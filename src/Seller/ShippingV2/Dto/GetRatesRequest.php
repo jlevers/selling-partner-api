@@ -8,7 +8,11 @@ use SellingPartnerApi\Dto;
 
 final class GetRatesRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['packages' => [Package::class], 'taxDetails' => [TaxDetail::class]];
+    protected static array $complexArrayTypes = [
+        'packages' => [Package::class],
+        'taxDetails' => [TaxDetail::class],
+        'clientReferenceDetails' => [ClientReferenceDetail::class],
+    ];
 
     /**
      * @param  Address  $shipFrom  The address.
@@ -17,8 +21,12 @@ final class GetRatesRequest extends Dto
      * @param  ?Address  $shipTo  The address.
      * @param  ?Address  $returnTo  The address.
      * @param  ?DateTime  $shipDate  The ship date and time (the requested pickup). This defaults to the current date and time.
+     * @param  ?ShipperInstruction  $shipperInstruction  The shipper instruction.
      * @param  ?ValueAddedServiceDetails  $valueAddedServices  A collection of supported value-added services.
      * @param  TaxDetail[]|null  $taxDetails  A list of tax detail information.
+     * @param  ClientReferenceDetail[]|null  $clientReferenceDetails  Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
+     * @param  ?string  $shipmentType  Shipment type.
+     * @param  ?AccessPointDetails  $destinationAccessPointDetails
      */
     public function __construct(
         public readonly Address $shipFrom,
@@ -27,8 +35,12 @@ final class GetRatesRequest extends Dto
         public readonly ?Address $shipTo = null,
         public readonly ?Address $returnTo = null,
         public readonly ?\DateTime $shipDate = null,
+        public readonly ?ShipperInstruction $shipperInstruction = null,
         public readonly ?ValueAddedServiceDetails $valueAddedServices = null,
         public readonly ?array $taxDetails = null,
+        public readonly ?array $clientReferenceDetails = null,
+        public readonly ?string $shipmentType = null,
+        public readonly ?AccessPointDetails $destinationAccessPointDetails = null,
     ) {
     }
 }

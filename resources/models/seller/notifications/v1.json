@@ -2,33 +2,41 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Selling Partner API for Notifications",
-        "description": "The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.\n\nFor more information, see the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide).",
+        "description": "The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.\n\nFor more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v1"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/notifications\/v1\/subscriptions\/{notificationType}": {
+        "/notifications/v1/subscriptions/{notificationType}": {
             "get": {
                 "tags": [
                     "NotificationsV1"
                 ],
-                "description": "Returns information about subscriptions of the specified notification type. You can use this API to get subscription information when you do not have a subscription identifier.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns information about subscription of the specified notification type and payload version. `payloadVersion` is an optional parameter. When `payloadVersion` is not provided, it will return latest payload version subscription's information. You can use this API to get subscription information when you do not have a subscription identifier.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getSubscription",
                 "parameters": [
                     {
-                        "$ref": "#\/components\/parameters\/NotificationType"
+                        "$ref": "#/components/parameters/NotificationType"
+                    },
+                    {
+                        "name": "payloadVersion",
+                        "in": "query",
+                        "description": "The version of the payload object to be used in the notification.",
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
@@ -49,9 +57,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionResponse"
                                 }
                             }
                         },
@@ -89,9 +97,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionResponse"
                                 }
                             }
                         }
@@ -107,9 +115,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionResponse"
                                 }
                             }
                         }
@@ -131,9 +139,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionResponse"
                                 }
                             }
                         }
@@ -155,9 +163,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionResponse"
                                 }
                             }
                         }
@@ -179,9 +187,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionResponse"
                                 }
                             }
                         }
@@ -203,9 +211,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionResponse"
                                 }
                             }
                         }
@@ -227,9 +235,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionResponse"
                                 }
                             }
                         }
@@ -251,9 +259,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionResponse"
                                 }
                             }
                         }
@@ -264,18 +272,18 @@
                 "tags": [
                     "NotificationsV1"
                 ],
-                "description": "Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the createDestination operation.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the `createDestination` operation. In cases where the specified notification type supports multiple payload versions, you can utilize this API to subscribe to a different payload version if you already have an existing subscription for a different payload version.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createSubscription",
                 "parameters": [
                     {
-                        "$ref": "#\/components\/parameters\/NotificationType"
+                        "$ref": "#/components/parameters/NotificationType"
                     }
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateSubscriptionRequest"
+                                "$ref": "#/components/schemas/CreateSubscriptionRequest"
                             }
                         }
                     },
@@ -299,9 +307,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateSubscriptionResponse"
+                                    "$ref": "#/components/schemas/CreateSubscriptionResponse"
                                 }
                             }
                         },
@@ -339,9 +347,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateSubscriptionResponse"
+                                    "$ref": "#/components/schemas/CreateSubscriptionResponse"
                                 }
                             }
                         }
@@ -357,9 +365,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateSubscriptionResponse"
+                                    "$ref": "#/components/schemas/CreateSubscriptionResponse"
                                 }
                             }
                         }
@@ -381,9 +389,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateSubscriptionResponse"
+                                    "$ref": "#/components/schemas/CreateSubscriptionResponse"
                                 }
                             }
                         }
@@ -405,9 +413,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateSubscriptionResponse"
+                                    "$ref": "#/components/schemas/CreateSubscriptionResponse"
                                 }
                             }
                         }
@@ -429,9 +437,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateSubscriptionResponse"
+                                    "$ref": "#/components/schemas/CreateSubscriptionResponse"
                                 }
                             }
                         }
@@ -453,9 +461,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateSubscriptionResponse"
+                                    "$ref": "#/components/schemas/CreateSubscriptionResponse"
                                 }
                             }
                         }
@@ -477,9 +485,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateSubscriptionResponse"
+                                    "$ref": "#/components/schemas/CreateSubscriptionResponse"
                                 }
                             }
                         }
@@ -501,9 +509,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateSubscriptionResponse"
+                                    "$ref": "#/components/schemas/CreateSubscriptionResponse"
                                 }
                             }
                         }
@@ -525,9 +533,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateSubscriptionResponse"
+                                    "$ref": "#/components/schemas/CreateSubscriptionResponse"
                                 }
                             }
                         }
@@ -536,12 +544,12 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/notifications\/v1\/subscriptions\/{notificationType}\/{subscriptionId}": {
+        "/notifications/v1/subscriptions/{notificationType}/{subscriptionId}": {
             "get": {
                 "tags": [
                     "NotificationsV1"
                 ],
-                "description": "Returns information about a subscription for the specified notification type. The getSubscriptionById API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns information about a subscription for the specified notification type. The `getSubscriptionById` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getSubscriptionById",
                 "parameters": [
                     {
@@ -554,7 +562,7 @@
                         }
                     },
                     {
-                        "$ref": "#\/components\/parameters\/NotificationType"
+                        "$ref": "#/components/parameters/NotificationType"
                     }
                 ],
                 "responses": {
@@ -575,9 +583,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionByIdResponse"
                                 }
                             }
                         },
@@ -615,9 +623,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -633,9 +641,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -657,9 +665,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionResponse"
                                 }
                             }
                         }
@@ -681,9 +689,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -705,9 +713,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -729,9 +737,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -753,9 +761,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -777,9 +785,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -801,9 +809,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/GetSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -814,7 +822,7 @@
                 "tags": [
                     "NotificationsV1"
                 ],
-                "description": "Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The deleteSubscriptionById API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The `deleteSubscriptionById` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "deleteSubscriptionById",
                 "parameters": [
                     {
@@ -827,7 +835,7 @@
                         }
                     },
                     {
-                        "$ref": "#\/components\/parameters\/NotificationType"
+                        "$ref": "#/components/parameters/NotificationType"
                     }
                 ],
                 "responses": {
@@ -848,9 +856,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/DeleteSubscriptionByIdResponse"
                                 }
                             }
                         },
@@ -882,9 +890,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/DeleteSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -900,9 +908,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/DeleteSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -924,9 +932,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/DeleteSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -948,9 +956,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/DeleteSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -972,9 +980,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/DeleteSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -996,9 +1004,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/DeleteSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -1020,9 +1028,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/DeleteSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -1044,9 +1052,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/DeleteSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -1068,9 +1076,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteSubscriptionByIdResponse"
+                                    "$ref": "#/components/schemas/DeleteSubscriptionByIdResponse"
                                 }
                             }
                         }
@@ -1078,12 +1086,12 @@
                 }
             }
         },
-        "\/notifications\/v1\/destinations": {
+        "/notifications/v1/destinations": {
             "get": {
                 "tags": [
                     "NotificationsV1"
                 ],
-                "description": "Returns information about all destinations. The getDestinations API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns information about all destinations. The `getDestinations` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getDestinations",
                 "responses": {
                     "200": {
@@ -1103,9 +1111,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationsResponse"
+                                    "$ref": "#/components/schemas/GetDestinationsResponse"
                                 }
                             }
                         },
@@ -1149,9 +1157,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationsResponse"
+                                    "$ref": "#/components/schemas/GetDestinationsResponse"
                                 }
                             }
                         }
@@ -1167,9 +1175,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationsResponse"
+                                    "$ref": "#/components/schemas/GetDestinationsResponse"
                                 }
                             }
                         }
@@ -1191,9 +1199,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationsResponse"
+                                    "$ref": "#/components/schemas/GetDestinationsResponse"
                                 }
                             }
                         }
@@ -1215,9 +1223,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationsResponse"
+                                    "$ref": "#/components/schemas/GetDestinationsResponse"
                                 }
                             }
                         }
@@ -1239,9 +1247,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationsResponse"
+                                    "$ref": "#/components/schemas/GetDestinationsResponse"
                                 }
                             }
                         }
@@ -1263,9 +1271,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationsResponse"
+                                    "$ref": "#/components/schemas/GetDestinationsResponse"
                                 }
                             }
                         }
@@ -1287,9 +1295,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationsResponse"
+                                    "$ref": "#/components/schemas/GetDestinationsResponse"
                                 }
                             }
                         }
@@ -1311,9 +1319,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationsResponse"
+                                    "$ref": "#/components/schemas/GetDestinationsResponse"
                                 }
                             }
                         }
@@ -1335,9 +1343,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationsResponse"
+                                    "$ref": "#/components/schemas/GetDestinationsResponse"
                                 }
                             }
                         }
@@ -1348,13 +1356,13 @@
                 "tags": [
                     "NotificationsV1"
                 ],
-                "description": "Creates a destination resource to receive notifications. The createDestination API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Creates a destination resource to receive notifications. The `createDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createDestination",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateDestinationRequest"
+                                "$ref": "#/components/schemas/CreateDestinationRequest"
                             }
                         }
                     },
@@ -1378,9 +1386,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateDestinationResponse"
                                 }
                             }
                         },
@@ -1422,9 +1430,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateDestinationResponse"
                                 }
                             }
                         }
@@ -1440,9 +1448,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateDestinationResponse"
                                 }
                             }
                         }
@@ -1464,9 +1472,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateDestinationResponse"
                                 }
                             }
                         }
@@ -1488,9 +1496,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateDestinationResponse"
                                 }
                             }
                         }
@@ -1512,9 +1520,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateDestinationResponse"
                                 }
                             }
                         }
@@ -1536,9 +1544,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateDestinationResponse"
                                 }
                             }
                         }
@@ -1560,9 +1568,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateDestinationResponse"
                                 }
                             }
                         }
@@ -1584,9 +1592,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateDestinationResponse"
                                 }
                             }
                         }
@@ -1608,9 +1616,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateDestinationResponse"
                                 }
                             }
                         }
@@ -1619,12 +1627,12 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/notifications\/v1\/destinations\/{destinationId}": {
+        "/notifications/v1/destinations/{destinationId}": {
             "get": {
                 "tags": [
                     "NotificationsV1"
                 ],
-                "description": "Returns information about the destination that you specify. The getDestination API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns information about the destination that you specify. The `getDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getDestination",
                 "parameters": [
                     {
@@ -1655,9 +1663,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationResponse"
+                                    "$ref": "#/components/schemas/GetDestinationResponse"
                                 }
                             }
                         },
@@ -1699,9 +1707,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationResponse"
+                                    "$ref": "#/components/schemas/GetDestinationResponse"
                                 }
                             }
                         }
@@ -1717,9 +1725,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationResponse"
+                                    "$ref": "#/components/schemas/GetDestinationResponse"
                                 }
                             }
                         }
@@ -1741,9 +1749,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationResponse"
+                                    "$ref": "#/components/schemas/GetDestinationResponse"
                                 }
                             }
                         }
@@ -1765,9 +1773,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationResponse"
+                                    "$ref": "#/components/schemas/GetDestinationResponse"
                                 }
                             }
                         }
@@ -1789,9 +1797,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationResponse"
+                                    "$ref": "#/components/schemas/GetDestinationResponse"
                                 }
                             }
                         }
@@ -1813,9 +1821,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationResponse"
+                                    "$ref": "#/components/schemas/GetDestinationResponse"
                                 }
                             }
                         }
@@ -1837,9 +1845,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationResponse"
+                                    "$ref": "#/components/schemas/GetDestinationResponse"
                                 }
                             }
                         }
@@ -1861,9 +1869,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationResponse"
+                                    "$ref": "#/components/schemas/GetDestinationResponse"
                                 }
                             }
                         }
@@ -1885,9 +1893,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDestinationResponse"
+                                    "$ref": "#/components/schemas/GetDestinationResponse"
                                 }
                             }
                         }
@@ -1898,7 +1906,7 @@
                 "tags": [
                     "NotificationsV1"
                 ],
-                "description": "Deletes the destination that you specify. The deleteDestination API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Deletes the destination that you specify. The `deleteDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "deleteDestination",
                 "parameters": [
                     {
@@ -1929,9 +1937,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteDestinationResponse"
+                                    "$ref": "#/components/schemas/DeleteDestinationResponse"
                                 }
                             }
                         },
@@ -1963,9 +1971,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteDestinationResponse"
+                                    "$ref": "#/components/schemas/DeleteDestinationResponse"
                                 }
                             }
                         }
@@ -1981,9 +1989,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteDestinationResponse"
+                                    "$ref": "#/components/schemas/DeleteDestinationResponse"
                                 }
                             }
                         }
@@ -2005,9 +2013,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteDestinationResponse"
+                                    "$ref": "#/components/schemas/DeleteDestinationResponse"
                                 }
                             }
                         }
@@ -2029,9 +2037,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteDestinationResponse"
+                                    "$ref": "#/components/schemas/DeleteDestinationResponse"
                                 }
                             }
                         }
@@ -2053,9 +2061,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteDestinationResponse"
+                                    "$ref": "#/components/schemas/DeleteDestinationResponse"
                                 }
                             }
                         }
@@ -2077,9 +2085,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteDestinationResponse"
+                                    "$ref": "#/components/schemas/DeleteDestinationResponse"
                                 }
                             }
                         }
@@ -2101,9 +2109,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteDestinationResponse"
+                                    "$ref": "#/components/schemas/DeleteDestinationResponse"
                                 }
                             }
                         }
@@ -2125,9 +2133,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteDestinationResponse"
+                                    "$ref": "#/components/schemas/DeleteDestinationResponse"
                                 }
                             }
                         }
@@ -2149,9 +2157,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteDestinationResponse"
+                                    "$ref": "#/components/schemas/DeleteDestinationResponse"
                                 }
                             }
                         }
@@ -2166,22 +2174,22 @@
                 "type": "object",
                 "properties": {
                     "eventFilter": {
-                        "$ref": "#\/components\/schemas\/EventFilter"
+                        "$ref": "#/components/schemas/EventFilter"
                     }
                 },
-                "description": "Additional information passed to the subscription to control the processing of notifications. For example, you can use an `eventFilter` to customize your subscription to send notifications for only the specified marketplaceId's, or select the aggregation time period at which to send notifications (e.g. limit to one notification every five minutes for high frequency notifications). The specific features available vary depending on the notificationType.\n\nThis feature is currently only supported by the `ANY_OFFER_CHANGED` and `ORDER_CHANGE` notificationTypes."
+                "description": "Additional information passed to the subscription to control the processing of notifications. For example, you can use an `eventFilter` to customize your subscription to send notifications for only the specified `marketplaceId`s, or select the aggregation time period at which to send notifications (for example: limit to one notification every five minutes for high frequency notifications). The specific features available vary depending on the `notificationType`.\n\nThis feature is currently only supported by the `ANY_OFFER_CHANGED` and `ORDER_CHANGE` `notificationType`s."
             },
             "EventFilter": {
-                "description": "A notificationType specific filter. This object contains all of the currently available filters and properties that you can use to define a notificationType specific filter.",
+                "description": "A `notificationType` specific filter. This object contains all of the currently available filters and properties that you can use to define a `notificationType` specific filter.",
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/AggregationFilter"
+                        "$ref": "#/components/schemas/AggregationFilter"
                     },
                     {
-                        "$ref": "#\/components\/schemas\/MarketplaceFilter"
+                        "$ref": "#/components/schemas/MarketplaceFilter"
                     },
                     {
-                        "$ref": "#\/components\/schemas\/OrderChangeTypeFilter"
+                        "$ref": "#/components/schemas/OrderChangeTypeFilter"
                     },
                     {
                         "required": [
@@ -2191,7 +2199,7 @@
                         "properties": {
                             "eventFilterType": {
                                 "type": "string",
-                                "description": "An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported.",
+                                "description": "An `eventFilterType` value that is supported by the specific `notificationType`. This is used by the subscription service to determine the type of event filter. Refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values) to determine if an `eventFilterType` is supported.",
                                 "enum": [
                                     "ANY_OFFER_CHANGED",
                                     "ORDER_CHANGE"
@@ -2205,14 +2213,14 @@
                 "type": "object",
                 "properties": {
                     "marketplaceIds": {
-                        "$ref": "#\/components\/schemas\/MarketplaceIds"
+                        "$ref": "#/components/schemas/MarketplaceIds"
                     }
                 },
-                "description": "Use this event filter to customize your subscription to send notifications for only the specified marketplaceId's."
+                "description": "An event filter to customize your subscription to send notifications for only the specified `marketplaceId`s."
             },
             "MarketplaceIds": {
                 "type": "array",
-                "description": "A list of marketplace identifiers to subscribe to (e.g. ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.",
+                "description": "A list of marketplace identifiers to subscribe to (for example: ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.",
                 "items": {
                     "type": "string"
                 }
@@ -2221,10 +2229,10 @@
                 "type": "object",
                 "properties": {
                     "aggregationSettings": {
-                        "$ref": "#\/components\/schemas\/AggregationSettings"
+                        "$ref": "#/components/schemas/AggregationSettings"
                     }
                 },
-                "description": "Use this filter to select the aggregation time period at which to send notifications (e.g. limit to one notification every five minutes for high frequency notifications)."
+                "description": "A filter used to select the aggregation time period at which to send notifications (for example: limit to one notification every five minutes for high frequency notifications)."
             },
             "AggregationSettings": {
                 "required": [
@@ -2233,7 +2241,7 @@
                 "type": "object",
                 "properties": {
                     "aggregationTimePeriod": {
-                        "$ref": "#\/components\/schemas\/AggregationTimePeriod"
+                        "$ref": "#/components/schemas/AggregationTimePeriod"
                     }
                 },
                 "description": "A container that holds all of the necessary properties to configure the aggregation of notifications."
@@ -2260,16 +2268,16 @@
                 "type": "object",
                 "properties": {
                     "orderChangeTypes": {
-                        "$ref": "#\/components\/schemas\/OrderChangeTypes"
+                        "$ref": "#/components/schemas/OrderChangeTypes"
                     }
                 },
-                "description": "Use this event filter to customize your subscription to send notifications for only the specified orderChangeType."
+                "description": "An event filter to customize your subscription to send notifications for only the specified `orderChangeType`."
             },
             "OrderChangeTypes": {
                 "type": "array",
-                "description": "A list of order change types to subscribe to (e.g. BuyerRequestedChange). To receive notifications of all change types, do not provide this list.",
+                "description": "A list of order change types to subscribe to (for example: `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/OrderChangeTypeEnum"
+                    "$ref": "#/components/schemas/OrderChangeTypeEnum"
                 }
             },
             "OrderChangeTypeEnum": {
@@ -2301,24 +2309,28 @@
                         "description": "The identifier for the destination where notifications will be delivered."
                     },
                     "processingDirective": {
-                        "$ref": "#\/components\/schemas\/ProcessingDirective"
+                        "$ref": "#/components/schemas/ProcessingDirective"
                     }
                 },
-                "description": "Represents a subscription to receive notifications."
+                "description": "Information about the subscription."
             },
             "CreateSubscriptionResponse": {
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Subscription"
+                        "$ref": "#/components/schemas/Subscription"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the createSubscription operation."
+                "description": "The response schema for the `createSubscription` operation."
             },
             "CreateSubscriptionRequest": {
+                "required": [
+                    "destinationId",
+                    "payloadVersion"
+                ],
                 "type": "object",
                 "properties": {
                     "payloadVersion": {
@@ -2330,49 +2342,49 @@
                         "description": "The identifier for the destination where notifications will be delivered."
                     },
                     "processingDirective": {
-                        "$ref": "#\/components\/schemas\/ProcessingDirective"
+                        "$ref": "#/components/schemas/ProcessingDirective"
                     }
                 },
-                "description": "The request schema for the createSubscription operation."
+                "description": "The request schema for the `createSubscription` operation."
             },
             "GetSubscriptionByIdResponse": {
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Subscription"
+                        "$ref": "#/components/schemas/Subscription"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the getSubscriptionById operation."
+                "description": "The response schema for the `getSubscriptionById` operation."
             },
             "GetSubscriptionResponse": {
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Subscription"
+                        "$ref": "#/components/schemas/Subscription"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the getSubscription operation."
+                "description": "The response schema for the `getSubscription` operation."
             },
             "DeleteSubscriptionByIdResponse": {
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the deleteSubscriptionById operation."
+                "description": "The response schema for the `deleteSubscriptionById` operation."
             },
             "DestinationList": {
                 "type": "array",
                 "description": "A list of destinations.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Destination"
+                    "$ref": "#/components/schemas/Destination"
                 }
             },
             "Destination": {
@@ -2393,19 +2405,19 @@
                         "description": "The destination identifier generated when you created the destination."
                     },
                     "resource": {
-                        "$ref": "#\/components\/schemas\/DestinationResource"
+                        "$ref": "#/components/schemas/DestinationResource"
                     }
                 },
-                "description": "Represents a destination created when you call the createDestination operation."
+                "description": "Information about the destination created when you call the `createDestination` operation."
             },
             "DestinationResource": {
                 "type": "object",
                 "properties": {
                     "sqs": {
-                        "$ref": "#\/components\/schemas\/SqsResource"
+                        "$ref": "#/components/schemas/SqsResource"
                     },
                     "eventBridge": {
-                        "$ref": "#\/components\/schemas\/EventBridgeResource"
+                        "$ref": "#/components/schemas/EventBridgeResource"
                     }
                 },
                 "description": "The destination resource types."
@@ -2414,10 +2426,10 @@
                 "type": "object",
                 "properties": {
                     "sqs": {
-                        "$ref": "#\/components\/schemas\/SqsResource"
+                        "$ref": "#/components/schemas/SqsResource"
                     },
                     "eventBridge": {
-                        "$ref": "#\/components\/schemas\/EventBridgeResourceSpecification"
+                        "$ref": "#/components/schemas/EventBridgeResourceSpecification"
                     }
                 },
                 "description": "The information required to create a destination resource. Applications should use one resource type (sqs or eventBridge) per destination."
@@ -2470,14 +2482,14 @@
                     },
                     "region": {
                         "type": "string",
-                        "description": "The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, see https:\/\/docs.aws.amazon.com\/general\/latest\/gr\/ev.html."
+                        "description": "The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, refer to [Amazon EventBridge endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ev.html)."
                     },
                     "accountId": {
                         "type": "string",
                         "description": "The identifier for the AWS account that is responsible for charges related to receiving notifications."
                     }
                 },
-                "description": "Represents an Amazon EventBridge destination."
+                "description": "The Amazon EventBridge destination."
             },
             "CreateDestinationRequest": {
                 "required": [
@@ -2487,23 +2499,23 @@
                 "type": "object",
                 "properties": {
                     "resourceSpecification": {
-                        "$ref": "#\/components\/schemas\/DestinationResourceSpecification"
+                        "$ref": "#/components/schemas/DestinationResourceSpecification"
                     },
                     "name": {
                         "type": "string",
                         "description": "A developer-defined name to help identify this destination."
                     }
                 },
-                "description": "The request schema for the createDestination operation."
+                "description": "The request schema for the `createDestination` operation."
             },
             "CreateDestinationResponse": {
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Destination"
+                        "$ref": "#/components/schemas/Destination"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the createDestination operation."
@@ -2512,40 +2524,40 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Destination"
+                        "$ref": "#/components/schemas/Destination"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the getDestination operation."
+                "description": "The response schema for the `getDestination` operation."
             },
             "GetDestinationsResponse": {
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/DestinationList"
+                        "$ref": "#/components/schemas/DestinationList"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the getDestinations operation."
+                "description": "The response schema for the `getDestinations` operation."
             },
             "DeleteDestinationResponse": {
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the deleteDestination operation."
+                "description": "The response schema for the `deleteDestination` operation."
             },
             "ErrorList": {
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Error": {
@@ -2561,21 +2573,21 @@
                     },
                     "message": {
                         "type": "string",
-                        "description": "A message that describes the error condition in a human-readable form."
+                        "description": "A message that describes the error condition."
                     },
                     "details": {
                         "type": "string",
                         "description": "Additional details that can help the caller understand or fix the issue."
                     }
                 },
-                "description": "Error response returned when the request is unsuccessful."
+                "description": "An error response returned when the request is unsuccessful."
             }
         },
         "parameters": {
             "NotificationType": {
                 "name": "notificationType",
                 "in": "path",
-                "description": "The type of notification.\n\n For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).",
+                "description": "The type of notification.\n\n For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).",
                 "required": true,
                 "schema": {
                     "type": "string"

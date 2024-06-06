@@ -2,24 +2,24 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Selling Partner API for Shipping",
-        "description": "Provides programmatic access to Amazon Shipping APIs.\n\n **Note:** If you are new to the Amazon Shipping API, refer to the latest version of <a href=\"https:\/\/developer-docs.amazon.com\/amazon-shipping\/docs\/shipping-api-v2-reference\">Amazon Shipping API (v2)<\/a> on the <a href=\"https:\/\/developer-docs.amazon.com\/amazon-shipping\/\">Amazon Shipping Developer Documentation<\/a> site.",
+        "description": "Provides programmatic access to Amazon Shipping APIs.\n\n **Note:** If you are new to the Amazon Shipping API, refer to the latest version of <a href=\"https://developer-docs.amazon.com/amazon-shipping/docs/shipping-api-v2-reference\">Amazon Shipping API (v2)</a> on the <a href=\"https://developer-docs.amazon.com/amazon-shipping/\">Amazon Shipping Developer Documentation</a> site.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v1"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/shipping\/v1\/shipments": {
+        "/shipping/v1/shipments": {
             "post": {
                 "tags": [
                     "ShippingV1"
@@ -28,9 +28,9 @@
                 "operationId": "createShipment",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateShipmentRequest"
+                                "$ref": "#/components/schemas/CreateShipmentRequest"
                             }
                         }
                     },
@@ -54,9 +54,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 },
                                 "example": {
                                     "shipmentId": "89108749065090",
@@ -151,9 +151,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         },
@@ -198,9 +198,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         },
@@ -239,9 +239,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         },
@@ -286,9 +286,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         },
@@ -333,9 +333,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         },
@@ -380,9 +380,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         },
@@ -427,9 +427,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         },
@@ -461,7 +461,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/shipping\/v1\/shipments\/{shipmentId}": {
+        "/shipping/v1/shipments/{shipmentId}": {
             "get": {
                 "tags": [
                     "ShippingV1"
@@ -496,9 +496,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 },
                                 "example": {
                                     "shipmentId": "89108749065090",
@@ -663,9 +663,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         },
@@ -708,9 +708,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         },
@@ -747,9 +747,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         },
@@ -792,9 +792,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         },
@@ -837,9 +837,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         },
@@ -882,9 +882,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         },
@@ -927,9 +927,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         },
@@ -958,7 +958,7 @@
                 }
             }
         },
-        "\/shipping\/v1\/shipments\/{shipmentId}\/cancel": {
+        "/shipping/v1/shipments/{shipmentId}/cancel": {
             "post": {
                 "tags": [
                     "ShippingV1"
@@ -993,9 +993,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         },
@@ -1031,9 +1031,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         },
@@ -1076,9 +1076,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         },
@@ -1115,9 +1115,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         },
@@ -1160,9 +1160,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         },
@@ -1205,9 +1205,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         },
@@ -1250,9 +1250,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         },
@@ -1295,9 +1295,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         },
@@ -1326,7 +1326,7 @@
                 }
             }
         },
-        "\/shipping\/v1\/shipments\/{shipmentId}\/purchaseLabels": {
+        "/shipping/v1/shipments/{shipmentId}/purchaseLabels": {
             "post": {
                 "tags": [
                     "ShippingV1"
@@ -1345,9 +1345,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/PurchaseLabelsRequest"
+                                "$ref": "#/components/schemas/PurchaseLabelsRequest"
                             }
                         }
                     },
@@ -1371,9 +1371,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseLabelsResponse"
+                                    "$ref": "#/components/schemas/PurchaseLabelsResponse"
                                 },
                                 "example": {
                                     "shipmentId": "89108749065090",
@@ -1486,9 +1486,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseLabelsResponse"
+                                    "$ref": "#/components/schemas/PurchaseLabelsResponse"
                                 }
                             }
                         },
@@ -1531,9 +1531,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseLabelsResponse"
+                                    "$ref": "#/components/schemas/PurchaseLabelsResponse"
                                 }
                             }
                         },
@@ -1570,9 +1570,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseLabelsResponse"
+                                    "$ref": "#/components/schemas/PurchaseLabelsResponse"
                                 }
                             }
                         },
@@ -1615,9 +1615,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseLabelsResponse"
+                                    "$ref": "#/components/schemas/PurchaseLabelsResponse"
                                 }
                             }
                         },
@@ -1660,9 +1660,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseLabelsResponse"
+                                    "$ref": "#/components/schemas/PurchaseLabelsResponse"
                                 }
                             }
                         },
@@ -1705,9 +1705,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseLabelsResponse"
+                                    "$ref": "#/components/schemas/PurchaseLabelsResponse"
                                 }
                             }
                         },
@@ -1750,9 +1750,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseLabelsResponse"
+                                    "$ref": "#/components/schemas/PurchaseLabelsResponse"
                                 }
                             }
                         },
@@ -1782,7 +1782,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/shipping\/v1\/shipments\/{shipmentId}\/containers\/{trackingId}\/label": {
+        "/shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label": {
             "post": {
                 "tags": [
                     "ShippingV1"
@@ -1809,9 +1809,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/RetrieveShippingLabelRequest"
+                                "$ref": "#/components/schemas/RetrieveShippingLabelRequest"
                             }
                         }
                     },
@@ -1835,9 +1835,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RetrieveShippingLabelResponse"
+                                    "$ref": "#/components/schemas/RetrieveShippingLabelResponse"
                                 },
                                 "example": {
                                     "labelStream": "iVBORw0KGgo...AAAARK5CYII=(Truncated)",
@@ -1888,9 +1888,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RetrieveShippingLabelResponse"
+                                    "$ref": "#/components/schemas/RetrieveShippingLabelResponse"
                                 }
                             }
                         },
@@ -1933,9 +1933,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RetrieveShippingLabelResponse"
+                                    "$ref": "#/components/schemas/RetrieveShippingLabelResponse"
                                 }
                             }
                         },
@@ -1972,9 +1972,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RetrieveShippingLabelResponse"
+                                    "$ref": "#/components/schemas/RetrieveShippingLabelResponse"
                                 }
                             }
                         },
@@ -2017,9 +2017,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RetrieveShippingLabelResponse"
+                                    "$ref": "#/components/schemas/RetrieveShippingLabelResponse"
                                 }
                             }
                         },
@@ -2062,9 +2062,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RetrieveShippingLabelResponse"
+                                    "$ref": "#/components/schemas/RetrieveShippingLabelResponse"
                                 }
                             }
                         },
@@ -2107,9 +2107,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RetrieveShippingLabelResponse"
+                                    "$ref": "#/components/schemas/RetrieveShippingLabelResponse"
                                 }
                             }
                         },
@@ -2152,9 +2152,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RetrieveShippingLabelResponse"
+                                    "$ref": "#/components/schemas/RetrieveShippingLabelResponse"
                                 }
                             }
                         },
@@ -2184,7 +2184,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/shipping\/v1\/purchaseShipment": {
+        "/shipping/v1/purchaseShipment": {
             "post": {
                 "tags": [
                     "ShippingV1"
@@ -2193,9 +2193,9 @@
                 "operationId": "purchaseShipment",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/PurchaseShipmentRequest"
+                                "$ref": "#/components/schemas/PurchaseShipmentRequest"
                             }
                         }
                     },
@@ -2219,9 +2219,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseShipmentResponse"
+                                    "$ref": "#/components/schemas/PurchaseShipmentResponse"
                                 },
                                 "example": {
                                     "shipmentId": "89108749065090",
@@ -2334,9 +2334,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseShipmentResponse"
+                                    "$ref": "#/components/schemas/PurchaseShipmentResponse"
                                 }
                             }
                         }
@@ -2358,9 +2358,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseShipmentResponse"
+                                    "$ref": "#/components/schemas/PurchaseShipmentResponse"
                                 }
                             }
                         }
@@ -2376,9 +2376,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseShipmentResponse"
+                                    "$ref": "#/components/schemas/PurchaseShipmentResponse"
                                 }
                             }
                         }
@@ -2400,9 +2400,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseShipmentResponse"
+                                    "$ref": "#/components/schemas/PurchaseShipmentResponse"
                                 }
                             }
                         }
@@ -2424,9 +2424,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseShipmentResponse"
+                                    "$ref": "#/components/schemas/PurchaseShipmentResponse"
                                 }
                             }
                         }
@@ -2448,9 +2448,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseShipmentResponse"
+                                    "$ref": "#/components/schemas/PurchaseShipmentResponse"
                                 }
                             }
                         }
@@ -2472,9 +2472,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseShipmentResponse"
+                                    "$ref": "#/components/schemas/PurchaseShipmentResponse"
                                 }
                             }
                         }
@@ -2483,7 +2483,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/shipping\/v1\/rates": {
+        "/shipping/v1/rates": {
             "post": {
                 "tags": [
                     "ShippingV1"
@@ -2492,9 +2492,9 @@
                 "operationId": "getRates",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/GetRatesRequest"
+                                "$ref": "#/components/schemas/GetRatesRequest"
                             }
                         }
                     },
@@ -2518,9 +2518,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetRatesResponse"
+                                    "$ref": "#/components/schemas/GetRatesResponse"
                                 },
                                 "example": {
                                     "serviceRates": [
@@ -2603,9 +2603,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetRatesResponse"
+                                    "$ref": "#/components/schemas/GetRatesResponse"
                                 }
                             }
                         }
@@ -2627,9 +2627,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetRatesResponse"
+                                    "$ref": "#/components/schemas/GetRatesResponse"
                                 }
                             }
                         }
@@ -2645,9 +2645,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetRatesResponse"
+                                    "$ref": "#/components/schemas/GetRatesResponse"
                                 }
                             }
                         }
@@ -2669,9 +2669,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetRatesResponse"
+                                    "$ref": "#/components/schemas/GetRatesResponse"
                                 }
                             }
                         }
@@ -2693,9 +2693,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetRatesResponse"
+                                    "$ref": "#/components/schemas/GetRatesResponse"
                                 }
                             }
                         }
@@ -2717,9 +2717,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetRatesResponse"
+                                    "$ref": "#/components/schemas/GetRatesResponse"
                                 }
                             }
                         }
@@ -2741,9 +2741,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetRatesResponse"
+                                    "$ref": "#/components/schemas/GetRatesResponse"
                                 }
                             }
                         }
@@ -2752,7 +2752,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/shipping\/v1\/account": {
+        "/shipping/v1/account": {
             "get": {
                 "tags": [
                     "ShippingV1"
@@ -2777,9 +2777,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAccountResponse"
+                                    "$ref": "#/components/schemas/GetAccountResponse"
                                 },
                                 "example": {
                                     "accountId": "2755049166"
@@ -2818,9 +2818,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAccountResponse"
+                                    "$ref": "#/components/schemas/GetAccountResponse"
                                 }
                             }
                         }
@@ -2842,9 +2842,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAccountResponse"
+                                    "$ref": "#/components/schemas/GetAccountResponse"
                                 }
                             }
                         }
@@ -2860,9 +2860,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAccountResponse"
+                                    "$ref": "#/components/schemas/GetAccountResponse"
                                 }
                             }
                         }
@@ -2884,9 +2884,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAccountResponse"
+                                    "$ref": "#/components/schemas/GetAccountResponse"
                                 }
                             }
                         }
@@ -2908,9 +2908,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAccountResponse"
+                                    "$ref": "#/components/schemas/GetAccountResponse"
                                 }
                             }
                         }
@@ -2932,9 +2932,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAccountResponse"
+                                    "$ref": "#/components/schemas/GetAccountResponse"
                                 }
                             }
                         }
@@ -2956,9 +2956,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAccountResponse"
+                                    "$ref": "#/components/schemas/GetAccountResponse"
                                 }
                             }
                         }
@@ -2966,7 +2966,7 @@
                 }
             }
         },
-        "\/shipping\/v1\/tracking\/{trackingId}": {
+        "/shipping/v1/tracking/{trackingId}": {
             "get": {
                 "tags": [
                     "ShippingV1"
@@ -3001,9 +3001,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTrackingInformationResponse"
+                                    "$ref": "#/components/schemas/GetTrackingInformationResponse"
                                 },
                                 "example": {
                                     "trackingId": "89108749065090",
@@ -3078,9 +3078,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTrackingInformationResponse"
+                                    "$ref": "#/components/schemas/GetTrackingInformationResponse"
                                 }
                             }
                         },
@@ -3123,9 +3123,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTrackingInformationResponse"
+                                    "$ref": "#/components/schemas/GetTrackingInformationResponse"
                                 }
                             }
                         }
@@ -3141,9 +3141,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTrackingInformationResponse"
+                                    "$ref": "#/components/schemas/GetTrackingInformationResponse"
                                 }
                             }
                         }
@@ -3165,9 +3165,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTrackingInformationResponse"
+                                    "$ref": "#/components/schemas/GetTrackingInformationResponse"
                                 }
                             }
                         }
@@ -3189,9 +3189,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTrackingInformationResponse"
+                                    "$ref": "#/components/schemas/GetTrackingInformationResponse"
                                 }
                             }
                         }
@@ -3213,9 +3213,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTrackingInformationResponse"
+                                    "$ref": "#/components/schemas/GetTrackingInformationResponse"
                                 }
                             }
                         }
@@ -3237,9 +3237,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTrackingInformationResponse"
+                                    "$ref": "#/components/schemas/GetTrackingInformationResponse"
                                 }
                             }
                         }
@@ -3276,7 +3276,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "AccountId": {
@@ -3330,16 +3330,16 @@
                 "type": "object",
                 "properties": {
                     "stateOrRegion": {
-                        "$ref": "#\/components\/schemas\/StateOrRegion"
+                        "$ref": "#/components/schemas/StateOrRegion"
                     },
                     "city": {
-                        "$ref": "#\/components\/schemas\/City"
+                        "$ref": "#/components/schemas/City"
                     },
                     "countryCode": {
-                        "$ref": "#\/components\/schemas\/CountryCode"
+                        "$ref": "#/components/schemas/CountryCode"
                     },
                     "postalCode": {
-                        "$ref": "#\/components\/schemas\/PostalCode"
+                        "$ref": "#/components/schemas/PostalCode"
                     }
                 },
                 "description": "The location where the person, business or institution is located."
@@ -3352,7 +3352,7 @@
                 "type": "object",
                 "properties": {
                     "eventCode": {
-                        "$ref": "#\/components\/schemas\/EventCode"
+                        "$ref": "#/components/schemas/EventCode"
                     },
                     "eventTime": {
                         "type": "string",
@@ -3360,7 +3360,7 @@
                         "format": "date-time"
                     },
                     "location": {
-                        "$ref": "#\/components\/schemas\/Location"
+                        "$ref": "#/components/schemas/Location"
                     }
                 },
                 "description": "An event of a shipment"
@@ -3369,7 +3369,7 @@
                 "type": "array",
                 "description": "A list of events of a shipment.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Event"
+                    "$ref": "#/components/schemas/Event"
                 }
             },
             "TrackingId": {
@@ -3431,16 +3431,16 @@
                         "description": "Additional address information, if required."
                     },
                     "stateOrRegion": {
-                        "$ref": "#\/components\/schemas\/StateOrRegion"
+                        "$ref": "#/components/schemas/StateOrRegion"
                     },
                     "city": {
-                        "$ref": "#\/components\/schemas\/City"
+                        "$ref": "#/components/schemas/City"
                     },
                     "countryCode": {
-                        "$ref": "#\/components\/schemas\/CountryCode"
+                        "$ref": "#/components/schemas/CountryCode"
                     },
                     "postalCode": {
-                        "$ref": "#\/components\/schemas\/PostalCode"
+                        "$ref": "#/components/schemas/PostalCode"
                     },
                     "email": {
                         "maxLength": 64,
@@ -3485,10 +3485,10 @@
                 "type": "object",
                 "properties": {
                     "deliveryWindow": {
-                        "$ref": "#\/components\/schemas\/TimeRange"
+                        "$ref": "#/components/schemas/TimeRange"
                     },
                     "receiveWindow": {
-                        "$ref": "#\/components\/schemas\/TimeRange"
+                        "$ref": "#/components/schemas/TimeRange"
                     }
                 },
                 "description": "The promised delivery time and pickup time."
@@ -3520,7 +3520,7 @@
                 "type": "array",
                 "description": "A list of service types that can be used to send the shipment.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ServiceType"
+                    "$ref": "#/components/schemas/ServiceType"
                 }
             },
             "Rate": {
@@ -3531,10 +3531,10 @@
                         "description": "An identifier for the rate."
                     },
                     "totalCharge": {
-                        "$ref": "#\/components\/schemas\/Currency"
+                        "$ref": "#/components/schemas/Currency"
                     },
                     "billedWeight": {
-                        "$ref": "#\/components\/schemas\/Weight"
+                        "$ref": "#/components/schemas/Weight"
                     },
                     "expirationTime": {
                         "type": "string",
@@ -3542,10 +3542,10 @@
                         "format": "date-time"
                     },
                     "serviceType": {
-                        "$ref": "#\/components\/schemas\/ServiceType"
+                        "$ref": "#/components/schemas/ServiceType"
                     },
                     "promise": {
-                        "$ref": "#\/components\/schemas\/ShippingPromiseSet"
+                        "$ref": "#/components/schemas/ShippingPromiseSet"
                     }
                 },
                 "description": "The available rate that can be used to send the shipment"
@@ -3554,7 +3554,7 @@
                 "type": "array",
                 "description": "A list of all the available rates that can be used to send the shipment.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Rate"
+                    "$ref": "#/components/schemas/Rate"
                 }
             },
             "RateId": {
@@ -3565,16 +3565,16 @@
                 "type": "object",
                 "properties": {
                     "totalCharge": {
-                        "$ref": "#\/components\/schemas\/Currency"
+                        "$ref": "#/components/schemas/Currency"
                     },
                     "billedWeight": {
-                        "$ref": "#\/components\/schemas\/Weight"
+                        "$ref": "#/components/schemas/Weight"
                     },
                     "serviceType": {
-                        "$ref": "#\/components\/schemas\/ServiceType"
+                        "$ref": "#/components/schemas/ServiceType"
                     },
                     "promise": {
-                        "$ref": "#\/components\/schemas\/ShippingPromiseSet"
+                        "$ref": "#/components/schemas/ShippingPromiseSet"
                     }
                 },
                 "description": "The specific rate purchased for the shipment, or null if unpurchased."
@@ -3589,16 +3589,16 @@
                 "type": "object",
                 "properties": {
                     "totalCharge": {
-                        "$ref": "#\/components\/schemas\/Currency"
+                        "$ref": "#/components/schemas/Currency"
                     },
                     "billableWeight": {
-                        "$ref": "#\/components\/schemas\/Weight"
+                        "$ref": "#/components/schemas/Weight"
                     },
                     "serviceType": {
-                        "$ref": "#\/components\/schemas\/ServiceType"
+                        "$ref": "#/components/schemas/ServiceType"
                     },
                     "promise": {
-                        "$ref": "#\/components\/schemas\/ShippingPromiseSet"
+                        "$ref": "#/components/schemas/ShippingPromiseSet"
                     }
                 },
                 "description": "The specific rate for a shipping service, or null if no service available."
@@ -3607,14 +3607,14 @@
                 "type": "array",
                 "description": "A list of service rates.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ServiceRate"
+                    "$ref": "#/components/schemas/ServiceRate"
                 }
             },
             "Party": {
                 "type": "object",
                 "properties": {
                     "accountId": {
-                        "$ref": "#\/components\/schemas\/AccountId"
+                        "$ref": "#/components/schemas/AccountId"
                     }
                 },
                 "description": "The account related with the shipment."
@@ -3737,10 +3737,10 @@
                         "description": "The quantity of the items of this type in the container."
                     },
                     "unitPrice": {
-                        "$ref": "#\/components\/schemas\/Currency"
+                        "$ref": "#/components/schemas/Currency"
                     },
                     "unitWeight": {
-                        "$ref": "#\/components\/schemas\/Weight"
+                        "$ref": "#/components/schemas/Weight"
                     },
                     "title": {
                         "maxLength": 30,
@@ -3774,23 +3774,23 @@
                         ]
                     },
                     "containerReferenceId": {
-                        "$ref": "#\/components\/schemas\/ContainerReferenceId"
+                        "$ref": "#/components/schemas/ContainerReferenceId"
                     },
                     "value": {
-                        "$ref": "#\/components\/schemas\/Currency"
+                        "$ref": "#/components/schemas/Currency"
                     },
                     "dimensions": {
-                        "$ref": "#\/components\/schemas\/Dimensions"
+                        "$ref": "#/components/schemas/Dimensions"
                     },
                     "items": {
                         "type": "array",
                         "description": "A list of the items in the container.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ContainerItem"
+                            "$ref": "#/components/schemas/ContainerItem"
                         }
                     },
                     "weight": {
-                        "$ref": "#\/components\/schemas\/Weight"
+                        "$ref": "#/components/schemas/Weight"
                     }
                 },
                 "description": "Container in the shipment."
@@ -3799,7 +3799,7 @@
                 "type": "array",
                 "description": "A list of container.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Container"
+                    "$ref": "#/components/schemas/Container"
                 }
             },
             "ContainerSpecification": {
@@ -3810,10 +3810,10 @@
                 "type": "object",
                 "properties": {
                     "dimensions": {
-                        "$ref": "#\/components\/schemas\/Dimensions"
+                        "$ref": "#/components/schemas/Dimensions"
                     },
                     "weight": {
-                        "$ref": "#\/components\/schemas\/Weight"
+                        "$ref": "#/components/schemas/Weight"
                     }
                 },
                 "description": "Container specification for checking the service rate."
@@ -3822,17 +3822,17 @@
                 "type": "array",
                 "description": "A list of container specifications.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ContainerSpecification"
+                    "$ref": "#/components/schemas/ContainerSpecification"
                 }
             },
             "Label": {
                 "type": "object",
                 "properties": {
                     "labelStream": {
-                        "$ref": "#\/components\/schemas\/LabelStream"
+                        "$ref": "#/components/schemas/LabelStream"
                     },
                     "labelSpecification": {
-                        "$ref": "#\/components\/schemas\/LabelSpecification"
+                        "$ref": "#/components/schemas/LabelSpecification"
                     }
                 },
                 "description": "The label details of the container."
@@ -3841,14 +3841,14 @@
                 "type": "object",
                 "properties": {
                     "containerReferenceId": {
-                        "$ref": "#\/components\/schemas\/ContainerReferenceId"
+                        "$ref": "#/components/schemas/ContainerReferenceId"
                     },
                     "trackingId": {
                         "type": "string",
                         "description": "The tracking identifier assigned to the container."
                     },
                     "label": {
-                        "$ref": "#\/components\/schemas\/Label"
+                        "$ref": "#/components/schemas/Label"
                     }
                 },
                 "description": "Label details including label stream, format, size."
@@ -3857,7 +3857,7 @@
                 "type": "array",
                 "description": "A list of label results",
                 "items": {
-                    "$ref": "#\/components\/schemas\/LabelResult"
+                    "$ref": "#/components/schemas/LabelResult"
                 }
             },
             "LabelStream": {
@@ -3910,16 +3910,16 @@
                 "type": "object",
                 "properties": {
                     "clientReferenceId": {
-                        "$ref": "#\/components\/schemas\/ClientReferenceId"
+                        "$ref": "#/components/schemas/ClientReferenceId"
                     },
                     "shipTo": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "shipFrom": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "containers": {
-                        "$ref": "#\/components\/schemas\/ContainerList"
+                        "$ref": "#/components/schemas/ContainerList"
                     }
                 },
                 "description": "The request schema for the createShipment operation."
@@ -3932,10 +3932,10 @@
                 "type": "object",
                 "properties": {
                     "rateId": {
-                        "$ref": "#\/components\/schemas\/RateId"
+                        "$ref": "#/components/schemas/RateId"
                     },
                     "labelSpecification": {
-                        "$ref": "#\/components\/schemas\/LabelSpecification"
+                        "$ref": "#/components/schemas/LabelSpecification"
                     }
                 },
                 "description": "The request schema for the purchaseLabels operation."
@@ -3947,7 +3947,7 @@
                 "type": "object",
                 "properties": {
                     "labelSpecification": {
-                        "$ref": "#\/components\/schemas\/LabelSpecification"
+                        "$ref": "#/components/schemas/LabelSpecification"
                     }
                 },
                 "description": "The request schema for the retrieveShippingLabel operation."
@@ -3962,13 +3962,13 @@
                 "type": "object",
                 "properties": {
                     "shipTo": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "shipFrom": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "serviceTypes": {
-                        "$ref": "#\/components\/schemas\/ServiceTypeList"
+                        "$ref": "#/components/schemas/ServiceTypeList"
                     },
                     "shipDate": {
                         "type": "string",
@@ -3976,7 +3976,7 @@
                         "format": "date-time"
                     },
                     "containerSpecifications": {
-                        "$ref": "#\/components\/schemas\/ContainerSpecificationList"
+                        "$ref": "#/components/schemas/ContainerSpecificationList"
                     }
                 },
                 "description": "The payload schema for the getRates operation."
@@ -3993,13 +3993,13 @@
                 "type": "object",
                 "properties": {
                     "clientReferenceId": {
-                        "$ref": "#\/components\/schemas\/ClientReferenceId"
+                        "$ref": "#/components/schemas/ClientReferenceId"
                     },
                     "shipTo": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "shipFrom": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "shipDate": {
                         "type": "string",
@@ -4007,13 +4007,13 @@
                         "format": "date-time"
                     },
                     "serviceType": {
-                        "$ref": "#\/components\/schemas\/ServiceType"
+                        "$ref": "#/components/schemas/ServiceType"
                     },
                     "containers": {
-                        "$ref": "#\/components\/schemas\/ContainerList"
+                        "$ref": "#/components/schemas/ContainerList"
                     },
                     "labelSpecification": {
-                        "$ref": "#\/components\/schemas\/LabelSpecification"
+                        "$ref": "#/components/schemas/LabelSpecification"
                     }
                 },
                 "description": "The payload schema for the purchaseShipment operation."
@@ -4026,10 +4026,10 @@
                 "type": "object",
                 "properties": {
                     "shipmentId": {
-                        "$ref": "#\/components\/schemas\/ShipmentId"
+                        "$ref": "#/components/schemas/ShipmentId"
                     },
                     "eligibleRates": {
-                        "$ref": "#\/components\/schemas\/RateList"
+                        "$ref": "#/components/schemas/RateList"
                     }
                 },
                 "description": "The payload schema for the createShipment operation."
@@ -4045,25 +4045,25 @@
                 "type": "object",
                 "properties": {
                     "shipmentId": {
-                        "$ref": "#\/components\/schemas\/ShipmentId"
+                        "$ref": "#/components/schemas/ShipmentId"
                     },
                     "clientReferenceId": {
-                        "$ref": "#\/components\/schemas\/ClientReferenceId"
+                        "$ref": "#/components/schemas/ClientReferenceId"
                     },
                     "shipFrom": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "shipTo": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "acceptedRate": {
-                        "$ref": "#\/components\/schemas\/AcceptedRate"
+                        "$ref": "#/components/schemas/AcceptedRate"
                     },
                     "shipper": {
-                        "$ref": "#\/components\/schemas\/Party"
+                        "$ref": "#/components/schemas/Party"
                     },
                     "containers": {
-                        "$ref": "#\/components\/schemas\/ContainerList"
+                        "$ref": "#/components/schemas/ContainerList"
                     }
                 },
                 "description": "The shipment related data."
@@ -4077,16 +4077,16 @@
                 "type": "object",
                 "properties": {
                     "shipmentId": {
-                        "$ref": "#\/components\/schemas\/ShipmentId"
+                        "$ref": "#/components/schemas/ShipmentId"
                     },
                     "clientReferenceId": {
-                        "$ref": "#\/components\/schemas\/ClientReferenceId"
+                        "$ref": "#/components/schemas/ClientReferenceId"
                     },
                     "acceptedRate": {
-                        "$ref": "#\/components\/schemas\/AcceptedRate"
+                        "$ref": "#/components/schemas/AcceptedRate"
                     },
                     "labelResults": {
-                        "$ref": "#\/components\/schemas\/LabelResultList"
+                        "$ref": "#/components/schemas/LabelResultList"
                     }
                 },
                 "description": "The payload schema for the purchaseLabels operation."
@@ -4099,10 +4099,10 @@
                 "type": "object",
                 "properties": {
                     "labelStream": {
-                        "$ref": "#\/components\/schemas\/LabelStream"
+                        "$ref": "#/components/schemas/LabelStream"
                     },
                     "labelSpecification": {
-                        "$ref": "#\/components\/schemas\/LabelSpecification"
+                        "$ref": "#/components/schemas/LabelSpecification"
                     }
                 },
                 "description": "The payload schema for the retrieveShippingLabel operation."
@@ -4114,7 +4114,7 @@
                 "type": "object",
                 "properties": {
                     "accountId": {
-                        "$ref": "#\/components\/schemas\/AccountId"
+                        "$ref": "#/components/schemas/AccountId"
                     }
                 },
                 "description": "The account related data."
@@ -4126,7 +4126,7 @@
                 "type": "object",
                 "properties": {
                     "serviceRates": {
-                        "$ref": "#\/components\/schemas\/ServiceRateList"
+                        "$ref": "#/components/schemas/ServiceRateList"
                     }
                 },
                 "description": "The payload schema for the getRates operation."
@@ -4140,13 +4140,13 @@
                 "type": "object",
                 "properties": {
                     "shipmentId": {
-                        "$ref": "#\/components\/schemas\/ShipmentId"
+                        "$ref": "#/components/schemas/ShipmentId"
                     },
                     "serviceRate": {
-                        "$ref": "#\/components\/schemas\/ServiceRate"
+                        "$ref": "#/components/schemas/ServiceRate"
                     },
                     "labelResults": {
-                        "$ref": "#\/components\/schemas\/LabelResultList"
+                        "$ref": "#/components/schemas/LabelResultList"
                     }
                 },
                 "description": "The payload schema for the purchaseShipment operation."
@@ -4161,16 +4161,16 @@
                 "type": "object",
                 "properties": {
                     "trackingId": {
-                        "$ref": "#\/components\/schemas\/TrackingId"
+                        "$ref": "#/components/schemas/TrackingId"
                     },
                     "summary": {
-                        "$ref": "#\/components\/schemas\/TrackingSummary"
+                        "$ref": "#/components/schemas/TrackingSummary"
                     },
                     "promisedDeliveryDate": {
-                        "$ref": "#\/components\/schemas\/PromisedDeliveryDate"
+                        "$ref": "#/components/schemas/PromisedDeliveryDate"
                     },
                     "eventHistory": {
-                        "$ref": "#\/components\/schemas\/EventList"
+                        "$ref": "#/components/schemas/EventList"
                     }
                 },
                 "description": "The payload schema for the getTrackingInformation operation."
@@ -4179,10 +4179,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/CreateShipmentResult"
+                        "$ref": "#/components/schemas/CreateShipmentResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the createShipment operation."
@@ -4191,10 +4191,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Shipment"
+                        "$ref": "#/components/schemas/Shipment"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getShipment operation."
@@ -4203,10 +4203,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/GetRatesResult"
+                        "$ref": "#/components/schemas/GetRatesResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getRates operation."
@@ -4215,10 +4215,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/PurchaseShipmentResult"
+                        "$ref": "#/components/schemas/PurchaseShipmentResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the purchaseShipment operation."
@@ -4227,7 +4227,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the cancelShipment operation."
@@ -4236,10 +4236,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/PurchaseLabelsResult"
+                        "$ref": "#/components/schemas/PurchaseLabelsResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the purchaseLabels operation."
@@ -4248,10 +4248,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/RetrieveShippingLabelResult"
+                        "$ref": "#/components/schemas/RetrieveShippingLabelResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the retrieveShippingLabel operation."
@@ -4260,10 +4260,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Account"
+                        "$ref": "#/components/schemas/Account"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getAccount operation."
@@ -4272,10 +4272,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/TrackingInformation"
+                        "$ref": "#/components/schemas/TrackingInformation"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getTrackingInformation operation."

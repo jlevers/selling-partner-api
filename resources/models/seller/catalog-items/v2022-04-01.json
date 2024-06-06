@@ -5,21 +5,21 @@
         "description": "The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.\n\nFor more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "2022-04-01"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/catalog\/2022-04-01\/items": {
+        "/catalog/2022-04-01/items": {
             "get": {
                 "tags": [
                     "CatalogItemsV20220401"
@@ -317,9 +317,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemSearchResults"
+                                    "$ref": "#/components/schemas/ItemSearchResults"
                                 },
                                 "example": {
                                     "numberOfResults": 1,
@@ -910,169 +910,169 @@
                                                     "images": [
                                                         {
                                                             "variant": "MAIN",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/91uohwV+k3L.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/91uohwV+k3L.jpg",
                                                             "height": 1707,
                                                             "width": 2560
                                                         },
                                                         {
                                                             "variant": "MAIN",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/51DZzp3w3vL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/51DZzp3w3vL.jpg",
                                                             "height": 333,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT01",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/81w2rTVShlL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/81w2rTVShlL.jpg",
                                                             "height": 2560,
                                                             "width": 2560
                                                         },
                                                         {
                                                             "variant": "PT01",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/41Px9eq9tkL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/41Px9eq9tkL.jpg",
                                                             "height": 500,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT02",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/51NTNhdhPyL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/51NTNhdhPyL.jpg",
                                                             "height": 375,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT03",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/51o4zpL+A3L.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/51o4zpL+A3L.jpg",
                                                             "height": 375,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT04",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/71ux2k9GAZL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/71ux2k9GAZL.jpg",
                                                             "height": 1000,
                                                             "width": 1000
                                                         },
                                                         {
                                                             "variant": "PT04",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/61UUX63yw1L.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/61UUX63yw1L.jpg",
                                                             "height": 500,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT05",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/61LwHkljX-L.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/61LwHkljX-L.jpg",
                                                             "height": 1000,
                                                             "width": 1000
                                                         },
                                                         {
                                                             "variant": "PT05",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/51wJTQty3PL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/51wJTQty3PL.jpg",
                                                             "height": 500,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT06",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/61uvoB4VvoL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/61uvoB4VvoL.jpg",
                                                             "height": 1000,
                                                             "width": 1000
                                                         },
                                                         {
                                                             "variant": "PT06",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/51ZexIO628L.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/51ZexIO628L.jpg",
                                                             "height": 500,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT07",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/7121MGd2ncL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/7121MGd2ncL.jpg",
                                                             "height": 1000,
                                                             "width": 1000
                                                         },
                                                         {
                                                             "variant": "PT07",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/61QK+JBMrGL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/61QK+JBMrGL.jpg",
                                                             "height": 500,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT08",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/61ECcGlG4IL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/61ECcGlG4IL.jpg",
                                                             "height": 1080,
                                                             "width": 1920
                                                         },
                                                         {
                                                             "variant": "PT08",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/31TxwfqvB5L.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/31TxwfqvB5L.jpg",
                                                             "height": 281,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT09",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/41B5vgmp4IL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/41B5vgmp4IL.jpg",
                                                             "height": 375,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT10",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/51S5IY3AV0L.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/51S5IY3AV0L.jpg",
                                                             "height": 375,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT11",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/41-6bmPtUlL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/41-6bmPtUlL.jpg",
                                                             "height": 375,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT12",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/41s9Q6gWJ7L.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/41s9Q6gWJ7L.jpg",
                                                             "height": 448,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT13",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/519nG0mRzuL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/519nG0mRzuL.jpg",
                                                             "height": 314,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT14",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/71sHhrGMc7L.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/71sHhrGMc7L.jpg",
                                                             "height": 1097,
                                                             "width": 1500
                                                         },
                                                         {
                                                             "variant": "PT14",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/41CH6gKtU5L.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/41CH6gKtU5L.jpg",
                                                             "height": 366,
                                                             "width": 500
                                                         },
                                                         {
                                                             "variant": "PT15",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/21-s7QYrTxL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/21-s7QYrTxL.jpg",
                                                             "height": 500,
                                                             "width": 175
                                                         },
                                                         {
                                                             "variant": "EEGL",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/61i3dsKD09L.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/61i3dsKD09L.jpg",
                                                             "height": 1375,
                                                             "width": 370
                                                         },
                                                         {
                                                             "variant": "EEGL",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/41E7ku-qdGL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/41E7ku-qdGL.jpg",
                                                             "height": 500,
                                                             "width": 135
                                                         },
                                                         {
                                                             "variant": "EGUS",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/61i3dsKD09L.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/61i3dsKD09L.jpg",
                                                             "height": 1375,
                                                             "width": 370
                                                         },
                                                         {
                                                             "variant": "EGUS",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/41E7ku-qdGL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/41E7ku-qdGL.jpg",
                                                             "height": 500,
                                                             "width": 135
                                                         }
@@ -1092,7 +1092,7 @@
                                                         {
                                                             "classificationId": "21489946011",
                                                             "title": "QLED TVs",
-                                                            "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics\/21489946011",
+                                                            "link": "http://www.amazon.com/gp/bestsellers/electronics/21489946011",
                                                             "rank": 113
                                                         }
                                                     ],
@@ -1100,7 +1100,7 @@
                                                         {
                                                             "websiteDisplayGroup": "ce_display_on_website",
                                                             "title": "Electronics",
-                                                            "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics",
+                                                            "link": "http://www.amazon.com/gp/bestsellers/electronics",
                                                             "rank": 72855
                                                         }
                                                     ]
@@ -1141,7 +1141,7 @@
                                                                     "color",
                                                                     "size"
                                                                 ],
-                                                                "theme": "SIZE_NAME\/COLOR_NAME"
+                                                                "theme": "SIZE_NAME/COLOR_NAME"
                                                             }
                                                         }
                                                     ]
@@ -1290,169 +1290,169 @@
                                                         "images": [
                                                             {
                                                                 "variant": "MAIN",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/91uohwV+k3L.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/91uohwV+k3L.jpg",
                                                                 "height": 1707,
                                                                 "width": 2560
                                                             },
                                                             {
                                                                 "variant": "MAIN",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/51DZzp3w3vL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/51DZzp3w3vL.jpg",
                                                                 "height": 333,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT01",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/81w2rTVShlL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/81w2rTVShlL.jpg",
                                                                 "height": 2560,
                                                                 "width": 2560
                                                             },
                                                             {
                                                                 "variant": "PT01",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/41Px9eq9tkL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/41Px9eq9tkL.jpg",
                                                                 "height": 500,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT02",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/51NTNhdhPyL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/51NTNhdhPyL.jpg",
                                                                 "height": 375,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT03",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/51o4zpL+A3L.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/51o4zpL+A3L.jpg",
                                                                 "height": 375,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT04",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/71ux2k9GAZL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/71ux2k9GAZL.jpg",
                                                                 "height": 1000,
                                                                 "width": 1000
                                                             },
                                                             {
                                                                 "variant": "PT04",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/61UUX63yw1L.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/61UUX63yw1L.jpg",
                                                                 "height": 500,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT05",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/61LwHkljX-L.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/61LwHkljX-L.jpg",
                                                                 "height": 1000,
                                                                 "width": 1000
                                                             },
                                                             {
                                                                 "variant": "PT05",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/51wJTQty3PL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/51wJTQty3PL.jpg",
                                                                 "height": 500,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT06",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/61uvoB4VvoL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/61uvoB4VvoL.jpg",
                                                                 "height": 1000,
                                                                 "width": 1000
                                                             },
                                                             {
                                                                 "variant": "PT06",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/51ZexIO628L.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/51ZexIO628L.jpg",
                                                                 "height": 500,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT07",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/7121MGd2ncL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/7121MGd2ncL.jpg",
                                                                 "height": 1000,
                                                                 "width": 1000
                                                             },
                                                             {
                                                                 "variant": "PT07",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/61QK+JBMrGL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/61QK+JBMrGL.jpg",
                                                                 "height": 500,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT08",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/61ECcGlG4IL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/61ECcGlG4IL.jpg",
                                                                 "height": 1080,
                                                                 "width": 1920
                                                             },
                                                             {
                                                                 "variant": "PT08",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/31TxwfqvB5L.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/31TxwfqvB5L.jpg",
                                                                 "height": 281,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT09",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/41B5vgmp4IL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/41B5vgmp4IL.jpg",
                                                                 "height": 375,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT10",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/51S5IY3AV0L.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/51S5IY3AV0L.jpg",
                                                                 "height": 375,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT11",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/41-6bmPtUlL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/41-6bmPtUlL.jpg",
                                                                 "height": 375,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT12",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/41s9Q6gWJ7L.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/41s9Q6gWJ7L.jpg",
                                                                 "height": 448,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT13",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/519nG0mRzuL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/519nG0mRzuL.jpg",
                                                                 "height": 314,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT14",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/71sHhrGMc7L.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/71sHhrGMc7L.jpg",
                                                                 "height": 1097,
                                                                 "width": 1500
                                                             },
                                                             {
                                                                 "variant": "PT14",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/41CH6gKtU5L.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/41CH6gKtU5L.jpg",
                                                                 "height": 366,
                                                                 "width": 500
                                                             },
                                                             {
                                                                 "variant": "PT15",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/21-s7QYrTxL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/21-s7QYrTxL.jpg",
                                                                 "height": 500,
                                                                 "width": 175
                                                             },
                                                             {
                                                                 "variant": "EEGL",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/61i3dsKD09L.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/61i3dsKD09L.jpg",
                                                                 "height": 1375,
                                                                 "width": 370
                                                             },
                                                             {
                                                                 "variant": "EEGL",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/41E7ku-qdGL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/41E7ku-qdGL.jpg",
                                                                 "height": 500,
                                                                 "width": 135
                                                             },
                                                             {
                                                                 "variant": "EGUS",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/61i3dsKD09L.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/61i3dsKD09L.jpg",
                                                                 "height": 1375,
                                                                 "width": 370
                                                             },
                                                             {
                                                                 "variant": "EGUS",
-                                                                "link": "https:\/\/m.media-amazon.com\/images\/I\/41E7ku-qdGL.jpg",
+                                                                "link": "https://m.media-amazon.com/images/I/41E7ku-qdGL.jpg",
                                                                 "height": 500,
                                                                 "width": 135
                                                             }
@@ -1472,7 +1472,7 @@
                                                             {
                                                                 "classificationId": "21489946011",
                                                                 "title": "QLED TVs",
-                                                                "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics\/21489946011",
+                                                                "link": "http://www.amazon.com/gp/bestsellers/electronics/21489946011",
                                                                 "rank": 113
                                                             }
                                                         ],
@@ -1480,7 +1480,7 @@
                                                             {
                                                                 "websiteDisplayGroup": "ce_display_on_website",
                                                                 "title": "Electronics",
-                                                                "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics",
+                                                                "link": "http://www.amazon.com/gp/bestsellers/electronics",
                                                                 "rank": 72855
                                                             }
                                                         ]
@@ -1521,7 +1521,7 @@
                                                                         "color",
                                                                         "size"
                                                                     ],
-                                                                    "theme": "SIZE_NAME\/COLOR_NAME"
+                                                                    "theme": "SIZE_NAME/COLOR_NAME"
                                                                 }
                                                             }
                                                         ]
@@ -1569,9 +1569,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1587,9 +1587,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1611,9 +1611,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1629,9 +1629,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1647,9 +1647,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1665,9 +1665,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1683,9 +1683,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1701,9 +1701,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1711,7 +1711,7 @@
                 }
             }
         },
-        "\/catalog\/2022-04-01\/items\/{asin}": {
+        "/catalog/2022-04-01/items/{asin}": {
             "get": {
                 "tags": [
                     "CatalogItemsV20220401"
@@ -1835,9 +1835,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Item"
+                                    "$ref": "#/components/schemas/Item"
                                 },
                                 "example": {
                                     "asin": "B07N4M94X4",
@@ -2406,169 +2406,169 @@
                                             "images": [
                                                 {
                                                     "variant": "MAIN",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/91uohwV+k3L.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/91uohwV+k3L.jpg",
                                                     "height": 1707,
                                                     "width": 2560
                                                 },
                                                 {
                                                     "variant": "MAIN",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/51DZzp3w3vL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/51DZzp3w3vL.jpg",
                                                     "height": 333,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT01",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/81w2rTVShlL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/81w2rTVShlL.jpg",
                                                     "height": 2560,
                                                     "width": 2560
                                                 },
                                                 {
                                                     "variant": "PT01",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/41Px9eq9tkL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/41Px9eq9tkL.jpg",
                                                     "height": 500,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT02",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/51NTNhdhPyL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/51NTNhdhPyL.jpg",
                                                     "height": 375,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT03",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/51o4zpL+A3L.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/51o4zpL+A3L.jpg",
                                                     "height": 375,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT04",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/71ux2k9GAZL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/71ux2k9GAZL.jpg",
                                                     "height": 1000,
                                                     "width": 1000
                                                 },
                                                 {
                                                     "variant": "PT04",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/61UUX63yw1L.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/61UUX63yw1L.jpg",
                                                     "height": 500,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT05",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/61LwHkljX-L.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/61LwHkljX-L.jpg",
                                                     "height": 1000,
                                                     "width": 1000
                                                 },
                                                 {
                                                     "variant": "PT05",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/51wJTQty3PL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/51wJTQty3PL.jpg",
                                                     "height": 500,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT06",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/61uvoB4VvoL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/61uvoB4VvoL.jpg",
                                                     "height": 1000,
                                                     "width": 1000
                                                 },
                                                 {
                                                     "variant": "PT06",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/51ZexIO628L.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/51ZexIO628L.jpg",
                                                     "height": 500,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT07",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/7121MGd2ncL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/7121MGd2ncL.jpg",
                                                     "height": 1000,
                                                     "width": 1000
                                                 },
                                                 {
                                                     "variant": "PT07",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/61QK+JBMrGL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/61QK+JBMrGL.jpg",
                                                     "height": 500,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT08",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/61ECcGlG4IL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/61ECcGlG4IL.jpg",
                                                     "height": 1080,
                                                     "width": 1920
                                                 },
                                                 {
                                                     "variant": "PT08",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/31TxwfqvB5L.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/31TxwfqvB5L.jpg",
                                                     "height": 281,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT09",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/41B5vgmp4IL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/41B5vgmp4IL.jpg",
                                                     "height": 375,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT10",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/51S5IY3AV0L.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/51S5IY3AV0L.jpg",
                                                     "height": 375,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT11",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/41-6bmPtUlL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/41-6bmPtUlL.jpg",
                                                     "height": 375,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT12",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/41s9Q6gWJ7L.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/41s9Q6gWJ7L.jpg",
                                                     "height": 448,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT13",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/519nG0mRzuL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/519nG0mRzuL.jpg",
                                                     "height": 314,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT14",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/71sHhrGMc7L.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/71sHhrGMc7L.jpg",
                                                     "height": 1097,
                                                     "width": 1500
                                                 },
                                                 {
                                                     "variant": "PT14",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/41CH6gKtU5L.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/41CH6gKtU5L.jpg",
                                                     "height": 366,
                                                     "width": 500
                                                 },
                                                 {
                                                     "variant": "PT15",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/21-s7QYrTxL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/21-s7QYrTxL.jpg",
                                                     "height": 500,
                                                     "width": 175
                                                 },
                                                 {
                                                     "variant": "EEGL",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/61i3dsKD09L.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/61i3dsKD09L.jpg",
                                                     "height": 1375,
                                                     "width": 370
                                                 },
                                                 {
                                                     "variant": "EEGL",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/41E7ku-qdGL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/41E7ku-qdGL.jpg",
                                                     "height": 500,
                                                     "width": 135
                                                 },
                                                 {
                                                     "variant": "EGUS",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/61i3dsKD09L.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/61i3dsKD09L.jpg",
                                                     "height": 1375,
                                                     "width": 370
                                                 },
                                                 {
                                                     "variant": "EGUS",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/41E7ku-qdGL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/41E7ku-qdGL.jpg",
                                                     "height": 500,
                                                     "width": 135
                                                 }
@@ -2588,7 +2588,7 @@
                                                 {
                                                     "classificationId": "21489946011",
                                                     "title": "QLED TVs",
-                                                    "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics\/21489946011",
+                                                    "link": "http://www.amazon.com/gp/bestsellers/electronics/21489946011",
                                                     "rank": 113
                                                 }
                                             ],
@@ -2596,7 +2596,7 @@
                                                 {
                                                     "websiteDisplayGroup": "ce_display_on_website",
                                                     "title": "Electronics",
-                                                    "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics",
+                                                    "link": "http://www.amazon.com/gp/bestsellers/electronics",
                                                     "rank": 72855
                                                 }
                                             ]
@@ -2637,7 +2637,7 @@
                                                             "color",
                                                             "size"
                                                         ],
-                                                        "theme": "SIZE_NAME\/COLOR_NAME"
+                                                        "theme": "SIZE_NAME/COLOR_NAME"
                                                     }
                                                 }
                                             ]
@@ -2759,169 +2759,169 @@
                                                 "images": [
                                                     {
                                                         "variant": "MAIN",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/91uohwV+k3L.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/91uohwV+k3L.jpg",
                                                         "height": 1707,
                                                         "width": 2560
                                                     },
                                                     {
                                                         "variant": "MAIN",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/51DZzp3w3vL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/51DZzp3w3vL.jpg",
                                                         "height": 333,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT01",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/81w2rTVShlL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/81w2rTVShlL.jpg",
                                                         "height": 2560,
                                                         "width": 2560
                                                     },
                                                     {
                                                         "variant": "PT01",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/41Px9eq9tkL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/41Px9eq9tkL.jpg",
                                                         "height": 500,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT02",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/51NTNhdhPyL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/51NTNhdhPyL.jpg",
                                                         "height": 375,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT03",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/51o4zpL+A3L.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/51o4zpL+A3L.jpg",
                                                         "height": 375,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT04",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/71ux2k9GAZL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/71ux2k9GAZL.jpg",
                                                         "height": 1000,
                                                         "width": 1000
                                                     },
                                                     {
                                                         "variant": "PT04",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/61UUX63yw1L.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/61UUX63yw1L.jpg",
                                                         "height": 500,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT05",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/61LwHkljX-L.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/61LwHkljX-L.jpg",
                                                         "height": 1000,
                                                         "width": 1000
                                                     },
                                                     {
                                                         "variant": "PT05",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/51wJTQty3PL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/51wJTQty3PL.jpg",
                                                         "height": 500,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT06",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/61uvoB4VvoL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/61uvoB4VvoL.jpg",
                                                         "height": 1000,
                                                         "width": 1000
                                                     },
                                                     {
                                                         "variant": "PT06",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/51ZexIO628L.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/51ZexIO628L.jpg",
                                                         "height": 500,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT07",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/7121MGd2ncL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/7121MGd2ncL.jpg",
                                                         "height": 1000,
                                                         "width": 1000
                                                     },
                                                     {
                                                         "variant": "PT07",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/61QK+JBMrGL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/61QK+JBMrGL.jpg",
                                                         "height": 500,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT08",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/61ECcGlG4IL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/61ECcGlG4IL.jpg",
                                                         "height": 1080,
                                                         "width": 1920
                                                     },
                                                     {
                                                         "variant": "PT08",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/31TxwfqvB5L.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/31TxwfqvB5L.jpg",
                                                         "height": 281,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT09",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/41B5vgmp4IL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/41B5vgmp4IL.jpg",
                                                         "height": 375,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT10",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/51S5IY3AV0L.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/51S5IY3AV0L.jpg",
                                                         "height": 375,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT11",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/41-6bmPtUlL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/41-6bmPtUlL.jpg",
                                                         "height": 375,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT12",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/41s9Q6gWJ7L.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/41s9Q6gWJ7L.jpg",
                                                         "height": 448,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT13",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/519nG0mRzuL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/519nG0mRzuL.jpg",
                                                         "height": 314,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT14",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/71sHhrGMc7L.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/71sHhrGMc7L.jpg",
                                                         "height": 1097,
                                                         "width": 1500
                                                     },
                                                     {
                                                         "variant": "PT14",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/41CH6gKtU5L.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/41CH6gKtU5L.jpg",
                                                         "height": 366,
                                                         "width": 500
                                                     },
                                                     {
                                                         "variant": "PT15",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/21-s7QYrTxL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/21-s7QYrTxL.jpg",
                                                         "height": 500,
                                                         "width": 175
                                                     },
                                                     {
                                                         "variant": "EEGL",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/61i3dsKD09L.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/61i3dsKD09L.jpg",
                                                         "height": 1375,
                                                         "width": 370
                                                     },
                                                     {
                                                         "variant": "EEGL",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/41E7ku-qdGL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/41E7ku-qdGL.jpg",
                                                         "height": 500,
                                                         "width": 135
                                                     },
                                                     {
                                                         "variant": "EGUS",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/61i3dsKD09L.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/61i3dsKD09L.jpg",
                                                         "height": 1375,
                                                         "width": 370
                                                     },
                                                     {
                                                         "variant": "EGUS",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/41E7ku-qdGL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/41E7ku-qdGL.jpg",
                                                         "height": 500,
                                                         "width": 135
                                                     }
@@ -2941,7 +2941,7 @@
                                                     {
                                                         "classificationId": "21489946011",
                                                         "title": "QLED TVs",
-                                                        "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics\/21489946011",
+                                                        "link": "http://www.amazon.com/gp/bestsellers/electronics/21489946011",
                                                         "rank": 113
                                                     }
                                                 ],
@@ -2949,7 +2949,7 @@
                                                     {
                                                         "websiteDisplayGroup": "ce_display_on_website",
                                                         "title": "Electronics",
-                                                        "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics",
+                                                        "link": "http://www.amazon.com/gp/bestsellers/electronics",
                                                         "rank": 72855
                                                     }
                                                 ]
@@ -2990,7 +2990,7 @@
                                                                 "color",
                                                                 "size"
                                                             ],
-                                                            "theme": "SIZE_NAME\/COLOR_NAME"
+                                                            "theme": "SIZE_NAME/COLOR_NAME"
                                                         }
                                                     }
                                                 ]
@@ -3036,9 +3036,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -3054,9 +3054,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -3078,9 +3078,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -3096,9 +3096,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -3114,9 +3114,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -3132,9 +3132,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -3150,9 +3150,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -3168,9 +3168,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -3212,7 +3212,7 @@
                     "errors": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Error"
+                            "$ref": "#/components/schemas/Error"
                         }
                     }
                 },
@@ -3225,34 +3225,34 @@
                 "type": "object",
                 "properties": {
                     "asin": {
-                        "$ref": "#\/components\/schemas\/ItemAsin"
+                        "$ref": "#/components/schemas/ItemAsin"
                     },
                     "attributes": {
-                        "$ref": "#\/components\/schemas\/ItemAttributes"
+                        "$ref": "#/components/schemas/ItemAttributes"
                     },
                     "dimensions": {
-                        "$ref": "#\/components\/schemas\/ItemDimensions"
+                        "$ref": "#/components/schemas/ItemDimensions"
                     },
                     "identifiers": {
-                        "$ref": "#\/components\/schemas\/ItemIdentifiers"
+                        "$ref": "#/components/schemas/ItemIdentifiers"
                     },
                     "images": {
-                        "$ref": "#\/components\/schemas\/ItemImages"
+                        "$ref": "#/components/schemas/ItemImages"
                     },
                     "productTypes": {
-                        "$ref": "#\/components\/schemas\/ItemProductTypes"
+                        "$ref": "#/components/schemas/ItemProductTypes"
                     },
                     "relationships": {
-                        "$ref": "#\/components\/schemas\/ItemRelationships"
+                        "$ref": "#/components/schemas/ItemRelationships"
                     },
                     "salesRanks": {
-                        "$ref": "#\/components\/schemas\/ItemSalesRanks"
+                        "$ref": "#/components/schemas/ItemSalesRanks"
                     },
                     "summaries": {
-                        "$ref": "#\/components\/schemas\/ItemSummaries"
+                        "$ref": "#/components/schemas/ItemSummaries"
                     },
                     "vendorDetails": {
-                        "$ref": "#\/components\/schemas\/ItemVendorDetails"
+                        "$ref": "#/components/schemas/ItemVendorDetails"
                     }
                 },
                 "description": "An item in the Amazon catalog."
@@ -3292,7 +3292,7 @@
                 "type": "object",
                 "properties": {
                     "role": {
-                        "$ref": "#\/components\/schemas\/ItemContributorRole"
+                        "$ref": "#/components/schemas/ItemContributorRole"
                     },
                     "value": {
                         "type": "string",
@@ -3336,16 +3336,16 @@
                 "type": "object",
                 "properties": {
                     "height": {
-                        "$ref": "#\/components\/schemas\/Dimension"
+                        "$ref": "#/components/schemas/Dimension"
                     },
                     "length": {
-                        "$ref": "#\/components\/schemas\/Dimension"
+                        "$ref": "#/components/schemas/Dimension"
                     },
                     "weight": {
-                        "$ref": "#\/components\/schemas\/Dimension"
+                        "$ref": "#/components/schemas/Dimension"
                     },
                     "width": {
-                        "$ref": "#\/components\/schemas\/Dimension"
+                        "$ref": "#/components/schemas/Dimension"
                     }
                 },
                 "description": "Dimensions of an Amazon catalog item or item in its packaging."
@@ -3354,7 +3354,7 @@
                 "type": "array",
                 "description": "Array of dimensions associated with the item in the Amazon catalog by Amazon marketplace.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemDimensionsByMarketplace"
+                    "$ref": "#/components/schemas/ItemDimensionsByMarketplace"
                 }
             },
             "ItemDimensionsByMarketplace": {
@@ -3368,10 +3368,10 @@
                         "description": "Amazon marketplace identifier."
                     },
                     "item": {
-                        "$ref": "#\/components\/schemas\/Dimensions"
+                        "$ref": "#/components/schemas/Dimensions"
                     },
                     "package": {
-                        "$ref": "#\/components\/schemas\/Dimensions"
+                        "$ref": "#/components/schemas/Dimensions"
                     }
                 },
                 "description": "Dimensions associated with the item in the Amazon catalog for the indicated Amazon marketplace."
@@ -3380,7 +3380,7 @@
                 "type": "array",
                 "description": "Identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemIdentifiersByMarketplace"
+                    "$ref": "#/components/schemas/ItemIdentifiersByMarketplace"
                 }
             },
             "ItemIdentifiersByMarketplace": {
@@ -3398,7 +3398,7 @@
                         "type": "array",
                         "description": "Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ItemIdentifier"
+                            "$ref": "#/components/schemas/ItemIdentifier"
                         }
                     }
                 },
@@ -3426,7 +3426,7 @@
                 "type": "array",
                 "description": "Images for an item in the Amazon catalog.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemImagesByMarketplace"
+                    "$ref": "#/components/schemas/ItemImagesByMarketplace"
                 }
             },
             "ItemImagesByMarketplace": {
@@ -3444,7 +3444,7 @@
                         "type": "array",
                         "description": "Images for an item in the Amazon catalog for the indicated Amazon marketplace.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ItemImage"
+                            "$ref": "#/components/schemas/ItemImage"
                         }
                     }
                 },
@@ -3537,7 +3537,7 @@
                 "type": "array",
                 "description": "Product types associated with the Amazon catalog item.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemProductTypeByMarketplace"
+                    "$ref": "#/components/schemas/ItemProductTypeByMarketplace"
                 }
             },
             "ItemProductTypeByMarketplace": {
@@ -3559,7 +3559,7 @@
                 "type": "array",
                 "description": "Sales ranks of an Amazon catalog item.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemSalesRanksByMarketplace"
+                    "$ref": "#/components/schemas/ItemSalesRanksByMarketplace"
                 }
             },
             "ItemSalesRanksByMarketplace": {
@@ -3576,14 +3576,14 @@
                         "type": "array",
                         "description": "Sales ranks of an Amazon catalog item for an Amazon marketplace by classification.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ItemClassificationSalesRank"
+                            "$ref": "#/components/schemas/ItemClassificationSalesRank"
                         }
                     },
                     "displayGroupRanks": {
                         "type": "array",
                         "description": "Sales ranks of an Amazon catalog item for an Amazon marketplace by website display group.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ItemDisplayGroupSalesRank"
+                            "$ref": "#/components/schemas/ItemDisplayGroupSalesRank"
                         }
                     }
                 },
@@ -3647,7 +3647,7 @@
                 "type": "array",
                 "description": "Summary details of an Amazon catalog item.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemSummaryByMarketplace"
+                    "$ref": "#/components/schemas/ItemSummaryByMarketplace"
                 }
             },
             "ItemSummaryByMarketplace": {
@@ -3673,7 +3673,7 @@
                         "description": "Name of the brand associated with an Amazon catalog item."
                     },
                     "browseClassification": {
-                        "$ref": "#\/components\/schemas\/ItemBrowseClassification"
+                        "$ref": "#/components/schemas/ItemBrowseClassification"
                     },
                     "color": {
                         "type": "string",
@@ -3683,7 +3683,7 @@
                         "type": "array",
                         "description": "Individual contributors to the creation of an item, such as the authors or actors.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ItemContributor"
+                            "$ref": "#/components/schemas/ItemContributor"
                         }
                     },
                     "itemClassification": {
@@ -3779,7 +3779,7 @@
                     "theme": {
                         "type": "string",
                         "description": "Variation theme indicating the combination of Amazon item catalog attributes that define the variation family.",
-                        "example": "COLOR_NAME\/STYLE_NAME"
+                        "example": "COLOR_NAME/STYLE_NAME"
                     }
                 },
                 "description": "Variation theme indicating the combination of Amazon item catalog attributes that define the variation family."
@@ -3788,7 +3788,7 @@
                 "type": "array",
                 "description": "Relationships by marketplace for an Amazon catalog item (for example, variations).",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemRelationshipsByMarketplace"
+                    "$ref": "#/components/schemas/ItemRelationshipsByMarketplace"
                 }
             },
             "ItemRelationshipsByMarketplace": {
@@ -3806,7 +3806,7 @@
                         "type": "array",
                         "description": "Relationships for the item.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ItemRelationship"
+                            "$ref": "#/components/schemas/ItemRelationship"
                         }
                     }
                 },
@@ -3833,7 +3833,7 @@
                         }
                     },
                     "variationTheme": {
-                        "$ref": "#\/components\/schemas\/ItemVariationTheme"
+                        "$ref": "#/components/schemas/ItemVariationTheme"
                     },
                     "type": {
                         "type": "string",
@@ -3875,7 +3875,7 @@
                 "type": "array",
                 "description": "Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemVendorDetailsByMarketplace"
+                    "$ref": "#/components/schemas/ItemVendorDetailsByMarketplace"
                 }
             },
             "ItemVendorDetailsByMarketplace": {
@@ -3901,14 +3901,14 @@
                         "description": "Parent vendor code of the manufacturer code."
                     },
                     "productCategory": {
-                        "$ref": "#\/components\/schemas\/ItemVendorDetailsCategory"
+                        "$ref": "#/components/schemas/ItemVendorDetailsCategory"
                     },
                     "productGroup": {
                         "type": "string",
                         "description": "Product group associated with an Amazon catalog item."
                     },
                     "productSubcategory": {
-                        "$ref": "#\/components\/schemas\/ItemVendorDetailsCategory"
+                        "$ref": "#/components/schemas/ItemVendorDetailsCategory"
                     },
                     "replenishmentCategory": {
                         "type": "string",
@@ -3985,16 +3985,16 @@
                         "description": "For `identifiers`-based searches, the total number of Amazon catalog items found. For `keywords`-based searches, the estimated total number of Amazon catalog items matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).\n\nNote: The maximum number of items (ASINs) that can be returned and paged through is 1000."
                     },
                     "pagination": {
-                        "$ref": "#\/components\/schemas\/Pagination"
+                        "$ref": "#/components/schemas/Pagination"
                     },
                     "refinements": {
-                        "$ref": "#\/components\/schemas\/Refinements"
+                        "$ref": "#/components/schemas/Refinements"
                     },
                     "items": {
                         "type": "array",
                         "description": "A list of items from the Amazon catalog.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Item"
+                            "$ref": "#/components/schemas/Item"
                         }
                     }
                 },
@@ -4025,14 +4025,14 @@
                         "type": "array",
                         "description": "Brand search refinements.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/BrandRefinement"
+                            "$ref": "#/components/schemas/BrandRefinement"
                         }
                     },
                     "classifications": {
                         "type": "array",
                         "description": "Classification search refinements.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ClassificationRefinement"
+                            "$ref": "#/components/schemas/ClassificationRefinement"
                         }
                     }
                 },

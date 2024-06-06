@@ -11,7 +11,7 @@ final class GenerateOrderScenarioRequest extends Dto
     protected static array $complexArrayTypes = ['orders' => [OrderScenarioRequest::class]];
 
     /**
-     * @param  OrderScenarioRequest[]  $orders  The list of test orders requested as indicated by party identifiers.
+     * @param  OrderScenarioRequest[]|null  $orders  The list of test orders requested as indicated by party identifiers.
      */
     public function __construct(
         public readonly ?array $orders = null,

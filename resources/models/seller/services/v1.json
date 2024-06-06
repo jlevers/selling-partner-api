@@ -5,21 +5,21 @@
         "description": "With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v1"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/service\/v1\/serviceJobs\/{serviceJobId}": {
+        "/service/v1/serviceJobs/{serviceJobId}": {
             "get": {
                 "tags": [
                     "ServicesV1"
@@ -57,9 +57,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobByServiceJobIdResponse"
                                 }
                             }
                         },
@@ -93,9 +93,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobByServiceJobIdResponse"
                                 }
                             }
                         },
@@ -127,9 +127,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -151,9 +151,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -175,9 +175,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -199,9 +199,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -223,9 +223,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -247,9 +247,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -271,9 +271,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -295,9 +295,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -305,7 +305,7 @@
                 }
             }
         },
-        "\/service\/v1\/serviceJobs\/{serviceJobId}\/cancellations": {
+        "/service/v1/serviceJobs/{serviceJobId}/cancellations": {
             "put": {
                 "tags": [
                     "ServicesV1"
@@ -355,9 +355,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CancelServiceJobByServiceJobIdResponse"
                                 }
                             }
                         },
@@ -396,9 +396,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CancelServiceJobByServiceJobIdResponse"
                                 }
                             }
                         },
@@ -481,9 +481,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CancelServiceJobByServiceJobIdResponse"
                                 }
                             }
                         },
@@ -536,9 +536,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CancelServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -560,9 +560,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CancelServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -584,9 +584,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CancelServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -608,9 +608,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CancelServiceJobByServiceJobIdResponse"
                                 }
                             }
                         },
@@ -699,9 +699,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CancelServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -723,9 +723,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CancelServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -747,9 +747,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CancelServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -757,7 +757,7 @@
                 }
             }
         },
-        "\/service\/v1\/serviceJobs\/{serviceJobId}\/completions": {
+        "/service/v1/serviceJobs/{serviceJobId}/completions": {
             "put": {
                 "tags": [
                     "ServicesV1"
@@ -795,9 +795,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CompleteServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CompleteServiceJobByServiceJobIdResponse"
                                 }
                             }
                         },
@@ -833,9 +833,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CompleteServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CompleteServiceJobByServiceJobIdResponse"
                                 }
                             }
                         },
@@ -873,9 +873,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CompleteServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CompleteServiceJobByServiceJobIdResponse"
                                 }
                             }
                         },
@@ -919,9 +919,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CompleteServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CompleteServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -943,9 +943,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CompleteServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CompleteServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -967,9 +967,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CompleteServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CompleteServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -991,9 +991,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CompleteServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CompleteServiceJobByServiceJobIdResponse"
                                 }
                             }
                         },
@@ -1055,9 +1055,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CompleteServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CompleteServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -1079,9 +1079,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CompleteServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CompleteServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -1103,9 +1103,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CompleteServiceJobByServiceJobIdResponse"
+                                    "$ref": "#/components/schemas/CompleteServiceJobByServiceJobIdResponse"
                                 }
                             }
                         }
@@ -1113,7 +1113,7 @@
                 }
             }
         },
-        "\/service\/v1\/serviceJobs": {
+        "/service/v1/serviceJobs": {
             "get": {
                 "tags": [
                     "ServicesV1"
@@ -1354,7 +1354,7 @@
                     {
                         "name": "requiredSkills",
                         "in": "query",
-                        "description": "A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and\/or service scenarios. Max values supported is 20.",
+                        "description": "A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20.",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -1404,9 +1404,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobsResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobsResponse"
                                 }
                             }
                         },
@@ -1471,9 +1471,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobsResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobsResponse"
                                 }
                             }
                         },
@@ -1510,9 +1510,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobsResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobsResponse"
                                 }
                             }
                         }
@@ -1534,9 +1534,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobsResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobsResponse"
                                 }
                             }
                         }
@@ -1558,9 +1558,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobsResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobsResponse"
                                 }
                             }
                         }
@@ -1582,9 +1582,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobsResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobsResponse"
                                 }
                             }
                         }
@@ -1606,9 +1606,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobsResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobsResponse"
                                 }
                             }
                         }
@@ -1630,9 +1630,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobsResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobsResponse"
                                 }
                             }
                         }
@@ -1654,9 +1654,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetServiceJobsResponse"
+                                    "$ref": "#/components/schemas/GetServiceJobsResponse"
                                 }
                             }
                         }
@@ -1664,7 +1664,7 @@
                 }
             }
         },
-        "\/service\/v1\/serviceJobs\/{serviceJobId}\/appointments": {
+        "/service/v1/serviceJobs/{serviceJobId}/appointments": {
             "post": {
                 "tags": [
                     "ServicesV1"
@@ -1687,9 +1687,9 @@
                 "requestBody": {
                     "description": "Add appointment operation input details.",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/AddAppointmentRequest"
+                                "$ref": "#/components/schemas/AddAppointmentRequest"
                             }
                         }
                     },
@@ -1713,9 +1713,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         },
@@ -1780,9 +1780,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         },
@@ -1828,9 +1828,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         },
@@ -1881,9 +1881,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         }
@@ -1905,9 +1905,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         }
@@ -1929,9 +1929,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         }
@@ -1953,9 +1953,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         },
@@ -2181,9 +2181,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         }
@@ -2205,9 +2205,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         }
@@ -2229,9 +2229,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         }
@@ -2240,7 +2240,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/service\/v1\/serviceJobs\/{serviceJobId}\/appointments\/{appointmentId}": {
+        "/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}": {
             "post": {
                 "tags": [
                     "ServicesV1"
@@ -2274,9 +2274,9 @@
                 "requestBody": {
                     "description": "Reschedule appointment operation input details.",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/RescheduleAppointmentRequest"
+                                "$ref": "#/components/schemas/RescheduleAppointmentRequest"
                             }
                         }
                     },
@@ -2300,9 +2300,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         },
@@ -2405,9 +2405,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         },
@@ -2487,9 +2487,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         },
@@ -2544,9 +2544,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         }
@@ -2568,9 +2568,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         }
@@ -2592,9 +2592,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         }
@@ -2616,9 +2616,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         },
@@ -2876,9 +2876,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         }
@@ -2900,9 +2900,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         }
@@ -2924,9 +2924,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SetAppointmentResponse"
+                                    "$ref": "#/components/schemas/SetAppointmentResponse"
                                 }
                             }
                         }
@@ -2935,12 +2935,12 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/service\/v1\/serviceJobs\/{serviceJobId}\/appointments\/{appointmentId}\/resources": {
+        "/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources": {
             "put": {
                 "tags": [
                     "ServicesV1"
                 ],
-                "description": "Assigns new resource(s) or overwrite\/update the existing one(s) to a service job appointment.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Assigns new resource(s) or overwrite/update the existing one(s) to a service job appointment.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "assignAppointmentResources",
                 "parameters": [
                     {
@@ -2968,9 +2968,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/AssignAppointmentResourcesRequest"
+                                "$ref": "#/components/schemas/AssignAppointmentResourcesRequest"
                             }
                         }
                     },
@@ -2994,9 +2994,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/AssignAppointmentResourcesResponse"
+                                    "$ref": "#/components/schemas/AssignAppointmentResourcesResponse"
                                 }
                             }
                         },
@@ -3101,9 +3101,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/AssignAppointmentResourcesResponse"
+                                    "$ref": "#/components/schemas/AssignAppointmentResourcesResponse"
                                 }
                             }
                         },
@@ -3272,9 +3272,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/AssignAppointmentResourcesResponse"
+                                    "$ref": "#/components/schemas/AssignAppointmentResourcesResponse"
                                 }
                             }
                         },
@@ -3333,9 +3333,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/AssignAppointmentResourcesResponse"
+                                    "$ref": "#/components/schemas/AssignAppointmentResourcesResponse"
                                 }
                             }
                         }
@@ -3357,9 +3357,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/AssignAppointmentResourcesResponse"
+                                    "$ref": "#/components/schemas/AssignAppointmentResourcesResponse"
                                 }
                             }
                         }
@@ -3381,9 +3381,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/AssignAppointmentResourcesResponse"
+                                    "$ref": "#/components/schemas/AssignAppointmentResourcesResponse"
                                 }
                             }
                         }
@@ -3405,9 +3405,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/AssignAppointmentResourcesResponse"
+                                    "$ref": "#/components/schemas/AssignAppointmentResourcesResponse"
                                 }
                             }
                         },
@@ -3686,9 +3686,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/AssignAppointmentResourcesResponse"
+                                    "$ref": "#/components/schemas/AssignAppointmentResourcesResponse"
                                 }
                             }
                         }
@@ -3710,9 +3710,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/AssignAppointmentResourcesResponse"
+                                    "$ref": "#/components/schemas/AssignAppointmentResourcesResponse"
                                 }
                             }
                         }
@@ -3734,9 +3734,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/AssignAppointmentResourcesResponse"
+                                    "$ref": "#/components/schemas/AssignAppointmentResourcesResponse"
                                 }
                             }
                         }
@@ -3745,7 +3745,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/service\/v1\/serviceJobs\/{serviceJobId}\/appointments\/{appointmentId}\/fulfillment": {
+        "/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment": {
             "put": {
                 "tags": [
                     "ServicesV1"
@@ -3779,9 +3779,9 @@
                 "requestBody": {
                     "description": "Appointment fulfillment data collection details.",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/SetAppointmentFulfillmentDataRequest"
+                                "$ref": "#/components/schemas/SetAppointmentFulfillmentDataRequest"
                             }
                         }
                     },
@@ -3805,7 +3805,7 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "string"
                                 }
@@ -4024,9 +4024,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -4148,9 +4148,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -4217,9 +4217,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -4241,9 +4241,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -4265,9 +4265,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -4289,9 +4289,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -5208,9 +5208,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -5232,9 +5232,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -5256,9 +5256,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -5267,7 +5267,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/service\/v1\/serviceResources\/{resourceId}\/capacity\/range": {
+        "/service/v1/serviceResources/{resourceId}/capacity/range": {
             "post": {
                 "tags": [
                     "ServicesV1"
@@ -5313,9 +5313,9 @@
                 "requestBody": {
                     "description": "Request body.",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/RangeSlotCapacityQuery"
+                                "$ref": "#/components/schemas/RangeSlotCapacityQuery"
                             }
                         }
                     },
@@ -5339,9 +5339,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RangeSlotCapacity"
+                                    "$ref": "#/components/schemas/RangeSlotCapacity"
                                 }
                             }
                         },
@@ -5567,9 +5567,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RangeSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/RangeSlotCapacityErrors"
                                 }
                             }
                         },
@@ -5674,7 +5674,7 @@
                                             {
                                                 "code": "InvalidInput",
                                                 "message": "This is invalid input",
-                                                "details": "Received the following errors: [startDateTime is not a valid ISO date\/time object]"
+                                                "details": "Received the following errors: [startDateTime is not a valid ISO date/time object]"
                                             }
                                         ]
                                     }
@@ -5693,9 +5693,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RangeSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/RangeSlotCapacityErrors"
                                 }
                             }
                         }
@@ -5711,9 +5711,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RangeSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/RangeSlotCapacityErrors"
                                 }
                             }
                         }
@@ -5735,9 +5735,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RangeSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/RangeSlotCapacityErrors"
                                 }
                             }
                         }
@@ -5753,9 +5753,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RangeSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/RangeSlotCapacityErrors"
                                 }
                             }
                         }
@@ -5771,9 +5771,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RangeSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/RangeSlotCapacityErrors"
                                 }
                             }
                         }
@@ -5789,9 +5789,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RangeSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/RangeSlotCapacityErrors"
                                 }
                             }
                         }
@@ -5807,9 +5807,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RangeSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/RangeSlotCapacityErrors"
                                 }
                             }
                         }
@@ -5825,9 +5825,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RangeSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/RangeSlotCapacityErrors"
                                 }
                             }
                         }
@@ -5836,7 +5836,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/service\/v1\/serviceResources\/{resourceId}\/capacity\/fixed": {
+        "/service/v1/serviceResources/{resourceId}/capacity/fixed": {
             "post": {
                 "tags": [
                     "ServicesV1"
@@ -5882,9 +5882,9 @@
                 "requestBody": {
                     "description": "Request body.",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/FixedSlotCapacityQuery"
+                                "$ref": "#/components/schemas/FixedSlotCapacityQuery"
                             }
                         }
                     },
@@ -5908,9 +5908,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FixedSlotCapacity"
+                                    "$ref": "#/components/schemas/FixedSlotCapacity"
                                 }
                             }
                         },
@@ -5982,9 +5982,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FixedSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/FixedSlotCapacityErrors"
                                 }
                             }
                         },
@@ -6117,7 +6117,7 @@
                                             {
                                                 "code": "InvalidInput",
                                                 "message": "This is invalid input",
-                                                "details": "Received the following errors: [startDateTime is not a valid ISO date\/time object]"
+                                                "details": "Received the following errors: [startDateTime is not a valid ISO date/time object]"
                                             }
                                         ]
                                     }
@@ -6136,9 +6136,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FixedSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/FixedSlotCapacityErrors"
                                 }
                             }
                         }
@@ -6154,9 +6154,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FixedSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/FixedSlotCapacityErrors"
                                 }
                             }
                         }
@@ -6178,9 +6178,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FixedSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/FixedSlotCapacityErrors"
                                 }
                             }
                         }
@@ -6196,9 +6196,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FixedSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/FixedSlotCapacityErrors"
                                 }
                             }
                         }
@@ -6214,9 +6214,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FixedSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/FixedSlotCapacityErrors"
                                 }
                             }
                         }
@@ -6232,9 +6232,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FixedSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/FixedSlotCapacityErrors"
                                 }
                             }
                         }
@@ -6250,9 +6250,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FixedSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/FixedSlotCapacityErrors"
                                 }
                             }
                         }
@@ -6268,9 +6268,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FixedSlotCapacityErrors"
+                                    "$ref": "#/components/schemas/FixedSlotCapacityErrors"
                                 }
                             }
                         }
@@ -6279,7 +6279,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/service\/v1\/serviceResources\/{resourceId}\/schedules": {
+        "/service/v1/serviceResources/{resourceId}/schedules": {
             "put": {
                 "tags": [
                     "ServicesV1"
@@ -6317,9 +6317,9 @@
                 "requestBody": {
                     "description": "Schedule details",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/UpdateScheduleRequest"
+                                "$ref": "#/components/schemas/UpdateScheduleRequest"
                             }
                         }
                     },
@@ -6343,9 +6343,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateScheduleResponse"
+                                    "$ref": "#/components/schemas/UpdateScheduleResponse"
                                 }
                             }
                         },
@@ -6529,9 +6529,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateScheduleResponse"
+                                    "$ref": "#/components/schemas/UpdateScheduleResponse"
                                 }
                             }
                         },
@@ -6595,9 +6595,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateScheduleResponse"
+                                    "$ref": "#/components/schemas/UpdateScheduleResponse"
                                 }
                             }
                         }
@@ -6619,9 +6619,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateScheduleResponse"
+                                    "$ref": "#/components/schemas/UpdateScheduleResponse"
                                 }
                             }
                         }
@@ -6643,9 +6643,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateScheduleResponse"
+                                    "$ref": "#/components/schemas/UpdateScheduleResponse"
                                 }
                             }
                         }
@@ -6667,9 +6667,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateScheduleResponse"
+                                    "$ref": "#/components/schemas/UpdateScheduleResponse"
                                 }
                             }
                         }
@@ -6691,9 +6691,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateScheduleResponse"
+                                    "$ref": "#/components/schemas/UpdateScheduleResponse"
                                 }
                             }
                         }
@@ -6715,9 +6715,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateScheduleResponse"
+                                    "$ref": "#/components/schemas/UpdateScheduleResponse"
                                 }
                             }
                         }
@@ -6739,9 +6739,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateScheduleResponse"
+                                    "$ref": "#/components/schemas/UpdateScheduleResponse"
                                 }
                             }
                         }
@@ -6750,7 +6750,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/service\/v1\/reservation": {
+        "/service/v1/reservation": {
             "post": {
                 "tags": [
                     "ServicesV1"
@@ -6777,9 +6777,9 @@
                 "requestBody": {
                     "description": "Reservation details",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateReservationRequest"
+                                "$ref": "#/components/schemas/CreateReservationRequest"
                             }
                         }
                     },
@@ -6803,9 +6803,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateReservationResponse"
+                                    "$ref": "#/components/schemas/CreateReservationResponse"
                                 }
                             }
                         },
@@ -6882,9 +6882,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateReservationResponse"
+                                    "$ref": "#/components/schemas/CreateReservationResponse"
                                 }
                             }
                         },
@@ -6944,9 +6944,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateReservationResponse"
+                                    "$ref": "#/components/schemas/CreateReservationResponse"
                                 }
                             }
                         }
@@ -6968,9 +6968,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateReservationResponse"
+                                    "$ref": "#/components/schemas/CreateReservationResponse"
                                 }
                             }
                         }
@@ -6992,9 +6992,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateReservationResponse"
+                                    "$ref": "#/components/schemas/CreateReservationResponse"
                                 }
                             }
                         }
@@ -7016,9 +7016,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateReservationResponse"
+                                    "$ref": "#/components/schemas/CreateReservationResponse"
                                 }
                             }
                         }
@@ -7040,9 +7040,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateReservationResponse"
+                                    "$ref": "#/components/schemas/CreateReservationResponse"
                                 }
                             }
                         }
@@ -7064,9 +7064,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateReservationResponse"
+                                    "$ref": "#/components/schemas/CreateReservationResponse"
                                 }
                             }
                         }
@@ -7088,9 +7088,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateReservationResponse"
+                                    "$ref": "#/components/schemas/CreateReservationResponse"
                                 }
                             }
                         }
@@ -7099,7 +7099,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/service\/v1\/reservation\/{reservationId}": {
+        "/service/v1/reservation/{reservationId}": {
             "put": {
                 "tags": [
                     "ServicesV1"
@@ -7137,9 +7137,9 @@
                 "requestBody": {
                     "description": "Reservation details",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/UpdateReservationRequest"
+                                "$ref": "#/components/schemas/UpdateReservationRequest"
                             }
                         }
                     },
@@ -7163,9 +7163,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateReservationResponse"
+                                    "$ref": "#/components/schemas/UpdateReservationResponse"
                                 }
                             }
                         },
@@ -7248,9 +7248,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateReservationResponse"
+                                    "$ref": "#/components/schemas/UpdateReservationResponse"
                                 }
                             }
                         },
@@ -7310,9 +7310,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateReservationResponse"
+                                    "$ref": "#/components/schemas/UpdateReservationResponse"
                                 }
                             }
                         }
@@ -7334,9 +7334,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateReservationResponse"
+                                    "$ref": "#/components/schemas/UpdateReservationResponse"
                                 }
                             }
                         },
@@ -7391,9 +7391,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateReservationResponse"
+                                    "$ref": "#/components/schemas/UpdateReservationResponse"
                                 }
                             }
                         }
@@ -7415,9 +7415,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateReservationResponse"
+                                    "$ref": "#/components/schemas/UpdateReservationResponse"
                                 }
                             }
                         }
@@ -7439,9 +7439,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateReservationResponse"
+                                    "$ref": "#/components/schemas/UpdateReservationResponse"
                                 }
                             }
                         }
@@ -7463,9 +7463,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateReservationResponse"
+                                    "$ref": "#/components/schemas/UpdateReservationResponse"
                                 }
                             }
                         }
@@ -7487,9 +7487,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateReservationResponse"
+                                    "$ref": "#/components/schemas/UpdateReservationResponse"
                                 }
                             }
                         }
@@ -7549,9 +7549,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelReservationResponse"
+                                    "$ref": "#/components/schemas/CancelReservationResponse"
                                 }
                             }
                         },
@@ -7587,9 +7587,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelReservationResponse"
+                                    "$ref": "#/components/schemas/CancelReservationResponse"
                                 }
                             }
                         },
@@ -7626,9 +7626,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelReservationResponse"
+                                    "$ref": "#/components/schemas/CancelReservationResponse"
                                 }
                             }
                         }
@@ -7650,9 +7650,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelReservationResponse"
+                                    "$ref": "#/components/schemas/CancelReservationResponse"
                                 }
                             }
                         },
@@ -7695,9 +7695,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelReservationResponse"
+                                    "$ref": "#/components/schemas/CancelReservationResponse"
                                 }
                             }
                         }
@@ -7719,9 +7719,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelReservationResponse"
+                                    "$ref": "#/components/schemas/CancelReservationResponse"
                                 }
                             }
                         }
@@ -7743,9 +7743,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelReservationResponse"
+                                    "$ref": "#/components/schemas/CancelReservationResponse"
                                 }
                             }
                         }
@@ -7767,9 +7767,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelReservationResponse"
+                                    "$ref": "#/components/schemas/CancelReservationResponse"
                                 }
                             }
                         }
@@ -7791,9 +7791,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelReservationResponse"
+                                    "$ref": "#/components/schemas/CancelReservationResponse"
                                 }
                             }
                         }
@@ -7801,7 +7801,7 @@
                 }
             }
         },
-        "\/service\/v1\/serviceJobs\/{serviceJobId}\/appointmentSlots": {
+        "/service/v1/serviceJobs/{serviceJobId}/appointmentSlots": {
             "get": {
                 "tags": [
                     "ServicesV1"
@@ -7870,9 +7870,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         },
@@ -7960,9 +7960,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         },
@@ -8000,7 +8000,7 @@
                                         "errors": [
                                             {
                                                 "code": "InvalidInput",
-                                                "message": "End Time is not a valid ISO date\/time object"
+                                                "message": "End Time is not a valid ISO date/time object"
                                             }
                                         ]
                                     }
@@ -8042,9 +8042,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8066,9 +8066,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8090,9 +8090,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8114,9 +8114,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8138,9 +8138,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8162,9 +8162,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8186,9 +8186,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8196,7 +8196,7 @@
                 }
             }
         },
-        "\/service\/v1\/appointmentSlots": {
+        "/service/v1/appointmentSlots": {
             "get": {
                 "tags": [
                     "ServicesV1"
@@ -8274,9 +8274,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         },
@@ -8370,9 +8370,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         },
@@ -8416,7 +8416,7 @@
                                         "errors": [
                                             {
                                                 "code": "InvalidInput",
-                                                "message": "Range End Time is not a valid ISO date\/time object"
+                                                "message": "Range End Time is not a valid ISO date/time object"
                                             }
                                         ]
                                     }
@@ -8461,9 +8461,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8485,9 +8485,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8509,9 +8509,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8533,9 +8533,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8557,9 +8557,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8581,9 +8581,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8605,9 +8605,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAppointmentSlotsResponse"
+                                    "$ref": "#/components/schemas/GetAppointmentSlotsResponse"
                                 }
                             }
                         }
@@ -8615,7 +8615,7 @@
                 }
             }
         },
-        "\/service\/v1\/documents": {
+        "/service/v1/documents": {
             "post": {
                 "tags": [
                     "ServicesV1"
@@ -8625,9 +8625,9 @@
                 "requestBody": {
                     "description": "Upload document operation input details.",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/ServiceUploadDocument"
+                                "$ref": "#/components/schemas/ServiceUploadDocument"
                             }
                         }
                     },
@@ -8651,9 +8651,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateServiceDocumentUploadDestination"
+                                    "$ref": "#/components/schemas/CreateServiceDocumentUploadDestination"
                                 }
                             }
                         },
@@ -8678,8 +8678,8 @@
                                                 "initializationVector": "paPlpo1iBBLmyOhU0mIo5g==",
                                                 "key": "PDuDJm2l+0ydObrRpS48tB+t2qbtOmWhSEOiFWKnH2k="
                                             },
-                                            "uploadDestinationId": "amzn1.tortuga.3.15ba627d-8e24-42ad-89d1-5eb01f5ba0af.T15MXQRST78UTC<->amzn1.tortuga.1.token.DizquVc+EoX\/lWAV\/7WTlw==",
-                                            "url": "https:\/\/tortuga-devo.s3-us-west-2.amazonaws.com\/%2FThirtyDays\/amzn1.tortuga.3.15ba627d-8e24-42ad-89d1-5eb01f5ba0af.T15MXQRST78UTC?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210108T103450Z&X-Amz-SignedHeaders=content-type%3Bhost&X-Amz-Expires=300&X-Amz-Credential=AKIAUR3X5C6O5CADVWED%2F20210108%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Signature=dd2fefe6c6102aba14bab1481b33cf07dcc0385bd49f7eb5796d77b082ea5ba3"
+                                            "uploadDestinationId": "amzn1.tortuga.3.15ba627d-8e24-42ad-89d1-5eb01f5ba0af.T15MXQRST78UTC<->amzn1.tortuga.1.token.DizquVc+EoX/lWAV/7WTlw==",
+                                            "url": "https://tortuga-devo.s3-us-west-2.amazonaws.com/%2FThirtyDays/amzn1.tortuga.3.15ba627d-8e24-42ad-89d1-5eb01f5ba0af.T15MXQRST78UTC?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210108T103450Z&X-Amz-SignedHeaders=content-type%3Bhost&X-Amz-Expires=300&X-Amz-Credential=AKIAUR3X5C6O5CADVWED%2F20210108%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Signature=dd2fefe6c6102aba14bab1481b33cf07dcc0385bd49f7eb5796d77b082ea5ba3"
                                         }
                                     }
                                 }
@@ -8703,9 +8703,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateServiceDocumentUploadDestination"
+                                    "$ref": "#/components/schemas/CreateServiceDocumentUploadDestination"
                                 }
                             }
                         },
@@ -8783,9 +8783,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateServiceDocumentUploadDestination"
+                                    "$ref": "#/components/schemas/CreateServiceDocumentUploadDestination"
                                 }
                             }
                         }
@@ -8807,9 +8807,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateServiceDocumentUploadDestination"
+                                    "$ref": "#/components/schemas/CreateServiceDocumentUploadDestination"
                                 }
                             }
                         }
@@ -8831,9 +8831,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateServiceDocumentUploadDestination"
+                                    "$ref": "#/components/schemas/CreateServiceDocumentUploadDestination"
                                 }
                             }
                         }
@@ -8855,9 +8855,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateServiceDocumentUploadDestination"
+                                    "$ref": "#/components/schemas/CreateServiceDocumentUploadDestination"
                                 }
                             }
                         }
@@ -8879,9 +8879,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateServiceDocumentUploadDestination"
+                                    "$ref": "#/components/schemas/CreateServiceDocumentUploadDestination"
                                 }
                             }
                         },
@@ -8929,9 +8929,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateServiceDocumentUploadDestination"
+                                    "$ref": "#/components/schemas/CreateServiceDocumentUploadDestination"
                                 }
                             }
                         }
@@ -8953,9 +8953,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateServiceDocumentUploadDestination"
+                                    "$ref": "#/components/schemas/CreateServiceDocumentUploadDestination"
                                 }
                             }
                         }
@@ -8977,9 +8977,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateServiceDocumentUploadDestination"
+                                    "$ref": "#/components/schemas/CreateServiceDocumentUploadDestination"
                                 }
                             }
                         }
@@ -8995,10 +8995,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/ServiceJob"
+                        "$ref": "#/components/schemas/ServiceJob"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the `getServiceJobByServiceJobId` operation."
@@ -9007,7 +9007,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema for the `cancelServiceJobByServiceJobId` operation."
@@ -9016,7 +9016,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema for the `completeServiceJobByServiceJobId` operation."
@@ -9025,10 +9025,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/JobListing"
+                        "$ref": "#/components/schemas/JobListing"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema for the `getServiceJobs` operation."
@@ -9037,13 +9037,13 @@
                 "type": "object",
                 "properties": {
                     "appointmentId": {
-                        "$ref": "#\/components\/schemas\/AppointmentId"
+                        "$ref": "#/components/schemas/AppointmentId"
                     },
                     "warnings": {
-                        "$ref": "#\/components\/schemas\/WarningList"
+                        "$ref": "#/components/schemas/WarningList"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema for the `addAppointmentForServiceJobByServiceJobId` and `rescheduleAppointmentForServiceJobByServiceJobId` operations."
@@ -9055,13 +9055,13 @@
                         "type": "object",
                         "properties": {
                             "warnings": {
-                                "$ref": "#\/components\/schemas\/WarningList"
+                                "$ref": "#/components/schemas/WarningList"
                             }
                         },
                         "description": "The payload for the `assignAppointmentResource` operation."
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema for the `assignAppointmentResources` operation."
@@ -9073,7 +9073,7 @@
                 "type": "object",
                 "properties": {
                     "resources": {
-                        "$ref": "#\/components\/schemas\/AppointmentResources"
+                        "$ref": "#/components/schemas/AppointmentResources"
                     }
                 },
                 "description": "Request schema for the `assignAppointmentResources` operation."
@@ -9097,7 +9097,7 @@
                         "type": "array",
                         "description": "List of job details for the given input.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ServiceJob"
+                            "$ref": "#/components/schemas/ServiceJob"
                         }
                     }
                 },
@@ -9112,7 +9112,7 @@
                         "format": "date-time"
                     },
                     "serviceJobId": {
-                        "$ref": "#\/components\/schemas\/ServiceJobId"
+                        "$ref": "#/components/schemas/ServiceJobId"
                     },
                     "serviceJobStatus": {
                         "type": "string",
@@ -9158,30 +9158,30 @@
                         ]
                     },
                     "scopeOfWork": {
-                        "$ref": "#\/components\/schemas\/ScopeOfWork"
+                        "$ref": "#/components/schemas/ScopeOfWork"
                     },
                     "seller": {
-                        "$ref": "#\/components\/schemas\/Seller"
+                        "$ref": "#/components/schemas/Seller"
                     },
                     "serviceJobProvider": {
-                        "$ref": "#\/components\/schemas\/ServiceJobProvider"
+                        "$ref": "#/components/schemas/ServiceJobProvider"
                     },
                     "preferredAppointmentTimes": {
                         "type": "array",
                         "description": "A list of appointment windows preferred by the buyer. Included only if the buyer selected appointment windows when creating the order.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/AppointmentTime"
+                            "$ref": "#/components/schemas/AppointmentTime"
                         }
                     },
                     "appointments": {
                         "type": "array",
                         "description": "A list of appointments.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Appointment"
+                            "$ref": "#/components/schemas/Appointment"
                         }
                     },
                     "serviceOrderId": {
-                        "$ref": "#\/components\/schemas\/OrderId"
+                        "$ref": "#/components/schemas/OrderId"
                     },
                     "marketplaceId": {
                         "pattern": "^[A-Z0-9]*$",
@@ -9195,17 +9195,17 @@
                         "description": "The Amazon-defined identifier for the region scope."
                     },
                     "buyer": {
-                        "$ref": "#\/components\/schemas\/Buyer"
+                        "$ref": "#/components/schemas/Buyer"
                     },
                     "associatedItems": {
                         "type": "array",
                         "description": "A list of items associated with the service job.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/AssociatedItem"
+                            "$ref": "#/components/schemas/AssociatedItem"
                         }
                     },
                     "serviceLocation": {
-                        "$ref": "#\/components\/schemas\/ServiceLocation"
+                        "$ref": "#/components/schemas/ServiceLocation"
                     }
                 },
                 "description": "The job details of a service."
@@ -9322,7 +9322,7 @@
                 "type": "object",
                 "properties": {
                     "appointmentId": {
-                        "$ref": "#\/components\/schemas\/AppointmentId"
+                        "$ref": "#/components/schemas/AppointmentId"
                     },
                     "appointmentStatus": {
                         "type": "string",
@@ -9348,21 +9348,21 @@
                         ]
                     },
                     "appointmentTime": {
-                        "$ref": "#\/components\/schemas\/AppointmentTime"
+                        "$ref": "#/components/schemas/AppointmentTime"
                     },
                     "assignedTechnicians": {
                         "minItems": 1,
                         "type": "array",
                         "description": "A list of technicians assigned to the service job.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Technician"
+                            "$ref": "#/components/schemas/Technician"
                         }
                     },
                     "rescheduledAppointmentId": {
-                        "$ref": "#\/components\/schemas\/AppointmentId"
+                        "$ref": "#/components/schemas/AppointmentId"
                     },
                     "poa": {
-                        "$ref": "#\/components\/schemas\/Poa"
+                        "$ref": "#/components/schemas/Poa"
                     }
                 },
                 "description": "The details of an appointment."
@@ -9387,14 +9387,14 @@
                 "type": "object",
                 "properties": {
                     "appointmentTime": {
-                        "$ref": "#\/components\/schemas\/AppointmentTime"
+                        "$ref": "#/components/schemas/AppointmentTime"
                     },
                     "technicians": {
                         "minItems": 1,
                         "type": "array",
                         "description": "A list of technicians.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Technician"
+                            "$ref": "#/components/schemas/Technician"
                         }
                     },
                     "uploadingTechnician": {
@@ -9454,7 +9454,7 @@
                         "description": "The total number of items included in the order."
                     },
                     "orderId": {
-                        "$ref": "#\/components\/schemas\/OrderId"
+                        "$ref": "#/components/schemas/OrderId"
                     },
                     "itemStatus": {
                         "type": "string",
@@ -9489,7 +9489,7 @@
                         "description": "The brand name of the item."
                     },
                     "itemDelivery": {
-                        "$ref": "#\/components\/schemas\/ItemDelivery"
+                        "$ref": "#/components/schemas/ItemDelivery"
                     }
                 },
                 "description": "Information about an item associated with the service job."
@@ -9503,7 +9503,7 @@
                         "format": "date-time"
                     },
                     "itemDeliveryPromise": {
-                        "$ref": "#\/components\/schemas\/ItemDeliveryPromise"
+                        "$ref": "#/components/schemas/ItemDeliveryPromise"
                     }
                 },
                 "description": "Delivery information for the item."
@@ -9551,7 +9551,7 @@
                         ]
                     },
                     "address": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     }
                 },
                 "description": "Information about the location of the service job."
@@ -9597,7 +9597,7 @@
                     },
                     "postalCode": {
                         "type": "string",
-                        "description": "The postal code. This can contain letters, digits, spaces, and\/or punctuation."
+                        "description": "The postal code. This can contain letters, digits, spaces, and/or punctuation."
                     },
                     "countryCode": {
                         "type": "string",
@@ -9617,7 +9617,7 @@
                 "type": "object",
                 "properties": {
                     "appointmentTime": {
-                        "$ref": "#\/components\/schemas\/AppointmentTimeInput"
+                        "$ref": "#/components/schemas/AppointmentTimeInput"
                     }
                 },
                 "description": "Input for add appointment operation."
@@ -9630,10 +9630,10 @@
                 "type": "object",
                 "properties": {
                     "appointmentTime": {
-                        "$ref": "#\/components\/schemas\/AppointmentTimeInput"
+                        "$ref": "#/components/schemas/AppointmentTimeInput"
                     },
                     "rescheduleReasonCode": {
-                        "$ref": "#\/components\/schemas\/RescheduleReasonCode"
+                        "$ref": "#/components/schemas/RescheduleReasonCode"
                     }
                 },
                 "description": "Input for rescheduled appointment operation."
@@ -9664,7 +9664,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Error": {
@@ -9711,7 +9711,7 @@
                 "type": "array",
                 "description": "A list of warnings returned in the sucessful execution response of an API request.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Warning"
+                    "$ref": "#/components/schemas/Warning"
                 }
             },
             "Warning": {
@@ -9740,7 +9740,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The error response schema for the `getRangeSlotCapacity` operation."
@@ -9756,7 +9756,7 @@
                         "type": "array",
                         "description": "Array of range capacities where each entry is for a specific capacity type.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/RangeCapacity"
+                            "$ref": "#/components/schemas/RangeCapacity"
                         }
                     },
                     "nextPageToken": {
@@ -9770,13 +9770,13 @@
                 "type": "object",
                 "properties": {
                     "capacityType": {
-                        "$ref": "#\/components\/schemas\/CapacityType"
+                        "$ref": "#/components/schemas/CapacityType"
                     },
                     "slots": {
                         "type": "array",
                         "description": "Array of capacity slots in range slot format.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/RangeSlot"
+                            "$ref": "#/components/schemas/RangeSlot"
                         }
                     }
                 },
@@ -9807,7 +9807,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The error response schema for the `getFixedSlotCapacity` operation."
@@ -9829,7 +9829,7 @@
                         "type": "array",
                         "description": "Array of capacity slots in fixed slot format.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/FixedSlot"
+                            "$ref": "#/components/schemas/FixedSlot"
                         }
                     },
                     "nextPageToken": {
@@ -9859,12 +9859,12 @@
                     },
                     "encumberedCapacity": {
                         "type": "integer",
-                        "description": "Encumbered capacity corresponding to the slot. This capacity represents the capacity allocated for Amazon Jobs\/Appointments\/Orders.",
+                        "description": "Encumbered capacity corresponding to the slot. This capacity represents the capacity allocated for Amazon Jobs/Appointments/Orders.",
                         "format": "int32"
                     },
                     "reservedCapacity": {
                         "type": "integer",
-                        "description": "Reserved capacity corresponding to the slot. This capacity represents the capacity made unavailable due to events like Breaks\/Leaves\/Lunch.",
+                        "description": "Reserved capacity corresponding to the slot. This capacity represents the capacity made unavailable due to events like Breaks/Leaves/Lunch.",
                         "format": "int32"
                     }
                 },
@@ -9875,13 +9875,13 @@
                 "properties": {
                     "payload": {
                         "type": "array",
-                        "description": "Contains the `UpdateScheduleRecords` for which the error\/warning has occurred.",
+                        "description": "Contains the `UpdateScheduleRecords` for which the error/warning has occurred.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/UpdateScheduleRecord"
+                            "$ref": "#/components/schemas/UpdateScheduleRecord"
                         }
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema for the `updateSchedule` operation."
@@ -9890,13 +9890,13 @@
                 "type": "object",
                 "properties": {
                     "fulfillmentTime": {
-                        "$ref": "#\/components\/schemas\/FulfillmentTime"
+                        "$ref": "#/components/schemas/FulfillmentTime"
                     },
                     "appointmentResources": {
-                        "$ref": "#\/components\/schemas\/AppointmentResources"
+                        "$ref": "#/components/schemas/AppointmentResources"
                     },
                     "fulfillmentDocuments": {
-                        "$ref": "#\/components\/schemas\/FulfillmentDocuments"
+                        "$ref": "#/components/schemas/FulfillmentDocuments"
                     }
                 },
                 "description": "Input for set appointment fulfillment data operation."
@@ -9921,7 +9921,7 @@
                 "type": "array",
                 "description": "List of documents captured during service appointment fulfillment.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/FulfillmentDocument"
+                    "$ref": "#/components/schemas/FulfillmentDocument"
                 }
             },
             "FulfillmentDocument": {
@@ -9942,7 +9942,7 @@
                 "type": "array",
                 "description": "List of resources that performs or performed job appointment fulfillment.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/AppointmentResource"
+                    "$ref": "#/components/schemas/AppointmentResource"
                 }
             },
             "AppointmentResource": {
@@ -9959,10 +9959,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/CreateReservationRecord"
+                        "$ref": "#/components/schemas/CreateReservationRecord"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema for the `createReservation` operation."
@@ -9971,10 +9971,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/UpdateReservationRecord"
+                        "$ref": "#/components/schemas/UpdateReservationRecord"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema for the `updateReservation` operation."
@@ -9983,7 +9983,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema for the `cancelReservation` operation."
@@ -10046,7 +10046,7 @@
                         "type": "array",
                         "description": "Days of the week when recurrence is valid. If the schedule is valid every Monday, input will only contain `MONDAY` in the list.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/DayOfWeek"
+                            "$ref": "#/components/schemas/DayOfWeek"
                         }
                     },
                     "daysOfMonth": {
@@ -10079,7 +10079,7 @@
                         "format": "date-time"
                     },
                     "recurrence": {
-                        "$ref": "#\/components\/schemas\/Recurrence"
+                        "$ref": "#/components/schemas/Recurrence"
                     },
                     "capacity": {
                         "minimum": 1,
@@ -10093,7 +10093,7 @@
                 "type": "array",
                 "description": "List of `AvailabilityRecord`s to represent the capacity of a resource over a time range.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/AvailabilityRecord"
+                    "$ref": "#/components/schemas/AvailabilityRecord"
                 }
             },
             "Reservation": {
@@ -10141,7 +10141,7 @@
                         ]
                     },
                     "availability": {
-                        "$ref": "#\/components\/schemas\/AvailabilityRecord"
+                        "$ref": "#/components/schemas/AvailabilityRecord"
                     }
                 },
                 "description": "Reservation object reduces the capacity of a resource."
@@ -10150,46 +10150,46 @@
                 "type": "object",
                 "properties": {
                     "availability": {
-                        "$ref": "#\/components\/schemas\/AvailabilityRecord"
+                        "$ref": "#/components/schemas/AvailabilityRecord"
                     },
                     "warnings": {
-                        "$ref": "#\/components\/schemas\/WarningList"
+                        "$ref": "#/components/schemas/WarningList"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "`UpdateScheduleRecord` entity contains the `AvailabilityRecord` if there is an error\/warning while performing the requested operation on it."
+                "description": "`UpdateScheduleRecord` entity contains the `AvailabilityRecord` if there is an error/warning while performing the requested operation on it."
             },
             "CreateReservationRecord": {
                 "type": "object",
                 "properties": {
                     "reservation": {
-                        "$ref": "#\/components\/schemas\/Reservation"
+                        "$ref": "#/components/schemas/Reservation"
                     },
                     "warnings": {
-                        "$ref": "#\/components\/schemas\/WarningList"
+                        "$ref": "#/components/schemas/WarningList"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "`CreateReservationRecord` entity contains the `Reservation` if there is an error\/warning while performing the requested operation on it, otherwise it will contain the new `reservationId`."
+                "description": "`CreateReservationRecord` entity contains the `Reservation` if there is an error/warning while performing the requested operation on it, otherwise it will contain the new `reservationId`."
             },
             "UpdateReservationRecord": {
                 "type": "object",
                 "properties": {
                     "reservation": {
-                        "$ref": "#\/components\/schemas\/Reservation"
+                        "$ref": "#/components/schemas/Reservation"
                     },
                     "warnings": {
-                        "$ref": "#\/components\/schemas\/WarningList"
+                        "$ref": "#/components/schemas/WarningList"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "`UpdateReservationRecord` entity contains the `Reservation` if there is an error\/warning while performing the requested operation on it, otherwise it will contain the new `reservationId`."
+                "description": "`UpdateReservationRecord` entity contains the `Reservation` if there is an error/warning while performing the requested operation on it, otherwise it will contain the new `reservationId`."
             },
             "RangeSlotCapacityQuery": {
                 "required": [
@@ -10202,7 +10202,7 @@
                         "type": "array",
                         "description": "An array of capacity types which are being requested. Default value is `[SCHEDULED_CAPACITY]`.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/CapacityType"
+                            "$ref": "#/components/schemas/CapacityType"
                         }
                     },
                     "startDateTime": {
@@ -10229,7 +10229,7 @@
                         "type": "array",
                         "description": "An array of capacity types which are being requested. Default value is `[SCHEDULED_CAPACITY]`.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/CapacityType"
+                            "$ref": "#/components/schemas/CapacityType"
                         }
                     },
                     "slotDuration": {
@@ -10258,7 +10258,7 @@
                 "type": "object",
                 "properties": {
                     "schedules": {
-                        "$ref": "#\/components\/schemas\/AvailabilityRecords"
+                        "$ref": "#/components/schemas/AvailabilityRecords"
                     }
                 },
                 "description": "Request schema for the `updateSchedule` operation."
@@ -10282,11 +10282,11 @@
                         "value": "AVAILABLE_CAPACITY"
                     },
                     {
-                        "description": "This capacity represents the capacity allocated for Amazon Jobs\/Appointments\/Orders.",
+                        "description": "This capacity represents the capacity allocated for Amazon Jobs/Appointments/Orders.",
                         "value": "ENCUMBERED_CAPACITY"
                     },
                     {
-                        "description": "This capacity represents the capacity made unavailable due to events like Breaks\/Leaves\/Lunch.",
+                        "description": "This capacity represents the capacity made unavailable due to events like Breaks/Leaves/Lunch.",
                         "value": "RESERVED_CAPACITY"
                     }
                 ]
@@ -10303,7 +10303,7 @@
                         "description": "Resource (store) identifier."
                     },
                     "reservation": {
-                        "$ref": "#\/components\/schemas\/Reservation"
+                        "$ref": "#/components/schemas/Reservation"
                     }
                 },
                 "description": "Request schema for the `createReservation` operation."
@@ -10320,7 +10320,7 @@
                         "description": "Resource (store) identifier."
                     },
                     "reservation": {
-                        "$ref": "#\/components\/schemas\/Reservation"
+                        "$ref": "#/components/schemas/Reservation"
                     }
                 },
                 "description": "Request schema for the `updateReservation` operation."
@@ -10329,10 +10329,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/AppointmentSlotReport"
+                        "$ref": "#/components/schemas/AppointmentSlotReport"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response of fetching appointment slots based on service context."
@@ -10372,7 +10372,7 @@
                         "type": "array",
                         "description": "A list of time windows along with associated capacity in which the service can be performed.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/AppointmentSlot"
+                            "$ref": "#/components/schemas/AppointmentSlot"
                         }
                     }
                 },
@@ -10420,27 +10420,27 @@
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "TIFF",
-                                "description": "To be uploaded POA is of type image\/tiff."
+                                "description": "To be uploaded POA is of type image/tiff."
                             },
                             {
                                 "value": "JPG",
-                                "description": "To be uploaded POA is of type image\/jpg."
+                                "description": "To be uploaded POA is of type image/jpg."
                             },
                             {
                                 "value": "PNG",
-                                "description": "To be uploaded POA is of type image\/png."
+                                "description": "To be uploaded POA is of type image/png."
                             },
                             {
                                 "value": "JPEG",
-                                "description": "To be uploaded POA is of type image\/jpeg."
+                                "description": "To be uploaded POA is of type image/jpeg."
                             },
                             {
                                 "value": "GIF",
-                                "description": "To be uploaded POA is of type image\/gif."
+                                "description": "To be uploaded POA is of type image/gif."
                             },
                             {
                                 "value": "PDF",
-                                "description": "To be uploaded POA is of type application\/pdf."
+                                "description": "To be uploaded POA is of type application/pdf."
                             }
                         ]
                     },
@@ -10452,7 +10452,7 @@
                         "format": "int64"
                     },
                     "contentMD5": {
-                        "pattern": "^[A-Za-z0-9\\\\+\/]{22}={2}$",
+                        "pattern": "^[A-Za-z0-9\\\\+/]{22}={2}$",
                         "type": "string",
                         "description": "An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit."
                     }
@@ -10463,10 +10463,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/ServiceDocumentUploadDestination"
+                        "$ref": "#/components/schemas/ServiceDocumentUploadDestination"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the `createServiceDocumentUploadDestination` operation."
@@ -10488,7 +10488,7 @@
                         "description": "The URL to which to upload the file."
                     },
                     "encryptionDetails": {
-                        "$ref": "#\/components\/schemas\/EncryptionDetails"
+                        "$ref": "#/components/schemas/EncryptionDetails"
                     },
                     "headers": {
                         "type": "object",

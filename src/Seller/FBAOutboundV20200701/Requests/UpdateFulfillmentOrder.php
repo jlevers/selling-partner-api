@@ -20,7 +20,7 @@ class UpdateFulfillmentOrder extends Request
 
     /**
      * @param  string  $sellerFulfillmentOrderId  The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @param  UpdateFulfillmentOrderRequest  $updateFulfillmentOrderRequest  The request body schema for the updateFulfillmentOrder operation.
+     * @param  UpdateFulfillmentOrderRequest  $updateFulfillmentOrderRequest  The request body schema for the `updateFulfillmentOrder` operation.
      */
     public function __construct(
         protected string $sellerFulfillmentOrderId,

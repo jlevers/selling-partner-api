@@ -23,7 +23,7 @@ class DeleteSubscriptionById extends Request
      * @param  string  $subscriptionId  The identifier for the subscription that you want to delete.
      * @param  string  $notificationType  The type of notification.
      *
-     *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
+     *  For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
      */
     public function __construct(
         protected string $subscriptionId,

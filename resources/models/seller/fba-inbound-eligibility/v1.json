@@ -5,26 +5,26 @@
         "description": "With the FBA Inbound Eligibility API, you can build applications that let sellers get eligibility previews for items before shipping them to Amazon's fulfillment centers. With this API you can find out if an item is eligible for inbound shipment to Amazon's fulfillment centers in a specific marketplace. You can also find out if an item is eligible for using the manufacturer barcode for FBA inventory tracking. Sellers can use this information to inform their decisions about which items to ship Amazon's fulfillment centers.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v1"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/fba\/inbound\/v1\/eligibility\/itemPreview": {
+        "/fba/inbound/v1/eligibility/itemPreview": {
             "get": {
                 "tags": [
                     "FBAInboundEligibilityV1"
                 ],
-                "description": "This operation gets an eligibility preview for an item that you specify. You can specify the type of eligibility preview that you want (INBOUND or COMMINGLING). For INBOUND previews, you can specify the marketplace in which you want to determine the item's eligibility.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "This operation gets an eligibility preview for an item that you specify. You can specify the type of eligibility preview that you want (INBOUND or COMMINGLING). For INBOUND previews, you can specify the marketplace in which you want to determine the item's eligibility.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getItemEligibilityPreview",
                 "parameters": [
                     {
@@ -82,9 +82,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetItemEligibilityPreviewResponse"
+                                    "$ref": "#/components/schemas/GetItemEligibilityPreviewResponse"
                                 }
                             }
                         },
@@ -127,9 +127,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetItemEligibilityPreviewResponse"
+                                    "$ref": "#/components/schemas/GetItemEligibilityPreviewResponse"
                                 }
                             }
                         },
@@ -172,9 +172,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetItemEligibilityPreviewResponse"
+                                    "$ref": "#/components/schemas/GetItemEligibilityPreviewResponse"
                                 }
                             }
                         },
@@ -211,9 +211,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetItemEligibilityPreviewResponse"
+                                    "$ref": "#/components/schemas/GetItemEligibilityPreviewResponse"
                                 }
                             }
                         },
@@ -256,9 +256,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetItemEligibilityPreviewResponse"
+                                    "$ref": "#/components/schemas/GetItemEligibilityPreviewResponse"
                                 }
                             }
                         },
@@ -301,9 +301,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetItemEligibilityPreviewResponse"
+                                    "$ref": "#/components/schemas/GetItemEligibilityPreviewResponse"
                                 }
                             }
                         },
@@ -346,9 +346,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetItemEligibilityPreviewResponse"
+                                    "$ref": "#/components/schemas/GetItemEligibilityPreviewResponse"
                                 }
                             }
                         },
@@ -391,9 +391,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetItemEligibilityPreviewResponse"
+                                    "$ref": "#/components/schemas/GetItemEligibilityPreviewResponse"
                                 }
                             }
                         },
@@ -429,10 +429,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/ItemEligibilityPreview"
+                        "$ref": "#/components/schemas/ItemEligibilityPreview"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getItemEligibilityPreview operation."
@@ -589,7 +589,7 @@
                                 },
                                 {
                                     "value": "FBA_INB_0035",
-                                    "description": "Expiration-dated\/lot-controlled product needs to be labeled. This product requires labeling to be received at our fulfillment centers."
+                                    "description": "Expiration-dated/lot-controlled product needs to be labeled. This product requires labeling to be received at our fulfillment centers."
                                 },
                                 {
                                     "value": "FBA_INB_0036",
@@ -645,7 +645,7 @@
                                 },
                                 {
                                     "value": "FBA_INB_0095",
-                                    "description": "The barcode (UPC\/EAN\/JAN\/ISBN) for this product is associated with more than one product in our fulfillment system. This product must be removed. You can send in new inventory by creating a new listing for this product that requires product labels."
+                                    "description": "The barcode (UPC/EAN/JAN/ISBN) for this product is associated with more than one product in our fulfillment system. This product must be removed. You can send in new inventory by creating a new listing for this product that requires product labels."
                                 },
                                 {
                                     "value": "FBA_INB_0097",
@@ -665,7 +665,7 @@
                                 },
                                 {
                                     "value": "FBA_INB_0103",
-                                    "description": "This is an expiration-dated\/lot-controlled product that cannot be handled at this time."
+                                    "description": "This is an expiration-dated/lot-controlled product that cannot be handled at this time."
                                 },
                                 {
                                     "value": "FBA_INB_0104",
@@ -689,7 +689,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Error": {

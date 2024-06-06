@@ -24,7 +24,7 @@ final class OrderAcknowledgementItem extends Dto
         public readonly AcknowledgementStatus $acknowledgementStatus,
         public readonly PartyIdentification $sellingParty,
         public readonly PartyIdentification $shipFromParty,
-        public readonly ?array $itemAcknowledgements = null,
+        public readonly array $itemAcknowledgements,
     ) {
     }
 }

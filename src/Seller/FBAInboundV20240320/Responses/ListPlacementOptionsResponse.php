@@ -13,7 +13,7 @@ final class ListPlacementOptionsResponse extends Response
     protected static array $complexArrayTypes = ['placementOptions' => [PlacementOptionSummary::class]];
 
     /**
-     * @param  PlacementOptionSummary[]  $placementOptions  Placement options for the inbound plan. This property will be populated when it has been generated via the corresponding endpoint. If there is a chosen placement option, that will be the only returned option. Query the placement option for more details.
+     * @param  PlacementOptionSummary[]  $placementOptions  Placement options for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, that will be the only returned option. Query the placement option for more details.
      * @param  ?Pagination  $pagination  Contains tokens to fetch from a certain page.
      */
     public function __construct(

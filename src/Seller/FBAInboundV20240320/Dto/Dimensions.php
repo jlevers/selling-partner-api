@@ -9,10 +9,10 @@ use SellingPartnerApi\Dto;
 final class Dimensions extends Dto
 {
     /**
-     * @param  float  $height  Height.
-     * @param  float  $length  Length.
+     * @param  float  $height  The height of a package.
+     * @param  float  $length  The length of a package.
      * @param  string  $unitOfMeasurement  Unit of linear measure.
-     * @param  float  $width  Width.
+     * @param  float  $width  The width of a package.
      */
     public function __construct(
         public readonly float $height,

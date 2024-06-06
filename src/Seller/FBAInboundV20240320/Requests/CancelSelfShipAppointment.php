@@ -20,22 +20,20 @@ class CancelSelfShipAppointment extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
-     * @param  string  $slotId  Identifier to a self-ship appointment slot.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      * @param  CancelSelfShipAppointmentRequest  $cancelSelfShipAppointmentRequest  The `cancelSelfShipAppointment` request.
      */
     public function __construct(
         protected string $inboundPlanId,
         protected string $shipmentId,
-        protected string $slotId,
         public CancelSelfShipAppointmentRequest $cancelSelfShipAppointmentRequest,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/inbound/fba/2024-03-20/inboundPlans/{$this->inboundPlanId}/shipments/{$this->shipmentId}/selfShipAppointmentSlots/{$this->slotId}/cancellation";
+        return "/inbound/fba/2024-03-20/inboundPlans/{$this->inboundPlanId}/shipments/{$this->shipmentId}/selfShipAppointmentCancellation";
     }
 
     public function createDtoFromResponse(Response $response): CancelSelfShipAppointmentResponse|ErrorList
@@ -43,7 +41,7 @@ class CancelSelfShipAppointment extends Request
         $status = $response->status();
         $responseCls = match ($status) {
             202 => CancelSelfShipAppointmentResponse::class,
-            400, 500, 403, 404, 413, 415, 429, 503 => ErrorList::class,
+            400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

@@ -9,7 +9,7 @@ use SellingPartnerApi\Dto;
 final class FeatureSku extends Dto
 {
     /**
-     * @param  ?string  $sellerSku  Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+     * @param  ?string  $sellerSku  Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller's SellerId, which is included with every operation that you submit.
      * @param  ?string  $fnSku  The unique SKU used by Amazon's fulfillment network.
      * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
      * @param  ?float  $skuCount  The number of SKUs available for this service.

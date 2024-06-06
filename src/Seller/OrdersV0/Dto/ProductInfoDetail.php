@@ -11,10 +11,10 @@ final class ProductInfoDetail extends Dto
     protected static array $attributeMap = ['numberOfItems' => 'NumberOfItems'];
 
     /**
-     * @param  ?int  $numberOfItems  The total number of items that are included in the ASIN.
+     * @param  ?string  $numberOfItems  The total number of items that are included in the ASIN.
      */
     public function __construct(
-        public readonly ?int $numberOfItems = null,
+        public readonly ?string $numberOfItems = null,
     ) {
     }
 }

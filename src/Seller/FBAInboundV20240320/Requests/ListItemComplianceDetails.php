@@ -19,7 +19,7 @@ class ListItemComplianceDetails extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  array  $mskus  List of merchant SKUs, a merchant-supplied identifier for a specific SKU.
+     * @param  array  $mskus  List of merchant SKUs - a merchant-supplied identifier for a specific SKU.
      * @param  string  $marketplaceId  The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values.
      */
     public function __construct(
@@ -43,7 +43,7 @@ class ListItemComplianceDetails extends Request
         $status = $response->status();
         $responseCls = match ($status) {
             200 => ListItemComplianceDetailsResponse::class,
-            400, 500, 403, 404, 413, 415, 429, 503 => ErrorList::class,
+            400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

@@ -18,7 +18,7 @@ class GetPackageTrackingDetails extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  int  $packageNumber  The unencrypted package identifier returned by the getFulfillmentOrder operation.
+     * @param  int  $packageNumber  The unencrypted package identifier returned by the `getFulfillmentOrder` operation.
      */
     public function __construct(
         protected int $packageNumber,

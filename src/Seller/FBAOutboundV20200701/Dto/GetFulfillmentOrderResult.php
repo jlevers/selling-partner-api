@@ -13,6 +13,7 @@ final class GetFulfillmentOrderResult extends Dto
         'returnItems' => [ReturnItem::class],
         'returnAuthorizations' => [ReturnAuthorization::class],
         'fulfillmentShipments' => [FulfillmentShipment::class],
+        'paymentInformation' => [PaymentInformation::class],
     ];
 
     /**
@@ -21,6 +22,7 @@ final class GetFulfillmentOrderResult extends Dto
      * @param  ReturnItem[]  $returnItems  An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
      * @param  ReturnAuthorization[]  $returnAuthorizations  An array of return authorization information.
      * @param  FulfillmentShipment[]|null  $fulfillmentShipments  An array of fulfillment shipment information.
+     * @param  PaymentInformation[]|null  $paymentInformation  An array of various payment attributes related to this fulfillment order.
      */
     public function __construct(
         public readonly FulfillmentOrder $fulfillmentOrder,
@@ -28,6 +30,7 @@ final class GetFulfillmentOrderResult extends Dto
         public readonly array $returnItems,
         public readonly array $returnAuthorizations,
         public readonly ?array $fulfillmentShipments = null,
+        public readonly ?array $paymentInformation = null,
     ) {
     }
 }

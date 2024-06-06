@@ -24,8 +24,8 @@ class GenerateSelfShipAppointmentSlots extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      * @param  GenerateSelfShipAppointmentSlotsRequest  $generateSelfShipAppointmentSlotsRequest  The `generateSelfShipAppointmentSlots` request.
      */
     public function __construct(
@@ -45,7 +45,7 @@ class GenerateSelfShipAppointmentSlots extends Request implements HasBody
         $status = $response->status();
         $responseCls = match ($status) {
             201 => GenerateSelfShipAppointmentSlotsResponse::class,
-            400, 500, 403, 404, 413, 415, 429, 503 => ErrorList::class,
+            400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

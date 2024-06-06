@@ -17,7 +17,7 @@ final class InventoryUpdate extends Dto
     public function __construct(
         public readonly PartyIdentification $sellingParty,
         public readonly bool $isFullUpdate,
-        public readonly ?array $items = null,
+        public readonly array $items,
     ) {
     }
 }

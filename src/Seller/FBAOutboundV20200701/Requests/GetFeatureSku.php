@@ -19,7 +19,7 @@ class GetFeatureSku extends Request
 
     /**
      * @param  string  $featureName  The name of the feature.
-     * @param  string  $sellerSku  Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+     * @param  string  $sellerSku  Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller's `SellerId`, which is included with every operation that you submit.
      * @param  string  $marketplaceId  The marketplace for which to return the count.
      */
     public function __construct(

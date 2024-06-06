@@ -16,7 +16,7 @@ final class Scenario extends Dto
      */
     public function __construct(
         public readonly string $scenarioId,
-        public readonly ?array $orders = null,
+        public readonly array $orders,
     ) {
     }
 }

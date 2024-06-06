@@ -9,10 +9,10 @@ use SellingPartnerApi\Dto;
 final class ItemInput extends Dto
 {
     /**
-     * @param  string  $labelOwner  Specifies who will label the items. Options include `AMAZON` and `SELLER`.
-     * @param  string  $msku  The merchant SKU.
-     * @param  string  $prepOwner  In some situations, special preparations are required for items and this field reflects the owner of the preparations. Options include `AMAZON` or `SELLER`.
-     * @param  int  $quantity  The number of units of the specified MSKU that will be shipped.
+     * @param  string  $labelOwner  Specifies who will label the items. Options include `AMAZON`, `SELLER` or `NONE`.
+     * @param  string  $msku  Merchant SKU.
+     * @param  string  $prepOwner  In some situations, special preparations are required for items and this field reflects the owner of the preparations. Options include `AMAZON`, `SELLER` or `NONE`.
+     * @param  int  $quantity  The number of units of the specified msku that will be shipped.
      * @param  ?string  $expiration  The expiration date of the MSKU in ISO 8601 format. The same MSKU with different expiration dates cannot go into the same box.
      * @param  ?string  $manufacturingLotCode  The manufacturing lot code.
      */

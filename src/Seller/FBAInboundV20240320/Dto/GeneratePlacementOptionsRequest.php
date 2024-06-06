@@ -11,7 +11,7 @@ final class GeneratePlacementOptionsRequest extends Dto
     protected static array $complexArrayTypes = ['customPlacement' => [CustomPlacementInput::class]];
 
     /**
-     * @param  CustomPlacementInput[]|null  $customPlacement  Custom placements options to be added to the plan.
+     * @param  CustomPlacementInput[]|null  $customPlacement  Custom placement options to be added to the plan.
      */
     public function __construct(
         public readonly ?array $customPlacement = null,

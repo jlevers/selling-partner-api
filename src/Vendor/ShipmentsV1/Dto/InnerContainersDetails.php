@@ -12,7 +12,7 @@ final class InnerContainersDetails extends Dto
 
     /**
      * @param  ?int  $containerCount  Total containers as part of the shipment
-     * @param  ContainerSequenceNumbers[]  $containerSequenceNumbers  Container sequence numbers that are involved in this shipment.
+     * @param  ContainerSequenceNumbers[]|null  $containerSequenceNumbers  Container sequence numbers that are involved in this shipment.
      */
     public function __construct(
         public readonly ?int $containerCount = null,

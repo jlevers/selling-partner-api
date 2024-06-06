@@ -25,8 +25,8 @@ class CreateSubscription extends Request implements HasBody
     /**
      * @param  string  $notificationType  The type of notification.
      *
-     *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
-     * @param  CreateSubscriptionRequest  $createSubscriptionRequest  The request schema for the createSubscription operation.
+     *  For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
+     * @param  CreateSubscriptionRequest  $createSubscriptionRequest  The request schema for the `createSubscription` operation.
      */
     public function __construct(
         protected string $notificationType,

@@ -26,7 +26,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Requests\UpdateFulfillmentOrde
 class Api extends BaseResource
 {
     /**
-     * @param  GetFulfillmentPreviewRequest  $getFulfillmentPreviewRequest  The request body schema for the getFulfillmentPreview operation.
+     * @param  GetFulfillmentPreviewRequest  $getFulfillmentPreviewRequest  The request body schema for the `getFulfillmentPreview` operation.
      */
     public function getFulfillmentPreview(GetFulfillmentPreviewRequest $getFulfillmentPreviewRequest): Response
     {
@@ -47,7 +47,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  CreateFulfillmentOrderRequest  $createFulfillmentOrderRequest  The request body schema for the createFulfillmentOrder operation.
+     * @param  CreateFulfillmentOrderRequest  $createFulfillmentOrderRequest  The request body schema for the `createFulfillmentOrder` operation.
      */
     public function createFulfillmentOrder(CreateFulfillmentOrderRequest $createFulfillmentOrderRequest): Response
     {
@@ -57,7 +57,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  int  $packageNumber  The unencrypted package identifier returned by the getFulfillmentOrder operation.
+     * @param  int  $packageNumber  The unencrypted package identifier returned by the `getFulfillmentOrder` operation.
      */
     public function getPackageTrackingDetails(int $packageNumber): Response
     {
@@ -68,24 +68,24 @@ class Api extends BaseResource
 
     /**
      * @param  string  $sellerSku  The seller SKU for which return reason codes are required.
-     * @param  string  $language  The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
      * @param  ?string  $marketplaceId  The marketplace for which the seller wants return reason codes.
      * @param  ?string  $sellerFulfillmentOrderId  The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
+     * @param  ?string  $language  The language that the `TranslatedDescription` property of the `ReasonCodeDetails` response object should be translated into.
      */
     public function listReturnReasonCodes(
         string $sellerSku,
-        string $language,
         ?string $marketplaceId = null,
         ?string $sellerFulfillmentOrderId = null,
+        ?string $language = null,
     ): Response {
-        $request = new ListReturnReasonCodes($sellerSku, $language, $marketplaceId, $sellerFulfillmentOrderId);
+        $request = new ListReturnReasonCodes($sellerSku, $marketplaceId, $sellerFulfillmentOrderId, $language);
 
         return $this->connector->send($request);
     }
 
     /**
-     * @param  string  $sellerFulfillmentOrderId  An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items.
-     * @param  CreateFulfillmentReturnRequest  $createFulfillmentReturnRequest  The createFulfillmentReturn operation creates a fulfillment return for items that were fulfilled using the createFulfillmentOrder operation. For calls to createFulfillmentReturn, you must include ReturnReasonCode values returned by a previous call to the listReturnReasonCodes operation.
+     * @param  string  $sellerFulfillmentOrderId  An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct `SellerFulfillmentOrderId` value based on the buyer's request to return items.
+     * @param  CreateFulfillmentReturnRequest  $createFulfillmentReturnRequest  The `createFulfillmentReturn` operation creates a fulfillment return for items that were fulfilled using the `createFulfillmentOrder` operation. For calls to `createFulfillmentReturn`, you must include `ReturnReasonCode` values returned by a previous call to the `listReturnReasonCodes` operation.
      */
     public function createFulfillmentReturn(
         string $sellerFulfillmentOrderId,
@@ -108,7 +108,7 @@ class Api extends BaseResource
 
     /**
      * @param  string  $sellerFulfillmentOrderId  The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @param  UpdateFulfillmentOrderRequest  $updateFulfillmentOrderRequest  The request body schema for the updateFulfillmentOrder operation.
+     * @param  UpdateFulfillmentOrderRequest  $updateFulfillmentOrderRequest  The request body schema for the `updateFulfillmentOrder` operation.
      */
     public function updateFulfillmentOrder(
         string $sellerFulfillmentOrderId,
@@ -131,7 +131,7 @@ class Api extends BaseResource
 
     /**
      * @param  string  $sellerFulfillmentOrderId  The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @param  SubmitFulfillmentOrderStatusUpdateRequest  $submitFulfillmentOrderStatusUpdateRequest  The request body schema for the submitFulfillmentOrderStatusUpdate operation.
+     * @param  SubmitFulfillmentOrderStatusUpdateRequest  $submitFulfillmentOrderStatusUpdateRequest  The request body schema for the `submitFulfillmentOrderStatusUpdate` operation.
      */
     public function submitFulfillmentOrderStatusUpdate(
         string $sellerFulfillmentOrderId,
@@ -166,7 +166,7 @@ class Api extends BaseResource
 
     /**
      * @param  string  $featureName  The name of the feature.
-     * @param  string  $sellerSku  Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+     * @param  string  $sellerSku  Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller's `SellerId`, which is included with every operation that you submit.
      * @param  string  $marketplaceId  The marketplace for which to return the count.
      */
     public function getFeatureSku(string $featureName, string $sellerSku, string $marketplaceId): Response

@@ -25,7 +25,7 @@ class UpdateShipmentStatus extends Request implements HasBody
 
     /**
      * @param  string  $orderId  An Amazon-defined order identifier, in 3-7-7 format.
-     * @param  UpdateShipmentStatusRequest  $updateShipmentStatusRequest  The request body for the updateShipmentStatus operation.
+     * @param  UpdateShipmentStatusRequest  $updateShipmentStatusRequest  The request body for the `updateShipmentStatus` operation.
      */
     public function __construct(
         protected string $orderId,

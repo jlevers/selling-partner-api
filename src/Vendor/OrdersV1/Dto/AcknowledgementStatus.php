@@ -14,7 +14,7 @@ final class AcknowledgementStatus extends Dto
      * @param  ?string  $confirmationStatus  Confirmation status of line item.
      * @param  ?ItemQuantity  $acceptedQuantity  Details of quantity ordered.
      * @param  ?ItemQuantity  $rejectedQuantity  Details of quantity ordered.
-     * @param  AcknowledgementStatusDetails[]  $acknowledgementStatusDetails  Details of item quantity confirmed.
+     * @param  AcknowledgementStatusDetails[]|null  $acknowledgementStatusDetails  Details of item quantity confirmed.
      */
     public function __construct(
         public readonly ?string $confirmationStatus = null,

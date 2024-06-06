@@ -47,6 +47,7 @@ final class OrderItem extends Dto
         'serialNumbers' => 'SerialNumbers',
         'substitutionPreferences' => 'SubstitutionPreferences',
         'measurement' => 'Measurement',
+        'shippingConstraints' => 'ShippingConstraints',
     ];
 
     protected static array $complexArrayTypes = ['associatedItems' => [AssociatedItem::class]];
@@ -72,19 +73,21 @@ final class OrderItem extends Dto
      * @param  ?string[]  $promotionIds  A list of promotion identifiers provided by the seller when the promotions were created.
      * @param  ?Money  $codFee  The monetary value of the order.
      * @param  ?Money  $codFeeDiscount  The monetary value of the order.
-     * @param  ?bool  $isGift  When true, the item is a gift.
+     * @param  ?string  $isGift  Indicates whether the item is a gift.
+     *
+     * **Possible values**: `true`, `false`.
      * @param  ?string  $conditionNote  The condition of the item as described by the seller.
      * @param  ?string  $conditionId  The condition of the item.
      *
-     * Possible values: New, Used, Collectible, Refurbished, Preorder, Club.
+     * **Possible values**: `New`, `Used`, `Collectible`, `Refurbished`, `Preorder`, `Club`.
      * @param  ?string  $conditionSubtypeId  The subcondition of the item.
      *
-     * Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other.
-     * @param  ?string  $scheduledDeliveryStartDate  The start date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
-     * @param  ?string  $scheduledDeliveryEndDate  The end date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
-     * @param  ?string  $priceDesignation  Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).
+     * **Possible values**: `New`, `Mint`, `Very Good`, `Good`, `Acceptable`, `Poor`, `Club`, `OEM`, `Warranty`, `Refurbished Warranty`, `Refurbished`, `Open Box`, `Any`, `Other`.
+     * @param  ?string  $scheduledDeliveryStartDate  The start date of the scheduled delivery window in the time zone of the order destination. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
+     * @param  ?string  $scheduledDeliveryEndDate  The end date of the scheduled delivery window in the time zone of the order destination. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
+     * @param  ?string  $priceDesignation  Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to [Amazon Business](https://business.amazon.com).
      *
-     * Possible values: BusinessPrice - A special price that is available only for Amazon Business orders.
+     * **Possible values**: `BusinessPrice` - A special price that is available only for Amazon Business orders.
      * @param  ?TaxCollection  $taxCollection  Information about withheld taxes.
      * @param  ?bool  $serialNumberRequired  When true, the product type for this item has a serial number.
      *
@@ -100,8 +103,9 @@ final class OrderItem extends Dto
      * @param  ?ItemBuyerInfo  $buyerInfo  A single item's buyer information.
      * @param  ?BuyerRequestedCancel  $buyerRequestedCancel  Information about whether or not a buyer requested cancellation.
      * @param  ?string[]  $serialNumbers  A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only.
-     * @param  ?SubstitutionPreferences  $substitutionPreferences
-     * @param  ?Measurement  $measurement
+     * @param  ?SubstitutionPreferences  $substitutionPreferences  Substitution preferences for an order item.
+     * @param  ?Measurement  $measurement  Measurement information for an order item.
+     * @param  ?ShippingConstraints  $shippingConstraints  Delivery constraints applicable to this order.
      */
     public function __construct(
         public readonly string $asin,
@@ -124,7 +128,7 @@ final class OrderItem extends Dto
         public readonly ?array $promotionIds = null,
         public readonly ?Money $codFee = null,
         public readonly ?Money $codFeeDiscount = null,
-        public readonly ?bool $isGift = null,
+        public readonly ?string $isGift = null,
         public readonly ?string $conditionNote = null,
         public readonly ?string $conditionId = null,
         public readonly ?string $conditionSubtypeId = null,
@@ -142,6 +146,7 @@ final class OrderItem extends Dto
         public readonly ?array $serialNumbers = null,
         public readonly ?SubstitutionPreferences $substitutionPreferences = null,
         public readonly ?Measurement $measurement = null,
+        public readonly ?ShippingConstraints $shippingConstraints = null,
     ) {
     }
 }

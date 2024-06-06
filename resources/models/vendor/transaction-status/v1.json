@@ -5,26 +5,26 @@
         "description": "The Selling Partner API for Retail Procurement Transaction Status provides programmatic access to status information on specific asynchronous POST transactions for vendors.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v1"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/vendor\/transactions\/v1\/transactions\/{transactionId}": {
+        "/vendor/transactions/v1/transactions/{transactionId}": {
             "get": {
                 "tags": [
                     "TransactionStatusV1"
                 ],
-                "description": "Returns the status of the transaction that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 20 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the status of the transaction that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 20 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getTransaction",
                 "parameters": [
                     {
@@ -55,9 +55,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTransactionResponse"
+                                    "$ref": "#/components/schemas/GetTransactionResponse"
                                 },
                                 "example": {
                                     "payload": {
@@ -142,9 +142,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTransactionResponse"
+                                    "$ref": "#/components/schemas/GetTransactionResponse"
                                 }
                             }
                         },
@@ -186,9 +186,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTransactionResponse"
+                                    "$ref": "#/components/schemas/GetTransactionResponse"
                                 }
                             }
                         }
@@ -204,9 +204,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTransactionResponse"
+                                    "$ref": "#/components/schemas/GetTransactionResponse"
                                 }
                             }
                         }
@@ -222,9 +222,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTransactionResponse"
+                                    "$ref": "#/components/schemas/GetTransactionResponse"
                                 }
                             }
                         }
@@ -246,9 +246,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTransactionResponse"
+                                    "$ref": "#/components/schemas/GetTransactionResponse"
                                 }
                             }
                         }
@@ -270,9 +270,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTransactionResponse"
+                                    "$ref": "#/components/schemas/GetTransactionResponse"
                                 }
                             }
                         }
@@ -294,9 +294,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTransactionResponse"
+                                    "$ref": "#/components/schemas/GetTransactionResponse"
                                 }
                             }
                         }
@@ -318,9 +318,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTransactionResponse"
+                                    "$ref": "#/components/schemas/GetTransactionResponse"
                                 }
                             }
                         }
@@ -335,10 +335,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/TransactionStatus"
+                        "$ref": "#/components/schemas/TransactionStatus"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getTransaction operation."
@@ -347,7 +347,7 @@
                 "type": "object",
                 "properties": {
                     "transactionStatus": {
-                        "$ref": "#\/components\/schemas\/Transaction"
+                        "$ref": "#/components/schemas/Transaction"
                     }
                 }
             },
@@ -386,7 +386,7 @@
                         ]
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The transaction status."
@@ -395,7 +395,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Error": {

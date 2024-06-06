@@ -11,7 +11,7 @@ final class SubmitShipmentStatusUpdatesRequest extends Dto
     protected static array $complexArrayTypes = ['shipmentStatusUpdates' => [ShipmentStatusUpdate::class]];
 
     /**
-     * @param  ShipmentStatusUpdate[]  $shipmentStatusUpdates
+     * @param  ShipmentStatusUpdate[]|null  $shipmentStatusUpdates
      */
     public function __construct(
         public readonly ?array $shipmentStatusUpdates = null,

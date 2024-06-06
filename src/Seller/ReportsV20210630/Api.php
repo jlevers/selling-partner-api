@@ -23,9 +23,9 @@ class Api extends BaseResource
      * @param  ?array  $processingStatuses  A list of processing statuses used to filter reports.
      * @param  ?array  $marketplaceIds  A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify.
      * @param  ?int  $pageSize  The maximum number of reports to return in a single call.
-     * @param  ?DateTime  $createdSince  The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
-     * @param  ?DateTime  $createdUntil  The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now.
-     * @param  ?string  $nextToken  A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
+     * @param  ?DateTime  $createdSince  The earliest report creation date and time for reports to include in the response, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
+     * @param  ?DateTime  $createdUntil  The latest report creation date and time for reports to include in the response, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. The default is now.
+     * @param  ?string  $nextToken  A string token returned in the response to your previous request. `nextToken` is returned when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the `getReports` operation and include this token as the only parameter. Specifying `nextToken` with any other parameters will cause the request to fail.
      */
     public function getReports(
         ?array $reportTypes = null,
@@ -81,6 +81,9 @@ class Api extends BaseResource
         return $this->connector->send($request);
     }
 
+    /**
+     * @param  CreateReportScheduleSpecification  $createReportScheduleSpecification  Information required to create the report schedule.
+     */
     public function createReportSchedule(CreateReportScheduleSpecification $createReportScheduleSpecification): Response
     {
         $request = new CreateReportSchedule($createReportScheduleSpecification);

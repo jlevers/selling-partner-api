@@ -9,8 +9,9 @@ use SellingPartnerApi\Dto;
 final class Price extends Dto
 {
     /**
-     * @param  ?MoneyType  $shippingPrice
-     * @param  ?Points  $points
+     * @param  MoneyType  $listingPrice  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  ?MoneyType  $shippingPrice  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  ?Points  $points  The number of Amazon Points offered with the purchase of an item, and their monetary value.
      */
     public function __construct(
         public readonly MoneyType $listingPrice,

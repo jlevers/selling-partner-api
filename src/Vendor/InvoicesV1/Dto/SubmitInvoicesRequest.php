@@ -11,7 +11,7 @@ final class SubmitInvoicesRequest extends Dto
     protected static array $complexArrayTypes = ['invoices' => [Invoice::class]];
 
     /**
-     * @param  Invoice[]  $invoices
+     * @param  Invoice[]|null  $invoices
      */
     public function __construct(
         public readonly ?array $invoices = null,

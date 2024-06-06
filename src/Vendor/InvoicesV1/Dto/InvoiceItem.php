@@ -23,9 +23,9 @@ final class InvoiceItem extends Dto
      * @param  ?string  $purchaseOrderNumber  The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.
      * @param  ?string  $hsnCode  HSN Tax code. The HSN number cannot contain alphabets.
      * @param  ?CreditNoteDetails  $creditNoteDetails  References required in order to process a credit note. This information is required only if InvoiceType is CreditNote.
-     * @param  TaxDetails[]  $taxDetails  Total tax amount details for all line items.
-     * @param  ChargeDetails[]  $chargeDetails  Total charge amount details for all line items.
-     * @param  AllowanceDetails[]  $allowanceDetails  Total allowance amount details for all line items.
+     * @param  TaxDetails[]|null  $taxDetails  Total tax amount details for all line items.
+     * @param  ChargeDetails[]|null  $chargeDetails  Total charge amount details for all line items.
+     * @param  AllowanceDetails[]|null  $allowanceDetails  Total allowance amount details for all line items.
      */
     public function __construct(
         public readonly int $itemSequenceNumber,

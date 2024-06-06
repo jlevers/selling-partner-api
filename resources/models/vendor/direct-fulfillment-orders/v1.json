@@ -5,26 +5,26 @@
         "description": "The Selling Partner API for Direct Fulfillment Orders provides programmatic access to a direct fulfillment vendor's order data.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v1"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/vendor\/directFulfillment\/orders\/v1\/purchaseOrders": {
+        "/vendor/directFulfillment/orders/v1/purchaseOrders": {
             "get": {
                 "tags": [
                     "DirectFulfillmentOrdersV1"
                 ],
-                "description": "Returns a list of purchase orders created during the time frame that you specify. You define the time frame using the createdAfter and createdBefore parameters. You must use both parameters. You can choose to get only the purchase order numbers by setting the includeDetails parameter to false. In that case, the operation returns a list of purchase order numbers. You can then call the getOrder operation to return the details of a specific order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a list of purchase orders created during the time frame that you specify. You define the time frame using the createdAfter and createdBefore parameters. You must use both parameters. You can choose to get only the purchase order numbers by setting the includeDetails parameter to false. In that case, the operation returns a list of purchase order numbers. You can then call the getOrder operation to return the details of a specific order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getOrders",
                 "parameters": [
                     {
@@ -99,7 +99,7 @@
                     {
                         "name": "createdAfter",
                         "in": "query",
-                        "description": "Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date\/time format.",
+                        "description": "Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -109,7 +109,7 @@
                     {
                         "name": "createdBefore",
                         "in": "query",
-                        "description": "Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date\/time format.",
+                        "description": "Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -185,9 +185,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrdersResponse"
+                                    "$ref": "#/components/schemas/GetOrdersResponse"
                                 }
                             }
                         },
@@ -1142,9 +1142,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrdersResponse"
+                                    "$ref": "#/components/schemas/GetOrdersResponse"
                                 }
                             }
                         },
@@ -1185,9 +1185,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrdersResponse"
+                                    "$ref": "#/components/schemas/GetOrdersResponse"
                                 }
                             }
                         }
@@ -1209,9 +1209,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrdersResponse"
+                                    "$ref": "#/components/schemas/GetOrdersResponse"
                                 }
                             }
                         }
@@ -1233,9 +1233,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrdersResponse"
+                                    "$ref": "#/components/schemas/GetOrdersResponse"
                                 }
                             }
                         }
@@ -1257,9 +1257,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrdersResponse"
+                                    "$ref": "#/components/schemas/GetOrdersResponse"
                                 }
                             }
                         }
@@ -1281,9 +1281,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrdersResponse"
+                                    "$ref": "#/components/schemas/GetOrdersResponse"
                                 }
                             }
                         }
@@ -1305,9 +1305,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrdersResponse"
+                                    "$ref": "#/components/schemas/GetOrdersResponse"
                                 }
                             }
                         }
@@ -1315,12 +1315,12 @@
                 }
             }
         },
-        "\/vendor\/directFulfillment\/orders\/v1\/purchaseOrders\/{purchaseOrderNumber}": {
+        "/vendor/directFulfillment/orders/v1/purchaseOrders/{purchaseOrderNumber}": {
             "get": {
                 "tags": [
                     "DirectFulfillmentOrdersV1"
                 ],
-                "description": "Returns purchase order information for the purchaseOrderNumber that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns purchase order information for the purchaseOrderNumber that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getOrder",
                 "parameters": [
                     {
@@ -1351,9 +1351,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponse"
+                                    "$ref": "#/components/schemas/GetOrderResponse"
                                 },
                                 "example": {
                                     "payload": {
@@ -1712,9 +1712,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponse"
+                                    "$ref": "#/components/schemas/GetOrderResponse"
                                 }
                             }
                         },
@@ -1758,9 +1758,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponse"
+                                    "$ref": "#/components/schemas/GetOrderResponse"
                                 }
                             }
                         }
@@ -1776,9 +1776,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponse"
+                                    "$ref": "#/components/schemas/GetOrderResponse"
                                 }
                             }
                         }
@@ -1800,9 +1800,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponse"
+                                    "$ref": "#/components/schemas/GetOrderResponse"
                                 }
                             }
                         }
@@ -1824,9 +1824,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponse"
+                                    "$ref": "#/components/schemas/GetOrderResponse"
                                 }
                             }
                         }
@@ -1848,9 +1848,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponse"
+                                    "$ref": "#/components/schemas/GetOrderResponse"
                                 }
                             }
                         }
@@ -1872,9 +1872,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponse"
+                                    "$ref": "#/components/schemas/GetOrderResponse"
                                 }
                             }
                         }
@@ -1896,9 +1896,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponse"
+                                    "$ref": "#/components/schemas/GetOrderResponse"
                                 }
                             }
                         }
@@ -1906,18 +1906,18 @@
                 }
             }
         },
-        "\/vendor\/directFulfillment\/orders\/v1\/acknowledgements": {
+        "/vendor/directFulfillment/orders/v1/acknowledgements": {
             "post": {
                 "tags": [
                     "DirectFulfillmentOrdersV1"
                 ],
-                "description": "Submits acknowledgements for one or more purchase orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Submits acknowledgements for one or more purchase orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "submitAcknowledgement",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/SubmitAcknowledgementRequest"
+                                "$ref": "#/components/schemas/SubmitAcknowledgementRequest"
                             }
                         }
                     },
@@ -1941,9 +1941,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitAcknowledgementResponse"
+                                    "$ref": "#/components/schemas/SubmitAcknowledgementResponse"
                                 }
                             }
                         },
@@ -2024,9 +2024,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitAcknowledgementResponse"
+                                    "$ref": "#/components/schemas/SubmitAcknowledgementResponse"
                                 }
                             }
                         },
@@ -2071,9 +2071,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitAcknowledgementResponse"
+                                    "$ref": "#/components/schemas/SubmitAcknowledgementResponse"
                                 }
                             }
                         }
@@ -2095,9 +2095,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitAcknowledgementResponse"
+                                    "$ref": "#/components/schemas/SubmitAcknowledgementResponse"
                                 }
                             }
                         }
@@ -2119,9 +2119,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitAcknowledgementResponse"
+                                    "$ref": "#/components/schemas/SubmitAcknowledgementResponse"
                                 }
                             }
                         }
@@ -2143,9 +2143,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitAcknowledgementResponse"
+                                    "$ref": "#/components/schemas/SubmitAcknowledgementResponse"
                                 }
                             }
                         }
@@ -2167,9 +2167,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitAcknowledgementResponse"
+                                    "$ref": "#/components/schemas/SubmitAcknowledgementResponse"
                                 }
                             }
                         }
@@ -2191,9 +2191,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitAcknowledgementResponse"
+                                    "$ref": "#/components/schemas/SubmitAcknowledgementResponse"
                                 }
                             }
                         }
@@ -2215,9 +2215,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitAcknowledgementResponse"
+                                    "$ref": "#/components/schemas/SubmitAcknowledgementResponse"
                                 }
                             }
                         }
@@ -2233,10 +2233,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/OrderList"
+                        "$ref": "#/components/schemas/OrderList"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getOrders operation."
@@ -2245,10 +2245,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Order"
+                        "$ref": "#/components/schemas/Order"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getOrder operation."
@@ -2257,12 +2257,12 @@
                 "type": "object",
                 "properties": {
                     "pagination": {
-                        "$ref": "#\/components\/schemas\/Pagination"
+                        "$ref": "#/components/schemas/Pagination"
                     },
                     "orders": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Order"
+                            "$ref": "#/components/schemas/Order"
                         }
                     }
                 }
@@ -2287,7 +2287,7 @@
                         "description": "The purchase order number for this order. Formatting Notes: alpha-numeric code."
                     },
                     "orderDetails": {
-                        "$ref": "#\/components\/schemas\/OrderDetails"
+                        "$ref": "#/components/schemas/OrderDetails"
                     }
                 }
             },
@@ -2310,7 +2310,7 @@
                     },
                     "orderDate": {
                         "type": "string",
-                        "description": "The date the order was placed. This field is expected to be in ISO-8601 date\/time format, for example:2018-07-16T23:00:00Z\/ 2018-07-16T23:00:00-05:00 \/2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.",
+                        "description": "The date the order was placed. This field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.",
                         "format": "date-time"
                     },
                     "orderStatus": {
@@ -2342,33 +2342,33 @@
                         ]
                     },
                     "shipmentDetails": {
-                        "$ref": "#\/components\/schemas\/ShipmentDetails"
+                        "$ref": "#/components/schemas/ShipmentDetails"
                     },
                     "taxTotal": {
                         "type": "object",
                         "properties": {
                             "taxLineItem": {
-                                "$ref": "#\/components\/schemas\/TaxLineItem"
+                                "$ref": "#/components/schemas/TaxLineItem"
                             }
                         }
                     },
                     "sellingParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "shipFromParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "shipToParty": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "billToParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "items": {
                         "type": "array",
                         "description": "A list of items in this purchase order.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/OrderItem"
+                            "$ref": "#/components/schemas/OrderItem"
                         }
                     }
                 },
@@ -2385,10 +2385,10 @@
                         "description": "Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details."
                     },
                     "address": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "taxInfo": {
-                        "$ref": "#\/components\/schemas\/TaxRegistrationDetails"
+                        "$ref": "#/components/schemas/TaxRegistrationDetails"
                     }
                 }
             },
@@ -2421,7 +2421,7 @@
                         "description": "Tax registration number for the party. For example, VAT ID."
                     },
                     "taxRegistrationAddress": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "taxRegistrationMessages": {
                         "type": "string",
@@ -2441,35 +2441,35 @@
                 "properties": {
                     "name": {
                         "type": "string",
-                        "description": "The name of the person, business or institution at that address."
+                        "description": "The name of the person, business or institution at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "attention": {
                         "type": "string",
-                        "description": "The attention name of the person at that address."
+                        "description": "The attention name of the person at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "addressLine1": {
                         "type": "string",
-                        "description": "First line of the address."
+                        "description": "First line of the address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "addressLine2": {
                         "type": "string",
-                        "description": "Additional address information, if required."
+                        "description": "Additional address information, if required. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "addressLine3": {
                         "type": "string",
-                        "description": "Additional address information, if required."
+                        "description": "Additional address information, if required. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "city": {
                         "type": "string",
-                        "description": "The city where the person, business or institution is located."
+                        "description": "The city where the person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "county": {
                         "type": "string",
-                        "description": "The county where person, business or institution is located."
+                        "description": "The county where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "district": {
                         "type": "string",
-                        "description": "The district where person, business or institution is located."
+                        "description": "The district where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "stateOrRegion": {
                         "type": "string",
@@ -2485,7 +2485,7 @@
                     },
                     "phone": {
                         "type": "string",
-                        "description": "The phone number of the person, business or institution located at that address."
+                        "description": "The phone number of the person, business or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     }
                 },
                 "description": "Address of the party."
@@ -2515,28 +2515,28 @@
                         "description": "Title for the item."
                     },
                     "orderedQuantity": {
-                        "$ref": "#\/components\/schemas\/ItemQuantity"
+                        "$ref": "#/components/schemas/ItemQuantity"
                     },
                     "scheduledDeliveryShipment": {
-                        "$ref": "#\/components\/schemas\/ScheduledDeliveryShipment"
+                        "$ref": "#/components/schemas/ScheduledDeliveryShipment"
                     },
                     "giftDetails": {
-                        "$ref": "#\/components\/schemas\/GiftDetails"
+                        "$ref": "#/components/schemas/GiftDetails"
                     },
                     "netPrice": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "taxDetails": {
                         "type": "object",
                         "properties": {
                             "taxLineItem": {
-                                "$ref": "#\/components\/schemas\/TaxLineItem"
+                                "$ref": "#/components/schemas/TaxLineItem"
                             }
                         },
                         "description": "Total tax details for the line item."
                     },
                     "totalPrice": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     }
                 }
             },
@@ -2548,7 +2548,7 @@
                         "description": "Three digit currency code in ISO 4217 format. String of length 3."
                     },
                     "amount": {
-                        "$ref": "#\/components\/schemas\/Decimal"
+                        "$ref": "#/components/schemas/Decimal"
                     }
                 },
                 "description": "An amount of money, including units in the form of currency."
@@ -2561,10 +2561,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/TransactionId"
+                        "$ref": "#/components/schemas/TransactionId"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the submitAcknowledgement operation."
@@ -2582,7 +2582,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "SubmitAcknowledgementRequest": {
@@ -2592,7 +2592,7 @@
                         "type": "array",
                         "description": "A list of one or more purchase orders.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/OrderAcknowledgementItem"
+                            "$ref": "#/components/schemas/OrderAcknowledgementItem"
                         }
                     }
                 },
@@ -2620,23 +2620,23 @@
                     },
                     "acknowledgementDate": {
                         "type": "string",
-                        "description": "The date and time when the order is acknowledged, in ISO-8601 date\/time format. For example: 2018-07-16T23:00:00Z \/ 2018-07-16T23:00:00-05:00 \/ 2018-07-16T23:00:00-08:00.",
+                        "description": "The date and time when the order is acknowledged, in ISO-8601 date/time format. For example: 2018-07-16T23:00:00Z / 2018-07-16T23:00:00-05:00 / 2018-07-16T23:00:00-08:00.",
                         "format": "date-time"
                     },
                     "acknowledgementStatus": {
-                        "$ref": "#\/components\/schemas\/AcknowledgementStatus"
+                        "$ref": "#/components/schemas/AcknowledgementStatus"
                     },
                     "sellingParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "shipFromParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "itemAcknowledgements": {
                         "type": "array",
                         "description": "Item details including acknowledged quantity.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/OrderItemAcknowledgement"
+                            "$ref": "#/components/schemas/OrderItemAcknowledgement"
                         }
                     }
                 },
@@ -2662,7 +2662,7 @@
                         "description": "The vendor selected product identification of the item. Should be the same as was provided in the purchase order."
                     },
                     "acknowledgedQuantity": {
-                        "$ref": "#\/components\/schemas\/ItemQuantity"
+                        "$ref": "#/components/schemas/ItemQuantity"
                     }
                 }
             },
@@ -2693,7 +2693,7 @@
                 "type": "array",
                 "description": "A list of tax line items.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/TaxDetails"
+                    "$ref": "#/components/schemas/TaxDetails"
                 }
             },
             "TaxDetails": {
@@ -2703,13 +2703,13 @@
                 "type": "object",
                 "properties": {
                     "taxRate": {
-                        "$ref": "#\/components\/schemas\/Decimal"
+                        "$ref": "#/components/schemas/Decimal"
                     },
                     "taxAmount": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "taxableAmount": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "type": {
                         "type": "string",
@@ -2823,7 +2823,7 @@
                         "description": "Ship method to be used for shipping the order. Amazon defines ship method codes indicating the shipping carrier and shipment service level. To see the full list of ship methods in use, including both the code and the friendly name, search the 'Help' section on Vendor Central for 'ship methods'."
                     },
                     "shipmentDates": {
-                        "$ref": "#\/components\/schemas\/ShipmentDates"
+                        "$ref": "#/components/schemas/ShipmentDates"
                     },
                     "messageToCustomer": {
                         "type": "string",

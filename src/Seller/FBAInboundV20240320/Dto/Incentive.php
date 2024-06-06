@@ -11,7 +11,7 @@ final class Incentive extends Dto
     /**
      * @param  string  $description  Description of the incentive.
      * @param  string  $target  Target of the incentive. Can be 'Placement Services' or 'Fulfillment Fee Discount'.
-     * @param  string  $type  Type of incentive. Can be `FEE` or `DISCOUNT`.
+     * @param  string  $type  Type of incentive. Can be: `FEE`, `DISCOUNT`.
      * @param  Currency  $value  Currency definition.
      */
     public function __construct(

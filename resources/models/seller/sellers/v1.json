@@ -5,26 +5,26 @@
         "description": "The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v1"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/sellers\/v1\/marketplaceParticipations": {
+        "/sellers/v1/marketplaceParticipations": {
             "get": {
                 "tags": [
                     "SellersV1"
                 ],
-                "description": "Returns a list of marketplaces that the seller submitting the request can sell in and information about the seller's participation in those marketplaces.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.016 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a list of marketplaces that the seller submitting the request can sell in and information about the seller's participation in those marketplaces.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.016 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getMarketplaceParticipations",
                 "responses": {
                     "200": {
@@ -44,9 +44,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMarketplaceParticipationsResponse"
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
                                 }
                             }
                         },
@@ -95,9 +95,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMarketplaceParticipationsResponse"
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
                                 }
                             }
                         }
@@ -113,9 +113,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMarketplaceParticipationsResponse"
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
                                 }
                             }
                         }
@@ -137,9 +137,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMarketplaceParticipationsResponse"
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
                                 }
                             }
                         }
@@ -161,9 +161,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMarketplaceParticipationsResponse"
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
                                 }
                             }
                         }
@@ -185,9 +185,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMarketplaceParticipationsResponse"
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
                                 }
                             }
                         }
@@ -209,9 +209,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMarketplaceParticipationsResponse"
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
                                 }
                             }
                         }
@@ -233,9 +233,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMarketplaceParticipationsResponse"
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
                                 }
                             }
                         }
@@ -257,9 +257,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMarketplaceParticipationsResponse"
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
                                 }
                             }
                         }
@@ -296,7 +296,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "MarketplaceParticipation": {
@@ -307,10 +307,10 @@
                 "type": "object",
                 "properties": {
                     "marketplace": {
-                        "$ref": "#\/components\/schemas\/Marketplace"
+                        "$ref": "#/components/schemas/Marketplace"
                     },
                     "participation": {
-                        "$ref": "#\/components\/schemas\/Participation"
+                        "$ref": "#/components/schemas/Participation"
                     }
                 }
             },
@@ -318,17 +318,17 @@
                 "type": "array",
                 "description": "List of marketplace participations.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/MarketplaceParticipation"
+                    "$ref": "#/components/schemas/MarketplaceParticipation"
                 }
             },
             "GetMarketplaceParticipationsResponse": {
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/MarketplaceParticipationList"
+                        "$ref": "#/components/schemas/MarketplaceParticipationList"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getMarketplaceParticipations operation."

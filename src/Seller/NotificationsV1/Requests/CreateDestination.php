@@ -25,7 +25,7 @@ class CreateDestination extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  CreateDestinationRequest  $createDestinationRequest  The request schema for the createDestination operation.
+     * @param  CreateDestinationRequest  $createDestinationRequest  The request schema for the `createDestination` operation.
      */
     public function __construct(
         public CreateDestinationRequest $createDestinationRequest,

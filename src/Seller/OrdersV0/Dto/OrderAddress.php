@@ -17,7 +17,7 @@ final class OrderAddress extends Dto
 
     /**
      * @param  string  $amazonOrderId  An Amazon-defined order identifier, in 3-7-7 format.
-     * @param  ?string  $buyerCompanyName  Company Name of the Buyer.
+     * @param  ?string  $buyerCompanyName  The company name of the contact buyer. For Invoice By Amazon (IBA) orders, the buyer company should be Amazon entities.
      * @param  ?Address  $shippingAddress  The shipping address for the order.
      * @param  ?DeliveryPreferences  $deliveryPreferences  Contains all of the delivery instructions provided by the customer for the shipping address.
      */

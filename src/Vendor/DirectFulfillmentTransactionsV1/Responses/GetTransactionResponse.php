@@ -14,7 +14,7 @@ final class GetTransactionResponse extends Response
 
     /**
      * @param  ?TransactionStatus  $payload  The payload for the getTransactionStatus operation.
-     * @param  Error[]  $errors  A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?TransactionStatus $payload = null,

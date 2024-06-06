@@ -22,6 +22,8 @@ final class OrderBuyerInfo extends Dto
      * @param  ?string  $buyerEmail  The anonymized email address of the buyer.
      * @param  ?string  $buyerName  The buyer name or the recipient name.
      * @param  ?string  $buyerCounty  The county of the buyer.
+     *
+     * **Note**: This attribute is only available in the Brazil marketplace.
      * @param  ?BuyerTaxInfo  $buyerTaxInfo  Tax information about the buyer.
      * @param  ?string  $purchaseOrderNumber  The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
      */

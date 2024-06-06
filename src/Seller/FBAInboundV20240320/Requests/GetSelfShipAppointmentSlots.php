@@ -19,8 +19,8 @@ class GetSelfShipAppointmentSlots extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      * @param  ?int  $pageSize  The number of self ship appointment slots to return in the response matching the given query.
      * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
      */
@@ -47,7 +47,7 @@ class GetSelfShipAppointmentSlots extends Request
         $status = $response->status();
         $responseCls = match ($status) {
             200 => GetSelfShipAppointmentSlotsResponse::class,
-            400, 500, 403, 404, 413, 415, 429, 503 => ErrorList::class,
+            400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

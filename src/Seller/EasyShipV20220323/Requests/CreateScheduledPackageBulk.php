@@ -44,7 +44,7 @@ class CreateScheduledPackageBulk extends Request implements HasBody
         $status = $response->status();
         $responseCls = match ($status) {
             200 => CreateScheduledPackagesResponse::class,
-            400, 401, 403, 404, 429, 415, 500, 503 => ErrorList::class,
+            400, 401, 403, 404, 429, 413, 415, 500, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

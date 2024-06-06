@@ -5,32 +5,32 @@
         "description": "The Selling Partner API for Fulfillment Outbound lets you create applications that help a seller fulfill Multi-Channel Fulfillment orders using their inventory in Amazon's fulfillment network. You can get information on both potential and existing fulfillment orders.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "2020-07-01"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/fba\/outbound\/2020-07-01\/fulfillmentOrders\/preview": {
+        "/fba/outbound/2020-07-01/fulfillmentOrders/preview": {
             "post": {
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Returns a list of fulfillment order previews based on shipping criteria that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a list of fulfillment order previews based on shipping criteria that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getFulfillmentPreview",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/GetFulfillmentPreviewRequest"
+                                "$ref": "#/components/schemas/GetFulfillmentPreviewRequest"
                             }
                         }
                     },
@@ -54,9 +54,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentPreviewResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentPreviewResponse"
                                 }
                             }
                         }
@@ -78,9 +78,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentPreviewResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentPreviewResponse"
                                 }
                             }
                         }
@@ -102,9 +102,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentPreviewResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentPreviewResponse"
                                 }
                             }
                         }
@@ -120,9 +120,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentPreviewResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentPreviewResponse"
                                 }
                             }
                         }
@@ -144,9 +144,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentPreviewResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentPreviewResponse"
                                 }
                             }
                         }
@@ -168,9 +168,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentPreviewResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentPreviewResponse"
                                 }
                             }
                         }
@@ -192,9 +192,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentPreviewResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentPreviewResponse"
                                 }
                             }
                         }
@@ -216,9 +216,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentPreviewResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentPreviewResponse"
                                 }
                             }
                         }
@@ -230,12 +230,12 @@
                 "dynamic": {}
             }
         },
-        "\/fba\/outbound\/2020-07-01\/fulfillmentOrders": {
+        "/fba/outbound/2020-07-01/fulfillmentOrders": {
             "get": {
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api)",
+                "description": "Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)",
                 "operationId": "listAllFulfillmentOrders",
                 "parameters": [
                     {
@@ -274,9 +274,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListAllFulfillmentOrdersResponse"
+                                    "$ref": "#/components/schemas/ListAllFulfillmentOrdersResponse"
                                 }
                             }
                         }
@@ -298,9 +298,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListAllFulfillmentOrdersResponse"
+                                    "$ref": "#/components/schemas/ListAllFulfillmentOrdersResponse"
                                 }
                             }
                         }
@@ -322,9 +322,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListAllFulfillmentOrdersResponse"
+                                    "$ref": "#/components/schemas/ListAllFulfillmentOrdersResponse"
                                 }
                             }
                         }
@@ -340,9 +340,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListAllFulfillmentOrdersResponse"
+                                    "$ref": "#/components/schemas/ListAllFulfillmentOrdersResponse"
                                 }
                             }
                         }
@@ -364,9 +364,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListAllFulfillmentOrdersResponse"
+                                    "$ref": "#/components/schemas/ListAllFulfillmentOrdersResponse"
                                 }
                             }
                         }
@@ -388,9 +388,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListAllFulfillmentOrdersResponse"
+                                    "$ref": "#/components/schemas/ListAllFulfillmentOrdersResponse"
                                 }
                             }
                         }
@@ -412,9 +412,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListAllFulfillmentOrdersResponse"
+                                    "$ref": "#/components/schemas/ListAllFulfillmentOrdersResponse"
                                 }
                             }
                         }
@@ -436,9 +436,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListAllFulfillmentOrdersResponse"
+                                    "$ref": "#/components/schemas/ListAllFulfillmentOrdersResponse"
                                 }
                             }
                         }
@@ -449,13 +449,13 @@
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Requests that Amazon ship items from the seller's inventory in Amazon's fulfillment network to a destination address.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api)",
+                "description": "Requests that Amazon ship items from the seller's inventory in Amazon's fulfillment network to a destination address.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)",
                 "operationId": "createFulfillmentOrder",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateFulfillmentOrderRequest"
+                                "$ref": "#/components/schemas/CreateFulfillmentOrderRequest"
                             }
                         }
                     },
@@ -479,9 +479,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -503,9 +503,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -527,9 +527,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -545,9 +545,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -569,9 +569,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -593,9 +593,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -617,9 +617,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -641,9 +641,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -655,18 +655,18 @@
                 "dynamic": {}
             }
         },
-        "\/fba\/outbound\/2020-07-01\/tracking": {
+        "/fba/outbound/2020-07-01/tracking": {
             "get": {
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getPackageTrackingDetails",
                 "parameters": [
                     {
                         "name": "packageNumber",
                         "in": "query",
-                        "description": "The unencrypted package identifier returned by the getFulfillmentOrder operation.",
+                        "description": "The unencrypted package identifier returned by the `getFulfillmentOrder` operation.",
                         "required": true,
                         "schema": {
                             "type": "integer",
@@ -692,9 +692,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPackageTrackingDetailsResponse"
+                                    "$ref": "#/components/schemas/GetPackageTrackingDetailsResponse"
                                 }
                             }
                         }
@@ -716,9 +716,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPackageTrackingDetailsResponse"
+                                    "$ref": "#/components/schemas/GetPackageTrackingDetailsResponse"
                                 }
                             }
                         }
@@ -740,9 +740,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPackageTrackingDetailsResponse"
+                                    "$ref": "#/components/schemas/GetPackageTrackingDetailsResponse"
                                 }
                             }
                         }
@@ -758,9 +758,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPackageTrackingDetailsResponse"
+                                    "$ref": "#/components/schemas/GetPackageTrackingDetailsResponse"
                                 }
                             }
                         }
@@ -782,9 +782,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPackageTrackingDetailsResponse"
+                                    "$ref": "#/components/schemas/GetPackageTrackingDetailsResponse"
                                 }
                             }
                         }
@@ -806,9 +806,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPackageTrackingDetailsResponse"
+                                    "$ref": "#/components/schemas/GetPackageTrackingDetailsResponse"
                                 }
                             }
                         }
@@ -830,9 +830,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPackageTrackingDetailsResponse"
+                                    "$ref": "#/components/schemas/GetPackageTrackingDetailsResponse"
                                 }
                             }
                         }
@@ -854,9 +854,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPackageTrackingDetailsResponse"
+                                    "$ref": "#/components/schemas/GetPackageTrackingDetailsResponse"
                                 }
                             }
                         }
@@ -867,12 +867,12 @@
                 "dynamic": {}
             }
         },
-        "\/fba\/outbound\/2020-07-01\/returnReasonCodes": {
+        "/fba/outbound/2020-07-01/returnReasonCodes": {
             "get": {
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Returns a list of return reason codes for a seller SKU in a given marketplace. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a list of return reason codes for a seller SKU in a given marketplace. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "listReturnReasonCodes",
                 "parameters": [
                     {
@@ -903,8 +903,7 @@
                     {
                         "name": "language",
                         "in": "query",
-                        "description": "The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.",
-                        "required": true,
+                        "description": "The language that the `TranslatedDescription` property of the `ReasonCodeDetails` response object should be translated into.",
                         "schema": {
                             "type": "string"
                         }
@@ -928,9 +927,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListReturnReasonCodesResponse"
+                                    "$ref": "#/components/schemas/ListReturnReasonCodesResponse"
                                 }
                             }
                         }
@@ -952,9 +951,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListReturnReasonCodesResponse"
+                                    "$ref": "#/components/schemas/ListReturnReasonCodesResponse"
                                 }
                             }
                         }
@@ -976,9 +975,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListReturnReasonCodesResponse"
+                                    "$ref": "#/components/schemas/ListReturnReasonCodesResponse"
                                 }
                             }
                         }
@@ -994,9 +993,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListReturnReasonCodesResponse"
+                                    "$ref": "#/components/schemas/ListReturnReasonCodesResponse"
                                 }
                             }
                         }
@@ -1018,9 +1017,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListReturnReasonCodesResponse"
+                                    "$ref": "#/components/schemas/ListReturnReasonCodesResponse"
                                 }
                             }
                         }
@@ -1042,9 +1041,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListReturnReasonCodesResponse"
+                                    "$ref": "#/components/schemas/ListReturnReasonCodesResponse"
                                 }
                             }
                         }
@@ -1066,9 +1065,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListReturnReasonCodesResponse"
+                                    "$ref": "#/components/schemas/ListReturnReasonCodesResponse"
                                 }
                             }
                         }
@@ -1090,9 +1089,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListReturnReasonCodesResponse"
+                                    "$ref": "#/components/schemas/ListReturnReasonCodesResponse"
                                 }
                             }
                         }
@@ -1103,18 +1102,18 @@
                 "dynamic": {}
             }
         },
-        "\/fba\/outbound\/2020-07-01\/fulfillmentOrders\/{sellerFulfillmentOrderId}\/return": {
+        "/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/return": {
             "put": {
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Creates a fulfillment return.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Creates a fulfillment return.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createFulfillmentReturn",
                 "parameters": [
                     {
                         "name": "sellerFulfillmentOrderId",
                         "in": "path",
-                        "description": "An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items.",
+                        "description": "An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct `SellerFulfillmentOrderId` value based on the buyer's request to return items.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1123,9 +1122,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateFulfillmentReturnRequest"
+                                "$ref": "#/components/schemas/CreateFulfillmentReturnRequest"
                             }
                         }
                     },
@@ -1149,9 +1148,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentReturnResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentReturnResponse"
                                 }
                             }
                         }
@@ -1173,9 +1172,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentReturnResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentReturnResponse"
                                 }
                             }
                         }
@@ -1197,9 +1196,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentReturnResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentReturnResponse"
                                 }
                             }
                         }
@@ -1221,9 +1220,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentReturnResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentReturnResponse"
                                 }
                             }
                         }
@@ -1245,9 +1244,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentReturnResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentReturnResponse"
                                 }
                             }
                         }
@@ -1269,9 +1268,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentReturnResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentReturnResponse"
                                 }
                             }
                         }
@@ -1293,9 +1292,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentReturnResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentReturnResponse"
                                 }
                             }
                         }
@@ -1317,9 +1316,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateFulfillmentReturnResponse"
+                                    "$ref": "#/components/schemas/CreateFulfillmentReturnResponse"
                                 }
                             }
                         }
@@ -1331,12 +1330,12 @@
                 "dynamic": {}
             }
         },
-        "\/fba\/outbound\/2020-07-01\/fulfillmentOrders\/{sellerFulfillmentOrderId}": {
+        "/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}": {
             "get": {
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Returns the fulfillment order indicated by the specified order identifier.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the fulfillment order indicated by the specified order identifier.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getFulfillmentOrder",
                 "parameters": [
                     {
@@ -1368,9 +1367,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1392,9 +1391,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1416,9 +1415,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1434,9 +1433,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1458,9 +1457,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1482,9 +1481,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1506,9 +1505,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1530,9 +1529,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/GetFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1543,7 +1542,7 @@
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Updates and\/or requests shipment for a fulfillment order with an order hold on it.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Updates and/or requests shipment for a fulfillment order with an order hold on it.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "updateFulfillmentOrder",
                 "parameters": [
                     {
@@ -1559,9 +1558,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/UpdateFulfillmentOrderRequest"
+                                "$ref": "#/components/schemas/UpdateFulfillmentOrderRequest"
                             }
                         }
                     },
@@ -1585,9 +1584,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/UpdateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1609,9 +1608,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/UpdateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1633,9 +1632,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/UpdateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1651,9 +1650,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/UpdateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1675,9 +1674,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/UpdateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1699,9 +1698,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/UpdateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1723,9 +1722,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/UpdateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1747,9 +1746,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/UpdateFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1761,12 +1760,12 @@
                 "dynamic": {}
             }
         },
-        "\/fba\/outbound\/2020-07-01\/fulfillmentOrders\/{sellerFulfillmentOrderId}\/cancel": {
+        "/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/cancel": {
             "put": {
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Requests that Amazon stop attempting to fulfill the fulfillment order indicated by the specified order identifier.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Requests that Amazon stop attempting to fulfill the fulfillment order indicated by the specified order identifier.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "cancelFulfillmentOrder",
                 "parameters": [
                     {
@@ -1798,9 +1797,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CancelFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1822,9 +1821,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CancelFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1846,9 +1845,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CancelFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1864,9 +1863,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CancelFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1888,9 +1887,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CancelFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1912,9 +1911,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CancelFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1936,9 +1935,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CancelFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1960,9 +1959,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelFulfillmentOrderResponse"
+                                    "$ref": "#/components/schemas/CancelFulfillmentOrderResponse"
                                 }
                             }
                         }
@@ -1973,12 +1972,12 @@
                 "dynamic": {}
             }
         },
-        "\/fba\/outbound\/2020-07-01\/fulfillmentOrders\/{sellerFulfillmentOrderId}\/status": {
+        "/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/status": {
             "put": {
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Requests that Amazon update the status of an order in the sandbox testing environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Fulfillment Outbound Dynamic Sandbox Guide](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/fulfillment-outbound-dynamic-sandbox-guide) and [Selling Partner API sandbox](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/the-selling-partner-api-sandbox) for more information.",
+                "description": "Requests that Amazon update the status of an order in the sandbox testing environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Fulfillment Outbound Dynamic Sandbox Guide](https://developer-docs.amazon.com/sp-api/docs/fulfillment-outbound-dynamic-sandbox-guide) and [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.",
                 "operationId": "submitFulfillmentOrderStatusUpdate",
                 "parameters": [
                     {
@@ -1994,9 +1993,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/SubmitFulfillmentOrderStatusUpdateRequest"
+                                "$ref": "#/components/schemas/SubmitFulfillmentOrderStatusUpdateRequest"
                             }
                         }
                     },
@@ -2020,9 +2019,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitFulfillmentOrderStatusUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitFulfillmentOrderStatusUpdateResponse"
                                 }
                             }
                         }
@@ -2044,9 +2043,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitFulfillmentOrderStatusUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitFulfillmentOrderStatusUpdateResponse"
                                 }
                             }
                         }
@@ -2068,9 +2067,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitFulfillmentOrderStatusUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitFulfillmentOrderStatusUpdateResponse"
                                 }
                             }
                         }
@@ -2086,9 +2085,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitFulfillmentOrderStatusUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitFulfillmentOrderStatusUpdateResponse"
                                 }
                             }
                         }
@@ -2110,9 +2109,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitFulfillmentOrderStatusUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitFulfillmentOrderStatusUpdateResponse"
                                 }
                             }
                         }
@@ -2134,9 +2133,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitFulfillmentOrderStatusUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitFulfillmentOrderStatusUpdateResponse"
                                 }
                             }
                         }
@@ -2158,9 +2157,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitFulfillmentOrderStatusUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitFulfillmentOrderStatusUpdateResponse"
                                 }
                             }
                         }
@@ -2182,9 +2181,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitFulfillmentOrderStatusUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitFulfillmentOrderStatusUpdateResponse"
                                 }
                             }
                         }
@@ -2197,12 +2196,12 @@
                 "dynamic": {}
             }
         },
-        "\/fba\/outbound\/2020-07-01\/features": {
+        "/fba/outbound/2020-07-01/features": {
             "get": {
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Returns a list of features available for Multi-Channel Fulfillment orders in the marketplace you specify, and whether the seller for which you made the call is enrolled for each feature.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a list of features available for Multi-Channel Fulfillment orders in the marketplace you specify, and whether the seller for which you made the call is enrolled for each feature.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getFeatures",
                 "parameters": [
                     {
@@ -2233,9 +2232,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeaturesResponse"
+                                    "$ref": "#/components/schemas/GetFeaturesResponse"
                                 }
                             }
                         }
@@ -2257,9 +2256,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeaturesResponse"
+                                    "$ref": "#/components/schemas/GetFeaturesResponse"
                                 }
                             }
                         }
@@ -2281,9 +2280,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeaturesResponse"
+                                    "$ref": "#/components/schemas/GetFeaturesResponse"
                                 }
                             }
                         }
@@ -2299,9 +2298,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeaturesResponse"
+                                    "$ref": "#/components/schemas/GetFeaturesResponse"
                                 }
                             }
                         }
@@ -2323,9 +2322,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeaturesResponse"
+                                    "$ref": "#/components/schemas/GetFeaturesResponse"
                                 }
                             }
                         }
@@ -2347,9 +2346,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeaturesResponse"
+                                    "$ref": "#/components/schemas/GetFeaturesResponse"
                                 }
                             }
                         }
@@ -2371,9 +2370,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeaturesResponse"
+                                    "$ref": "#/components/schemas/GetFeaturesResponse"
                                 }
                             }
                         }
@@ -2395,9 +2394,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeaturesResponse"
+                                    "$ref": "#/components/schemas/GetFeaturesResponse"
                                 }
                             }
                         }
@@ -2408,12 +2407,12 @@
                 "dynamic": {}
             }
         },
-        "\/fba\/outbound\/2020-07-01\/features\/inventory\/{featureName}": {
+        "/fba/outbound/2020-07-01/features/inventory/{featureName}": {
             "get": {
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Returns a list of inventory items that are eligible for the fulfillment feature you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api)..",
+                "description": "Returns a list of inventory items that are eligible for the fulfillment feature you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)..",
                 "operationId": "getFeatureInventory",
                 "parameters": [
                     {
@@ -2461,9 +2460,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureInventoryResponse"
+                                    "$ref": "#/components/schemas/GetFeatureInventoryResponse"
                                 }
                             }
                         }
@@ -2485,9 +2484,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureInventoryResponse"
+                                    "$ref": "#/components/schemas/GetFeatureInventoryResponse"
                                 }
                             }
                         }
@@ -2509,9 +2508,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureInventoryResponse"
+                                    "$ref": "#/components/schemas/GetFeatureInventoryResponse"
                                 }
                             }
                         }
@@ -2527,9 +2526,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureInventoryResponse"
+                                    "$ref": "#/components/schemas/GetFeatureInventoryResponse"
                                 }
                             }
                         }
@@ -2551,9 +2550,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureInventoryResponse"
+                                    "$ref": "#/components/schemas/GetFeatureInventoryResponse"
                                 }
                             }
                         }
@@ -2575,9 +2574,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureInventoryResponse"
+                                    "$ref": "#/components/schemas/GetFeatureInventoryResponse"
                                 }
                             }
                         }
@@ -2599,9 +2598,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureInventoryResponse"
+                                    "$ref": "#/components/schemas/GetFeatureInventoryResponse"
                                 }
                             }
                         }
@@ -2623,9 +2622,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureInventoryResponse"
+                                    "$ref": "#/components/schemas/GetFeatureInventoryResponse"
                                 }
                             }
                         }
@@ -2636,12 +2635,12 @@
                 "dynamic": {}
             }
         },
-        "\/fba\/outbound\/2020-07-01\/features\/inventory\/{featureName}\/{sellerSku}": {
+        "/fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}": {
             "get": {
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn't eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn't eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getFeatureSKU",
                 "parameters": [
                     {
@@ -2665,7 +2664,7 @@
                     {
                         "name": "sellerSku",
                         "in": "path",
-                        "description": "Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.",
+                        "description": "Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller's `SellerId`, which is included with every operation that you submit.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -2690,9 +2689,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureSkuResponse"
+                                    "$ref": "#/components/schemas/GetFeatureSkuResponse"
                                 }
                             }
                         }
@@ -2714,9 +2713,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureSkuResponse"
+                                    "$ref": "#/components/schemas/GetFeatureSkuResponse"
                                 }
                             }
                         }
@@ -2738,9 +2737,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureSkuResponse"
+                                    "$ref": "#/components/schemas/GetFeatureSkuResponse"
                                 }
                             }
                         }
@@ -2756,9 +2755,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureSkuResponse"
+                                    "$ref": "#/components/schemas/GetFeatureSkuResponse"
                                 }
                             }
                         }
@@ -2780,9 +2779,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureSkuResponse"
+                                    "$ref": "#/components/schemas/GetFeatureSkuResponse"
                                 }
                             }
                         }
@@ -2804,9 +2803,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureSkuResponse"
+                                    "$ref": "#/components/schemas/GetFeatureSkuResponse"
                                 }
                             }
                         }
@@ -2828,9 +2827,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureSkuResponse"
+                                    "$ref": "#/components/schemas/GetFeatureSkuResponse"
                                 }
                             }
                         }
@@ -2852,9 +2851,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetFeatureSkuResponse"
+                                    "$ref": "#/components/schemas/GetFeatureSkuResponse"
                                 }
                             }
                         }
@@ -2894,7 +2893,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Address": {
@@ -2961,16 +2960,16 @@
                         "description": "When true, this fulfillment order requires a COD (Cash On Delivery) payment."
                     },
                     "codCharge": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "codChargeTax": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "shippingCharge": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "shippingChargeTax": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     }
                 },
                 "description": "The COD (Cash On Delivery) charges that you associate with a COD fulfillment order."
@@ -2991,10 +2990,10 @@
                     "sellerFulfillmentOrderItemId": {
                         "maxLength": 50,
                         "type": "string",
-                        "description": "A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same SellerSKU. For example, the seller might assign different SellerFulfillmentOrderItemId values to two items in a fulfillment order that share the same SellerSKU but have different GiftMessage values."
+                        "description": "A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same `SellerSKU`. For example, the seller might assign different `SellerFulfillmentOrderItemId` values to two items in a fulfillment order that share the same `SellerSKU` but have different `GiftMessage` values."
                     },
                     "quantity": {
-                        "$ref": "#\/components\/schemas\/Quantity"
+                        "$ref": "#/components/schemas/Quantity"
                     },
                     "giftMessage": {
                         "maxLength": 512,
@@ -3011,13 +3010,13 @@
                         "description": "Amazon's fulfillment network SKU of the item."
                     },
                     "perUnitDeclaredValue": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "perUnitPrice": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "perUnitTax": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     }
                 },
                 "description": "Item information for creating a fulfillment order."
@@ -3026,12 +3025,12 @@
                 "type": "array",
                 "description": "An array of item information for creating a fulfillment order.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/CreateFulfillmentOrderItem"
+                    "$ref": "#/components/schemas/CreateFulfillmentOrderItem"
                 }
             },
             "FulfillmentPolicy": {
                 "type": "string",
-                "description": "The FulfillmentPolicy value specified when you submitted the createFulfillmentOrder operation.",
+                "description": "The `FulfillmentPolicy` value specified when you submitted the `createFulfillmentOrder` operation.",
                 "enum": [
                     "FillOrKill",
                     "FillAll",
@@ -3040,7 +3039,7 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "FillOrKill",
-                        "description": "If an item in a fulfillment order is determined to be unfulfillable before any shipment in the order has acquired the status of Pending (the process of picking units from inventory has begun), then the entire order is considered unfulfillable. However, if an item in a fulfillment order is determined to be unfulfillable after a shipment in the order has acquired the status of Pending, Amazon cancels as much of the fulfillment order as possible. See the FulfillmentShipment object for shipment status definitions."
+                        "description": "If an item in a fulfillment order is determined to be unfulfillable before any shipment in the order has acquired the status of Pending (the process of picking units from inventory has begun), then the entire order is considered unfulfillable. However, if an item in a fulfillment order is determined to be unfulfillable after a shipment in the order has acquired the status of Pending, Amazon cancels as much of the fulfillment order as possible. Refer to the `FulfillmentShipment` object for shipment status definitions."
                     },
                     {
                         "value": "FillAll",
@@ -3124,58 +3123,61 @@
                     "sellerFulfillmentOrderId": {
                         "maxLength": 40,
                         "type": "string",
-                        "description": "A fulfillment order identifier that the seller creates to track their fulfillment order. The SellerFulfillmentOrderId must be unique for each fulfillment order that a seller creates. If the seller's system already creates unique order identifiers, then these might be good values for them to use."
+                        "description": "A fulfillment order identifier that the seller creates to track their fulfillment order. The `SellerFulfillmentOrderId` must be unique for each fulfillment order that a seller creates. If the seller's system already creates unique order identifiers, then these might be good values for them to use."
                     },
                     "displayableOrderId": {
                         "maxLength": 40,
                         "type": "string",
-                        "description": "A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.\n\nThe value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed."
+                        "description": "A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `DisplayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the `SellerFulfillmentOrderId` for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.\n\nThe value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed."
                     },
                     "displayableOrderDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "displayableOrderComment": {
-                        "maxLength": 1000,
+                        "maxLength": 750,
                         "type": "string",
                         "description": "Order-specific text that appears in recipient-facing materials such as the outbound shipment packing slip."
                     },
                     "shippingSpeedCategory": {
-                        "$ref": "#\/components\/schemas\/ShippingSpeedCategory"
+                        "$ref": "#/components/schemas/ShippingSpeedCategory"
                     },
                     "deliveryWindow": {
-                        "$ref": "#\/components\/schemas\/DeliveryWindow"
+                        "$ref": "#/components/schemas/DeliveryWindow"
                     },
                     "destinationAddress": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "fulfillmentAction": {
-                        "$ref": "#\/components\/schemas\/FulfillmentAction"
+                        "$ref": "#/components/schemas/FulfillmentAction"
                     },
                     "fulfillmentPolicy": {
-                        "$ref": "#\/components\/schemas\/FulfillmentPolicy"
+                        "$ref": "#/components/schemas/FulfillmentPolicy"
                     },
                     "codSettings": {
-                        "$ref": "#\/components\/schemas\/CODSettings"
+                        "$ref": "#/components/schemas/CODSettings"
                     },
                     "shipFromCountryCode": {
                         "type": "string",
                         "description": "The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format."
                     },
                     "notificationEmails": {
-                        "$ref": "#\/components\/schemas\/NotificationEmailList"
+                        "$ref": "#/components/schemas/NotificationEmailList"
                     },
                     "featureConstraints": {
                         "type": "array",
                         "description": "A list of features and their fulfillment policies to apply to the order.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/FeatureSettings"
+                            "$ref": "#/components/schemas/FeatureSettings"
                         }
                     },
                     "items": {
-                        "$ref": "#\/components\/schemas\/CreateFulfillmentOrderItemList"
+                        "$ref": "#/components/schemas/CreateFulfillmentOrderItemList"
+                    },
+                    "paymentInformation": {
+                        "$ref": "#/components/schemas/PaymentInformationList"
                     }
                 },
-                "description": "The request body schema for the createFulfillmentOrder operation."
+                "description": "The request body schema for the `createFulfillmentOrder` operation."
             },
             "CreateFulfillmentReturnRequest": {
                 "required": [
@@ -3184,22 +3186,22 @@
                 "type": "object",
                 "properties": {
                     "items": {
-                        "$ref": "#\/components\/schemas\/CreateReturnItemList"
+                        "$ref": "#/components/schemas/CreateReturnItemList"
                     }
                 },
-                "description": "The createFulfillmentReturn operation creates a fulfillment return for items that were fulfilled using the createFulfillmentOrder operation. For calls to createFulfillmentReturn, you must include ReturnReasonCode values returned by a previous call to the listReturnReasonCodes operation."
+                "description": "The `createFulfillmentReturn` operation creates a fulfillment return for items that were fulfilled using the `createFulfillmentOrder` operation. For calls to `createFulfillmentReturn`, you must include `ReturnReasonCode` values returned by a previous call to the `listReturnReasonCodes` operation."
             },
             "CreateFulfillmentReturnResult": {
                 "type": "object",
                 "properties": {
                     "returnItems": {
-                        "$ref": "#\/components\/schemas\/ReturnItemList"
+                        "$ref": "#/components/schemas/ReturnItemList"
                     },
                     "invalidReturnItems": {
-                        "$ref": "#\/components\/schemas\/InvalidReturnItemList"
+                        "$ref": "#/components/schemas/InvalidReturnItemList"
                     },
                     "returnAuthorizations": {
-                        "$ref": "#\/components\/schemas\/ReturnAuthorizationList"
+                        "$ref": "#/components/schemas/ReturnAuthorizationList"
                     }
                 }
             },
@@ -3207,13 +3209,13 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/CreateFulfillmentReturnResult"
+                        "$ref": "#/components/schemas/CreateFulfillmentReturnResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the createFulfillmentReturn operation."
+                "description": "The response schema for the `createFulfillmentReturn` operation."
             },
             "CreateReturnItem": {
                 "required": [
@@ -3253,7 +3255,7 @@
                 "type": "array",
                 "description": "An array of items to be returned.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/CreateReturnItem"
+                    "$ref": "#/components/schemas/CreateReturnItem"
                 }
             },
             "Money": {
@@ -3268,7 +3270,7 @@
                         "description": "Three digit currency code in ISO 4217 format."
                     },
                     "value": {
-                        "$ref": "#\/components\/schemas\/Decimal"
+                        "$ref": "#/components/schemas/Decimal"
                     }
                 },
                 "description": "An amount of money, including units in the form of currency."
@@ -3285,10 +3287,10 @@
                 "type": "object",
                 "properties": {
                     "startDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "endDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     }
                 },
                 "description": "The time range within which a Scheduled Delivery fulfillment order should be delivered. This is only available in the JP marketplace."
@@ -3297,7 +3299,7 @@
                 "type": "array",
                 "description": "An array of delivery windows.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/DeliveryWindow"
+                    "$ref": "#/components/schemas/DeliveryWindow"
                 }
             },
             "Fee": {
@@ -3336,7 +3338,7 @@
                         ]
                     },
                     "amount": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     }
                 },
                 "description": "Fee type and cost."
@@ -3345,7 +3347,7 @@
                 "type": "array",
                 "description": "An array of fee type and cost pairs.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Fee"
+                    "$ref": "#/components/schemas/Fee"
                 }
             },
             "FulfillmentAction": {
@@ -3383,7 +3385,7 @@
                 "properties": {
                     "sellerFulfillmentOrderId": {
                         "type": "string",
-                        "description": "The fulfillment order identifier submitted with the createFulfillmentOrder operation."
+                        "description": "The fulfillment order identifier submitted with the `createFulfillmentOrder` operation."
                     },
                     "marketplaceId": {
                         "type": "string",
@@ -3391,50 +3393,50 @@
                     },
                     "displayableOrderId": {
                         "type": "string",
-                        "description": "A fulfillment order identifier submitted with the createFulfillmentOrder operation. Displays as the order identifier in recipient-facing materials such as the packing slip."
+                        "description": "A fulfillment order identifier submitted with the `createFulfillmentOrder` operation. Displays as the order identifier in recipient-facing materials such as the packing slip."
                     },
                     "displayableOrderDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "displayableOrderComment": {
                         "type": "string",
-                        "description": "A text block submitted with the createFulfillmentOrder operation. Displays in recipient-facing materials such as the packing slip."
+                        "description": "A text block submitted with the `createFulfillmentOrder` operation. Displays in recipient-facing materials such as the packing slip."
                     },
                     "shippingSpeedCategory": {
-                        "$ref": "#\/components\/schemas\/ShippingSpeedCategory"
+                        "$ref": "#/components/schemas/ShippingSpeedCategory"
                     },
                     "deliveryWindow": {
-                        "$ref": "#\/components\/schemas\/DeliveryWindow"
+                        "$ref": "#/components/schemas/DeliveryWindow"
                     },
                     "destinationAddress": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "fulfillmentAction": {
-                        "$ref": "#\/components\/schemas\/FulfillmentAction"
+                        "$ref": "#/components/schemas/FulfillmentAction"
                     },
                     "fulfillmentPolicy": {
-                        "$ref": "#\/components\/schemas\/FulfillmentPolicy"
+                        "$ref": "#/components/schemas/FulfillmentPolicy"
                     },
                     "codSettings": {
-                        "$ref": "#\/components\/schemas\/CODSettings"
+                        "$ref": "#/components/schemas/CODSettings"
                     },
                     "receivedDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "fulfillmentOrderStatus": {
-                        "$ref": "#\/components\/schemas\/FulfillmentOrderStatus"
+                        "$ref": "#/components/schemas/FulfillmentOrderStatus"
                     },
                     "statusUpdatedDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "notificationEmails": {
-                        "$ref": "#\/components\/schemas\/NotificationEmailList"
+                        "$ref": "#/components/schemas/NotificationEmailList"
                     },
                     "featureConstraints": {
                         "type": "array",
                         "description": "A list of features and their fulfillment policies to apply to the order.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/FeatureSettings"
+                            "$ref": "#/components/schemas/FeatureSettings"
                         }
                     }
                 },
@@ -3456,10 +3458,10 @@
                     },
                     "sellerFulfillmentOrderItemId": {
                         "type": "string",
-                        "description": "A fulfillment order item identifier submitted with a call to the createFulfillmentOrder operation."
+                        "description": "A fulfillment order item identifier submitted with a call to the `createFulfillmentOrder` operation."
                     },
                     "quantity": {
-                        "$ref": "#\/components\/schemas\/Quantity"
+                        "$ref": "#/components/schemas/Quantity"
                     },
                     "giftMessage": {
                         "type": "string",
@@ -3478,25 +3480,25 @@
                         "description": "Indicates whether the item is sellable or unsellable."
                     },
                     "cancelledQuantity": {
-                        "$ref": "#\/components\/schemas\/Quantity"
+                        "$ref": "#/components/schemas/Quantity"
                     },
                     "unfulfillableQuantity": {
-                        "$ref": "#\/components\/schemas\/Quantity"
+                        "$ref": "#/components/schemas/Quantity"
                     },
                     "estimatedShipDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "estimatedArrivalDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "perUnitPrice": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "perUnitTax": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "perUnitDeclaredValue": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     }
                 },
                 "description": "Item information for a fulfillment order."
@@ -3505,7 +3507,7 @@
                 "type": "array",
                 "description": "An array of fulfillment order item information.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/FulfillmentOrderItem"
+                    "$ref": "#/components/schemas/FulfillmentOrderItem"
                 }
             },
             "FulfillmentPreview": {
@@ -3518,10 +3520,10 @@
                 "type": "object",
                 "properties": {
                     "shippingSpeedCategory": {
-                        "$ref": "#\/components\/schemas\/ShippingSpeedCategory"
+                        "$ref": "#/components/schemas/ShippingSpeedCategory"
                     },
                     "scheduledDeliveryInfo": {
-                        "$ref": "#\/components\/schemas\/ScheduledDeliveryInfo"
+                        "$ref": "#/components/schemas/ScheduledDeliveryInfo"
                     },
                     "isFulfillable": {
                         "type": "boolean",
@@ -3532,19 +3534,19 @@
                         "description": "When true, this fulfillment order preview is for COD (Cash On Delivery)."
                     },
                     "estimatedShippingWeight": {
-                        "$ref": "#\/components\/schemas\/Weight"
+                        "$ref": "#/components/schemas/Weight"
                     },
                     "estimatedFees": {
-                        "$ref": "#\/components\/schemas\/FeeList"
+                        "$ref": "#/components/schemas/FeeList"
                     },
                     "fulfillmentPreviewShipments": {
-                        "$ref": "#\/components\/schemas\/FulfillmentPreviewShipmentList"
+                        "$ref": "#/components/schemas/FulfillmentPreviewShipmentList"
                     },
                     "unfulfillablePreviewItems": {
-                        "$ref": "#\/components\/schemas\/UnfulfillablePreviewItemList"
+                        "$ref": "#/components/schemas/UnfulfillablePreviewItemList"
                     },
                     "orderUnfulfillableReasons": {
-                        "$ref": "#\/components\/schemas\/StringList"
+                        "$ref": "#/components/schemas/StringList"
                     },
                     "marketplaceId": {
                         "type": "string",
@@ -3554,7 +3556,7 @@
                         "type": "array",
                         "description": "A list of features and their fulfillment policies to apply to the order.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/FeatureSettings"
+                            "$ref": "#/components/schemas/FeatureSettings"
                         }
                     }
                 },
@@ -3573,14 +3575,14 @@
                         "description": "The seller SKU of the item."
                     },
                     "quantity": {
-                        "$ref": "#\/components\/schemas\/Quantity"
+                        "$ref": "#/components/schemas/Quantity"
                     },
                     "sellerFulfillmentOrderItemId": {
                         "type": "string",
-                        "description": "A fulfillment order item identifier that the seller created with a call to the createFulfillmentOrder operation."
+                        "description": "A fulfillment order item identifier that the seller created with a call to the `createFulfillmentOrder` operation."
                     },
                     "estimatedShippingWeight": {
-                        "$ref": "#\/components\/schemas\/Weight"
+                        "$ref": "#/components/schemas/Weight"
                     },
                     "shippingWeightCalculationMethod": {
                         "type": "string",
@@ -3607,14 +3609,14 @@
                 "type": "array",
                 "description": "An array of fulfillment preview item information.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/FulfillmentPreviewItem"
+                    "$ref": "#/components/schemas/FulfillmentPreviewItem"
                 }
             },
             "FulfillmentPreviewList": {
                 "type": "array",
                 "description": "An array of fulfillment preview information.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/FulfillmentPreview"
+                    "$ref": "#/components/schemas/FulfillmentPreview"
                 }
             },
             "FulfillmentPreviewShipment": {
@@ -3624,16 +3626,16 @@
                 "type": "object",
                 "properties": {
                     "earliestShipDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "latestShipDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "earliestArrivalDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "latestArrivalDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "shippingNotes": {
                         "type": "array",
@@ -3643,7 +3645,7 @@
                         }
                     },
                     "fulfillmentPreviewItems": {
-                        "$ref": "#\/components\/schemas\/FulfillmentPreviewItemList"
+                        "$ref": "#/components/schemas/FulfillmentPreviewItemList"
                     }
                 },
                 "description": "Delivery and item information for a shipment in a fulfillment order preview."
@@ -3652,7 +3654,7 @@
                 "type": "array",
                 "description": "An array of fulfillment preview shipment information.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/FulfillmentPreviewShipment"
+                    "$ref": "#/components/schemas/FulfillmentPreviewShipment"
                 }
             },
             "FulfillmentReturnItemStatus": {
@@ -3714,15 +3716,15 @@
                             },
                             {
                                 "value": "CANCELLED_BY_SELLER",
-                                "description": "The shipment was cancelled using the CancelFulfillmentOrder request."
+                                "description": "The shipment was cancelled using the `CancelFulfillmentOrder` request."
                             }
                         ]
                     },
                     "shippingDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "estimatedArrivalDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "shippingNotes": {
                         "type": "array",
@@ -3732,10 +3734,10 @@
                         }
                     },
                     "fulfillmentShipmentItem": {
-                        "$ref": "#\/components\/schemas\/FulfillmentShipmentItemList"
+                        "$ref": "#/components/schemas/FulfillmentShipmentItemList"
                     },
                     "fulfillmentShipmentPackage": {
-                        "$ref": "#\/components\/schemas\/FulfillmentShipmentPackageList"
+                        "$ref": "#/components/schemas/FulfillmentShipmentPackageList"
                     }
                 },
                 "description": "Delivery and item information for a shipment in a fulfillment order."
@@ -3754,10 +3756,10 @@
                     },
                     "sellerFulfillmentOrderItemId": {
                         "type": "string",
-                        "description": "The fulfillment order item identifier that the seller created and submitted with a call to the createFulfillmentOrder operation."
+                        "description": "The fulfillment order item identifier that the seller created and submitted with a call to the `createFulfillmentOrder` operation."
                     },
                     "quantity": {
-                        "$ref": "#\/components\/schemas\/Quantity"
+                        "$ref": "#/components/schemas/Quantity"
                     },
                     "packageNumber": {
                         "type": "integer",
@@ -3775,14 +3777,14 @@
                 "type": "array",
                 "description": "An array of fulfillment shipment item information.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/FulfillmentShipmentItem"
+                    "$ref": "#/components/schemas/FulfillmentShipmentItem"
                 }
             },
             "FulfillmentShipmentList": {
                 "type": "array",
                 "description": "An array of fulfillment shipment information.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/FulfillmentShipment"
+                    "$ref": "#/components/schemas/FulfillmentShipment"
                 }
             },
             "FulfillmentShipmentPackage": {
@@ -3806,7 +3808,7 @@
                         "description": "The tracking number, if provided, can be used to obtain tracking and delivery information."
                     },
                     "estimatedArrivalDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     }
                 },
                 "description": "Package information for a shipment in a fulfillment order."
@@ -3815,7 +3817,7 @@
                 "type": "array",
                 "description": "An array of fulfillment shipment package information.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/FulfillmentShipmentPackage"
+                    "$ref": "#/components/schemas/FulfillmentShipmentPackage"
                 }
             },
             "GetFulfillmentOrderResult": {
@@ -3828,19 +3830,22 @@
                 "type": "object",
                 "properties": {
                     "fulfillmentOrder": {
-                        "$ref": "#\/components\/schemas\/FulfillmentOrder"
+                        "$ref": "#/components/schemas/FulfillmentOrder"
                     },
                     "fulfillmentOrderItems": {
-                        "$ref": "#\/components\/schemas\/FulfillmentOrderItemList"
+                        "$ref": "#/components/schemas/FulfillmentOrderItemList"
                     },
                     "fulfillmentShipments": {
-                        "$ref": "#\/components\/schemas\/FulfillmentShipmentList"
+                        "$ref": "#/components/schemas/FulfillmentShipmentList"
                     },
                     "returnItems": {
-                        "$ref": "#\/components\/schemas\/ReturnItemList"
+                        "$ref": "#/components/schemas/ReturnItemList"
                     },
                     "returnAuthorizations": {
-                        "$ref": "#\/components\/schemas\/ReturnAuthorizationList"
+                        "$ref": "#/components/schemas/ReturnAuthorizationList"
+                    },
+                    "paymentInformation": {
+                        "$ref": "#/components/schemas/PaymentInformationList"
                     }
                 }
             },
@@ -3848,13 +3853,13 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/GetFulfillmentOrderResult"
+                        "$ref": "#/components/schemas/GetFulfillmentOrderResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the getFulfillmentOrder operation."
+                "description": "The response schema for the `getFulfillmentOrder` operation."
             },
             "GetFulfillmentPreviewItem": {
                 "required": [
@@ -3870,10 +3875,10 @@
                         "description": "The seller SKU of the item."
                     },
                     "quantity": {
-                        "$ref": "#\/components\/schemas\/Quantity"
+                        "$ref": "#/components/schemas/Quantity"
                     },
                     "perUnitDeclaredValue": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "sellerFulfillmentOrderItemId": {
                         "maxLength": 50,
@@ -3887,7 +3892,7 @@
                 "type": "array",
                 "description": "An array of fulfillment preview item information.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/GetFulfillmentPreviewItem"
+                    "$ref": "#/components/schemas/GetFulfillmentPreviewItem"
                 }
             },
             "GetFulfillmentPreviewRequest": {
@@ -3902,13 +3907,13 @@
                         "description": "The marketplace the fulfillment order is placed against."
                     },
                     "address": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "items": {
-                        "$ref": "#\/components\/schemas\/GetFulfillmentPreviewItemList"
+                        "$ref": "#/components/schemas/GetFulfillmentPreviewItemList"
                     },
                     "shippingSpeedCategories": {
-                        "$ref": "#\/components\/schemas\/ShippingSpeedCategoryList"
+                        "$ref": "#/components/schemas/ShippingSpeedCategoryList"
                     },
                     "includeCODFulfillmentPreview": {
                         "type": "boolean",
@@ -3916,23 +3921,23 @@
                     },
                     "includeDeliveryWindows": {
                         "type": "boolean",
-                        "description": "When true, returns the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery."
+                        "description": "When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` = `ScheduledDelivery`."
                     },
                     "featureConstraints": {
                         "type": "array",
                         "description": "A list of features and their fulfillment policies to apply to the order.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/FeatureSettings"
+                            "$ref": "#/components/schemas/FeatureSettings"
                         }
                     }
                 },
-                "description": "The request body schema for the getFulfillmentPreview operation."
+                "description": "The request body schema for the `getFulfillmentPreview` operation."
             },
             "GetFulfillmentPreviewResult": {
                 "type": "object",
                 "properties": {
                     "fulfillmentPreviews": {
-                        "$ref": "#\/components\/schemas\/FulfillmentPreviewList"
+                        "$ref": "#/components/schemas/FulfillmentPreviewList"
                     }
                 },
                 "description": "A list of fulfillment order previews, including estimated shipping weights, estimated shipping fees, and estimated ship dates and arrival dates."
@@ -3941,13 +3946,13 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/GetFulfillmentPreviewResult"
+                        "$ref": "#/components/schemas/GetFulfillmentPreviewResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the getFulfillmentPreview operation."
+                "description": "The response schema for the `getFulfillmentPreview` operation."
             },
             "InvalidItemReasonCode": {
                 "type": "string",
@@ -3985,7 +3990,7 @@
                 "type": "object",
                 "properties": {
                     "invalidItemReasonCode": {
-                        "$ref": "#\/components\/schemas\/InvalidItemReasonCode"
+                        "$ref": "#/components/schemas/InvalidItemReasonCode"
                     },
                     "description": {
                         "type": "string",
@@ -4011,7 +4016,7 @@
                         "description": "The identifier assigned to the item by the seller when the fulfillment order was created."
                     },
                     "invalidItemReason": {
-                        "$ref": "#\/components\/schemas\/InvalidItemReason"
+                        "$ref": "#/components/schemas/InvalidItemReason"
                     }
                 },
                 "description": "An item that is invalid for return."
@@ -4020,7 +4025,7 @@
                 "type": "array",
                 "description": "An array of invalid return item information.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/InvalidReturnItem"
+                    "$ref": "#/components/schemas/InvalidReturnItem"
                 }
             },
             "ListAllFulfillmentOrdersResult": {
@@ -4034,7 +4039,7 @@
                         "type": "array",
                         "description": "An array of fulfillment order information.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/FulfillmentOrder"
+                            "$ref": "#/components/schemas/FulfillmentOrder"
                         }
                     }
                 }
@@ -4043,19 +4048,19 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/ListAllFulfillmentOrdersResult"
+                        "$ref": "#/components/schemas/ListAllFulfillmentOrdersResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the listAllFulfillmentOrders operation."
+                "description": "The response schema for the `listAllFulfillmentOrders` operation."
             },
             "ListReturnReasonCodesResult": {
                 "type": "object",
                 "properties": {
                     "reasonCodeDetails": {
-                        "$ref": "#\/components\/schemas\/ReasonCodeDetailsList"
+                        "$ref": "#/components/schemas/ReasonCodeDetailsList"
                     }
                 }
             },
@@ -4063,13 +4068,13 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/ListReturnReasonCodesResult"
+                        "$ref": "#/components/schemas/ListReturnReasonCodesResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the listReturnReasonCodes operation."
+                "description": "The response schema for the `listReturnReasonCodes` operation."
             },
             "NotificationEmailList": {
                 "type": "array",
@@ -4347,30 +4352,30 @@
                         "description": "The URL of the carrier's website."
                     },
                     "shipDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "estimatedArrivalDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "shipToAddress": {
-                        "$ref": "#\/components\/schemas\/TrackingAddress"
+                        "$ref": "#/components/schemas/TrackingAddress"
                     },
                     "currentStatus": {
-                        "$ref": "#\/components\/schemas\/CurrentStatus"
+                        "$ref": "#/components/schemas/CurrentStatus"
                     },
                     "currentStatusDescription": {
                         "type": "string",
-                        "description": "Description corresponding to the CurrentStatus value."
+                        "description": "Description corresponding to the `CurrentStatus` value."
                     },
                     "signedForBy": {
                         "type": "string",
                         "description": "The name of the person who signed for the package."
                     },
                     "additionalLocationInfo": {
-                        "$ref": "#\/components\/schemas\/AdditionalLocationInfo"
+                        "$ref": "#/components/schemas/AdditionalLocationInfo"
                     },
                     "trackingEvents": {
-                        "$ref": "#\/components\/schemas\/TrackingEventList"
+                        "$ref": "#/components/schemas/TrackingEventList"
                     }
                 }
             },
@@ -4378,13 +4383,13 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/PackageTrackingDetails"
+                        "$ref": "#/components/schemas/PackageTrackingDetails"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the getPackageTrackingDetails operation."
+                "description": "The response schema for the `getPackageTrackingDetails` operation."
             },
             "ReasonCodeDetails": {
                 "required": [
@@ -4412,8 +4417,30 @@
                 "type": "array",
                 "description": "An array of return reason code details.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ReasonCodeDetails"
+                    "$ref": "#/components/schemas/ReasonCodeDetails"
                 }
+            },
+            "PaymentInformation": {
+                "required": [
+                    "paymentDate",
+                    "paymentMode",
+                    "paymentTransactionId"
+                ],
+                "type": "object",
+                "properties": {
+                    "paymentTransactionId": {
+                        "type": "string",
+                        "description": "The transaction identifier of this payment."
+                    },
+                    "paymentMode": {
+                        "type": "string",
+                        "description": "The transaction mode of this payment."
+                    },
+                    "paymentDate": {
+                        "$ref": "#/components/schemas/Timestamp"
+                    }
+                },
+                "description": "The attributes related to the payment made from customer to seller for this order."
             },
             "ReturnAuthorization": {
                 "required": [
@@ -4434,7 +4461,7 @@
                         "description": "An identifier for the Amazon fulfillment center that the return items should be sent to."
                     },
                     "returnToAddress": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "amazonRmaId": {
                         "type": "string",
@@ -4447,11 +4474,18 @@
                 },
                 "description": "Return authorization information for items accepted for return."
             },
+            "PaymentInformationList": {
+                "type": "array",
+                "description": "An array of various payment attributes related to this fulfillment order.",
+                "items": {
+                    "$ref": "#/components/schemas/PaymentInformation"
+                }
+            },
             "ReturnAuthorizationList": {
                 "type": "array",
                 "description": "An array of return authorization information.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ReturnAuthorization"
+                    "$ref": "#/components/schemas/ReturnAuthorization"
                 }
             },
             "ReturnItem": {
@@ -4490,17 +4524,17 @@
                         "description": "The return reason code that the Amazon fulfillment center assigned to the return item."
                     },
                     "status": {
-                        "$ref": "#\/components\/schemas\/FulfillmentReturnItemStatus"
+                        "$ref": "#/components/schemas/FulfillmentReturnItemStatus"
                     },
                     "statusChangedDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "returnAuthorizationId": {
                         "type": "string",
-                        "description": "Identifies the return authorization used to return this item. See ReturnAuthorization."
+                        "description": "Identifies the return authorization used to return this item. Refer to `ReturnAuthorization`."
                     },
                     "returnReceivedCondition": {
-                        "$ref": "#\/components\/schemas\/ReturnItemDisposition"
+                        "$ref": "#/components/schemas/ReturnItemDisposition"
                     },
                     "fulfillmentCenterId": {
                         "type": "string",
@@ -4546,7 +4580,7 @@
                 "type": "array",
                 "description": "An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ReturnItem"
+                    "$ref": "#/components/schemas/ReturnItem"
                 }
             },
             "ScheduledDeliveryInfo": {
@@ -4558,10 +4592,10 @@
                 "properties": {
                     "deliveryTimeZone": {
                         "type": "string",
-                        "description": "The time zone of the destination address for the fulfillment order preview. Must be an IANA time zone name. Example: Asia\/Tokyo."
+                        "description": "The time zone of the destination address for the fulfillment order preview. Must be an IANA time zone name. Example: Asia/Tokyo."
                     },
                     "deliveryWindows": {
-                        "$ref": "#\/components\/schemas\/DeliveryWindowList"
+                        "$ref": "#/components/schemas/DeliveryWindowList"
                     }
                 },
                 "description": "Delivery information for a scheduled delivery. This is only available in the JP marketplace."
@@ -4569,7 +4603,7 @@
             "ShippingSpeedCategoryList": {
                 "type": "array",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ShippingSpeedCategory"
+                    "$ref": "#/components/schemas/ShippingSpeedCategory"
                 }
             },
             "StringList": {
@@ -4791,13 +4825,13 @@
                 "type": "object",
                 "properties": {
                     "eventDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "eventAddress": {
-                        "$ref": "#\/components\/schemas\/TrackingAddress"
+                        "$ref": "#/components/schemas/TrackingAddress"
                     },
                     "eventCode": {
-                        "$ref": "#\/components\/schemas\/EventCode"
+                        "$ref": "#/components/schemas/EventCode"
                     },
                     "eventDescription": {
                         "type": "string",
@@ -4810,7 +4844,7 @@
                 "type": "array",
                 "description": "An array of tracking event information.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/TrackingEvent"
+                    "$ref": "#/components/schemas/TrackingEvent"
                 }
             },
             "UnfulfillablePreviewItem": {
@@ -4827,15 +4861,15 @@
                         "description": "The seller SKU of the item."
                     },
                     "quantity": {
-                        "$ref": "#\/components\/schemas\/Quantity"
+                        "$ref": "#/components/schemas/Quantity"
                     },
                     "sellerFulfillmentOrderItemId": {
                         "maxLength": 50,
                         "type": "string",
-                        "description": "A fulfillment order item identifier created with a call to the getFulfillmentPreview operation."
+                        "description": "A fulfillment order item identifier created with a call to the `getFulfillmentPreview` operation."
                     },
                     "itemUnfulfillableReasons": {
-                        "$ref": "#\/components\/schemas\/StringList"
+                        "$ref": "#/components/schemas/StringList"
                     }
                 },
                 "description": "Information about unfulfillable items in a fulfillment order preview."
@@ -4844,7 +4878,7 @@
                 "type": "array",
                 "description": "An array of unfulfillable preview item information.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/UnfulfillablePreviewItem"
+                    "$ref": "#/components/schemas/UnfulfillablePreviewItem"
                 }
             },
             "UpdateFulfillmentOrderItem": {
@@ -4861,10 +4895,10 @@
                     "sellerFulfillmentOrderItemId": {
                         "maxLength": 50,
                         "type": "string",
-                        "description": "Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation."
+                        "description": "Identifies the fulfillment order item to update. Created with a previous call to the `createFulfillmentOrder` operation."
                     },
                     "quantity": {
-                        "$ref": "#\/components\/schemas\/Quantity"
+                        "$ref": "#/components/schemas/Quantity"
                     },
                     "giftMessage": {
                         "maxLength": 512,
@@ -4885,13 +4919,13 @@
                         "description": "Indicates whether the item is sellable or unsellable."
                     },
                     "perUnitDeclaredValue": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "perUnitPrice": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "perUnitTax": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     }
                 },
                 "description": "Item information for updating a fulfillment order."
@@ -4900,7 +4934,7 @@
                 "type": "array",
                 "description": "An array of fulfillment order item information for updating a fulfillment order.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/UpdateFulfillmentOrderItem"
+                    "$ref": "#/components/schemas/UpdateFulfillmentOrderItem"
                 }
             },
             "UpdateFulfillmentOrderRequest": {
@@ -4913,74 +4947,74 @@
                     "displayableOrderId": {
                         "maxLength": 40,
                         "type": "string",
-                        "description": "A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier."
+                        "description": "A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `DisplayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the `SellerFulfillmentOrderId` for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier."
                     },
                     "displayableOrderDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "displayableOrderComment": {
-                        "maxLength": 1000,
+                        "maxLength": 750,
                         "type": "string",
                         "description": "Order-specific text that appears in recipient-facing materials such as the outbound shipment packing slip."
                     },
                     "shippingSpeedCategory": {
-                        "$ref": "#\/components\/schemas\/ShippingSpeedCategory"
+                        "$ref": "#/components/schemas/ShippingSpeedCategory"
                     },
                     "destinationAddress": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "fulfillmentAction": {
-                        "$ref": "#\/components\/schemas\/FulfillmentAction"
+                        "$ref": "#/components/schemas/FulfillmentAction"
                     },
                     "fulfillmentPolicy": {
-                        "$ref": "#\/components\/schemas\/FulfillmentPolicy"
+                        "$ref": "#/components/schemas/FulfillmentPolicy"
                     },
                     "shipFromCountryCode": {
                         "type": "string",
                         "description": "The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format."
                     },
                     "notificationEmails": {
-                        "$ref": "#\/components\/schemas\/NotificationEmailList"
+                        "$ref": "#/components/schemas/NotificationEmailList"
                     },
                     "featureConstraints": {
                         "type": "array",
                         "description": "A list of features and their fulfillment policies to apply to the order.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/FeatureSettings"
+                            "$ref": "#/components/schemas/FeatureSettings"
                         }
                     },
                     "items": {
-                        "$ref": "#\/components\/schemas\/UpdateFulfillmentOrderItemList"
+                        "$ref": "#/components/schemas/UpdateFulfillmentOrderItemList"
                     }
                 },
-                "description": "The request body schema for the updateFulfillmentOrder operation."
+                "description": "The request body schema for the `updateFulfillmentOrder` operation."
             },
             "UpdateFulfillmentOrderResponse": {
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the updateFulfillmentOrder operation."
+                "description": "The response schema for the `updateFulfillmentOrder` operation."
             },
             "CreateFulfillmentOrderResponse": {
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the createFulfillmentOrder operation."
+                "description": "The response schema for the `createFulfillmentOrder` operation."
             },
             "CancelFulfillmentOrderResponse": {
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the cancelFulfillmentOrder operation."
+                "description": "The response schema for the `cancelFulfillmentOrder` operation."
             },
             "Weight": {
                 "required": [
@@ -5031,7 +5065,7 @@
             },
             "ShippingSpeedCategory": {
                 "type": "string",
-                "description": "The shipping method used for the fulfillment order. When this value is ScheduledDelivery, choose Ship for the fulfillmentAction. Hold is not a valid fulfillmentAction value when the shippingSpeedCategory value is ScheduledDelivery.",
+                "description": "The shipping method used for the fulfillment order. When this value is `ScheduledDelivery`, choose Ship for the `fulfillmentAction`. Hold is not a valid `fulfillmentAction` value when the `shippingSpeedCategory` value is `ScheduledDelivery`.",
                 "enum": [
                     "Standard",
                     "Expedited",
@@ -5061,10 +5095,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/GetFeatureInventoryResult"
+                        "$ref": "#/components/schemas/GetFeatureInventoryResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The breakdown of eligibility inventory by feature."
@@ -5092,18 +5126,18 @@
                         "type": "array",
                         "description": "An array of SKUs eligible for this feature and the quantity available.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/FeatureSku"
+                            "$ref": "#/components/schemas/FeatureSku"
                         }
                     }
                 },
-                "description": "The payload for the getEligibileInventory operation."
+                "description": "The payload for the `getEligibileInventory` operation."
             },
             "FeatureSku": {
                 "type": "object",
                 "properties": {
                     "sellerSku": {
                         "type": "string",
-                        "description": "Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit."
+                        "description": "Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller's SellerId, which is included with every operation that you submit."
                     },
                     "fnSku": {
                         "type": "string",
@@ -5131,13 +5165,13 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/GetFeaturesResult"
+                        "$ref": "#/components/schemas/GetFeaturesResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the getFeatures operation."
+                "description": "The response schema for the `getFeatures` operation."
             },
             "GetFeaturesResult": {
                 "required": [
@@ -5146,16 +5180,16 @@
                 "type": "object",
                 "properties": {
                     "features": {
-                        "$ref": "#\/components\/schemas\/Features"
+                        "$ref": "#/components/schemas/Features"
                     }
                 },
-                "description": "The payload for the getFeatures operation."
+                "description": "The payload for the `getFeatures` operation."
             },
             "Features": {
                 "type": "array",
                 "description": "An array of features.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Feature"
+                    "$ref": "#/components/schemas/Feature"
                 }
             },
             "Feature": {
@@ -5184,13 +5218,13 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/GetFeatureSkuResult"
+                        "$ref": "#/components/schemas/GetFeatureSkuResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the getFeatureSKU operation."
+                "description": "The response schema for the `getFeatureSKU` operation."
             },
             "GetFeatureSkuResult": {
                 "required": [
@@ -5214,16 +5248,16 @@
                     },
                     "ineligibleReasons": {
                         "type": "array",
-                        "description": "A list of one or more reasons that the seller SKU is ineligibile for the feature.\n\nPossible values:\n* MERCHANT_NOT_ENROLLED - The merchant isn't enrolled for the feature.\n* SKU_NOT_ELIGIBLE - The SKU doesn't reside in a warehouse that supports the feature.\n* INVALID_SKU - There is an issue with the SKU provided.",
+                        "description": "A list of one or more reasons that the seller SKU is ineligibile for the feature.\n\nPossible values:\n* `MERCHANT_NOT_ENROLLED` - The merchant isn't enrolled for the feature.\n* `SKU_NOT_ELIGIBLE` - The SKU doesn't reside in a warehouse that supports the feature.\n* `INVALID_SKU` - There is an issue with the SKU provided.",
                         "items": {
                             "type": "string"
                         }
                     },
                     "skuInfo": {
-                        "$ref": "#\/components\/schemas\/FeatureSku"
+                        "$ref": "#/components/schemas/FeatureSku"
                     }
                 },
-                "description": "The payload for the getFeatureSKU operation."
+                "description": "The payload for the `getFeatureSKU` operation."
             },
             "FeatureSettings": {
                 "type": "object",
@@ -5251,25 +5285,25 @@
                         ]
                     }
                 },
-                "description": "FeatureSettings allows users to apply fulfillment features to an order. To block an order from being shipped using Amazon Logistics (AMZL) and an AMZL tracking number, use featureName as BLOCK_AMZL and featureFulfillmentPolicy as Required. Blocking AMZL will incur an additional fee surcharge on your MCF orders and increase the risk of some of your orders being unfulfilled or delivered late if there are no alternative carriers available. Using BLOCK_AMZL in an order request will take precedence over your Seller Central account setting. To ship in non-Amazon branded packaging (blank boxes), use featureName BLANK_BOX."
+                "description": "`FeatureSettings` allows users to apply fulfillment features to an order. To block an order from being shipped using Amazon Logistics (AMZL) and an AMZL tracking number, use `featureName` as `BLOCK_AMZL` and `featureFulfillmentPolicy` as `Required`. Blocking AMZL will incur an additional fee surcharge on your MCF orders and increase the risk of some of your orders being unfulfilled or delivered late if there are no alternative carriers available. Using `BLOCK_AMZL` in an order request will take precedence over your Seller Central account setting. To ship in non-Amazon branded packaging (blank boxes), use featureName `BLANK_BOX`."
             },
             "SubmitFulfillmentOrderStatusUpdateRequest": {
                 "type": "object",
                 "properties": {
                     "fulfillmentOrderStatus": {
-                        "$ref": "#\/components\/schemas\/FulfillmentOrderStatus"
+                        "$ref": "#/components/schemas/FulfillmentOrderStatus"
                     }
                 },
-                "description": "The request body schema for the submitFulfillmentOrderStatusUpdate operation."
+                "description": "The request body schema for the `submitFulfillmentOrderStatusUpdate` operation."
             },
             "SubmitFulfillmentOrderStatusUpdateResponse": {
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the SubmitFulfillmentOrderStatusUpdate operation."
+                "description": "The response schema for the `SubmitFulfillmentOrderStatusUpdate` operation."
             }
         }
     },

@@ -17,9 +17,9 @@ final class Report extends Response
      * @param  ?DateTime  $dataStartTime  The start of a date and time range used for selecting the data to report.
      * @param  ?DateTime  $dataEndTime  The end of a date and time range used for selecting the data to report.
      * @param  ?string  $reportScheduleId  The identifier of the report schedule that created this report (if any). This identifier is unique only in combination with a seller ID.
-     * @param  ?DateTime  $processingStartTime  The date and time when the report processing started, in ISO 8601 date time format.
-     * @param  ?DateTime  $processingEndTime  The date and time when the report processing completed, in ISO 8601 date time format.
-     * @param  ?string  $reportDocumentId  The identifier for the report document. Pass this into the getReportDocument operation to get the information you will need to retrieve the report document's contents.
+     * @param  ?DateTime  $processingStartTime  The date and time when the report processing started, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
+     * @param  ?DateTime  $processingEndTime  The date and time when the report processing completed, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
+     * @param  ?string  $reportDocumentId  The identifier for the report document. Pass this into the `getReportDocument` operation to get the information you will need to retrieve the report document's contents.
      */
     public function __construct(
         public readonly string $reportId,

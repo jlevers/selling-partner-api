@@ -5,26 +5,26 @@
         "description": "The Selling Partner API for FBA Inventory lets you programmatically retrieve information about inventory in Amazon's fulfillment network.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v1"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/fba\/inventory\/v1\/summaries": {
+        "/fba/inventory/v1/summaries": {
             "get": {
                 "tags": [
                     "FBAInventoryV1"
                 ],
-                "description": "Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the `startDateTime`, `sellerSkus` and `sellerSku` parameters:\n\n- All inventory summaries with available details are returned when the `startDateTime`, `sellerSkus` and `sellerSku` parameters are omitted.\n- When `startDateTime` is provided, the operation returns inventory summaries that have had changes after the date and time specified. The `sellerSkus` and `sellerSku` parameters are ignored. **Important:** To avoid errors, use both `startDateTime` and `nextToken` to get the next page of inventory summaries that have changed after the date and time specified.\n- When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`. The `sellerSku` parameter is ignored.\n- When the `sellerSku` parameter is provided, the operation returns inventory summaries for only the specified `sellerSku`.\n\n**Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the `startDateTime`, `sellerSkus` and `sellerSku` parameters:\n\n- All inventory summaries with available details are returned when the `startDateTime`, `sellerSkus` and `sellerSku` parameters are omitted.\n- When `startDateTime` is provided, the operation returns inventory summaries that have had changes after the date and time specified. The `sellerSkus` and `sellerSku` parameters are ignored. **Important:** To avoid errors, use both `startDateTime` and `nextToken` to get the next page of inventory summaries that have changed after the date and time specified.\n- When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`. The `sellerSku` parameter is ignored.\n- When the `sellerSku` parameter is provided, the operation returns inventory summaries for only the specified `sellerSku`.\n\n**Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getInventorySummaries",
                 "parameters": [
                     {
@@ -142,9 +142,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInventorySummariesResponse"
+                                    "$ref": "#/components/schemas/GetInventorySummariesResponse"
                                 }
                             }
                         },
@@ -291,7 +291,7 @@
                                                         }
                                                     },
                                                     "lastUpdatedTime": "2018-03-31T23:40:39Z",
-                                                    "productName": "Silicon Power 32GB up to 85MB\/s MicroSDHC UHS-1 Class10, Elite Flash Memory Card with Adaptor (SP032GBSTHBU1V20SP)",
+                                                    "productName": "Silicon Power 32GB up to 85MB/s MicroSDHC UHS-1 Class10, Elite Flash Memory Card with Adaptor (SP032GBSTHBU1V20SP)",
                                                     "totalQuantity": 87
                                                 }
                                             ]
@@ -318,9 +318,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInventorySummariesResponse"
+                                    "$ref": "#/components/schemas/GetInventorySummariesResponse"
                                 }
                             }
                         }
@@ -336,9 +336,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInventorySummariesResponse"
+                                    "$ref": "#/components/schemas/GetInventorySummariesResponse"
                                 }
                             }
                         }
@@ -360,9 +360,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInventorySummariesResponse"
+                                    "$ref": "#/components/schemas/GetInventorySummariesResponse"
                                 }
                             }
                         }
@@ -384,9 +384,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInventorySummariesResponse"
+                                    "$ref": "#/components/schemas/GetInventorySummariesResponse"
                                 }
                             }
                         }
@@ -408,9 +408,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInventorySummariesResponse"
+                                    "$ref": "#/components/schemas/GetInventorySummariesResponse"
                                 }
                             }
                         },
@@ -455,9 +455,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInventorySummariesResponse"
+                                    "$ref": "#/components/schemas/GetInventorySummariesResponse"
                                 }
                             }
                         }
@@ -558,7 +558,7 @@
                         "type": "array",
                         "description": "A list of quantity details for items currently being researched.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ResearchingQuantityEntry"
+                            "$ref": "#/components/schemas/ResearchingQuantityEntry"
                         }
                     }
                 },
@@ -618,13 +618,13 @@
                         "description": "The number of units that have not yet been received at an Amazon fulfillment center for processing, but are part of an inbound shipment with some units that have already been received and processed."
                     },
                     "reservedQuantity": {
-                        "$ref": "#\/components\/schemas\/ReservedQuantity"
+                        "$ref": "#/components/schemas/ReservedQuantity"
                     },
                     "researchingQuantity": {
-                        "$ref": "#\/components\/schemas\/ResearchingQuantity"
+                        "$ref": "#/components/schemas/ResearchingQuantity"
                     },
                     "unfulfillableQuantity": {
-                        "$ref": "#\/components\/schemas\/UnfulfillableQuantity"
+                        "$ref": "#/components/schemas/UnfulfillableQuantity"
                     }
                 },
                 "description": "Summarized inventory details. This object will not appear if the details parameter in the request is false."
@@ -649,7 +649,7 @@
                         "description": "The condition of the item as described by the seller (for example, New Item)."
                     },
                     "inventoryDetails": {
-                        "$ref": "#\/components\/schemas\/InventoryDetails"
+                        "$ref": "#/components/schemas/InventoryDetails"
                     },
                     "lastUpdatedTime": {
                         "type": "string",
@@ -671,7 +671,7 @@
                 "type": "array",
                 "description": "A list of inventory summaries.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/InventorySummary"
+                    "$ref": "#/components/schemas/InventorySummary"
                 }
             },
             "Pagination": {
@@ -692,10 +692,10 @@
                 "type": "object",
                 "properties": {
                     "granularity": {
-                        "$ref": "#\/components\/schemas\/Granularity"
+                        "$ref": "#/components/schemas/Granularity"
                     },
                     "inventorySummaries": {
-                        "$ref": "#\/components\/schemas\/InventorySummaries"
+                        "$ref": "#/components/schemas/InventorySummaries"
                     }
                 },
                 "description": "The payload schema for the getInventorySummaries operation."
@@ -704,13 +704,13 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/GetInventorySummariesResult"
+                        "$ref": "#/components/schemas/GetInventorySummariesResult"
                     },
                     "pagination": {
-                        "$ref": "#\/components\/schemas\/Pagination"
+                        "$ref": "#/components/schemas/Pagination"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The Response schema."
@@ -740,7 +740,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             }
         }

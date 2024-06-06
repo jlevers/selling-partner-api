@@ -19,7 +19,7 @@ class GetOrderBuyerInfo extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $orderId  An orderId is an Amazon-defined order identifier, in 3-7-7 format.
+     * @param  string  $orderId  An `orderId` is an Amazon-defined order identifier, in 3-7-7 format.
      */
     public function __construct(
         protected string $orderId,

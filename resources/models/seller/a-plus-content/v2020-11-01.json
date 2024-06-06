@@ -5,21 +5,21 @@
         "description": "With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "2020-11-01"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/aplus\/2020-11-01\/contentDocuments": {
+        "/aplus/2020-11-01/contentDocuments": {
             "get": {
                 "tags": [
                     "APlusContentV20201101"
@@ -65,9 +65,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SearchContentDocumentsResponse"
+                                    "$ref": "#/components/schemas/SearchContentDocumentsResponse"
                                 }
                             }
                         }
@@ -89,9 +89,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -113,9 +113,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -131,9 +131,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -155,9 +155,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -179,9 +179,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -203,9 +203,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -227,9 +227,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -251,9 +251,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -281,9 +281,9 @@
                 "requestBody": {
                     "description": "The content document request details.",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/PostContentDocumentRequest"
+                                "$ref": "#/components/schemas/PostContentDocumentRequest"
                             }
                         }
                     },
@@ -307,9 +307,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PostContentDocumentResponse"
+                                    "$ref": "#/components/schemas/PostContentDocumentResponse"
                                 }
                             }
                         }
@@ -331,9 +331,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -355,9 +355,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -373,9 +373,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -397,9 +397,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -421,9 +421,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -445,9 +445,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -469,9 +469,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -480,7 +480,7 @@
                 "x-codegen-request-body-name": "postContentDocumentRequest"
             }
         },
-        "\/aplus\/2020-11-01\/contentDocuments\/{contentReferenceKey}": {
+        "/aplus/2020-11-01/contentDocuments/{contentReferenceKey}": {
             "get": {
                 "tags": [
                     "APlusContentV20201101"
@@ -557,9 +557,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetContentDocumentResponse"
+                                    "$ref": "#/components/schemas/GetContentDocumentResponse"
                                 }
                             }
                         }
@@ -581,9 +581,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -605,9 +605,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -623,9 +623,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -647,9 +647,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -671,9 +671,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -695,9 +695,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -719,9 +719,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -743,9 +743,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -783,9 +783,9 @@
                 "requestBody": {
                     "description": "The content document request details.",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/PostContentDocumentRequest"
+                                "$ref": "#/components/schemas/PostContentDocumentRequest"
                             }
                         }
                     },
@@ -809,9 +809,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PostContentDocumentResponse"
+                                    "$ref": "#/components/schemas/PostContentDocumentResponse"
                                 }
                             }
                         }
@@ -833,9 +833,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -857,9 +857,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -875,9 +875,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -899,9 +899,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -923,9 +923,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -947,9 +947,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -971,9 +971,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -995,9 +995,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1006,7 +1006,7 @@
                 "x-codegen-request-body-name": "postContentDocumentRequest"
             }
         },
-        "\/aplus\/2020-11-01\/contentDocuments\/{contentReferenceKey}\/asins": {
+        "/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins": {
             "get": {
                 "tags": [
                     "APlusContentV20201101"
@@ -1101,9 +1101,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListContentDocumentAsinRelationsResponse"
+                                    "$ref": "#/components/schemas/ListContentDocumentAsinRelationsResponse"
                                 }
                             }
                         }
@@ -1125,9 +1125,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1149,9 +1149,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1167,9 +1167,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1191,9 +1191,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1215,9 +1215,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1239,9 +1239,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1263,9 +1263,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1287,9 +1287,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1327,9 +1327,9 @@
                 "requestBody": {
                     "description": "The content document ASIN relations request details.",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/PostContentDocumentAsinRelationsRequest"
+                                "$ref": "#/components/schemas/PostContentDocumentAsinRelationsRequest"
                             }
                         }
                     },
@@ -1353,9 +1353,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PostContentDocumentAsinRelationsResponse"
+                                    "$ref": "#/components/schemas/PostContentDocumentAsinRelationsResponse"
                                 }
                             }
                         }
@@ -1377,9 +1377,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1401,9 +1401,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1419,9 +1419,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1443,9 +1443,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1467,9 +1467,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1491,9 +1491,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1515,9 +1515,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1539,9 +1539,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1550,7 +1550,7 @@
                 "x-codegen-request-body-name": "postContentDocumentAsinRelationsRequest"
             }
         },
-        "\/aplus\/2020-11-01\/contentAsinValidations": {
+        "/aplus/2020-11-01/contentAsinValidations": {
             "post": {
                 "tags": [
                     "APlusContentV20201101"
@@ -1587,9 +1587,9 @@
                 "requestBody": {
                     "description": "The content document request details.",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/PostContentDocumentRequest"
+                                "$ref": "#/components/schemas/PostContentDocumentRequest"
                             }
                         }
                     },
@@ -1613,9 +1613,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ValidateContentDocumentAsinRelationsResponse"
+                                    "$ref": "#/components/schemas/ValidateContentDocumentAsinRelationsResponse"
                                 }
                             }
                         }
@@ -1637,9 +1637,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1661,9 +1661,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1679,9 +1679,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1703,9 +1703,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1727,9 +1727,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1751,9 +1751,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1775,9 +1775,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1786,7 +1786,7 @@
                 "x-codegen-request-body-name": "postContentDocumentRequest"
             }
         },
-        "\/aplus\/2020-11-01\/contentPublishRecords": {
+        "/aplus/2020-11-01/contentPublishRecords": {
             "get": {
                 "tags": [
                     "APlusContentV20201101"
@@ -1842,9 +1842,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SearchContentPublishRecordsResponse"
+                                    "$ref": "#/components/schemas/SearchContentPublishRecordsResponse"
                                 }
                             }
                         }
@@ -1866,9 +1866,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1890,9 +1890,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1908,9 +1908,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1932,9 +1932,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1956,9 +1956,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1980,9 +1980,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2004,9 +2004,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2014,7 +2014,7 @@
                 }
             }
         },
-        "\/aplus\/2020-11-01\/contentDocuments\/{contentReferenceKey}\/approvalSubmissions": {
+        "/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions": {
             "post": {
                 "tags": [
                     "APlusContentV20201101"
@@ -2061,9 +2061,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PostContentDocumentApprovalSubmissionResponse"
+                                    "$ref": "#/components/schemas/PostContentDocumentApprovalSubmissionResponse"
                                 }
                             }
                         }
@@ -2085,9 +2085,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2109,9 +2109,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2127,9 +2127,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2151,9 +2151,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2175,9 +2175,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2199,9 +2199,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2223,9 +2223,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2247,9 +2247,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2257,7 +2257,7 @@
                 }
             }
         },
-        "\/aplus\/2020-11-01\/contentDocuments\/{contentReferenceKey}\/suspendSubmissions": {
+        "/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions": {
             "post": {
                 "tags": [
                     "APlusContentV20201101"
@@ -2304,9 +2304,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PostContentDocumentSuspendSubmissionResponse"
+                                    "$ref": "#/components/schemas/PostContentDocumentSuspendSubmissionResponse"
                                 }
                             }
                         }
@@ -2328,9 +2328,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2352,9 +2352,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2370,9 +2370,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2394,9 +2394,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2418,9 +2418,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2442,9 +2442,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2466,9 +2466,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2490,9 +2490,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2507,7 +2507,7 @@
                 "type": "object",
                 "properties": {
                     "warnings": {
-                        "$ref": "#\/components\/schemas\/MessageSet"
+                        "$ref": "#/components/schemas/MessageSet"
                     }
                 },
                 "description": "The base response data for all A+ Content operations when a request is successful or partially successful. Individual operations may extend this with additional data."
@@ -2516,13 +2516,13 @@
                 "description": "The base response data for paginated A+ Content operations. Individual operations may extend this with additional data. If nextPageToken is not returned, there are no more pages to return.",
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/AplusResponse"
+                        "$ref": "#/components/schemas/AplusResponse"
                     },
                     {
                         "type": "object",
                         "properties": {
                             "nextPageToken": {
-                                "$ref": "#\/components\/schemas\/PageToken"
+                                "$ref": "#/components/schemas/PageToken"
                             }
                         }
                     }
@@ -2538,7 +2538,7 @@
                         "type": "array",
                         "description": "A list of error responses returned when a request is unsuccessful.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Error"
+                            "$ref": "#/components/schemas/Error"
                         }
                     }
                 },
@@ -2549,7 +2549,7 @@
                 "type": "array",
                 "description": "A set of messages to the user, such as warnings or comments.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Error": {
@@ -2582,7 +2582,7 @@
                 "type": "array",
                 "description": "A list of A+ Content metadata records.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ContentMetadataRecord"
+                    "$ref": "#/components/schemas/ContentMetadataRecord"
                 }
             },
             "ContentMetadataRecord": {
@@ -2593,10 +2593,10 @@
                 "type": "object",
                 "properties": {
                     "contentReferenceKey": {
-                        "$ref": "#\/components\/schemas\/ContentReferenceKey"
+                        "$ref": "#/components/schemas/ContentReferenceKey"
                     },
                     "contentMetadata": {
-                        "$ref": "#\/components\/schemas\/ContentMetadata"
+                        "$ref": "#/components/schemas/ContentMetadata"
                     }
                 },
                 "description": "The metadata for an A+ Content document, with additional information for content management."
@@ -2618,13 +2618,13 @@
                         "description": "The A+ Content document name."
                     },
                     "marketplaceId": {
-                        "$ref": "#\/components\/schemas\/MarketplaceId"
+                        "$ref": "#/components/schemas/MarketplaceId"
                     },
                     "status": {
-                        "$ref": "#\/components\/schemas\/ContentStatus"
+                        "$ref": "#/components/schemas/ContentStatus"
                     },
                     "badgeSet": {
-                        "$ref": "#\/components\/schemas\/ContentBadgeSet"
+                        "$ref": "#/components/schemas/ContentBadgeSet"
                     },
                     "updateTime": {
                         "type": "string",
@@ -2690,7 +2690,7 @@
                 "type": "array",
                 "description": "The set of content badges.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ContentBadge"
+                    "$ref": "#/components/schemas/ContentBadge"
                 }
             },
             "ContentBadge": {
@@ -2731,7 +2731,7 @@
                 "type": "array",
                 "description": "The set of ASIN badges.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/AsinBadge"
+                    "$ref": "#/components/schemas/AsinBadge"
                 }
             },
             "AsinBadge": {
@@ -2777,7 +2777,7 @@
                 "type": "array",
                 "description": "The set of ASINs.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Asin"
+                    "$ref": "#/components/schemas/Asin"
                 }
             },
             "Asin": {
@@ -2790,7 +2790,7 @@
                 "type": "array",
                 "description": "The set of ASIN metadata.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/AsinMetadata"
+                    "$ref": "#/components/schemas/AsinMetadata"
                 }
             },
             "AsinMetadata": {
@@ -2800,13 +2800,13 @@
                 "type": "object",
                 "properties": {
                     "asin": {
-                        "$ref": "#\/components\/schemas\/Asin"
+                        "$ref": "#/components/schemas/Asin"
                     },
                     "badgeSet": {
-                        "$ref": "#\/components\/schemas\/AsinBadgeSet"
+                        "$ref": "#/components/schemas/AsinBadgeSet"
                     },
                     "parent": {
-                        "$ref": "#\/components\/schemas\/Asin"
+                        "$ref": "#/components/schemas/Asin"
                     },
                     "title": {
                         "minLength": 1,
@@ -2819,7 +2819,7 @@
                         "description": "The default image for the ASIN in the Amazon catalog."
                     },
                     "contentReferenceKeySet": {
-                        "$ref": "#\/components\/schemas\/ContentReferenceKeySet"
+                        "$ref": "#/components/schemas/ContentReferenceKeySet"
                     }
                 },
                 "description": "The A+ Content ASIN with additional metadata for content management. If you don't include the `includedDataSet` parameter in a call to the listContentDocumentAsinRelations operation, the related ASINs are returned without metadata."
@@ -2829,7 +2829,7 @@
                 "type": "array",
                 "description": "A list of A+ Content publishing records.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/PublishRecord"
+                    "$ref": "#/components/schemas/PublishRecord"
                 }
             },
             "PublishRecord": {
@@ -2843,22 +2843,22 @@
                 "type": "object",
                 "properties": {
                     "marketplaceId": {
-                        "$ref": "#\/components\/schemas\/MarketplaceId"
+                        "$ref": "#/components/schemas/MarketplaceId"
                     },
                     "locale": {
-                        "$ref": "#\/components\/schemas\/LanguageTag"
+                        "$ref": "#/components/schemas/LanguageTag"
                     },
                     "asin": {
-                        "$ref": "#\/components\/schemas\/Asin"
+                        "$ref": "#/components/schemas/Asin"
                     },
                     "contentType": {
-                        "$ref": "#\/components\/schemas\/ContentType"
+                        "$ref": "#/components/schemas/ContentType"
                     },
                     "contentSubType": {
-                        "$ref": "#\/components\/schemas\/ContentSubType"
+                        "$ref": "#/components/schemas/ContentSubType"
                     },
                     "contentReferenceKey": {
-                        "$ref": "#\/components\/schemas\/ContentReferenceKey"
+                        "$ref": "#/components/schemas/ContentReferenceKey"
                     }
                 },
                 "description": "The full context for an A+ Content publishing event."
@@ -2868,7 +2868,7 @@
                 "type": "array",
                 "description": "A set of content reference keys.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ContentReferenceKey"
+                    "$ref": "#/components/schemas/ContentReferenceKey"
                 }
             },
             "ContentReferenceKey": {
@@ -2888,10 +2888,10 @@
                 "type": "object",
                 "properties": {
                     "size": {
-                        "$ref": "#\/components\/schemas\/ImageDimensions"
+                        "$ref": "#/components/schemas/ImageDimensions"
                     },
                     "offset": {
-                        "$ref": "#\/components\/schemas\/ImageOffsets"
+                        "$ref": "#/components/schemas/ImageOffsets"
                     }
                 },
                 "description": "The instructions for optionally cropping an image. If no cropping is desired, set the dimensions to the original image size. If the image is cropped and no offset values are provided, then the coordinates of the top left corner of the cropped image, relative to the original image, are defaulted to (0,0)."
@@ -2904,10 +2904,10 @@
                 "type": "object",
                 "properties": {
                     "width": {
-                        "$ref": "#\/components\/schemas\/IntegerWithUnits"
+                        "$ref": "#/components/schemas/IntegerWithUnits"
                     },
                     "height": {
-                        "$ref": "#\/components\/schemas\/IntegerWithUnits"
+                        "$ref": "#/components/schemas/IntegerWithUnits"
                     }
                 },
                 "description": "The dimensions extending from the top left corner of the cropped image, or the top left corner of the original image if there is no cropping. Only `pixels` is allowed as the units value for ImageDimensions."
@@ -2920,10 +2920,10 @@
                 "type": "object",
                 "properties": {
                     "x": {
-                        "$ref": "#\/components\/schemas\/IntegerWithUnits"
+                        "$ref": "#/components/schemas/IntegerWithUnits"
                     },
                     "y": {
-                        "$ref": "#\/components\/schemas\/IntegerWithUnits"
+                        "$ref": "#/components/schemas/IntegerWithUnits"
                     }
                 },
                 "description": "The top left corner of the cropped image, specified in the original image's coordinate space."
@@ -2953,13 +2953,13 @@
                 "type": "object",
                 "properties": {
                     "contentReferenceKey": {
-                        "$ref": "#\/components\/schemas\/ContentReferenceKey"
+                        "$ref": "#/components/schemas/ContentReferenceKey"
                     },
                     "contentMetadata": {
-                        "$ref": "#\/components\/schemas\/ContentMetadata"
+                        "$ref": "#/components/schemas/ContentMetadata"
                     },
                     "contentDocument": {
-                        "$ref": "#\/components\/schemas\/ContentDocument"
+                        "$ref": "#/components/schemas/ContentDocument"
                     }
                 },
                 "description": "A content document with additional information for content management."
@@ -2980,16 +2980,16 @@
                         "description": "The A+ Content document name."
                     },
                     "contentType": {
-                        "$ref": "#\/components\/schemas\/ContentType"
+                        "$ref": "#/components/schemas/ContentType"
                     },
                     "contentSubType": {
-                        "$ref": "#\/components\/schemas\/ContentSubType"
+                        "$ref": "#/components/schemas/ContentSubType"
                     },
                     "locale": {
-                        "$ref": "#\/components\/schemas\/LanguageTag"
+                        "$ref": "#/components/schemas/LanguageTag"
                     },
                     "contentModuleList": {
-                        "$ref": "#\/components\/schemas\/ContentModuleList"
+                        "$ref": "#/components/schemas/ContentModuleList"
                     }
                 },
                 "description": "The A+ Content document. This is the enhanced content that is published to product detail pages."
@@ -3001,7 +3001,7 @@
                 "type": "array",
                 "description": "A list of A+ Content modules.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ContentModule"
+                    "$ref": "#/components/schemas/ContentModule"
                 }
             },
             "ContentModule": {
@@ -3011,52 +3011,52 @@
                 "type": "object",
                 "properties": {
                     "contentModuleType": {
-                        "$ref": "#\/components\/schemas\/ContentModuleType"
+                        "$ref": "#/components/schemas/ContentModuleType"
                     },
                     "standardCompanyLogo": {
-                        "$ref": "#\/components\/schemas\/StandardCompanyLogoModule"
+                        "$ref": "#/components/schemas/StandardCompanyLogoModule"
                     },
                     "standardComparisonTable": {
-                        "$ref": "#\/components\/schemas\/StandardComparisonTableModule"
+                        "$ref": "#/components/schemas/StandardComparisonTableModule"
                     },
                     "standardFourImageText": {
-                        "$ref": "#\/components\/schemas\/StandardFourImageTextModule"
+                        "$ref": "#/components/schemas/StandardFourImageTextModule"
                     },
                     "standardFourImageTextQuadrant": {
-                        "$ref": "#\/components\/schemas\/StandardFourImageTextQuadrantModule"
+                        "$ref": "#/components/schemas/StandardFourImageTextQuadrantModule"
                     },
                     "standardHeaderImageText": {
-                        "$ref": "#\/components\/schemas\/StandardHeaderImageTextModule"
+                        "$ref": "#/components/schemas/StandardHeaderImageTextModule"
                     },
                     "standardImageSidebar": {
-                        "$ref": "#\/components\/schemas\/StandardImageSidebarModule"
+                        "$ref": "#/components/schemas/StandardImageSidebarModule"
                     },
                     "standardImageTextOverlay": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextOverlayModule"
+                        "$ref": "#/components/schemas/StandardImageTextOverlayModule"
                     },
                     "standardMultipleImageText": {
-                        "$ref": "#\/components\/schemas\/StandardMultipleImageTextModule"
+                        "$ref": "#/components/schemas/StandardMultipleImageTextModule"
                     },
                     "standardProductDescription": {
-                        "$ref": "#\/components\/schemas\/StandardProductDescriptionModule"
+                        "$ref": "#/components/schemas/StandardProductDescriptionModule"
                     },
                     "standardSingleImageHighlights": {
-                        "$ref": "#\/components\/schemas\/StandardSingleImageHighlightsModule"
+                        "$ref": "#/components/schemas/StandardSingleImageHighlightsModule"
                     },
                     "standardSingleImageSpecsDetail": {
-                        "$ref": "#\/components\/schemas\/StandardSingleImageSpecsDetailModule"
+                        "$ref": "#/components/schemas/StandardSingleImageSpecsDetailModule"
                     },
                     "standardSingleSideImage": {
-                        "$ref": "#\/components\/schemas\/StandardSingleSideImageModule"
+                        "$ref": "#/components/schemas/StandardSingleSideImageModule"
                     },
                     "standardTechSpecs": {
-                        "$ref": "#\/components\/schemas\/StandardTechSpecsModule"
+                        "$ref": "#/components/schemas/StandardTechSpecsModule"
                     },
                     "standardText": {
-                        "$ref": "#\/components\/schemas\/StandardTextModule"
+                        "$ref": "#/components/schemas/StandardTextModule"
                     },
                     "standardThreeImageText": {
-                        "$ref": "#\/components\/schemas\/StandardThreeImageTextModule"
+                        "$ref": "#/components/schemas/StandardThreeImageTextModule"
                     }
                 },
                 "description": "An A+ Content module. An A+ Content document is composed of content modules. The contentModuleType property selects which content module types to use."
@@ -3151,7 +3151,7 @@
                 "type": "object",
                 "properties": {
                     "companyLogo": {
-                        "$ref": "#\/components\/schemas\/ImageComponent"
+                        "$ref": "#/components/schemas/ImageComponent"
                     }
                 },
                 "description": "The standard company logo image."
@@ -3164,7 +3164,7 @@
                         "minItems": 0,
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/StandardComparisonProductBlock"
+                            "$ref": "#/components/schemas/StandardComparisonProductBlock"
                         }
                     },
                     "metricRowLabels": {
@@ -3172,7 +3172,7 @@
                         "minItems": 0,
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/PlainTextItem"
+                            "$ref": "#/components/schemas/PlainTextItem"
                         }
                     }
                 },
@@ -3182,19 +3182,19 @@
                 "type": "object",
                 "properties": {
                     "headline": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "block1": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     },
                     "block2": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     },
                     "block3": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     },
                     "block4": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     }
                 },
                 "description": "Four standard images with text, presented across a single row."
@@ -3209,16 +3209,16 @@
                 "type": "object",
                 "properties": {
                     "block1": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     },
                     "block2": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     },
                     "block3": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     },
                     "block4": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     }
                 },
                 "description": "Four standard images with text, presented on a grid of four quadrants."
@@ -3227,10 +3227,10 @@
                 "type": "object",
                 "properties": {
                     "headline": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "block": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     }
                 },
                 "description": "Standard headline text, an image, and body text."
@@ -3239,22 +3239,22 @@
                 "type": "object",
                 "properties": {
                     "headline": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "imageCaptionBlock": {
-                        "$ref": "#\/components\/schemas\/StandardImageCaptionBlock"
+                        "$ref": "#/components/schemas/StandardImageCaptionBlock"
                     },
                     "descriptionTextBlock": {
-                        "$ref": "#\/components\/schemas\/StandardTextBlock"
+                        "$ref": "#/components/schemas/StandardTextBlock"
                     },
                     "descriptionListBlock": {
-                        "$ref": "#\/components\/schemas\/StandardTextListBlock"
+                        "$ref": "#/components/schemas/StandardTextListBlock"
                     },
                     "sidebarImageTextBlock": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     },
                     "sidebarListBlock": {
-                        "$ref": "#\/components\/schemas\/StandardTextListBlock"
+                        "$ref": "#/components/schemas/StandardTextListBlock"
                     }
                 },
                 "description": "Two images, two paragraphs, and two bulleted lists. One image is smaller and displayed in the sidebar."
@@ -3266,10 +3266,10 @@
                 "type": "object",
                 "properties": {
                     "overlayColorType": {
-                        "$ref": "#\/components\/schemas\/ColorType"
+                        "$ref": "#/components/schemas/ColorType"
                     },
                     "block": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     }
                 },
                 "description": "A standard background image with a floating text box."
@@ -3280,7 +3280,7 @@
                     "blocks": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/StandardImageTextCaptionBlock"
+                            "$ref": "#/components/schemas/StandardImageTextCaptionBlock"
                         }
                     }
                 },
@@ -3293,7 +3293,7 @@
                 "type": "object",
                 "properties": {
                     "body": {
-                        "$ref": "#\/components\/schemas\/ParagraphComponent"
+                        "$ref": "#/components/schemas/ParagraphComponent"
                     }
                 },
                 "description": "Standard product description text."
@@ -3302,22 +3302,22 @@
                 "type": "object",
                 "properties": {
                     "image": {
-                        "$ref": "#\/components\/schemas\/ImageComponent"
+                        "$ref": "#/components/schemas/ImageComponent"
                     },
                     "headline": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "textBlock1": {
-                        "$ref": "#\/components\/schemas\/StandardTextBlock"
+                        "$ref": "#/components/schemas/StandardTextBlock"
                     },
                     "textBlock2": {
-                        "$ref": "#\/components\/schemas\/StandardTextBlock"
+                        "$ref": "#/components/schemas/StandardTextBlock"
                     },
                     "textBlock3": {
-                        "$ref": "#\/components\/schemas\/StandardTextBlock"
+                        "$ref": "#/components/schemas/StandardTextBlock"
                     },
                     "bulletedListBlock": {
-                        "$ref": "#\/components\/schemas\/StandardHeaderTextListBlock"
+                        "$ref": "#/components/schemas/StandardHeaderTextListBlock"
                     }
                 },
                 "description": "A standard image with several paragraphs and a bulleted list."
@@ -3326,28 +3326,28 @@
                 "type": "object",
                 "properties": {
                     "headline": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "image": {
-                        "$ref": "#\/components\/schemas\/ImageComponent"
+                        "$ref": "#/components/schemas/ImageComponent"
                     },
                     "descriptionHeadline": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "descriptionBlock1": {
-                        "$ref": "#\/components\/schemas\/StandardTextBlock"
+                        "$ref": "#/components/schemas/StandardTextBlock"
                     },
                     "descriptionBlock2": {
-                        "$ref": "#\/components\/schemas\/StandardTextBlock"
+                        "$ref": "#/components/schemas/StandardTextBlock"
                     },
                     "specificationHeadline": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "specificationListBlock": {
-                        "$ref": "#\/components\/schemas\/StandardHeaderTextListBlock"
+                        "$ref": "#/components/schemas/StandardHeaderTextListBlock"
                     },
                     "specificationTextBlock": {
-                        "$ref": "#\/components\/schemas\/StandardTextBlock"
+                        "$ref": "#/components/schemas/StandardTextBlock"
                     }
                 },
                 "description": "A standard image with paragraphs and a bulleted list, and extra space for technical details."
@@ -3359,10 +3359,10 @@
                 "type": "object",
                 "properties": {
                     "imagePositionType": {
-                        "$ref": "#\/components\/schemas\/PositionType"
+                        "$ref": "#/components/schemas/PositionType"
                     },
                     "block": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     }
                 },
                 "description": "A standard headline and body text with an image on the side."
@@ -3374,7 +3374,7 @@
                 "type": "object",
                 "properties": {
                     "headline": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "specificationList": {
                         "maxItems": 16,
@@ -3382,7 +3382,7 @@
                         "type": "array",
                         "description": "The specification list.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/StandardTextPairBlock"
+                            "$ref": "#/components/schemas/StandardTextPairBlock"
                         }
                     },
                     "tableCount": {
@@ -3401,10 +3401,10 @@
                 "type": "object",
                 "properties": {
                     "headline": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "body": {
-                        "$ref": "#\/components\/schemas\/ParagraphComponent"
+                        "$ref": "#/components/schemas/ParagraphComponent"
                     }
                 },
                 "description": "A standard headline and body text."
@@ -3413,16 +3413,16 @@
                 "type": "object",
                 "properties": {
                     "headline": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "block1": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     },
                     "block2": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     },
                     "block3": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     }
                 },
                 "description": "Three standard images with text, presented across a single row."
@@ -3440,7 +3440,7 @@
                         "description": "The rank or index of this comparison product block within the module. Different blocks cannot occupy the same position within a single module."
                     },
                     "image": {
-                        "$ref": "#\/components\/schemas\/ImageComponent"
+                        "$ref": "#/components/schemas/ImageComponent"
                     },
                     "title": {
                         "maxLength": 80,
@@ -3449,7 +3449,7 @@
                         "description": "The comparison product title."
                     },
                     "asin": {
-                        "$ref": "#\/components\/schemas\/Asin"
+                        "$ref": "#/components/schemas/Asin"
                     },
                     "highlight": {
                         "type": "boolean",
@@ -3461,7 +3461,7 @@
                         "type": "array",
                         "description": "Comparison metrics for the product.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/PlainTextItem"
+                            "$ref": "#/components/schemas/PlainTextItem"
                         }
                     }
                 },
@@ -3471,10 +3471,10 @@
                 "type": "object",
                 "properties": {
                     "headline": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "block": {
-                        "$ref": "#\/components\/schemas\/StandardTextListBlock"
+                        "$ref": "#/components/schemas/StandardTextListBlock"
                     }
                 },
                 "description": "The A+ standard fixed-length list of text, with a related headline."
@@ -3490,7 +3490,7 @@
                         "minItems": 0,
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/TextItem"
+                            "$ref": "#/components/schemas/TextItem"
                         }
                     }
                 },
@@ -3500,10 +3500,10 @@
                 "type": "object",
                 "properties": {
                     "block": {
-                        "$ref": "#\/components\/schemas\/StandardImageTextBlock"
+                        "$ref": "#/components/schemas/StandardImageTextBlock"
                     },
                     "caption": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     }
                 },
                 "description": "The A+ Content standard image and text block, with a related caption. The caption may not display on all devices."
@@ -3512,10 +3512,10 @@
                 "type": "object",
                 "properties": {
                     "image": {
-                        "$ref": "#\/components\/schemas\/ImageComponent"
+                        "$ref": "#/components/schemas/ImageComponent"
                     },
                     "caption": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     }
                 },
                 "description": "The A+ Content standard image and caption block."
@@ -3524,13 +3524,13 @@
                 "type": "object",
                 "properties": {
                     "image": {
-                        "$ref": "#\/components\/schemas\/ImageComponent"
+                        "$ref": "#/components/schemas/ImageComponent"
                     },
                     "headline": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "body": {
-                        "$ref": "#\/components\/schemas\/ParagraphComponent"
+                        "$ref": "#/components/schemas/ParagraphComponent"
                     }
                 },
                 "description": "The A+ Content standard image and text box block."
@@ -3539,10 +3539,10 @@
                 "type": "object",
                 "properties": {
                     "headline": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "body": {
-                        "$ref": "#\/components\/schemas\/ParagraphComponent"
+                        "$ref": "#/components/schemas/ParagraphComponent"
                     }
                 },
                 "description": "The A+ Content standard text box block, comprised of a paragraph with a headline."
@@ -3551,10 +3551,10 @@
                 "type": "object",
                 "properties": {
                     "label": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     },
                     "description": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     }
                 },
                 "description": "The A+ Content standard label and description block, comprised of a pair of text components."
@@ -3573,7 +3573,7 @@
                         "description": "The rank or index of this text item within the collection. Different items cannot occupy the same position within a single collection."
                     },
                     "text": {
-                        "$ref": "#\/components\/schemas\/TextComponent"
+                        "$ref": "#/components/schemas/TextComponent"
                     }
                 },
                 "description": "Rich positional text, usually presented as a collection of bullet points."
@@ -3614,7 +3614,7 @@
                         "description": "This identifier is provided by the Selling Partner API for Uploads."
                     },
                     "imageCropSpecification": {
-                        "$ref": "#\/components\/schemas\/ImageCropSpecification"
+                        "$ref": "#/components/schemas/ImageCropSpecification"
                     },
                     "altText": {
                         "maxLength": 100,
@@ -3636,7 +3636,7 @@
                         "minItems": 1,
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/TextComponent"
+                            "$ref": "#/components/schemas/TextComponent"
                         }
                     }
                 },
@@ -3655,7 +3655,7 @@
                         "description": "The actual plain text."
                     },
                     "decoratorSet": {
-                        "$ref": "#\/components\/schemas\/DecoratorSet"
+                        "$ref": "#/components/schemas/DecoratorSet"
                     }
                 },
                 "description": "Rich text content."
@@ -3701,14 +3701,14 @@
                 "type": "array",
                 "description": "A set of content decorators.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Decorator"
+                    "$ref": "#/components/schemas/Decorator"
                 }
             },
             "Decorator": {
                 "type": "object",
                 "properties": {
                     "type": {
-                        "$ref": "#\/components\/schemas\/DecoratorType"
+                        "$ref": "#/components/schemas/DecoratorType"
                     },
                     "offset": {
                         "maximum": 10000,
@@ -3782,7 +3782,7 @@
             "SearchContentDocumentsResponse": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/AplusPaginatedResponse"
+                        "$ref": "#/components/schemas/AplusPaginatedResponse"
                     },
                     {
                         "required": [
@@ -3791,7 +3791,7 @@
                         "type": "object",
                         "properties": {
                             "contentMetadataRecords": {
-                                "$ref": "#\/components\/schemas\/ContentMetadataRecordList"
+                                "$ref": "#/components/schemas/ContentMetadataRecordList"
                             }
                         }
                     }
@@ -3800,7 +3800,7 @@
             "GetContentDocumentResponse": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/AplusResponse"
+                        "$ref": "#/components/schemas/AplusResponse"
                     },
                     {
                         "required": [
@@ -3809,7 +3809,7 @@
                         "type": "object",
                         "properties": {
                             "contentRecord": {
-                                "$ref": "#\/components\/schemas\/ContentRecord"
+                                "$ref": "#/components/schemas/ContentRecord"
                             }
                         }
                     }
@@ -3822,14 +3822,14 @@
                 "type": "object",
                 "properties": {
                     "contentDocument": {
-                        "$ref": "#\/components\/schemas\/ContentDocument"
+                        "$ref": "#/components/schemas/ContentDocument"
                     }
                 }
             },
             "PostContentDocumentResponse": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/AplusResponse"
+                        "$ref": "#/components/schemas/AplusResponse"
                     },
                     {
                         "required": [
@@ -3838,7 +3838,7 @@
                         "type": "object",
                         "properties": {
                             "contentReferenceKey": {
-                                "$ref": "#\/components\/schemas\/ContentReferenceKey"
+                                "$ref": "#/components/schemas/ContentReferenceKey"
                             }
                         }
                     }
@@ -3847,7 +3847,7 @@
             "ListContentDocumentAsinRelationsResponse": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/AplusPaginatedResponse"
+                        "$ref": "#/components/schemas/AplusPaginatedResponse"
                     },
                     {
                         "required": [
@@ -3856,7 +3856,7 @@
                         "type": "object",
                         "properties": {
                             "asinMetadataSet": {
-                                "$ref": "#\/components\/schemas\/AsinMetadataSet"
+                                "$ref": "#/components/schemas/AsinMetadataSet"
                             }
                         }
                     }
@@ -3869,31 +3869,31 @@
                 "type": "object",
                 "properties": {
                     "asinSet": {
-                        "$ref": "#\/components\/schemas\/AsinSet"
+                        "$ref": "#/components/schemas/AsinSet"
                     }
                 }
             },
             "PostContentDocumentAsinRelationsResponse": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/AplusResponse"
+                        "$ref": "#/components/schemas/AplusResponse"
                     }
                 ]
             },
             "ValidateContentDocumentAsinRelationsResponse": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/AplusResponse"
+                        "$ref": "#/components/schemas/AplusResponse"
                     },
                     {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 ]
             },
             "SearchContentPublishRecordsResponse": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/AplusPaginatedResponse"
+                        "$ref": "#/components/schemas/AplusPaginatedResponse"
                     },
                     {
                         "required": [
@@ -3902,7 +3902,7 @@
                         "type": "object",
                         "properties": {
                             "publishRecordList": {
-                                "$ref": "#\/components\/schemas\/PublishRecordList"
+                                "$ref": "#/components/schemas/PublishRecordList"
                             }
                         }
                     }
@@ -3911,14 +3911,14 @@
             "PostContentDocumentApprovalSubmissionResponse": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/AplusResponse"
+                        "$ref": "#/components/schemas/AplusResponse"
                     }
                 ]
             },
             "PostContentDocumentSuspendSubmissionResponse": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/AplusResponse"
+                        "$ref": "#/components/schemas/AplusResponse"
                     }
                 ]
             }

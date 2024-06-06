@@ -9,8 +9,8 @@ use SellingPartnerApi\Dto;
 final class PatchOperation extends Dto
 {
     /**
-     * @param  string  $op  Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See <https://tools.ietf.org/html/rfc6902>.
-     * @param  string  $path  JSON Pointer path of the element to patch. See <https://tools.ietf.org/html/rfc6902>.
+     * @param  string  $op  Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.
+     * @param  string  $path  JSON Pointer path of the element to patch. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.
      * @param  mixed[][]|null  $value  JSON value to add, replace, or delete.
      */
     public function __construct(

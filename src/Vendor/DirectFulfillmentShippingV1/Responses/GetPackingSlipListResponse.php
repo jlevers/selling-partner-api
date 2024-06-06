@@ -14,7 +14,7 @@ final class GetPackingSlipListResponse extends Response
 
     /**
      * @param  ?PackingSlipList  $payload  A list of packing slips.
-     * @param  Error[]  $errors  A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?PackingSlipList $payload = null,

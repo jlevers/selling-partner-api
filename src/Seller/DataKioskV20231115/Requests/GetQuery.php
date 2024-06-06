@@ -36,7 +36,7 @@ class GetQuery extends Request
         $status = $response->status();
         $responseCls = match ($status) {
             200 => Query::class,
-            400, 401, 403, 404, 415, 429, 500, 503 => ErrorList::class,
+            400, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

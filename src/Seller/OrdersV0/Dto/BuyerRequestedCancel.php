@@ -14,11 +14,13 @@ final class BuyerRequestedCancel extends Dto
     ];
 
     /**
-     * @param  ?bool  $isBuyerRequestedCancel  When true, the buyer has requested cancellation.
+     * @param  ?string  $isBuyerRequestedCancel  Indicate whether the buyer has requested cancellation.
+     *
+     * **Possible Values**: `true`, `false`.
      * @param  ?string  $buyerCancelReason  The reason that the buyer requested cancellation.
      */
     public function __construct(
-        public readonly ?bool $isBuyerRequestedCancel = null,
+        public readonly ?string $isBuyerRequestedCancel = null,
         public readonly ?string $buyerCancelReason = null,
     ) {
     }

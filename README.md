@@ -67,6 +67,7 @@ This README is divided into several sections:
 * [Naming conventions](#naming-conventions)
 * [API versions](#api-versions)
 * [Working with DTOs](#working-with-dtos)
+* [Contributing](#contributing)
 
 ## Getting Started
 
@@ -532,3 +533,37 @@ $response = $ordersApi->confirmShipment(
     confirmShipmentRequest: $confirmShipmentRequest,
 )
 ```
+
+## Contributing
+
+To regenerate the library, you can run 
+
+    # composer clean
+    # composer build
+
+Composer has a number of pre-configured scripts in `composer.json`:
+
+* `build`: Run all the stages to regenerate the PHP files
+* `clean`: Delete all the generated PHP and JSON files
+* `lint`: Run PHP-CS-Fixer 
+* `schema:download`: Download the schemas from Amazon
+* `schema:generate`: Generate the PHP files from the schemas
+* `schema:refactor`: Make local modifications to the schemas before generation
+
+If you want to generate a specific schema, you can use the `--schema` option:
+
+    # composer schema:generate -- --schema=orders
+
+You can also generate just the seller or vendor schemas:
+
+    # composer schema:refactor -- --category=seller
+    # composer schema:generate -- --category=vendor
+
+You can also combine both options:
+
+    # composer schema:download -- --schema=orders --category=seller
+
+The schema commands use the underlying `./bin/console` command. To get a list of
+available commands, run:
+
+    # php ./bin/console list

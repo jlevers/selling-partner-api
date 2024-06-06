@@ -1,5 +1,14 @@
 {
   "seller": {
+    "fba-inbound": {
+      "0": [
+        {
+          "comment": "Responses from Amazon have been missing one or more required Address parts",
+          "action": "delete",
+          "path": "components.schemas.Address.required"
+        }
+      ]
+    },
     "fba-outbound": {
       "2020-07-01": [
         {

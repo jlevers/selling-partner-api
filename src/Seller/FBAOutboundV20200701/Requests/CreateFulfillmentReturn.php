@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Requests;
 
 use Exception;
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
+use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\CreateFulfillmentReturnRequest;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Responses\CreateFulfillmentReturnResponse;
@@ -14,8 +16,10 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Responses\CreateFulfillmentRet
 /**
  * createFulfillmentReturn
  */
-class CreateFulfillmentReturn extends Request
+class CreateFulfillmentReturn extends Request implements HasBody
 {
+    use HasJsonBody;
+
     protected Method $method = Method::PUT;
 
     /**

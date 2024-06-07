@@ -5,20 +5,16 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\MessagingV1\Requests;
 
 use Exception;
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
-use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\MessagingV1\Responses\CreateNegativeFeedbackRemovalResponse;
 
 /**
  * createNegativeFeedbackRemoval
  */
-class CreateNegativeFeedbackRemoval extends Request implements HasBody
+class CreateNegativeFeedbackRemoval extends Request
 {
-    use HasJsonBody;
-
     protected Method $method = Method::POST;
 
     /**

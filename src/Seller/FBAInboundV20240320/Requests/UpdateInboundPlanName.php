@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\FBAInboundV20240320\Requests;
 
 use Exception;
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
+use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\EmptyResponse;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\UpdateInboundPlanNameRequest;
@@ -15,8 +17,10 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ErrorList;
 /**
  * updateInboundPlanName
  */
-class UpdateInboundPlanName extends Request
+class UpdateInboundPlanName extends Request implements HasBody
 {
+    use HasJsonBody;
+
     protected Method $method = Method::PUT;
 
     /**

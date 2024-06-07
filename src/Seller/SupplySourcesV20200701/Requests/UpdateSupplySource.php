@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\SupplySourcesV20200701\Requests;
 
 use Exception;
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
+use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\EmptyResponse;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\SupplySourcesV20200701\Dto\UpdateSupplySourceRequest;
@@ -15,8 +17,10 @@ use SellingPartnerApi\Seller\SupplySourcesV20200701\Responses\ErrorList;
 /**
  * updateSupplySource
  */
-class UpdateSupplySource extends Request
+class UpdateSupplySource extends Request implements HasBody
 {
+    use HasJsonBody;
+
     protected Method $method = Method::PUT;
 
     /**

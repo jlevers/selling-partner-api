@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\FBAInboundV20240320\Requests;
 
 use Exception;
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
-use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ConfirmPackingOptionResponse;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ErrorList;
@@ -16,10 +14,8 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ErrorList;
 /**
  * confirmPackingOption
  */
-class ConfirmPackingOption extends Request implements HasBody
+class ConfirmPackingOption extends Request
 {
-    use HasJsonBody;
-
     protected Method $method = Method::POST;
 
     /**

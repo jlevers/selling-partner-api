@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\ApplicationManagementV20231130\Requests;
 
 use Exception;
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
-use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\EmptyResponse;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\ApplicationManagementV20231130\Responses\ErrorList;
@@ -16,10 +14,8 @@ use SellingPartnerApi\Seller\ApplicationManagementV20231130\Responses\ErrorList;
 /**
  * rotateApplicationClientSecret
  */
-class RotateApplicationClientSecret extends Request implements HasBody
+class RotateApplicationClientSecret extends Request
 {
-    use HasJsonBody;
-
     protected Method $method = Method::POST;
 
     public function resolveEndpoint(): string

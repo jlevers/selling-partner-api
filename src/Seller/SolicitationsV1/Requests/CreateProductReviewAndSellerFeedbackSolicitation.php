@@ -5,20 +5,16 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\SolicitationsV1\Requests;
 
 use Exception;
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
-use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\SolicitationsV1\Responses\CreateProductReviewAndSellerFeedbackSolicitationResponse;
 
 /**
  * createProductReviewAndSellerFeedbackSolicitation
  */
-class CreateProductReviewAndSellerFeedbackSolicitation extends Request implements HasBody
+class CreateProductReviewAndSellerFeedbackSolicitation extends Request
 {
-    use HasJsonBody;
-
     protected Method $method = Method::POST;
 
     /**

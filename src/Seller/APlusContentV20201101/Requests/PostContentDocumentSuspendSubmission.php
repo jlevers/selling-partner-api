@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\APlusContentV20201101\Requests;
 
 use Exception;
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
-use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\APlusContentV20201101\Responses\ErrorList;
 use SellingPartnerApi\Seller\APlusContentV20201101\Responses\PostContentDocumentSuspendSubmissionResponse;
@@ -16,10 +14,8 @@ use SellingPartnerApi\Seller\APlusContentV20201101\Responses\PostContentDocument
 /**
  * postContentDocumentSuspendSubmission
  */
-class PostContentDocumentSuspendSubmission extends Request implements HasBody
+class PostContentDocumentSuspendSubmission extends Request
 {
-    use HasJsonBody;
-
     protected Method $method = Method::POST;
 
     /**

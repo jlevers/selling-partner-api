@@ -38,11 +38,6 @@ class SellerConnector extends SellingPartnerApi
         return $this->fbaInboundV0();
     }
 
-    public function fbaInboundV20240320(): FBAInboundV20240320\Api
-    {
-        return $this->fbaInboundV20240320();
-    }
-
     public function fbaInboundEligibility(): FBAInboundEligibilityV1\Api
     {
         return $this->fbaInboundEligibilityV1();
@@ -211,6 +206,11 @@ class SellerConnector extends SellingPartnerApi
     public function fbaInboundV0(): FBAInboundV0\Api
     {
         return new FBAInboundV0\Api($this);
+    }
+
+    public function fbaInboundV20240320(): FBAInboundV20240320\Api
+    {
+        return new FBAInboundV20240320\Api($this);
     }
 
     public function fbaInboundEligibilityV1(): FBAInboundEligibilityV1\Api

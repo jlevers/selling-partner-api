@@ -57,20 +57,12 @@ class UpdateVersion extends Command
         $config['version'] = $newVersion;
         file_put_contents(GENERATOR_CONFIG_FILE, json_encode($config, JSON_PRETTY_PRINT)."\n");
 
-        $composerFile = ROOT_DIR.'/composer.json';
-        $composerConfig = json_decode(file_get_contents($composerFile), true);
-        $composerConfig['version'] = $newVersion;
-        file_put_contents(
-            $composerFile,
-            json_encode($composerConfig, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)."\n"
-        );
-
         if (! $commit) {
             return 0;
         }
 
         $configFile = GENERATOR_CONFIG_FILE;
-        exec("git add $configFile $composerFile && git commit -m 'Update package version to $newVersion' && git stash pop");
+        exec("git add $configFile && git commit -m 'Update package version to $newVersion' && git stash pop");
 
         echo "\nVersioning-related changes have been committed.\n";
 

@@ -29,7 +29,7 @@ use SellingPartnerApi\Seller\TokensV20210301\Dto\CreateRestrictedDataTokenReques
 use SellingPartnerApi\Seller\TokensV20210301\Dto\RestrictedResource;
 use SellingPartnerApi\Vendor\VendorConnector;
 
-class SellingPartnerApi extends Connector
+abstract class SellingPartnerApi extends Connector
 {
     use AlwaysThrowOnErrors;
     use ClientCredentialsGrant {
@@ -58,29 +58,47 @@ class SellingPartnerApi extends Connector
         $this->authenticate($authenticator);
     }
 
-    public function seller(): SellerConnector
-    {
+    public static function seller(
+        string $clientId,
+        string $clientSecret,
+        string $refreshToken,
+        Endpoint $endpoint,
+        array $dataElements = [],
+        ?string $delegatee = null,
+        ?Client $authenticationClient = null,
+        ?TokenCache $cache = new InMemoryTokenCache,
+    ): SellerConnector {
         return new SellerConnector(
-            $this->clientId,
-            $this->clientSecret,
-            $this->refreshToken,
-            $this->endpoint,
-            $this->dataElements,
-            $this->delegatee,
-            $this->authenticationClient,
+            $clientId,
+            $clientSecret,
+            $refreshToken,
+            $endpoint,
+            $dataElements,
+            $delegatee,
+            $authenticationClient,
+            $cache,
         );
     }
 
-    public function vendor(): VendorConnector
-    {
+    public static function vendor(
+        string $clientId,
+        string $clientSecret,
+        string $refreshToken,
+        Endpoint $endpoint,
+        array $dataElements = [],
+        ?string $delegatee = null,
+        ?Client $authenticationClient = null,
+        ?TokenCache $cache = new InMemoryTokenCache,
+    ): VendorConnector {
         return new VendorConnector(
-            $this->clientId,
-            $this->clientSecret,
-            $this->refreshToken,
-            $this->endpoint,
-            $this->dataElements,
-            $this->delegatee,
-            $this->authenticationClient,
+            $clientId,
+            $clientSecret,
+            $refreshToken,
+            $endpoint,
+            $dataElements,
+            $delegatee,
+            $authenticationClient,
+            $cache,
         );
     }
 

@@ -78,18 +78,18 @@ To get started, you need an approved Selling Partner API developer account, and 
 
 ### Setup
 
-The [`SellingPartnerApi`](https://github.com/jlevers/selling-partner-api/blob/main/src/SellingPartnerApi.php) class acts as a factory to generate API connector instances. It takes a set of (optionally) named parameters. Its basic usage looks like this:
+The [`SellingPartnerApi`](https://github.com/jlevers/selling-partner-api/blob/main/src/SellingPartnerApi.php) class acts as a factory to generate Seller and Vendor API connector instances. Its `seller()` and `vendor()` methods each take a set of identical (and optionally, named) parameters. Its basic usage looks like this:
 
 ```php
 use SellingPartnerApi\SellingPartnerApi;
 use SellingPartnerApi\Enums\Endpoint;
 
-$connector = SellingPartnerApi::make(
+$connector = SellingPartnerApi::seller(
     clientId: 'amzn1.application-oa2-client.asdfqwertyuiop...',
     clientSecret: 'amzn1.oa2-cs.v1.1234567890asdfghjkl...',
     refreshToken: 'Atzr|IwEBIA...',
     endpoint: Endpoint::NA,  // Or Endpoint::EU, Endpoint::FE, Endpoint::NA_SANDBOX, etc.
-)->seller();
+);
 ```
 
 > [!NOTE]
@@ -117,7 +117,7 @@ See the [Working with DTOs](#working-with-dtos) section for more details on how 
 
 ##### Configuration options
 
-The `SellingPartnerApi::make()` builder method accepts the following keys:
+The `SellingPartnerApi::seller()` and `SellingPartnerApi::vendor()` builder methods accept the following arguments:
 
 * `clientId (string)`: Required. The LWA client ID of the SP API application to use to execute API requests.
 * `clientSecret (string)`: Required. The LWA client secret of the SP API application to use to execute API requests.
@@ -125,7 +125,8 @@ The `SellingPartnerApi::make()` builder method accepts the following keys:
 * `endpoint`: Required. An instance of the [`SellingPartnerApi\Enums\Endpoint` enum](https://github.com/jlevers/selling-partner-api/blob/main/src/Enums/Endpoint.php). Primary endpoints are `Endpoint::NA`, `Endpoint::EU`, and `Endpoint::FE`. Sandbox endpoints are `Endpoint::NA_SANDBOX`, `Endpoint::EU_SANDBOX`, and `Endpoint::FE_SANDBOX`.
 * `dataElements (array)`: Optional. An array of data elements to pass to restricted operations. See the [Restricted operations](#restricted-operations) section for more details.
 * `delegatee (string)`: Optional. The application ID of a delegatee application to generate RDTs on behalf of.
-* `authenticationClient`: Optional `GuzzleHttp\ClientInterface` object that will be used to generate the access token from the refresh token. If not provided, a default Guzzle client will be used.
+* `authenticationClient (GuzzleHttp\Client)`: Guzzle client instance that will be used to generate the access token from the refresh token. If not provided, the default Saloon Guzzle client will be used.
+* `tokenCache (SellingPartnerApi\Contracts\TokenCache)`: A cache interface instance that will be used to cache access tokens. If not provided, a basic in-memory cache will be used.
 
 
 ### Debugging
@@ -135,12 +136,12 @@ To get detailed debugging output, you can take advantage of [Saloon's debugging 
 ```php
 use SellingPartnerApi\SellingPartnerApi;
 
-$connector = SellingPartnerApi::make(
+$connector = SellingPartnerApi::seller(
     clientId: 'amzn1.application-oa2-client.asdfqwertyuiop...',
     clientSecret: 'amzn1.oa2-cs.v1.1234567890asdfghjkl...',
     refreshToken: 'Atzr|IwEBIA...',
     endpoint: Endpoint::NA,
-)->seller();
+);
 
 $connector->debugRequest(
     function (PendingRequest $pendingRequest, RequestInterface $psrRequest) {
@@ -165,13 +166,13 @@ It also means that if a new version of an existing API is introduced, the librar
 
 ### Seller APIs
 
-Seller APIs are accessed via the `SellerConnector` class:
+Seller APIs are accessed via the `SellingPartnerApi::seller()` class:
 
 ```php
 <?php
 use SellingPartnerApi\SellingPartnerApi;
 
-$sellerConnector = SellingPartnerApi::make(/* ... */)->seller();
+$sellerConnector = SellingPartnerApi::seller(/* ... */);
 ```
 
 * **Application Management API (v2023-11-30)** ([docs](https://developer-docs.amazon.com/sp-api/docs/application-management-api-v2023-11-30-reference))
@@ -329,13 +330,13 @@ $sellerConnector = SellingPartnerApi::make(/* ... */)->seller();
 
 ### Vendor APIs
 
-Vendor APIs are accessed via the `VendorConnector` class:
+Vendor APIs are accessed via the `SellingPartnerApi::vendor()` method:
 
 ```php
 <?php
 use SellingPartnerApi\SellingPartnerApi;
 
-$vendorConnector = SellingPartnerApi::make(/* ... */)->vendor();
+$vendorConnector = SellingPartnerApi::vendor(/* ... */);
 ```
 
 * **Direct Fulfillment Inventory API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-inventory-api-v1-reference))
@@ -414,8 +415,8 @@ $reportType = 'GET_MERCHANT_LISTINGS_DATA';
 // Assume we already got a report document ID from a previous getReport call
 $documentId = '1234567890.asdf';
 
-$connector = SellingPartnerApi::make(/* ... */)->seller();
 $response = $connector->reports()->getReportDocument($documentId, $reportType);
+$connector = SellingPartnerApi::seller(/* ... */);
 
 $reportDocument = $response->dto();
 
@@ -448,8 +449,8 @@ use SellingPartnerApi\Seller\FeedsV20210630\Responses\CreateFeedDocumentResponse
 
 $feedType = 'POST_PRODUCT_PRICING_DATA';
 
-$connector = SellingPartnerApi::make(/* ... */)->seller();
 $feedsApi = $connector->feeds();
+$connector = SellingPartnerApi::seller(/* ... */);
 
 // Create feed document
 $contentType = CreateFeedDocumentResponse::getContentType($feedType);
@@ -486,8 +487,8 @@ $feedType = 'POST_PRODUCT_PRICING_DATA';
 // Assume we already got a feed result document ID from a previous getFeed call
 $documentId = '1234567890.asdf';
 
-$connector = SellingPartnerApi::make(/* ... */)->seller();
 $response = $connector->feeds()->getFeedDocument($documentId);
+$connector = SellingPartnerApi::seller(/* ... */);
 $feedDocument = $response->dto();
 
 $contents = $feedResultDocument->download($feedType);

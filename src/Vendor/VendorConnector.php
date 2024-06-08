@@ -8,56 +8,6 @@ use SellingPartnerApi\SellingPartnerApi;
 
 class VendorConnector extends SellingPartnerApi
 {
-    public function directFulfillmentInventory(): DirectFulfillmentInventoryV1\Api
-    {
-        return $this->directFulfillmentInventoryV1();
-    }
-
-    public function directFulfillmentOrders(): DirectFulfillmentOrdersV20211228\Api
-    {
-        return $this->directFulfillmentOrdersV20211228();
-    }
-
-    public function directFulfillmentPayment(): DirectFulfillmentPaymentV1\Api
-    {
-        return $this->directFulfillmentPaymentV1();
-    }
-
-    public function directFulfillmentSandbox(): DirectFulfillmentSandboxV20211028\Api
-    {
-        return $this->directFulfillmentSandboxV20211028();
-    }
-
-    public function directFulfillmentShipping(): DirectFulfillmentShippingV20211228\Api
-    {
-        return $this->directFulfillmentShippingV20211228();
-    }
-
-    public function directFulfillmentTransactions(): DirectFulfillmentTransactionsV20211228\Api
-    {
-        return $this->directFulfillmentTransactionsV20211228();
-    }
-
-    public function invoices(): InvoicesV1\Api
-    {
-        return $this->invoicesV1();
-    }
-
-    public function orders(): OrdersV1\Api
-    {
-        return $this->ordersV1();
-    }
-
-    public function shipments(): ShipmentsV1\Api
-    {
-        return $this->shipmentsV1();
-    }
-
-    public function transactionStatus(): TransactionStatusV1\Api
-    {
-        return $this->transactionStatusV1();
-    }
-
     public function directFulfillmentInventoryV1(): DirectFulfillmentInventoryV1\Api
     {
         return new DirectFulfillmentInventoryV1\Api($this);

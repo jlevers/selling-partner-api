@@ -8,171 +8,6 @@ use SellingPartnerApi\SellingPartnerApi;
 
 class SellerConnector extends SellingPartnerApi
 {
-    public function aPlusContent(): APlusContentV20201101\Api
-    {
-        return $this->aPlusContentV20201101();
-    }
-
-    public function authorization(): AuthorizationV1\Api
-    {
-        return $this->authorizationV1();
-    }
-
-    public function catalogItems(): CatalogItemsV20220401\Api
-    {
-        return $this->catalogItemsV20220401();
-    }
-
-    public function dataKiosk(): DataKioskV20231115\Api
-    {
-        return $this->dataKioskV20231115();
-    }
-
-    public function easyShip(): EasyShipV20220323\Api
-    {
-        return $this->easyShipV20220323();
-    }
-
-    public function fbaInbound(): FBAInboundV0\Api
-    {
-        return $this->fbaInboundV0();
-    }
-
-    public function fbaInboundV20240320(): FBAInboundV20240320\Api
-    {
-        return $this->fbaInboundV20240320();
-    }
-
-    public function fbaInboundEligibility(): FBAInboundEligibilityV1\Api
-    {
-        return $this->fbaInboundEligibilityV1();
-    }
-
-    public function fbaInventory(): FBAInventoryV1\Api
-    {
-        return $this->fbaInventoryV1();
-    }
-
-    public function fbaOutbound(): FBAOutboundV20200701\Api
-    {
-        return $this->fbaOutboundV20200701();
-    }
-
-    public function fbaSmallAndLight(): FBASmallAndLightV1\Api
-    {
-        return $this->fbaSmallAndLightV1();
-    }
-
-    public function feeds(): FeedsV20210630\Api
-    {
-        return $this->feedsV20210630();
-    }
-
-    public function finances(): FinancesV0\Api
-    {
-        return $this->financesV0();
-    }
-
-    public function listingsItems(): ListingsItemsV20210801\Api
-    {
-        return $this->listingsItemsV20210801();
-    }
-
-    public function listingsRestrictions(): ListingsRestrictionsV20210801\Api
-    {
-        return $this->listingsRestrictionsV20210801();
-    }
-
-    public function merchantFulfillment(): MerchantFulfillmentV0\Api
-    {
-        return $this->merchantFulfillmentV0();
-    }
-
-    public function messaging(): MessagingV1\Api
-    {
-        return $this->messagingV1();
-    }
-
-    public function notifications(): NotificationsV1\Api
-    {
-        return $this->notificationsV1();
-    }
-
-    public function orders(): OrdersV0\Api
-    {
-        return $this->ordersV0();
-    }
-
-    public function productFees(): ProductFeesV0\Api
-    {
-        return $this->productFeesV0();
-    }
-
-    public function productPricing(): ProductPricingV20220501\Api
-    {
-        return $this->productPricingV20220501();
-    }
-
-    public function productTypeDefinitions(): ProductTypeDefinitionsV20200901\Api
-    {
-        return $this->productTypeDefinitionsV20200901();
-    }
-
-    public function replenishment(): ReplenishmentV20221107\Api
-    {
-        return $this->replenishmentV20221107();
-    }
-
-    public function reports(): ReportsV20210630\Api
-    {
-        return $this->reportsV20210630();
-    }
-
-    public function sales(): SalesV1\Api
-    {
-        return $this->salesV1();
-    }
-
-    public function sellers(): SellersV1\Api
-    {
-        return $this->sellersV1();
-    }
-
-    public function services(): ServicesV1\Api
-    {
-        return $this->servicesV1();
-    }
-
-    public function shipmentInvoicing(): ShipmentInvoicingV0\Api
-    {
-        return $this->shipmentInvoicingV0();
-    }
-
-    public function shipping(): ShippingV2\Api
-    {
-        return $this->shippingV2();
-    }
-
-    public function solicitations(): SolicitationsV1\Api
-    {
-        return $this->solicitationsV1();
-    }
-
-    public function supplySources(): SupplySourcesV20200701\Api
-    {
-        return $this->supplySourcesV20200701();
-    }
-
-    public function tokens(): TokensV20210301\Api
-    {
-        return $this->tokensV20210301();
-    }
-
-    public function uploads(): UploadsV20201101\Api
-    {
-        return $this->uploadsV20201101();
-    }
-
     public function aPlusContentV20201101(): APlusContentV20201101\Api
     {
         return new APlusContentV20201101\Api($this);
@@ -206,6 +41,11 @@ class SellerConnector extends SellingPartnerApi
     public function easyShipV20220323(): EasyShipV20220323\Api
     {
         return new EasyShipV20220323\Api($this);
+    }
+
+    public function fbaInboundV20240320(): FBAInboundV20240320\Api
+    {
+        return $this->fbaInboundV20240320();
     }
 
     public function fbaInboundV0(): FBAInboundV0\Api

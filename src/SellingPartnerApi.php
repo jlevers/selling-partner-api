@@ -7,6 +7,7 @@ namespace SellingPartnerApi;
 use DateTimeImmutable;
 use GuzzleHttp\Client;
 use Psr\Http\Message\RequestInterface;
+use Saloon\Contracts\Authenticator;
 use Saloon\Contracts\OAuthAuthenticator;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Helpers\OAuth2\OAuthConfig;
@@ -50,12 +51,6 @@ abstract class SellingPartnerApi extends Connector
             ->setClientId($clientId)
             ->setClientSecret($clientSecret)
             ->setTokenEndpoint('https://api.amazon.com/auth/o2/token');
-
-        $authenticator = $this->getCacheableAuthenticator(
-            $this->refreshToken,
-            fn () => $this->getAccessToken()
-        );
-        $this->authenticate($authenticator);
     }
 
     public static function seller(
@@ -100,6 +95,16 @@ abstract class SellingPartnerApi extends Connector
             $authenticationClient,
             $cache,
         );
+    }
+
+    public function defaultAuth(): Authenticator
+    {
+        $authenticator = $this->getCacheableAuthenticator(
+            $this->refreshToken,
+            fn () => $this->getAccessToken()
+        );
+
+        return $authenticator;
     }
 
     public function resolveBaseUrl(): string

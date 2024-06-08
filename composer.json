@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.2",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
@@ -58,7 +58,7 @@
             "@php-compatibility-check"
         ],
         "pint": "php vendor/bin/pint",
-        "php-compatibility-check": "./vendor/bin/phpcs -p ./src ./bin --standard=PHPCompatibility --runtime-set testVersion 8.1-",
+        "php-compatibility-check": "./vendor/bin/phpcs -p ./src ./bin --standard=PHPCompatibility --runtime-set testVersion 8.2-",
         "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
         "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
     },

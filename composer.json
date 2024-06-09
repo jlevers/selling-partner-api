@@ -36,7 +36,9 @@
         "psy/psysh": "^0.12.0",
         "voku/simple_html_dom": "^4.8",
         "laravel/pint": "^1.13",
-        "phpcompatibility/php-compatibility": "dev-develop"
+        "phpcompatibility/php-compatibility": "dev-develop",
+        "phpunit/phpunit": "^11.2",
+        "fakerphp/faker": "^1.23"
     },
     "prefer-stable": true,
     "autoload": {
@@ -60,7 +62,8 @@
         "pint": "php vendor/bin/pint",
         "php-compatibility-check": "./vendor/bin/phpcs -p ./src ./bin --standard=PHPCompatibility --runtime-set testVersion 8.2-",
         "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
-        "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
+        "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+        "test": "vendor/bin/phpunit"
     },
     "config": {
         "allow-plugins": {

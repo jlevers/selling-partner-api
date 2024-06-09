@@ -46,3 +46,6 @@ jobs:
 
     - name: Check PHP 8.2+ compatibility
       run: composer php-compatibility-check
+
+    - name: Run test suite
+      run: vendor/bin/phpunit

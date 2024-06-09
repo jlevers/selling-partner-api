@@ -24,11 +24,11 @@ final class Item extends Response
     /**
      * @param  string  $sku  A selling partner provided identifier for an Amazon listing.
      * @param  ItemSummaryByMarketplace[]|null  $summaries  Summary details of a listings item.
-     * @param  ?mixed[]  $attributes  JSON object containing structured listings item attribute data keyed by attribute name.
-     * @param  Issue[]|null  $issues  Issues associated with the listings item.
+     * @param  ?mixed[]  $attributes  A JSON object containing structured listings item attribute data keyed by attribute name.
+     * @param  Issue[]|null  $issues  The issues associated with the listings item.
      * @param  ItemOfferByMarketplace[]|null  $offers  Offer details for the listings item.
-     * @param  FulfillmentAvailability[]|null  $fulfillmentAvailability  Fulfillment availability for the listings item.
-     * @param  ItemProcurement[]|null  $procurement  Vendor procurement information for the listings item.
+     * @param  FulfillmentAvailability[]|null  $fulfillmentAvailability  The fulfillment availability for the listings item.
+     * @param  ItemProcurement[]|null  $procurement  The vendor procurement information for the listings item.
      */
     public function __construct(
         public readonly string $sku,

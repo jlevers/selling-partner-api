@@ -9,7 +9,7 @@ use SellingPartnerApi\Dto;
 final class PackingOptionSummary extends Dto
 {
     /**
-     * @param  string  $packingOptionId  Identifier to a packing option.
+     * @param  string  $packingOptionId  Identifier of a packing option.
      * @param  string  $status  The status of a packing option. Can be 'OFFERED', 'ACCEPTED', or 'EXPIRED'.
      */
     public function __construct(

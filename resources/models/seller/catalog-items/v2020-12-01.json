@@ -5,21 +5,21 @@
         "description": "The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.\n\nFor more information, see the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2020-12-01-use-case-guide).",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "2020-12-01"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/catalog\/2020-12-01\/items": {
+        "/catalog/2020-12-01/items": {
             "get": {
                 "tags": [
                     "CatalogItemsV20201201"
@@ -196,9 +196,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemSearchResults"
+                                    "$ref": "#/components/schemas/ItemSearchResults"
                                 },
                                 "example": {
                                     "numberOfResults": 3097,
@@ -254,7 +254,7 @@
                                                     "images": [
                                                         {
                                                             "variant": "MAIN",
-                                                            "link": "https:\/\/m.media-amazon.com\/images\/I\/51DZzp3w3vL.jpg",
+                                                            "link": "https://m.media-amazon.com/images/I/51DZzp3w3vL.jpg",
                                                             "height": 333,
                                                             "width": 500
                                                         }
@@ -273,12 +273,12 @@
                                                     "ranks": [
                                                         {
                                                             "title": "OLED TVs",
-                                                            "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics\/6463520011",
+                                                            "link": "http://www.amazon.com/gp/bestsellers/electronics/6463520011",
                                                             "rank": 3
                                                         },
                                                         {
                                                             "title": "Electronics",
-                                                            "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics",
+                                                            "link": "http://www.amazon.com/gp/bestsellers/electronics",
                                                             "rank": 1544
                                                         }
                                                     ]
@@ -395,8 +395,8 @@
                                                     {
                                                         "marketplaceId": "ATVPDKIKX0DER",
                                                         "brandName": "Fred Perry",
-                                                        "colorName": "Wht\/Brt Red\/Nvy",
-                                                        "itemName": "Fred Perry Men's Twin Tipped Polo Shirt-M1200, WHT\/BRT RED\/NVY, X-Large",
+                                                        "colorName": "Wht/Brt Red/Nvy",
+                                                        "itemName": "Fred Perry Men's Twin Tipped Polo Shirt-M1200, WHT/BRT RED/NVY, X-Large",
                                                         "manufacturer": "Fred Perry Men's Apparel",
                                                         "modelNumber": "M1200",
                                                         "sizeName": "X-Large",
@@ -410,8 +410,8 @@
                                                     {
                                                         "marketplaceId": "ATVPDKIKX0DER",
                                                         "brandName": "Fred Perry",
-                                                        "colorName": "White\/Bright Red\/Navy",
-                                                        "itemName": "Fred Perry Men's Twin Tipped Polo, White\/Bright Red\/Navy, SM",
+                                                        "colorName": "White/Bright Red/Navy",
+                                                        "itemName": "Fred Perry Men's Twin Tipped Polo, White/Bright Red/Navy, SM",
                                                         "manufacturer": "Fred Perry Apparel Mens",
                                                         "modelNumber": "M1200-748",
                                                         "sizeName": "SM",
@@ -439,8 +439,8 @@
                                                     {
                                                         "marketplaceId": "ATVPDKIKX0DER",
                                                         "brandName": "adidas",
-                                                        "colorName": "Bold Red\/White",
-                                                        "itemName": "Adidas Golf Men's Puremotion Textured Stripe Polo, Bold Red\/White, Large",
+                                                        "colorName": "Bold Red/White",
+                                                        "itemName": "Adidas Golf Men's Puremotion Textured Stripe Polo, Bold Red/White, Large",
                                                         "manufacturer": "TaylorMade - Adidas Golf Apparel",
                                                         "modelNumber": "TM3010S4",
                                                         "sizeName": "Large"
@@ -453,8 +453,8 @@
                                                     {
                                                         "marketplaceId": "ATVPDKIKX0DER",
                                                         "brandName": "RALPH LAUREN",
-                                                        "colorName": "Black \/ Red Pony",
-                                                        "itemName": "Polo Ralph Lauren Men's Long-sleeved T-shirt \/ Sleepwear \/ Thermal in Black, Red Pony (Large \/ L)",
+                                                        "colorName": "Black / Red Pony",
+                                                        "itemName": "Polo Ralph Lauren Men's Long-sleeved T-shirt / Sleepwear / Thermal in Black, Red Pony (Large / L)",
                                                         "sizeName": "Large"
                                                     }
                                                 ]
@@ -482,9 +482,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -500,9 +500,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -524,9 +524,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -548,9 +548,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -572,9 +572,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -596,9 +596,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -620,9 +620,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -644,9 +644,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -654,7 +654,7 @@
                 }
             }
         },
-        "\/catalog\/2020-12-01\/items\/{asin}": {
+        "/catalog/2020-12-01/items/{asin}": {
             "get": {
                 "tags": [
                     "CatalogItemsV20201201"
@@ -772,9 +772,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Item"
+                                    "$ref": "#/components/schemas/Item"
                                 },
                                 "example": {
                                     "asin": "B07N4M94X4",
@@ -799,7 +799,7 @@
                                             "images": [
                                                 {
                                                     "variant": "MAIN",
-                                                    "link": "https:\/\/m.media-amazon.com\/images\/I\/51DZzp3w3vL.jpg",
+                                                    "link": "https://m.media-amazon.com/images/I/51DZzp3w3vL.jpg",
                                                     "height": 333,
                                                     "width": 500
                                                 }
@@ -818,12 +818,12 @@
                                             "ranks": [
                                                 {
                                                     "title": "OLED TVs",
-                                                    "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics\/6463520011",
+                                                    "link": "http://www.amazon.com/gp/bestsellers/electronics/6463520011",
                                                     "rank": 3
                                                 },
                                                 {
                                                     "title": "Electronics",
-                                                    "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics",
+                                                    "link": "http://www.amazon.com/gp/bestsellers/electronics",
                                                     "rank": 1544
                                                 }
                                             ]
@@ -915,7 +915,7 @@
                                                 "images": [
                                                     {
                                                         "variant": "MAIN",
-                                                        "link": "https:\/\/m.media-amazon.com\/images\/I\/51DZzp3w3vL.jpg",
+                                                        "link": "https://m.media-amazon.com/images/I/51DZzp3w3vL.jpg",
                                                         "height": 333,
                                                         "width": 500
                                                     }
@@ -934,12 +934,12 @@
                                                 "ranks": [
                                                     {
                                                         "title": "OLED TVs",
-                                                        "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics\/6463520011",
+                                                        "link": "http://www.amazon.com/gp/bestsellers/electronics/6463520011",
                                                         "rank": 3
                                                     },
                                                     {
                                                         "title": "Electronics",
-                                                        "link": "http:\/\/www.amazon.com\/gp\/bestsellers\/electronics",
+                                                        "link": "http://www.amazon.com/gp/bestsellers/electronics",
                                                         "rank": 1544
                                                     }
                                                 ]
@@ -1001,9 +1001,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1019,9 +1019,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1043,9 +1043,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1067,9 +1067,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1091,9 +1091,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1115,9 +1115,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1139,9 +1139,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1163,9 +1163,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1207,7 +1207,7 @@
                     "errors": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Error"
+                            "$ref": "#/components/schemas/Error"
                         }
                     }
                 },
@@ -1220,31 +1220,31 @@
                 "type": "object",
                 "properties": {
                     "asin": {
-                        "$ref": "#\/components\/schemas\/ItemAsin"
+                        "$ref": "#/components/schemas/ItemAsin"
                     },
                     "attributes": {
-                        "$ref": "#\/components\/schemas\/ItemAttributes"
+                        "$ref": "#/components/schemas/ItemAttributes"
                     },
                     "identifiers": {
-                        "$ref": "#\/components\/schemas\/ItemIdentifiers"
+                        "$ref": "#/components/schemas/ItemIdentifiers"
                     },
                     "images": {
-                        "$ref": "#\/components\/schemas\/ItemImages"
+                        "$ref": "#/components/schemas/ItemImages"
                     },
                     "productTypes": {
-                        "$ref": "#\/components\/schemas\/ItemProductTypes"
+                        "$ref": "#/components/schemas/ItemProductTypes"
                     },
                     "salesRanks": {
-                        "$ref": "#\/components\/schemas\/ItemSalesRanks"
+                        "$ref": "#/components/schemas/ItemSalesRanks"
                     },
                     "summaries": {
-                        "$ref": "#\/components\/schemas\/ItemSummaries"
+                        "$ref": "#/components/schemas/ItemSummaries"
                     },
                     "variations": {
-                        "$ref": "#\/components\/schemas\/ItemVariations"
+                        "$ref": "#/components/schemas/ItemVariations"
                     },
                     "vendorDetails": {
-                        "$ref": "#\/components\/schemas\/ItemVendorDetails"
+                        "$ref": "#/components/schemas/ItemVendorDetails"
                     }
                 },
                 "description": "An item in the Amazon catalog."
@@ -1262,7 +1262,7 @@
                 "type": "array",
                 "description": "Identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemIdentifiersByMarketplace"
+                    "$ref": "#/components/schemas/ItemIdentifiersByMarketplace"
                 }
             },
             "ItemIdentifiersByMarketplace": {
@@ -1280,7 +1280,7 @@
                         "type": "array",
                         "description": "Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ItemIdentifier"
+                            "$ref": "#/components/schemas/ItemIdentifier"
                         }
                     }
                 },
@@ -1308,7 +1308,7 @@
                 "type": "array",
                 "description": "Images for an item in the Amazon catalog. All image variants are provided to brand owners. Otherwise, a thumbnail of the \"MAIN\" image variant is provided.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemImagesByMarketplace"
+                    "$ref": "#/components/schemas/ItemImagesByMarketplace"
                 }
             },
             "ItemImagesByMarketplace": {
@@ -1326,7 +1326,7 @@
                         "type": "array",
                         "description": "Images for an item in the Amazon catalog for the indicated Amazon marketplace.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ItemImage"
+                            "$ref": "#/components/schemas/ItemImage"
                         }
                     }
                 },
@@ -1419,7 +1419,7 @@
                 "type": "array",
                 "description": "Product types associated with the Amazon catalog item.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemProductTypeByMarketplace"
+                    "$ref": "#/components/schemas/ItemProductTypeByMarketplace"
                 }
             },
             "ItemProductTypeByMarketplace": {
@@ -1441,7 +1441,7 @@
                 "type": "array",
                 "description": "Sales ranks of an Amazon catalog item.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemSalesRanksByMarketplace"
+                    "$ref": "#/components/schemas/ItemSalesRanksByMarketplace"
                 }
             },
             "ItemSalesRanksByMarketplace": {
@@ -1459,7 +1459,7 @@
                         "type": "array",
                         "description": "Sales ranks of an Amazon catalog item for an Amazon marketplace.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ItemSalesRank"
+                            "$ref": "#/components/schemas/ItemSalesRank"
                         }
                     }
                 },
@@ -1491,7 +1491,7 @@
                 "type": "array",
                 "description": "Summary details of an Amazon catalog item.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemSummaryByMarketplace"
+                    "$ref": "#/components/schemas/ItemSummaryByMarketplace"
                 }
             },
             "ItemSummaryByMarketplace": {
@@ -1543,7 +1543,7 @@
                 "type": "array",
                 "description": "Variation details by marketplace for an Amazon catalog item (variation relationships).",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemVariationsByMarketplace"
+                    "$ref": "#/components/schemas/ItemVariationsByMarketplace"
                 }
             },
             "ItemVariationsByMarketplace": {
@@ -1591,7 +1591,7 @@
                 "type": "array",
                 "description": "Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemVendorDetailsByMarketplace"
+                    "$ref": "#/components/schemas/ItemVendorDetailsByMarketplace"
                 }
             },
             "ItemVendorDetailsByMarketplace": {
@@ -1703,16 +1703,16 @@
                         "description": "The estimated total number of products matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).\n\nNote: The maximum number of items (ASINs) that can be returned and paged through is 1000."
                     },
                     "pagination": {
-                        "$ref": "#\/components\/schemas\/Pagination"
+                        "$ref": "#/components/schemas/Pagination"
                     },
                     "refinements": {
-                        "$ref": "#\/components\/schemas\/Refinements"
+                        "$ref": "#/components/schemas/Refinements"
                     },
                     "items": {
                         "type": "array",
                         "description": "A list of items from the Amazon catalog.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Item"
+                            "$ref": "#/components/schemas/Item"
                         }
                     }
                 },
@@ -1743,14 +1743,14 @@
                         "type": "array",
                         "description": "Brand search refinements.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/BrandRefinement"
+                            "$ref": "#/components/schemas/BrandRefinement"
                         }
                     },
                     "classifications": {
                         "type": "array",
                         "description": "Classification search refinements.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ClassificationRefinement"
+                            "$ref": "#/components/schemas/ClassificationRefinement"
                         }
                     }
                 },

@@ -5,21 +5,21 @@
         "description": "The Selling Partner API for Vendor Direct Fulfillment Sandbox Test Data provides programmatic access to vendor direct fulfillment sandbox test data.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "2021-10-28"
     },
     "servers": [
         {
-            "url": "https:\/\/sandbox.sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sandbox.sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/vendor\/directFulfillment\/sandbox\/2021-10-28\/orders": {
+        "/vendor/directFulfillment/sandbox/2021-10-28/orders": {
             "post": {
                 "tags": [
                     "DirectFulfillmentSandboxV20211028"
@@ -28,9 +28,9 @@
                 "operationId": "generateOrderScenarios",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/GenerateOrderScenarioRequest"
+                                "$ref": "#/components/schemas/GenerateOrderScenarioRequest"
                             }
                         }
                     },
@@ -54,9 +54,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/TransactionReference"
+                                    "$ref": "#/components/schemas/TransactionReference"
                                 }
                             }
                         }
@@ -78,9 +78,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -96,9 +96,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -120,9 +120,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -138,9 +138,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -156,9 +156,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -174,9 +174,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -192,9 +192,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -210,9 +210,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -225,7 +225,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/vendor\/directFulfillment\/sandbox\/2021-10-28\/transactions\/{transactionId}": {
+        "/vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}": {
             "get": {
                 "tags": [
                     "DirectFulfillmentSandboxV20211028"
@@ -261,9 +261,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/TransactionStatus"
+                                    "$ref": "#/components/schemas/TransactionStatus"
                                 },
                                 "example": {
                                     "transactionStatus": {
@@ -317,9 +317,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -341,9 +341,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -359,9 +359,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -383,9 +383,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -407,9 +407,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -431,9 +431,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -455,9 +455,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -479,9 +479,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -503,7 +503,7 @@
                         "type": "array",
                         "description": "The list of test orders requested as indicated by party identifiers.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/OrderScenarioRequest"
+                            "$ref": "#/components/schemas/OrderScenarioRequest"
                         }
                     }
                 },
@@ -517,10 +517,10 @@
                 "type": "object",
                 "properties": {
                     "sellingParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "shipFromParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     }
                 },
                 "description": "The party identifiers required to generate the test data."
@@ -560,7 +560,7 @@
                 "type": "object",
                 "properties": {
                     "transactionStatus": {
-                        "$ref": "#\/components\/schemas\/Transaction"
+                        "$ref": "#/components/schemas/Transaction"
                     }
                 },
                 "description": "The payload for the getOrderScenarios operation."
@@ -600,7 +600,7 @@
                         ]
                     },
                     "testCaseData": {
-                        "$ref": "#\/components\/schemas\/TestCaseData"
+                        "$ref": "#/components/schemas/TestCaseData"
                     }
                 },
                 "description": "The transaction details including the status. If the transaction was successful, also includes the requested test order data."
@@ -612,7 +612,7 @@
                         "type": "array",
                         "description": "Set of use cases that describes the possible test scenarios.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Scenario"
+                            "$ref": "#/components/schemas/Scenario"
                         }
                     }
                 },
@@ -633,7 +633,7 @@
                         "type": "array",
                         "description": "A list of orders that can be used by the caller to test each life cycle or scenario.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/TestOrder"
+                            "$ref": "#/components/schemas/TestOrder"
                         }
                     }
                 },
@@ -661,7 +661,7 @@
                     "errors": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Error"
+                            "$ref": "#/components/schemas/Error"
                         }
                     }
                 },

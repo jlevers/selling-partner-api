@@ -19,7 +19,7 @@ class GetInboundOperationStatus extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $operationId  Identifier to an asynchronous operation.
+     * @param  string  $operationId  Identifier of an asynchronous operation.
      */
     public function __construct(
         protected string $operationId,
@@ -36,7 +36,7 @@ class GetInboundOperationStatus extends Request
         $status = $response->status();
         $responseCls = match ($status) {
             200 => InboundOperationStatus::class,
-            400, 500, 403, 404, 413, 415, 429, 503 => ErrorList::class,
+            400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

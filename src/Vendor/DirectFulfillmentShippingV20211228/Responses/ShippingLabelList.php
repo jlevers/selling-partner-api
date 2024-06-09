@@ -6,7 +6,6 @@ namespace SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Responses;
 
 use SellingPartnerApi\Response;
 use SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Dto\Pagination;
-use SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Dto\ShippingLabel;
 
 final class ShippingLabelList extends Response
 {
@@ -14,7 +13,7 @@ final class ShippingLabelList extends Response
 
     /**
      * @param  ?Pagination  $pagination
-     * @param  ShippingLabel[]  $shippingLabels
+     * @param  ShippingLabel[]|null  $shippingLabels
      */
     public function __construct(
         public readonly ?Pagination $pagination = null,

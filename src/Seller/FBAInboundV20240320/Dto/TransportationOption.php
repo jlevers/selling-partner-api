@@ -10,24 +10,22 @@ final class TransportationOption extends Dto
 {
     /**
      * @param  Carrier  $carrier  The carrier for the inbound shipment.
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $placementOptionId  The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
-     * @param  string  $shippingMode  The shipping mode associated with the transportation option. Available modes are ground small parcel, freight less-than-truckload (LTL), freight full-truckload (FTL) palletized, freight FTL non-palletized, ocean less-than-container-load (LCL), ocean full-container load (FCL), air small parcel, and air small parcel express.
-     * @param  string  $shippingSolution  The shipping solution associated with the transportation option. Available solutions are Amazon-partnered carrier or 'use your own carrier'.
-     * @param  string  $transportationOptionId  Identifier to a transportation option. A transportation option represent one option for how to send a shipment.
-     * @param  ?AppointmentSlot  $appointmentSlot  The fulfillment center appointment slot for the transportation option.
+     * @param  string[]  $preconditions  Identifies a list of preconditions for confirming the transportation option.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  string  $shippingMode  Mode of shipment transportation that this option will provide. Can be: `GROUND_SMALL_PARCEL`, `FREIGHT_LTL`, `FREIGHT_FTL_PALLET`, `FREIGHT_FTL_NONPALLET`, `OCEAN_LCL`, `OCEAN_FCL`, `AIR_SMALL_PARCEL`, `AIR_SMALL_PARCEL_EXPRESS`.
+     * @param  string  $shippingSolution  Shipping program for the option. Can be: `AMAZON_PARTNERED_CARRIER`, `USE_YOUR_OWN_CARRIER`.
+     * @param  string  $transportationOptionId  Identifier of a transportation option. A transportation option represent one option for how to send a shipment.
+     * @param  ?CarrierAppointment  $carrierAppointment  Contains details for a transportation carrier appointment. This appointment is vended out by Amazon and is an indicator for when a transportation carrier is accepting shipments to be picked up.
      * @param  ?Quote  $quote  The estimated shipping cost associated with the transportation option.
      */
     public function __construct(
         public readonly Carrier $carrier,
-        public readonly string $inboundPlanId,
-        public readonly string $placementOptionId,
+        public readonly array $preconditions,
         public readonly string $shipmentId,
         public readonly string $shippingMode,
         public readonly string $shippingSolution,
         public readonly string $transportationOptionId,
-        public readonly ?AppointmentSlot $appointmentSlot = null,
+        public readonly ?CarrierAppointment $carrierAppointment = null,
         public readonly ?Quote $quote = null,
     ) {
     }

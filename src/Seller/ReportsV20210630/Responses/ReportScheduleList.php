@@ -11,7 +11,7 @@ final class ReportScheduleList extends Response
     protected static array $complexArrayTypes = ['reportSchedules' => [ReportSchedule::class]];
 
     /**
-     * @param  ReportSchedule[]  $reportSchedules
+     * @param  ReportSchedule[]  $reportSchedules  Detailed information about a report schedule.
      */
     public function __construct(
         public readonly array $reportSchedules,

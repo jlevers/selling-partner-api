@@ -12,7 +12,7 @@ final class CustomerInvoiceList extends Dto
 
     /**
      * @param  ?Pagination  $pagination
-     * @param  CustomerInvoice[]  $customerInvoices
+     * @param  CustomerInvoice[]|null  $customerInvoices
      */
     public function __construct(
         public readonly ?Pagination $pagination = null,

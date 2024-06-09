@@ -17,7 +17,7 @@ final class ReturnItem extends Dto
      * @param  DateTime  $statusChangedDate
      * @param  ?string  $returnComment  An optional comment about the return item.
      * @param  ?string  $amazonReturnReasonCode  The return reason code that the Amazon fulfillment center assigned to the return item.
-     * @param  ?string  $returnAuthorizationId  Identifies the return authorization used to return this item. See ReturnAuthorization.
+     * @param  ?string  $returnAuthorizationId  Identifies the return authorization used to return this item. Refer to `ReturnAuthorization`.
      * @param  ?string  $returnReceivedCondition  The condition of the return item when received by an Amazon fulfillment center.
      * @param  ?string  $fulfillmentCenterId  The identifier for the Amazon fulfillment center that processed the return item.
      */

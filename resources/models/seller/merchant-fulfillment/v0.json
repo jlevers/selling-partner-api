@@ -5,444 +5,32 @@
         "description": "The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon\u2019s Buy Shipping Services.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v0"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/mfn\/v0\/eligibleServices": {
+        "/mfn/v0/eligibleShippingServices": {
             "post": {
                 "tags": [
                     "MerchantFulfillmentV0"
                 ],
-                "description": "Returns a list of shipping service offers that satisfy the specified shipment request details.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
-                "operationId": "getEligibleShipmentServicesOld",
-                "requestBody": {
-                    "content": {
-                        "application\/json": {
-                            "schema": {
-                                "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "body": {
-                                                "value": {
-                                                    "ShipmentRequestDetails": {
-                                                        "AmazonOrderId": "903-5563053-5647845",
-                                                        "ItemList": [
-                                                            {
-                                                                "OrderItemId": "52986411826454",
-                                                                "Quantity": 1
-                                                            }
-                                                        ],
-                                                        "ShipFromAddress": {
-                                                            "Name": "John Doe",
-                                                            "AddressLine1": "300 Turnbull Ave",
-                                                            "Email": "jdoeasdfllkj@yahoo.com",
-                                                            "City": "Detroit",
-                                                            "StateOrProvinceCode": "MI",
-                                                            "PostalCode": "48123",
-                                                            "CountryCode": "US",
-                                                            "Phone": "7132341234"
-                                                        },
-                                                        "PackageDimensions": {
-                                                            "Length": 10.25,
-                                                            "Width": 10.25,
-                                                            "Height": 10.25,
-                                                            "Unit": "inches"
-                                                        },
-                                                        "Weight": {
-                                                            "Value": 10.25,
-                                                            "Unit": "oz"
-                                                        },
-                                                        "ShippingServiceOptions": {
-                                                            "DeliveryExperience": "NoTracking",
-                                                            "CarrierWillPickUp": false,
-                                                            "CarrierWillPickUpOption": "ShipperWillDropOff"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "payload": {
-                                            "ShippingServiceList": [
-                                                {
-                                                    "ShippingServiceName": "UPS 2nd Day Air\u00ae",
-                                                    "CarrierName": "UPS\u00ae",
-                                                    "ShippingServiceId": "UPS_PTP_2ND_DAY_AIR",
-                                                    "ShippingServiceOfferId": "WHgxtyn6qjGGaCzOCog1azF5HLHje5Pz3Lc2Fmt5eKoZAReW8oJ1SMumuBS8lA\/Hjuglhyiu0+KRLvyJxFV0PB9YFMDhygs3VyTL0WGYkGxiuRkmuEvpqldUn9rrkWVodqnR4vx2VtXvtER\/Ju6RqYoddJZGy6RS2KLzzhQ2NclN0NYXMZVqpOe5RsRBddXaGuJr7oza3M52+JzChocAHzcurIhCRynpbxfmNLzZMQEbgnpGLzuaoSMzfxg90\/NaXFR\/Ou01du\/uKd5AbfMW\/AxAKP9ht6Oi9lDHq6WkGqvjkVLW0\/jj\/fBgblIwcs+t",
-                                                    "ShipDate": "2019-10-28T16:36:36Z",
-                                                    "EarliestEstimatedDeliveryDate": "2019-10-31T06:00:00Z",
-                                                    "LatestEstimatedDeliveryDate": "2019-10-31T06:00:00Z",
-                                                    "Rate": {
-                                                        "CurrencyCode": "USD",
-                                                        "Amount": 34.73
-                                                    },
-                                                    "ShippingServiceOptions": {
-                                                        "DeliveryExperience": "NoTracking",
-                                                        "CarrierWillPickUp": false,
-                                                        "LabelFormat": ""
-                                                    },
-                                                    "AvailableLabelFormats": [
-                                                        "ZPL203",
-                                                        "ShippingServiceDefault",
-                                                        "PDF",
-                                                        "PNG"
-                                                    ],
-                                                    "AvailableFormatOptionsForLabel": [
-                                                        {
-                                                            "LabelFormat": "ZPL203"
-                                                        },
-                                                        {
-                                                            "LabelFormat": "ShippingServiceDefault"
-                                                        },
-                                                        {
-                                                            "LabelFormat": "PDF"
-                                                        },
-                                                        {
-                                                            "LabelFormat": "PNG"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "ShippingServiceName": "UPS Next Day Air Saver\u00ae",
-                                                    "CarrierName": "UPS\u00ae",
-                                                    "ShippingServiceId": "UPS_PTP_NEXT_DAY_AIR_SAVER",
-                                                    "ShippingServiceOfferId": "WHgxtyn6qjGGaCzOCog1azF5HLHje5Pz3Lc2Fmt5eKqqhKGQ2YZmuxsXKVXmdgdWNvfxb1qfm5bGm8NuqlqnNT3eTiJ4viTctepggbeUKUSykClJ+Qmw43zdA8wsgREhQCmb4Bbo\/skapLQS1F9uwH2FgY5SfMsj\/egudyocpVRT45KSQAT0H5YiXW3OyyRAae9fZ0RzDJAABHiisOyYyXnB1mtWOZqc7rlGR4yyqN7jmiT4t8dmuGPX7ptY4qskrN+6VHZO9bM9tdDS0ysHhAVv4jO3Q5sWFg4nEPaARWSsrpa6zSGMLxAOj56O3tcP",
-                                                    "ShipDate": "2019-10-28T16:36:36Z",
-                                                    "EarliestEstimatedDeliveryDate": "2019-10-30T06:00:00Z",
-                                                    "LatestEstimatedDeliveryDate": "2019-10-30T06:00:00Z",
-                                                    "Rate": {
-                                                        "CurrencyCode": "USD",
-                                                        "Amount": 98.75
-                                                    },
-                                                    "ShippingServiceOptions": {
-                                                        "DeliveryExperience": "NoTracking",
-                                                        "CarrierWillPickUp": false,
-                                                        "LabelFormat": ""
-                                                    },
-                                                    "AvailableLabelFormats": [
-                                                        "ZPL203",
-                                                        "ShippingServiceDefault",
-                                                        "PDF",
-                                                        "PNG"
-                                                    ],
-                                                    "AvailableFormatOptionsForLabel": [
-                                                        {
-                                                            "LabelFormat": "ZPL203"
-                                                        },
-                                                        {
-                                                            "LabelFormat": "ShippingServiceDefault"
-                                                        },
-                                                        {
-                                                            "LabelFormat": "PDF"
-                                                        },
-                                                        {
-                                                            "LabelFormat": "PNG"
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "TemporarilyUnavailableCarrierList": [
-                                                {
-                                                    "CarrierName": "UPS\u00ae"
-                                                },
-                                                {
-                                                    "CarrierName": "DHLECOMMERCE"
-                                                }
-                                            ],
-                                            "TermsAndConditionsNotAcceptedCarrierList": [
-                                                {
-                                                    "CarrierName": "YANWEN"
-                                                },
-                                                {
-                                                    "CarrierName": "CHINA_POST"
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "400": {
-                        "description": "Request has missing or invalid parameters and cannot be parsed.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "body": {
-                                                "value": {
-                                                    "ShipmentRequestDetails": {
-                                                        "AmazonOrderId": "TEST_CASE_400",
-                                                        "ItemList": [
-                                                            {
-                                                                "OrderItemId": "52986411826454",
-                                                                "Quantity": 1
-                                                            }
-                                                        ],
-                                                        "ShipFromAddress": {
-                                                            "Name": "John Doe",
-                                                            "AddressLine1": "300 Turnbull Ave",
-                                                            "Email": "jdoeasdfllkj@yahoo.com",
-                                                            "City": "Detroit",
-                                                            "StateOrProvinceCode": "MI",
-                                                            "PostalCode": "48123",
-                                                            "CountryCode": "USA",
-                                                            "Phone": "7132341234"
-                                                        },
-                                                        "PackageDimensions": {
-                                                            "Length": 10.25,
-                                                            "Width": 10.25,
-                                                            "Height": 10.25,
-                                                            "Unit": "inches"
-                                                        },
-                                                        "Weight": {
-                                                            "Value": 10.25,
-                                                            "Unit": "oz"
-                                                        },
-                                                        "ShippingServiceOptions": {
-                                                            "DeliveryExperience": "NoTracking",
-                                                            "CarrierWillPickUp": false,
-                                                            "CarrierWillPickUpOption": "ShipperWillDropOff"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "InvalidInput",
-                                                "message": "1 validation error detected: Value 'USA' at 'shipmentRequestDetails.shipFromAddress.countryCode' failed to satisfy constraint: Member must have length less than or equal to 2",
-                                                "details": ""
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "401": {
-                        "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
-                                }
-                            }
-                        }
-                    },
-                    "403": {
-                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The specified resource does not exist.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
-                                }
-                            }
-                        }
-                    },
-                    "429": {
-                        "description": "The frequency of requests was greater than allowed.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
-                                }
-                            }
-                        }
-                    },
-                    "503": {
-                        "description": "Temporary overloading or maintenance of the server.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
-                                }
-                            }
-                        }
-                    }
-                },
-                "deprecated": true,
-                "x-codegen-request-body-name": "body"
-            }
-        },
-        "\/mfn\/v0\/eligibleShippingServices": {
-            "post": {
-                "tags": [
-                    "MerchantFulfillmentV0"
-                ],
-                "description": "Returns a list of shipping service offers that satisfy the specified shipment request details.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a list of shipping service offers that satisfy the specified shipment request details.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getEligibleShipmentServices",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesRequest"
+                                "$ref": "#/components/schemas/GetEligibleShipmentServicesRequest"
                             }
                         }
                     },
@@ -466,9 +54,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
+                                    "$ref": "#/components/schemas/GetEligibleShipmentServicesResponse"
                                 }
                             }
                         },
@@ -524,7 +112,7 @@
                                                     "ShippingServiceName": "UPS 2nd Day Air\u00ae",
                                                     "CarrierName": "UPS\u00ae",
                                                     "ShippingServiceId": "UPS_PTP_2ND_DAY_AIR",
-                                                    "ShippingServiceOfferId": "WHgxtyn6qjGGaCzOCog1azF5HLHje5Pz3Lc2Fmt5eKoZAReW8oJ1SMumuBS8lA\/Hjuglhyiu0+KRLvyJxFV0PB9YFMDhygs3VyTL0WGYkGxiuRkmuEvpqldUn9rrkWVodqnR4vx2VtXvtER\/Ju6RqYoddJZGy6RS2KLzzhQ2NclN0NYXMZVqpOe5RsRBddXaGuJr7oza3M52+JzChocAHzcurIhCRynpbxfmNLzZMQEbgnpGLzuaoSMzfxg90\/NaXFR\/Ou01du\/uKd5AbfMW\/AxAKP9ht6Oi9lDHq6WkGqvjkVLW0\/jj\/fBgblIwcs+t",
+                                                    "ShippingServiceOfferId": "WHgxtyn6qjGGaCzOCog1azF5HLHje5Pz3Lc2Fmt5eKoZAReW8oJ1SMumuBS8lA/Hjuglhyiu0+KRLvyJxFV0PB9YFMDhygs3VyTL0WGYkGxiuRkmuEvpqldUn9rrkWVodqnR4vx2VtXvtER/Ju6RqYoddJZGy6RS2KLzzhQ2NclN0NYXMZVqpOe5RsRBddXaGuJr7oza3M52+JzChocAHzcurIhCRynpbxfmNLzZMQEbgnpGLzuaoSMzfxg90/NaXFR/Ou01du/uKd5AbfMW/AxAKP9ht6Oi9lDHq6WkGqvjkVLW0/jj/fBgblIwcs+t",
                                                     "ShipDate": "2019-10-28T16:36:36Z",
                                                     "EarliestEstimatedDeliveryDate": "2019-10-31T06:00:00Z",
                                                     "LatestEstimatedDeliveryDate": "2019-10-31T06:00:00Z",
@@ -562,7 +150,7 @@
                                                     "ShippingServiceName": "UPS Next Day Air Saver\u00ae",
                                                     "CarrierName": "UPS\u00ae",
                                                     "ShippingServiceId": "UPS_PTP_NEXT_DAY_AIR_SAVER",
-                                                    "ShippingServiceOfferId": "WHgxtyn6qjGGaCzOCog1azF5HLHje5Pz3Lc2Fmt5eKqqhKGQ2YZmuxsXKVXmdgdWNvfxb1qfm5bGm8NuqlqnNT3eTiJ4viTctepggbeUKUSykClJ+Qmw43zdA8wsgREhQCmb4Bbo\/skapLQS1F9uwH2FgY5SfMsj\/egudyocpVRT45KSQAT0H5YiXW3OyyRAae9fZ0RzDJAABHiisOyYyXnB1mtWOZqc7rlGR4yyqN7jmiT4t8dmuGPX7ptY4qskrN+6VHZO9bM9tdDS0ysHhAVv4jO3Q5sWFg4nEPaARWSsrpa6zSGMLxAOj56O3tcP",
+                                                    "ShippingServiceOfferId": "WHgxtyn6qjGGaCzOCog1azF5HLHje5Pz3Lc2Fmt5eKqqhKGQ2YZmuxsXKVXmdgdWNvfxb1qfm5bGm8NuqlqnNT3eTiJ4viTctepggbeUKUSykClJ+Qmw43zdA8wsgREhQCmb4Bbo/skapLQS1F9uwH2FgY5SfMsj/egudyocpVRT45KSQAT0H5YiXW3OyyRAae9fZ0RzDJAABHiisOyYyXnB1mtWOZqc7rlGR4yyqN7jmiT4t8dmuGPX7ptY4qskrN+6VHZO9bM9tdDS0ysHhAVv4jO3Q5sWFg4nEPaARWSsrpa6zSGMLxAOj56O3tcP",
                                                     "ShipDate": "2019-10-28T16:36:36Z",
                                                     "EarliestEstimatedDeliveryDate": "2019-10-30T06:00:00Z",
                                                     "LatestEstimatedDeliveryDate": "2019-10-30T06:00:00Z",
@@ -636,9 +224,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
+                                    "$ref": "#/components/schemas/GetEligibleShipmentServicesResponse"
                                 }
                             }
                         },
@@ -717,9 +305,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
+                                    "$ref": "#/components/schemas/GetEligibleShipmentServicesResponse"
                                 }
                             }
                         }
@@ -735,9 +323,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
+                                    "$ref": "#/components/schemas/GetEligibleShipmentServicesResponse"
                                 }
                             }
                         }
@@ -759,9 +347,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
+                                    "$ref": "#/components/schemas/GetEligibleShipmentServicesResponse"
                                 }
                             }
                         }
@@ -783,9 +371,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
+                                    "$ref": "#/components/schemas/GetEligibleShipmentServicesResponse"
                                 }
                             }
                         }
@@ -807,9 +395,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
+                                    "$ref": "#/components/schemas/GetEligibleShipmentServicesResponse"
                                 }
                             }
                         }
@@ -831,9 +419,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResponse"
+                                    "$ref": "#/components/schemas/GetEligibleShipmentServicesResponse"
                                 }
                             }
                         }
@@ -842,12 +430,12 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/mfn\/v0\/shipments\/{shipmentId}": {
+        "/mfn/v0/shipments/{shipmentId}": {
             "get": {
                 "tags": [
                     "MerchantFulfillmentV0"
                 ],
-                "description": "Returns the shipment information for an existing shipment.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the shipment information for an existing shipment.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getShipment",
                 "parameters": [
                     {
@@ -879,9 +467,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         },
@@ -968,7 +556,7 @@
                                                 },
                                                 "FileContents": {
                                                     "Contents": "H4sIAAAAAAAAAOS6dV",
-                                                    "FileType": "image\/png",
+                                                    "FileType": "image/png",
                                                     "Checksum": "9ALVyphCKfc3+Lb2ssyh8A=="
                                                 }
                                             },
@@ -999,9 +587,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         },
@@ -1045,9 +633,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         }
@@ -1063,9 +651,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         }
@@ -1087,9 +675,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         }
@@ -1111,9 +699,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         }
@@ -1135,9 +723,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         }
@@ -1159,9 +747,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentResponse"
+                                    "$ref": "#/components/schemas/GetShipmentResponse"
                                 }
                             }
                         }
@@ -1172,7 +760,7 @@
                 "tags": [
                     "MerchantFulfillmentV0"
                 ],
-                "description": "Cancel the shipment indicated by the specified shipment identifier.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Cancel the shipment indicated by the specified shipment identifier.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "cancelShipment",
                 "parameters": [
                     {
@@ -1204,9 +792,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         },
@@ -1320,9 +908,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         },
@@ -1366,9 +954,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         }
@@ -1384,9 +972,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         }
@@ -1408,9 +996,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         }
@@ -1432,9 +1020,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         }
@@ -1456,9 +1044,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         }
@@ -1480,9 +1068,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
+                                    "$ref": "#/components/schemas/CancelShipmentResponse"
                                 }
                             }
                         }
@@ -1490,342 +1078,18 @@
                 }
             }
         },
-        "\/mfn\/v0\/shipments\/{shipmentId}\/cancel": {
-            "put": {
-                "tags": [
-                    "MerchantFulfillmentV0"
-                ],
-                "description": "Cancel the shipment indicated by the specified shipment identifer.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
-                "operationId": "cancelShipmentOld",
-                "parameters": [
-                    {
-                        "name": "shipmentId",
-                        "in": "path",
-                        "description": "The Amazon-defined shipment identifier for the shipment to cancel.",
-                        "required": true,
-                        "schema": {
-                            "pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}",
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "shipmentId": {
-                                                "value": "be7a0a53-00c3-4f6f-a63a-639f76ee9253"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "payload": {
-                                            "ShipmentId": "be7a0a53-00c3-4f6f-a63a-639f76ee9253",
-                                            "AmazonOrderId": "903-5563053-5647845",
-                                            "SellerOrderId": "903-5563053-5647845",
-                                            "Insurance": {
-                                                "CurrencyCode": "USD",
-                                                "Amount": 0
-                                            },
-                                            "ItemList": [
-                                                {
-                                                    "OrderItemId": "12958298061782",
-                                                    "Quantity": 1
-                                                }
-                                            ],
-                                            "ShipFromAddress": {
-                                                "Name": "John Doe",
-                                                "AddressLine1": "300 Turnbull Ave",
-                                                "Email": "jdoeasdfllkj@yahoo.com",
-                                                "City": "Detroit",
-                                                "StateOrProvinceCode": "MI",
-                                                "PostalCode": "48123",
-                                                "CountryCode": "US",
-                                                "Phone": "7132341234"
-                                            },
-                                            "ShipToAddress": {
-                                                "Name": "New York",
-                                                "AddressLine1": "TIME WARNER CENTER",
-                                                "AddressLine2": "10 COLUMBUS CIR",
-                                                "Email": "",
-                                                "City": "NEW YORK",
-                                                "StateOrProvinceCode": "NY",
-                                                "PostalCode": "10019-1158",
-                                                "CountryCode": "US",
-                                                "Phone": ""
-                                            },
-                                            "PackageDimensions": {
-                                                "Length": 10.25,
-                                                "Width": 10.25,
-                                                "Height": 10.25,
-                                                "Unit": "inches"
-                                            },
-                                            "Weight": {
-                                                "Value": 10.25,
-                                                "Unit": "oz"
-                                            },
-                                            "ShippingService": {
-                                                "ShippingServiceName": "UPS 2nd Day Air \u00ae",
-                                                "CarrierName": "UPS\u00ae",
-                                                "ShippingServiceId": "UPS_PTP_2ND_DAY_AIR",
-                                                "ShippingServiceOfferId": "",
-                                                "ShipDate": "2019-10-28T18:00:00Z",
-                                                "Rate": {
-                                                    "CurrencyCode": "USD",
-                                                    "Amount": 34.73
-                                                },
-                                                "ShippingServiceOptions": {
-                                                    "DeliveryExperience": "DeliveryConfirmationWithoutSignature",
-                                                    "DeclaredValue": {
-                                                        "CurrencyCode": "USD",
-                                                        "Amount": 0
-                                                    }
-                                                },
-                                                "RequiresAdditionalSellerInputs": false
-                                            },
-                                            "Label": {
-                                                "Dimensions": {},
-                                                "FileContents": {
-                                                    "Contents": "",
-                                                    "FileType": "",
-                                                    "Checksum": ""
-                                                }
-                                            },
-                                            "Status": "RefundPending",
-                                            "TrackingId": "1Z17E2100206868939",
-                                            "CreatedDate": "2019-10-28T18:29:34Z",
-                                            "LastUpdatedDate": "2019-10-28T18:36:55Z"
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "400": {
-                        "description": "Request has missing or invalid parameters and cannot be parsed.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "shipmentId": {
-                                                "value": "87d20cf7-1beb-4cda-8bf4-7366cfddbec1"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "InvalidInput",
-                                                "message": "1 validation error detected: Value 'TEST_CASE_400' at 'shipmentId' failed to satisfy constraint: Member must satisfy regular expression pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}",
-                                                "details": ""
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "401": {
-                        "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
-                                }
-                            }
-                        }
-                    },
-                    "403": {
-                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The specified resource does not exist.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
-                                }
-                            }
-                        }
-                    },
-                    "429": {
-                        "description": "The frequency of requests was greater than allowed.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
-                                }
-                            }
-                        }
-                    },
-                    "503": {
-                        "description": "Temporary overloading or maintenance of the server.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/CancelShipmentResponse"
-                                }
-                            }
-                        }
-                    }
-                },
-                "deprecated": true
-            }
-        },
-        "\/mfn\/v0\/shipments": {
+        "/mfn/v0/shipments": {
             "post": {
                 "tags": [
                     "MerchantFulfillmentV0"
                 ],
-                "description": "Create a shipment with the information provided.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Create a shipment with the information provided.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createShipment",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateShipmentRequest"
+                                "$ref": "#/components/schemas/CreateShipmentRequest"
                             }
                         }
                     },
@@ -1849,9 +1113,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         },
@@ -1897,7 +1161,7 @@
                                                         }
                                                     },
                                                     "ShippingServiceId": "UPS_PTP_2ND_DAY_AIR",
-                                                    "ShippingServiceOfferId": "WHgxtyn6qjGGaCzOCog1azF5HLHje5Pz3Lc2Fmt5eKoZAReW8oJ1SMumuBS8lA\/Hjuglhyiu0+KRLvyJxFV0PB9YFMDhygs3VyTL0WGYkGxiuRkmuEvpqldUn9rrkWVodqnR4vx2VtXvtER\/Ju6RqYoddJZGy6RS2KLzzhQ2NclN0NYXMZVqpOe5RsRBddXaGuJr7oza3M52+JzChocAHzcurIhCRynpbxfmNLzZMQEbgnpGLzuaoSMzfxg90\/NaXFR\/Ou01du\/uKd5AbfMW\/AxAKP9ht6Oi9lDHq6WkGqvjkVLW0\/jj\/fBgblIwcs+t"
+                                                    "ShippingServiceOfferId": "WHgxtyn6qjGGaCzOCog1azF5HLHje5Pz3Lc2Fmt5eKoZAReW8oJ1SMumuBS8lA/Hjuglhyiu0+KRLvyJxFV0PB9YFMDhygs3VyTL0WGYkGxiuRkmuEvpqldUn9rrkWVodqnR4vx2VtXvtER/Ju6RqYoddJZGy6RS2KLzzhQ2NclN0NYXMZVqpOe5RsRBddXaGuJr7oza3M52+JzChocAHzcurIhCRynpbxfmNLzZMQEbgnpGLzuaoSMzfxg90/NaXFR/Ou01du/uKd5AbfMW/AxAKP9ht6Oi9lDHq6WkGqvjkVLW0/jj/fBgblIwcs+t"
                                                 }
                                             }
                                         }
@@ -1951,7 +1215,7 @@
                                                 "ShippingServiceName": "UPS 2nd Day Air\u00ae",
                                                 "CarrierName": "UPS\u00ae",
                                                 "ShippingServiceId": "UPS_PTP_2ND_DAY_AIR",
-                                                "ShippingServiceOfferId": "WHgxtyn6qjGGaCzOCog1azF5HLHje5Pz3Lc2Fmt5eKoZAReW8oJ1SMumuBS8lA\/Hjuglhyiu0+KRLvyJxFV0PB9YFMDhygs3VyTL0WGYkGxiuRkmuEvpqldUn9rrkWVodqnR4vx2VtXvtER\/Ju6RqYoddJZGy6RS2KLzzhQ2NclN0NYXMZVqpOe5RsRBddXaGuJr7oza3M52+JzChocAHzcurIhCRynpbxfmNLzZMQEbgnpGLzuaoSMzfxg90\/NaXFR\/Ou01du\/uKd5AbfMW\/AxAKP9ht6Oi9lDHq6WkGqvjkVLW0\/jj\/fBgblIwcs+t",
+                                                "ShippingServiceOfferId": "WHgxtyn6qjGGaCzOCog1azF5HLHje5Pz3Lc2Fmt5eKoZAReW8oJ1SMumuBS8lA/Hjuglhyiu0+KRLvyJxFV0PB9YFMDhygs3VyTL0WGYkGxiuRkmuEvpqldUn9rrkWVodqnR4vx2VtXvtER/Ju6RqYoddJZGy6RS2KLzzhQ2NclN0NYXMZVqpOe5RsRBddXaGuJr7oza3M52+JzChocAHzcurIhCRynpbxfmNLzZMQEbgnpGLzuaoSMzfxg90/NaXFR/Ou01du/uKd5AbfMW/AxAKP9ht6Oi9lDHq6WkGqvjkVLW0/jj/fBgblIwcs+t",
                                                 "ShipDate": "2019-10-28T16:37:37Z",
                                                 "EarliestEstimatedDeliveryDate": "2019-10-30T07:00:00Z",
                                                 "LatestEstimatedDeliveryDate": "2019-10-30T07:00:00Z",
@@ -1976,7 +1240,7 @@
                                                 },
                                                 "FileContents": {
                                                     "Contents": "H4sIAAAAAAAAAOR",
-                                                    "FileType": "image\/png",
+                                                    "FileType": "image/png",
                                                     "Checksum": "d+eUxK5WTGxkGsTF0pmefQ=="
                                                 },
                                                 "LabelFormat": "PNG"
@@ -2007,9 +1271,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         },
@@ -2055,7 +1319,7 @@
                                                         }
                                                     },
                                                     "ShippingServiceId": "UPS_PTP_2ND_DAY_AIR",
-                                                    "ShippingServiceOfferId": "WHgxtyn6qjGGaCzOCog1azF5HLHje5Pz3Lc2Fmt5eKoZAReW8oJ1SMumuBS8lA\/Hjuglhyiu0+KRLvyJxFV0PB9YFMDhygs3VyTL0WGYkGxiuRkmuEvpqldUn9rrkWVodqnR4vx2VtXvtER\/Ju6RqYoddJZGy6RS2KLzzhQ2NclN0NYXMZVqpOe5RsRBddXaGuJr7oza3M52+JzChocAHzcurIhCRynpbxfmNLzZMQEbgnpGLzuaoSMzfxg90\/NaXFR\/Ou01du\/uKd5AbfMW\/AxAKP9ht6Oi9lDHq6WkGqvjkVLW0\/jj\/fBgblIwcs+t"
+                                                    "ShippingServiceOfferId": "WHgxtyn6qjGGaCzOCog1azF5HLHje5Pz3Lc2Fmt5eKoZAReW8oJ1SMumuBS8lA/Hjuglhyiu0+KRLvyJxFV0PB9YFMDhygs3VyTL0WGYkGxiuRkmuEvpqldUn9rrkWVodqnR4vx2VtXvtER/Ju6RqYoddJZGy6RS2KLzzhQ2NclN0NYXMZVqpOe5RsRBddXaGuJr7oza3M52+JzChocAHzcurIhCRynpbxfmNLzZMQEbgnpGLzuaoSMzfxg90/NaXFR/Ou01du/uKd5AbfMW/AxAKP9ht6Oi9lDHq6WkGqvjkVLW0/jj/fBgblIwcs+t"
                                                 }
                                             }
                                         }
@@ -2090,9 +1354,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         }
@@ -2108,9 +1372,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         }
@@ -2132,9 +1396,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         }
@@ -2156,9 +1420,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         }
@@ -2180,9 +1444,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         }
@@ -2204,9 +1468,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateShipmentResponse"
+                                    "$ref": "#/components/schemas/CreateShipmentResponse"
                                 }
                             }
                         }
@@ -2215,303 +1479,18 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/mfn\/v0\/sellerInputs": {
+        "/mfn/v0/additionalSellerInputs": {
             "post": {
                 "tags": [
                     "MerchantFulfillmentV0"
                 ],
-                "description": "Get a list of additional seller inputs required for a ship method. This is generally used for international shipping.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
-                "operationId": "getAdditionalSellerInputsOld",
-                "requestBody": {
-                    "content": {
-                        "application\/json": {
-                            "schema": {
-                                "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "body": {
-                                                "value": {
-                                                    "ShippingServiceId": "UPS_PTP_GND",
-                                                    "ShipFromAddress": {
-                                                        "Name": "John Doe",
-                                                        "AddressLine1": "300 Turnbull Ave",
-                                                        "Email": "jdoeasdfllkj@yahoo.com",
-                                                        "City": "Detroit",
-                                                        "StateOrProvinceCode": "MI",
-                                                        "PostalCode": "48123",
-                                                        "CountryCode": "US",
-                                                        "Phone": "7132341234"
-                                                    },
-                                                    "OrderId": "903-5563053-5647845"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "payload": {
-                                            "ShipmentLevelFields": [
-                                                {
-                                                    "AdditionalInputFieldName": "John Doe"
-                                                }
-                                            ],
-                                            "ItemLevelFieldsList": [
-                                                {
-                                                    "Asin": "ASIN_ID_200",
-                                                    "AdditionalInputs": []
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "400": {
-                        "description": "Request has missing or invalid parameters and cannot be parsed.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "body": {
-                                                "value": {
-                                                    "ShippingServiceId": "UPS_PTP_GND",
-                                                    "ShipFromAddress": {
-                                                        "Name": "John Doe",
-                                                        "AddressLine1": "300 Turnbull Ave",
-                                                        "Email": "jdoeasdfllkj@yahoo.com",
-                                                        "City": "Detroit",
-                                                        "StateOrProvinceCode": "MI",
-                                                        "PostalCode": "48123",
-                                                        "CountryCode": "XX",
-                                                        "Phone": "7132341234"
-                                                    },
-                                                    "OrderId": "901-5563053-5647845"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "InvalidInput",
-                                                "message": "Invalid Ship From Address when calling GetAdditionalSellerInputs",
-                                                "details": ""
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "401": {
-                        "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
-                                }
-                            }
-                        }
-                    },
-                    "403": {
-                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The specified resource does not exist.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
-                                }
-                            }
-                        }
-                    },
-                    "429": {
-                        "description": "The frequency of requests was greater than allowed.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
-                                }
-                            }
-                        }
-                    },
-                    "503": {
-                        "description": "Temporary overloading or maintenance of the server.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
-                                }
-                            }
-                        }
-                    }
-                },
-                "deprecated": true,
-                "x-codegen-request-body-name": "body"
-            }
-        },
-        "\/mfn\/v0\/additionalSellerInputs": {
-            "post": {
-                "tags": [
-                    "MerchantFulfillmentV0"
-                ],
-                "description": "Gets a list of additional seller inputs required for a ship method. This is generally used for international shipping.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Gets a list of additional seller inputs required for a ship method. This is generally used for international shipping.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getAdditionalSellerInputs",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsRequest"
+                                "$ref": "#/components/schemas/GetAdditionalSellerInputsRequest"
                             }
                         }
                     },
@@ -2535,9 +1514,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
+                                    "$ref": "#/components/schemas/GetAdditionalSellerInputsResponse"
                                 }
                             }
                         },
@@ -2600,9 +1579,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
+                                    "$ref": "#/components/schemas/GetAdditionalSellerInputsResponse"
                                 }
                             }
                         },
@@ -2659,9 +1638,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
+                                    "$ref": "#/components/schemas/GetAdditionalSellerInputsResponse"
                                 }
                             }
                         }
@@ -2677,9 +1656,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
+                                    "$ref": "#/components/schemas/GetAdditionalSellerInputsResponse"
                                 }
                             }
                         }
@@ -2701,9 +1680,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
+                                    "$ref": "#/components/schemas/GetAdditionalSellerInputsResponse"
                                 }
                             }
                         }
@@ -2725,9 +1704,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
+                                    "$ref": "#/components/schemas/GetAdditionalSellerInputsResponse"
                                 }
                             }
                         }
@@ -2749,9 +1728,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
+                                    "$ref": "#/components/schemas/GetAdditionalSellerInputsResponse"
                                 }
                             }
                         }
@@ -2773,9 +1752,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResponse"
+                                    "$ref": "#/components/schemas/GetAdditionalSellerInputsResponse"
                                 }
                             }
                         }
@@ -2813,7 +1792,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "LabelFormatOptionRequest": {
@@ -2834,7 +1813,7 @@
                         "description": "When true, include a packing slip with the label."
                     },
                     "LabelFormat": {
-                        "$ref": "#\/components\/schemas\/LabelFormat"
+                        "$ref": "#/components/schemas/LabelFormat"
                     }
                 },
                 "description": "The label format details and whether to include a packing slip."
@@ -2847,10 +1826,10 @@
                 "type": "object",
                 "properties": {
                     "CarrierWillPickUpOption": {
-                        "$ref": "#\/components\/schemas\/CarrierWillPickUpOption"
+                        "$ref": "#/components/schemas/CarrierWillPickUpOption"
                     },
                     "Charge": {
-                        "$ref": "#\/components\/schemas\/CurrencyAmount"
+                        "$ref": "#/components/schemas/CurrencyAmount"
                     }
                 },
                 "description": "Indicates whether the carrier will pick up the package, and what fee is charged, if any."
@@ -2859,7 +1838,7 @@
                 "type": "array",
                 "description": "List of available carrier pickup options.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/AvailableCarrierWillPickUpOption"
+                    "$ref": "#/components/schemas/AvailableCarrierWillPickUpOption"
                 }
             },
             "AvailableDeliveryExperienceOption": {
@@ -2870,10 +1849,10 @@
                 "type": "object",
                 "properties": {
                     "DeliveryExperienceOption": {
-                        "$ref": "#\/components\/schemas\/DeliveryExperienceOption"
+                        "$ref": "#/components/schemas/DeliveryExperienceOption"
                     },
                     "Charge": {
-                        "$ref": "#\/components\/schemas\/CurrencyAmount"
+                        "$ref": "#/components/schemas/CurrencyAmount"
                     }
                 },
                 "description": "The available delivery confirmation options, and the fee charged, if any."
@@ -2882,7 +1861,7 @@
                 "type": "array",
                 "description": "List of available delivery experience options.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/AvailableDeliveryExperienceOption"
+                    "$ref": "#/components/schemas/AvailableDeliveryExperienceOption"
                 }
             },
             "AvailableShippingServiceOptions": {
@@ -2893,22 +1872,22 @@
                 "type": "object",
                 "properties": {
                     "AvailableCarrierWillPickUpOptions": {
-                        "$ref": "#\/components\/schemas\/AvailableCarrierWillPickUpOptionsList"
+                        "$ref": "#/components/schemas/AvailableCarrierWillPickUpOptionsList"
                     },
                     "AvailableDeliveryExperienceOptions": {
-                        "$ref": "#\/components\/schemas\/AvailableDeliveryExperienceOptionsList"
+                        "$ref": "#/components/schemas/AvailableDeliveryExperienceOptionsList"
                     }
                 },
                 "description": "The available shipping service options."
             },
             "AvailableFormatOptionsForLabel": {
-                "$ref": "#\/components\/schemas\/AvailableFormatOptionsForLabelList"
+                "$ref": "#/components/schemas/AvailableFormatOptionsForLabelList"
             },
             "AvailableFormatOptionsForLabelList": {
                 "type": "array",
                 "description": "The available label formats.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/LabelFormatOption"
+                    "$ref": "#/components/schemas/LabelFormatOption"
                 }
             },
             "Constraint": {
@@ -2932,7 +1911,7 @@
                 "type": "array",
                 "description": "List of constraints.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Constraint"
+                    "$ref": "#/components/schemas/Constraint"
                 }
             },
             "AdditionalInputs": {
@@ -2943,7 +1922,7 @@
                         "description": "The field name."
                     },
                     "SellerInputDefinition": {
-                        "$ref": "#\/components\/schemas\/SellerInputDefinition"
+                        "$ref": "#/components/schemas/SellerInputDefinition"
                     }
                 },
                 "description": "Maps the additional seller input to the definition. The key to the map is the field name."
@@ -2967,20 +1946,20 @@
                         "description": "The data type of the additional input field."
                     },
                     "Constraints": {
-                        "$ref": "#\/components\/schemas\/Constraints"
+                        "$ref": "#/components/schemas/Constraints"
                     },
                     "InputDisplayText": {
                         "type": "string",
                         "description": "The display text for the additional input field."
                     },
                     "InputTarget": {
-                        "$ref": "#\/components\/schemas\/InputTargetType"
+                        "$ref": "#/components/schemas/InputTargetType"
                     },
                     "StoredValue": {
-                        "$ref": "#\/components\/schemas\/AdditionalSellerInput"
+                        "$ref": "#/components/schemas/AdditionalSellerInput"
                     },
                     "RestrictedSetValues": {
-                        "$ref": "#\/components\/schemas\/RestrictedSetValues"
+                        "$ref": "#/components/schemas/RestrictedSetValues"
                     }
                 },
                 "description": "Specifies characteristics that apply to a seller input."
@@ -3007,7 +1986,7 @@
                 "type": "array",
                 "description": "A list of additional inputs.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/AdditionalInputs"
+                    "$ref": "#/components/schemas/AdditionalInputs"
                 }
             },
             "AdditionalSellerInput": {
@@ -3030,19 +2009,19 @@
                         "description": "The value when the data type is integer."
                     },
                     "ValueAsTimestamp": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "ValueAsAddress": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "ValueAsWeight": {
-                        "$ref": "#\/components\/schemas\/Weight"
+                        "$ref": "#/components/schemas/Weight"
                     },
                     "ValueAsDimension": {
-                        "$ref": "#\/components\/schemas\/Length"
+                        "$ref": "#/components/schemas/Length"
                     },
                     "ValueAsCurrency": {
-                        "$ref": "#\/components\/schemas\/CurrencyAmount"
+                        "$ref": "#/components/schemas/CurrencyAmount"
                     }
                 },
                 "description": "Additional information required to purchase shipping."
@@ -3059,7 +2038,7 @@
                         "description": "The name of the additional input field."
                     },
                     "AdditionalSellerInput": {
-                        "$ref": "#\/components\/schemas\/AdditionalSellerInput"
+                        "$ref": "#/components/schemas/AdditionalSellerInput"
                     }
                 },
                 "description": "An additional set of seller inputs required to purchase shipping."
@@ -3068,7 +2047,7 @@
                 "type": "array",
                 "description": "A list of additional seller input pairs required to purchase shipping.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/AdditionalSellerInputs"
+                    "$ref": "#/components/schemas/AdditionalSellerInputs"
                 }
             },
             "Address": {
@@ -3084,37 +2063,37 @@
                 "type": "object",
                 "properties": {
                     "Name": {
-                        "$ref": "#\/components\/schemas\/AddressName"
+                        "$ref": "#/components/schemas/AddressName"
                     },
                     "AddressLine1": {
-                        "$ref": "#\/components\/schemas\/AddressLine1"
+                        "$ref": "#/components/schemas/AddressLine1"
                     },
                     "AddressLine2": {
-                        "$ref": "#\/components\/schemas\/AddressLine2"
+                        "$ref": "#/components/schemas/AddressLine2"
                     },
                     "AddressLine3": {
-                        "$ref": "#\/components\/schemas\/AddressLine3"
+                        "$ref": "#/components/schemas/AddressLine3"
                     },
                     "DistrictOrCounty": {
-                        "$ref": "#\/components\/schemas\/DistrictOrCounty"
+                        "$ref": "#/components/schemas/DistrictOrCounty"
                     },
                     "Email": {
-                        "$ref": "#\/components\/schemas\/EmailAddress"
+                        "$ref": "#/components/schemas/EmailAddress"
                     },
                     "City": {
-                        "$ref": "#\/components\/schemas\/City"
+                        "$ref": "#/components/schemas/City"
                     },
                     "StateOrProvinceCode": {
-                        "$ref": "#\/components\/schemas\/StateOrProvinceCode"
+                        "$ref": "#/components/schemas/StateOrProvinceCode"
                     },
                     "PostalCode": {
-                        "$ref": "#\/components\/schemas\/PostalCode"
+                        "$ref": "#/components/schemas/PostalCode"
                     },
                     "CountryCode": {
-                        "$ref": "#\/components\/schemas\/CountryCode"
+                        "$ref": "#/components/schemas/CountryCode"
                     },
                     "Phone": {
-                        "$ref": "#\/components\/schemas\/PhoneNumber"
+                        "$ref": "#/components/schemas/PhoneNumber"
                     }
                 },
                 "description": "The postal address information."
@@ -3147,10 +2126,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Shipment"
+                        "$ref": "#/components/schemas/Shipment"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema."
@@ -3172,23 +2151,23 @@
                 "type": "object",
                 "properties": {
                     "ShipmentRequestDetails": {
-                        "$ref": "#\/components\/schemas\/ShipmentRequestDetails"
+                        "$ref": "#/components/schemas/ShipmentRequestDetails"
                     },
                     "ShippingServiceId": {
-                        "$ref": "#\/components\/schemas\/ShippingServiceIdentifier"
+                        "$ref": "#/components/schemas/ShippingServiceIdentifier"
                     },
                     "ShippingServiceOfferId": {
                         "type": "string",
                         "description": "Identifies a shipping service order made by a carrier."
                     },
                     "HazmatType": {
-                        "$ref": "#\/components\/schemas\/HazmatType"
+                        "$ref": "#/components/schemas/HazmatType"
                     },
                     "LabelFormatOption": {
-                        "$ref": "#\/components\/schemas\/LabelFormatOptionRequest"
+                        "$ref": "#/components/schemas/LabelFormatOptionRequest"
                     },
                     "ShipmentLevelSellerInputsList": {
-                        "$ref": "#\/components\/schemas\/AdditionalSellerInputsList"
+                        "$ref": "#/components/schemas/AdditionalSellerInputsList"
                     }
                 },
                 "description": "Request schema."
@@ -3197,10 +2176,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Shipment"
+                        "$ref": "#/components/schemas/Shipment"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema."
@@ -3217,7 +2196,7 @@
                         "description": "The Amazon Standard Identification Number (ASIN) of the item."
                     },
                     "AdditionalInputs": {
-                        "$ref": "#\/components\/schemas\/AdditionalInputsList"
+                        "$ref": "#/components/schemas/AdditionalInputsList"
                     }
                 }
             },
@@ -3225,7 +2204,7 @@
                 "type": "array",
                 "description": "A list of item level fields.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemLevelFields"
+                    "$ref": "#/components/schemas/ItemLevelFields"
                 }
             },
             "GetAdditionalSellerInputsRequest": {
@@ -3237,13 +2216,13 @@
                 "type": "object",
                 "properties": {
                     "ShippingServiceId": {
-                        "$ref": "#\/components\/schemas\/ShippingServiceIdentifier"
+                        "$ref": "#/components/schemas/ShippingServiceIdentifier"
                     },
                     "ShipFromAddress": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "OrderId": {
-                        "$ref": "#\/components\/schemas\/AmazonOrderId"
+                        "$ref": "#/components/schemas/AmazonOrderId"
                     }
                 },
                 "description": "Request schema."
@@ -3252,10 +2231,10 @@
                 "type": "object",
                 "properties": {
                     "ShipmentLevelFields": {
-                        "$ref": "#\/components\/schemas\/AdditionalInputsList"
+                        "$ref": "#/components/schemas/AdditionalInputsList"
                     },
                     "ItemLevelFieldsList": {
-                        "$ref": "#\/components\/schemas\/ItemLevelFieldsList"
+                        "$ref": "#/components/schemas/ItemLevelFieldsList"
                     }
                 },
                 "description": "The payload for the getAdditionalSellerInputs operation."
@@ -3264,10 +2243,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/GetAdditionalSellerInputsResult"
+                        "$ref": "#/components/schemas/GetAdditionalSellerInputsResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema."
@@ -3346,7 +2325,7 @@
                         "description": "Data for printing labels, in the form of a Base64-encoded, GZip-compressed string."
                     },
                     "FileType": {
-                        "$ref": "#\/components\/schemas\/FileType"
+                        "$ref": "#/components/schemas/FileType"
                     },
                     "Checksum": {
                         "type": "string",
@@ -3359,21 +2338,21 @@
                 "type": "string",
                 "description": "The file type for a label.",
                 "enum": [
-                    "application\/pdf",
-                    "application\/zpl",
-                    "image\/png"
+                    "application/pdf",
+                    "application/zpl",
+                    "image/png"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
-                        "value": "application\/pdf",
+                        "value": "application/pdf",
                         "description": "A Portable Document Format (pdf) file."
                     },
                     {
-                        "value": "application\/zpl",
+                        "value": "application/zpl",
                         "description": "A Zebra Programming Language (zpl) file."
                     },
                     {
-                        "value": "image\/png",
+                        "value": "image/png",
                         "description": "A Portable Network Graphics (png) file."
                     }
                 ]
@@ -3385,10 +2364,10 @@
                 "type": "object",
                 "properties": {
                     "ShipmentRequestDetails": {
-                        "$ref": "#\/components\/schemas\/ShipmentRequestDetails"
+                        "$ref": "#/components/schemas/ShipmentRequestDetails"
                     },
                     "ShippingOfferingFilter": {
-                        "$ref": "#\/components\/schemas\/ShippingOfferingFilter"
+                        "$ref": "#/components/schemas/ShippingOfferingFilter"
                     }
                 },
                 "description": "Request schema."
@@ -3397,10 +2376,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/GetEligibleShipmentServicesResult"
+                        "$ref": "#/components/schemas/GetEligibleShipmentServicesResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema."
@@ -3412,16 +2391,16 @@
                 "type": "object",
                 "properties": {
                     "ShippingServiceList": {
-                        "$ref": "#\/components\/schemas\/ShippingServiceList"
+                        "$ref": "#/components/schemas/ShippingServiceList"
                     },
                     "RejectedShippingServiceList": {
-                        "$ref": "#\/components\/schemas\/RejectedShippingServiceList"
+                        "$ref": "#/components/schemas/RejectedShippingServiceList"
                     },
                     "TemporarilyUnavailableCarrierList": {
-                        "$ref": "#\/components\/schemas\/TemporarilyUnavailableCarrierList"
+                        "$ref": "#/components/schemas/TemporarilyUnavailableCarrierList"
                     },
                     "TermsAndConditionsNotAcceptedCarrierList": {
-                        "$ref": "#\/components\/schemas\/TermsAndConditionsNotAcceptedCarrierList"
+                        "$ref": "#/components/schemas/TermsAndConditionsNotAcceptedCarrierList"
                     }
                 },
                 "description": "The payload for the getEligibleShipmentServices operation."
@@ -3430,10 +2409,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Shipment"
+                        "$ref": "#/components/schemas/Shipment"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Response schema."
@@ -3464,22 +2443,32 @@
                 "type": "object",
                 "properties": {
                     "OrderItemId": {
-                        "$ref": "#\/components\/schemas\/OrderItemId"
+                        "$ref": "#/components/schemas/OrderItemId"
                     },
                     "Quantity": {
-                        "$ref": "#\/components\/schemas\/ItemQuantity"
+                        "$ref": "#/components/schemas/ItemQuantity"
                     },
                     "ItemWeight": {
-                        "$ref": "#\/components\/schemas\/Weight"
+                        "$ref": "#/components/schemas/Weight"
                     },
                     "ItemDescription": {
-                        "$ref": "#\/components\/schemas\/ItemDescription"
+                        "$ref": "#/components/schemas/ItemDescription"
                     },
                     "TransparencyCodeList": {
-                        "$ref": "#\/components\/schemas\/TransparencyCodeList"
+                        "$ref": "#/components/schemas/TransparencyCodeList"
                     },
                     "ItemLevelSellerInputsList": {
-                        "$ref": "#\/components\/schemas\/AdditionalSellerInputsList"
+                        "$ref": "#/components/schemas/AdditionalSellerInputsList"
+                    },
+                    "LiquidVolume": {
+                        "$ref": "#/components/schemas/LiquidVolume"
+                    },
+                    "IsHazmat": {
+                        "type": "boolean",
+                        "description": "When true, the item qualifies as hazardous materials (hazmat). Defaults to false."
+                    },
+                    "DangerousGoodsDetails": {
+                        "$ref": "#/components/schemas/DangerousGoodsDetails"
                     }
                 },
                 "description": "An Amazon order item identifier and a quantity."
@@ -3488,7 +2477,7 @@
                 "type": "array",
                 "description": "The list of items to be included in a shipment.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Item"
+                    "$ref": "#/components/schemas/Item"
                 }
             },
             "ItemQuantity": {
@@ -3508,19 +2497,19 @@
                 "type": "object",
                 "properties": {
                     "CustomTextForLabel": {
-                        "$ref": "#\/components\/schemas\/CustomTextForLabel"
+                        "$ref": "#/components/schemas/CustomTextForLabel"
                     },
                     "Dimensions": {
-                        "$ref": "#\/components\/schemas\/LabelDimensions"
+                        "$ref": "#/components/schemas/LabelDimensions"
                     },
                     "FileContents": {
-                        "$ref": "#\/components\/schemas\/FileContents"
+                        "$ref": "#/components/schemas/FileContents"
                     },
                     "LabelFormat": {
-                        "$ref": "#\/components\/schemas\/LabelFormat"
+                        "$ref": "#/components/schemas/LabelFormat"
                     },
                     "StandardIdForLabel": {
-                        "$ref": "#\/components\/schemas\/StandardIdForLabel"
+                        "$ref": "#/components/schemas/StandardIdForLabel"
                     }
                 },
                 "description": "Data for creating a shipping label and dimensions for printing the label."
@@ -3529,10 +2518,10 @@
                 "type": "object",
                 "properties": {
                     "CustomTextForLabel": {
-                        "$ref": "#\/components\/schemas\/CustomTextForLabel"
+                        "$ref": "#/components/schemas/CustomTextForLabel"
                     },
                     "StandardIdForLabel": {
-                        "$ref": "#\/components\/schemas\/StandardIdForLabel"
+                        "$ref": "#/components/schemas/StandardIdForLabel"
                     }
                 },
                 "description": "Custom text for shipping labels."
@@ -3550,13 +2539,13 @@
                 "type": "object",
                 "properties": {
                     "Length": {
-                        "$ref": "#\/components\/schemas\/LabelDimension"
+                        "$ref": "#/components/schemas/LabelDimension"
                     },
                     "Width": {
-                        "$ref": "#\/components\/schemas\/LabelDimension"
+                        "$ref": "#/components/schemas/LabelDimension"
                     },
                     "Unit": {
-                        "$ref": "#\/components\/schemas\/UnitOfLength"
+                        "$ref": "#/components/schemas/UnitOfLength"
                     }
                 },
                 "description": "Dimensions for printing a shipping label."
@@ -3598,7 +2587,7 @@
                 "type": "array",
                 "description": "List of label formats.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/LabelFormat"
+                    "$ref": "#/components/schemas/LabelFormat"
                 }
             },
             "Length": {
@@ -3609,7 +2598,7 @@
                         "description": "The value in units."
                     },
                     "unit": {
-                        "$ref": "#\/components\/schemas\/UnitOfLength"
+                        "$ref": "#/components/schemas/UnitOfLength"
                     }
                 },
                 "description": "The length."
@@ -3626,19 +2615,19 @@
                 "type": "object",
                 "properties": {
                     "Length": {
-                        "$ref": "#\/components\/schemas\/PackageDimension"
+                        "$ref": "#/components/schemas/PackageDimension"
                     },
                     "Width": {
-                        "$ref": "#\/components\/schemas\/PackageDimension"
+                        "$ref": "#/components/schemas/PackageDimension"
                     },
                     "Height": {
-                        "$ref": "#\/components\/schemas\/PackageDimension"
+                        "$ref": "#/components/schemas/PackageDimension"
                     },
                     "Unit": {
-                        "$ref": "#\/components\/schemas\/UnitOfLength"
+                        "$ref": "#/components/schemas/UnitOfLength"
                     },
                     "PredefinedPackageDimensions": {
-                        "$ref": "#\/components\/schemas\/PredefinedPackageDimensions"
+                        "$ref": "#/components/schemas/PredefinedPackageDimensions"
                     }
                 },
                 "description": "The dimensions of a package contained in a shipment."
@@ -3942,49 +2931,49 @@
                 "type": "object",
                 "properties": {
                     "ShipmentId": {
-                        "$ref": "#\/components\/schemas\/ShipmentId"
+                        "$ref": "#/components/schemas/ShipmentId"
                     },
                     "AmazonOrderId": {
-                        "$ref": "#\/components\/schemas\/AmazonOrderId"
+                        "$ref": "#/components/schemas/AmazonOrderId"
                     },
                     "SellerOrderId": {
-                        "$ref": "#\/components\/schemas\/SellerOrderId"
+                        "$ref": "#/components/schemas/SellerOrderId"
                     },
                     "ItemList": {
-                        "$ref": "#\/components\/schemas\/ItemList"
+                        "$ref": "#/components/schemas/ItemList"
                     },
                     "ShipFromAddress": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "ShipToAddress": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "PackageDimensions": {
-                        "$ref": "#\/components\/schemas\/PackageDimensions"
+                        "$ref": "#/components/schemas/PackageDimensions"
                     },
                     "Weight": {
-                        "$ref": "#\/components\/schemas\/Weight"
+                        "$ref": "#/components/schemas/Weight"
                     },
                     "Insurance": {
-                        "$ref": "#\/components\/schemas\/CurrencyAmount"
+                        "$ref": "#/components/schemas/CurrencyAmount"
                     },
                     "ShippingService": {
-                        "$ref": "#\/components\/schemas\/ShippingService"
+                        "$ref": "#/components/schemas/ShippingService"
                     },
                     "Label": {
-                        "$ref": "#\/components\/schemas\/Label"
+                        "$ref": "#/components/schemas/Label"
                     },
                     "Status": {
-                        "$ref": "#\/components\/schemas\/ShipmentStatus"
+                        "$ref": "#/components/schemas/ShipmentStatus"
                     },
                     "TrackingId": {
-                        "$ref": "#\/components\/schemas\/TrackingId"
+                        "$ref": "#/components/schemas/TrackingId"
                     },
                     "CreatedDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "LastUpdatedDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     }
                 },
                 "description": "The details of a shipment, including the shipment status."
@@ -4005,34 +2994,34 @@
                 "type": "object",
                 "properties": {
                     "AmazonOrderId": {
-                        "$ref": "#\/components\/schemas\/AmazonOrderId"
+                        "$ref": "#/components/schemas/AmazonOrderId"
                     },
                     "SellerOrderId": {
-                        "$ref": "#\/components\/schemas\/SellerOrderId"
+                        "$ref": "#/components/schemas/SellerOrderId"
                     },
                     "ItemList": {
-                        "$ref": "#\/components\/schemas\/ItemList"
+                        "$ref": "#/components/schemas/ItemList"
                     },
                     "ShipFromAddress": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "PackageDimensions": {
-                        "$ref": "#\/components\/schemas\/PackageDimensions"
+                        "$ref": "#/components/schemas/PackageDimensions"
                     },
                     "Weight": {
-                        "$ref": "#\/components\/schemas\/Weight"
+                        "$ref": "#/components/schemas/Weight"
                     },
                     "MustArriveByDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "ShipDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "ShippingServiceOptions": {
-                        "$ref": "#\/components\/schemas\/ShippingServiceOptions"
+                        "$ref": "#/components/schemas/ShippingServiceOptions"
                     },
                     "LabelCustomization": {
-                        "$ref": "#\/components\/schemas\/LabelCustomization"
+                        "$ref": "#/components/schemas/LabelCustomization"
                     }
                 },
                 "description": "Shipment information required for requesting shipping service offers or for creating a shipment."
@@ -4110,10 +3099,10 @@
                         "description": "When true, include complex shipping options."
                     },
                     "CarrierWillPickUp": {
-                        "$ref": "#\/components\/schemas\/CarrierWillPickUpOption"
+                        "$ref": "#/components/schemas/CarrierWillPickUpOption"
                     },
                     "DeliveryExperience": {
-                        "$ref": "#\/components\/schemas\/DeliveryExperienceOption"
+                        "$ref": "#/components/schemas/DeliveryExperienceOption"
                     }
                 },
                 "description": "Filter for use when requesting eligible shipping services."
@@ -4140,35 +3129,35 @@
                         "description": "The name of the carrier."
                     },
                     "ShippingServiceId": {
-                        "$ref": "#\/components\/schemas\/ShippingServiceIdentifier"
+                        "$ref": "#/components/schemas/ShippingServiceIdentifier"
                     },
                     "ShippingServiceOfferId": {
                         "type": "string",
                         "description": "An Amazon-defined shipping service offer identifier."
                     },
                     "ShipDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "EarliestEstimatedDeliveryDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "LatestEstimatedDeliveryDate": {
-                        "$ref": "#\/components\/schemas\/Timestamp"
+                        "$ref": "#/components/schemas/Timestamp"
                     },
                     "Rate": {
-                        "$ref": "#\/components\/schemas\/CurrencyAmount"
+                        "$ref": "#/components/schemas/CurrencyAmount"
                     },
                     "ShippingServiceOptions": {
-                        "$ref": "#\/components\/schemas\/ShippingServiceOptions"
+                        "$ref": "#/components/schemas/ShippingServiceOptions"
                     },
                     "AvailableShippingServiceOptions": {
-                        "$ref": "#\/components\/schemas\/AvailableShippingServiceOptions"
+                        "$ref": "#/components/schemas/AvailableShippingServiceOptions"
                     },
                     "AvailableLabelFormats": {
-                        "$ref": "#\/components\/schemas\/LabelFormatList"
+                        "$ref": "#/components/schemas/LabelFormatList"
                     },
                     "AvailableFormatOptionsForLabel": {
-                        "$ref": "#\/components\/schemas\/AvailableFormatOptionsForLabelList"
+                        "$ref": "#/components/schemas/AvailableFormatOptionsForLabelList"
                     },
                     "RequiresAdditionalSellerInputs": {
                         "type": "boolean",
@@ -4185,7 +3174,7 @@
                 "type": "array",
                 "description": "A list of shipping services offers.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ShippingService"
+                    "$ref": "#/components/schemas/ShippingService"
                 }
             },
             "ShippingServiceOptions": {
@@ -4196,20 +3185,20 @@
                 "type": "object",
                 "properties": {
                     "DeliveryExperience": {
-                        "$ref": "#\/components\/schemas\/DeliveryExperienceType"
+                        "$ref": "#/components/schemas/DeliveryExperienceType"
                     },
                     "DeclaredValue": {
-                        "$ref": "#\/components\/schemas\/CurrencyAmount"
+                        "$ref": "#/components/schemas/CurrencyAmount"
                     },
                     "CarrierWillPickUp": {
                         "type": "boolean",
                         "description": "When true, the carrier will pick up the package.\n\nNote: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK)."
                     },
                     "CarrierWillPickUpOption": {
-                        "$ref": "#\/components\/schemas\/CarrierWillPickUpOption"
+                        "$ref": "#/components/schemas/CarrierWillPickUpOption"
                     },
                     "LabelFormat": {
-                        "$ref": "#\/components\/schemas\/LabelFormat"
+                        "$ref": "#/components/schemas/LabelFormat"
                     }
                 },
                 "description": "Extra services provided by a carrier."
@@ -4273,7 +3262,7 @@
                         "description": "The rejected shipping service localized name. e.g. FedEx Standard Overnight"
                     },
                     "ShippingServiceId": {
-                        "$ref": "#\/components\/schemas\/ShippingServiceIdentifier"
+                        "$ref": "#/components/schemas/ShippingServiceIdentifier"
                     },
                     "RejectionReasonCode": {
                         "type": "string",
@@ -4290,7 +3279,7 @@
                 "type": "array",
                 "description": "List of services that were for some reason unavailable for this request",
                 "items": {
-                    "$ref": "#\/components\/schemas\/RejectedShippingService"
+                    "$ref": "#/components/schemas/RejectedShippingService"
                 }
             },
             "TemporarilyUnavailableCarrier": {
@@ -4310,7 +3299,7 @@
                 "type": "array",
                 "description": "A list of temporarily unavailable carriers.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/TemporarilyUnavailableCarrier"
+                    "$ref": "#/components/schemas/TemporarilyUnavailableCarrier"
                 }
             },
             "TermsAndConditionsNotAcceptedCarrier": {
@@ -4330,7 +3319,7 @@
                 "type": "array",
                 "description": "List of carriers whose terms and conditions were not accepted by the seller.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/TermsAndConditionsNotAcceptedCarrier"
+                    "$ref": "#/components/schemas/TermsAndConditionsNotAcceptedCarrier"
                 }
             },
             "Timestamp": {
@@ -4343,13 +3332,13 @@
             },
             "TransparencyCode": {
                 "type": "string",
-                "description": "The Transparency code associated with the item. The Transparency serial number that needs to be submitted can be determined by the following:\n\n**1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN).\n**2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC\/EAN\/ISBN) barcode.\n**QR code SN:** Submit the URL that the QR code generates."
+                "description": "The Transparency code associated with the item. The Transparency serial number that needs to be submitted can be determined by the following:\n\n**1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN).\n**2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode.\n**QR code SN:** Submit the URL that the QR code generates."
             },
             "TransparencyCodeList": {
                 "type": "array",
                 "description": "A list of transparency codes.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/TransparencyCode"
+                    "$ref": "#/components/schemas/TransparencyCode"
                 }
             },
             "UnitOfLength": {
@@ -4396,10 +3385,10 @@
                 "type": "object",
                 "properties": {
                     "Value": {
-                        "$ref": "#\/components\/schemas\/WeightValue"
+                        "$ref": "#/components/schemas/WeightValue"
                     },
                     "Unit": {
-                        "$ref": "#\/components\/schemas\/UnitOfWeight"
+                        "$ref": "#/components/schemas/UnitOfWeight"
                     }
                 },
                 "description": "The weight."
@@ -4408,6 +3397,175 @@
                 "type": "number",
                 "description": "The weight value.",
                 "format": "double"
+            },
+            "LiquidVolume": {
+                "required": [
+                    "Unit",
+                    "Value"
+                ],
+                "type": "object",
+                "properties": {
+                    "Unit": {
+                        "type": "string",
+                        "description": "The unit of measurement.",
+                        "enum": [
+                            "ML",
+                            "L",
+                            "FL_OZ",
+                            "GAL",
+                            "PT",
+                            "QT",
+                            "C"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "ML",
+                                "description": "Milliliter - Metric unit of volume."
+                            },
+                            {
+                                "value": "L",
+                                "description": "Liter - Metric unit of volume."
+                            },
+                            {
+                                "value": "FL_OZ",
+                                "description": "Fluid Ounce - Imperial unit of volume."
+                            },
+                            {
+                                "value": "GAL",
+                                "description": "Gallon - Imperial unit of volume."
+                            },
+                            {
+                                "value": "PT",
+                                "description": "Pint - Imperial unit of volume."
+                            },
+                            {
+                                "value": "QT",
+                                "description": "Quart - Imperial unit of volume."
+                            },
+                            {
+                                "value": "C",
+                                "description": "Cup - Imperial unit of volume."
+                            }
+                        ]
+                    },
+                    "Value": {
+                        "type": "number",
+                        "description": "The measurement value."
+                    }
+                },
+                "description": "Liquid Volume."
+            },
+            "DangerousGoodsDetails": {
+                "type": "object",
+                "properties": {
+                    "UnitedNationsRegulatoryId": {
+                        "pattern": "^(UN|ID|NA)[0-9]{4}$",
+                        "type": "string",
+                        "description": "The specific UNID of the item being shipped."
+                    },
+                    "TransportationRegulatoryClass": {
+                        "pattern": "^[1-9](\\.[1-9])?$",
+                        "type": "string",
+                        "description": "The specific regulatory class  of the item being shipped."
+                    },
+                    "PackingGroup": {
+                        "type": "string",
+                        "description": "The specific packaging group of the item being shipped.",
+                        "enum": [
+                            "I",
+                            "II",
+                            "III"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "I",
+                                "description": "Packing group I indicates great danger."
+                            },
+                            {
+                                "value": "II",
+                                "description": "Packing group II indicates medium danger."
+                            },
+                            {
+                                "value": "III",
+                                "description": "Packing group III indicates minor danger."
+                            }
+                        ]
+                    },
+                    "PackingInstruction": {
+                        "type": "string",
+                        "description": "The specific packing instruction of the item being shipped.",
+                        "enum": [
+                            "PI965_SECTION_IA",
+                            "PI965_SECTION_IB",
+                            "PI965_SECTION_II",
+                            "PI966_SECTION_I",
+                            "PI966_SECTION_II",
+                            "PI967_SECTION_I",
+                            "PI967_SECTION_II",
+                            "PI968_SECTION_IA",
+                            "PI968_SECTION_IB",
+                            "PI969_SECTION_I",
+                            "PI969_SECTION_II",
+                            "PI970_SECTION_I",
+                            "PI970_SECTION_II"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "PI965_SECTION_IA",
+                                "description": "Ion PI965 Section IA (LiBa)"
+                            },
+                            {
+                                "value": "PI965_SECTION_IB",
+                                "description": "Ion PI965 Section IB (LiBa)"
+                            },
+                            {
+                                "value": "PI965_SECTION_II",
+                                "description": "Ion PI965 Section II (LiBa)"
+                            },
+                            {
+                                "value": "PI966_SECTION_I",
+                                "description": "Ion PI966 Section I (LiBa with equipment)"
+                            },
+                            {
+                                "value": "PI966_SECTION_II",
+                                "description": "Ion PI966 Section II (LiBa with equipment)"
+                            },
+                            {
+                                "value": "PI967_SECTION_I",
+                                "description": "Ion PI967 Section I (LiBa in equipment)"
+                            },
+                            {
+                                "value": "PI967_SECTION_II",
+                                "description": "Ion PI967 Section II (LiBa in equipment)"
+                            },
+                            {
+                                "value": "PI968_SECTION_IA",
+                                "description": "Metal PI968 Section IA (LiBa)"
+                            },
+                            {
+                                "value": "PI968_SECTION_IB",
+                                "description": "Metal PI968 Section IB (LiBa)"
+                            },
+                            {
+                                "value": "PI969_SECTION_I",
+                                "description": "Metal PI969 Section I (LiBa with equipment)"
+                            },
+                            {
+                                "value": "PI969_SECTION_II",
+                                "description": "Metal PI969 Section II (LiBa with equipment)"
+                            },
+                            {
+                                "value": "PI970_SECTION_I",
+                                "description": "Metal PI970 Section I (LiBa in equipment)"
+                            },
+                            {
+                                "value": "PI970_SECTION_II",
+                                "description": "Metal PI970 Section II (LiBa in equipment)"
+                            }
+                        ]
+                    }
+                },
+                "description": "Details related to any dangerous goods/items that are being shipped."
             }
         }
     },

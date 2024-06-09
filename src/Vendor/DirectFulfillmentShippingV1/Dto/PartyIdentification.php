@@ -13,7 +13,7 @@ final class PartyIdentification extends Dto
     /**
      * @param  string  $partyId  Assigned Identification for the party.
      * @param  ?Address  $address  Address of the party.
-     * @param  TaxRegistrationDetails[]  $taxRegistrationDetails  Tax registration details of the entity.
+     * @param  TaxRegistrationDetails[]|null  $taxRegistrationDetails  Tax registration details of the entity.
      */
     public function __construct(
         public readonly string $partyId,

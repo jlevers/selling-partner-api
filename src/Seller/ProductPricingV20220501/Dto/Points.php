@@ -10,7 +10,7 @@ final class Points extends Dto
 {
     /**
      * @param  ?int  $pointsNumber  The number of points.
-     * @param  ?MoneyType  $pointsMonetaryValue
+     * @param  ?MoneyType  $pointsMonetaryValue  Currency type and monetary value. Schema for demonstrating pricing info.
      */
     public function __construct(
         public readonly ?int $pointsNumber = null,

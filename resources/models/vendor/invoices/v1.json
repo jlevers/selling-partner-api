@@ -5,32 +5,32 @@
         "description": "The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v1"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/vendor\/payments\/v1\/invoices": {
+        "/vendor/payments/v1/invoices": {
             "post": {
                 "tags": [
                     "InvoicesV1"
                 ],
-                "description": "Submit new invoices to Amazon.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Submit new invoices to Amazon.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "submitInvoices",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/SubmitInvoicesRequest"
+                                "$ref": "#/components/schemas/SubmitInvoicesRequest"
                             }
                         }
                     },
@@ -54,9 +54,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoicesResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
                                 },
                                 "example": {
                                     "payload": {
@@ -119,9 +119,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoicesResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
                                 }
                             }
                         },
@@ -170,9 +170,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoicesResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
                                 }
                             }
                         }
@@ -194,9 +194,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoicesResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
                                 }
                             }
                         }
@@ -218,9 +218,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoicesResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
                                 }
                             }
                         }
@@ -242,9 +242,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoicesResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
                                 }
                             }
                         }
@@ -266,9 +266,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoicesResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
                                 }
                             }
                         }
@@ -290,9 +290,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoicesResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
                                 }
                             }
                         }
@@ -314,9 +314,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoicesResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
                                 }
                             }
                         }
@@ -332,10 +332,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/TransactionId"
+                        "$ref": "#/components/schemas/TransactionId"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the submitInvoices operation."
@@ -353,7 +353,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Error": {
@@ -384,7 +384,7 @@
                     "invoices": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Invoice"
+                            "$ref": "#/components/schemas/Invoice"
                         }
                     }
                 },
@@ -427,59 +427,59 @@
                         "description": "An additional unique reference number used for regulatory or other purposes."
                     },
                     "date": {
-                        "$ref": "#\/components\/schemas\/DateTime"
+                        "$ref": "#/components/schemas/DateTime"
                     },
                     "remitToParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "shipToParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "shipFromParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "billToParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "paymentTerms": {
-                        "$ref": "#\/components\/schemas\/PaymentTerms"
+                        "$ref": "#/components/schemas/PaymentTerms"
                     },
                     "invoiceTotal": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "taxDetails": {
                         "type": "array",
                         "description": "Total tax amount details for all line items.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/TaxDetails"
+                            "$ref": "#/components/schemas/TaxDetails"
                         }
                     },
                     "additionalDetails": {
                         "type": "array",
                         "description": "Additional details provided by the selling party, for tax related or other purposes.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/AdditionalDetails"
+                            "$ref": "#/components/schemas/AdditionalDetails"
                         }
                     },
                     "chargeDetails": {
                         "type": "array",
                         "description": "Total charge amount details for all line items.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ChargeDetails"
+                            "$ref": "#/components/schemas/ChargeDetails"
                         }
                     },
                     "allowanceDetails": {
                         "type": "array",
                         "description": "Total allowance amount details for all line items.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/AllowanceDetails"
+                            "$ref": "#/components/schemas/AllowanceDetails"
                         }
                     },
                     "items": {
                         "type": "array",
                         "description": "The list of invoice items.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/InvoiceItem"
+                            "$ref": "#/components/schemas/InvoiceItem"
                         }
                     }
                 }
@@ -495,13 +495,13 @@
                         "description": "Assigned identification for the party."
                     },
                     "address": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "taxRegistrationDetails": {
                         "type": "array",
                         "description": "Tax registration details of the party.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/TaxRegistrationDetails"
+                            "$ref": "#/components/schemas/TaxRegistrationDetails"
                         }
                     }
                 }
@@ -615,10 +615,10 @@
                         "description": "The vendor selected product identifier of the item. Should be the same as was provided in the purchase order."
                     },
                     "invoicedQuantity": {
-                        "$ref": "#\/components\/schemas\/ItemQuantity"
+                        "$ref": "#/components/schemas/ItemQuantity"
                     },
                     "netCost": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "purchaseOrderNumber": {
                         "type": "string",
@@ -629,27 +629,27 @@
                         "description": "HSN Tax code. The HSN number cannot contain alphabets."
                     },
                     "creditNoteDetails": {
-                        "$ref": "#\/components\/schemas\/CreditNoteDetails"
+                        "$ref": "#/components/schemas/CreditNoteDetails"
                     },
                     "taxDetails": {
                         "type": "array",
                         "description": "Individual tax details per line item.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/TaxDetails"
+                            "$ref": "#/components/schemas/TaxDetails"
                         }
                     },
                     "chargeDetails": {
                         "type": "array",
                         "description": "Individual charge details per line item.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ChargeDetails"
+                            "$ref": "#/components/schemas/ChargeDetails"
                         }
                     },
                     "allowanceDetails": {
                         "type": "array",
                         "description": "Individual allowance details per line item.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/AllowanceDetails"
+                            "$ref": "#/components/schemas/AllowanceDetails"
                         }
                     }
                 },
@@ -700,7 +700,7 @@
                             },
                             {
                                 "value": "IGST",
-                                "description": "Integrated Goods and Services Tax (IGST) is a tax levied on all Inter-State supplies of goods and\/or services in India."
+                                "description": "Integrated Goods and Services Tax (IGST) is a tax levied on all Inter-State supplies of goods and/or services in India."
                             },
                             {
                                 "value": "MwSt.",
@@ -741,13 +741,13 @@
                         ]
                     },
                     "taxRate": {
-                        "$ref": "#\/components\/schemas\/Decimal"
+                        "$ref": "#/components/schemas/Decimal"
                     },
                     "taxAmount": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "taxableAmount": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     }
                 },
                 "description": "Details of tax amount applied."
@@ -760,7 +760,7 @@
                         "description": "Three-digit currency code in ISO 4217 format."
                     },
                     "amount": {
-                        "$ref": "#\/components\/schemas\/Decimal"
+                        "$ref": "#/components/schemas/Decimal"
                     }
                 },
                 "description": "An amount of money, including units in the form of currency."
@@ -881,13 +881,13 @@
                         "description": "Description of the charge."
                     },
                     "chargeAmount": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "taxDetails": {
                         "type": "array",
                         "description": "Tax amount details applied on this charge.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/TaxDetails"
+                            "$ref": "#/components/schemas/TaxDetails"
                         }
                     }
                 },
@@ -943,13 +943,13 @@
                         "description": "Description of the allowance."
                     },
                     "allowanceAmount": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "taxDetails": {
                         "type": "array",
                         "description": "Tax amount details applied on this allowance.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/TaxDetails"
+                            "$ref": "#/components/schemas/TaxDetails"
                         }
                     }
                 },
@@ -997,7 +997,7 @@
                         ]
                     },
                     "discountPercent": {
-                        "$ref": "#\/components\/schemas\/Decimal"
+                        "$ref": "#/components/schemas/Decimal"
                     },
                     "discountDueDays": {
                         "type": "number",
@@ -1026,7 +1026,7 @@
                         "description": "Identifies the Returns Notice Number. Mandatory for all Returns Credit Notes."
                     },
                     "goodsReturnDate": {
-                        "$ref": "#\/components\/schemas\/DateTime"
+                        "$ref": "#/components/schemas/DateTime"
                     },
                     "rmaId": {
                         "type": "string",

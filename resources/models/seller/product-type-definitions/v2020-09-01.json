@@ -5,21 +5,21 @@
         "description": "The Selling Partner API for Product Type Definitions provides programmatic access to attribute and data requirements for product types in the Amazon catalog. Use this API to return the JSON Schema for a product type that you can then use with other Selling Partner APIs, such as the Selling Partner API for Listings Items, the Selling Partner API for Catalog Items, and the Selling Partner API for Feeds (for JSON-based listing feeds).\n\nFor more information, see the [Product Type Definitions API Use Case Guide](doc:product-type-api-use-case-guide).",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "2020-09-01"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/definitions\/2020-09-01\/productTypes": {
+        "/definitions/2020-09-01/productTypes": {
             "get": {
                 "tags": [
                     "ProductTypeDefinitionsV20200901"
@@ -102,9 +102,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ProductTypeList"
+                                    "$ref": "#/components/schemas/ProductTypeList"
                                 },
                                 "example": {
                                     "productTypes": [
@@ -116,11 +116,7 @@
                                             ]
                                         }
                                     ],
-                                    "productTypeVersion": {
-                                        "version": "UHqSqmb4FNUk=",
-                                        "latest": true,
-                                        "releaseCandidate": false
-                                    }
+                                    "productTypeVersion": "UHqSqmb4FNUk="
                                 }
                             }
                         },
@@ -140,11 +136,7 @@
                                                 ]
                                             }
                                         ],
-                                        "productTypeVersion": {
-                                            "version": "UHqSqmb4FNUk=",
-                                            "latest": true,
-                                            "releaseCandidate": false
-                                        }
+                                        "productTypeVersion": "UHqSqmb4FNUk="
                                     }
                                 }
                             ]
@@ -167,9 +159,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -209,9 +201,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -233,9 +225,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -257,9 +249,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -281,9 +273,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -299,9 +291,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -323,9 +315,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -347,9 +339,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -357,7 +349,7 @@
                 }
             }
         },
-        "\/definitions\/2020-09-01\/productTypes\/{productType}": {
+        "/definitions/2020-09-01/productTypes/{productType}": {
             "get": {
                 "tags": [
                     "ProductTypeDefinitionsV20200901"
@@ -862,21 +854,21 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ProductTypeDefinition"
+                                    "$ref": "#/components/schemas/ProductTypeDefinition"
                                 },
                                 "example": {
                                     "metaSchema": {
                                         "link": {
-                                            "resource": "https:\/\/meta-schema-url",
+                                            "resource": "https://meta-schema-url",
                                             "verb": "GET"
                                         },
                                         "checksum": "c7af9479ca7261645cea9db56c5f720d"
                                     },
                                     "schema": {
                                         "link": {
-                                            "resource": "https:\/\/schema-url",
+                                            "resource": "https://schema-url",
                                             "verb": "GET"
                                         },
                                         "checksum": "c7af9479ca7261645cea9db56c5f720d"
@@ -923,14 +915,14 @@
                                     "response": {
                                         "metaSchema": {
                                             "link": {
-                                                "resource": "https:\/\/meta-schema-url",
+                                                "resource": "https://meta-schema-url",
                                                 "verb": "GET"
                                             },
                                             "checksum": "c7af9479ca7261645cea9db56c5f720d"
                                         },
                                         "schema": {
                                             "link": {
-                                                "resource": "https:\/\/schema-url",
+                                                "resource": "https://schema-url",
                                                 "verb": "GET"
                                             },
                                             "checksum": "c7af9479ca7261645cea9db56c5f720d"
@@ -987,9 +979,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -1027,9 +1019,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1051,9 +1043,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1075,9 +1067,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1099,9 +1091,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1123,9 +1115,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1147,9 +1139,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1171,9 +1163,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1215,7 +1207,7 @@
                     "errors": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Error"
+                            "$ref": "#/components/schemas/Error"
                         }
                     }
                 },
@@ -1276,10 +1268,10 @@
                 "type": "object",
                 "properties": {
                     "metaSchema": {
-                        "$ref": "#\/components\/schemas\/SchemaLink"
+                        "$ref": "#/components/schemas/SchemaLink"
                     },
                     "schema": {
-                        "$ref": "#\/components\/schemas\/SchemaLink"
+                        "$ref": "#/components/schemas/SchemaLink"
                     },
                     "requirements": {
                         "type": "string",
@@ -1325,7 +1317,7 @@
                     "propertyGroups": {
                         "type": "object",
                         "additionalProperties": {
-                            "$ref": "#\/components\/schemas\/PropertyGroup"
+                            "$ref": "#/components/schemas/PropertyGroup"
                         },
                         "description": "Mapping of property group names to property groups. Property groups represent logical groupings of schema properties that can be used for display or informational purposes."
                     },
@@ -1349,7 +1341,7 @@
                         "description": "Human-readable and localized description of the Amazon product type."
                     },
                     "productTypeVersion": {
-                        "$ref": "#\/components\/schemas\/ProductTypeVersion"
+                        "$ref": "#/components/schemas/ProductTypeVersion"
                     }
                 },
                 "description": "A product type definition represents the attributes and data requirements for a product type in the Amazon catalog. Product type definitions are used interchangeably between the Selling Partner API for Listings Items, Selling Partner API for Catalog Items, and JSON-based listings feeds in the Selling Partner API for Feeds."
@@ -1433,11 +1425,12 @@
                     "productTypes": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ProductType"
+                            "$ref": "#/components/schemas/ProductType"
                         }
                     },
                     "productTypeVersion": {
-                        "$ref": "#\/components\/schemas\/ProductTypeVersion"
+                        "type": "string",
+                        "description": "Amazon product type version identifier."
                     }
                 },
                 "description": "A list of Amazon product types with definitions available."

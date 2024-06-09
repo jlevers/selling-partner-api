@@ -11,7 +11,7 @@ final class SubmitShippingLabelsRequest extends Dto
     protected static array $complexArrayTypes = ['shippingLabelRequests' => [ShippingLabelRequest::class]];
 
     /**
-     * @param  ShippingLabelRequest[]  $shippingLabelRequests
+     * @param  ShippingLabelRequest[]|null  $shippingLabelRequests
      */
     public function __construct(
         public readonly ?array $shippingLabelRequests = null,

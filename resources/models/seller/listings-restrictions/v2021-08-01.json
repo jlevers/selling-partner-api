@@ -5,21 +5,21 @@
         "description": "The Selling Partner API for Listings Restrictions provides programmatic access to restrictions on Amazon catalog listings.\n\nFor more information, see the [Listings Restrictions API Use Case Guide](doc:listings-restrictions-api-v2021-08-01-use-case-guide).",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "2021-08-01"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/listings\/2021-08-01\/restrictions": {
+        "/listings/2021-08-01/restrictions": {
             "get": {
                 "tags": [
                     "ListingsRestrictionsV20210801"
@@ -221,9 +221,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RestrictionList"
+                                    "$ref": "#/components/schemas/RestrictionList"
                                 },
                                 "example": {
                                     "restrictions": [
@@ -235,10 +235,10 @@
                                                     "message": "You cannot list the product in this condition.",
                                                     "links": [
                                                         {
-                                                            "resource": "https:\/\/sellercentral.amazon.com\/hz\/approvalrequest\/restrictions\/approve?asin=B0000ASIN1",
+                                                            "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B0000ASIN1",
                                                             "verb": "GET",
                                                             "title": "Request Approval via Seller Central.",
-                                                            "type": "text\/html"
+                                                            "type": "text/html"
                                                         }
                                                     ]
                                                 }
@@ -266,10 +266,10 @@
                                                         "message": "You cannot list the product in this condition.",
                                                         "links": [
                                                             {
-                                                                "resource": "https:\/\/sellercentral.amazon.com\/hz\/approvalrequest\/restrictions\/approve?asin=B0000ASIN1",
+                                                                "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B0000ASIN1",
                                                                 "verb": "GET",
                                                                 "title": "Request Approval via Seller Central.",
-                                                                "type": "text\/html"
+                                                                "type": "text/html"
                                                             }
                                                         ]
                                                     }
@@ -298,9 +298,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -335,9 +335,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -359,9 +359,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -377,9 +377,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -395,9 +395,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -413,9 +413,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -431,9 +431,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -449,9 +449,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -471,7 +471,7 @@
                     "restrictions": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Restriction"
+                            "$ref": "#/components/schemas/Restriction"
                         }
                     }
                 },
@@ -564,7 +564,7 @@
                         "type": "array",
                         "description": "A list of reasons for the restriction.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Reason"
+                            "$ref": "#/components/schemas/Reason"
                         }
                     }
                 },
@@ -607,7 +607,7 @@
                         "type": "array",
                         "description": "A list of path forward links that may allow Selling Partners to remove the restriction.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Link"
+                            "$ref": "#/components/schemas/Link"
                         }
                     }
                 },
@@ -653,7 +653,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Error": {

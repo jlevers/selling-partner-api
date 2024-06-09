@@ -5,26 +5,26 @@
         "description": "The Selling Partner API for Direct Fulfillment Inventory Updates provides programmatic access to a direct fulfillment vendor's inventory updates.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v1"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/vendor\/directFulfillment\/inventory\/v1\/warehouses\/{warehouseId}\/items": {
+        "/vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items": {
             "post": {
                 "tags": [
                     "DirectFulfillmentInventoryV1"
                 ],
-                "description": "Submits inventory updates for the specified warehouse for either a partial or full feed of inventory items.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Submits inventory updates for the specified warehouse for either a partial or full feed of inventory items.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "submitInventoryUpdate",
                 "parameters": [
                     {
@@ -39,9 +39,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/SubmitInventoryUpdateRequest"
+                                "$ref": "#/components/schemas/SubmitInventoryUpdateRequest"
                             }
                         }
                     },
@@ -65,9 +65,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInventoryUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitInventoryUpdateResponse"
                                 }
                             }
                         },
@@ -155,9 +155,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInventoryUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitInventoryUpdateResponse"
                                 }
                             }
                         },
@@ -195,9 +195,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInventoryUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitInventoryUpdateResponse"
                                 }
                             }
                         }
@@ -219,9 +219,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInventoryUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitInventoryUpdateResponse"
                                 }
                             }
                         }
@@ -243,9 +243,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInventoryUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitInventoryUpdateResponse"
                                 }
                             }
                         }
@@ -267,9 +267,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInventoryUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitInventoryUpdateResponse"
                                 }
                             }
                         }
@@ -291,9 +291,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInventoryUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitInventoryUpdateResponse"
                                 }
                             }
                         }
@@ -315,9 +315,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInventoryUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitInventoryUpdateResponse"
                                 }
                             }
                         }
@@ -339,9 +339,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInventoryUpdateResponse"
+                                    "$ref": "#/components/schemas/SubmitInventoryUpdateResponse"
                                 }
                             }
                         }
@@ -357,7 +357,7 @@
                 "type": "object",
                 "properties": {
                     "inventory": {
-                        "$ref": "#\/components\/schemas\/InventoryUpdate"
+                        "$ref": "#/components/schemas/InventoryUpdate"
                     }
                 },
                 "description": "The request body for the submitInventoryUpdate operation."
@@ -371,7 +371,7 @@
                 "type": "object",
                 "properties": {
                     "sellingParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "isFullUpdate": {
                         "type": "boolean",
@@ -381,7 +381,7 @@
                         "type": "array",
                         "description": "A list of inventory items with updated details, including quantity available.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ItemDetails"
+                            "$ref": "#/components/schemas/ItemDetails"
                         }
                     }
                 }
@@ -401,7 +401,7 @@
                         "description": "The vendor selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted."
                     },
                     "availableQuantity": {
-                        "$ref": "#\/components\/schemas\/ItemQuantity"
+                        "$ref": "#/components/schemas/ItemQuantity"
                     },
                     "isObsolete": {
                         "type": "boolean",
@@ -443,10 +443,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/TransactionReference"
+                        "$ref": "#/components/schemas/TransactionReference"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the submitInventoryUpdate operation."
@@ -464,7 +464,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Error": {

@@ -20,6 +20,7 @@ final class Address extends Dto
      * @param  ?string  $companyName  The name of the business or institution associated with the address.
      * @param  ?string  $email  The email address of the contact associated with the address.
      * @param  ?string  $phoneNumber  The phone number of the person, business or institution located at that address, including the country calling code.
+     * @param  ?Geocode  $geocode  Defines the latitude and longitude of the access point.
      */
     public function __construct(
         public readonly string $name,
@@ -33,6 +34,7 @@ final class Address extends Dto
         public readonly ?string $companyName = null,
         public readonly ?string $email = null,
         public readonly ?string $phoneNumber = null,
+        public readonly ?Geocode $geocode = null,
     ) {
     }
 }

@@ -24,8 +24,8 @@ class SetPackingInformation extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  SetPackingInformationRequest  $setPackingInformationRequest  `setPackingInformation` request.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  SetPackingInformationRequest  $setPackingInformationRequest  The `setPackingInformation` request.
      */
     public function __construct(
         protected string $inboundPlanId,
@@ -43,7 +43,7 @@ class SetPackingInformation extends Request implements HasBody
         $status = $response->status();
         $responseCls = match ($status) {
             202 => SetPackingInformationResponse::class,
-            400, 500, 403, 404, 413, 415, 429, 503 => ErrorList::class,
+            400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

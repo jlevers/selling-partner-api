@@ -12,7 +12,7 @@ final class PackingSlipList extends Dto
 
     /**
      * @param  ?Pagination  $pagination
-     * @param  PackingSlip[]  $packingSlips
+     * @param  PackingSlip[]|null  $packingSlips
      */
     public function __construct(
         public readonly ?Pagination $pagination = null,

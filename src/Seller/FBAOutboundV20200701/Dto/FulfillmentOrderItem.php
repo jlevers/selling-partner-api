@@ -10,7 +10,7 @@ final class FulfillmentOrderItem extends Dto
 {
     /**
      * @param  string  $sellerSku  The seller SKU of the item.
-     * @param  string  $sellerFulfillmentOrderItemId  A fulfillment order item identifier submitted with a call to the createFulfillmentOrder operation.
+     * @param  string  $sellerFulfillmentOrderItemId  A fulfillment order item identifier submitted with a call to the `createFulfillmentOrder` operation.
      * @param  int  $quantity  The item quantity.
      * @param  int  $cancelledQuantity  The item quantity.
      * @param  int  $unfulfillableQuantity  The item quantity.

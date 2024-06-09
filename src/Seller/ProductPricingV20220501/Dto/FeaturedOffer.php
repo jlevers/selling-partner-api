@@ -11,7 +11,7 @@ final class FeaturedOffer extends Dto
     /**
      * @param  OfferIdentifier  $offerIdentifier  Identifies an offer from a particular seller on an ASIN.
      * @param  ?string  $condition  The condition of the item.
-     * @param  ?Price  $price
+     * @param  ?Price  $price  Schema for item's price information, including listing price, shipping price, and Amazon points.
      */
     public function __construct(
         public readonly OfferIdentifier $offerIdentifier,

@@ -9,9 +9,9 @@ use SellingPartnerApi\Dto;
 final class ItemImage extends Dto
 {
     /**
-     * @param  string  $link  Link, or URL, for the image.
-     * @param  int  $height  Height of the image in pixels.
-     * @param  int  $width  Width of the image in pixels.
+     * @param  string  $link  The link, or URL, to the image.
+     * @param  int  $height  The height of the image in pixels.
+     * @param  int  $width  The width of the image in pixels.
      */
     public function __construct(
         public readonly string $link,

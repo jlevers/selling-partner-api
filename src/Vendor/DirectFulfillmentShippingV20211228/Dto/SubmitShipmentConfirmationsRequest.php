@@ -11,7 +11,7 @@ final class SubmitShipmentConfirmationsRequest extends Dto
     protected static array $complexArrayTypes = ['shipmentConfirmations' => [ShipmentConfirmation::class]];
 
     /**
-     * @param  ShipmentConfirmation[]  $shipmentConfirmations
+     * @param  ShipmentConfirmation[]|null  $shipmentConfirmations
      */
     public function __construct(
         public readonly ?array $shipmentConfirmations = null,

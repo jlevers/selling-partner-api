@@ -19,7 +19,7 @@ class GetInboundPlan extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      */
     public function __construct(
         protected string $inboundPlanId,
@@ -36,7 +36,7 @@ class GetInboundPlan extends Request
         $status = $response->status();
         $responseCls = match ($status) {
             200 => InboundPlan::class,
-            400, 500, 403, 404, 413, 415, 429, 503 => ErrorList::class,
+            400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

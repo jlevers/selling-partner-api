@@ -14,6 +14,7 @@ final class Container extends Dto
      * @param  string  $containerType  The type of container.
      * @param  string  $containerIdentifier  The container identifier.
      * @param  Weight  $weight  The weight.
+     * @param  PackedItem[]  $packedItems  A list of packed items.
      * @param  ?string  $trackingNumber  The tracking number.
      * @param  ?string  $manifestId  The manifest identifier.
      * @param  ?string  $manifestDate  The date of the manifest.
@@ -22,12 +23,12 @@ final class Container extends Dto
      * @param  ?string  $carrier  Carrier required for EU VOC vendors only.
      * @param  ?int  $containerSequenceNumber  An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.
      * @param  ?Dimensions  $dimensions  Physical dimensional measurements of a container.
-     * @param  PackedItem[]  $packedItems  A list of packed items.
      */
     public function __construct(
         public readonly string $containerType,
         public readonly string $containerIdentifier,
         public readonly Weight $weight,
+        public readonly array $packedItems,
         public readonly ?string $trackingNumber = null,
         public readonly ?string $manifestId = null,
         public readonly ?string $manifestDate = null,
@@ -36,7 +37,6 @@ final class Container extends Dto
         public readonly ?string $carrier = null,
         public readonly ?int $containerSequenceNumber = null,
         public readonly ?Dimensions $dimensions = null,
-        public readonly ?array $packedItems = null,
     ) {
     }
 }

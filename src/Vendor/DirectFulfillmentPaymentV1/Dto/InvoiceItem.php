@@ -22,8 +22,8 @@ final class InvoiceItem extends Dto
      * @param  ?string  $vendorProductIdentifier  The vendor selected product identification of the item.
      * @param  ?string  $vendorOrderNumber  The vendor's order number for this order.
      * @param  ?string  $hsnCode  Harmonized System of Nomenclature (HSN) tax code. The HSN number cannot contain alphabets.
-     * @param  TaxDetail[]  $taxDetails  Individual tax details per line item.
-     * @param  ChargeDetails[]  $chargeDetails  Total charge amount details for all line items.
+     * @param  TaxDetail[]|null  $taxDetails  Individual tax details per line item.
+     * @param  ChargeDetails[]|null  $chargeDetails  Total charge amount details for all line items.
      */
     public function __construct(
         public readonly string $itemSequenceNumber,

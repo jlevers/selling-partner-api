@@ -60,7 +60,7 @@ trait HasArrayableAttributes
         if (is_null($value)) {
             return null;
         } elseif ($value instanceof DateTime) {
-            return $this->toZuluString($value);
+            return $value->format(DateTime::RFC3339);
         } elseif (is_string($type)) {
             if (class_exists($type)) {
                 return $value->toArray();
@@ -85,13 +85,5 @@ trait HasArrayableAttributes
         }
 
         throw new InvalidAttributeTypeException("Unrecognized attribute type `$type`");
-    }
-
-    private function toZuluString(\DateTime $dateTime)
-    {
-        $dt = clone $dateTime;
-        $dt->setTimezone(new \DateTimeZone("UTC"));
-
-        return $dt->format('Y-m-d\TH:i:s\Z');
     }
 }

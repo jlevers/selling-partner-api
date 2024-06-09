@@ -10,7 +10,7 @@ final class SelfShipAppointmentDetails extends Dto
 {
     /**
      * @param  ?float  $appointmentId  Identifier for appointment.
-     * @param  ?AppointmentSlotTime  $appointmentSlotTime  An appointment slot time with a start and end.
+     * @param  ?AppointmentSlotTime  $appointmentSlotTime  An appointment slot time with start and end.
      * @param  ?string  $appointmentStatus  Status of the appointment.
      */
     public function __construct(

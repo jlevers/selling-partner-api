@@ -20,11 +20,18 @@ class GetSubscription extends Request
     /**
      * @param  string  $notificationType  The type of notification.
      *
-     *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
+     *  For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
+     * @param  ?string  $payloadVersion  The version of the payload object to be used in the notification.
      */
     public function __construct(
         protected string $notificationType,
+        protected ?string $payloadVersion = null,
     ) {
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['payloadVersion' => $this->payloadVersion]);
     }
 
     public function resolveEndpoint(): string

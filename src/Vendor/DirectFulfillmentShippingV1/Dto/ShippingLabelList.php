@@ -12,7 +12,7 @@ final class ShippingLabelList extends Dto
 
     /**
      * @param  ?Pagination  $pagination
-     * @param  ShippingLabel[]  $shippingLabels
+     * @param  ShippingLabel[]|null  $shippingLabels
      */
     public function __construct(
         public readonly ?Pagination $pagination = null,

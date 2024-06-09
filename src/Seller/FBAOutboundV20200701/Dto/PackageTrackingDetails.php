@@ -23,7 +23,7 @@ final class PackageTrackingDetails extends Dto
      * @param  ?DateTime  $estimatedArrivalDate
      * @param  ?TrackingAddress  $shipToAddress  Address information for tracking the package.
      * @param  ?string  $currentStatus  The current delivery status of the package.
-     * @param  ?string  $currentStatusDescription  Description corresponding to the CurrentStatus value.
+     * @param  ?string  $currentStatusDescription  Description corresponding to the `CurrentStatus` value.
      * @param  ?string  $signedForBy  The name of the person who signed for the package.
      * @param  ?string  $additionalLocationInfo  Additional location information.
      * @param  TrackingEvent[]|null  $trackingEvents  An array of tracking event information.

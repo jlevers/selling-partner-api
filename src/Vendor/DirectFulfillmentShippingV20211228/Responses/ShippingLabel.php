@@ -22,7 +22,7 @@ final class ShippingLabel extends Response
         public readonly PartyIdentification $sellingParty,
         public readonly PartyIdentification $shipFromParty,
         public readonly string $labelFormat,
-        public readonly ?array $labelData = null,
+        public readonly array $labelData,
     ) {
     }
 }

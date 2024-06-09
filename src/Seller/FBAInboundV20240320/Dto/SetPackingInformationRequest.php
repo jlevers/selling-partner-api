@@ -11,10 +11,10 @@ final class SetPackingInformationRequest extends Dto
     protected static array $complexArrayTypes = ['packageGroupings' => [PackageGroupingInput::class]];
 
     /**
-     * @param  PackageGroupingInput[]|null  $packageGroupings  List of packing information for the inbound plan.
+     * @param  PackageGroupingInput[]  $packageGroupings  List of packing information for the inbound plan.
      */
     public function __construct(
-        public readonly ?array $packageGroupings = null,
+        public readonly array $packageGroupings,
     ) {
     }
 }

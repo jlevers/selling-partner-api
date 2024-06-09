@@ -14,7 +14,7 @@ final class AllowanceDetails extends Dto
      * @param  string  $type  Type of the allowance applied.
      * @param  Money  $allowanceAmount  An amount of money, including units in the form of currency.
      * @param  ?string  $description  Description of the allowance.
-     * @param  TaxDetails[]  $taxDetails  Total tax amount details for all line items.
+     * @param  TaxDetails[]|null  $taxDetails  Total tax amount details for all line items.
      */
     public function __construct(
         public readonly string $type,

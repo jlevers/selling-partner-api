@@ -5,26 +5,26 @@
         "description": "The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer information for Amazon Marketplace products.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v0"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/products\/pricing\/v0\/price": {
+        "/products/pricing/v0/price": {
             "get": {
                 "tags": [
                     "ProductPricingV0"
                 ],
-                "description": "Returns pricing information for a seller's offer listings based on seller SKU or ASIN.\n\n**Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns pricing information for a seller's offer listings based on seller SKU or ASIN.\n\n**Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getPricing",
                 "parameters": [
                     {
@@ -207,9 +207,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         },
@@ -564,9 +564,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         },
@@ -609,9 +609,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         }
@@ -627,9 +627,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         }
@@ -651,9 +651,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         }
@@ -675,9 +675,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         }
@@ -699,9 +699,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         }
@@ -723,9 +723,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         }
@@ -733,12 +733,12 @@
                 }
             }
         },
-        "\/products\/pricing\/v0\/competitivePrice": {
+        "/products/pricing/v0/competitivePrice": {
             "get": {
                 "tags": [
                     "ProductPricingV0"
                 ],
-                "description": "Returns competitive pricing information for a seller's offer listings based on seller SKU or ASIN.\n\n**Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns competitive pricing information for a seller's offer listings based on seller SKU or ASIN.\n\n**Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getCompetitivePricing",
                 "parameters": [
                     {
@@ -862,9 +862,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         },
@@ -1561,9 +1561,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         },
@@ -1606,9 +1606,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         }
@@ -1624,9 +1624,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         }
@@ -1648,9 +1648,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         }
@@ -1672,9 +1672,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         }
@@ -1696,9 +1696,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         }
@@ -1720,9 +1720,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetPricingResponse"
+                                    "$ref": "#/components/schemas/GetPricingResponse"
                                 }
                             }
                         }
@@ -1730,12 +1730,12 @@
                 }
             }
         },
-        "\/products\/pricing\/v0\/listings\/{SellerSKU}\/offers": {
+        "/products/pricing/v0/listings/{SellerSKU}/offers": {
             "get": {
                 "tags": [
                     "ProductPricingV0"
                 ],
-                "description": "Returns the lowest priced offers for a single SKU listing.\n\n**Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the lowest priced offers for a single SKU listing.\n\n**Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getListingOffers",
                 "parameters": [
                     {
@@ -1867,9 +1867,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         },
@@ -2156,9 +2156,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         },
@@ -2201,9 +2201,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         }
@@ -2219,9 +2219,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         }
@@ -2243,9 +2243,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         }
@@ -2267,9 +2267,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         }
@@ -2291,9 +2291,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         }
@@ -2315,9 +2315,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         }
@@ -2325,7 +2325,7 @@
                 }
             }
         },
-        "\/products\/pricing\/v0\/items\/{Asin}\/offers": {
+        "/products/pricing/v0/items/{Asin}/offers": {
             "get": {
                 "tags": [
                     "ProductPricingV0"
@@ -2462,9 +2462,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         },
@@ -2750,9 +2750,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         },
@@ -2795,9 +2795,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         }
@@ -2813,9 +2813,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         }
@@ -2837,9 +2837,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         }
@@ -2861,9 +2861,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         }
@@ -2885,9 +2885,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         }
@@ -2909,9 +2909,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOffersResponse"
+                                    "$ref": "#/components/schemas/GetOffersResponse"
                                 }
                             }
                         }
@@ -2919,18 +2919,18 @@
                 }
             }
         },
-        "\/batches\/products\/pricing\/v0\/itemOffers": {
+        "/batches/products/pricing/v0/itemOffers": {
             "post": {
                 "tags": [
                     "ProductPricingV0"
                 ],
-                "description": "Returns the lowest priced offers for a batch of items based on ASIN.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the lowest priced offers for a batch of items based on ASIN.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getItemOffersBatch",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/GetItemOffersBatchRequest"
+                                "$ref": "#/components/schemas/GetItemOffersBatchRequest"
                             }
                         }
                     },
@@ -2954,9 +2954,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetItemOffersBatchResponse"
+                                    "$ref": "#/components/schemas/GetItemOffersBatchResponse"
                                 }
                             }
                         },
@@ -2969,70 +2969,70 @@
                                                 "value": {
                                                     "requests": [
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/items\/B000P6Q7MY\/offers",
+                                                            "uri": "/products/pricing/v0/items/B000P6Q7MY/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
                                                             "CustomerType": "Consumer"
                                                         },
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/items\/B001Q3KU9Q\/offers",
+                                                            "uri": "/products/pricing/v0/items/B001Q3KU9Q/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
                                                             "CustomerType": "Consumer"
                                                         },
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/items\/B007Z07UK6\/offers",
+                                                            "uri": "/products/pricing/v0/items/B007Z07UK6/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
                                                             "CustomerType": "Consumer"
                                                         },
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/items\/B000OQA3N4\/offers",
+                                                            "uri": "/products/pricing/v0/items/B000OQA3N4/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
                                                             "CustomerType": "Consumer"
                                                         },
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/items\/B07PTMKYS7\/offers",
+                                                            "uri": "/products/pricing/v0/items/B07PTMKYS7/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
                                                             "CustomerType": "Consumer"
                                                         },
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/items\/B001PYUTII\/offers",
+                                                            "uri": "/products/pricing/v0/items/B001PYUTII/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
                                                             "CustomerType": "Consumer"
                                                         },
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/items\/B00505DW2I\/offers",
+                                                            "uri": "/products/pricing/v0/items/B00505DW2I/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
                                                             "CustomerType": "Consumer"
                                                         },
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/items\/B00CGZQU42\/offers",
+                                                            "uri": "/products/pricing/v0/items/B00CGZQU42/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
                                                             "CustomerType": "Consumer"
                                                         },
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/items\/B01LY2ZYRF\/offers",
+                                                            "uri": "/products/pricing/v0/items/B01LY2ZYRF/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
                                                             "CustomerType": "Consumer"
                                                         },
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/items\/B00KFRNZY6\/offers",
+                                                            "uri": "/products/pricing/v0/items/B00KFRNZY6/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
@@ -5246,9 +5246,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         },
@@ -5261,7 +5261,7 @@
                                                 "value": {
                                                     "requests": [
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/items\/B000P6Q7MY\/offers",
+                                                            "uri": "/products/pricing/v0/items/B000P6Q7MY/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
@@ -5301,9 +5301,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         }
@@ -5319,9 +5319,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         }
@@ -5343,9 +5343,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         }
@@ -5367,9 +5367,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         }
@@ -5391,9 +5391,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         }
@@ -5415,9 +5415,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         }
@@ -5426,7 +5426,7 @@
                 "x-codegen-request-body-name": "getItemOffersBatchRequestBody"
             }
         },
-        "\/batches\/products\/pricing\/v0\/listingOffers": {
+        "/batches/products/pricing/v0/listingOffers": {
             "post": {
                 "tags": [
                     "ProductPricingV0"
@@ -5435,9 +5435,9 @@
                 "operationId": "getListingOffersBatch",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/GetListingOffersBatchRequest"
+                                "$ref": "#/components/schemas/GetListingOffersBatchRequest"
                             }
                         }
                     },
@@ -5461,9 +5461,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetListingOffersBatchResponse"
+                                    "$ref": "#/components/schemas/GetListingOffersBatchResponse"
                                 }
                             }
                         },
@@ -5476,35 +5476,35 @@
                                                 "value": {
                                                     "requests": [
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/listings\/GC-QTMS-SV2I\/offers",
+                                                            "uri": "/products/pricing/v0/listings/GC-QTMS-SV2I/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
                                                             "CustomerType": "Consumer"
                                                         },
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/listings\/VT-DEIT-57TQ\/offers",
+                                                            "uri": "/products/pricing/v0/listings/VT-DEIT-57TQ/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
                                                             "CustomerType": "Consumer"
                                                         },
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/listings\/NA-H7X1-JYTM\/offers",
+                                                            "uri": "/products/pricing/v0/listings/NA-H7X1-JYTM/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
                                                             "CustomerType": "Consumer"
                                                         },
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/listings\/RL-JVOC-MBSL\/offers",
+                                                            "uri": "/products/pricing/v0/listings/RL-JVOC-MBSL/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
                                                             "CustomerType": "Consumer"
                                                         },
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/listings\/74-64KG-H9W9\/offers",
+                                                            "uri": "/products/pricing/v0/listings/74-64KG-H9W9/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
@@ -7104,9 +7104,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         },
@@ -7119,7 +7119,7 @@
                                                 "value": {
                                                     "requests": [
                                                         {
-                                                            "uri": "\/products\/pricing\/v0\/listings\/GC-QTMS-SV2I\/offers",
+                                                            "uri": "/products/pricing/v0/listings/GC-QTMS-SV2I/offers",
                                                             "method": "GET",
                                                             "MarketplaceId": "ATVPDKIKX0DER",
                                                             "ItemCondition": "New",
@@ -7159,9 +7159,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         }
@@ -7177,9 +7177,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         }
@@ -7201,9 +7201,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         }
@@ -7225,9 +7225,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         }
@@ -7249,9 +7249,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         }
@@ -7273,9 +7273,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Errors"
+                                    "$ref": "#/components/schemas/Errors"
                                 }
                             }
                         }
@@ -7291,7 +7291,7 @@
                 "type": "object",
                 "properties": {
                     "requests": {
-                        "$ref": "#\/components\/schemas\/ItemOffersRequestList"
+                        "$ref": "#/components/schemas/ItemOffersRequestList"
                     }
                 },
                 "description": "The request associated with the `getItemOffersBatch` API call."
@@ -7300,7 +7300,7 @@
                 "type": "object",
                 "properties": {
                     "requests": {
-                        "$ref": "#\/components\/schemas\/ListingOffersRequestList"
+                        "$ref": "#/components/schemas/ListingOffersRequestList"
                     }
                 },
                 "description": "The request associated with the `getListingOffersBatch` API call."
@@ -7311,7 +7311,7 @@
                 "type": "array",
                 "description": "A list of `getListingOffers` batched requests to run.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ListingOffersRequest"
+                    "$ref": "#/components/schemas/ListingOffersRequest"
                 }
             },
             "ItemOffersRequestList": {
@@ -7320,7 +7320,7 @@
                 "type": "array",
                 "description": "A list of `getListingOffers` batched requests to run.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemOffersRequest"
+                    "$ref": "#/components/schemas/ItemOffersRequest"
                 }
             },
             "BatchOffersRequestParams": {
@@ -7331,33 +7331,33 @@
                 "type": "object",
                 "properties": {
                     "MarketplaceId": {
-                        "$ref": "#\/components\/schemas\/MarketplaceId"
+                        "$ref": "#/components/schemas/MarketplaceId"
                     },
                     "ItemCondition": {
-                        "$ref": "#\/components\/schemas\/ItemCondition"
+                        "$ref": "#/components/schemas/ItemCondition"
                     },
                     "CustomerType": {
-                        "$ref": "#\/components\/schemas\/CustomerType"
+                        "$ref": "#/components/schemas/CustomerType"
                     }
                 }
             },
             "ItemOffersRequest": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/BatchRequest"
+                        "$ref": "#/components/schemas/BatchRequest"
                     },
                     {
-                        "$ref": "#\/components\/schemas\/BatchOffersRequestParams"
+                        "$ref": "#/components/schemas/BatchOffersRequestParams"
                     }
                 ]
             },
             "ListingOffersRequest": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/BatchRequest"
+                        "$ref": "#/components/schemas/BatchRequest"
                     },
                     {
-                        "$ref": "#\/components\/schemas\/BatchOffersRequestParams"
+                        "$ref": "#/components/schemas/BatchOffersRequestParams"
                     }
                 ]
             },
@@ -7365,7 +7365,7 @@
                 "type": "object",
                 "properties": {
                     "responses": {
-                        "$ref": "#\/components\/schemas\/ItemOffersResponseList"
+                        "$ref": "#/components/schemas/ItemOffersResponseList"
                     }
                 },
                 "description": "The response associated with the `getItemOffersBatch` API call."
@@ -7374,7 +7374,7 @@
                 "type": "object",
                 "properties": {
                     "responses": {
-                        "$ref": "#\/components\/schemas\/ListingOffersResponseList"
+                        "$ref": "#/components/schemas/ListingOffersResponseList"
                     }
                 },
                 "description": "The response associated with the `getListingOffersBatch` API call."
@@ -7385,7 +7385,7 @@
                 "type": "array",
                 "description": "A list of `getItemOffers` batched responses.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ItemOffersResponse"
+                    "$ref": "#/components/schemas/ItemOffersResponse"
                 }
             },
             "ListingOffersResponseList": {
@@ -7394,7 +7394,7 @@
                 "type": "array",
                 "description": "A list of `getListingOffers` batched responses.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ListingOffersResponse"
+                    "$ref": "#/components/schemas/ListingOffersResponse"
                 }
             },
             "BatchOffersResponse": {
@@ -7404,20 +7404,20 @@
                 "type": "object",
                 "properties": {
                     "headers": {
-                        "$ref": "#\/components\/schemas\/HttpResponseHeaders"
+                        "$ref": "#/components/schemas/HttpResponseHeaders"
                     },
                     "status": {
-                        "$ref": "#\/components\/schemas\/GetOffersHttpStatusLine"
+                        "$ref": "#/components/schemas/GetOffersHttpStatusLine"
                     },
                     "body": {
-                        "$ref": "#\/components\/schemas\/GetOffersResponse"
+                        "$ref": "#/components/schemas/GetOffersResponse"
                     }
                 }
             },
             "ItemOffersRequestParams": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/BatchOffersRequestParams"
+                        "$ref": "#/components/schemas/BatchOffersRequestParams"
                     },
                     {
                         "type": "object",
@@ -7433,7 +7433,7 @@
             "ItemOffersResponse": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/BatchOffersResponse"
+                        "$ref": "#/components/schemas/BatchOffersResponse"
                     },
                     {
                         "required": [
@@ -7442,7 +7442,7 @@
                         "type": "object",
                         "properties": {
                             "request": {
-                                "$ref": "#\/components\/schemas\/ItemOffersRequestParams"
+                                "$ref": "#/components/schemas/ItemOffersRequestParams"
                             }
                         }
                     }
@@ -7451,7 +7451,7 @@
             "ListingOffersRequestParams": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/BatchOffersRequestParams"
+                        "$ref": "#/components/schemas/BatchOffersRequestParams"
                     },
                     {
                         "required": [
@@ -7470,13 +7470,13 @@
             "ListingOffersResponse": {
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/BatchOffersResponse"
+                        "$ref": "#/components/schemas/BatchOffersResponse"
                     },
                     {
                         "type": "object",
                         "properties": {
                             "request": {
-                                "$ref": "#\/components\/schemas\/ListingOffersRequestParams"
+                                "$ref": "#/components/schemas/ListingOffersRequestParams"
                             }
                         }
                     }
@@ -7489,7 +7489,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "A list of error responses returned when a request is unsuccessful."
@@ -7498,10 +7498,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/PriceList"
+                        "$ref": "#/components/schemas/PriceList"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the `getPricing` and `getCompetitivePricing` operations."
@@ -7510,10 +7510,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/GetOffersResult"
+                        "$ref": "#/components/schemas/GetOffersResult"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the `getListingOffers` and `getItemOffers` operations."
@@ -7522,7 +7522,7 @@
                 "maxItems": 20,
                 "type": "array",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Price"
+                    "$ref": "#/components/schemas/Price"
                 }
             },
             "GetOffersResult": {
@@ -7549,20 +7549,20 @@
                         "description": "The stock keeping unit (SKU) of the item."
                     },
                     "ItemCondition": {
-                        "$ref": "#\/components\/schemas\/ConditionType"
+                        "$ref": "#/components/schemas/ConditionType"
                     },
                     "status": {
                         "type": "string",
                         "description": "The status of the operation."
                     },
                     "Identifier": {
-                        "$ref": "#\/components\/schemas\/ItemIdentifier"
+                        "$ref": "#/components/schemas/ItemIdentifier"
                     },
                     "Summary": {
-                        "$ref": "#\/components\/schemas\/Summary"
+                        "$ref": "#/components/schemas/Summary"
                     },
                     "Offers": {
-                        "$ref": "#\/components\/schemas\/OfferDetailList"
+                        "$ref": "#/components/schemas/OfferDetailList"
                     }
                 }
             },
@@ -7571,14 +7571,14 @@
                 "additionalProperties": {
                     "type": "string"
                 },
-                "description": "A mapping of additional HTTP headers to send\/receive for the individual batch request."
+                "description": "A mapping of additional HTTP headers to send/receive for the individual batch request."
             },
             "HttpResponseHeaders": {
                 "type": "object",
                 "properties": {
                     "Date": {
                         "type": "string",
-                        "description": "The timestamp that the API request was received.  For more information, consult [RFC 2616 Section 14](https:\/\/www.w3.org\/Protocols\/rfc2616\/rfc2616-sec14.html)."
+                        "description": "The timestamp that the API request was received.  For more information, consult [RFC 2616 Section 14](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)."
                     },
                     "x-amzn-RequestId": {
                         "type": "string",
@@ -7588,7 +7588,7 @@
                 "additionalProperties": {
                     "type": "string"
                 },
-                "description": "A mapping of additional HTTP headers to send\/receive for the individual batch request."
+                "description": "A mapping of additional HTTP headers to send/receive for the individual batch request."
             },
             "GetOffersHttpStatusLine": {
                 "type": "object",
@@ -7604,7 +7604,7 @@
                         "description": "The HTTP response Reason-Phase."
                     }
                 },
-                "description": "The HTTP status line associated with the response.  For more information, consult [RFC 2616](https:\/\/www.w3.org\/Protocols\/rfc2616\/rfc2616-sec6.html)."
+                "description": "The HTTP status line associated with the response.  For more information, consult [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html)."
             },
             "HttpUri": {
                 "maxLength": 512,
@@ -7654,13 +7654,13 @@
                 "properties": {
                     "uri": {
                         "type": "string",
-                        "description": "The resource path of the operation you are calling in batch without any query parameters.\n\nIf you are calling `getItemOffersBatch`, supply the path of `getItemOffers`.\n\n**Example:** `\/products\/pricing\/v0\/items\/B000P6Q7MY\/offers`\n\nIf you are calling `getListingOffersBatch`, supply the path of `getListingOffers`.\n\n**Example:** `\/products\/pricing\/v0\/listings\/B000P6Q7MY\/offers`"
+                        "description": "The resource path of the operation you are calling in batch without any query parameters.\n\nIf you are calling `getItemOffersBatch`, supply the path of `getItemOffers`.\n\n**Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`\n\nIf you are calling `getListingOffersBatch`, supply the path of `getListingOffers`.\n\n**Example:** `/products/pricing/v0/listings/B000P6Q7MY/offers`"
                     },
                     "method": {
-                        "$ref": "#\/components\/schemas\/HttpMethod"
+                        "$ref": "#/components/schemas/HttpMethod"
                     },
                     "headers": {
-                        "$ref": "#\/components\/schemas\/HttpRequestHeaders"
+                        "$ref": "#/components/schemas/HttpRequestHeaders"
                     }
                 },
                 "description": "Common properties of batch requests against individual APIs."
@@ -7684,7 +7684,7 @@
                         "description": "The Amazon Standard Identification Number (ASIN) of the item."
                     },
                     "Product": {
-                        "$ref": "#\/components\/schemas\/Product"
+                        "$ref": "#/components/schemas/Product"
                     }
                 }
             },
@@ -7695,22 +7695,22 @@
                 "type": "object",
                 "properties": {
                     "Identifiers": {
-                        "$ref": "#\/components\/schemas\/IdentifierType"
+                        "$ref": "#/components/schemas/IdentifierType"
                     },
                     "AttributeSets": {
-                        "$ref": "#\/components\/schemas\/AttributeSetList"
+                        "$ref": "#/components/schemas/AttributeSetList"
                     },
                     "Relationships": {
-                        "$ref": "#\/components\/schemas\/RelationshipList"
+                        "$ref": "#/components/schemas/RelationshipList"
                     },
                     "CompetitivePricing": {
-                        "$ref": "#\/components\/schemas\/CompetitivePricingType"
+                        "$ref": "#/components/schemas/CompetitivePricingType"
                     },
                     "SalesRankings": {
-                        "$ref": "#\/components\/schemas\/SalesRankList"
+                        "$ref": "#/components/schemas/SalesRankList"
                     },
                     "Offers": {
-                        "$ref": "#\/components\/schemas\/OffersList"
+                        "$ref": "#/components/schemas/OffersList"
                     }
                 },
                 "description": "An item."
@@ -7722,10 +7722,10 @@
                 "type": "object",
                 "properties": {
                     "MarketplaceASIN": {
-                        "$ref": "#\/components\/schemas\/ASINIdentifier"
+                        "$ref": "#/components/schemas/ASINIdentifier"
                     },
                     "SKUIdentifier": {
-                        "$ref": "#\/components\/schemas\/SellerSKUIdentifier"
+                        "$ref": "#/components/schemas/SellerSKUIdentifier"
                     }
                 },
                 "description": "Specifies the identifiers used to uniquely identify an item."
@@ -7793,13 +7793,13 @@
                 "type": "object",
                 "properties": {
                     "CompetitivePrices": {
-                        "$ref": "#\/components\/schemas\/CompetitivePriceList"
+                        "$ref": "#/components/schemas/CompetitivePriceList"
                     },
                     "NumberOfOfferListings": {
-                        "$ref": "#\/components\/schemas\/NumberOfOfferListingsList"
+                        "$ref": "#/components/schemas/NumberOfOfferListingsList"
                     },
                     "TradeInValue": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     }
                 },
                 "description": "Competitive pricing information for the item."
@@ -7808,7 +7808,7 @@
                 "type": "array",
                 "description": "A list of competitive pricing information.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/CompetitivePriceType"
+                    "$ref": "#/components/schemas/CompetitivePriceType"
                 }
             },
             "CompetitivePriceType": {
@@ -7823,7 +7823,7 @@
                         "description": "The pricing model for each price that is returned.\n\nPossible values:\n\n* 1 - New Buy Box Price.\n* 2 - Used Buy Box Price."
                     },
                     "Price": {
-                        "$ref": "#\/components\/schemas\/PriceType"
+                        "$ref": "#/components/schemas/PriceType"
                     },
                     "condition": {
                         "type": "string",
@@ -7834,7 +7834,7 @@
                         "description": "Indicates the subcondition of the item whose pricing information is returned. Possible values are: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other."
                     },
                     "offerType": {
-                        "$ref": "#\/components\/schemas\/OfferCustomerType"
+                        "$ref": "#/components/schemas/OfferCustomerType"
                     },
                     "quantityTier": {
                         "type": "integer",
@@ -7842,7 +7842,7 @@
                         "format": "int32"
                     },
                     "quantityDiscountType": {
-                        "$ref": "#\/components\/schemas\/QuantityDiscountType"
+                        "$ref": "#/components/schemas/QuantityDiscountType"
                     },
                     "sellerId": {
                         "type": "string",
@@ -7858,7 +7858,7 @@
                 "type": "array",
                 "description": "The number of active offer listings for the item that was submitted. The listing count is returned by condition, one for each listing condition value that is returned.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/OfferListingCountType"
+                    "$ref": "#/components/schemas/OfferListingCountType"
                 }
             },
             "OfferListingCountType": {
@@ -7897,7 +7897,7 @@
                 "type": "array",
                 "description": "A list of sales rank information for the item, by category.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/SalesRankType"
+                    "$ref": "#/components/schemas/SalesRankType"
                 }
             },
             "SalesRankType": {
@@ -7925,16 +7925,16 @@
                 "type": "object",
                 "properties": {
                     "LandedPrice": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "ListingPrice": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "Shipping": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "Points": {
-                        "$ref": "#\/components\/schemas\/Points"
+                        "$ref": "#/components/schemas/Points"
                     }
                 }
             },
@@ -7942,7 +7942,7 @@
                 "type": "array",
                 "description": "A list of offers.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/OfferType"
+                    "$ref": "#/components/schemas/OfferType"
                 }
             },
             "OfferType": {
@@ -7957,21 +7957,21 @@
                 "type": "object",
                 "properties": {
                     "offerType": {
-                        "$ref": "#\/components\/schemas\/OfferCustomerType"
+                        "$ref": "#/components/schemas/OfferCustomerType"
                     },
                     "BuyingPrice": {
-                        "$ref": "#\/components\/schemas\/PriceType"
+                        "$ref": "#/components/schemas/PriceType"
                     },
                     "RegularPrice": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "businessPrice": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "quantityDiscountPrices": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/QuantityDiscountPriceType"
+                            "$ref": "#/components/schemas/QuantityDiscountPriceType"
                         }
                     },
                     "FulfillmentChannel": {
@@ -8023,10 +8023,10 @@
                         "format": "int32"
                     },
                     "quantityDiscountType": {
-                        "$ref": "#\/components\/schemas\/QuantityDiscountType"
+                        "$ref": "#/components/schemas/QuantityDiscountType"
                     },
                     "listingPrice": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     }
                 },
                 "description": "Contains pricing information that includes special pricing when buying in bulk."
@@ -8052,7 +8052,7 @@
                         "format": "int32"
                     },
                     "PointsMonetaryValue": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     }
                 }
             },
@@ -8109,7 +8109,7 @@
                         "description": "The seller stock keeping unit (SKU) of the item."
                     },
                     "ItemCondition": {
-                        "$ref": "#\/components\/schemas\/ConditionType"
+                        "$ref": "#/components/schemas/ConditionType"
                     }
                 },
                 "description": "Information that identifies an item."
@@ -8126,28 +8126,28 @@
                         "format": "int32"
                     },
                     "NumberOfOffers": {
-                        "$ref": "#\/components\/schemas\/NumberOfOffers"
+                        "$ref": "#/components/schemas/NumberOfOffers"
                     },
                     "LowestPrices": {
-                        "$ref": "#\/components\/schemas\/LowestPrices"
+                        "$ref": "#/components/schemas/LowestPrices"
                     },
                     "BuyBoxPrices": {
-                        "$ref": "#\/components\/schemas\/BuyBoxPrices"
+                        "$ref": "#/components/schemas/BuyBoxPrices"
                     },
                     "ListPrice": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "CompetitivePriceThreshold": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "SuggestedLowerPricePlusShipping": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "SalesRankings": {
-                        "$ref": "#\/components\/schemas\/SalesRankList"
+                        "$ref": "#/components/schemas/SalesRankList"
                     },
                     "BuyBoxEligibleOffers": {
-                        "$ref": "#\/components\/schemas\/BuyBoxEligibleOffers"
+                        "$ref": "#/components/schemas/BuyBoxEligibleOffers"
                     },
                     "OffersAvailableTime": {
                         "type": "string",
@@ -8160,25 +8160,25 @@
             "BuyBoxEligibleOffers": {
                 "type": "array",
                 "items": {
-                    "$ref": "#\/components\/schemas\/OfferCountType"
+                    "$ref": "#/components/schemas/OfferCountType"
                 }
             },
             "BuyBoxPrices": {
                 "type": "array",
                 "items": {
-                    "$ref": "#\/components\/schemas\/BuyBoxPriceType"
+                    "$ref": "#/components/schemas/BuyBoxPriceType"
                 }
             },
             "LowestPrices": {
                 "type": "array",
                 "items": {
-                    "$ref": "#\/components\/schemas\/LowestPriceType"
+                    "$ref": "#/components/schemas/LowestPriceType"
                 }
             },
             "NumberOfOffers": {
                 "type": "array",
                 "items": {
-                    "$ref": "#\/components\/schemas\/OfferCountType"
+                    "$ref": "#/components/schemas/OfferCountType"
                 }
             },
             "OfferCountType": {
@@ -8189,7 +8189,7 @@
                         "description": "Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club."
                     },
                     "fulfillmentChannel": {
-                        "$ref": "#\/components\/schemas\/FulfillmentChannelType"
+                        "$ref": "#/components/schemas/FulfillmentChannelType"
                     },
                     "OfferCount": {
                         "type": "integer",
@@ -8234,7 +8234,7 @@
                         "description": "Indicates whether the item is fulfilled by Amazon or by the seller."
                     },
                     "offerType": {
-                        "$ref": "#\/components\/schemas\/OfferCustomerType"
+                        "$ref": "#/components/schemas/OfferCustomerType"
                     },
                     "quantityTier": {
                         "type": "integer",
@@ -8242,19 +8242,19 @@
                         "format": "int32"
                     },
                     "quantityDiscountType": {
-                        "$ref": "#\/components\/schemas\/QuantityDiscountType"
+                        "$ref": "#/components/schemas/QuantityDiscountType"
                     },
                     "LandedPrice": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "ListingPrice": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "Shipping": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "Points": {
-                        "$ref": "#\/components\/schemas\/Points"
+                        "$ref": "#/components/schemas/Points"
                     }
                 }
             },
@@ -8272,7 +8272,7 @@
                         "description": "Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club."
                     },
                     "offerType": {
-                        "$ref": "#\/components\/schemas\/OfferCustomerType"
+                        "$ref": "#/components/schemas/OfferCustomerType"
                     },
                     "quantityTier": {
                         "type": "integer",
@@ -8280,19 +8280,19 @@
                         "format": "int32"
                     },
                     "quantityDiscountType": {
-                        "$ref": "#\/components\/schemas\/QuantityDiscountType"
+                        "$ref": "#/components/schemas/QuantityDiscountType"
                     },
                     "LandedPrice": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "ListingPrice": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "Shipping": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "Points": {
-                        "$ref": "#\/components\/schemas\/Points"
+                        "$ref": "#/components/schemas/Points"
                     },
                     "sellerId": {
                         "type": "string",
@@ -8304,7 +8304,7 @@
                 "maxItems": 20,
                 "type": "array",
                 "items": {
-                    "$ref": "#\/components\/schemas\/OfferDetail"
+                    "$ref": "#/components/schemas/OfferDetail"
                 }
             },
             "OfferDetail": {
@@ -8322,7 +8322,7 @@
                         "description": "When true, this is the seller's offer."
                     },
                     "offerType": {
-                        "$ref": "#\/components\/schemas\/OfferCustomerType"
+                        "$ref": "#/components/schemas/OfferCustomerType"
                     },
                     "SubCondition": {
                         "type": "string",
@@ -8337,35 +8337,35 @@
                         "description": "Information about the condition of the item."
                     },
                     "SellerFeedbackRating": {
-                        "$ref": "#\/components\/schemas\/SellerFeedbackType"
+                        "$ref": "#/components/schemas/SellerFeedbackType"
                     },
                     "ShippingTime": {
-                        "$ref": "#\/components\/schemas\/DetailedShippingTimeType"
+                        "$ref": "#/components/schemas/DetailedShippingTimeType"
                     },
                     "ListingPrice": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "quantityDiscountPrices": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/QuantityDiscountPriceType"
+                            "$ref": "#/components/schemas/QuantityDiscountPriceType"
                         }
                     },
                     "Points": {
-                        "$ref": "#\/components\/schemas\/Points"
+                        "$ref": "#/components/schemas/Points"
                     },
                     "Shipping": {
-                        "$ref": "#\/components\/schemas\/MoneyType"
+                        "$ref": "#/components/schemas/MoneyType"
                     },
                     "ShipsFrom": {
-                        "$ref": "#\/components\/schemas\/ShipsFromType"
+                        "$ref": "#/components/schemas/ShipsFromType"
                     },
                     "IsFulfilledByAmazon": {
                         "type": "boolean",
                         "description": "When true, the offer is fulfilled by Amazon."
                     },
                     "PrimeInformation": {
-                        "$ref": "#\/components\/schemas\/PrimeInformationType"
+                        "$ref": "#/components/schemas/PrimeInformationType"
                     },
                     "IsBuyBoxWinner": {
                         "type": "boolean",
@@ -8418,7 +8418,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "DetailedShippingTimeType": {

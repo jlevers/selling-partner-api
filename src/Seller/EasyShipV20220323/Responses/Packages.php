@@ -11,7 +11,7 @@ final class Packages extends Response
     protected static array $complexArrayTypes = ['packages' => [Package::class]];
 
     /**
-     * @param  Package[]  $packages
+     * @param  Package[]  $packages  A list of packages.
      */
     public function __construct(
         public readonly array $packages,

@@ -19,11 +19,11 @@ class ListTransportationOptions extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      * @param  ?int  $pageSize  The number of transportation options to return in the response matching the given query.
      * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @param  ?string  $placementOptionId  The placement option to get transportation options for. Either placementOptionId or shipmentId must be specified.
-     * @param  ?string  $shipmentId  The shipment to get transportation options for. Either placementOptionId or shipmentId must be specified.
+     * @param  ?string  $placementOptionId  The placement option to get transportation options for. Either `placementOptionId` or `shipmentId` must be specified.
+     * @param  ?string  $shipmentId  The shipment to get transportation options for. Either `placementOptionId` or `shipmentId` must be specified.
      */
     public function __construct(
         protected string $inboundPlanId,
@@ -54,7 +54,7 @@ class ListTransportationOptions extends Request
         $status = $response->status();
         $responseCls = match ($status) {
             200 => ListTransportationOptionsResponse::class,
-            400, 500, 403, 404, 413, 415, 429, 503 => ErrorList::class,
+            400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

@@ -7,42 +7,60 @@ use SellingPartnerApi\BaseResource;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\CancelSelfShipAppointmentRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\ConfirmTransportationOptionsRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\CreateInboundPlanRequest;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\CreateMarketplaceItemLabelsRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\GeneratePlacementOptionsRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\GenerateSelfShipAppointmentSlotsRequest;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\GenerateShipmentContentUpdatePreviewsRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\GenerateTransportationOptionsRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\ScheduleSelfShipAppointmentRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\SetPackingInformationRequest;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\UpdateInboundPlanNameRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\UpdateItemComplianceDetailsRequest;
-use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\UpdateShipmentDeliveryWindowRequest;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\UpdateShipmentNameRequest;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\UpdateShipmentSourceAddressRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\UpdateShipmentTrackingDetailsRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\CancelInboundPlan;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\CancelSelfShipAppointment;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ConfirmDeliveryWindowOptions;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ConfirmPackingOption;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ConfirmPlacementOption;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ConfirmShipmentContentUpdatePreview;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ConfirmTransportationOptions;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\CreateInboundPlan;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\CreateMarketplaceItemLabels;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\GenerateDeliveryWindowOptions;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\GeneratePackingOptions;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\GeneratePlacementOptions;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\GenerateSelfShipAppointmentSlots;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\GenerateShipmentContentUpdatePreviews;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\GenerateTransportationOptions;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\GetDeliveryChallanDocument;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\GetInboundOperationStatus;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\GetInboundPlan;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\GetSelfShipAppointmentSlots;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\GetShipment;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\GetShipmentContentUpdatePreview;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListDeliveryWindowOptions;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListInboundPlanBoxes;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListInboundPlanItems;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListInboundPlanPallets;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListInboundPlans;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListItemComplianceDetails;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListPackingGroupBoxes;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListPackingGroupItems;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListPackingOptions;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListPlacementOptions;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListShipmentBoxes;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListShipmentContentUpdatePreviews;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListShipmentItems;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListShipmentPallets;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListTransportationOptions;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ScheduleSelfShipAppointment;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\SetPackingInformation;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\UpdateInboundPlanName;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\UpdateItemComplianceDetails;
-use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\UpdateShipmentDeliveryWindow;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\UpdateShipmentName;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\UpdateShipmentSourceAddress;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\UpdateShipmentTrackingDetails;
 
 class Api extends BaseResource
@@ -77,7 +95,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      */
     public function getInboundPlan(string $inboundPlanId): Response
     {
@@ -87,7 +105,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      * @param  ?int  $pageSize  The number of boxes to return in the response matching the given query.
      * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
      */
@@ -102,7 +120,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      */
     public function cancelInboundPlan(string $inboundPlanId): Response
     {
@@ -112,7 +130,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      * @param  ?int  $pageSize  The number of items to return in the response matching the given query.
      * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
      */
@@ -127,8 +145,55 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  SetPackingInformationRequest  $setPackingInformationRequest  `setPackingInformation` request.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  UpdateInboundPlanNameRequest  $updateInboundPlanNameRequest  The `updateInboundPlanName` request.
+     */
+    public function updateInboundPlanName(
+        string $inboundPlanId,
+        UpdateInboundPlanNameRequest $updateInboundPlanNameRequest,
+    ): Response {
+        $request = new UpdateInboundPlanName($inboundPlanId, $updateInboundPlanNameRequest);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $packingGroupId  Identifier of a packing group.
+     * @param  ?int  $pageSize  The number of packing group boxes to return in the response matching the given query.
+     * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
+     */
+    public function listPackingGroupBoxes(
+        string $inboundPlanId,
+        string $packingGroupId,
+        ?int $pageSize = null,
+        ?string $paginationToken = null,
+    ): Response {
+        $request = new ListPackingGroupBoxes($inboundPlanId, $packingGroupId, $pageSize, $paginationToken);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $packingGroupId  Identifier of a packing group.
+     * @param  ?int  $pageSize  The number of packing group items to return in the response matching the given query.
+     * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
+     */
+    public function listPackingGroupItems(
+        string $inboundPlanId,
+        string $packingGroupId,
+        ?int $pageSize = null,
+        ?string $paginationToken = null,
+    ): Response {
+        $request = new ListPackingGroupItems($inboundPlanId, $packingGroupId, $pageSize, $paginationToken);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  SetPackingInformationRequest  $setPackingInformationRequest  The `setPackingInformation` request.
      */
     public function setPackingInformation(
         string $inboundPlanId,
@@ -140,7 +205,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      * @param  ?int  $pageSize  The number of packing options to return in the response matching the given query.
      * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
      */
@@ -155,7 +220,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      */
     public function generatePackingOptions(string $inboundPlanId): Response
     {
@@ -165,8 +230,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $packingOptionId  Identifier to a packing option.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $packingOptionId  Identifier of a packing option.
      */
     public function confirmPackingOption(string $inboundPlanId, string $packingOptionId): Response
     {
@@ -176,26 +241,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $packingOptionId  Identifier to a packing option.
-     * @param  string  $packingGroupId  Identifier to a packing group.
-     * @param  ?int  $pageSize  The number of packing group items to return in the response matching the given query.
-     * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     */
-    public function listPackingGroupItems(
-        string $inboundPlanId,
-        string $packingOptionId,
-        string $packingGroupId,
-        ?int $pageSize = null,
-        ?string $paginationToken = null,
-    ): Response {
-        $request = new ListPackingGroupItems($inboundPlanId, $packingOptionId, $packingGroupId, $pageSize, $paginationToken);
-
-        return $this->connector->send($request);
-    }
-
-    /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      * @param  ?int  $pageSize  The number of pallets to return in the response matching the given query.
      * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
      */
@@ -210,7 +256,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      * @param  ?int  $pageSize  The number of placement options to return in the response matching the given query.
      * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
      */
@@ -225,7 +271,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      * @param  GeneratePlacementOptionsRequest  $generatePlacementOptionsRequest  The `generatePlacementOptions` request.
      */
     public function generatePlacementOptions(
@@ -238,8 +284,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $placementOptionId  Identifier to a placement option. A placement option represents the shipment splits and destinations of SKUs.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $placementOptionId  The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
      */
     public function confirmPlacementOption(string $inboundPlanId, string $placementOptionId): Response
     {
@@ -249,8 +295,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      */
     public function getShipment(string $inboundPlanId, string $shipmentId): Response
     {
@@ -260,8 +306,87 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  ?int  $pageSize  The number of boxes to return in the response matching the given query.
+     * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
+     */
+    public function listShipmentBoxes(
+        string $inboundPlanId,
+        string $shipmentId,
+        ?int $pageSize = null,
+        ?string $paginationToken = null,
+    ): Response {
+        $request = new ListShipmentBoxes($inboundPlanId, $shipmentId, $pageSize, $paginationToken);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  ?int  $pageSize  The number of content update previews to return.
+     * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
+     */
+    public function listShipmentContentUpdatePreviews(
+        string $inboundPlanId,
+        string $shipmentId,
+        ?int $pageSize = null,
+        ?string $paginationToken = null,
+    ): Response {
+        $request = new ListShipmentContentUpdatePreviews($inboundPlanId, $shipmentId, $pageSize, $paginationToken);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  GenerateShipmentContentUpdatePreviewsRequest  $generateShipmentContentUpdatePreviewsRequest  The `GenerateShipmentContentUpdatePreviews` request.
+     */
+    public function generateShipmentContentUpdatePreviews(
+        string $inboundPlanId,
+        string $shipmentId,
+        GenerateShipmentContentUpdatePreviewsRequest $generateShipmentContentUpdatePreviewsRequest,
+    ): Response {
+        $request = new GenerateShipmentContentUpdatePreviews($inboundPlanId, $shipmentId, $generateShipmentContentUpdatePreviewsRequest);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  string  $contentUpdatePreviewId  Identifier of a content update preview.
+     */
+    public function getShipmentContentUpdatePreview(
+        string $inboundPlanId,
+        string $shipmentId,
+        string $contentUpdatePreviewId,
+    ): Response {
+        $request = new GetShipmentContentUpdatePreview($inboundPlanId, $shipmentId, $contentUpdatePreviewId);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  string  $contentUpdatePreviewId  Identifier of a content update preview.
+     */
+    public function confirmShipmentContentUpdatePreview(
+        string $inboundPlanId,
+        string $shipmentId,
+        string $contentUpdatePreviewId,
+    ): Response {
+        $request = new ConfirmShipmentContentUpdatePreview($inboundPlanId, $shipmentId, $contentUpdatePreviewId);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      */
     public function getDeliveryChallanDocument(string $inboundPlanId, string $shipmentId): Response
     {
@@ -271,23 +396,115 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
-     * @param  UpdateShipmentDeliveryWindowRequest  $updateShipmentDeliveryWindowRequest  The `updateShipmentDeliveryWindow` request.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  The shipment to get delivery window options for.
+     * @param  ?int  $pageSize  The number of delivery window options to return in the response matching the given query.
+     * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
      */
-    public function updateShipmentDeliveryWindow(
+    public function listDeliveryWindowOptions(
         string $inboundPlanId,
         string $shipmentId,
-        UpdateShipmentDeliveryWindowRequest $updateShipmentDeliveryWindowRequest,
+        ?int $pageSize = null,
+        ?string $paginationToken = null,
     ): Response {
-        $request = new UpdateShipmentDeliveryWindow($inboundPlanId, $shipmentId, $updateShipmentDeliveryWindowRequest);
+        $request = new ListDeliveryWindowOptions($inboundPlanId, $shipmentId, $pageSize, $paginationToken);
 
         return $this->connector->send($request);
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  The shipment to generate delivery window options for.
+     */
+    public function generateDeliveryWindowOptions(string $inboundPlanId, string $shipmentId): Response
+    {
+        $request = new GenerateDeliveryWindowOptions($inboundPlanId, $shipmentId);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  The shipment to confirm the delivery window option for.
+     * @param  string  $deliveryWindowOptionId  The id of the delivery window option to be confirmed.
+     */
+    public function confirmDeliveryWindowOptions(
+        string $inboundPlanId,
+        string $shipmentId,
+        string $deliveryWindowOptionId,
+    ): Response {
+        $request = new ConfirmDeliveryWindowOptions($inboundPlanId, $shipmentId, $deliveryWindowOptionId);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  ?int  $pageSize  The number of items to return in the response matching the given query.
+     * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
+     */
+    public function listShipmentItems(
+        string $inboundPlanId,
+        string $shipmentId,
+        ?int $pageSize = null,
+        ?string $paginationToken = null,
+    ): Response {
+        $request = new ListShipmentItems($inboundPlanId, $shipmentId, $pageSize, $paginationToken);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  UpdateShipmentNameRequest  $updateShipmentNameRequest  The `updateShipmentName` request.
+     */
+    public function updateShipmentName(
+        string $inboundPlanId,
+        string $shipmentId,
+        UpdateShipmentNameRequest $updateShipmentNameRequest,
+    ): Response {
+        $request = new UpdateShipmentName($inboundPlanId, $shipmentId, $updateShipmentNameRequest);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  ?int  $pageSize  The number of pallets to return in the response matching the given query.
+     * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
+     */
+    public function listShipmentPallets(
+        string $inboundPlanId,
+        string $shipmentId,
+        ?int $pageSize = null,
+        ?string $paginationToken = null,
+    ): Response {
+        $request = new ListShipmentPallets($inboundPlanId, $shipmentId, $pageSize, $paginationToken);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  CancelSelfShipAppointmentRequest  $cancelSelfShipAppointmentRequest  The `cancelSelfShipAppointment` request.
+     */
+    public function cancelSelfShipAppointment(
+        string $inboundPlanId,
+        string $shipmentId,
+        CancelSelfShipAppointmentRequest $cancelSelfShipAppointmentRequest,
+    ): Response {
+        $request = new CancelSelfShipAppointment($inboundPlanId, $shipmentId, $cancelSelfShipAppointmentRequest);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      * @param  ?int  $pageSize  The number of self ship appointment slots to return in the response matching the given query.
      * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
      */
@@ -303,8 +520,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      * @param  GenerateSelfShipAppointmentSlotsRequest  $generateSelfShipAppointmentSlotsRequest  The `generateSelfShipAppointmentSlots` request.
      */
     public function generateSelfShipAppointmentSlots(
@@ -318,27 +535,10 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
-     * @param  string  $slotId  Identifier to a self-ship appointment slot.
-     * @param  CancelSelfShipAppointmentRequest  $cancelSelfShipAppointmentRequest  The `cancelSelfShipAppointment` request.
-     */
-    public function cancelSelfShipAppointment(
-        string $inboundPlanId,
-        string $shipmentId,
-        string $slotId,
-        CancelSelfShipAppointmentRequest $cancelSelfShipAppointmentRequest,
-    ): Response {
-        $request = new CancelSelfShipAppointment($inboundPlanId, $shipmentId, $slotId, $cancelSelfShipAppointmentRequest);
-
-        return $this->connector->send($request);
-    }
-
-    /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
-     * @param  string  $slotId  Identifier to a self-ship appointment slot.
-     * @param  ScheduleSelfShipAppointmentRequest  $scheduleSelfShipAppointmentRequest  `scheduleSelfShipAppointment` request.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  string  $slotId  An identifier to a self-ship appointment slot.
+     * @param  ScheduleSelfShipAppointmentRequest  $scheduleSelfShipAppointmentRequest  The `scheduleSelfShipAppointment` request.
      */
     public function scheduleSelfShipAppointment(
         string $inboundPlanId,
@@ -352,8 +552,23 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  UpdateShipmentSourceAddressRequest  $updateShipmentSourceAddressRequest  The `UpdateShipmentSourceAddress` request.
+     */
+    public function updateShipmentSourceAddress(
+        string $inboundPlanId,
+        string $shipmentId,
+        UpdateShipmentSourceAddressRequest $updateShipmentSourceAddressRequest,
+    ): Response {
+        $request = new UpdateShipmentSourceAddress($inboundPlanId, $shipmentId, $updateShipmentSourceAddressRequest);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      * @param  UpdateShipmentTrackingDetailsRequest  $updateShipmentTrackingDetailsRequest  The `updateShipmentTrackingDetails` request.
      */
     public function updateShipmentTrackingDetails(
@@ -367,11 +582,11 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      * @param  ?int  $pageSize  The number of transportation options to return in the response matching the given query.
      * @param  ?string  $paginationToken  A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result.
-     * @param  ?string  $placementOptionId  The placement option to get transportation options for. Either placementOptionId or shipmentId must be specified.
-     * @param  ?string  $shipmentId  The shipment to get transportation options for. Either placementOptionId or shipmentId must be specified.
+     * @param  ?string  $placementOptionId  The placement option to get transportation options for. Either `placementOptionId` or `shipmentId` must be specified.
+     * @param  ?string  $shipmentId  The shipment to get transportation options for. Either `placementOptionId` or `shipmentId` must be specified.
      */
     public function listTransportationOptions(
         string $inboundPlanId,
@@ -386,7 +601,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      * @param  GenerateTransportationOptionsRequest  $generateTransportationOptionsRequest  The `generateTransportationOptions` request.
      */
     public function generateTransportationOptions(
@@ -399,7 +614,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      * @param  ConfirmTransportationOptionsRequest  $confirmTransportationOptionsRequest  The `confirmTransportationOptions` request.
      */
     public function confirmTransportationOptions(
@@ -412,7 +627,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  array  $mskus  List of merchant SKUs, a merchant-supplied identifier for a specific SKU.
+     * @param  array  $mskus  List of merchant SKUs - a merchant-supplied identifier for a specific SKU.
      * @param  string  $marketplaceId  The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values.
      */
     public function listItemComplianceDetails(array $mskus, string $marketplaceId): Response
@@ -436,7 +651,18 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $operationId  Identifier to an asynchronous operation.
+     * @param  CreateMarketplaceItemLabelsRequest  $createMarketplaceItemLabelsRequest  The `createMarketplaceItemLabels` request.
+     */
+    public function createMarketplaceItemLabels(
+        CreateMarketplaceItemLabelsRequest $createMarketplaceItemLabelsRequest,
+    ): Response {
+        $request = new CreateMarketplaceItemLabels($createMarketplaceItemLabelsRequest);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $operationId  Identifier of an asynchronous operation.
      */
     public function getInboundOperationStatus(string $operationId): Response
     {

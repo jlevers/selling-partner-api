@@ -5,32 +5,32 @@
         "description": "The Selling Partner API for Replenishment (Replenishment API) provides programmatic access to replenishment program metrics and offers. These programs provide recurring delivery of any replenishable item at a frequency chosen by the customer.\n\nThe Replenishment API is available worldwide wherever Amazon Subscribe & Save is available or is supported. The API is available to vendors and FBA selling partners.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "2022-11-07"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/replenishment\/2022-11-07\/sellingPartners\/metrics\/search": {
+        "/replenishment/2022-11-07/sellingPartners/metrics/search": {
             "post": {
                 "tags": [
                     "ReplenishmentV20221107"
                 ],
-                "description": "Returns aggregated replenishment program metrics for a selling partner. \n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns aggregated replenishment program metrics for a selling partner. \n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getSellingPartnerMetrics",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/GetSellingPartnerMetricsRequest"
+                                "$ref": "#/components/schemas/GetSellingPartnerMetricsRequest"
                             }
                         }
                     },
@@ -54,9 +54,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSellingPartnerMetricsResponse"
+                                    "$ref": "#/components/schemas/GetSellingPartnerMetricsResponse"
                                 },
                                 "example": {
                                     "metrics": [
@@ -139,9 +139,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -196,9 +196,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -214,9 +214,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -238,9 +238,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -256,9 +256,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -274,9 +274,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -292,9 +292,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -310,9 +310,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -321,19 +321,19 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/replenishment\/2022-11-07\/offers\/metrics\/search": {
+        "/replenishment/2022-11-07/offers/metrics/search": {
             "post": {
                 "tags": [
                     "ReplenishmentV20221107"
                 ],
-                "description": "Returns aggregated replenishment program metrics for a selling partner's offers.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns aggregated replenishment program metrics for a selling partner's offers.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "listOfferMetrics",
                 "requestBody": {
                     "description": "The request body for the `listOfferMetrics` operation.",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/ListOfferMetricsRequest"
+                                "$ref": "#/components/schemas/ListOfferMetricsRequest"
                             }
                         }
                     },
@@ -357,9 +357,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListOfferMetricsResponse"
+                                    "$ref": "#/components/schemas/ListOfferMetricsResponse"
                                 },
                                 "example": {
                                     "offers": [
@@ -483,9 +483,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -546,9 +546,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -564,9 +564,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -588,9 +588,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -606,9 +606,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -624,9 +624,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -642,9 +642,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -660,9 +660,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -671,18 +671,18 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/replenishment\/2022-11-07\/offers\/search": {
+        "/replenishment/2022-11-07/offers/search": {
             "post": {
                 "tags": [
                     "ReplenishmentV20221107"
                 ],
-                "description": "Returns the details of a selling partner's replenishment program offers. Note that this operation only supports sellers at this time.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the details of a selling partner's replenishment program offers. Note that this operation only supports sellers at this time.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "listOffers",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/ListOffersRequest"
+                                "$ref": "#/components/schemas/ListOffersRequest"
                             }
                         }
                     },
@@ -706,9 +706,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListOffersResponse"
+                                    "$ref": "#/components/schemas/ListOffersResponse"
                                 },
                                 "example": {
                                     "offers": [
@@ -879,9 +879,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -936,9 +936,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -954,9 +954,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -978,9 +978,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -996,9 +996,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1014,9 +1014,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1032,9 +1032,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1050,9 +1050,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1074,10 +1074,10 @@
                 "type": "object",
                 "properties": {
                     "aggregationFrequency": {
-                        "$ref": "#\/components\/schemas\/AggregationFrequency"
+                        "$ref": "#/components/schemas/AggregationFrequency"
                     },
                     "timeInterval": {
-                        "$ref": "#\/components\/schemas\/TimeInterval"
+                        "$ref": "#/components/schemas/TimeInterval"
                     },
                     "metrics": {
                         "minItems": 1,
@@ -1085,17 +1085,17 @@
                         "type": "array",
                         "description": "The list of metrics requested. If no metric value is provided, data for all of the metrics will be returned.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Metric"
+                            "$ref": "#/components/schemas/Metric"
                         }
                     },
                     "timePeriodType": {
-                        "$ref": "#\/components\/schemas\/TimePeriodType"
+                        "$ref": "#/components/schemas/TimePeriodType"
                     },
                     "marketplaceId": {
-                        "$ref": "#\/components\/schemas\/MarketplaceId"
+                        "$ref": "#/components/schemas/MarketplaceId"
                     },
                     "programTypes": {
-                        "$ref": "#\/components\/schemas\/ProgramTypes"
+                        "$ref": "#/components/schemas/ProgramTypes"
                     }
                 },
                 "description": "The request body for the `getSellingPartnerMetrics` operation."
@@ -1108,13 +1108,13 @@
                 "type": "object",
                 "properties": {
                     "pagination": {
-                        "$ref": "#\/components\/schemas\/ListOfferMetricsRequestPagination"
+                        "$ref": "#/components/schemas/ListOfferMetricsRequestPagination"
                     },
                     "sort": {
-                        "$ref": "#\/components\/schemas\/ListOfferMetricsRequestSort"
+                        "$ref": "#/components/schemas/ListOfferMetricsRequestSort"
                     },
                     "filters": {
-                        "$ref": "#\/components\/schemas\/ListOfferMetricsRequestFilters"
+                        "$ref": "#/components/schemas/ListOfferMetricsRequestFilters"
                     }
                 },
                 "description": "The request body for the `listOfferMetrics` operation."
@@ -1127,13 +1127,13 @@
                 "type": "object",
                 "properties": {
                     "pagination": {
-                        "$ref": "#\/components\/schemas\/ListOffersRequestPagination"
+                        "$ref": "#/components/schemas/ListOffersRequestPagination"
                     },
                     "filters": {
-                        "$ref": "#\/components\/schemas\/ListOffersRequestFilters"
+                        "$ref": "#/components/schemas/ListOffersRequestFilters"
                     },
                     "sort": {
-                        "$ref": "#\/components\/schemas\/ListOffersRequestSort"
+                        "$ref": "#/components/schemas/ListOffersRequestSort"
                     }
                 },
                 "description": "The request body for the `listOffers` operation."
@@ -1175,7 +1175,7 @@
                         "type": "array",
                         "description": "Filters the results to only include offers with the auto-enrollment preference specified.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/AutoEnrollmentPreference"
+                            "$ref": "#/components/schemas/AutoEnrollmentPreference"
                         }
                     }
                 },
@@ -1185,16 +1185,16 @@
                 "type": "object",
                 "properties": {
                     "sellingPartnerFundedBaseDiscount": {
-                        "$ref": "#\/components\/schemas\/DiscountFunding"
+                        "$ref": "#/components/schemas/DiscountFunding"
                     },
                     "sellingPartnerFundedTieredDiscount": {
-                        "$ref": "#\/components\/schemas\/DiscountFunding"
+                        "$ref": "#/components/schemas/DiscountFunding"
                     },
                     "amazonFundedBaseDiscount": {
-                        "$ref": "#\/components\/schemas\/DiscountFunding"
+                        "$ref": "#/components/schemas/DiscountFunding"
                     },
                     "amazonFundedTieredDiscount": {
-                        "$ref": "#\/components\/schemas\/DiscountFunding"
+                        "$ref": "#/components/schemas/DiscountFunding"
                     }
                 },
                 "description": "Offer promotions to include in the result filter criteria."
@@ -1222,13 +1222,13 @@
                 "type": "object",
                 "properties": {
                     "preferences": {
-                        "$ref": "#\/components\/schemas\/OfferProgramConfigurationPreferences"
+                        "$ref": "#/components/schemas/OfferProgramConfigurationPreferences"
                     },
                     "promotions": {
-                        "$ref": "#\/components\/schemas\/OfferProgramConfigurationPromotions"
+                        "$ref": "#/components/schemas/OfferProgramConfigurationPromotions"
                     },
                     "enrollmentMethod": {
-                        "$ref": "#\/components\/schemas\/EnrollmentMethod"
+                        "$ref": "#/components/schemas/EnrollmentMethod"
                     }
                 },
                 "description": "The offer program configuration contains a set of program properties for an offer."
@@ -1237,7 +1237,7 @@
                 "type": "object",
                 "properties": {
                     "autoEnrollment": {
-                        "$ref": "#\/components\/schemas\/AutoEnrollmentPreference"
+                        "$ref": "#/components/schemas/AutoEnrollmentPreference"
                     }
                 },
                 "description": "An object which contains the preferences applied to the offer."
@@ -1246,16 +1246,16 @@
                 "type": "object",
                 "properties": {
                     "sellingPartnerFundedBaseDiscount": {
-                        "$ref": "#\/components\/schemas\/OfferProgramConfigurationPromotionsDiscountFunding"
+                        "$ref": "#/components/schemas/OfferProgramConfigurationPromotionsDiscountFunding"
                     },
                     "sellingPartnerFundedTieredDiscount": {
-                        "$ref": "#\/components\/schemas\/OfferProgramConfigurationPromotionsDiscountFunding"
+                        "$ref": "#/components/schemas/OfferProgramConfigurationPromotionsDiscountFunding"
                     },
                     "amazonFundedBaseDiscount": {
-                        "$ref": "#\/components\/schemas\/OfferProgramConfigurationPromotionsDiscountFunding"
+                        "$ref": "#/components/schemas/OfferProgramConfigurationPromotionsDiscountFunding"
                     },
                     "amazonFundedTieredDiscount": {
-                        "$ref": "#\/components\/schemas\/OfferProgramConfigurationPromotionsDiscountFunding"
+                        "$ref": "#/components/schemas/OfferProgramConfigurationPromotionsDiscountFunding"
                     }
                 },
                 "description": "An object which represents all promotions applied to an offer."
@@ -1321,7 +1321,7 @@
                 "type": "array",
                 "description": "A list of replenishment program types.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ProgramType"
+                    "$ref": "#/components/schemas/ProgramType"
                 }
             },
             "ProgramType": {
@@ -1365,19 +1365,19 @@
                 "type": "object",
                 "properties": {
                     "aggregationFrequency": {
-                        "$ref": "#\/components\/schemas\/AggregationFrequency"
+                        "$ref": "#/components/schemas/AggregationFrequency"
                     },
                     "timeInterval": {
-                        "$ref": "#\/components\/schemas\/TimeInterval"
+                        "$ref": "#/components/schemas/TimeInterval"
                     },
                     "timePeriodType": {
-                        "$ref": "#\/components\/schemas\/TimePeriodType"
+                        "$ref": "#/components/schemas/TimePeriodType"
                     },
                     "marketplaceId": {
-                        "$ref": "#\/components\/schemas\/MarketplaceId"
+                        "$ref": "#/components/schemas/MarketplaceId"
                     },
                     "programTypes": {
-                        "$ref": "#\/components\/schemas\/ProgramTypes"
+                        "$ref": "#/components/schemas/ProgramTypes"
                     },
                     "asins": {
                         "maxItems": 20,
@@ -1401,10 +1401,10 @@
                 "type": "object",
                 "properties": {
                     "order": {
-                        "$ref": "#\/components\/schemas\/SortOrder"
+                        "$ref": "#/components/schemas/SortOrder"
                     },
                     "key": {
-                        "$ref": "#\/components\/schemas\/ListOfferMetricsSortKey"
+                        "$ref": "#/components/schemas/ListOfferMetricsSortKey"
                     }
                 },
                 "description": "Use these parameters to sort the response."
@@ -1494,7 +1494,7 @@
                 "type": "object",
                 "properties": {
                     "marketplaceId": {
-                        "$ref": "#\/components\/schemas\/MarketplaceId"
+                        "$ref": "#/components/schemas/MarketplaceId"
                     },
                     "skus": {
                         "maxItems": 20,
@@ -1524,17 +1524,17 @@
                         "type": "array",
                         "description": "A list of eligibilities associated with an offer.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/EligibilityStatus"
+                            "$ref": "#/components/schemas/EligibilityStatus"
                         }
                     },
                     "preferences": {
-                        "$ref": "#\/components\/schemas\/Preference"
+                        "$ref": "#/components/schemas/Preference"
                     },
                     "promotions": {
-                        "$ref": "#\/components\/schemas\/Promotion"
+                        "$ref": "#/components/schemas/Promotion"
                     },
                     "programTypes": {
-                        "$ref": "#\/components\/schemas\/ProgramTypes"
+                        "$ref": "#/components/schemas/ProgramTypes"
                     }
                 },
                 "description": "Use these parameters to filter results. Any result must match all of the provided parameters. For any parameter that is an array, the result must match at least one element in the provided array."
@@ -1547,10 +1547,10 @@
                 "type": "object",
                 "properties": {
                     "order": {
-                        "$ref": "#\/components\/schemas\/SortOrder"
+                        "$ref": "#/components/schemas/SortOrder"
                     },
                     "key": {
-                        "$ref": "#\/components\/schemas\/ListOffersSortKey"
+                        "$ref": "#/components/schemas/ListOffersSortKey"
                     }
                 },
                 "description": "Use these parameters to sort the response."
@@ -1590,7 +1590,7 @@
             },
             "MarketplaceId": {
                 "type": "string",
-                "description": "The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/marketplace-ids) to find the identifier for the marketplace."
+                "description": "The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace."
             },
             "AggregationFrequency": {
                 "type": "string",
@@ -1716,7 +1716,7 @@
                         "type": "array",
                         "description": "A list of metrics data for the selling partner.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/GetSellingPartnerMetricsResponseMetric"
+                            "$ref": "#/components/schemas/GetSellingPartnerMetricsResponseMetric"
                         }
                     }
                 },
@@ -1763,7 +1763,7 @@
                         "format": "double"
                     },
                     "timeInterval": {
-                        "$ref": "#\/components\/schemas\/TimeInterval"
+                        "$ref": "#/components/schemas/TimeInterval"
                     },
                     "currencyCode": {
                         "type": "string",
@@ -1779,11 +1779,11 @@
                         "type": "array",
                         "description": "A list of offers and associated metrics.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ListOfferMetricsResponseOffer"
+                            "$ref": "#/components/schemas/ListOfferMetricsResponseOffer"
                         }
                     },
                     "pagination": {
-                        "$ref": "#\/components\/schemas\/PaginationResponse"
+                        "$ref": "#/components/schemas/PaginationResponse"
                     }
                 },
                 "description": "The response schema for the `listOfferMetrics` operation."
@@ -1795,11 +1795,11 @@
                         "type": "array",
                         "description": "A list of offers.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ListOffersResponseOffer"
+                            "$ref": "#/components/schemas/ListOffersResponseOffer"
                         }
                     },
                     "pagination": {
-                        "$ref": "#\/components\/schemas\/PaginationResponse"
+                        "$ref": "#/components/schemas/PaginationResponse"
                     }
                 },
                 "description": "The response schema for the `listOffers` operation."
@@ -1816,16 +1816,16 @@
                         "description": "The Amazon Standard Identification Number (ASIN)."
                     },
                     "marketplaceId": {
-                        "$ref": "#\/components\/schemas\/MarketplaceId"
+                        "$ref": "#/components/schemas/MarketplaceId"
                     },
                     "eligibility": {
-                        "$ref": "#\/components\/schemas\/EligibilityStatus"
+                        "$ref": "#/components/schemas/EligibilityStatus"
                     },
                     "offerProgramConfiguration": {
-                        "$ref": "#\/components\/schemas\/OfferProgramConfiguration"
+                        "$ref": "#/components/schemas/OfferProgramConfiguration"
                     },
                     "programType": {
-                        "$ref": "#\/components\/schemas\/ProgramType"
+                        "$ref": "#/components/schemas/ProgramType"
                     },
                     "vendorCodes": {
                         "type": "array",
@@ -1926,7 +1926,7 @@
                         "format": "int64"
                     },
                     "timeInterval": {
-                        "$ref": "#\/components\/schemas\/TimeInterval"
+                        "$ref": "#/components/schemas/TimeInterval"
                     },
                     "currencyCode": {
                         "type": "string",
@@ -1944,7 +1944,7 @@
                     "errors": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Error"
+                            "$ref": "#/components/schemas/Error"
                         }
                     }
                 },

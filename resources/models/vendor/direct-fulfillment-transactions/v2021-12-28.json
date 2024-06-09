@@ -5,21 +5,21 @@
         "description": "The Selling Partner API for Direct Fulfillment Transaction Status provides programmatic access to a direct fulfillment vendor's transaction status.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "2021-12-28"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/vendor\/directFulfillment\/transactions\/2021-12-28\/transactions\/{transactionId}": {
+        "/vendor/directFulfillment/transactions/2021-12-28/transactions/{transactionId}": {
             "get": {
                 "tags": [
                     "DirectFulfillmentTransactionsV20211228"
@@ -55,9 +55,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/TransactionStatus"
+                                    "$ref": "#/components/schemas/TransactionStatus"
                                 },
                                 "example": {
                                     "transactionStatus": {
@@ -85,9 +85,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -109,9 +109,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Error"
+                                    "$ref": "#/components/schemas/Error"
                                 }
                             }
                         }
@@ -127,9 +127,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Error"
+                                    "$ref": "#/components/schemas/Error"
                                 }
                             }
                         }
@@ -151,9 +151,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Error"
+                                    "$ref": "#/components/schemas/Error"
                                 }
                             }
                         }
@@ -175,9 +175,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Error"
+                                    "$ref": "#/components/schemas/Error"
                                 }
                             }
                         }
@@ -199,9 +199,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Error"
+                                    "$ref": "#/components/schemas/Error"
                                 }
                             }
                         }
@@ -223,9 +223,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Error"
+                                    "$ref": "#/components/schemas/Error"
                                 }
                             }
                         }
@@ -247,9 +247,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Error"
+                                    "$ref": "#/components/schemas/Error"
                                 }
                             }
                         }
@@ -267,7 +267,7 @@
                 "type": "object",
                 "properties": {
                     "transactionStatus": {
-                        "$ref": "#\/components\/schemas\/Transaction"
+                        "$ref": "#/components/schemas/Transaction"
                     }
                 },
                 "description": "The payload for the getTransactionStatus operation."
@@ -307,7 +307,7 @@
                         ]
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The transaction status details."
@@ -321,7 +321,7 @@
                     "errors": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Error"
+                            "$ref": "#/components/schemas/Error"
                         }
                     }
                 },

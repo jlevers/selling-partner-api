@@ -22,22 +22,31 @@ class PutListingsItem extends Request
     /**
      * @param  string  $sellerId  A selling partner identifier, such as a merchant account or vendor code.
      * @param  string  $sku  A selling partner provided identifier for an Amazon listing.
-     * @param  ListingsItemPutRequest  $listingsItemPutRequest  The request body schema for the putListingsItem operation.
+     * @param  ListingsItemPutRequest  $listingsItemPutRequest  The request body schema for the `putListingsItem` operation.
      * @param  array  $marketplaceIds  A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @param  ?string  $issueLocale  A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: "en_US", "fr_CA", "fr_FR". Localized messages default to "en_US" when a localization is not available in the specified locale.
+     * @param  ?array  $includedData  A comma-delimited list of data sets to include in the response. Default: `issues`.
+     * @param  ?string  $mode  The mode of operation for the request.
+     * @param  ?string  $issueLocale  A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: `en_US`, `fr_CA`, `fr_FR`. Localized messages default to `en_US` when a localization is not available in the specified locale.
      */
     public function __construct(
         protected string $sellerId,
         protected string $sku,
         public ListingsItemPutRequest $listingsItemPutRequest,
         protected array $marketplaceIds,
+        protected ?array $includedData = null,
+        protected ?string $mode = null,
         protected ?string $issueLocale = null,
     ) {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'issueLocale' => $this->issueLocale]);
+        return array_filter([
+            'marketplaceIds' => $this->marketplaceIds,
+            'includedData' => $this->includedData,
+            'mode' => $this->mode,
+            'issueLocale' => $this->issueLocale,
+        ]);
     }
 
     public function resolveEndpoint(): string

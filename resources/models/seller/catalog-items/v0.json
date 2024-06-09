@@ -5,21 +5,21 @@
         "description": "The Selling Partner API for Catalog Items helps you programmatically retrieve item details for items in the catalog.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v0"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/catalog\/v0\/items": {
+        "/catalog/v0/items": {
             "get": {
                 "tags": [
                     "CatalogItemsV0"
@@ -111,9 +111,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogItemsResponse"
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
                                 }
                             }
                         },
@@ -353,9 +353,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogItemsResponse"
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
                                 }
                             }
                         },
@@ -398,9 +398,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogItemsResponse"
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
                                 }
                             }
                         }
@@ -416,9 +416,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogItemsResponse"
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
                                 }
                             }
                         }
@@ -440,9 +440,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogItemsResponse"
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
                                 }
                             }
                         }
@@ -464,9 +464,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogItemsResponse"
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
                                 }
                             }
                         }
@@ -488,9 +488,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogItemsResponse"
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
                                 }
                             }
                         }
@@ -512,9 +512,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogItemsResponse"
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
                                 }
                             }
                         }
@@ -522,7 +522,7 @@
                 }
             }
         },
-        "\/catalog\/v0\/items\/{asin}": {
+        "/catalog/v0/items/{asin}": {
             "get": {
                 "tags": [
                     "CatalogItemsV0"
@@ -567,9 +567,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetCatalogItemResponse"
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
                                 }
                             }
                         },
@@ -661,7 +661,7 @@
                                                     "Size": "Size",
                                                     "SizePerPearl": "SizePerPearl",
                                                     "SmallImage": {
-                                                        "URL": "http:\/\/g-ecx.images-amazon.com\/images\/G\/01\/x-site\/icons\/no-img-sm._CB1535416344_.gif",
+                                                        "URL": "http://g-ecx.images-amazon.com/images/G/01/x-site/icons/no-img-sm._CB1535416344_.gif",
                                                         "Height": {
                                                             "Units": "pixels",
                                                             "value": 40
@@ -762,9 +762,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetCatalogItemResponse"
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
                                 }
                             }
                         },
@@ -807,9 +807,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetCatalogItemResponse"
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
                                 }
                             }
                         }
@@ -825,9 +825,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetCatalogItemResponse"
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
                                 }
                             }
                         }
@@ -849,9 +849,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetCatalogItemResponse"
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
                                 }
                             }
                         }
@@ -873,9 +873,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetCatalogItemResponse"
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
                                 }
                             }
                         }
@@ -897,9 +897,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetCatalogItemResponse"
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
                                 }
                             }
                         }
@@ -921,9 +921,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetCatalogItemResponse"
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
                                 }
                             }
                         }
@@ -931,7 +931,7 @@
                 }
             }
         },
-        "\/catalog\/v0\/categories": {
+        "/catalog/v0/categories": {
             "get": {
                 "tags": [
                     "CatalogItemsV0"
@@ -983,9 +983,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogCategoriesResponse"
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
                                 }
                             }
                         },
@@ -1037,9 +1037,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogCategoriesResponse"
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
                                 }
                             }
                         },
@@ -1085,9 +1085,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogCategoriesResponse"
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
                                 }
                             }
                         }
@@ -1103,9 +1103,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogCategoriesResponse"
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
                                 }
                             }
                         }
@@ -1127,9 +1127,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogCategoriesResponse"
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
                                 }
                             }
                         }
@@ -1151,9 +1151,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogCategoriesResponse"
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
                                 }
                             }
                         }
@@ -1175,9 +1175,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogCategoriesResponse"
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
                                 }
                             }
                         }
@@ -1199,9 +1199,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ListCatalogCategoriesResponse"
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
                                 }
                             }
                         }
@@ -1216,10 +1216,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/ListMatchingItemsResponse"
+                        "$ref": "#/components/schemas/ListMatchingItemsResponse"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 }
             },
@@ -1227,7 +1227,7 @@
                 "type": "object",
                 "properties": {
                     "Items": {
-                        "$ref": "#\/components\/schemas\/ItemList"
+                        "$ref": "#/components/schemas/ItemList"
                     }
                 }
             },
@@ -1235,17 +1235,17 @@
                 "type": "array",
                 "description": "A list of items.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Item"
+                    "$ref": "#/components/schemas/Item"
                 }
             },
             "GetCatalogItemResponse": {
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Item"
+                        "$ref": "#/components/schemas/Item"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 }
             },
@@ -1256,16 +1256,16 @@
                 "type": "object",
                 "properties": {
                     "Identifiers": {
-                        "$ref": "#\/components\/schemas\/IdentifierType"
+                        "$ref": "#/components/schemas/IdentifierType"
                     },
                     "AttributeSets": {
-                        "$ref": "#\/components\/schemas\/AttributeSetList"
+                        "$ref": "#/components/schemas/AttributeSetList"
                     },
                     "Relationships": {
-                        "$ref": "#\/components\/schemas\/RelationshipList"
+                        "$ref": "#/components/schemas/RelationshipList"
                     },
                     "SalesRankings": {
-                        "$ref": "#\/components\/schemas\/SalesRankList"
+                        "$ref": "#/components/schemas/SalesRankList"
                     }
                 },
                 "description": "An item in the Amazon catalog."
@@ -1274,10 +1274,10 @@
                 "type": "object",
                 "properties": {
                     "MarketplaceASIN": {
-                        "$ref": "#\/components\/schemas\/ASINIdentifier"
+                        "$ref": "#/components/schemas/ASINIdentifier"
                     },
                     "SKUIdentifier": {
-                        "$ref": "#\/components\/schemas\/SellerSKUIdentifier"
+                        "$ref": "#/components/schemas/SellerSKUIdentifier"
                     }
                 }
             },
@@ -1324,7 +1324,7 @@
                 "type": "array",
                 "description": "A list of attributes for the item.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/AttributeSetListType"
+                    "$ref": "#/components/schemas/AttributeSetListType"
                 }
             },
             "AttributeSetListType": {
@@ -1400,7 +1400,7 @@
                         "description": "The CPU manufacturer attribute of the item."
                     },
                     "CpuSpeed": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "CpuType": {
                         "type": "string",
@@ -1410,7 +1410,7 @@
                         "type": "array",
                         "description": "The creator attributes of the item.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/CreatorType"
+                            "$ref": "#/components/schemas/CreatorType"
                         }
                     },
                     "Department": {
@@ -1425,7 +1425,7 @@
                         }
                     },
                     "DisplaySize": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "Edition": {
                         "type": "string",
@@ -1473,7 +1473,7 @@
                         "description": "The golf club flex attribute of the item."
                     },
                     "GolfClubLoft": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "HandOrientation": {
                         "type": "string",
@@ -1484,7 +1484,7 @@
                         "description": "The hard disk interface attribute of the item."
                     },
                     "HardDiskSize": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "HardwarePlatform": {
                         "type": "string",
@@ -1495,7 +1495,7 @@
                         "description": "The hazardous material type attribute of the item."
                     },
                     "ItemDimensions": {
-                        "$ref": "#\/components\/schemas\/DimensionType"
+                        "$ref": "#/components/schemas/DimensionType"
                     },
                     "IsAdultProduct": {
                         "type": "boolean",
@@ -1529,7 +1529,7 @@
                         "type": "array",
                         "description": "The languages attribute of the item.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/LanguageType"
+                            "$ref": "#/components/schemas/LanguageType"
                         }
                     },
                     "LegalDisclaimer": {
@@ -1537,17 +1537,17 @@
                         "description": "The legal disclaimer attribute of the item."
                     },
                     "ListPrice": {
-                        "$ref": "#\/components\/schemas\/Price"
+                        "$ref": "#/components/schemas/Price"
                     },
                     "Manufacturer": {
                         "type": "string",
                         "description": "The manufacturer attribute of the item."
                     },
                     "ManufacturerMaximumAge": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "ManufacturerMinimumAge": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "ManufacturerPartsWarrantyDescription": {
                         "type": "string",
@@ -1561,7 +1561,7 @@
                         }
                     },
                     "MaximumResolution": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "MediaType": {
                         "type": "array",
@@ -1610,10 +1610,10 @@
                         }
                     },
                     "OpticalZoom": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "PackageDimensions": {
-                        "$ref": "#\/components\/schemas\/DimensionType"
+                        "$ref": "#/components/schemas/DimensionType"
                     },
                     "PackageQuantity": {
                         "type": "integer",
@@ -1671,7 +1671,7 @@
                         "description": "The ring size attribute of the item."
                     },
                     "RunningTime": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "ShaftMaterial": {
                         "type": "string",
@@ -1698,17 +1698,17 @@
                         "description": "The size per pearl attribute of the item."
                     },
                     "SmallImage": {
-                        "$ref": "#\/components\/schemas\/Image"
+                        "$ref": "#/components/schemas/Image"
                     },
                     "Studio": {
                         "type": "string",
                         "description": "The studio attribute of the item."
                     },
                     "SubscriptionLength": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "SystemMemorySize": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "SystemMemoryType": {
                         "type": "string",
@@ -1723,17 +1723,17 @@
                         "description": "The title attribute of the item."
                     },
                     "TotalDiamondWeight": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "TotalGemWeight": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "Warranty": {
                         "type": "string",
                         "description": "The warranty attribute of the item."
                     },
                     "WeeeTaxValue": {
-                        "$ref": "#\/components\/schemas\/Price"
+                        "$ref": "#/components/schemas/Price"
                     }
                 },
                 "description": "The attributes of the item."
@@ -1770,16 +1770,16 @@
                 "type": "object",
                 "properties": {
                     "Height": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "Length": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "Width": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "Weight": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     }
                 },
                 "description": "The dimension type attribute of an item."
@@ -1810,10 +1810,10 @@
                         "description": "The image URL attribute of the item."
                     },
                     "Height": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "Width": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     }
                 },
                 "description": "The image attribute of the item."
@@ -1836,14 +1836,14 @@
                 "type": "array",
                 "description": "A list of variation relationship information, if applicable for the item.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/RelationshipType"
+                    "$ref": "#/components/schemas/RelationshipType"
                 }
             },
             "RelationshipType": {
                 "type": "object",
                 "properties": {
                     "Identifiers": {
-                        "$ref": "#\/components\/schemas\/IdentifierType"
+                        "$ref": "#/components/schemas/IdentifierType"
                     },
                     "Color": {
                         "type": "string",
@@ -1923,20 +1923,20 @@
                         "description": "The size per pearl variation of an item."
                     },
                     "GolfClubLoft": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "TotalDiamondWeight": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "TotalGemWeight": {
-                        "$ref": "#\/components\/schemas\/DecimalWithUnits"
+                        "$ref": "#/components/schemas/DecimalWithUnits"
                     },
                     "PackageQuantity": {
                         "type": "integer",
                         "description": "The package quantity variation of an item."
                     },
                     "ItemDimensions": {
-                        "$ref": "#\/components\/schemas\/DimensionType"
+                        "$ref": "#/components/schemas/DimensionType"
                     }
                 },
                 "description": "Specific variations of the item."
@@ -1945,7 +1945,7 @@
                 "type": "array",
                 "description": "A list of sales rank information for the item by category.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/SalesRankType"
+                    "$ref": "#/components/schemas/SalesRankType"
                 }
             },
             "SalesRankType": {
@@ -1970,17 +1970,17 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/ListOfCategories"
+                        "$ref": "#/components/schemas/ListOfCategories"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 }
             },
             "ListOfCategories": {
                 "type": "array",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Categories"
+                    "$ref": "#/components/schemas/Categories"
                 }
             },
             "Categories": {
@@ -2005,7 +2005,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Error": {

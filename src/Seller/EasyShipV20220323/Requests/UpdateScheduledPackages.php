@@ -41,7 +41,7 @@ class UpdateScheduledPackages extends Request implements HasBody
         $status = $response->status();
         $responseCls = match ($status) {
             200 => Packages::class,
-            400, 401, 403, 404, 415, 429, 500, 503 => ErrorList::class,
+            400, 401, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

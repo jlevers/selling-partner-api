@@ -9,7 +9,7 @@ use SellingPartnerApi\Response;
 final class CreateInboundPlanResponse extends Response
 {
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
      * @param  string  $operationId  UUID for the given operation.
      */
     public function __construct(

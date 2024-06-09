@@ -18,7 +18,7 @@ final class FulfillmentPreview extends Dto
     ];
 
     /**
-     * @param  string  $shippingSpeedCategory  The shipping method used for the fulfillment order. When this value is ScheduledDelivery, choose Ship for the fulfillmentAction. Hold is not a valid fulfillmentAction value when the shippingSpeedCategory value is ScheduledDelivery.
+     * @param  string  $shippingSpeedCategory  The shipping method used for the fulfillment order. When this value is `ScheduledDelivery`, choose Ship for the `fulfillmentAction`. Hold is not a valid `fulfillmentAction` value when the `shippingSpeedCategory` value is `ScheduledDelivery`.
      * @param  bool  $isFulfillable  When true, this fulfillment order preview is fulfillable.
      * @param  bool  $isCodCapable  When true, this fulfillment order preview is for COD (Cash On Delivery).
      * @param  string  $marketplaceId  The marketplace the fulfillment order is placed against.

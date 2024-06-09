@@ -23,6 +23,9 @@ class CreateReportSchedule extends Request implements HasBody
 
     protected Method $method = Method::POST;
 
+    /**
+     * @param  CreateReportScheduleSpecification  $createReportScheduleSpecification  Information required to create the report schedule.
+     */
     public function __construct(
         public CreateReportScheduleSpecification $createReportScheduleSpecification,
     ) {

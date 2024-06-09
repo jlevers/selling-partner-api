@@ -5,21 +5,21 @@
         "description": "The Selling Partner API for Direct Fulfillment Orders provides programmatic access to a direct fulfillment vendor's order data.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "2021-12-28"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/vendor\/directFulfillment\/orders\/2021-12-28\/purchaseOrders": {
+        "/vendor/directFulfillment/orders/2021-12-28/purchaseOrders": {
             "get": {
                 "tags": [
                     "DirectFulfillmentOrdersV20211228"
@@ -99,7 +99,7 @@
                     {
                         "name": "createdAfter",
                         "in": "query",
-                        "description": "Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date\/time format.",
+                        "description": "Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -109,7 +109,7 @@
                     {
                         "name": "createdBefore",
                         "in": "query",
-                        "description": "Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date\/time format.",
+                        "description": "Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -185,9 +185,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/OrderList"
+                                    "$ref": "#/components/schemas/OrderList"
                                 }
                             }
                         }
@@ -209,9 +209,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -227,9 +227,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -251,9 +251,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -275,9 +275,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -299,9 +299,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -323,9 +323,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -347,9 +347,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -360,7 +360,7 @@
                 }
             }
         },
-        "\/vendor\/directFulfillment\/orders\/2021-12-28\/purchaseOrders\/{purchaseOrderNumber}": {
+        "/vendor/directFulfillment/orders/2021-12-28/purchaseOrders/{purchaseOrderNumber}": {
             "get": {
                 "tags": [
                     "DirectFulfillmentOrdersV20211228"
@@ -396,9 +396,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Order"
+                                    "$ref": "#/components/schemas/Order"
                                 },
                                 "example": {
                                     "purchaseOrderNumber": "2JK3S9VC",
@@ -527,9 +527,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -551,9 +551,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -569,9 +569,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -593,9 +593,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -617,9 +617,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -641,9 +641,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -665,9 +665,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -689,9 +689,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -702,7 +702,7 @@
                 }
             }
         },
-        "\/vendor\/directFulfillment\/orders\/2021-12-28\/acknowledgements": {
+        "/vendor/directFulfillment/orders/2021-12-28/acknowledgements": {
             "post": {
                 "tags": [
                     "DirectFulfillmentOrdersV20211228"
@@ -711,9 +711,9 @@
                 "operationId": "submitAcknowledgement",
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/SubmitAcknowledgementRequest"
+                                "$ref": "#/components/schemas/SubmitAcknowledgementRequest"
                             }
                         }
                     },
@@ -737,9 +737,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/TransactionId"
+                                    "$ref": "#/components/schemas/TransactionId"
                                 }
                             }
                         }
@@ -761,9 +761,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -779,9 +779,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -803,9 +803,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -827,9 +827,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -851,9 +851,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -875,9 +875,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -899,9 +899,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -923,9 +923,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -944,12 +944,12 @@
                 "type": "object",
                 "properties": {
                     "pagination": {
-                        "$ref": "#\/components\/schemas\/Pagination"
+                        "$ref": "#/components/schemas/Pagination"
                     },
                     "orders": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Order"
+                            "$ref": "#/components/schemas/Order"
                         }
                     }
                 }
@@ -974,7 +974,7 @@
                         "description": "The purchase order number for this order. Formatting Notes: alpha-numeric code."
                     },
                     "orderDetails": {
-                        "$ref": "#\/components\/schemas\/OrderDetails"
+                        "$ref": "#/components/schemas/OrderDetails"
                     }
                 }
             },
@@ -997,7 +997,7 @@
                     },
                     "orderDate": {
                         "type": "string",
-                        "description": "The date the order was placed. This  field is expected to be in ISO-8601 date\/time format, for example:2018-07-16T23:00:00Z\/ 2018-07-16T23:00:00-05:00 \/2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.",
+                        "description": "The date the order was placed. This  field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.",
                         "format": "date-time"
                     },
                     "orderStatus": {
@@ -1029,28 +1029,28 @@
                         ]
                     },
                     "shipmentDetails": {
-                        "$ref": "#\/components\/schemas\/ShipmentDetails"
+                        "$ref": "#/components/schemas/ShipmentDetails"
                     },
                     "taxTotal": {
-                        "$ref": "#\/components\/schemas\/TaxItemDetails"
+                        "$ref": "#/components/schemas/TaxItemDetails"
                     },
                     "sellingParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "shipFromParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "shipToParty": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "billToParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "items": {
                         "type": "array",
                         "description": "A list of items in this purchase order.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/OrderItem"
+                            "$ref": "#/components/schemas/OrderItem"
                         }
                     }
                 },
@@ -1067,10 +1067,10 @@
                         "description": "Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details."
                     },
                     "address": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "taxInfo": {
-                        "$ref": "#\/components\/schemas\/TaxRegistrationDetails"
+                        "$ref": "#/components/schemas/TaxRegistrationDetails"
                     }
                 }
             },
@@ -1103,7 +1103,7 @@
                         "description": "Tax registration number for the party. For example, VAT ID."
                     },
                     "taxRegistrationAddress": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "taxRegistrationMessages": {
                         "type": "string",
@@ -1123,35 +1123,35 @@
                 "properties": {
                     "name": {
                         "type": "string",
-                        "description": "The name of the person, business or institution at that address."
+                        "description": "The name of the person, business or institution at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "attention": {
                         "type": "string",
-                        "description": "The attention name of the person at that address."
+                        "description": "The attention name of the person at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "addressLine1": {
                         "type": "string",
-                        "description": "First line of the address."
+                        "description": "First line of the address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "addressLine2": {
                         "type": "string",
-                        "description": "Additional address information, if required."
+                        "description": "Additional address information, if required. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "addressLine3": {
                         "type": "string",
-                        "description": "Additional address information, if required."
+                        "description": "Additional address information, if required. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "city": {
                         "type": "string",
-                        "description": "The city where the person, business or institution is located."
+                        "description": "The city where the person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "county": {
                         "type": "string",
-                        "description": "The county where person, business or institution is located."
+                        "description": "The county where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "district": {
                         "type": "string",
-                        "description": "The district where person, business or institution is located."
+                        "description": "The district where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "stateOrRegion": {
                         "type": "string",
@@ -1167,7 +1167,7 @@
                     },
                     "phone": {
                         "type": "string",
-                        "description": "The phone number of the person, business or institution located at that address."
+                        "description": "The phone number of the person, business or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     }
                 },
                 "description": "Address of the party."
@@ -1197,25 +1197,25 @@
                         "description": "Title for the item."
                     },
                     "orderedQuantity": {
-                        "$ref": "#\/components\/schemas\/ItemQuantity"
+                        "$ref": "#/components/schemas/ItemQuantity"
                     },
                     "scheduledDeliveryShipment": {
-                        "$ref": "#\/components\/schemas\/ScheduledDeliveryShipment"
+                        "$ref": "#/components/schemas/ScheduledDeliveryShipment"
                     },
                     "giftDetails": {
-                        "$ref": "#\/components\/schemas\/GiftDetails"
+                        "$ref": "#/components/schemas/GiftDetails"
                     },
                     "netPrice": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "taxDetails": {
-                        "$ref": "#\/components\/schemas\/TaxItemDetails"
+                        "$ref": "#/components/schemas/TaxItemDetails"
                     },
                     "totalPrice": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "buyerCustomizedInfo": {
-                        "$ref": "#\/components\/schemas\/buyerCustomizedInfoDetail"
+                        "$ref": "#/components/schemas/buyerCustomizedInfoDetail"
                     }
                 }
             },
@@ -1227,7 +1227,7 @@
                         "description": "Three digit currency code in ISO 4217 format. String of length 3."
                     },
                     "amount": {
-                        "$ref": "#\/components\/schemas\/Decimal"
+                        "$ref": "#/components/schemas/Decimal"
                     }
                 },
                 "description": "An amount of money, including units in the form of currency."
@@ -1237,7 +1237,7 @@
                 "properties": {
                     "customizedUrl": {
                         "type": "string",
-                        "description": "A [Base 64](https:\/\/datatracker.ietf.org\/doc\/html\/rfc4648#section-4) encoded URL using the UTF-8 character set. The URL provides the location of the zip file that specifies the types of customizations or configurations allowed by the vendor, along with types and ranges for the attributes of their products."
+                        "description": "A [Base 64](https://datatracker.ietf.org/doc/html/rfc4648#section-4) encoded URL using the UTF-8 character set. The URL provides the location of the zip file that specifies the types of customizations or configurations allowed by the vendor, along with types and ranges for the attributes of their products."
                     }
                 }
             },
@@ -1249,10 +1249,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/TransactionId"
+                        "$ref": "#/components/schemas/TransactionId"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the submitAcknowledgement operation."
@@ -1275,7 +1275,7 @@
                     "errors": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Error"
+                            "$ref": "#/components/schemas/Error"
                         }
                     }
                 },
@@ -1288,7 +1288,7 @@
                         "type": "array",
                         "description": "A list of one or more purchase orders.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/OrderAcknowledgementItem"
+                            "$ref": "#/components/schemas/OrderAcknowledgementItem"
                         }
                     }
                 },
@@ -1316,23 +1316,23 @@
                     },
                     "acknowledgementDate": {
                         "type": "string",
-                        "description": "The date and time when the order is acknowledged, in ISO-8601 date\/time format. For example: 2018-07-16T23:00:00Z \/ 2018-07-16T23:00:00-05:00 \/ 2018-07-16T23:00:00-08:00.",
+                        "description": "The date and time when the order is acknowledged, in ISO-8601 date/time format. For example: 2018-07-16T23:00:00Z / 2018-07-16T23:00:00-05:00 / 2018-07-16T23:00:00-08:00.",
                         "format": "date-time"
                     },
                     "acknowledgementStatus": {
-                        "$ref": "#\/components\/schemas\/AcknowledgementStatus"
+                        "$ref": "#/components/schemas/AcknowledgementStatus"
                     },
                     "sellingParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "shipFromParty": {
-                        "$ref": "#\/components\/schemas\/PartyIdentification"
+                        "$ref": "#/components/schemas/PartyIdentification"
                     },
                     "itemAcknowledgements": {
                         "type": "array",
                         "description": "Item details including acknowledged quantity.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/OrderItemAcknowledgement"
+                            "$ref": "#/components/schemas/OrderItemAcknowledgement"
                         }
                     }
                 },
@@ -1358,7 +1358,7 @@
                         "description": "The vendor selected product identification of the item. Should be the same as was provided in the purchase order."
                     },
                     "acknowledgedQuantity": {
-                        "$ref": "#\/components\/schemas\/ItemQuantity"
+                        "$ref": "#/components/schemas/ItemQuantity"
                     }
                 }
             },
@@ -1389,7 +1389,7 @@
                 "type": "array",
                 "description": "A list of tax line items.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/TaxDetails"
+                    "$ref": "#/components/schemas/TaxDetails"
                 }
             },
             "TaxDetails": {
@@ -1399,13 +1399,13 @@
                 "type": "object",
                 "properties": {
                     "taxRate": {
-                        "$ref": "#\/components\/schemas\/Decimal"
+                        "$ref": "#/components/schemas/Decimal"
                     },
                     "taxAmount": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "taxableAmount": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "type": {
                         "type": "string",
@@ -1519,7 +1519,7 @@
                         "description": "Ship method to be used for shipping the order. Amazon defines ship method codes indicating the shipping carrier and shipment service level. To see the full list of ship methods in use, including both the code and the friendly name, search the 'Help' section on Vendor Central for 'ship methods'."
                     },
                     "shipmentDates": {
-                        "$ref": "#\/components\/schemas\/ShipmentDates"
+                        "$ref": "#/components/schemas/ShipmentDates"
                     },
                     "messageToCustomer": {
                         "type": "string",
@@ -1585,7 +1585,7 @@
                 "type": "object",
                 "properties": {
                     "taxLineItem": {
-                        "$ref": "#\/components\/schemas\/TaxLineItem"
+                        "$ref": "#/components/schemas/TaxLineItem"
                     }
                 },
                 "description": "Total tax details for the line item."

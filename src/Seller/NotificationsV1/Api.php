@@ -20,11 +20,12 @@ class Api extends BaseResource
     /**
      * @param  string  $notificationType  The type of notification.
      *
-     *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
+     *  For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
+     * @param  ?string  $payloadVersion  The version of the payload object to be used in the notification.
      */
-    public function getSubscription(string $notificationType): Response
+    public function getSubscription(string $notificationType, ?string $payloadVersion = null): Response
     {
-        $request = new GetSubscription($notificationType);
+        $request = new GetSubscription($notificationType, $payloadVersion);
 
         return $this->connector->send($request);
     }
@@ -32,8 +33,8 @@ class Api extends BaseResource
     /**
      * @param  string  $notificationType  The type of notification.
      *
-     *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
-     * @param  CreateSubscriptionRequest  $createSubscriptionRequest  The request schema for the createSubscription operation.
+     *  For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
+     * @param  CreateSubscriptionRequest  $createSubscriptionRequest  The request schema for the `createSubscription` operation.
      */
     public function createSubscription(
         string $notificationType,
@@ -48,7 +49,7 @@ class Api extends BaseResource
      * @param  string  $subscriptionId  The identifier for the subscription that you want to get.
      * @param  string  $notificationType  The type of notification.
      *
-     *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
+     *  For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
      */
     public function getSubscriptionById(string $subscriptionId, string $notificationType): Response
     {
@@ -61,7 +62,7 @@ class Api extends BaseResource
      * @param  string  $subscriptionId  The identifier for the subscription that you want to delete.
      * @param  string  $notificationType  The type of notification.
      *
-     *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
+     *  For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
      */
     public function deleteSubscriptionById(string $subscriptionId, string $notificationType): Response
     {
@@ -78,7 +79,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  CreateDestinationRequest  $createDestinationRequest  The request schema for the createDestination operation.
+     * @param  CreateDestinationRequest  $createDestinationRequest  The request schema for the `createDestination` operation.
      */
     public function createDestination(CreateDestinationRequest $createDestinationRequest): Response
     {

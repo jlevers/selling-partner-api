@@ -19,11 +19,11 @@ final class Pallet extends Dto
      * @param  ?int  $block  Number of cartons per layer on the pallet. Only applicable to container type Pallet.
      * @param  ?Dimensions  $dimensions  Physical dimensional measurements of a container.
      * @param  ?Weight  $weight  The weight of the shipment.
-     * @param  ?CartonReferenceDetails  $cartonReferenceDetails
-     * @param  PurchaseOrderItems[]  $items  A list of the items that are associated to the PO in this transport and their associated details.
+     * @param  ?CartonReferenceDetails  $cartonReferenceDetails  Carton reference details.
+     * @param  PurchaseOrderItems[]|null  $items  A list of the items that are associated to the PO in this transport and their associated details.
      */
     public function __construct(
-        public readonly ?array $palletIdentifiers = null,
+        public readonly array $palletIdentifiers,
         public readonly ?int $tier = null,
         public readonly ?int $block = null,
         public readonly ?Dimensions $dimensions = null,

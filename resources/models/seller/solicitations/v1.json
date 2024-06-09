@@ -2,29 +2,29 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Selling Partner API for Solicitations",
-        "description": "With the Solicitations API you can build applications that send non-critical solicitations to buyers. You can get a list of solicitation types that are available for an order that you specify, then call an operation that sends a solicitation to the buyer for that order. Buyers cannot respond to solicitations sent by this API, and these solicitations do not appear in the Messaging section of Seller Central or in the recipient's Message Center. The Solicitations API returns responses that are formed according to the <a href=https:\/\/tools.ietf.org\/html\/draft-kelly-json-hal-08>JSON Hypertext Application Language<\/a> (HAL) standard.",
+        "description": "With the Solicitations API you can build applications that send non-critical solicitations to buyers. You can get a list of solicitation types that are available for an order that you specify, then call an operation that sends a solicitation to the buyer for that order. Buyers cannot respond to solicitations sent by this API, and these solicitations do not appear in the Messaging section of Seller Central or in the recipient's Message Center. The Solicitations API returns responses that are formed according to the <a href=https://tools.ietf.org/html/draft-kelly-json-hal-08>JSON Hypertext Application Language</a> (HAL) standard.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v1"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/solicitations\/v1\/orders\/{amazonOrderId}": {
+        "/solicitations/v1/orders/{amazonOrderId}": {
             "get": {
                 "tags": [
                     "SolicitationsV1"
                 ],
-                "description": "Returns a list of solicitation types that are available for an order that you specify. A solicitation type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a solicitation. Currently only the productReviewAndSellerFeedbackSolicitation solicitation type is available.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a list of solicitation types that are available for an order that you specify. A solicitation type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a solicitation. Currently only the productReviewAndSellerFeedbackSolicitation solicitation type is available.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getSolicitationActionsForOrder",
                 "parameters": [
                     {
@@ -70,20 +70,20 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSolicitationActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetSolicitationActionsForOrderResponse"
                                 },
                                 "example": {
                                     "_links": {
                                         "actions": [
                                             {
-                                                "href": "\/solicitations\/v1\/orders\/903-1671087-0812628\/solicitations\/productReviewAndSellerFeedback?marketplaceIds=ATVPDKIKX0DER",
+                                                "href": "/solicitations/v1/orders/903-1671087-0812628/solicitations/productReviewAndSellerFeedback?marketplaceIds=ATVPDKIKX0DER",
                                                 "name": "productReviewAndSellerFeedback"
                                             }
                                         ],
                                         "self": {
-                                            "href": "\/solicitations\/v1\/orders\/903-1671087-0812628?marketplaceIds=ATVPDKIKX0DER"
+                                            "href": "/solicitations/v1/orders/903-1671087-0812628?marketplaceIds=ATVPDKIKX0DER"
                                         }
                                     },
                                     "_embedded": {
@@ -91,7 +91,7 @@
                                             {
                                                 "_links": {
                                                     "schema": {
-                                                        "href": "\/solicitations\/v1\/orders\/903-1671087-0812628\/solicitations\/productReviewAndSellerFeedback\/schema",
+                                                        "href": "/solicitations/v1/orders/903-1671087-0812628/solicitations/productReviewAndSellerFeedback/schema",
                                                         "name": "productReviewAndSellerFeedback"
                                                     }
                                                 }
@@ -120,12 +120,12 @@
                                         "_links": {
                                             "actions": [
                                                 {
-                                                    "href": "\/solicitations\/v1\/orders\/123-1234567-1234567\/solicitations\/productReviewAndSellerFeedback?marketplaceIds=ATVPDKIKX0DER",
+                                                    "href": "/solicitations/v1/orders/123-1234567-1234567/solicitations/productReviewAndSellerFeedback?marketplaceIds=ATVPDKIKX0DER",
                                                     "name": "productReviewAndSellerFeedback"
                                                 }
                                             ],
                                             "self": {
-                                                "href": "\/solicitations\/v1\/orders\/123-1234567-1234567?marketplaceIds=ATVPDKIKX0DER"
+                                                "href": "/solicitations/v1/orders/123-1234567-1234567?marketplaceIds=ATVPDKIKX0DER"
                                             }
                                         }
                                     }
@@ -150,9 +150,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSolicitationActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetSolicitationActionsForOrderResponse"
                                 }
                             }
                         }
@@ -168,9 +168,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSolicitationActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetSolicitationActionsForOrderResponse"
                                 }
                             }
                         }
@@ -192,9 +192,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSolicitationActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetSolicitationActionsForOrderResponse"
                                 }
                             }
                         }
@@ -216,9 +216,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSolicitationActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetSolicitationActionsForOrderResponse"
                                 }
                             }
                         }
@@ -240,9 +240,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSolicitationActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetSolicitationActionsForOrderResponse"
                                 }
                             }
                         }
@@ -264,9 +264,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSolicitationActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetSolicitationActionsForOrderResponse"
                                 }
                             }
                         }
@@ -288,9 +288,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSolicitationActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetSolicitationActionsForOrderResponse"
                                 }
                             }
                         }
@@ -312,9 +312,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSolicitationActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetSolicitationActionsForOrderResponse"
                                 }
                             }
                         }
@@ -322,12 +322,12 @@
                 }
             }
         },
-        "\/solicitations\/v1\/orders\/{amazonOrderId}\/solicitations\/productReviewAndSellerFeedback": {
+        "/solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback": {
             "post": {
                 "tags": [
                     "SolicitationsV1"
                 ],
-                "description": "Sends a solicitation to a buyer asking for seller feedback and a product review for the specified order. Send only one productReviewAndSellerFeedback or free form proactive message per order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a solicitation to a buyer asking for seller feedback and a product review for the specified order. Send only one productReviewAndSellerFeedback or free form proactive message per order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createProductReviewAndSellerFeedbackSolicitation",
                 "parameters": [
                     {
@@ -373,9 +373,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateProductReviewAndSellerFeedbackSolicitationResponse"
+                                    "$ref": "#/components/schemas/CreateProductReviewAndSellerFeedbackSolicitationResponse"
                                 }
                             }
                         },
@@ -411,9 +411,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateProductReviewAndSellerFeedbackSolicitationResponse"
+                                    "$ref": "#/components/schemas/CreateProductReviewAndSellerFeedbackSolicitationResponse"
                                 }
                             }
                         }
@@ -429,9 +429,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateProductReviewAndSellerFeedbackSolicitationResponse"
+                                    "$ref": "#/components/schemas/CreateProductReviewAndSellerFeedbackSolicitationResponse"
                                 }
                             }
                         }
@@ -453,9 +453,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateProductReviewAndSellerFeedbackSolicitationResponse"
+                                    "$ref": "#/components/schemas/CreateProductReviewAndSellerFeedbackSolicitationResponse"
                                 }
                             }
                         }
@@ -477,9 +477,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateProductReviewAndSellerFeedbackSolicitationResponse"
+                                    "$ref": "#/components/schemas/CreateProductReviewAndSellerFeedbackSolicitationResponse"
                                 }
                             }
                         }
@@ -501,9 +501,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateProductReviewAndSellerFeedbackSolicitationResponse"
+                                    "$ref": "#/components/schemas/CreateProductReviewAndSellerFeedbackSolicitationResponse"
                                 }
                             }
                         }
@@ -525,9 +525,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateProductReviewAndSellerFeedbackSolicitationResponse"
+                                    "$ref": "#/components/schemas/CreateProductReviewAndSellerFeedbackSolicitationResponse"
                                 }
                             }
                         }
@@ -549,9 +549,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateProductReviewAndSellerFeedbackSolicitationResponse"
+                                    "$ref": "#/components/schemas/CreateProductReviewAndSellerFeedbackSolicitationResponse"
                                 }
                             }
                         }
@@ -573,9 +573,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateProductReviewAndSellerFeedbackSolicitationResponse"
+                                    "$ref": "#/components/schemas/CreateProductReviewAndSellerFeedbackSolicitationResponse"
                                 }
                             }
                         }
@@ -620,7 +620,7 @@
                 "additionalProperties": {
                     "type": "object"
                 },
-                "description": "A JSON schema document describing the expected payload of the action. This object can be validated against <a href=http:\/\/json-schema.org\/draft-04\/schema>http:\/\/json-schema.org\/draft-04\/schema<\/a>."
+                "description": "A JSON schema document describing the expected payload of the action. This object can be validated against <a href=http://json-schema.org/draft-04/schema>http://json-schema.org/draft-04/schema</a>."
             },
             "GetSolicitationActionsForOrderResponse": {
                 "type": "object",
@@ -633,13 +633,13 @@
                         "type": "object",
                         "properties": {
                             "self": {
-                                "$ref": "#\/components\/schemas\/LinkObject"
+                                "$ref": "#/components/schemas/LinkObject"
                             },
                             "actions": {
                                 "type": "array",
                                 "description": "Eligible actions for the specified amazonOrderId.",
                                 "items": {
-                                    "$ref": "#\/components\/schemas\/LinkObject"
+                                    "$ref": "#/components/schemas/LinkObject"
                                 }
                             }
                         }
@@ -653,13 +653,13 @@
                             "actions": {
                                 "type": "array",
                                 "items": {
-                                    "$ref": "#\/components\/schemas\/GetSolicitationActionResponse"
+                                    "$ref": "#/components/schemas/GetSolicitationActionResponse"
                                 }
                             }
                         }
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getSolicitationActionsForOrder operation."
@@ -675,10 +675,10 @@
                         "type": "object",
                         "properties": {
                             "self": {
-                                "$ref": "#\/components\/schemas\/LinkObject"
+                                "$ref": "#/components/schemas/LinkObject"
                             },
                             "schema": {
-                                "$ref": "#\/components\/schemas\/LinkObject"
+                                "$ref": "#/components/schemas/LinkObject"
                             }
                         }
                     },
@@ -686,15 +686,15 @@
                         "type": "object",
                         "properties": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/GetSchemaResponse"
+                                "$ref": "#/components/schemas/GetSchemaResponse"
                             }
                         }
                     },
                     "payload": {
-                        "$ref": "#\/components\/schemas\/SolicitationsAction"
+                        "$ref": "#/components/schemas/SolicitationsAction"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Describes a solicitation action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input."
@@ -709,15 +709,15 @@
                         "type": "object",
                         "properties": {
                             "self": {
-                                "$ref": "#\/components\/schemas\/LinkObject"
+                                "$ref": "#/components/schemas/LinkObject"
                             }
                         }
                     },
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Schema"
+                        "$ref": "#/components/schemas/Schema"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 }
             },
@@ -725,7 +725,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the createProductReviewAndSellerFeedbackSolicitation operation."
@@ -734,7 +734,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Error": {

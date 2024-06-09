@@ -12,8 +12,8 @@ final class InboundOperationStatus extends Response
     protected static array $complexArrayTypes = ['operationProblems' => [OperationProblem::class]];
 
     /**
-     * @param  string  $operation  The name of the operation that was executed in the asynchronous API call.
-     * @param  string  $operationId  The operation Id returned by the asynchronous API call.
+     * @param  string  $operation  The name of the operation in the asynchronous API call.
+     * @param  string  $operationId  The operation ID returned by the asynchronous API call.
      * @param  OperationProblem[]  $operationProblems  The problems in the processing of the asynchronous operation.
      * @param  string  $operationStatus  The status of an operation.
      */

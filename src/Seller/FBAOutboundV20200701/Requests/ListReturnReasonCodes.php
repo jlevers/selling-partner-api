@@ -19,15 +19,15 @@ class ListReturnReasonCodes extends Request
 
     /**
      * @param  string  $sellerSku  The seller SKU for which return reason codes are required.
-     * @param  string  $language  The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
      * @param  ?string  $marketplaceId  The marketplace for which the seller wants return reason codes.
      * @param  ?string  $sellerFulfillmentOrderId  The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
+     * @param  ?string  $language  The language that the `TranslatedDescription` property of the `ReasonCodeDetails` response object should be translated into.
      */
     public function __construct(
         protected string $sellerSku,
-        protected string $language,
         protected ?string $marketplaceId = null,
         protected ?string $sellerFulfillmentOrderId = null,
+        protected ?string $language = null,
     ) {
     }
 
@@ -35,9 +35,9 @@ class ListReturnReasonCodes extends Request
     {
         return array_filter([
             'sellerSku' => $this->sellerSku,
-            'language' => $this->language,
             'marketplaceId' => $this->marketplaceId,
             'sellerFulfillmentOrderId' => $this->sellerFulfillmentOrderId,
+            'language' => $this->language,
         ]);
     }
 

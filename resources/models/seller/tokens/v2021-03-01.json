@@ -5,33 +5,33 @@
         "description": "The Selling Partner API for Tokens provides a secure way to access a customer's PII (Personally Identifiable Information). You can call the Tokens API to get a Restricted Data Token (RDT) for one or more restricted resources that you specify. The RDT authorizes subsequent calls to restricted operations that correspond to the restricted resources that you specified.\n\nFor more information, see the [Tokens API Use Case Guide](doc:tokens-api-use-case-guide).",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "2021-03-01"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/tokens\/2021-03-01\/restrictedDataToken": {
+        "/tokens/2021-03-01/restrictedDataToken": {
             "post": {
                 "tags": [
                     "TokensV20210301"
                 ],
-                "description": "Returns a Restricted Data Token (RDT) for one or more restricted resources that you specify. A restricted resource is the HTTP method and path from a restricted operation that returns Personally Identifiable Information (PII), plus a dataElements value that indicates the type of PII requested. See the Tokens API Use Case Guide for a list of restricted operations. Use the RDT returned here as the access token in subsequent calls to the corresponding restricted operations.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a Restricted Data Token (RDT) for one or more restricted resources that you specify. A restricted resource is the HTTP method and path from a restricted operation that returns Personally Identifiable Information (PII), plus a dataElements value that indicates the type of PII requested. See the Tokens API Use Case Guide for a list of restricted operations. Use the RDT returned here as the access token in subsequent calls to the corresponding restricted operations.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createRestrictedDataToken",
                 "requestBody": {
                     "description": "The restricted data token request details.",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateRestrictedDataTokenRequest"
+                                "$ref": "#/components/schemas/CreateRestrictedDataTokenRequest"
                             }
                         }
                     },
@@ -55,9 +55,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateRestrictedDataTokenResponse"
+                                    "$ref": "#/components/schemas/CreateRestrictedDataTokenResponse"
                                 }
                             }
                         },
@@ -72,7 +72,7 @@
                                                     "restrictedResources": [
                                                         {
                                                             "method": "GET",
-                                                            "path": "\/orders\/v0\/orders\/{orderId}\/address"
+                                                            "path": "/orders/v0/orders/{orderId}/address"
                                                         }
                                                     ]
                                                 }
@@ -92,7 +92,7 @@
                                                     "restrictedResources": [
                                                         {
                                                             "method": "GET",
-                                                            "path": "\/orders\/v0\/orders\/943-12-123434\/address"
+                                                            "path": "/orders/v0/orders/943-12-123434/address"
                                                         }
                                                     ]
                                                 }
@@ -124,9 +124,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -141,7 +141,7 @@
                                                     "restrictedResources": [
                                                         {
                                                             "method": "",
-                                                            "path": "\/orders\/v1\/orders\/902-1845936-5435065\/address"
+                                                            "path": "/orders/v1/orders/902-1845936-5435065/address"
                                                         }
                                                     ]
                                                 }
@@ -172,9 +172,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -190,9 +190,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -214,9 +214,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -238,9 +238,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -262,9 +262,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -286,9 +286,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -310,9 +310,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -338,7 +338,7 @@
                         "type": "array",
                         "description": "A list of restricted resources.\nMaximum: 50",
                         "items": {
-                            "$ref": "#\/components\/schemas\/RestrictedResource"
+                            "$ref": "#/components/schemas/RestrictedResource"
                         }
                     }
                 },
@@ -381,7 +381,7 @@
                     },
                     "path": {
                         "type": "string",
-                        "description": "The path in the restricted resource. Here are some path examples:\n- ```\/orders\/v0\/orders```. For getting an RDT for the getOrders operation of the Orders API. For bulk orders.\n- ```\/orders\/v0\/orders\/123-1234567-1234567```. For getting an RDT for the getOrder operation of the Orders API. For a specific order.\n- ```\/orders\/v0\/orders\/123-1234567-1234567\/orderItems```. For getting an RDT for the getOrderItems operation of the Orders API. For the order items in a specific order.\n- ```\/mfn\/v0\/shipments\/FBA1234ABC5D```. For getting an RDT for the getShipment operation of the Shipping API. For a specific shipment.\n- ```\/mfn\/v0\/shipments\/{shipmentId}```. For getting an RDT for the getShipment operation of the Shipping API. For any of a selling partner's shipments that you specify when you call the getShipment operation."
+                        "description": "The path in the restricted resource. Here are some path examples:\n- ```/orders/v0/orders```. For getting an RDT for the getOrders operation of the Orders API. For bulk orders.\n- ```/orders/v0/orders/123-1234567-1234567```. For getting an RDT for the getOrder operation of the Orders API. For a specific order.\n- ```/orders/v0/orders/123-1234567-1234567/orderItems```. For getting an RDT for the getOrderItems operation of the Orders API. For the order items in a specific order.\n- ```/mfn/v0/shipments/FBA1234ABC5D```. For getting an RDT for the getShipment operation of the Shipping API. For a specific shipment.\n- ```/mfn/v0/shipments/{shipmentId}```. For getting an RDT for the getShipment operation of the Shipping API. For any of a selling partner's shipments that you specify when you call the getShipment operation."
                     },
                     "dataElements": {
                         "type": "array",
@@ -435,7 +435,7 @@
                     "errors": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Error"
+                            "$ref": "#/components/schemas/Error"
                         }
                     }
                 },

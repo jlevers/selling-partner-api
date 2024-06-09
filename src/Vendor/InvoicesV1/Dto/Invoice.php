@@ -26,11 +26,11 @@ final class Invoice extends Dto
      * @param  ?PartyIdentification  $shipFromParty
      * @param  ?PartyIdentification  $billToParty
      * @param  ?PaymentTerms  $paymentTerms  Terms of the payment for the invoice. The basis of the payment terms is the invoice date.
-     * @param  TaxDetails[]  $taxDetails  Total tax amount details for all line items.
-     * @param  AdditionalDetails[]  $additionalDetails  Additional details provided by the selling party, for tax related or other purposes.
-     * @param  ChargeDetails[]  $chargeDetails  Total charge amount details for all line items.
-     * @param  AllowanceDetails[]  $allowanceDetails  Total allowance amount details for all line items.
-     * @param  InvoiceItem[]  $items  The list of invoice items.
+     * @param  TaxDetails[]|null  $taxDetails  Total tax amount details for all line items.
+     * @param  AdditionalDetails[]|null  $additionalDetails  Additional details provided by the selling party, for tax related or other purposes.
+     * @param  ChargeDetails[]|null  $chargeDetails  Total charge amount details for all line items.
+     * @param  AllowanceDetails[]|null  $allowanceDetails  Total allowance amount details for all line items.
+     * @param  InvoiceItem[]|null  $items  The list of invoice items.
      */
     public function __construct(
         public readonly string $invoiceType,

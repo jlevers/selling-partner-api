@@ -20,8 +20,8 @@ class UpdateShipmentTrackingDetails extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      * @param  UpdateShipmentTrackingDetailsRequest  $updateShipmentTrackingDetailsRequest  The `updateShipmentTrackingDetails` request.
      */
     public function __construct(
@@ -41,7 +41,7 @@ class UpdateShipmentTrackingDetails extends Request
         $status = $response->status();
         $responseCls = match ($status) {
             202 => UpdateShipmentTrackingDetailsResponse::class,
-            400, 500, 403, 404, 413, 415, 429, 503 => ErrorList::class,
+            400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

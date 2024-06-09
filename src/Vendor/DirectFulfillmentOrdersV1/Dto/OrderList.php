@@ -12,7 +12,7 @@ final class OrderList extends Dto
 
     /**
      * @param  ?Pagination  $pagination
-     * @param  Order[]  $orders
+     * @param  Order[]|null  $orders
      */
     public function __construct(
         public readonly ?Pagination $pagination = null,

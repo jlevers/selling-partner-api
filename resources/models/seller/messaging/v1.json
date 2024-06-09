@@ -2,29 +2,29 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Selling Partner API for Messaging",
-        "description": "With the Messaging API you can build applications that send messages to buyers. You can get a list of message types that are available for an order that you specify, then call an operation that sends a message to the buyer for that order. The Messaging API returns responses that are formed according to the <a href=https:\/\/tools.ietf.org\/html\/draft-kelly-json-hal-08>JSON Hypertext Application Language<\/a> (HAL) standard.",
+        "description": "With the Messaging API you can build applications that send messages to buyers. You can get a list of message types that are available for an order that you specify, then call an operation that sends a message to the buyer for that order. The Messaging API returns responses that are formed according to the <a href=https://tools.ietf.org/html/draft-kelly-json-hal-08>JSON Hypertext Application Language</a> (HAL) standard.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v1"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/messaging\/v1\/orders\/{amazonOrderId}": {
+        "/messaging/v1/orders/{amazonOrderId}": {
             "get": {
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Returns a list of message types that are available for an order that you specify. A message type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a message.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a list of message types that are available for an order that you specify. A message type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a message.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getMessagingActionsForOrder",
                 "parameters": [
                     {
@@ -70,20 +70,20 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMessagingActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetMessagingActionsForOrderResponse"
                                 },
                                 "example": {
                                     "_links": {
                                         "actions": [
                                             {
-                                                "href": "\/messaging\/v1\/orders\/903-1671087-0812628\/messages\/negativeFeedbackRemoval?marketplaceIds=ATVPDKIKX0DER",
+                                                "href": "/messaging/v1/orders/903-1671087-0812628/messages/negativeFeedbackRemoval?marketplaceIds=ATVPDKIKX0DER",
                                                 "name": "negativeFeedbackRemoval"
                                             }
                                         ],
                                         "self": {
-                                            "href": "\/messaging\/v1\/orders\/903-1671087-0812628?marketplaceIds=ATVPDKIKX0DER"
+                                            "href": "/messaging/v1/orders/903-1671087-0812628?marketplaceIds=ATVPDKIKX0DER"
                                         }
                                     },
                                     "_embedded": {
@@ -91,11 +91,11 @@
                                             {
                                                 "_links": {
                                                     "schema": {
-                                                        "href": "\/messaging\/v1\/orders\/903-1671087-0812628\/messages\/negativeFeedbackRemoval\/schema",
+                                                        "href": "/messaging/v1/orders/903-1671087-0812628/messages/negativeFeedbackRemoval/schema",
                                                         "name": "negativeFeedbackRemoval"
                                                     },
                                                     "self": {
-                                                        "href": "\/messaging\/v1\/orders\/903-1671087-0812628\/messages\/negativeFeedbackRemoval?marketplaceIds=ATVPDKIKX0DER",
+                                                        "href": "/messaging/v1/orders/903-1671087-0812628/messages/negativeFeedbackRemoval?marketplaceIds=ATVPDKIKX0DER",
                                                         "name": "negativeFeedbackRemoval"
                                                     }
                                                 }
@@ -119,52 +119,52 @@
                                         "_links": {
                                             "actions": [
                                                 {
-                                                    "href": "\/messaging\/v1\/orders\/123-1234567-1234567\/messages\/confirmCustomizationDetails?marketplaceIds=ATVPDKIKX0DER",
+                                                    "href": "/messaging/v1/orders/123-1234567-1234567/messages/confirmCustomizationDetails?marketplaceIds=ATVPDKIKX0DER",
                                                     "name": "confirmCustomizationDetails"
                                                 },
                                                 {
-                                                    "href": "\/messaging\/v1\/orders\/123-1234567-1234567\/messages\/confirmDeliveryDetails?marketplaceIds=ATVPDKIKX0DER",
+                                                    "href": "/messaging/v1/orders/123-1234567-1234567/messages/confirmDeliveryDetails?marketplaceIds=ATVPDKIKX0DER",
                                                     "name": "confirmDeliveryDetails"
                                                 },
                                                 {
-                                                    "href": "\/messaging\/v1\/orders\/123-1234567-1234567\/messages\/legalDisclosure?marketplaceIds=ATVPDKIKX0DER",
+                                                    "href": "/messaging/v1/orders/123-1234567-1234567/messages/legalDisclosure?marketplaceIds=ATVPDKIKX0DER",
                                                     "name": "legalDisclosure"
                                                 },
                                                 {
-                                                    "href": "\/messaging\/v1\/orders\/123-1234567-1234567\/messages\/negativeFeedbackRemoval?marketplaceIds=ATVPDKIKX0DER",
+                                                    "href": "/messaging/v1/orders/123-1234567-1234567/messages/negativeFeedbackRemoval?marketplaceIds=ATVPDKIKX0DER",
                                                     "name": "negativeFeedbackRemoval"
                                                 },
                                                 {
-                                                    "href": "\/messaging\/v1\/orders\/123-1234567-1234567\/messages\/confirmOrderDetails?marketplaceIds=ATVPDKIKX0DER",
+                                                    "href": "/messaging/v1/orders/123-1234567-1234567/messages/confirmOrderDetails?marketplaceIds=ATVPDKIKX0DER",
                                                     "name": "confirmOrderDetails"
                                                 },
                                                 {
-                                                    "href": "\/messaging\/v1\/orders\/123-1234567-1234567\/messages\/confirmServiceDetails?marketplaceIds=ATVPDKIKX0DER",
+                                                    "href": "/messaging/v1/orders/123-1234567-1234567/messages/confirmServiceDetails?marketplaceIds=ATVPDKIKX0DER",
                                                     "name": "confirmServiceDetails"
                                                 },
                                                 {
-                                                    "href": "\/messaging\/v1\/orders\/123-1234567-1234567\/messages\/amazonMotors?marketplaceIds=ATVPDKIKX0DER",
+                                                    "href": "/messaging/v1/orders/123-1234567-1234567/messages/amazonMotors?marketplaceIds=ATVPDKIKX0DER",
                                                     "name": "amazonMotors"
                                                 },
                                                 {
-                                                    "href": "\/messaging\/v1\/orders\/123-1234567-1234567\/messages\/digitalAccessKey?marketplaceIds=ATVPDKIKX0DER",
+                                                    "href": "/messaging/v1/orders/123-1234567-1234567/messages/digitalAccessKey?marketplaceIds=ATVPDKIKX0DER",
                                                     "name": "digitalAccessKey"
                                                 },
                                                 {
-                                                    "href": "\/messaging\/v1\/orders\/123-1234567-1234567\/messages\/unexpectedProblem?marketplaceIds=ATVPDKIKX0DER",
+                                                    "href": "/messaging/v1/orders/123-1234567-1234567/messages/unexpectedProblem?marketplaceIds=ATVPDKIKX0DER",
                                                     "name": "unexpectedProblem"
                                                 },
                                                 {
-                                                    "href": "\/messaging\/v1\/orders\/123-1234567-1234567\/messages\/warranty?marketplaceIds=ATVPDKIKX0DER",
+                                                    "href": "/messaging/v1/orders/123-1234567-1234567/messages/warranty?marketplaceIds=ATVPDKIKX0DER",
                                                     "name": "warranty"
                                                 },
                                                 {
-                                                    "href": "\/messaging\/v1\/orders\/123-1234567-1234567\/attributes?marketplaceIds=ATVPDKIKX0DER",
+                                                    "href": "/messaging/v1/orders/123-1234567-1234567/attributes?marketplaceIds=ATVPDKIKX0DER",
                                                     "name": "attributes"
                                                 }
                                             ],
                                             "self": {
-                                                "href": "\/messaging\/v1\/orders\/123-1234567-1234567?marketplaceIds=ATVPDKIKX0DER"
+                                                "href": "/messaging/v1/orders/123-1234567-1234567?marketplaceIds=ATVPDKIKX0DER"
                                             }
                                         }
                                     }
@@ -189,9 +189,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMessagingActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetMessagingActionsForOrderResponse"
                                 }
                             }
                         },
@@ -229,9 +229,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMessagingActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetMessagingActionsForOrderResponse"
                                 }
                             }
                         }
@@ -253,9 +253,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMessagingActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetMessagingActionsForOrderResponse"
                                 }
                             }
                         }
@@ -277,9 +277,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMessagingActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetMessagingActionsForOrderResponse"
                                 }
                             }
                         }
@@ -301,9 +301,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMessagingActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetMessagingActionsForOrderResponse"
                                 }
                             }
                         }
@@ -325,9 +325,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMessagingActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetMessagingActionsForOrderResponse"
                                 }
                             }
                         }
@@ -349,9 +349,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMessagingActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetMessagingActionsForOrderResponse"
                                 }
                             }
                         }
@@ -373,9 +373,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetMessagingActionsForOrderResponse"
+                                    "$ref": "#/components/schemas/GetMessagingActionsForOrderResponse"
                                 }
                             }
                         }
@@ -383,12 +383,12 @@
                 }
             }
         },
-        "\/messaging\/v1\/orders\/{amazonOrderId}\/messages\/confirmCustomizationDetails": {
+        "/messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails": {
             "post": {
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message asking a buyer to provide or verify customization details such as name spelling, images, initials, etc.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a message asking a buyer to provide or verify customization details such as name spelling, images, initials, etc.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "confirmCustomizationDetails",
                 "parameters": [
                     {
@@ -418,9 +418,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateConfirmCustomizationDetailsRequest"
+                                "$ref": "#/components/schemas/CreateConfirmCustomizationDetailsRequest"
                             }
                         }
                     },
@@ -444,9 +444,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmCustomizationDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmCustomizationDetailsResponse"
                                 }
                             }
                         },
@@ -497,9 +497,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmCustomizationDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmCustomizationDetailsResponse"
                                 }
                             }
                         },
@@ -537,9 +537,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmCustomizationDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmCustomizationDetailsResponse"
                                 }
                             }
                         }
@@ -561,9 +561,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmCustomizationDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmCustomizationDetailsResponse"
                                 }
                             }
                         }
@@ -585,9 +585,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmCustomizationDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmCustomizationDetailsResponse"
                                 }
                             }
                         }
@@ -609,9 +609,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmCustomizationDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmCustomizationDetailsResponse"
                                 }
                             }
                         }
@@ -633,9 +633,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmCustomizationDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmCustomizationDetailsResponse"
                                 }
                             }
                         }
@@ -657,9 +657,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmCustomizationDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmCustomizationDetailsResponse"
                                 }
                             }
                         }
@@ -681,9 +681,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmCustomizationDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmCustomizationDetailsResponse"
                                 }
                             }
                         }
@@ -692,12 +692,12 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/messaging\/v1\/orders\/{amazonOrderId}\/messages\/confirmDeliveryDetails": {
+        "/messaging/v1/orders/{amazonOrderId}/messages/confirmDeliveryDetails": {
             "post": {
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message to a buyer to arrange a delivery or to confirm contact information for making a delivery.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a message to a buyer to arrange a delivery or to confirm contact information for making a delivery.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createConfirmDeliveryDetails",
                 "parameters": [
                     {
@@ -727,9 +727,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateConfirmDeliveryDetailsRequest"
+                                "$ref": "#/components/schemas/CreateConfirmDeliveryDetailsRequest"
                             }
                         }
                     },
@@ -753,9 +753,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmDeliveryDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmDeliveryDetailsResponse"
                                 }
                             }
                         },
@@ -796,9 +796,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmDeliveryDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmDeliveryDetailsResponse"
                                 }
                             }
                         },
@@ -836,9 +836,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmDeliveryDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmDeliveryDetailsResponse"
                                 }
                             }
                         }
@@ -860,9 +860,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmDeliveryDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmDeliveryDetailsResponse"
                                 }
                             }
                         }
@@ -884,9 +884,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmDeliveryDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmDeliveryDetailsResponse"
                                 }
                             }
                         }
@@ -908,9 +908,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmDeliveryDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmDeliveryDetailsResponse"
                                 }
                             }
                         }
@@ -932,9 +932,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmDeliveryDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmDeliveryDetailsResponse"
                                 }
                             }
                         }
@@ -956,9 +956,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmDeliveryDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmDeliveryDetailsResponse"
                                 }
                             }
                         }
@@ -980,9 +980,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmDeliveryDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmDeliveryDetailsResponse"
                                 }
                             }
                         }
@@ -991,12 +991,12 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/messaging\/v1\/orders\/{amazonOrderId}\/messages\/legalDisclosure": {
+        "/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure": {
             "post": {
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a critical message that contains documents that a seller is legally obligated to provide to the buyer. This message should only be used to deliver documents that are required by law.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a critical message that contains documents that a seller is legally obligated to provide to the buyer. This message should only be used to deliver documents that are required by law.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createLegalDisclosure",
                 "parameters": [
                     {
@@ -1026,9 +1026,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateLegalDisclosureRequest"
+                                "$ref": "#/components/schemas/CreateLegalDisclosureRequest"
                             }
                         }
                     },
@@ -1052,9 +1052,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateLegalDisclosureResponse"
+                                    "$ref": "#/components/schemas/CreateLegalDisclosureResponse"
                                 }
                             }
                         },
@@ -1104,9 +1104,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateLegalDisclosureResponse"
+                                    "$ref": "#/components/schemas/CreateLegalDisclosureResponse"
                                 }
                             }
                         },
@@ -1144,9 +1144,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateLegalDisclosureResponse"
+                                    "$ref": "#/components/schemas/CreateLegalDisclosureResponse"
                                 }
                             }
                         }
@@ -1168,9 +1168,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateLegalDisclosureResponse"
+                                    "$ref": "#/components/schemas/CreateLegalDisclosureResponse"
                                 }
                             }
                         }
@@ -1192,9 +1192,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateLegalDisclosureResponse"
+                                    "$ref": "#/components/schemas/CreateLegalDisclosureResponse"
                                 }
                             }
                         }
@@ -1216,9 +1216,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateLegalDisclosureResponse"
+                                    "$ref": "#/components/schemas/CreateLegalDisclosureResponse"
                                 }
                             }
                         }
@@ -1240,9 +1240,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateLegalDisclosureResponse"
+                                    "$ref": "#/components/schemas/CreateLegalDisclosureResponse"
                                 }
                             }
                         }
@@ -1264,9 +1264,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateLegalDisclosureResponse"
+                                    "$ref": "#/components/schemas/CreateLegalDisclosureResponse"
                                 }
                             }
                         }
@@ -1288,9 +1288,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateLegalDisclosureResponse"
+                                    "$ref": "#/components/schemas/CreateLegalDisclosureResponse"
                                 }
                             }
                         }
@@ -1299,12 +1299,12 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/messaging\/v1\/orders\/{amazonOrderId}\/messages\/negativeFeedbackRemoval": {
+        "/messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval": {
             "post": {
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer's problem.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer's problem.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createNegativeFeedbackRemoval",
                 "parameters": [
                     {
@@ -1350,9 +1350,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateNegativeFeedbackRemovalResponse"
+                                    "$ref": "#/components/schemas/CreateNegativeFeedbackRemovalResponse"
                                 }
                             }
                         },
@@ -1388,9 +1388,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateNegativeFeedbackRemovalResponse"
+                                    "$ref": "#/components/schemas/CreateNegativeFeedbackRemovalResponse"
                                 }
                             }
                         },
@@ -1428,9 +1428,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateNegativeFeedbackRemovalResponse"
+                                    "$ref": "#/components/schemas/CreateNegativeFeedbackRemovalResponse"
                                 }
                             }
                         }
@@ -1452,9 +1452,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateNegativeFeedbackRemovalResponse"
+                                    "$ref": "#/components/schemas/CreateNegativeFeedbackRemovalResponse"
                                 }
                             }
                         }
@@ -1476,9 +1476,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateNegativeFeedbackRemovalResponse"
+                                    "$ref": "#/components/schemas/CreateNegativeFeedbackRemovalResponse"
                                 }
                             }
                         }
@@ -1500,9 +1500,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateNegativeFeedbackRemovalResponse"
+                                    "$ref": "#/components/schemas/CreateNegativeFeedbackRemovalResponse"
                                 }
                             }
                         }
@@ -1524,9 +1524,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateNegativeFeedbackRemovalResponse"
+                                    "$ref": "#/components/schemas/CreateNegativeFeedbackRemovalResponse"
                                 }
                             }
                         }
@@ -1548,9 +1548,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateNegativeFeedbackRemovalResponse"
+                                    "$ref": "#/components/schemas/CreateNegativeFeedbackRemovalResponse"
                                 }
                             }
                         }
@@ -1572,9 +1572,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateNegativeFeedbackRemovalResponse"
+                                    "$ref": "#/components/schemas/CreateNegativeFeedbackRemovalResponse"
                                 }
                             }
                         }
@@ -1582,12 +1582,12 @@
                 }
             }
         },
-        "\/messaging\/v1\/orders\/{amazonOrderId}\/messages\/confirmOrderDetails": {
+        "/messaging/v1/orders/{amazonOrderId}/messages/confirmOrderDetails": {
             "post": {
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message to ask a buyer an order-related question prior to shipping their order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a message to ask a buyer an order-related question prior to shipping their order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createConfirmOrderDetails",
                 "parameters": [
                     {
@@ -1617,9 +1617,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateConfirmOrderDetailsRequest"
+                                "$ref": "#/components/schemas/CreateConfirmOrderDetailsRequest"
                             }
                         }
                     },
@@ -1643,9 +1643,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmOrderDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmOrderDetailsResponse"
                                 }
                             }
                         },
@@ -1686,9 +1686,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmOrderDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmOrderDetailsResponse"
                                 }
                             }
                         },
@@ -1726,9 +1726,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmOrderDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmOrderDetailsResponse"
                                 }
                             }
                         }
@@ -1750,9 +1750,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmOrderDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmOrderDetailsResponse"
                                 }
                             }
                         }
@@ -1774,9 +1774,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmOrderDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmOrderDetailsResponse"
                                 }
                             }
                         }
@@ -1798,9 +1798,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmOrderDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmOrderDetailsResponse"
                                 }
                             }
                         }
@@ -1822,9 +1822,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmOrderDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmOrderDetailsResponse"
                                 }
                             }
                         }
@@ -1846,9 +1846,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmOrderDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmOrderDetailsResponse"
                                 }
                             }
                         }
@@ -1870,9 +1870,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmOrderDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmOrderDetailsResponse"
                                 }
                             }
                         }
@@ -1881,12 +1881,12 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/messaging\/v1\/orders\/{amazonOrderId}\/messages\/confirmServiceDetails": {
+        "/messaging/v1/orders/{amazonOrderId}/messages/confirmServiceDetails": {
             "post": {
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message to contact a Home Service customer to arrange a service call or to gather information prior to a service call.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a message to contact a Home Service customer to arrange a service call or to gather information prior to a service call.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createConfirmServiceDetails",
                 "parameters": [
                     {
@@ -1916,9 +1916,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateConfirmServiceDetailsRequest"
+                                "$ref": "#/components/schemas/CreateConfirmServiceDetailsRequest"
                             }
                         }
                     },
@@ -1942,9 +1942,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmServiceDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmServiceDetailsResponse"
                                 }
                             }
                         },
@@ -1985,9 +1985,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmServiceDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmServiceDetailsResponse"
                                 }
                             }
                         },
@@ -2025,9 +2025,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmServiceDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmServiceDetailsResponse"
                                 }
                             }
                         }
@@ -2049,9 +2049,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmServiceDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmServiceDetailsResponse"
                                 }
                             }
                         }
@@ -2073,9 +2073,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmServiceDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmServiceDetailsResponse"
                                 }
                             }
                         }
@@ -2097,9 +2097,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmServiceDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmServiceDetailsResponse"
                                 }
                             }
                         }
@@ -2121,9 +2121,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmServiceDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmServiceDetailsResponse"
                                 }
                             }
                         }
@@ -2145,9 +2145,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmServiceDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmServiceDetailsResponse"
                                 }
                             }
                         }
@@ -2169,9 +2169,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateConfirmServiceDetailsResponse"
+                                    "$ref": "#/components/schemas/CreateConfirmServiceDetailsResponse"
                                 }
                             }
                         }
@@ -2180,12 +2180,12 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/messaging\/v1\/orders\/{amazonOrderId}\/messages\/amazonMotors": {
+        "/messaging/v1/orders/{amazonOrderId}/messages/amazonMotors": {
             "post": {
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message to a buyer to provide details about an Amazon Motors order. This message can only be sent by Amazon Motors sellers.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a message to a buyer to provide details about an Amazon Motors order. This message can only be sent by Amazon Motors sellers.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "CreateAmazonMotors",
                 "parameters": [
                     {
@@ -2215,9 +2215,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateAmazonMotorsRequest"
+                                "$ref": "#/components/schemas/CreateAmazonMotorsRequest"
                             }
                         }
                     },
@@ -2241,9 +2241,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateAmazonMotorsResponse"
+                                    "$ref": "#/components/schemas/CreateAmazonMotorsResponse"
                                 }
                             }
                         },
@@ -2289,9 +2289,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateAmazonMotorsResponse"
+                                    "$ref": "#/components/schemas/CreateAmazonMotorsResponse"
                                 }
                             }
                         },
@@ -2329,9 +2329,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateAmazonMotorsResponse"
+                                    "$ref": "#/components/schemas/CreateAmazonMotorsResponse"
                                 }
                             }
                         }
@@ -2353,9 +2353,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateAmazonMotorsResponse"
+                                    "$ref": "#/components/schemas/CreateAmazonMotorsResponse"
                                 }
                             }
                         }
@@ -2377,9 +2377,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateAmazonMotorsResponse"
+                                    "$ref": "#/components/schemas/CreateAmazonMotorsResponse"
                                 }
                             }
                         }
@@ -2401,9 +2401,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateAmazonMotorsResponse"
+                                    "$ref": "#/components/schemas/CreateAmazonMotorsResponse"
                                 }
                             }
                         }
@@ -2425,9 +2425,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateAmazonMotorsResponse"
+                                    "$ref": "#/components/schemas/CreateAmazonMotorsResponse"
                                 }
                             }
                         }
@@ -2449,9 +2449,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateAmazonMotorsResponse"
+                                    "$ref": "#/components/schemas/CreateAmazonMotorsResponse"
                                 }
                             }
                         }
@@ -2473,9 +2473,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateAmazonMotorsResponse"
+                                    "$ref": "#/components/schemas/CreateAmazonMotorsResponse"
                                 }
                             }
                         }
@@ -2484,12 +2484,12 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/messaging\/v1\/orders\/{amazonOrderId}\/messages\/warranty": {
+        "/messaging/v1/orders/{amazonOrderId}/messages/warranty": {
             "post": {
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message to a buyer to provide details about warranty information on a purchase in their order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a message to a buyer to provide details about warranty information on a purchase in their order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "CreateWarranty",
                 "parameters": [
                     {
@@ -2519,9 +2519,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateWarrantyRequest"
+                                "$ref": "#/components/schemas/CreateWarrantyRequest"
                             }
                         }
                     },
@@ -2545,9 +2545,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateWarrantyResponse"
+                                    "$ref": "#/components/schemas/CreateWarrantyResponse"
                                 }
                             }
                         },
@@ -2595,9 +2595,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateWarrantyResponse"
+                                    "$ref": "#/components/schemas/CreateWarrantyResponse"
                                 }
                             }
                         },
@@ -2635,9 +2635,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateWarrantyResponse"
+                                    "$ref": "#/components/schemas/CreateWarrantyResponse"
                                 }
                             }
                         }
@@ -2659,9 +2659,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateWarrantyResponse"
+                                    "$ref": "#/components/schemas/CreateWarrantyResponse"
                                 }
                             }
                         }
@@ -2683,9 +2683,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateWarrantyResponse"
+                                    "$ref": "#/components/schemas/CreateWarrantyResponse"
                                 }
                             }
                         }
@@ -2707,9 +2707,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateWarrantyResponse"
+                                    "$ref": "#/components/schemas/CreateWarrantyResponse"
                                 }
                             }
                         }
@@ -2731,9 +2731,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateWarrantyResponse"
+                                    "$ref": "#/components/schemas/CreateWarrantyResponse"
                                 }
                             }
                         }
@@ -2755,9 +2755,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateWarrantyResponse"
+                                    "$ref": "#/components/schemas/CreateWarrantyResponse"
                                 }
                             }
                         }
@@ -2779,9 +2779,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateWarrantyResponse"
+                                    "$ref": "#/components/schemas/CreateWarrantyResponse"
                                 }
                             }
                         }
@@ -2790,7 +2790,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/messaging\/v1\/orders\/{amazonOrderId}\/attributes": {
+        "/messaging/v1/orders/{amazonOrderId}/attributes": {
             "get": {
                 "tags": [
                     "MessagingV1"
@@ -2841,9 +2841,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAttributesResponse"
+                                    "$ref": "#/components/schemas/GetAttributesResponse"
                                 },
                                 "example": {
                                     "buyer": {
@@ -2888,9 +2888,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAttributesResponse"
+                                    "$ref": "#/components/schemas/GetAttributesResponse"
                                 },
                                 "example": {
                                     "errors": [
@@ -2937,9 +2937,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAttributesResponse"
+                                    "$ref": "#/components/schemas/GetAttributesResponse"
                                 },
                                 "example": {
                                     "errors": [
@@ -2970,9 +2970,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAttributesResponse"
+                                    "$ref": "#/components/schemas/GetAttributesResponse"
                                 },
                                 "example": {
                                     "errors": [
@@ -3003,9 +3003,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAttributesResponse"
+                                    "$ref": "#/components/schemas/GetAttributesResponse"
                                 },
                                 "example": {
                                     "errors": [
@@ -3036,9 +3036,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAttributesResponse"
+                                    "$ref": "#/components/schemas/GetAttributesResponse"
                                 },
                                 "example": {
                                     "errors": [
@@ -3069,9 +3069,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAttributesResponse"
+                                    "$ref": "#/components/schemas/GetAttributesResponse"
                                 },
                                 "example": {
                                     "errors": [
@@ -3102,9 +3102,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAttributesResponse"
+                                    "$ref": "#/components/schemas/GetAttributesResponse"
                                 },
                                 "example": {
                                     "errors": [
@@ -3135,9 +3135,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAttributesResponse"
+                                    "$ref": "#/components/schemas/GetAttributesResponse"
                                 },
                                 "example": {
                                     "errors": [
@@ -3154,12 +3154,12 @@
                 }
             }
         },
-        "\/messaging\/v1\/orders\/{amazonOrderId}\/messages\/digitalAccessKey": {
+        "/messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey": {
             "post": {
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message to a buyer to share a digital access key needed to utilize digital content in their order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a message to a buyer to share a digital access key needed to utilize digital content in their order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createDigitalAccessKey",
                 "parameters": [
                     {
@@ -3189,9 +3189,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateDigitalAccessKeyRequest"
+                                "$ref": "#/components/schemas/CreateDigitalAccessKeyRequest"
                             }
                         }
                     },
@@ -3215,9 +3215,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDigitalAccessKeyResponse"
+                                    "$ref": "#/components/schemas/CreateDigitalAccessKeyResponse"
                                 }
                             }
                         },
@@ -3268,9 +3268,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDigitalAccessKeyResponse"
+                                    "$ref": "#/components/schemas/CreateDigitalAccessKeyResponse"
                                 }
                             }
                         },
@@ -3308,9 +3308,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDigitalAccessKeyResponse"
+                                    "$ref": "#/components/schemas/CreateDigitalAccessKeyResponse"
                                 }
                             }
                         }
@@ -3332,9 +3332,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDigitalAccessKeyResponse"
+                                    "$ref": "#/components/schemas/CreateDigitalAccessKeyResponse"
                                 }
                             }
                         }
@@ -3356,9 +3356,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDigitalAccessKeyResponse"
+                                    "$ref": "#/components/schemas/CreateDigitalAccessKeyResponse"
                                 }
                             }
                         }
@@ -3380,9 +3380,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDigitalAccessKeyResponse"
+                                    "$ref": "#/components/schemas/CreateDigitalAccessKeyResponse"
                                 }
                             }
                         }
@@ -3404,9 +3404,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDigitalAccessKeyResponse"
+                                    "$ref": "#/components/schemas/CreateDigitalAccessKeyResponse"
                                 }
                             }
                         }
@@ -3428,9 +3428,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDigitalAccessKeyResponse"
+                                    "$ref": "#/components/schemas/CreateDigitalAccessKeyResponse"
                                 }
                             }
                         }
@@ -3452,9 +3452,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateDigitalAccessKeyResponse"
+                                    "$ref": "#/components/schemas/CreateDigitalAccessKeyResponse"
                                 }
                             }
                         }
@@ -3463,12 +3463,12 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/messaging\/v1\/orders\/{amazonOrderId}\/messages\/unexpectedProblem": {
+        "/messaging/v1/orders/{amazonOrderId}/messages/unexpectedProblem": {
             "post": {
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a critical message to a buyer that an unexpected problem was encountered affecting the completion of the order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a critical message to a buyer that an unexpected problem was encountered affecting the completion of the order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createUnexpectedProblem",
                 "parameters": [
                     {
@@ -3498,9 +3498,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateUnexpectedProblemRequest"
+                                "$ref": "#/components/schemas/CreateUnexpectedProblemRequest"
                             }
                         }
                     },
@@ -3524,9 +3524,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUnexpectedProblemResponse"
+                                    "$ref": "#/components/schemas/CreateUnexpectedProblemResponse"
                                 }
                             }
                         },
@@ -3567,9 +3567,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUnexpectedProblemResponse"
+                                    "$ref": "#/components/schemas/CreateUnexpectedProblemResponse"
                                 }
                             }
                         },
@@ -3607,9 +3607,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUnexpectedProblemResponse"
+                                    "$ref": "#/components/schemas/CreateUnexpectedProblemResponse"
                                 }
                             }
                         }
@@ -3631,9 +3631,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUnexpectedProblemResponse"
+                                    "$ref": "#/components/schemas/CreateUnexpectedProblemResponse"
                                 }
                             }
                         }
@@ -3655,9 +3655,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUnexpectedProblemResponse"
+                                    "$ref": "#/components/schemas/CreateUnexpectedProblemResponse"
                                 }
                             }
                         }
@@ -3679,9 +3679,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUnexpectedProblemResponse"
+                                    "$ref": "#/components/schemas/CreateUnexpectedProblemResponse"
                                 }
                             }
                         }
@@ -3703,9 +3703,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUnexpectedProblemResponse"
+                                    "$ref": "#/components/schemas/CreateUnexpectedProblemResponse"
                                 }
                             }
                         }
@@ -3727,9 +3727,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUnexpectedProblemResponse"
+                                    "$ref": "#/components/schemas/CreateUnexpectedProblemResponse"
                                 }
                             }
                         }
@@ -3751,9 +3751,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUnexpectedProblemResponse"
+                                    "$ref": "#/components/schemas/CreateUnexpectedProblemResponse"
                                 }
                             }
                         }
@@ -3762,7 +3762,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/messaging\/v1\/orders\/{amazonOrderId}\/messages\/invoice": {
+        "/messaging/v1/orders/{amazonOrderId}/messages/invoice": {
             "post": {
                 "tags": [
                     "MessagingV1"
@@ -3797,9 +3797,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/InvoiceRequest"
+                                "$ref": "#/components/schemas/InvoiceRequest"
                             }
                         }
                     },
@@ -3823,9 +3823,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InvoiceResponse"
+                                    "$ref": "#/components/schemas/InvoiceResponse"
                                 }
                             }
                         },
@@ -3861,9 +3861,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InvoiceResponse"
+                                    "$ref": "#/components/schemas/InvoiceResponse"
                                 }
                             }
                         },
@@ -3901,9 +3901,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InvoiceResponse"
+                                    "$ref": "#/components/schemas/InvoiceResponse"
                                 }
                             }
                         }
@@ -3925,9 +3925,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InvoiceResponse"
+                                    "$ref": "#/components/schemas/InvoiceResponse"
                                 }
                             }
                         }
@@ -3949,9 +3949,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InvoiceResponse"
+                                    "$ref": "#/components/schemas/InvoiceResponse"
                                 }
                             }
                         }
@@ -3973,9 +3973,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InvoiceResponse"
+                                    "$ref": "#/components/schemas/InvoiceResponse"
                                 }
                             }
                         }
@@ -3997,9 +3997,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InvoiceResponse"
+                                    "$ref": "#/components/schemas/InvoiceResponse"
                                 }
                             }
                         }
@@ -4021,9 +4021,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InvoiceResponse"
+                                    "$ref": "#/components/schemas/InvoiceResponse"
                                 }
                             }
                         }
@@ -4045,9 +4045,9 @@
                             }
                         },
                         "content": {
-                            "application\/hal+json": {
+                            "application/hal+json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InvoiceResponse"
+                                    "$ref": "#/components/schemas/InvoiceResponse"
                                 }
                             }
                         }
@@ -4111,7 +4111,7 @@
                 "additionalProperties": {
                     "type": "object"
                 },
-                "description": "A JSON schema document describing the expected payload of the action. This object can be validated against <a href=http:\/\/json-schema.org\/draft-04\/schema>http:\/\/json-schema.org\/draft-04\/schema<\/a>."
+                "description": "A JSON schema document describing the expected payload of the action. This object can be validated against <a href=http://json-schema.org/draft-04/schema>http://json-schema.org/draft-04/schema</a>."
             },
             "GetMessagingActionsForOrderResponse": {
                 "type": "object",
@@ -4124,13 +4124,13 @@
                         "type": "object",
                         "properties": {
                             "self": {
-                                "$ref": "#\/components\/schemas\/LinkObject"
+                                "$ref": "#/components/schemas/LinkObject"
                             },
                             "actions": {
                                 "type": "array",
                                 "description": "Eligible actions for the specified amazonOrderId.",
                                 "items": {
-                                    "$ref": "#\/components\/schemas\/LinkObject"
+                                    "$ref": "#/components/schemas/LinkObject"
                                 }
                             }
                         }
@@ -4144,13 +4144,13 @@
                             "actions": {
                                 "type": "array",
                                 "items": {
-                                    "$ref": "#\/components\/schemas\/GetMessagingActionResponse"
+                                    "$ref": "#/components/schemas/GetMessagingActionResponse"
                                 }
                             }
                         }
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getMessagingActionsForOrder operation."
@@ -4166,10 +4166,10 @@
                         "type": "object",
                         "properties": {
                             "self": {
-                                "$ref": "#\/components\/schemas\/LinkObject"
+                                "$ref": "#/components/schemas/LinkObject"
                             },
                             "schema": {
-                                "$ref": "#\/components\/schemas\/LinkObject"
+                                "$ref": "#/components/schemas/LinkObject"
                             }
                         }
                     },
@@ -4177,15 +4177,15 @@
                         "type": "object",
                         "properties": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/GetSchemaResponse"
+                                "$ref": "#/components/schemas/GetSchemaResponse"
                             }
                         }
                     },
                     "payload": {
-                        "$ref": "#\/components\/schemas\/MessagingAction"
+                        "$ref": "#/components/schemas/MessagingAction"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "Describes a messaging action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input."
@@ -4200,15 +4200,15 @@
                         "type": "object",
                         "properties": {
                             "self": {
-                                "$ref": "#\/components\/schemas\/LinkObject"
+                                "$ref": "#/components/schemas/LinkObject"
                             }
                         }
                     },
                     "payload": {
-                        "$ref": "#\/components\/schemas\/Schema"
+                        "$ref": "#/components/schemas/Schema"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 }
             },
@@ -4219,7 +4219,7 @@
                         "type": "array",
                         "description": "Attachments to include in the message to the buyer.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Attachment"
+                            "$ref": "#/components/schemas/Attachment"
                         }
                     }
                 },
@@ -4229,7 +4229,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the sendInvoice operation."
@@ -4247,7 +4247,7 @@
                         "type": "array",
                         "description": "Attachments to include in the message to the buyer.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Attachment"
+                            "$ref": "#/components/schemas/Attachment"
                         }
                     }
                 },
@@ -4257,7 +4257,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the confirmCustomizationDetails operation."
@@ -4278,7 +4278,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the createConfirmDeliveryDetails operation."
@@ -4287,7 +4287,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the createNegativeFeedbackRemoval operation."
@@ -4299,7 +4299,7 @@
                         "type": "array",
                         "description": "Attachments to include in the message to the buyer. If any text is included in the attachment, the text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Attachment"
+                            "$ref": "#/components/schemas/Attachment"
                         }
                     }
                 },
@@ -4309,7 +4309,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the createLegalDisclosure operation."
@@ -4330,7 +4330,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the createConfirmOrderDetails operation."
@@ -4351,7 +4351,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the createConfirmServiceDetails operation."
@@ -4363,7 +4363,7 @@
                         "type": "array",
                         "description": "Attachments to include in the message to the buyer. If any text is included in the attachment, the text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Attachment"
+                            "$ref": "#/components/schemas/Attachment"
                         }
                     }
                 },
@@ -4373,7 +4373,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the createAmazonMotors operation."
@@ -4385,7 +4385,7 @@
                         "type": "array",
                         "description": "Attachments to include in the message to the buyer. If any text is included in the attachment, the text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Attachment"
+                            "$ref": "#/components/schemas/Attachment"
                         }
                     },
                     "coverageStartDate": {
@@ -4405,7 +4405,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the createWarranty operation."
@@ -4424,7 +4424,7 @@
                         "description": "The list of attributes related to the buyer."
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the GetAttributes operation."
@@ -4442,7 +4442,7 @@
                         "type": "array",
                         "description": "Attachments to include in the message to the buyer.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Attachment"
+                            "$ref": "#/components/schemas/Attachment"
                         }
                     }
                 },
@@ -4452,7 +4452,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the createDigitalAccessKey operation."
@@ -4473,7 +4473,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the createUnexpectedProblem operation."
@@ -4482,7 +4482,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Error": {

@@ -23,8 +23,8 @@ class ConfirmPlacementOption extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $placementOptionId  Identifier to a placement option. A placement option represents the shipment splits and destinations of SKUs.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $placementOptionId  The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
      */
     public function __construct(
         protected string $inboundPlanId,
@@ -42,7 +42,7 @@ class ConfirmPlacementOption extends Request implements HasBody
         $status = $response->status();
         $responseCls = match ($status) {
             202 => ConfirmPlacementOptionResponse::class,
-            400, 500, 403, 404, 413, 415, 429, 503 => ErrorList::class,
+            400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

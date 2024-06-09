@@ -13,7 +13,7 @@ final class CreateSubscriptionResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?Subscription  $payload  Represents a subscription to receive notifications.
+     * @param  ?Subscription  $payload  Information about the subscription.
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

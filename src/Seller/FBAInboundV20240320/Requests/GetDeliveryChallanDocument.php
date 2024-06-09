@@ -19,8 +19,8 @@ class GetDeliveryChallanDocument extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $inboundPlanId  Identifier to an inbound plan.
-     * @param  string  $shipmentId  Identifier to a shipment. A shipment contains the boxes and units being inbounded.
+     * @param  string  $inboundPlanId  Identifier of an inbound plan.
+     * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      */
     public function __construct(
         protected string $inboundPlanId,
@@ -38,7 +38,7 @@ class GetDeliveryChallanDocument extends Request
         $status = $response->status();
         $responseCls = match ($status) {
             200 => GetDeliveryChallanDocumentResponse::class,
-            400, 500, 403, 404, 413, 415, 429, 503 => ErrorList::class,
+            400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

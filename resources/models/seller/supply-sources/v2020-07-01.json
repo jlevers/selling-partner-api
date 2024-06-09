@@ -5,21 +5,21 @@
         "description": "Manage configurations and capabilities of seller supply sources.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "2020-07-01"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/supplySources\/2020-07-01\/supplySources": {
+        "/supplySources/2020-07-01/supplySources": {
             "get": {
                 "tags": [
                     "SupplySourcesV20200701"
@@ -63,9 +63,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSupplySourcesResponse"
+                                    "$ref": "#/components/schemas/GetSupplySourcesResponse"
                                 }
                             }
                         },
@@ -113,9 +113,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -153,9 +153,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -177,9 +177,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -201,9 +201,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -225,9 +225,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -249,9 +249,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -273,9 +273,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -297,9 +297,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -315,9 +315,9 @@
                 "requestBody": {
                     "description": "A request to create a supply source.",
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateSupplySourceRequest"
+                                "$ref": "#/components/schemas/CreateSupplySourceRequest"
                             }
                         }
                     },
@@ -341,9 +341,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateSupplySourceResponse"
+                                    "$ref": "#/components/schemas/CreateSupplySourceResponse"
                                 }
                             }
                         },
@@ -378,9 +378,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -431,9 +431,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -455,9 +455,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -479,9 +479,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -503,9 +503,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -527,9 +527,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -551,9 +551,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -575,9 +575,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -586,7 +586,7 @@
                 "x-codegen-request-body-name": "payload"
             }
         },
-        "\/supplySources\/2020-07-01\/supplySources\/{supplySourceId}": {
+        "/supplySources/2020-07-01/supplySources/{supplySourceId}": {
             "get": {
                 "tags": [
                     "SupplySourcesV20200701"
@@ -622,9 +622,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SupplySource"
+                                    "$ref": "#/components/schemas/SupplySource"
                                 }
                             }
                         },
@@ -714,7 +714,7 @@
                                                     ]
                                                 }
                                             },
-                                            "timezone": "Africa\/Accra"
+                                            "timezone": "Africa/Accra"
                                         },
                                         "capabilities": {
                                             "outbound": {
@@ -911,9 +911,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -951,9 +951,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -975,9 +975,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -999,9 +999,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1023,9 +1023,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1047,9 +1047,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1071,9 +1071,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1095,9 +1095,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1123,9 +1123,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/UpdateSupplySourceRequest"
+                                "$ref": "#/components/schemas/UpdateSupplySourceRequest"
                             }
                         }
                     },
@@ -1149,9 +1149,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -1183,9 +1183,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -1233,7 +1233,7 @@
                                                                 "timeUnit": "Hours"
                                                             }
                                                         },
-                                                        "timezone": "Africa\/Accra"
+                                                        "timezone": "Africa/Accra"
                                                     },
                                                     "capabilities": {
                                                         "outbound": {
@@ -1414,9 +1414,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1438,9 +1438,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1462,9 +1462,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1486,9 +1486,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1510,9 +1510,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1534,9 +1534,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1558,9 +1558,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1603,9 +1603,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -1637,9 +1637,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -1677,9 +1677,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1701,9 +1701,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1725,9 +1725,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1749,9 +1749,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1773,9 +1773,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1797,9 +1797,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1821,9 +1821,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -1831,7 +1831,7 @@
                 }
             }
         },
-        "\/supplySources\/2020-07-01\/supplySources\/{supplySourceId}\/status": {
+        "/supplySources/2020-07-01/supplySources/{supplySourceId}/status": {
             "put": {
                 "tags": [
                     "SupplySourcesV20200701"
@@ -1851,9 +1851,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/UpdateSupplySourceStatusRequest"
+                                "$ref": "#/components/schemas/UpdateSupplySourceStatusRequest"
                             }
                         }
                     },
@@ -1877,9 +1877,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -1911,9 +1911,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         },
@@ -1979,9 +1979,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2003,9 +2003,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2027,9 +2027,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2051,9 +2051,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2075,9 +2075,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2099,9 +2099,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2123,9 +2123,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorList"
+                                    "$ref": "#/components/schemas/ErrorList"
                                 }
                             }
                         }
@@ -2169,7 +2169,7 @@
                         "type": "array",
                         "description": "A list of error responses returned when a request is unsuccessful.",
                         "items": {
-                            "$ref": "#\/components\/schemas\/Error"
+                            "$ref": "#/components/schemas/Error"
                         }
                     }
                 },
@@ -2179,7 +2179,7 @@
                 "type": "object",
                 "properties": {
                     "supplySources": {
-                        "$ref": "#\/components\/schemas\/SupplySourceList"
+                        "$ref": "#/components/schemas/SupplySourceList"
                     },
                     "nextPageToken": {
                         "type": "string",
@@ -2192,7 +2192,7 @@
                 "type": "object",
                 "properties": {
                     "status": {
-                        "$ref": "#\/components\/schemas\/SupplySourceStatus"
+                        "$ref": "#/components/schemas/SupplySourceStatus"
                     }
                 },
                 "description": "A request to update the status of a supply source."
@@ -2206,13 +2206,13 @@
                 "type": "object",
                 "properties": {
                     "supplySourceCode": {
-                        "$ref": "#\/components\/schemas\/SupplySourceCode"
+                        "$ref": "#/components/schemas/SupplySourceCode"
                     },
                     "alias": {
-                        "$ref": "#\/components\/schemas\/SupplySourceAlias"
+                        "$ref": "#/components/schemas/SupplySourceAlias"
                     },
                     "address": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     }
                 },
                 "description": "A request to create a supply source."
@@ -2225,10 +2225,10 @@
                 "type": "object",
                 "properties": {
                     "supplySourceId": {
-                        "$ref": "#\/components\/schemas\/SupplySourceId"
+                        "$ref": "#/components/schemas/SupplySourceId"
                     },
                     "supplySourceCode": {
-                        "$ref": "#\/components\/schemas\/SupplySourceCode"
+                        "$ref": "#/components/schemas/SupplySourceCode"
                     }
                 },
                 "description": "The result of creating a new supply source."
@@ -2237,13 +2237,13 @@
                 "type": "object",
                 "properties": {
                     "alias": {
-                        "$ref": "#\/components\/schemas\/SupplySourceAlias"
+                        "$ref": "#/components/schemas/SupplySourceAlias"
                     },
                     "configuration": {
-                        "$ref": "#\/components\/schemas\/SupplySourceConfiguration"
+                        "$ref": "#/components/schemas/SupplySourceConfiguration"
                     },
                     "capabilities": {
-                        "$ref": "#\/components\/schemas\/SupplySourceCapabilities"
+                        "$ref": "#/components/schemas/SupplySourceCapabilities"
                     }
                 },
                 "description": "A request to update the configuration and capabilities of a supply source."
@@ -2252,31 +2252,31 @@
                 "type": "object",
                 "properties": {
                     "supplySourceId": {
-                        "$ref": "#\/components\/schemas\/SupplySourceId"
+                        "$ref": "#/components/schemas/SupplySourceId"
                     },
                     "supplySourceCode": {
-                        "$ref": "#\/components\/schemas\/SupplySourceCode"
+                        "$ref": "#/components/schemas/SupplySourceCode"
                     },
                     "alias": {
-                        "$ref": "#\/components\/schemas\/SupplySourceAlias"
+                        "$ref": "#/components/schemas/SupplySourceAlias"
                     },
                     "status": {
-                        "$ref": "#\/components\/schemas\/SupplySourceStatusReadOnly"
+                        "$ref": "#/components/schemas/SupplySourceStatusReadOnly"
                     },
                     "address": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "configuration": {
-                        "$ref": "#\/components\/schemas\/SupplySourceConfiguration"
+                        "$ref": "#/components/schemas/SupplySourceConfiguration"
                     },
                     "capabilities": {
-                        "$ref": "#\/components\/schemas\/SupplySourceCapabilities"
+                        "$ref": "#/components/schemas/SupplySourceCapabilities"
                     },
                     "createdAt": {
-                        "$ref": "#\/components\/schemas\/DateTime"
+                        "$ref": "#/components/schemas/DateTime"
                     },
                     "updatedAt": {
-                        "$ref": "#\/components\/schemas\/DateTime"
+                        "$ref": "#/components/schemas/DateTime"
                     }
                 },
                 "description": "The supply source details, including configurations and capabilities."
@@ -2285,11 +2285,11 @@
                 "type": "object",
                 "properties": {
                     "operationalConfiguration": {
-                        "$ref": "#\/components\/schemas\/OperationalConfiguration"
+                        "$ref": "#/components/schemas/OperationalConfiguration"
                     },
                     "timezone": {
                         "type": "string",
-                        "description": "Please see RFC 6557, should be a canonical time zone ID as listed here: https:\/\/www.joda.org\/joda-time\/timezones.html."
+                        "description": "Please see RFC 6557, should be a canonical time zone ID as listed here: https://www.joda.org/joda-time/timezones.html."
                     }
                 },
                 "description": "Includes configuration and timezone of a supply source."
@@ -2298,10 +2298,10 @@
                 "type": "object",
                 "properties": {
                     "outbound": {
-                        "$ref": "#\/components\/schemas\/OutboundCapability"
+                        "$ref": "#/components/schemas/OutboundCapability"
                     },
                     "services": {
-                        "$ref": "#\/components\/schemas\/ServicesCapability"
+                        "$ref": "#/components/schemas/ServicesCapability"
                     }
                 },
                 "description": "The capabilities of a supply source."
@@ -2313,16 +2313,16 @@
                     "type": "object",
                     "properties": {
                         "alias": {
-                            "$ref": "#\/components\/schemas\/SupplySourceAlias"
+                            "$ref": "#/components/schemas/SupplySourceAlias"
                         },
                         "supplySourceId": {
-                            "$ref": "#\/components\/schemas\/SupplySourceId"
+                            "$ref": "#/components/schemas/SupplySourceId"
                         },
                         "supplySourceCode": {
-                            "$ref": "#\/components\/schemas\/SupplySourceCode"
+                            "$ref": "#/components/schemas/SupplySourceCode"
                         },
                         "address": {
-                            "$ref": "#\/components\/schemas\/Address"
+                            "$ref": "#/components/schemas/Address"
                         }
                     }
                 }
@@ -2363,16 +2363,16 @@
                         "type": "boolean"
                     },
                     "operationalConfiguration": {
-                        "$ref": "#\/components\/schemas\/OperationalConfiguration"
+                        "$ref": "#/components/schemas/OperationalConfiguration"
                     },
                     "returnLocation": {
-                        "$ref": "#\/components\/schemas\/ReturnLocation"
+                        "$ref": "#/components/schemas/ReturnLocation"
                     },
                     "deliveryChannel": {
-                        "$ref": "#\/components\/schemas\/DeliveryChannel"
+                        "$ref": "#/components/schemas/DeliveryChannel"
                     },
                     "pickupChannel": {
-                        "$ref": "#\/components\/schemas\/PickupChannel"
+                        "$ref": "#/components/schemas/PickupChannel"
                     }
                 },
                 "description": "The outbound capability of a supply source."
@@ -2385,7 +2385,7 @@
                         "description": "When true, `SupplySource` supports the Service capability."
                     },
                     "operationalConfiguration": {
-                        "$ref": "#\/components\/schemas\/OperationalConfiguration"
+                        "$ref": "#/components/schemas/OperationalConfiguration"
                     }
                 },
                 "description": "The services capability of a supply source."
@@ -2394,19 +2394,19 @@
                 "type": "object",
                 "properties": {
                     "inventoryHoldPeriod": {
-                        "$ref": "#\/components\/schemas\/Duration"
+                        "$ref": "#/components/schemas/Duration"
                     },
                     "isSupported": {
                         "type": "boolean"
                     },
                     "operationalConfiguration": {
-                        "$ref": "#\/components\/schemas\/OperationalConfiguration"
+                        "$ref": "#/components/schemas/OperationalConfiguration"
                     },
                     "inStorePickupConfiguration": {
-                        "$ref": "#\/components\/schemas\/InStorePickupConfiguration"
+                        "$ref": "#/components/schemas/InStorePickupConfiguration"
                     },
                     "curbsidePickupConfiguration": {
-                        "$ref": "#\/components\/schemas\/CurbsidePickupConfiguration"
+                        "$ref": "#/components/schemas/CurbsidePickupConfiguration"
                     }
                 },
                 "description": "The pick up channel of a supply source."
@@ -2415,13 +2415,13 @@
                 "type": "object",
                 "properties": {
                     "parkingCostType": {
-                        "$ref": "#\/components\/schemas\/ParkingCostType"
+                        "$ref": "#/components/schemas/ParkingCostType"
                     },
                     "parkingSpotIdentificationType": {
-                        "$ref": "#\/components\/schemas\/ParkingSpotIdentificationType"
+                        "$ref": "#/components/schemas/ParkingSpotIdentificationType"
                     },
                     "numberOfParkingSpots": {
-                        "$ref": "#\/components\/schemas\/NonNegativeInteger"
+                        "$ref": "#/components/schemas/NonNegativeInteger"
                     }
                 },
                 "description": "The parking configuration."
@@ -2450,7 +2450,7 @@
                         "description": "When true, in-store pickup is supported by the supply source (default: `isSupported` value in `PickupChannel`)."
                     },
                     "parkingConfiguration": {
-                        "$ref": "#\/components\/schemas\/ParkingConfiguration"
+                        "$ref": "#/components/schemas/ParkingConfiguration"
                     }
                 },
                 "description": "The in-store pickup configuration of a supply source."
@@ -2463,10 +2463,10 @@
                         "description": "When true, curbside pickup is supported by the supply source."
                     },
                     "operationalConfiguration": {
-                        "$ref": "#\/components\/schemas\/OperationalConfiguration"
+                        "$ref": "#/components/schemas/OperationalConfiguration"
                     },
                     "parkingWithAddressConfiguration": {
-                        "$ref": "#\/components\/schemas\/ParkingWithAddressConfiguration"
+                        "$ref": "#/components/schemas/ParkingWithAddressConfiguration"
                     }
                 },
                 "description": "The curbside pickup configuration of a supply source."
@@ -2475,13 +2475,13 @@
                 "description": "The parking configuration with the address.",
                 "allOf": [
                     {
-                        "$ref": "#\/components\/schemas\/ParkingConfiguration"
+                        "$ref": "#/components/schemas/ParkingConfiguration"
                     },
                     {
                         "type": "object",
                         "properties": {
                             "address": {
-                                "$ref": "#\/components\/schemas\/Address"
+                                "$ref": "#/components/schemas/Address"
                             }
                         }
                     }
@@ -2494,7 +2494,7 @@
                         "type": "boolean"
                     },
                     "operationalConfiguration": {
-                        "$ref": "#\/components\/schemas\/OperationalConfiguration"
+                        "$ref": "#/components/schemas/OperationalConfiguration"
                     }
                 },
                 "description": "The delivery channel of a supply source."
@@ -2503,16 +2503,16 @@
                 "type": "object",
                 "properties": {
                     "contactDetails": {
-                        "$ref": "#\/components\/schemas\/ContactDetails"
+                        "$ref": "#/components/schemas/ContactDetails"
                     },
                     "throughputConfig": {
-                        "$ref": "#\/components\/schemas\/ThroughputConfig"
+                        "$ref": "#/components/schemas/ThroughputConfig"
                     },
                     "operatingHoursByDay": {
-                        "$ref": "#\/components\/schemas\/OperatingHoursByDay"
+                        "$ref": "#/components/schemas/OperatingHoursByDay"
                     },
                     "handlingTime": {
-                        "$ref": "#\/components\/schemas\/Duration"
+                        "$ref": "#/components/schemas/Duration"
                     }
                 },
                 "description": "The operational configuration of `supplySources`."
@@ -2521,10 +2521,10 @@
                 "type": "object",
                 "properties": {
                     "value": {
-                        "$ref": "#\/components\/schemas\/NonNegativeInteger"
+                        "$ref": "#/components/schemas/NonNegativeInteger"
                     },
                     "timeUnit": {
-                        "$ref": "#\/components\/schemas\/TimeUnit"
+                        "$ref": "#/components/schemas/TimeUnit"
                     }
                 },
                 "description": "The duration of time."
@@ -2536,10 +2536,10 @@
                 "type": "object",
                 "properties": {
                     "throughputCap": {
-                        "$ref": "#\/components\/schemas\/ThroughputCap"
+                        "$ref": "#/components/schemas/ThroughputCap"
                     },
                     "throughputUnit": {
-                        "$ref": "#\/components\/schemas\/ThroughputUnit"
+                        "$ref": "#/components/schemas/ThroughputUnit"
                     }
                 },
                 "description": "The throughput configuration."
@@ -2552,7 +2552,7 @@
                         "description": "The Amazon provided `supplySourceId` where orders can be returned to."
                     },
                     "addressWithContact": {
-                        "$ref": "#\/components\/schemas\/AddressWithContact"
+                        "$ref": "#/components/schemas/AddressWithContact"
                     }
                 },
                 "description": "The address or reference to another `supplySourceId` to act as a return location."
@@ -2561,10 +2561,10 @@
                 "type": "object",
                 "properties": {
                     "contactDetails": {
-                        "$ref": "#\/components\/schemas\/ContactDetails"
+                        "$ref": "#/components/schemas/ContactDetails"
                     },
                     "address": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     }
                 },
                 "description": "The address and contact details."
@@ -2576,7 +2576,7 @@
                         "type": "object",
                         "properties": {
                             "email": {
-                                "$ref": "#\/components\/schemas\/EmailAddress"
+                                "$ref": "#/components/schemas/EmailAddress"
                             },
                             "phone": {
                                 "type": "string",
@@ -2591,10 +2591,10 @@
                 "type": "object",
                 "properties": {
                     "value": {
-                        "$ref": "#\/components\/schemas\/NonNegativeInteger"
+                        "$ref": "#/components/schemas/NonNegativeInteger"
                     },
                     "timeUnit": {
-                        "$ref": "#\/components\/schemas\/TimeUnit"
+                        "$ref": "#/components/schemas/TimeUnit"
                     }
                 },
                 "description": "The throughput capacity"
@@ -2617,7 +2617,7 @@
                 "type": "array",
                 "description": "A list of Operating Hours.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/OperatingHour"
+                    "$ref": "#/components/schemas/OperatingHour"
                 }
             },
             "ThroughputUnit": {
@@ -2631,25 +2631,25 @@
                 "type": "object",
                 "properties": {
                     "monday": {
-                        "$ref": "#\/components\/schemas\/OperatingHours"
+                        "$ref": "#/components/schemas/OperatingHours"
                     },
                     "tuesday": {
-                        "$ref": "#\/components\/schemas\/OperatingHours"
+                        "$ref": "#/components/schemas/OperatingHours"
                     },
                     "wednesday": {
-                        "$ref": "#\/components\/schemas\/OperatingHours"
+                        "$ref": "#/components/schemas/OperatingHours"
                     },
                     "thursday": {
-                        "$ref": "#\/components\/schemas\/OperatingHours"
+                        "$ref": "#/components/schemas/OperatingHours"
                     },
                     "friday": {
-                        "$ref": "#\/components\/schemas\/OperatingHours"
+                        "$ref": "#/components/schemas/OperatingHours"
                     },
                     "saturday": {
-                        "$ref": "#\/components\/schemas\/OperatingHours"
+                        "$ref": "#/components/schemas/OperatingHours"
                     },
                     "sunday": {
-                        "$ref": "#\/components\/schemas\/OperatingHours"
+                        "$ref": "#/components/schemas/OperatingHours"
                     }
                 },
                 "description": "The operating hours per day"

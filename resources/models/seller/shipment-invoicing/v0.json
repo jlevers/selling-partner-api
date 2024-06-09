@@ -5,21 +5,21 @@
         "description": "The Selling Partner API for Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil marketplace for a selling partner\u2019s Fulfillment by Amazon (FBA) orders.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "v0"
     },
     "servers": [
         {
-            "url": "\/"
+            "url": "/"
         }
     ],
     "paths": {
-        "\/fba\/outbound\/brazil\/v0\/shipments\/{shipmentId}": {
+        "/fba/outbound/brazil/v0/shipments/{shipmentId}": {
             "get": {
                 "tags": [
                     "ShipmentInvoicingV0"
@@ -55,9 +55,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentDetailsResponse"
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
                                 }
                             }
                         },
@@ -172,9 +172,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentDetailsResponse"
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
                                 }
                             }
                         },
@@ -218,9 +218,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentDetailsResponse"
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
                                 }
                             }
                         }
@@ -236,9 +236,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentDetailsResponse"
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
                                 }
                             }
                         }
@@ -260,9 +260,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentDetailsResponse"
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
                                 }
                             }
                         }
@@ -284,9 +284,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentDetailsResponse"
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
                                 }
                             }
                         }
@@ -308,9 +308,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentDetailsResponse"
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
                                 }
                             }
                         }
@@ -332,9 +332,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentDetailsResponse"
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
                                 }
                             }
                         }
@@ -356,9 +356,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetShipmentDetailsResponse"
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
                                 }
                             }
                         }
@@ -366,7 +366,7 @@
                 }
             }
         },
-        "\/fba\/outbound\/brazil\/v0\/shipments\/{shipmentId}\/invoice": {
+        "/fba/outbound/brazil/v0/shipments/{shipmentId}/invoice": {
             "post": {
                 "tags": [
                     "ShipmentInvoicingV0"
@@ -386,9 +386,9 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application\/json": {
+                        "application/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/SubmitInvoiceRequest"
+                                "$ref": "#/components/schemas/SubmitInvoiceRequest"
                             }
                         }
                     },
@@ -412,9 +412,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoiceResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
                                 }
                             }
                         },
@@ -456,9 +456,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoiceResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
                                 }
                             }
                         },
@@ -508,9 +508,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoiceResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
                                 }
                             }
                         }
@@ -526,9 +526,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoiceResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
                                 }
                             }
                         }
@@ -550,9 +550,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoiceResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
                                 }
                             }
                         }
@@ -574,9 +574,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoiceResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
                                 }
                             }
                         }
@@ -598,9 +598,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoiceResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
                                 }
                             }
                         }
@@ -622,9 +622,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoiceResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
                                 }
                             }
                         }
@@ -646,9 +646,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/SubmitInvoiceResponse"
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
                                 }
                             }
                         }
@@ -657,7 +657,7 @@
                 "x-codegen-request-body-name": "body"
             }
         },
-        "\/fba\/outbound\/brazil\/v0\/shipments\/{shipmentId}\/invoice\/status": {
+        "/fba/outbound/brazil/v0/shipments/{shipmentId}/invoice/status": {
             "get": {
                 "tags": [
                     "ShipmentInvoicingV0"
@@ -693,9 +693,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInvoiceStatusResponse"
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
                                 }
                             }
                         },
@@ -738,9 +738,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInvoiceStatusResponse"
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
                                 }
                             }
                         },
@@ -784,9 +784,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInvoiceStatusResponse"
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
                                 }
                             }
                         }
@@ -802,9 +802,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInvoiceStatusResponse"
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
                                 }
                             }
                         }
@@ -826,9 +826,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInvoiceStatusResponse"
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
                                 }
                             }
                         }
@@ -850,9 +850,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInvoiceStatusResponse"
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
                                 }
                             }
                         }
@@ -874,9 +874,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInvoiceStatusResponse"
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
                                 }
                             }
                         }
@@ -898,9 +898,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInvoiceStatusResponse"
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
                                 }
                             }
                         }
@@ -922,9 +922,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetInvoiceStatusResponse"
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
                                 }
                             }
                         }
@@ -939,10 +939,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/ShipmentDetail"
+                        "$ref": "#/components/schemas/ShipmentDetail"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getShipmentDetails operation."
@@ -968,10 +968,10 @@
                         "format": "date-time"
                     },
                     "ShippingAddress": {
-                        "$ref": "#\/components\/schemas\/Address"
+                        "$ref": "#/components/schemas/Address"
                     },
                     "PaymentMethodDetails": {
-                        "$ref": "#\/components\/schemas\/PaymentMethodDetailItemList"
+                        "$ref": "#/components/schemas/PaymentMethodDetailItemList"
                     },
                     "MarketplaceId": {
                         "type": "string",
@@ -990,17 +990,17 @@
                         "description": "The county of the buyer."
                     },
                     "BuyerTaxInfo": {
-                        "$ref": "#\/components\/schemas\/BuyerTaxInfo"
+                        "$ref": "#/components/schemas/BuyerTaxInfo"
                     },
                     "MarketplaceTaxInfo": {
-                        "$ref": "#\/components\/schemas\/MarketplaceTaxInfo"
+                        "$ref": "#/components/schemas/MarketplaceTaxInfo"
                     },
                     "SellerDisplayName": {
                         "type": "string",
                         "description": "The seller\u2019s friendly name registered in the marketplace."
                     },
                     "ShipmentItems": {
-                        "$ref": "#\/components\/schemas\/ShipmentItems"
+                        "$ref": "#/components/schemas/ShipmentItems"
                     }
                 },
                 "description": "The information required by a selling partner to issue a shipment invoice."
@@ -1053,7 +1053,7 @@
                         "description": "The phone number."
                     },
                     "AddressType": {
-                        "$ref": "#\/components\/schemas\/AddressTypeEnum"
+                        "$ref": "#/components/schemas/AddressTypeEnum"
                     }
                 },
                 "description": "The shipping address details of the shipment."
@@ -1095,7 +1095,7 @@
                         "description": "The country or region imposing the tax."
                     },
                     "TaxClassifications": {
-                        "$ref": "#\/components\/schemas\/TaxClassificationList"
+                        "$ref": "#/components/schemas/TaxClassificationList"
                     }
                 },
                 "description": "Tax information about the buyer."
@@ -1112,7 +1112,7 @@
                         "description": "The country or region imposing the tax."
                     },
                     "TaxClassifications": {
-                        "$ref": "#\/components\/schemas\/TaxClassificationList"
+                        "$ref": "#/components/schemas/TaxClassificationList"
                     }
                 },
                 "description": "Tax information about the marketplace."
@@ -1121,7 +1121,7 @@
                 "type": "array",
                 "description": "The list of tax classifications.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/TaxClassification"
+                    "$ref": "#/components/schemas/TaxClassification"
                 }
             },
             "TaxClassification": {
@@ -1142,7 +1142,7 @@
                 "type": "array",
                 "description": "A list of shipment items.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/ShipmentItem"
+                    "$ref": "#/components/schemas/ShipmentItem"
                 }
             },
             "ShipmentItem": {
@@ -1169,22 +1169,22 @@
                         "description": "The number of items ordered."
                     },
                     "ItemPrice": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "ShippingPrice": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "GiftWrapPrice": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "ShippingDiscount": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "PromotionDiscount": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#/components/schemas/Money"
                     },
                     "SerialNumbers": {
-                        "$ref": "#\/components\/schemas\/SerialNumbersList"
+                        "$ref": "#/components/schemas/SerialNumbersList"
                     }
                 },
                 "description": "The shipment item information required by a seller to issue a shipment invoice."
@@ -1214,7 +1214,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Error": {
@@ -1247,7 +1247,7 @@
                 "type": "object",
                 "properties": {
                     "InvoiceContent": {
-                        "$ref": "#\/components\/schemas\/Blob"
+                        "$ref": "#/components/schemas/Blob"
                     },
                     "MarketplaceId": {
                         "type": "string",
@@ -1255,7 +1255,7 @@
                     },
                     "ContentMD5Value": {
                         "type": "string",
-                        "description": "MD5 sum for validating the invoice data. For more information about calculating this value, see [Working with Content-MD5 Checksums](https:\/\/docs.developer.amazonservices.com\/en_US\/dev_guide\/DG_MD5.html)."
+                        "description": "MD5 sum for validating the invoice data. For more information about calculating this value, see [Working with Content-MD5 Checksums](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_MD5.html)."
                     }
                 },
                 "description": "The request schema for the submitInvoice operation."
@@ -1269,7 +1269,7 @@
                 "type": "object",
                 "properties": {
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the submitInvoice operation."
@@ -1282,7 +1282,7 @@
                         "description": "The Amazon-defined shipment identifier."
                     },
                     "InvoiceStatus": {
-                        "$ref": "#\/components\/schemas\/ShipmentInvoiceStatus"
+                        "$ref": "#/components/schemas/ShipmentInvoiceStatus"
                     }
                 },
                 "description": "The shipment invoice status information."
@@ -1319,7 +1319,7 @@
                 "type": "object",
                 "properties": {
                     "Shipments": {
-                        "$ref": "#\/components\/schemas\/ShipmentInvoiceStatusInfo"
+                        "$ref": "#/components/schemas/ShipmentInvoiceStatusInfo"
                     }
                 },
                 "description": "The shipment invoice status response."
@@ -1328,10 +1328,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/ShipmentInvoiceStatusResponse"
+                        "$ref": "#/components/schemas/ShipmentInvoiceStatusResponse"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getInvoiceStatus operation."

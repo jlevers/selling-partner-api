@@ -13,7 +13,7 @@ final class Item extends Dto
     /**
      * @param  string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
      * @param  string  $fnsku  A unique identifier assigned by Amazon to products stored in and fulfilled from an Amazon fulfillment center.
-     * @param  string  $labelOwner  Specifies who will label the items. Options include `AMAZON` and `SELLER`.
+     * @param  string  $labelOwner  Specifies who will label the items. Options include `AMAZON`, `SELLER`, and `NONE`.
      * @param  string  $msku  The merchant defined SKU ID.
      * @param  PrepInstruction[]  $prepInstructions  Special preparations that are required for an item.
      * @param  int  $quantity  The number of the specified MSKU.

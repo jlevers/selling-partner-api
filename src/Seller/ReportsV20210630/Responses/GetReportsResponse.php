@@ -12,7 +12,7 @@ final class GetReportsResponse extends Response
 
     /**
      * @param  Report[]  $reports  A list of reports.
-     * @param  ?string  $nextToken  Returned when the number of results exceeds pageSize. To get the next page of results, call getReports with this token as the only parameter.
+     * @param  ?string  $nextToken  Returned when the number of results exceeds `pageSize`. To get the next page of results, call `getReports` with this token as the only parameter.
      */
     public function __construct(
         public readonly array $reports,

@@ -18,8 +18,8 @@ final class OrderAcknowledgement extends Dto
     public function __construct(
         public readonly string $purchaseOrderNumber,
         public readonly PartyIdentification $sellingParty,
-        public readonly ?array $items,
         public readonly \DateTime $acknowledgementDate,
+        public readonly array $items,
     ) {
     }
 }

@@ -5,26 +5,26 @@
         "description": "The Uploads API lets you upload files that you can programmatically access using other Selling Partner APIs, such as the A+ Content API and the Messaging API.",
         "contact": {
             "name": "Selling Partner API Developer Support",
-            "url": "https:\/\/sellercentral.amazon.com\/gp\/mws\/contactus.html"
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
         },
         "license": {
             "name": "Apache License 2.0",
-            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
         },
         "version": "2020-11-01"
     },
     "servers": [
         {
-            "url": "https:\/\/sellingpartnerapi-na.amazon.com\/"
+            "url": "https://sellingpartnerapi-na.amazon.com/"
         }
     ],
     "paths": {
-        "\/uploads\/2020-11-01\/uploadDestinations\/{resource}": {
+        "/uploads/2020-11-01/uploadDestinations/{resource}": {
             "post": {
                 "tags": [
                     "UploadsV20201101"
                 ],
-                "description": "Creates an upload destination, returning the information required to upload a file to the destination and to programmatically access the file.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https:\/\/developer-docs.amazon.com\/sp-api\/docs\/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Creates an upload destination, returning the information required to upload a file to the destination and to programmatically access the file.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createUploadDestinationForResource",
                 "parameters": [
                     {
@@ -54,7 +54,7 @@
                     {
                         "name": "resource",
                         "in": "path",
-                        "description": "The resource for the upload destination that you are creating. For example, if you are creating an upload destination for the createLegalDisclosure operation of the Messaging API, the `{resource}` would be `\/messaging\/v1\/orders\/{amazonOrderId}\/messages\/legalDisclosure`, and the entire path would be `\/uploads\/2020-11-01\/uploadDestinations\/messaging\/v1\/orders\/{amazonOrderId}\/messages\/legalDisclosure`. If you are creating an upload destination for an Aplus content document, the `{resource}` would be `aplus\/2020-11-01\/contentDocuments` and the path would be `\/uploads\/v1\/uploadDestinations\/aplus\/2020-11-01\/contentDocuments`.",
+                        "description": "The resource for the upload destination that you are creating. For example, if you are creating an upload destination for the createLegalDisclosure operation of the Messaging API, the `{resource}` would be `/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure`, and the entire path would be `/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure`. If you are creating an upload destination for an Aplus content document, the `{resource}` would be `aplus/2020-11-01/contentDocuments` and the path would be `/uploads/v1/uploadDestinations/aplus/2020-11-01/contentDocuments`.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -89,14 +89,14 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUploadDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateUploadDestinationResponse"
                                 },
                                 "example": {
                                     "payload": {
                                         "uploadDestinationId": "5d4e42b5-1d6e-44e8-a89c-2abfca0625bb",
-                                        "url": "https:\/\/s3.amazonaws.com\/buyer-seller-messaging-test-draft-attachment-namarketplace\/%2F067\/5d4e42b5-1d6e-44e8-a89c-2abfca0625bb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190701T214102Z&X-Amz-SignedHeaders=content-md5%3Bhost%3Bx-amz-server-side-encryption&X-Amz-Expires=900&X-Amz-Credential=AKIAW5VUA47ENEOYT7RC%2F20190701%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=d4f85c5f1a32a788a8d54e3f00a2a08af45be5b83551cdd81c82ae353dfcdfd4",
+                                        "url": "https://s3.amazonaws.com/buyer-seller-messaging-test-draft-attachment-namarketplace/%2F067/5d4e42b5-1d6e-44e8-a89c-2abfca0625bb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190701T214102Z&X-Amz-SignedHeaders=content-md5%3Bhost%3Bx-amz-server-side-encryption&X-Amz-Expires=900&X-Amz-Credential=AKIAW5VUA47ENEOYT7RC%2F20190701%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=d4f85c5f1a32a788a8d54e3f00a2a08af45be5b83551cdd81c82ae353dfcdfd4",
                                         "headers": {
                                             "Content-MD5": "5d41402abc4b2a76b9719d911017c592",
                                             "x-amz-server-side-encryption": "aws:kms"
@@ -123,9 +123,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUploadDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateUploadDestinationResponse"
                                 }
                             }
                         }
@@ -141,9 +141,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUploadDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateUploadDestinationResponse"
                                 }
                             }
                         }
@@ -165,9 +165,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUploadDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateUploadDestinationResponse"
                                 }
                             }
                         }
@@ -189,9 +189,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUploadDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateUploadDestinationResponse"
                                 }
                             }
                         }
@@ -213,9 +213,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUploadDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateUploadDestinationResponse"
                                 }
                             }
                         }
@@ -237,9 +237,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUploadDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateUploadDestinationResponse"
                                 }
                             }
                         }
@@ -261,9 +261,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUploadDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateUploadDestinationResponse"
                                 }
                             }
                         }
@@ -285,9 +285,9 @@
                             }
                         },
                         "content": {
-                            "application\/json": {
+                            "application/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateUploadDestinationResponse"
+                                    "$ref": "#/components/schemas/CreateUploadDestinationResponse"
                                 }
                             }
                         }
@@ -302,10 +302,10 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#\/components\/schemas\/UploadDestination"
+                        "$ref": "#/components/schemas/UploadDestination"
                     },
                     "errors": {
-                        "$ref": "#\/components\/schemas\/ErrorList"
+                        "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the createUploadDestination operation."
@@ -333,7 +333,7 @@
                 "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
                 "items": {
-                    "$ref": "#\/components\/schemas\/Error"
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "Error": {

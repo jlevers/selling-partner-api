@@ -23,7 +23,7 @@ final class OrderStatus extends Dto
         public readonly \DateTime $purchaseOrderDate,
         public readonly PartyIdentification $sellingParty,
         public readonly PartyIdentification $shipToParty,
-        public readonly ?array $itemStatus = null,
+        public readonly array $itemStatus,
         public readonly ?\DateTime $lastUpdatedDate = null,
     ) {
     }

@@ -11,10 +11,20 @@ interface TokenCache
     /**
      * Get an authenticator (with any tokens) from the cache. Return false if the key is missing or expired.
      */
-    public static function get(string $key): AccessTokenAuthenticator|false;
+    public function get(string $key): AccessTokenAuthenticator|false;
 
     /**
      * Set a value in the cache.
      */
-    public static function set(string $key, AccessTokenAuthenticator $authenticator): void;
+    public function set(string $key, AccessTokenAuthenticator $authenticator): void;
+
+    /**
+     * Remove a value from the cache.
+     */
+    public function forget(string $key): void;
+
+    /**
+     * Clear the cache.
+     */
+    public function clear(): void;
 }

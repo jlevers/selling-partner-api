@@ -135,9 +135,9 @@ abstract class SellingPartnerApi extends Connector
         // Only use data elements that are known to be valid for this particular endpoint
         $dataElements = array_intersect($this->dataElements, $knownDataElements);
 
-        $cacheKey = "{$this->clientId}.{$path}.{$method}";
+        $cacheKey = "{$this->clientId}.{$method}.{$path}";
         if ($dataElements) {
-            $cacheKey .= '.'.implode('.', $dataElements);
+            $cacheKey .= ':'.implode(',', $dataElements);
         }
 
         // Using $this in closures doesn't work well

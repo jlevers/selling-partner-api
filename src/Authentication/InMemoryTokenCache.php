@@ -11,7 +11,7 @@ class InMemoryTokenCache implements TokenCache
     /** @var AccessTokenAuthenticator[] */
     private static array $tokens = [];
 
-    public static function get(string $key): AccessTokenAuthenticator|false
+    public function get(string $key): AccessTokenAuthenticator|false
     {
         $authenticator = self::$tokens[$key] ?? false;
         if (! $authenticator || $authenticator->hasExpired()) {
@@ -21,8 +21,18 @@ class InMemoryTokenCache implements TokenCache
         return $authenticator;
     }
 
-    public static function set(string $key, AccessTokenAuthenticator $authenticator): void
+    public function set(string $key, AccessTokenAuthenticator $authenticator): void
     {
         self::$tokens[$key] = $authenticator;
+    }
+
+    public function forget(string $key): void
+    {
+        unset(self::$tokens[$key]);
+    }
+
+    public function clear(): void
+    {
+        self::$tokens = [];
     }
 }

@@ -39,17 +39,14 @@ enum Endpoint: string
     public static function byMarketplaceId(string $marketplaceId, bool $sandbox = false): self
     {
         return match ($marketplaceId) {
-            'A2Q3Y263D00KWC', 'A2EUQ1WTGCTBG2', 'A1AM78C64UM0Y8', 'ATVPDKIKX0DER'
-                => $sandbox ? self::NA_SANDBOX : self::NA,
+            'A2Q3Y263D00KWC', 'A2EUQ1WTGCTBG2', 'A1AM78C64UM0Y8', 'ATVPDKIKX0DER' => $sandbox ? self::NA_SANDBOX : self::NA,
 
             'A2VIGQ35RCS4UG', 'AMEN7PMS3EDWL', 'A1PA6795UKMFR9', 'ARBP9OOSHTCHU',
             'A1RKKUPIHCS9HS', 'A13V1IB3VIYZZH', 'A1F83G8C2ARO7P', 'A21TJRUUN4KGV',
             'APJ6JRA9NG5V4', 'A1805IZSGTT6HS', 'A1C3SOZRARQ6R3', 'A17E79C6D8DWNP',
-            'A2NODRKZP88ZB9', 'A33AVAJ2PDY3EV', 'AE08WJ6YKNBMC'
-                => $sandbox ? self::EU_SANDBOX : self::EU,
+            'A2NODRKZP88ZB9', 'A33AVAJ2PDY3EV', 'AE08WJ6YKNBMC' => $sandbox ? self::EU_SANDBOX : self::EU,
 
-            'A19VAU5U5O7RUS', 'A39IBJ37TRP1C6', 'A1VC38T7YXB528'
-                => $sandbox ? self::FE_SANDBOX : self::FE,
+            'A19VAU5U5O7RUS', 'A39IBJ37TRP1C6', 'A1VC38T7YXB528' => $sandbox ? self::FE_SANDBOX : self::FE,
 
             default => throw new InvalidArgumentException("Unknown marketplace ID $marketplaceId"),
         };

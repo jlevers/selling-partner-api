@@ -26,6 +26,7 @@ use SellingPartnerApi\Enums\Endpoint;
 use SellingPartnerApi\Enums\GrantlessScope;
 use SellingPartnerApi\Generator\Package;
 use SellingPartnerApi\Seller\SellerConnector;
+use SellingPartnerApi\Seller\TokensV20210301;
 use SellingPartnerApi\Seller\TokensV20210301\Dto\CreateRestrictedDataTokenRequest;
 use SellingPartnerApi\Seller\TokensV20210301\Dto\RestrictedResource;
 use SellingPartnerApi\Vendor\VendorConnector;
@@ -36,6 +37,8 @@ abstract class SellingPartnerApi extends Connector
     use ClientCredentialsGrant {
         getAccessToken as getClientCredentialsToken;
     }
+
+    protected TokensV20210301\Api $tokensApi;
 
     public function __construct(
         public readonly string $clientId,
@@ -51,6 +54,8 @@ abstract class SellingPartnerApi extends Connector
             ->setClientId($clientId)
             ->setClientSecret($clientSecret)
             ->setTokenEndpoint('https://api.amazon.com/auth/o2/token');
+
+        $this->tokensApi = new TokensV20210301\Api($this);
     }
 
     public static function seller(
@@ -138,16 +143,26 @@ abstract class SellingPartnerApi extends Connector
         // Using $this in closures doesn't work well
         $dataElements = $this->dataElements;
         $delegatee = $this->delegatee;
+        $tokensApi = $this->tokensApi;
         $authenticator = $this->getCacheableAuthenticator(
             $cacheKey,
-            function () use ($method, $path, $dataElements, $delegatee): AccessTokenAuthenticator {
+            function () use ($method, $path, $dataElements, $delegatee, $tokensApi): AccessTokenAuthenticator {
                 try {
-                    $tokensApi = self::seller(
-                        $this->clientId,
-                        $this->clientSecret,
-                        $this->refreshToken,
-                        $this->endpoint,
-                    )->tokensV20210301();
+                    // Using a Tokens API instance created for this specific connector instance ensures that
+                    // that instance uses all the same configuration details as the connector that initiated
+                    // the restricted request, such as the sender, the HTTP client (important for mocking), etc.
+                    $response = $tokensApi->createRestrictedDataToken(
+                        new CreateRestrictedDataTokenRequest(
+                            [
+                                new RestrictedResource(
+                                    $method,
+                                    $path,
+                                    $dataElements ?: null,
+                                ),
+                            ],
+                            $delegatee
+                        )
+                    )->dto();
                 } catch (RequestException $e) {
                     throw new RequestException(
                         $e->getResponse(),
@@ -156,19 +171,6 @@ abstract class SellingPartnerApi extends Connector
                         $e->getPrevious()
                     );
                 }
-
-                $response = $tokensApi->createRestrictedDataToken(
-                    new CreateRestrictedDataTokenRequest(
-                        [
-                            new RestrictedResource(
-                                $method,
-                                $path,
-                                $dataElements ?: null,
-                            ),
-                        ],
-                        $delegatee
-                    )
-                )->dto();
 
                 return new AccessTokenAuthenticator(
                     $response->restrictedDataToken,
@@ -193,6 +195,7 @@ abstract class SellingPartnerApi extends Connector
         bool $returnResponse = false,
         ?callable $requestModifier = null
     ): OAuthAuthenticator|Response {
+        $originalSender = $this->sender ?? $this->defaultSender();
         // Make sure we use the authentication client for any access token related requests
         if ($this->authenticationClient) {
             $this->sender = new AuthSender($this->authenticationClient);
@@ -201,7 +204,7 @@ abstract class SellingPartnerApi extends Connector
         $result = $this->getClientCredentialsToken($scopes, $scopeSeparator, $returnResponse, $requestModifier);
 
         if ($this->authenticationClient) {
-            $this->sender = $this->defaultSender();
+            $this->sender = $originalSender;
         }
 
         return $result;

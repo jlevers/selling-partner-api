@@ -53,7 +53,7 @@ trait HasArrayableAttributes
             }
         }
 
-        return $asArray;
+        return array_filter($asArray, fn ($v) => $v !== null);
     }
 
     public function valueToArray(mixed $value, array|string $type): mixed

@@ -159,10 +159,8 @@ class AuthenticationTest extends TestCase
                     [
                         'method' => 'GET',
                         'path' => '/mfn/v0/shipments/{shipmentId}',
-                        'dataElements' => null,
                     ],
                 ],
-                'targetApplication' => null,
             ],
             $mockClient->getLastPendingRequest()->body()->all()
         );
@@ -206,10 +204,8 @@ class AuthenticationTest extends TestCase
                     [
                         'method' => 'GET',
                         'path' => '/reports/2021-06-30/documents/report-document-id-1',
-                        'dataElements' => null,
                     ],
                 ],
-                'targetApplication' => null,
             ],
             $mockClient->getLastPendingRequest()->body()->all()
         );
@@ -256,7 +252,6 @@ class AuthenticationTest extends TestCase
                         'dataElements' => ['shippingAddress', 'buyerInfo'],
                     ],
                 ],
-                'targetApplication' => null,
             ],
             $mockClient->getLastPendingRequest()->body()->all()
         );
@@ -298,7 +293,6 @@ class AuthenticationTest extends TestCase
                     [
                         'method' => 'GET',
                         'path' => '/mfn/v0/shipments/{shipmentId}',
-                        'dataElements' => null,
                     ],
                 ],
                 'targetApplication' => 'app-id',

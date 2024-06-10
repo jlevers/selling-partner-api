@@ -9,12 +9,12 @@ use SellingPartnerApi\Dto;
 final class ShipmentDates extends Dto
 {
     /**
-     * @param  DateTime  $requiredShipDate  Time by which the vendor is required to ship the order.
-     * @param  ?DateTime  $promisedDeliveryDate  Delivery date promised to the Amazon customer.
+     * @param  \DateTimeInterface  $requiredShipDate  Time by which the vendor is required to ship the order.
+     * @param  ?\DateTimeInterface  $promisedDeliveryDate  Delivery date promised to the Amazon customer.
      */
     public function __construct(
-        public readonly \DateTime $requiredShipDate,
-        public readonly ?\DateTime $promisedDeliveryDate = null,
+        public readonly \DateTimeInterface $requiredShipDate,
+        public readonly ?\DateTimeInterface $promisedDeliveryDate = null,
     ) {
     }
 }

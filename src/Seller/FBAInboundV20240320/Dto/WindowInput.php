@@ -9,10 +9,10 @@ use SellingPartnerApi\Dto;
 final class WindowInput extends Dto
 {
     /**
-     * @param  DateTime  $start  The start date of the window. The time component must be zero.
+     * @param  \DateTimeInterface  $start  The start date of the window. The time component must be zero.
      */
     public function __construct(
-        public readonly \DateTime $start,
+        public readonly \DateTimeInterface $start,
     ) {
     }
 }

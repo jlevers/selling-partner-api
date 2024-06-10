@@ -20,8 +20,8 @@ class GetOrders extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  DateTime  $createdAfter  Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  DateTime  $createdBefore  Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  \DateTimeInterface  $createdAfter  Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  \DateTimeInterface  $createdBefore  Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $shipFromPartyId  The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses.
      * @param  ?string  $status  Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
      * @param  ?int  $limit  The limit to the number of purchase orders returned.
@@ -30,8 +30,8 @@ class GetOrders extends Request
      * @param  ?string  $includeDetails  When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned.
      */
     public function __construct(
-        protected \DateTime $createdAfter,
-        protected \DateTime $createdBefore,
+        protected \DateTimeInterface $createdAfter,
+        protected \DateTimeInterface $createdBefore,
         protected ?string $shipFromPartyId = null,
         protected ?string $status = null,
         protected ?int $limit = null,

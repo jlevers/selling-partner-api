@@ -18,11 +18,11 @@ class ListAllFulfillmentOrders extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  ?DateTime  $queryStartDate  A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
+     * @param  ?\DateTimeInterface  $queryStartDate  A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
      * @param  ?string  $nextToken  A string token returned in the response to your previous request.
      */
     public function __construct(
-        protected ?\DateTime $queryStartDate = null,
+        protected ?\DateTimeInterface $queryStartDate = null,
         protected ?string $nextToken = null,
     ) {
     }

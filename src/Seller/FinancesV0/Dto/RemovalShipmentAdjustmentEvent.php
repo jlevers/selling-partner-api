@@ -22,7 +22,7 @@ final class RemovalShipmentAdjustmentEvent extends Dto
     ];
 
     /**
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      * @param  ?string  $adjustmentEventId  The unique identifier for the adjustment event.
      * @param  ?string  $merchantOrderId  The merchant removal orderId.
      * @param  ?string  $orderId  The orderId for shipping inventory.
@@ -34,7 +34,7 @@ final class RemovalShipmentAdjustmentEvent extends Dto
      * @param  RemovalShipmentItemAdjustment[]|null  $removalShipmentItemAdjustmentList  A comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory.
      */
     public function __construct(
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $adjustmentEventId = null,
         public readonly ?string $merchantOrderId = null,
         public readonly ?string $orderId = null,

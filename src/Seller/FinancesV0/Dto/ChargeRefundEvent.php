@@ -18,7 +18,7 @@ final class ChargeRefundEvent extends Dto
     protected static array $complexArrayTypes = ['chargeRefundTransactions' => [ChargeRefundTransaction::class]];
 
     /**
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      * @param  ?string  $reasonCode  The reason given for a charge refund.
      *
      * Example: `SubscriptionFeeCorrection`
@@ -28,7 +28,7 @@ final class ChargeRefundEvent extends Dto
      * @param  ChargeRefundTransaction[]|null  $chargeRefundTransactions  A list of `ChargeRefund` transactions
      */
     public function __construct(
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $reasonCode = null,
         public readonly ?string $reasonCodeDescription = null,
         public readonly ?array $chargeRefundTransactions = null,

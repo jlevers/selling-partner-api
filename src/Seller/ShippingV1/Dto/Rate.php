@@ -12,7 +12,7 @@ final class Rate extends Dto
      * @param  ?string  $rateId  An identifier for the rate.
      * @param  ?Currency  $totalCharge  The total value of all items in the container.
      * @param  ?Weight  $billedWeight  The weight.
-     * @param  ?DateTime  $expirationTime  The time after which the offering will expire.
+     * @param  ?\DateTimeInterface  $expirationTime  The time after which the offering will expire.
      * @param  ?string  $serviceType  The type of shipping service that will be used for the service offering.
      * @param  ?ShippingPromiseSet  $promise  The promised delivery time and pickup time.
      */
@@ -20,7 +20,7 @@ final class Rate extends Dto
         public readonly ?string $rateId = null,
         public readonly ?Currency $totalCharge = null,
         public readonly ?Weight $billedWeight = null,
-        public readonly ?\DateTime $expirationTime = null,
+        public readonly ?\DateTimeInterface $expirationTime = null,
         public readonly ?string $serviceType = null,
         public readonly ?ShippingPromiseSet $promise = null,
     ) {

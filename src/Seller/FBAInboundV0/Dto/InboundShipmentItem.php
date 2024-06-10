@@ -28,7 +28,7 @@ final class InboundShipmentItem extends Dto
      * @param  ?string  $fulfillmentNetworkSku  Amazon's fulfillment network SKU of the item.
      * @param  ?int  $quantityReceived  The item quantity.
      * @param  ?int  $quantityInCase  The item quantity.
-     * @param  ?DateTime  $releaseDate  Type containing date in string format
+     * @param  ?\DateTimeInterface  $releaseDate  Type containing date in string format
      * @param  PrepDetails[]|null  $prepDetailsList  A list of preparation instructions and who is responsible for that preparation.
      */
     public function __construct(
@@ -38,7 +38,7 @@ final class InboundShipmentItem extends Dto
         public readonly ?string $fulfillmentNetworkSku = null,
         public readonly ?int $quantityReceived = null,
         public readonly ?int $quantityInCase = null,
-        public readonly ?\DateTime $releaseDate = null,
+        public readonly ?\DateTimeInterface $releaseDate = null,
         public readonly ?array $prepDetailsList = null,
     ) {
     }

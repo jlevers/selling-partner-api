@@ -20,7 +20,7 @@ final class CouponPaymentEvent extends Dto
     ];
 
     /**
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      * @param  ?string  $couponId  A coupon identifier.
      * @param  ?string  $sellerCouponDescription  The description provided by the seller when they created the coupon.
      * @param  ?int  $clipOrRedemptionCount  The number of coupon clips or redemptions.
@@ -94,7 +94,7 @@ final class CouponPaymentEvent extends Dto
      * @param  ?Currency  $totalAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $couponId = null,
         public readonly ?string $sellerCouponDescription = null,
         public readonly ?int $clipOrRedemptionCount = null,

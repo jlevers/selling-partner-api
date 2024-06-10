@@ -27,7 +27,7 @@ final class NetworkComminglingTransactionEvent extends Dto
      * * NetCo - A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.
      *
      * * ComminglingVAT - A commingling VAT transaction. Available only in the UK, Spain, France, Germany, and Italy marketplaces.
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      * @param  ?string  $netCoTransactionId  The identifier for the network item swap.
      * @param  ?string  $swapReason  The reason for the network item swap.
      * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the swapped item.
@@ -37,7 +37,7 @@ final class NetworkComminglingTransactionEvent extends Dto
      */
     public function __construct(
         public readonly ?string $transactionType = null,
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $netCoTransactionId = null,
         public readonly ?string $swapReason = null,
         public readonly ?string $asin = null,

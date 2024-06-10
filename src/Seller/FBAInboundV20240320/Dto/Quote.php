@@ -10,13 +10,13 @@ final class Quote extends Dto
 {
     /**
      * @param  Currency  $cost  Currency definition.
-     * @param  ?DateTime  $expiration  The timestamp at which this transportation option quote becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
-     * @param  ?DateTime  $voidableUntil  Voidable until timestamp.
+     * @param  ?\DateTimeInterface  $expiration  The timestamp at which this transportation option quote becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param  ?\DateTimeInterface  $voidableUntil  Voidable until timestamp.
      */
     public function __construct(
         public readonly Currency $cost,
-        public readonly ?\DateTime $expiration = null,
-        public readonly ?\DateTime $voidableUntil = null,
+        public readonly ?\DateTimeInterface $expiration = null,
+        public readonly ?\DateTimeInterface $voidableUntil = null,
     ) {
     }
 }

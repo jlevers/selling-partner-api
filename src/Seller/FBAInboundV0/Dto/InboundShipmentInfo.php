@@ -29,7 +29,7 @@ final class InboundShipmentInfo extends Dto
      * @param  ?string  $destinationFulfillmentCenterId  An Amazon fulfillment center identifier created by Amazon.
      * @param  ?string  $shipmentStatus  Indicates the status of the inbound shipment. When used with the createInboundShipment operation, WORKING is the only valid value. When used with the updateInboundShipment operation, possible values are WORKING, SHIPPED or CANCELLED.
      * @param  ?string  $labelPrepType  The type of label preparation that is required for the inbound shipment.
-     * @param  ?DateTime  $confirmedNeedByDate  Type containing date in string format
+     * @param  ?\DateTimeInterface  $confirmedNeedByDate  Type containing date in string format
      * @param  ?string  $boxContentsSource  Where the seller provided box contents information for a shipment.
      * @param  ?BoxContentsFeeDetails  $estimatedBoxContentsFee  The manual processing fee per unit and total fee for a shipment.
      */
@@ -41,7 +41,7 @@ final class InboundShipmentInfo extends Dto
         public readonly ?string $destinationFulfillmentCenterId = null,
         public readonly ?string $shipmentStatus = null,
         public readonly ?string $labelPrepType = null,
-        public readonly ?\DateTime $confirmedNeedByDate = null,
+        public readonly ?\DateTimeInterface $confirmedNeedByDate = null,
         public readonly ?string $boxContentsSource = null,
         public readonly ?BoxContentsFeeDetails $estimatedBoxContentsFee = null,
     ) {

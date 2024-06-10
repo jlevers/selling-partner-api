@@ -19,7 +19,7 @@ final class RemovalShipmentEvent extends Dto
     protected static array $complexArrayTypes = ['removalShipmentItemList' => [RemovalShipmentItem::class]];
 
     /**
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      * @param  ?string  $merchantOrderId  The merchant removal orderId.
      * @param  ?string  $orderId  The identifier for the removal shipment order.
      * @param  ?string  $transactionType  The type of removal order.
@@ -30,7 +30,7 @@ final class RemovalShipmentEvent extends Dto
      * @param  RemovalShipmentItem[]|null  $removalShipmentItemList  A list of information about removal shipment items.
      */
     public function __construct(
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $merchantOrderId = null,
         public readonly ?string $orderId = null,
         public readonly ?string $transactionType = null,

@@ -9,13 +9,13 @@ use SellingPartnerApi\Dto;
 final class RangeSlot extends Dto
 {
     /**
-     * @param  ?DateTime  $startDateTime  Start date time of slot in ISO 8601 format with precision of seconds.
-     * @param  ?DateTime  $endDateTime  End date time of slot in ISO 8601 format with precision of seconds.
+     * @param  ?\DateTimeInterface  $startDateTime  Start date time of slot in ISO 8601 format with precision of seconds.
+     * @param  ?\DateTimeInterface  $endDateTime  End date time of slot in ISO 8601 format with precision of seconds.
      * @param  ?int  $capacity  Capacity of the slot.
      */
     public function __construct(
-        public readonly ?\DateTime $startDateTime = null,
-        public readonly ?\DateTime $endDateTime = null,
+        public readonly ?\DateTimeInterface $startDateTime = null,
+        public readonly ?\DateTimeInterface $endDateTime = null,
         public readonly ?int $capacity = null,
     ) {
     }

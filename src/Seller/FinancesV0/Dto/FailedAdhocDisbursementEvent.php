@@ -31,7 +31,7 @@ final class FailedAdhocDisbursementEvent extends Dto
      *
      * Example `HARD_DECLINED`
      * @param  ?Currency  $transferAmount  A currency type and amount.
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      */
     public function __construct(
         public readonly ?string $fundsTransfersType = null,
@@ -40,7 +40,7 @@ final class FailedAdhocDisbursementEvent extends Dto
         public readonly ?string $paymentDisbursementType = null,
         public readonly ?string $status = null,
         public readonly ?Currency $transferAmount = null,
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
     ) {
     }
 }

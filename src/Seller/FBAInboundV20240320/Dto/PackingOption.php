@@ -21,7 +21,7 @@ final class PackingOption extends Dto
      * @param  string  $packingOptionId  Identifier of a packing option.
      * @param  string  $status  The status of the packing option. Can be: `OFFERED`, `ACCEPTED`, or `EXPIRED`.
      * @param  ShippingConfiguration[]  $supportedShippingConfigurations  List of supported shipping modes.
-     * @param  ?DateTime  $expiration  The timestamp at which this packing option becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param  ?\DateTimeInterface  $expiration  The timestamp at which this packing option becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
     public function __construct(
         public readonly array $discounts,
@@ -30,7 +30,7 @@ final class PackingOption extends Dto
         public readonly string $packingOptionId,
         public readonly string $status,
         public readonly array $supportedShippingConfigurations,
-        public readonly ?\DateTime $expiration = null,
+        public readonly ?\DateTimeInterface $expiration = null,
     ) {
     }
 }

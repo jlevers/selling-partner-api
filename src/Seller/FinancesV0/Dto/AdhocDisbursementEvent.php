@@ -19,13 +19,13 @@ final class AdhocDisbursementEvent extends Dto
      * @param  ?string  $transactionType  Indicates the type of transaction.
      *
      * Example: "Disbursed to Amazon Gift Card balance"
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      * @param  ?string  $transactionId  The identifier for the transaction.
      * @param  ?Currency  $transactionAmount  A currency type and amount.
      */
     public function __construct(
         public readonly ?string $transactionType = null,
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $transactionId = null,
         public readonly ?Currency $transactionAmount = null,
     ) {

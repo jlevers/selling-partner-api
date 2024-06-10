@@ -22,7 +22,7 @@ final class OneClickShipmentRequest extends Dto
      * @param  ServiceSelection  $serviceSelection  Service Selection Criteria.
      * @param  ?Address  $shipTo  The address.
      * @param  ?Address  $returnTo  The address.
-     * @param  ?DateTime  $shipDate  The ship date and time (the requested pickup). This defaults to the current date and time.
+     * @param  ?\DateTimeInterface  $shipDate  The ship date and time (the requested pickup). This defaults to the current date and time.
      * @param  OneClickShipmentValueAddedService[]|null  $valueAddedServicesDetails  The value-added services to be added to a shipping service purchase.
      * @param  TaxDetail[]|null  $taxDetails  A list of tax detail information.
      * @param  ?ShipperInstruction  $shipperInstruction  The shipper instruction.
@@ -36,7 +36,7 @@ final class OneClickShipmentRequest extends Dto
         public readonly ServiceSelection $serviceSelection,
         public readonly ?Address $shipTo = null,
         public readonly ?Address $returnTo = null,
-        public readonly ?\DateTime $shipDate = null,
+        public readonly ?\DateTimeInterface $shipDate = null,
         public readonly ?array $valueAddedServicesDetails = null,
         public readonly ?array $taxDetails = null,
         public readonly ?ShipperInstruction $shipperInstruction = null,

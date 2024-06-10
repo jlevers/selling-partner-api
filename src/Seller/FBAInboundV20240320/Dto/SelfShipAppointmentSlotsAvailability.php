@@ -11,11 +11,11 @@ final class SelfShipAppointmentSlotsAvailability extends Dto
     protected static array $complexArrayTypes = ['slots' => [AppointmentSlot::class]];
 
     /**
-     * @param  ?DateTime  $expiresAt  The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param  ?\DateTimeInterface  $expiresAt  The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      * @param  AppointmentSlot[]|null  $slots  List of appointment slots.
      */
     public function __construct(
-        public readonly ?\DateTime $expiresAt = null,
+        public readonly ?\DateTimeInterface $expiresAt = null,
         public readonly ?array $slots = null,
     ) {
     }

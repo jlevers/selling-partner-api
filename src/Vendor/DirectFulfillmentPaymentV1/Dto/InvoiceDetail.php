@@ -17,7 +17,7 @@ final class InvoiceDetail extends Dto
 
     /**
      * @param  string  $invoiceNumber  The unique invoice number.
-     * @param  DateTime  $invoiceDate  Invoice date.
+     * @param  \DateTimeInterface  $invoiceDate  Invoice date.
      * @param  Money  $invoiceTotal  An amount of money, including units in the form of currency.
      * @param  InvoiceItem[]  $items  Provides the details of the items in this invoice.
      * @param  ?string  $referenceNumber  An additional unique reference number used for regulatory or other purposes.
@@ -30,7 +30,7 @@ final class InvoiceDetail extends Dto
      */
     public function __construct(
         public readonly string $invoiceNumber,
-        public readonly \DateTime $invoiceDate,
+        public readonly \DateTimeInterface $invoiceDate,
         public readonly PartyIdentification $remitToParty,
         public readonly PartyIdentification $shipFromParty,
         public readonly Money $invoiceTotal,

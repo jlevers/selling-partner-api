@@ -31,7 +31,7 @@ final class ShipmentDetail extends Dto
      * @param  ?string  $warehouseId  The Amazon-defined identifier for the warehouse.
      * @param  ?string  $amazonOrderId  The Amazon-defined identifier for the order.
      * @param  ?string  $amazonShipmentId  The Amazon-defined identifier for the shipment.
-     * @param  ?DateTime  $purchaseDate  The date and time when the order was created.
+     * @param  ?\DateTimeInterface  $purchaseDate  The date and time when the order was created.
      * @param  ?Address  $shippingAddress  The shipping address details of the shipment.
      * @param  ?string[]  $paymentMethodDetails  The list of payment method details.
      * @param  ?string  $marketplaceId  The identifier for the marketplace where the order was placed.
@@ -47,7 +47,7 @@ final class ShipmentDetail extends Dto
         public readonly ?string $warehouseId = null,
         public readonly ?string $amazonOrderId = null,
         public readonly ?string $amazonShipmentId = null,
-        public readonly ?\DateTime $purchaseDate = null,
+        public readonly ?\DateTimeInterface $purchaseDate = null,
         public readonly ?Address $shippingAddress = null,
         public readonly ?array $paymentMethodDetails = null,
         public readonly ?string $marketplaceId = null,

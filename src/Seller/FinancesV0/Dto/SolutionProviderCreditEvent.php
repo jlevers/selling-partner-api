@@ -31,7 +31,7 @@ final class SolutionProviderCreditEvent extends Dto
      * @param  ?string  $providerId  The Amazon-defined identifier of the solution provider.
      * @param  ?string  $providerStoreName  The store name where the payment event occurred.
      * @param  ?Currency  $transactionAmount  A currency type and amount.
-     * @param  ?DateTime  $transactionCreationDate
+     * @param  ?\DateTimeInterface  $transactionCreationDate
      */
     public function __construct(
         public readonly ?string $providerTransactionType = null,
@@ -43,7 +43,7 @@ final class SolutionProviderCreditEvent extends Dto
         public readonly ?string $providerId = null,
         public readonly ?string $providerStoreName = null,
         public readonly ?Currency $transactionAmount = null,
-        public readonly ?\DateTime $transactionCreationDate = null,
+        public readonly ?\DateTimeInterface $transactionCreationDate = null,
     ) {
     }
 }

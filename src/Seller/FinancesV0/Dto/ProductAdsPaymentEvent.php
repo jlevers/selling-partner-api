@@ -9,7 +9,7 @@ use SellingPartnerApi\Dto;
 final class ProductAdsPaymentEvent extends Dto
 {
     /**
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      * @param  ?string  $transactionType  Indicates if the transaction is for a charge or a refund.
      *
      * Possible values:
@@ -23,7 +23,7 @@ final class ProductAdsPaymentEvent extends Dto
      * @param  ?Currency  $transactionValue  A currency type and amount.
      */
     public function __construct(
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $transactionType = null,
         public readonly ?string $invoiceId = null,
         public readonly ?Currency $baseValue = null,

@@ -15,14 +15,14 @@ final class GetRatesRequest extends Dto
      * @param  Address  $shipFrom  The address.
      * @param  string[]  $serviceTypes  A list of service types that can be used to send the shipment.
      * @param  ContainerSpecification[]  $containerSpecifications  A list of container specifications.
-     * @param  ?DateTime  $shipDate  The start date and time. This defaults to the current date and time.
+     * @param  ?\DateTimeInterface  $shipDate  The start date and time. This defaults to the current date and time.
      */
     public function __construct(
         public readonly Address $shipTo,
         public readonly Address $shipFrom,
         public readonly array $serviceTypes,
         public readonly array $containerSpecifications,
-        public readonly ?\DateTime $shipDate = null,
+        public readonly ?\DateTimeInterface $shipDate = null,
     ) {
     }
 }

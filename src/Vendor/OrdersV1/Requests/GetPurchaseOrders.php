@@ -19,13 +19,13 @@ class GetPurchaseOrders extends Request
 
     /**
      * @param  ?int  $limit  The limit to the number of records returned. Default value is 100 records.
-     * @param  ?DateTime  $createdAfter  Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?DateTime  $createdBefore  Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?\DateTimeInterface  $createdAfter  Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?\DateTimeInterface  $createdBefore  Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $sortOrder  Sort in ascending or descending order by purchase order creation date.
      * @param  ?string  $nextToken  Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call
      * @param  ?string  $includeDetails  When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true.
-     * @param  ?DateTime  $changedAfter  Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?DateTime  $changedBefore  Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?\DateTimeInterface  $changedAfter  Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?\DateTimeInterface  $changedBefore  Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $poItemState  Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
      * @param  ?string  $isPoChanged  When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false.
      * @param  ?string  $purchaseOrderState  Filters purchase orders based on the purchase order state.
@@ -33,13 +33,13 @@ class GetPurchaseOrders extends Request
      */
     public function __construct(
         protected ?int $limit = null,
-        protected ?\DateTime $createdAfter = null,
-        protected ?\DateTime $createdBefore = null,
+        protected ?\DateTimeInterface $createdAfter = null,
+        protected ?\DateTimeInterface $createdBefore = null,
         protected ?string $sortOrder = null,
         protected ?string $nextToken = null,
         protected ?string $includeDetails = null,
-        protected ?\DateTime $changedAfter = null,
-        protected ?\DateTime $changedBefore = null,
+        protected ?\DateTimeInterface $changedAfter = null,
+        protected ?\DateTimeInterface $changedBefore = null,
         protected ?string $poItemState = null,
         protected ?string $isPoChanged = null,
         protected ?string $purchaseOrderState = null,

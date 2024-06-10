@@ -9,7 +9,7 @@ use SellingPartnerApi\Dto;
 final class SellerDealPaymentEvent extends Dto
 {
     /**
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      * @param  ?string  $dealId  The unique identifier of the deal.
      * @param  ?string  $dealDescription  The internal description of the deal.
      * @param  ?string  $eventType  The type of event: SellerDealComplete.
@@ -19,7 +19,7 @@ final class SellerDealPaymentEvent extends Dto
      * @param  ?Currency  $totalAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $dealId = null,
         public readonly ?string $dealDescription = null,
         public readonly ?string $eventType = null,

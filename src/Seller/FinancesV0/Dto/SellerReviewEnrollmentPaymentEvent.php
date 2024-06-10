@@ -18,7 +18,7 @@ final class SellerReviewEnrollmentPaymentEvent extends Dto
     ];
 
     /**
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      * @param  ?string  $enrollmentId  An enrollment identifier.
      * @param  ?string  $parentAsin  The Amazon Standard Identification Number (ASIN) of the item that was enrolled in the Early Reviewer Program.
      * @param  ?FeeComponent  $feeComponent  A fee associated with the event.
@@ -90,7 +90,7 @@ final class SellerReviewEnrollmentPaymentEvent extends Dto
      * @param  ?Currency  $totalAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $enrollmentId = null,
         public readonly ?string $parentAsin = null,
         public readonly ?FeeComponent $feeComponent = null,

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Traits;
 
 use DateTime;
+use DateTimeInterface;
 use ReflectionClass;
 use SellingPartnerApi\Exceptions\InvalidAttributeTypeException;
 
@@ -47,7 +48,7 @@ trait HasArrayableAttributes
             if ($name === 'additionalProperties') {
                 $asArray = array_merge($asArray, $attributeAsArray);
             } else {
-                $originalName = $this->attributeMap[$name] ?? $name;
+                $originalName = static::$attributeMap[$name] ?? $name;
                 $asArray[$originalName] = $attributeAsArray;
             }
         }
@@ -59,7 +60,7 @@ trait HasArrayableAttributes
     {
         if (is_null($value)) {
             return null;
-        } elseif ($value instanceof DateTime) {
+        } elseif ($value instanceof DateTimeInterface) {
             return $value->format(DateTime::RFC3339);
         } elseif (is_string($type)) {
             if (class_exists($type)) {

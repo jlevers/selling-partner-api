@@ -20,16 +20,16 @@ use SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Requests\SubmitShipping
 class Api extends BaseResource
 {
     /**
-     * @param  DateTime  $createdAfter  Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  DateTime  $createdBefore  Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  \DateTimeInterface  $createdAfter  Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  \DateTimeInterface  $createdBefore  Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $shipFromPartyId  The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
      * @param  ?int  $limit  The limit to the number of records returned.
      * @param  ?string  $sortOrder  Sort ASC or DESC by order creation date.
      * @param  ?string  $nextToken  Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
      */
     public function getShippingLabels(
-        \DateTime $createdAfter,
-        \DateTime $createdBefore,
+        \DateTimeInterface $createdAfter,
+        \DateTimeInterface $createdBefore,
         ?string $shipFromPartyId = null,
         ?int $limit = null,
         ?string $sortOrder = null,
@@ -74,16 +74,16 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  DateTime  $createdAfter  Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  DateTime  $createdBefore  Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  \DateTimeInterface  $createdAfter  Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  \DateTimeInterface  $createdBefore  Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $shipFromPartyId  The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
      * @param  ?int  $limit  The limit to the number of records returned
      * @param  ?string  $sortOrder  Sort ASC or DESC by order creation date.
      * @param  ?string  $nextToken  Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
      */
     public function getCustomerInvoices(
-        \DateTime $createdAfter,
-        \DateTime $createdBefore,
+        \DateTimeInterface $createdAfter,
+        \DateTimeInterface $createdBefore,
         ?string $shipFromPartyId = null,
         ?int $limit = null,
         ?string $sortOrder = null,
@@ -105,16 +105,16 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  DateTime  $createdAfter  Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  DateTime  $createdBefore  Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  \DateTimeInterface  $createdAfter  Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  \DateTimeInterface  $createdBefore  Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $shipFromPartyId  The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
      * @param  ?int  $limit  The limit to the number of records returned
      * @param  ?string  $sortOrder  Sort ASC or DESC by packing slip creation date.
      * @param  ?string  $nextToken  Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
      */
     public function getPackingSlips(
-        \DateTime $createdAfter,
-        \DateTime $createdBefore,
+        \DateTimeInterface $createdAfter,
+        \DateTimeInterface $createdBefore,
         ?string $shipFromPartyId = null,
         ?int $limit = null,
         ?string $sortOrder = null,

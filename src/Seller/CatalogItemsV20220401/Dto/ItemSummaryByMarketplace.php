@@ -25,7 +25,7 @@ final class ItemSummaryByMarketplace extends Dto
      * @param  ?string  $modelNumber  Model number associated with an Amazon catalog item.
      * @param  ?int  $packageQuantity  Quantity of an Amazon catalog item in one package.
      * @param  ?string  $partNumber  Part number associated with an Amazon catalog item.
-     * @param  ?DateTime  $releaseDate  First date on which an Amazon catalog item is shippable to customers.
+     * @param  ?\DateTimeInterface  $releaseDate  First date on which an Amazon catalog item is shippable to customers.
      * @param  ?string  $size  Name of the size associated with an Amazon catalog item.
      * @param  ?string  $style  Name of the style associated with an Amazon catalog item.
      * @param  ?bool  $tradeInEligible  Identifies an Amazon catalog item is eligible for trade-in.
@@ -47,7 +47,7 @@ final class ItemSummaryByMarketplace extends Dto
         public readonly ?string $modelNumber = null,
         public readonly ?int $packageQuantity = null,
         public readonly ?string $partNumber = null,
-        public readonly ?\DateTime $releaseDate = null,
+        public readonly ?\DateTimeInterface $releaseDate = null,
         public readonly ?string $size = null,
         public readonly ?string $style = null,
         public readonly ?bool $tradeInEligible = null,

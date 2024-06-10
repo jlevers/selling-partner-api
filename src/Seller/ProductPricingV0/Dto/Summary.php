@@ -39,7 +39,7 @@ final class Summary extends Dto
      * @param  ?MoneyType  $suggestedLowerPricePlusShipping
      * @param  SalesRankType[]|null  $salesRankings  A list of sales rank information for the item, by category.
      * @param  OfferCountType[]|null  $buyBoxEligibleOffers
-     * @param  ?DateTime  $offersAvailableTime  When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing.
+     * @param  ?\DateTimeInterface  $offersAvailableTime  When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing.
      */
     public function __construct(
         public readonly int $totalOfferCount,
@@ -51,7 +51,7 @@ final class Summary extends Dto
         public readonly ?MoneyType $suggestedLowerPricePlusShipping = null,
         public readonly ?array $salesRankings = null,
         public readonly ?array $buyBoxEligibleOffers = null,
-        public readonly ?\DateTime $offersAvailableTime = null,
+        public readonly ?\DateTimeInterface $offersAvailableTime = null,
     ) {
     }
 }

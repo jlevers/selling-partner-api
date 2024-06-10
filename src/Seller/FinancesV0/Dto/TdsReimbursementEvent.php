@@ -15,12 +15,12 @@ final class TdsReimbursementEvent extends Dto
     ];
 
     /**
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      * @param  ?string  $tdsOrderId  The Tax-Deducted-at-Source (TDS) identifier.
      * @param  ?Currency  $reimbursedAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $tdsOrderId = null,
         public readonly ?Currency $reimbursedAmount = null,
     ) {

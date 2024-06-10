@@ -47,7 +47,7 @@ final class ShipmentEvent extends Dto
      * @param  FeeComponent[]|null  $orderFeeList  A list of fee component information.
      * @param  FeeComponent[]|null  $orderFeeAdjustmentList  A list of fee component information.
      * @param  DirectPayment[]|null  $directPaymentList  A list of direct payment information.
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      * @param  ShipmentItem[]|null  $shipmentItemList  A list of shipment items.
      * @param  ShipmentItem[]|null  $shipmentItemAdjustmentList  A list of shipment items.
      */
@@ -62,7 +62,7 @@ final class ShipmentEvent extends Dto
         public readonly ?array $orderFeeList = null,
         public readonly ?array $orderFeeAdjustmentList = null,
         public readonly ?array $directPaymentList = null,
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?array $shipmentItemList = null,
         public readonly ?array $shipmentItemAdjustmentList = null,
     ) {

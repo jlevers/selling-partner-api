@@ -20,13 +20,13 @@ final class ImagingServicesFeeEvent extends Dto
     /**
      * @param  ?string  $imagingRequestBillingItemId  The identifier for the imaging services request.
      * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the item for which the imaging service was requested.
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      * @param  FeeComponent[]|null  $feeList  A list of fee component information.
      */
     public function __construct(
         public readonly ?string $imagingRequestBillingItemId = null,
         public readonly ?string $asin = null,
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?array $feeList = null,
     ) {
     }

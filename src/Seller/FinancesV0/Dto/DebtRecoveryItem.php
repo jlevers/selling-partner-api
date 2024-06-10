@@ -18,14 +18,14 @@ final class DebtRecoveryItem extends Dto
     /**
      * @param  ?Currency  $recoveryAmount  A currency type and amount.
      * @param  ?Currency  $originalAmount  A currency type and amount.
-     * @param  ?DateTime  $groupBeginDate
-     * @param  ?DateTime  $groupEndDate
+     * @param  ?\DateTimeInterface  $groupBeginDate
+     * @param  ?\DateTimeInterface  $groupEndDate
      */
     public function __construct(
         public readonly ?Currency $recoveryAmount = null,
         public readonly ?Currency $originalAmount = null,
-        public readonly ?\DateTime $groupBeginDate = null,
-        public readonly ?\DateTime $groupEndDate = null,
+        public readonly ?\DateTimeInterface $groupBeginDate = null,
+        public readonly ?\DateTimeInterface $groupEndDate = null,
     ) {
     }
 }

@@ -8,13 +8,9 @@ use SellingPartnerApi\Dto;
 
 final class DeliveryWindow extends Dto
 {
-    /**
-     * @param  DateTime  $startDate
-     * @param  DateTime  $endDate
-     */
     public function __construct(
-        public readonly \DateTime $startDate,
-        public readonly \DateTime $endDate,
+        public readonly \DateTimeInterface $startDate,
+        public readonly \DateTimeInterface $endDate,
     ) {
     }
 }

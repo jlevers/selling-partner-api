@@ -14,12 +14,12 @@ final class ConfirmPreorderResult extends Dto
     ];
 
     /**
-     * @param  ?DateTime  $confirmedNeedByDate  Type containing date in string format
-     * @param  ?DateTime  $confirmedFulfillableDate  Type containing date in string format
+     * @param  ?\DateTimeInterface  $confirmedNeedByDate  Type containing date in string format
+     * @param  ?\DateTimeInterface  $confirmedFulfillableDate  Type containing date in string format
      */
     public function __construct(
-        public readonly ?\DateTime $confirmedNeedByDate = null,
-        public readonly ?\DateTime $confirmedFulfillableDate = null,
+        public readonly ?\DateTimeInterface $confirmedNeedByDate = null,
+        public readonly ?\DateTimeInterface $confirmedFulfillableDate = null,
     ) {
     }
 }

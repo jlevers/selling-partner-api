@@ -34,12 +34,12 @@ final class FinancialEventGroup extends Dto
      * @param  ?string  $fundTransferStatus  The status of the fund transfer.
      * @param  ?Currency  $originalTotal  A currency type and amount.
      * @param  ?Currency  $convertedTotal  A currency type and amount.
-     * @param  ?DateTime  $fundTransferDate
+     * @param  ?\DateTimeInterface  $fundTransferDate
      * @param  ?string  $traceId  The trace identifier used by sellers to look up transactions externally.
      * @param  ?string  $accountTail  The account tail of the payment instrument.
      * @param  ?Currency  $beginningBalance  A currency type and amount.
-     * @param  ?DateTime  $financialEventGroupStart
-     * @param  ?DateTime  $financialEventGroupEnd
+     * @param  ?\DateTimeInterface  $financialEventGroupStart
+     * @param  ?\DateTimeInterface  $financialEventGroupEnd
      */
     public function __construct(
         public readonly ?string $financialEventGroupId = null,
@@ -47,12 +47,12 @@ final class FinancialEventGroup extends Dto
         public readonly ?string $fundTransferStatus = null,
         public readonly ?Currency $originalTotal = null,
         public readonly ?Currency $convertedTotal = null,
-        public readonly ?\DateTime $fundTransferDate = null,
+        public readonly ?\DateTimeInterface $fundTransferDate = null,
         public readonly ?string $traceId = null,
         public readonly ?string $accountTail = null,
         public readonly ?Currency $beginningBalance = null,
-        public readonly ?\DateTime $financialEventGroupStart = null,
-        public readonly ?\DateTime $financialEventGroupEnd = null,
+        public readonly ?\DateTimeInterface $financialEventGroupStart = null,
+        public readonly ?\DateTimeInterface $financialEventGroupEnd = null,
     ) {
     }
 }

@@ -10,11 +10,11 @@ final class InvoiceDetails extends Dto
 {
     /**
      * @param  ?string  $invoiceNumber  The invoice number of the item.
-     * @param  ?DateTime  $invoiceDate  The invoice date of the item in ISO 8061 format.
+     * @param  ?\DateTimeInterface  $invoiceDate  The invoice date of the item in ISO 8061 format.
      */
     public function __construct(
         public readonly ?string $invoiceNumber = null,
-        public readonly ?\DateTime $invoiceDate = null,
+        public readonly ?\DateTimeInterface $invoiceDate = null,
     ) {
     }
 }

@@ -37,13 +37,13 @@ final class AdjustmentEvent extends Dto
      * * ReimbursementClawback - An Amazon Easy Ship reimbursement clawback from a seller's account. This occurs when a prior reimbursement is reversed. This value is used only in the India marketplace.
      *
      * * SellerRewards - An award credited to a seller's account for their participation in an offer in the Seller Rewards program. Applies only to the India marketplace.
-     * @param  ?DateTime  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate
      * @param  ?Currency  $adjustmentAmount  A currency type and amount.
      * @param  AdjustmentItem[]|null  $adjustmentItemList  A list of information about items in an adjustment to the seller's account.
      */
     public function __construct(
         public readonly ?string $adjustmentType = null,
-        public readonly ?\DateTime $postedDate = null,
+        public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?Currency $adjustmentAmount = null,
         public readonly ?array $adjustmentItemList = null,
     ) {

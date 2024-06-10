@@ -4493,7 +4493,6 @@
                     "amazonShipmentId",
                     "sellerFulfillmentOrderItemId",
                     "sellerReturnItemId",
-                    "sellerReturnReasonCode",
                     "status",
                     "statusChangedDate"
                 ],

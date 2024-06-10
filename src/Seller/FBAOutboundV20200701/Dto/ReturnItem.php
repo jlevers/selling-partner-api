@@ -12,9 +12,9 @@ final class ReturnItem extends Dto
      * @param  string  $sellerReturnItemId  An identifier assigned by the seller to the return item.
      * @param  string  $sellerFulfillmentOrderItemId  The identifier assigned to the item by the seller when the fulfillment order was created.
      * @param  string  $amazonShipmentId  The identifier for the shipment that is associated with the return item.
-     * @param  string  $sellerReturnReasonCode  The return reason code assigned to the return item by the seller.
      * @param  string  $status  Indicates if the return item has been processed by a fulfillment center.
      * @param  DateTime  $statusChangedDate
+     * @param  ?string  $sellerReturnReasonCode  The return reason code assigned to the return item by the seller.
      * @param  ?string  $returnComment  An optional comment about the return item.
      * @param  ?string  $amazonReturnReasonCode  The return reason code that the Amazon fulfillment center assigned to the return item.
      * @param  ?string  $returnAuthorizationId  Identifies the return authorization used to return this item. Refer to `ReturnAuthorization`.
@@ -25,9 +25,9 @@ final class ReturnItem extends Dto
         public readonly string $sellerReturnItemId,
         public readonly string $sellerFulfillmentOrderItemId,
         public readonly string $amazonShipmentId,
-        public readonly string $sellerReturnReasonCode,
         public readonly string $status,
         public readonly \DateTime $statusChangedDate,
+        public readonly ?string $sellerReturnReasonCode = null,
         public readonly ?string $returnComment = null,
         public readonly ?string $amazonReturnReasonCode = null,
         public readonly ?string $returnAuthorizationId = null,

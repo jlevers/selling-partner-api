@@ -54,7 +54,7 @@ class FileHandler extends BasicFileHandler
         return $this->baseOutputPath($file, $type->value);
     }
 
-    protected function baseOutputPath(PhpFile $file, string $subPath = ''): string
+    protected function baseOutputPath(PhpFile $file, ?string $subPath = ''): string
     {
         if ($subPath && $subPath[0] !== '/') {
             $subPath = "/$subPath";

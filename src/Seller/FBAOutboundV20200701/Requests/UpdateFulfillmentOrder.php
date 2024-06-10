@@ -11,8 +11,10 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Requests;
 
 use Exception;
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
+use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\UpdateFulfillmentOrderRequest;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Responses\UpdateFulfillmentOrderResponse;
@@ -20,8 +22,10 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Responses\UpdateFulfillmentOrd
 /**
  * updateFulfillmentOrder
  */
-class UpdateFulfillmentOrder extends Request
+class UpdateFulfillmentOrder extends Request implements HasBody
 {
+    use HasJsonBody;
+
     protected Method $method = Method::PUT;
 
     /**

@@ -11,10 +11,8 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\FBAInboundV20240320\Requests;
 
 use Exception;
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
-use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ConfirmDeliveryWindowOptionsResponse;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ErrorList;
@@ -22,10 +20,8 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ErrorList;
 /**
  * confirmDeliveryWindowOptions
  */
-class ConfirmDeliveryWindowOptions extends Request implements HasBody
+class ConfirmDeliveryWindowOptions extends Request
 {
-    use HasJsonBody;
-
     protected Method $method = Method::POST;
 
     /**

@@ -11,8 +11,10 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\ListingsItemsV20200901\Requests;
 
 use Exception;
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
+use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\ListingsItemsV20200901\Dto\ListingsItemPutRequest;
 use SellingPartnerApi\Seller\ListingsItemsV20200901\Responses\ErrorList;
@@ -21,8 +23,10 @@ use SellingPartnerApi\Seller\ListingsItemsV20200901\Responses\ListingsItemSubmis
 /**
  * putListingsItem
  */
-class PutListingsItem extends Request
+class PutListingsItem extends Request implements HasBody
 {
+    use HasJsonBody;
+
     protected Method $method = Method::PUT;
 
     /**

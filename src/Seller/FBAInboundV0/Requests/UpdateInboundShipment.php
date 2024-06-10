@@ -11,8 +11,10 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\FBAInboundV0\Requests;
 
 use Exception;
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
+use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\FBAInboundV0\Dto\InboundShipmentRequest;
 use SellingPartnerApi\Seller\FBAInboundV0\Responses\InboundShipmentResponse;
@@ -20,8 +22,10 @@ use SellingPartnerApi\Seller\FBAInboundV0\Responses\InboundShipmentResponse;
 /**
  * updateInboundShipment
  */
-class UpdateInboundShipment extends Request
+class UpdateInboundShipment extends Request implements HasBody
 {
+    use HasJsonBody;
+
     protected Method $method = Method::PUT;
 
     /**

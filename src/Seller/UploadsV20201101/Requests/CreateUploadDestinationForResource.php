@@ -11,20 +11,16 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\UploadsV20201101\Requests;
 
 use Exception;
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
-use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\UploadsV20201101\Responses\CreateUploadDestinationResponse;
 
 /**
  * createUploadDestinationForResource
  */
-class CreateUploadDestinationForResource extends Request implements HasBody
+class CreateUploadDestinationForResource extends Request
 {
-    use HasJsonBody;
-
     protected Method $method = Method::POST;
 
     /**

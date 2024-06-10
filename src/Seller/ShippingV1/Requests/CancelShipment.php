@@ -11,20 +11,16 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\ShippingV1\Requests;
 
 use Exception;
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
-use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\ShippingV1\Responses\CancelShipmentResponse;
 
 /**
  * cancelShipment
  */
-class CancelShipment extends Request implements HasBody
+class CancelShipment extends Request
 {
-    use HasJsonBody;
-
     protected Method $method = Method::POST;
 
     public function __construct(

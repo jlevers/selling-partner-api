@@ -11,20 +11,16 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\FBAInboundV0\Requests;
 
 use Exception;
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
-use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\FBAInboundV0\Responses\VoidTransportResponse;
 
 /**
  * voidTransport
  */
-class VoidTransport extends Request implements HasBody
+class VoidTransport extends Request
 {
-    use HasJsonBody;
-
     protected Method $method = Method::POST;
 
     /**

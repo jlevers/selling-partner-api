@@ -11,8 +11,10 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\ServicesV1\Requests;
 
 use Exception;
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
+use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\ServicesV1\Dto\UpdateScheduleRequest;
 use SellingPartnerApi\Seller\ServicesV1\Responses\UpdateScheduleResponse;
@@ -20,8 +22,10 @@ use SellingPartnerApi\Seller\ServicesV1\Responses\UpdateScheduleResponse;
 /**
  * updateSchedule
  */
-class UpdateSchedule extends Request
+class UpdateSchedule extends Request implements HasBody
 {
+    use HasJsonBody;
+
     protected Method $method = Method::PUT;
 
     /**

@@ -11,8 +11,10 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\FBAInboundV20240320\Requests;
 
 use Exception;
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
+use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\CancelSelfShipAppointmentRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\CancelSelfShipAppointmentResponse;
@@ -21,8 +23,10 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ErrorList;
 /**
  * cancelSelfShipAppointment
  */
-class CancelSelfShipAppointment extends Request
+class CancelSelfShipAppointment extends Request implements HasBody
 {
+    use HasJsonBody;
+
     protected Method $method = Method::PUT;
 
     /**

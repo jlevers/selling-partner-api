@@ -11,8 +11,10 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\ServicesV1\Requests;
 
 use Exception;
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
+use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\EmptyResponse;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\ServicesV1\Dto\SetAppointmentFulfillmentDataRequest;
@@ -21,8 +23,10 @@ use SellingPartnerApi\Seller\ServicesV1\Responses\ErrorList;
 /**
  * setAppointmentFulfillmentData
  */
-class SetAppointmentFulfillmentData extends Request
+class SetAppointmentFulfillmentData extends Request implements HasBody
 {
+    use HasJsonBody;
+
     protected Method $method = Method::PUT;
 
     /**

@@ -5,8 +5,9 @@ Contributing
 * [Pull Requests](#pull-requests)
 * [Testing](#testing)
 * [SDK Design](#sdk-design)
-    * [Downloading schemas](#downloading-schemas-schemadownload)
-    * [Refactoring schemas](#refactoring-schemas-schemarefactor)
+    * [Downloading schemas](#downloading-schemas-php-binconsole-schemadownload)
+    * [Refactoring schemas](#refactoring-schemas-php-binconsole-schemarefactor)
+    * [Generating code](#generating-code-php-binconsole-schemagenerate)
     * [Generator control files](#generator-control-files)
 
 We welcome any and all contributions! There are a few ways you can contribute to this project:
@@ -69,7 +70,7 @@ Downloaded OpenAPI models are placed in `resources/models/raw/<category>/<api-na
 
 A wide variety of refactoring processes are run on the raw schemas to get them ready to be used in the following step: code generation. The refactoring process code is in `SchemaVersion::refactor()`.
 
-Certain schema changes need to be made manually, because they are too specific or too cumbersome to make in the code. These modifications are defined in the [modifications.json](https://github.com/highsidelabs/saloon-sdk-generator/tree/master/src/resources/metadata/modifications.json) file, which is explained more thoroughly [below](#modificationsjson).
+Certain schema changes need to be made manually, because they are too specific or too cumbersome to make in the code. These modifications are defined in the [resources/metadata/modifications.json](https://github.com/highsidelabs/saloon-sdk-generator/tree/master/src/resources/metadata/modifications.json) file, which is explained more thoroughly [below](#modificationsjson).
 
 Once refactoring is complete, the finalized OpenAPI model file is saved to `resources/models/<category>/<api-name>/<version>.json`. These files _are_ version-controlled, unlike the raw models, because having them available to everyone makes it easier to reason about the autogeneration process.
 

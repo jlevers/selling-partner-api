@@ -14,22 +14,23 @@
 A PHP library for connecting to Amazon's [Selling Partner API](https://github.com/amzn/selling-partner-api-docs/).
 
 > [!NOTE]
-> If you're looking for the documentation for v5 of this package, you can find it [here](https://github.com/jlevers/selling-partner-api/tree/v5.10.2).
+> If you're looking for the documentation for v5 of this package, you can find it [here](https://github.com/jlevers/selling-partner-api/tree/v5.0).
 
 ### Related packages
 
 * [`highsidelabs/laravel-spapi`](https://github.com/highsidelabs/laravel-spapi): A [Laravel](https://laravel.com) wrapper for this package that makes SP API integration in Laravel projects quick and easy.
 * [`highsidelabs/amazon-business-api`](https://github.com/highsidelabs/amazon-business-api): A PHP library for Amazon's [Business API](https://developer-docs.amazon.com/amazon-business/docs), with a near-identical interface to this package.
 * [`highsidelabs/walmart-api`](https://github.com/highsidelabs/walmart-api-php): A PHP library for [Walmart's seller and supplier APIs](https://developer.walmart.com), including the Marketplace, Drop Ship Vendor, Content Provider, and Warehouse Supplier APIs.
+* [`highsidelabs/saloon-sdk-generator`](https://github.com/highsidelabs/saloon-sdk-generator): A tool for autogenerating [Saloon](https://docs.saloon.dev) SDKs from OpenAPI models.
 
 ---
 
-**This package is developed and maintained by [Highside Labs](https://highsidelabs.co). If you need support integrating with Amazon's (or any other e-commerce platform's) APIs, we're happy to help! Shoot us an email at [hi@highsidelabs.co](mailto:hi@highsidelabs.co). We'd love to hear from you :)**
+**I'm available for consulting work!** If you need support designing and building applications with Amazon, Walmart, or other e-commerce APIs, or building SDKs in PHP, I can help. Shoot me an email at [jesse@highsidelabs.co](mailto:jesse@highsidelabs.co).
 
-If you've found any of our packages useful, please consider [becoming a Sponsor](https://github.com/sponsors/jlevers), or making a one-time donation via the button below. I appreciate any and all support you can provide!
+If you've found any of my packages useful, please consider [becoming a Sponsor](https://github.com/sponsors/jlevers), or making a one-time donation via the button below. I appreciate any and all support! Keeping open source projects alive is a community effort.
 
 <p align="center">
-    <a href="https://www.paypal.com/donate?business=EL4PRLAEMGXNQ&currency_code=USD"><img alt="Donate to Highside Labs" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"></a>
+    <a href="https://www.paypal.com/donate?business=EL4PRLAEMGXNQ&currency_code=USD"><img alt="Donate to Jesse Evers" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"></a>
 </p>
 
 ### Sponsored by **[Tesmo](https://tesmollc.com)**.
@@ -38,7 +39,7 @@ If you've found any of our packages useful, please consider [becoming a Sponsor]
 
 ## Features
 
-* Supports all Selling Partner API operations (for Sellers and Vendors) as of 2/10/2024
+* Supports all Selling Partner API operations (for Sellers and Vendors) as of 6/11/2024
 * Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents
 
@@ -46,6 +47,11 @@ If you've found any of our packages useful, please consider [becoming a Sponsor]
 ## Installation
 
 `composer require jlevers/selling-partner-api`
+
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 
 ## Table of Contents
@@ -73,7 +79,6 @@ This README is divided into several sections:
 ### Prerequisites
 
 To get started, you need an approved Selling Partner API developer account, and SP API application credentials, which you can get by creating a new SP API application in Seller Central.
-
 
 
 ### Setup

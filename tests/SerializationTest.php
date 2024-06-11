@@ -44,14 +44,14 @@ class SerializationTest extends TestCase
 
         $body = new GetItemOffersBatchRequest([
             new ItemOffersRequest(
-                uri: "/products/pricing/v0/items/TESTASIN1/offers",
+                uri: '/products/pricing/v0/items/TESTASIN1/offers',
                 method: 'GET',
                 itemCondition: 'New',
                 marketplaceId: 'marketplace-id',
                 customerType: 'Consumer',
             ),
             new ItemOffersRequest(
-                uri: "/products/pricing/v0/items/TESTASIN2/offers",
+                uri: '/products/pricing/v0/items/TESTASIN2/offers',
                 method: 'GET',
                 itemCondition: 'New',
                 marketplaceId: 'marketplace-id',
@@ -65,7 +65,7 @@ class SerializationTest extends TestCase
         $this->assertEquals(
             [
                 'requests' => [
-                        [
+                    [
                         'uri' => '/products/pricing/v0/items/TESTASIN1/offers',
                         'method' => 'GET',
                         'ItemCondition' => 'New',

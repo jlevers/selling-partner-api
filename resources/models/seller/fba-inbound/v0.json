@@ -4808,14 +4808,6 @@
                 }
             },
             "Address": {
-                "required": [
-                    "AddressLine1",
-                    "City",
-                    "CountryCode",
-                    "Name",
-                    "PostalCode",
-                    "StateOrProvinceCode"
-                ],
                 "type": "object",
                 "properties": {
                     "Name": {
@@ -5538,7 +5530,6 @@
             },
             "InboundShipmentInfo": {
                 "required": [
-                    "AreCasesRequired",
                     "ShipFromAddress"
                 ],
                 "type": "object",

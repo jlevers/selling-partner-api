@@ -19,7 +19,7 @@ final class ListShipmentItemsResponse extends Response
     protected static array $complexArrayTypes = ['items' => [Item::class]];
 
     /**
-     * @param  Item[]  $items  Items contained within the box.
+     * @param  Item[]  $items  The items in a shipment.
      * @param  ?Pagination  $pagination  Contains tokens to fetch from a certain page.
      */
     public function __construct(

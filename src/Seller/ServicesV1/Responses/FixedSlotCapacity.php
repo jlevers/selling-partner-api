@@ -11,16 +11,16 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\ServicesV1\Responses;
 
 use SellingPartnerApi\Response;
-use SellingPartnerApi\Seller\ServicesV1\Dto\RangeCapacity;
+use SellingPartnerApi\Seller\ServicesV1\Dto\FixedSlot;
 
 final class FixedSlotCapacity extends Response
 {
-    protected static array $complexArrayTypes = ['capacities' => [RangeCapacity::class]];
+    protected static array $complexArrayTypes = ['capacities' => [FixedSlot::class]];
 
     /**
      * @param  ?string  $resourceId  Resource Identifier.
      * @param  ?float  $slotDuration  The duration of each slot which is returned. This value will be a multiple of 5 and fall in the following range: 5 <= `slotDuration` <= 360.
-     * @param  RangeCapacity[]|null  $capacities  Array of range capacities where each entry is for a specific capacity type.
+     * @param  FixedSlot[]|null  $capacities  Array of capacity slots in fixed slot format.
      * @param  ?string  $nextPageToken  Next page token, if there are more pages.
      */
     public function __construct(

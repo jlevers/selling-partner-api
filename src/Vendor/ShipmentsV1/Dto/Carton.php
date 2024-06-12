@@ -15,13 +15,13 @@ use SellingPartnerApi\Dto;
 final class Carton extends Dto
 {
     protected static array $complexArrayTypes = [
-        'items' => [PurchaseOrderItems::class],
+        'items' => [ContainerItem::class],
         'cartonIdentifiers' => [ContainerIdentification::class],
     ];
 
     /**
      * @param  string  $cartonSequenceNumber  Carton sequence number for the carton. The first carton will be 001, the second 002, and so on. This number is used as a reference to refer to this carton from the pallet level.
-     * @param  PurchaseOrderItems[]  $items  A list of the items that are associated to the PO in this transport and their associated details.
+     * @param  ContainerItem[]  $items  A list of container item details.
      * @param  ContainerIdentification[]|null  $cartonIdentifiers  A list of carton identifiers.
      * @param  ?Dimensions  $dimensions  Physical dimensional measurements of a container.
      * @param  ?Weight  $weight  The weight of the shipment.

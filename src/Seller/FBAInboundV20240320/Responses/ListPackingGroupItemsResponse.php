@@ -19,7 +19,7 @@ final class ListPackingGroupItemsResponse extends Response
     protected static array $complexArrayTypes = ['items' => [Item::class]];
 
     /**
-     * @param  Item[]  $items  Items contained within the box.
+     * @param  Item[]  $items  Provides the information about the list of items in the packing group.
      * @param  ?Pagination  $pagination  Contains tokens to fetch from a certain page.
      */
     public function __construct(

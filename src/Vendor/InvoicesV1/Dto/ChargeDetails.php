@@ -20,7 +20,7 @@ final class ChargeDetails extends Dto
      * @param  string  $type  Type of the charge applied.
      * @param  Money  $chargeAmount  An amount of money, including units in the form of currency.
      * @param  ?string  $description  Description of the charge.
-     * @param  TaxDetails[]|null  $taxDetails  Total tax amount details for all line items.
+     * @param  TaxDetails[]|null  $taxDetails  Tax amount details applied on this charge.
      */
     public function __construct(
         public readonly string $type,

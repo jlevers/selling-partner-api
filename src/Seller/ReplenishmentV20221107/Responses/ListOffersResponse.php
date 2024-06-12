@@ -11,15 +11,15 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\ReplenishmentV20221107\Responses;
 
 use SellingPartnerApi\Response;
-use SellingPartnerApi\Seller\ReplenishmentV20221107\Dto\ListOfferMetricsResponseOffer;
+use SellingPartnerApi\Seller\ReplenishmentV20221107\Dto\ListOffersResponseOffer;
 use SellingPartnerApi\Seller\ReplenishmentV20221107\Dto\PaginationResponse;
 
 final class ListOffersResponse extends Response
 {
-    protected static array $complexArrayTypes = ['offers' => [ListOfferMetricsResponseOffer::class]];
+    protected static array $complexArrayTypes = ['offers' => [ListOffersResponseOffer::class]];
 
     /**
-     * @param  ListOfferMetricsResponseOffer[]|null  $offers  A list of offers and associated metrics.
+     * @param  ListOffersResponseOffer[]|null  $offers  A list of offers.
      * @param  ?PaginationResponse  $pagination  Use these parameters to paginate through the response.
      */
     public function __construct(

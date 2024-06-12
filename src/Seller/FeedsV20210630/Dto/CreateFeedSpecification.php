@@ -16,7 +16,7 @@ final class CreateFeedSpecification extends Dto
 {
     /**
      * @param  string  $feedType  The feed type.
-     * @param  string[]  $marketplaceIds  A list of identifiers for the marketplaces that the feed is applied to.
+     * @param  string[]  $marketplaceIds  A list of identifiers for marketplaces that you want the feed to be applied to.
      * @param  string  $inputFeedDocumentId  The document identifier returned by the createFeedDocument operation. Upload the feed document contents before calling the createFeed operation.
      * @param  ?string[]  $feedOptions  Additional options to control the feed. These vary by feed type.
      */

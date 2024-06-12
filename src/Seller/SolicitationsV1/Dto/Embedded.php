@@ -14,13 +14,11 @@ use SellingPartnerApi\Dto;
 
 final class Embedded extends Dto
 {
-    protected static array $complexArrayTypes = ['actions' => [LinkObject::class]];
-
     /**
-     * @param  LinkObject[]  $actions  Eligible actions for the specified amazonOrderId.
+     * @param  ?GetSchemaResponse  $schema
      */
     public function __construct(
-        public readonly array $actions,
+        public readonly ?GetSchemaResponse $schema = null,
     ) {
     }
 }

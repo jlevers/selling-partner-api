@@ -14,14 +14,14 @@ use SellingPartnerApi\Dto;
 
 final class BoxInput extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [Item::class]];
+    protected static array $complexArrayTypes = ['items' => [ItemInput::class]];
 
     /**
      * @param  string  $contentInformationSource  Indication of how box content is meant to be provided.
      * @param  Dimensions  $dimensions  Measurement of a package's dimensions.
      * @param  int  $quantity  The number of containers where all other properties like weight or dimensions are identical.
      * @param  Weight  $weight  The weight of a package.
-     * @param  Item[]|null  $items  Items contained within the box.
+     * @param  ItemInput[]|null  $items  The items and their quantity in the box. This must be empty if the box `contentInformationSource` is `BARCODE_2D` or `MANUAL_PROCESS`.
      */
     public function __construct(
         public readonly string $contentInformationSource,

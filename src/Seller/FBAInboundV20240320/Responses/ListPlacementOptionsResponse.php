@@ -12,14 +12,14 @@ namespace SellingPartnerApi\Seller\FBAInboundV20240320\Responses;
 
 use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\Pagination;
-use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\PlacementOptionSummary;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\PlacementOption;
 
 final class ListPlacementOptionsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['placementOptions' => [PlacementOptionSummary::class]];
+    protected static array $complexArrayTypes = ['placementOptions' => [PlacementOption::class]];
 
     /**
-     * @param  PlacementOptionSummary[]  $placementOptions  Placement options for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, that will be the only returned option. Query the placement option for more details.
+     * @param  PlacementOption[]  $placementOptions  Placement options generated for the inbound plan.
      * @param  ?Pagination  $pagination  Contains tokens to fetch from a certain page.
      */
     public function __construct(

@@ -7,6 +7,7 @@ namespace SellingPartnerApi;
 use DateTimeImmutable;
 use GuzzleHttp\Client;
 use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 use Saloon\Contracts\Authenticator;
 use Saloon\Contracts\OAuthAuthenticator;
 use Saloon\Exceptions\Request\RequestException;
@@ -30,6 +31,9 @@ use SellingPartnerApi\Seller\TokensV20210301;
 use SellingPartnerApi\Seller\TokensV20210301\Dto\CreateRestrictedDataTokenRequest;
 use SellingPartnerApi\Seller\TokensV20210301\Dto\RestrictedResource;
 use SellingPartnerApi\Vendor\VendorConnector;
+use Symfony\Component\VarDumper\Cloner\VarCloner;
+use Symfony\Component\VarDumper\Dumper\CliDumper;
+use Symfony\Component\VarDumper\VarDumper;
 
 abstract class SellingPartnerApi extends Connector
 {
@@ -187,6 +191,90 @@ abstract class SellingPartnerApi extends Connector
         $version = Package::version();
 
         return "jlevers/selling-partner-api/v$version/php";
+    }
+
+    /**
+     * I couldn't find any great way of reusing the original Debugger::symfonyRequestDebugger() method from
+     * the Saloon package, so I'm just going to copy and paste the code here, but with the VarDumper
+     * configured to dump to a file.
+     */
+    public function debugRequestToFile(string $outputPath, bool $die = false): static
+    {
+        return $this->debugRequest(
+            function (PendingRequest $pendingRequest, RequestInterface $psrRequest) use ($outputPath) {
+                $headers = [];
+                foreach ($psrRequest->getHeaders() as $headerName => $value) {
+                    $headers[$headerName] = implode(';', $value);
+                }
+
+                $className = explode('\\', $pendingRequest->getRequest()::class);
+                $label = end($className);
+
+                VarDumper::setHandler(function ($var) use ($outputPath, $label) {
+                    $file = fopen($outputPath, 'a');
+
+                    $cloner = new VarCloner();
+                    $dumper = new CliDumper($file);
+                    $cloned = $cloner->cloneVar($var)
+                        ->withContext(['label' => 'Saloon Request('.$label.') ->']);
+                    $dumper->dump($cloned);
+
+                    fclose($file);
+                });
+                VarDumper::dump([
+                    'connector' => $pendingRequest->getConnector()::class,
+                    'request' => $pendingRequest->getRequest()::class,
+                    'method' => $psrRequest->getMethod(),
+                    'uri' => (string) $psrRequest->getUri(),
+                    'headers' => $headers,
+                    'body' => (string) $psrRequest->getBody(),
+                ]);
+            },
+            die: $die,
+        );
+    }
+
+    /**
+     * I couldn't find any great way of reusing the original Debugger::symfonyResponseDebugger() method from
+     * the Saloon package, so I'm just going to copy and paste the code here, but with the VarDumper
+     * configured to dump to a file.
+     */
+    public function debugResponseToFile(string $outputPath, bool $die = false): static
+    {
+        return $this->debugResponse(
+            function (Response $response, ResponseInterface $psrResponse) use ($outputPath) {
+                $headers = [];
+                foreach ($psrResponse->getHeaders() as $headerName => $value) {
+                    $headers[$headerName] = implode(';', $value);
+                }
+
+                $className = explode('\\', $response->getRequest()::class);
+                $label = end($className);
+
+                VarDumper::setHandler(function ($var) use ($outputPath, $label) {
+                    $file = fopen($outputPath, 'a');
+
+                    $cloner = new VarCloner();
+                    $dumper = new CliDumper($file);
+                    $cloned = $cloner->cloneVar($var)
+                        ->withContext(['label' => 'Saloon Response('.$label.') ->']);
+                    $dumper->dump($cloned);
+
+                    fclose($file);
+                });
+                VarDumper::dump([
+                    'status' => $response->status(),
+                    'headers' => $headers,
+                    'body' => $response->body(),
+                ]);
+            },
+            die: $die,
+        );
+    }
+
+    public function debugToFile(string $outputPath, bool $die = false): static
+    {
+        return $this->debugRequestToFile($outputPath)->debugResponseToFile($outputPath, $die);
     }
 
     public function getAccessToken(

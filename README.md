@@ -157,6 +157,7 @@ $connector->debugRequest(
 
 Then make requests with the connector as usual, and you'll hit the closure above every time a request is fired. You can also debug responses in a similar fashion – check out the [Saloon docs](https://docs.saloon.dev/digging-deeper/debugging#debugging-responses) for more details.
 
+If you want to output your debug data to a file, you can do so with the `SellingPartnerApi::debugRequestToFile()`, `SellingPartnerApi::debugResponseToFile()`, and `SellingPartnerApi::debugToFile()` methods. These methods all take an `$outputPath` argument and an optional `$die` argument.
 
 ## Supported API segments
 

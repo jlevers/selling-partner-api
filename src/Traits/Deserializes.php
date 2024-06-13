@@ -79,9 +79,9 @@ trait Deserializes
                 return $_value;
             }
 
-            if (! class_exists($type)) {
+            if (! class_exists($type) && ! interface_exists($type)) {
                 throw new InvalidAttributeTypeException("Class `$type` does not exist");
-            } elseif ($type === DateTime::class) {
+            } elseif ($type === DateTime::class || $type == \DateTimeInterface::class) {
                 return DateTime::createFromFormat(DateTime::RFC3339, $value);
             }
 

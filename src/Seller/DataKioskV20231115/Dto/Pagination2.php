@@ -8,19 +8,17 @@
 
 declare(strict_types=1);
 
-namespace SellingPartnerApi\Seller\MessagingV1\Dto;
+namespace SellingPartnerApi\Seller\DataKioskV20231115\Dto;
 
 use SellingPartnerApi\Dto;
 
-final class Embedded extends Dto
+final class Pagination2 extends Dto
 {
-    protected static array $complexArrayTypes = ['actions' => [GetMessagingActionResponse::class]];
-
     /**
-     * @param  GetMessagingActionResponse[]  $actions
+     * @param  ?string  $nextToken  A token that can be used to fetch the next page of results.
      */
     public function __construct(
-        public readonly array $actions,
+        public readonly ?string $nextToken = null,
     ) {
     }
 }

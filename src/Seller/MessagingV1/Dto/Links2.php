@@ -12,15 +12,15 @@ namespace SellingPartnerApi\Seller\MessagingV1\Dto;
 
 use SellingPartnerApi\Dto;
 
-final class Embedded extends Dto
+final class Links2 extends Dto
 {
-    protected static array $complexArrayTypes = ['actions' => [GetMessagingActionResponse::class]];
-
     /**
-     * @param  GetMessagingActionResponse[]  $actions
+     * @param  LinkObject  $self  A Link object.
+     * @param  LinkObject  $schema  A Link object.
      */
     public function __construct(
-        public readonly array $actions,
+        public readonly LinkObject $self,
+        public readonly LinkObject $schema,
     ) {
     }
 }

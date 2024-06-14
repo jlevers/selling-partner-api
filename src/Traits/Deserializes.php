@@ -82,7 +82,11 @@ trait Deserializes
             if (! class_exists($type) && ! interface_exists($type)) {
                 throw new InvalidAttributeTypeException("Class `$type` does not exist");
             } elseif ($type === DateTime::class || $type == \DateTimeInterface::class) {
-                return DateTime::createFromFormat(DateTime::RFC3339, $value);
+                if (strlen($value) === 10) {
+                    return DateTime::createFromFormat('Y-m-d', $value);
+                } else {
+                    return DateTime::createFromFormat(DateTime::RFC3339, $value);
+                }
             }
 
             $deserialized = $type::deserialize($value);

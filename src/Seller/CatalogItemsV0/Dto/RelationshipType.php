@@ -45,14 +45,14 @@ final class RelationshipType extends Dto
      * @param  ?string  $color  The color variation of the item.
      * @param  ?string  $edition  The edition variation of the item.
      * @param  ?string  $flavor  The flavor variation of the item.
-     * @param  ?string[]  $gemType  The gem type attributes of the item.
+     * @param  ?string[]  $gemType  The gem type variations of the item.
      * @param  ?string  $golfClubFlex  The golf club flex variation of an item.
      * @param  ?string  $handOrientation  The hand orientation variation of an item.
      * @param  ?string  $hardwarePlatform  The hardware platform variation of an item.
-     * @param  ?string[]  $materialType  The material type attributes of the item.
+     * @param  ?string[]  $materialType  The material type variations of an item.
      * @param  ?string  $metalType  The metal type variation of an item.
      * @param  ?string  $model  The model variation of an item.
-     * @param  ?string[]  $operatingSystem  The operating system attributes of the item.
+     * @param  ?string[]  $operatingSystem  The operating system variations of an item.
      * @param  ?string  $productTypeSubcategory  The product type subcategory variation of an item.
      * @param  ?string  $ringSize  The ring size variation of an item.
      * @param  ?string  $shaftMaterial  The shaft material variation of an item.

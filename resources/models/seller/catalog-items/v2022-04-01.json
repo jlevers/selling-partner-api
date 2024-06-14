@@ -24,7 +24,7 @@
                 "tags": [
                     "CatalogItemsV20220401"
                 ],
-                "description": "Search for and return a list of Amazon catalog items and associated information either by identifier or by keywords.\n\n**Usage Plans:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Search for and return a list of Amazon catalog items and associated information either by identifier or by keywords.\n\n**Usage Plans:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "searchCatalogItems",
                 "parameters": [
                     {
@@ -157,6 +157,7 @@
                                 "type": "string",
                                 "enum": [
                                     "attributes",
+                                    "classifications",
                                     "dimensions",
                                     "identifiers",
                                     "images",
@@ -170,6 +171,10 @@
                                     {
                                         "value": "attributes",
                                         "description": "A JSON object containing structured item attribute data keyed by attribute name. Catalog item attributes conform to the related Amazon product type definitions available in the Selling Partner API for Product Type Definitions."
+                                    },
+                                    {
+                                        "value": "classifications",
+                                        "description": "Classifications (browse nodes) for an item in the Amazon catalog."
                                     },
                                     {
                                         "value": "dimensions",
@@ -844,6 +849,29 @@
                                                     }
                                                 ]
                                             },
+                                            "classifications": [
+                                                {
+                                                    "marketplaceId": "ATVPDKIKX0DER",
+                                                    "classifications": [
+                                                        {
+                                                            "displayName": "QLED TVs",
+                                                            "classificationId": "21489946011",
+                                                            "parent": {
+                                                                "displayName": "Televisions",
+                                                                "classificationId": "172659",
+                                                                "parent": {
+                                                                    "displayName": "Television & Video",
+                                                                    "classificationId": "1266092011",
+                                                                    "parent": {
+                                                                        "displayName": "Electronics",
+                                                                        "classificationId": "172282"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ],
                                             "dimensions": [
                                                 {
                                                     "marketplaceId": "ATVPDKIKX0DER",
@@ -1188,6 +1216,7 @@
                                             },
                                             "includedData": {
                                                 "value": [
+                                                    "classifications",
                                                     "dimensions",
                                                     "identifiers",
                                                     "images",
@@ -1224,6 +1253,29 @@
                                         "items": [
                                             {
                                                 "asin": "B07N4M94X4",
+                                                "classifications": [
+                                                    {
+                                                        "marketplaceId": "ATVPDKIKX0DER",
+                                                        "classifications": [
+                                                            {
+                                                                "displayName": "QLED TVs",
+                                                                "classificationId": "21489946011",
+                                                                "parent": {
+                                                                    "displayName": "Televisions",
+                                                                    "classificationId": "172659",
+                                                                    "parent": {
+                                                                        "displayName": "Television & Video",
+                                                                        "classificationId": "1266092011",
+                                                                        "parent": {
+                                                                            "displayName": "Electronics",
+                                                                            "classificationId": "172282"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
                                                 "dimensions": [
                                                     {
                                                         "marketplaceId": "ATVPDKIKX0DER",
@@ -1716,7 +1768,7 @@
                 "tags": [
                     "CatalogItemsV20220401"
                 ],
-                "description": "Retrieves details for an item in the Amazon catalog.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Retrieves details for an item in the Amazon catalog.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getCatalogItem",
                 "parameters": [
                     {
@@ -1755,6 +1807,7 @@
                                 "type": "string",
                                 "enum": [
                                     "attributes",
+                                    "classifications",
                                     "dimensions",
                                     "identifiers",
                                     "images",
@@ -1768,6 +1821,10 @@
                                     {
                                         "value": "attributes",
                                         "description": "A JSON object containing structured item attribute data keyed by attribute name. Catalog item attributes conform to the related Amazon product type definitions available in the Selling Partner API for Product Type Definitions."
+                                    },
+                                    {
+                                        "value": "classifications",
+                                        "description": "Classifications (browse nodes) for an item in the Amazon catalog."
                                     },
                                     {
                                         "value": "dimensions",
@@ -2340,6 +2397,29 @@
                                             }
                                         ]
                                     },
+                                    "classifications": [
+                                        {
+                                            "marketplaceId": "ATVPDKIKX0DER",
+                                            "classifications": [
+                                                {
+                                                    "displayName": "QLED TVs",
+                                                    "classificationId": "21489946011",
+                                                    "parent": {
+                                                        "displayName": "Televisions",
+                                                        "classificationId": "172659",
+                                                        "parent": {
+                                                            "displayName": "Television & Video",
+                                                            "classificationId": "1266092011",
+                                                            "parent": {
+                                                                "displayName": "Electronics",
+                                                                "classificationId": "172282"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ],
                                     "dimensions": [
                                         {
                                             "marketplaceId": "ATVPDKIKX0DER",
@@ -2679,6 +2759,7 @@
                                             },
                                             "includedData": {
                                                 "value": [
+                                                    "classifications",
                                                     "dimensions",
                                                     "identifiers",
                                                     "images",
@@ -2693,6 +2774,29 @@
                                     },
                                     "response": {
                                         "asin": "B07N4M94X4",
+                                        "classifications": [
+                                            {
+                                                "marketplaceId": "ATVPDKIKX0DER",
+                                                "classifications": [
+                                                    {
+                                                        "displayName": "QLED TVs",
+                                                        "classificationId": "21489946011",
+                                                        "parent": {
+                                                            "displayName": "Televisions",
+                                                            "classificationId": "172659",
+                                                            "parent": {
+                                                                "displayName": "Television & Video",
+                                                                "classificationId": "1266092011",
+                                                                "parent": {
+                                                                    "displayName": "Electronics",
+                                                                    "classificationId": "172282"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ],
                                         "dimensions": [
                                             {
                                                 "marketplaceId": "ATVPDKIKX0DER",
@@ -3230,6 +3334,9 @@
                     "attributes": {
                         "$ref": "#/components/schemas/ItemAttributes"
                     },
+                    "classifications": {
+                        "$ref": "#/components/schemas/ItemBrowseClassifications"
+                    },
                     "dimensions": {
                         "$ref": "#/components/schemas/ItemDimensions"
                     },
@@ -3275,11 +3382,14 @@
                 "properties": {
                     "displayName": {
                         "type": "string",
-                        "description": "Display name for the classification."
+                        "description": "Display name for the classification (browse node)."
                     },
                     "classificationId": {
                         "type": "string",
                         "description": "Identifier of the classification (browse node identifier)."
+                    },
+                    "parent": {
+                        "$ref": "#/components/schemas/ItemBrowseClassification"
                     }
                 },
                 "description": "Classification (browse node) associated with an Amazon catalog item."
@@ -3317,6 +3427,33 @@
                     }
                 },
                 "description": "Role of an individual contributor in the creation of an item, such as author or actor."
+            },
+            "ItemBrowseClassifications": {
+                "type": "array",
+                "description": "Array of classifications (browse nodes) associated with the item in the Amazon catalog by Amazon marketplace.",
+                "items": {
+                    "$ref": "#/components/schemas/ItemBrowseClassificationsByMarketplace"
+                }
+            },
+            "ItemBrowseClassificationsByMarketplace": {
+                "required": [
+                    "marketplaceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "marketplaceId": {
+                        "type": "string",
+                        "description": "Amazon marketplace identifier."
+                    },
+                    "classifications": {
+                        "type": "array",
+                        "description": "Classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace.",
+                        "items": {
+                            "$ref": "#/components/schemas/ItemBrowseClassification"
+                        }
+                    }
+                },
+                "description": "Classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace."
             },
             "Dimension": {
                 "type": "object",

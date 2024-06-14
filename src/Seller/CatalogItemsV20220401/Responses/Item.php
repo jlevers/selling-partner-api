@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\CatalogItemsV20220401\Responses;
 
 use SellingPartnerApi\Response;
+use SellingPartnerApi\Seller\CatalogItemsV20220401\Dto\ItemBrowseClassificationsByMarketplace;
 use SellingPartnerApi\Seller\CatalogItemsV20220401\Dto\ItemDimensionsByMarketplace;
 use SellingPartnerApi\Seller\CatalogItemsV20220401\Dto\ItemIdentifiersByMarketplace;
 use SellingPartnerApi\Seller\CatalogItemsV20220401\Dto\ItemImagesByMarketplace;
@@ -23,6 +24,7 @@ use SellingPartnerApi\Seller\CatalogItemsV20220401\Dto\ItemVendorDetailsByMarket
 final class Item extends Response
 {
     protected static array $complexArrayTypes = [
+        'classifications' => [ItemBrowseClassificationsByMarketplace::class],
         'dimensions' => [ItemDimensionsByMarketplace::class],
         'identifiers' => [ItemIdentifiersByMarketplace::class],
         'images' => [ItemImagesByMarketplace::class],
@@ -36,6 +38,7 @@ final class Item extends Response
     /**
      * @param  string  $asin  Amazon Standard Identification Number (ASIN) is the unique identifier for an item in the Amazon catalog.
      * @param  ?mixed[]  $attributes  A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
+     * @param  ItemBrowseClassificationsByMarketplace[]|null  $classifications  Array of classifications (browse nodes) associated with the item in the Amazon catalog by Amazon marketplace.
      * @param  ItemDimensionsByMarketplace[]|null  $dimensions  Array of dimensions associated with the item in the Amazon catalog by Amazon marketplace.
      * @param  ItemIdentifiersByMarketplace[]|null  $identifiers  Identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers.
      * @param  ItemImagesByMarketplace[]|null  $images  Images for an item in the Amazon catalog.
@@ -48,6 +51,7 @@ final class Item extends Response
     public function __construct(
         public readonly string $asin,
         public readonly ?array $attributes = null,
+        public readonly ?array $classifications = null,
         public readonly ?array $dimensions = null,
         public readonly ?array $identifiers = null,
         public readonly ?array $images = null,

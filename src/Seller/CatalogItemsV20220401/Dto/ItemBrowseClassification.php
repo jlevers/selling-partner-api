@@ -15,12 +15,14 @@ use SellingPartnerApi\Dto;
 final class ItemBrowseClassification extends Dto
 {
     /**
-     * @param  string  $displayName  Display name for the classification.
+     * @param  string  $displayName  Display name for the classification (browse node).
      * @param  string  $classificationId  Identifier of the classification (browse node identifier).
+     * @param  ?ItemBrowseClassification  $parent  Classification (browse node) associated with an Amazon catalog item.
      */
     public function __construct(
         public readonly string $displayName,
         public readonly string $classificationId,
+        public readonly ?ItemBrowseClassification $parent = null,
     ) {
     }
 }

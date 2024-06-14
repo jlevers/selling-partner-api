@@ -12,6 +12,8 @@ trait Deserializes
 {
     use HasComplexArrayTypes;
 
+    protected static string $datetimeFormat = 'Y-m-d\TH:i:s\Z';
+
     public static function deserialize(mixed $data): mixed
     {
         if (is_null($data)) {
@@ -69,7 +71,7 @@ trait Deserializes
                 'float' => (float) $value,
                 'bool' => (bool) $value,
                 'string' => (string) $value,
-                'date', 'datetime' => DateTime::createFromFormat(DateTime::RFC3339, $value),
+                'date', 'datetime' => DateTime::createFromFormat(static::$datetimeFormat, $value),
                 'array', 'mixed' => $value,
                 'null' => null,
                 default => chr(0),
@@ -82,7 +84,7 @@ trait Deserializes
             if (! class_exists($type)) {
                 throw new InvalidAttributeTypeException("Class `$type` does not exist");
             } elseif ($type === DateTime::class) {
-                return DateTime::createFromFormat(DateTime::RFC3339, $value);
+                return DateTime::createFromFormat(static::$datetimeFormat, $value);
             }
 
             $deserialized = $type::deserialize($value);

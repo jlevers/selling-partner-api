@@ -176,7 +176,7 @@ class RequestGenerator extends SDKGenerator
             if (SimpleType::isScalar($bodyType)) {
                 $returnValText = '[$this->%s]';
             } elseif ($bodyType === 'DateTime') {
-                $returnValText = '$this->%s->format(\DateTime::RFC3339)';
+                $returnValText = '[$this->%s->format(\''.$this->config->datetimeFormat.'\')]';
             } elseif (! Utils::isBuiltinType($bodyType)) {
                 $returnValText = '$this->%s->toArray()';
             } else {

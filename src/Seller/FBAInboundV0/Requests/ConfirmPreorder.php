@@ -37,7 +37,7 @@ class ConfirmPreorder extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['NeedByDate' => $this->needByDate?->format(\DateTime::RFC3339), 'MarketplaceId' => $this->marketplaceId]);
+        return array_filter(['NeedByDate' => $this->needByDate?->format('Y-m-d\TH:i:s\Z'), 'MarketplaceId' => $this->marketplaceId]);
     }
 
     public function resolveEndpoint(): string

@@ -35,7 +35,7 @@ class ListAllFulfillmentOrders extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['queryStartDate' => $this->queryStartDate?->format(\DateTime::RFC3339), 'nextToken' => $this->nextToken]);
+        return array_filter(['queryStartDate' => $this->queryStartDate?->format('Y-m-d\TH:i:s\Z'), 'nextToken' => $this->nextToken]);
     }
 
     public function resolveEndpoint(): string

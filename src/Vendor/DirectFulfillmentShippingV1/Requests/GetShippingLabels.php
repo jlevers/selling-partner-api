@@ -44,8 +44,8 @@ class GetShippingLabels extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'createdAfter' => $this->createdAfter?->format(\DateTime::RFC3339),
-            'createdBefore' => $this->createdBefore?->format(\DateTime::RFC3339),
+            'createdAfter' => $this->createdAfter?->format('Y-m-d\TH:i:s\Z'),
+            'createdBefore' => $this->createdBefore?->format('Y-m-d\TH:i:s\Z'),
             'shipFromPartyId' => $this->shipFromPartyId,
             'limit' => $this->limit,
             'sortOrder' => $this->sortOrder,

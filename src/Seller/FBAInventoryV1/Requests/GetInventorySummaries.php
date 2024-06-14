@@ -52,7 +52,7 @@ class GetInventorySummaries extends Request
             'granularityId' => $this->granularityId,
             'marketplaceIds' => $this->marketplaceIds,
             'details' => $this->details,
-            'startDateTime' => $this->startDateTime?->format(\DateTime::RFC3339),
+            'startDateTime' => $this->startDateTime?->format('Y-m-d\TH:i:s\Z'),
             'sellerSkus' => $this->sellerSkus,
             'sellerSku' => $this->sellerSku,
             'nextToken' => $this->nextToken,

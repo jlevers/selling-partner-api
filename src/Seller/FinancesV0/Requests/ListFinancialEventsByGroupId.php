@@ -43,8 +43,8 @@ class ListFinancialEventsByGroupId extends Request
     {
         return array_filter([
             'MaxResultsPerPage' => $this->maxResultsPerPage,
-            'PostedAfter' => $this->postedAfter?->format(\DateTime::RFC3339),
-            'PostedBefore' => $this->postedBefore?->format(\DateTime::RFC3339),
+            'PostedAfter' => $this->postedAfter?->format('Y-m-d\TH:i:s\Z'),
+            'PostedBefore' => $this->postedBefore?->format('Y-m-d\TH:i:s\Z'),
             'NextToken' => $this->nextToken,
         ]);
     }

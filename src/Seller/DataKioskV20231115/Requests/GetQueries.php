@@ -45,8 +45,8 @@ class GetQueries extends Request
         return array_filter([
             'processingStatuses' => $this->processingStatuses,
             'pageSize' => $this->pageSize,
-            'createdSince' => $this->createdSince?->format(\DateTime::RFC3339),
-            'createdUntil' => $this->createdUntil?->format(\DateTime::RFC3339),
+            'createdSince' => $this->createdSince?->format('Y-m-d\TH:i:s\Z'),
+            'createdUntil' => $this->createdUntil?->format('Y-m-d\TH:i:s\Z'),
             'paginationToken' => $this->paginationToken,
         ]);
     }

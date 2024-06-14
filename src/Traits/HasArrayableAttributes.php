@@ -61,7 +61,7 @@ trait HasArrayableAttributes
         if (is_null($value)) {
             return null;
         } elseif ($value instanceof DateTimeInterface) {
-            return $value->format(DateTime::RFC3339);
+            return $this->toZuluString($value);
         } elseif (is_string($type)) {
             if (class_exists($type)) {
                 return $value->toArray();
@@ -86,5 +86,10 @@ trait HasArrayableAttributes
         }
 
         throw new InvalidAttributeTypeException("Unrecognized attribute type `$type`");
+    }
+
+    private function toZuluString(DateTimeInterface $dateTime)
+    {
+        return $dateTime->format('Y-m-d\TH:i:s\Z');
     }
 }

@@ -44,8 +44,8 @@ class GetShipmentItems extends Request
         return array_filter([
             'QueryType' => $this->queryType,
             'MarketplaceId' => $this->marketplaceId,
-            'LastUpdatedAfter' => $this->lastUpdatedAfter?->format(\DateTime::RFC3339),
-            'LastUpdatedBefore' => $this->lastUpdatedBefore?->format(\DateTime::RFC3339),
+            'LastUpdatedAfter' => $this->lastUpdatedAfter?->format('Y-m-d\TH:i:s\Z'),
+            'LastUpdatedBefore' => $this->lastUpdatedBefore?->format('Y-m-d\TH:i:s\Z'),
             'NextToken' => $this->nextToken,
         ]);
     }

@@ -41,8 +41,8 @@ class ListFinancialEventGroups extends Request
     {
         return array_filter([
             'MaxResultsPerPage' => $this->maxResultsPerPage,
-            'FinancialEventGroupStartedBefore' => $this->financialEventGroupStartedBefore?->format(\DateTime::RFC3339),
-            'FinancialEventGroupStartedAfter' => $this->financialEventGroupStartedAfter?->format(\DateTime::RFC3339),
+            'FinancialEventGroupStartedBefore' => $this->financialEventGroupStartedBefore?->format('Y-m-d\TH:i:s\Z'),
+            'FinancialEventGroupStartedAfter' => $this->financialEventGroupStartedAfter?->format('Y-m-d\TH:i:s\Z'),
             'NextToken' => $this->nextToken,
         ]);
     }

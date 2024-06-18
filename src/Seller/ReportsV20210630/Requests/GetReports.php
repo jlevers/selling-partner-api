@@ -51,8 +51,8 @@ class GetReports extends Request
             'processingStatuses' => $this->processingStatuses,
             'marketplaceIds' => $this->marketplaceIds,
             'pageSize' => $this->pageSize,
-            'createdSince' => $this->createdSince?->format(\DateTime::RFC3339),
-            'createdUntil' => $this->createdUntil?->format(\DateTime::RFC3339),
+            'createdSince' => $this->createdSince?->format('Y-m-d\TH:i:s\Z'),
+            'createdUntil' => $this->createdUntil?->format('Y-m-d\TH:i:s\Z'),
             'nextToken' => $this->nextToken,
         ]);
     }

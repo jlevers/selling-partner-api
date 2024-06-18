@@ -7,6 +7,10 @@ use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use SellingPartnerApi\Authentication\GetAccessTokenRequest;
 use SellingPartnerApi\Enums\Endpoint;
+use SellingPartnerApi\Seller\FBAInventoryV1\Requests\GetInventorySummaries;
+use SellingPartnerApi\Seller\OrdersV0\Dto\ConfirmShipmentRequest;
+use SellingPartnerApi\Seller\OrdersV0\Dto\PackageDetail;
+use SellingPartnerApi\Seller\OrdersV0\Requests\ConfirmShipment;
 use SellingPartnerApi\Seller\ProductPricingV0\Dto\GetItemOffersBatchRequest;
 use SellingPartnerApi\Seller\ProductPricingV0\Dto\ItemOffersRequest;
 use SellingPartnerApi\Seller\ProductPricingV0\Requests\GetItemOffersBatch;
@@ -82,5 +86,82 @@ class SerializationTest extends TestCase
             ],
             $mockClient->getLastPendingRequest()->body()->all()
         );
+    }
+
+    public function testDatesInQueryParametersAreSerializedInZuluFormat(): void
+    {
+        $mockClient = new MockClient([
+            GetAccessTokenRequest::class => MockResponse::make(
+                body: [
+                    'access_token' => 'access-token',
+                    'refresh_token' => 'refresh-token',
+                    'expires_in' => 3600,
+                    'token_type' => 'bearer',
+                ],
+            ),
+            GetInventorySummaries::class => MockResponse::make(),
+        ]);
+
+        $connector = SellingPartnerApi::seller(
+            clientId: 'client-id',
+            clientSecret: 'client-secret',
+            refreshToken: 'refresh-token',
+            endpoint: Endpoint::NA_SANDBOX,
+        );
+        $connector->withMockClient($mockClient);
+
+        $api = $connector->fbaInventoryV1();
+        $api->getInventorySummaries(
+            granularityType: 'Marketplace',
+            granularityId: 'marketplace-id',
+            marketplaceIds: ['marketplace-id'],
+            startDateTime: new DateTimeImmutable('2024-01-01')
+        );
+
+        $query = $mockClient->getLastPendingRequest()->query();
+
+        $this->assertEquals('2024-01-01T00:00:00Z', $query->get('startDateTime'));
+    }
+
+    public function testDatesInBodyParametersAreSerializedInZuluFormat(): void
+    {
+        $mockClient = new MockClient([
+            GetAccessTokenRequest::class => MockResponse::make(
+                body: [
+                    'access_token' => 'access-token',
+                    'refresh_token' => 'refresh-token',
+                    'expires_in' => 3600,
+                    'token_type' => 'bearer',
+                ],
+            ),
+            ConfirmShipment::class => MockResponse::make(),
+        ]);
+
+        $connector = SellingPartnerApi::seller(
+            clientId: 'client-id',
+            clientSecret: 'client-secret',
+            refreshToken: 'refresh-token',
+            endpoint: Endpoint::NA_SANDBOX,
+        );
+        $connector->withMockClient($mockClient);
+
+        $api = $connector->ordersV0();
+        $api->confirmShipment(
+            'order-id',
+            new ConfirmShipmentRequest(
+                new PackageDetail(
+                    packageReferenceId: 'package-reference-id',
+                    carrierCode: 'carrier-code',
+                    trackingNumber: 'tracking-number',
+                    shipDate: new DateTimeImmutable('2024-01-01'),
+                    orderItems: [],
+                ),
+                'marketplace-id',
+            )
+        );
+
+        $body = $mockClient->getLastPendingRequest()->body()->all();
+
+        $this->assertEquals('2024-01-01T00:00:00Z', $body['packageDetail']['shipDate']);
     }
 }

@@ -8,19 +8,17 @@
 
 declare(strict_types=1);
 
-namespace SellingPartnerApi\Seller\MessagingV1\Dto;
+namespace SellingPartnerApi\Seller\SolicitationsV1\Dto;
 
 use SellingPartnerApi\Dto;
 
-final class Embedded extends Dto
+final class Embedded2 extends Dto
 {
-    protected static array $complexArrayTypes = ['actions' => [GetMessagingActionResponse::class]];
-
     /**
-     * @param  GetMessagingActionResponse[]  $actions
+     * @param  ?GetSchemaResponse  $schema
      */
     public function __construct(
-        public readonly array $actions,
+        public readonly ?GetSchemaResponse $schema = null,
     ) {
     }
 }

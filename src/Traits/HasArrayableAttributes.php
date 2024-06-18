@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace SellingPartnerApi\Traits;
 
-use DateTime;
 use DateTimeInterface;
 use ReflectionClass;
 use SellingPartnerApi\Exceptions\InvalidAttributeTypeException;
@@ -12,6 +11,8 @@ use SellingPartnerApi\Exceptions\InvalidAttributeTypeException;
 trait HasArrayableAttributes
 {
     use HasComplexArrayTypes;
+
+    protected static string $datetimeFormat = 'Y-m-d\TH:i:s\Z';
 
     /**
      * @var array{string, string}
@@ -61,7 +62,7 @@ trait HasArrayableAttributes
         if (is_null($value)) {
             return null;
         } elseif ($value instanceof DateTimeInterface) {
-            return $value->format(DateTime::RFC3339);
+            return $value->format(static::$datetimeFormat);
         } elseif (is_string($type)) {
             if (class_exists($type)) {
                 return $value->toArray();

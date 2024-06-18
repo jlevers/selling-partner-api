@@ -50,8 +50,8 @@ class GetShipments extends Request
             'MarketplaceId' => $this->marketplaceId,
             'ShipmentStatusList' => $this->shipmentStatusList,
             'ShipmentIdList' => $this->shipmentIdList,
-            'LastUpdatedAfter' => $this->lastUpdatedAfter?->format(\DateTime::RFC3339),
-            'LastUpdatedBefore' => $this->lastUpdatedBefore?->format(\DateTime::RFC3339),
+            'LastUpdatedAfter' => $this->lastUpdatedAfter?->format('Y-m-d\TH:i:s\Z'),
+            'LastUpdatedBefore' => $this->lastUpdatedBefore?->format('Y-m-d\TH:i:s\Z'),
             'NextToken' => $this->nextToken,
         ]);
     }

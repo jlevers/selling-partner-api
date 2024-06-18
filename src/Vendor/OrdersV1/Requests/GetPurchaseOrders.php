@@ -57,13 +57,13 @@ class GetPurchaseOrders extends Request
     {
         return array_filter([
             'limit' => $this->limit,
-            'createdAfter' => $this->createdAfter?->format(\DateTime::RFC3339),
-            'createdBefore' => $this->createdBefore?->format(\DateTime::RFC3339),
+            'createdAfter' => $this->createdAfter?->format('Y-m-d\TH:i:s\Z'),
+            'createdBefore' => $this->createdBefore?->format('Y-m-d\TH:i:s\Z'),
             'sortOrder' => $this->sortOrder,
             'nextToken' => $this->nextToken,
             'includeDetails' => $this->includeDetails,
-            'changedAfter' => $this->changedAfter?->format(\DateTime::RFC3339),
-            'changedBefore' => $this->changedBefore?->format(\DateTime::RFC3339),
+            'changedAfter' => $this->changedAfter?->format('Y-m-d\TH:i:s\Z'),
+            'changedBefore' => $this->changedBefore?->format('Y-m-d\TH:i:s\Z'),
             'poItemState' => $this->poItemState,
             'isPOChanged' => $this->isPoChanged,
             'purchaseOrderState' => $this->purchaseOrderState,

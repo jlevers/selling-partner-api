@@ -8,5 +8,6 @@
     "baseFilesNamespace": "SellingPartnerApi",
     "namespaceSuffixes": {
         "resource": null
-    }
+    },
+    "datetimeFormat": "Y-m-d\\TH:i:s\\Z"
 }

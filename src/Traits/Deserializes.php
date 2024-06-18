@@ -81,10 +81,14 @@ trait Deserializes
                 return $_value;
             }
 
-            if (! class_exists($type)) {
-                throw new InvalidAttributeTypeException("Class `$type` does not exist");
-            } elseif ($type === DateTime::class) {
-                return DateTime::createFromFormat(static::$datetimeFormat, $value);
+            if (! class_exists($type) && ! interface_exists($type)) {
+                throw new InvalidAttributeTypeException("Neither the Class nor Interface `$type` exists");
+            } elseif ($type == \DateTimeInterface::class) {
+                if (strlen($value) === 10) {
+                    return DateTime::createFromFormat('Y-m-d', $value);
+                } else {
+                    return DateTime::createFromFormat(static::$datetimeFormat, $value);
+                }
             }
 
             $deserialized = $type::deserialize($value);

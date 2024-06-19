@@ -12,15 +12,12 @@ namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Dto;
 
 use SellingPartnerApi\Dto;
 
-final class DeliveryWindow extends Dto
+final class DeliveryPolicy extends Dto
 {
     /**
-     * @param  \DateTimeInterface  $startDate  Date timestamp
-     * @param  \DateTimeInterface  $endDate  Date timestamp
+     * @param  ?DeliveryMessage  $message  Localized messaging for a delivery offering.
      */
     public function __construct(
-        public readonly \DateTimeInterface $startDate,
-        public readonly \DateTimeInterface $endDate,
-    ) {
-    }
+        public readonly ?DeliveryMessage $message = null,
+    ) {}
 }

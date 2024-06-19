@@ -12,15 +12,14 @@ namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Dto;
 
 use SellingPartnerApi\Dto;
 
-final class DeliveryWindow extends Dto
+final class GetDeliveryOffersResult extends Dto
 {
+    protected static array $complexArrayTypes = ['deliveryOffers' => [DeliveryOffer::class]];
+
     /**
-     * @param  \DateTimeInterface  $startDate  Date timestamp
-     * @param  \DateTimeInterface  $endDate  Date timestamp
+     * @param  DeliveryOffer[]|null  $deliveryOffers  An array of delivery offer information.
      */
     public function __construct(
-        public readonly \DateTimeInterface $startDate,
-        public readonly \DateTimeInterface $endDate,
-    ) {
-    }
+        public readonly ?array $deliveryOffers = null,
+    ) {}
 }

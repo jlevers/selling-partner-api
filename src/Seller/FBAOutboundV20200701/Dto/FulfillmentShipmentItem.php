@@ -20,6 +20,7 @@ final class FulfillmentShipmentItem extends Dto
      * @param  int  $quantity  The item quantity.
      * @param  ?int  $packageNumber  An identifier for the package that contains the item quantity.
      * @param  ?string  $serialNumber  The serial number of the shipped item.
+     * @param  ?string[]  $manufacturerLotCodes  String list
      */
     public function __construct(
         public readonly string $sellerSku,
@@ -27,6 +28,6 @@ final class FulfillmentShipmentItem extends Dto
         public readonly int $quantity,
         public readonly ?int $packageNumber = null,
         public readonly ?string $serialNumber = null,
-    ) {
-    }
+        public readonly ?array $manufacturerLotCodes = null,
+    ) {}
 }

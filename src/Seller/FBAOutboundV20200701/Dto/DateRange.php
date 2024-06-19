@@ -12,15 +12,14 @@ namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Dto;
 
 use SellingPartnerApi\Dto;
 
-final class DeliveryWindow extends Dto
+final class DateRange extends Dto
 {
     /**
-     * @param  \DateTimeInterface  $startDate  Date timestamp
-     * @param  \DateTimeInterface  $endDate  Date timestamp
+     * @param  \DateTimeInterface  $earliest  Date timestamp
+     * @param  \DateTimeInterface  $latest  Date timestamp
      */
     public function __construct(
-        public readonly \DateTimeInterface $startDate,
-        public readonly \DateTimeInterface $endDate,
-    ) {
-    }
+        public readonly \DateTimeInterface $earliest,
+        public readonly \DateTimeInterface $latest,
+    ) {}
 }

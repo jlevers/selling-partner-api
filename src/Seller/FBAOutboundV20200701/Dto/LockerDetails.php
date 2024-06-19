@@ -12,15 +12,14 @@ namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Dto;
 
 use SellingPartnerApi\Dto;
 
-final class DeliveryWindow extends Dto
+final class LockerDetails extends Dto
 {
     /**
-     * @param  \DateTimeInterface  $startDate  Date timestamp
-     * @param  \DateTimeInterface  $endDate  Date timestamp
+     * @param  ?string  $lockerNumber  Indicates the locker number
+     * @param  ?string  $lockerAccessCode  Indicates the locker access code
      */
     public function __construct(
-        public readonly \DateTimeInterface $startDate,
-        public readonly \DateTimeInterface $endDate,
-    ) {
-    }
+        public readonly ?string $lockerNumber = null,
+        public readonly ?string $lockerAccessCode = null,
+    ) {}
 }

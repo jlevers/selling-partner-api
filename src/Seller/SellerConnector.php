@@ -19,9 +19,9 @@ class SellerConnector extends SellingPartnerApi
         return new APlusContentV20201101\Api($this);
     }
 
-    public function authorizationV1(): AuthorizationV1\Api
+    public function authorizationV1()
     {
-        return new AuthorizationV1\Api($this);
+        throw new Exception('The Authorization API is deprecated!');
     }
 
     public function catalogItemsV20220401(): CatalogItemsV20220401\Api
@@ -74,9 +74,9 @@ class SellerConnector extends SellingPartnerApi
         return new FBAOutboundV20200701\Api($this);
     }
 
-    public function fbaSmallAndLightV1(): FBASmallAndLightV1\Api
+    public function fbaSmallAndLightV1()
     {
-        return new FBASmallAndLightV1\Api($this);
+        throw new Exception('The FBA Small and Light API is deprecated!');
     }
 
     public function feedsV20210630(): FeedsV20210630\Api

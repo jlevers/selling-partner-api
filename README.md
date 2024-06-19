@@ -39,7 +39,7 @@ If you've found any of my packages useful, please consider [becoming a Sponsor](
 
 ## Features
 
-* Supports all Selling Partner API operations (for Sellers and Vendors) as of 6/11/2024
+* Supports all Selling Partner API operations (for Sellers and Vendors) as of 6/19/2024
 * Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents
 
@@ -174,6 +174,10 @@ use SellingPartnerApi\SellingPartnerApi;
 $sellerConnector = SellingPartnerApi::seller(/* ... */);
 ```
 
+* **Amazon Warehousing and Distribution API (v2024-05-09)** ([docs](https://developer-docs.amazon.com/sp-api/docs/awd_2024-05-09-reference`))
+    ```php
+    $amazonWarehousingAndDistributionApi = $sellerConnector->amazonWarehousingAndDistributionV20240509();
+    ```
 * **Application Management API (v2023-11-30)** ([docs](https://developer-docs.amazon.com/sp-api/docs/application-management-api-v2023-11-30-reference))
     ```php
     $applicationManagementApi = $sellerConnector->applicationManagementV20231130();
@@ -181,10 +185,6 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
 * **A+ Content API (v2020-11-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/selling-partner-api-for-a-content-management))
     ```php
     $aPlusContentApi = $sellerConnector->aPlusContentV20201101();
-    ```
-* **Authorization API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/authorization-api-v1-reference))
-    ```php
-    $authorizationApi = $sellerConnector->authorizationV1();
     ```
 * **Catalog Items API (v2022-04-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-reference))
     ```php
@@ -225,10 +225,6 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
 * **FBA Outbound API (v2020-07-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/fulfillment-outbound-api-v2020-07-01-reference))
     ```php
     $fbaOutboundApi = $sellerConnector->fbaOutboundV20200701();
-    ```
-* **FBA Small and Light API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/fbasmallandlight-api-v1-reference))
-    ```php
-    $fbaSmallAndLightApi = $sellerConnector->fbaSmallAndLightV1();
     ```
 * **Feeds API (v2021-06-30)** ([docs](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference))
     ```php

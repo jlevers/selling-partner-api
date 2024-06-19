@@ -4,10 +4,16 @@ declare(strict_types=1);
 
 namespace SellingPartnerApi\Seller;
 
+use Exception;
 use SellingPartnerApi\SellingPartnerApi;
 
 class SellerConnector extends SellingPartnerApi
 {
+    public function amazonWarehousingAndDistributionV20240509(): AmazonWarehousingAndDistributionV20240509\Api
+    {
+        return new AmazonWarehousingAndDistributionV20240509\Api($this);
+    }
+
     public function aPlusContentV20201101(): APlusContentV20201101\Api
     {
         return new APlusContentV20201101\Api($this);

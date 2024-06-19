@@ -1,5 +1,14 @@
 {
   "seller": {
+    "amazon-warehousing-distribution": {
+      "name": "Amazon Warehousing and Distribution",
+      "versions": [
+        {
+          "version": "2024-05-09",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/amazon-warehousing-and-distribution-model/awd_2024-05-09.json"
+        }
+      ]
+    },
     "application-management": {
       "name": "Application Management",
       "versions": [

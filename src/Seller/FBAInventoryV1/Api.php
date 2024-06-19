@@ -4,6 +4,11 @@ namespace SellingPartnerApi\Seller\FBAInventoryV1;
 
 use Saloon\Http\Response;
 use SellingPartnerApi\BaseResource;
+use SellingPartnerApi\Seller\FBAInventoryV1\Dto\AddInventoryRequest;
+use SellingPartnerApi\Seller\FBAInventoryV1\Dto\CreateInventoryItemRequest;
+use SellingPartnerApi\Seller\FBAInventoryV1\Requests\AddInventory;
+use SellingPartnerApi\Seller\FBAInventoryV1\Requests\CreateInventoryItem;
+use SellingPartnerApi\Seller\FBAInventoryV1\Requests\DeleteInventoryItem;
 use SellingPartnerApi\Seller\FBAInventoryV1\Requests\GetInventorySummaries;
 
 class Api extends BaseResource
@@ -29,6 +34,37 @@ class Api extends BaseResource
         ?string $nextToken = null,
     ): Response {
         $request = new GetInventorySummaries($granularityType, $granularityId, $marketplaceIds, $details, $startDateTime, $sellerSkus, $sellerSku, $nextToken);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  CreateInventoryItemRequest  $createInventoryItemRequest  An item to be created in the inventory.
+     */
+    public function createInventoryItem(CreateInventoryItemRequest $createInventoryItemRequest): Response
+    {
+        $request = new CreateInventoryItem($createInventoryItemRequest);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $sellerSku  A single seller SKU used for querying the specified seller SKU inventory summaries.
+     * @param  string  $marketplaceId  The marketplace ID for the marketplace for which the sellerSku is to be deleted.
+     */
+    public function deleteInventoryItem(string $sellerSku, string $marketplaceId): Response
+    {
+        $request = new DeleteInventoryItem($sellerSku, $marketplaceId);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  AddInventoryRequest  $addInventoryRequest  The object with the list of Inventory to be added
+     */
+    public function addInventory(AddInventoryRequest $addInventoryRequest): Response
+    {
+        $request = new AddInventory($addInventoryRequest);
 
         return $this->connector->send($request);
     }

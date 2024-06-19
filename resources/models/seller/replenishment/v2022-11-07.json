@@ -27,6 +27,7 @@
                 "description": "Returns aggregated replenishment program metrics for a selling partner. \n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getSellingPartnerMetrics",
                 "requestBody": {
+                    "description": "The request body for the `getSellingPartnerMetrics` operation.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -67,6 +68,10 @@
                                             "notDeliveredDueToOOS": 5.54,
                                             "totalSubscriptionsRevenue": 131340.24,
                                             "activeSubscriptions": 0,
+                                            "lostRevenueDueToOOS": 38493.29,
+                                            "subscriberAverageReorders": 3.25,
+                                            "nonSubscriberAverageReorders": 1.11,
+                                            "couponsRevenuePenetration": 0,
                                             "currencyCode": "USD",
                                             "timeInterval": {
                                                 "endDate": "2023-05-09T22:36:56Z",
@@ -110,6 +115,10 @@
                                                 "notDeliveredDueToOOS": 5.54,
                                                 "totalSubscriptionsRevenue": 131340.24,
                                                 "activeSubscriptions": 0,
+                                                "lostRevenueDueToOOS": 38493.29,
+                                                "subscriberAverageReorders": 3.25,
+                                                "nonSubscriberAverageReorders": 1.11,
+                                                "couponsRevenuePenetration": 0,
                                                 "currencyCode": "USD",
                                                 "timeInterval": {
                                                     "endDate": "2023-05-09T22:36:56Z",
@@ -162,7 +171,10 @@
                                                         "TOTAL_SUBSCRIPTIONS_REVENUE",
                                                         "NOT_DELIVERED_DUE_TO_OOS",
                                                         "ACTIVE_SUBSCRIPTIONS",
-                                                        "SUBSCRIBER_NON_SUBSCRIBER_AVERAGE_REVENUE"
+                                                        "SUBSCRIBER_NON_SUBSCRIBER_AVERAGE_REVENUE",
+                                                        "LOST_REVENUE_DUE_TO_OOS",
+                                                        "SUBSCRIBER_NON_SUBSCRIBER_AVERAGE_REORDERS",
+                                                        "COUPONS_REVENUE_PENETRATION"
                                                     ],
                                                     "timePeriodType": "PERFORMANCE",
                                                     "marketplaceId": "ATVPDKIKX0DER",
@@ -232,6 +244,24 @@
                             },
                             "x-amzn-RateLimit-Limit": {
                                 "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -369,6 +399,8 @@
                                             "totalSubscriptionsRevenue": 12.89,
                                             "asin": "B000TMUDOW",
                                             "revenuePenetration": 10.34,
+                                            "lostRevenueDueToOOS": 12.32,
+                                            "couponsRevenuePenetration": 10,
                                             "timeInterval": {
                                                 "endDate": "2023-03-11T00:00:00Z",
                                                 "startDate": "2023-03-05T00:00:00Z"
@@ -381,6 +413,8 @@
                                             "totalSubscriptionsRevenue": 34.03,
                                             "asin": "B004CLH5CY",
                                             "revenuePenetration": 9.87,
+                                            "lostRevenueDueToOOS": 17.82,
+                                            "couponsRevenuePenetration": 17,
                                             "timeInterval": {
                                                 "endDate": "2023-03-11T00:00:00Z",
                                                 "startDate": "2023-03-05T00:00:00Z"
@@ -438,6 +472,8 @@
                                                 "revenuePenetration": 23.6,
                                                 "shippedSubscriptionUnits": 100,
                                                 "activeSubscriptions": 100,
+                                                "lostRevenueDueToOOS": 12.32,
+                                                "couponsRevenuePenetration": 10,
                                                 "timeInterval": {
                                                     "startDate": "2022-01-01T00:00:00Z",
                                                     "endDate": "2022-12-31T00:00:00Z"
@@ -451,6 +487,8 @@
                                                 "revenuePenetration": 35.9,
                                                 "shippedSubscriptionUnits": 100,
                                                 "activeSubscriptions": 100,
+                                                "lostRevenueDueToOOS": 17.82,
+                                                "couponsRevenuePenetration": 17,
                                                 "timeInterval": {
                                                     "startDate": "2022-01-01T00:00:00Z",
                                                     "endDate": "2022-12-31T00:00:00Z"
@@ -595,6 +633,24 @@
                             }
                         }
                     },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
                     "415": {
                         "description": "The request payload is in an unsupported format.",
                         "headers": {
@@ -676,9 +732,10 @@
                 "tags": [
                     "ReplenishmentV20221107"
                 ],
-                "description": "Returns the details of a selling partner's replenishment program offers. Note that this operation only supports sellers at this time.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the details of a selling partner's replenishment program offers.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "listOffers",
                 "requestBody": {
+                    "description": "The request body for the `listOffers` operation.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -972,6 +1029,24 @@
                             },
                             "x-amzn-RateLimit-Limit": {
                                 "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1426,39 +1501,39 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "SHIPPED_SUBSCRIPTION_UNITS",
-                        "description": "The number of units shipped to the subscribers over a period of time. Applicable only for the PERFORMANCE timePeriodType."
+                        "description": "The number of units shipped to the subscribers over a period of time. Applicable only for the `PERFORMANCE` `timePeriodType`."
                     },
                     {
                         "value": "TOTAL_SUBSCRIPTIONS_REVENUE",
-                        "description": "The revenue generated from subscriptions over a period of time. Applicable only for the PERFORMANCE timePeriodType."
+                        "description": "The revenue generated from subscriptions over a period of time. Applicable only for the `PERFORMANCE` `timePeriodType`."
                     },
                     {
                         "value": "ACTIVE_SUBSCRIPTIONS",
-                        "description": "The number of active subscriptions present at the end of the period. Applicable only for the PERFORMANCE timePeriodType."
+                        "description": "The number of active subscriptions present at the end of the period. Applicable only for the `PERFORMANCE` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_90DAYS_SHIPPED_SUBSCRIPTION_UNITS",
-                        "description": "The forecasted shipped subscription units for the next 90 days. Applicable only for the FORECAST timePeriodType."
+                        "description": "The forecasted shipped subscription units for the next 90 days. Applicable only for the `FORECAST` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_60DAYS_SHIPPED_SUBSCRIPTION_UNITS",
-                        "description": "The forecasted shipped subscription units for the next 60 days. Applicable only for the FORECAST timePeriodType."
+                        "description": "The forecasted shipped subscription units for the next 60 days. Applicable only for the `FORECAST` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_30DAYS_SHIPPED_SUBSCRIPTION_UNITS",
-                        "description": "The forecasted shipped subscription units for the next 30 days. Applicable only for the FORECAST timePeriodType."
+                        "description": "The forecasted shipped subscription units for the next 30 days. Applicable only for the `FORECAST` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_90DAYS_TOTAL_SUBSCRIPTIONS_REVENUE",
-                        "description": "The forecasted total subscription revenue for the next 90 days. Applicable only for the FORECAST timePeriodType."
+                        "description": "The forecasted total subscription revenue for the next 90 days. Applicable only for the `FORECAST` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_60DAYS_TOTAL_SUBSCRIPTIONS_REVENUE",
-                        "description": "The forecasted total subscription revenue for the next 60 days. Applicable only for the FORECAST timePeriodType."
+                        "description": "The forecasted total subscription revenue for the next 60 days. Applicable only for the `FORECAST` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_30DAYS_TOTAL_SUBSCRIPTIONS_REVENUE",
-                        "description": "The forecasted total subscription revenue for the next 30 days. Applicable only for the FORECAST timePeriodType."
+                        "description": "The forecasted total subscription revenue for the next 30 days. Applicable only for the `FORECAST` `timePeriodType`."
                     }
                 ]
             },
@@ -1594,7 +1669,7 @@
             },
             "AggregationFrequency": {
                 "type": "string",
-                "description": "The time period used to group data in the response. Note that this is only valid for the performance time period type.",
+                "description": "The time period used to group data in the response. Note that this is only valid for the `PERFORMANCE` time period type.",
                 "enum": [
                     "WEEK",
                     "MONTH",
@@ -1629,12 +1704,12 @@
                 "properties": {
                     "startDate": {
                         "type": "string",
-                        "description": "When this object is used as a request parameter, the specified startDate is adjusted based on the aggregation frequency.\n\n* For WEEK the metric is computed from the first day of the week (that is, Sunday based on ISO 8601) that contains the startDate.\n* For MONTH the metric is computed from the first day of the month that contains the startDate.\n* For QUARTER the metric is computed from the first day of the quarter that contains the startDate.\n* For YEAR the metric is computed from the first day of the year that contains the startDate.",
+                        "description": "When this object is used as a request parameter, the specified `startDate` is adjusted based on the aggregation frequency.\n\n* For `WEEK` the metric is computed from the first day of the week (Sunday, based on ISO 8601) that contains the `startDate`.\n* For `MONTH` the metric is computed from the first day of the month that contains the `startDate`.\n* For `QUARTER` the metric is computed from the first day of the quarter that contains the `startDate`.\n* For `YEAR` the metric is computed from the first day of the year that contains the `startDate`.",
                         "format": "date-time"
                     },
                     "endDate": {
                         "type": "string",
-                        "description": "When this object is used as a request parameter, the specified endDate is adjusted based on the aggregation frequency.\n\n* For WEEK the metric is computed up to the last day of the week (that is, Sunday based on ISO 8601) that contains the endDate.\n* For MONTH, the metric is computed up to the last day that contains the endDate.\n* For QUARTER the metric is computed up to the last day of the quarter that contains the endDate.\n* For YEAR the metric is computed up to the last day of the year that contains the endDate.\n Note: The end date may be adjusted to a lower value based on the data available in our system.",
+                        "description": "When this object is used as a request parameter, the specified `endDate` is adjusted based on the aggregation frequency.\n\n* For `WEEK` the metric is computed up to the last day of the week (Sunday, based on ISO 8601) that contains the `endDate`.\n* For `MONTH`, the metric is computed up to the last day that contains the `endDate`.\n* For `QUARTER` the metric is computed up to the last day of the quarter that contains the `endDate`.\n* For `YEAR` the metric is computed up to the last day of the year that contains the `endDate`.\n Note: The end date may be adjusted to a lower value based on the data available in our system.",
                         "format": "date-time"
                     }
                 },
@@ -1648,7 +1723,10 @@
                     "TOTAL_SUBSCRIPTIONS_REVENUE",
                     "ACTIVE_SUBSCRIPTIONS",
                     "NOT_DELIVERED_DUE_TO_OOS",
-                    "SUBSCRIBER_NON_SUBSCRIBER_AVERAGE_REVENUE"
+                    "SUBSCRIBER_NON_SUBSCRIBER_AVERAGE_REVENUE",
+                    "LOST_REVENUE_DUE_TO_OOS",
+                    "SUBSCRIBER_NON_SUBSCRIBER_AVERAGE_REORDERS",
+                    "COUPONS_REVENUE_PENETRATION"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
@@ -1670,6 +1748,18 @@
                     {
                         "value": "SUBSCRIBER_NON_SUBSCRIBER_AVERAGE_REVENUE",
                         "description": "The average revenue per subscriber and non-subscriber over the past 12 months for sellers and 6 months for vendors."
+                    },
+                    {
+                        "value": "LOST_REVENUE_DUE_TO_OOS",
+                        "description": "The revenue that would have been generated had there not been out of stock."
+                    },
+                    {
+                        "value": "SUBSCRIBER_NON_SUBSCRIBER_AVERAGE_REORDERS",
+                        "description": "The average reorders per subscriber and non-subscriber over the last 12 months."
+                    },
+                    {
+                        "value": "COUPONS_REVENUE_PENETRATION",
+                        "description": "The percentage of revenue from ASINs with coupons out of total revenue from all ASINs."
                     }
                 ]
             },
@@ -1705,7 +1795,7 @@
                     },
                     {
                         "value": "FORECAST",
-                        "description": "Indicates forecasted metrics. Only TOTAL_SUBSCRIPTIONS_REVENUE and SHIPPED_SUBSCRIPTION_UNITS are supported. Forecast data is supported for sellers but not for vendors."
+                        "description": "Indicates forecasted metrics. Only `TOTAL_SUBSCRIPTIONS_REVENUE` and `SHIPPED_SUBSCRIPTION_UNITS` are supported. Forecast data is supported for sellers but not for vendors."
                     }
                 ]
             },
@@ -1729,37 +1819,62 @@
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the PERFORMANCE timePeriodType.",
+                        "description": "The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "totalSubscriptionsRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The revenue generated from subscriptions over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.",
+                        "description": "The revenue generated from subscriptions over a period of time. Applicable for both the `PERFORMANCE` and `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "shippedSubscriptionUnits": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The number of units shipped to the subscribers over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.",
+                        "description": "The number of units shipped to the subscribers over a period of time. Applicable for both the `PERFORMANCE` and `FORECAST` `timePeriodType`.",
                         "format": "int64"
                     },
                     "activeSubscriptions": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The number of active subscriptions present at the end of the period. Applicable only for the PERFORMANCE timePeriodType.",
+                        "description": "The number of active subscriptions present at the end of the period. Applicable only for the `PERFORMANCE` `timePeriodType`.",
                         "format": "int64"
                     },
                     "subscriberAverageRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the PERFORMANCE timePeriodType.",
+                        "description": "The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "nonSubscriberAverageRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the PERFORMANCE timePeriodType.",
+                        "description": "The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the `PERFORMANCE` `timePeriodType`.",
+                        "format": "double"
+                    },
+                    "lostRevenueDueToOOS": {
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "The revenue that would have been generated had there not been out of stock. Applicable only for the PERFORMANCE timePeriodType.",
+                        "format": "double"
+                    },
+                    "subscriberAverageReorders": {
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "The average reorders per subscriber of the program over a period of 12 months. Applicable only for the PERFORMANCE timePeriodType.",
+                        "format": "double"
+                    },
+                    "nonSubscriberAverageReorders": {
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "The average reorders per non-subscriber of the program over a period of past 12 months. Applicable only for the PERFORMANCE timePeriodType.",
+                        "format": "double"
+                    },
+                    "couponsRevenuePenetration": {
+                        "maximum": 100,
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable only for the PERFORMANCE timePeriodType.",
                         "format": "double"
                     },
                     "timeInterval": {
@@ -1861,68 +1976,81 @@
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the PERFORMANCE timePeriodType.",
+                        "description": "The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "totalSubscriptionsRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The revenue generated from subscriptions over a period of time. Applicable only for the PERFORMANCE timePeriodType.",
+                        "description": "The revenue generated from subscriptions over a period of time. Applicable only for the `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "shippedSubscriptionUnits": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The number of units shipped to the subscribers over a period of time. Applicable only for the PERFORMANCE timePeriodType.",
+                        "description": "The number of units shipped to the subscribers over a period of time. Applicable only for the `PERFORMANCE` `timePeriodType`.",
                         "format": "int64"
                     },
                     "activeSubscriptions": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The number of active subscriptions present at the end of the period. Applicable only for the PERFORMANCE timePeriodType.",
+                        "description": "The number of active subscriptions present at the end of the period. Applicable only for the `PERFORMANCE` `timePeriodType`.",
                         "format": "int64"
                     },
                     "revenuePenetration": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of total program revenue out of total product revenue. Applicable only for the PERFORMANCE timePeriodType.",
+                        "description": "The percentage of total program revenue out of total product revenue. Applicable only for the `PERFORMANCE` `timePeriodType`.",
+                        "format": "double"
+                    },
+                    "lostRevenueDueToOOS": {
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "The revenue that would have been generated had there not been out of stock. Applicable only for the PERFORMANCE timePeriodType.",
+                        "format": "double"
+                    },
+                    "couponsRevenuePenetration": {
+                        "maximum": 100,
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable only for the PERFORMANCE timePeriodType.",
                         "format": "double"
                     },
                     "next30DayTotalSubscriptionsRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The forecasted total subscription revenue for the next 30 days. Applicable only for the FORECAST timePeriodType.",
+                        "description": "The forecasted total subscription revenue for the next 30 days. Applicable only for the `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "next60DayTotalSubscriptionsRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The forecasted total subscription revenue for the next 60 days. Applicable only for the FORECAST timePeriodType.",
+                        "description": "The forecasted total subscription revenue for the next 60 days. Applicable only for the `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "next90DayTotalSubscriptionsRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The forecasted total subscription revenue for the next 90 days. Applicable only for the FORECAST timePeriodType.",
+                        "description": "The forecasted total subscription revenue for the next 90 days. Applicable only for the `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "next30DayShippedSubscriptionUnits": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The forecasted shipped subscription units for the next 30 days. Applicable only for the FORECAST timePeriodType.",
+                        "description": "The forecasted shipped subscription units for the next 30 days. Applicable only for the `FORECAST` `timePeriodType`.",
                         "format": "int64"
                     },
                     "next60DayShippedSubscriptionUnits": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The forecasted shipped subscription units for the next 60 days. Applicable only for the FORECAST timePeriodType.",
+                        "description": "The forecasted shipped subscription units for the next 60 days. Applicable only for the `FORECAST` `timePeriodType`.",
                         "format": "int64"
                     },
                     "next90DayShippedSubscriptionUnits": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The forecasted shipped subscription units for the next 90 days. Applicable only for the FORECAST timePeriodType.",
+                        "description": "The forecasted shipped subscription units for the next 90 days. Applicable only for the `FORECAST` `timePeriodType`.",
                         "format": "int64"
                     },
                     "timeInterval": {
@@ -1943,6 +2071,7 @@
                 "properties": {
                     "errors": {
                         "type": "array",
+                        "description": "A list of error responses returned when a request is unsuccessful.",
                         "items": {
                             "$ref": "#/components/schemas/Error"
                         }

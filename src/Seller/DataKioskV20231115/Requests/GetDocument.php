@@ -29,8 +29,7 @@ class GetDocument extends Request
      */
     public function __construct(
         protected string $documentId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

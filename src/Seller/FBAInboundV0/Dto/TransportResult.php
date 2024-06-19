@@ -29,6 +29,5 @@ final class TransportResult extends Dto
         public readonly string $transportStatus,
         public readonly ?string $errorCode = null,
         public readonly ?string $errorDescription = null,
-    ) {
-    }
+    ) {}
 }

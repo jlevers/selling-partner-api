@@ -53,6 +53,5 @@ final class ShipmentItem extends Dto
         public readonly ?Money $shippingDiscount = null,
         public readonly ?Money $promotionDiscount = null,
         public readonly ?array $serialNumbers = null,
-    ) {
-    }
+    ) {}
 }

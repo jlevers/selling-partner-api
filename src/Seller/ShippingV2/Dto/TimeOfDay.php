@@ -23,6 +23,5 @@ final class TimeOfDay extends Dto
         public readonly ?int $hourOfDay = null,
         public readonly ?int $minuteOfHour = null,
         public readonly ?int $secondOfMinute = null,
-    ) {
-    }
+    ) {}
 }

@@ -36,8 +36,7 @@ class GetCompetitivePricing extends Request
         protected ?array $asins = null,
         protected ?array $skus = null,
         protected ?string $customerType = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

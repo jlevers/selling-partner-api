@@ -25,6 +25,5 @@ final class GetShipmentsResult extends Dto
     public function __construct(
         public readonly ?array $shipmentData = null,
         public readonly ?string $nextToken = null,
-    ) {
-    }
+    ) {}
 }

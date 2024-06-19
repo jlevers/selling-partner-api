@@ -25,6 +25,5 @@ final class SubmitInvoicesResponse extends Response
     public function __construct(
         public readonly ?TransactionId $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

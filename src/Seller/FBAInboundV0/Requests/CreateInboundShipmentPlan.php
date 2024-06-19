@@ -33,8 +33,7 @@ class CreateInboundShipmentPlan extends Request implements HasBody
      */
     public function __construct(
         public CreateInboundShipmentPlanRequest $createInboundShipmentPlanRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

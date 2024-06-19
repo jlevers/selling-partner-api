@@ -27,6 +27,5 @@ final class RateItem extends Dto
         public readonly ?string $rateItemType = null,
         public readonly ?Currency $rateItemCharge = null,
         public readonly ?string $rateItemNameLocalization = null,
-    ) {
-    }
+    ) {}
 }

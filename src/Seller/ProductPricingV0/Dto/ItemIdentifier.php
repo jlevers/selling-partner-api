@@ -32,6 +32,5 @@ final class ItemIdentifier extends Dto
         public readonly string $itemCondition,
         public readonly ?string $asin = null,
         public readonly ?string $sellerSku = null,
-    ) {
-    }
+    ) {}
 }

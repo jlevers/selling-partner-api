@@ -23,6 +23,5 @@ final class PrepInstruction extends Dto
         public readonly ?Currency $fee = null,
         public readonly ?string $prepOwner = null,
         public readonly ?string $prepType = null,
-    ) {
-    }
+    ) {}
 }

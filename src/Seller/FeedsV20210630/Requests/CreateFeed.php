@@ -34,8 +34,7 @@ class CreateFeed extends Request implements HasBody
      */
     public function __construct(
         public CreateFeedSpecification $createFeedSpecification,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

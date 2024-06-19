@@ -20,6 +20,5 @@ final class GetDeliveryChallanDocumentResponse extends Response
      */
     public function __construct(
         public readonly DocumentDownload $documentDownload,
-    ) {
-    }
+    ) {}
 }

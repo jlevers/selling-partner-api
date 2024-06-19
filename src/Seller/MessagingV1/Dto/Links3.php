@@ -19,6 +19,5 @@ final class Links3 extends Dto
      */
     public function __construct(
         public readonly LinkObject $self,
-    ) {
-    }
+    ) {}
 }

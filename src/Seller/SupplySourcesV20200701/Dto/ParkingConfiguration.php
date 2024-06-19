@@ -23,6 +23,5 @@ final class ParkingConfiguration extends Dto
         public readonly ?string $parkingCostType = null,
         public readonly ?string $parkingSpotIdentificationType = null,
         public readonly ?int $numberOfParkingSpots = null,
-    ) {
-    }
+    ) {}
 }

@@ -34,8 +34,7 @@ class CreateQuery extends Request implements HasBody
      */
     public function __construct(
         public CreateQuerySpecification $createQuerySpecification,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

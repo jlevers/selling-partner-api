@@ -37,8 +37,7 @@ class CreateAmazonMotors extends Request implements HasBody
         protected string $amazonOrderId,
         public CreateAmazonMotorsRequest $createAmazonMotorsRequest,
         protected array $marketplaceIds,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

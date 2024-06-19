@@ -33,6 +33,5 @@ final class PurchaseShipmentRequest extends Dto
         public readonly array $containers,
         public readonly LabelSpecification $labelSpecification,
         public readonly ?\DateTimeInterface $shipDate = null,
-    ) {
-    }
+    ) {}
 }

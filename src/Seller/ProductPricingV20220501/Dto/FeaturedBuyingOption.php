@@ -23,6 +23,5 @@ final class FeaturedBuyingOption extends Dto
     public function __construct(
         public readonly string $buyingOptionType,
         public readonly array $segmentedFeaturedOffers,
-    ) {
-    }
+    ) {}
 }

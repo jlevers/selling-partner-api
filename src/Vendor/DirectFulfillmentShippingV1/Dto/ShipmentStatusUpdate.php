@@ -23,6 +23,5 @@ final class ShipmentStatusUpdate extends Dto
         public readonly PartyIdentification $sellingParty,
         public readonly PartyIdentification $shipFromParty,
         public readonly StatusUpdateDetails $statusUpdateDetails,
-    ) {
-    }
+    ) {}
 }

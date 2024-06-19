@@ -23,6 +23,5 @@ final class ConfirmShipmentOrderItem extends Dto
         public readonly string $orderItemId,
         public readonly int $quantity,
         public readonly ?array $transparencyCodes = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class FulfillmentDocument extends Dto
     public function __construct(
         public readonly ?string $uploadDestinationId = null,
         public readonly ?string $contentSha256 = null,
-    ) {
-    }
+    ) {}
 }

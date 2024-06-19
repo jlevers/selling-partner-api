@@ -21,6 +21,5 @@ final class FeatureSettings extends Dto
     public function __construct(
         public readonly ?string $featureName = null,
         public readonly ?string $featureFulfillmentPolicy = null,
-    ) {
-    }
+    ) {}
 }

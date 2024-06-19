@@ -31,6 +31,5 @@ final class OrderItem extends Dto
         public readonly ?string $vendorProductIdentifier = null,
         public readonly ?Money $netCost = null,
         public readonly ?Money $listPrice = null,
-    ) {
-    }
+    ) {}
 }

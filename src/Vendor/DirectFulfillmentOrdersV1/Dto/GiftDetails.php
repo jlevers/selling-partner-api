@@ -21,6 +21,5 @@ final class GiftDetails extends Dto
     public function __construct(
         public readonly ?string $giftMessage = null,
         public readonly ?string $giftWrapId = null,
-    ) {
-    }
+    ) {}
 }

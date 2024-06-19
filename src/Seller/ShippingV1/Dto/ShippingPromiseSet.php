@@ -21,6 +21,5 @@ final class ShippingPromiseSet extends Dto
     public function __construct(
         public readonly ?TimeRange $deliveryWindow = null,
         public readonly ?TimeRange $receiveWindow = null,
-    ) {
-    }
+    ) {}
 }

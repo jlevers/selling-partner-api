@@ -34,8 +34,7 @@ class ListReturnReasonCodes extends Request
         protected ?string $marketplaceId = null,
         protected ?string $sellerFulfillmentOrderId = null,
         protected ?string $language = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

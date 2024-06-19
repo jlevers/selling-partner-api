@@ -21,6 +21,5 @@ final class ReferencePrice extends Dto
     public function __construct(
         public readonly string $name,
         public readonly MoneyType $price,
-    ) {
-    }
+    ) {}
 }

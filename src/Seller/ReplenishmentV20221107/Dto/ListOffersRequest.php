@@ -23,6 +23,5 @@ final class ListOffersRequest extends Dto
         public readonly ListOffersRequestPagination $pagination,
         public readonly ListOffersRequestFilters $filters,
         public readonly ?ListOffersRequestSort $sort = null,
-    ) {
-    }
+    ) {}
 }

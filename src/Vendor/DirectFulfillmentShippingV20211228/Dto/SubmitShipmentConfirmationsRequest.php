@@ -21,6 +21,5 @@ final class SubmitShipmentConfirmationsRequest extends Dto
      */
     public function __construct(
         public readonly ?array $shipmentConfirmations = null,
-    ) {
-    }
+    ) {}
 }

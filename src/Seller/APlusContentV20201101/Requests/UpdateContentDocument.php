@@ -37,8 +37,7 @@ class UpdateContentDocument extends Request implements HasBody
         protected string $contentReferenceKey,
         public PostContentDocumentRequest $postContentDocumentRequest,
         protected string $marketplaceId,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

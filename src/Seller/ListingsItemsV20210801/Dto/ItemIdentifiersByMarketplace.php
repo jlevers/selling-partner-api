@@ -21,6 +21,5 @@ final class ItemIdentifiersByMarketplace extends Dto
     public function __construct(
         public readonly ?string $marketplaceId = null,
         public readonly ?string $asin = null,
-    ) {
-    }
+    ) {}
 }

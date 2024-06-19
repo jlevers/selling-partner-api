@@ -34,8 +34,7 @@ class CreateUploadDestinationForResource extends Request
         protected array $marketplaceIds,
         protected string $contentMd5,
         protected ?string $contentType = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

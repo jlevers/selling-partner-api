@@ -38,8 +38,7 @@ class GetPricing extends Request
         protected ?array $skus = null,
         protected ?string $itemCondition = null,
         protected ?string $offerType = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

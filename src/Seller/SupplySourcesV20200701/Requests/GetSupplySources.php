@@ -31,8 +31,7 @@ class GetSupplySources extends Request
     public function __construct(
         protected ?string $nextPageToken = null,
         protected ?float $pageSize = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

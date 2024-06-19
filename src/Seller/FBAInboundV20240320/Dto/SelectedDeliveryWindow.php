@@ -27,6 +27,5 @@ final class SelectedDeliveryWindow extends Dto
         public readonly \DateTimeInterface $endDate,
         public readonly \DateTimeInterface $startDate,
         public readonly ?\DateTimeInterface $editableUntil = null,
-    ) {
-    }
+    ) {}
 }

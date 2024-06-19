@@ -31,6 +31,5 @@ final class ImportDetails extends Dto
         public readonly ?Weight $billableWeight = null,
         public readonly ?\DateTimeInterface $estimatedShipByDate = null,
         public readonly ?string $handlingInstructions = null,
-    ) {
-    }
+    ) {}
 }

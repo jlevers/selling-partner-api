@@ -21,6 +21,5 @@ final class Links2 extends Dto
     public function __construct(
         public readonly LinkObject $self,
         public readonly LinkObject $schema,
-    ) {
-    }
+    ) {}
 }

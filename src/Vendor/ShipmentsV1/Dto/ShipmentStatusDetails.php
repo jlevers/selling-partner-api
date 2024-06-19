@@ -21,6 +21,5 @@ final class ShipmentStatusDetails extends Dto
     public function __construct(
         public readonly ?string $shipmentStatus = null,
         public readonly ?\DateTimeInterface $shipmentStatusDate = null,
-    ) {
-    }
+    ) {}
 }

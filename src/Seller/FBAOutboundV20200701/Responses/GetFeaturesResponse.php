@@ -25,6 +25,5 @@ final class GetFeaturesResponse extends Response
     public function __construct(
         public readonly ?GetFeaturesResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

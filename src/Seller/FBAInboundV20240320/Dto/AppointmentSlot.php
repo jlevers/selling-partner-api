@@ -21,6 +21,5 @@ final class AppointmentSlot extends Dto
     public function __construct(
         public readonly string $slotId,
         public readonly AppointmentSlotTime $slotTime,
-    ) {
-    }
+    ) {}
 }

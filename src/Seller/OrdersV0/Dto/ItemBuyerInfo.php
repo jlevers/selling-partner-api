@@ -37,6 +37,5 @@ final class ItemBuyerInfo extends Dto
         public readonly ?Money $giftWrapTax = null,
         public readonly ?string $giftMessageText = null,
         public readonly ?string $giftWrapLevel = null,
-    ) {
-    }
+    ) {}
 }

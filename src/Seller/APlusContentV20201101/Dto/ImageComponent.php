@@ -23,6 +23,5 @@ final class ImageComponent extends Dto
         public readonly string $uploadDestinationId,
         public readonly ImageCropSpecification $imageCropSpecification,
         public readonly string $altText,
-    ) {
-    }
+    ) {}
 }

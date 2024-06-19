@@ -31,6 +31,5 @@ final class RestrictedResource extends Dto
         public readonly string $method,
         public readonly string $path,
         public readonly ?array $dataElements = null,
-    ) {
-    }
+    ) {}
 }

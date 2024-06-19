@@ -34,8 +34,7 @@ class CreateScheduledPackage extends Request implements HasBody
      */
     public function __construct(
         public CreateScheduledPackageRequest $createScheduledPackageRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

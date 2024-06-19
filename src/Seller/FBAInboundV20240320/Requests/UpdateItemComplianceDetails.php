@@ -36,8 +36,7 @@ class UpdateItemComplianceDetails extends Request implements HasBody
     public function __construct(
         public UpdateItemComplianceDetailsRequest $updateItemComplianceDetailsRequest,
         protected string $marketplaceId,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -32,6 +32,5 @@ final class AddressExtendedFields extends Dto
         public readonly ?string $streetNumber = null,
         public readonly ?string $complement = null,
         public readonly ?string $neighborhood = null,
-    ) {
-    }
+    ) {}
 }

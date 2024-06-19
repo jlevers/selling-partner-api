@@ -34,8 +34,7 @@ class GetItemOffersBatch extends Request implements HasBody
      */
     public function __construct(
         public GetItemOffersBatchRequest $getItemOffersBatchRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

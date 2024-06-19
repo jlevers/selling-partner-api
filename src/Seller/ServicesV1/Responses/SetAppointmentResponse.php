@@ -27,6 +27,5 @@ final class SetAppointmentResponse extends Response
         public readonly ?string $appointmentId = null,
         public readonly ?array $warnings = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

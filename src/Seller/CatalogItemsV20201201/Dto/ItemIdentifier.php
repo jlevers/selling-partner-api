@@ -21,6 +21,5 @@ final class ItemIdentifier extends Dto
     public function __construct(
         public readonly string $identifierType,
         public readonly string $identifier,
-    ) {
-    }
+    ) {}
 }

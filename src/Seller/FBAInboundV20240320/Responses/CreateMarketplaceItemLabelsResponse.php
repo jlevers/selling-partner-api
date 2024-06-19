@@ -22,6 +22,5 @@ final class CreateMarketplaceItemLabelsResponse extends Response
      */
     public function __construct(
         public readonly array $documentDownloads,
-    ) {
-    }
+    ) {}
 }

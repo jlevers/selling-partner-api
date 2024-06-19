@@ -37,8 +37,7 @@ class SearchDefinitionsProductTypes extends Request
         protected ?string $itemName = null,
         protected ?string $locale = null,
         protected ?string $searchLocale = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

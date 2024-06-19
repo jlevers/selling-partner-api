@@ -38,8 +38,7 @@ class GenerateSelfShipAppointmentSlots extends Request implements HasBody
         protected string $inboundPlanId,
         protected string $shipmentId,
         public GenerateSelfShipAppointmentSlotsRequest $generateSelfShipAppointmentSlotsRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

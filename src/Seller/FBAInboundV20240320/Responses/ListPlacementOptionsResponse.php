@@ -25,6 +25,5 @@ final class ListPlacementOptionsResponse extends Response
     public function __construct(
         public readonly array $placementOptions,
         public readonly ?Pagination $pagination = null,
-    ) {
-    }
+    ) {}
 }

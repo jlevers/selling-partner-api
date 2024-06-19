@@ -34,8 +34,7 @@ class PurchaseLabels extends Request implements HasBody
     public function __construct(
         protected string $shipmentId,
         public PurchaseLabelsRequest $purchaseLabelsRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

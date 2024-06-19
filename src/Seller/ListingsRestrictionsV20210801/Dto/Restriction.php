@@ -25,6 +25,5 @@ final class Restriction extends Dto
         public readonly string $marketplaceId,
         public readonly ?string $conditionType = null,
         public readonly ?array $reasons = null,
-    ) {
-    }
+    ) {}
 }

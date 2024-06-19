@@ -34,6 +34,5 @@ final class InboundShipmentPlanItem extends Dto
         public readonly string $fulfillmentNetworkSku,
         public readonly int $quantity,
         public readonly ?array $prepDetailsList = null,
-    ) {
-    }
+    ) {}
 }

@@ -23,6 +23,5 @@ final class LabelResult extends Dto
         public readonly ?string $containerReferenceId = null,
         public readonly ?string $trackingId = null,
         public readonly ?Label $label = null,
-    ) {
-    }
+    ) {}
 }

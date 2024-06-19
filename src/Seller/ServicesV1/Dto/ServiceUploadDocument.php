@@ -25,6 +25,5 @@ final class ServiceUploadDocument extends Dto
         public readonly string $contentType,
         public readonly float $contentLength,
         public readonly ?string $contentMd5 = null,
-    ) {
-    }
+    ) {}
 }

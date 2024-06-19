@@ -37,8 +37,7 @@ class CreateWarranty extends Request implements HasBody
         protected string $amazonOrderId,
         public CreateWarrantyRequest $createWarrantyRequest,
         protected array $marketplaceIds,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -23,6 +23,5 @@ final class ShippingLabelList extends Dto
     public function __construct(
         public readonly ?Pagination $pagination = null,
         public readonly ?array $shippingLabels = null,
-    ) {
-    }
+    ) {}
 }

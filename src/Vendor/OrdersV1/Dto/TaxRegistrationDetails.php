@@ -21,6 +21,5 @@ final class TaxRegistrationDetails extends Dto
     public function __construct(
         public readonly string $taxRegistrationType,
         public readonly string $taxRegistrationNumber,
-    ) {
-    }
+    ) {}
 }

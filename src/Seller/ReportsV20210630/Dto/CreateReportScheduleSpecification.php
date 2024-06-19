@@ -27,6 +27,5 @@ final class CreateReportScheduleSpecification extends Dto
         public readonly string $period,
         public readonly ?array $reportOptions = null,
         public readonly ?\DateTimeInterface $nextReportCreationTime = null,
-    ) {
-    }
+    ) {}
 }

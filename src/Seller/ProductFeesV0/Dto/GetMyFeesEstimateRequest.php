@@ -21,6 +21,5 @@ final class GetMyFeesEstimateRequest extends Dto
      */
     public function __construct(
         public readonly ?FeesEstimateRequest $feesEstimateRequest = null,
-    ) {
-    }
+    ) {}
 }

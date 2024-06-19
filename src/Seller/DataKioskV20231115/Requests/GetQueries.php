@@ -37,8 +37,7 @@ class GetQueries extends Request
         protected ?\DateTimeInterface $createdSince = null,
         protected ?\DateTimeInterface $createdUntil = null,
         protected ?string $paginationToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

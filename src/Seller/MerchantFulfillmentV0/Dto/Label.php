@@ -37,6 +37,5 @@ final class Label extends Dto
         public readonly ?string $customTextForLabel = null,
         public readonly ?string $labelFormat = null,
         public readonly ?string $standardIdForLabel = null,
-    ) {
-    }
+    ) {}
 }

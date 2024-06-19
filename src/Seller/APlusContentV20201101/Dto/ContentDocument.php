@@ -30,6 +30,5 @@ final class ContentDocument extends Dto
         public readonly string $locale,
         public readonly array $contentModuleList,
         public readonly ?string $contentSubType = null,
-    ) {
-    }
+    ) {}
 }

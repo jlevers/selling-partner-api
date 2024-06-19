@@ -24,6 +24,5 @@ final class InventoryUpdate extends Dto
         public readonly PartyIdentification $sellingParty,
         public readonly bool $isFullUpdate,
         public readonly array $items,
-    ) {
-    }
+    ) {}
 }

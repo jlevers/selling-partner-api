@@ -31,8 +31,7 @@ class ConfirmPackingOption extends Request
     public function __construct(
         protected string $inboundPlanId,
         protected string $packingOptionId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

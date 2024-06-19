@@ -21,6 +21,5 @@ final class CreateLegalDisclosureRequest extends Dto
      */
     public function __construct(
         public readonly ?array $attachments = null,
-    ) {
-    }
+    ) {}
 }

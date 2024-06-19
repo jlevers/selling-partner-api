@@ -34,6 +34,5 @@ final class CompetitivePricingType extends Dto
         public readonly array $competitivePrices,
         public readonly array $numberOfOfferListings,
         public readonly ?MoneyType $tradeInValue = null,
-    ) {
-    }
+    ) {}
 }

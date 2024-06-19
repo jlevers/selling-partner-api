@@ -25,6 +25,5 @@ final class GetItemEligibilityPreviewResponse extends Response
     public function __construct(
         public readonly ?ItemEligibilityPreview $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class Granularity extends Dto
     public function __construct(
         public readonly ?string $granularityType = null,
         public readonly ?string $granularityId = null,
-    ) {
-    }
+    ) {}
 }

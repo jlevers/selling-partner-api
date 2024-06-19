@@ -23,6 +23,5 @@ final class RangeSlotCapacityQuery extends Dto
         public readonly \DateTimeInterface $startDateTime,
         public readonly \DateTimeInterface $endDateTime,
         public readonly ?array $capacityTypes = null,
-    ) {
-    }
+    ) {}
 }

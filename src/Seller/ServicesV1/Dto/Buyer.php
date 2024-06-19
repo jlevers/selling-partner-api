@@ -25,6 +25,5 @@ final class Buyer extends Dto
         public readonly ?string $name = null,
         public readonly ?string $phone = null,
         public readonly ?bool $isPrimeMember = null,
-    ) {
-    }
+    ) {}
 }

@@ -31,6 +31,5 @@ final class AssociatedItem extends Dto
         public readonly ?string $itemStatus = null,
         public readonly ?string $brandName = null,
         public readonly ?ItemDelivery $itemDelivery = null,
-    ) {
-    }
+    ) {}
 }

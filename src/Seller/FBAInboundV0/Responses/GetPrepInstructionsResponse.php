@@ -25,6 +25,5 @@ final class GetPrepInstructionsResponse extends Response
     public function __construct(
         public readonly ?GetPrepInstructionsResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class StandardHeaderImageTextModule extends Dto
     public function __construct(
         public readonly ?TextComponent $headline = null,
         public readonly ?StandardImageTextBlock $block = null,
-    ) {
-    }
+    ) {}
 }

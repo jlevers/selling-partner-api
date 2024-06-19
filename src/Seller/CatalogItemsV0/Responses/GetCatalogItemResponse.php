@@ -25,6 +25,5 @@ final class GetCatalogItemResponse extends Response
     public function __construct(
         public readonly ?Item $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

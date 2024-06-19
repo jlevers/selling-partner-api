@@ -27,6 +27,5 @@ final class ShippingLabel extends Dto
         public readonly PartyIdentification $shipFromParty,
         public readonly string $labelFormat,
         public readonly array $labelData,
-    ) {
-    }
+    ) {}
 }

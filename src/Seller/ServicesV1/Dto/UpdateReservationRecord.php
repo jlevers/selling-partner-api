@@ -25,6 +25,5 @@ final class UpdateReservationRecord extends Dto
         public readonly ?Reservation $reservation = null,
         public readonly ?array $warnings = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

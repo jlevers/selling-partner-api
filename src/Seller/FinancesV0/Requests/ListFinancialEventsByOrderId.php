@@ -32,8 +32,7 @@ class ListFinancialEventsByOrderId extends Request
         protected string $orderId,
         protected ?int $maxResultsPerPage = null,
         protected ?string $nextToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

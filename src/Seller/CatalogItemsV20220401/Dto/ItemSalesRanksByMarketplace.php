@@ -28,6 +28,5 @@ final class ItemSalesRanksByMarketplace extends Dto
         public readonly string $marketplaceId,
         public readonly ?array $classificationRanks = null,
         public readonly ?array $displayGroupRanks = null,
-    ) {
-    }
+    ) {}
 }

@@ -47,6 +47,5 @@ final class InboundPlan extends Response
         public readonly ?array $packingOptions = null,
         public readonly ?array $placementOptions = null,
         public readonly ?array $shipments = null,
-    ) {
-    }
+    ) {}
 }

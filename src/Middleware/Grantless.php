@@ -8,9 +8,7 @@ use SellingPartnerApi\Enums\GrantlessScope;
 
 class Grantless implements RequestMiddleware
 {
-    public function __construct(protected GrantlessScope $scope)
-    {
-    }
+    public function __construct(protected GrantlessScope $scope) {}
 
     public function __invoke(PendingRequest $pendingRequest)
     {

@@ -21,6 +21,5 @@ final class RejectedOrder extends Dto
     public function __construct(
         public readonly string $amazonOrderId,
         public readonly ?Error $error = null,
-    ) {
-    }
+    ) {}
 }

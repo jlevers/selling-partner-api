@@ -23,6 +23,5 @@ final class ListMatchingItemsResponse extends Dto
      */
     public function __construct(
         public readonly ?array $items = null,
-    ) {
-    }
+    ) {}
 }

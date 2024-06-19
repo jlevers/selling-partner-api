@@ -20,6 +20,5 @@ final class GetShipmentDocumentsResponse extends Response
      */
     public function __construct(
         public readonly ?GetShipmentDocumentsResult $payload = null,
-    ) {
-    }
+    ) {}
 }

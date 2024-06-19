@@ -23,6 +23,5 @@ final class ProductType extends Dto
         public readonly string $name,
         public readonly string $displayName,
         public readonly array $marketplaceIds,
-    ) {
-    }
+    ) {}
 }

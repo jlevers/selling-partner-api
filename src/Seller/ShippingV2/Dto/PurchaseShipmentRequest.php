@@ -31,6 +31,5 @@ final class PurchaseShipmentRequest extends Dto
         public readonly RequestedDocumentSpecification $requestedDocumentSpecification,
         public readonly ?array $requestedValueAddedServices = null,
         public readonly ?array $additionalInputs = null,
-    ) {
-    }
+    ) {}
 }

@@ -25,6 +25,5 @@ final class GetPackingSlipResponse extends Response
     public function __construct(
         public readonly ?PackingSlip $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

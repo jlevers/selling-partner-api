@@ -21,6 +21,5 @@ final class FulfillmentAvailability extends Dto
     public function __construct(
         public readonly string $fulfillmentChannelCode,
         public readonly ?int $quantity = null,
-    ) {
-    }
+    ) {}
 }

@@ -23,6 +23,5 @@ final class ItemVariationsByMarketplace extends Dto
         public readonly string $marketplaceId,
         public readonly array $asins,
         public readonly string $variationType,
-    ) {
-    }
+    ) {}
 }

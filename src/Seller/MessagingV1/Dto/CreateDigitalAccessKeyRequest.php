@@ -23,6 +23,5 @@ final class CreateDigitalAccessKeyRequest extends Dto
     public function __construct(
         public readonly ?string $text = null,
         public readonly ?array $attachments = null,
-    ) {
-    }
+    ) {}
 }

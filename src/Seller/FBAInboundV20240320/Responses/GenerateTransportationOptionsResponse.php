@@ -19,6 +19,5 @@ final class GenerateTransportationOptionsResponse extends Response
      */
     public function __construct(
         public readonly string $operationId,
-    ) {
-    }
+    ) {}
 }

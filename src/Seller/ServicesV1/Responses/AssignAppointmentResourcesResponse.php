@@ -25,6 +25,5 @@ final class AssignAppointmentResourcesResponse extends Response
     public function __construct(
         public readonly ?Payload $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class ReportScheduleList extends Response
      */
     public function __construct(
         public readonly array $reportSchedules,
-    ) {
-    }
+    ) {}
 }

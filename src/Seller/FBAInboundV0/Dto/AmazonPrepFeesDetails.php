@@ -23,6 +23,5 @@ final class AmazonPrepFeesDetails extends Dto
     public function __construct(
         public readonly ?string $prepInstruction = null,
         public readonly ?Amount $feePerUnit = null,
-    ) {
-    }
+    ) {}
 }

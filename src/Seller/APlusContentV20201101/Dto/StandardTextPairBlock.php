@@ -21,6 +21,5 @@ final class StandardTextPairBlock extends Dto
     public function __construct(
         public readonly ?TextComponent $label = null,
         public readonly ?TextComponent $description = null,
-    ) {
-    }
+    ) {}
 }

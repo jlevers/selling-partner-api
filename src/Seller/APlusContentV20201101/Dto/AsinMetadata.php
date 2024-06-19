@@ -29,6 +29,5 @@ final class AsinMetadata extends Dto
         public readonly ?string $title = null,
         public readonly ?string $imageUrl = null,
         public readonly ?array $contentReferenceKeySet = null,
-    ) {
-    }
+    ) {}
 }

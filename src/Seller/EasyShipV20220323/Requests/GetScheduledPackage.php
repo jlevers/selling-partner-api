@@ -31,8 +31,7 @@ class GetScheduledPackage extends Request
     public function __construct(
         protected string $amazonOrderId,
         protected string $marketplaceId,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

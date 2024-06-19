@@ -23,6 +23,5 @@ final class Price extends Dto
     public function __construct(
         public readonly ?float $amount = null,
         public readonly ?string $currencyCode = null,
-    ) {
-    }
+    ) {}
 }

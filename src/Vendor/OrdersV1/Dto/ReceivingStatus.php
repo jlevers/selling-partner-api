@@ -23,6 +23,5 @@ final class ReceivingStatus extends Dto
         public readonly ?string $receiveStatus = null,
         public readonly ?ItemQuantity $receivedQuantity = null,
         public readonly ?\DateTimeInterface $lastReceiveDate = null,
-    ) {
-    }
+    ) {}
 }

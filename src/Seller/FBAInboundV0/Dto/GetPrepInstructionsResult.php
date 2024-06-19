@@ -39,6 +39,5 @@ final class GetPrepInstructionsResult extends Dto
         public readonly ?array $invalidSkuList = null,
         public readonly ?array $asinPrepInstructionsList = null,
         public readonly ?array $invalidAsinList = null,
-    ) {
-    }
+    ) {}
 }

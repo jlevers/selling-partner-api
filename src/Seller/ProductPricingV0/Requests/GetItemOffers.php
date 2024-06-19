@@ -34,8 +34,7 @@ class GetItemOffers extends Request
         protected string $marketplaceId,
         protected string $itemCondition,
         protected ?string $customerType = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

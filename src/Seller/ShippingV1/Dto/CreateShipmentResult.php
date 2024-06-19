@@ -23,6 +23,5 @@ final class CreateShipmentResult extends Dto
     public function __construct(
         public readonly string $shipmentId,
         public readonly array $eligibleRates,
-    ) {
-    }
+    ) {}
 }

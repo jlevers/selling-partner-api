@@ -41,6 +41,5 @@ final class RemovalShipmentEvent extends Dto
         public readonly ?string $orderId = null,
         public readonly ?string $transactionType = null,
         public readonly ?array $removalShipmentItemList = null,
-    ) {
-    }
+    ) {}
 }

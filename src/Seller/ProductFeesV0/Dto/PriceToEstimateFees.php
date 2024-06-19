@@ -28,6 +28,5 @@ final class PriceToEstimateFees extends Dto
         public readonly MoneyType $listingPrice,
         public readonly ?MoneyType $shipping = null,
         public readonly ?Points $points = null,
-    ) {
-    }
+    ) {}
 }

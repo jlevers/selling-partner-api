@@ -22,8 +22,7 @@ class SchemaVersion
         public bool $latest = false,
         public bool $deprecated = false,
         public ?string $selector = null,
-    ) {
-    }
+    ) {}
 
     /**
      * Generate the code for this version of this schema.

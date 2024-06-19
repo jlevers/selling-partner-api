@@ -58,6 +58,5 @@ final class Summary extends Dto
         public readonly ?array $salesRankings = null,
         public readonly ?array $buyBoxEligibleOffers = null,
         public readonly ?\DateTimeInterface $offersAvailableTime = null,
-    ) {
-    }
+    ) {}
 }

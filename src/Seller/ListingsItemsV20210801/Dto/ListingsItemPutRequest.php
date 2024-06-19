@@ -23,6 +23,5 @@ final class ListingsItemPutRequest extends Dto
         public readonly string $productType,
         public readonly array $attributes,
         public readonly ?string $requirements = null,
-    ) {
-    }
+    ) {}
 }

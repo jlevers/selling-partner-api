@@ -25,6 +25,5 @@ final class EventFilter extends Dto
         public readonly ?AggregationSettings $aggregationSettings = null,
         public readonly ?array $marketplaceIds = null,
         public readonly ?array $orderChangeTypes = null,
-    ) {
-    }
+    ) {}
 }

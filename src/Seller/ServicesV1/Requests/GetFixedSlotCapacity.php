@@ -40,8 +40,7 @@ class GetFixedSlotCapacity extends Request implements HasBody
         public FixedSlotCapacityQuery $fixedSlotCapacityQuery,
         protected array $marketplaceIds,
         protected ?string $nextPageToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

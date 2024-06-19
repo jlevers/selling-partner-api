@@ -42,8 +42,7 @@ class GetDefinitionsProductType extends Request
         protected ?string $requirements = null,
         protected ?string $requirementsEnforced = null,
         protected ?string $locale = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

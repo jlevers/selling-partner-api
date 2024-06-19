@@ -19,6 +19,5 @@ final class Seller extends Dto
      */
     public function __construct(
         public readonly ?string $sellerId = null,
-    ) {
-    }
+    ) {}
 }

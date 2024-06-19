@@ -37,6 +37,5 @@ final class PackingOption extends Dto
         public readonly string $status,
         public readonly array $supportedShippingConfigurations,
         public readonly ?\DateTimeInterface $expiration = null,
-    ) {
-    }
+    ) {}
 }

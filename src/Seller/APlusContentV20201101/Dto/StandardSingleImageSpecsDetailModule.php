@@ -33,6 +33,5 @@ final class StandardSingleImageSpecsDetailModule extends Dto
         public readonly ?TextComponent $specificationHeadline = null,
         public readonly ?StandardHeaderTextListBlock $specificationListBlock = null,
         public readonly ?StandardTextBlock $specificationTextBlock = null,
-    ) {
-    }
+    ) {}
 }

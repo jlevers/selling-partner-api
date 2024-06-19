@@ -19,6 +19,5 @@ final class TransactionId extends Dto
      */
     public function __construct(
         public readonly ?string $transactionId = null,
-    ) {
-    }
+    ) {}
 }

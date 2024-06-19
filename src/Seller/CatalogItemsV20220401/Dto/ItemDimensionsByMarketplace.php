@@ -23,6 +23,5 @@ final class ItemDimensionsByMarketplace extends Dto
         public readonly string $marketplaceId,
         public readonly ?Dimensions $item = null,
         public readonly ?Dimensions $package = null,
-    ) {
-    }
+    ) {}
 }

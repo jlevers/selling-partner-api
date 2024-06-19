@@ -25,6 +25,5 @@ final class ItemOffersResponse extends Dto
         public readonly ItemOffersRequestParams $request,
         public readonly ?HttpResponseHeaders $headers = null,
         public readonly ?GetOffersHttpStatusLine $status = null,
-    ) {
-    }
+    ) {}
 }

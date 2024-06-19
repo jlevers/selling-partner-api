@@ -21,6 +21,5 @@ final class ConfirmTransportationOptionsRequest extends Dto
      */
     public function __construct(
         public readonly array $transportationSelections,
-    ) {
-    }
+    ) {}
 }

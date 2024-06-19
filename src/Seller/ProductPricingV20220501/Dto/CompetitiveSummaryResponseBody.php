@@ -36,6 +36,5 @@ final class CompetitiveSummaryResponseBody extends Dto
         public readonly ?array $lowestPricedOffers = null,
         public readonly ?array $referencePrices = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

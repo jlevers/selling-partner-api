@@ -31,6 +31,5 @@ final class OrderItemsList extends Dto
         public readonly array $orderItems,
         public readonly string $amazonOrderId,
         public readonly ?string $nextToken = null,
-    ) {
-    }
+    ) {}
 }

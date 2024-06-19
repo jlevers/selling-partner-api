@@ -21,6 +21,5 @@ final class SupplySourceCapabilities extends Dto
     public function __construct(
         public readonly ?OutboundCapability $outbound = null,
         public readonly ?ServicesCapability $services = null,
-    ) {
-    }
+    ) {}
 }

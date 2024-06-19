@@ -37,8 +37,7 @@ class PostContentDocumentAsinRelations extends Request implements HasBody
         protected string $contentReferenceKey,
         public PostContentDocumentAsinRelationsRequest $postContentDocumentAsinRelationsRequest,
         protected string $marketplaceId,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

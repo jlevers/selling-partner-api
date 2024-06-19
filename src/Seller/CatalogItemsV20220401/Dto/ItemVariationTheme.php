@@ -21,6 +21,5 @@ final class ItemVariationTheme extends Dto
     public function __construct(
         public readonly ?array $attributes = null,
         public readonly ?string $theme = null,
-    ) {
-    }
+    ) {}
 }

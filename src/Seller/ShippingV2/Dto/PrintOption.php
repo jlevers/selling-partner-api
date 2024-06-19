@@ -29,6 +29,5 @@ final class PrintOption extends Dto
         public readonly array $supportedFileJoiningOptions,
         public readonly array $supportedDocumentDetails,
         public readonly ?array $supportedDpIs = null,
-    ) {
-    }
+    ) {}
 }

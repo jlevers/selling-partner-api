@@ -21,6 +21,5 @@ final class Duration extends Dto
     public function __construct(
         public readonly ?int $value = null,
         public readonly ?string $timeUnit = null,
-    ) {
-    }
+    ) {}
 }

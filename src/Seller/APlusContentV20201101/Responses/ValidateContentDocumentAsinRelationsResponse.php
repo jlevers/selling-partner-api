@@ -24,6 +24,5 @@ final class ValidateContentDocumentAsinRelationsResponse extends Response
     public function __construct(
         public readonly array $errors,
         public readonly ?array $warnings = null,
-    ) {
-    }
+    ) {}
 }

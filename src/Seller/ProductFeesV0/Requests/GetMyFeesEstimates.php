@@ -33,8 +33,7 @@ class GetMyFeesEstimates extends Request implements HasBody
      */
     public function __construct(
         public array $getMyFeesEstimatesRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

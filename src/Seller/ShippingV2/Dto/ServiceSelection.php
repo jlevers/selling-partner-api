@@ -19,6 +19,5 @@ final class ServiceSelection extends Dto
      */
     public function __construct(
         public readonly array $serviceId,
-    ) {
-    }
+    ) {}
 }

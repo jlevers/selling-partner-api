@@ -25,6 +25,5 @@ final class Pallet extends Dto
         public readonly Dimensions $dimensions,
         public readonly bool $isStacked,
         public readonly ?Weight $weight = null,
-    ) {
-    }
+    ) {}
 }

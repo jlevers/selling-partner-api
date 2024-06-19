@@ -32,6 +32,5 @@ final class RegulatedInformationField extends Dto
         public readonly string $fieldLabel,
         public readonly string $fieldType,
         public readonly string $fieldValue,
-    ) {
-    }
+    ) {}
 }

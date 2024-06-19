@@ -37,8 +37,7 @@ class UpdateSchedule extends Request implements HasBody
         protected string $resourceId,
         public UpdateScheduleRequest $updateScheduleRequest,
         protected array $marketplaceIds,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

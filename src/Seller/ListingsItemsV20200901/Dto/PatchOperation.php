@@ -23,6 +23,5 @@ final class PatchOperation extends Dto
         public readonly string $op,
         public readonly string $path,
         public readonly ?array $value = null,
-    ) {
-    }
+    ) {}
 }

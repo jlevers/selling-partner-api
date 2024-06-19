@@ -23,6 +23,5 @@ final class InvalidSku extends Dto
     public function __construct(
         public readonly ?string $sellerSku = null,
         public readonly ?string $errorReason = null,
-    ) {
-    }
+    ) {}
 }

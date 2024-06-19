@@ -49,6 +49,5 @@ final class RetrochargeEvent extends Dto
         public readonly ?Currency $shippingTax = null,
         public readonly ?string $marketplaceName = null,
         public readonly ?array $retrochargeTaxWithheldList = null,
-    ) {
-    }
+    ) {}
 }

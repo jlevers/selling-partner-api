@@ -23,6 +23,5 @@ final class UploadDestination extends Dto
         public readonly ?string $uploadDestinationId = null,
         public readonly ?string $url = null,
         public readonly ?array $headers = null,
-    ) {
-    }
+    ) {}
 }

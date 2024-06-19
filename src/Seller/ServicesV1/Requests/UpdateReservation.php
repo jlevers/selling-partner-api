@@ -37,8 +37,7 @@ class UpdateReservation extends Request implements HasBody
         protected string $reservationId,
         public UpdateReservationRequest $updateReservationRequest,
         protected array $marketplaceIds,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

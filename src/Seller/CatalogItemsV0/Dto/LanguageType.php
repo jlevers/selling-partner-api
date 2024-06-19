@@ -25,6 +25,5 @@ final class LanguageType extends Dto
         public readonly ?string $name = null,
         public readonly ?string $type = null,
         public readonly ?string $audioFormat = null,
-    ) {
-    }
+    ) {}
 }

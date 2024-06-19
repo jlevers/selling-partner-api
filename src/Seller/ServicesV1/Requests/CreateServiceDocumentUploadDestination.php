@@ -33,8 +33,7 @@ class CreateServiceDocumentUploadDestination extends Request implements HasBody
      */
     public function __construct(
         public ServiceUploadDocument $serviceUploadDocument,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

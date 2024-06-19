@@ -21,6 +21,5 @@ final class SetPackingInformationRequest extends Dto
      */
     public function __construct(
         public readonly array $packageGroupings,
-    ) {
-    }
+    ) {}
 }

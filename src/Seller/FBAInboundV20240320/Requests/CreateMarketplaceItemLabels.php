@@ -34,8 +34,7 @@ class CreateMarketplaceItemLabels extends Request implements HasBody
      */
     public function __construct(
         public CreateMarketplaceItemLabelsRequest $createMarketplaceItemLabelsRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

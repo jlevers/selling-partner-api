@@ -14,8 +14,7 @@ class RestrictedDataToken implements RequestMiddleware
         protected string $path,
         protected string $method,
         protected array $knownDataElements,
-    ) {
-    }
+    ) {}
 
     public function __invoke(PendingRequest $pendingRequest)
     {

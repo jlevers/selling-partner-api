@@ -28,6 +28,5 @@ final class BuyerRequestedCancel extends Dto
     public function __construct(
         public readonly ?string $isBuyerRequestedCancel = null,
         public readonly ?string $buyerCancelReason = null,
-    ) {
-    }
+    ) {}
 }

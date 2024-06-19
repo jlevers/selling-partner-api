@@ -29,6 +29,5 @@ final class OrderMetricsInterval extends Dto
         public readonly int $orderCount,
         public readonly Money $averageUnitPrice,
         public readonly Money $totalSales,
-    ) {
-    }
+    ) {}
 }

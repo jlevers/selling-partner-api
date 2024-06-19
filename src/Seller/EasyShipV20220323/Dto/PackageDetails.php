@@ -25,6 +25,5 @@ final class PackageDetails extends Dto
         public readonly TimeSlot $packageTimeSlot,
         public readonly ?array $packageItems = null,
         public readonly ?string $packageIdentifier = null,
-    ) {
-    }
+    ) {}
 }

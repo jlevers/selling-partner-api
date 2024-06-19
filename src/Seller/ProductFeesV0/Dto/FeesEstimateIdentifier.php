@@ -44,6 +44,5 @@ final class FeesEstimateIdentifier extends Dto
         public readonly ?PriceToEstimateFees $priceToEstimateFees = null,
         public readonly ?string $sellerInputIdentifier = null,
         public readonly ?string $optionalFulfillmentProgram = null,
-    ) {
-    }
+    ) {}
 }

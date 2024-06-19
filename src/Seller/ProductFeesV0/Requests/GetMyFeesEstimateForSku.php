@@ -35,8 +35,7 @@ class GetMyFeesEstimateForSku extends Request implements HasBody
     public function __construct(
         protected string $sellerSku,
         public GetMyFeesEstimateRequest $getMyFeesEstimateRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

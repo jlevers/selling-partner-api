@@ -25,6 +25,5 @@ final class CreateReservationResponse extends Response
     public function __construct(
         public readonly ?CreateReservationRecord $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

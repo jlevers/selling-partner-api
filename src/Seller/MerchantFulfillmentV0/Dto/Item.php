@@ -49,6 +49,5 @@ final class Item extends Dto
         public readonly ?LiquidVolume $liquidVolume = null,
         public readonly ?bool $isHazmat = null,
         public readonly ?DangerousGoodsDetails $dangerousGoodsDetails = null,
-    ) {
-    }
+    ) {}
 }

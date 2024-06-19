@@ -22,6 +22,5 @@ final class GetSupplySourcesResponse extends Response
     public function __construct(
         public readonly ?SupplySourceList $supplySources = null,
         public readonly ?string $nextPageToken = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class StandardHeaderTextListBlock extends Dto
     public function __construct(
         public readonly ?TextComponent $headline = null,
         public readonly ?StandardTextListBlock $block = null,
-    ) {
-    }
+    ) {}
 }

@@ -23,6 +23,5 @@ final class OrderedQuantity extends Dto
     public function __construct(
         public readonly ?ItemQuantity $orderedQuantity = null,
         public readonly ?array $orderedQuantityDetails = null,
-    ) {
-    }
+    ) {}
 }

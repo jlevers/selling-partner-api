@@ -31,8 +31,7 @@ class ConfirmPlacementOption extends Request
     public function __construct(
         protected string $inboundPlanId,
         protected string $placementOptionId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

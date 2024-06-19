@@ -25,6 +25,5 @@ final class ServiceDocumentUploadDestination extends Dto
         public readonly string $url,
         public readonly EncryptionDetails $encryptionDetails,
         public readonly ?array $headers = null,
-    ) {
-    }
+    ) {}
 }

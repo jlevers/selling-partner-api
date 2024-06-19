@@ -25,6 +25,5 @@ final class PalletInput extends Dto
         public readonly ?Dimensions $dimensions = null,
         public readonly ?string $stackability = null,
         public readonly ?Weight $weight = null,
-    ) {
-    }
+    ) {}
 }

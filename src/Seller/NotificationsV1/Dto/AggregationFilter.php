@@ -19,6 +19,5 @@ final class AggregationFilter extends Dto
      */
     public function __construct(
         public readonly ?AggregationSettings $aggregationSettings = null,
-    ) {
-    }
+    ) {}
 }

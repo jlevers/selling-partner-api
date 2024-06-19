@@ -19,6 +19,5 @@ final class GetAccessPointsResult extends Dto
      */
     public function __construct(
         public readonly array $accessPointsMap,
-    ) {
-    }
+    ) {}
 }

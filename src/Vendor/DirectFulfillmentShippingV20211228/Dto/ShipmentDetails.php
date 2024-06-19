@@ -27,6 +27,5 @@ final class ShipmentDetails extends Dto
         public readonly ?bool $isPriorityShipment = null,
         public readonly ?string $vendorOrderNumber = null,
         public readonly ?\DateTimeInterface $estimatedDeliveryDate = null,
-    ) {
-    }
+    ) {}
 }

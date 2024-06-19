@@ -23,6 +23,5 @@ final class PartyIdentification extends Dto
         public readonly string $partyId,
         public readonly ?Address $address = null,
         public readonly ?TaxRegistrationDetails $taxInfo = null,
-    ) {
-    }
+    ) {}
 }

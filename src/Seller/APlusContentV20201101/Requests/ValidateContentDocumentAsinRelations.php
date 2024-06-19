@@ -37,8 +37,7 @@ class ValidateContentDocumentAsinRelations extends Request implements HasBody
         public PostContentDocumentRequest $postContentDocumentRequest,
         protected string $marketplaceId,
         protected ?array $asinSet = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

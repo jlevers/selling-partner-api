@@ -34,8 +34,7 @@ class GetRates extends Request implements HasBody
      */
     public function __construct(
         public GetRatesRequest $getRatesRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

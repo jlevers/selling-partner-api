@@ -19,6 +19,5 @@ final class CancelSelfShipAppointmentRequest extends Dto
      */
     public function __construct(
         public readonly ?string $reasonComment = null,
-    ) {
-    }
+    ) {}
 }

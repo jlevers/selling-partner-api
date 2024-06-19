@@ -25,6 +25,5 @@ final class ListHandoverSlotsRequest extends Dto
         public readonly string $amazonOrderId,
         public readonly Dimensions $packageDimensions,
         public readonly Weight $packageWeight,
-    ) {
-    }
+    ) {}
 }

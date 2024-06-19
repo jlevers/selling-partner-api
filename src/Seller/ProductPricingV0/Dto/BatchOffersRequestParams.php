@@ -29,6 +29,5 @@ final class BatchOffersRequestParams extends Dto
         public readonly string $marketplaceId,
         public readonly string $itemCondition,
         public readonly ?string $customerType = null,
-    ) {
-    }
+    ) {}
 }

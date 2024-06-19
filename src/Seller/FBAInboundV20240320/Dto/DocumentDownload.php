@@ -23,6 +23,5 @@ final class DocumentDownload extends Dto
         public readonly string $downloadType,
         public readonly string $uri,
         public readonly ?\DateTimeInterface $expiration = null,
-    ) {
-    }
+    ) {}
 }

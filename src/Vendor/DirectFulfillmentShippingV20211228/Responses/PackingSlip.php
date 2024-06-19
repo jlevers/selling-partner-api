@@ -23,6 +23,5 @@ final class PackingSlip extends Response
         public readonly string $purchaseOrderNumber,
         public readonly string $content,
         public readonly ?string $contentType = null,
-    ) {
-    }
+    ) {}
 }

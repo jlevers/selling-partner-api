@@ -42,8 +42,7 @@ class GetInventorySummaries extends Request
         protected ?array $sellerSkus = null,
         protected ?string $sellerSku = null,
         protected ?string $nextToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

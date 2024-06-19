@@ -33,7 +33,7 @@ final class FulfillmentPreview extends Dto
      * @param  Fee[]|null  $estimatedFees  An array of fee type and cost pairs.
      * @param  FulfillmentPreviewShipment[]|null  $fulfillmentPreviewShipments  An array of fulfillment preview shipment information.
      * @param  UnfulfillablePreviewItem[]|null  $unfulfillablePreviewItems  An array of unfulfillable preview item information.
-     * @param  ?string[]  $orderUnfulfillableReasons
+     * @param  ?string[]  $orderUnfulfillableReasons  String list
      * @param  FeatureSettings[]|null  $featureConstraints  A list of features and their fulfillment policies to apply to the order.
      */
     public function __construct(
@@ -48,6 +48,5 @@ final class FulfillmentPreview extends Dto
         public readonly ?array $unfulfillablePreviewItems = null,
         public readonly ?array $orderUnfulfillableReasons = null,
         public readonly ?array $featureConstraints = null,
-    ) {
-    }
+    ) {}
 }

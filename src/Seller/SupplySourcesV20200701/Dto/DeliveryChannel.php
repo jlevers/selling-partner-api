@@ -21,6 +21,5 @@ final class DeliveryChannel extends Dto
     public function __construct(
         public readonly ?bool $isSupported = null,
         public readonly ?OperationalConfiguration $operationalConfiguration = null,
-    ) {
-    }
+    ) {}
 }

@@ -22,6 +22,5 @@ final class ListItemComplianceDetailsResponse extends Response
      */
     public function __construct(
         public readonly ?array $complianceDetails = null,
-    ) {
-    }
+    ) {}
 }

@@ -19,6 +19,5 @@ final class SubmitInventoryUpdateRequest extends Dto
      */
     public function __construct(
         public readonly ?InventoryUpdate $inventory = null,
-    ) {
-    }
+    ) {}
 }

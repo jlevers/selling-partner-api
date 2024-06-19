@@ -35,8 +35,7 @@ class ListPackingGroupItems extends Request
         protected string $packingGroupId,
         protected ?int $pageSize = null,
         protected ?string $paginationToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -29,6 +29,5 @@ final class GetAdditionalSellerInputsRequest extends Dto
         public readonly string $shippingServiceId,
         public readonly Address $shipFromAddress,
         public readonly string $orderId,
-    ) {
-    }
+    ) {}
 }

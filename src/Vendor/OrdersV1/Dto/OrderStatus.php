@@ -31,6 +31,5 @@ final class OrderStatus extends Dto
         public readonly PartyIdentification $shipToParty,
         public readonly array $itemStatus,
         public readonly ?\DateTimeInterface $lastUpdatedDate = null,
-    ) {
-    }
+    ) {}
 }

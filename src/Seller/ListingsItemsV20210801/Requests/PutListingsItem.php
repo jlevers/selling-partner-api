@@ -46,8 +46,7 @@ class PutListingsItem extends Request implements HasBody
         protected ?array $includedData = null,
         protected ?string $mode = null,
         protected ?string $issueLocale = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

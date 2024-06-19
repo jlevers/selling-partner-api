@@ -31,6 +31,5 @@ final class OneClickShipmentResult extends Dto
         public readonly Carrier $carrier,
         public readonly Service $service,
         public readonly Currency $totalCharge,
-    ) {
-    }
+    ) {}
 }

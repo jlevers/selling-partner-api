@@ -36,8 +36,7 @@ class UpdateShipmentStatus extends Request implements HasBody
     public function __construct(
         protected string $orderId,
         public UpdateShipmentStatusRequest $updateShipmentStatusRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

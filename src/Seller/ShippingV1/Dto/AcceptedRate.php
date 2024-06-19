@@ -25,6 +25,5 @@ final class AcceptedRate extends Dto
         public readonly ?Weight $billedWeight = null,
         public readonly ?string $serviceType = null,
         public readonly ?ShippingPromiseSet $promise = null,
-    ) {
-    }
+    ) {}
 }

@@ -26,6 +26,5 @@ final class Refinements extends Dto
     public function __construct(
         public readonly array $brands,
         public readonly array $classifications,
-    ) {
-    }
+    ) {}
 }

@@ -33,8 +33,7 @@ class GetAdditionalSellerInputs extends Request implements HasBody
      */
     public function __construct(
         public GetAdditionalSellerInputsRequest $getAdditionalSellerInputsRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

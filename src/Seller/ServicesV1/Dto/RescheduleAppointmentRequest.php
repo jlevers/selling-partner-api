@@ -21,6 +21,5 @@ final class RescheduleAppointmentRequest extends Dto
     public function __construct(
         public readonly AppointmentTimeInput $appointmentTime,
         public readonly string $rescheduleReasonCode,
-    ) {
-    }
+    ) {}
 }

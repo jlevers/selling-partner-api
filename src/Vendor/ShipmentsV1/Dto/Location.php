@@ -23,6 +23,5 @@ final class Location extends Dto
         public readonly ?string $type = null,
         public readonly ?string $locationCode = null,
         public readonly ?string $countryCode = null,
-    ) {
-    }
+    ) {}
 }

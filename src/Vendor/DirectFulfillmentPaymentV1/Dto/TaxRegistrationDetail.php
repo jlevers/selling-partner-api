@@ -25,6 +25,5 @@ final class TaxRegistrationDetail extends Dto
         public readonly ?string $taxRegistrationType = null,
         public readonly ?Address $taxRegistrationAddress = null,
         public readonly ?string $taxRegistrationMessage = null,
-    ) {
-    }
+    ) {}
 }

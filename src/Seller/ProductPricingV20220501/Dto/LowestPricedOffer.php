@@ -23,6 +23,5 @@ final class LowestPricedOffer extends Dto
     public function __construct(
         public readonly LowestPricedOffersInput $lowestPricedOffersInput,
         public readonly array $offers,
-    ) {
-    }
+    ) {}
 }

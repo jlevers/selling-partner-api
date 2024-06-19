@@ -35,8 +35,7 @@ class RetrieveShippingLabel extends Request implements HasBody
         protected string $shipmentId,
         protected string $trackingId,
         public RetrieveShippingLabelRequest $retrieveShippingLabelRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

@@ -24,6 +24,5 @@ final class CreateRestrictedDataTokenRequest extends Dto
     public function __construct(
         public readonly array $restrictedResources,
         public readonly ?string $targetApplication = null,
-    ) {
-    }
+    ) {}
 }

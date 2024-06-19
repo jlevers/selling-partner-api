@@ -27,6 +27,5 @@ final class PickupChannel extends Dto
         public readonly ?OperationalConfiguration $operationalConfiguration = null,
         public readonly ?InStorePickupConfiguration $inStorePickupConfiguration = null,
         public readonly ?CurbsidePickupConfiguration $curbsidePickupConfiguration = null,
-    ) {
-    }
+    ) {}
 }

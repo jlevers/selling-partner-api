@@ -21,6 +21,5 @@ final class TaxTotal extends Dto
      */
     public function __construct(
         public readonly ?array $taxLineItem = null,
-    ) {
-    }
+    ) {}
 }

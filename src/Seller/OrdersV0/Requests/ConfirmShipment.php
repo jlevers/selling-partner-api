@@ -36,8 +36,7 @@ class ConfirmShipment extends Request implements HasBody
     public function __construct(
         protected string $orderId,
         public ConfirmShipmentRequest $confirmShipmentRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

@@ -23,6 +23,5 @@ final class DecimalWithUnits extends Dto
     public function __construct(
         public readonly ?float $value = null,
         public readonly ?string $units = null,
-    ) {
-    }
+    ) {}
 }

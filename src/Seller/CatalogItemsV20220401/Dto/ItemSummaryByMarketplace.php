@@ -59,6 +59,5 @@ final class ItemSummaryByMarketplace extends Dto
         public readonly ?bool $tradeInEligible = null,
         public readonly ?string $websiteDisplayGroup = null,
         public readonly ?string $websiteDisplayGroupName = null,
-    ) {
-    }
+    ) {}
 }

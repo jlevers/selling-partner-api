@@ -21,6 +21,5 @@ final class StandardImageCaptionBlock extends Dto
     public function __construct(
         public readonly ?ImageComponent $image = null,
         public readonly ?TextComponent $caption = null,
-    ) {
-    }
+    ) {}
 }

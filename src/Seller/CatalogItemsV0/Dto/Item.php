@@ -37,6 +37,5 @@ final class Item extends Dto
         public readonly ?array $attributeSets = null,
         public readonly ?array $relationships = null,
         public readonly ?array $salesRankings = null,
-    ) {
-    }
+    ) {}
 }

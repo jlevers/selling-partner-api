@@ -25,6 +25,5 @@ final class BusinessHours extends Dto
     public function __construct(
         public readonly ?string $dayOfWeek = null,
         public readonly ?array $openIntervals = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class AddressWithContact extends Dto
     public function __construct(
         public readonly ?ContactDetails $contactDetails = null,
         public readonly ?Address $address = null,
-    ) {
-    }
+    ) {}
 }

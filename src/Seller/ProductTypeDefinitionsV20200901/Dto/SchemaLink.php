@@ -21,6 +21,5 @@ final class SchemaLink extends Dto
     public function __construct(
         public readonly Link $link,
         public readonly string $checksum,
-    ) {
-    }
+    ) {}
 }

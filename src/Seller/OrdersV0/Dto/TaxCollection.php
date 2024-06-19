@@ -23,6 +23,5 @@ final class TaxCollection extends Dto
     public function __construct(
         public readonly ?string $model = null,
         public readonly ?string $responsibleParty = null,
-    ) {
-    }
+    ) {}
 }

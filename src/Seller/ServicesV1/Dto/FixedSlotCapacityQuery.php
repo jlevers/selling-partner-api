@@ -25,6 +25,5 @@ final class FixedSlotCapacityQuery extends Dto
         public readonly \DateTimeInterface $endDateTime,
         public readonly ?array $capacityTypes = null,
         public readonly ?float $slotDuration = null,
-    ) {
-    }
+    ) {}
 }

@@ -19,6 +19,5 @@ final class UpdateShipmentSourceAddressRequest extends Dto
      */
     public function __construct(
         public readonly AddressInput $address,
-    ) {
-    }
+    ) {}
 }

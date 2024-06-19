@@ -21,6 +21,5 @@ final class GetItemOffersBatchRequest extends Dto
      */
     public function __construct(
         public readonly ?array $requests = null,
-    ) {
-    }
+    ) {}
 }

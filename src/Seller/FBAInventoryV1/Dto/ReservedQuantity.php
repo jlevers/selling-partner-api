@@ -25,6 +25,5 @@ final class ReservedQuantity extends Dto
         public readonly ?int $pendingCustomerOrderQuantity = null,
         public readonly ?int $pendingTransshipmentQuantity = null,
         public readonly ?int $fcProcessingQuantity = null,
-    ) {
-    }
+    ) {}
 }

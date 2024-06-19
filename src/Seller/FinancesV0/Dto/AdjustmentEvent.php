@@ -52,6 +52,5 @@ final class AdjustmentEvent extends Dto
         public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?Currency $adjustmentAmount = null,
         public readonly ?array $adjustmentItemList = null,
-    ) {
-    }
+    ) {}
 }

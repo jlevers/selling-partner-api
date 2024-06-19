@@ -89,6 +89,5 @@ final class RelationshipType extends Dto
         public readonly ?DecimalWithUnits $totalGemWeight = null,
         public readonly ?int $packageQuantity = null,
         public readonly ?DimensionType $itemDimensions = null,
-    ) {
-    }
+    ) {}
 }

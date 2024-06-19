@@ -41,6 +41,5 @@ final class ProductTypeDefinition extends Response
         public readonly string $displayName,
         public readonly ProductTypeVersion $productTypeVersion,
         public readonly ?SchemaLink $metaSchema = null,
-    ) {
-    }
+    ) {}
 }

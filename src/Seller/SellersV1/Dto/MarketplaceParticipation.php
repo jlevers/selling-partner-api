@@ -21,6 +21,5 @@ final class MarketplaceParticipation extends Dto
     public function __construct(
         public readonly Marketplace $marketplace,
         public readonly Participation $participation,
-    ) {
-    }
+    ) {}
 }

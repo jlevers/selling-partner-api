@@ -25,6 +25,5 @@ final class CreateInboundShipmentPlanResponse extends Response
     public function __construct(
         public readonly ?CreateInboundShipmentPlanResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

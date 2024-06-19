@@ -44,8 +44,7 @@ class GetLabels extends Request
         protected ?int $numberOfPallets = null,
         protected ?int $pageSize = null,
         protected ?int $pageStartIndex = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

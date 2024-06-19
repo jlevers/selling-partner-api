@@ -28,6 +28,5 @@ final class SubstitutionPreferences extends Dto
     public function __construct(
         public readonly string $substitutionType,
         public readonly ?array $substitutionOptions = null,
-    ) {
-    }
+    ) {}
 }

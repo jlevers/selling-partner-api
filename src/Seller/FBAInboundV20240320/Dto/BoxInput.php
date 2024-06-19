@@ -29,6 +29,5 @@ final class BoxInput extends Dto
         public readonly int $quantity,
         public readonly Weight $weight,
         public readonly ?array $items = null,
-    ) {
-    }
+    ) {}
 }

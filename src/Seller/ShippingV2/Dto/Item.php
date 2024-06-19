@@ -41,6 +41,5 @@ final class Item extends Dto
         public readonly ?InvoiceDetails $invoiceDetails = null,
         public readonly ?array $serialNumbers = null,
         public readonly ?DirectFulfillmentItemIdentifiers $directFulfillmentItemIdentifiers = null,
-    ) {
-    }
+    ) {}
 }

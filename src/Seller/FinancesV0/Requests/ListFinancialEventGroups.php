@@ -34,8 +34,7 @@ class ListFinancialEventGroups extends Request
         protected ?\DateTimeInterface $financialEventGroupStartedBefore = null,
         protected ?\DateTimeInterface $financialEventGroupStartedAfter = null,
         protected ?string $nextToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

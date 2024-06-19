@@ -23,6 +23,5 @@ final class TaxWithholdingPeriod extends Dto
     public function __construct(
         public readonly ?\DateTimeInterface $startDate = null,
         public readonly ?\DateTimeInterface $endDate = null,
-    ) {
-    }
+    ) {}
 }

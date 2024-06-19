@@ -33,8 +33,7 @@ class GetContentDocument extends Request
         protected string $contentReferenceKey,
         protected string $marketplaceId,
         protected array $includedDataSet,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -35,8 +35,7 @@ class GetMyFeesEstimateForAsin extends Request implements HasBody
     public function __construct(
         protected string $asin,
         public GetMyFeesEstimateRequest $getMyFeesEstimateRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

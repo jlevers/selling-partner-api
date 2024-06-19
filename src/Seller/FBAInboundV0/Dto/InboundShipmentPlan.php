@@ -40,6 +40,5 @@ final class InboundShipmentPlan extends Dto
         public readonly string $labelPrepType,
         public readonly array $items,
         public readonly ?BoxContentsFeeDetails $estimatedBoxContentsFee = null,
-    ) {
-    }
+    ) {}
 }

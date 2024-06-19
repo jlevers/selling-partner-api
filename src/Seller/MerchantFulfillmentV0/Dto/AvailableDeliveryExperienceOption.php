@@ -23,6 +23,5 @@ final class AvailableDeliveryExperienceOption extends Dto
     public function __construct(
         public readonly string $deliveryExperienceOption,
         public readonly CurrencyAmount $charge,
-    ) {
-    }
+    ) {}
 }

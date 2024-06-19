@@ -25,7 +25,7 @@ final class GetFulfillmentPreviewRequest extends Dto
      * @param  Address  $address  A physical address.
      * @param  GetFulfillmentPreviewItem[]  $items  An array of fulfillment preview item information.
      * @param  ?string  $marketplaceId  The marketplace the fulfillment order is placed against.
-     * @param  ?string[]  $shippingSpeedCategories
+     * @param  ?string[]  $shippingSpeedCategories  ShippingSpeedCategory List
      * @param  ?bool  $includeCodFulfillmentPreview  When true, returns all fulfillment order previews both for COD and not for COD. Otherwise, returns only fulfillment order previews that are not for COD.
      * @param  ?bool  $includeDeliveryWindows  When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` = `ScheduledDelivery`.
      * @param  FeatureSettings[]|null  $featureConstraints  A list of features and their fulfillment policies to apply to the order.
@@ -38,6 +38,5 @@ final class GetFulfillmentPreviewRequest extends Dto
         public readonly ?bool $includeCodFulfillmentPreview = null,
         public readonly ?bool $includeDeliveryWindows = null,
         public readonly ?array $featureConstraints = null,
-    ) {
-    }
+    ) {}
 }

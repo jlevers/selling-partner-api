@@ -26,6 +26,5 @@ final class AdditionalInputs extends Dto
     public function __construct(
         public readonly ?string $additionalInputFieldName = null,
         public readonly ?SellerInputDefinition $sellerInputDefinition = null,
-    ) {
-    }
+    ) {}
 }

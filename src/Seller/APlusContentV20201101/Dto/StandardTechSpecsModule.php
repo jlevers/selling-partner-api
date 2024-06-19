@@ -25,6 +25,5 @@ final class StandardTechSpecsModule extends Dto
         public readonly array $specificationList,
         public readonly ?TextComponent $headline = null,
         public readonly ?int $tableCount = null,
-    ) {
-    }
+    ) {}
 }

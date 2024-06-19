@@ -21,6 +21,5 @@ final class TermsAndConditionsNotAcceptedCarrier extends Dto
      */
     public function __construct(
         public readonly string $carrierName,
-    ) {
-    }
+    ) {}
 }

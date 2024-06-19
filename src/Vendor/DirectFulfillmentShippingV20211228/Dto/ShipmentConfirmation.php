@@ -29,6 +29,5 @@ final class ShipmentConfirmation extends Dto
         public readonly PartyIdentification $shipFromParty,
         public readonly array $items,
         public readonly ?array $containers = null,
-    ) {
-    }
+    ) {}
 }

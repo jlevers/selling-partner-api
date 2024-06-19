@@ -34,8 +34,7 @@ class CreateReportSchedule extends Request implements HasBody
      */
     public function __construct(
         public CreateReportScheduleSpecification $createReportScheduleSpecification,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

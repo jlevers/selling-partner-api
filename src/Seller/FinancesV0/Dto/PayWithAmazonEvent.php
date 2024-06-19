@@ -126,6 +126,5 @@ final class PayWithAmazonEvent extends Dto
         public readonly ?string $amountDescription = null,
         public readonly ?string $fulfillmentChannel = null,
         public readonly ?string $storeName = null,
-    ) {
-    }
+    ) {}
 }

@@ -27,6 +27,5 @@ final class ContentUpdatePreview extends Response
         public readonly string $expiration,
         public readonly RequestedUpdates $requestedUpdates,
         public readonly TransportationOption $transportationOption,
-    ) {
-    }
+    ) {}
 }

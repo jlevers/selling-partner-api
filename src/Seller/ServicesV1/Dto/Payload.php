@@ -21,6 +21,5 @@ final class Payload extends Dto
      */
     public function __construct(
         public readonly ?array $warnings = null,
-    ) {
-    }
+    ) {}
 }

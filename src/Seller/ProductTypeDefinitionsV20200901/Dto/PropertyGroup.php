@@ -23,6 +23,5 @@ final class PropertyGroup extends Dto
         public readonly ?string $title = null,
         public readonly ?string $description = null,
         public readonly ?array $propertyNames = null,
-    ) {
-    }
+    ) {}
 }

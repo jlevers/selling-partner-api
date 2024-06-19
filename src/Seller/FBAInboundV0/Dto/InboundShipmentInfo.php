@@ -50,6 +50,5 @@ final class InboundShipmentInfo extends Dto
         public readonly ?\DateTimeInterface $confirmedNeedByDate = null,
         public readonly ?string $boxContentsSource = null,
         public readonly ?BoxContentsFeeDetails $estimatedBoxContentsFee = null,
-    ) {
-    }
+    ) {}
 }

@@ -25,6 +25,5 @@ final class ConfirmPreorderResponse extends Response
     public function __construct(
         public readonly ?ConfirmPreorderResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

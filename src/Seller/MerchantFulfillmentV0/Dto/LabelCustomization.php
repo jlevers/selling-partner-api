@@ -28,6 +28,5 @@ final class LabelCustomization extends Dto
     public function __construct(
         public readonly ?string $customTextForLabel = null,
         public readonly ?string $standardIdForLabel = null,
-    ) {
-    }
+    ) {}
 }

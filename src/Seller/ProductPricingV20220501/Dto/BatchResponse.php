@@ -21,6 +21,5 @@ final class BatchResponse extends Dto
     public function __construct(
         public readonly array $headers,
         public readonly HttpStatusLine $status,
-    ) {
-    }
+    ) {}
 }

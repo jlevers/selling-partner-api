@@ -26,6 +26,5 @@ final class SellerFeedbackType extends Dto
     public function __construct(
         public readonly int $feedbackCount,
         public readonly ?float $sellerPositiveFeedbackRating = null,
-    ) {
-    }
+    ) {}
 }

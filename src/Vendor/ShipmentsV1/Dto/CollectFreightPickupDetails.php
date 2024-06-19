@@ -23,6 +23,5 @@ final class CollectFreightPickupDetails extends Dto
         public readonly ?\DateTimeInterface $requestedPickUp = null,
         public readonly ?\DateTimeInterface $scheduledPickUp = null,
         public readonly ?\DateTimeInterface $carrierAssignmentDate = null,
-    ) {
-    }
+    ) {}
 }

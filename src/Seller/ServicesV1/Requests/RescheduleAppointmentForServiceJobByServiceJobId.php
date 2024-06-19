@@ -37,8 +37,7 @@ class RescheduleAppointmentForServiceJobByServiceJobId extends Request implement
         protected string $serviceJobId,
         protected string $appointmentId,
         public RescheduleAppointmentRequest $rescheduleAppointmentRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

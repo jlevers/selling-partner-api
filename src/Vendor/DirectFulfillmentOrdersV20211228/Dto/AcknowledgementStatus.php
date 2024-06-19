@@ -21,6 +21,5 @@ final class AcknowledgementStatus extends Dto
     public function __construct(
         public readonly ?string $code = null,
         public readonly ?string $description = null,
-    ) {
-    }
+    ) {}
 }

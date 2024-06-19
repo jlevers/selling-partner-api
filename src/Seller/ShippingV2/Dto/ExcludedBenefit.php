@@ -17,6 +17,5 @@ final class ExcludedBenefit extends Dto
     public function __construct(
         public readonly string $benefit,
         public readonly string $reasonCode,
-    ) {
-    }
+    ) {}
 }

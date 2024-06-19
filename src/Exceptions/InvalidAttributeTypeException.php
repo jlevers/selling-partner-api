@@ -6,6 +6,4 @@ namespace SellingPartnerApi\Exceptions;
 
 use Exception;
 
-class InvalidAttributeTypeException extends Exception
-{
-}
+class InvalidAttributeTypeException extends Exception {}

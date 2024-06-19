@@ -31,6 +31,5 @@ final class ListOffersResponseOffer extends Dto
         public readonly ?OfferProgramConfiguration $offerProgramConfiguration = null,
         public readonly ?string $programType = null,
         public readonly ?array $vendorCodes = null,
-    ) {
-    }
+    ) {}
 }

@@ -36,8 +36,7 @@ class UpdateInboundPlanName extends Request implements HasBody
     public function __construct(
         protected string $inboundPlanId,
         public UpdateInboundPlanNameRequest $updateInboundPlanNameRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

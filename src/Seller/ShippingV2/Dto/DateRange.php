@@ -21,6 +21,5 @@ final class DateRange extends Dto
     public function __construct(
         public readonly ?string $startDate = null,
         public readonly ?string $endDate = null,
-    ) {
-    }
+    ) {}
 }

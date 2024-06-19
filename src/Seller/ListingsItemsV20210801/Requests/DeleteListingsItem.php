@@ -35,8 +35,7 @@ class DeleteListingsItem extends Request
         protected string $sku,
         protected array $marketplaceIds,
         protected ?string $issueLocale = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

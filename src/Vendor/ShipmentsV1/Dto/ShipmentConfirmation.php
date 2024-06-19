@@ -57,6 +57,5 @@ final class ShipmentConfirmation extends Dto
         public readonly ?ImportDetails $importDetails = null,
         public readonly ?array $cartons = null,
         public readonly ?array $pallets = null,
-    ) {
-    }
+    ) {}
 }

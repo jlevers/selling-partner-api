@@ -21,6 +21,5 @@ final class StandardMultipleImageTextModule extends Dto
      */
     public function __construct(
         public readonly ?array $blocks = null,
-    ) {
-    }
+    ) {}
 }

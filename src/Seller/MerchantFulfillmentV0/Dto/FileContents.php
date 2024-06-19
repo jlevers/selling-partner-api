@@ -25,6 +25,5 @@ final class FileContents extends Dto
         public readonly string $contents,
         public readonly string $fileType,
         public readonly string $checksum,
-    ) {
-    }
+    ) {}
 }

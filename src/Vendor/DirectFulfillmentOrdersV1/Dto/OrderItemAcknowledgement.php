@@ -25,6 +25,5 @@ final class OrderItemAcknowledgement extends Dto
         public readonly ItemQuantity $acknowledgedQuantity,
         public readonly ?string $buyerProductIdentifier = null,
         public readonly ?string $vendorProductIdentifier = null,
-    ) {
-    }
+    ) {}
 }

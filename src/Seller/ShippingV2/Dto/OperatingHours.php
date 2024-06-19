@@ -25,6 +25,5 @@ final class OperatingHours extends Dto
         public readonly ?TimeOfDay $closingTime = null,
         public readonly ?TimeOfDay $openingTime = null,
         public readonly ?array $midDayClosures = null,
-    ) {
-    }
+    ) {}
 }

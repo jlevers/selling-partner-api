@@ -31,6 +31,5 @@ final class Container extends Dto
         public readonly array $items,
         public readonly Weight $weight,
         public readonly ?string $containerType = null,
-    ) {
-    }
+    ) {}
 }

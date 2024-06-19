@@ -71,6 +71,5 @@ final class ShipmentEvent extends Dto
         public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?array $shipmentItemList = null,
         public readonly ?array $shipmentItemAdjustmentList = null,
-    ) {
-    }
+    ) {}
 }

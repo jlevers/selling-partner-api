@@ -33,6 +33,5 @@ final class TransportationOption extends Dto
         public readonly string $transportationOptionId,
         public readonly ?CarrierAppointment $carrierAppointment = null,
         public readonly ?Quote $quote = null,
-    ) {
-    }
+    ) {}
 }

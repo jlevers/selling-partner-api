@@ -25,6 +25,5 @@ final class CreateScheduledPackagesRequest extends Dto
         public readonly string $marketplaceId,
         public readonly array $orderScheduleDetailsList,
         public readonly string $labelFormat,
-    ) {
-    }
+    ) {}
 }

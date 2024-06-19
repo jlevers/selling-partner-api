@@ -52,6 +52,5 @@ final class ShipmentRequestDetails extends Dto
         public readonly ?\DateTimeInterface $mustArriveByDate = null,
         public readonly ?\DateTimeInterface $shipDate = null,
         public readonly ?LabelCustomization $labelCustomization = null,
-    ) {
-    }
+    ) {}
 }

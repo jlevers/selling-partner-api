@@ -33,8 +33,7 @@ class CreateFulfillmentOrder extends Request implements HasBody
      */
     public function __construct(
         public CreateFulfillmentOrderRequest $createFulfillmentOrderRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

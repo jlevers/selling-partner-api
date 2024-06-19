@@ -27,6 +27,5 @@ final class CreateReportSpecification extends Dto
         public readonly ?array $reportOptions = null,
         public readonly ?\DateTimeInterface $dataStartTime = null,
         public readonly ?\DateTimeInterface $dataEndTime = null,
-    ) {
-    }
+    ) {}
 }

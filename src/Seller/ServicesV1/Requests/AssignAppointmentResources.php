@@ -37,8 +37,7 @@ class AssignAppointmentResources extends Request implements HasBody
         protected string $serviceJobId,
         protected string $appointmentId,
         public AssignAppointmentResourcesRequest $assignAppointmentResourcesRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

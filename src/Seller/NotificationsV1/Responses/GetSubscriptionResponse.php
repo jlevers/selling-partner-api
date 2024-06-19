@@ -25,6 +25,5 @@ final class GetSubscriptionResponse extends Response
     public function __construct(
         public readonly ?Subscription $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

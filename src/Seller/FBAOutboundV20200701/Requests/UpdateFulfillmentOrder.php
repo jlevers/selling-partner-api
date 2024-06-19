@@ -35,8 +35,7 @@ class UpdateFulfillmentOrder extends Request implements HasBody
     public function __construct(
         protected string $sellerFulfillmentOrderId,
         public UpdateFulfillmentOrderRequest $updateFulfillmentOrderRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

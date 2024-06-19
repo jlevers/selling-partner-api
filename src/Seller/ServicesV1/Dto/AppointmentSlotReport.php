@@ -27,6 +27,5 @@ final class AppointmentSlotReport extends Dto
         public readonly ?\DateTimeInterface $startTime = null,
         public readonly ?\DateTimeInterface $endTime = null,
         public readonly ?array $appointmentSlots = null,
-    ) {
-    }
+    ) {}
 }

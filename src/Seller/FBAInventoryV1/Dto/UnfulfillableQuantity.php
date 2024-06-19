@@ -31,6 +31,5 @@ final class UnfulfillableQuantity extends Dto
         public readonly ?int $carrierDamagedQuantity = null,
         public readonly ?int $defectiveQuantity = null,
         public readonly ?int $expiredQuantity = null,
-    ) {
-    }
+    ) {}
 }

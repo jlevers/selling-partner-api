@@ -29,6 +29,5 @@ final class CreateFulfillmentReturnResult extends Dto
         public readonly ?array $returnItems = null,
         public readonly ?array $invalidReturnItems = null,
         public readonly ?array $returnAuthorizations = null,
-    ) {
-    }
+    ) {}
 }

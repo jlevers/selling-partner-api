@@ -34,8 +34,7 @@ class GetListingOffersBatch extends Request implements HasBody
      */
     public function __construct(
         public GetListingOffersBatchRequest $getListingOffersBatchRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

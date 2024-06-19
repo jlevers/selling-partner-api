@@ -23,6 +23,5 @@ final class Event extends Dto
         public readonly string $eventCode,
         public readonly \DateTimeInterface $eventTime,
         public readonly ?Location $location = null,
-    ) {
-    }
+    ) {}
 }

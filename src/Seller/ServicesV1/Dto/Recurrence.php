@@ -23,6 +23,5 @@ final class Recurrence extends Dto
         public readonly \DateTimeInterface $endTime,
         public readonly ?array $daysOfWeek = null,
         public readonly ?array $daysOfMonth = null,
-    ) {
-    }
+    ) {}
 }

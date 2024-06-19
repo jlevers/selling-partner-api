@@ -25,6 +25,5 @@ final class ListShipmentPalletsResponse extends Response
     public function __construct(
         public readonly array $pallets,
         public readonly ?Pagination $pagination = null,
-    ) {
-    }
+    ) {}
 }

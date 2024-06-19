@@ -34,6 +34,5 @@ final class ValueAddedServiceChargeEvent extends Dto
         public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $description = null,
         public readonly ?Currency $transactionAmount = null,
-    ) {
-    }
+    ) {}
 }

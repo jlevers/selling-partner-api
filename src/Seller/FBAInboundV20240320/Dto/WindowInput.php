@@ -19,6 +19,5 @@ final class WindowInput extends Dto
      */
     public function __construct(
         public readonly \DateTimeInterface $start,
-    ) {
-    }
+    ) {}
 }

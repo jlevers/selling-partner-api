@@ -25,6 +25,5 @@ final class CreateFeedSpecification extends Dto
         public readonly array $marketplaceIds,
         public readonly string $inputFeedDocumentId,
         public readonly ?array $feedOptions = null,
-    ) {
-    }
+    ) {}
 }

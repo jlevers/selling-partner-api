@@ -23,6 +23,5 @@ final class UpdateVerificationStatusRequestBody extends Dto
         public readonly string $status,
         public readonly string $externalReviewerId,
         public readonly ?string $rejectionReasonId = null,
-    ) {
-    }
+    ) {}
 }

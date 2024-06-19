@@ -32,6 +32,5 @@ final class TaxWithholdingEvent extends Dto
         public readonly ?Currency $baseAmount = null,
         public readonly ?Currency $withheldAmount = null,
         public readonly ?TaxWithholdingPeriod $taxWithholdingPeriod = null,
-    ) {
-    }
+    ) {}
 }

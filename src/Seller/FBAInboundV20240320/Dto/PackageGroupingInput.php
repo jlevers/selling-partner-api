@@ -25,6 +25,5 @@ final class PackageGroupingInput extends Dto
         public readonly array $boxes,
         public readonly ?string $packingGroupId = null,
         public readonly ?string $shipmentId = null,
-    ) {
-    }
+    ) {}
 }

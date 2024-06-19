@@ -25,6 +25,5 @@ final class ItemRelationship extends Dto
         public readonly ?array $childAsins = null,
         public readonly ?array $parentAsins = null,
         public readonly ?ItemVariationTheme $variationTheme = null,
-    ) {
-    }
+    ) {}
 }

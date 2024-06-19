@@ -51,6 +51,5 @@ final class ServiceJob extends Dto
         public readonly ?Buyer $buyer = null,
         public readonly ?array $associatedItems = null,
         public readonly ?ServiceLocation $serviceLocation = null,
-    ) {
-    }
+    ) {}
 }

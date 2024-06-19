@@ -27,6 +27,5 @@ final class CreateReturnItem extends Dto
         public readonly string $amazonShipmentId,
         public readonly string $returnReasonCode,
         public readonly ?string $returnComment = null,
-    ) {
-    }
+    ) {}
 }

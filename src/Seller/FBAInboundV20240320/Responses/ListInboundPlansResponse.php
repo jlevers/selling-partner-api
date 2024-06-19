@@ -25,6 +25,5 @@ final class ListInboundPlansResponse extends Response
     public function __construct(
         public readonly ?array $inboundPlans = null,
         public readonly ?Pagination $pagination = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class UpdateItemComplianceDetailsRequest extends Dto
     public function __construct(
         public readonly string $msku,
         public readonly TaxDetails $taxDetails,
-    ) {
-    }
+    ) {}
 }

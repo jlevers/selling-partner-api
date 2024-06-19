@@ -25,6 +25,5 @@ final class GetEligibleShipmentServicesResponse extends Response
     public function __construct(
         public readonly ?GetEligibleShipmentServicesResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

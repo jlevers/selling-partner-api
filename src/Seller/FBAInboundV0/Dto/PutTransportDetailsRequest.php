@@ -29,6 +29,5 @@ final class PutTransportDetailsRequest extends Dto
         public readonly bool $isPartnered,
         public readonly string $shipmentType,
         public readonly TransportDetailInput $transportDetails,
-    ) {
-    }
+    ) {}
 }

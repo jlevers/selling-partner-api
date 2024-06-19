@@ -40,6 +40,5 @@ final class SkuPrepInstructions extends Dto
         public readonly ?string $prepGuidance = null,
         public readonly ?array $prepInstructionList = null,
         public readonly ?array $amazonPrepFeesDetailsList = null,
-    ) {
-    }
+    ) {}
 }

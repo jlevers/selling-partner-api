@@ -21,6 +21,5 @@ final class Technician extends Dto
     public function __construct(
         public readonly ?string $technicianId = null,
         public readonly ?string $name = null,
-    ) {
-    }
+    ) {}
 }

@@ -35,8 +35,7 @@ class PutTransportDetails extends Request implements HasBody
     public function __construct(
         protected string $shipmentId,
         public PutTransportDetailsRequest $putTransportDetailsRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

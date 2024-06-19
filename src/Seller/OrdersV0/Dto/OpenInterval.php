@@ -23,6 +23,5 @@ final class OpenInterval extends Dto
     public function __construct(
         public readonly ?OpenTimeInterval $startTime = null,
         public readonly ?OpenTimeInterval $endTime = null,
-    ) {
-    }
+    ) {}
 }

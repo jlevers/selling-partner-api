@@ -25,6 +25,5 @@ final class FeaturedOfferExpectedPriceResponse extends Dto
         public readonly HttpStatusLine $status,
         public readonly FeaturedOfferExpectedPriceRequestParams $request,
         public readonly ?FeaturedOfferExpectedPriceResponseBody $body = null,
-    ) {
-    }
+    ) {}
 }

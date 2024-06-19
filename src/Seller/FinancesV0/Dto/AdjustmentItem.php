@@ -41,6 +41,5 @@ final class AdjustmentItem extends Dto
         public readonly ?string $fnSku = null,
         public readonly ?string $productDescription = null,
         public readonly ?string $asin = null,
-    ) {
-    }
+    ) {}
 }

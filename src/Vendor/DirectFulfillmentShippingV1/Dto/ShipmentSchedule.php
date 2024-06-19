@@ -23,6 +23,5 @@ final class ShipmentSchedule extends Dto
         public readonly ?\DateTimeInterface $estimatedDeliveryDateTime = null,
         public readonly ?\DateTimeInterface $apptWindowStartDateTime = null,
         public readonly ?\DateTimeInterface $apptWindowEndDateTime = null,
-    ) {
-    }
+    ) {}
 }

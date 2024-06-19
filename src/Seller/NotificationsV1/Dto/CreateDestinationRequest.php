@@ -21,6 +21,5 @@ final class CreateDestinationRequest extends Dto
     public function __construct(
         public readonly DestinationResourceSpecification $resourceSpecification,
         public readonly string $name,
-    ) {
-    }
+    ) {}
 }

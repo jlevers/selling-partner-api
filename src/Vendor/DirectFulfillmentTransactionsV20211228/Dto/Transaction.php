@@ -24,6 +24,5 @@ final class Transaction extends Dto
         public readonly string $transactionId,
         public readonly string $status,
         public readonly ?ErrorList $errors = null,
-    ) {
-    }
+    ) {}
 }

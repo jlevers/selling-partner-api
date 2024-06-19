@@ -32,8 +32,7 @@ class ConfirmPreorder extends Request
         protected string $shipmentId,
         protected \DateTimeInterface $needByDate,
         protected string $marketplaceId,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

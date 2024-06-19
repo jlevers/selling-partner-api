@@ -25,6 +25,5 @@ final class ItemImage extends Dto
         public readonly string $link,
         public readonly int $height,
         public readonly int $width,
-    ) {
-    }
+    ) {}
 }

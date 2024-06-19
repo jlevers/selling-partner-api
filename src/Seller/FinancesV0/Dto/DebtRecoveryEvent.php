@@ -48,6 +48,5 @@ final class DebtRecoveryEvent extends Dto
         public readonly ?Currency $overPaymentCredit = null,
         public readonly ?array $debtRecoveryItemList = null,
         public readonly ?array $chargeInstrumentList = null,
-    ) {
-    }
+    ) {}
 }

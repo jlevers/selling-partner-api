@@ -42,6 +42,5 @@ final class AccessPoint extends Dto
         public readonly ?string $assistanceType = null,
         public readonly ?string $score = null,
         public readonly ?array $standardOperatingHours = null,
-    ) {
-    }
+    ) {}
 }

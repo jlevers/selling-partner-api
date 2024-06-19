@@ -21,6 +21,5 @@ final class ImageOffsets extends Dto
     public function __construct(
         public readonly IntegerWithUnits $x,
         public readonly IntegerWithUnits $y,
-    ) {
-    }
+    ) {}
 }

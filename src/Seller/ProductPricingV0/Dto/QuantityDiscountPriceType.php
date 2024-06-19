@@ -21,6 +21,5 @@ final class QuantityDiscountPriceType extends Dto
         public readonly int $quantityTier,
         public readonly string $quantityDiscountType,
         public readonly MoneyType $listingPrice,
-    ) {
-    }
+    ) {}
 }

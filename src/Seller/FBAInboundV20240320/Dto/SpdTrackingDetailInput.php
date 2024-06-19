@@ -21,6 +21,5 @@ final class SpdTrackingDetailInput extends Dto
      */
     public function __construct(
         public readonly array $spdTrackingItems,
-    ) {
-    }
+    ) {}
 }

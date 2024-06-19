@@ -19,12 +19,11 @@ final class GetPackageTrackingDetailsResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?PackageTrackingDetails  $payload
+     * @param  ?PackageTrackingDetails  $payload  Tracking details of package
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?PackageTrackingDetails $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

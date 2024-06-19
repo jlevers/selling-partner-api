@@ -38,6 +38,5 @@ final class TransportHeader extends Dto
         public readonly string $shipmentId,
         public readonly bool $isPartnered,
         public readonly string $shipmentType,
-    ) {
-    }
+    ) {}
 }

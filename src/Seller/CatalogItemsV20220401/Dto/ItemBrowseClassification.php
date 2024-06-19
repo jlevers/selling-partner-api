@@ -23,6 +23,5 @@ final class ItemBrowseClassification extends Dto
         public readonly string $displayName,
         public readonly string $classificationId,
         public readonly ?ItemBrowseClassification $parent = null,
-    ) {
-    }
+    ) {}
 }

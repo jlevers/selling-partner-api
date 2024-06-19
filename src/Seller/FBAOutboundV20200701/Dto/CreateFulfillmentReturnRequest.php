@@ -21,6 +21,5 @@ final class CreateFulfillmentReturnRequest extends Dto
      */
     public function __construct(
         public readonly array $items,
-    ) {
-    }
+    ) {}
 }

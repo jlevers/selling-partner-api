@@ -50,6 +50,5 @@ final class RemovalShipmentItem extends Dto
         public readonly ?Currency $feeAmount = null,
         public readonly ?Currency $taxAmount = null,
         public readonly ?Currency $taxWithheld = null,
-    ) {
-    }
+    ) {}
 }

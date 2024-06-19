@@ -21,6 +21,5 @@ final class CreateQuerySpecification extends Dto
     public function __construct(
         public readonly string $query,
         public readonly ?string $paginationToken = null,
-    ) {
-    }
+    ) {}
 }

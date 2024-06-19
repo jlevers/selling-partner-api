@@ -21,6 +21,5 @@ final class Geocode extends Dto
     public function __construct(
         public readonly ?string $latitude = null,
         public readonly ?string $longitude = null,
-    ) {
-    }
+    ) {}
 }

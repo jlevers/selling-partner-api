@@ -19,6 +19,5 @@ final class StandardProductDescriptionModule extends Dto
      */
     public function __construct(
         public readonly ParagraphComponent $body,
-    ) {
-    }
+    ) {}
 }

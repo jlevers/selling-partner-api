@@ -35,6 +35,5 @@ final class CreateFulfillmentOrderItem extends Dto
         public readonly ?Money $perUnitDeclaredValue = null,
         public readonly ?Money $perUnitPrice = null,
         public readonly ?Money $perUnitTax = null,
-    ) {
-    }
+    ) {}
 }

@@ -27,6 +27,5 @@ final class GetSchemaResponse extends Dto
         public readonly ?Links3 $links = null,
         public readonly ?array $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

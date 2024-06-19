@@ -21,6 +21,5 @@ final class Weight extends Dto
     public function __construct(
         public readonly ?float $value = null,
         public readonly ?string $unit = null,
-    ) {
-    }
+    ) {}
 }

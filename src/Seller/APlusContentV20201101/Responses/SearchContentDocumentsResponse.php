@@ -30,6 +30,5 @@ final class SearchContentDocumentsResponse extends Response
         public readonly array $contentMetadataRecords,
         public readonly ?array $warnings = null,
         public readonly ?string $nextPageToken = null,
-    ) {
-    }
+    ) {}
 }

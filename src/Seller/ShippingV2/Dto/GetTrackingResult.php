@@ -29,6 +29,5 @@ final class GetTrackingResult extends Dto
         public readonly array $eventHistory,
         public readonly \DateTimeInterface $promisedDeliveryDate,
         public readonly TrackingSummary $summary,
-    ) {
-    }
+    ) {}
 }

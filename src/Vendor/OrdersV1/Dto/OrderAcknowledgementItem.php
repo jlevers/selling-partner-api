@@ -35,6 +35,5 @@ final class OrderAcknowledgementItem extends Dto
         public readonly ?Money $netCost = null,
         public readonly ?Money $listPrice = null,
         public readonly ?string $discountMultiplier = null,
-    ) {
-    }
+    ) {}
 }

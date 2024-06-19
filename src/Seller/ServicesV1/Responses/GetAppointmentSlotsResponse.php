@@ -25,6 +25,5 @@ final class GetAppointmentSlotsResponse extends Response
     public function __construct(
         public readonly ?AppointmentSlotReport $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

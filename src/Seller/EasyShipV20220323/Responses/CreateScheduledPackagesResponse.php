@@ -29,6 +29,5 @@ final class CreateScheduledPackagesResponse extends Response
         public readonly ?array $scheduledPackages = null,
         public readonly ?array $rejectedOrders = null,
         public readonly ?string $printableDocumentsUrl = null,
-    ) {
-    }
+    ) {}
 }

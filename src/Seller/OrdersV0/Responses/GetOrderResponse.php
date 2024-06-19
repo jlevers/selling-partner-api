@@ -25,6 +25,5 @@ final class GetOrderResponse extends Response
     public function __construct(
         public readonly ?Order $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

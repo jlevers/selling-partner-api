@@ -32,6 +32,5 @@ final class CapacityReservationBillingEvent extends Dto
         public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $description = null,
         public readonly ?Currency $transactionAmount = null,
-    ) {
-    }
+    ) {}
 }

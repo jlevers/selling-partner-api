@@ -46,8 +46,7 @@ class GetOrderMetrics extends Request
         protected ?string $firstDayOfWeek = null,
         protected ?string $asin = null,
         protected ?string $sku = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

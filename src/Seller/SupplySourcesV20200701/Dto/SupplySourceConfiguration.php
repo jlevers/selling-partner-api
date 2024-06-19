@@ -21,6 +21,5 @@ final class SupplySourceConfiguration extends Dto
     public function __construct(
         public readonly ?OperationalConfiguration $operationalConfiguration = null,
         public readonly ?string $timezone = null,
-    ) {
-    }
+    ) {}
 }

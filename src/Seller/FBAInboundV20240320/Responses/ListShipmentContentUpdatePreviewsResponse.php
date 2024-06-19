@@ -24,6 +24,5 @@ final class ListShipmentContentUpdatePreviewsResponse extends Response
     public function __construct(
         public readonly array $contentUpdatePreviews,
         public readonly ?Pagination $pagination = null,
-    ) {
-    }
+    ) {}
 }

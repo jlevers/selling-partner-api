@@ -25,6 +25,5 @@ final class GetPurchaseOrdersResponse extends Response
     public function __construct(
         public readonly ?OrderList $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

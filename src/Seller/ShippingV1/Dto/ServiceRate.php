@@ -25,6 +25,5 @@ final class ServiceRate extends Dto
         public readonly Weight $billableWeight,
         public readonly string $serviceType,
         public readonly ShippingPromiseSet $promise,
-    ) {
-    }
+    ) {}
 }

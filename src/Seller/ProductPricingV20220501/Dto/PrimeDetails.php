@@ -19,6 +19,5 @@ final class PrimeDetails extends Dto
      */
     public function __construct(
         public readonly string $eligibility,
-    ) {
-    }
+    ) {}
 }

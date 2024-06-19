@@ -31,8 +31,7 @@ class GetDeliveryChallanDocument extends Request
     public function __construct(
         protected string $inboundPlanId,
         protected string $shipmentId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

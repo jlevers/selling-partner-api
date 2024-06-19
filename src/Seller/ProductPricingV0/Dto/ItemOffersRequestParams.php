@@ -32,6 +32,5 @@ final class ItemOffersRequestParams extends Dto
         public readonly string $itemCondition,
         public readonly ?string $customerType = null,
         public readonly ?string $asin = null,
-    ) {
-    }
+    ) {}
 }

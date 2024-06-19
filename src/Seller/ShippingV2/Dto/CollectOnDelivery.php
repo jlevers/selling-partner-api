@@ -19,6 +19,5 @@ final class CollectOnDelivery extends Dto
      */
     public function __construct(
         public readonly Currency $amount,
-    ) {
-    }
+    ) {}
 }

@@ -26,6 +26,5 @@ final class StandardComparisonTableModule extends Dto
     public function __construct(
         public readonly ?array $productColumns = null,
         public readonly ?array $metricRowLabels = null,
-    ) {
-    }
+    ) {}
 }

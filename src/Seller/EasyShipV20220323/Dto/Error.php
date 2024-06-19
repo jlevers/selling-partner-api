@@ -23,6 +23,5 @@ final class Error extends Dto
         public readonly string $code,
         public readonly string $message,
         public readonly ?string $details = null,
-    ) {
-    }
+    ) {}
 }

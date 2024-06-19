@@ -21,6 +21,5 @@ final class CreateInboundPlanResponse extends Response
     public function __construct(
         public readonly string $inboundPlanId,
         public readonly string $operationId,
-    ) {
-    }
+    ) {}
 }

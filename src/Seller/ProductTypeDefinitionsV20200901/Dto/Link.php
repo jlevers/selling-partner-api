@@ -21,6 +21,5 @@ final class Link extends Dto
     public function __construct(
         public readonly string $resource,
         public readonly string $verb,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class GetTransportDetailsResult extends Dto
      */
     public function __construct(
         public readonly ?TransportContent $transportContent = null,
-    ) {
-    }
+    ) {}
 }

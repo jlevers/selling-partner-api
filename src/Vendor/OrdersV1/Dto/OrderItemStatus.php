@@ -33,6 +33,5 @@ final class OrderItemStatus extends Dto
         public readonly ?OrderedQuantity $orderedQuantity = null,
         public readonly ?AcknowledgementStatus $acknowledgementStatus = null,
         public readonly ?ReceivingStatus $receivingStatus = null,
-    ) {
-    }
+    ) {}
 }

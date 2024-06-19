@@ -23,6 +23,5 @@ final class CreateScheduledPackageRequest extends Dto
         public readonly string $amazonOrderId,
         public readonly string $marketplaceId,
         public readonly PackageDetails $packageDetails,
-    ) {
-    }
+    ) {}
 }

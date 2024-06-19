@@ -34,6 +34,5 @@ final class ImagingServicesFeeEvent extends Dto
         public readonly ?string $asin = null,
         public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?array $feeList = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class ItemQuantity extends Dto
     public function __construct(
         public readonly ?int $amount = null,
         public readonly ?string $unitOfMeasure = null,
-    ) {
-    }
+    ) {}
 }

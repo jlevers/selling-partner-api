@@ -25,6 +25,5 @@ final class GetContentDocumentResponse extends Response
     public function __construct(
         public readonly ContentRecord $contentRecord,
         public readonly ?array $warnings = null,
-    ) {
-    }
+    ) {}
 }

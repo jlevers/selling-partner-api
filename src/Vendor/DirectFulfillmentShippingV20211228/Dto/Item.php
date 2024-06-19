@@ -25,6 +25,5 @@ final class Item extends Dto
         public readonly ItemQuantity $shippedQuantity,
         public readonly ?string $buyerProductIdentifier = null,
         public readonly ?string $vendorProductIdentifier = null,
-    ) {
-    }
+    ) {}
 }

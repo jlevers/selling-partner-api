@@ -33,8 +33,7 @@ class ConfirmShipmentContentUpdatePreview extends Request
         protected string $inboundPlanId,
         protected string $shipmentId,
         protected string $contentUpdatePreviewId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

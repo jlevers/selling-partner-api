@@ -42,6 +42,5 @@ final class Containers extends Dto
         public readonly ?int $block = null,
         public readonly ?InnerContainersDetails $innerContainersDetails = null,
         public readonly ?array $packedItems = null,
-    ) {
-    }
+    ) {}
 }

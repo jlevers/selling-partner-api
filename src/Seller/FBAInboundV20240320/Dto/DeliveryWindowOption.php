@@ -27,6 +27,5 @@ final class DeliveryWindowOption extends Dto
         public readonly \DateTimeInterface $endDate,
         public readonly \DateTimeInterface $startDate,
         public readonly \DateTimeInterface $validUntil,
-    ) {
-    }
+    ) {}
 }

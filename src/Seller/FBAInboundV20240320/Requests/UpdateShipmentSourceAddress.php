@@ -38,8 +38,7 @@ class UpdateShipmentSourceAddress extends Request implements HasBody
         protected string $inboundPlanId,
         protected string $shipmentId,
         public UpdateShipmentSourceAddressRequest $updateShipmentSourceAddressRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

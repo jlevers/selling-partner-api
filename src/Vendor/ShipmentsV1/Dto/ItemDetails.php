@@ -27,6 +27,5 @@ final class ItemDetails extends Dto
         public readonly ?Expiry $expiry = null,
         public readonly ?Money $maximumRetailPrice = null,
         public readonly ?string $handlingCode = null,
-    ) {
-    }
+    ) {}
 }

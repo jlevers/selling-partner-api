@@ -47,6 +47,5 @@ final class OrderDetails extends Dto
         public readonly ?PartyIdentification $billToParty = null,
         public readonly ?string $shipWindow = null,
         public readonly ?string $deliveryWindow = null,
-    ) {
-    }
+    ) {}
 }

@@ -26,6 +26,5 @@ final class RangeSlotCapacity extends Response
         public readonly ?string $resourceId = null,
         public readonly ?array $capacities = null,
         public readonly ?string $nextPageToken = null,
-    ) {
-    }
+    ) {}
 }

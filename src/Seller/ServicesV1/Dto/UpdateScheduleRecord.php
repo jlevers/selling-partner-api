@@ -25,6 +25,5 @@ final class UpdateScheduleRecord extends Dto
         public readonly ?AvailabilityRecord $availability = null,
         public readonly ?array $warnings = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

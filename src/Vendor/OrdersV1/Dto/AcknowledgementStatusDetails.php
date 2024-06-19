@@ -23,6 +23,5 @@ final class AcknowledgementStatusDetails extends Dto
         public readonly ?\DateTimeInterface $acknowledgementDate = null,
         public readonly ?ItemQuantity $acceptedQuantity = null,
         public readonly ?ItemQuantity $rejectedQuantity = null,
-    ) {
-    }
+    ) {}
 }

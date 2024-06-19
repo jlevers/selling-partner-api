@@ -37,8 +37,7 @@ class CreateConfirmDeliveryDetails extends Request implements HasBody
         protected string $amazonOrderId,
         public CreateConfirmDeliveryDetailsRequest $createConfirmDeliveryDetailsRequest,
         protected array $marketplaceIds,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

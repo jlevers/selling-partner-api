@@ -23,6 +23,5 @@ final class CreatorType extends Dto
     public function __construct(
         public readonly ?string $value = null,
         public readonly ?string $role = null,
-    ) {
-    }
+    ) {}
 }

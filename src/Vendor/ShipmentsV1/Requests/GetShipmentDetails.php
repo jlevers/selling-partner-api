@@ -74,8 +74,7 @@ class GetShipmentDetails extends Request
         protected ?string $buyerReferenceNumber = null,
         protected ?string $buyerWarehouseCode = null,
         protected ?string $sellerWarehouseCode = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -25,6 +25,5 @@ final class ListPackingOptionsResponse extends Response
     public function __construct(
         public readonly array $packingOptions,
         public readonly ?Pagination $pagination = null,
-    ) {
-    }
+    ) {}
 }

@@ -37,8 +37,7 @@ class GetListingsRestrictions extends Request
         protected array $marketplaceIds,
         protected ?string $conditionType = null,
         protected ?string $reasonLocale = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

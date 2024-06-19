@@ -19,6 +19,5 @@ final class ValueAddedServiceDetails extends Dto
      */
     public function __construct(
         public readonly ?CollectOnDelivery $collectOnDelivery = null,
-    ) {
-    }
+    ) {}
 }

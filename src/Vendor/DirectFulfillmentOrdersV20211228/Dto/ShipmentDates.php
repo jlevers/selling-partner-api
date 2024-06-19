@@ -21,6 +21,5 @@ final class ShipmentDates extends Dto
     public function __construct(
         public readonly \DateTimeInterface $requiredShipDate,
         public readonly ?\DateTimeInterface $promisedDeliveryDate = null,
-    ) {
-    }
+    ) {}
 }

@@ -25,6 +25,5 @@ final class Image extends Dto
         public readonly ?string $url = null,
         public readonly ?DecimalWithUnits $height = null,
         public readonly ?DecimalWithUnits $width = null,
-    ) {
-    }
+    ) {}
 }

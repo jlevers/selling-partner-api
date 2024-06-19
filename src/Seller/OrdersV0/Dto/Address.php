@@ -73,6 +73,5 @@ final class Address extends Dto
         public readonly ?string $phone = null,
         public readonly ?AddressExtendedFields $extendedFields = null,
         public readonly ?string $addressType = null,
-    ) {
-    }
+    ) {}
 }

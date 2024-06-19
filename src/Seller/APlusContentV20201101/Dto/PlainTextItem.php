@@ -21,6 +21,5 @@ final class PlainTextItem extends Dto
     public function __construct(
         public readonly int $position,
         public readonly string $value,
-    ) {
-    }
+    ) {}
 }

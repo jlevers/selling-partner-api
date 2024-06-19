@@ -25,6 +25,5 @@ final class Dimensions extends Dto
         public readonly float $width,
         public readonly float $height,
         public readonly string $unit,
-    ) {
-    }
+    ) {}
 }

@@ -25,6 +25,5 @@ final class ComplianceDetail extends Dto
         public readonly ?string $fnsku = null,
         public readonly ?string $msku = null,
         public readonly ?TaxDetails $taxDetails = null,
-    ) {
-    }
+    ) {}
 }

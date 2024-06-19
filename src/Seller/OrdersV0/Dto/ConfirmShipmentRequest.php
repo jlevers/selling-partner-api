@@ -23,6 +23,5 @@ final class ConfirmShipmentRequest extends Dto
         public readonly PackageDetail $packageDetail,
         public readonly string $marketplaceId,
         public readonly ?string $codCollectionMethod = null,
-    ) {
-    }
+    ) {}
 }

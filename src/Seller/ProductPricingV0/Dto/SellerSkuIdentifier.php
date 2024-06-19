@@ -29,6 +29,5 @@ final class SellerSkuIdentifier extends Dto
         public readonly string $marketplaceId,
         public readonly string $sellerId,
         public readonly string $sellerSku,
-    ) {
-    }
+    ) {}
 }

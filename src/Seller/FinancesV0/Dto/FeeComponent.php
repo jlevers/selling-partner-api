@@ -23,6 +23,5 @@ final class FeeComponent extends Dto
     public function __construct(
         public readonly ?string $feeType = null,
         public readonly ?Currency $feeAmount = null,
-    ) {
-    }
+    ) {}
 }

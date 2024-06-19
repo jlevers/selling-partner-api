@@ -21,6 +21,5 @@ final class SubmitInvoiceRequest extends Dto
      */
     public function __construct(
         public readonly ?array $invoices = null,
-    ) {
-    }
+    ) {}
 }

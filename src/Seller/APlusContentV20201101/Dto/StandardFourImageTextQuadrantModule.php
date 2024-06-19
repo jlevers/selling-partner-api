@@ -25,6 +25,5 @@ final class StandardFourImageTextQuadrantModule extends Dto
         public readonly StandardImageTextBlock $block2,
         public readonly StandardImageTextBlock $block3,
         public readonly StandardImageTextBlock $block4,
-    ) {
-    }
+    ) {}
 }

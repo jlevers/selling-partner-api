@@ -25,6 +25,5 @@ final class ChargeInstrument extends Dto
         public readonly ?string $description = null,
         public readonly ?string $tail = null,
         public readonly ?Currency $amount = null,
-    ) {
-    }
+    ) {}
 }

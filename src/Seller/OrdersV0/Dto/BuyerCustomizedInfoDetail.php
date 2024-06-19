@@ -21,6 +21,5 @@ final class BuyerCustomizedInfoDetail extends Dto
      */
     public function __construct(
         public readonly ?string $customizedUrl = null,
-    ) {
-    }
+    ) {}
 }

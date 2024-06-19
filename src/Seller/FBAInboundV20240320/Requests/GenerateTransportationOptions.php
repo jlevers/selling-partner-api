@@ -36,8 +36,7 @@ class GenerateTransportationOptions extends Request implements HasBody
     public function __construct(
         protected string $inboundPlanId,
         public GenerateTransportationOptionsRequest $generateTransportationOptionsRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

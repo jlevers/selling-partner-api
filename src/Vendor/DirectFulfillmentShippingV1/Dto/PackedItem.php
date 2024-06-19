@@ -25,6 +25,5 @@ final class PackedItem extends Dto
         public readonly ItemQuantity $packedQuantity,
         public readonly ?string $buyerProductIdentifier = null,
         public readonly ?string $vendorProductIdentifier = null,
-    ) {
-    }
+    ) {}
 }

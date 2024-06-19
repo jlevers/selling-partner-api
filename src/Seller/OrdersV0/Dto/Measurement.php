@@ -23,6 +23,5 @@ final class Measurement extends Dto
     public function __construct(
         public readonly string $unit,
         public readonly float $value,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class InvalidItemReason extends Dto
     public function __construct(
         public readonly string $invalidItemReasonCode,
         public readonly string $description,
-    ) {
-    }
+    ) {}
 }

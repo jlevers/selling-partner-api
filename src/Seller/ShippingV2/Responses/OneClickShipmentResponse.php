@@ -20,6 +20,5 @@ final class OneClickShipmentResponse extends Response
      */
     public function __construct(
         public readonly ?OneClickShipmentResult $payload = null,
-    ) {
-    }
+    ) {}
 }

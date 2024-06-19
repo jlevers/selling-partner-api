@@ -44,6 +44,5 @@ final class Package extends Response
         public readonly ?InvoiceData $invoice = null,
         public readonly ?string $packageStatus = null,
         public readonly ?TrackingDetails $trackingDetails = null,
-    ) {
-    }
+    ) {}
 }

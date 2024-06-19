@@ -38,8 +38,7 @@ class GetShippingLabels extends Request
         protected ?int $limit = null,
         protected ?string $sortOrder = null,
         protected ?string $nextToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

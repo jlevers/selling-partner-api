@@ -35,8 +35,7 @@ class CreateInboundShipment extends Request implements HasBody
     public function __construct(
         protected string $shipmentId,
         public InboundShipmentRequest $inboundShipmentRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

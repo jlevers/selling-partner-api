@@ -21,6 +21,5 @@ final class ThroughputConfig extends Dto
     public function __construct(
         public readonly string $throughputUnit,
         public readonly ?ThroughputCap $throughputCap = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class FeaturedOfferExpectedPrice extends Dto
     public function __construct(
         public readonly MoneyType $listingPrice,
         public readonly ?Points $points = null,
-    ) {
-    }
+    ) {}
 }

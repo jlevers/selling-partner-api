@@ -23,6 +23,5 @@ final class RegulatedInformation extends Dto
      */
     public function __construct(
         public readonly array $fields,
-    ) {
-    }
+    ) {}
 }

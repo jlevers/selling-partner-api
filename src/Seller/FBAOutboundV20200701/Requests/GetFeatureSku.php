@@ -32,8 +32,7 @@ class GetFeatureSku extends Request
         protected string $featureName,
         protected string $sellerSku,
         protected string $marketplaceId,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -32,6 +32,5 @@ final class TransportDetailInput extends Dto
         public readonly ?NonPartneredSmallParcelDataInput $nonPartneredSmallParcelData = null,
         public readonly ?PartneredLtlDataInput $partneredLtlData = null,
         public readonly ?NonPartneredLtlDataInput $nonPartneredLtlData = null,
-    ) {
-    }
+    ) {}
 }

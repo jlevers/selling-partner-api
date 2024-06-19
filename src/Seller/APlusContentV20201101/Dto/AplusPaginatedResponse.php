@@ -23,6 +23,5 @@ final class AplusPaginatedResponse extends Dto
     public function __construct(
         public readonly ?array $warnings = null,
         public readonly ?string $nextPageToken = null,
-    ) {
-    }
+    ) {}
 }

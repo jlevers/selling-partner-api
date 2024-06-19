@@ -29,6 +29,5 @@ final class IneligibleRate extends Dto
         public readonly string $carrierName,
         public readonly string $carrierId,
         public readonly array $ineligibilityReasons,
-    ) {
-    }
+    ) {}
 }

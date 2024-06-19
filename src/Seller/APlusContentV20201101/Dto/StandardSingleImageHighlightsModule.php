@@ -29,6 +29,5 @@ final class StandardSingleImageHighlightsModule extends Dto
         public readonly ?StandardTextBlock $textBlock2 = null,
         public readonly ?StandardTextBlock $textBlock3 = null,
         public readonly ?StandardHeaderTextListBlock $bulletedListBlock = null,
-    ) {
-    }
+    ) {}
 }

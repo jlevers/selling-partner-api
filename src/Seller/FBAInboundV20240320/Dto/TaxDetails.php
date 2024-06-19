@@ -25,6 +25,5 @@ final class TaxDetails extends Dto
         public readonly ?Currency $declaredValue = null,
         public readonly ?string $hsnCode = null,
         public readonly ?array $taxRates = null,
-    ) {
-    }
+    ) {}
 }

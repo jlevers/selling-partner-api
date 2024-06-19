@@ -66,6 +66,5 @@ final class OfferDetail extends Dto
         public readonly ?PrimeInformationType $primeInformation = null,
         public readonly ?bool $isBuyBoxWinner = null,
         public readonly ?bool $isFeaturedMerchant = null,
-    ) {
-    }
+    ) {}
 }

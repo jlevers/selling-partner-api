@@ -153,6 +153,5 @@ final class OrderItem extends Dto
         public readonly ?SubstitutionPreferences $substitutionPreferences = null,
         public readonly ?Measurement $measurement = null,
         public readonly ?ShippingConstraints $shippingConstraints = null,
-    ) {
-    }
+    ) {}
 }

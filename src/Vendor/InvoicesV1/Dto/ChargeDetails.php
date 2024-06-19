@@ -27,6 +27,5 @@ final class ChargeDetails extends Dto
         public readonly Money $chargeAmount,
         public readonly ?string $description = null,
         public readonly ?array $taxDetails = null,
-    ) {
-    }
+    ) {}
 }

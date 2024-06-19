@@ -39,6 +39,5 @@ final class Address extends Dto
         public readonly ?string $email = null,
         public readonly ?array $copyEmails = null,
         public readonly ?string $phoneNumber = null,
-    ) {
-    }
+    ) {}
 }

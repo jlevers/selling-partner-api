@@ -21,6 +21,5 @@ final class ReturnLocation extends Dto
     public function __construct(
         public readonly ?string $supplySourceId = null,
         public readonly ?AddressWithContact $addressWithContact = null,
-    ) {
-    }
+    ) {}
 }

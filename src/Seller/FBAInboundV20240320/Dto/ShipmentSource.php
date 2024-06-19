@@ -21,6 +21,5 @@ final class ShipmentSource extends Dto
     public function __construct(
         public readonly string $sourceType,
         public readonly ?Address $address = null,
-    ) {
-    }
+    ) {}
 }

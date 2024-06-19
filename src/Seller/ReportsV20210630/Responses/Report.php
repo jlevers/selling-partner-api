@@ -39,6 +39,5 @@ final class Report extends Response
         public readonly ?\DateTimeInterface $processingStartTime = null,
         public readonly ?\DateTimeInterface $processingEndTime = null,
         public readonly ?string $reportDocumentId = null,
-    ) {
-    }
+    ) {}
 }

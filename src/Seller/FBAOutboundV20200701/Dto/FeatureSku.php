@@ -27,6 +27,5 @@ final class FeatureSku extends Dto
         public readonly ?string $asin = null,
         public readonly ?float $skuCount = null,
         public readonly ?array $overlappingSkus = null,
-    ) {
-    }
+    ) {}
 }

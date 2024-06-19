@@ -33,6 +33,5 @@ final class CreateMarketplaceItemLabelsRequest extends Dto
         public readonly ?string $localeCode = null,
         public readonly ?string $pageType = null,
         public readonly ?float $width = null,
-    ) {
-    }
+    ) {}
 }

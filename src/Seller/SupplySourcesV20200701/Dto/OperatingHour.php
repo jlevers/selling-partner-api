@@ -21,6 +21,5 @@ final class OperatingHour extends Dto
     public function __construct(
         public readonly ?string $startTime = null,
         public readonly ?string $endTime = null,
-    ) {
-    }
+    ) {}
 }

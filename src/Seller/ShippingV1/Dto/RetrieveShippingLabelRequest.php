@@ -19,6 +19,5 @@ final class RetrieveShippingLabelRequest extends Dto
      */
     public function __construct(
         public readonly LabelSpecification $labelSpecification,
-    ) {
-    }
+    ) {}
 }

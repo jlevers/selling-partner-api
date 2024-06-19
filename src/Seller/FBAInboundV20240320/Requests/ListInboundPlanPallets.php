@@ -33,8 +33,7 @@ class ListInboundPlanPallets extends Request
         protected string $inboundPlanId,
         protected ?int $pageSize = null,
         protected ?string $paginationToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

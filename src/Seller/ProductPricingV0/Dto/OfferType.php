@@ -47,6 +47,5 @@ final class OfferType extends Dto
         public readonly ?string $offerType = null,
         public readonly ?MoneyType $businessPrice = null,
         public readonly ?array $quantityDiscountPrices = null,
-    ) {
-    }
+    ) {}
 }

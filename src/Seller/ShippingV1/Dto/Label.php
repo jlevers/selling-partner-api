@@ -21,6 +21,5 @@ final class Label extends Dto
     public function __construct(
         public readonly ?string $labelStream = null,
         public readonly ?LabelSpecification $labelSpecification = null,
-    ) {
-    }
+    ) {}
 }

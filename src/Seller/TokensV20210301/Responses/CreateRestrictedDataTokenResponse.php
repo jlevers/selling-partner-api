@@ -21,6 +21,5 @@ final class CreateRestrictedDataTokenResponse extends Response
     public function __construct(
         public readonly ?string $restrictedDataToken = null,
         public readonly ?int $expiresIn = null,
-    ) {
-    }
+    ) {}
 }

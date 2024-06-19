@@ -28,8 +28,7 @@ class GetServiceJobByServiceJobId extends Request
      */
     public function __construct(
         protected string $serviceJobId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

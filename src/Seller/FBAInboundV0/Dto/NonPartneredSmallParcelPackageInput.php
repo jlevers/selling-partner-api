@@ -21,6 +21,5 @@ final class NonPartneredSmallParcelPackageInput extends Dto
      */
     public function __construct(
         public readonly string $trackingId,
-    ) {
-    }
+    ) {}
 }

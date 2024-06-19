@@ -23,6 +23,5 @@ final class NonPartneredSmallParcelDataOutput extends Dto
      */
     public function __construct(
         public readonly array $packageList,
-    ) {
-    }
+    ) {}
 }

@@ -29,6 +29,5 @@ final class FeesEstimateByIdRequest extends Dto
         public readonly string $idType,
         public readonly string $idValue,
         public readonly ?FeesEstimateRequest $feesEstimateRequest = null,
-    ) {
-    }
+    ) {}
 }

@@ -23,6 +23,5 @@ final class RangeCapacity extends Dto
     public function __construct(
         public readonly ?string $capacityType = null,
         public readonly ?array $slots = null,
-    ) {
-    }
+    ) {}
 }

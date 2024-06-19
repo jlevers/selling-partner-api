@@ -25,6 +25,5 @@ final class PartneredSmallParcelDataOutput extends Dto
     public function __construct(
         public readonly array $packageList,
         public readonly ?PartneredEstimate $partneredEstimate = null,
-    ) {
-    }
+    ) {}
 }

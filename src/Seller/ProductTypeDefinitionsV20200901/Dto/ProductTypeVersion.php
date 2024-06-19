@@ -23,6 +23,5 @@ final class ProductTypeVersion extends Dto
         public readonly string $version,
         public readonly bool $latest,
         public readonly ?bool $releaseCandidate = null,
-    ) {
-    }
+    ) {}
 }

@@ -23,6 +23,5 @@ final class Order extends Dto
         public readonly string $purchaseOrderNumber,
         public readonly string $purchaseOrderState,
         public readonly ?OrderDetails $orderDetails = null,
-    ) {
-    }
+    ) {}
 }

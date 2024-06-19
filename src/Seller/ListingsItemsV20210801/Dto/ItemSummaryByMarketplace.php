@@ -37,6 +37,5 @@ final class ItemSummaryByMarketplace extends Dto
         public readonly ?string $conditionType = null,
         public readonly ?string $fnSku = null,
         public readonly ?ItemImage $mainImage = null,
-    ) {
-    }
+    ) {}
 }

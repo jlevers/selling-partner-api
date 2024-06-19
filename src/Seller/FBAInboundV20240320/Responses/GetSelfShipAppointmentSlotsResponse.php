@@ -23,6 +23,5 @@ final class GetSelfShipAppointmentSlotsResponse extends Response
     public function __construct(
         public readonly SelfShipAppointmentSlotsAvailability $selfShipAppointmentSlotsAvailability,
         public readonly ?Pagination $pagination = null,
-    ) {
-    }
+    ) {}
 }

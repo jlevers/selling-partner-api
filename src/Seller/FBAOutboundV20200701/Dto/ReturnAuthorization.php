@@ -29,6 +29,5 @@ final class ReturnAuthorization extends Dto
         public readonly Address $returnToAddress,
         public readonly string $amazonRmaId,
         public readonly string $rmaPageUrl,
-    ) {
-    }
+    ) {}
 }

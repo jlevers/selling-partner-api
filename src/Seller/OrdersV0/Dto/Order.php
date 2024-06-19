@@ -175,6 +175,5 @@ final class Order extends Dto
         public readonly ?AutomatedShippingSettings $automatedShippingSettings = null,
         public readonly ?bool $hasRegulatedItems = null,
         public readonly ?string $electronicInvoiceStatus = null,
-    ) {
-    }
+    ) {}
 }

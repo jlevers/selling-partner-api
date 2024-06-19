@@ -23,6 +23,5 @@ final class Price extends Dto
         public readonly MoneyType $listingPrice,
         public readonly ?MoneyType $shippingPrice = null,
         public readonly ?Points $points = null,
-    ) {
-    }
+    ) {}
 }

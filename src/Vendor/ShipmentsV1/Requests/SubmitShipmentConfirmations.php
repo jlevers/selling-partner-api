@@ -33,8 +33,7 @@ class SubmitShipmentConfirmations extends Request implements HasBody
      */
     public function __construct(
         public SubmitShipmentConfirmationsRequest $submitShipmentConfirmationsRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

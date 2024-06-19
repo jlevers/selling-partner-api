@@ -21,6 +21,5 @@ final class UpdatePackageDetails extends Dto
     public function __construct(
         public readonly ScheduledPackageId $scheduledPackageId,
         public readonly TimeSlot $packageTimeSlot,
-    ) {
-    }
+    ) {}
 }

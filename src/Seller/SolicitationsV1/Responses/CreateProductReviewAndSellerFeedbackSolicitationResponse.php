@@ -22,6 +22,5 @@ final class CreateProductReviewAndSellerFeedbackSolicitationResponse extends Res
      */
     public function __construct(
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class StandardImageTextOverlayModule extends Dto
     public function __construct(
         public readonly string $overlayColorType,
         public readonly ?StandardImageTextBlock $block = null,
-    ) {
-    }
+    ) {}
 }

@@ -25,6 +25,5 @@ final class GetBillOfLadingResponse extends Response
     public function __construct(
         public readonly ?BillOfLadingDownloadUrl $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

@@ -23,6 +23,5 @@ final class Reservation extends Dto
         public readonly string $type,
         public readonly AvailabilityRecord $availability,
         public readonly ?string $reservationId = null,
-    ) {
-    }
+    ) {}
 }

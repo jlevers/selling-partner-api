@@ -310,6 +310,5 @@ final class AttributeSetListType extends Dto
         public readonly ?DecimalWithUnits $totalGemWeight = null,
         public readonly ?string $warranty = null,
         public readonly ?Price $weeeTaxValue = null,
-    ) {
-    }
+    ) {}
 }

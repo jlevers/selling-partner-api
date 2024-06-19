@@ -39,6 +39,5 @@ final class BuyBoxPriceType extends Dto
         public readonly ?string $quantityDiscountType = null,
         public readonly ?Points $points = null,
         public readonly ?string $sellerId = null,
-    ) {
-    }
+    ) {}
 }

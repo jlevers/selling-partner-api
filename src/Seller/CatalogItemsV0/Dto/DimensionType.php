@@ -32,6 +32,5 @@ final class DimensionType extends Dto
         public readonly ?DecimalWithUnits $length = null,
         public readonly ?DecimalWithUnits $width = null,
         public readonly ?DecimalWithUnits $weight = null,
-    ) {
-    }
+    ) {}
 }

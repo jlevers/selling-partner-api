@@ -23,6 +23,5 @@ final class RangeSlot extends Dto
         public readonly ?\DateTimeInterface $startDateTime = null,
         public readonly ?\DateTimeInterface $endDateTime = null,
         public readonly ?int $capacity = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class Route extends Dto
      */
     public function __construct(
         public readonly array $stops,
-    ) {
-    }
+    ) {}
 }

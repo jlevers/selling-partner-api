@@ -25,6 +25,5 @@ final class ScopeOfWork extends Dto
         public readonly ?string $title = null,
         public readonly ?int $quantity = null,
         public readonly ?array $requiredSkills = null,
-    ) {
-    }
+    ) {}
 }

@@ -31,6 +31,5 @@ final class Appointment extends Dto
         public readonly ?array $assignedTechnicians = null,
         public readonly ?string $rescheduledAppointmentId = null,
         public readonly ?Poa $poa = null,
-    ) {
-    }
+    ) {}
 }

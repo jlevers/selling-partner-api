@@ -47,6 +47,5 @@ final class AdditionalSellerInput extends Dto
         public readonly ?Weight $valueAsWeight = null,
         public readonly ?Length $valueAsDimension = null,
         public readonly ?CurrencyAmount $valueAsCurrency = null,
-    ) {
-    }
+    ) {}
 }

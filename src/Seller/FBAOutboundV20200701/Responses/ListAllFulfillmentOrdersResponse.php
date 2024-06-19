@@ -19,12 +19,11 @@ final class ListAllFulfillmentOrdersResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?ListAllFulfillmentOrdersResult  $payload
+     * @param  ?ListAllFulfillmentOrdersResult  $payload  The request for the listAllFulfillmentOrders operation.
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?ListAllFulfillmentOrdersResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

@@ -35,6 +35,5 @@ final class PackageDetail extends Dto
         public readonly ?string $carrierName = null,
         public readonly ?string $shippingMethod = null,
         public readonly ?string $shipFromSupplySourceId = null,
-    ) {
-    }
+    ) {}
 }

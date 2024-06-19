@@ -27,6 +27,5 @@ final class ItemEligibilityPreview extends Dto
         public readonly bool $isEligibleForProgram,
         public readonly ?string $marketplaceId = null,
         public readonly ?array $ineligibilityReasonList = null,
-    ) {
-    }
+    ) {}
 }

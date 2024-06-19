@@ -30,6 +30,5 @@ final class GetSolicitationActionsForOrderResponse extends Response
         public readonly ?Links $links = null,
         public readonly ?Embedded $embedded = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

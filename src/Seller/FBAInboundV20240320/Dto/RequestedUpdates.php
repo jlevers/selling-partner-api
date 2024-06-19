@@ -23,6 +23,5 @@ final class RequestedUpdates extends Dto
     public function __construct(
         public readonly ?array $boxes = null,
         public readonly ?array $items = null,
-    ) {
-    }
+    ) {}
 }

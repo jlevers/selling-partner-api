@@ -21,6 +21,5 @@ final class InvoiceDetails extends Dto
     public function __construct(
         public readonly ?string $invoiceNumber = null,
         public readonly ?\DateTimeInterface $invoiceDate = null,
-    ) {
-    }
+    ) {}
 }

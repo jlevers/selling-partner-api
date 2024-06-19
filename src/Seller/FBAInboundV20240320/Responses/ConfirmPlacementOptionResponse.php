@@ -19,6 +19,5 @@ final class ConfirmPlacementOptionResponse extends Response
      */
     public function __construct(
         public readonly string $operationId,
-    ) {
-    }
+    ) {}
 }

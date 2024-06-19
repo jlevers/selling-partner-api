@@ -35,8 +35,7 @@ class CreateFulfillmentReturn extends Request implements HasBody
     public function __construct(
         protected string $sellerFulfillmentOrderId,
         public CreateFulfillmentReturnRequest $createFulfillmentReturnRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

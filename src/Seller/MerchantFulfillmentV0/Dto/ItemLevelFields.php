@@ -25,6 +25,5 @@ final class ItemLevelFields extends Dto
     public function __construct(
         public readonly string $asin,
         public readonly array $additionalInputs,
-    ) {
-    }
+    ) {}
 }

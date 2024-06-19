@@ -49,6 +49,5 @@ final class ContentModule extends Dto
         public readonly ?StandardTechSpecsModule $standardTechSpecs = null,
         public readonly ?StandardTextModule $standardText = null,
         public readonly ?StandardThreeImageTextModule $standardThreeImageText = null,
-    ) {
-    }
+    ) {}
 }

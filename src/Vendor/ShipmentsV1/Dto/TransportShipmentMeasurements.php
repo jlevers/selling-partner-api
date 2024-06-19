@@ -27,6 +27,5 @@ final class TransportShipmentMeasurements extends Dto
         public readonly ?int $totalPalletNonStackable = null,
         public readonly ?Weight $shipmentWeight = null,
         public readonly ?Volume $shipmentVolume = null,
-    ) {
-    }
+    ) {}
 }

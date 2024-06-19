@@ -25,6 +25,5 @@ final class GetRatesResponse extends Response
     public function __construct(
         public readonly ?GetRatesResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

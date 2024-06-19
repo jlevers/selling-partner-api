@@ -19,6 +19,5 @@ final class CreateFeedDocumentSpecification extends Dto
      */
     public function __construct(
         public readonly string $contentType,
-    ) {
-    }
+    ) {}
 }

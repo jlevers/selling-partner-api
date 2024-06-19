@@ -21,6 +21,5 @@ final class Packages extends Response
      */
     public function __construct(
         public readonly array $packages,
-    ) {
-    }
+    ) {}
 }

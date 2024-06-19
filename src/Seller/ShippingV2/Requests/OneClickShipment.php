@@ -34,8 +34,7 @@ class OneClickShipment extends Request implements HasBody
      */
     public function __construct(
         public OneClickShipmentRequest $oneClickShipmentRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

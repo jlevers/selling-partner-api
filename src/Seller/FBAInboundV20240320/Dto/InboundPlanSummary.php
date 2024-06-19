@@ -31,6 +31,5 @@ final class InboundPlanSummary extends Dto
         public readonly string $name,
         public readonly Address $sourceAddress,
         public readonly string $status,
-    ) {
-    }
+    ) {}
 }

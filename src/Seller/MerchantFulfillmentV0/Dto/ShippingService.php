@@ -60,6 +60,5 @@ final class ShippingService extends Dto
         public readonly ?AvailableShippingServiceOptions $availableShippingServiceOptions = null,
         public readonly ?array $availableLabelFormats = null,
         public readonly ?array $availableFormatOptionsForLabel = null,
-    ) {
-    }
+    ) {}
 }

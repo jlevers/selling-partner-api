@@ -21,6 +21,5 @@ final class TimeRange extends Dto
     public function __construct(
         public readonly ?\DateTimeInterface $start = null,
         public readonly ?\DateTimeInterface $end = null,
-    ) {
-    }
+    ) {}
 }

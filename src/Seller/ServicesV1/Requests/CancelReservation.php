@@ -31,8 +31,7 @@ class CancelReservation extends Request
     public function __construct(
         protected string $reservationId,
         protected array $marketplaceIds,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

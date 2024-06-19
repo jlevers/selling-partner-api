@@ -52,8 +52,7 @@ class GetPurchaseOrdersStatus extends Request
         protected ?string $itemReceiveStatus = null,
         protected ?string $orderingVendorCode = null,
         protected ?string $shipToPartyId = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -19,6 +19,5 @@ final class UpdateShipmentTrackingDetailsRequest extends Dto
      */
     public function __construct(
         public readonly TrackingDetailsInput $trackingDetails,
-    ) {
-    }
+    ) {}
 }

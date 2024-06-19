@@ -24,6 +24,5 @@ final class ProductTypeList extends Response
     public function __construct(
         public readonly array $productTypes,
         public readonly string $productTypeVersion,
-    ) {
-    }
+    ) {}
 }

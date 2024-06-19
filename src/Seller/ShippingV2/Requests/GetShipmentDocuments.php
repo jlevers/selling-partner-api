@@ -35,8 +35,7 @@ class GetShipmentDocuments extends Request
         protected string $packageClientReferenceId,
         protected ?string $format = null,
         protected ?float $dpi = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

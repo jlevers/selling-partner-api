@@ -21,6 +21,5 @@ final class InStorePickupConfiguration extends Dto
     public function __construct(
         public readonly ?bool $isSupported = null,
         public readonly ?ParkingConfiguration $parkingConfiguration = null,
-    ) {
-    }
+    ) {}
 }

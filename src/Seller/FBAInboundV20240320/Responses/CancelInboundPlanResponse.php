@@ -19,6 +19,5 @@ final class CancelInboundPlanResponse extends Response
      */
     public function __construct(
         public readonly string $operationId,
-    ) {
-    }
+    ) {}
 }

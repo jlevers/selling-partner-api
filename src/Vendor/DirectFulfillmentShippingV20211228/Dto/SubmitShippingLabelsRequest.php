@@ -21,6 +21,5 @@ final class SubmitShippingLabelsRequest extends Dto
      */
     public function __construct(
         public readonly ?array $shippingLabelRequests = null,
-    ) {
-    }
+    ) {}
 }

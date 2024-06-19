@@ -28,6 +28,5 @@ final class Categories extends Dto
         public readonly ?string $productCategoryId = null,
         public readonly ?string $productCategoryName = null,
         public readonly ?array $parent = null,
-    ) {
-    }
+    ) {}
 }

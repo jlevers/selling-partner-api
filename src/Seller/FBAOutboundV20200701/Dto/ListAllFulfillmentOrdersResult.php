@@ -23,6 +23,5 @@ final class ListAllFulfillmentOrdersResult extends Dto
     public function __construct(
         public readonly ?string $nextToken = null,
         public readonly ?array $fulfillmentOrders = null,
-    ) {
-    }
+    ) {}
 }

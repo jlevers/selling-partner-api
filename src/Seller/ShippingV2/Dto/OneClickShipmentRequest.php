@@ -47,6 +47,5 @@ final class OneClickShipmentRequest extends Dto
         public readonly ?array $taxDetails = null,
         public readonly ?ShipperInstruction $shipperInstruction = null,
         public readonly ?AccessPointDetails $destinationAccessPointDetails = null,
-    ) {
-    }
+    ) {}
 }

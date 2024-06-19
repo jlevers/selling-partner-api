@@ -31,6 +31,5 @@ final class StandardComparisonProductBlock extends Dto
         public readonly ?string $asin = null,
         public readonly ?bool $highlight = null,
         public readonly ?array $metrics = null,
-    ) {
-    }
+    ) {}
 }

@@ -27,6 +27,5 @@ final class OrderItemAcknowledgement extends Dto
         public readonly ?\DateTimeInterface $scheduledShipDate = null,
         public readonly ?\DateTimeInterface $scheduledDeliveryDate = null,
         public readonly ?string $rejectionReason = null,
-    ) {
-    }
+    ) {}
 }

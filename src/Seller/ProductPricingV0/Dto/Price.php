@@ -27,6 +27,5 @@ final class Price extends Dto
         public readonly ?string $sellerSku = null,
         public readonly ?string $asin = null,
         public readonly ?Product $product = null,
-    ) {
-    }
+    ) {}
 }

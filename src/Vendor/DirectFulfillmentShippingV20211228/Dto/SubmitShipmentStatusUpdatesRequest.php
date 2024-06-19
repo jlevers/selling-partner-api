@@ -21,6 +21,5 @@ final class SubmitShipmentStatusUpdatesRequest extends Dto
      */
     public function __construct(
         public readonly ?array $shipmentStatusUpdates = null,
-    ) {
-    }
+    ) {}
 }

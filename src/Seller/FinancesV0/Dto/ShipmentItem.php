@@ -69,6 +69,5 @@ final class ShipmentItem extends Dto
         public readonly ?array $promotionAdjustmentList = null,
         public readonly ?Currency $costOfPointsGranted = null,
         public readonly ?Currency $costOfPointsReturned = null,
-    ) {
-    }
+    ) {}
 }

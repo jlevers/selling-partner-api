@@ -31,8 +31,7 @@ class SubmitShippingLabelRequest extends Request implements HasBody
 
     public function __construct(
         public SubmitShippingLabelsRequest $submitShippingLabelsRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

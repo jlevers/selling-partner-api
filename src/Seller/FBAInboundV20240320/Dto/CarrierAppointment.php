@@ -21,6 +21,5 @@ final class CarrierAppointment extends Dto
     public function __construct(
         public readonly \DateTimeInterface $endTime,
         public readonly \DateTimeInterface $startTime,
-    ) {
-    }
+    ) {}
 }

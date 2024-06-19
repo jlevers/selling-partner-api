@@ -31,6 +31,5 @@ final class ItemSearchResults extends Response
         public readonly Pagination $pagination,
         public readonly Refinements $refinements,
         public readonly array $items,
-    ) {
-    }
+    ) {}
 }

@@ -30,8 +30,7 @@ class CancelServiceJobByServiceJobId extends Request
     public function __construct(
         protected string $serviceJobId,
         protected string $cancellationReasonCode,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -23,6 +23,5 @@ final class InvalidReturnItem extends Dto
         public readonly string $sellerReturnItemId,
         public readonly string $sellerFulfillmentOrderItemId,
         public readonly InvalidItemReason $invalidItemReason,
-    ) {
-    }
+    ) {}
 }

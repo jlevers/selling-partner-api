@@ -26,6 +26,5 @@ final class FeedDocument extends Response
         public readonly string $feedDocumentId,
         public readonly string $url,
         public readonly ?string $compressionAlgorithm = null,
-    ) {
-    }
+    ) {}
 }

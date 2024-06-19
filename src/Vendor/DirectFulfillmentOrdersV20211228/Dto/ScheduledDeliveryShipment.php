@@ -23,6 +23,5 @@ final class ScheduledDeliveryShipment extends Dto
         public readonly ?string $scheduledDeliveryServiceType = null,
         public readonly ?\DateTimeInterface $earliestNominatedDeliveryDate = null,
         public readonly ?\DateTimeInterface $latestNominatedDeliveryDate = null,
-    ) {
-    }
+    ) {}
 }

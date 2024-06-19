@@ -23,6 +23,5 @@ final class TransportationSelection extends Dto
         public readonly string $shipmentId,
         public readonly string $transportationOptionId,
         public readonly ?ContactInformation $contactInformation = null,
-    ) {
-    }
+    ) {}
 }

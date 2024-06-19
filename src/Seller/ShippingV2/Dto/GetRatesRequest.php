@@ -47,6 +47,5 @@ final class GetRatesRequest extends Dto
         public readonly ?array $clientReferenceDetails = null,
         public readonly ?string $shipmentType = null,
         public readonly ?AccessPointDetails $destinationAccessPointDetails = null,
-    ) {
-    }
+    ) {}
 }

@@ -35,6 +35,5 @@ final class PartneredSmallParcelPackageOutput extends Dto
         public readonly string $carrierName,
         public readonly string $trackingId,
         public readonly string $packageStatus,
-    ) {
-    }
+    ) {}
 }

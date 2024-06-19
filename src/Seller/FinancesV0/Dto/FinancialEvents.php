@@ -155,6 +155,5 @@ final class FinancialEvents extends Dto
         public readonly ?array $failedAdhocDisbursementEventList = null,
         public readonly ?array $valueAddedServiceChargeEventList = null,
         public readonly ?array $capacityReservationBillingEventList = null,
-    ) {
-    }
+    ) {}
 }

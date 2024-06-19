@@ -31,6 +31,5 @@ final class TransportationDetails extends Dto
         public readonly ?\DateTimeInterface $shipmentDeliveryDate = null,
         public readonly ?CarrierDetails $carrierDetails = null,
         public readonly ?string $billOfLadingNumber = null,
-    ) {
-    }
+    ) {}
 }

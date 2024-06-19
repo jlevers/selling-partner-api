@@ -26,6 +26,5 @@ final class ReportDocument extends Response
         public readonly string $reportDocumentId,
         public readonly string $url,
         public readonly ?string $compressionAlgorithm = null,
-    ) {
-    }
+    ) {}
 }

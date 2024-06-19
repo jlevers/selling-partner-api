@@ -25,6 +25,5 @@ final class GetOrderItemsBuyerInfoResponse extends Response
     public function __construct(
         public readonly ?OrderItemsBuyerInfoList $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

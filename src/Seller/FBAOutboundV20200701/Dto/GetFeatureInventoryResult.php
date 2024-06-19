@@ -27,6 +27,5 @@ final class GetFeatureInventoryResult extends Dto
         public readonly string $featureName,
         public readonly ?string $nextToken = null,
         public readonly ?array $featureSkus = null,
-    ) {
-    }
+    ) {}
 }

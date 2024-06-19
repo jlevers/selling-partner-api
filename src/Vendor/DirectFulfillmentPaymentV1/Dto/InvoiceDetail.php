@@ -48,6 +48,5 @@ final class InvoiceDetail extends Dto
         public readonly ?array $taxTotals = null,
         public readonly ?array $additionalDetails = null,
         public readonly ?array $chargeDetails = null,
-    ) {
-    }
+    ) {}
 }

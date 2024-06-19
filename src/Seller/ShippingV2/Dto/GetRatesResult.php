@@ -25,6 +25,5 @@ final class GetRatesResult extends Dto
         public readonly string $requestToken,
         public readonly array $rates,
         public readonly ?array $ineligibleRates = null,
-    ) {
-    }
+    ) {}
 }

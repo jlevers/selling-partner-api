@@ -26,6 +26,5 @@ final class GetEligibleShipmentServicesRequest extends Dto
     public function __construct(
         public readonly ShipmentRequestDetails $shipmentRequestDetails,
         public readonly ?ShippingOfferingFilter $shippingOfferingFilter = null,
-    ) {
-    }
+    ) {}
 }

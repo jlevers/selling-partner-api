@@ -25,8 +25,7 @@ class CancelShipment extends Request
 
     public function __construct(
         protected string $shipmentId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

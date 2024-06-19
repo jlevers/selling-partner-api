@@ -21,6 +21,5 @@ final class AccessibilityAttributes extends Dto
     public function __construct(
         public readonly ?string $distance = null,
         public readonly ?int $driveTime = null,
-    ) {
-    }
+    ) {}
 }

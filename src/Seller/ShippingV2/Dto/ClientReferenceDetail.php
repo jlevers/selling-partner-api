@@ -21,6 +21,5 @@ final class ClientReferenceDetail extends Dto
     public function __construct(
         public readonly string $clientReferenceType,
         public readonly string $clientReferenceId,
-    ) {
-    }
+    ) {}
 }

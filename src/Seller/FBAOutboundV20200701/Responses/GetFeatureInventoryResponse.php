@@ -25,6 +25,5 @@ final class GetFeatureInventoryResponse extends Response
     public function __construct(
         public readonly ?GetFeatureInventoryResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

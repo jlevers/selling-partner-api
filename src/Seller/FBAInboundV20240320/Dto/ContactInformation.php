@@ -23,6 +23,5 @@ final class ContactInformation extends Dto
         public readonly string $name,
         public readonly string $phoneNumber,
         public readonly ?string $email = null,
-    ) {
-    }
+    ) {}
 }

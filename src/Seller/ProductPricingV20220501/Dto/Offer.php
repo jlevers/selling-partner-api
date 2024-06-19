@@ -35,6 +35,5 @@ final class Offer extends Dto
         public readonly ?array $shippingOptions = null,
         public readonly ?Points $points = null,
         public readonly ?PrimeDetails $primeDetails = null,
-    ) {
-    }
+    ) {}
 }

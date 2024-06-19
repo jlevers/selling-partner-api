@@ -21,6 +21,5 @@ final class DestinationResourceSpecification extends Dto
     public function __construct(
         public readonly ?SqsResource $sqs = null,
         public readonly ?EventBridgeResourceSpecification $eventBridge = null,
-    ) {
-    }
+    ) {}
 }

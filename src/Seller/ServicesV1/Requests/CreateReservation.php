@@ -35,8 +35,7 @@ class CreateReservation extends Request implements HasBody
     public function __construct(
         public CreateReservationRequest $createReservationRequest,
         protected array $marketplaceIds,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

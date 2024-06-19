@@ -31,6 +31,5 @@ final class BatchRequest extends Dto
         public readonly string $uri,
         public readonly string $method,
         public readonly ?array $headers = null,
-    ) {
-    }
+    ) {}
 }

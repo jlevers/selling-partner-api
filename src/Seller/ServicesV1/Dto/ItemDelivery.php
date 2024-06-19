@@ -21,6 +21,5 @@ final class ItemDelivery extends Dto
     public function __construct(
         public readonly ?\DateTimeInterface $estimatedDeliveryDate = null,
         public readonly ?ItemDeliveryPromise $itemDeliveryPromise = null,
-    ) {
-    }
+    ) {}
 }

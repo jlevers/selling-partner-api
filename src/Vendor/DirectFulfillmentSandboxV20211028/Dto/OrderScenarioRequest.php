@@ -21,6 +21,5 @@ final class OrderScenarioRequest extends Dto
     public function __construct(
         public readonly PartyIdentification $sellingParty,
         public readonly PartyIdentification $shipFromParty,
-    ) {
-    }
+    ) {}
 }

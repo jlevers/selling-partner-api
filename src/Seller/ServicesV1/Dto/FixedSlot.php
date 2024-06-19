@@ -27,6 +27,5 @@ final class FixedSlot extends Dto
         public readonly ?int $availableCapacity = null,
         public readonly ?int $encumberedCapacity = null,
         public readonly ?int $reservedCapacity = null,
-    ) {
-    }
+    ) {}
 }

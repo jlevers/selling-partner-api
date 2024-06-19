@@ -25,6 +25,5 @@ final class GetCustomerInvoicesResponse extends Response
     public function __construct(
         public readonly ?CustomerInvoiceList $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

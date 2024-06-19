@@ -25,6 +25,5 @@ final class PurchaseShipmentResult extends Dto
         public readonly string $shipmentId,
         public readonly array $packageDocumentDetails,
         public readonly Promise $promise,
-    ) {
-    }
+    ) {}
 }

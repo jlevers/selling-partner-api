@@ -23,6 +23,5 @@ final class TrackingAddress extends Dto
         public readonly string $city,
         public readonly string $state,
         public readonly string $country,
-    ) {
-    }
+    ) {}
 }

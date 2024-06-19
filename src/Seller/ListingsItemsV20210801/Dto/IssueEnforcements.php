@@ -23,6 +23,5 @@ final class IssueEnforcements extends Dto
     public function __construct(
         public readonly array $actions,
         public readonly IssueExemption $exemption,
-    ) {
-    }
+    ) {}
 }

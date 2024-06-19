@@ -59,6 +59,5 @@ final class CreateInboundShipmentPlanRequest extends Dto
         public readonly array $inboundShipmentPlanRequestItems,
         public readonly ?string $shipToCountryCode = null,
         public readonly ?string $shipToCountrySubdivisionCode = null,
-    ) {
-    }
+    ) {}
 }

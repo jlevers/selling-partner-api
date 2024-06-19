@@ -23,6 +23,5 @@ final class GetDocumentResponse extends Response
     public function __construct(
         public readonly string $documentId,
         public readonly string $documentUrl,
-    ) {
-    }
+    ) {}
 }

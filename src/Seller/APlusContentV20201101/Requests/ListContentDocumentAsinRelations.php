@@ -37,8 +37,7 @@ class ListContentDocumentAsinRelations extends Request
         protected ?array $includedDataSet = null,
         protected ?array $asinSet = null,
         protected ?string $pageToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

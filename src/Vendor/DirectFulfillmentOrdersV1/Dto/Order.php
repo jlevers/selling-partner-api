@@ -21,6 +21,5 @@ final class Order extends Dto
     public function __construct(
         public readonly string $purchaseOrderNumber,
         public readonly ?OrderDetails $orderDetails = null,
-    ) {
-    }
+    ) {}
 }

@@ -28,6 +28,5 @@ final class PreferredDeliveryTime extends Dto
     public function __construct(
         public readonly ?array $businessHours = null,
         public readonly ?array $exceptionDates = null,
-    ) {
-    }
+    ) {}
 }

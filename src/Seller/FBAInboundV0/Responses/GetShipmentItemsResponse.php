@@ -25,6 +25,5 @@ final class GetShipmentItemsResponse extends Response
     public function __construct(
         public readonly ?GetShipmentItemsResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

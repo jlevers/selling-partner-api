@@ -27,6 +27,5 @@ final class Contact extends Dto
         public readonly string $phone,
         public readonly string $email,
         public readonly ?string $fax = null,
-    ) {
-    }
+    ) {}
 }

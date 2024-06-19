@@ -21,6 +21,5 @@ final class TemporarilyUnavailableCarrier extends Dto
      */
     public function __construct(
         public readonly string $carrierName,
-    ) {
-    }
+    ) {}
 }

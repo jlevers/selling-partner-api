@@ -30,8 +30,7 @@ class SubmitShipmentStatusUpdates extends Request implements HasBody
 
     public function __construct(
         public SubmitShipmentStatusUpdatesRequest $submitShipmentStatusUpdatesRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

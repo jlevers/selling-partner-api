@@ -42,8 +42,7 @@ class PutListingsItem extends Request implements HasBody
         public ListingsItemPutRequest $listingsItemPutRequest,
         protected array $marketplaceIds,
         protected ?string $issueLocale = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

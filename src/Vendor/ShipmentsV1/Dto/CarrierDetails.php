@@ -27,6 +27,5 @@ final class CarrierDetails extends Dto
         public readonly ?string $phone = null,
         public readonly ?string $email = null,
         public readonly ?string $shipmentReferenceNumber = null,
-    ) {
-    }
+    ) {}
 }

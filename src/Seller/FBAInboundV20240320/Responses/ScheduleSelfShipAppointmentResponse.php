@@ -20,6 +20,5 @@ final class ScheduleSelfShipAppointmentResponse extends Response
      */
     public function __construct(
         public readonly SelfShipAppointmentDetails $selfShipAppointmentDetails,
-    ) {
-    }
+    ) {}
 }

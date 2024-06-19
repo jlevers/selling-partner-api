@@ -28,8 +28,7 @@ class GetPurchaseOrder extends Request
      */
     public function __construct(
         protected string $purchaseOrderNumber,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

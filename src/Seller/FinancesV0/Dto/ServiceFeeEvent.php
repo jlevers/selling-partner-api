@@ -43,6 +43,5 @@ final class ServiceFeeEvent extends Dto
         public readonly ?string $fnSku = null,
         public readonly ?string $feeDescription = null,
         public readonly ?string $asin = null,
-    ) {
-    }
+    ) {}
 }

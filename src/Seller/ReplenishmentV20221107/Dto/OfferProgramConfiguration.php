@@ -23,6 +23,5 @@ final class OfferProgramConfiguration extends Dto
         public readonly ?OfferProgramConfigurationPreferences $preferences = null,
         public readonly ?OfferProgramConfigurationPromotions $promotions = null,
         public readonly ?string $enrollmentMethod = null,
-    ) {
-    }
+    ) {}
 }

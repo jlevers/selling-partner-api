@@ -15,6 +15,7 @@ use SellingPartnerApi\Dto;
 final class TrackingEvent extends Dto
 {
     /**
+     * @param  \DateTimeInterface  $eventDate  Date timestamp
      * @param  TrackingAddress  $eventAddress  Address information for tracking the package.
      * @param  string  $eventCode  The event code for the delivery event.
      * @param  string  $eventDescription  A description for the corresponding event code.
@@ -24,6 +25,5 @@ final class TrackingEvent extends Dto
         public readonly TrackingAddress $eventAddress,
         public readonly string $eventCode,
         public readonly string $eventDescription,
-    ) {
-    }
+    ) {}
 }

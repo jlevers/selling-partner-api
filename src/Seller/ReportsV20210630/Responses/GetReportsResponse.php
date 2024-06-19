@@ -23,6 +23,5 @@ final class GetReportsResponse extends Response
     public function __construct(
         public readonly array $reports,
         public readonly ?string $nextToken = null,
-    ) {
-    }
+    ) {}
 }

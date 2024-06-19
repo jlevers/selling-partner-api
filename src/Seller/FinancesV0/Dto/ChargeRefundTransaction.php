@@ -23,6 +23,5 @@ final class ChargeRefundTransaction extends Dto
     public function __construct(
         public readonly ?Currency $chargeAmount = null,
         public readonly ?string $chargeType = null,
-    ) {
-    }
+    ) {}
 }

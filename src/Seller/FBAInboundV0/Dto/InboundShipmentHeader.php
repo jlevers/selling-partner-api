@@ -49,6 +49,5 @@ final class InboundShipmentHeader extends Dto
         public readonly string $labelPrepPreference,
         public readonly ?bool $areCasesRequired = null,
         public readonly ?string $intendedBoxContentsSource = null,
-    ) {
-    }
+    ) {}
 }

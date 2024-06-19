@@ -34,8 +34,7 @@ class GetFeaturedOfferExpectedPriceBatch extends Request implements HasBody
      */
     public function __construct(
         public GetFeaturedOfferExpectedPriceBatchRequest $getFeaturedOfferExpectedPriceBatchRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

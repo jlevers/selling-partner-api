@@ -25,6 +25,5 @@ final class GetAccountResponse extends Response
     public function __construct(
         public readonly ?Account $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

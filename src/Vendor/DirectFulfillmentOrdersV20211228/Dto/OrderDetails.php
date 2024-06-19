@@ -36,6 +36,5 @@ final class OrderDetails extends Dto
         public readonly array $items,
         public readonly ?string $orderStatus = null,
         public readonly ?TaxItemDetails $taxTotal = null,
-    ) {
-    }
+    ) {}
 }

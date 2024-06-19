@@ -34,6 +34,5 @@ final class Carton extends Dto
         public readonly ?Dimensions $dimensions = null,
         public readonly ?Weight $weight = null,
         public readonly ?string $trackingNumber = null,
-    ) {
-    }
+    ) {}
 }

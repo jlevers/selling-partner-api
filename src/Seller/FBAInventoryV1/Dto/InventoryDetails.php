@@ -31,6 +31,5 @@ final class InventoryDetails extends Dto
         public readonly ?ReservedQuantity $reservedQuantity = null,
         public readonly ?ResearchingQuantity $researchingQuantity = null,
         public readonly ?UnfulfillableQuantity $unfulfillableQuantity = null,
-    ) {
-    }
+    ) {}
 }

@@ -25,6 +25,5 @@ final class EstimateTransportResponse extends Response
     public function __construct(
         public readonly ?CommonTransportResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

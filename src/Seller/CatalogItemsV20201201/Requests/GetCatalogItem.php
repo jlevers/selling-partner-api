@@ -35,8 +35,7 @@ class GetCatalogItem extends Request
         protected array $marketplaceIds,
         protected ?array $includedData = null,
         protected ?string $locale = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

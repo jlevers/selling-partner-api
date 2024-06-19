@@ -36,8 +36,7 @@ class UpdateSupplySource extends Request implements HasBody
     public function __construct(
         protected string $supplySourceId,
         public UpdateSupplySourceRequest $updateSupplySourceRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

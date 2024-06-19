@@ -37,8 +37,7 @@ class GetListingsItem extends Request
         protected array $marketplaceIds,
         protected ?string $issueLocale = null,
         protected ?array $includedData = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

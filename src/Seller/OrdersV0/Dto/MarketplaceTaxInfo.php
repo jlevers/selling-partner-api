@@ -23,6 +23,5 @@ final class MarketplaceTaxInfo extends Dto
      */
     public function __construct(
         public readonly ?array $taxClassifications = null,
-    ) {
-    }
+    ) {}
 }

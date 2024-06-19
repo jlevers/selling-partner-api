@@ -25,6 +25,5 @@ final class GetShippingLabelListResponse extends Response
     public function __construct(
         public readonly ?ShippingLabelList $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

@@ -31,6 +31,5 @@ final class CompetitiveSummaryRequest extends Dto
         public readonly string $method,
         public readonly string $uri,
         public readonly ?array $lowestPricedOffersInputs = null,
-    ) {
-    }
+    ) {}
 }

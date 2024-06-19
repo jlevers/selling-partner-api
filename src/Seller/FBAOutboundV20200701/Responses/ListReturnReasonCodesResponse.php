@@ -19,12 +19,11 @@ final class ListReturnReasonCodesResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?ListReturnReasonCodesResult  $payload
+     * @param  ?ListReturnReasonCodesResult  $payload  The request for the listReturnReasonCodes operation.
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?ListReturnReasonCodesResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

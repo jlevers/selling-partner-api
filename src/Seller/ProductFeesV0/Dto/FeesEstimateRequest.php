@@ -35,6 +35,5 @@ final class FeesEstimateRequest extends Dto
         public readonly string $identifier,
         public readonly ?bool $isAmazonFulfilled = null,
         public readonly ?string $optionalFulfillmentProgram = null,
-    ) {
-    }
+    ) {}
 }

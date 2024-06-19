@@ -25,6 +25,5 @@ final class ListTransportationOptionsResponse extends Response
     public function __construct(
         public readonly array $transportationOptions,
         public readonly ?Pagination $pagination = null,
-    ) {
-    }
+    ) {}
 }

@@ -29,6 +29,5 @@ final class TdsReimbursementEvent extends Dto
         public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $tdsOrderId = null,
         public readonly ?Currency $reimbursedAmount = null,
-    ) {
-    }
+    ) {}
 }

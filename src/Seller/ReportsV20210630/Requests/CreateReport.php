@@ -34,8 +34,7 @@ class CreateReport extends Request implements HasBody
      */
     public function __construct(
         public CreateReportSpecification $createReportSpecification,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

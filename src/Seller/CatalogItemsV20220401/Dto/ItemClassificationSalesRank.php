@@ -25,6 +25,5 @@ final class ItemClassificationSalesRank extends Dto
         public readonly string $title,
         public readonly int $rank,
         public readonly ?string $link = null,
-    ) {
-    }
+    ) {}
 }

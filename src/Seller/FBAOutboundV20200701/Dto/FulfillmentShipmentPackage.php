@@ -18,13 +18,14 @@ final class FulfillmentShipmentPackage extends Dto
      * @param  int  $packageNumber  Identifies a package in a shipment.
      * @param  string  $carrierCode  Identifies the carrier who will deliver the shipment to the recipient.
      * @param  ?string  $trackingNumber  The tracking number, if provided, can be used to obtain tracking and delivery information.
-     * @param  ?\DateTimeInterface  $estimatedArrivalDate
+     * @param  ?\DateTimeInterface  $estimatedArrivalDate  Date timestamp
+     * @param  ?LockerDetails  $lockerDetails  The locker details, if provided can be used to access locker delivery box.
      */
     public function __construct(
         public readonly int $packageNumber,
         public readonly string $carrierCode,
         public readonly ?string $trackingNumber = null,
         public readonly ?\DateTimeInterface $estimatedArrivalDate = null,
-    ) {
-    }
+        public readonly ?LockerDetails $lockerDetails = null,
+    ) {}
 }

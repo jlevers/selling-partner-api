@@ -24,6 +24,5 @@ final class GetQueriesResponse extends Response
     public function __construct(
         public readonly array $queries,
         public readonly ?Pagination2 $pagination = null,
-    ) {
-    }
+    ) {}
 }

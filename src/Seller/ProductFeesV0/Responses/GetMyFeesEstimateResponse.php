@@ -25,6 +25,5 @@ final class GetMyFeesEstimateResponse extends Response
     public function __construct(
         public readonly ?GetMyFeesEstimateResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

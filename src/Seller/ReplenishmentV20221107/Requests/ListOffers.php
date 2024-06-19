@@ -34,8 +34,7 @@ class ListOffers extends Request implements HasBody
      */
     public function __construct(
         public ListOffersRequest $listOffersRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

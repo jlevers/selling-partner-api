@@ -25,6 +25,5 @@ final class DangerousGoodsDetails extends Dto
         public readonly ?string $transportationRegulatoryClass = null,
         public readonly ?string $packingGroup = null,
         public readonly ?string $packingInstruction = null,
-    ) {
-    }
+    ) {}
 }

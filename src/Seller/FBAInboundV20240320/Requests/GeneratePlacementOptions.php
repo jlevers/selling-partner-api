@@ -36,8 +36,7 @@ class GeneratePlacementOptions extends Request implements HasBody
     public function __construct(
         protected string $inboundPlanId,
         public GeneratePlacementOptionsRequest $generatePlacementOptionsRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

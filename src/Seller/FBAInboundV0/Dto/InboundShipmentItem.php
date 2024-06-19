@@ -46,6 +46,5 @@ final class InboundShipmentItem extends Dto
         public readonly ?int $quantityInCase = null,
         public readonly ?\DateTimeInterface $releaseDate = null,
         public readonly ?array $prepDetailsList = null,
-    ) {
-    }
+    ) {}
 }

@@ -53,6 +53,5 @@ final class AffordabilityExpenseEvent extends Dto
         public readonly ?string $transactionType = null,
         public readonly ?Currency $baseExpense = null,
         public readonly ?Currency $totalExpense = null,
-    ) {
-    }
+    ) {}
 }

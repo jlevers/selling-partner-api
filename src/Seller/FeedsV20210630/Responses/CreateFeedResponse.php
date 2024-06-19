@@ -19,6 +19,5 @@ final class CreateFeedResponse extends Response
      */
     public function __construct(
         public readonly string $feedId,
-    ) {
-    }
+    ) {}
 }

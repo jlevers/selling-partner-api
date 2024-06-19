@@ -35,6 +35,5 @@ final class Item extends Dto
         public readonly int $quantity,
         public readonly ?string $expiration = null,
         public readonly ?string $manufacturingLotCode = null,
-    ) {
-    }
+    ) {}
 }

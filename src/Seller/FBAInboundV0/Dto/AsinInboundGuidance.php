@@ -29,6 +29,5 @@ final class AsinInboundGuidance extends Dto
         public readonly string $asin,
         public readonly string $inboundGuidance,
         public readonly ?array $guidanceReasonList = null,
-    ) {
-    }
+    ) {}
 }

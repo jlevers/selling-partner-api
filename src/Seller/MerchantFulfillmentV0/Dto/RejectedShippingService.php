@@ -35,6 +35,5 @@ final class RejectedShippingService extends Dto
         public readonly string $shippingServiceId,
         public readonly string $rejectionReasonCode,
         public readonly ?string $rejectionReasonMessage = null,
-    ) {
-    }
+    ) {}
 }

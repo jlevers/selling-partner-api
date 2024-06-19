@@ -21,6 +21,5 @@ final class LtlTrackingDetailInput extends Dto
     public function __construct(
         public readonly array $freightBillNumber,
         public readonly ?string $billOfLadingNumber = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class CompetitiveSummaryResponse extends Dto
     public function __construct(
         public readonly HttpStatusLine $status,
         public readonly CompetitiveSummaryResponseBody $body,
-    ) {
-    }
+    ) {}
 }

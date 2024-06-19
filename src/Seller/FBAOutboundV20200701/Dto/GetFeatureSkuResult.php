@@ -32,6 +32,5 @@ final class GetFeatureSkuResult extends Dto
         public readonly bool $isEligible,
         public readonly ?array $ineligibleReasons = null,
         public readonly ?FeatureSku $skuInfo = null,
-    ) {
-    }
+    ) {}
 }

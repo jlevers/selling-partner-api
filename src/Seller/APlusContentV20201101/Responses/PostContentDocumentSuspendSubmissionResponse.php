@@ -22,6 +22,5 @@ final class PostContentDocumentSuspendSubmissionResponse extends Response
      */
     public function __construct(
         public readonly ?array $warnings = null,
-    ) {
-    }
+    ) {}
 }

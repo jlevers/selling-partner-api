@@ -19,6 +19,5 @@ final class PostContentDocumentRequest extends Dto
      */
     public function __construct(
         public readonly ContentDocument $contentDocument,
-    ) {
-    }
+    ) {}
 }

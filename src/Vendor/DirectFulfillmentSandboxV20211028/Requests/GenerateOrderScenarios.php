@@ -34,8 +34,7 @@ class GenerateOrderScenarios extends Request implements HasBody
      */
     public function __construct(
         public GenerateOrderScenarioRequest $generateOrderScenarioRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

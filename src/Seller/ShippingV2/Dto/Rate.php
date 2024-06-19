@@ -51,6 +51,5 @@ final class Rate extends Dto
         public readonly ?array $rateItemList = null,
         public readonly ?string $paymentType = null,
         public readonly ?Benefits $benefits = null,
-    ) {
-    }
+    ) {}
 }

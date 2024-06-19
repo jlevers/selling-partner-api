@@ -25,6 +25,5 @@ final class SupportedDocumentSpecification extends Dto
         public readonly string $format,
         public readonly DocumentSize $size,
         public readonly array $printOptions,
-    ) {
-    }
+    ) {}
 }

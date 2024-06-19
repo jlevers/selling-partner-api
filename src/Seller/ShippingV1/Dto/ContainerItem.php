@@ -25,6 +25,5 @@ final class ContainerItem extends Dto
         public readonly Currency $unitPrice,
         public readonly Weight $unitWeight,
         public readonly string $title,
-    ) {
-    }
+    ) {}
 }

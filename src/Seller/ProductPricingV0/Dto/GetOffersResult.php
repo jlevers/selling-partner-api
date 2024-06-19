@@ -45,6 +45,5 @@ final class GetOffersResult extends Dto
         public readonly array $offers,
         public readonly ?string $asin = null,
         public readonly ?string $sku = null,
-    ) {
-    }
+    ) {}
 }

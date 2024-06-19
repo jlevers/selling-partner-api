@@ -23,6 +23,5 @@ final class CreateSupplySourceRequest extends Dto
         public readonly string $supplySourceCode,
         public readonly string $alias,
         public readonly Address $address,
-    ) {
-    }
+    ) {}
 }

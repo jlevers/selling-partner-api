@@ -35,8 +35,7 @@ class CreateContentDocument extends Request implements HasBody
     public function __construct(
         public PostContentDocumentRequest $postContentDocumentRequest,
         protected string $marketplaceId,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

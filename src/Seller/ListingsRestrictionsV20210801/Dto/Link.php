@@ -25,6 +25,5 @@ final class Link extends Dto
         public readonly string $verb,
         public readonly ?string $title = null,
         public readonly ?string $type = null,
-    ) {
-    }
+    ) {}
 }

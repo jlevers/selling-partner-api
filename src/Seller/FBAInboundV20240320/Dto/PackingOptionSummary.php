@@ -21,6 +21,5 @@ final class PackingOptionSummary extends Dto
     public function __construct(
         public readonly string $packingOptionId,
         public readonly string $status,
-    ) {
-    }
+    ) {}
 }

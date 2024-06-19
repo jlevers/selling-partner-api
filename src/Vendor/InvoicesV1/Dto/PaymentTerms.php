@@ -25,6 +25,5 @@ final class PaymentTerms extends Dto
         public readonly ?string $discountPercent = null,
         public readonly ?float $discountDueDays = null,
         public readonly ?float $netDueDays = null,
-    ) {
-    }
+    ) {}
 }

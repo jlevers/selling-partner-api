@@ -29,6 +29,5 @@ final class FeaturedOfferExpectedPriceRequest extends Dto
         public readonly string $sku,
         public readonly ?array $body = null,
         public readonly ?array $headers = null,
-    ) {
-    }
+    ) {}
 }

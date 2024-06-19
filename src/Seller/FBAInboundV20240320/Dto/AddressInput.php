@@ -37,6 +37,5 @@ final class AddressInput extends Dto
         public readonly ?string $companyName = null,
         public readonly ?string $email = null,
         public readonly ?string $stateOrProvinceCode = null,
-    ) {
-    }
+    ) {}
 }

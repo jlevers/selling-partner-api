@@ -32,6 +32,5 @@ final class DeliveryPreferences extends Dto
         public readonly ?PreferredDeliveryTime $preferredDeliveryTime = null,
         public readonly ?array $otherAttributes = null,
         public readonly ?string $addressInstructions = null,
-    ) {
-    }
+    ) {}
 }

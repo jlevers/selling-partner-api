@@ -20,6 +20,5 @@ final class PurchaseShipmentResponse extends Response
      */
     public function __construct(
         public readonly ?PurchaseShipmentResult $payload = null,
-    ) {
-    }
+    ) {}
 }

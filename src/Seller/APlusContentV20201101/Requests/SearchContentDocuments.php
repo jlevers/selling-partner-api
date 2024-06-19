@@ -31,8 +31,7 @@ class SearchContentDocuments extends Request
     public function __construct(
         protected string $marketplaceId,
         protected ?string $pageToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

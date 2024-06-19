@@ -23,6 +23,5 @@ final class InvalidAsin extends Dto
     public function __construct(
         public readonly ?string $asin = null,
         public readonly ?string $errorReason = null,
-    ) {
-    }
+    ) {}
 }

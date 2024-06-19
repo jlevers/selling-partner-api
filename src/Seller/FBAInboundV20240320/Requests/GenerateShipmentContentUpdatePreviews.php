@@ -38,8 +38,7 @@ class GenerateShipmentContentUpdatePreviews extends Request implements HasBody
         protected string $inboundPlanId,
         protected string $shipmentId,
         public GenerateShipmentContentUpdatePreviewsRequest $generateShipmentContentUpdatePreviewsRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

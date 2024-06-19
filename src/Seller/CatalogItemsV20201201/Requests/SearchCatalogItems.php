@@ -45,8 +45,7 @@ class SearchCatalogItems extends Request
         protected ?string $pageToken = null,
         protected ?string $keywordsLocale = null,
         protected ?string $locale = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

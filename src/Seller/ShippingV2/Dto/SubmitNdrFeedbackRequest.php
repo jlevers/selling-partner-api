@@ -23,6 +23,5 @@ final class SubmitNdrFeedbackRequest extends Dto
         public readonly string $trackingId,
         public readonly string $ndrAction,
         public readonly ?NdrRequestData $ndrRequestData = null,
-    ) {
-    }
+    ) {}
 }

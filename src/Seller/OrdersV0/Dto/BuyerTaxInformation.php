@@ -32,6 +32,5 @@ final class BuyerTaxInformation extends Dto
         public readonly ?string $buyerBusinessAddress = null,
         public readonly ?string $buyerTaxRegistrationId = null,
         public readonly ?string $buyerTaxOffice = null,
-    ) {
-    }
+    ) {}
 }

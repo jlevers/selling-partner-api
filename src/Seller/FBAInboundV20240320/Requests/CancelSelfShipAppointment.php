@@ -38,8 +38,7 @@ class CancelSelfShipAppointment extends Request implements HasBody
         protected string $inboundPlanId,
         protected string $shipmentId,
         public CancelSelfShipAppointmentRequest $cancelSelfShipAppointmentRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

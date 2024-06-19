@@ -23,6 +23,5 @@ final class ListingsItemPatchRequest extends Dto
     public function __construct(
         public readonly string $productType,
         public readonly array $patches,
-    ) {
-    }
+    ) {}
 }

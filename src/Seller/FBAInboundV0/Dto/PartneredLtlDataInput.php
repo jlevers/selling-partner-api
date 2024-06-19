@@ -43,6 +43,5 @@ final class PartneredLtlDataInput extends Dto
         public readonly ?array $palletList = null,
         public readonly ?Weight $totalWeight = null,
         public readonly ?Amount $sellerDeclaredValue = null,
-    ) {
-    }
+    ) {}
 }

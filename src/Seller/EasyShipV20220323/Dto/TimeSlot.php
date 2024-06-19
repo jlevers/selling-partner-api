@@ -25,6 +25,5 @@ final class TimeSlot extends Dto
         public readonly ?\DateTimeInterface $startTime = null,
         public readonly ?\DateTimeInterface $endTime = null,
         public readonly ?string $handoverMethod = null,
-    ) {
-    }
+    ) {}
 }

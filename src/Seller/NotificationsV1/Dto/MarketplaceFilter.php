@@ -19,6 +19,5 @@ final class MarketplaceFilter extends Dto
      */
     public function __construct(
         public readonly ?array $marketplaceIds = null,
-    ) {
-    }
+    ) {}
 }

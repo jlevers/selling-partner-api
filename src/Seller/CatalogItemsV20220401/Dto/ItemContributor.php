@@ -21,6 +21,5 @@ final class ItemContributor extends Dto
     public function __construct(
         public readonly ItemContributorRole $role,
         public readonly string $value,
-    ) {
-    }
+    ) {}
 }

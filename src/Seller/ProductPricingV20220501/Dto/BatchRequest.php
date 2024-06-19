@@ -25,6 +25,5 @@ final class BatchRequest extends Dto
         public readonly string $method,
         public readonly ?array $body = null,
         public readonly ?array $headers = null,
-    ) {
-    }
+    ) {}
 }

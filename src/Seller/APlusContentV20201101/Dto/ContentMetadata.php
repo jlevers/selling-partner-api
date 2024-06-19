@@ -27,6 +27,5 @@ final class ContentMetadata extends Dto
         public readonly string $status,
         public readonly array $badgeSet,
         public readonly \DateTimeInterface $updateTime,
-    ) {
-    }
+    ) {}
 }

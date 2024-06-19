@@ -27,6 +27,5 @@ final class Pallet extends Dto
         public readonly ?int $quantity = null,
         public readonly ?string $stackability = null,
         public readonly ?Weight $weight = null,
-    ) {
-    }
+    ) {}
 }

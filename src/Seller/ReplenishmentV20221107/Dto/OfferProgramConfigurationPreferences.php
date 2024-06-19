@@ -19,6 +19,5 @@ final class OfferProgramConfigurationPreferences extends Dto
      */
     public function __construct(
         public readonly ?string $autoEnrollment = null,
-    ) {
-    }
+    ) {}
 }

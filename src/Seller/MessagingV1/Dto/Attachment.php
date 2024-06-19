@@ -21,6 +21,5 @@ final class Attachment extends Dto
     public function __construct(
         public readonly string $uploadDestinationId,
         public readonly string $fileName,
-    ) {
-    }
+    ) {}
 }

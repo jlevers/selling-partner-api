@@ -20,6 +20,5 @@ final class Participation extends Dto
     public function __construct(
         public readonly bool $isParticipating,
         public readonly bool $hasSuspendedListings,
-    ) {
-    }
+    ) {}
 }

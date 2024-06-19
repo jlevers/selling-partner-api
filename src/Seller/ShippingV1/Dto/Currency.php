@@ -21,6 +21,5 @@ final class Currency extends Dto
     public function __construct(
         public readonly float $value,
         public readonly string $unit,
-    ) {
-    }
+    ) {}
 }

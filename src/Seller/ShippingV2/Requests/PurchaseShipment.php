@@ -34,8 +34,7 @@ class PurchaseShipment extends Request implements HasBody
      */
     public function __construct(
         public PurchaseShipmentRequest $purchaseShipmentRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

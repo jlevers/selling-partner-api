@@ -21,6 +21,5 @@ final class ShippingOption extends Dto
     public function __construct(
         public readonly string $shippingOptionType,
         public readonly MoneyType $price,
-    ) {
-    }
+    ) {}
 }

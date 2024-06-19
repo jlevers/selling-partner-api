@@ -21,6 +21,5 @@ final class ProductInfoDetail extends Dto
      */
     public function __construct(
         public readonly ?string $numberOfItems = null,
-    ) {
-    }
+    ) {}
 }

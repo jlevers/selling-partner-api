@@ -23,6 +23,5 @@ final class AdditionalDetails extends Dto
         public readonly string $type,
         public readonly string $detail,
         public readonly ?string $languageCode = null,
-    ) {
-    }
+    ) {}
 }

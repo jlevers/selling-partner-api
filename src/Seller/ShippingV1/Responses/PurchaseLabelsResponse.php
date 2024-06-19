@@ -25,6 +25,5 @@ final class PurchaseLabelsResponse extends Response
     public function __construct(
         public readonly ?PurchaseLabelsResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

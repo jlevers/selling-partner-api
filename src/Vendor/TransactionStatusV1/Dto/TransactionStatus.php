@@ -19,6 +19,5 @@ final class TransactionStatus extends Dto
      */
     public function __construct(
         public readonly ?Transaction $transactionStatus = null,
-    ) {
-    }
+    ) {}
 }

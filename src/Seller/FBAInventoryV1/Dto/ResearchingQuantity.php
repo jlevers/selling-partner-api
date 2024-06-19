@@ -23,6 +23,5 @@ final class ResearchingQuantity extends Dto
     public function __construct(
         public readonly ?int $totalResearchingQuantity = null,
         public readonly ?array $researchingQuantityBreakdown = null,
-    ) {
-    }
+    ) {}
 }

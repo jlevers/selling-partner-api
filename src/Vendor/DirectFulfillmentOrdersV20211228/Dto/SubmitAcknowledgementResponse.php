@@ -23,6 +23,5 @@ final class SubmitAcknowledgementResponse extends Dto
     public function __construct(
         public readonly ?TransactionId $payload = null,
         public readonly ?ErrorList $errors = null,
-    ) {
-    }
+    ) {}
 }

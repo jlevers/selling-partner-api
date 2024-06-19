@@ -36,6 +36,5 @@ final class Pallet extends Dto
         public readonly ?Weight $weight = null,
         public readonly ?CartonReferenceDetails $cartonReferenceDetails = null,
         public readonly ?array $items = null,
-    ) {
-    }
+    ) {}
 }

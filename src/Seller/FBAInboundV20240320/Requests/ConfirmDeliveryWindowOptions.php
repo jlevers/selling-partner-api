@@ -33,8 +33,7 @@ class ConfirmDeliveryWindowOptions extends Request
         protected string $inboundPlanId,
         protected string $shipmentId,
         protected string $deliveryWindowOptionId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

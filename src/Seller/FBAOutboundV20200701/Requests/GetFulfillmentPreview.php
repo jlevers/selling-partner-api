@@ -33,8 +33,7 @@ class GetFulfillmentPreview extends Request implements HasBody
      */
     public function __construct(
         public GetFulfillmentPreviewRequest $getFulfillmentPreviewRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

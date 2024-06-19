@@ -33,6 +33,5 @@ final class SellerDealPaymentEvent extends Dto
         public readonly ?Currency $feeAmount = null,
         public readonly ?Currency $taxAmount = null,
         public readonly ?Currency $totalAmount = null,
-    ) {
-    }
+    ) {}
 }

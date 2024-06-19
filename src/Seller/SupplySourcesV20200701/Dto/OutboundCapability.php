@@ -27,6 +27,5 @@ final class OutboundCapability extends Dto
         public readonly ?ReturnLocation $returnLocation = null,
         public readonly ?DeliveryChannel $deliveryChannel = null,
         public readonly ?PickupChannel $pickupChannel = null,
-    ) {
-    }
+    ) {}
 }

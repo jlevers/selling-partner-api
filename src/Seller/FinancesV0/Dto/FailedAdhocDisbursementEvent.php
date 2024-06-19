@@ -47,6 +47,5 @@ final class FailedAdhocDisbursementEvent extends Dto
         public readonly ?string $status = null,
         public readonly ?Currency $transferAmount = null,
         public readonly ?\DateTimeInterface $postedDate = null,
-    ) {
-    }
+    ) {}
 }

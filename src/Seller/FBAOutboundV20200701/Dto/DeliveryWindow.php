@@ -21,6 +21,5 @@ final class DeliveryWindow extends Dto
     public function __construct(
         public readonly \DateTimeInterface $startDate,
         public readonly \DateTimeInterface $endDate,
-    ) {
-    }
+    ) {}
 }

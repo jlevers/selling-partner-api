@@ -37,8 +37,7 @@ class CreateConfirmServiceDetails extends Request implements HasBody
         protected string $amazonOrderId,
         public CreateConfirmServiceDetailsRequest $createConfirmServiceDetailsRequest,
         protected array $marketplaceIds,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

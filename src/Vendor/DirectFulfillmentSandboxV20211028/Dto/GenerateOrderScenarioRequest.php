@@ -21,6 +21,5 @@ final class GenerateOrderScenarioRequest extends Dto
      */
     public function __construct(
         public readonly ?array $orders = null,
-    ) {
-    }
+    ) {}
 }

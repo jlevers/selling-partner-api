@@ -25,6 +25,5 @@ final class Promotion extends Dto
         public readonly ?DiscountFunding $sellingPartnerFundedTieredDiscount = null,
         public readonly ?DiscountFunding $amazonFundedBaseDiscount = null,
         public readonly ?DiscountFunding $amazonFundedTieredDiscount = null,
-    ) {
-    }
+    ) {}
 }

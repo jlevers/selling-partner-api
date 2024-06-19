@@ -34,6 +34,5 @@ final class ListingsItemSubmissionResponse extends Response
         public readonly string $submissionId,
         public readonly ?array $issues = null,
         public readonly ?array $identifiers = null,
-    ) {
-    }
+    ) {}
 }

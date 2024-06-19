@@ -21,6 +21,5 @@ final class ImageCropSpecification extends Dto
     public function __construct(
         public readonly ImageDimensions $size,
         public readonly ?ImageOffsets $offset = null,
-    ) {
-    }
+    ) {}
 }

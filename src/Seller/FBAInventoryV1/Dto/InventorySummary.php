@@ -33,6 +33,5 @@ final class InventorySummary extends Dto
         public readonly ?\DateTimeInterface $lastUpdatedTime = null,
         public readonly ?string $productName = null,
         public readonly ?int $totalQuantity = null,
-    ) {
-    }
+    ) {}
 }

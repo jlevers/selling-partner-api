@@ -25,6 +25,5 @@ final class PackageDocumentDetail extends Dto
         public readonly string $packageClientReferenceId,
         public readonly array $packageDocuments,
         public readonly ?string $trackingId = null,
-    ) {
-    }
+    ) {}
 }

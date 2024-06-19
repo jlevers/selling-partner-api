@@ -21,6 +21,5 @@ final class LinkObject extends Dto
     public function __construct(
         public readonly string $href,
         public readonly ?string $name = null,
-    ) {
-    }
+    ) {}
 }

@@ -19,6 +19,5 @@ final class ShipperInstruction extends Dto
      */
     public function __construct(
         public readonly ?string $deliveryNotes = null,
-    ) {
-    }
+    ) {}
 }

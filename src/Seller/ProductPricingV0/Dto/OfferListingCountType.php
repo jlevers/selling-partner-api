@@ -23,6 +23,5 @@ final class OfferListingCountType extends Dto
     public function __construct(
         public readonly int $count,
         public readonly string $condition,
-    ) {
-    }
+    ) {}
 }

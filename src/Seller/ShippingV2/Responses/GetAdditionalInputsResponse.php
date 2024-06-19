@@ -19,6 +19,5 @@ final class GetAdditionalInputsResponse extends Response
      */
     public function __construct(
         public readonly ?array $payload = null,
-    ) {
-    }
+    ) {}
 }

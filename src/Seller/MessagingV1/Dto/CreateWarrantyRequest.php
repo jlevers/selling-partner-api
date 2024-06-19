@@ -25,6 +25,5 @@ final class CreateWarrantyRequest extends Dto
         public readonly ?array $attachments = null,
         public readonly ?\DateTimeInterface $coverageStartDate = null,
         public readonly ?\DateTimeInterface $coverageEndDate = null,
-    ) {
-    }
+    ) {}
 }

@@ -57,6 +57,5 @@ final class Shipment extends Response
         public readonly ?string $shipmentConfirmationId = null,
         public readonly ?string $status = null,
         public readonly ?TrackingDetails $trackingDetails = null,
-    ) {
-    }
+    ) {}
 }

@@ -25,6 +25,5 @@ final class ItemOfferByMarketplace extends Dto
         public readonly string $offerType,
         public readonly Money $price,
         public readonly ?Points $points = null,
-    ) {
-    }
+    ) {}
 }

@@ -29,8 +29,7 @@ class GetInboundPlan extends Request
      */
     public function __construct(
         protected string $inboundPlanId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

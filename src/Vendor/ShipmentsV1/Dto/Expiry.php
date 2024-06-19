@@ -23,6 +23,5 @@ final class Expiry extends Dto
         public readonly ?\DateTimeInterface $manufacturerDate = null,
         public readonly ?\DateTimeInterface $expiryDate = null,
         public readonly ?Duration $expiryAfterDuration = null,
-    ) {
-    }
+    ) {}
 }

@@ -25,6 +25,5 @@ final class GetAttributesResponse extends Response
     public function __construct(
         public readonly ?Buyer $buyer = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

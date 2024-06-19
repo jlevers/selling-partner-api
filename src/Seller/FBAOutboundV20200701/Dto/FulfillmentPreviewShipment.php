@@ -18,10 +18,10 @@ final class FulfillmentPreviewShipment extends Dto
 
     /**
      * @param  FulfillmentPreviewItem[]  $fulfillmentPreviewItems  An array of fulfillment preview item information.
-     * @param  ?\DateTimeInterface  $earliestShipDate
-     * @param  ?\DateTimeInterface  $latestShipDate
-     * @param  ?\DateTimeInterface  $earliestArrivalDate
-     * @param  ?\DateTimeInterface  $latestArrivalDate
+     * @param  ?\DateTimeInterface  $earliestShipDate  Date timestamp
+     * @param  ?\DateTimeInterface  $latestShipDate  Date timestamp
+     * @param  ?\DateTimeInterface  $earliestArrivalDate  Date timestamp
+     * @param  ?\DateTimeInterface  $latestArrivalDate  Date timestamp
      * @param  ?string[]  $shippingNotes  Provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed.
      */
     public function __construct(
@@ -31,6 +31,5 @@ final class FulfillmentPreviewShipment extends Dto
         public readonly ?\DateTimeInterface $earliestArrivalDate = null,
         public readonly ?\DateTimeInterface $latestArrivalDate = null,
         public readonly ?array $shippingNotes = null,
-    ) {
-    }
+    ) {}
 }

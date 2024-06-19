@@ -23,6 +23,5 @@ final class CurbsidePickupConfiguration extends Dto
         public readonly ?bool $isSupported = null,
         public readonly ?OperationalConfiguration $operationalConfiguration = null,
         public readonly ?ParkingWithAddressConfiguration $parkingWithAddressConfiguration = null,
-    ) {
-    }
+    ) {}
 }

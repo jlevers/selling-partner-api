@@ -30,8 +30,7 @@ class ListAllFulfillmentOrders extends Request
     public function __construct(
         protected ?\DateTimeInterface $queryStartDate = null,
         protected ?string $nextToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

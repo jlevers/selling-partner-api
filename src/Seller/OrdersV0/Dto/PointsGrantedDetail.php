@@ -26,6 +26,5 @@ final class PointsGrantedDetail extends Dto
     public function __construct(
         public readonly ?int $pointsNumber = null,
         public readonly ?Money $pointsMonetaryValue = null,
-    ) {
-    }
+    ) {}
 }

@@ -35,6 +35,5 @@ final class AutomatedShippingSettings extends Dto
         public readonly ?string $automatedShipMethod = null,
         public readonly ?string $automatedShipMethodName = null,
         public readonly ?string $automatedCarrierName = null,
-    ) {
-    }
+    ) {}
 }

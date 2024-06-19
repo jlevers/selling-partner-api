@@ -37,6 +37,5 @@ final class Box extends Dto
         public readonly ?int $quantity = null,
         public readonly ?string $templateName = null,
         public readonly ?Weight $weight = null,
-    ) {
-    }
+    ) {}
 }

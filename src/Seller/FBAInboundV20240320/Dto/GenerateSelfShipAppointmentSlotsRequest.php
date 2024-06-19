@@ -21,6 +21,5 @@ final class GenerateSelfShipAppointmentSlotsRequest extends Dto
     public function __construct(
         public readonly ?\DateTimeInterface $desiredEndDate = null,
         public readonly ?\DateTimeInterface $desiredStartDate = null,
-    ) {
-    }
+    ) {}
 }

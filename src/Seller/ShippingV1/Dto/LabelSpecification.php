@@ -21,6 +21,5 @@ final class LabelSpecification extends Dto
     public function __construct(
         public readonly string $labelFormat,
         public readonly string $labelStockSize,
-    ) {
-    }
+    ) {}
 }

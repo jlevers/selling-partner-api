@@ -23,6 +23,5 @@ final class SpdTrackingItem extends Dto
         public readonly ?string $boxId = null,
         public readonly ?string $trackingId = null,
         public readonly ?string $trackingNumberValidationStatus = null,
-    ) {
-    }
+    ) {}
 }

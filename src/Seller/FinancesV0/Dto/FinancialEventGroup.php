@@ -59,6 +59,5 @@ final class FinancialEventGroup extends Dto
         public readonly ?Currency $beginningBalance = null,
         public readonly ?\DateTimeInterface $financialEventGroupStart = null,
         public readonly ?\DateTimeInterface $financialEventGroupEnd = null,
-    ) {
-    }
+    ) {}
 }

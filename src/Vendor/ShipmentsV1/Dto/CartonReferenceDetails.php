@@ -21,6 +21,5 @@ final class CartonReferenceDetails extends Dto
     public function __construct(
         public readonly array $cartonReferenceNumbers,
         public readonly ?int $cartonCount = null,
-    ) {
-    }
+    ) {}
 }

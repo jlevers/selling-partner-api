@@ -23,6 +23,5 @@ final class DocumentSize extends Dto
         public readonly float $width,
         public readonly float $length,
         public readonly string $unit,
-    ) {
-    }
+    ) {}
 }

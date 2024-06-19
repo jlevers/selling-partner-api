@@ -21,6 +21,5 @@ final class StandardTextModule extends Dto
     public function __construct(
         public readonly ParagraphComponent $body,
         public readonly ?TextComponent $headline = null,
-    ) {
-    }
+    ) {}
 }

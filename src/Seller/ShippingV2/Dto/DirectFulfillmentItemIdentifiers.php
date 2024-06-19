@@ -23,6 +23,5 @@ final class DirectFulfillmentItemIdentifiers extends Dto
     public function __construct(
         public readonly string $lineItemId,
         public readonly ?string $pieceNumber = null,
-    ) {
-    }
+    ) {}
 }

@@ -23,6 +23,5 @@ final class ContentRecord extends Dto
         public readonly string $contentReferenceKey,
         public readonly ?ContentMetadata $contentMetadata = null,
         public readonly ?ContentDocument $contentDocument = null,
-    ) {
-    }
+    ) {}
 }

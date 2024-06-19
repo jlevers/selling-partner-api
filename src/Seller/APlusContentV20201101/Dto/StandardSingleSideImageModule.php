@@ -21,6 +21,5 @@ final class StandardSingleSideImageModule extends Dto
     public function __construct(
         public readonly string $imagePositionType,
         public readonly ?StandardImageTextBlock $block = null,
-    ) {
-    }
+    ) {}
 }

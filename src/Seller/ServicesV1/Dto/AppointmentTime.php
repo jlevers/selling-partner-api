@@ -21,6 +21,5 @@ final class AppointmentTime extends Dto
     public function __construct(
         public readonly \DateTimeInterface $startTime,
         public readonly int $durationInMinutes,
-    ) {
-    }
+    ) {}
 }

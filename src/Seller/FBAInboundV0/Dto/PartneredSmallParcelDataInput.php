@@ -25,6 +25,5 @@ final class PartneredSmallParcelDataInput extends Dto
     public function __construct(
         public readonly ?array $packageList = null,
         public readonly ?string $carrierName = null,
-    ) {
-    }
+    ) {}
 }

@@ -37,6 +37,5 @@ final class OrderItem extends Dto
         public readonly ?GiftDetails $giftDetails = null,
         public readonly ?TaxDetails $taxDetails = null,
         public readonly ?Money $totalPrice = null,
-    ) {
-    }
+    ) {}
 }

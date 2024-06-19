@@ -23,6 +23,5 @@ final class SelfShipAppointmentDetails extends Dto
         public readonly ?float $appointmentId = null,
         public readonly ?AppointmentSlotTime $appointmentSlotTime = null,
         public readonly ?string $appointmentStatus = null,
-    ) {
-    }
+    ) {}
 }

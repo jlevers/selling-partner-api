@@ -32,6 +32,5 @@ final class FeesEstimateError extends Dto
         public readonly string $code,
         public readonly string $message,
         public readonly array $detail,
-    ) {
-    }
+    ) {}
 }

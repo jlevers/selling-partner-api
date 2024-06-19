@@ -37,8 +37,7 @@ class CreateLegalDisclosure extends Request implements HasBody
         protected string $amazonOrderId,
         public CreateLegalDisclosureRequest $createLegalDisclosureRequest,
         protected array $marketplaceIds,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

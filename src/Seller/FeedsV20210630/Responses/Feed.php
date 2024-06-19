@@ -33,6 +33,5 @@ final class Feed extends Response
         public readonly ?\DateTimeInterface $processingStartTime = null,
         public readonly ?\DateTimeInterface $processingEndTime = null,
         public readonly ?string $resultFeedDocumentId = null,
-    ) {
-    }
+    ) {}
 }

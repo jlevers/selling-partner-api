@@ -21,6 +21,5 @@ final class TextItem extends Dto
     public function __construct(
         public readonly int $position,
         public readonly TextComponent $text,
-    ) {
-    }
+    ) {}
 }

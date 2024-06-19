@@ -31,6 +31,5 @@ final class ExceptionDates extends Dto
         public readonly ?string $exceptionDate = null,
         public readonly ?bool $isOpen = null,
         public readonly ?array $openIntervals = null,
-    ) {
-    }
+    ) {}
 }

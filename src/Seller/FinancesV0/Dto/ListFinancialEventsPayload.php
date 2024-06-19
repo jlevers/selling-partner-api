@@ -23,6 +23,5 @@ final class ListFinancialEventsPayload extends Dto
     public function __construct(
         public readonly ?string $nextToken = null,
         public readonly ?FinancialEvents $financialEvents = null,
-    ) {
-    }
+    ) {}
 }

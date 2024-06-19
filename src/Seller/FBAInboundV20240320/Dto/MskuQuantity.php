@@ -21,6 +21,5 @@ final class MskuQuantity extends Dto
     public function __construct(
         public readonly string $msku,
         public readonly int $quantity,
-    ) {
-    }
+    ) {}
 }

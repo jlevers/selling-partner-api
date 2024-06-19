@@ -23,6 +23,5 @@ final class GenerateShipmentContentUpdatePreviewsRequest extends Dto
     public function __construct(
         public readonly array $boxes,
         public readonly array $items,
-    ) {
-    }
+    ) {}
 }

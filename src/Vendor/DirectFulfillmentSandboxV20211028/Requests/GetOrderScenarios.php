@@ -29,8 +29,7 @@ class GetOrderScenarios extends Request
      */
     public function __construct(
         protected string $transactionId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

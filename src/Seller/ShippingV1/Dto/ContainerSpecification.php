@@ -21,6 +21,5 @@ final class ContainerSpecification extends Dto
     public function __construct(
         public readonly Dimensions $dimensions,
         public readonly Weight $weight,
-    ) {
-    }
+    ) {}
 }

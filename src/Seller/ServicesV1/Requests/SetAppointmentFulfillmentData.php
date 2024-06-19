@@ -38,8 +38,7 @@ class SetAppointmentFulfillmentData extends Request implements HasBody
         protected string $serviceJobId,
         protected string $appointmentId,
         public SetAppointmentFulfillmentDataRequest $setAppointmentFulfillmentDataRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

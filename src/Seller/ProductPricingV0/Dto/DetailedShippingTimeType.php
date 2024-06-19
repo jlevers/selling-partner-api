@@ -25,6 +25,5 @@ final class DetailedShippingTimeType extends Dto
         public readonly ?int $maximumHours = null,
         public readonly ?string $availableDate = null,
         public readonly ?string $availabilityType = null,
-    ) {
-    }
+    ) {}
 }

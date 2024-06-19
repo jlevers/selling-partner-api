@@ -29,6 +29,5 @@ final class PartneredEstimate extends Dto
         public readonly Amount $amount,
         public readonly ?\DateTimeInterface $confirmDeadline = null,
         public readonly ?\DateTimeInterface $voidDeadline = null,
-    ) {
-    }
+    ) {}
 }

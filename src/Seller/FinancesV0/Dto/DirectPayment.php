@@ -40,6 +40,5 @@ final class DirectPayment extends Dto
     public function __construct(
         public readonly ?string $directPaymentType = null,
         public readonly ?Currency $directPaymentAmount = null,
-    ) {
-    }
+    ) {}
 }

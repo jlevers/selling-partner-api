@@ -32,6 +32,5 @@ final class ListingOffersRequestParams extends Dto
         public readonly string $itemCondition,
         public readonly string $sellerSku,
         public readonly ?string $customerType = null,
-    ) {
-    }
+    ) {}
 }

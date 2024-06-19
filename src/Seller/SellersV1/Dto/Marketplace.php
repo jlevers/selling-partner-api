@@ -29,6 +29,5 @@ final class Marketplace extends Dto
         public readonly string $defaultCurrencyCode,
         public readonly string $defaultLanguageCode,
         public readonly string $domainName,
-    ) {
-    }
+    ) {}
 }

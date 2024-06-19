@@ -25,6 +25,5 @@ final class Issue extends Dto
         public readonly string $message,
         public readonly string $severity,
         public readonly ?string $attributeName = null,
-    ) {
-    }
+    ) {}
 }

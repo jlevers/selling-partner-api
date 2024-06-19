@@ -25,6 +25,5 @@ final class GetTrackingInformationResponse extends Response
     public function __construct(
         public readonly ?TrackingInformation $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

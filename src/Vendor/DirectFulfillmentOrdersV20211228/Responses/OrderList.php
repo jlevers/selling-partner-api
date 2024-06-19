@@ -24,6 +24,5 @@ final class OrderList extends Response
     public function __construct(
         public readonly ?Pagination $pagination = null,
         public readonly ?array $orders = null,
-    ) {
-    }
+    ) {}
 }

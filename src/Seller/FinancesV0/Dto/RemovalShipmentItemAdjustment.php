@@ -47,6 +47,5 @@ final class RemovalShipmentItemAdjustment extends Dto
         public readonly ?Currency $revenueAdjustment = null,
         public readonly ?Currency $taxAmountAdjustment = null,
         public readonly ?Currency $taxWithheldAdjustment = null,
-    ) {
-    }
+    ) {}
 }

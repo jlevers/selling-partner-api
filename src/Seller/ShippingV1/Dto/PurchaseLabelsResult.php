@@ -27,6 +27,5 @@ final class PurchaseLabelsResult extends Dto
         public readonly AcceptedRate $acceptedRate,
         public readonly array $labelResults,
         public readonly ?string $clientReferenceId = null,
-    ) {
-    }
+    ) {}
 }

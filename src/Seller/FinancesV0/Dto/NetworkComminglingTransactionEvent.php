@@ -50,6 +50,5 @@ final class NetworkComminglingTransactionEvent extends Dto
         public readonly ?string $marketplaceId = null,
         public readonly ?Currency $taxExclusiveAmount = null,
         public readonly ?Currency $taxAmount = null,
-    ) {
-    }
+    ) {}
 }

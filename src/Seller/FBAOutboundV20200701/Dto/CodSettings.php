@@ -27,6 +27,5 @@ final class CodSettings extends Dto
         public readonly ?Money $codChargeTax = null,
         public readonly ?Money $shippingCharge = null,
         public readonly ?Money $shippingChargeTax = null,
-    ) {
-    }
+    ) {}
 }

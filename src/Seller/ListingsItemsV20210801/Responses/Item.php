@@ -44,6 +44,5 @@ final class Item extends Response
         public readonly ?array $offers = null,
         public readonly ?array $fulfillmentAvailability = null,
         public readonly ?array $procurement = null,
-    ) {
-    }
+    ) {}
 }

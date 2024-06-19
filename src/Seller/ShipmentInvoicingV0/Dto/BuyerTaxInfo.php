@@ -31,6 +31,5 @@ final class BuyerTaxInfo extends Dto
         public readonly ?string $companyLegalName = null,
         public readonly ?string $taxingRegion = null,
         public readonly ?array $taxClassifications = null,
-    ) {
-    }
+    ) {}
 }

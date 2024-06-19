@@ -29,6 +29,5 @@ final class ReportSchedule extends Response
         public readonly ?array $marketplaceIds = null,
         public readonly ?array $reportOptions = null,
         public readonly ?\DateTimeInterface $nextReportCreationTime = null,
-    ) {
-    }
+    ) {}
 }

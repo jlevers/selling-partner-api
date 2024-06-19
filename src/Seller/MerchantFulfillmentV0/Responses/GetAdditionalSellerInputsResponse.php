@@ -25,6 +25,5 @@ final class GetAdditionalSellerInputsResponse extends Response
     public function __construct(
         public readonly ?GetAdditionalSellerInputsResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

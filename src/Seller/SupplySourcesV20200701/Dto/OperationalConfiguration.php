@@ -25,6 +25,5 @@ final class OperationalConfiguration extends Dto
         public readonly ?ThroughputConfig $throughputConfig = null,
         public readonly ?OperatingHoursByDay $operatingHoursByDay = null,
         public readonly ?Duration $handlingTime = null,
-    ) {
-    }
+    ) {}
 }

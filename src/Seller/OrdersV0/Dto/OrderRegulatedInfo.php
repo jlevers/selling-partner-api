@@ -32,6 +32,5 @@ final class OrderRegulatedInfo extends Dto
         public readonly RegulatedInformation $regulatedInformation,
         public readonly bool $requiresDosageLabel,
         public readonly RegulatedOrderVerificationStatus $regulatedOrderVerificationStatus,
-    ) {
-    }
+    ) {}
 }

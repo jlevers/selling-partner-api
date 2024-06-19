@@ -23,6 +23,5 @@ final class ReasonCodeDetails extends Dto
         public readonly string $returnReasonCode,
         public readonly string $description,
         public readonly ?string $translatedDescription = null,
-    ) {
-    }
+    ) {}
 }

@@ -28,6 +28,5 @@ final class GetInventorySummariesResponse extends Response
         public readonly ?GetInventorySummariesResult $payload = null,
         public readonly ?Pagination $pagination = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

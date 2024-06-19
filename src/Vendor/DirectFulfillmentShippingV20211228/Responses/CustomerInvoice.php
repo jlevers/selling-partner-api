@@ -21,6 +21,5 @@ final class CustomerInvoice extends Response
     public function __construct(
         public readonly string $purchaseOrderNumber,
         public readonly string $content,
-    ) {
-    }
+    ) {}
 }

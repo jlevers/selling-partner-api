@@ -3,10 +3,6 @@
     "info": {
         "title": "Amazon Shipping API",
         "description": "The Amazon Shipping API is designed to support outbound shipping use cases both for orders originating on Amazon-owned marketplaces as well as external channels/marketplaces. With these APIs, you can request shipping rates, create shipments, cancel shipments, and track shipments.",
-        "license": {
-            "name": "Amazon Software License",
-            "url": "https://aws.amazon.com/asl/"
-        },
         "version": "v2"
     },
     "servers": [
@@ -4769,8 +4765,7 @@
                     "city",
                     "countryCode",
                     "name",
-                    "postalCode",
-                    "stateOrRegion"
+                    "postalCode"
                 ],
                 "type": "object",
                 "properties": {

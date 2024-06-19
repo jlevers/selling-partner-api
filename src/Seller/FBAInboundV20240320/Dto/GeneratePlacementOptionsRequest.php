@@ -21,6 +21,5 @@ final class GeneratePlacementOptionsRequest extends Dto
      */
     public function __construct(
         public readonly ?array $customPlacement = null,
-    ) {
-    }
+    ) {}
 }

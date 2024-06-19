@@ -29,6 +29,5 @@ final class TransportContent extends Dto
         public readonly TransportHeader $transportHeader,
         public readonly TransportDetailOutput $transportDetails,
         public readonly TransportResult $transportResult,
-    ) {
-    }
+    ) {}
 }

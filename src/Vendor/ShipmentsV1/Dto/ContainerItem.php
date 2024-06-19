@@ -23,6 +23,5 @@ final class ContainerItem extends Dto
         public readonly string $itemReference,
         public readonly ItemQuantity $shippedQuantity,
         public readonly ?ItemDetails $itemDetails = null,
-    ) {
-    }
+    ) {}
 }

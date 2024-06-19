@@ -29,6 +29,5 @@ final class BoxContentsFeeDetails extends Dto
         public readonly ?int $totalUnits = null,
         public readonly ?Amount $feePerUnit = null,
         public readonly ?Amount $totalFee = null,
-    ) {
-    }
+    ) {}
 }

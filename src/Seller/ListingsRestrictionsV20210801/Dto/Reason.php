@@ -25,6 +25,5 @@ final class Reason extends Dto
         public readonly string $message,
         public readonly ?string $reasonCode = null,
         public readonly ?array $links = null,
-    ) {
-    }
+    ) {}
 }

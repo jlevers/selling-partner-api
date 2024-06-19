@@ -22,6 +22,5 @@ final class GetMyFeesEstimatesResponse extends Response
      */
     public function __construct(
         public readonly array $getMyFeesEstimatesResponse,
-    ) {
-    }
+    ) {}
 }

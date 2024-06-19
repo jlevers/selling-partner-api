@@ -23,6 +23,5 @@ final class Feature extends Dto
         public readonly string $featureName,
         public readonly string $featureDescription,
         public readonly ?bool $sellerEligible = null,
-    ) {
-    }
+    ) {}
 }

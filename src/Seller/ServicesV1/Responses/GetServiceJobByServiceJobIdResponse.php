@@ -25,6 +25,5 @@ final class GetServiceJobByServiceJobIdResponse extends Response
     public function __construct(
         public readonly ?ServiceJob $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

@@ -23,6 +23,5 @@ final class ItemQuantity extends Dto
         public readonly int $amount,
         public readonly string $unitOfMeasure,
         public readonly ?int $unitSize = null,
-    ) {
-    }
+    ) {}
 }

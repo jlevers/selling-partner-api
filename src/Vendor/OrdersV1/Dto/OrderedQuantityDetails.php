@@ -23,6 +23,5 @@ final class OrderedQuantityDetails extends Dto
         public readonly ?\DateTimeInterface $updatedDate = null,
         public readonly ?ItemQuantity $orderedQuantity = null,
         public readonly ?ItemQuantity $cancelledQuantity = null,
-    ) {
-    }
+    ) {}
 }

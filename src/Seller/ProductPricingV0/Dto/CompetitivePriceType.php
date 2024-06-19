@@ -41,6 +41,5 @@ final class CompetitivePriceType extends Dto
         public readonly ?string $quantityDiscountType = null,
         public readonly ?string $sellerId = null,
         public readonly ?bool $belongsToRequester = null,
-    ) {
-    }
+    ) {}
 }

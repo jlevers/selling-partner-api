@@ -21,6 +21,5 @@ final class ExceptionOperatingHours extends Dto
     public function __construct(
         public readonly ?DateRange $dateRange = null,
         public readonly ?OperatingHours $operatingHours = null,
-    ) {
-    }
+    ) {}
 }

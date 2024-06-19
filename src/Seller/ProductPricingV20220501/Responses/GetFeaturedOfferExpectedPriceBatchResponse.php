@@ -22,6 +22,5 @@ final class GetFeaturedOfferExpectedPriceBatchResponse extends Response
      */
     public function __construct(
         public readonly ?array $responses = null,
-    ) {
-    }
+    ) {}
 }

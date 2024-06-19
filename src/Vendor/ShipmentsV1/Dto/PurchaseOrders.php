@@ -27,6 +27,5 @@ final class PurchaseOrders extends Dto
         public readonly ?\DateTimeInterface $purchaseOrderDate = null,
         public readonly ?string $shipWindow = null,
         public readonly ?array $items = null,
-    ) {
-    }
+    ) {}
 }

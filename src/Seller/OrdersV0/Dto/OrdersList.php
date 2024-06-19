@@ -34,6 +34,5 @@ final class OrdersList extends Dto
         public readonly ?string $nextToken = null,
         public readonly ?string $lastUpdatedBefore = null,
         public readonly ?string $createdBefore = null,
-    ) {
-    }
+    ) {}
 }

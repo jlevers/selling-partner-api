@@ -23,6 +23,5 @@ final class ShipmentInvoiceStatusInfo extends Dto
     public function __construct(
         public readonly ?string $amazonShipmentId = null,
         public readonly ?string $invoiceStatus = null,
-    ) {
-    }
+    ) {}
 }

@@ -31,6 +31,5 @@ final class ShipmentDetails extends Dto
         public readonly string $messageToCustomer,
         public readonly ?bool $isScheduledDeliveryShipment = null,
         public readonly ?bool $isGift = null,
-    ) {
-    }
+    ) {}
 }

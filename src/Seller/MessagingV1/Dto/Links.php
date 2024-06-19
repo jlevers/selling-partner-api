@@ -23,6 +23,5 @@ final class Links extends Dto
     public function __construct(
         public readonly LinkObject $self,
         public readonly array $actions,
-    ) {
-    }
+    ) {}
 }

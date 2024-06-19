@@ -33,6 +33,5 @@ final class Shipment extends Dto
         public readonly array $containers,
         public readonly ?AcceptedRate $acceptedRate = null,
         public readonly ?Party $shipper = null,
-    ) {
-    }
+    ) {}
 }

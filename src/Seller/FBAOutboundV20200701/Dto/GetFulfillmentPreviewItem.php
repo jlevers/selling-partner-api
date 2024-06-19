@@ -25,6 +25,5 @@ final class GetFulfillmentPreviewItem extends Dto
         public readonly int $quantity,
         public readonly string $sellerFulfillmentOrderItemId,
         public readonly ?Money $perUnitDeclaredValue = null,
-    ) {
-    }
+    ) {}
 }

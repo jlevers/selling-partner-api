@@ -20,6 +20,5 @@ final class GetAccessPointsResponse extends Response
      */
     public function __construct(
         public readonly ?GetAccessPointsResult $payload = null,
-    ) {
-    }
+    ) {}
 }

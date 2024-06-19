@@ -23,6 +23,5 @@ final class ItemSalesRanksByMarketplace extends Dto
     public function __construct(
         public readonly string $marketplaceId,
         public readonly array $ranks,
-    ) {
-    }
+    ) {}
 }

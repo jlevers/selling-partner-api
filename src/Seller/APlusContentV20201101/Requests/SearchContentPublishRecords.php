@@ -33,8 +33,7 @@ class SearchContentPublishRecords extends Request
         protected string $marketplaceId,
         protected string $asin,
         protected ?string $pageToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -28,6 +28,5 @@ final class InboundOperationStatus extends Response
         public readonly string $operationId,
         public readonly array $operationProblems,
         public readonly string $operationStatus,
-    ) {
-    }
+    ) {}
 }

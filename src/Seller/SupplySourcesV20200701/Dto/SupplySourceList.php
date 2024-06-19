@@ -25,6 +25,5 @@ final class SupplySourceList extends Dto
         public readonly ?string $supplySourceId = null,
         public readonly ?string $supplySourceCode = null,
         public readonly ?Address $address = null,
-    ) {
-    }
+    ) {}
 }

@@ -23,6 +23,5 @@ final class AppointmentSlot extends Dto
         public readonly ?\DateTimeInterface $startTime = null,
         public readonly ?\DateTimeInterface $endTime = null,
         public readonly ?int $capacity = null,
-    ) {
-    }
+    ) {}
 }

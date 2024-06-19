@@ -66,6 +66,5 @@ final class Shipment extends Dto
         public readonly ?string $sellerOrderId = null,
         public readonly ?string $trackingId = null,
         public readonly ?\DateTimeInterface $lastUpdatedDate = null,
-    ) {
-    }
+    ) {}
 }

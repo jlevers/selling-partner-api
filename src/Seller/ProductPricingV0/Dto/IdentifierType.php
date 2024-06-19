@@ -22,6 +22,5 @@ final class IdentifierType extends Dto
     public function __construct(
         public readonly AsinIdentifier $marketplaceAsin,
         public readonly ?SellerSkuIdentifier $skuIdentifier = null,
-    ) {
-    }
+    ) {}
 }

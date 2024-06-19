@@ -34,8 +34,7 @@ class CreateSupplySource extends Request implements HasBody
      */
     public function __construct(
         public CreateSupplySourceRequest $createSupplySourceRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

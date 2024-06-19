@@ -21,6 +21,5 @@ final class Dimension extends Dto
     public function __construct(
         public readonly ?string $unit = null,
         public readonly ?float $value = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class BrandRefinement extends Dto
     public function __construct(
         public readonly int $numberOfResults,
         public readonly string $brandName,
-    ) {
-    }
+    ) {}
 }

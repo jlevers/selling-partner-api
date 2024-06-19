@@ -23,6 +23,5 @@ final class ShipsFromType extends Dto
     public function __construct(
         public readonly ?string $state = null,
         public readonly ?string $country = null,
-    ) {
-    }
+    ) {}
 }

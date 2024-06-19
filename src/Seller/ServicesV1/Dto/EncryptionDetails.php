@@ -23,6 +23,5 @@ final class EncryptionDetails extends Dto
         public readonly string $standard,
         public readonly string $initializationVector,
         public readonly string $key,
-    ) {
-    }
+    ) {}
 }

@@ -24,6 +24,5 @@ final class PackingSlipList extends Response
     public function __construct(
         public readonly ?Pagination $pagination = null,
         public readonly ?array $packingSlips = null,
-    ) {
-    }
+    ) {}
 }

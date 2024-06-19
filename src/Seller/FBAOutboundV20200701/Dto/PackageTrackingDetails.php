@@ -25,8 +25,8 @@ final class PackageTrackingDetails extends Dto
      * @param  ?string  $carrierCode  The name of the carrier.
      * @param  ?string  $carrierPhoneNumber  The phone number of the carrier.
      * @param  ?string  $carrierUrl  The URL of the carrier's website.
-     * @param  ?\DateTimeInterface  $shipDate
-     * @param  ?\DateTimeInterface  $estimatedArrivalDate
+     * @param  ?\DateTimeInterface  $shipDate  Date timestamp
+     * @param  ?\DateTimeInterface  $estimatedArrivalDate  Date timestamp
      * @param  ?TrackingAddress  $shipToAddress  Address information for tracking the package.
      * @param  ?string  $currentStatus  The current delivery status of the package.
      * @param  ?string  $currentStatusDescription  Description corresponding to the `CurrentStatus` value.
@@ -49,6 +49,5 @@ final class PackageTrackingDetails extends Dto
         public readonly ?string $signedForBy = null,
         public readonly ?string $additionalLocationInfo = null,
         public readonly ?array $trackingEvents = null,
-    ) {
-    }
+    ) {}
 }

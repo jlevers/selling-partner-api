@@ -27,6 +27,5 @@ final class CreateInboundPlanRequest extends Dto
         public readonly array $items,
         public readonly AddressInput $sourceAddress,
         public readonly ?string $name = null,
-    ) {
-    }
+    ) {}
 }

@@ -25,6 +25,5 @@ final class FeaturedOfferExpectedPriceResult extends Dto
         public readonly ?FeaturedOfferExpectedPrice $featuredOfferExpectedPrice = null,
         public readonly ?FeaturedOffer $competingFeaturedOffer = null,
         public readonly ?FeaturedOffer $currentFeaturedOffer = null,
-    ) {
-    }
+    ) {}
 }

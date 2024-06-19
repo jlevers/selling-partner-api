@@ -21,6 +21,5 @@ final class CreateSupplySourceResponse extends Response
     public function __construct(
         public readonly string $supplySourceId,
         public readonly string $supplySourceCode,
-    ) {
-    }
+    ) {}
 }

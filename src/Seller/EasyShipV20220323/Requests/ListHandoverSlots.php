@@ -34,8 +34,7 @@ class ListHandoverSlots extends Request implements HasBody
      */
     public function __construct(
         public ListHandoverSlotsRequest $listHandoverSlotsRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

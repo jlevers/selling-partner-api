@@ -29,6 +29,5 @@ final class SubmitInvoiceRequest extends Dto
         public readonly string $invoiceContent,
         public readonly string $contentMd5value,
         public readonly ?string $marketplaceId = null,
-    ) {
-    }
+    ) {}
 }

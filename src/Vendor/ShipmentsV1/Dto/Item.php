@@ -27,6 +27,5 @@ final class Item extends Dto
         public readonly ?string $amazonProductIdentifier = null,
         public readonly ?string $vendorProductIdentifier = null,
         public readonly ?ItemDetails $itemDetails = null,
-    ) {
-    }
+    ) {}
 }

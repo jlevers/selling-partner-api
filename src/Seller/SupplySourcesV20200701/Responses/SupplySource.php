@@ -38,6 +38,5 @@ final class SupplySource extends Response
         public readonly ?SupplySourceCapabilities $capabilities = null,
         public readonly ?string $createdAt = null,
         public readonly ?string $updatedAt = null,
-    ) {
-    }
+    ) {}
 }

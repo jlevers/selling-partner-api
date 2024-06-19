@@ -47,6 +47,5 @@ final class Issue extends Dto
         public readonly array $categories,
         public readonly ?array $attributeNames = null,
         public readonly ?IssueEnforcements $enforcements = null,
-    ) {
-    }
+    ) {}
 }

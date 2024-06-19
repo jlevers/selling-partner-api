@@ -27,6 +27,5 @@ final class AvailableValueAddedServiceGroup extends Dto
         public readonly string $groupDescription,
         public readonly bool $isRequired,
         public readonly ?array $valueAddedServices = null,
-    ) {
-    }
+    ) {}
 }

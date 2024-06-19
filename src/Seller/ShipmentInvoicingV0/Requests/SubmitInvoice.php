@@ -35,8 +35,7 @@ class SubmitInvoice extends Request implements HasBody
     public function __construct(
         protected string $shipmentId,
         public SubmitInvoiceRequest $submitInvoiceRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

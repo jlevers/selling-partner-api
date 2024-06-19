@@ -29,8 +29,7 @@ class GetSupplySource extends Request
      */
     public function __construct(
         protected string $supplySourceId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

@@ -33,6 +33,5 @@ final class IncludedFeeDetail extends Dto
         public readonly MoneyType $finalFee,
         public readonly ?MoneyType $feePromotion = null,
         public readonly ?MoneyType $taxAmount = null,
-    ) {
-    }
+    ) {}
 }

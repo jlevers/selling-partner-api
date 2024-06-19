@@ -29,6 +29,5 @@ final class StandardImageSidebarModule extends Dto
         public readonly ?StandardTextListBlock $descriptionListBlock = null,
         public readonly ?StandardImageTextBlock $sidebarImageTextBlock = null,
         public readonly ?StandardTextListBlock $sidebarListBlock = null,
-    ) {
-    }
+    ) {}
 }

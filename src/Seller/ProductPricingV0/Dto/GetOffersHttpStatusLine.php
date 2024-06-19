@@ -21,6 +21,5 @@ final class GetOffersHttpStatusLine extends Dto
     public function __construct(
         public readonly ?int $statusCode = null,
         public readonly ?string $reasonPhrase = null,
-    ) {
-    }
+    ) {}
 }

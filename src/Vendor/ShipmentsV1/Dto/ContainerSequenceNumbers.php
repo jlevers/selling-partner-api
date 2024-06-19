@@ -19,6 +19,5 @@ final class ContainerSequenceNumbers extends Dto
      */
     public function __construct(
         public readonly ?string $containerSequenceNumber = null,
-    ) {
-    }
+    ) {}
 }

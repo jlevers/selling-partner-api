@@ -31,6 +31,5 @@ final class PlacementOption extends Dto
         public readonly array $shipmentIds,
         public readonly string $status,
         public readonly ?\DateTimeInterface $expiration = null,
-    ) {
-    }
+    ) {}
 }

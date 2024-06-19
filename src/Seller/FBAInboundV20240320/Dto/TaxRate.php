@@ -23,6 +23,5 @@ final class TaxRate extends Dto
         public readonly ?float $cessRate = null,
         public readonly ?float $gstRate = null,
         public readonly ?string $taxType = null,
-    ) {
-    }
+    ) {}
 }

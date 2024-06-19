@@ -27,6 +27,5 @@ final class PurchaseOrderItems extends Dto
         public readonly ?string $buyerProductIdentifier = null,
         public readonly ?string $vendorProductIdentifier = null,
         public readonly ?Money $maximumRetailPrice = null,
-    ) {
-    }
+    ) {}
 }

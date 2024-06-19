@@ -36,8 +36,7 @@ class GetAppointmentSlots extends Request
         protected array $marketplaceIds,
         protected ?string $startTime = null,
         protected ?string $endTime = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

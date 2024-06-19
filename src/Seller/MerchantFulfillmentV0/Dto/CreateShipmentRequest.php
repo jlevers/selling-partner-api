@@ -40,6 +40,5 @@ final class CreateShipmentRequest extends Dto
         public readonly ?string $hazmatType = null,
         public readonly ?LabelFormatOptionRequest $labelFormatOption = null,
         public readonly ?array $shipmentLevelSellerInputsList = null,
-    ) {
-    }
+    ) {}
 }

@@ -40,6 +40,5 @@ final class InboundShipmentPlanRequestItem extends Dto
         public readonly int $quantity,
         public readonly ?int $quantityInCase = null,
         public readonly ?array $prepDetailsList = null,
-    ) {
-    }
+    ) {}
 }

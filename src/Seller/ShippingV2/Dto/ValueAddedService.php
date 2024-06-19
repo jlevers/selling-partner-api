@@ -23,6 +23,5 @@ final class ValueAddedService extends Dto
         public readonly string $id,
         public readonly string $name,
         public readonly Currency $cost,
-    ) {
-    }
+    ) {}
 }

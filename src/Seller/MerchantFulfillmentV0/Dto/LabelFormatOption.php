@@ -26,6 +26,5 @@ final class LabelFormatOption extends Dto
     public function __construct(
         public readonly ?bool $includePackingSlipWithLabel = null,
         public readonly ?string $labelFormat = null,
-    ) {
-    }
+    ) {}
 }

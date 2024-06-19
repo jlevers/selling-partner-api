@@ -19,6 +19,5 @@ final class TransactionReference extends Response
      */
     public function __construct(
         public readonly ?string $transactionId = null,
-    ) {
-    }
+    ) {}
 }

@@ -29,6 +29,5 @@ final class GetMessagingActionResponse extends Dto
         public readonly ?Embedded2 $embedded = null,
         public readonly ?MessagingAction $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

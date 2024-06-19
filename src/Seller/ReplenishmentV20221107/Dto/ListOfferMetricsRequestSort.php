@@ -21,6 +21,5 @@ final class ListOfferMetricsRequestSort extends Dto
     public function __construct(
         public readonly string $order,
         public readonly string $key,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class ScheduledPackageId extends Dto
     public function __construct(
         public readonly string $amazonOrderId,
         public readonly ?string $packageId = null,
-    ) {
-    }
+    ) {}
 }

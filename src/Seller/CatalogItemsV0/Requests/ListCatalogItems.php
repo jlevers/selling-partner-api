@@ -42,8 +42,7 @@ class ListCatalogItems extends Request
         protected ?string $ean = null,
         protected ?string $isbn = null,
         protected ?string $jan = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

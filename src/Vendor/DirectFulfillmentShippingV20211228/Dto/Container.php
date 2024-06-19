@@ -43,6 +43,5 @@ final class Container extends Dto
         public readonly ?string $carrier = null,
         public readonly ?int $containerSequenceNumber = null,
         public readonly ?Dimensions $dimensions = null,
-    ) {
-    }
+    ) {}
 }

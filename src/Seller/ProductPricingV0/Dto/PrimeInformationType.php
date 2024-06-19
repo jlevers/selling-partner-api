@@ -23,6 +23,5 @@ final class PrimeInformationType extends Dto
     public function __construct(
         public readonly bool $isPrime,
         public readonly bool $isNationalPrime,
-    ) {
-    }
+    ) {}
 }

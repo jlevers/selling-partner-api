@@ -24,6 +24,5 @@ final class CreateFeedDocumentResponse extends Response
     public function __construct(
         public readonly string $feedDocumentId,
         public readonly string $url,
-    ) {
-    }
+    ) {}
 }

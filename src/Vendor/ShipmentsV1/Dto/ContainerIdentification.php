@@ -21,6 +21,5 @@ final class ContainerIdentification extends Dto
     public function __construct(
         public readonly string $containerIdentificationType,
         public readonly string $containerIdentificationNumber,
-    ) {
-    }
+    ) {}
 }

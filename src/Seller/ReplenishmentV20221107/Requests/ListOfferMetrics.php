@@ -34,8 +34,7 @@ class ListOfferMetrics extends Request implements HasBody
      */
     public function __construct(
         public ListOfferMetricsRequest $listOfferMetricsRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

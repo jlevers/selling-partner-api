@@ -21,6 +21,5 @@ final class ListReturnReasonCodesResult extends Dto
      */
     public function __construct(
         public readonly ?array $reasonCodeDetails = null,
-    ) {
-    }
+    ) {}
 }

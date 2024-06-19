@@ -23,6 +23,5 @@ final class TextComponent extends Dto
     public function __construct(
         public readonly string $value,
         public readonly ?array $decoratorSet = null,
-    ) {
-    }
+    ) {}
 }

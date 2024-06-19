@@ -29,6 +29,5 @@ final class GetRatesRequest extends Dto
         public readonly array $serviceTypes,
         public readonly array $containerSpecifications,
         public readonly ?\DateTimeInterface $shipDate = null,
-    ) {
-    }
+    ) {}
 }

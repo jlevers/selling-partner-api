@@ -32,6 +32,5 @@ final class FeesEstimateResult extends Dto
         public readonly ?FeesEstimateIdentifier $feesEstimateIdentifier = null,
         public readonly ?FeesEstimate $feesEstimate = null,
         public readonly ?FeesEstimateError $error = null,
-    ) {
-    }
+    ) {}
 }

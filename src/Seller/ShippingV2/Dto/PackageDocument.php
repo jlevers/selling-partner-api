@@ -23,6 +23,5 @@ final class PackageDocument extends Dto
         public readonly string $type,
         public readonly string $format,
         public readonly string $contents,
-    ) {
-    }
+    ) {}
 }

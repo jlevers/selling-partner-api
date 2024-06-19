@@ -23,6 +23,5 @@ final class InnerContainersDetails extends Dto
     public function __construct(
         public readonly ?int $containerCount = null,
         public readonly ?array $containerSequenceNumbers = null,
-    ) {
-    }
+    ) {}
 }

@@ -29,8 +29,7 @@ class CancelReportSchedule extends Request
      */
     public function __construct(
         protected string $reportScheduleId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

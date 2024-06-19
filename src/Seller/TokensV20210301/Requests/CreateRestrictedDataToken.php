@@ -34,8 +34,7 @@ class CreateRestrictedDataToken extends Request implements HasBody
      */
     public function __construct(
         public CreateRestrictedDataTokenRequest $createRestrictedDataTokenRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

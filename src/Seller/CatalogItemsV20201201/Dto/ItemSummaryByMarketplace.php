@@ -35,6 +35,5 @@ final class ItemSummaryByMarketplace extends Dto
         public readonly ?string $modelNumber = null,
         public readonly ?string $sizeName = null,
         public readonly ?string $styleName = null,
-    ) {
-    }
+    ) {}
 }

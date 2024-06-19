@@ -31,6 +31,5 @@ final class GetAdditionalSellerInputsResult extends Dto
     public function __construct(
         public readonly ?array $shipmentLevelFields = null,
         public readonly ?array $itemLevelFieldsList = null,
-    ) {
-    }
+    ) {}
 }

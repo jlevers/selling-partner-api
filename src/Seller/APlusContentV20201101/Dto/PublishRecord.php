@@ -30,6 +30,5 @@ final class PublishRecord extends Dto
         public readonly string $contentType,
         public readonly string $contentReferenceKey,
         public readonly ?string $contentSubType = null,
-    ) {
-    }
+    ) {}
 }

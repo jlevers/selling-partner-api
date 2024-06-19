@@ -21,6 +21,5 @@ final class ShippingConfiguration extends Dto
     public function __construct(
         public readonly ?string $shippingMode = null,
         public readonly ?string $shippingSolution = null,
-    ) {
-    }
+    ) {}
 }

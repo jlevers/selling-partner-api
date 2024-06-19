@@ -19,6 +19,5 @@ final class StandardCompanyLogoModule extends Dto
      */
     public function __construct(
         public readonly ImageComponent $companyLogo,
-    ) {
-    }
+    ) {}
 }

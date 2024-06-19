@@ -23,6 +23,5 @@ final class PackageItemDetails extends Dto
         public readonly ?string $purchaseOrderNumber = null,
         public readonly ?string $lotNumber = null,
         public readonly ?Expiry $expiry = null,
-    ) {
-    }
+    ) {}
 }

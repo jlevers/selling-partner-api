@@ -33,6 +33,5 @@ final class ItemVendorDetailsByMarketplace extends Dto
         public readonly ?string $productGroup = null,
         public readonly ?string $replenishmentCategory = null,
         public readonly ?string $subcategoryCode = null,
-    ) {
-    }
+    ) {}
 }

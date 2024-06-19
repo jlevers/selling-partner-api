@@ -21,6 +21,5 @@ final class LowestPricedOffersInput extends Dto
     public function __construct(
         public readonly string $itemCondition,
         public readonly string $offerType,
-    ) {
-    }
+    ) {}
 }

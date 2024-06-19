@@ -19,6 +19,5 @@ final class TrackingDetails extends Dto
      */
     public function __construct(
         public readonly ?string $trackingId = null,
-    ) {
-    }
+    ) {}
 }

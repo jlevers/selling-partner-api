@@ -23,6 +23,5 @@ final class Window extends Dto
         public readonly \DateTimeInterface $end,
         public readonly \DateTimeInterface $start,
         public readonly ?\DateTimeInterface $editableUntil = null,
-    ) {
-    }
+    ) {}
 }

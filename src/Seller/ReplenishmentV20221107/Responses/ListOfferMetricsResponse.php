@@ -25,6 +25,5 @@ final class ListOfferMetricsResponse extends Response
     public function __construct(
         public readonly ?array $offers = null,
         public readonly ?PaginationResponse $pagination = null,
-    ) {
-    }
+    ) {}
 }

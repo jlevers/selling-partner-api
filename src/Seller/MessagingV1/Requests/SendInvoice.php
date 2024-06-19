@@ -37,8 +37,7 @@ class SendInvoice extends Request implements HasBody
         protected string $amazonOrderId,
         public InvoiceRequest $invoiceRequest,
         protected array $marketplaceIds,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -32,6 +32,5 @@ final class GetPreorderInfoResult extends Dto
         public readonly ?bool $shipmentConfirmedForPreorder = null,
         public readonly ?\DateTimeInterface $needByDate = null,
         public readonly ?\DateTimeInterface $confirmedFulfillableDate = null,
-    ) {
-    }
+    ) {}
 }

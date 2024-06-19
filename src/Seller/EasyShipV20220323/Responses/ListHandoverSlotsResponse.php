@@ -24,6 +24,5 @@ final class ListHandoverSlotsResponse extends Response
     public function __construct(
         public readonly string $amazonOrderId,
         public readonly array $timeSlots,
-    ) {
-    }
+    ) {}
 }

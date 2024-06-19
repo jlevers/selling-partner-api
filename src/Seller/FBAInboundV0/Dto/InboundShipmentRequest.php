@@ -31,6 +31,5 @@ final class InboundShipmentRequest extends Dto
         public readonly InboundShipmentHeader $inboundShipmentHeader,
         public readonly array $inboundShipmentItems,
         public readonly string $marketplaceId,
-    ) {
-    }
+    ) {}
 }

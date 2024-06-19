@@ -34,6 +34,5 @@ final class AdhocDisbursementEvent extends Dto
         public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $transactionId = null,
         public readonly ?Currency $transactionAmount = null,
-    ) {
-    }
+    ) {}
 }

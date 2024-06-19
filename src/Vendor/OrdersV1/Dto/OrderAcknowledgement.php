@@ -26,6 +26,5 @@ final class OrderAcknowledgement extends Dto
         public readonly PartyIdentification $sellingParty,
         public readonly \DateTimeInterface $acknowledgementDate,
         public readonly array $items,
-    ) {
-    }
+    ) {}
 }

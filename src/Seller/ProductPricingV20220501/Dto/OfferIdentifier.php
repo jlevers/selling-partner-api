@@ -27,6 +27,5 @@ final class OfferIdentifier extends Dto
         public readonly ?string $sellerId = null,
         public readonly ?string $sku = null,
         public readonly ?string $fulfillmentType = null,
-    ) {
-    }
+    ) {}
 }

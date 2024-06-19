@@ -36,8 +36,7 @@ class GetPrepInstructions extends Request
         protected string $shipToCountryCode,
         protected ?array $sellerSkuList = null,
         protected ?array $asinList = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

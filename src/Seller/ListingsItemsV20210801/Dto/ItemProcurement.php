@@ -19,6 +19,5 @@ final class ItemProcurement extends Dto
      */
     public function __construct(
         public readonly Money $costPrice,
-    ) {
-    }
+    ) {}
 }

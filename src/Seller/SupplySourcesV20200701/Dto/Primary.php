@@ -21,6 +21,5 @@ final class Primary extends Dto
     public function __construct(
         public readonly ?string $email = null,
         public readonly ?string $phone = null,
-    ) {
-    }
+    ) {}
 }

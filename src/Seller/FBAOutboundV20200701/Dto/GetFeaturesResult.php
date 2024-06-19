@@ -21,6 +21,5 @@ final class GetFeaturesResult extends Dto
      */
     public function __construct(
         public readonly array $features,
-    ) {
-    }
+    ) {}
 }

@@ -25,6 +25,5 @@ final class TransportationDetailsForShipmentConfirmation extends Dto
         public readonly ?string $carrierShipmentReferenceNumber = null,
         public readonly ?string $transportationMode = null,
         public readonly ?string $billOfLadingNumber = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class Item extends Dto
     public function __construct(
         public readonly ?string $orderItemId = null,
         public readonly ?array $orderItemSerialNumbers = null,
-    ) {
-    }
+    ) {}
 }

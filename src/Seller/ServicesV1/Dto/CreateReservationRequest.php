@@ -21,6 +21,5 @@ final class CreateReservationRequest extends Dto
     public function __construct(
         public readonly string $resourceId,
         public readonly Reservation $reservation,
-    ) {
-    }
+    ) {}
 }

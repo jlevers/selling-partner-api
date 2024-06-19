@@ -36,8 +36,7 @@ class GetShipmentItems extends Request
         protected ?\DateTimeInterface $lastUpdatedAfter = null,
         protected ?\DateTimeInterface $lastUpdatedBefore = null,
         protected ?string $nextToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

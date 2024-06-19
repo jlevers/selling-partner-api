@@ -23,6 +23,5 @@ final class ClassificationRefinement extends Dto
         public readonly int $numberOfResults,
         public readonly string $displayName,
         public readonly string $classificationId,
-    ) {
-    }
+    ) {}
 }

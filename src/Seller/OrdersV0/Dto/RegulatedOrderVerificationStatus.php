@@ -40,6 +40,5 @@ final class RegulatedOrderVerificationStatus extends Dto
         public readonly ?RejectionReason $rejectionReason = null,
         public readonly ?string $reviewDate = null,
         public readonly ?string $externalReviewerId = null,
-    ) {
-    }
+    ) {}
 }

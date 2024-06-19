@@ -19,6 +19,5 @@ final class TestOrder extends Dto
      */
     public function __construct(
         public readonly string $orderId,
-    ) {
-    }
+    ) {}
 }

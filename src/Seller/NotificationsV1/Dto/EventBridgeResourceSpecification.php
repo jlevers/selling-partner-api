@@ -21,6 +21,5 @@ final class EventBridgeResourceSpecification extends Dto
     public function __construct(
         public readonly string $region,
         public readonly string $accountId,
-    ) {
-    }
+    ) {}
 }

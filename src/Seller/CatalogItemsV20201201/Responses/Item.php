@@ -52,6 +52,5 @@ final class Item extends Response
         public readonly ?array $summaries = null,
         public readonly ?array $variations = null,
         public readonly ?array $vendorDetails = null,
-    ) {
-    }
+    ) {}
 }

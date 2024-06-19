@@ -43,6 +43,5 @@ final class SellerInputDefinition extends Dto
         public readonly AdditionalSellerInput $storedValue,
         public readonly ?string $inputTarget = null,
         public readonly ?array $restrictedSetValues = null,
-    ) {
-    }
+    ) {}
 }

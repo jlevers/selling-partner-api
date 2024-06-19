@@ -21,6 +21,5 @@ final class ServiceLocation extends Dto
     public function __construct(
         public readonly ?string $serviceLocationType = null,
         public readonly ?Address $address = null,
-    ) {
-    }
+    ) {}
 }

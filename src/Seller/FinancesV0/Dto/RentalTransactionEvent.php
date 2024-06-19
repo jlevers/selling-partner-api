@@ -72,6 +72,5 @@ final class RentalTransactionEvent extends Dto
         public readonly ?Currency $rentalInitialValue = null,
         public readonly ?Currency $rentalReimbursement = null,
         public readonly ?array $rentalTaxWithheldList = null,
-    ) {
-    }
+    ) {}
 }

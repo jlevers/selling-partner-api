@@ -37,6 +37,5 @@ final class PackageDimensions extends Dto
         public readonly ?float $height = null,
         public readonly ?string $unit = null,
         public readonly ?string $predefinedPackageDimensions = null,
-    ) {
-    }
+    ) {}
 }

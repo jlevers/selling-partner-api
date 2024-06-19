@@ -41,6 +41,5 @@ final class OperatingHoursByDay extends Dto
         public readonly ?array $friday = null,
         public readonly ?array $saturday = null,
         public readonly ?array $sunday = null,
-    ) {
-    }
+    ) {}
 }

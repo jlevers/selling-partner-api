@@ -26,6 +26,5 @@ final class ListingOffersResponse extends Dto
         public readonly ?HttpResponseHeaders $headers = null,
         public readonly ?GetOffersHttpStatusLine $status = null,
         public readonly ?ListingOffersRequestParams $request = null,
-    ) {
-    }
+    ) {}
 }

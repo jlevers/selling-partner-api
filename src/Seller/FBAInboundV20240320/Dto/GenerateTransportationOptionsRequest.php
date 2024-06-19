@@ -25,6 +25,5 @@ final class GenerateTransportationOptionsRequest extends Dto
     public function __construct(
         public readonly string $placementOptionId,
         public readonly array $shipmentTransportationConfigurations,
-    ) {
-    }
+    ) {}
 }

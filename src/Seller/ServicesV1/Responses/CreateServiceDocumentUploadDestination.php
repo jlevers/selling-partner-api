@@ -25,6 +25,5 @@ final class CreateServiceDocumentUploadDestination extends Response
     public function __construct(
         public readonly ?ServiceDocumentUploadDestination $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

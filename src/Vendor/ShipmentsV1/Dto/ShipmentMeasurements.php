@@ -25,6 +25,5 @@ final class ShipmentMeasurements extends Dto
         public readonly ?Volume $shipmentVolume = null,
         public readonly ?int $cartonCount = null,
         public readonly ?int $palletCount = null,
-    ) {
-    }
+    ) {}
 }

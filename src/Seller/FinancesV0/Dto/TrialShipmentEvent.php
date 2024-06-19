@@ -37,6 +37,5 @@ final class TrialShipmentEvent extends Dto
         public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $sku = null,
         public readonly ?array $feeList = null,
-    ) {
-    }
+    ) {}
 }

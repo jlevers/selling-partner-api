@@ -21,6 +21,5 @@ final class IntegerWithUnits extends Dto
     public function __construct(
         public readonly int $value,
         public readonly string $units,
-    ) {
-    }
+    ) {}
 }

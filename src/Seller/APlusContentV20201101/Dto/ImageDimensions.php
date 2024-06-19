@@ -21,6 +21,5 @@ final class ImageDimensions extends Dto
     public function __construct(
         public readonly IntegerWithUnits $width,
         public readonly IntegerWithUnits $height,
-    ) {
-    }
+    ) {}
 }

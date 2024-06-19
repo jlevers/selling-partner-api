@@ -25,6 +25,5 @@ final class Decorator extends Dto
         public readonly ?int $offset = null,
         public readonly ?int $length = null,
         public readonly ?int $depth = null,
-    ) {
-    }
+    ) {}
 }

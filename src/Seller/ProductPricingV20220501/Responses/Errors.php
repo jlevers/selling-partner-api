@@ -22,6 +22,5 @@ final class Errors extends Response
      */
     public function __construct(
         public readonly array $errors,
-    ) {
-    }
+    ) {}
 }

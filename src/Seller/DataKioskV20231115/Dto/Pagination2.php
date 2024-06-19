@@ -19,6 +19,5 @@ final class Pagination2 extends Dto
      */
     public function __construct(
         public readonly ?string $nextToken = null,
-    ) {
-    }
+    ) {}
 }

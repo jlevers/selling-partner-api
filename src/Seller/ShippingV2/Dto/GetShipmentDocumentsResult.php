@@ -21,6 +21,5 @@ final class GetShipmentDocumentsResult extends Dto
     public function __construct(
         public readonly string $shipmentId,
         public readonly PackageDocumentDetail $packageDocumentDetail,
-    ) {
-    }
+    ) {}
 }

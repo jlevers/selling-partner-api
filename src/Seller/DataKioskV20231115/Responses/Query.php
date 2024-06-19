@@ -36,6 +36,5 @@ final class Query extends Response
         public readonly ?string $dataDocumentId = null,
         public readonly ?string $errorDocumentId = null,
         public readonly ?Pagination $pagination = null,
-    ) {
-    }
+    ) {}
 }

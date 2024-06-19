@@ -34,8 +34,7 @@ class SubmitNdrFeedback extends Request implements HasBody
      */
     public function __construct(
         public SubmitNdrFeedbackRequest $submitNdrFeedbackRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

@@ -25,6 +25,5 @@ final class GetOrderRegulatedInfoResponse extends Response
     public function __construct(
         public readonly ?OrderRegulatedInfo $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

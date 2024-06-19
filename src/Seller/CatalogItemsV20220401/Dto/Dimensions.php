@@ -25,6 +25,5 @@ final class Dimensions extends Dto
         public readonly ?Dimension $length = null,
         public readonly ?Dimension $weight = null,
         public readonly ?Dimension $width = null,
-    ) {
-    }
+    ) {}
 }

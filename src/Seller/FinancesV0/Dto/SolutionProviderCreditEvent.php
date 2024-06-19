@@ -50,6 +50,5 @@ final class SolutionProviderCreditEvent extends Dto
         public readonly ?string $providerStoreName = null,
         public readonly ?Currency $transactionAmount = null,
         public readonly ?\DateTimeInterface $transactionCreationDate = null,
-    ) {
-    }
+    ) {}
 }

@@ -32,6 +32,5 @@ final class ShippingOfferingFilter extends Dto
         public readonly ?bool $includeComplexShippingOptions = null,
         public readonly ?string $carrierWillPickUp = null,
         public readonly ?string $deliveryExperience = null,
-    ) {
-    }
+    ) {}
 }

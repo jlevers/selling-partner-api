@@ -21,6 +21,5 @@ final class NdrRequestData extends Dto
     public function __construct(
         public readonly ?\DateTimeInterface $rescheduleDate = null,
         public readonly ?string $additionalAddressNotes = null,
-    ) {
-    }
+    ) {}
 }

@@ -25,6 +25,5 @@ final class OfferCountType extends Dto
         public readonly ?string $condition = null,
         public readonly ?string $fulfillmentChannel = null,
         public readonly ?int $offerCount = null,
-    ) {
-    }
+    ) {}
 }

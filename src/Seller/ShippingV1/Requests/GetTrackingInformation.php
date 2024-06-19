@@ -25,8 +25,7 @@ class GetTrackingInformation extends Request
 
     public function __construct(
         protected string $trackingId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

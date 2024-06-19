@@ -32,8 +32,7 @@ class ListCatalogCategories extends Request
         protected string $marketplaceId,
         protected ?string $asin = null,
         protected ?string $sellerSku = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

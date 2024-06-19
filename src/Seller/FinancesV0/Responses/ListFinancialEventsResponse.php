@@ -25,6 +25,5 @@ final class ListFinancialEventsResponse extends Response
     public function __construct(
         public readonly ?ListFinancialEventsPayload $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

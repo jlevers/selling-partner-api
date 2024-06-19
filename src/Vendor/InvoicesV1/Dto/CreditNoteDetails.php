@@ -31,6 +31,5 @@ final class CreditNoteDetails extends Dto
         public readonly ?string $rmaId = null,
         public readonly ?string $coopReferenceNumber = null,
         public readonly ?string $consignorsReferenceNumber = null,
-    ) {
-    }
+    ) {}
 }

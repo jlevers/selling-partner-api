@@ -35,8 +35,7 @@ class AddAppointmentForServiceJobByServiceJobId extends Request implements HasBo
     public function __construct(
         protected string $serviceJobId,
         public AddAppointmentRequest $addAppointmentRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

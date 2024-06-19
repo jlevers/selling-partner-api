@@ -29,8 +29,7 @@ class CancelFeed extends Request
      */
     public function __construct(
         protected string $feedId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

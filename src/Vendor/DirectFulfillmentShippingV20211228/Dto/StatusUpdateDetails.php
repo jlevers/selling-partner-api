@@ -29,6 +29,5 @@ final class StatusUpdateDetails extends Dto
         public readonly \DateTimeInterface $statusDateTime,
         public readonly Address $statusLocationAddress,
         public readonly ?ShipmentSchedule $shipmentSchedule = null,
-    ) {
-    }
+    ) {}
 }

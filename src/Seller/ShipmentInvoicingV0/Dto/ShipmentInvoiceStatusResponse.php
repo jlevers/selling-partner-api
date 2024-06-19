@@ -21,6 +21,5 @@ final class ShipmentInvoiceStatusResponse extends Dto
      */
     public function __construct(
         public readonly ?ShipmentInvoiceStatusInfo $shipments = null,
-    ) {
-    }
+    ) {}
 }

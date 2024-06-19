@@ -27,6 +27,5 @@ final class AcknowledgementStatus extends Dto
         public readonly ?ItemQuantity $acceptedQuantity = null,
         public readonly ?ItemQuantity $rejectedQuantity = null,
         public readonly ?array $acknowledgementStatusDetails = null,
-    ) {
-    }
+    ) {}
 }

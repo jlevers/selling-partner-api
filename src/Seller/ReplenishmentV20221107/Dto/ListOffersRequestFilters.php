@@ -31,6 +31,5 @@ final class ListOffersRequestFilters extends Dto
         public readonly ?array $eligibilities = null,
         public readonly ?Preference $preferences = null,
         public readonly ?Promotion $promotions = null,
-    ) {
-    }
+    ) {}
 }

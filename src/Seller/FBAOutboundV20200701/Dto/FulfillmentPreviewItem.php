@@ -27,6 +27,5 @@ final class FulfillmentPreviewItem extends Dto
         public readonly string $sellerFulfillmentOrderItemId,
         public readonly ?Weight $estimatedShippingWeight = null,
         public readonly ?string $shippingWeightCalculationMethod = null,
-    ) {
-    }
+    ) {}
 }

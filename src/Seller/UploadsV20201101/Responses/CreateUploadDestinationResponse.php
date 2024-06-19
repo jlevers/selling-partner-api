@@ -25,6 +25,5 @@ final class CreateUploadDestinationResponse extends Response
     public function __construct(
         public readonly ?UploadDestination $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

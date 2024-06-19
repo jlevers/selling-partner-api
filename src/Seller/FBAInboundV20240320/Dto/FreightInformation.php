@@ -21,6 +21,5 @@ final class FreightInformation extends Dto
     public function __construct(
         public readonly ?Currency $declaredValue = null,
         public readonly ?string $freightClass = null,
-    ) {
-    }
+    ) {}
 }

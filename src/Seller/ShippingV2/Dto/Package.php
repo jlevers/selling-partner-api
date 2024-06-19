@@ -35,6 +35,5 @@ final class Package extends Dto
         public readonly ?bool $isHazmat = null,
         public readonly ?string $sellerDisplayName = null,
         public readonly ?array $charges = null,
-    ) {
-    }
+    ) {}
 }

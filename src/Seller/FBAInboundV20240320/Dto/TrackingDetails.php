@@ -21,6 +21,5 @@ final class TrackingDetails extends Dto
     public function __construct(
         public readonly ?LtlTrackingDetail $ltlTrackingDetail = null,
         public readonly ?SpdTrackingDetail $spdTrackingDetail = null,
-    ) {
-    }
+    ) {}
 }

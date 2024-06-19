@@ -6,6 +6,4 @@ namespace SellingPartnerApi;
 
 use Saloon\Http\Request as SaloonRequest;
 
-abstract class Request extends SaloonRequest
-{
-}
+abstract class Request extends SaloonRequest {}

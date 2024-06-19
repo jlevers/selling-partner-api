@@ -28,8 +28,7 @@ class GetAccessPoints extends Request
         protected array $accessPointTypes,
         protected string $countryCode,
         protected string $postalCode,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

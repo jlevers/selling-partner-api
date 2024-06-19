@@ -37,8 +37,7 @@ class ListTransportationOptions extends Request
         protected ?string $paginationToken = null,
         protected ?string $placementOptionId = null,
         protected ?string $shipmentId = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

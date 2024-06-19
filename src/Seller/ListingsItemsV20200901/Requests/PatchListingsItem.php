@@ -42,8 +42,7 @@ class PatchListingsItem extends Request implements HasBody
         public ListingsItemPatchRequest $listingsItemPatchRequest,
         protected array $marketplaceIds,
         protected ?string $issueLocale = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

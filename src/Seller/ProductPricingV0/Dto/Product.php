@@ -40,6 +40,5 @@ final class Product extends Dto
         public readonly ?CompetitivePricingType $competitivePricing = null,
         public readonly ?array $salesRankings = null,
         public readonly ?array $offers = null,
-    ) {
-    }
+    ) {}
 }

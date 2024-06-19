@@ -25,6 +25,5 @@ final class CancelShipmentResponse extends Response
     public function __construct(
         public readonly ?Shipment $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

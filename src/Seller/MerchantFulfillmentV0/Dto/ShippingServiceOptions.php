@@ -37,6 +37,5 @@ final class ShippingServiceOptions extends Dto
         public readonly ?CurrencyAmount $declaredValue = null,
         public readonly ?string $carrierWillPickUpOption = null,
         public readonly ?string $labelFormat = null,
-    ) {
-    }
+    ) {}
 }

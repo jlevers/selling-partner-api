@@ -23,6 +23,5 @@ final class OrderListStatus extends Dto
     public function __construct(
         public readonly ?Pagination $pagination = null,
         public readonly ?array $ordersStatus = null,
-    ) {
-    }
+    ) {}
 }

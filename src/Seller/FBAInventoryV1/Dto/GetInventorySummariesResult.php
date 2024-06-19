@@ -23,6 +23,5 @@ final class GetInventorySummariesResult extends Dto
     public function __construct(
         public readonly Granularity $granularity,
         public readonly array $inventorySummaries,
-    ) {
-    }
+    ) {}
 }

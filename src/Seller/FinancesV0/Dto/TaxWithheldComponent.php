@@ -34,6 +34,5 @@ final class TaxWithheldComponent extends Dto
     public function __construct(
         public readonly ?string $taxCollectionModel = null,
         public readonly ?array $taxesWithheld = null,
-    ) {
-    }
+    ) {}
 }

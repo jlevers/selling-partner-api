@@ -23,6 +23,5 @@ final class Error extends Response
         public readonly string $code,
         public readonly string $message,
         public readonly ?string $details = null,
-    ) {
-    }
+    ) {}
 }

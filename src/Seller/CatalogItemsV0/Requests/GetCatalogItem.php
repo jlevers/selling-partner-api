@@ -30,8 +30,7 @@ class GetCatalogItem extends Request
     public function __construct(
         protected string $asin,
         protected string $marketplaceId,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

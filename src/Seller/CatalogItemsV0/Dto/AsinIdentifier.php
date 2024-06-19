@@ -23,6 +23,5 @@ final class AsinIdentifier extends Dto
     public function __construct(
         public readonly string $marketplaceId,
         public readonly string $asin,
-    ) {
-    }
+    ) {}
 }

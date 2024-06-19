@@ -23,6 +23,5 @@ final class PrepDetails extends Dto
     public function __construct(
         public readonly string $prepInstruction,
         public readonly string $prepOwner,
-    ) {
-    }
+    ) {}
 }

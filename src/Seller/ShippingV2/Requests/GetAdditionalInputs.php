@@ -31,8 +31,7 @@ class GetAdditionalInputs extends Request
     public function __construct(
         protected string $requestToken,
         protected string $rateId,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

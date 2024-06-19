@@ -108,6 +108,5 @@ final class CouponPaymentEvent extends Dto
         public readonly ?FeeComponent $feeComponent = null,
         public readonly ?ChargeComponent $chargeComponent = null,
         public readonly ?Currency $totalAmount = null,
-    ) {
-    }
+    ) {}
 }

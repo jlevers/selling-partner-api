@@ -37,8 +37,7 @@ class ListInboundPlans extends Request
         protected ?string $status = null,
         protected ?string $sortBy = null,
         protected ?string $sortOrder = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

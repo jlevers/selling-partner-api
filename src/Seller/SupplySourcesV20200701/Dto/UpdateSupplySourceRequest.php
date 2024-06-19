@@ -23,6 +23,5 @@ final class UpdateSupplySourceRequest extends Dto
         public readonly ?string $alias = null,
         public readonly ?SupplySourceConfiguration $configuration = null,
         public readonly ?SupplySourceCapabilities $capabilities = null,
-    ) {
-    }
+    ) {}
 }

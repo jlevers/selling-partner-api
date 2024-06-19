@@ -19,6 +19,5 @@ final class CreateQueryResponse extends Response
      */
     public function __construct(
         public readonly string $queryId,
-    ) {
-    }
+    ) {}
 }

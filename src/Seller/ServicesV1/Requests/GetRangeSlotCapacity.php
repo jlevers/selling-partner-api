@@ -40,8 +40,7 @@ class GetRangeSlotCapacity extends Request implements HasBody
         public RangeSlotCapacityQuery $rangeSlotCapacityQuery,
         protected array $marketplaceIds,
         protected ?string $nextPageToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -23,6 +23,5 @@ final class Benefits extends Dto
     public function __construct(
         public readonly array $includedBenefits,
         public readonly array $excludedBenefits,
-    ) {
-    }
+    ) {}
 }

@@ -25,6 +25,5 @@ final class OfferProgramConfigurationPromotions extends Dto
         public readonly ?OfferProgramConfigurationPromotionsDiscountFunding $sellingPartnerFundedTieredDiscount = null,
         public readonly ?OfferProgramConfigurationPromotionsDiscountFunding $amazonFundedBaseDiscount = null,
         public readonly ?OfferProgramConfigurationPromotionsDiscountFunding $amazonFundedTieredDiscount = null,
-    ) {
-    }
+    ) {}
 }

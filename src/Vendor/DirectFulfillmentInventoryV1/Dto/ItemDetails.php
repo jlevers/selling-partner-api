@@ -25,6 +25,5 @@ final class ItemDetails extends Dto
         public readonly ?string $buyerProductIdentifier = null,
         public readonly ?string $vendorProductIdentifier = null,
         public readonly ?bool $isObsolete = null,
-    ) {
-    }
+    ) {}
 }

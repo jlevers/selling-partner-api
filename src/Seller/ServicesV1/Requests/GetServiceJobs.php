@@ -58,8 +58,7 @@ class GetServiceJobs extends Request
         protected ?array $asins = null,
         protected ?array $requiredSkills = null,
         protected ?array $storeIds = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

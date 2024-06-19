@@ -23,6 +23,5 @@ final class EventBridgeResource extends Dto
         public readonly string $name,
         public readonly string $region,
         public readonly string $accountId,
-    ) {
-    }
+    ) {}
 }

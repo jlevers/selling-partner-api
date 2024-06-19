@@ -29,6 +29,5 @@ final class Promotion extends Dto
         public readonly ?string $promotionType = null,
         public readonly ?string $promotionId = null,
         public readonly ?Currency $promotionAmount = null,
-    ) {
-    }
+    ) {}
 }

@@ -29,6 +29,5 @@ final class RequestedDocumentSpecification extends Dto
         public readonly array $requestedDocumentTypes,
         public readonly ?int $dpi = null,
         public readonly ?string $pageLayout = null,
-    ) {
-    }
+    ) {}
 }

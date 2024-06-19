@@ -41,8 +41,7 @@ class GetReports extends Request
         protected ?\DateTimeInterface $createdSince = null,
         protected ?\DateTimeInterface $createdUntil = null,
         protected ?string $nextToken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

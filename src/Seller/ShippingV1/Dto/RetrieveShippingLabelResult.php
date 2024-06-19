@@ -21,6 +21,5 @@ final class RetrieveShippingLabelResult extends Dto
     public function __construct(
         public readonly string $labelStream,
         public readonly LabelSpecification $labelSpecification,
-    ) {
-    }
+    ) {}
 }

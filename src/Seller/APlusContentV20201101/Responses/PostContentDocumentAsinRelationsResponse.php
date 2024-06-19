@@ -22,6 +22,5 @@ final class PostContentDocumentAsinRelationsResponse extends Response
      */
     public function __construct(
         public readonly ?array $warnings = null,
-    ) {
-    }
+    ) {}
 }

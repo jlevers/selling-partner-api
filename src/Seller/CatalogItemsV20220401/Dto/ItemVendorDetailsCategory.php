@@ -21,6 +21,5 @@ final class ItemVendorDetailsCategory extends Dto
     public function __construct(
         public readonly ?string $displayName = null,
         public readonly ?string $value = null,
-    ) {
-    }
+    ) {}
 }

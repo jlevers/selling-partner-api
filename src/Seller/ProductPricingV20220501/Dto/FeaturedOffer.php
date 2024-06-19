@@ -23,6 +23,5 @@ final class FeaturedOffer extends Dto
         public readonly OfferIdentifier $offerIdentifier,
         public readonly ?string $condition = null,
         public readonly ?Price $price = null,
-    ) {
-    }
+    ) {}
 }

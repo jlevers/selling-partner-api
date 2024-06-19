@@ -21,6 +21,5 @@ final class FeaturedOfferExpectedPriceRequestParams extends Dto
     public function __construct(
         public readonly string $marketplaceId,
         public readonly string $sku,
-    ) {
-    }
+    ) {}
 }

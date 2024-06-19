@@ -25,6 +25,5 @@ final class AvailabilityRecord extends Dto
         public readonly \DateTimeInterface $endTime,
         public readonly ?Recurrence $recurrence = null,
         public readonly ?int $capacity = null,
-    ) {
-    }
+    ) {}
 }

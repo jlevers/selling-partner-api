@@ -23,6 +23,5 @@ final class GetFeedsResponse extends Response
     public function __construct(
         public readonly array $feeds,
         public readonly ?string $nextToken = null,
-    ) {
-    }
+    ) {}
 }

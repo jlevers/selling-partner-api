@@ -23,6 +23,5 @@ final class ShipmentDestination extends Dto
         public readonly string $destinationType,
         public readonly ?Address $address = null,
         public readonly ?string $warehouseId = null,
-    ) {
-    }
+    ) {}
 }

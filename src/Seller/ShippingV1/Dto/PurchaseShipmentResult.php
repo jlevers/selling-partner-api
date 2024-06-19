@@ -25,6 +25,5 @@ final class PurchaseShipmentResult extends Dto
         public readonly string $shipmentId,
         public readonly ServiceRate $serviceRate,
         public readonly array $labelResults,
-    ) {
-    }
+    ) {}
 }

@@ -30,6 +30,5 @@ final class SearchContentPublishRecordsResponse extends Response
         public readonly array $publishRecordList,
         public readonly ?array $warnings = null,
         public readonly ?string $nextPageToken = null,
-    ) {
-    }
+    ) {}
 }

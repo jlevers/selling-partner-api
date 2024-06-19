@@ -26,6 +26,5 @@ final class Constraint extends Dto
     public function __construct(
         public readonly string $validationString,
         public readonly ?string $validationRegEx = null,
-    ) {
-    }
+    ) {}
 }

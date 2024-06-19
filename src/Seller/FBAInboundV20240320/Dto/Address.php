@@ -37,6 +37,5 @@ final class Address extends Dto
         public readonly ?string $email = null,
         public readonly ?string $phoneNumber = null,
         public readonly ?string $stateOrProvinceCode = null,
-    ) {
-    }
+    ) {}
 }

@@ -32,6 +32,5 @@ final class DebtRecoveryItem extends Dto
         public readonly ?Currency $originalAmount = null,
         public readonly ?\DateTimeInterface $groupBeginDate = null,
         public readonly ?\DateTimeInterface $groupEndDate = null,
-    ) {
-    }
+    ) {}
 }

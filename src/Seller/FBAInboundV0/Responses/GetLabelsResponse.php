@@ -25,6 +25,5 @@ final class GetLabelsResponse extends Response
     public function __construct(
         public readonly ?LabelDownloadUrl $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

@@ -37,8 +37,7 @@ class CreateDigitalAccessKey extends Request implements HasBody
         protected string $amazonOrderId,
         public CreateDigitalAccessKeyRequest $createDigitalAccessKeyRequest,
         protected array $marketplaceIds,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

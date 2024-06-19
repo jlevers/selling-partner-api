@@ -29,8 +29,7 @@ class GetReportSchedules extends Request
      */
     public function __construct(
         protected array $reportTypes,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

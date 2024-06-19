@@ -32,6 +32,5 @@ final class OrderAddress extends Dto
         public readonly ?string $buyerCompanyName = null,
         public readonly ?Address $shippingAddress = null,
         public readonly ?DeliveryPreferences $deliveryPreferences = null,
-    ) {
-    }
+    ) {}
 }

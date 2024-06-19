@@ -28,6 +28,5 @@ final class FixedSlotCapacity extends Response
         public readonly ?float $slotDuration = null,
         public readonly ?array $capacities = null,
         public readonly ?string $nextPageToken = null,
-    ) {
-    }
+    ) {}
 }

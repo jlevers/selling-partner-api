@@ -29,6 +29,5 @@ final class ShipmentTransportationConfiguration extends Dto
         public readonly ?ContactInformation $contactInformation = null,
         public readonly ?FreightInformation $freightInformation = null,
         public readonly ?array $pallets = null,
-    ) {
-    }
+    ) {}
 }

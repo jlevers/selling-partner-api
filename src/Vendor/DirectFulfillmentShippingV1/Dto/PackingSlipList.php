@@ -23,6 +23,5 @@ final class PackingSlipList extends Dto
     public function __construct(
         public readonly ?Pagination $pagination = null,
         public readonly ?array $packingSlips = null,
-    ) {
-    }
+    ) {}
 }

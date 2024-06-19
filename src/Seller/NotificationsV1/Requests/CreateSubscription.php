@@ -37,8 +37,7 @@ class CreateSubscription extends Request implements HasBody
     public function __construct(
         protected string $notificationType,
         public CreateSubscriptionRequest $createSubscriptionRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

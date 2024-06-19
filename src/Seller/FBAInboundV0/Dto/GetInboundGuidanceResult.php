@@ -39,6 +39,5 @@ final class GetInboundGuidanceResult extends Dto
         public readonly ?array $invalidSkuList = null,
         public readonly ?array $asinInboundGuidanceList = null,
         public readonly ?array $invalidAsinList = null,
-    ) {
-    }
+    ) {}
 }

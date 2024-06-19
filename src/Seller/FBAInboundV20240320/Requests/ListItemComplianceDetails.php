@@ -31,8 +31,7 @@ class ListItemComplianceDetails extends Request
     public function __construct(
         protected array $mskus,
         protected string $marketplaceId,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -27,6 +27,5 @@ final class ListContentDocumentAsinRelationsResponse extends Response
         public readonly array $asinMetadataSet,
         public readonly ?array $warnings = null,
         public readonly ?string $nextPageToken = null,
-    ) {
-    }
+    ) {}
 }

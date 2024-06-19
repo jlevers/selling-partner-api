@@ -31,8 +31,7 @@ class PostContentDocumentApprovalSubmission extends Request
     public function __construct(
         protected string $contentReferenceKey,
         protected string $marketplaceId,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -21,6 +21,5 @@ final class MoneyType extends Dto
     public function __construct(
         public readonly ?string $currencyCode = null,
         public readonly ?float $amount = null,
-    ) {
-    }
+    ) {}
 }

@@ -23,6 +23,5 @@ final class StandardImageTextBlock extends Dto
         public readonly ?ImageComponent $image = null,
         public readonly ?TextComponent $headline = null,
         public readonly ?ParagraphComponent $body = null,
-    ) {
-    }
+    ) {}
 }

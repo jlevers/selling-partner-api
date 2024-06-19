@@ -19,6 +19,5 @@ final class CreateConfirmOrderDetailsRequest extends Dto
      */
     public function __construct(
         public readonly ?string $text = null,
-    ) {
-    }
+    ) {}
 }

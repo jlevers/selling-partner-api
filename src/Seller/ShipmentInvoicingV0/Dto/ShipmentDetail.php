@@ -64,6 +64,5 @@ final class ShipmentDetail extends Dto
         public readonly ?MarketplaceTaxInfo $marketplaceTaxInfo = null,
         public readonly ?string $sellerDisplayName = null,
         public readonly ?array $shipmentItems = null,
-    ) {
-    }
+    ) {}
 }

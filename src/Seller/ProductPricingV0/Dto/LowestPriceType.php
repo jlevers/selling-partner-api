@@ -41,6 +41,5 @@ final class LowestPriceType extends Dto
         public readonly ?MoneyType $landedPrice = null,
         public readonly ?MoneyType $shipping = null,
         public readonly ?Points $points = null,
-    ) {
-    }
+    ) {}
 }

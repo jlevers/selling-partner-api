@@ -27,6 +27,5 @@ final class ImportDetails extends Dto
         public readonly ?string $portOfDelivery = null,
         public readonly ?string $importContainers = null,
         public readonly ?string $shippingInstructions = null,
-    ) {
-    }
+    ) {}
 }

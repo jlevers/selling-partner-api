@@ -33,8 +33,7 @@ class SubmitAcknowledgement extends Request implements HasBody
      */
     public function __construct(
         public SubmitAcknowledgementRequest $submitAcknowledgementRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

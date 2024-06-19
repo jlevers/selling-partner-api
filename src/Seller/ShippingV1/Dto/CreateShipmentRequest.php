@@ -27,6 +27,5 @@ final class CreateShipmentRequest extends Dto
         public readonly Address $shipTo,
         public readonly Address $shipFrom,
         public readonly array $containers,
-    ) {
-    }
+    ) {}
 }

@@ -25,6 +25,5 @@ final class GetFulfillmentPreviewResponse extends Response
     public function __construct(
         public readonly ?GetFulfillmentPreviewResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

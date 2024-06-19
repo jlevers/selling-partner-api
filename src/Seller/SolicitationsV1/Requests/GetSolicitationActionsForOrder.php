@@ -30,8 +30,7 @@ class GetSolicitationActionsForOrder extends Request
     public function __construct(
         protected string $amazonOrderId,
         protected array $marketplaceIds,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

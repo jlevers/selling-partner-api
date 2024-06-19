@@ -21,6 +21,5 @@ final class Embedded extends Dto
      */
     public function __construct(
         public readonly array $actions,
-    ) {
-    }
+    ) {}
 }

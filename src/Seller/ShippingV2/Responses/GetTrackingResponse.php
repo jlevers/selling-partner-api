@@ -20,6 +20,5 @@ final class GetTrackingResponse extends Response
      */
     public function __construct(
         public readonly ?GetTrackingResult $payload = null,
-    ) {
-    }
+    ) {}
 }

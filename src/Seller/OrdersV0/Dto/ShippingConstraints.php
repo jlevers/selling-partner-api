@@ -21,6 +21,5 @@ final class ShippingConstraints extends Dto
      */
     public function __construct(
         public readonly ?string $palletDelivery = null,
-    ) {
-    }
+    ) {}
 }

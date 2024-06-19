@@ -23,6 +23,5 @@ final class SelfShipAppointmentSlotsAvailability extends Dto
     public function __construct(
         public readonly ?\DateTimeInterface $expiresAt = null,
         public readonly ?array $slots = null,
-    ) {
-    }
+    ) {}
 }

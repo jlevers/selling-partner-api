@@ -29,6 +29,5 @@ final class Poa extends Dto
         public readonly ?string $uploadingTechnician = null,
         public readonly ?\DateTimeInterface $uploadTime = null,
         public readonly ?string $poaType = null,
-    ) {
-    }
+    ) {}
 }

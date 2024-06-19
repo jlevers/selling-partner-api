@@ -21,6 +21,5 @@ final class ContentMetadataRecord extends Dto
     public function __construct(
         public readonly string $contentReferenceKey,
         public readonly ContentMetadata $contentMetadata,
-    ) {
-    }
+    ) {}
 }

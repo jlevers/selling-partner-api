@@ -23,6 +23,5 @@ final class UpdateShipmentStatusRequest extends Dto
         public readonly string $marketplaceId,
         public readonly string $shipmentStatus,
         public readonly ?OrderItems $orderItems = null,
-    ) {
-    }
+    ) {}
 }

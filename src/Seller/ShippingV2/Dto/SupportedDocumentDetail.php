@@ -21,6 +21,5 @@ final class SupportedDocumentDetail extends Dto
     public function __construct(
         public readonly string $name,
         public readonly bool $isMandatory,
-    ) {
-    }
+    ) {}
 }

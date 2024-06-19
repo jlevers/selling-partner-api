@@ -21,6 +21,5 @@ final class Carrier extends Dto
     public function __construct(
         public readonly ?string $alphaCode = null,
         public readonly ?string $name = null,
-    ) {
-    }
+    ) {}
 }

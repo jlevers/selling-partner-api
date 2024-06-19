@@ -27,6 +27,5 @@ final class StandardFourImageTextModule extends Dto
         public readonly ?StandardImageTextBlock $block2 = null,
         public readonly ?StandardImageTextBlock $block3 = null,
         public readonly ?StandardImageTextBlock $block4 = null,
-    ) {
-    }
+    ) {}
 }

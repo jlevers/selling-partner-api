@@ -50,8 +50,7 @@ class GetPurchaseOrders extends Request
         protected ?string $isPoChanged = null,
         protected ?string $purchaseOrderState = null,
         protected ?string $orderingVendorCode = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

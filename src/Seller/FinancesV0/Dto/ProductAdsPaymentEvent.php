@@ -35,6 +35,5 @@ final class ProductAdsPaymentEvent extends Dto
         public readonly ?Currency $baseValue = null,
         public readonly ?Currency $taxValue = null,
         public readonly ?Currency $transactionValue = null,
-    ) {
-    }
+    ) {}
 }

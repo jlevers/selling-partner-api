@@ -31,6 +31,5 @@ final class FeesEstimate extends Dto
         public readonly \DateTimeInterface $timeOfFeesEstimation,
         public readonly ?MoneyType $totalFeesEstimate = null,
         public readonly ?array $feeDetailList = null,
-    ) {
-    }
+    ) {}
 }

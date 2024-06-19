@@ -21,6 +21,5 @@ final class IssueExemption extends Dto
     public function __construct(
         public readonly string $status,
         public readonly ?\DateTimeInterface $expiryDate = null,
-    ) {
-    }
+    ) {}
 }

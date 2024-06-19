@@ -20,10 +20,13 @@ final class FulfillmentOrder extends Dto
      * @param  string  $sellerFulfillmentOrderId  The fulfillment order identifier submitted with the `createFulfillmentOrder` operation.
      * @param  string  $marketplaceId  The identifier for the marketplace the fulfillment order is placed against.
      * @param  string  $displayableOrderId  A fulfillment order identifier submitted with the `createFulfillmentOrder` operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
+     * @param  \DateTimeInterface  $displayableOrderDate  Date timestamp
      * @param  string  $displayableOrderComment  A text block submitted with the `createFulfillmentOrder` operation. Displays in recipient-facing materials such as the packing slip.
      * @param  string  $shippingSpeedCategory  The shipping method used for the fulfillment order. When this value is `ScheduledDelivery`, choose Ship for the `fulfillmentAction`. Hold is not a valid `fulfillmentAction` value when the `shippingSpeedCategory` value is `ScheduledDelivery`.
      * @param  Address  $destinationAddress  A physical address.
+     * @param  \DateTimeInterface  $receivedDate  Date timestamp
      * @param  string  $fulfillmentOrderStatus  The current status of the fulfillment order.
+     * @param  \DateTimeInterface  $statusUpdatedDate  Date timestamp
      * @param  ?DeliveryWindow  $deliveryWindow  The time range within which a Scheduled Delivery fulfillment order should be delivered. This is only available in the JP marketplace.
      * @param  ?string  $fulfillmentAction  Specifies whether the fulfillment order should ship now or have an order hold put on it.
      * @param  ?string  $fulfillmentPolicy  The `FulfillmentPolicy` value specified when you submitted the `createFulfillmentOrder` operation.
@@ -48,6 +51,5 @@ final class FulfillmentOrder extends Dto
         public readonly ?CodSettings $codSettings = null,
         public readonly ?array $notificationEmails = null,
         public readonly ?array $featureConstraints = null,
-    ) {
-    }
+    ) {}
 }

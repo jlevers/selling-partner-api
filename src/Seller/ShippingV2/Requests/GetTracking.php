@@ -31,8 +31,7 @@ class GetTracking extends Request
     public function __construct(
         protected string $trackingId,
         protected string $carrierId,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

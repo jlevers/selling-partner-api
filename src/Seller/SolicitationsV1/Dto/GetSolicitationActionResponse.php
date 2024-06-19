@@ -29,6 +29,5 @@ final class GetSolicitationActionResponse extends Dto
         public readonly ?Embedded2 $embedded = null,
         public readonly ?SolicitationsAction $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

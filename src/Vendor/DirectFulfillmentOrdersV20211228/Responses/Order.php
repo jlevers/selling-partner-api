@@ -22,6 +22,5 @@ final class Order extends Response
     public function __construct(
         public readonly string $purchaseOrderNumber,
         public readonly ?OrderDetails $orderDetails = null,
-    ) {
-    }
+    ) {}
 }

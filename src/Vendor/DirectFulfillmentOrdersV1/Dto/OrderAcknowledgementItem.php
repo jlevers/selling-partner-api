@@ -31,6 +31,5 @@ final class OrderAcknowledgementItem extends Dto
         public readonly PartyIdentification $sellingParty,
         public readonly PartyIdentification $shipFromParty,
         public readonly array $itemAcknowledgements,
-    ) {
-    }
+    ) {}
 }

@@ -27,6 +27,5 @@ final class JobListing extends Dto
         public readonly ?string $nextPageToken = null,
         public readonly ?string $previousPageToken = null,
         public readonly ?array $jobs = null,
-    ) {
-    }
+    ) {}
 }

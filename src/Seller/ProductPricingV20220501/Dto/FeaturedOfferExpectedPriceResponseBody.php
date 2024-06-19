@@ -28,6 +28,5 @@ final class FeaturedOfferExpectedPriceResponseBody extends Dto
         public readonly OfferIdentifier $offerIdentifier,
         public readonly ?array $featuredOfferExpectedPriceResults = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

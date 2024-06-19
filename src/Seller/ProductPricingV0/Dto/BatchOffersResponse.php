@@ -24,6 +24,5 @@ final class BatchOffersResponse extends Dto
         public readonly GetOffersResponse $body,
         public readonly ?HttpResponseHeaders $headers = null,
         public readonly ?GetOffersHttpStatusLine $status = null,
-    ) {
-    }
+    ) {}
 }

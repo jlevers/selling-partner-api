@@ -25,6 +25,5 @@ final class LabelDimensions extends Dto
         public readonly float $length,
         public readonly float $width,
         public readonly string $unit,
-    ) {
-    }
+    ) {}
 }

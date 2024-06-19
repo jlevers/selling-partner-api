@@ -21,6 +21,5 @@ final class HttpStatusLine extends Dto
     public function __construct(
         public readonly ?int $statusCode = null,
         public readonly ?string $reasonPhrase = null,
-    ) {
-    }
+    ) {}
 }

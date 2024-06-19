@@ -38,6 +38,5 @@ final class FeeDetail extends Dto
         public readonly ?MoneyType $feePromotion = null,
         public readonly ?MoneyType $taxAmount = null,
         public readonly ?array $includedFeeDetailList = null,
-    ) {
-    }
+    ) {}
 }

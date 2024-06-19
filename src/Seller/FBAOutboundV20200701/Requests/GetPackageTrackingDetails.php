@@ -28,8 +28,7 @@ class GetPackageTrackingDetails extends Request
      */
     public function __construct(
         protected int $packageNumber,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

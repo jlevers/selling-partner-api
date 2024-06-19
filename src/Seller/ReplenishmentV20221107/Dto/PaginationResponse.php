@@ -19,6 +19,5 @@ final class PaginationResponse extends Dto
      */
     public function __construct(
         public readonly ?int $totalResults = null,
-    ) {
-    }
+    ) {}
 }

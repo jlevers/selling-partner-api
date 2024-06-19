@@ -33,8 +33,7 @@ class SubmitShipments extends Request implements HasBody
      */
     public function __construct(
         public SubmitShipments1 $submitShipments,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

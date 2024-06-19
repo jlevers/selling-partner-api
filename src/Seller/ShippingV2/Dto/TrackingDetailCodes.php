@@ -21,6 +21,5 @@ final class TrackingDetailCodes extends Dto
     public function __construct(
         public readonly array $forward,
         public readonly array $returns,
-    ) {
-    }
+    ) {}
 }

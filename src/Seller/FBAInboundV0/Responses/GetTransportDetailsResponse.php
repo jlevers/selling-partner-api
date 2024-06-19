@@ -25,6 +25,5 @@ final class GetTransportDetailsResponse extends Response
     public function __construct(
         public readonly ?GetTransportDetailsResult $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

@@ -27,6 +27,5 @@ final class Subscription extends Dto
         public readonly string $payloadVersion,
         public readonly string $destinationId,
         public readonly ?ProcessingDirective $processingDirective = null,
-    ) {
-    }
+    ) {}
 }

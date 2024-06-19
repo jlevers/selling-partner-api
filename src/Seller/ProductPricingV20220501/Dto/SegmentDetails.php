@@ -19,6 +19,5 @@ final class SegmentDetails extends Dto
      */
     public function __construct(
         public readonly ?float $glanceViewWeightPercentage = null,
-    ) {
-    }
+    ) {}
 }

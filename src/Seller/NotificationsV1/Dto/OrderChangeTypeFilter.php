@@ -19,6 +19,5 @@ final class OrderChangeTypeFilter extends Dto
      */
     public function __construct(
         public readonly ?array $orderChangeTypes = null,
-    ) {
-    }
+    ) {}
 }

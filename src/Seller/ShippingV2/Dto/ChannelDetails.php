@@ -23,6 +23,5 @@ final class ChannelDetails extends Dto
         public readonly string $channelType,
         public readonly ?AmazonOrderDetails $amazonOrderDetails = null,
         public readonly ?AmazonShipmentDetails $amazonShipmentDetails = null,
-    ) {
-    }
+    ) {}
 }

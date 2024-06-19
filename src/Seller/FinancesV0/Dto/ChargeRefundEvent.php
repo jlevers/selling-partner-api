@@ -38,6 +38,5 @@ final class ChargeRefundEvent extends Dto
         public readonly ?string $reasonCode = null,
         public readonly ?string $reasonCodeDescription = null,
         public readonly ?array $chargeRefundTransactions = null,
-    ) {
-    }
+    ) {}
 }

@@ -19,6 +19,5 @@ final class AddAppointmentRequest extends Dto
      */
     public function __construct(
         public readonly AppointmentTimeInput $appointmentTime,
-    ) {
-    }
+    ) {}
 }

@@ -39,6 +39,5 @@ final class GetEligibleShipmentServicesResult extends Dto
         public readonly ?array $rejectedShippingServiceList = null,
         public readonly ?array $temporarilyUnavailableCarrierList = null,
         public readonly ?array $termsAndConditionsNotAcceptedCarrierList = null,
-    ) {
-    }
+    ) {}
 }

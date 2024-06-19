@@ -19,6 +19,5 @@ final class ProcessingDirective extends Dto
      */
     public function __construct(
         public readonly ?EventFilter $eventFilter = null,
-    ) {
-    }
+    ) {}
 }

@@ -32,6 +32,5 @@ final class AsinPrepInstructions extends Dto
         public readonly ?string $barcodeInstruction = null,
         public readonly ?string $prepGuidance = null,
         public readonly ?array $prepInstructionList = null,
-    ) {
-    }
+    ) {}
 }

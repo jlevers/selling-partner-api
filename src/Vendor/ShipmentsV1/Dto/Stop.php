@@ -25,6 +25,5 @@ final class Stop extends Dto
         public readonly ?Location $locationIdentification = null,
         public readonly ?\DateTimeInterface $arrivalTime = null,
         public readonly ?\DateTimeInterface $departureTime = null,
-    ) {
-    }
+    ) {}
 }

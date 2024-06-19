@@ -27,6 +27,5 @@ final class LabelData extends Dto
         public readonly ?string $trackingNumber = null,
         public readonly ?string $shipMethod = null,
         public readonly ?string $shipMethodName = null,
-    ) {
-    }
+    ) {}
 }

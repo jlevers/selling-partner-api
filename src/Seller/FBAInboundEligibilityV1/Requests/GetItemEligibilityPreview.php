@@ -32,8 +32,7 @@ class GetItemEligibilityPreview extends Request
         protected string $asin,
         protected string $program,
         protected ?array $marketplaceIds = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

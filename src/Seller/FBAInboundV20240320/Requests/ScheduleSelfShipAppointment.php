@@ -40,8 +40,7 @@ class ScheduleSelfShipAppointment extends Request implements HasBody
         protected string $shipmentId,
         protected string $slotId,
         public ScheduleSelfShipAppointmentRequest $scheduleSelfShipAppointmentRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

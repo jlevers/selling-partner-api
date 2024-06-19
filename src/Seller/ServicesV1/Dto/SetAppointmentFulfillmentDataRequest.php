@@ -28,6 +28,5 @@ final class SetAppointmentFulfillmentDataRequest extends Dto
         public readonly ?FulfillmentTime $fulfillmentTime = null,
         public readonly ?array $appointmentResources = null,
         public readonly ?array $fulfillmentDocuments = null,
-    ) {
-    }
+    ) {}
 }

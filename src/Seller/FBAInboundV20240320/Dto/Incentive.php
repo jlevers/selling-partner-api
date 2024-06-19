@@ -25,6 +25,5 @@ final class Incentive extends Dto
         public readonly string $target,
         public readonly string $type,
         public readonly Currency $value,
-    ) {
-    }
+    ) {}
 }

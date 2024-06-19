@@ -25,6 +25,5 @@ final class ListDeliveryWindowOptionsResponse extends Response
     public function __construct(
         public readonly array $deliveryWindowOptions,
         public readonly ?Pagination $pagination = null,
-    ) {
-    }
+    ) {}
 }

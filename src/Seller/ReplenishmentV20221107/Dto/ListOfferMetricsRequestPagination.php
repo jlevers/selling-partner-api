@@ -21,6 +21,5 @@ final class ListOfferMetricsRequestPagination extends Dto
     public function __construct(
         public readonly int $limit,
         public readonly int $offset,
-    ) {
-    }
+    ) {}
 }

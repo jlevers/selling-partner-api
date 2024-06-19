@@ -29,6 +29,5 @@ final class Rate extends Dto
         public readonly ?\DateTimeInterface $expirationTime = null,
         public readonly ?string $serviceType = null,
         public readonly ?ShippingPromiseSet $promise = null,
-    ) {
-    }
+    ) {}
 }

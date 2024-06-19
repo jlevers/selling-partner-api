@@ -25,6 +25,5 @@ final class SafetReimbursementItem extends Dto
         public readonly ?array $itemChargeList = null,
         public readonly ?string $productDescription = null,
         public readonly ?string $quantity = null,
-    ) {
-    }
+    ) {}
 }

@@ -21,6 +21,5 @@ final class CommonTransportResult extends Dto
      */
     public function __construct(
         public readonly ?TransportResult $transportResult = null,
-    ) {
-    }
+    ) {}
 }

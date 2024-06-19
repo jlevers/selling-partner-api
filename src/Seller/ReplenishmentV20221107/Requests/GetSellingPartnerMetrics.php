@@ -34,8 +34,7 @@ class GetSellingPartnerMetrics extends Request implements HasBody
      */
     public function __construct(
         public GetSellingPartnerMetricsRequest $getSellingPartnerMetricsRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

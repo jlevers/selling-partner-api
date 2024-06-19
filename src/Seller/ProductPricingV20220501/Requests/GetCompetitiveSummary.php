@@ -34,8 +34,7 @@ class GetCompetitiveSummary extends Request implements HasBody
      */
     public function __construct(
         public CompetitiveSummaryBatchRequest $competitiveSummaryBatchRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

@@ -23,6 +23,5 @@ final class Region extends Dto
         public readonly ?string $countryCode = null,
         public readonly ?string $state = null,
         public readonly ?string $warehouseId = null,
-    ) {
-    }
+    ) {}
 }

@@ -31,6 +31,5 @@ final class BoxUpdateInput extends Dto
         public readonly Weight $weight,
         public readonly ?array $items = null,
         public readonly ?string $packageId = null,
-    ) {
-    }
+    ) {}
 }

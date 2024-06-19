@@ -43,6 +43,5 @@ final class ListingOffersRequest extends Dto
         public readonly string $itemCondition,
         public readonly ?array $headers = null,
         public readonly ?string $customerType = null,
-    ) {
-    }
+    ) {}
 }

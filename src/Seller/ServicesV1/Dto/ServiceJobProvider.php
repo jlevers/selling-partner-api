@@ -19,6 +19,5 @@ final class ServiceJobProvider extends Dto
      */
     public function __construct(
         public readonly ?string $serviceJobProviderId = null,
-    ) {
-    }
+    ) {}
 }

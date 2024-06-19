@@ -19,6 +19,5 @@ final class OfferProgramConfigurationPromotionsDiscountFunding extends Dto
      */
     public function __construct(
         public readonly ?float $percentage = null,
-    ) {
-    }
+    ) {}
 }

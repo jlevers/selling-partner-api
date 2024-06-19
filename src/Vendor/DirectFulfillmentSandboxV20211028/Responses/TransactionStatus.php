@@ -20,6 +20,5 @@ final class TransactionStatus extends Response
      */
     public function __construct(
         public readonly ?Transaction $transactionStatus = null,
-    ) {
-    }
+    ) {}
 }

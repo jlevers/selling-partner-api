@@ -37,6 +37,5 @@ final class SafetReimbursementEvent extends Dto
         public readonly ?Currency $reimbursedAmount = null,
         public readonly ?string $reasonCode = null,
         public readonly ?array $safetReimbursementItemList = null,
-    ) {
-    }
+    ) {}
 }

@@ -34,6 +34,5 @@ final class LoanServicingEvent extends Dto
     public function __construct(
         public readonly ?Currency $loanAmount = null,
         public readonly ?string $sourceBusinessEventType = null,
-    ) {
-    }
+    ) {}
 }

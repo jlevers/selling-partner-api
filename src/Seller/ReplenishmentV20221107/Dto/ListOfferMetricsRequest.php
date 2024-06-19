@@ -23,6 +23,5 @@ final class ListOfferMetricsRequest extends Dto
         public readonly ListOfferMetricsRequestPagination $pagination,
         public readonly ListOfferMetricsRequestFilters $filters,
         public readonly ?ListOfferMetricsRequestSort $sort = null,
-    ) {
-    }
+    ) {}
 }

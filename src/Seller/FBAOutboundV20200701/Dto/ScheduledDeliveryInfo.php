@@ -23,6 +23,5 @@ final class ScheduledDeliveryInfo extends Dto
     public function __construct(
         public readonly string $deliveryTimeZone,
         public readonly array $deliveryWindows,
-    ) {
-    }
+    ) {}
 }

@@ -24,8 +24,8 @@ final class FulfillmentOrderItem extends Dto
      * @param  ?string  $displayableComment  Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip.
      * @param  ?string  $fulfillmentNetworkSku  Amazon's fulfillment network SKU of the item.
      * @param  ?string  $orderItemDisposition  Indicates whether the item is sellable or unsellable.
-     * @param  ?\DateTimeInterface  $estimatedShipDate
-     * @param  ?\DateTimeInterface  $estimatedArrivalDate
+     * @param  ?\DateTimeInterface  $estimatedShipDate  Date timestamp
+     * @param  ?\DateTimeInterface  $estimatedArrivalDate  Date timestamp
      * @param  ?Money  $perUnitPrice  An amount of money, including units in the form of currency.
      * @param  ?Money  $perUnitTax  An amount of money, including units in the form of currency.
      * @param  ?Money  $perUnitDeclaredValue  An amount of money, including units in the form of currency.
@@ -45,6 +45,5 @@ final class FulfillmentOrderItem extends Dto
         public readonly ?Money $perUnitPrice = null,
         public readonly ?Money $perUnitTax = null,
         public readonly ?Money $perUnitDeclaredValue = null,
-    ) {
-    }
+    ) {}
 }

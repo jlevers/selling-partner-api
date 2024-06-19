@@ -21,6 +21,5 @@ final class ItemProductTypeByMarketplace extends Dto
     public function __construct(
         public readonly ?string $marketplaceId = null,
         public readonly ?string $productType = null,
-    ) {
-    }
+    ) {}
 }

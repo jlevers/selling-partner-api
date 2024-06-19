@@ -23,6 +23,5 @@ final class NonPartneredLtlDataInput extends Dto
     public function __construct(
         public readonly string $carrierName,
         public readonly string $proNumber,
-    ) {
-    }
+    ) {}
 }

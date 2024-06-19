@@ -23,6 +23,5 @@ final class Quote extends Dto
         public readonly Currency $cost,
         public readonly ?\DateTimeInterface $expiration = null,
         public readonly ?\DateTimeInterface $voidableUntil = null,
-    ) {
-    }
+    ) {}
 }

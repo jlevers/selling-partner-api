@@ -42,6 +42,5 @@ final class InvoiceItem extends Dto
         public readonly ?string $hsnCode = null,
         public readonly ?array $taxDetails = null,
         public readonly ?array $chargeDetails = null,
-    ) {
-    }
+    ) {}
 }

@@ -32,8 +32,7 @@ class GetSubscription extends Request
     public function __construct(
         protected string $notificationType,
         protected ?string $payloadVersion = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

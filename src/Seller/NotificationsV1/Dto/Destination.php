@@ -23,6 +23,5 @@ final class Destination extends Dto
         public readonly string $name,
         public readonly string $destinationId,
         public readonly DestinationResource $resource,
-    ) {
-    }
+    ) {}
 }

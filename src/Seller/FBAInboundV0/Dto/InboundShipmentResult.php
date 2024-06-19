@@ -21,6 +21,5 @@ final class InboundShipmentResult extends Dto
      */
     public function __construct(
         public readonly string $shipmentId,
-    ) {
-    }
+    ) {}
 }

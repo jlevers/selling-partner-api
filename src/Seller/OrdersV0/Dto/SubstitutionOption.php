@@ -35,6 +35,5 @@ final class SubstitutionOption extends Dto
         public readonly ?string $sellerSku = null,
         public readonly ?string $title = null,
         public readonly ?Measurement $measurement = null,
-    ) {
-    }
+    ) {}
 }

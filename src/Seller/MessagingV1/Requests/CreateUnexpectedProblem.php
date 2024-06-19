@@ -37,8 +37,7 @@ class CreateUnexpectedProblem extends Request implements HasBody
         protected string $amazonOrderId,
         public CreateUnexpectedProblemRequest $createUnexpectedProblemRequest,
         protected array $marketplaceIds,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

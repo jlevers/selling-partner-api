@@ -26,6 +26,5 @@ final class ConfirmPreorderResult extends Dto
     public function __construct(
         public readonly ?\DateTimeInterface $confirmedNeedByDate = null,
         public readonly ?\DateTimeInterface $confirmedFulfillableDate = null,
-    ) {
-    }
+    ) {}
 }

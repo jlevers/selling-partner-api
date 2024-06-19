@@ -25,6 +25,5 @@ final class OperationProblem extends Dto
         public readonly string $message,
         public readonly string $severity,
         public readonly ?string $details = null,
-    ) {
-    }
+    ) {}
 }

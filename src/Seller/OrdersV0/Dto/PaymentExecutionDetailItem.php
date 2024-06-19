@@ -29,6 +29,5 @@ final class PaymentExecutionDetailItem extends Dto
     public function __construct(
         public readonly Money $payment,
         public readonly string $paymentMethod,
-    ) {
-    }
+    ) {}
 }

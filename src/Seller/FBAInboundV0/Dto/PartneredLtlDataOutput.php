@@ -67,6 +67,5 @@ final class PartneredLtlDataOutput extends Dto
         public readonly ?Amount $sellerDeclaredValue = null,
         public readonly ?Amount $amazonCalculatedValue = null,
         public readonly ?PartneredEstimate $partneredEstimate = null,
-    ) {
-    }
+    ) {}
 }

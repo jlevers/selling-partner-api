@@ -31,6 +31,5 @@ final class AvailableShippingServiceOptions extends Dto
     public function __construct(
         public readonly array $availableCarrierWillPickUpOptions,
         public readonly array $availableDeliveryExperienceOptions,
-    ) {
-    }
+    ) {}
 }

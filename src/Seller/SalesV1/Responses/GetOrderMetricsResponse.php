@@ -25,6 +25,5 @@ final class GetOrderMetricsResponse extends Response
     public function __construct(
         public readonly ?array $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

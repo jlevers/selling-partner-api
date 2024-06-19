@@ -25,6 +25,5 @@ final class GetTransactionResponse extends Response
     public function __construct(
         public readonly ?TransactionStatus $payload = null,
         public readonly ?array $errors = null,
-    ) {
-    }
+    ) {}
 }

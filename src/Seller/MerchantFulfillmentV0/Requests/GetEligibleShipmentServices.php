@@ -33,8 +33,7 @@ class GetEligibleShipmentServices extends Request implements HasBody
      */
     public function __construct(
         public GetEligibleShipmentServicesRequest $getEligibleShipmentServicesRequest,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {

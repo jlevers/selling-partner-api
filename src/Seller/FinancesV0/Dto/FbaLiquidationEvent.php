@@ -32,6 +32,5 @@ final class FbaLiquidationEvent extends Dto
         public readonly ?string $originalRemovalOrderId = null,
         public readonly ?Currency $liquidationProceedsAmount = null,
         public readonly ?Currency $liquidationFeeAmount = null,
-    ) {
-    }
+    ) {}
 }

@@ -14,10 +14,10 @@ use SellingPartnerApi\Dto;
 
 final class CustomPlacementInput extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [Item::class]];
+    protected static array $complexArrayTypes = ['items' => [ItemInput::class]];
 
     /**
-     * @param  Item[]  $items  Items contained within the box.
+     * @param  ItemInput[]  $items  Items included while creating Inbound Plan.
      * @param  string  $warehouseId  Warehouse Id.
      */
     public function __construct(

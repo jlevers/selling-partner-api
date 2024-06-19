@@ -14,11 +14,11 @@ use SellingPartnerApi\Dto;
 
 final class Scenario extends Dto
 {
-    protected static array $complexArrayTypes = ['orders' => [OrderScenarioRequest::class]];
+    protected static array $complexArrayTypes = ['orders' => [TestOrder::class]];
 
     /**
      * @param  string  $scenarioId  An identifier that identifies the type of scenario that user can use for testing.
-     * @param  OrderScenarioRequest[]  $orders  The list of test orders requested as indicated by party identifiers.
+     * @param  TestOrder[]  $orders  A list of orders that can be used by the caller to test each life cycle or scenario.
      */
     public function __construct(
         public readonly string $scenarioId,

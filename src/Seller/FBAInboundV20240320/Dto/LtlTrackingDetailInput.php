@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class LtlTrackingDetailInput extends Dto
 {
     /**
-     * @param  string[]  $freightBillNumber  The number associated with the freight bill.
+     * @param  string[]  $freightBillNumber  Number associated with the freight bill.
      * @param  ?string  $billOfLadingNumber  The number of the carrier shipment acknowledgement document.
      */
     public function __construct(

@@ -19,7 +19,7 @@ final class ListShipmentPalletsResponse extends Response
     protected static array $complexArrayTypes = ['pallets' => [Pallet::class]];
 
     /**
-     * @param  Pallet[]  $pallets  The pallets in an inbound plan.
+     * @param  Pallet[]  $pallets  The pallets in a shipment.
      * @param  ?Pagination  $pagination  Contains tokens to fetch from a certain page.
      */
     public function __construct(

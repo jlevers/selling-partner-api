@@ -16,7 +16,7 @@ final class Pallet extends Dto
 {
     protected static array $complexArrayTypes = [
         'palletIdentifiers' => [ContainerIdentification::class],
-        'items' => [PurchaseOrderItems::class],
+        'items' => [ContainerItem::class],
     ];
 
     /**
@@ -26,7 +26,7 @@ final class Pallet extends Dto
      * @param  ?Dimensions  $dimensions  Physical dimensional measurements of a container.
      * @param  ?Weight  $weight  The weight of the shipment.
      * @param  ?CartonReferenceDetails  $cartonReferenceDetails  Carton reference details.
-     * @param  PurchaseOrderItems[]|null  $items  A list of the items that are associated to the PO in this transport and their associated details.
+     * @param  ContainerItem[]|null  $items  A list of container item details.
      */
     public function __construct(
         public readonly array $palletIdentifiers,

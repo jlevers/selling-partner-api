@@ -11,15 +11,15 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\FBAInboundV20240320\Responses;
 
 use SellingPartnerApi\Response;
-use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\BoxUpdateInput;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\Box;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\Pagination;
 
 final class ListPackingGroupBoxesResponse extends Response
 {
-    protected static array $complexArrayTypes = ['boxes' => [BoxUpdateInput::class]];
+    protected static array $complexArrayTypes = ['boxes' => [Box::class]];
 
     /**
-     * @param  BoxUpdateInput[]  $boxes  A list of boxes that will be present in the shipment after the update.
+     * @param  Box[]  $boxes  Provides the information about the list of boxes in the packing group.
      * @param  ?Pagination  $pagination  Contains tokens to fetch from a certain page.
      */
     public function __construct(

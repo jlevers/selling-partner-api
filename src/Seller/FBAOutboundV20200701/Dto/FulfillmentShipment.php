@@ -26,7 +26,7 @@ final class FulfillmentShipment extends Dto
      * @param  FulfillmentShipmentItem[]  $fulfillmentShipmentItem  An array of fulfillment shipment item information.
      * @param  ?\DateTimeInterface  $shippingDate
      * @param  ?\DateTimeInterface  $estimatedArrivalDate
-     * @param  ?string[]  $shippingNotes  Provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed.
+     * @param  ?string[]  $shippingNotes  Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren't available.
      * @param  FulfillmentShipmentPackage[]|null  $fulfillmentShipmentPackage  An array of fulfillment shipment package information.
      */
     public function __construct(

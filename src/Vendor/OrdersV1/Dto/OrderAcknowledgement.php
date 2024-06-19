@@ -14,12 +14,12 @@ use SellingPartnerApi\Dto;
 
 final class OrderAcknowledgement extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [OrderItem::class]];
+    protected static array $complexArrayTypes = ['items' => [OrderAcknowledgementItem::class]];
 
     /**
      * @param  string  $purchaseOrderNumber  The purchase order number. Formatting Notes: 8-character alpha-numeric code.
      * @param  \DateTimeInterface  $acknowledgementDate  The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.
-     * @param  OrderItem[]  $items  A list of items in this purchase order.
+     * @param  OrderAcknowledgementItem[]  $items  A list of the items being acknowledged with associated details.
      */
     public function __construct(
         public readonly string $purchaseOrderNumber,

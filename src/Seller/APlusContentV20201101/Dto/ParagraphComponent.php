@@ -14,10 +14,10 @@ use SellingPartnerApi\Dto;
 
 final class ParagraphComponent extends Dto
 {
-    protected static array $complexArrayTypes = ['textList' => [TextItem::class]];
+    protected static array $complexArrayTypes = ['textList' => [TextComponent::class]];
 
     /**
-     * @param  TextItem[]  $textList
+     * @param  TextComponent[]  $textList
      */
     public function __construct(
         public readonly array $textList,

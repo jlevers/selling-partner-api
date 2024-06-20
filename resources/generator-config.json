@@ -1,5 +1,5 @@
 {
-    "version": "6.0.6",
+    "version": "7.0.0",
     "type": "openapi",
     "outputDir": "src",
     "force": true,

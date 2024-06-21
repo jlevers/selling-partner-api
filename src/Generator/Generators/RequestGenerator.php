@@ -3,10 +3,8 @@
 namespace SellingPartnerApi\Generator\Generators;
 
 use Crescat\SaloonSdkGenerator\Data\Generator\Endpoint;
-use Crescat\SaloonSdkGenerator\Enums\SimpleType;
 use Crescat\SaloonSdkGenerator\Generators\RequestGenerator as SDKGenerator;
 use Crescat\SaloonSdkGenerator\Helpers\NameHelper;
-use Crescat\SaloonSdkGenerator\Helpers\Utils;
 use Exception;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
@@ -172,16 +170,8 @@ class RequestGenerator extends SDKGenerator
             ->setType(Response::class);
 
         if ($endpoint->bodySchema) {
-            $bodyType = $endpoint->bodySchema->type;
-            if (SimpleType::isScalar($bodyType)) {
-                $returnValText = '[$this->%s]';
-            } elseif ($bodyType === 'DateTime') {
-                $returnValText = '[$this->%s->format(\''.$this->config->datetimeFormat.'\')]';
-            } elseif (! Utils::isBuiltinType($bodyType)) {
-                $returnValText = '$this->%s->toArray()';
-            } else {
-                $returnValText = '$this->%s';
-            }
+            $returnValText = $this->generateDefaultBody($endpoint->bodySchema);
+
             $classType
                 ->addMethod('defaultBody')
                 ->setReturnType('array')

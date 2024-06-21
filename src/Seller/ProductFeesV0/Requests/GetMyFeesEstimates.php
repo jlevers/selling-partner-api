@@ -54,6 +54,6 @@ class GetMyFeesEstimates extends Request implements HasBody
 
     public function defaultBody(): array
     {
-        return $this->getMyFeesEstimatesRequest;
+        return array_map(fn ($item) => $item->toArray(), $this->getMyFeesEstimatesRequest);
     }
 }

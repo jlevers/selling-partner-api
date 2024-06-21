@@ -5,14 +5,22 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Traits;
 
 use DateTime;
+use DateTimeInterface;
 use ReflectionClass;
 use SellingPartnerApi\Exceptions\InvalidAttributeTypeException;
+use SellingPartnerApi\Exceptions\UnknownDatetimeFormatException;
 
 trait Deserializes
 {
     use HasComplexArrayTypes;
 
     protected static string $datetimeFormat = 'Y-m-d\TH:i:s\Z';
+    protected static string $dateFormat = 'Y-m-d';
+    protected static array $validDatetimeFormats = [
+        'Y-m-d\TH:i:s\Z',
+        DATE_ATOM,
+        'Y-m-d'
+    ];
 
     public static function deserialize(mixed $data): mixed
     {
@@ -71,7 +79,7 @@ trait Deserializes
                 'float' => (float) $value,
                 'bool' => (bool) $value,
                 'string' => (string) $value,
-                'date', 'datetime' => DateTime::createFromFormat(static::$datetimeFormat, $value),
+                'date', 'datetime' => static::convertValueToDateTime($value),
                 'array', 'mixed' => $value,
                 'null' => null,
                 default => chr(0),
@@ -83,12 +91,8 @@ trait Deserializes
 
             if (! class_exists($type) && ! interface_exists($type)) {
                 throw new InvalidAttributeTypeException("Neither the Class nor Interface `$type` exists");
-            } elseif ($type == \DateTimeInterface::class) {
-                if (strlen($value) === 10) {
-                    return DateTime::createFromFormat('Y-m-d', $value);
-                } else {
-                    return DateTime::createFromFormat(static::$datetimeFormat, $value);
-                }
+            } elseif ($type == DateTimeInterface::class) {
+                return static::convertValueToDateTime($value);
             }
 
             $deserialized = $type::deserialize($value);
@@ -111,5 +115,25 @@ trait Deserializes
         }
 
         throw new InvalidAttributeTypeException("Invalid type `$type`");
+    }
+
+    protected static function convertValueToDateTime(string $value): DateTime
+    {
+        foreach (static::$validDatetimeFormats as $validDatetimeFormat) {
+            try {
+                $returnValue = DateTime::createFromFormat($validDatetimeFormat, $value);
+                // Only return a valid object, else try again until failure
+                if ($returnValue instanceof DateTimeInterface) {
+                    return $returnValue;
+                }
+
+                continue;
+            } catch (\Exception) {
+                // continue with the next format if there's one
+                continue;
+            }
+        }
+
+        throw new UnknownDatetimeFormatException("The value `$value` uses a unknown DateTime format.");
     }
 }

@@ -44,6 +44,8 @@ abstract class SellingPartnerApi extends Connector
 
     protected TokensV20210301\Api $tokensApi;
 
+    protected string $userAgent;
+
     public function __construct(
         public readonly string $clientId,
         public readonly string $clientSecret,
@@ -188,9 +190,21 @@ abstract class SellingPartnerApi extends Connector
 
     public function getUserAgent(): string
     {
-        $version = Package::version();
+        if (isset($this->userAgent)) {
+            return $this->userAgent;
+        }
 
-        return "jlevers/selling-partner-api/v$version/php";
+        $version = Package::version();
+        $this->userAgent = "jlevers/selling-partner-api/v$version/php";
+
+        return $this->userAgent;
+    }
+
+    public function setUserAgent(string $userAgent): static
+    {
+        $this->userAgent = $userAgent;
+
+        return $this;
     }
 
     /**

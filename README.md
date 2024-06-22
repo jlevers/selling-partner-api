@@ -131,7 +131,7 @@ The `SellingPartnerApi::seller()` and `SellingPartnerApi::vendor()` builder meth
 * `dataElements (array)`: Optional. An array of data elements to pass to restricted operations. See the [Restricted operations](#restricted-operations) section for more details.
 * `delegatee (string)`: Optional. The application ID of a delegatee application to generate RDTs on behalf of.
 * `authenticationClient (GuzzleHttp\Client)`: Guzzle client instance that will be used to generate the access token from the refresh token. If not provided, the default Saloon Guzzle client will be used.
-* `tokenCache (SellingPartnerApi\Contracts\TokenCache)`: A cache interface instance that will be used to cache access tokens. If not provided, a basic in-memory cache will be used.
+* `cache (SellingPartnerApi\Contracts\TokenCache)`: A cache interface instance that will be used to cache access tokens. If not provided, a basic in-memory cache will be used.
 
 
 ### Debugging

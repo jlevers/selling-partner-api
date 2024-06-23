@@ -7,6 +7,7 @@ namespace SellingPartnerApi\Authentication;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Helpers\OAuth2\OAuthConfig;
+use Saloon\Http\PendingRequest;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Enums\GrantlessScope;
@@ -21,14 +22,6 @@ class GetAccessTokenRequest extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * Define the endpoint for the request.
-     */
-    public function resolveEndpoint(): string
-    {
-        return $this->oauthConfig->getTokenEndpoint();
-    }
-
-    /**
      * Requires the authorization code and OAuth 2 config.
      *
      * @param  string[]  $scopes
@@ -39,6 +32,20 @@ class GetAccessTokenRequest extends Request implements HasBody
         protected ?GrantlessScope $scope = null,
     ) {
         $this->authenticate(new NullAuthenticator());
+    }
+
+    public function resolveEndpoint(): string
+    {
+        return $this->oauthConfig->getTokenEndpoint();
+    }
+
+    public function boot(PendingRequest $request): void
+    {
+        $defaultHeaders = array_keys($request->getConnector()->headers()->all());
+
+        foreach ($defaultHeaders as $defaultHeader) {
+            $request->headers()->remove($defaultHeader);
+        }
     }
 
     /**

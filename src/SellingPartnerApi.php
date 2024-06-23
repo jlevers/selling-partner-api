@@ -138,10 +138,14 @@ abstract class SellingPartnerApi extends Connector
         string $method,
         array $knownDataElements,
     ): AccessTokenAuthenticator {
+        $cacheKey = "{$this->refreshToken}.{$method}.{$path}";
+
+        if ($this->delegatee) {
+            $cacheKey = "{$this->delegatee}.{$cacheKey}";
+        }
+
         // Only use data elements that are known to be valid for this particular endpoint
         $dataElements = array_intersect($this->dataElements, $knownDataElements);
-
-        $cacheKey = "{$this->clientId}.{$method}.{$path}";
         if ($dataElements) {
             $cacheKey .= ':'.implode(',', $dataElements);
         }

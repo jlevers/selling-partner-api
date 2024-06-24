@@ -388,4 +388,31 @@ class AuthenticationTest extends TestCase
         // Make sure different dataElements sets result in different RDTs
         $this->assertNotEquals($dataElementsRdtAuthenticator1->accessToken, $dataElementsRdtAuthenticator2->accessToken);
     }
+
+    public function testWorksWithNoCache(): void
+    {
+        $faker = Faker\Factory::create();
+        $mockClient = new MockClient([
+            GetAccessTokenRequest::class => fn () => MockResponse::make([
+                'access_token' => $faker->unique()->asciify('********************************************'),
+                'token_type' => 'bearer',
+                'expires_in' => 3600,
+                'refresh_token' => 'refresh-token',
+            ]),
+        ]);
+
+        $connector = SellingPartnerApi::seller(
+            clientId: 'client-id',
+            clientSecret: 'client-secret',
+            refreshToken: 'refresh-token',
+            endpoint: Endpoint::NA_SANDBOX,
+            cache: null,
+        );
+        $connector->withMockClient($mockClient);
+
+        $authenticator1 = $connector->defaultAuth();
+        $authenticator2 = $connector->defaultAuth();
+
+        $this->assertNotEquals($authenticator1->accessToken, $authenticator2->accessToken);
+    }
 }

@@ -330,13 +330,18 @@ abstract class SellingPartnerApi extends Connector
 
     protected function getCacheableAuthenticator(string $key, callable $refetch): AccessTokenAuthenticator
     {
-        $cached = $this->cache->get($key);
-        if ($cached) {
-            return $cached;
+        if ($this->cache) {
+            $cached = $this->cache->get($key);
+            if ($cached) {
+                return $cached;
+            }
         }
 
         $fetched = $refetch();
-        $this->cache->set($key, $fetched);
+
+        if ($this->cache) {
+            $this->cache->set($key, $fetched);
+        }
 
         return $fetched;
     }

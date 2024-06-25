@@ -20,6 +20,7 @@ trait Deserializes
 
     protected static array $validDatetimeFormats = [
         'Y-m-d\TH:i:s\Z',
+        'Y-m-d\TH:i:s.u\Z',
         DATE_ATOM,
         'Y-m-d',
     ];

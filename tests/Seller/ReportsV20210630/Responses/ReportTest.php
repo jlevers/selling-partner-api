@@ -37,4 +37,16 @@ class ReportTest extends TestCase
         $this->assertNotNull($result);
         $this->assertInstanceOf(DateTimeInterface::class, $result->createdTime);
     }
+
+    public function testDeserializeDateTimeNew()
+    {
+        $result = Report::deserialize([
+            'reportId' => 12345,
+            'reportType' => 'TEST_REPORT',
+            'createdTime' => '2024-06-25T12:48:31.000Z',
+            'processingStatus' => 'IN_QUEUE',
+        ]);
+        $this->assertNotNull($result);
+        $this->assertInstanceOf(DateTimeInterface::class, $result->createdTime);
+    }
 }

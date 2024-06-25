@@ -73,6 +73,19 @@
           ]
         }
       ]
+    },
+    "catalog-items": {
+      "2022-04-01": [
+        {
+          "comment": "Remove required 'Pagination' and 'Refinements', see https://github.com/jlevers/selling-partner-api/issues/740",
+          "action": "replace",
+          "path": "components.schemas.ItemSearchResults.required",
+          "value": [
+            "items",
+            "numberOfResults"
+          ]
+        }
+      ]
     }
   }
 }

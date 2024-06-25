@@ -38,7 +38,7 @@ class ReportTest extends TestCase
         $this->assertInstanceOf(DateTimeInterface::class, $result->createdTime);
     }
 
-    public function testDeserializeDateTimeNew()
+    public function testDeserializeDateTimeIssue742()
     {
         $result = Report::deserialize([
             'reportId' => 12345,

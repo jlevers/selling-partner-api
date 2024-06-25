@@ -19,8 +19,9 @@ A PHP library for connecting to Amazon's [Selling Partner API](https://github.co
 ### Related packages
 
 * [`highsidelabs/laravel-spapi`](https://github.com/highsidelabs/laravel-spapi): A [Laravel](https://laravel.com) wrapper for this package that makes SP API integration in Laravel projects quick and easy.
-* [`highsidelabs/amazon-business-api`](https://github.com/highsidelabs/amazon-business-api): A PHP library for Amazon's [Business API](https://developer-docs.amazon.com/amazon-business/docs), with a near-identical interface to this package.
+* [`highsidelabs/amazon-business-api`](https://github.com/highsidelabs/amazon-business-api): A PHP library for Amazon's [Business API](https://developer-docs.amazon.com/amazon-business/docs).
 * [`highsidelabs/walmart-api`](https://github.com/highsidelabs/walmart-api-php): A PHP library for [Walmart's seller and supplier APIs](https://developer.walmart.com), including the Marketplace, Drop Ship Vendor, Content Provider, and Warehouse Supplier APIs.
+* [`shipstream/fedex-rest-sdk`](https://github.com/shipstream/fedex-rest-php-sdk): A PHP library for interacting with FedEx's REST APIs, built by me on behalf of [ShipStream](https://shipstream.io).
 * [`highsidelabs/saloon-sdk-generator`](https://github.com/highsidelabs/saloon-sdk-generator): A tool for autogenerating [Saloon](https://docs.saloon.dev) SDKs from OpenAPI models.
 
 ---

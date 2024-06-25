@@ -22,8 +22,10 @@
     "require": {
         "php": ">=8.2",
         "ext-curl": "*",
+        "ext-dom": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
+        "ext-simplexml": "*",
         "guzzlehttp/guzzle": "^6.0|^7.0",
         "saloonphp/saloon": "^3.4",
         "openspout/openspout": "^4.23",
@@ -55,6 +57,13 @@
         }
     },
     "scripts": {
+        "build": [
+            "@schema:download",
+            "@schema:refactor",
+            "@schema:generate",
+            "@lint"
+        ],
+        "clean": "rm -rf src/Vendor src/Seller resources/models/seller resources/models/vendor resources/models/raw",
         "lint": [
             "@pint",
             "@php-compatibility-check"
@@ -63,6 +72,9 @@
         "php-compatibility-check": "./vendor/bin/phpcs -p ./src ./bin --standard=PHPCompatibility --runtime-set testVersion 8.2-",
         "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
         "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+        "schema:download": "@php bin/console schema:download",
+        "schema:generate": "@php bin/console schema:generate",
+        "schema:refactor": "@php bin/console schema:refactor",
         "test": "vendor/bin/phpunit"
     },
     "config": {

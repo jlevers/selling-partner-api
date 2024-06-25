@@ -18,3 +18,5 @@ composer.lock
 
 # OS X
 **/.DS_Store
+
+resources/models/raw

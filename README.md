@@ -63,6 +63,8 @@ This README is divided into several sections:
 * [Setup](#setup)
     * [Configuration options](#configuration-options)
 * [Debugging](#debugging)
+* [Working with responses](#working-with-responses)
+* [Working with DTOs](#working-with-dtos)
 * [Supported API segments](#supported-api-segments)
     * [Seller APIs](#seller-apis)
     * [Vendor APIs](#vendor-apis)
@@ -73,7 +75,6 @@ This README is divided into several sections:
     * [Downloading a feed result document](#downloading-a-feed-result-document)
 * [Naming conventions](#naming-conventions)
 * [API versions](#api-versions)
-* [Working with DTOs](#working-with-dtos)
 
 ## Getting Started
 
@@ -118,7 +119,7 @@ $dto = $response->dto();
 $purchaseDate = $dto->payload->orders[0]->purchaseDate;
 ```
 
-See the [Working with DTOs](#working-with-dtos) section for more details on how to work with requests and responses.
+See the [Working with responses](#working-with-responses) section for more details on how to work with responses, and [Working with DTOs](#working-with-dtos) for more details on how to use DTOs.
 
 
 ##### Configuration options
@@ -159,6 +160,46 @@ $connector->debugRequest(
 Then make requests with the connector as usual, and you'll hit the closure above every time a request is fired. You can also debug responses in a similar fashion – check out the [Saloon docs](https://docs.saloon.dev/digging-deeper/debugging#debugging-responses) for more details.
 
 If you want to output your debug data to a file, you can do so with the `SellingPartnerApi::debugRequestToFile()`, `SellingPartnerApi::debugResponseToFile()`, and `SellingPartnerApi::debugToFile()` methods. These methods all take an `$outputPath` argument and an optional `$die` argument.
+
+## Working with responses
+
+As mentioned earlier, all endpoint methods return an instance of `Saloon\Response`. You can access the raw JSON response via `$response->json()`, or you can automatically parse the response into a DTO by calling `$response->dto()`. Once the response is turned into a DTO, you can access the data via the DTO's properties (described below). Saloon's [response documentation](https://docs.saloon.dev/the-basics/responses) gives a comprehensive guide to working with Saloon responses, including retrieving headers, status, and more.
+
+## Working with DTOs
+
+Some methods take DTOs as parameters. For instance, the `confirmShipment` method in the Orders API takes a `ConfirmShipmentRequest` DTO as a parameter. You can call `confirmShipment` like so:
+
+```php
+<?php
+
+use SellingPartnerApi\Seller\OrdersV0\Dto;
+use SellingPartnerApi\SellingPartnerApi;
+
+$confirmShipmentRequest = new Dto\ConfirmShipmentRequest(
+    packageDetail: new Dto\PackageDetail(
+        packageReferenceId: 'PKG123',
+        carrierCode: 'USPS',
+        trackingNumber: 'ASDF1234567890',
+        shipDate: new DateTime('2024-01-01 12:00:00'),
+        orderItems: [
+            new Dto\ConfirmShipmentOrderItem(
+                orderItemId: '1234567890',
+                quantity: 1,
+            ),
+            new Dto\ConfirmShipmentOrderItem(
+                orderItemId: '0987654321',
+                quantity: 2,
+            )
+        ],
+    ),
+    marketplaceId: 'ATVPDKIKX0DER',
+);
+
+$response = $ordersApi->confirmShipment(
+    orderId: '123-4567890-1234567',
+    confirmShipmentRequest: $confirmShipmentRequest,
+);
+```
 
 ## Supported API segments
 
@@ -499,39 +540,3 @@ $contents = $feedResultDocument->download($feedType);
 Wherever possible, the names of the classes, methods, and properties in this package are identical to the names used in the Selling Partner API documentation. There are limited cases where this is not true, such as where the SP API documentation itself is inconsistent: for instance, there are some cases the SP API docs name properties in `UpperCamelCase` instead of `camelCase`, and in those cases the properties are named in `camelCase` in this package. Methods are named in `camelCase`, and DTOs are named in `UpperCamelCase`.
 
 Instead of maintaining a redundant set of documentation, we link to the official SP API documentation whenever possible. If it's unclear how to use a particular method or DTO, check out the corresponding section of the [official SP API documentation](https://developer-docs.amazon.com/sp-api/docs/welcome).
-
-## Working with DTOs
-
-Some methods take DTOs as parameters. For instance, the `confirmShipment` method in the Orders API takes a `ConfirmShipmentRequest` DTO as a parameter. You can call `confirmShipment` like so:
-
-```php
-<?php
-
-use SellingPartnerApi\Seller\OrdersV0\Dto;
-use SellingPartnerApi\SellingPartnerApi;
-
-$confirmShipmentRequest = new Dto\ConfirmShipmentRequest(
-    packageDetail: new Dto\PackageDetail(
-        packageReferenceId: 'PKG123',
-        carrierCode: 'USPS',
-        trackingNumber: 'ASDF1234567890',
-        shipDate: new DateTime('2024-01-01 12:00:00'),
-        orderItems: [
-            new Dto\ConfirmShipmentOrderItem(
-                orderItemId: '1234567890',
-                quantity: 1,
-            ),
-            new Dto\ConfirmShipmentOrderItem(
-                orderItemId: '0987654321',
-                quantity: 2,
-            )
-        ],
-    ),
-    marketplaceId: 'ATVPDKIKX0DER',
-);
-
-$response = $ordersApi->confirmShipment(
-    orderId: '123-4567890-1234567',
-    confirmShipmentRequest: $confirmShipmentRequest,
-)
-```

@@ -123,7 +123,7 @@ trait Deserializes
     {
         foreach (static::$validDatetimeFormats as $validDatetimeFormat) {
             try {
-                $returnValue = DateTime::createFromFormat($validDatetimeFormat, $value);
+                $returnValue = DateTime::createFromFormat($validDatetimeFormat, $value, (str_ends_with($value, 'Z') ? new DateTimeZone('UTC') : null));
                 // Only return a valid object, else try again until failure
                 if ($returnValue instanceof DateTimeInterface) {
                     return $returnValue;

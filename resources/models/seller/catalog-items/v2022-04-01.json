@@ -4111,9 +4111,7 @@
             "ItemSearchResults": {
                 "required": [
                     "items",
-                    "numberOfResults",
-                    "pagination",
-                    "refinements"
+                    "numberOfResults"
                 ],
                 "type": "object",
                 "properties": {

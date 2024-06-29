@@ -16,6 +16,8 @@ final class ShipmentStatusUpdate extends Dto
 {
     /**
      * @param  string  $purchaseOrderNumber  Purchase order number of the shipment for which to update the shipment status.
+     * @param  PartyIdentification  $sellingParty  Name, address, and tax details for a party.
+     * @param  PartyIdentification  $shipFromParty  Name, address, and tax details for a party.
      * @param  StatusUpdateDetails  $statusUpdateDetails  Details for the shipment status update given by the vendor for the specific package.
      */
     public function __construct(

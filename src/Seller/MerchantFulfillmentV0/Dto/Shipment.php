@@ -37,7 +37,7 @@ final class Shipment extends Dto
     /**
      * @param  string  $shipmentId  An Amazon-defined shipment identifier.
      * @param  string  $amazonOrderId  An Amazon-defined order identifier, in 3-7-7 format.
-     * @param  Item[]  $itemList  The list of items to be included in a shipment.
+     * @param  Item[]  $itemList  The list of items you want to include in a shipment.
      * @param  Address  $shipFromAddress  The postal address information.
      * @param  Address  $shipToAddress  The postal address information.
      * @param  PackageDimensions  $packageDimensions  The dimensions of a package contained in a shipment.
@@ -46,9 +46,10 @@ final class Shipment extends Dto
      * @param  ShippingService  $shippingService  A shipping service offer made by a carrier.
      * @param  Label  $label  Data for creating a shipping label and dimensions for printing the label.
      * @param  string  $status  The shipment status.
+     * @param  \DateTimeInterface  $createdDate  Date-time formatted timestamp.
      * @param  ?string  $sellerOrderId  A seller-defined order identifier.
      * @param  ?string  $trackingId  The shipment tracking identifier provided by the carrier.
-     * @param  ?\DateTimeInterface  $lastUpdatedDate
+     * @param  ?\DateTimeInterface  $lastUpdatedDate  Date-time formatted timestamp.
      */
     public function __construct(
         public readonly string $shipmentId,

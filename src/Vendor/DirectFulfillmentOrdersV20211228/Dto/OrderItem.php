@@ -25,7 +25,7 @@ final class OrderItem extends Dto
      * @param  ?GiftDetails  $giftDetails  Gift details for the item.
      * @param  ?TaxItemDetails  $taxDetails  Total tax details for the line item.
      * @param  ?Money  $totalPrice  An amount of money, including units in the form of currency.
-     * @param  ?BuyerCustomizedInfoDetail  $buyerCustomizedInfo
+     * @param  ?BuyerCustomizedInfoDetail  $buyerCustomizedInfo  The details of the products the vendor has configured as customizable.
      */
     public function __construct(
         public readonly string $itemSequenceNumber,

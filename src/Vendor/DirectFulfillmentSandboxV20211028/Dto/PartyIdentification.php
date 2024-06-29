@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class PartyIdentification extends Dto
 {
     /**
-     * @param  string  $partyId  Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
+     * @param  string  $partyId  Assigned identification for the party. For example, warehouse code or vendor code.
      */
     public function __construct(
         public readonly string $partyId,

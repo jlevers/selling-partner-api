@@ -24,9 +24,10 @@
                 "tags": [
                     "DirectFulfillmentPaymentV1"
                 ],
-                "description": "Submits one or more invoices for a vendor's direct fulfillment orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Submits one or more invoices for a vendor's direct fulfillment orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "submitInvoice",
                 "requestBody": {
+                    "description": "The request body that contains one or more invoices for vendor orders.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -314,12 +315,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -335,12 +330,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -362,12 +351,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -386,12 +369,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -407,12 +384,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -438,6 +409,7 @@
                 "properties": {
                     "invoices": {
                         "type": "array",
+                        "description": "An array of invoice details you want to submit.",
                         "items": {
                             "$ref": "#/components/schemas/InvoiceDetail"
                         }
@@ -517,7 +489,8 @@
                             "$ref": "#/components/schemas/InvoiceItem"
                         }
                     }
-                }
+                },
+                "description": "Represents the invoice details, including the invoice number, date, parties involved, payment terms, totals, taxes, charges, and line items."
             },
             "InvoiceItem": {
                 "required": [
@@ -572,7 +545,8 @@
                             "$ref": "#/components/schemas/ChargeDetails"
                         }
                     }
-                }
+                },
+                "description": "Details of the invoice items."
             },
             "PartyIdentification": {
                 "required": [
@@ -594,7 +568,8 @@
                             "$ref": "#/components/schemas/TaxRegistrationDetail"
                         }
                     }
-                }
+                },
+                "description": "Name, address, and tax details of a party."
             },
             "TaxRegistrationDetail": {
                 "required": [
@@ -622,7 +597,7 @@
                     },
                     "taxRegistrationNumber": {
                         "type": "string",
-                        "description": "Tax registration number for the entity. For example, VAT ID, Consumption Tax ID."
+                        "description": "Tax registration number for the entity. For example, VAT ID or Consumption Tax ID."
                     },
                     "taxRegistrationAddress": {
                         "$ref": "#/components/schemas/Address"
@@ -907,7 +882,7 @@
                         "description": "The language code of the additional information detail."
                     }
                 },
-                "description": "A field where the selling party can provide additional information for tax-related or any other purposes."
+                "description": "A field where the selling party provides additional information."
             },
             "ItemQuantity": {
                 "required": [
@@ -946,7 +921,8 @@
                         "type": "string",
                         "description": "GUID to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction."
                     }
-                }
+                },
+                "description": "Response that contains the transaction ID."
             },
             "ErrorList": {
                 "type": "array",

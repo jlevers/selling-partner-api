@@ -20,10 +20,13 @@ final class OrderDetails extends Dto
      * @param  string  $customerOrderNumber  The customer order number.
      * @param  \DateTimeInterface  $orderDate  The date the order was placed. This field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.
      * @param  ShipmentDetails  $shipmentDetails  Shipment details required for the shipment.
+     * @param  PartyIdentification  $sellingParty  Name, address, and tax details of a party.
+     * @param  PartyIdentification  $shipFromParty  Name, address, and tax details of a party.
      * @param  Address  $shipToParty  Address of the party.
+     * @param  PartyIdentification  $billToParty  Name, address, and tax details of a party.
      * @param  OrderItem[]  $items  A list of items in this purchase order.
      * @param  ?string  $orderStatus  Current status of the order.
-     * @param  ?TaxTotal  $taxTotal
+     * @param  ?TaxTotal  $taxTotal  The total tax object within the shipment that relates to the order.
      */
     public function __construct(
         public readonly string $customerOrderNumber,

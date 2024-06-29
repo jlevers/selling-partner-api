@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class SubmitInventoryUpdateRequest extends Dto
 {
     /**
-     * @param  ?InventoryUpdate  $inventory
+     * @param  ?InventoryUpdate  $inventory  Inventory details required to update some or all items for the requested warehouse.
      */
     public function __construct(
         public readonly ?InventoryUpdate $inventory = null,

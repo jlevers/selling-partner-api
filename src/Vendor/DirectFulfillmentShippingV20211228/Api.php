@@ -42,6 +42,9 @@ class Api extends BaseResource
         return $this->connector->send($request);
     }
 
+    /**
+     * @param  SubmitShippingLabelsRequest  $submitShippingLabelsRequest  The request schema for the `submitShippingLabelRequest` operation.
+     */
     public function submitShippingLabelRequest(SubmitShippingLabelsRequest $submitShippingLabelsRequest): Response
     {
         $request = new SubmitShippingLabelRequest($submitShippingLabelsRequest);
@@ -50,7 +53,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $purchaseOrderNumber  The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order.
+     * @param  string  $purchaseOrderNumber  The purchase order number for which you want to return the shipping label. Should be the same `purchaseOrderNumber` as received in the order.
      */
     public function getShippingLabel(string $purchaseOrderNumber): Response
     {
@@ -72,6 +75,9 @@ class Api extends BaseResource
         return $this->connector->send($request);
     }
 
+    /**
+     * @param  SubmitShipmentConfirmationsRequest  $submitShipmentConfirmationsRequest  The `submitShipmentConfirmations` request schema.
+     */
     public function submitShipmentConfirmations(
         SubmitShipmentConfirmationsRequest $submitShipmentConfirmationsRequest,
     ): Response {
@@ -80,6 +86,9 @@ class Api extends BaseResource
         return $this->connector->send($request);
     }
 
+    /**
+     * @param  SubmitShipmentStatusUpdatesRequest  $submitShipmentStatusUpdatesRequest  The `submitShipmentStatusUpdates` request schema.
+     */
     public function submitShipmentStatusUpdates(
         SubmitShipmentStatusUpdatesRequest $submitShipmentStatusUpdatesRequest,
     ): Response {

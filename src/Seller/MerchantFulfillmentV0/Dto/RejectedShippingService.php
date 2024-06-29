@@ -23,10 +23,10 @@ final class RejectedShippingService extends Dto
     ];
 
     /**
-     * @param  string  $carrierName  The rejected shipping carrier name. e.g. USPS
-     * @param  string  $shippingServiceName  The rejected shipping service localized name. e.g. FedEx Standard Overnight
+     * @param  string  $carrierName  The rejected shipping carrier name. For example, USPS.
+     * @param  string  $shippingServiceName  The rejected shipping service localized name. For example, FedEx Standard Overnight.
      * @param  string  $shippingServiceId  An Amazon-defined shipping service identifier.
-     * @param  string  $rejectionReasonCode  A reason code meant to be consumed programatically. e.g. CARRIER_CANNOT_SHIP_TO_POBOX
+     * @param  string  $rejectionReasonCode  A reason code meant to be consumed programatically. For example, `CARRIER_CANNOT_SHIP_TO_POBOX`.
      * @param  ?string  $rejectionReasonMessage  A localized human readable description of the rejected reason.
      */
     public function __construct(

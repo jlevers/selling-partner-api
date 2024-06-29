@@ -19,7 +19,7 @@ final class GetPurchaseOrdersResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?OrderList  $payload
+     * @param  ?OrderList  $payload  A list of orders returned as response.
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

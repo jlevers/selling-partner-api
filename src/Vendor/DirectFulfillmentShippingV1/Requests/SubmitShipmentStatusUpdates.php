@@ -28,6 +28,9 @@ class SubmitShipmentStatusUpdates extends Request implements HasBody
 
     protected Method $method = Method::POST;
 
+    /**
+     * @param  SubmitShipmentStatusUpdatesRequest  $submitShipmentStatusUpdatesRequest  Represents the request payload for submitting updates to the status of shipments, containing an array of one or more `ShipmentStatusUpdate` objects.
+     */
     public function __construct(
         public SubmitShipmentStatusUpdatesRequest $submitShipmentStatusUpdatesRequest,
     ) {}

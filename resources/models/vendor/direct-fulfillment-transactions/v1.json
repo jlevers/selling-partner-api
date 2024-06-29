@@ -24,7 +24,7 @@
                 "tags": [
                     "DirectFulfillmentTransactionsV1"
                 ],
-                "description": "Returns the status of the transaction indicated by the specified transactionId.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the status of the transaction indicated by the specified `transactionId`.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the SP-API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getTransactionStatus",
                 "parameters": [
                     {
@@ -181,12 +181,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -247,12 +241,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -268,12 +256,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -295,12 +277,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -316,12 +292,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -351,7 +321,7 @@
                         "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the getTransactionStatus operation."
+                "description": "The response schema for the `getTransactionStatus` operation."
             },
             "TransactionStatus": {
                 "type": "object",
@@ -360,7 +330,7 @@
                         "$ref": "#/components/schemas/Transaction"
                     }
                 },
-                "description": "The payload for the getTransactionStatus operation."
+                "description": "The payload for the `getTransactionStatus` operation."
             },
             "Transaction": {
                 "required": [

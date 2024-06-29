@@ -19,7 +19,7 @@ final class GetPurchaseOrderResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?Order  $payload
+     * @param  ?Order  $payload  Represents an order placed by Amazon, including the purchase order number, current state, and order details.
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

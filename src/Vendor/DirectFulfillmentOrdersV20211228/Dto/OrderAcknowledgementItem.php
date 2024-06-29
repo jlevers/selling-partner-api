@@ -21,6 +21,8 @@ final class OrderAcknowledgementItem extends Dto
      * @param  string  $vendorOrderNumber  The vendor's order number for this order.
      * @param  \DateTimeInterface  $acknowledgementDate  The date and time when the order is acknowledged, in ISO-8601 date/time format. For example: 2018-07-16T23:00:00Z / 2018-07-16T23:00:00-05:00 / 2018-07-16T23:00:00-08:00.
      * @param  AcknowledgementStatus  $acknowledgementStatus  Status of acknowledgement.
+     * @param  PartyIdentification  $sellingParty  Name, address and tax details of a party.
+     * @param  PartyIdentification  $shipFromParty  Name, address and tax details of a party.
      * @param  OrderItemAcknowledgement[]  $itemAcknowledgements  Item details including acknowledged quantity.
      */
     public function __construct(

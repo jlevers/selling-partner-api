@@ -19,7 +19,7 @@ final class SubmitShipmentStatusUpdatesResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?TransactionReference  $payload
+     * @param  ?TransactionReference  $payload  Response containing the transaction ID.
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

@@ -25,9 +25,7 @@ final class Label extends Dto
     /**
      * @param  LabelDimensions  $dimensions  Dimensions for printing a shipping label.
      * @param  FileContents  $fileContents  The document data and checksum.
-     * @param  ?string  $customTextForLabel  Custom text to print on the label.
-     *
-     * Note: Custom text is only included on labels that are in ZPL format (ZPL203). FedEx does not support CustomTextForLabel.
+     * @param  ?string  $customTextForLabel  Custom text to print on the label. Note: Custom text is only included on labels that are in ZPL format (ZPL203). FedEx does not support `CustomTextForLabel`.
      * @param  ?string  $labelFormat  The label format.
      * @param  ?string  $standardIdForLabel  The type of standard identifier to print on the label.
      */

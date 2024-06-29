@@ -17,8 +17,8 @@ final class CustomerInvoiceList extends Dto
     protected static array $complexArrayTypes = ['customerInvoices' => [CustomerInvoice::class]];
 
     /**
-     * @param  ?Pagination  $pagination
-     * @param  CustomerInvoice[]|null  $customerInvoices
+     * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.
+     * @param  CustomerInvoice[]|null  $customerInvoices  Represents a customer invoice within the `CustomerInvoiceList`.
      */
     public function __construct(
         public readonly ?Pagination $pagination = null,

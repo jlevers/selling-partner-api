@@ -17,8 +17,8 @@ final class PackingSlipList extends Dto
     protected static array $complexArrayTypes = ['packingSlips' => [PackingSlip::class]];
 
     /**
-     * @param  ?Pagination  $pagination
-     * @param  PackingSlip[]|null  $packingSlips
+     * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.
+     * @param  PackingSlip[]|null  $packingSlips  An array of packing slip objects.
      */
     public function __construct(
         public readonly ?Pagination $pagination = null,

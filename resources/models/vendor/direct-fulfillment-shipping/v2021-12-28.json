@@ -214,12 +214,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -235,12 +229,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -262,12 +250,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -283,12 +265,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -314,6 +290,7 @@
                 "description": "Creates a shipping label for a purchase order and returns a transactionId for reference.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "submitShippingLabelRequest",
                 "requestBody": {
+                    "description": "Request body that contains the shipping labels data.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -422,12 +399,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -443,12 +414,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -470,12 +435,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -494,12 +453,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -515,12 +468,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -552,7 +499,7 @@
                     {
                         "name": "purchaseOrderNumber",
                         "in": "path",
-                        "description": "The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order.",
+                        "description": "The purchase order number for which you want to return the shipping label. Should be the same `purchaseOrderNumber` as received in the order.",
                         "required": true,
                         "schema": {
                             "pattern": "^[a-zA-Z0-9]+$",
@@ -636,12 +583,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -702,12 +643,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -723,12 +658,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -750,12 +679,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -771,12 +694,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -814,6 +731,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "The request payload that contains parameters for creating shipping labels.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1037,6 +955,7 @@
                 "description": "Submits one or more shipment confirmations for vendor orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "submitShipmentConfirmations",
                 "requestBody": {
+                    "description": "Request body containing the shipment confirmations data.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1242,6 +1161,7 @@
                 "description": "This operation is only to be used by Vendor-Own-Carrier (VOC) vendors. Calling this API submits a shipment status update for the package that a vendor has shipped. It will provide the Amazon customer visibility on their order, when the package is outside of Amazon Network visibility.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "submitShipmentStatusUpdates",
                 "requestBody": {
+                    "description": "Request body that contains the shipment status update data.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -2467,6 +2387,7 @@
                     },
                     "packingSlips": {
                         "type": "array",
+                        "description": "An array of packing slip objects.",
                         "items": {
                             "$ref": "#/components/schemas/PackingSlip"
                         }
@@ -2502,11 +2423,13 @@
                 "properties": {
                     "shippingLabelRequests": {
                         "type": "array",
+                        "description": "An array of shipping label requests you want to process.",
                         "items": {
                             "$ref": "#/components/schemas/ShippingLabelRequest"
                         }
                     }
-                }
+                },
+                "description": "The request schema for the `submitShippingLabelRequest` operation."
             },
             "ShippingLabelRequest": {
                 "required": [
@@ -2534,7 +2457,8 @@
                             "$ref": "#/components/schemas/Container"
                         }
                     }
-                }
+                },
+                "description": "Represents the request payload to create a shipping label. Contains the purchase order number, selling party, ship from party, and a list of containers or packages in the shipment."
             },
             "Item": {
                 "required": [
@@ -2587,7 +2511,8 @@
                     "packedQuantity": {
                         "$ref": "#/components/schemas/ItemQuantity"
                     }
-                }
+                },
+                "description": "Represents an item packed into a container for shipping."
             },
             "PartyIdentification": {
                 "required": [
@@ -2609,7 +2534,8 @@
                             "$ref": "#/components/schemas/TaxRegistrationDetails"
                         }
                     }
-                }
+                },
+                "description": "Name, address, and tax details for a party."
             },
             "ShipmentDetails": {
                 "required": [
@@ -2673,11 +2599,11 @@
                     },
                     "statusCode": {
                         "type": "string",
-                        "description": "Indicates the shipment status code of the package that provides transportation information for Amazon tracking systems and ultimately for the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation)."
+                        "description": "The shipment status code for the package that provides transportation information for Amazon tracking systems and the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation)."
                     },
                     "reasonCode": {
                         "type": "string",
-                        "description": "Provides a reason code for the status of the package that will provide additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation)."
+                        "description": "Provides a reason code for the package status that provides additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation)."
                     },
                     "statusDateTime": {
                         "type": "string",
@@ -2907,11 +2833,13 @@
                     },
                     "shippingLabels": {
                         "type": "array",
+                        "description": "An array that contains the details of the generated shipping labels.",
                         "items": {
                             "$ref": "#/components/schemas/ShippingLabel"
                         }
                     }
-                }
+                },
+                "description": "Response payload with the shipping labels list."
             },
             "LabelData": {
                 "required": [
@@ -2988,18 +2916,21 @@
                             "$ref": "#/components/schemas/LabelData"
                         }
                     }
-                }
+                },
+                "description": "Shipping label information for an order. Includes the purchase order number, selling party, ship from party, label format, and package details."
             },
             "SubmitShipmentConfirmationsRequest": {
                 "type": "object",
                 "properties": {
                     "shipmentConfirmations": {
                         "type": "array",
+                        "description": "An array of `ShipmentConfirmation` objects, each represents confirmation details for a specific shipment.",
                         "items": {
                             "$ref": "#/components/schemas/ShipmentConfirmation"
                         }
                     }
-                }
+                },
+                "description": "The `submitShipmentConfirmations` request schema."
             },
             "ShipmentConfirmation": {
                 "required": [
@@ -3039,7 +2970,8 @@
                             "$ref": "#/components/schemas/Container"
                         }
                     }
-                }
+                },
+                "description": "Represents the confirmation details of a shipment. Includes the purchase order number and other shipment details."
             },
             "SubmitShipmentStatusUpdatesRequest": {
                 "type": "object",
@@ -3047,11 +2979,13 @@
                     "shipmentStatusUpdates": {
                         "minItems": 1,
                         "type": "array",
+                        "description": "Contains a list of one or more `ShipmentStatusUpdate` objects, each represents a status update of a specific shipment.",
                         "items": {
                             "$ref": "#/components/schemas/ShipmentStatusUpdate"
                         }
                     }
-                }
+                },
+                "description": "The `submitShipmentStatusUpdates` request schema."
             },
             "ShipmentStatusUpdate": {
                 "required": [
@@ -3076,7 +3010,8 @@
                     "statusUpdateDetails": {
                         "$ref": "#/components/schemas/StatusUpdateDetails"
                     }
-                }
+                },
+                "description": "Represents a shipment status update."
             },
             "CustomerInvoiceList": {
                 "type": "object",
@@ -3086,11 +3021,13 @@
                     },
                     "customerInvoices": {
                         "type": "array",
+                        "description": "Represents a customer invoice within the `CustomerInvoiceList`.",
                         "items": {
                             "$ref": "#/components/schemas/CustomerInvoice"
                         }
                     }
-                }
+                },
+                "description": "Represents a list of customer invoices, potentially paginated."
             },
             "Pagination": {
                 "type": "object",
@@ -3099,7 +3036,8 @@
                         "type": "string",
                         "description": "A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more order items to return."
                     }
-                }
+                },
+                "description": "The pagination elements required to retrieve the remaining data."
             },
             "CustomerInvoice": {
                 "required": [
@@ -3117,7 +3055,8 @@
                         "type": "string",
                         "description": "The Base64encoded customer invoice."
                     }
-                }
+                },
+                "description": "Represents a customer invoice associated with a purchase order."
             },
             "TransactionReference": {
                 "type": "object",
@@ -3126,7 +3065,8 @@
                         "type": "string",
                         "description": "GUID to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction."
                     }
-                }
+                },
+                "description": "Response that contains the transaction ID."
             },
             "ErrorList": {
                 "required": [
@@ -3136,6 +3076,7 @@
                 "properties": {
                     "errors": {
                         "type": "array",
+                        "description": "An array of error objects that represents individual errors encountered during the request.",
                         "items": {
                             "$ref": "#/components/schemas/Error"
                         }
@@ -3237,7 +3178,8 @@
                             "$ref": "#/components/schemas/PackedItem"
                         }
                     }
-                }
+                },
+                "description": "A container for shipping and packing items."
             }
         }
     },

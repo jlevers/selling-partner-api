@@ -25,7 +25,7 @@ class GetPackingSlip extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $purchaseOrderNumber  The purchaseOrderNumber for the packing slip you want.
+     * @param  string  $purchaseOrderNumber  The `purchaseOrderNumber` for the packing slip you want.
      */
     public function __construct(
         protected string $purchaseOrderNumber,

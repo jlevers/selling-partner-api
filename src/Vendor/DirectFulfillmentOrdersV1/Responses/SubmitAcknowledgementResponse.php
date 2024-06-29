@@ -19,7 +19,7 @@ final class SubmitAcknowledgementResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?TransactionId  $payload
+     * @param  ?TransactionId  $payload  Response that contains the transaction ID.
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

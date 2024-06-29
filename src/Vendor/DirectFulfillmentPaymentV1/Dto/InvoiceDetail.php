@@ -24,10 +24,12 @@ final class InvoiceDetail extends Dto
     /**
      * @param  string  $invoiceNumber  The unique invoice number.
      * @param  \DateTimeInterface  $invoiceDate  Invoice date.
+     * @param  PartyIdentification  $remitToParty  Name, address, and tax details of a party.
+     * @param  PartyIdentification  $shipFromParty  Name, address, and tax details of a party.
      * @param  Money  $invoiceTotal  An amount of money, including units in the form of currency.
      * @param  InvoiceItem[]  $items  Provides the details of the items in this invoice.
      * @param  ?string  $referenceNumber  An additional unique reference number used for regulatory or other purposes.
-     * @param  ?PartyIdentification  $billToParty
+     * @param  ?PartyIdentification  $billToParty  Name, address, and tax details of a party.
      * @param  ?string  $shipToCountryCode  Ship-to country code.
      * @param  ?string  $paymentTermsCode  The payment terms for the invoice.
      * @param  TaxDetail[]|null  $taxTotals  Individual tax details per line item.

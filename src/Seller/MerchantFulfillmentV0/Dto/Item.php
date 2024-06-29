@@ -35,9 +35,9 @@ final class Item extends Dto
      * @param  ?string  $itemDescription  The description of the item.
      * @param  ?string[]  $transparencyCodeList  A list of transparency codes.
      * @param  AdditionalSellerInputs[]|null  $itemLevelSellerInputsList  A list of additional seller input pairs required to purchase shipping.
-     * @param  ?LiquidVolume  $liquidVolume  Liquid Volume.
+     * @param  ?LiquidVolume  $liquidVolume  Liquid volume.
      * @param  ?bool  $isHazmat  When true, the item qualifies as hazardous materials (hazmat). Defaults to false.
-     * @param  ?DangerousGoodsDetails  $dangerousGoodsDetails  Details related to any dangerous goods/items that are being shipped.
+     * @param  ?DangerousGoodsDetails  $dangerousGoodsDetails  Details related to any dangerous goods or items that are shipped.
      */
     public function __construct(
         public readonly string $orderItemId,

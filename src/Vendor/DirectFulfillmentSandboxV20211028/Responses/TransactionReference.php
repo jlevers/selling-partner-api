@@ -15,7 +15,7 @@ use SellingPartnerApi\Response;
 final class TransactionReference extends Response
 {
     /**
-     * @param  ?string  $transactionId
+     * @param  ?string  $transactionId  A GUID (Globally Unique Identifier) assigned by Amazon to uniquely identify the transaction.
      */
     public function __construct(
         public readonly ?string $transactionId = null,

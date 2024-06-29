@@ -31,7 +31,7 @@ final class AdditionalSellerInput extends Dto
      * @param  ?string  $valueAsString  The value when the data type is string.
      * @param  ?bool  $valueAsBoolean  The value when the data type is boolean.
      * @param  ?int  $valueAsInteger  The value when the data type is integer.
-     * @param  ?\DateTimeInterface  $valueAsTimestamp
+     * @param  ?\DateTimeInterface  $valueAsTimestamp  Date-time formatted timestamp.
      * @param  ?Address  $valueAsAddress  The postal address information.
      * @param  ?Weight  $valueAsWeight  The weight.
      * @param  ?Length  $valueAsDimension  The length.

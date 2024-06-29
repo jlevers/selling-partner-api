@@ -25,7 +25,7 @@ class GetOrderScenarios extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $transactionId  The transaction identifier returned in the response to the generateOrderScenarios operation.
+     * @param  string  $transactionId  The transaction identifier returned in the response for the `generateOrderScenarios` operation.
      */
     public function __construct(
         protected string $transactionId,

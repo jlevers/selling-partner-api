@@ -18,6 +18,8 @@ final class ShippingLabelRequest extends Dto
 
     /**
      * @param  string  $purchaseOrderNumber  Purchase order number of the order for which to create a shipping label.
+     * @param  PartyIdentification  $sellingParty  Name, address, and tax details for a party.
+     * @param  PartyIdentification  $shipFromParty  Name, address, and tax details for a party.
      * @param  Container[]|null  $containers  A list of the packages in this shipment.
      */
     public function __construct(

@@ -19,7 +19,7 @@ final class GetShipmentResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?Shipment  $payload  The details of a shipment, including the shipment status.
+     * @param  ?Shipment  $payload  The details of a shipment. Includes the shipment status.
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

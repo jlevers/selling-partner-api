@@ -622,251 +622,6 @@
                                     "request": {
                                         "parameters": {
                                             "createdBefore": {
-                                                "value": "2020-02-20T00:00:00-08:00"
-                                            },
-                                            "createdAfter": {
-                                                "value": "2020-02-15T14:00:00-08:00"
-                                            },
-                                            "includeDetails": {
-                                                "value": "true"
-                                            },
-                                            "limit": {
-                                                "value": 2
-                                            },
-                                            "sortOrder": {
-                                                "value": "DESC"
-                                            },
-                                            "nextToken": {
-                                                "value": "MDAwMDAwMDAwMQ=="
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "payload": {
-                                            "orders": [
-                                                {
-                                                    "purchaseOrderNumber": "2JK3S9VCD",
-                                                    "orderDetails": {
-                                                        "customerOrderNumber": "123-ABC",
-                                                        "orderDate": "2020-02-20T13:51:00Z",
-                                                        "orderStatus": "NEW",
-                                                        "shipmentDetails": {
-                                                            "isPriorityShipment": false,
-                                                            "isScheduledDeliveryShipment": false,
-                                                            "isPslipRequired": true,
-                                                            "isGift": false,
-                                                            "shipMethod": "UPS_2ND",
-                                                            "shipmentDates": {
-                                                                "requiredShipDate": "2020-02-21T00:00:00Z",
-                                                                "promisedDeliveryDate": "2020-02-24T00:00:00Z"
-                                                            },
-                                                            "messageToCustomer": "This shipment completes your order. You can always check the status of your orders from the \"Your Account\" link at the top of each page of our site.Thank you for shopping at Amazon.com"
-                                                        },
-                                                        "taxTotal": {
-                                                            "taxLineItem": [
-                                                                {
-                                                                    "taxAmount": {
-                                                                        "currencyCode": "USD",
-                                                                        "amount": "190"
-                                                                    },
-                                                                    "type": "TOTAL"
-                                                                }
-                                                            ]
-                                                        },
-                                                        "sellingParty": {
-                                                            "partyId": "999US"
-                                                        },
-                                                        "shipFromParty": {
-                                                            "partyId": "ABCD"
-                                                        },
-                                                        "shipToParty": {
-                                                            "name": "ABCD",
-                                                            "attention": "ABCD",
-                                                            "addressLine1": "123 XYZ Street",
-                                                            "addressLine2": "Apt 5",
-                                                            "city": "San Jose",
-                                                            "stateOrRegion": "CA",
-                                                            "postalCode": "94086",
-                                                            "countryCode": "USA"
-                                                        },
-                                                        "billToParty": {
-                                                            "partyId": "ABCD"
-                                                        },
-                                                        "items": [
-                                                            {
-                                                                "itemSequenceNumber": "00001",
-                                                                "buyerProductIdentifier": "B07DFVDRAB",
-                                                                "vendorProductIdentifier": "8806098286500",
-                                                                "title": "LG 8 kg Inverter Wi-Fi Fully-Automatic Front Loading Washing Machine (FHT1408SWS, STS-VCM, Inbuilt Heater)",
-                                                                "orderedQuantity": {
-                                                                    "amount": 1,
-                                                                    "unitOfMeasure": "EACH"
-                                                                },
-                                                                "netPrice": {
-                                                                    "currencyCode": "USD",
-                                                                    "amount": "500"
-                                                                },
-                                                                "taxDetails": {
-                                                                    "taxLineItem": [
-                                                                        {
-                                                                            "taxRate": "0.1",
-                                                                            "taxAmount": {
-                                                                                "currencyCode": "USD",
-                                                                                "amount": "50"
-                                                                            },
-                                                                            "type": "TOTAL"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            },
-                                                            {
-                                                                "itemSequenceNumber": "00002",
-                                                                "buyerProductIdentifier": "B07DFYF5AB",
-                                                                "vendorProductIdentifier": "8806098286123",
-                                                                "title": "LG 6.5 kg Inverter Fully-Automatic Front Loading Washing Machine (FHT1065SNW, Blue and White, Inbuilt Heater)",
-                                                                "orderedQuantity": {
-                                                                    "amount": 2,
-                                                                    "unitOfMeasure": "EACH"
-                                                                },
-                                                                "netPrice": {
-                                                                    "currencyCode": "USD",
-                                                                    "amount": "700"
-                                                                },
-                                                                "taxDetails": {
-                                                                    "taxLineItem": [
-                                                                        {
-                                                                            "taxRate": "0.1",
-                                                                            "taxAmount": {
-                                                                                "currencyCode": "USD",
-                                                                                "amount": "140"
-                                                                            },
-                                                                            "type": "TOTAL"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
-                                                },
-                                                {
-                                                    "purchaseOrderNumber": "3TRD2IABC",
-                                                    "orderDetails": {
-                                                        "customerOrderNumber": "456-ABC",
-                                                        "orderDate": "2020-02-18T11:47:00Z",
-                                                        "orderStatus": "NEW",
-                                                        "shipmentDetails": {
-                                                            "isPriorityShipment": false,
-                                                            "isScheduledDeliveryShipment": false,
-                                                            "isPslipRequired": true,
-                                                            "isGift": false,
-                                                            "shipMethod": "UPS_2ND",
-                                                            "shipmentDates": {
-                                                                "requiredShipDate": "2020-02-20T00:00:00Z",
-                                                                "promisedDeliveryDate": "2020-02-22T00:00:00Z"
-                                                            },
-                                                            "messageToCustomer": "This shipment completes your order. You can always check the status of your orders from the \"Your Account\" link at the top of each page of our site.Thank you for shopping at Amazon.com"
-                                                        },
-                                                        "taxTotal": {
-                                                            "taxLineItem": [
-                                                                {
-                                                                    "taxRate": "0.1",
-                                                                    "taxAmount": {
-                                                                        "currencyCode": "USD",
-                                                                        "amount": "2"
-                                                                    },
-                                                                    "type": "TOTAL"
-                                                                }
-                                                            ]
-                                                        },
-                                                        "sellingParty": {
-                                                            "partyId": "999US"
-                                                        },
-                                                        "shipFromParty": {
-                                                            "partyId": "ABCD"
-                                                        },
-                                                        "shipToParty": {
-                                                            "name": "XYZ",
-                                                            "attention": "XYZ",
-                                                            "addressLine1": "456 ABC Street",
-                                                            "city": "Seattle",
-                                                            "stateOrRegion": "WA",
-                                                            "postalCode": "98007",
-                                                            "countryCode": "USA"
-                                                        },
-                                                        "billToParty": {
-                                                            "partyId": "ABCD"
-                                                        },
-                                                        "items": [
-                                                            {
-                                                                "itemSequenceNumber": "00001",
-                                                                "buyerProductIdentifier": "B01LNRIIAB",
-                                                                "vendorProductIdentifier": "8806098286501",
-                                                                "title": "Baby Dove Baby Wipes Rich Moisture (50 Pieces)",
-                                                                "orderedQuantity": {
-                                                                    "amount": 1,
-                                                                    "unitOfMeasure": "EACH"
-                                                                },
-                                                                "netPrice": {
-                                                                    "currencyCode": "USD",
-                                                                    "amount": "20"
-                                                                },
-                                                                "taxDetails": {
-                                                                    "taxLineItem": [
-                                                                        {
-                                                                            "taxRate": "0.1",
-                                                                            "taxAmount": {
-                                                                                "currencyCode": "USD",
-                                                                                "amount": "2"
-                                                                            },
-                                                                            "type": "TOTAL"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    }
-                                },
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "createdBefore": {
-                                                "value": "2019-08-21T00:00:00-08:00"
-                                            },
-                                            "createdAfter": {
-                                                "value": "2019-08-20T14:00:00-08:00"
-                                            },
-                                            "includeDetails": {
-                                                "value": "false"
-                                            },
-                                            "sortOrder": {
-                                                "value": "DESC"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "payload": {
-                                            "pagination": {
-                                                "nextToken": "MDAwMDAwMDAwMQ=="
-                                            },
-                                            "orders": [
-                                                {
-                                                    "purchaseOrderNumber": "2JK3S9VC"
-                                                },
-                                                {
-                                                    "purchaseOrderNumber": "3TRD2IAB"
-                                                }
-                                            ]
-                                        }
-                                    }
-                                },
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "createdBefore": {
                                                 "value": "2019-08-21T00:00:00-08:00"
                                             },
                                             "createdAfter": {
@@ -1224,12 +979,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1245,12 +994,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1272,12 +1015,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1293,12 +1030,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1749,12 +1480,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1815,12 +1540,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1836,12 +1555,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1863,12 +1576,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1884,12 +1591,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1914,6 +1615,7 @@
                 "description": "Submits acknowledgements for one or more purchase orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "submitAcknowledgement",
                 "requestBody": {
+                    "description": "The request body that contains the order acknowledgement.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -2110,12 +1812,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2131,12 +1827,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -2158,12 +1848,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2182,12 +1866,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2203,12 +1881,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -2261,11 +1933,13 @@
                     },
                     "orders": {
                         "type": "array",
+                        "description": "Represents a purchase order within the `OrderList`.",
                         "items": {
                             "$ref": "#/components/schemas/Order"
                         }
                     }
-                }
+                },
+                "description": "A purchase orders list returned as a response."
             },
             "Pagination": {
                 "type": "object",
@@ -2274,7 +1948,8 @@
                         "type": "string",
                         "description": "A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more order items to return."
                     }
-                }
+                },
+                "description": "The pagination elements required to retrieve the remaining data."
             },
             "Order": {
                 "required": [
@@ -2289,7 +1964,8 @@
                     "orderDetails": {
                         "$ref": "#/components/schemas/OrderDetails"
                     }
-                }
+                },
+                "description": "Represents a purchase order."
             },
             "OrderDetails": {
                 "required": [
@@ -2350,7 +2026,8 @@
                             "taxLineItem": {
                                 "$ref": "#/components/schemas/TaxLineItem"
                             }
-                        }
+                        },
+                        "description": "The total tax object within the shipment that relates to the order."
                     },
                     "sellingParty": {
                         "$ref": "#/components/schemas/PartyIdentification"
@@ -2390,7 +2067,8 @@
                     "taxInfo": {
                         "$ref": "#/components/schemas/TaxRegistrationDetails"
                     }
-                }
+                },
+                "description": "Name, address, and tax details of a party."
             },
             "TaxRegistrationDetails": {
                 "required": [
@@ -2441,7 +2119,7 @@
                 "properties": {
                     "name": {
                         "type": "string",
-                        "description": "The name of the person, business or institution at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
+                        "description": "The name of the person, business, or institution at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "attention": {
                         "type": "string",
@@ -2461,15 +2139,15 @@
                     },
                     "city": {
                         "type": "string",
-                        "description": "The city where the person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
+                        "description": "The city where the person, business, or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "county": {
                         "type": "string",
-                        "description": "The county where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
+                        "description": "The county where the person, business, or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "district": {
                         "type": "string",
-                        "description": "The district where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
+                        "description": "The district where the person, business, or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "stateOrRegion": {
                         "type": "string",
@@ -2485,7 +2163,7 @@
                     },
                     "phone": {
                         "type": "string",
-                        "description": "The phone number of the person, business or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
+                        "description": "The phone number of the person, business, or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     }
                 },
                 "description": "Address of the party."
@@ -2538,7 +2216,8 @@
                     "totalPrice": {
                         "$ref": "#/components/schemas/Money"
                     }
-                }
+                },
+                "description": "An order item."
             },
             "Money": {
                 "type": "object",
@@ -2576,7 +2255,8 @@
                         "type": "string",
                         "description": "GUID assigned by Amazon to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction."
                     }
-                }
+                },
+                "description": "Response that contains the transaction ID."
             },
             "ErrorList": {
                 "type": "array",
@@ -2664,7 +2344,8 @@
                     "acknowledgedQuantity": {
                         "$ref": "#/components/schemas/ItemQuantity"
                     }
-                }
+                },
+                "description": "Individual item details within the acknowledged order."
             },
             "ItemQuantity": {
                 "type": "object",
@@ -2754,7 +2435,8 @@
                             }
                         ]
                     }
-                }
+                },
+                "description": "The order's tax details."
             },
             "AcknowledgementStatus": {
                 "type": "object",

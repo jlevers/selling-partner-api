@@ -20,6 +20,8 @@ final class ShippingLabel extends Response
 
     /**
      * @param  string  $purchaseOrderNumber  This field will contain the Purchase Order Number for this order.
+     * @param  PartyIdentification  $sellingParty  Name, address, and tax details for a party.
+     * @param  PartyIdentification  $shipFromParty  Name, address, and tax details for a party.
      * @param  string  $labelFormat  Format of the label.
      * @param  LabelData[]  $labelData  Provides the details of the packages in this shipment.
      */

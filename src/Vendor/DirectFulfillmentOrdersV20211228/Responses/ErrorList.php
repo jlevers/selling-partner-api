@@ -18,7 +18,7 @@ final class ErrorList extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  Error[]  $errors
+     * @param  Error[]  $errors  An array of Error objects representing individual errors encountered during the request.
      */
     public function __construct(
         public readonly array $errors,

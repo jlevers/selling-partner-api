@@ -18,8 +18,8 @@ final class ShippingLabelList extends Response
     protected static array $complexArrayTypes = ['shippingLabels' => [ShippingLabel::class]];
 
     /**
-     * @param  ?Pagination  $pagination
-     * @param  ShippingLabel[]|null  $shippingLabels
+     * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.
+     * @param  ShippingLabel[]|null  $shippingLabels  An array that contains the details of the generated shipping labels.
      */
     public function __construct(
         public readonly ?Pagination $pagination = null,

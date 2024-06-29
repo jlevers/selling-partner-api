@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class AcknowledgementStatusDetails extends Dto
 {
     /**
-     * @param  ?\DateTimeInterface  $acknowledgementDate  The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.
+     * @param  ?\DateTimeInterface  $acknowledgementDate  The date when the line item was confirmed by the vendor. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
      * @param  ?ItemQuantity  $acceptedQuantity  Details of quantity ordered.
      * @param  ?ItemQuantity  $rejectedQuantity  Details of quantity ordered.
      */

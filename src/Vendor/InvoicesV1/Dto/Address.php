@@ -20,11 +20,11 @@ final class Address extends Dto
      * @param  string  $countryCode  The two digit country code. In ISO 3166-1 alpha-2 format.
      * @param  ?string  $addressLine2  Additional address information, if required.
      * @param  ?string  $addressLine3  Additional address information, if required.
-     * @param  ?string  $city  The city where the person, business or institution is located.
-     * @param  ?string  $county  The county where person, business or institution is located.
-     * @param  ?string  $district  The district where person, business or institution is located.
-     * @param  ?string  $stateOrRegion  The state or region where person, business or institution is located.
-     * @param  ?string  $postalOrZipCode  The postal or zip code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
+     * @param  ?string  $city  The city where the person, business, or institution is located.
+     * @param  ?string  $county  The county where person, business, or institution is located.
+     * @param  ?string  $district  The district where person, business, or institution is located.
+     * @param  ?string  $stateOrRegion  The state or region where person, business, or institution is located.
+     * @param  ?string  $postalOrZipCode  The postal or zip code of that address. It contains a series of letters, digits, or both, sometimes including spaces or punctuation.
      * @param  ?string  $phone  The phone number of the person, business or institution located at that address.
      */
     public function __construct(

@@ -19,7 +19,7 @@ final class GetShippingLabelListResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?ShippingLabelList  $payload
+     * @param  ?ShippingLabelList  $payload  Response payload with the list of shipping labels
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

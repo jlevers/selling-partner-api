@@ -17,7 +17,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Responses\Transact
 final class SubmitAcknowledgementResponse extends Dto
 {
     /**
-     * @param  ?TransactionId  $payload
+     * @param  ?TransactionId  $payload  Response containing the transaction ID.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

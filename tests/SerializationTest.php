@@ -164,4 +164,49 @@ class SerializationTest extends TestCase
 
         $this->assertEquals('2024-01-01T00:00:00Z', $body['packageDetail']['shipDate']);
     }
+
+    public function testDeserializeDateTimeMilliseconds()
+    {
+        $mockClient = new MockClient([
+            GetAccessTokenRequest::class => MockResponse::make(
+                body: [
+                    'access_token' => 'access-token',
+                    'refresh_token' => 'refresh-token',
+                    'expires_in' => 3600,
+                    'token_type' => 'bearer',
+                ],
+            ),
+            ConfirmShipment::class => MockResponse::make(),
+        ]);
+
+        $connector = SellingPartnerApi::seller(
+            clientId: 'client-id',
+            clientSecret: 'client-secret',
+            refreshToken: 'refresh-token',
+            endpoint: Endpoint::NA_SANDBOX,
+        );
+        $connector->withMockClient($mockClient);
+
+        $api = $connector->productFeesV0();
+        $result = $api->getMyFeesEstimateForAsin(
+            'asin',
+            new GetMyFeesEstimateRequest(
+                feesEstimateRequest: new FeesEstimateRequest(
+                    marketplaceId: 'marketplace-id',
+                    priceToEstimateFees: new PriceToEstimateFees(
+                        new MoneyType(
+                            'currency-code',
+                            'amount'
+                        )
+                    ),
+                    identifier: 'identifier',
+                    isAmazonFulfilled: false,
+                    optionalFulfillmentProgram: null
+                )
+            )
+        )->dto();
+        $this->assertNotNull($result);
+
+        $this->assertInstanceOf(DateTimeInterface::class, $result->timeOfFeesEstimation);
+    }
 }

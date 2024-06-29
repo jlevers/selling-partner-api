@@ -27,22 +27,16 @@ class GetFeatureInventory extends Request
      * @param  string  $featureName  The name of the feature for which to return a list of eligible inventory.
      * @param  string  $marketplaceId  The marketplace for which to return a list of the inventory that is eligible for the specified feature.
      * @param  ?string  $nextToken  A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
-     * @param  ?\DateTimeInterface  $queryStartDate  A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ
      */
     public function __construct(
         protected string $featureName,
         protected string $marketplaceId,
         protected ?string $nextToken = null,
-        protected ?\DateTimeInterface $queryStartDate = null,
     ) {}
 
     public function defaultQuery(): array
     {
-        return array_filter([
-            'marketplaceId' => $this->marketplaceId,
-            'nextToken' => $this->nextToken,
-            'queryStartDate' => $this->queryStartDate?->format('Y-m-d\TH:i:s\Z'),
-        ]);
+        return array_filter(['marketplaceId' => $this->marketplaceId, 'nextToken' => $this->nextToken]);
     }
 
     public function resolveEndpoint(): string

@@ -2345,15 +2345,6 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "queryStartDate",
-                        "in": "query",
-                        "description": "A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ",
-                        "schema": {
-                            "type": "string",
-                            "format": "date-time"
-                        }
                     }
                 ],
                 "responses": {

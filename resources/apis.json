@@ -305,6 +305,16 @@
         }
       ]
     },
+    "transfers": {
+      "name": "Transfers",
+      "versions": [
+        {
+          "version": "2024-06-01",
+          "url": "https://developer-docs.amazon.com/sp-api/docs/transfers-api-v2024-06-01-model",
+          "selector": "code[data-lang='json']"
+        }
+      ]
+    },
     "uploads": {
       "name": "Uploads",
       "versions": [

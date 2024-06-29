@@ -364,6 +364,10 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
     ```php
     $tokensApi = $sellerConnector->tokensV20210301();
     ```
+* **Transfers API (v2024-06-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/transfers-api-v2024-06-01-reference))
+    ```php
+    $transfersApi = $sellerConnector->transfersV20240601();
+    ```
 * **Uploads API (v2020-11-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference))
     ```php
     $uploadsApi = $sellerConnector->uploadsV20201101();

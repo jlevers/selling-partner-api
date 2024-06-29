@@ -199,6 +199,11 @@ class SellerConnector extends SellingPartnerApi
         return new TokensV20210301\Api($this);
     }
 
+    public function transfersV20240601(): TransfersV20240601\Api
+    {
+        return new TransfersV20240601\Api($this);
+    }
+
     public function uploadsV20201101(): UploadsV20201101\Api
     {
         return new UploadsV20201101\Api($this);

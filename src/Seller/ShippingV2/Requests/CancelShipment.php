@@ -26,9 +26,11 @@ class CancelShipment extends Request
 
     /**
      * @param  string  $shipmentId  The shipment identifier originally returned by the purchaseShipment operation.
+     * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function __construct(
         protected string $shipmentId,
+        protected ?string $xAmznShippingBusinessId = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -46,5 +48,10 @@ class CancelShipment extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultHeaders(): array
+    {
+        return array_filter(['x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
     }
 }

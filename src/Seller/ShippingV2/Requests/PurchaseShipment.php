@@ -31,9 +31,11 @@ class PurchaseShipment extends Request implements HasBody
 
     /**
      * @param  PurchaseShipmentRequest  $purchaseShipmentRequest  The request schema for the purchaseShipment operation.
+     * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function __construct(
         public PurchaseShipmentRequest $purchaseShipmentRequest,
+        protected ?string $xAmznShippingBusinessId = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -56,5 +58,10 @@ class PurchaseShipment extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->purchaseShipmentRequest->toArray();
+    }
+
+    public function defaultHeaders(): array
+    {
+        return array_filter(['x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
     }
 }

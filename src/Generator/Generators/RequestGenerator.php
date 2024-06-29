@@ -4,6 +4,7 @@ namespace SellingPartnerApi\Generator\Generators;
 
 use Crescat\SaloonSdkGenerator\Data\Generator\Endpoint;
 use Crescat\SaloonSdkGenerator\Generators\RequestGenerator as SDKGenerator;
+use Crescat\SaloonSdkGenerator\Helpers\MethodGeneratorHelper;
 use Crescat\SaloonSdkGenerator\Helpers\NameHelper;
 use Exception;
 use Illuminate\Support\Collection;
@@ -24,6 +25,8 @@ class RequestGenerator extends SDKGenerator
 {
     protected function generateRequestClass(Endpoint $endpoint): PhpFile
     {
+        $methods = [];
+
         $middleware = json_decode(file_get_contents(METADATA_DIR.'/middleware.json'));
         $grantlessOperations = json_decode(file_get_contents(METADATA_DIR.'/scopes.json'));
         $restrictedOperations = json_decode(file_get_contents(METADATA_DIR.'/restricted.json'));
@@ -55,6 +58,7 @@ class RequestGenerator extends SDKGenerator
             );
 
         $constructor = $this->generateConstructor($endpoint, $classType);
+        $methods['__construct'] = $constructor;
 
         $path = $this->buildGenericPath($endpoint->pathSegments);
         $httpMethod = strtolower($endpoint->method->value);
@@ -101,9 +105,10 @@ class RequestGenerator extends SDKGenerator
         // Remove the constructor if it's not being used
         if (count($constructor->getParameters()) === 0 && $constructor->getBody() === '') {
             $classType->removeMethod('__construct');
+            unset($methods['__construct']);
         }
 
-        $classType->addMethod('resolveEndpoint')
+        $methods['resolveEndpoint'] = $classType->addMethod('resolveEndpoint')
             ->setPublic()
             ->setReturnType('string')
             ->addBody(
@@ -168,11 +173,12 @@ class RequestGenerator extends SDKGenerator
         $createDtoMethod
             ->addParameter('response')
             ->setType(Response::class);
+        $methods['createDtoFromResponse'] = $createDtoMethod;
 
         if ($endpoint->bodySchema) {
             $returnValText = $this->generateDefaultBody($endpoint->bodySchema);
 
-            $classType
+            $methods['defaultBody'] = $classType
                 ->addMethod('defaultBody')
                 ->setReturnType('array')
                 ->addBody(
@@ -182,6 +188,30 @@ class RequestGenerator extends SDKGenerator
             $bodyFQN = $this->bodyFQN($endpoint->bodySchema);
             $namespace->addUse($bodyFQN);
         }
+
+        if ($endpoint->queryParameters) {
+            $methods['defaultQuery'] = MethodGeneratorHelper::generateArrayReturnMethod(
+                $classType,
+                'defaultQuery',
+                $this->queryParams,
+                $this->config->datetimeFormat,
+                withArrayFilterWrapper: true
+            );
+        }
+
+        if ($endpoint->headerParameters) {
+            $methods['defaultHeaders'] = MethodGeneratorHelper::generateArrayReturnMethod(
+                $classType,
+                'defaultHeaders',
+                $this->headerParams,
+                $this->config->datetimeFormat,
+                withArrayFilterWrapper: true
+            );
+        }
+
+        // By explicitly setting the list of methods here, we control the order they are rendered in the class.
+        // Without this, they would be rendered in whatever order they were created.
+        $classType->setMethods($methods);
 
         $namespace
             ->addUse(SaloonHttpMethod::class)

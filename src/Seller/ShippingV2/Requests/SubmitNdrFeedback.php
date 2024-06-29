@@ -31,9 +31,11 @@ class SubmitNdrFeedback extends Request implements HasBody
 
     /**
      * @param  SubmitNdrFeedbackRequest  $submitNdrFeedbackRequest  The request schema for the NdrFeedback operation
+     * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function __construct(
         public SubmitNdrFeedbackRequest $submitNdrFeedbackRequest,
+        protected ?string $xAmznShippingBusinessId = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -56,5 +58,10 @@ class SubmitNdrFeedback extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->submitNdrFeedbackRequest->toArray();
+    }
+
+    public function defaultHeaders(): array
+    {
+        return array_filter(['x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
     }
 }

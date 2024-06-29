@@ -27,16 +27,13 @@ class GetTracking extends Request
     /**
      * @param  string  $trackingId  A carrier-generated tracking identifier originally returned by the purchaseShipment operation.
      * @param  string  $carrierId  A carrier identifier originally returned by the getRates operation for the selected rate.
+     * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function __construct(
         protected string $trackingId,
         protected string $carrierId,
+        protected ?string $xAmznShippingBusinessId = null,
     ) {}
-
-    public function defaultQuery(): array
-    {
-        return array_filter(['trackingId' => $this->trackingId, 'carrierId' => $this->carrierId]);
-    }
 
     public function resolveEndpoint(): string
     {
@@ -53,5 +50,15 @@ class GetTracking extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['trackingId' => $this->trackingId, 'carrierId' => $this->carrierId]);
+    }
+
+    public function defaultHeaders(): array
+    {
+        return array_filter(['x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
     }
 }

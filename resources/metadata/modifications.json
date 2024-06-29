@@ -1,5 +1,18 @@
 {
   "seller": {
+    "catalog-items": {
+      "2022-04-01": [
+        {
+          "comment": "Remove required 'Pagination' and 'Refinements', see https://github.com/jlevers/selling-partner-api/issues/740",
+          "action": "replace",
+          "path": "components.schemas.ItemSearchResults.required",
+          "value": [
+            "items",
+            "numberOfResults"
+          ]
+        }
+      ]
+    },
     "fba-inbound": {
       "0": [
         {
@@ -74,16 +87,43 @@
         }
       ]
     },
-    "catalog-items": {
-      "2022-04-01": [
+    "shipping": {
+      "2": [
         {
-          "comment": "Remove required 'Pagination' and 'Refinements', see https://github.com/jlevers/selling-partner-api/issues/740",
+          "comment": "Make the x-amzn-shipping-business-id header optional, because making it required would break backwards compatibility. This will be removed in the next major release.",
           "action": "replace",
-          "path": "components.schemas.ItemSearchResults.required",
-          "value": [
-            "items",
-            "numberOfResults"
-          ]
+          "path": "paths./shipping/v2/shipments/rates.post.parameters.1.required",
+          "value": false
+        },
+        {
+          "comment": "Make the x-amzn-shipping-business-id header optional, because making it required would break backwards compatibility. This will be removed in the next major release.",
+          "action": "replace",
+          "path": "paths./shipping/v2/shipments.post.parameters.1.required",
+          "value": false
+        },
+        {
+          "comment": "Make the x-amzn-shipping-business-id header optional, because making it required would break backwards compatibility. This will be removed in the next major release.",
+          "action": "replace",
+          "path": "paths./shipping/v2/oneClickShipment.post.parameters.1.required",
+          "value": false
+        },
+        {
+          "comment": "Make the x-amzn-shipping-business-id header optional, because making it required would break backwards compatibility. This will be removed in the next major release.",
+          "action": "replace",
+          "path": "paths./shipping/v2/shipments/{shipmentId}/documents.get.parameters.5.required",
+          "value": false
+        },
+        {
+          "comment": "Make the x-amzn-shipping-business-id header optional, because making it required would break backwards compatibility. This will be removed in the next major release.",
+          "action": "replace",
+          "path": "paths./shipping/v2/shipments/{shipmentId}/cancel.put.parameters.2.required",
+          "value": false
+        },
+        {
+          "comment": "Make the x-amzn-shipping-business-id header optional, because making it required would break backwards compatibility. This will be removed in the next major release.",
+          "action": "replace",
+          "path": "paths./shipping/v2/accessPoints.get.parameters.4.required",
+          "value": false
         }
       ]
     }

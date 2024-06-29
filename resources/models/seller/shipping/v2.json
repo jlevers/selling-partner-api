@@ -32,7 +32,7 @@
                         "name": "x-amzn-shipping-business-id",
                         "in": "header",
                         "description": "Amazon shipping business to assume for this request. The default is AmazonShipping_UK.",
-                        "required": true,
+                        "required": false,
                         "schema": {
                             "type": "string",
                             "enum": [
@@ -598,7 +598,7 @@
                         "name": "x-amzn-shipping-business-id",
                         "in": "header",
                         "description": "Amazon shipping business to assume for this request. The default is AmazonShipping_UK.",
-                        "required": true,
+                        "required": false,
                         "schema": {
                             "type": "string",
                             "enum": [
@@ -1036,7 +1036,7 @@
                         "name": "x-amzn-shipping-business-id",
                         "in": "header",
                         "description": "Amazon shipping business to assume for this request. The default is AmazonShipping_UK.",
-                        "required": true,
+                        "required": false,
                         "schema": {
                             "type": "string",
                             "enum": [
@@ -1984,7 +1984,7 @@
                         "name": "x-amzn-shipping-business-id",
                         "in": "header",
                         "description": "Amazon shipping business to assume for this request. The default is AmazonShipping_UK.",
-                        "required": true,
+                        "required": false,
                         "schema": {
                             "type": "string",
                             "enum": [
@@ -2408,7 +2408,7 @@
                         "name": "x-amzn-shipping-business-id",
                         "in": "header",
                         "description": "Amazon shipping business to assume for this request. The default is AmazonShipping_UK.",
-                        "required": true,
+                        "required": false,
                         "schema": {
                             "type": "string",
                             "enum": [
@@ -2920,7 +2920,7 @@
                         "name": "x-amzn-shipping-business-id",
                         "in": "header",
                         "description": "Amazon shipping business to assume for this request. The default is AmazonShipping_UK.",
-                        "required": true,
+                        "required": false,
                         "schema": {
                             "type": "string",
                             "enum": [

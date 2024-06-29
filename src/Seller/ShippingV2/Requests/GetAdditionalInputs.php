@@ -27,16 +27,13 @@ class GetAdditionalInputs extends Request
     /**
      * @param  string  $requestToken  The request token returned in the response to the getRates operation.
      * @param  string  $rateId  The rate identifier for the shipping offering (rate) returned in the response to the getRates operation.
+     * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function __construct(
         protected string $requestToken,
         protected string $rateId,
+        protected ?string $xAmznShippingBusinessId = null,
     ) {}
-
-    public function defaultQuery(): array
-    {
-        return array_filter(['requestToken' => $this->requestToken, 'rateId' => $this->rateId]);
-    }
 
     public function resolveEndpoint(): string
     {
@@ -53,5 +50,15 @@ class GetAdditionalInputs extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['requestToken' => $this->requestToken, 'rateId' => $this->rateId]);
+    }
+
+    public function defaultHeaders(): array
+    {
+        return array_filter(['x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
     }
 }

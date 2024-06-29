@@ -31,9 +31,11 @@ class GetRates extends Request implements HasBody
 
     /**
      * @param  GetRatesRequest  $getRatesRequest  The request schema for the getRates operation. When the channelType is Amazon, the shipTo address is not required and will be ignored.
+     * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function __construct(
         public GetRatesRequest $getRatesRequest,
+        protected ?string $xAmznShippingBusinessId = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -56,5 +58,10 @@ class GetRates extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->getRatesRequest->toArray();
+    }
+
+    public function defaultHeaders(): array
+    {
+        return array_filter(['x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
     }
 }

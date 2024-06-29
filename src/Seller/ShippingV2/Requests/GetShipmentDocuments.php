@@ -29,18 +29,15 @@ class GetShipmentDocuments extends Request
      * @param  string  $packageClientReferenceId  The package client reference identifier originally provided in the request body parameter for the getRates operation.
      * @param  ?string  $format  The file format of the document. Must be one of the supported formats returned by the getRates operation.
      * @param  ?float  $dpi  The resolution of the document (for example, 300 means 300 dots per inch). Must be one of the supported resolutions returned in the response to the getRates operation.
+     * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function __construct(
         protected string $shipmentId,
         protected string $packageClientReferenceId,
         protected ?string $format = null,
         protected ?float $dpi = null,
+        protected ?string $xAmznShippingBusinessId = null,
     ) {}
-
-    public function defaultQuery(): array
-    {
-        return array_filter(['packageClientReferenceId' => $this->packageClientReferenceId, 'format' => $this->format, 'dpi' => $this->dpi]);
-    }
 
     public function resolveEndpoint(): string
     {
@@ -57,5 +54,15 @@ class GetShipmentDocuments extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['packageClientReferenceId' => $this->packageClientReferenceId, 'format' => $this->format, 'dpi' => $this->dpi]);
+    }
+
+    public function defaultHeaders(): array
+    {
+        return array_filter(['x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
     }
 }

@@ -31,9 +31,11 @@ class OneClickShipment extends Request implements HasBody
 
     /**
      * @param  OneClickShipmentRequest  $oneClickShipmentRequest  The request schema for the OneClickShipment operation. When the channelType is not Amazon, shipTo is required and when channelType is Amazon shipTo is ignored.
+     * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function __construct(
         public OneClickShipmentRequest $oneClickShipmentRequest,
+        protected ?string $xAmznShippingBusinessId = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -56,5 +58,10 @@ class OneClickShipment extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->oneClickShipmentRequest->toArray();
+    }
+
+    public function defaultHeaders(): array
+    {
+        return array_filter(['x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
     }
 }

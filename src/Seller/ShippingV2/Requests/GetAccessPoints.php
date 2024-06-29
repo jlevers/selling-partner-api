@@ -24,16 +24,15 @@ class GetAccessPoints extends Request
 {
     protected Method $method = Method::GET;
 
+    /**
+     * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
+     */
     public function __construct(
         protected array $accessPointTypes,
         protected string $countryCode,
         protected string $postalCode,
+        protected ?string $xAmznShippingBusinessId = null,
     ) {}
-
-    public function defaultQuery(): array
-    {
-        return array_filter(['accessPointTypes' => $this->accessPointTypes, 'countryCode' => $this->countryCode, 'postalCode' => $this->postalCode]);
-    }
 
     public function resolveEndpoint(): string
     {
@@ -50,5 +49,15 @@ class GetAccessPoints extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['accessPointTypes' => $this->accessPointTypes, 'countryCode' => $this->countryCode, 'postalCode' => $this->postalCode]);
+    }
+
+    public function defaultHeaders(): array
+    {
+        return array_filter(['x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
     }
 }

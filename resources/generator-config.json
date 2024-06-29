@@ -9,5 +9,8 @@
     "namespaceSuffixes": {
         "resource": null
     },
-    "datetimeFormat": "Y-m-d\\TH:i:s\\Z"
+    "datetimeFormat": "Y-m-d\\TH:i:s\\Z",
+    "ignoredParams": {
+      "header": ["x-amz-access-token"]
+    }
 }

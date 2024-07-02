@@ -3080,7 +3080,6 @@
                 "required": [
                     "CarrierName",
                     "Rate",
-                    "RequiresAdditionalSellerInputs",
                     "ShipDate",
                     "ShippingServiceId",
                     "ShippingServiceName",

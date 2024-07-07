@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\CatalogItemsV0\Dto\ListMatchingItemsResponse;
 
 final class ListCatalogItemsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?ListMatchingItemsResponse  $payload

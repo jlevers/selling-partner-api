@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ServicesV1\Dto\Error;
 
 final class CreateReservationResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?CreateReservationRecord  $payload  `CreateReservationRecord` entity contains the `Reservation` if there is an error/warning while performing the requested operation on it, otherwise it will contain the new `reservationId`.

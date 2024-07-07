@@ -28,9 +28,9 @@ final class RentalTransactionEvent extends Dto
     ];
 
     protected static array $complexArrayTypes = [
-        'rentalChargeList' => [ChargeComponent::class],
-        'rentalFeeList' => [FeeComponent::class],
-        'rentalTaxWithheldList' => [TaxWithheldComponent::class],
+        'rentalChargeList' => ChargeComponent::class,
+        'rentalFeeList' => FeeComponent::class,
+        'rentalTaxWithheldList' => TaxWithheldComponent::class,
     ];
 
     /**

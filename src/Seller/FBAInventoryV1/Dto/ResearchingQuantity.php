@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ResearchingQuantity extends Dto
 {
-    protected static array $complexArrayTypes = ['researchingQuantityBreakdown' => [ResearchingQuantityEntry::class]];
+    protected static array $complexArrayTypes = ['researchingQuantityBreakdown' => ResearchingQuantityEntry::class];
 
     /**
      * @param  ?int  $totalResearchingQuantity  The total number of units currently being researched in Amazon's fulfillment network.

@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class Refinements extends Dto
 {
     protected static array $complexArrayTypes = [
-        'brands' => [BrandRefinement::class],
-        'classifications' => [ClassificationRefinement::class],
+        'brands' => BrandRefinement::class,
+        'classifications' => ClassificationRefinement::class,
     ];
 
     /**

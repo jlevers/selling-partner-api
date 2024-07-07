@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\Pagination;
 
 final class ListShipmentContentUpdatePreviewsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['contentUpdatePreviews' => [ContentUpdatePreview::class]];
+    protected static array $complexArrayTypes = ['contentUpdatePreviews' => ContentUpdatePreview::class];
 
     /**
      * @param  ContentUpdatePreview[]  $contentUpdatePreviews  A list of content update previews in a shipment.

@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\ProductTypeDefinitionsV20200901\Dto\ProductType;
 
 final class ProductTypeList extends Response
 {
-    protected static array $complexArrayTypes = ['productTypes' => [ProductType::class]];
+    protected static array $complexArrayTypes = ['productTypes' => ProductType::class];
 
     /**
      * @param  ProductType[]  $productTypes

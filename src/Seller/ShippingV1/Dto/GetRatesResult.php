@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class GetRatesResult extends Dto
 {
-    protected static array $complexArrayTypes = ['serviceRates' => [ServiceRate::class]];
+    protected static array $complexArrayTypes = ['serviceRates' => ServiceRate::class];
 
     /**
      * @param  ServiceRate[]  $serviceRates  A list of service rates.

@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class StandardMultipleImageTextModule extends Dto
 {
-    protected static array $complexArrayTypes = ['blocks' => [StandardImageTextCaptionBlock::class]];
+    protected static array $complexArrayTypes = ['blocks' => StandardImageTextCaptionBlock::class];
 
     /**
      * @param  StandardImageTextCaptionBlock[]|null  $blocks

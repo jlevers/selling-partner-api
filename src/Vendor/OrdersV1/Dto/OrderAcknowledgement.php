@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class OrderAcknowledgement extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [OrderAcknowledgementItem::class]];
+    protected static array $complexArrayTypes = ['items' => OrderAcknowledgementItem::class];
 
     /**
      * @param  string  $purchaseOrderNumber  The purchase order number. Formatting Notes: 8-character alpha-numeric code.

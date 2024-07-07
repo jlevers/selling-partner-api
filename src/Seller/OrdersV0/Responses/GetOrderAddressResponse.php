@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\OrdersV0\Dto\OrderAddress;
 
 final class GetOrderAddressResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?OrderAddress  $payload  The shipping address for the order.

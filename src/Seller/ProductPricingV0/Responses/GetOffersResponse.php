@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ProductPricingV0\Dto\GetOffersResult;
 
 final class GetOffersResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?GetOffersResult  $payload

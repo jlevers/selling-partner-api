@@ -22,7 +22,7 @@ final class TrialShipmentEvent extends Dto
         'feeList' => 'FeeList',
     ];
 
-    protected static array $complexArrayTypes = ['feeList' => [FeeComponent::class]];
+    protected static array $complexArrayTypes = ['feeList' => FeeComponent::class];
 
     /**
      * @param  ?string  $amazonOrderId  An Amazon-defined identifier for an order.

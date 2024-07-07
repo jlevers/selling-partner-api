@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class OperatingHours extends Dto
 {
-    protected static array $complexArrayTypes = ['midDayClosures' => [TimeOfDay::class]];
+    protected static array $complexArrayTypes = ['midDayClosures' => TimeOfDay::class];
 
     /**
      * @param  ?TimeOfDay  $closingTime  Denotes time of the day, used for defining opening or closing time of access points

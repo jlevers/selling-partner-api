@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ProductQuantity extends Dto
 {
-    protected static array $complexArrayTypes = ['attributes' => [ProductAttribute::class]];
+    protected static array $complexArrayTypes = ['attributes' => ProductAttribute::class];
 
     /**
      * @param  int  $quantity  Product quantity.

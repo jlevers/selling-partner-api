@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentPaymentV1\Dto\TransactionReference
 
 final class SubmitInvoiceResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?TransactionReference  $payload  Response that contains the transaction ID.

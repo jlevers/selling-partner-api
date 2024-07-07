@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class FeaturedBuyingOption extends Dto
 {
-    protected static array $complexArrayTypes = ['segmentedFeaturedOffers' => [SegmentedFeaturedOffer::class]];
+    protected static array $complexArrayTypes = ['segmentedFeaturedOffers' => SegmentedFeaturedOffer::class];
 
     /**
      * @param  string  $buyingOptionType  The buying option type of the featured offer. This field represents the buying options that a customer sees on the detail page. For example, B2B, Fresh, and Subscribe n Save. Currently supports `NEW`

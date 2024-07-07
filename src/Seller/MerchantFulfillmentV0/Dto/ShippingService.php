@@ -31,7 +31,7 @@ final class ShippingService extends Dto
         'benefits' => 'Benefits',
     ];
 
-    protected static array $complexArrayTypes = ['availableFormatOptionsForLabel' => [LabelFormatOption::class]];
+    protected static array $complexArrayTypes = ['availableFormatOptionsForLabel' => LabelFormatOption::class];
 
     /**
      * @param  string  $shippingServiceName  A plain text representation of a carrier's shipping service. For example, UPS Ground or FedEx Standard Overnight.

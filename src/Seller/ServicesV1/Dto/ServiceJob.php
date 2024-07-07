@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class ServiceJob extends Dto
 {
     protected static array $complexArrayTypes = [
-        'preferredAppointmentTimes' => [AppointmentTime::class],
-        'appointments' => [Appointment::class],
-        'associatedItems' => [AssociatedItem::class],
+        'preferredAppointmentTimes' => AppointmentTime::class,
+        'appointments' => Appointment::class,
+        'associatedItems' => AssociatedItem::class,
     ];
 
     /**

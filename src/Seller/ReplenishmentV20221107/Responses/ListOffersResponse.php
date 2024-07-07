@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ReplenishmentV20221107\Dto\PaginationResponse;
 
 final class ListOffersResponse extends Response
 {
-    protected static array $complexArrayTypes = ['offers' => [ListOffersResponseOffer::class]];
+    protected static array $complexArrayTypes = ['offers' => ListOffersResponseOffer::class];
 
     /**
      * @param  ListOffersResponseOffer[]|null  $offers  A list of offers.

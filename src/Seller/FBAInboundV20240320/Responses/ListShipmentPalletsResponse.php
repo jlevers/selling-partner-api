@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\Pallet;
 
 final class ListShipmentPalletsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['pallets' => [Pallet::class]];
+    protected static array $complexArrayTypes = ['pallets' => Pallet::class];
 
     /**
      * @param  Pallet[]  $pallets  The pallets in a shipment.

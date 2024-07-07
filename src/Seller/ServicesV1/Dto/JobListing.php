@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class JobListing extends Dto
 {
-    protected static array $complexArrayTypes = ['jobs' => [ServiceJob::class]];
+    protected static array $complexArrayTypes = ['jobs' => ServiceJob::class];
 
     /**
      * @param  ?int  $totalResultSize  Total result size of the query result.

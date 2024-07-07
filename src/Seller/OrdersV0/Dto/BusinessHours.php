@@ -16,7 +16,7 @@ final class BusinessHours extends Dto
 {
     protected static array $attributeMap = ['dayOfWeek' => 'DayOfWeek', 'openIntervals' => 'OpenIntervals'];
 
-    protected static array $complexArrayTypes = ['openIntervals' => [OpenInterval::class]];
+    protected static array $complexArrayTypes = ['openIntervals' => OpenInterval::class];
 
     /**
      * @param  ?string  $dayOfWeek  Day of the week.

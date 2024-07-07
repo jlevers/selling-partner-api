@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class PurchaseOrders extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [PurchaseOrderItems::class]];
+    protected static array $complexArrayTypes = ['items' => PurchaseOrderItems::class];
 
     /**
      * @param  ?string  $purchaseOrderNumber  Purchase order numbers involved in this shipment, list all the PO that are involved as part of this shipment.

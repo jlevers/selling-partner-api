@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ProductFeesV0\Dto\GetMyFeesEstimateResult;
 
 final class GetMyFeesEstimateResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?GetMyFeesEstimateResult  $payload  Response schema.

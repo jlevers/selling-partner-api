@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ChargeDetails extends Dto
 {
-    protected static array $complexArrayTypes = ['taxDetails' => [TaxDetails::class]];
+    protected static array $complexArrayTypes = ['taxDetails' => TaxDetails::class];
 
     /**
      * @param  string  $type  Type of the charge applied.

@@ -15,10 +15,10 @@ use SellingPartnerApi\Dto;
 final class InvoiceDetail extends Dto
 {
     protected static array $complexArrayTypes = [
-        'items' => [InvoiceItem::class],
-        'taxTotals' => [TaxDetail::class],
-        'additionalDetails' => [AdditionalDetails::class],
-        'chargeDetails' => [ChargeDetails::class],
+        'items' => InvoiceItem::class,
+        'taxTotals' => TaxDetail::class,
+        'additionalDetails' => AdditionalDetails::class,
+        'chargeDetails' => ChargeDetails::class,
     ];
 
     /**

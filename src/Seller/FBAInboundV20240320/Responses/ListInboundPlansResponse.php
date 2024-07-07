@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\Pagination;
 
 final class ListInboundPlansResponse extends Response
 {
-    protected static array $complexArrayTypes = ['inboundPlans' => [InboundPlanSummary::class]];
+    protected static array $complexArrayTypes = ['inboundPlans' => InboundPlanSummary::class];
 
     /**
      * @param  InboundPlanSummary[]|null  $inboundPlans  A list of inbound plans with minimal information.

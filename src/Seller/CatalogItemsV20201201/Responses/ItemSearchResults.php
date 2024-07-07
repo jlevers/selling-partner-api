@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\CatalogItemsV20201201\Dto\Refinements;
 
 final class ItemSearchResults extends Response
 {
-    protected static array $complexArrayTypes = ['items' => [Item::class]];
+    protected static array $complexArrayTypes = ['items' => Item::class];
 
     /**
      * @param  int  $numberOfResults  The estimated total number of products matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).

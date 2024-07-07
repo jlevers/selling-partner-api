@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ReplenishmentV20221107\Dto\PaginationResponse;
 
 final class ListOfferMetricsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['offers' => [ListOfferMetricsResponseOffer::class]];
+    protected static array $complexArrayTypes = ['offers' => ListOfferMetricsResponseOffer::class];
 
     /**
      * @param  ListOfferMetricsResponseOffer[]|null  $offers  A list of offers and associated metrics.

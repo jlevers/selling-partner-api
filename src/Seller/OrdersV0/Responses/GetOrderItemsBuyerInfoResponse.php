@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\OrdersV0\Dto\OrderItemsBuyerInfoList;
 
 final class GetOrderItemsBuyerInfoResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?OrderItemsBuyerInfoList  $payload  A single order item's buyer information list with the order ID.

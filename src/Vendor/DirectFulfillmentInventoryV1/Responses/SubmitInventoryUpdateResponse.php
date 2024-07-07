@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentInventoryV1\Dto\TransactionReferen
 
 final class SubmitInventoryUpdateResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?TransactionReference  $payload  A response that contains the transaction ID.

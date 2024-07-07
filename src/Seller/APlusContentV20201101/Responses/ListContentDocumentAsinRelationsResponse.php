@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\APlusContentV20201101\Dto\Error;
 
 final class ListContentDocumentAsinRelationsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['asinMetadataSet' => [AsinMetadata::class], 'warnings' => [Error::class]];
+    protected static array $complexArrayTypes = ['asinMetadataSet' => AsinMetadata::class, 'warnings' => Error::class];
 
     /**
      * @param  AsinMetadata[]  $asinMetadataSet  The set of ASIN metadata.

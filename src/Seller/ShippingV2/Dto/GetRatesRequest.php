@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class GetRatesRequest extends Dto
 {
     protected static array $complexArrayTypes = [
-        'packages' => [Package::class],
-        'taxDetails' => [TaxDetail::class],
-        'clientReferenceDetails' => [ClientReferenceDetail::class],
+        'packages' => Package::class,
+        'taxDetails' => TaxDetail::class,
+        'clientReferenceDetails' => ClientReferenceDetail::class,
     ];
 
     /**

@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\GetFeaturesResult;
 
 final class GetFeaturesResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?GetFeaturesResult  $payload  The payload for the `getFeatures` operation.

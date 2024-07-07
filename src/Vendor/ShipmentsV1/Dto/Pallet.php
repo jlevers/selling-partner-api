@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class Pallet extends Dto
 {
     protected static array $complexArrayTypes = [
-        'palletIdentifiers' => [ContainerIdentification::class],
-        'items' => [ContainerItem::class],
+        'palletIdentifiers' => ContainerIdentification::class,
+        'items' => ContainerItem::class,
     ];
 
     /**

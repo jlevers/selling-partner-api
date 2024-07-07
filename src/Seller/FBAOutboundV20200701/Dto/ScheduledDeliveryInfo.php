@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ScheduledDeliveryInfo extends Dto
 {
-    protected static array $complexArrayTypes = ['deliveryWindows' => [DeliveryWindow::class]];
+    protected static array $complexArrayTypes = ['deliveryWindows' => DeliveryWindow::class];
 
     /**
      * @param  string  $deliveryTimeZone  The time zone of the destination address for the fulfillment order preview. Must be an IANA time zone name. Example: Asia/Tokyo.

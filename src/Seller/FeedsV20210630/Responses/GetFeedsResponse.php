@@ -14,7 +14,7 @@ use SellingPartnerApi\Response;
 
 final class GetFeedsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['feeds' => [Feed::class]];
+    protected static array $complexArrayTypes = ['feeds' => Feed::class];
 
     /**
      * @param  Feed[]  $feeds  A list of feeds.

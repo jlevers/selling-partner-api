@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\ServicesV1\Dto\Error;
 
 final class ErrorList extends Response
 {
-    protected static array $complexArrayTypes = ['errorList' => [Error::class]];
+    protected static array $complexArrayTypes = ['errorList' => Error::class];
 
     /**
      * @param  Error[]  $errorList  A list of error responses returned when a request is unsuccessful.

@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\APlusContentV20201101\Dto\Error;
 
 final class PostContentDocumentApprovalSubmissionResponse extends Response
 {
-    protected static array $complexArrayTypes = ['warnings' => [Error::class]];
+    protected static array $complexArrayTypes = ['warnings' => Error::class];
 
     /**
      * @param  Error[]|null  $warnings  A set of messages to the user, such as warnings or comments.

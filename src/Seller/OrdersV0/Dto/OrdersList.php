@@ -21,7 +21,7 @@ final class OrdersList extends Dto
         'createdBefore' => 'CreatedBefore',
     ];
 
-    protected static array $complexArrayTypes = ['orders' => [Order::class]];
+    protected static array $complexArrayTypes = ['orders' => Order::class];
 
     /**
      * @param  Order[]  $orders  A list of orders.

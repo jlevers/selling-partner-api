@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ShipmentInvoicingV0\Dto\ShipmentDetail;
 
 final class GetShipmentDetailsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?ShipmentDetail  $payload  The information required by a selling partner to issue a shipment invoice.

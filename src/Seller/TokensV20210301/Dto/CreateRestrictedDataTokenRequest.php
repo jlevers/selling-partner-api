@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class CreateRestrictedDataTokenRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['restrictedResources' => [RestrictedResource::class]];
+    protected static array $complexArrayTypes = ['restrictedResources' => RestrictedResource::class];
 
     /**
      * @param  RestrictedResource[]  $restrictedResources  A list of restricted resources.

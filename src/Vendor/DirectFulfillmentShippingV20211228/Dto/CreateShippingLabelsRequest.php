@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class CreateShippingLabelsRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['containers' => [Container::class]];
+    protected static array $complexArrayTypes = ['containers' => Container::class];
 
     /**
      * @param  PartyIdentification  $sellingParty  Name, address, and tax details for a party.

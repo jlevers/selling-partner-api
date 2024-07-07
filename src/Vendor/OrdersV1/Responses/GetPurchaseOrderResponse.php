@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\OrdersV1\Dto\Order;
 
 final class GetPurchaseOrderResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?Order  $payload  Represents an order placed by Amazon, including the purchase order number, current state, and order details.

@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\CatalogItemsV0\Dto\Error;
 
 final class ListCatalogCategoriesResponse extends Response
 {
-    protected static array $complexArrayTypes = ['payload' => [Categories::class], 'errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['payload' => Categories::class, 'errors' => Error::class];
 
     /**
      * @param  Categories[]|null  $payload

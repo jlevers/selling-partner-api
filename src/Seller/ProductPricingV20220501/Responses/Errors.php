@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\ProductPricingV20220501\Dto\Error;
 
 final class Errors extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  Error[]  $errors  A list of error responses returned when a request is unsuccessful.

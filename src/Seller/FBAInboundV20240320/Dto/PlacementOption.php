@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class PlacementOption extends Dto
 {
-    protected static array $complexArrayTypes = ['discounts' => [Incentive::class], 'fees' => [Incentive::class]];
+    protected static array $complexArrayTypes = ['discounts' => Incentive::class, 'fees' => Incentive::class];
 
     /**
      * @param  Incentive[]  $discounts  Discount for the offered option.

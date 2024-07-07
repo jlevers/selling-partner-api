@@ -17,8 +17,8 @@ final class GetFulfillmentPreviewRequest extends Dto
     protected static array $attributeMap = ['includeCodFulfillmentPreview' => 'includeCODFulfillmentPreview'];
 
     protected static array $complexArrayTypes = [
-        'items' => [GetFulfillmentPreviewItem::class],
-        'featureConstraints' => [FeatureSettings::class],
+        'items' => GetFulfillmentPreviewItem::class,
+        'featureConstraints' => FeatureSettings::class,
     ];
 
     /**

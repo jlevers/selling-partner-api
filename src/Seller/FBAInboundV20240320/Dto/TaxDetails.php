@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class TaxDetails extends Dto
 {
-    protected static array $complexArrayTypes = ['taxRates' => [TaxRate::class]];
+    protected static array $complexArrayTypes = ['taxRates' => TaxRate::class];
 
     /**
      * @param  ?Currency  $declaredValue  Currency definition.

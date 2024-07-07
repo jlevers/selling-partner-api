@@ -21,7 +21,7 @@ final class ImagingServicesFeeEvent extends Dto
         'feeList' => 'FeeList',
     ];
 
-    protected static array $complexArrayTypes = ['feeList' => [FeeComponent::class]];
+    protected static array $complexArrayTypes = ['feeList' => FeeComponent::class];
 
     /**
      * @param  ?string  $imagingRequestBillingItemId  The identifier for the imaging services request.

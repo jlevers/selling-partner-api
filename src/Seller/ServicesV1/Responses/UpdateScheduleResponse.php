@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ServicesV1\Dto\UpdateScheduleRecord;
 
 final class UpdateScheduleResponse extends Response
 {
-    protected static array $complexArrayTypes = ['payload' => [UpdateScheduleRecord::class], 'errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['payload' => UpdateScheduleRecord::class, 'errors' => Error::class];
 
     /**
      * @param  UpdateScheduleRecord[]|null  $payload  Contains the `UpdateScheduleRecords` for which the error/warning has occurred.

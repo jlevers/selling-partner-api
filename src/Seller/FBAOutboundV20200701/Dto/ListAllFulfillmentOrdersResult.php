@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ListAllFulfillmentOrdersResult extends Dto
 {
-    protected static array $complexArrayTypes = ['fulfillmentOrders' => [FulfillmentOrder::class]];
+    protected static array $complexArrayTypes = ['fulfillmentOrders' => FulfillmentOrder::class];
 
     /**
      * @param  ?string  $nextToken  When present and not empty, pass this string token in the next request to return the next response page.

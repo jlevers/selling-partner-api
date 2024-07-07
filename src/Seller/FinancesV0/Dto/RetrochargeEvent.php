@@ -24,7 +24,7 @@ final class RetrochargeEvent extends Dto
         'retrochargeTaxWithheldList' => 'RetrochargeTaxWithheldList',
     ];
 
-    protected static array $complexArrayTypes = ['retrochargeTaxWithheldList' => [TaxWithheldComponent::class]];
+    protected static array $complexArrayTypes = ['retrochargeTaxWithheldList' => TaxWithheldComponent::class];
 
     /**
      * @param  ?string  $retrochargeEventType  The type of event.

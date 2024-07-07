@@ -24,7 +24,7 @@ final class ServiceFeeEvent extends Dto
         'asin' => 'ASIN',
     ];
 
-    protected static array $complexArrayTypes = ['feeList' => [FeeComponent::class]];
+    protected static array $complexArrayTypes = ['feeList' => FeeComponent::class];
 
     /**
      * @param  ?string  $amazonOrderId  An Amazon-defined identifier for an order.

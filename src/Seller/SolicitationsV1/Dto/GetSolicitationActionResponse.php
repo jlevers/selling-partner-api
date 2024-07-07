@@ -16,7 +16,7 @@ final class GetSolicitationActionResponse extends Dto
 {
     protected static array $attributeMap = ['links' => '_links', 'embedded' => '_embedded'];
 
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?Links2  $links

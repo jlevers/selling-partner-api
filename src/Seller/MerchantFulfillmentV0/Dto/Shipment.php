@@ -32,7 +32,7 @@ final class Shipment extends Dto
         'lastUpdatedDate' => 'LastUpdatedDate',
     ];
 
-    protected static array $complexArrayTypes = ['itemList' => [Item::class]];
+    protected static array $complexArrayTypes = ['itemList' => Item::class];
 
     /**
      * @param  string  $shipmentId  An Amazon-defined shipment identifier.

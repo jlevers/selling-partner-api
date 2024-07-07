@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class IneligibleRate extends Dto
 {
-    protected static array $complexArrayTypes = ['ineligibilityReasons' => [IneligibilityReason::class]];
+    protected static array $complexArrayTypes = ['ineligibilityReasons' => IneligibilityReason::class];
 
     /**
      * @param  string  $serviceId  An identifier for the shipping service.

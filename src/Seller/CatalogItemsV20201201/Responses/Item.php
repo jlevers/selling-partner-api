@@ -22,13 +22,13 @@ use SellingPartnerApi\Seller\CatalogItemsV20201201\Dto\ItemVendorDetailsByMarket
 final class Item extends Response
 {
     protected static array $complexArrayTypes = [
-        'identifiers' => [ItemIdentifiersByMarketplace::class],
-        'images' => [ItemImagesByMarketplace::class],
-        'productTypes' => [ItemProductTypeByMarketplace::class],
-        'salesRanks' => [ItemSalesRanksByMarketplace::class],
-        'summaries' => [ItemSummaryByMarketplace::class],
-        'variations' => [ItemVariationsByMarketplace::class],
-        'vendorDetails' => [ItemVendorDetailsByMarketplace::class],
+        'identifiers' => ItemIdentifiersByMarketplace::class,
+        'images' => ItemImagesByMarketplace::class,
+        'productTypes' => ItemProductTypeByMarketplace::class,
+        'salesRanks' => ItemSalesRanksByMarketplace::class,
+        'summaries' => ItemSummaryByMarketplace::class,
+        'variations' => ItemVariationsByMarketplace::class,
+        'vendorDetails' => ItemVendorDetailsByMarketplace::class,
     ];
 
     /**

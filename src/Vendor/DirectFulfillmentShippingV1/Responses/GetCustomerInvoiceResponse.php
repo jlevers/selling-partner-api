@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Dto\Error;
 
 final class GetCustomerInvoiceResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?CustomerInvoice  $payload  Represents a customer invoice associated with a purchase order.

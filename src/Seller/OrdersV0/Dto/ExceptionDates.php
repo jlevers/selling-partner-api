@@ -20,7 +20,7 @@ final class ExceptionDates extends Dto
         'openIntervals' => 'OpenIntervals',
     ];
 
-    protected static array $complexArrayTypes = ['openIntervals' => [OpenInterval::class]];
+    protected static array $complexArrayTypes = ['openIntervals' => OpenInterval::class];
 
     /**
      * @param  ?string  $exceptionDate  Date when the business is closed, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date format.

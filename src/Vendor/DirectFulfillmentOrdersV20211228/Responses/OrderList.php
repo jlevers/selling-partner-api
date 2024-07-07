@@ -15,7 +15,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Dto\Pagination;
 
 final class OrderList extends Response
 {
-    protected static array $complexArrayTypes = ['orders' => [Order::class]];
+    protected static array $complexArrayTypes = ['orders' => Order::class];
 
     /**
      * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.

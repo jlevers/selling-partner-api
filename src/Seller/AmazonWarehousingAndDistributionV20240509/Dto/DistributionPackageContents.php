@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class DistributionPackageContents extends Dto
 {
     protected static array $complexArrayTypes = [
-        'packages' => [DistributionPackageQuantity::class],
-        'products' => [ProductQuantity::class],
+        'packages' => DistributionPackageQuantity::class,
+        'products' => ProductQuantity::class,
     ];
 
     /**

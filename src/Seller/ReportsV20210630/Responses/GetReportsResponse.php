@@ -14,7 +14,7 @@ use SellingPartnerApi\Response;
 
 final class GetReportsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['reports' => [Report::class]];
+    protected static array $complexArrayTypes = ['reports' => Report::class];
 
     /**
      * @param  Report[]  $reports  A list of reports.

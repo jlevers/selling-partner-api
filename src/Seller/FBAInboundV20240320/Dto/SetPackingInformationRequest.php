@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class SetPackingInformationRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['packageGroupings' => [PackageGroupingInput::class]];
+    protected static array $complexArrayTypes = ['packageGroupings' => PackageGroupingInput::class];
 
     /**
      * @param  PackageGroupingInput[]  $packageGroupings  List of packing information for the inbound plan.

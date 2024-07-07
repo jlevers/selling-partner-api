@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentTransactionsV1\Dto\TransactionStat
 
 final class GetTransactionResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?TransactionStatus  $payload  The payload for the `getTransactionStatus` operation.

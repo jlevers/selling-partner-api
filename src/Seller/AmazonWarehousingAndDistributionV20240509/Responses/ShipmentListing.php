@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\Inbou
 
 final class ShipmentListing extends Response
 {
-    protected static array $complexArrayTypes = ['shipments' => [InboundShipmentSummary::class]];
+    protected static array $complexArrayTypes = ['shipments' => InboundShipmentSummary::class];
 
     /**
      * @param  ?string  $nextToken  Token to retrieve the next set of paginated results.

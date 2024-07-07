@@ -15,7 +15,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Dto\Error;
 
 final class ErrorList extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  Error[]  $errors  An array of error objects that represents individual errors encountered during the request.

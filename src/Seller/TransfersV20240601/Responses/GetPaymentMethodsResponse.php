@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\TransfersV20240601\Dto\PiDetails;
 
 final class GetPaymentMethodsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['piDetails' => [PiDetails::class]];
+    protected static array $complexArrayTypes = ['piDetails' => PiDetails::class];
 
     /**
      * @param  PiDetails[]|null  $piDetails  The list of payment instruments.

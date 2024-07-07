@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\NotificationsV1\Dto\Error;
 
 final class CreateDestinationResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?Destination  $payload  Information about the destination created when you call the `createDestination` operation.

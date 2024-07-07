@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\GetDeliveryOffersResult;
 
 final class GetDeliveryOffersResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?GetDeliveryOffersResult  $payload  A list of delivery offers, including offer expiration, earliest and latest date and time range, and the delivery offer policy.

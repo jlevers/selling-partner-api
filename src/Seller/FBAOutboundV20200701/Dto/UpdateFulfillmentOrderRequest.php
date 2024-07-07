@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class UpdateFulfillmentOrderRequest extends Dto
 {
     protected static array $complexArrayTypes = [
-        'featureConstraints' => [FeatureSettings::class],
-        'items' => [UpdateFulfillmentOrderItem::class],
+        'featureConstraints' => FeatureSettings::class,
+        'items' => UpdateFulfillmentOrderItem::class,
     ];
 
     /**

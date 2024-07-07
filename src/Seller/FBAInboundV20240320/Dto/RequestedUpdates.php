@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class RequestedUpdates extends Dto
 {
-    protected static array $complexArrayTypes = ['boxes' => [BoxUpdateInput::class], 'items' => [ItemInput::class]];
+    protected static array $complexArrayTypes = ['boxes' => BoxUpdateInput::class, 'items' => ItemInput::class];
 
     /**
      * @param  BoxUpdateInput[]|null  $boxes  A list of boxes that will be present in the shipment after the update.

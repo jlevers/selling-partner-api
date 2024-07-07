@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\ReplenishmentV20221107\Dto\GetSellingPartnerMetrics
 
 final class GetSellingPartnerMetricsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['metrics' => [GetSellingPartnerMetricsResponseMetric::class]];
+    protected static array $complexArrayTypes = ['metrics' => GetSellingPartnerMetricsResponseMetric::class];
 
     /**
      * @param  GetSellingPartnerMetricsResponseMetric[]|null  $metrics  A list of metrics data for the selling partner.

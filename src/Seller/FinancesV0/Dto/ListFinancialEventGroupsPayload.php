@@ -19,7 +19,7 @@ final class ListFinancialEventGroupsPayload extends Dto
         'financialEventGroupList' => 'FinancialEventGroupList',
     ];
 
-    protected static array $complexArrayTypes = ['financialEventGroupList' => [FinancialEventGroup::class]];
+    protected static array $complexArrayTypes = ['financialEventGroupList' => FinancialEventGroup::class];
 
     /**
      * @param  ?string  $nextToken  When present and not empty, pass this string token in the next request to return the next response page.

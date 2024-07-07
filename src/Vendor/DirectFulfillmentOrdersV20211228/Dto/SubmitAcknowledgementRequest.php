@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class SubmitAcknowledgementRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['orderAcknowledgements' => [OrderAcknowledgementItem::class]];
+    protected static array $complexArrayTypes = ['orderAcknowledgements' => OrderAcknowledgementItem::class];
 
     /**
      * @param  OrderAcknowledgementItem[]|null  $orderAcknowledgements  A list of one or more purchase orders.

@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class OrderDetails extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [OrderItem::class]];
+    protected static array $complexArrayTypes = ['items' => OrderItem::class];
 
     /**
      * @param  \DateTimeInterface  $purchaseOrderDate  The date the purchase order was placed. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.

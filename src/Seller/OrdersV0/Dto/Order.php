@@ -64,7 +64,7 @@ final class Order extends Dto
         'electronicInvoiceStatus' => 'ElectronicInvoiceStatus',
     ];
 
-    protected static array $complexArrayTypes = ['paymentExecutionDetail' => [PaymentExecutionDetailItem::class]];
+    protected static array $complexArrayTypes = ['paymentExecutionDetail' => PaymentExecutionDetailItem::class];
 
     /**
      * @param  string  $amazonOrderId  An Amazon-defined order identifier, in 3-7-7 format.

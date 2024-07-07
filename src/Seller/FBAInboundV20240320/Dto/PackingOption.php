@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class PackingOption extends Dto
 {
     protected static array $complexArrayTypes = [
-        'discounts' => [Incentive::class],
-        'fees' => [Incentive::class],
-        'supportedShippingConfigurations' => [ShippingConfiguration::class],
+        'discounts' => Incentive::class,
+        'fees' => Incentive::class,
+        'supportedShippingConfigurations' => ShippingConfiguration::class,
     ];
 
     /**

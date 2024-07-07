@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ServicesV1\Dto\Payload;
 
 final class AssignAppointmentResourcesResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?Payload  $payload  The payload for the `assignAppointmentResource` operation.

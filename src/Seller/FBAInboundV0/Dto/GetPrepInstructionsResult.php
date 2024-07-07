@@ -22,10 +22,10 @@ final class GetPrepInstructionsResult extends Dto
     ];
 
     protected static array $complexArrayTypes = [
-        'skuPrepInstructionsList' => [SkuPrepInstructions::class],
-        'invalidSkuList' => [InvalidSku::class],
-        'asinPrepInstructionsList' => [AsinPrepInstructions::class],
-        'invalidAsinList' => [InvalidAsin::class],
+        'skuPrepInstructionsList' => SkuPrepInstructions::class,
+        'invalidSkuList' => InvalidSku::class,
+        'asinPrepInstructionsList' => AsinPrepInstructions::class,
+        'invalidAsinList' => InvalidAsin::class,
     ];
 
     /**

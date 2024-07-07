@@ -20,7 +20,7 @@ final class BuyerTaxInfo extends Dto
         'taxClassifications' => 'TaxClassifications',
     ];
 
-    protected static array $complexArrayTypes = ['taxClassifications' => [TaxClassification::class]];
+    protected static array $complexArrayTypes = ['taxClassifications' => TaxClassification::class];
 
     /**
      * @param  ?string  $companyLegalName  The legal name of the company.

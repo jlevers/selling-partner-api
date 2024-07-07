@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class UpdateScheduledPackagesRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['updatePackageDetailsList' => [UpdatePackageDetails::class]];
+    protected static array $complexArrayTypes = ['updatePackageDetailsList' => UpdatePackageDetails::class];
 
     /**
      * @param  string  $marketplaceId  A string of up to 255 characters.

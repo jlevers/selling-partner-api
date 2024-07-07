@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class UpdateReservationRecord extends Dto
 {
-    protected static array $complexArrayTypes = ['warnings' => [Warning::class], 'errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['warnings' => Warning::class, 'errors' => Error::class];
 
     /**
      * @param  ?Reservation  $reservation  Reservation object reduces the capacity of a resource.

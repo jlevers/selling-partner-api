@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ProductPricingV0\Dto\Price;
 
 final class GetPricingResponse extends Response
 {
-    protected static array $complexArrayTypes = ['payload' => [Price::class], 'errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['payload' => Price::class, 'errors' => Error::class];
 
     /**
      * @param  Price[]|null  $payload

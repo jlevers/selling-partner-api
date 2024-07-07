@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class CustomerInvoiceList extends Dto
 {
-    protected static array $complexArrayTypes = ['customerInvoices' => [CustomerInvoice::class]];
+    protected static array $complexArrayTypes = ['customerInvoices' => CustomerInvoice::class];
 
     /**
      * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.

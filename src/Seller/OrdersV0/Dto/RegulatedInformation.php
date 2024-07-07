@@ -16,7 +16,7 @@ final class RegulatedInformation extends Dto
 {
     protected static array $attributeMap = ['fields' => 'Fields'];
 
-    protected static array $complexArrayTypes = ['fields' => [RegulatedInformationField::class]];
+    protected static array $complexArrayTypes = ['fields' => RegulatedInformationField::class];
 
     /**
      * @param  RegulatedInformationField[]  $fields  A list of regulated information fields as collected from the regulatory form.

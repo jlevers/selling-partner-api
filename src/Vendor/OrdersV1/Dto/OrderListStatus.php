@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class OrderListStatus extends Dto
 {
-    protected static array $complexArrayTypes = ['ordersStatus' => [OrderStatus::class]];
+    protected static array $complexArrayTypes = ['ordersStatus' => OrderStatus::class];
 
     /**
      * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.

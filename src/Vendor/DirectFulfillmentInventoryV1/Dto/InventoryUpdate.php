@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class InventoryUpdate extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [ItemDetails::class]];
+    protected static array $complexArrayTypes = ['items' => ItemDetails::class];
 
     /**
      * @param  PartyIdentification  $sellingParty  Name, address and tax details for a group.

@@ -20,11 +20,11 @@ use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\ItemSummaryByMarketplace
 final class Item extends Response
 {
     protected static array $complexArrayTypes = [
-        'summaries' => [ItemSummaryByMarketplace::class],
-        'issues' => [Issue::class],
-        'offers' => [ItemOfferByMarketplace::class],
-        'fulfillmentAvailability' => [FulfillmentAvailability::class],
-        'procurement' => [ItemProcurement::class],
+        'summaries' => ItemSummaryByMarketplace::class,
+        'issues' => Issue::class,
+        'offers' => ItemOfferByMarketplace::class,
+        'fulfillmentAvailability' => FulfillmentAvailability::class,
+        'procurement' => ItemProcurement::class,
     ];
 
     /**

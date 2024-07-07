@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class CreateScheduledPackagesRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['orderScheduleDetailsList' => [OrderScheduleDetails::class]];
+    protected static array $complexArrayTypes = ['orderScheduleDetailsList' => OrderScheduleDetails::class];
 
     /**
      * @param  string  $marketplaceId  A string of up to 255 characters.

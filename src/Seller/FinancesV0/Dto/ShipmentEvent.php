@@ -31,15 +31,15 @@ final class ShipmentEvent extends Dto
     ];
 
     protected static array $complexArrayTypes = [
-        'orderChargeList' => [ChargeComponent::class],
-        'orderChargeAdjustmentList' => [ChargeComponent::class],
-        'shipmentFeeList' => [FeeComponent::class],
-        'shipmentFeeAdjustmentList' => [FeeComponent::class],
-        'orderFeeList' => [FeeComponent::class],
-        'orderFeeAdjustmentList' => [FeeComponent::class],
-        'directPaymentList' => [DirectPayment::class],
-        'shipmentItemList' => [ShipmentItem::class],
-        'shipmentItemAdjustmentList' => [ShipmentItem::class],
+        'orderChargeList' => ChargeComponent::class,
+        'orderChargeAdjustmentList' => ChargeComponent::class,
+        'shipmentFeeList' => FeeComponent::class,
+        'shipmentFeeAdjustmentList' => FeeComponent::class,
+        'orderFeeList' => FeeComponent::class,
+        'orderFeeAdjustmentList' => FeeComponent::class,
+        'directPaymentList' => DirectPayment::class,
+        'shipmentItemList' => ShipmentItem::class,
+        'shipmentItemAdjustmentList' => ShipmentItem::class,
     ];
 
     /**

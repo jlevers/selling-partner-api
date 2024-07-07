@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundV0\Dto\Error;
 
 final class GetBillOfLadingResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?BillOfLadingDownloadUrl  $payload  Download URL for the bill of lading.

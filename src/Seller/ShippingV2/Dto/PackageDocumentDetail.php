@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class PackageDocumentDetail extends Dto
 {
-    protected static array $complexArrayTypes = ['packageDocuments' => [PackageDocument::class]];
+    protected static array $complexArrayTypes = ['packageDocuments' => PackageDocument::class];
 
     /**
      * @param  string  $packageClientReferenceId  A client provided unique identifier for a package being shipped. This value should be saved by the client to pass as a parameter to the getShipmentDocuments operation.

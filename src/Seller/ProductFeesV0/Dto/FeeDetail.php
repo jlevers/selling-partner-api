@@ -23,7 +23,7 @@ final class FeeDetail extends Dto
         'includedFeeDetailList' => 'IncludedFeeDetailList',
     ];
 
-    protected static array $complexArrayTypes = ['includedFeeDetailList' => [IncludedFeeDetail::class]];
+    protected static array $complexArrayTypes = ['includedFeeDetailList' => IncludedFeeDetail::class];
 
     /**
      * @param  string  $feeType  The type of fee charged to a seller.

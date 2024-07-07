@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Appointment extends Dto
 {
-    protected static array $complexArrayTypes = ['assignedTechnicians' => [Technician::class]];
+    protected static array $complexArrayTypes = ['assignedTechnicians' => Technician::class];
 
     /**
      * @param  ?string  $appointmentId  The appointment identifier.

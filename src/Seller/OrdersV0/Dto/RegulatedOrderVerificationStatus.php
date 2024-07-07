@@ -23,7 +23,7 @@ final class RegulatedOrderVerificationStatus extends Dto
         'externalReviewerId' => 'ExternalReviewerId',
     ];
 
-    protected static array $complexArrayTypes = ['validRejectionReasons' => [RejectionReason::class]];
+    protected static array $complexArrayTypes = ['validRejectionReasons' => RejectionReason::class];
 
     /**
      * @param  string  $status  The verification status of the order.

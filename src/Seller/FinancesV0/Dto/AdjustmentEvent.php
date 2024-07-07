@@ -21,7 +21,7 @@ final class AdjustmentEvent extends Dto
         'adjustmentItemList' => 'AdjustmentItemList',
     ];
 
-    protected static array $complexArrayTypes = ['adjustmentItemList' => [AdjustmentItem::class]];
+    protected static array $complexArrayTypes = ['adjustmentItemList' => AdjustmentItem::class];
 
     /**
      * @param  ?string  $adjustmentType  The type of adjustment.

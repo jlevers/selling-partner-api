@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\CatalogItemsV0\Dto\Item;
 
 final class GetCatalogItemResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?Item  $payload  An item in the Amazon catalog.

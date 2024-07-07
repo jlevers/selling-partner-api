@@ -31,13 +31,13 @@ final class ShipmentItem extends Dto
     ];
 
     protected static array $complexArrayTypes = [
-        'itemChargeList' => [ChargeComponent::class],
-        'itemChargeAdjustmentList' => [ChargeComponent::class],
-        'itemFeeList' => [FeeComponent::class],
-        'itemFeeAdjustmentList' => [FeeComponent::class],
-        'itemTaxWithheldList' => [TaxWithheldComponent::class],
-        'promotionList' => [Promotion::class],
-        'promotionAdjustmentList' => [Promotion::class],
+        'itemChargeList' => ChargeComponent::class,
+        'itemChargeAdjustmentList' => ChargeComponent::class,
+        'itemFeeList' => FeeComponent::class,
+        'itemFeeAdjustmentList' => FeeComponent::class,
+        'itemTaxWithheldList' => TaxWithheldComponent::class,
+        'promotionList' => Promotion::class,
+        'promotionAdjustmentList' => Promotion::class,
     ];
 
     /**

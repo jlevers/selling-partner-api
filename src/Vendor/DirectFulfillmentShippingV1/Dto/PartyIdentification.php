@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class PartyIdentification extends Dto
 {
-    protected static array $complexArrayTypes = ['taxRegistrationDetails' => [TaxRegistrationDetails::class]];
+    protected static array $complexArrayTypes = ['taxRegistrationDetails' => TaxRegistrationDetails::class];
 
     /**
      * @param  string  $partyId  Assigned Identification for the party.

@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ShippingV1\Dto\RetrieveShippingLabelResult;
 
 final class RetrieveShippingLabelResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?RetrieveShippingLabelResult  $payload  The payload schema for the retrieveShippingLabel operation.

@@ -16,7 +16,7 @@ final class GetShipmentItemsResult extends Dto
 {
     protected static array $attributeMap = ['itemData' => 'ItemData', 'nextToken' => 'NextToken'];
 
-    protected static array $complexArrayTypes = ['itemData' => [InboundShipmentItem::class]];
+    protected static array $complexArrayTypes = ['itemData' => InboundShipmentItem::class];
 
     /**
      * @param  InboundShipmentItem[]|null  $itemData  A list of inbound shipment item information.

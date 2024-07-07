@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class GetDeliveryOffersResult extends Dto
 {
-    protected static array $complexArrayTypes = ['deliveryOffers' => [DeliveryOffer::class]];
+    protected static array $complexArrayTypes = ['deliveryOffers' => DeliveryOffer::class];
 
     /**
      * @param  DeliveryOffer[]|null  $deliveryOffers  An array of delivery offer information.

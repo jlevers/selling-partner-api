@@ -20,7 +20,7 @@ final class InboundShipmentRequest extends Dto
         'marketplaceId' => 'MarketplaceId',
     ];
 
-    protected static array $complexArrayTypes = ['inboundShipmentItems' => [InboundShipmentItem::class]];
+    protected static array $complexArrayTypes = ['inboundShipmentItems' => InboundShipmentItem::class];
 
     /**
      * @param  InboundShipmentHeader  $inboundShipmentHeader  Inbound shipment information used to create and update inbound shipments.

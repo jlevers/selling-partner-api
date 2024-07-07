@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FinancesV0\Dto\ListFinancialEventsPayload;
 
 final class ListFinancialEventsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?ListFinancialEventsPayload  $payload  The payload for the listFinancialEvents operation.

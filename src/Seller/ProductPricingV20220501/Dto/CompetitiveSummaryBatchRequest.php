@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class CompetitiveSummaryBatchRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['requests' => [CompetitiveSummaryRequest::class]];
+    protected static array $complexArrayTypes = ['requests' => CompetitiveSummaryRequest::class];
 
     /**
      * @param  CompetitiveSummaryRequest[]  $requests  A batched list of `competitiveSummary` requests.

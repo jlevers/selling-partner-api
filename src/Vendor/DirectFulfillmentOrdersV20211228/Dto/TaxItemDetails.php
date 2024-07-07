@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class TaxItemDetails extends Dto
 {
-    protected static array $complexArrayTypes = ['taxLineItem' => [TaxDetails::class]];
+    protected static array $complexArrayTypes = ['taxLineItem' => TaxDetails::class];
 
     /**
      * @param  TaxDetails[]|null  $taxLineItem  A list of tax line items.

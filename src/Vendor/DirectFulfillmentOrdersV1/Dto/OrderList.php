@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class OrderList extends Dto
 {
-    protected static array $complexArrayTypes = ['orders' => [Order::class]];
+    protected static array $complexArrayTypes = ['orders' => Order::class];
 
     /**
      * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.

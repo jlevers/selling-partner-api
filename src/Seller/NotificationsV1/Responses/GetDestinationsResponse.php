@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\NotificationsV1\Dto\Error;
 
 final class GetDestinationsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['payload' => [Destination::class], 'errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['payload' => Destination::class, 'errors' => Error::class];
 
     /**
      * @param  Destination[]|null  $payload  A list of destinations.

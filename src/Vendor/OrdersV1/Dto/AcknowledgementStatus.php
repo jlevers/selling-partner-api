@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class AcknowledgementStatus extends Dto
 {
-    protected static array $complexArrayTypes = ['acknowledgementStatusDetails' => [AcknowledgementStatusDetails::class]];
+    protected static array $complexArrayTypes = ['acknowledgementStatusDetails' => AcknowledgementStatusDetails::class];
 
     /**
      * @param  ?string  $confirmationStatus  Confirmation status of line item.

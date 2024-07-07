@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class SubmitInvoiceRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['invoices' => [InvoiceDetail::class]];
+    protected static array $complexArrayTypes = ['invoices' => InvoiceDetail::class];
 
     /**
      * @param  InvoiceDetail[]|null  $invoices  An array of invoice details you want to submit.

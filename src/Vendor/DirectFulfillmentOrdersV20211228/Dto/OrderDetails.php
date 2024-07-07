@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class OrderDetails extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [OrderItem::class]];
+    protected static array $complexArrayTypes = ['items' => OrderItem::class];
 
     /**
      * @param  string  $customerOrderNumber  The customer order number.

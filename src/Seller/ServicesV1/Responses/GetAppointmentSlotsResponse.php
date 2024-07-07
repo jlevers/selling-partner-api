@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ServicesV1\Dto\Error;
 
 final class GetAppointmentSlotsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?AppointmentSlotReport  $payload  Availability information as per the service context queried.

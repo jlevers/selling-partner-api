@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class CreateFulfillmentReturnRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [CreateReturnItem::class]];
+    protected static array $complexArrayTypes = ['items' => CreateReturnItem::class];
 
     /**
      * @param  CreateReturnItem[]  $items  An array of items to be returned.

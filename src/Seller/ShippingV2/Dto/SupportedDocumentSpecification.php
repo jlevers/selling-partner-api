@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class SupportedDocumentSpecification extends Dto
 {
-    protected static array $complexArrayTypes = ['printOptions' => [PrintOption::class]];
+    protected static array $complexArrayTypes = ['printOptions' => PrintOption::class];
 
     /**
      * @param  string  $format  The file format of the document.

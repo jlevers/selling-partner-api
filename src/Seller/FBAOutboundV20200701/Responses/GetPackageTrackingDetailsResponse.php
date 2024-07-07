@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\PackageTrackingDetails;
 
 final class GetPackageTrackingDetailsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?PackageTrackingDetails  $payload  Tracking details of package

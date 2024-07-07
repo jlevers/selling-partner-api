@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class GenerateOrderScenarioRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['orders' => [OrderScenarioRequest::class]];
+    protected static array $complexArrayTypes = ['orders' => OrderScenarioRequest::class];
 
     /**
      * @param  OrderScenarioRequest[]|null  $orders  The list of test orders requested as indicated by party identifiers.

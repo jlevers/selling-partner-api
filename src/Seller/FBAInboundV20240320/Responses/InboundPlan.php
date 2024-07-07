@@ -19,9 +19,9 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\ShipmentSummary;
 final class InboundPlan extends Response
 {
     protected static array $complexArrayTypes = [
-        'packingOptions' => [PackingOptionSummary::class],
-        'placementOptions' => [PlacementOptionSummary::class],
-        'shipments' => [ShipmentSummary::class],
+        'packingOptions' => PackingOptionSummary::class,
+        'placementOptions' => PlacementOptionSummary::class,
+        'shipments' => ShipmentSummary::class,
     ];
 
     /**

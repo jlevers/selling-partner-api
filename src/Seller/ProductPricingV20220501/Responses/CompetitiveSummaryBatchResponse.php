@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\ProductPricingV20220501\Dto\CompetitiveSummaryRespo
 
 final class CompetitiveSummaryBatchResponse extends Response
 {
-    protected static array $complexArrayTypes = ['responses' => [CompetitiveSummaryResponse::class]];
+    protected static array $complexArrayTypes = ['responses' => CompetitiveSummaryResponse::class];
 
     /**
      * @param  CompetitiveSummaryResponse[]  $responses  The response list of the `competitiveSummaryBatch` operation.

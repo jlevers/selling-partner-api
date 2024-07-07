@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class AppointmentSlotReport extends Dto
 {
-    protected static array $complexArrayTypes = ['appointmentSlots' => [AppointmentSlot::class]];
+    protected static array $complexArrayTypes = ['appointmentSlots' => AppointmentSlot::class];
 
     /**
      * @param  ?string  $schedulingType  Defines the type of slots.

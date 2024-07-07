@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class GetRatesRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['containerSpecifications' => [ContainerSpecification::class]];
+    protected static array $complexArrayTypes = ['containerSpecifications' => ContainerSpecification::class];
 
     /**
      * @param  Address  $shipTo  The address.

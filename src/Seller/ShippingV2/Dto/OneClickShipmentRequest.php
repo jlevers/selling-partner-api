@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class OneClickShipmentRequest extends Dto
 {
     protected static array $complexArrayTypes = [
-        'packages' => [Package::class],
-        'valueAddedServicesDetails' => [OneClickShipmentValueAddedService::class],
-        'taxDetails' => [TaxDetail::class],
+        'packages' => Package::class,
+        'valueAddedServicesDetails' => OneClickShipmentValueAddedService::class,
+        'taxDetails' => TaxDetail::class,
     ];
 
     /**

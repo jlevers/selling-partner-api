@@ -17,8 +17,8 @@ use SellingPartnerApi\Seller\APlusContentV20201101\Dto\Error;
 final class SearchContentDocumentsResponse extends Response
 {
     protected static array $complexArrayTypes = [
-        'contentMetadataRecords' => [ContentMetadataRecord::class],
-        'warnings' => [Error::class],
+        'contentMetadataRecords' => ContentMetadataRecord::class,
+        'warnings' => Error::class,
     ];
 
     /**

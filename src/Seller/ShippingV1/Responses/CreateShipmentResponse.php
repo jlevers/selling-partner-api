@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ShippingV1\Dto\Error;
 
 final class CreateShipmentResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?CreateShipmentResult  $payload  The payload schema for the createShipment operation.

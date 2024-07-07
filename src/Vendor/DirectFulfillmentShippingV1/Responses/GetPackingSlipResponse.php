@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Dto\PackingSlip;
 
 final class GetPackingSlipResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?PackingSlip  $payload  Packing slip information.

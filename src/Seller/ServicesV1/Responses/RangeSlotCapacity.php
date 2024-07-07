@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\ServicesV1\Dto\RangeCapacity;
 
 final class RangeSlotCapacity extends Response
 {
-    protected static array $complexArrayTypes = ['capacities' => [RangeCapacity::class]];
+    protected static array $complexArrayTypes = ['capacities' => RangeCapacity::class];
 
     /**
      * @param  ?string  $resourceId  Resource Identifier.

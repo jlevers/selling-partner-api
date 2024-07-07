@@ -24,7 +24,7 @@ final class GetOffersResult extends Dto
         'sku' => 'SKU',
     ];
 
-    protected static array $complexArrayTypes = ['offers' => [OfferDetail::class]];
+    protected static array $complexArrayTypes = ['offers' => OfferDetail::class];
 
     /**
      * @param  string  $marketplaceId  A marketplace identifier.

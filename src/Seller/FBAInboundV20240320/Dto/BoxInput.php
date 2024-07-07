@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class BoxInput extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [ItemInput::class]];
+    protected static array $complexArrayTypes = ['items' => ItemInput::class];
 
     /**
      * @param  string  $contentInformationSource  Indication of how box content is meant to be provided.

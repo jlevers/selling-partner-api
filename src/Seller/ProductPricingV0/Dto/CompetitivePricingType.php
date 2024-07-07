@@ -21,8 +21,8 @@ final class CompetitivePricingType extends Dto
     ];
 
     protected static array $complexArrayTypes = [
-        'competitivePrices' => [CompetitivePriceType::class],
-        'numberOfOfferListings' => [OfferListingCountType::class],
+        'competitivePrices' => CompetitivePriceType::class,
+        'numberOfOfferListings' => OfferListingCountType::class,
     ];
 
     /**

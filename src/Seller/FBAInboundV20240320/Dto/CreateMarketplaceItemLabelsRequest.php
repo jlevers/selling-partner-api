@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class CreateMarketplaceItemLabelsRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['mskuQuantities' => [MskuQuantity::class]];
+    protected static array $complexArrayTypes = ['mskuQuantities' => MskuQuantity::class];
 
     /**
      * @param  string  $labelType  Indicates the type of print type for a given label.

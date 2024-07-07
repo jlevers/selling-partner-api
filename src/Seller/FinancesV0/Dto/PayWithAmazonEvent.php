@@ -27,7 +27,7 @@ final class PayWithAmazonEvent extends Dto
         'storeName' => 'StoreName',
     ];
 
-    protected static array $complexArrayTypes = ['feeList' => [FeeComponent::class]];
+    protected static array $complexArrayTypes = ['feeList' => FeeComponent::class];
 
     /**
      * @param  ?string  $sellerOrderId  An order identifier that is specified by the seller.

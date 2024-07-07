@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ShippingLabelRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['containers' => [Container::class]];
+    protected static array $complexArrayTypes = ['containers' => Container::class];
 
     /**
      * @param  string  $purchaseOrderNumber  Purchase order number of the order for which to create a shipping label.

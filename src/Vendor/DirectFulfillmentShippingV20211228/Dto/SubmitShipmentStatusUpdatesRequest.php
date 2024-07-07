@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class SubmitShipmentStatusUpdatesRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['shipmentStatusUpdates' => [ShipmentStatusUpdate::class]];
+    protected static array $complexArrayTypes = ['shipmentStatusUpdates' => ShipmentStatusUpdate::class];
 
     /**
      * @param  ShipmentStatusUpdate[]|null  $shipmentStatusUpdates  Contains a list of one or more `ShipmentStatusUpdate` objects, each represents a status update of a specific shipment.

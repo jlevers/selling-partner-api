@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class CustomPlacementInput extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [ItemInput::class]];
+    protected static array $complexArrayTypes = ['items' => ItemInput::class];
 
     /**
      * @param  ItemInput[]  $items  Items included while creating Inbound Plan.

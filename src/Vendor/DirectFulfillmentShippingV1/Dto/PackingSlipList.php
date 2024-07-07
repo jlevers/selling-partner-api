@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class PackingSlipList extends Dto
 {
-    protected static array $complexArrayTypes = ['packingSlips' => [PackingSlip::class]];
+    protected static array $complexArrayTypes = ['packingSlips' => PackingSlip::class];
 
     /**
      * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.

@@ -19,7 +19,7 @@ final class GetMessagingActionsForOrderResponse extends Response
 {
     protected static array $attributeMap = ['links' => '_links', 'embedded' => '_embedded'];
 
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?Links  $links

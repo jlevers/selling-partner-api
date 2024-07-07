@@ -17,8 +17,8 @@ use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\ItemIdentifiersByMarketp
 final class ListingsItemSubmissionResponse extends Response
 {
     protected static array $complexArrayTypes = [
-        'issues' => [Issue::class],
-        'identifiers' => [ItemIdentifiersByMarketplace::class],
+        'issues' => Issue::class,
+        'identifiers' => ItemIdentifiersByMarketplace::class,
     ];
 
     /**

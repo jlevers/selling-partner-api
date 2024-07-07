@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ItemRelationshipsByMarketplace extends Dto
 {
-    protected static array $complexArrayTypes = ['relationships' => [ItemRelationship::class]];
+    protected static array $complexArrayTypes = ['relationships' => ItemRelationship::class];
 
     /**
      * @param  string  $marketplaceId  Amazon marketplace identifier.

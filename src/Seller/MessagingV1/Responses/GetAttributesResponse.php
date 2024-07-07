@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\MessagingV1\Dto\Error;
 
 final class GetAttributesResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?Buyer  $buyer  The list of attributes related to the buyer.

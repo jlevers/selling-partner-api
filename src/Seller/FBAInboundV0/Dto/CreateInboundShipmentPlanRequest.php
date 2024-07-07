@@ -22,9 +22,7 @@ final class CreateInboundShipmentPlanRequest extends Dto
         'shipToCountrySubdivisionCode' => 'ShipToCountrySubdivisionCode',
     ];
 
-    protected static array $complexArrayTypes = [
-        'inboundShipmentPlanRequestItems' => [InboundShipmentPlanRequestItem::class],
-    ];
+    protected static array $complexArrayTypes = ['inboundShipmentPlanRequestItems' => InboundShipmentPlanRequestItem::class];
 
     /**
      * @param  Address  $shipFromAddress  Specific details to identify a place.

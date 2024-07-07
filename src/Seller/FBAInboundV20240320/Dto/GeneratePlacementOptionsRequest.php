@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class GeneratePlacementOptionsRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['customPlacement' => [CustomPlacementInput::class]];
+    protected static array $complexArrayTypes = ['customPlacement' => CustomPlacementInput::class];
 
     /**
      * @param  CustomPlacementInput[]|null  $customPlacement  Custom placement options to be added to the plan.

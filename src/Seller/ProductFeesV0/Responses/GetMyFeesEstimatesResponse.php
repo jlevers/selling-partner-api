@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\ProductFeesV0\Dto\FeesEstimateResult;
 
 final class GetMyFeesEstimatesResponse extends Response
 {
-    protected static array $complexArrayTypes = ['getMyFeesEstimatesResponse' => [FeesEstimateResult::class]];
+    protected static array $complexArrayTypes = ['getMyFeesEstimatesResponse' => FeesEstimateResult::class];
 
     /**
      * @param  FeesEstimateResult[]  $getMyFeesEstimatesResponse  Estimated fees for a list of products.

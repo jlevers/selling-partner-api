@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ShipmentTransportationConfiguration extends Dto
 {
-    protected static array $complexArrayTypes = ['pallets' => [PalletInput::class]];
+    protected static array $complexArrayTypes = ['pallets' => PalletInput::class];
 
     /**
      * @param  WindowInput  $readyToShipWindow  Contains only a starting DateTime.

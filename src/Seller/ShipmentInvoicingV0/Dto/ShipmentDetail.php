@@ -31,7 +31,7 @@ final class ShipmentDetail extends Dto
         'shipmentItems' => 'ShipmentItems',
     ];
 
-    protected static array $complexArrayTypes = ['shipmentItems' => [ShipmentItem::class]];
+    protected static array $complexArrayTypes = ['shipmentItems' => ShipmentItem::class];
 
     /**
      * @param  ?string  $warehouseId  The Amazon-defined identifier for the warehouse.

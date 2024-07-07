@@ -22,7 +22,7 @@ final class SafetReimbursementEvent extends Dto
         'safetReimbursementItemList' => 'SAFETReimbursementItemList',
     ];
 
-    protected static array $complexArrayTypes = ['safetReimbursementItemList' => [SafetReimbursementItem::class]];
+    protected static array $complexArrayTypes = ['safetReimbursementItemList' => SafetReimbursementItem::class];
 
     /**
      * @param  ?\DateTimeInterface  $postedDate

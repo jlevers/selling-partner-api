@@ -24,7 +24,7 @@ final class RemovalShipmentAdjustmentEvent extends Dto
     ];
 
     protected static array $complexArrayTypes = [
-        'removalShipmentItemAdjustmentList' => [RemovalShipmentItemAdjustment::class],
+        'removalShipmentItemAdjustmentList' => RemovalShipmentItemAdjustment::class,
     ];
 
     /**

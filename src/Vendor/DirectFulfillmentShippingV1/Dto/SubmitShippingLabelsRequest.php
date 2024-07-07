@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class SubmitShippingLabelsRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['shippingLabelRequests' => [ShippingLabelRequest::class]];
+    protected static array $complexArrayTypes = ['shippingLabelRequests' => ShippingLabelRequest::class];
 
     /**
      * @param  ShippingLabelRequest[]|null  $shippingLabelRequests  An array of shipping label requests to be processed.

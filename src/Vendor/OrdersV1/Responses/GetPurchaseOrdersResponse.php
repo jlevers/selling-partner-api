@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\OrdersV1\Dto\OrderList;
 
 final class GetPurchaseOrdersResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?OrderList  $payload  A list of orders returned as response.

@@ -16,7 +16,7 @@ final class GetSchemaResponse extends Dto
 {
     protected static array $attributeMap = ['links' => '_links'];
 
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?Links3  $links

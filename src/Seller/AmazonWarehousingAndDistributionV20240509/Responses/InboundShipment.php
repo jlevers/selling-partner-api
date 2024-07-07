@@ -19,8 +19,8 @@ use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\Inven
 final class InboundShipment extends Response
 {
     protected static array $complexArrayTypes = [
-        'shipmentContainerQuantities' => [DistributionPackageQuantity::class],
-        'receivedQuantity' => [InventoryQuantity::class],
+        'shipmentContainerQuantities' => DistributionPackageQuantity::class,
+        'receivedQuantity' => InventoryQuantity::class,
     ];
 
     /**

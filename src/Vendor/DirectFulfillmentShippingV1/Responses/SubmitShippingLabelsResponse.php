@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Dto\TransactionReferenc
 
 final class SubmitShippingLabelsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?TransactionReference  $payload  Response containing the transaction ID.

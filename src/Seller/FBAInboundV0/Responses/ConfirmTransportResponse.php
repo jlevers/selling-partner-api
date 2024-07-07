@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundV0\Dto\Error;
 
 final class ConfirmTransportResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?CommonTransportResult  $payload  Common container for transport result

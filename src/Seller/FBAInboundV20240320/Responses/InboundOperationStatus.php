@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\OperationProblem;
 
 final class InboundOperationStatus extends Response
 {
-    protected static array $complexArrayTypes = ['operationProblems' => [OperationProblem::class]];
+    protected static array $complexArrayTypes = ['operationProblems' => OperationProblem::class];
 
     /**
      * @param  string  $operation  The name of the operation in the asynchronous API call.

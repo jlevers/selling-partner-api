@@ -31,7 +31,7 @@ final class OfferDetail extends Dto
         'isFeaturedMerchant' => 'IsFeaturedMerchant',
     ];
 
-    protected static array $complexArrayTypes = ['quantityDiscountPrices' => [QuantityDiscountPriceType::class]];
+    protected static array $complexArrayTypes = ['quantityDiscountPrices' => QuantityDiscountPriceType::class];
 
     /**
      * @param  string  $subCondition  The subcondition of the item. Subcondition values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.

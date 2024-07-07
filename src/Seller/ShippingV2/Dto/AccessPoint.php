@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class AccessPoint extends Dto
 {
     protected static array $complexArrayTypes = [
-        'exceptionOperatingHours' => [ExceptionOperatingHours::class],
-        'standardOperatingHours' => [OperatingHours::class],
+        'exceptionOperatingHours' => ExceptionOperatingHours::class,
+        'standardOperatingHours' => OperatingHours::class,
     ];
 
     /**

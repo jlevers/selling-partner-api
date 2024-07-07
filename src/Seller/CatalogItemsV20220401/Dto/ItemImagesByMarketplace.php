@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ItemImagesByMarketplace extends Dto
 {
-    protected static array $complexArrayTypes = ['images' => [ItemImage::class]];
+    protected static array $complexArrayTypes = ['images' => ItemImage::class];
 
     /**
      * @param  string  $marketplaceId  Amazon marketplace identifier.

@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class ShipmentConfirmation extends Dto
 {
     protected static array $complexArrayTypes = [
-        'shippedItems' => [Item::class],
-        'cartons' => [Carton::class],
-        'pallets' => [Pallet::class],
+        'shippedItems' => Item::class,
+        'cartons' => Carton::class,
+        'pallets' => Pallet::class,
     ];
 
     /**

@@ -23,8 +23,8 @@ final class DebtRecoveryEvent extends Dto
     ];
 
     protected static array $complexArrayTypes = [
-        'debtRecoveryItemList' => [DebtRecoveryItem::class],
-        'chargeInstrumentList' => [ChargeInstrument::class],
+        'debtRecoveryItemList' => DebtRecoveryItem::class,
+        'chargeInstrumentList' => ChargeInstrument::class,
     ];
 
     /**

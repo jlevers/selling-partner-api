@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\UploadsV20201101\Dto\UploadDestination;
 
 final class CreateUploadDestinationResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?UploadDestination  $payload  Information about an upload destination.

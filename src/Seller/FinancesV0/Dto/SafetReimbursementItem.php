@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class SafetReimbursementItem extends Dto
 {
-    protected static array $complexArrayTypes = ['itemChargeList' => [ChargeComponent::class]];
+    protected static array $complexArrayTypes = ['itemChargeList' => ChargeComponent::class];
 
     /**
      * @param  ChargeComponent[]|null  $itemChargeList  A list of charge information on the seller's account.

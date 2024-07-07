@@ -16,10 +16,7 @@ use SellingPartnerApi\Seller\APlusContentV20201101\Dto\PublishRecord;
 
 final class SearchContentPublishRecordsResponse extends Response
 {
-    protected static array $complexArrayTypes = [
-        'publishRecordList' => [PublishRecord::class],
-        'warnings' => [Error::class],
-    ];
+    protected static array $complexArrayTypes = ['publishRecordList' => PublishRecord::class, 'warnings' => Error::class];
 
     /**
      * @param  PublishRecord[]  $publishRecordList  A list of A+ Content publishing records.

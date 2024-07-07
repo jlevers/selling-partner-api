@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundV0\Dto\GetPrepInstructionsResult;
 
 final class GetPrepInstructionsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?GetPrepInstructionsResult  $payload  Result for the get prep instructions operation

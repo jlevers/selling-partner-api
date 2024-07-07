@@ -15,11 +15,11 @@ use SellingPartnerApi\Dto;
 final class GetFulfillmentOrderResult extends Dto
 {
     protected static array $complexArrayTypes = [
-        'fulfillmentOrderItems' => [FulfillmentOrderItem::class],
-        'returnItems' => [ReturnItem::class],
-        'returnAuthorizations' => [ReturnAuthorization::class],
-        'fulfillmentShipments' => [FulfillmentShipment::class],
-        'paymentInformation' => [PaymentInformation::class],
+        'fulfillmentOrderItems' => FulfillmentOrderItem::class,
+        'returnItems' => ReturnItem::class,
+        'returnAuthorizations' => ReturnAuthorization::class,
+        'fulfillmentShipments' => FulfillmentShipment::class,
+        'paymentInformation' => PaymentInformation::class,
     ];
 
     /**

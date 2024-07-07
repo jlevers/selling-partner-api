@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ServicesV1\Dto\ServiceDocumentUploadDestination;
 
 final class CreateServiceDocumentUploadDestination extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?ServiceDocumentUploadDestination  $payload  Information about an upload destination.

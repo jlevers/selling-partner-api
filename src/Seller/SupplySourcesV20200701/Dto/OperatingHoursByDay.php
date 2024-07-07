@@ -15,13 +15,13 @@ use SellingPartnerApi\Dto;
 final class OperatingHoursByDay extends Dto
 {
     protected static array $complexArrayTypes = [
-        'monday' => [OperatingHour::class],
-        'tuesday' => [OperatingHour::class],
-        'wednesday' => [OperatingHour::class],
-        'thursday' => [OperatingHour::class],
-        'friday' => [OperatingHour::class],
-        'saturday' => [OperatingHour::class],
-        'sunday' => [OperatingHour::class],
+        'monday' => OperatingHour::class,
+        'tuesday' => OperatingHour::class,
+        'wednesday' => OperatingHour::class,
+        'thursday' => OperatingHour::class,
+        'friday' => OperatingHour::class,
+        'saturday' => OperatingHour::class,
+        'sunday' => OperatingHour::class,
     ];
 
     /**

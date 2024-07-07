@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\ShipmentsV1\Dto\ShipmentDetails;
 
 final class GetShipmentDetailsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?ShipmentDetails  $payload  The request schema for the GetShipmentDetails operation.

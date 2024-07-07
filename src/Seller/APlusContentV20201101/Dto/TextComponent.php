@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class TextComponent extends Dto
 {
-    protected static array $complexArrayTypes = ['decoratorSet' => [Decorator::class]];
+    protected static array $complexArrayTypes = ['decoratorSet' => Decorator::class];
 
     /**
      * @param  string  $value  The actual plain text.

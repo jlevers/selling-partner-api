@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\GetFeatureInventoryResult;
 
 final class GetFeatureInventoryResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?GetFeatureInventoryResult  $payload  The payload for the `getEligibileInventory` operation.

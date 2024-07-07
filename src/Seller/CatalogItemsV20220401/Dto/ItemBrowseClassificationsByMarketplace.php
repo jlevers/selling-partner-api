@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ItemBrowseClassificationsByMarketplace extends Dto
 {
-    protected static array $complexArrayTypes = ['classifications' => [ItemBrowseClassification::class]];
+    protected static array $complexArrayTypes = ['classifications' => ItemBrowseClassification::class];
 
     /**
      * @param  string  $marketplaceId  Amazon marketplace identifier.

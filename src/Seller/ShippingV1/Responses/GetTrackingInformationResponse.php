@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ShippingV1\Dto\TrackingInformation;
 
 final class GetTrackingInformationResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?TrackingInformation  $payload  The payload schema for the getTrackingInformation operation.

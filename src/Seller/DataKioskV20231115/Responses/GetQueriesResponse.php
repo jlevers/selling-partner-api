@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\DataKioskV20231115\Dto\Pagination2;
 
 final class GetQueriesResponse extends Response
 {
-    protected static array $complexArrayTypes = ['queries' => [Query::class]];
+    protected static array $complexArrayTypes = ['queries' => Query::class];
 
     /**
      * @param  Query[]  $queries  A list of queries.

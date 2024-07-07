@@ -16,7 +16,7 @@ final class ListMatchingItemsResponse extends Dto
 {
     protected static array $attributeMap = ['items' => 'Items'];
 
-    protected static array $complexArrayTypes = ['items' => [Item::class]];
+    protected static array $complexArrayTypes = ['items' => Item::class];
 
     /**
      * @param  Item[]|null  $items  A list of items.

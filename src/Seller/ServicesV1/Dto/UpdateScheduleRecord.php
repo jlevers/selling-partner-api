@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class UpdateScheduleRecord extends Dto
 {
-    protected static array $complexArrayTypes = ['warnings' => [Warning::class], 'errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['warnings' => Warning::class, 'errors' => Error::class];
 
     /**
      * @param  ?AvailabilityRecord  $availability  `AvailabilityRecord` to represent the capacity of a resource over a time range.

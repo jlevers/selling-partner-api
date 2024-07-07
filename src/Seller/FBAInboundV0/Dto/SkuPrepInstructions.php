@@ -23,7 +23,7 @@ final class SkuPrepInstructions extends Dto
         'amazonPrepFeesDetailsList' => 'AmazonPrepFeesDetailsList',
     ];
 
-    protected static array $complexArrayTypes = ['amazonPrepFeesDetailsList' => [AmazonPrepFeesDetails::class]];
+    protected static array $complexArrayTypes = ['amazonPrepFeesDetailsList' => AmazonPrepFeesDetails::class];
 
     /**
      * @param  ?string  $sellerSku  The seller SKU of the item.

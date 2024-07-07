@@ -23,7 +23,7 @@ final class OfferType extends Dto
         'sellerSku' => 'SellerSKU',
     ];
 
-    protected static array $complexArrayTypes = ['quantityDiscountPrices' => [QuantityDiscountPriceType::class]];
+    protected static array $complexArrayTypes = ['quantityDiscountPrices' => QuantityDiscountPriceType::class];
 
     /**
      * @param  string  $fulfillmentChannel  The fulfillment channel for the offer listing. Possible values:

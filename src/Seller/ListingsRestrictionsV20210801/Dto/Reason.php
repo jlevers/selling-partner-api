@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Reason extends Dto
 {
-    protected static array $complexArrayTypes = ['links' => [Link::class]];
+    protected static array $complexArrayTypes = ['links' => Link::class];
 
     /**
      * @param  string  $message  A message describing the reason for the restriction.

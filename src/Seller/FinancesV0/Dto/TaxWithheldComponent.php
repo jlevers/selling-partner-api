@@ -19,7 +19,7 @@ final class TaxWithheldComponent extends Dto
         'taxesWithheld' => 'TaxesWithheld',
     ];
 
-    protected static array $complexArrayTypes = ['taxesWithheld' => [ChargeComponent::class]];
+    protected static array $complexArrayTypes = ['taxesWithheld' => ChargeComponent::class];
 
     /**
      * @param  ?string  $taxCollectionModel  The tax collection model applied to the item.

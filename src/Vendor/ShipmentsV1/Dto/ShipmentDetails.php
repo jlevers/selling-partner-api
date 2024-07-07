@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ShipmentDetails extends Dto
 {
-    protected static array $complexArrayTypes = ['shipments' => [Shipment::class]];
+    protected static array $complexArrayTypes = ['shipments' => Shipment::class];
 
     /**
      * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.

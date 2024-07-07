@@ -137,7 +137,7 @@ class ResponseGenerator extends SDKGenerator
                 $namespace->addUse($fqn);
 
                 $literalType = new Literal(sprintf('%s::class', $type));
-                $complexArrayTypes[$name] = [$literalType];
+                $complexArrayTypes[$name] = $literalType;
             }
             $classType->addProperty('complexArrayTypes', $complexArrayTypes)
                 ->setStatic()

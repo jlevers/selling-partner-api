@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ConfirmTransportationOptionsRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['transportationSelections' => [TransportationSelection::class]];
+    protected static array $complexArrayTypes = ['transportationSelections' => TransportationSelection::class];
 
     /**
      * @param  TransportationSelection[]  $transportationSelections  Information needed to confirm one of the available transportation options.

@@ -23,7 +23,7 @@ final class CreateShipmentRequest extends Dto
         'shipmentLevelSellerInputsList' => 'ShipmentLevelSellerInputsList',
     ];
 
-    protected static array $complexArrayTypes = ['shipmentLevelSellerInputsList' => [AdditionalSellerInputs::class]];
+    protected static array $complexArrayTypes = ['shipmentLevelSellerInputsList' => AdditionalSellerInputs::class];
 
     /**
      * @param  ShipmentRequestDetails  $shipmentRequestDetails  Shipment information required for requesting shipping service offers or for creating a shipment.

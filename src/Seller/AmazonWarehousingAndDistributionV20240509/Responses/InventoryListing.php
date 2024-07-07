@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\Inven
 
 final class InventoryListing extends Response
 {
-    protected static array $complexArrayTypes = ['inventory' => [InventorySummary::class]];
+    protected static array $complexArrayTypes = ['inventory' => InventorySummary::class];
 
     /**
      * @param  InventorySummary[]  $inventory  List of inventory summaries.

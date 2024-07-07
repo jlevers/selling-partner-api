@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class OrderAcknowledgementItem extends Dto
 {
-    protected static array $complexArrayTypes = ['itemAcknowledgements' => [OrderItemAcknowledgement::class]];
+    protected static array $complexArrayTypes = ['itemAcknowledgements' => OrderItemAcknowledgement::class];
 
     /**
      * @param  ItemQuantity  $orderedQuantity  Details of quantity ordered.

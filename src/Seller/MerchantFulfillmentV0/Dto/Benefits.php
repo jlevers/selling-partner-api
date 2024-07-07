@@ -19,7 +19,7 @@ final class Benefits extends Dto
         'excludedBenefits' => 'ExcludedBenefits',
     ];
 
-    protected static array $complexArrayTypes = ['excludedBenefits' => [ExcludedBenefit::class]];
+    protected static array $complexArrayTypes = ['excludedBenefits' => ExcludedBenefit::class];
 
     /**
      * @param  ?string[]  $includedBenefits  A list of included benefits.

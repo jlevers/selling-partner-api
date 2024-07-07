@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class SetAppointmentFulfillmentDataRequest extends Dto
 {
     protected static array $complexArrayTypes = [
-        'appointmentResources' => [AppointmentResource::class],
-        'fulfillmentDocuments' => [FulfillmentDocument::class],
+        'appointmentResources' => AppointmentResource::class,
+        'fulfillmentDocuments' => FulfillmentDocument::class,
     ];
 
     /**

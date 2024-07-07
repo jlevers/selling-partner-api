@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\ListReturnReasonCodesResul
 
 final class ListReturnReasonCodesResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?ListReturnReasonCodesResult  $payload  The request for the listReturnReasonCodes operation.

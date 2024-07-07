@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\ProductPricingV0\Dto\ItemOffersResponse;
 
 final class GetItemOffersBatchResponse extends Response
 {
-    protected static array $complexArrayTypes = ['responses' => [ItemOffersResponse::class]];
+    protected static array $complexArrayTypes = ['responses' => ItemOffersResponse::class];
 
     /**
      * @param  ItemOffersResponse[]|null  $responses  A list of `getItemOffers` batched responses.

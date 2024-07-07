@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Item extends Dto
 {
-    protected static array $complexArrayTypes = ['prepInstructions' => [PrepInstruction::class]];
+    protected static array $complexArrayTypes = ['prepInstructions' => PrepInstruction::class];
 
     /**
      * @param  string  $asin  The Amazon Standard Identification Number (ASIN) of the item.

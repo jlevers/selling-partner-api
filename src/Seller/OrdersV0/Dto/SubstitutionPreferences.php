@@ -19,7 +19,7 @@ final class SubstitutionPreferences extends Dto
         'substitutionOptions' => 'SubstitutionOptions',
     ];
 
-    protected static array $complexArrayTypes = ['substitutionOptions' => [SubstitutionOption::class]];
+    protected static array $complexArrayTypes = ['substitutionOptions' => SubstitutionOption::class];
 
     /**
      * @param  string  $substitutionType  The type of substitution that these preferences represent.

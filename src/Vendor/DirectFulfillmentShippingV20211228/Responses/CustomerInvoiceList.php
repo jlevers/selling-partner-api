@@ -15,7 +15,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Dto\Pagination;
 
 final class CustomerInvoiceList extends Response
 {
-    protected static array $complexArrayTypes = ['customerInvoices' => [CustomerInvoice::class]];
+    protected static array $complexArrayTypes = ['customerInvoices' => CustomerInvoice::class];
 
     /**
      * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.

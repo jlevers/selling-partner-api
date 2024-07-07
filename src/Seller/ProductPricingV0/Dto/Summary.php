@@ -28,11 +28,11 @@ final class Summary extends Dto
     ];
 
     protected static array $complexArrayTypes = [
-        'numberOfOffers' => [OfferCountType::class],
-        'lowestPrices' => [LowestPriceType::class],
-        'buyBoxPrices' => [BuyBoxPriceType::class],
-        'salesRankings' => [SalesRankType::class],
-        'buyBoxEligibleOffers' => [OfferCountType::class],
+        'numberOfOffers' => OfferCountType::class,
+        'lowestPrices' => LowestPriceType::class,
+        'buyBoxPrices' => BuyBoxPriceType::class,
+        'salesRankings' => SalesRankType::class,
+        'buyBoxEligibleOffers' => OfferCountType::class,
     ];
 
     /**

@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class SubmitShipmentConfirmationsRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['shipmentConfirmations' => [ShipmentConfirmation::class]];
+    protected static array $complexArrayTypes = ['shipmentConfirmations' => ShipmentConfirmation::class];
 
     /**
      * @param  ShipmentConfirmation[]|null  $shipmentConfirmations  An array of `ShipmentConfirmation` objects, each represents confirmation details for a specific shipment.

@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundV0\Dto\Error;
 
 final class CreateInboundShipmentPlanResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?CreateInboundShipmentPlanResult  $payload  Result for the create inbound shipment operation

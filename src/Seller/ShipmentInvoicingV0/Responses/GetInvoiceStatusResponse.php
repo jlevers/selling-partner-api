@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ShipmentInvoicingV0\Dto\ShipmentInvoiceStatusRespon
 
 final class GetInvoiceStatusResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?ShipmentInvoiceStatusResponse  $payload  The shipment invoice status response.

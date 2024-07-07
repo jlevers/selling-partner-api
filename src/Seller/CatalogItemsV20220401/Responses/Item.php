@@ -24,15 +24,15 @@ use SellingPartnerApi\Seller\CatalogItemsV20220401\Dto\ItemVendorDetailsByMarket
 final class Item extends Response
 {
     protected static array $complexArrayTypes = [
-        'classifications' => [ItemBrowseClassificationsByMarketplace::class],
-        'dimensions' => [ItemDimensionsByMarketplace::class],
-        'identifiers' => [ItemIdentifiersByMarketplace::class],
-        'images' => [ItemImagesByMarketplace::class],
-        'productTypes' => [ItemProductTypeByMarketplace::class],
-        'relationships' => [ItemRelationshipsByMarketplace::class],
-        'salesRanks' => [ItemSalesRanksByMarketplace::class],
-        'summaries' => [ItemSummaryByMarketplace::class],
-        'vendorDetails' => [ItemVendorDetailsByMarketplace::class],
+        'classifications' => ItemBrowseClassificationsByMarketplace::class,
+        'dimensions' => ItemDimensionsByMarketplace::class,
+        'identifiers' => ItemIdentifiersByMarketplace::class,
+        'images' => ItemImagesByMarketplace::class,
+        'productTypes' => ItemProductTypeByMarketplace::class,
+        'relationships' => ItemRelationshipsByMarketplace::class,
+        'salesRanks' => ItemSalesRanksByMarketplace::class,
+        'summaries' => ItemSummaryByMarketplace::class,
+        'vendorDetails' => ItemVendorDetailsByMarketplace::class,
     ];
 
     /**

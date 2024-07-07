@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ShippingLabel extends Dto
 {
-    protected static array $complexArrayTypes = ['labelData' => [LabelData::class]];
+    protected static array $complexArrayTypes = ['labelData' => LabelData::class];
 
     /**
      * @param  string  $purchaseOrderNumber  This field will contain the Purchase Order Number for this order.

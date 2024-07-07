@@ -16,7 +16,7 @@ final class PrintOption extends Dto
 {
     protected static array $attributeMap = ['supportedDpIs' => 'supportedDPIs'];
 
-    protected static array $complexArrayTypes = ['supportedDocumentDetails' => [SupportedDocumentDetail::class]];
+    protected static array $complexArrayTypes = ['supportedDocumentDetails' => SupportedDocumentDetail::class];
 
     /**
      * @param  string[]  $supportedPageLayouts  A list of the supported page layout options for a document.

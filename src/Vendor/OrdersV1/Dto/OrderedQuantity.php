@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class OrderedQuantity extends Dto
 {
-    protected static array $complexArrayTypes = ['orderedQuantityDetails' => [OrderedQuantityDetails::class]];
+    protected static array $complexArrayTypes = ['orderedQuantityDetails' => OrderedQuantityDetails::class];
 
     /**
      * @param  ?ItemQuantity  $orderedQuantity  Details of quantity ordered.

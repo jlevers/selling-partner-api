@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class Rate extends Dto
 {
     protected static array $complexArrayTypes = [
-        'supportedDocumentSpecifications' => [SupportedDocumentSpecification::class],
-        'availableValueAddedServiceGroups' => [AvailableValueAddedServiceGroup::class],
-        'rateItemList' => [RateItem::class],
+        'supportedDocumentSpecifications' => SupportedDocumentSpecification::class,
+        'availableValueAddedServiceGroups' => AvailableValueAddedServiceGroup::class,
+        'rateItemList' => RateItem::class,
     ];
 
     /**

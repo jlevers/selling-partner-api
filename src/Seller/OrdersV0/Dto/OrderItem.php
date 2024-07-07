@@ -56,7 +56,7 @@ final class OrderItem extends Dto
         'shippingConstraints' => 'ShippingConstraints',
     ];
 
-    protected static array $complexArrayTypes = ['associatedItems' => [AssociatedItem::class]];
+    protected static array $complexArrayTypes = ['associatedItems' => AssociatedItem::class];
 
     /**
      * @param  string  $asin  The Amazon Standard Identification Number (ASIN) of the item.

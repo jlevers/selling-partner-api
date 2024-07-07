@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\MerchantFulfillmentV0\Dto\GetAdditionalSellerInputs
 
 final class GetAdditionalSellerInputsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?GetAdditionalSellerInputsResult  $payload  The payload for the `getAdditionalSellerInputs` operation.

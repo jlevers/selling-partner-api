@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\SellersV1\Dto\MarketplaceParticipation;
 
 final class GetMarketplaceParticipationsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['payload' => [MarketplaceParticipation::class], 'errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['payload' => MarketplaceParticipation::class, 'errors' => Error::class];
 
     /**
      * @param  MarketplaceParticipation[]|null  $payload  List of marketplace participations.

@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ListReturnReasonCodesResult extends Dto
 {
-    protected static array $complexArrayTypes = ['reasonCodeDetails' => [ReasonCodeDetails::class]];
+    protected static array $complexArrayTypes = ['reasonCodeDetails' => ReasonCodeDetails::class];
 
     /**
      * @param  ReasonCodeDetails[]|null  $reasonCodeDetails  An array of return reason code details.

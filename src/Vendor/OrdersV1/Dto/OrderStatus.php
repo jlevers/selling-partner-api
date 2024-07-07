@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class OrderStatus extends Dto
 {
-    protected static array $complexArrayTypes = ['itemStatus' => [OrderItemStatus::class]];
+    protected static array $complexArrayTypes = ['itemStatus' => OrderItemStatus::class];
 
     /**
      * @param  string  $purchaseOrderNumber  The buyer's purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.

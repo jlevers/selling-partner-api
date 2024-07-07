@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class StandardTechSpecsModule extends Dto
 {
-    protected static array $complexArrayTypes = ['specificationList' => [StandardTextPairBlock::class]];
+    protected static array $complexArrayTypes = ['specificationList' => StandardTextPairBlock::class];
 
     /**
      * @param  StandardTextPairBlock[]  $specificationList  The specification list.

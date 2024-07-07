@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Benefits extends Dto
 {
-    protected static array $complexArrayTypes = ['excludedBenefits' => [ExcludedBenefit::class]];
+    protected static array $complexArrayTypes = ['excludedBenefits' => ExcludedBenefit::class];
 
     /**
      * @param  string[]  $includedBenefits  A list of included benefits.

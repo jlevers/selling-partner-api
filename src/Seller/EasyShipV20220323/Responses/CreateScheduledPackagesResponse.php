@@ -16,8 +16,8 @@ use SellingPartnerApi\Seller\EasyShipV20220323\Dto\RejectedOrder;
 final class CreateScheduledPackagesResponse extends Response
 {
     protected static array $complexArrayTypes = [
-        'scheduledPackages' => [Package::class],
-        'rejectedOrders' => [RejectedOrder::class],
+        'scheduledPackages' => Package::class,
+        'rejectedOrders' => RejectedOrder::class,
     ];
 
     /**

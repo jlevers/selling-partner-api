@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundV0\Dto\GetShipmentsResult;
 
 final class GetShipmentsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?GetShipmentsResult  $payload  Result for the get shipments operation

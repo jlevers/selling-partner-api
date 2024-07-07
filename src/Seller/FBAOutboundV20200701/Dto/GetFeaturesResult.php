@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class GetFeaturesResult extends Dto
 {
-    protected static array $complexArrayTypes = ['features' => [Feature::class]];
+    protected static array $complexArrayTypes = ['features' => Feature::class];
 
     /**
      * @param  Feature[]  $features  An array of features.

@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class SegmentedFeaturedOffer extends Dto
 {
     protected static array $complexArrayTypes = [
-        'featuredOfferSegments' => [FeaturedOfferSegment::class],
-        'shippingOptions' => [ShippingOption::class],
+        'featuredOfferSegments' => FeaturedOfferSegment::class,
+        'shippingOptions' => ShippingOption::class,
     ];
 
     /**

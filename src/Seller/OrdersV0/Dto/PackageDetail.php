@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class PackageDetail extends Dto
 {
-    protected static array $complexArrayTypes = ['orderItems' => [ConfirmShipmentOrderItem::class]];
+    protected static array $complexArrayTypes = ['orderItems' => ConfirmShipmentOrderItem::class];
 
     /**
      * @param  string  $packageReferenceId  A seller-supplied identifier that uniquely identifies a package within the scope of an order. Only positive numeric values are supported.

@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\Pagination;
 
 final class ListDeliveryWindowOptionsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['deliveryWindowOptions' => [DeliveryWindowOption::class]];
+    protected static array $complexArrayTypes = ['deliveryWindowOptions' => DeliveryWindowOption::class];
 
     /**
      * @param  DeliveryWindowOption[]  $deliveryWindowOptions  Delivery window options generated for the placement option.

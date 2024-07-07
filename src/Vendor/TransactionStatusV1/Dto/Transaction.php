@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Transaction extends Dto
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  string  $transactionId  The unique identifier returned in the 'transactionId' field in response to the post request of a specific transaction.

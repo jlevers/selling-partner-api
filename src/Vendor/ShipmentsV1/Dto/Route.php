@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Route extends Dto
 {
-    protected static array $complexArrayTypes = ['stops' => [Stop::class]];
+    protected static array $complexArrayTypes = ['stops' => Stop::class];
 
     /**
      * @param  Stop[]  $stops  The port or location involved in transporting the cargo, as specified in transportation contracts or operational plans.

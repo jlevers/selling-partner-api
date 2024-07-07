@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class GetInventorySummariesResult extends Dto
 {
-    protected static array $complexArrayTypes = ['inventorySummaries' => [InventorySummary::class]];
+    protected static array $complexArrayTypes = ['inventorySummaries' => InventorySummary::class];
 
     /**
      * @param  Granularity  $granularity  Describes a granularity at which inventory data can be aggregated. For example, if you use Marketplace granularity, the fulfillable quantity will reflect inventory that could be fulfilled in the given marketplace.

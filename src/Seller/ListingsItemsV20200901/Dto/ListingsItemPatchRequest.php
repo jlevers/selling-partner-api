@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ListingsItemPatchRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['patches' => [PatchOperation::class]];
+    protected static array $complexArrayTypes = ['patches' => PatchOperation::class];
 
     /**
      * @param  string  $productType  The Amazon product type of the listings item.

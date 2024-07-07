@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class AddInventoryRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['inventoryItems' => [InventoryItem::class]];
+    protected static array $complexArrayTypes = ['inventoryItems' => InventoryItem::class];
 
     /**
      * @param  InventoryItem[]|null  $inventoryItems  List of Inventory to be added

@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ServicesV1\Dto\ServiceJob;
 
 final class GetServiceJobByServiceJobIdResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?ServiceJob  $payload  The job details of a service.

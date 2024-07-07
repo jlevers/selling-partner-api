@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class PurchaseShipmentResult extends Dto
 {
-    protected static array $complexArrayTypes = ['labelResults' => [LabelResult::class]];
+    protected static array $complexArrayTypes = ['labelResults' => LabelResult::class];
 
     /**
      * @param  string  $shipmentId  The unique shipment identifier.

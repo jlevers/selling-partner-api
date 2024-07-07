@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\OrdersV0\Dto\OrderItemsList;
 
 final class GetOrderItemsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?OrderItemsList  $payload  The order items list along with the order ID.

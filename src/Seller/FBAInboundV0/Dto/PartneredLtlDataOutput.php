@@ -32,7 +32,7 @@ final class PartneredLtlDataOutput extends Dto
         'partneredEstimate' => 'PartneredEstimate',
     ];
 
-    protected static array $complexArrayTypes = ['palletList' => [Pallet::class]];
+    protected static array $complexArrayTypes = ['palletList' => Pallet::class];
 
     /**
      * @param  Contact  $contact  Contact information for the person in the seller's organization who is responsible for a Less Than Truckload/Full Truckload (LTL/FTL) shipment.

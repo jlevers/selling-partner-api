@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\TransactionStatusV1\Dto\TransactionStatus;
 
 final class GetTransactionResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?TransactionStatus  $payload  Represents the status of a transaction.

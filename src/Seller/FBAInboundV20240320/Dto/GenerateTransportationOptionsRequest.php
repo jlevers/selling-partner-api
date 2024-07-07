@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class GenerateTransportationOptionsRequest extends Dto
 {
     protected static array $complexArrayTypes = [
-        'shipmentTransportationConfigurations' => [ShipmentTransportationConfiguration::class],
+        'shipmentTransportationConfigurations' => ShipmentTransportationConfiguration::class,
     ];
 
     /**

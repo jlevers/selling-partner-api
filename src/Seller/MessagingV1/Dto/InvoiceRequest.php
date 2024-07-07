@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class InvoiceRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['attachments' => [Attachment::class]];
+    protected static array $complexArrayTypes = ['attachments' => Attachment::class];
 
     /**
      * @param  Attachment[]|null  $attachments  Attachments to include in the message to the buyer.

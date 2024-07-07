@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\ComplianceDetail;
 
 final class ListItemComplianceDetailsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['complianceDetails' => [ComplianceDetail::class]];
+    protected static array $complexArrayTypes = ['complianceDetails' => ComplianceDetail::class];
 
     /**
      * @param  ComplianceDetail[]|null  $complianceDetails  List of compliance details.

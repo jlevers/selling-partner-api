@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class PackageDetails extends Dto
 {
-    protected static array $complexArrayTypes = ['packageItems' => [Item::class]];
+    protected static array $complexArrayTypes = ['packageItems' => Item::class];
 
     /**
      * @param  TimeSlot  $packageTimeSlot  A time window to hand over an Easy Ship package to Amazon Logistics.

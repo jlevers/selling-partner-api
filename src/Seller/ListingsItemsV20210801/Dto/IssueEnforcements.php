@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class IssueEnforcements extends Dto
 {
-    protected static array $complexArrayTypes = ['actions' => [IssueEnforcementAction::class]];
+    protected static array $complexArrayTypes = ['actions' => IssueEnforcementAction::class];
 
     /**
      * @param  IssueEnforcementAction[]  $actions  List of enforcement actions taken by Amazon that affect the publishing or status of a listing.

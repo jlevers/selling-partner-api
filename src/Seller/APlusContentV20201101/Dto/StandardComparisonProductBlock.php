@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class StandardComparisonProductBlock extends Dto
 {
-    protected static array $complexArrayTypes = ['metrics' => [PlainTextItem::class]];
+    protected static array $complexArrayTypes = ['metrics' => PlainTextItem::class];
 
     /**
      * @param  int  $position  The rank or index of this comparison product block within the module. Different blocks cannot occupy the same position within a single module.

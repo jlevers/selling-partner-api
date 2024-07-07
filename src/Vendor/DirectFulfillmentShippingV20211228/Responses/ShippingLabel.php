@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Dto\PartyIdentif
 
 final class ShippingLabel extends Response
 {
-    protected static array $complexArrayTypes = ['labelData' => [LabelData::class]];
+    protected static array $complexArrayTypes = ['labelData' => LabelData::class];
 
     /**
      * @param  string  $purchaseOrderNumber  This field will contain the Purchase Order Number for this order.

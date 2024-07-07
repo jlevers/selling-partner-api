@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\Pagination;
 
 final class ListPackingGroupBoxesResponse extends Response
 {
-    protected static array $complexArrayTypes = ['boxes' => [Box::class]];
+    protected static array $complexArrayTypes = ['boxes' => Box::class];
 
     /**
      * @param  Box[]  $boxes  Provides the information about the list of boxes in the packing group.

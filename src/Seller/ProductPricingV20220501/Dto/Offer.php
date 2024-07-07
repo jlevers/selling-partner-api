@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Offer extends Dto
 {
-    protected static array $complexArrayTypes = ['shippingOptions' => [ShippingOption::class]];
+    protected static array $complexArrayTypes = ['shippingOptions' => ShippingOption::class];
 
     /**
      * @param  string  $sellerId  The seller identifier for the offer.

@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\MessagingV1\Dto\Error;
 
 final class CreateNegativeFeedbackRemovalResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.

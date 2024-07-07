@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ShipmentConfirmation extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [Item::class], 'containers' => [Container::class]];
+    protected static array $complexArrayTypes = ['items' => Item::class, 'containers' => Container::class];
 
     /**
      * @param  string  $purchaseOrderNumber  Purchase order number corresponding to the shipment.

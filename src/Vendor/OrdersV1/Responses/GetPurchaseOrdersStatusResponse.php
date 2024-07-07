@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\OrdersV1\Dto\OrderListStatus;
 
 final class GetPurchaseOrdersStatusResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?OrderListStatus  $payload  A list of order statuses.

@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Dto\ShippingLabel;
 
 final class GetShippingLabelResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?ShippingLabel  $payload  Shipping label information for an order, including the purchase order number, selling party, ship from party, label format, and package details.

@@ -16,7 +16,7 @@ final class PartneredSmallParcelDataInput extends Dto
 {
     protected static array $attributeMap = ['packageList' => 'PackageList', 'carrierName' => 'CarrierName'];
 
-    protected static array $complexArrayTypes = ['packageList' => [PartneredSmallParcelPackageInput::class]];
+    protected static array $complexArrayTypes = ['packageList' => PartneredSmallParcelPackageInput::class];
 
     /**
      * @param  PartneredSmallParcelPackageInput[]|null  $packageList  A list of dimensions and weight information for packages.

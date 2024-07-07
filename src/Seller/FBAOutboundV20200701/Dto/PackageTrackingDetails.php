@@ -16,7 +16,7 @@ final class PackageTrackingDetails extends Dto
 {
     protected static array $attributeMap = ['carrierUrl' => 'carrierURL'];
 
-    protected static array $complexArrayTypes = ['trackingEvents' => [TrackingEvent::class]];
+    protected static array $complexArrayTypes = ['trackingEvents' => TrackingEvent::class];
 
     /**
      * @param  int  $packageNumber  The package identifier.

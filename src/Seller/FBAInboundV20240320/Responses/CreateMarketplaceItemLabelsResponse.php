@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\DocumentDownload;
 
 final class CreateMarketplaceItemLabelsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['documentDownloads' => [DocumentDownload::class]];
+    protected static array $complexArrayTypes = ['documentDownloads' => DocumentDownload::class];
 
     /**
      * @param  DocumentDownload[]  $documentDownloads  Resources to download the requested document.

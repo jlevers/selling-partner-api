@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\ShipmentsV1\Dto\TransactionReference;
 
 final class SubmitShipmentConfirmationsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?TransactionReference  $payload  The response payload for the SubmitShipmentConfirmations operation.

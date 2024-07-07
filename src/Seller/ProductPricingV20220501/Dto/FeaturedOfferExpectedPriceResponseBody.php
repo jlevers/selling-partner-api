@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class FeaturedOfferExpectedPriceResponseBody extends Dto
 {
     protected static array $complexArrayTypes = [
-        'featuredOfferExpectedPriceResults' => [FeaturedOfferExpectedPriceResult::class],
-        'errors' => [Error::class],
+        'featuredOfferExpectedPriceResults' => FeaturedOfferExpectedPriceResult::class,
+        'errors' => Error::class,
     ];
 
     /**

@@ -20,7 +20,7 @@ final class FeesEstimate extends Dto
         'feeDetailList' => 'FeeDetailList',
     ];
 
-    protected static array $complexArrayTypes = ['feeDetailList' => [FeeDetail::class]];
+    protected static array $complexArrayTypes = ['feeDetailList' => FeeDetail::class];
 
     /**
      * @param  \DateTimeInterface  $timeOfFeesEstimation  The time at which the fees were estimated. This defaults to the time the request is made.

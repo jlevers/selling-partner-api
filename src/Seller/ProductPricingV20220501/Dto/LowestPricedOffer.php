@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class LowestPricedOffer extends Dto
 {
-    protected static array $complexArrayTypes = ['offers' => [Offer::class]];
+    protected static array $complexArrayTypes = ['offers' => Offer::class];
 
     /**
      * @param  LowestPricedOffersInput  $lowestPricedOffersInput  The input required for building the `LowestPricedOffers` data in the response.

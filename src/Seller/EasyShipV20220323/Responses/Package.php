@@ -21,7 +21,7 @@ use SellingPartnerApi\Seller\EasyShipV20220323\Dto\Weight;
 
 final class Package extends Response
 {
-    protected static array $complexArrayTypes = ['packageItems' => [Item::class]];
+    protected static array $complexArrayTypes = ['packageItems' => Item::class];
 
     /**
      * @param  ScheduledPackageId  $scheduledPackageId  Identifies the scheduled package to be updated.

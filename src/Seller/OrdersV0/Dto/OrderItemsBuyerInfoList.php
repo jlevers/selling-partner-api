@@ -20,7 +20,7 @@ final class OrderItemsBuyerInfoList extends Dto
         'nextToken' => 'NextToken',
     ];
 
-    protected static array $complexArrayTypes = ['orderItems' => [OrderItemBuyerInfo::class]];
+    protected static array $complexArrayTypes = ['orderItems' => OrderItemBuyerInfo::class];
 
     /**
      * @param  OrderItemBuyerInfo[]  $orderItems  A single order item's buyer information list.

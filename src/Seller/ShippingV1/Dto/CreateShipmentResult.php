@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class CreateShipmentResult extends Dto
 {
-    protected static array $complexArrayTypes = ['eligibleRates' => [Rate::class]];
+    protected static array $complexArrayTypes = ['eligibleRates' => Rate::class];
 
     /**
      * @param  string  $shipmentId  The unique shipment identifier.

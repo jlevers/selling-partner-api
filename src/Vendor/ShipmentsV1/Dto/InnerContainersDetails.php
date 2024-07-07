@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class InnerContainersDetails extends Dto
 {
-    protected static array $complexArrayTypes = ['containerSequenceNumbers' => [ContainerSequenceNumbers::class]];
+    protected static array $complexArrayTypes = ['containerSequenceNumbers' => ContainerSequenceNumbers::class];
 
     /**
      * @param  ?int  $containerCount  Total containers as part of the shipment

@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\OrdersV1\Dto\TransactionId;
 
 final class SubmitAcknowledgementResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?TransactionId  $payload  Response containing the transaction ID.

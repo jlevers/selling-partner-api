@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class SelfShipAppointmentSlotsAvailability extends Dto
 {
-    protected static array $complexArrayTypes = ['slots' => [AppointmentSlot::class]];
+    protected static array $complexArrayTypes = ['slots' => AppointmentSlot::class];
 
     /**
      * @param  ?\DateTimeInterface  $expiresAt  The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.

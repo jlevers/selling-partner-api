@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\SalesV1\Dto\OrderMetricsInterval;
 
 final class GetOrderMetricsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['payload' => [OrderMetricsInterval::class], 'errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['payload' => OrderMetricsInterval::class, 'errors' => Error::class];
 
     /**
      * @param  OrderMetricsInterval[]|null  $payload  A set of order metrics, each scoped to a particular time interval.

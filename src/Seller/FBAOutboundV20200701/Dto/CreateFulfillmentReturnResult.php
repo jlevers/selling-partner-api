@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class CreateFulfillmentReturnResult extends Dto
 {
     protected static array $complexArrayTypes = [
-        'returnItems' => [ReturnItem::class],
-        'invalidReturnItems' => [InvalidReturnItem::class],
-        'returnAuthorizations' => [ReturnAuthorization::class],
+        'returnItems' => ReturnItem::class,
+        'invalidReturnItems' => InvalidReturnItem::class,
+        'returnAuthorizations' => ReturnAuthorization::class,
     ];
 
     /**

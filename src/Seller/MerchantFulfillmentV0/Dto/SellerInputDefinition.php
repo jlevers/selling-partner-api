@@ -24,7 +24,7 @@ final class SellerInputDefinition extends Dto
         'restrictedSetValues' => 'RestrictedSetValues',
     ];
 
-    protected static array $complexArrayTypes = ['constraints' => [Constraint::class]];
+    protected static array $complexArrayTypes = ['constraints' => Constraint::class];
 
     /**
      * @param  bool  $isRequired  When true, the additional input field is required.

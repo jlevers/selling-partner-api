@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class GetRatesResult extends Dto
 {
-    protected static array $complexArrayTypes = ['rates' => [Rate::class], 'ineligibleRates' => [IneligibleRate::class]];
+    protected static array $complexArrayTypes = ['rates' => Rate::class, 'ineligibleRates' => IneligibleRate::class];
 
     /**
      * @param  string  $requestToken  A unique token generated to identify a getRates operation.

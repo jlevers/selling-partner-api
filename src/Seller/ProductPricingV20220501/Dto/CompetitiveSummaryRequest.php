@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class CompetitiveSummaryRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['lowestPricedOffersInputs' => [LowestPricedOffersInput::class]];
+    protected static array $complexArrayTypes = ['lowestPricedOffersInputs' => LowestPricedOffersInput::class];
 
     /**
      * @param  string  $asin  The Amazon Standard Identification Number (ASIN) of the item.

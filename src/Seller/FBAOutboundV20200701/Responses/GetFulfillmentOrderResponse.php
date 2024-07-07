@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\GetFulfillmentOrderResult;
 
 final class GetFulfillmentOrderResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?GetFulfillmentOrderResult  $payload  The request for the getFulfillmentOrder operation.

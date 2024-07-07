@@ -113,7 +113,7 @@ final class AttributeSetListType extends Dto
         'weeeTaxValue' => 'WeeeTaxValue',
     ];
 
-    protected static array $complexArrayTypes = ['creator' => [CreatorType::class], 'languages' => [LanguageType::class]];
+    protected static array $complexArrayTypes = ['creator' => CreatorType::class, 'languages' => LanguageType::class];
 
     /**
      * @param  ?string[]  $actor  The actor attributes of the item.

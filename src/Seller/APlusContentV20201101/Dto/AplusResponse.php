@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class AplusResponse extends Dto
 {
-    protected static array $complexArrayTypes = ['warnings' => [Error::class]];
+    protected static array $complexArrayTypes = ['warnings' => Error::class];
 
     /**
      * @param  Error[]|null  $warnings  A set of messages to the user, such as warnings or comments.

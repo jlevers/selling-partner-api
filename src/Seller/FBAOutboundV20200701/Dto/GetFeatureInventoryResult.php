@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class GetFeatureInventoryResult extends Dto
 {
-    protected static array $complexArrayTypes = ['featureSkus' => [FeatureSku::class]];
+    protected static array $complexArrayTypes = ['featureSkus' => FeatureSku::class];
 
     /**
      * @param  string  $marketplaceId  The requested marketplace.

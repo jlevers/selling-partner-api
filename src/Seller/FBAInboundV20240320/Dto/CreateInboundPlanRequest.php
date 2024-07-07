@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class CreateInboundPlanRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [ItemInput::class]];
+    protected static array $complexArrayTypes = ['items' => ItemInput::class];
 
     /**
      * @param  string[]  $destinationMarketplaces  Marketplaces where the items need to be shipped to. Currently only one marketplace can be selected in this request.

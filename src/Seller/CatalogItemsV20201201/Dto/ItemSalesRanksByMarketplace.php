@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ItemSalesRanksByMarketplace extends Dto
 {
-    protected static array $complexArrayTypes = ['ranks' => [ItemSalesRank::class]];
+    protected static array $complexArrayTypes = ['ranks' => ItemSalesRank::class];
 
     /**
      * @param  string  $marketplaceId  Amazon marketplace identifier.

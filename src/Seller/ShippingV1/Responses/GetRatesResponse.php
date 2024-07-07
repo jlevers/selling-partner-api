@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ShippingV1\Dto\GetRatesResult;
 
 final class GetRatesResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?GetRatesResult  $payload  The payload schema for the getRates operation.

@@ -14,10 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class InvoiceItem extends Dto
 {
-    protected static array $complexArrayTypes = [
-        'taxDetails' => [TaxDetail::class],
-        'chargeDetails' => [ChargeDetails::class],
-    ];
+    protected static array $complexArrayTypes = ['taxDetails' => TaxDetail::class, 'chargeDetails' => ChargeDetails::class];
 
     /**
      * @param  string  $itemSequenceNumber  Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.

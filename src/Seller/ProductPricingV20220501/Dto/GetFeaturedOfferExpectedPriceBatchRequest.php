@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class GetFeaturedOfferExpectedPriceBatchRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['requests' => [FeaturedOfferExpectedPriceRequest::class]];
+    protected static array $complexArrayTypes = ['requests' => FeaturedOfferExpectedPriceRequest::class];
 
     /**
      * @param  FeaturedOfferExpectedPriceRequest[]|null  $requests  A batched list of featured offer expected price requests.

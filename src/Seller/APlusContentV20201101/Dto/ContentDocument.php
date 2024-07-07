@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ContentDocument extends Dto
 {
-    protected static array $complexArrayTypes = ['contentModuleList' => [ContentModule::class]];
+    protected static array $complexArrayTypes = ['contentModuleList' => ContentModule::class];
 
     /**
      * @param  string  $name  The A+ Content document name.

@@ -16,7 +16,7 @@ final class MarketplaceTaxInfo extends Dto
 {
     protected static array $attributeMap = ['taxClassifications' => 'TaxClassifications'];
 
-    protected static array $complexArrayTypes = ['taxClassifications' => [TaxClassification::class]];
+    protected static array $complexArrayTypes = ['taxClassifications' => TaxClassification::class];
 
     /**
      * @param  TaxClassification[]|null  $taxClassifications  A list of tax classifications that apply to the order.

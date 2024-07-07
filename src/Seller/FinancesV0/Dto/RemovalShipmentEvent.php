@@ -22,7 +22,7 @@ final class RemovalShipmentEvent extends Dto
         'removalShipmentItemList' => 'RemovalShipmentItemList',
     ];
 
-    protected static array $complexArrayTypes = ['removalShipmentItemList' => [RemovalShipmentItem::class]];
+    protected static array $complexArrayTypes = ['removalShipmentItemList' => RemovalShipmentItem::class];
 
     /**
      * @param  ?\DateTimeInterface  $postedDate

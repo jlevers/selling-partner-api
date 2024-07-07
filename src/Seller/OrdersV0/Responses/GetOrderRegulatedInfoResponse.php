@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\OrdersV0\Dto\OrderRegulatedInfo;
 
 final class GetOrderRegulatedInfoResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?OrderRegulatedInfo  $payload  The order's regulated information along with its verification status.

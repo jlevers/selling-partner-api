@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\Pagination;
 
 final class ListInboundPlanItemsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['items' => [Item::class]];
+    protected static array $complexArrayTypes = ['items' => Item::class];
 
     /**
      * @param  Item[]  $items  The items in an inbound plan.

@@ -20,8 +20,8 @@ final class GetAdditionalSellerInputsResult extends Dto
     ];
 
     protected static array $complexArrayTypes = [
-        'shipmentLevelFields' => [AdditionalInputs::class],
-        'itemLevelFieldsList' => [ItemLevelFields::class],
+        'shipmentLevelFields' => AdditionalInputs::class,
+        'itemLevelFieldsList' => ItemLevelFields::class,
     ];
 
     /**

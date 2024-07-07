@@ -16,7 +16,7 @@ final class NonPartneredSmallParcelDataInput extends Dto
 {
     protected static array $attributeMap = ['carrierName' => 'CarrierName', 'packageList' => 'PackageList'];
 
-    protected static array $complexArrayTypes = ['packageList' => [NonPartneredSmallParcelPackageInput::class]];
+    protected static array $complexArrayTypes = ['packageList' => NonPartneredSmallParcelPackageInput::class];
 
     /**
      * @param  string  $carrierName  The carrier that you are using for the inbound shipment.

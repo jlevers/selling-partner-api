@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class TrackingInformation extends Dto
 {
-    protected static array $complexArrayTypes = ['eventHistory' => [Event::class]];
+    protected static array $complexArrayTypes = ['eventHistory' => Event::class];
 
     /**
      * @param  string  $trackingId  The tracking id generated to each shipment. It contains a series of letters or digits or both.

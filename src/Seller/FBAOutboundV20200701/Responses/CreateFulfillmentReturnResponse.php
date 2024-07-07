@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\Error;
 
 final class CreateFulfillmentReturnResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?CreateFulfillmentReturnResult  $payload  The result for the createFulfillmentReturn operation.

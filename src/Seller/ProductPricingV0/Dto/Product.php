@@ -23,7 +23,7 @@ final class Product extends Dto
         'offers' => 'Offers',
     ];
 
-    protected static array $complexArrayTypes = ['salesRankings' => [SalesRankType::class], 'offers' => [OfferType::class]];
+    protected static array $complexArrayTypes = ['salesRankings' => SalesRankType::class, 'offers' => OfferType::class];
 
     /**
      * @param  IdentifierType  $identifiers  Specifies the identifiers used to uniquely identify an item.

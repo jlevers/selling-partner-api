@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Links extends Dto
 {
-    protected static array $complexArrayTypes = ['actions' => [LinkObject::class]];
+    protected static array $complexArrayTypes = ['actions' => LinkObject::class];
 
     /**
      * @param  LinkObject  $self  A Link object.

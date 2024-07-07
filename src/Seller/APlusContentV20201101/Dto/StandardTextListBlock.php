@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class StandardTextListBlock extends Dto
 {
-    protected static array $complexArrayTypes = ['textList' => [TextItem::class]];
+    protected static array $complexArrayTypes = ['textList' => TextItem::class];
 
     /**
      * @param  TextItem[]  $textList

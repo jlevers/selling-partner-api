@@ -20,7 +20,7 @@ final class OrderItemsList extends Dto
         'nextToken' => 'NextToken',
     ];
 
-    protected static array $complexArrayTypes = ['orderItems' => [OrderItem::class]];
+    protected static array $complexArrayTypes = ['orderItems' => OrderItem::class];
 
     /**
      * @param  OrderItem[]  $orderItems  A list of order items.

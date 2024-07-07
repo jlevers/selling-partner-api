@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\NotificationsV1\Dto\Subscription;
 
 final class GetSubscriptionByIdResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?Subscription  $payload  Information about the subscription.

@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class SubmitInvoicesRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['invoices' => [Invoice::class]];
+    protected static array $complexArrayTypes = ['invoices' => Invoice::class];
 
     /**
      * @param  Invoice[]|null  $invoices  An array of Invoice objects representing the invoices or credit notes to be submitted.

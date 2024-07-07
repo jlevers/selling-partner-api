@@ -22,9 +22,9 @@ final class Item extends Dto
     ];
 
     protected static array $complexArrayTypes = [
-        'attributeSets' => [AttributeSetListType::class],
-        'relationships' => [RelationshipType::class],
-        'salesRankings' => [SalesRankType::class],
+        'attributeSets' => AttributeSetListType::class,
+        'relationships' => RelationshipType::class,
+        'salesRankings' => SalesRankType::class,
     ];
 
     /**

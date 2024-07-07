@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundEligibilityV1\Dto\ItemEligibilityPreview;
 
 final class GetItemEligibilityPreviewResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?ItemEligibilityPreview  $payload  The response object which contains the ASIN, marketplaceId if required, eligibility program, the eligibility status (boolean), and a list of ineligibility reason codes.

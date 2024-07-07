@@ -17,8 +17,8 @@ final class PreferredDeliveryTime extends Dto
     protected static array $attributeMap = ['businessHours' => 'BusinessHours', 'exceptionDates' => 'ExceptionDates'];
 
     protected static array $complexArrayTypes = [
-        'businessHours' => [BusinessHours::class],
-        'exceptionDates' => [ExceptionDates::class],
+        'businessHours' => BusinessHours::class,
+        'exceptionDates' => ExceptionDates::class,
     ];
 
     /**

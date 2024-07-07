@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Container extends Dto
 {
-    protected static array $complexArrayTypes = ['packedItems' => [PackedItem::class]];
+    protected static array $complexArrayTypes = ['packedItems' => PackedItem::class];
 
     /**
      * @param  string  $containerType  The type of container.

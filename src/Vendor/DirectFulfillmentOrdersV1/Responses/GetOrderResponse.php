@@ -16,7 +16,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV1\Dto\Order;
 
 final class GetOrderResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?Order  $payload  Represents a purchase order.

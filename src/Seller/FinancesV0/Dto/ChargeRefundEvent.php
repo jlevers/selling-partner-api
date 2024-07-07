@@ -21,7 +21,7 @@ final class ChargeRefundEvent extends Dto
         'chargeRefundTransactions' => 'ChargeRefundTransactions',
     ];
 
-    protected static array $complexArrayTypes = ['chargeRefundTransactions' => [ChargeRefundTransaction::class]];
+    protected static array $complexArrayTypes = ['chargeRefundTransactions' => ChargeRefundTransaction::class];
 
     /**
      * @param  ?\DateTimeInterface  $postedDate

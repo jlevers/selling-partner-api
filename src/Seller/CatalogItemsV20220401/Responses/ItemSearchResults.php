@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\CatalogItemsV20220401\Dto\Refinements;
 
 final class ItemSearchResults extends Response
 {
-    protected static array $complexArrayTypes = ['items' => [Item::class]];
+    protected static array $complexArrayTypes = ['items' => Item::class];
 
     /**
      * @param  int  $numberOfResults  For `identifiers`-based searches, the total number of Amazon catalog items found. For `keywords`-based searches, the estimated total number of Amazon catalog items matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).

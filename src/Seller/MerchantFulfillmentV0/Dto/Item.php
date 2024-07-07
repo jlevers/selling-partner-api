@@ -26,7 +26,7 @@ final class Item extends Dto
         'dangerousGoodsDetails' => 'DangerousGoodsDetails',
     ];
 
-    protected static array $complexArrayTypes = ['itemLevelSellerInputsList' => [AdditionalSellerInputs::class]];
+    protected static array $complexArrayTypes = ['itemLevelSellerInputsList' => AdditionalSellerInputs::class];
 
     /**
      * @param  string  $orderItemId  An Amazon-defined identifier for an individual item in an order.

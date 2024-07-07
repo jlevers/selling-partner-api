@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Scenario extends Dto
 {
-    protected static array $complexArrayTypes = ['orders' => [TestOrder::class]];
+    protected static array $complexArrayTypes = ['orders' => TestOrder::class];
 
     /**
      * @param  string  $scenarioId  An identifier that identifies the type of scenario that user can use for testing.

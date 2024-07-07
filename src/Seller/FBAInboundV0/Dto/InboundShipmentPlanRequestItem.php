@@ -23,7 +23,7 @@ final class InboundShipmentPlanRequestItem extends Dto
         'prepDetailsList' => 'PrepDetailsList',
     ];
 
-    protected static array $complexArrayTypes = ['prepDetailsList' => [PrepDetails::class]];
+    protected static array $complexArrayTypes = ['prepDetailsList' => PrepDetails::class];
 
     /**
      * @param  string  $sellerSku  The seller SKU of the item.

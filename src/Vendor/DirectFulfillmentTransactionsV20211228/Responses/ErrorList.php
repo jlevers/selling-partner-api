@@ -14,7 +14,7 @@ use SellingPartnerApi\Response;
 
 final class ErrorList extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  Error[]  $errors  An array of individual error objects containing error details.

@@ -15,7 +15,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Dto\Pagination;
 
 final class ShippingLabelList extends Response
 {
-    protected static array $complexArrayTypes = ['shippingLabels' => [ShippingLabel::class]];
+    protected static array $complexArrayTypes = ['shippingLabels' => ShippingLabel::class];
 
     /**
      * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.

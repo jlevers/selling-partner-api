@@ -17,10 +17,10 @@ final class FulfillmentPreview extends Dto
     protected static array $attributeMap = ['isCodCapable' => 'isCODCapable'];
 
     protected static array $complexArrayTypes = [
-        'estimatedFees' => [Fee::class],
-        'fulfillmentPreviewShipments' => [FulfillmentPreviewShipment::class],
-        'unfulfillablePreviewItems' => [UnfulfillablePreviewItem::class],
-        'featureConstraints' => [FeatureSettings::class],
+        'estimatedFees' => Fee::class,
+        'fulfillmentPreviewShipments' => FulfillmentPreviewShipment::class,
+        'unfulfillablePreviewItems' => UnfulfillablePreviewItem::class,
+        'featureConstraints' => FeatureSettings::class,
     ];
 
     /**

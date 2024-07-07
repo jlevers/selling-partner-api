@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Restriction extends Dto
 {
-    protected static array $complexArrayTypes = ['reasons' => [Reason::class]];
+    protected static array $complexArrayTypes = ['reasons' => Reason::class];
 
     /**
      * @param  string  $marketplaceId  A marketplace identifier. Identifies the Amazon marketplace where the restriction is enforced.

@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class FulfillmentOrder extends Dto
 {
-    protected static array $complexArrayTypes = ['featureConstraints' => [FeatureSettings::class]];
+    protected static array $complexArrayTypes = ['featureConstraints' => FeatureSettings::class];
 
     /**
      * @param  string  $sellerFulfillmentOrderId  The fulfillment order identifier submitted with the `createFulfillmentOrder` operation.

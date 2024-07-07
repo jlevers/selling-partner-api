@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ShippingV1\Dto\PurchaseShipmentResult;
 
 final class PurchaseShipmentResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?PurchaseShipmentResult  $payload  The payload schema for the purchaseShipment operation.

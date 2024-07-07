@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Embedded extends Dto
 {
-    protected static array $complexArrayTypes = ['actions' => [GetMessagingActionResponse::class]];
+    protected static array $complexArrayTypes = ['actions' => GetMessagingActionResponse::class];
 
     /**
      * @param  GetMessagingActionResponse[]  $actions

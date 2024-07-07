@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class StandardComparisonTableModule extends Dto
 {
     protected static array $complexArrayTypes = [
-        'productColumns' => [StandardComparisonProductBlock::class],
-        'metricRowLabels' => [PlainTextItem::class],
+        'productColumns' => StandardComparisonProductBlock::class,
+        'metricRowLabels' => PlainTextItem::class,
     ];
 
     /**

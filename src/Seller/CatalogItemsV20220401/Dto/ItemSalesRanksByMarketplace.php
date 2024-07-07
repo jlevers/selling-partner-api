@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class ItemSalesRanksByMarketplace extends Dto
 {
     protected static array $complexArrayTypes = [
-        'classificationRanks' => [ItemClassificationSalesRank::class],
-        'displayGroupRanks' => [ItemDisplayGroupSalesRank::class],
+        'classificationRanks' => ItemClassificationSalesRank::class,
+        'displayGroupRanks' => ItemDisplayGroupSalesRank::class,
     ];
 
     /**

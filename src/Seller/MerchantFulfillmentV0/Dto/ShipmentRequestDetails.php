@@ -27,7 +27,7 @@ final class ShipmentRequestDetails extends Dto
         'labelCustomization' => 'LabelCustomization',
     ];
 
-    protected static array $complexArrayTypes = ['itemList' => [Item::class]];
+    protected static array $complexArrayTypes = ['itemList' => Item::class];
 
     /**
      * @param  string  $amazonOrderId  An Amazon-defined order identifier, in 3-7-7 format.

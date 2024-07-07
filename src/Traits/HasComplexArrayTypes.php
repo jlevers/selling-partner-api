@@ -8,7 +8,7 @@ trait HasComplexArrayTypes
 {
     /**
      * Override this to specify the item types (and key types, if necessary) of attributes.
-     * Valid values look like ['attributeName' => [SomeType::class]]
+     * Valid values look like ['attributeName' => SomeType::class]
      */
     protected static array $complexArrayTypes = [];
 
@@ -18,6 +18,6 @@ trait HasComplexArrayTypes
             return 'array';
         }
 
-        return static::$complexArrayTypes[$attributeName];
+        return [static::$complexArrayTypes[$attributeName]];
     }
 }

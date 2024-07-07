@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class ItemIdentifiersByMarketplace extends Dto
 {
-    protected static array $complexArrayTypes = ['identifiers' => [ItemIdentifier::class]];
+    protected static array $complexArrayTypes = ['identifiers' => ItemIdentifier::class];
 
     /**
      * @param  string  $marketplaceId  Amazon marketplace identifier.

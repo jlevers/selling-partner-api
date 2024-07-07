@@ -20,8 +20,8 @@ final class AvailableShippingServiceOptions extends Dto
     ];
 
     protected static array $complexArrayTypes = [
-        'availableCarrierWillPickUpOptions' => [AvailableCarrierWillPickUpOption::class],
-        'availableDeliveryExperienceOptions' => [AvailableDeliveryExperienceOption::class],
+        'availableCarrierWillPickUpOptions' => AvailableCarrierWillPickUpOption::class,
+        'availableDeliveryExperienceOptions' => AvailableDeliveryExperienceOption::class,
     ];
 
     /**

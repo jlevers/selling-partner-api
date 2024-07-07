@@ -17,7 +17,7 @@ use SellingPartnerApi\Seller\ProductTypeDefinitionsV20200901\Dto\SchemaLink;
 
 final class ProductTypeDefinition extends Response
 {
-    protected static array $complexArrayTypes = ['propertyGroups' => [PropertyGroup::class]];
+    protected static array $complexArrayTypes = ['propertyGroups' => PropertyGroup::class];
 
     /**
      * @param  string  $requirements  Name of the requirements set represented in this product type definition.

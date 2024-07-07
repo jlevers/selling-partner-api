@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Package extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [Item::class], 'charges' => [ChargeComponent::class]];
+    protected static array $complexArrayTypes = ['items' => Item::class, 'charges' => ChargeComponent::class];
 
     /**
      * @param  Dimensions  $dimensions  A set of measurements for a three-dimensional object.

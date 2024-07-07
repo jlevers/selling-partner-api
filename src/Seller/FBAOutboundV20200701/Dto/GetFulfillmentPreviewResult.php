@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class GetFulfillmentPreviewResult extends Dto
 {
-    protected static array $complexArrayTypes = ['fulfillmentPreviews' => [FulfillmentPreview::class]];
+    protected static array $complexArrayTypes = ['fulfillmentPreviews' => FulfillmentPreview::class];
 
     /**
      * @param  FulfillmentPreview[]|null  $fulfillmentPreviews  An array of fulfillment preview information.

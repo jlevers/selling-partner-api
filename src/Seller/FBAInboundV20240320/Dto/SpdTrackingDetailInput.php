@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class SpdTrackingDetailInput extends Dto
 {
-    protected static array $complexArrayTypes = ['spdTrackingItems' => [SpdTrackingItemInput::class]];
+    protected static array $complexArrayTypes = ['spdTrackingItems' => SpdTrackingItemInput::class];
 
     /**
      * @param  SpdTrackingItemInput[]  $spdTrackingItems  List of Small Parcel Delivery (SPD) tracking items input.

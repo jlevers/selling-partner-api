@@ -15,10 +15,10 @@ use SellingPartnerApi\Dto;
 final class CompetitiveSummaryResponseBody extends Dto
 {
     protected static array $complexArrayTypes = [
-        'featuredBuyingOptions' => [FeaturedBuyingOption::class],
-        'lowestPricedOffers' => [LowestPricedOffer::class],
-        'referencePrices' => [ReferencePrice::class],
-        'errors' => [Error::class],
+        'featuredBuyingOptions' => FeaturedBuyingOption::class,
+        'lowestPricedOffers' => LowestPricedOffer::class,
+        'referencePrices' => ReferencePrice::class,
+        'errors' => Error::class,
     ];
 
     /**

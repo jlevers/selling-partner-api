@@ -16,7 +16,7 @@ final class PartneredSmallParcelDataOutput extends Dto
 {
     protected static array $attributeMap = ['packageList' => 'PackageList', 'partneredEstimate' => 'PartneredEstimate'];
 
-    protected static array $complexArrayTypes = ['packageList' => [PartneredSmallParcelPackageOutput::class]];
+    protected static array $complexArrayTypes = ['packageList' => PartneredSmallParcelPackageOutput::class];
 
     /**
      * @param  PartneredSmallParcelPackageOutput[]  $packageList  A list of packages, including shipping information from the Amazon-partnered carrier.

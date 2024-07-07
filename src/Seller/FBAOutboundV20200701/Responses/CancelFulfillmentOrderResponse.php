@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\Error;
 
 final class CancelFulfillmentOrderResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.

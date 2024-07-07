@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ShippingV1\Dto\Error;
 
 final class GetAccountResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?Account  $payload  The account related data.

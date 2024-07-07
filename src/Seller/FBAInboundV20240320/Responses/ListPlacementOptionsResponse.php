@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\PlacementOption;
 
 final class ListPlacementOptionsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['placementOptions' => [PlacementOption::class]];
+    protected static array $complexArrayTypes = ['placementOptions' => PlacementOption::class];
 
     /**
      * @param  PlacementOption[]  $placementOptions  Placement options generated for the inbound plan.

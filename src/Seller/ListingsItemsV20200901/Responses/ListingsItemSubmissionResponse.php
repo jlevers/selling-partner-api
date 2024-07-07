@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\ListingsItemsV20200901\Dto\Issue;
 
 final class ListingsItemSubmissionResponse extends Response
 {
-    protected static array $complexArrayTypes = ['issues' => [Issue::class]];
+    protected static array $complexArrayTypes = ['issues' => Issue::class];
 
     /**
      * @param  string  $sku  A selling partner provided identifier for an Amazon listing.

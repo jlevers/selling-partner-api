@@ -22,10 +22,10 @@ final class GetInboundGuidanceResult extends Dto
     ];
 
     protected static array $complexArrayTypes = [
-        'skuInboundGuidanceList' => [SkuInboundGuidance::class],
-        'invalidSkuList' => [InvalidSku::class],
-        'asinInboundGuidanceList' => [AsinInboundGuidance::class],
-        'invalidAsinList' => [InvalidAsin::class],
+        'skuInboundGuidanceList' => SkuInboundGuidance::class,
+        'invalidSkuList' => InvalidSku::class,
+        'asinInboundGuidanceList' => AsinInboundGuidance::class,
+        'invalidAsinList' => InvalidAsin::class,
     ];
 
     /**

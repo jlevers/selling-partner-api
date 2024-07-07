@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class PackageGroupingInput extends Dto
 {
-    protected static array $complexArrayTypes = ['boxes' => [BoxInput::class]];
+    protected static array $complexArrayTypes = ['boxes' => BoxInput::class];
 
     /**
      * @param  BoxInput[]  $boxes  Box level information being provided.

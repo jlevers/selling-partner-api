@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\TransportationOption;
 
 final class ListTransportationOptionsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['transportationOptions' => [TransportationOption::class]];
+    protected static array $complexArrayTypes = ['transportationOptions' => TransportationOption::class];
 
     /**
      * @param  TransportationOption[]  $transportationOptions  Transportation options generated for the placement option.

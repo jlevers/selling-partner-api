@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Box extends Dto
 {
-    protected static array $complexArrayTypes = ['items' => [Item::class]];
+    protected static array $complexArrayTypes = ['items' => Item::class];
 
     /**
      * @param  string  $packageId  Primary key to uniquely identify a Package (Box or Pallet).

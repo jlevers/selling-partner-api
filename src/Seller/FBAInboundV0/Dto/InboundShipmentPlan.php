@@ -23,7 +23,7 @@ final class InboundShipmentPlan extends Dto
         'estimatedBoxContentsFee' => 'EstimatedBoxContentsFee',
     ];
 
-    protected static array $complexArrayTypes = ['items' => [InboundShipmentPlanItem::class]];
+    protected static array $complexArrayTypes = ['items' => InboundShipmentPlanItem::class];
 
     /**
      * @param  string  $shipmentId  A shipment identifier originally returned by the createInboundShipmentPlan operation.

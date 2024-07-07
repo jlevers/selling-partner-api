@@ -17,7 +17,7 @@ use SellingPartnerApi\Seller\FBAInventoryV1\Dto\Pagination;
 
 final class GetInventorySummariesResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?GetInventorySummariesResult  $payload  The payload schema for the getInventorySummaries operation.

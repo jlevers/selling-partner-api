@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class GetItemOffersBatchRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['requests' => [ItemOffersRequest::class]];
+    protected static array $complexArrayTypes = ['requests' => ItemOffersRequest::class];
 
     /**
      * @param  ItemOffersRequest[]|null  $requests  A list of `getListingOffers` batched requests to run.

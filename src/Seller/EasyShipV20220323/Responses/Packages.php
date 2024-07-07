@@ -14,7 +14,7 @@ use SellingPartnerApi\Response;
 
 final class Packages extends Response
 {
-    protected static array $complexArrayTypes = ['packages' => [Package::class]];
+    protected static array $complexArrayTypes = ['packages' => Package::class];
 
     /**
      * @param  Package[]  $packages  A list of packages.

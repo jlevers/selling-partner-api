@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\APlusContentV20201101\Dto\Error;
 
 final class GetContentDocumentResponse extends Response
 {
-    protected static array $complexArrayTypes = ['warnings' => [Error::class]];
+    protected static array $complexArrayTypes = ['warnings' => Error::class];
 
     /**
      * @param  ContentRecord  $contentRecord  A content document with additional information for content management.

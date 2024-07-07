@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class PurchaseShipmentRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['requestedValueAddedServices' => [RequestedValueAddedService::class]];
+    protected static array $complexArrayTypes = ['requestedValueAddedServices' => RequestedValueAddedService::class];
 
     /**
      * @param  string  $requestToken  A unique token generated to identify a getRates operation.

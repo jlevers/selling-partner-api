@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class Shipment extends Dto
 {
-    protected static array $complexArrayTypes = ['containers' => [Container::class]];
+    protected static array $complexArrayTypes = ['containers' => Container::class];
 
     /**
      * @param  string  $shipmentId  The unique shipment identifier.

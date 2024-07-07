@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class AssignAppointmentResourcesRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['resources' => [AppointmentResource::class]];
+    protected static array $complexArrayTypes = ['resources' => AppointmentResource::class];
 
     /**
      * @param  AppointmentResource[]  $resources  List of resources that performs or performed job appointment fulfillment.

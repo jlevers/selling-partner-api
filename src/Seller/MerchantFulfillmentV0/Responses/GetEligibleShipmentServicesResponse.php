@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\MerchantFulfillmentV0\Dto\GetEligibleShipmentServic
 
 final class GetEligibleShipmentServicesResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?GetEligibleShipmentServicesResult  $payload  The payload for the `getEligibleShipmentServices` operation.

@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\ServicesV1\Dto\FixedSlot;
 
 final class FixedSlotCapacity extends Response
 {
-    protected static array $complexArrayTypes = ['capacities' => [FixedSlot::class]];
+    protected static array $complexArrayTypes = ['capacities' => FixedSlot::class];
 
     /**
      * @param  ?string  $resourceId  Resource Identifier.

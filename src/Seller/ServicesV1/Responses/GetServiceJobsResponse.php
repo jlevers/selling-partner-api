@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ServicesV1\Dto\JobListing;
 
 final class GetServiceJobsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?JobListing  $payload  The payload for the `getServiceJobs` operation.

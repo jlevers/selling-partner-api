@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\APlusContentV20201101\Dto\Error;
 
 final class PostContentDocumentResponse extends Response
 {
-    protected static array $complexArrayTypes = ['warnings' => [Error::class]];
+    protected static array $complexArrayTypes = ['warnings' => Error::class];
 
     /**
      * @param  string  $contentReferenceKey  A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.

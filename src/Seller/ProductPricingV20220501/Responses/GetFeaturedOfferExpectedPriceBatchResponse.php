@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\ProductPricingV20220501\Dto\FeaturedOfferExpectedPr
 
 final class GetFeaturedOfferExpectedPriceBatchResponse extends Response
 {
-    protected static array $complexArrayTypes = ['responses' => [FeaturedOfferExpectedPriceResponse::class]];
+    protected static array $complexArrayTypes = ['responses' => FeaturedOfferExpectedPriceResponse::class];
 
     /**
      * @param  FeaturedOfferExpectedPriceResponse[]|null  $responses  A batched list of featured offer expected price responses.

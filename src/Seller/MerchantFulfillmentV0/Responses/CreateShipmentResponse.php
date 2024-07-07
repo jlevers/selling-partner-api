@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\MerchantFulfillmentV0\Dto\Shipment;
 
 final class CreateShipmentResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?Shipment  $payload  The details of a shipment. Includes the shipment status.

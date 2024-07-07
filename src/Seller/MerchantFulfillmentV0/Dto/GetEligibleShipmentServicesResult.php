@@ -22,10 +22,10 @@ final class GetEligibleShipmentServicesResult extends Dto
     ];
 
     protected static array $complexArrayTypes = [
-        'shippingServiceList' => [ShippingService::class],
-        'rejectedShippingServiceList' => [RejectedShippingService::class],
-        'temporarilyUnavailableCarrierList' => [TemporarilyUnavailableCarrier::class],
-        'termsAndConditionsNotAcceptedCarrierList' => [TermsAndConditionsNotAcceptedCarrier::class],
+        'shippingServiceList' => ShippingService::class,
+        'rejectedShippingServiceList' => RejectedShippingService::class,
+        'temporarilyUnavailableCarrierList' => TemporarilyUnavailableCarrier::class,
+        'termsAndConditionsNotAcceptedCarrierList' => TermsAndConditionsNotAcceptedCarrier::class,
     ];
 
     /**

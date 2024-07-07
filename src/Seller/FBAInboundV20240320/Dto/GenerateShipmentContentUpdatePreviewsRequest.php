@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class GenerateShipmentContentUpdatePreviewsRequest extends Dto
 {
-    protected static array $complexArrayTypes = ['boxes' => [BoxUpdateInput::class], 'items' => [ItemInput::class]];
+    protected static array $complexArrayTypes = ['boxes' => BoxUpdateInput::class, 'items' => ItemInput::class];
 
     /**
      * @param  BoxUpdateInput[]  $boxes  A list of boxes that will be present in the shipment after the update.

@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class RangeCapacity extends Dto
 {
-    protected static array $complexArrayTypes = ['slots' => [RangeSlot::class]];
+    protected static array $complexArrayTypes = ['slots' => RangeSlot::class];
 
     /**
      * @param  ?string  $capacityType  Type of capacity

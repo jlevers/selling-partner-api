@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\Pagination;
 
 final class ListInboundPlanBoxesResponse extends Response
 {
-    protected static array $complexArrayTypes = ['boxes' => [Box::class]];
+    protected static array $complexArrayTypes = ['boxes' => Box::class];
 
     /**
      * @param  Box[]  $boxes  A list of boxes in an inbound plan.

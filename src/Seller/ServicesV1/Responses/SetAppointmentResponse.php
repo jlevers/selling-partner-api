@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ServicesV1\Dto\Warning;
 
 final class SetAppointmentResponse extends Response
 {
-    protected static array $complexArrayTypes = ['warnings' => [Warning::class], 'errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['warnings' => Warning::class, 'errors' => Error::class];
 
     /**
      * @param  ?string  $appointmentId  The appointment identifier.

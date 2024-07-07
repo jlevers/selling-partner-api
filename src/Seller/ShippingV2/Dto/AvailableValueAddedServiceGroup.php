@@ -14,7 +14,7 @@ use SellingPartnerApi\Dto;
 
 final class AvailableValueAddedServiceGroup extends Dto
 {
-    protected static array $complexArrayTypes = ['valueAddedServices' => [ValueAddedService::class]];
+    protected static array $complexArrayTypes = ['valueAddedServices' => ValueAddedService::class];
 
     /**
      * @param  string  $groupId  The type of the value-added service group.

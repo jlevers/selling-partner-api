@@ -22,7 +22,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\TrackingDetails;
 
 final class Shipment extends Response
 {
-    protected static array $complexArrayTypes = ['selfShipAppointmentDetails' => [SelfShipAppointmentDetails::class]];
+    protected static array $complexArrayTypes = ['selfShipAppointmentDetails' => SelfShipAppointmentDetails::class];
 
     /**
      * @param  ShipmentDestination  $destination  The Amazon fulfillment center address and warehouse ID.

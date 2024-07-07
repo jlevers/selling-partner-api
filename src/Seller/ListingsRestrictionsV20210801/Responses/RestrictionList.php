@@ -15,7 +15,7 @@ use SellingPartnerApi\Seller\ListingsRestrictionsV20210801\Dto\Restriction;
 
 final class RestrictionList extends Response
 {
-    protected static array $complexArrayTypes = ['restrictions' => [Restriction::class]];
+    protected static array $complexArrayTypes = ['restrictions' => Restriction::class];
 
     /**
      * @param  Restriction[]  $restrictions

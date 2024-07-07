@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\ListAllFulfillmentOrdersRe
 
 final class ListAllFulfillmentOrdersResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
      * @param  ?ListAllFulfillmentOrdersResult  $payload  The request for the listAllFulfillmentOrders operation.

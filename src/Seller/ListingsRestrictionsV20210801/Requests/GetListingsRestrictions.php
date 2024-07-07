@@ -39,17 +39,6 @@ class GetListingsRestrictions extends Request
         protected ?string $reasonLocale = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'asin' => $this->asin,
-            'sellerId' => $this->sellerId,
-            'marketplaceIds' => $this->marketplaceIds,
-            'conditionType' => $this->conditionType,
-            'reasonLocale' => $this->reasonLocale,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/listings/2021-08-01/restrictions';
@@ -65,5 +54,16 @@ class GetListingsRestrictions extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'asin' => $this->asin,
+            'sellerId' => $this->sellerId,
+            'marketplaceIds' => $this->marketplaceIds,
+            'conditionType' => $this->conditionType,
+            'reasonLocale' => $this->reasonLocale,
+        ]);
     }
 }

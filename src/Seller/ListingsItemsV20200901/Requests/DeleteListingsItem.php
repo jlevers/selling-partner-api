@@ -37,11 +37,6 @@ class DeleteListingsItem extends Request
         protected ?string $issueLocale = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'issueLocale' => $this->issueLocale]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/listings/2020-09-01/items/{$this->sellerId}/{$this->sku}";
@@ -57,5 +52,10 @@ class DeleteListingsItem extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'issueLocale' => $this->issueLocale]);
     }
 }

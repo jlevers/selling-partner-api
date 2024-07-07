@@ -32,11 +32,6 @@ class ListAllFulfillmentOrders extends Request
         protected ?string $nextToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['queryStartDate' => $this->queryStartDate?->format('Y-m-d\TH:i:s\Z'), 'nextToken' => $this->nextToken]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/fba/outbound/2020-07-01/fulfillmentOrders';
@@ -51,5 +46,10 @@ class ListAllFulfillmentOrders extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['queryStartDate' => $this->queryStartDate?->format('Y-m-d\TH:i:s\Z'), 'nextToken' => $this->nextToken]);
     }
 }

@@ -43,19 +43,6 @@ class GetReports extends Request
         protected ?string $nextToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'reportTypes' => $this->reportTypes,
-            'processingStatuses' => $this->processingStatuses,
-            'marketplaceIds' => $this->marketplaceIds,
-            'pageSize' => $this->pageSize,
-            'createdSince' => $this->createdSince?->format('Y-m-d\TH:i:s\Z'),
-            'createdUntil' => $this->createdUntil?->format('Y-m-d\TH:i:s\Z'),
-            'nextToken' => $this->nextToken,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/reports/2021-06-30/reports';
@@ -71,5 +58,18 @@ class GetReports extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'reportTypes' => $this->reportTypes,
+            'processingStatuses' => $this->processingStatuses,
+            'marketplaceIds' => $this->marketplaceIds,
+            'pageSize' => $this->pageSize,
+            'createdSince' => $this->createdSince?->format('Y-m-d\TH:i:s\Z'),
+            'createdUntil' => $this->createdUntil?->format('Y-m-d\TH:i:s\Z'),
+            'nextToken' => $this->nextToken,
+        ]);
     }
 }

@@ -33,11 +33,6 @@ class GetSupplySources extends Request
         protected ?float $pageSize = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['nextPageToken' => $this->nextPageToken, 'pageSize' => $this->pageSize]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/supplySources/2020-07-01/supplySources';
@@ -53,5 +48,10 @@ class GetSupplySources extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['nextPageToken' => $this->nextPageToken, 'pageSize' => $this->pageSize]);
     }
 }

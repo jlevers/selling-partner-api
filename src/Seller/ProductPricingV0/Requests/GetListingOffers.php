@@ -36,15 +36,6 @@ class GetListingOffers extends Request
         protected ?string $customerType = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'MarketplaceId' => $this->marketplaceId,
-            'ItemCondition' => $this->itemCondition,
-            'CustomerType' => $this->customerType,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/products/pricing/v0/listings/{$this->sellerSku}/offers";
@@ -59,5 +50,14 @@ class GetListingOffers extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'MarketplaceId' => $this->marketplaceId,
+            'ItemCondition' => $this->itemCondition,
+            'CustomerType' => $this->customerType,
+        ]);
     }
 }

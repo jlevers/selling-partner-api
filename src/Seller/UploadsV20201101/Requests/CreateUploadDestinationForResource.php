@@ -36,11 +36,6 @@ class CreateUploadDestinationForResource extends Request
         protected ?string $contentType = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'contentMD5' => $this->contentMd5, 'contentType' => $this->contentType]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/uploads/2020-11-01/uploadDestinations/{$this->resource}";
@@ -55,5 +50,10 @@ class CreateUploadDestinationForResource extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'contentMD5' => $this->contentMd5, 'contentType' => $this->contentType]);
     }
 }

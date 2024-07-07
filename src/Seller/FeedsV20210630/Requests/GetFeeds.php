@@ -43,19 +43,6 @@ class GetFeeds extends Request
         protected ?string $nextToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'feedTypes' => $this->feedTypes,
-            'marketplaceIds' => $this->marketplaceIds,
-            'pageSize' => $this->pageSize,
-            'processingStatuses' => $this->processingStatuses,
-            'createdSince' => $this->createdSince?->format('Y-m-d\TH:i:s\Z'),
-            'createdUntil' => $this->createdUntil?->format('Y-m-d\TH:i:s\Z'),
-            'nextToken' => $this->nextToken,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/feeds/2021-06-30/feeds';
@@ -71,5 +58,18 @@ class GetFeeds extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'feedTypes' => $this->feedTypes,
+            'marketplaceIds' => $this->marketplaceIds,
+            'pageSize' => $this->pageSize,
+            'processingStatuses' => $this->processingStatuses,
+            'createdSince' => $this->createdSince?->format('Y-m-d\TH:i:s\Z'),
+            'createdUntil' => $this->createdUntil?->format('Y-m-d\TH:i:s\Z'),
+            'nextToken' => $this->nextToken,
+        ]);
     }
 }

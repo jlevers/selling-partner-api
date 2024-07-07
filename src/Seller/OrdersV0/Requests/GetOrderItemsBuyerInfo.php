@@ -36,11 +36,6 @@ class GetOrderItemsBuyerInfo extends Request
         $this->middleware()->onRequest($rdtMiddleware);
     }
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['NextToken' => $this->nextToken]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/orders/v0/orders/{$this->orderId}/orderItems/buyerInfo";
@@ -55,5 +50,10 @@ class GetOrderItemsBuyerInfo extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['NextToken' => $this->nextToken]);
     }
 }

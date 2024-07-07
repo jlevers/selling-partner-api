@@ -39,17 +39,6 @@ class GetQueries extends Request
         protected ?string $paginationToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'processingStatuses' => $this->processingStatuses,
-            'pageSize' => $this->pageSize,
-            'createdSince' => $this->createdSince?->format('Y-m-d\TH:i:s\Z'),
-            'createdUntil' => $this->createdUntil?->format('Y-m-d\TH:i:s\Z'),
-            'paginationToken' => $this->paginationToken,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/dataKiosk/2023-11-15/queries';
@@ -65,5 +54,16 @@ class GetQueries extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'processingStatuses' => $this->processingStatuses,
+            'pageSize' => $this->pageSize,
+            'createdSince' => $this->createdSince?->format('Y-m-d\TH:i:s\Z'),
+            'createdUntil' => $this->createdUntil?->format('Y-m-d\TH:i:s\Z'),
+            'paginationToken' => $this->paginationToken,
+        ]);
     }
 }

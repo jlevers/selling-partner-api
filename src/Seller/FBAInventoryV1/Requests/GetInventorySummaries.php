@@ -44,20 +44,6 @@ class GetInventorySummaries extends Request
         protected ?string $nextToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'granularityType' => $this->granularityType,
-            'granularityId' => $this->granularityId,
-            'marketplaceIds' => $this->marketplaceIds,
-            'details' => $this->details,
-            'startDateTime' => $this->startDateTime?->format('Y-m-d\TH:i:s\Z'),
-            'sellerSkus' => $this->sellerSkus,
-            'sellerSku' => $this->sellerSku,
-            'nextToken' => $this->nextToken,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/fba/inventory/v1/summaries';
@@ -72,5 +58,19 @@ class GetInventorySummaries extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'granularityType' => $this->granularityType,
+            'granularityId' => $this->granularityId,
+            'marketplaceIds' => $this->marketplaceIds,
+            'details' => $this->details,
+            'startDateTime' => $this->startDateTime?->format('Y-m-d\TH:i:s\Z'),
+            'sellerSkus' => $this->sellerSkus,
+            'sellerSku' => $this->sellerSku,
+            'nextToken' => $this->nextToken,
+        ]);
     }
 }

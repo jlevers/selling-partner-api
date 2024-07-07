@@ -53,6 +53,23 @@ class SearchCatalogItems extends Request
         protected ?string $keywordsLocale = null,
     ) {}
 
+    public function resolveEndpoint(): string
+    {
+        return '/catalog/2022-04-01/items';
+    }
+
+    public function createDtoFromResponse(Response $response): ItemSearchResults|ErrorList
+    {
+        $status = $response->status();
+        $responseCls = match ($status) {
+            200 => ItemSearchResults::class,
+            400, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
+            default => throw new Exception("Unhandled response status: {$status}")
+        };
+
+        return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
     public function defaultQuery(): array
     {
         return array_filter([
@@ -69,22 +86,5 @@ class SearchCatalogItems extends Request
             'pageToken' => $this->pageToken,
             'keywordsLocale' => $this->keywordsLocale,
         ]);
-    }
-
-    public function resolveEndpoint(): string
-    {
-        return '/catalog/2022-04-01/items';
-    }
-
-    public function createDtoFromResponse(Response $response): ItemSearchResults|ErrorList
-    {
-        $status = $response->status();
-        $responseCls = match ($status) {
-            200 => ItemSearchResults::class,
-            400, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
-            default => throw new Exception("Unhandled response status: {$status}")
-        };
-
-        return $responseCls::deserialize($response->json(), $responseCls);
     }
 }

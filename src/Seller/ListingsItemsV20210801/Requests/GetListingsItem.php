@@ -39,11 +39,6 @@ class GetListingsItem extends Request
         protected ?array $includedData = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'issueLocale' => $this->issueLocale, 'includedData' => $this->includedData]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/listings/2021-08-01/items/{$this->sellerId}/{$this->sku}";
@@ -59,5 +54,10 @@ class GetListingsItem extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'issueLocale' => $this->issueLocale, 'includedData' => $this->includedData]);
     }
 }

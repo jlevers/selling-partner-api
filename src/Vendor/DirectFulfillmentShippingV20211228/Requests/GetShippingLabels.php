@@ -45,18 +45,6 @@ class GetShippingLabels extends Request
         $this->middleware()->onRequest($rdtMiddleware);
     }
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'createdAfter' => $this->createdAfter?->format('Y-m-d\TH:i:s\Z'),
-            'createdBefore' => $this->createdBefore?->format('Y-m-d\TH:i:s\Z'),
-            'shipFromPartyId' => $this->shipFromPartyId,
-            'limit' => $this->limit,
-            'sortOrder' => $this->sortOrder,
-            'nextToken' => $this->nextToken,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/vendor/directFulfillment/shipping/2021-12-28/shippingLabels';
@@ -72,5 +60,17 @@ class GetShippingLabels extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'createdAfter' => $this->createdAfter?->format('Y-m-d\TH:i:s\Z'),
+            'createdBefore' => $this->createdBefore?->format('Y-m-d\TH:i:s\Z'),
+            'shipFromPartyId' => $this->shipFromPartyId,
+            'limit' => $this->limit,
+            'sortOrder' => $this->sortOrder,
+            'nextToken' => $this->nextToken,
+        ]);
     }
 }

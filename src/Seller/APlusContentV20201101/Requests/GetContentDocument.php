@@ -35,11 +35,6 @@ class GetContentDocument extends Request
         protected array $includedDataSet,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceId' => $this->marketplaceId, 'includedDataSet' => $this->includedDataSet]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/aplus/2020-11-01/contentDocuments/{$this->contentReferenceKey}";
@@ -55,5 +50,10 @@ class GetContentDocument extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceId' => $this->marketplaceId, 'includedDataSet' => $this->includedDataSet]);
     }
 }

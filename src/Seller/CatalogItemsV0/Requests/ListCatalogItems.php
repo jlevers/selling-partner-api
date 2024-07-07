@@ -44,20 +44,6 @@ class ListCatalogItems extends Request
         protected ?string $jan = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'MarketplaceId' => $this->marketplaceId,
-            'Query' => $this->query,
-            'QueryContextId' => $this->queryContextId,
-            'SellerSKU' => $this->sellerSku,
-            'UPC' => $this->upc,
-            'EAN' => $this->ean,
-            'ISBN' => $this->isbn,
-            'JAN' => $this->jan,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/catalog/v0/items';
@@ -72,5 +58,19 @@ class ListCatalogItems extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'MarketplaceId' => $this->marketplaceId,
+            'Query' => $this->query,
+            'QueryContextId' => $this->queryContextId,
+            'SellerSKU' => $this->sellerSku,
+            'UPC' => $this->upc,
+            'EAN' => $this->ean,
+            'ISBN' => $this->isbn,
+            'JAN' => $this->jan,
+        ]);
     }
 }

@@ -34,11 +34,6 @@ class ListCatalogCategories extends Request
         protected ?string $sellerSku = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['MarketplaceId' => $this->marketplaceId, 'ASIN' => $this->asin, 'SellerSKU' => $this->sellerSku]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/catalog/v0/categories';
@@ -53,5 +48,10 @@ class ListCatalogCategories extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['MarketplaceId' => $this->marketplaceId, 'ASIN' => $this->asin, 'SellerSKU' => $this->sellerSku]);
     }
 }

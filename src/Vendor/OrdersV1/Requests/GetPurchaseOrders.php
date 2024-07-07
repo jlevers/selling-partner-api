@@ -52,6 +52,22 @@ class GetPurchaseOrders extends Request
         protected ?string $orderingVendorCode = null,
     ) {}
 
+    public function resolveEndpoint(): string
+    {
+        return '/vendor/orders/v1/purchaseOrders';
+    }
+
+    public function createDtoFromResponse(Response $response): GetPurchaseOrdersResponse
+    {
+        $status = $response->status();
+        $responseCls = match ($status) {
+            200, 400, 403, 404, 415, 429, 500, 503 => GetPurchaseOrdersResponse::class,
+            default => throw new Exception("Unhandled response status: {$status}")
+        };
+
+        return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
     public function defaultQuery(): array
     {
         return array_filter([
@@ -68,21 +84,5 @@ class GetPurchaseOrders extends Request
             'purchaseOrderState' => $this->purchaseOrderState,
             'orderingVendorCode' => $this->orderingVendorCode,
         ]);
-    }
-
-    public function resolveEndpoint(): string
-    {
-        return '/vendor/orders/v1/purchaseOrders';
-    }
-
-    public function createDtoFromResponse(Response $response): GetPurchaseOrdersResponse
-    {
-        $status = $response->status();
-        $responseCls = match ($status) {
-            200, 400, 403, 404, 415, 429, 500, 503 => GetPurchaseOrdersResponse::class,
-            default => throw new Exception("Unhandled response status: {$status}")
-        };
-
-        return $responseCls::deserialize($response->json(), $responseCls);
     }
 }

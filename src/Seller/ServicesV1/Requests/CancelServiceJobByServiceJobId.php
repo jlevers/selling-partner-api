@@ -32,11 +32,6 @@ class CancelServiceJobByServiceJobId extends Request
         protected string $cancellationReasonCode,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['cancellationReasonCode' => $this->cancellationReasonCode]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/service/v1/serviceJobs/{$this->serviceJobId}/cancellations";
@@ -51,5 +46,10 @@ class CancelServiceJobByServiceJobId extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['cancellationReasonCode' => $this->cancellationReasonCode]);
     }
 }

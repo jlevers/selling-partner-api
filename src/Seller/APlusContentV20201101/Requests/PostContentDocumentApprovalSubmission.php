@@ -33,11 +33,6 @@ class PostContentDocumentApprovalSubmission extends Request
         protected string $marketplaceId,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceId' => $this->marketplaceId]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/aplus/2020-11-01/contentDocuments/{$this->contentReferenceKey}/approvalSubmissions";
@@ -53,5 +48,10 @@ class PostContentDocumentApprovalSubmission extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceId' => $this->marketplaceId]);
     }
 }

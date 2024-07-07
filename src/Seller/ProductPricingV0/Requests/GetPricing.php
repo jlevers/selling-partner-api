@@ -40,18 +40,6 @@ class GetPricing extends Request
         protected ?string $offerType = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'MarketplaceId' => $this->marketplaceId,
-            'ItemType' => $this->itemType,
-            'Asins' => $this->asins,
-            'Skus' => $this->skus,
-            'ItemCondition' => $this->itemCondition,
-            'OfferType' => $this->offerType,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/products/pricing/v0/price';
@@ -66,5 +54,17 @@ class GetPricing extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'MarketplaceId' => $this->marketplaceId,
+            'ItemType' => $this->itemType,
+            'Asins' => $this->asins,
+            'Skus' => $this->skus,
+            'ItemCondition' => $this->itemCondition,
+            'OfferType' => $this->offerType,
+        ]);
     }
 }

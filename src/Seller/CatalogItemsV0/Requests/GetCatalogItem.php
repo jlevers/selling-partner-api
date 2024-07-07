@@ -32,11 +32,6 @@ class GetCatalogItem extends Request
         protected string $marketplaceId,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['MarketplaceId' => $this->marketplaceId]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/catalog/v0/items/{$this->asin}";
@@ -51,5 +46,10 @@ class GetCatalogItem extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['MarketplaceId' => $this->marketplaceId]);
     }
 }

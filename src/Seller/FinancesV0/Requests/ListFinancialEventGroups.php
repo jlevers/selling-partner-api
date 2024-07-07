@@ -36,16 +36,6 @@ class ListFinancialEventGroups extends Request
         protected ?string $nextToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'MaxResultsPerPage' => $this->maxResultsPerPage,
-            'FinancialEventGroupStartedBefore' => $this->financialEventGroupStartedBefore?->format('Y-m-d\TH:i:s\Z'),
-            'FinancialEventGroupStartedAfter' => $this->financialEventGroupStartedAfter?->format('Y-m-d\TH:i:s\Z'),
-            'NextToken' => $this->nextToken,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/finances/v0/financialEventGroups';
@@ -60,5 +50,15 @@ class ListFinancialEventGroups extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'MaxResultsPerPage' => $this->maxResultsPerPage,
+            'FinancialEventGroupStartedBefore' => $this->financialEventGroupStartedBefore?->format('Y-m-d\TH:i:s\Z'),
+            'FinancialEventGroupStartedAfter' => $this->financialEventGroupStartedAfter?->format('Y-m-d\TH:i:s\Z'),
+            'NextToken' => $this->nextToken,
+        ]);
     }
 }

@@ -44,18 +44,6 @@ class GetDefinitionsProductType extends Request
         protected ?string $locale = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'marketplaceIds' => $this->marketplaceIds,
-            'sellerId' => $this->sellerId,
-            'productTypeVersion' => $this->productTypeVersion,
-            'requirements' => $this->requirements,
-            'requirementsEnforced' => $this->requirementsEnforced,
-            'locale' => $this->locale,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/definitions/2020-09-01/productTypes/{$this->productType}";
@@ -71,5 +59,17 @@ class GetDefinitionsProductType extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'marketplaceIds' => $this->marketplaceIds,
+            'sellerId' => $this->sellerId,
+            'productTypeVersion' => $this->productTypeVersion,
+            'requirements' => $this->requirements,
+            'requirementsEnforced' => $this->requirementsEnforced,
+            'locale' => $this->locale,
+        ]);
     }
 }

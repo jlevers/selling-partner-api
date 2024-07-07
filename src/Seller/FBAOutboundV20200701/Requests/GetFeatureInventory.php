@@ -34,11 +34,6 @@ class GetFeatureInventory extends Request
         protected ?string $nextToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceId' => $this->marketplaceId, 'nextToken' => $this->nextToken]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/fba/outbound/2020-07-01/features/inventory/{$this->featureName}";
@@ -53,5 +48,10 @@ class GetFeatureInventory extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceId' => $this->marketplaceId, 'nextToken' => $this->nextToken]);
     }
 }

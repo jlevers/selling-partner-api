@@ -39,11 +39,6 @@ class ValidateContentDocumentAsinRelations extends Request implements HasBody
         protected ?array $asinSet = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceId' => $this->marketplaceId, 'asinSet' => $this->asinSet]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/aplus/2020-11-01/contentAsinValidations';
@@ -64,5 +59,10 @@ class ValidateContentDocumentAsinRelations extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->postContentDocumentRequest->toArray();
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceId' => $this->marketplaceId, 'asinSet' => $this->asinSet]);
     }
 }

@@ -34,11 +34,6 @@ class ListFinancialEventsByOrderId extends Request
         protected ?string $nextToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['MaxResultsPerPage' => $this->maxResultsPerPage, 'NextToken' => $this->nextToken]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/finances/v0/orders/{$this->orderId}/financialEvents";
@@ -53,5 +48,10 @@ class ListFinancialEventsByOrderId extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['MaxResultsPerPage' => $this->maxResultsPerPage, 'NextToken' => $this->nextToken]);
     }
 }

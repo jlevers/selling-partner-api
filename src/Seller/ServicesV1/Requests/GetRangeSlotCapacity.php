@@ -42,11 +42,6 @@ class GetRangeSlotCapacity extends Request implements HasBody
         protected ?string $nextPageToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'nextPageToken' => $this->nextPageToken]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/service/v1/serviceResources/{$this->resourceId}/capacity/range";
@@ -67,5 +62,10 @@ class GetRangeSlotCapacity extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->rangeSlotCapacityQuery->toArray();
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'nextPageToken' => $this->nextPageToken]);
     }
 }

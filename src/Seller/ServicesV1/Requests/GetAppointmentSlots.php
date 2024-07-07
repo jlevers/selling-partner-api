@@ -38,17 +38,6 @@ class GetAppointmentSlots extends Request
         protected ?string $endTime = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'asin' => $this->asin,
-            'storeId' => $this->storeId,
-            'marketplaceIds' => $this->marketplaceIds,
-            'startTime' => $this->startTime,
-            'endTime' => $this->endTime,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/service/v1/appointmentSlots';
@@ -63,5 +52,16 @@ class GetAppointmentSlots extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'asin' => $this->asin,
+            'storeId' => $this->storeId,
+            'marketplaceIds' => $this->marketplaceIds,
+            'startTime' => $this->startTime,
+            'endTime' => $this->endTime,
+        ]);
     }
 }

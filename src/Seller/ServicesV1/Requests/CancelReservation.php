@@ -33,11 +33,6 @@ class CancelReservation extends Request
         protected array $marketplaceIds,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceIds' => $this->marketplaceIds]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/service/v1/reservation/{$this->reservationId}";
@@ -53,5 +48,10 @@ class CancelReservation extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceIds' => $this->marketplaceIds]);
     }
 }

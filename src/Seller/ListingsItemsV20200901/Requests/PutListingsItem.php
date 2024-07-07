@@ -44,11 +44,6 @@ class PutListingsItem extends Request implements HasBody
         protected ?string $issueLocale = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'issueLocale' => $this->issueLocale]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/listings/2020-09-01/items/{$this->sellerId}/{$this->sku}";
@@ -69,5 +64,10 @@ class PutListingsItem extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->listingsItemPutRequest->toArray();
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'issueLocale' => $this->issueLocale]);
     }
 }

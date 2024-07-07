@@ -39,11 +39,6 @@ class CreateUnexpectedProblem extends Request implements HasBody
         protected array $marketplaceIds,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceIds' => $this->marketplaceIds]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/messaging/v1/orders/{$this->amazonOrderId}/messages/unexpectedProblem";
@@ -63,5 +58,10 @@ class CreateUnexpectedProblem extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->createUnexpectedProblemRequest->toArray();
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceIds' => $this->marketplaceIds]);
     }
 }

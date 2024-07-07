@@ -35,11 +35,6 @@ class ListInboundPlanBoxes extends Request
         protected ?string $paginationToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['pageSize' => $this->pageSize, 'paginationToken' => $this->paginationToken]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/inbound/fba/2024-03-20/inboundPlans/{$this->inboundPlanId}/boxes";
@@ -55,5 +50,10 @@ class ListInboundPlanBoxes extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['pageSize' => $this->pageSize, 'paginationToken' => $this->paginationToken]);
     }
 }

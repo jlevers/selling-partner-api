@@ -38,17 +38,6 @@ class GetShipmentItems extends Request
         protected ?string $nextToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'QueryType' => $this->queryType,
-            'MarketplaceId' => $this->marketplaceId,
-            'LastUpdatedAfter' => $this->lastUpdatedAfter?->format('Y-m-d\TH:i:s\Z'),
-            'LastUpdatedBefore' => $this->lastUpdatedBefore?->format('Y-m-d\TH:i:s\Z'),
-            'NextToken' => $this->nextToken,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/fba/inbound/v0/shipmentItems';
@@ -63,5 +52,16 @@ class GetShipmentItems extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'QueryType' => $this->queryType,
+            'MarketplaceId' => $this->marketplaceId,
+            'LastUpdatedAfter' => $this->lastUpdatedAfter?->format('Y-m-d\TH:i:s\Z'),
+            'LastUpdatedBefore' => $this->lastUpdatedBefore?->format('Y-m-d\TH:i:s\Z'),
+            'NextToken' => $this->nextToken,
+        ]);
     }
 }

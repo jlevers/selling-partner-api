@@ -60,6 +60,22 @@ class GetServiceJobs extends Request
         protected ?array $storeIds = null,
     ) {}
 
+    public function resolveEndpoint(): string
+    {
+        return '/service/v1/serviceJobs';
+    }
+
+    public function createDtoFromResponse(Response $response): GetServiceJobsResponse
+    {
+        $status = $response->status();
+        $responseCls = match ($status) {
+            200, 400, 403, 404, 413, 415, 429, 500, 503 => GetServiceJobsResponse::class,
+            default => throw new Exception("Unhandled response status: {$status}")
+        };
+
+        return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
     public function defaultQuery(): array
     {
         return array_filter([
@@ -80,21 +96,5 @@ class GetServiceJobs extends Request
             'requiredSkills' => $this->requiredSkills,
             'storeIds' => $this->storeIds,
         ]);
-    }
-
-    public function resolveEndpoint(): string
-    {
-        return '/service/v1/serviceJobs';
-    }
-
-    public function createDtoFromResponse(Response $response): GetServiceJobsResponse
-    {
-        $status = $response->status();
-        $responseCls = match ($status) {
-            200, 400, 403, 404, 413, 415, 429, 500, 503 => GetServiceJobsResponse::class,
-            default => throw new Exception("Unhandled response status: {$status}")
-        };
-
-        return $responseCls::deserialize($response->json(), $responseCls);
     }
 }

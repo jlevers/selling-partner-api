@@ -46,19 +46,6 @@ class GetLabels extends Request
         protected ?int $pageStartIndex = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'PageType' => $this->pageType,
-            'LabelType' => $this->labelType,
-            'NumberOfPackages' => $this->numberOfPackages,
-            'PackageLabelsToPrint' => $this->packageLabelsToPrint,
-            'NumberOfPallets' => $this->numberOfPallets,
-            'PageSize' => $this->pageSize,
-            'PageStartIndex' => $this->pageStartIndex,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/fba/inbound/v0/shipments/{$this->shipmentId}/labels";
@@ -73,5 +60,18 @@ class GetLabels extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'PageType' => $this->pageType,
+            'LabelType' => $this->labelType,
+            'NumberOfPackages' => $this->numberOfPackages,
+            'PackageLabelsToPrint' => $this->packageLabelsToPrint,
+            'NumberOfPallets' => $this->numberOfPallets,
+            'PageSize' => $this->pageSize,
+            'PageStartIndex' => $this->pageStartIndex,
+        ]);
     }
 }

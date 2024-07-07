@@ -37,11 +37,6 @@ class CreateReservation extends Request implements HasBody
         protected array $marketplaceIds,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceIds' => $this->marketplaceIds]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/service/v1/reservation';
@@ -61,5 +56,10 @@ class CreateReservation extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->createReservationRequest->toArray();
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceIds' => $this->marketplaceIds]);
     }
 }

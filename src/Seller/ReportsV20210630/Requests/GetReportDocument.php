@@ -36,11 +36,6 @@ class GetReportDocument extends Request
         $this->middleware()->onRequest(new RestrictedReport);
     }
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['reportType' => $this->reportType]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/reports/2021-06-30/documents/{$this->reportDocumentId}";
@@ -56,5 +51,10 @@ class GetReportDocument extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['reportType' => $this->reportType]);
     }
 }

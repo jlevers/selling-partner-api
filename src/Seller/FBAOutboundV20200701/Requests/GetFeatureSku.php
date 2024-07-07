@@ -34,11 +34,6 @@ class GetFeatureSku extends Request
         protected string $marketplaceId,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceId' => $this->marketplaceId]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/fba/outbound/2020-07-01/features/inventory/{$this->featureName}/{$this->sellerSku}";
@@ -53,5 +48,10 @@ class GetFeatureSku extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceId' => $this->marketplaceId]);
     }
 }

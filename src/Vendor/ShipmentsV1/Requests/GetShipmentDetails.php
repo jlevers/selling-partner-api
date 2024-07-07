@@ -76,6 +76,22 @@ class GetShipmentDetails extends Request
         protected ?string $sellerWarehouseCode = null,
     ) {}
 
+    public function resolveEndpoint(): string
+    {
+        return '/vendor/shipping/v1/shipments';
+    }
+
+    public function createDtoFromResponse(Response $response): GetShipmentDetailsResponse
+    {
+        $status = $response->status();
+        $responseCls = match ($status) {
+            200, 400, 401, 403, 404, 415, 429, 500, 503 => GetShipmentDetailsResponse::class,
+            default => throw new Exception("Unhandled response status: {$status}")
+        };
+
+        return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
     public function defaultQuery(): array
     {
         return array_filter([
@@ -104,21 +120,5 @@ class GetShipmentDetails extends Request
             'buyerWarehouseCode' => $this->buyerWarehouseCode,
             'sellerWarehouseCode' => $this->sellerWarehouseCode,
         ]);
-    }
-
-    public function resolveEndpoint(): string
-    {
-        return '/vendor/shipping/v1/shipments';
-    }
-
-    public function createDtoFromResponse(Response $response): GetShipmentDetailsResponse
-    {
-        $status = $response->status();
-        $responseCls = match ($status) {
-            200, 400, 401, 403, 404, 415, 429, 500, 503 => GetShipmentDetailsResponse::class,
-            default => throw new Exception("Unhandled response status: {$status}")
-        };
-
-        return $responseCls::deserialize($response->json(), $responseCls);
     }
 }

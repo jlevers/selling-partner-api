@@ -30,11 +30,6 @@ class GetPackageTrackingDetails extends Request
         protected int $packageNumber,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['packageNumber' => $this->packageNumber]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/fba/outbound/2020-07-01/tracking';
@@ -49,5 +44,10 @@ class GetPackageTrackingDetails extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['packageNumber' => $this->packageNumber]);
     }
 }

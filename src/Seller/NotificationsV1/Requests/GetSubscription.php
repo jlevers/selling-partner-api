@@ -34,11 +34,6 @@ class GetSubscription extends Request
         protected ?string $payloadVersion = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['payloadVersion' => $this->payloadVersion]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/notifications/v1/subscriptions/{$this->notificationType}";
@@ -53,5 +48,10 @@ class GetSubscription extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['payloadVersion' => $this->payloadVersion]);
     }
 }

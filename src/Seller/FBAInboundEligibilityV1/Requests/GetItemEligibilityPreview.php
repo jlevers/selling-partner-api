@@ -34,11 +34,6 @@ class GetItemEligibilityPreview extends Request
         protected ?array $marketplaceIds = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['asin' => $this->asin, 'program' => $this->program, 'marketplaceIds' => $this->marketplaceIds]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/fba/inbound/v1/eligibility/itemPreview';
@@ -53,5 +48,10 @@ class GetItemEligibilityPreview extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['asin' => $this->asin, 'program' => $this->program, 'marketplaceIds' => $this->marketplaceIds]);
     }
 }

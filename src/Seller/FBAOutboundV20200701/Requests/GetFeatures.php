@@ -30,11 +30,6 @@ class GetFeatures extends Request
         protected string $marketplaceId,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceId' => $this->marketplaceId]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/fba/outbound/2020-07-01/features';
@@ -49,5 +44,10 @@ class GetFeatures extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceId' => $this->marketplaceId]);
     }
 }

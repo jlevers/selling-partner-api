@@ -38,15 +38,6 @@ class GetPrepInstructions extends Request
         protected ?array $asinList = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'ShipToCountryCode' => $this->shipToCountryCode,
-            'SellerSKUList' => $this->sellerSkuList,
-            'ASINList' => $this->asinList,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/fba/inbound/v0/prepInstructions';
@@ -61,5 +52,14 @@ class GetPrepInstructions extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'ShipToCountryCode' => $this->shipToCountryCode,
+            'SellerSKUList' => $this->sellerSkuList,
+            'ASINList' => $this->asinList,
+        ]);
     }
 }

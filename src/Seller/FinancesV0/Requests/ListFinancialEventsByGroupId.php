@@ -38,16 +38,6 @@ class ListFinancialEventsByGroupId extends Request
         protected ?string $nextToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'MaxResultsPerPage' => $this->maxResultsPerPage,
-            'PostedAfter' => $this->postedAfter?->format('Y-m-d\TH:i:s\Z'),
-            'PostedBefore' => $this->postedBefore?->format('Y-m-d\TH:i:s\Z'),
-            'NextToken' => $this->nextToken,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/finances/v0/financialEventGroups/{$this->eventGroupId}/financialEvents";
@@ -62,5 +52,15 @@ class ListFinancialEventsByGroupId extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'MaxResultsPerPage' => $this->maxResultsPerPage,
+            'PostedAfter' => $this->postedAfter?->format('Y-m-d\TH:i:s\Z'),
+            'PostedBefore' => $this->postedBefore?->format('Y-m-d\TH:i:s\Z'),
+            'NextToken' => $this->nextToken,
+        ]);
     }
 }

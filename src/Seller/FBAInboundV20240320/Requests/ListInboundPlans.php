@@ -39,17 +39,6 @@ class ListInboundPlans extends Request
         protected ?string $sortOrder = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'pageSize' => $this->pageSize,
-            'paginationToken' => $this->paginationToken,
-            'status' => $this->status,
-            'sortBy' => $this->sortBy,
-            'sortOrder' => $this->sortOrder,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/inbound/fba/2024-03-20/inboundPlans';
@@ -65,5 +54,16 @@ class ListInboundPlans extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'pageSize' => $this->pageSize,
+            'paginationToken' => $this->paginationToken,
+            'status' => $this->status,
+            'sortBy' => $this->sortBy,
+            'sortOrder' => $this->sortOrder,
+        ]);
     }
 }

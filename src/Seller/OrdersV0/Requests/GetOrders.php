@@ -125,6 +125,22 @@ class GetOrders extends Request
         $this->middleware()->onRequest($rdtMiddleware);
     }
 
+    public function resolveEndpoint(): string
+    {
+        return '/orders/v0/orders';
+    }
+
+    public function createDtoFromResponse(Response $response): GetOrdersResponse
+    {
+        $status = $response->status();
+        $responseCls = match ($status) {
+            200, 400, 403, 404, 429, 500, 503 => GetOrdersResponse::class,
+            default => throw new Exception("Unhandled response status: {$status}")
+        };
+
+        return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
     public function defaultQuery(): array
     {
         return array_filter([
@@ -151,21 +167,5 @@ class GetOrders extends Request
             'LatestDeliveryDateBefore' => $this->latestDeliveryDateBefore,
             'LatestDeliveryDateAfter' => $this->latestDeliveryDateAfter,
         ]);
-    }
-
-    public function resolveEndpoint(): string
-    {
-        return '/orders/v0/orders';
-    }
-
-    public function createDtoFromResponse(Response $response): GetOrdersResponse
-    {
-        $status = $response->status();
-        $responseCls = match ($status) {
-            200, 400, 403, 404, 429, 500, 503 => GetOrdersResponse::class,
-            default => throw new Exception("Unhandled response status: {$status}")
-        };
-
-        return $responseCls::deserialize($response->json(), $responseCls);
     }
 }

@@ -43,19 +43,6 @@ class ListInboundShipments extends Request
         protected ?string $nextToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'sortBy' => $this->sortBy,
-            'sortOrder' => $this->sortOrder,
-            'shipmentStatus' => $this->shipmentStatus,
-            'updatedAfter' => $this->updatedAfter?->format('Y-m-d\TH:i:s\Z'),
-            'updatedBefore' => $this->updatedBefore?->format('Y-m-d\TH:i:s\Z'),
-            'maxResults' => $this->maxResults,
-            'nextToken' => $this->nextToken,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/awd/2024-05-09/inboundShipments';
@@ -71,5 +58,18 @@ class ListInboundShipments extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'sortBy' => $this->sortBy,
+            'sortOrder' => $this->sortOrder,
+            'shipmentStatus' => $this->shipmentStatus,
+            'updatedAfter' => $this->updatedAfter?->format('Y-m-d\TH:i:s\Z'),
+            'updatedBefore' => $this->updatedBefore?->format('Y-m-d\TH:i:s\Z'),
+            'maxResults' => $this->maxResults,
+            'nextToken' => $this->nextToken,
+        ]);
     }
 }

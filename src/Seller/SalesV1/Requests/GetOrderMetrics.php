@@ -48,21 +48,6 @@ class GetOrderMetrics extends Request
         protected ?string $sku = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'marketplaceIds' => $this->marketplaceIds,
-            'interval' => $this->interval,
-            'granularity' => $this->granularity,
-            'granularityTimeZone' => $this->granularityTimeZone,
-            'buyerType' => $this->buyerType,
-            'fulfillmentNetwork' => $this->fulfillmentNetwork,
-            'firstDayOfWeek' => $this->firstDayOfWeek,
-            'asin' => $this->asin,
-            'sku' => $this->sku,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/sales/v1/orderMetrics';
@@ -77,5 +62,20 @@ class GetOrderMetrics extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'marketplaceIds' => $this->marketplaceIds,
+            'interval' => $this->interval,
+            'granularity' => $this->granularity,
+            'granularityTimeZone' => $this->granularityTimeZone,
+            'buyerType' => $this->buyerType,
+            'fulfillmentNetwork' => $this->fulfillmentNetwork,
+            'firstDayOfWeek' => $this->firstDayOfWeek,
+            'asin' => $this->asin,
+            'sku' => $this->sku,
+        ]);
     }
 }

@@ -38,17 +38,6 @@ class GetCompetitivePricing extends Request
         protected ?string $customerType = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'MarketplaceId' => $this->marketplaceId,
-            'ItemType' => $this->itemType,
-            'Asins' => $this->asins,
-            'Skus' => $this->skus,
-            'CustomerType' => $this->customerType,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/products/pricing/v0/competitivePrice';
@@ -63,5 +52,16 @@ class GetCompetitivePricing extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'MarketplaceId' => $this->marketplaceId,
+            'ItemType' => $this->itemType,
+            'Asins' => $this->asins,
+            'Skus' => $this->skus,
+            'CustomerType' => $this->customerType,
+        ]);
     }
 }

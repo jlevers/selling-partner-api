@@ -32,11 +32,6 @@ class GetPreorderInfo extends Request
         protected string $marketplaceId,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['MarketplaceId' => $this->marketplaceId]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/fba/inbound/v0/shipments/{$this->shipmentId}/preorder";
@@ -51,5 +46,10 @@ class GetPreorderInfo extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['MarketplaceId' => $this->marketplaceId]);
     }
 }

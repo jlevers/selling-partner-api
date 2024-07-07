@@ -39,11 +39,6 @@ class CreateWarranty extends Request implements HasBody
         protected array $marketplaceIds,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceIds' => $this->marketplaceIds]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/messaging/v1/orders/{$this->amazonOrderId}/messages/warranty";
@@ -63,5 +58,10 @@ class CreateWarranty extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->createWarrantyRequest->toArray();
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceIds' => $this->marketplaceIds]);
     }
 }

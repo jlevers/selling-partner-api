@@ -39,17 +39,6 @@ class SearchDefinitionsProductTypes extends Request
         protected ?string $searchLocale = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'marketplaceIds' => $this->marketplaceIds,
-            'keywords' => $this->keywords,
-            'itemName' => $this->itemName,
-            'locale' => $this->locale,
-            'searchLocale' => $this->searchLocale,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/definitions/2020-09-01/productTypes';
@@ -65,5 +54,16 @@ class SearchDefinitionsProductTypes extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'marketplaceIds' => $this->marketplaceIds,
+            'keywords' => $this->keywords,
+            'itemName' => $this->itemName,
+            'locale' => $this->locale,
+            'searchLocale' => $this->searchLocale,
+        ]);
     }
 }

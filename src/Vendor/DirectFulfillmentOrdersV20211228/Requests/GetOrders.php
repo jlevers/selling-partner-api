@@ -49,20 +49,6 @@ class GetOrders extends Request
         $this->middleware()->onRequest($rdtMiddleware);
     }
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'createdAfter' => $this->createdAfter?->format('Y-m-d\TH:i:s\Z'),
-            'createdBefore' => $this->createdBefore?->format('Y-m-d\TH:i:s\Z'),
-            'shipFromPartyId' => $this->shipFromPartyId,
-            'status' => $this->status,
-            'limit' => $this->limit,
-            'sortOrder' => $this->sortOrder,
-            'nextToken' => $this->nextToken,
-            'includeDetails' => $this->includeDetails,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/vendor/directFulfillment/orders/2021-12-28/purchaseOrders';
@@ -78,5 +64,19 @@ class GetOrders extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'createdAfter' => $this->createdAfter?->format('Y-m-d\TH:i:s\Z'),
+            'createdBefore' => $this->createdBefore?->format('Y-m-d\TH:i:s\Z'),
+            'shipFromPartyId' => $this->shipFromPartyId,
+            'status' => $this->status,
+            'limit' => $this->limit,
+            'sortOrder' => $this->sortOrder,
+            'nextToken' => $this->nextToken,
+            'includeDetails' => $this->includeDetails,
+        ]);
     }
 }

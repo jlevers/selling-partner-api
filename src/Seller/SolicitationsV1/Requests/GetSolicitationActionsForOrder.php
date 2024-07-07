@@ -32,11 +32,6 @@ class GetSolicitationActionsForOrder extends Request
         protected array $marketplaceIds,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceIds' => $this->marketplaceIds]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/solicitations/v1/orders/{$this->amazonOrderId}";
@@ -51,5 +46,10 @@ class GetSolicitationActionsForOrder extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceIds' => $this->marketplaceIds]);
     }
 }

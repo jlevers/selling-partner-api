@@ -33,11 +33,6 @@ class ListItemComplianceDetails extends Request
         protected string $marketplaceId,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['mskus' => $this->mskus, 'marketplaceId' => $this->marketplaceId]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/inbound/fba/2024-03-20/items/compliance';
@@ -53,5 +48,10 @@ class ListItemComplianceDetails extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['mskus' => $this->mskus, 'marketplaceId' => $this->marketplaceId]);
     }
 }

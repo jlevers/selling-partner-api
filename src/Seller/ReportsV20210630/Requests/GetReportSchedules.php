@@ -31,11 +31,6 @@ class GetReportSchedules extends Request
         protected array $reportTypes,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['reportTypes' => $this->reportTypes]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/reports/2021-06-30/schedules';
@@ -51,5 +46,10 @@ class GetReportSchedules extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['reportTypes' => $this->reportTypes]);
     }
 }

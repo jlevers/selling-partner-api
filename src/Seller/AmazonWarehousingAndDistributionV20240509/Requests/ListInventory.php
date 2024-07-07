@@ -39,17 +39,6 @@ class ListInventory extends Request
         protected ?int $maxResults = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'sku' => $this->sku,
-            'sortOrder' => $this->sortOrder,
-            'details' => $this->details,
-            'nextToken' => $this->nextToken,
-            'maxResults' => $this->maxResults,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/awd/2024-05-09/inventory';
@@ -65,5 +54,16 @@ class ListInventory extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'sku' => $this->sku,
+            'sortOrder' => $this->sortOrder,
+            'details' => $this->details,
+            'nextToken' => $this->nextToken,
+            'maxResults' => $this->maxResults,
+        ]);
     }
 }

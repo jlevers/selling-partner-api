@@ -33,11 +33,6 @@ class GetScheduledPackage extends Request
         protected string $marketplaceId,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['amazonOrderId' => $this->amazonOrderId, 'marketplaceId' => $this->marketplaceId]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/easyShip/2022-03-23/package';
@@ -53,5 +48,10 @@ class GetScheduledPackage extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['amazonOrderId' => $this->amazonOrderId, 'marketplaceId' => $this->marketplaceId]);
     }
 }

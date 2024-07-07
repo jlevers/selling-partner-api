@@ -38,11 +38,6 @@ class UpdateItemComplianceDetails extends Request implements HasBody
         protected string $marketplaceId,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceId' => $this->marketplaceId]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/inbound/fba/2024-03-20/items/compliance';
@@ -63,5 +58,10 @@ class UpdateItemComplianceDetails extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->updateItemComplianceDetailsRequest->toArray();
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceId' => $this->marketplaceId]);
     }
 }

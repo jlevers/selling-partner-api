@@ -34,11 +34,6 @@ class ConfirmPreorder extends Request
         protected string $marketplaceId,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['NeedByDate' => $this->needByDate?->format('Y-m-d\TH:i:s\Z'), 'MarketplaceId' => $this->marketplaceId]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/fba/inbound/v0/shipments/{$this->shipmentId}/preorder/confirm";
@@ -53,5 +48,10 @@ class ConfirmPreorder extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['NeedByDate' => $this->needByDate?->format('Y-m-d\TH:i:s\Z'), 'MarketplaceId' => $this->marketplaceId]);
     }
 }

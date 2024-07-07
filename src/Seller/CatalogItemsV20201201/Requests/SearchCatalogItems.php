@@ -47,21 +47,6 @@ class SearchCatalogItems extends Request
         protected ?string $locale = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'keywords' => $this->keywords,
-            'marketplaceIds' => $this->marketplaceIds,
-            'includedData' => $this->includedData,
-            'brandNames' => $this->brandNames,
-            'classificationIds' => $this->classificationIds,
-            'pageSize' => $this->pageSize,
-            'pageToken' => $this->pageToken,
-            'keywordsLocale' => $this->keywordsLocale,
-            'locale' => $this->locale,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/catalog/2020-12-01/items';
@@ -77,5 +62,20 @@ class SearchCatalogItems extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'keywords' => $this->keywords,
+            'marketplaceIds' => $this->marketplaceIds,
+            'includedData' => $this->includedData,
+            'brandNames' => $this->brandNames,
+            'classificationIds' => $this->classificationIds,
+            'pageSize' => $this->pageSize,
+            'pageToken' => $this->pageToken,
+            'keywordsLocale' => $this->keywordsLocale,
+            'locale' => $this->locale,
+        ]);
     }
 }

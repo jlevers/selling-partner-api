@@ -36,16 +36,6 @@ class ListReturnReasonCodes extends Request
         protected ?string $language = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'sellerSku' => $this->sellerSku,
-            'marketplaceId' => $this->marketplaceId,
-            'sellerFulfillmentOrderId' => $this->sellerFulfillmentOrderId,
-            'language' => $this->language,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/fba/outbound/2020-07-01/returnReasonCodes';
@@ -60,5 +50,15 @@ class ListReturnReasonCodes extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'sellerSku' => $this->sellerSku,
+            'marketplaceId' => $this->marketplaceId,
+            'sellerFulfillmentOrderId' => $this->sellerFulfillmentOrderId,
+            'language' => $this->language,
+        ]);
     }
 }

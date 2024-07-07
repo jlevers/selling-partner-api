@@ -39,11 +39,6 @@ class PostContentDocumentAsinRelations extends Request implements HasBody
         protected string $marketplaceId,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceId' => $this->marketplaceId]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/aplus/2020-11-01/contentDocuments/{$this->contentReferenceKey}/asins";
@@ -64,5 +59,10 @@ class PostContentDocumentAsinRelations extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->postContentDocumentAsinRelationsRequest->toArray();
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceId' => $this->marketplaceId]);
     }
 }

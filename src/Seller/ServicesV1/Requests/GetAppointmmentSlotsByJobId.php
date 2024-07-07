@@ -36,11 +36,6 @@ class GetAppointmmentSlotsByJobId extends Request
         protected ?string $endTime = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'startTime' => $this->startTime, 'endTime' => $this->endTime]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/service/v1/serviceJobs/{$this->serviceJobId}/appointmentSlots";
@@ -55,5 +50,10 @@ class GetAppointmmentSlotsByJobId extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'startTime' => $this->startTime, 'endTime' => $this->endTime]);
     }
 }

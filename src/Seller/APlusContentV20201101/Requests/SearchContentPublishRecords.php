@@ -35,11 +35,6 @@ class SearchContentPublishRecords extends Request
         protected ?string $pageToken = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter(['marketplaceId' => $this->marketplaceId, 'asin' => $this->asin, 'pageToken' => $this->pageToken]);
-    }
-
     public function resolveEndpoint(): string
     {
         return '/aplus/2020-11-01/contentPublishRecords';
@@ -55,5 +50,10 @@ class SearchContentPublishRecords extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceId' => $this->marketplaceId, 'asin' => $this->asin, 'pageToken' => $this->pageToken]);
     }
 }

@@ -39,16 +39,6 @@ class ListTransportationOptions extends Request
         protected ?string $shipmentId = null,
     ) {}
 
-    public function defaultQuery(): array
-    {
-        return array_filter([
-            'pageSize' => $this->pageSize,
-            'paginationToken' => $this->paginationToken,
-            'placementOptionId' => $this->placementOptionId,
-            'shipmentId' => $this->shipmentId,
-        ]);
-    }
-
     public function resolveEndpoint(): string
     {
         return "/inbound/fba/2024-03-20/inboundPlans/{$this->inboundPlanId}/transportationOptions";
@@ -64,5 +54,15 @@ class ListTransportationOptions extends Request
         };
 
         return $responseCls::deserialize($response->json(), $responseCls);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'pageSize' => $this->pageSize,
+            'paginationToken' => $this->paginationToken,
+            'placementOptionId' => $this->placementOptionId,
+            'shipmentId' => $this->shipmentId,
+        ]);
     }
 }

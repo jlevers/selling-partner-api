@@ -61,10 +61,11 @@ class Api extends BaseResource
 
     /**
      * @param  AddInventoryRequest  $addInventoryRequest  The object with the list of Inventory to be added
+     * @param  string  $xAmznIdempotencyToken  A unique token/requestId provided with each call to ensure idempotency.
      */
-    public function addInventory(AddInventoryRequest $addInventoryRequest): Response
+    public function addInventory(AddInventoryRequest $addInventoryRequest, string $xAmznIdempotencyToken): Response
     {
-        $request = new AddInventory($addInventoryRequest);
+        $request = new AddInventory($addInventoryRequest, $xAmznIdempotencyToken);
 
         return $this->connector->send($request);
     }

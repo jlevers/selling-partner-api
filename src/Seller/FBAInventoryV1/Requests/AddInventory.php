@@ -30,9 +30,11 @@ class AddInventory extends Request implements HasBody
 
     /**
      * @param  AddInventoryRequest  $addInventoryRequest  The object with the list of Inventory to be added
+     * @param  string  $xAmznIdempotencyToken  A unique token/requestId provided with each call to ensure idempotency.
      */
     public function __construct(
         public AddInventoryRequest $addInventoryRequest,
+        protected string $xAmznIdempotencyToken,
     ) {}
 
     public function resolveEndpoint(): string
@@ -54,5 +56,10 @@ class AddInventory extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->addInventoryRequest->toArray();
+    }
+
+    public function defaultHeaders(): array
+    {
+        return array_filter(['x-amzn-idempotency-token' => $this->xAmznIdempotencyToken]);
     }
 }

@@ -186,6 +186,6 @@ class SerializationTest extends TestCase
         ]);
         $this->assertNotNull($result);
         $this->assertInstanceOf(DateTimeInterface::class, $result->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation);
-        $this->assertEquals( (new DateTimeZone('+02:00'), $result->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation->getTimeZone() );
+        $this->assertEquals( (new DateTimeZone('+02:00')), $result->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation->getTimeZone() );
     }
 }

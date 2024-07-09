@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use DateTime;
+use DateTimeZone;
+use DateTimeInterface;
 use PHPUnit\Framework\TestCase;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
@@ -14,6 +17,7 @@ use SellingPartnerApi\Seller\OrdersV0\Requests\ConfirmShipment;
 use SellingPartnerApi\Seller\ProductPricingV0\Dto\GetItemOffersBatchRequest;
 use SellingPartnerApi\Seller\ProductPricingV0\Dto\ItemOffersRequest;
 use SellingPartnerApi\Seller\ProductPricingV0\Requests\GetItemOffersBatch;
+use SellingPartnerApi\Seller\ProductFeesV0\Responses\GetMyFeesEstimateResponse;
 use SellingPartnerApi\Seller\SellerConnector;
 use SellingPartnerApi\SellingPartnerApi;
 
@@ -163,5 +167,25 @@ class SerializationTest extends TestCase
         $body = $mockClient->getLastPendingRequest()->body()->all();
 
         $this->assertEquals('2024-01-01T00:00:00Z', $body['packageDetail']['shipDate']);
+    }
+
+    public function testDeserializeDateTimeWithTimezone(): void
+    {
+        $now = new DateTime();
+        $now->setTimeZone(new DateTimeZone('+02:00'));
+
+        $result = GetMyFeesEstimateResponse::deserialize([
+            'payload' => [
+                'FeesEstimateResult' => [
+                    'status' => 'Success',
+                    'FeesEstimate' => [
+                        'TimeOfFeesEstimation' => $now->format(DateTimeInterface::ATOM),
+                    ],
+                ],
+            ],
+        ]);
+        $this->assertNotNull($result);
+        $this->assertInstanceOf(DateTimeInterface::class, $result->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation);
+        $this->assertEquals( (new DateTimeZone('+02:00')), $result->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation->getTimeZone() );
     }
 }

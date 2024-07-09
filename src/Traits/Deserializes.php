@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Traits;
 
 use DateTime;
+use DateTimeZone;
 use DateTimeInterface;
 use ReflectionClass;
 use SellingPartnerApi\Exceptions\InvalidAttributeTypeException;
@@ -121,7 +122,11 @@ trait Deserializes
     {
         foreach (static::$validDatetimeFormats as $validDatetimeFormat) {
             try {
-                $returnValue = DateTime::createFromFormat($validDatetimeFormat, $value);
+                $returnValue = DateTime::createFromFormat(
+                    $validDatetimeFormat, 
+                    $value, 
+                    new DateTimeZone('UTC')
+                );
                 // Only return a valid object, else try again until failure
                 if ($returnValue instanceof DateTimeInterface) {
                     return $returnValue;

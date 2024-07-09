@@ -12,6 +12,7 @@ class GetMyFeesEstimateResponseTest extends TestCase
     public function testDeserializeDateTime()
     {
         $now = new DateTime();
+        $ms = $now->format('v');
         $result = GetMyFeesEstimateResponse::deserialize([
             'payload' => [
                 'FeesEstimateResult' => [
@@ -24,5 +25,6 @@ class GetMyFeesEstimateResponseTest extends TestCase
         ]);
         $this->assertNotNull($result);
         $this->assertInstanceOf(DateTimeInterface::class, $result->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation);
+        $this->assertEquals($ms, $result->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation->format('v'));
     }
 }

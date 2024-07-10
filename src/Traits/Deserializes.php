@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Traits;
 
 use DateTime;
-use DateTimeZone;
 use DateTimeInterface;
+use DateTimeZone;
 use ReflectionClass;
 use SellingPartnerApi\Exceptions\InvalidAttributeTypeException;
 use SellingPartnerApi\Exceptions\UnknownDatetimeFormatException;
@@ -123,8 +123,8 @@ trait Deserializes
         foreach (static::$validDatetimeFormats as $validDatetimeFormat) {
             try {
                 $returnValue = DateTime::createFromFormat(
-                    $validDatetimeFormat, 
-                    $value, 
+                    $validDatetimeFormat,
+                    $value,
                     new DateTimeZone('UTC')
                 );
                 // Only return a valid object, else try again until failure

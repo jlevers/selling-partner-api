@@ -11,10 +11,10 @@ use SellingPartnerApi\Seller\FBAInventoryV1\Requests\GetInventorySummaries;
 use SellingPartnerApi\Seller\OrdersV0\Dto\ConfirmShipmentRequest;
 use SellingPartnerApi\Seller\OrdersV0\Dto\PackageDetail;
 use SellingPartnerApi\Seller\OrdersV0\Requests\ConfirmShipment;
+use SellingPartnerApi\Seller\ProductFeesV0\Responses\GetMyFeesEstimateResponse;
 use SellingPartnerApi\Seller\ProductPricingV0\Dto\GetItemOffersBatchRequest;
 use SellingPartnerApi\Seller\ProductPricingV0\Dto\ItemOffersRequest;
 use SellingPartnerApi\Seller\ProductPricingV0\Requests\GetItemOffersBatch;
-use SellingPartnerApi\Seller\ProductFeesV0\Responses\GetMyFeesEstimateResponse;
 use SellingPartnerApi\Seller\SellerConnector;
 use SellingPartnerApi\SellingPartnerApi;
 

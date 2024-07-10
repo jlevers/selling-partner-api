@@ -59,7 +59,7 @@ abstract class SellingPartnerApi extends Connector
         $this->oauthConfig()
             ->setClientId($clientId)
             ->setClientSecret($clientSecret)
-            ->setTokenEndpoint('https://api.amazon.com/auth/o2/token');
+            ->setTokenEndpoint(OAuth::TOKEN_URL);
 
         $this->tokensApi = new TokensV20210301\Api($this);
     }

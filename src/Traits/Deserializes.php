@@ -5,26 +5,13 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Traits;
 
 use DateTime;
-use DateTimeInterface;
-use DateTimeZone;
 use ReflectionClass;
+use ReflectionUnionType;
 use SellingPartnerApi\Exceptions\InvalidAttributeTypeException;
-use SellingPartnerApi\Exceptions\UnknownDatetimeFormatException;
 
 trait Deserializes
 {
     use HasComplexArrayTypes;
-
-    protected static string $datetimeFormat = 'Y-m-d\TH:i:s\Z';
-
-    protected static string $dateFormat = 'Y-m-d';
-
-    protected static array $validDatetimeFormats = [
-        'Y-m-d\TH:i:s\Z',
-        DATE_ATOM,
-        'Y-m-d\TH:i:s.vp',
-        'Y-m-d',
-    ];
 
     public static function deserialize(mixed $data): mixed
     {
@@ -43,21 +30,28 @@ trait Deserializes
         $deserializedParams = [];
         foreach ($reflectionParams as $param) {
             $name = $param->getName();
-            $type = $param->getType()->getName();
+            $paramType = $param->getType();
 
-            // `array` could either be read as a simple PHP array, or a typed array that
-            // we want to deserialize into an array of objects
-            if ($type === 'array') {
-                $type = static::getArrayType($name);
+            // Handle Union Types
+            if ($paramType instanceof ReflectionUnionType) {
+                $types = array_map(fn($t) => $t->getName(), $paramType->getTypes());
+            } else {
+                $types = [$paramType->getName()];
             }
 
-            $attributeTypes[$name] = $type;
+            // Handle array types separately
+            if (in_array('array', $types)) {
+                $types = array_map(fn($t) => $t === 'array' ? static::getArrayType($name) : $t, $types);
+            }
+
+            $attributeTypes[$name] = $types;
         }
 
         $hasAttributeMap = $reflectionClass->hasProperty('attributeMap');
         $attributeMap = $hasAttributeMap
             ? array_flip($reflectionClass->getProperty('attributeMap')->getValue())
             : [];
+        $unknownKeys = [];
 
         foreach ($data as $rawKey => $value) {
             $key = $rawKey;
@@ -66,25 +60,39 @@ trait Deserializes
             }
 
             if (! array_key_exists($key, $attributeTypes)) {
+                $unknownKeys[] = $key;
                 continue;
             }
             $deserializedParams[$key] = static::deserializeValue($value, $attributeTypes[$key]);
         }
 
+        if (count($unknownKeys) > 0) {
+            $cls = static::class;
+            echo "Warning: Unknown keys when deserializing into $cls: " . implode(', ', $unknownKeys) . "\n";
+        }
+
         return new static(...$deserializedParams);
     }
 
-    protected static function deserializeValue(mixed $value, array|string $type): mixed
+    protected static function deserializeValue(mixed $value, array|string $types): mixed
     {
-        if (is_string($type)) {
-            // Not using SimpleType enum to avoid needing to import the enum in the generated code
+        foreach ($types as $type) {
+            if ($type === 'null' && $value === null) {
+                return null;
+            }
+
+            if ($type === 'array') {
+                return $value;
+            }
+
+            // Handle simple types
             $_value = match ($type) {
                 'int' => (int) $value,
                 'float' => (float) $value,
                 'bool' => (bool) $value,
                 'string' => (string) $value,
-                'date', 'datetime' => static::convertValueToDateTime($value),
-                'array', 'mixed' => $value,
+                'date', 'datetime' => DateTime::createFromFormat(DateTime::RFC3339, $value),
+                'mixed' => $value,
                 'null' => null,
                 default => chr(0),
             };
@@ -93,52 +101,35 @@ trait Deserializes
                 return $_value;
             }
 
-            if (! class_exists($type) && ! interface_exists($type)) {
-                throw new InvalidAttributeTypeException("Neither the Class nor Interface `$type` exists");
-            } elseif ($type == DateTimeInterface::class) {
-                return static::convertValueToDateTime($value);
+            // Handle complex array types
+            if (is_array($type)) {
+                $typeLen = count($type);
+                if ($typeLen !== 1) {
+                    throw new InvalidAttributeTypeException(
+                        "Complex array type must have a single value (the type of the array items), $typeLen given"
+                    );
+                }
+
+                $deserialized = [];
+                foreach ($value as $item) {
+                    $deserialized[] = static::deserializeValue($item, [$type[0]]);
+                }
+
+                return $deserialized;
             }
 
+            // Handle complex types
+            if (! class_exists($type)) {
+                throw new InvalidAttributeTypeException("Class `$type` does not exist");
+            } elseif ($type === DateTime::class) {
+                return DateTime::createFromFormat(DateTime::RFC3339, $value);
+            }
+
+            // Deserialize complex type
             $deserialized = $type::deserialize($value);
-
-            return $type::deserialize($value);
-        } elseif (is_array($type)) {
-            if ($value === null) {
-                return null;
-            }
-
-            $deserialized = [];
-            foreach ($value as $item) {
-                $deserialized[] = static::deserializeValue($item, $type[0]);
-            }
-
             return $deserialized;
         }
 
-        throw new InvalidAttributeTypeException("Invalid type `$type`");
-    }
-
-    protected static function convertValueToDateTime(string $value): DateTime
-    {
-        foreach (static::$validDatetimeFormats as $validDatetimeFormat) {
-            try {
-                $returnValue = DateTime::createFromFormat(
-                    $validDatetimeFormat,
-                    $value,
-                    new DateTimeZone('UTC')
-                );
-                // Only return a valid object, else try again until failure
-                if ($returnValue instanceof DateTimeInterface) {
-                    return $returnValue;
-                }
-
-                continue;
-            } catch (\Exception) {
-                // continue with the next format if there's one
-                continue;
-            }
-        }
-
-        throw new UnknownDatetimeFormatException("The value `$value` uses a unknown DateTime format.");
+        throw new InvalidAttributeTypeException("Invalid types `$types`");
     }
 }

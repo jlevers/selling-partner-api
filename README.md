@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://highsidelabs.co" target="_blank">
-        <img src="https://github.com/highsidelabs/.github/blob/main/images/logo.png?raw=true" width="125">
+        <img src="https://github.com/highsidelabs/.github/blob/main/images/logo.png?raw=true" width="125" alt="Highside Labs logo">
     </a>
 </p>
 
@@ -74,7 +74,6 @@ This README is divided into several sections:
     * [Uploading a feed document](#uploading-a-feed-document)
     * [Downloading a feed result document](#downloading-a-feed-result-document)
 * [Naming conventions](#naming-conventions)
-* [API versions](#api-versions)
 
 ## Getting Started
 
@@ -216,7 +215,7 @@ use SellingPartnerApi\SellingPartnerApi;
 $sellerConnector = SellingPartnerApi::seller(/* ... */);
 ```
 
-* **Amazon Warehousing and Distribution API (v2024-05-09)** ([docs](https://developer-docs.amazon.com/sp-api/docs/awd_2024-05-09-reference`))
+* **Amazon Warehousing and Distribution API (v2024-05-09)** ([docs](https://developer-docs.amazon.com/sp-api/docs/awd_2024-05-09-reference))
     ```php
     $amazonWarehousingAndDistributionApi = $sellerConnector->amazonWarehousingAndDistributionV20240509();
     ```

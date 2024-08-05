@@ -41,7 +41,7 @@ final class ShippingService extends Dto
      * @param  \DateTimeInterface  $shipDate  Date-time formatted timestamp.
      * @param  CurrencyAmount  $rate  Currency type and amount.
      * @param  ShippingServiceOptions  $shippingServiceOptions  Extra services provided by a carrier.
-     * @param  bool  $requiresAdditionalSellerInputs  When true, additional seller inputs are required.
+     * @param  ?bool  $requiresAdditionalSellerInputs  When true, additional seller inputs are required.
      * @param  ?\DateTimeInterface  $earliestEstimatedDeliveryDate  Date-time formatted timestamp.
      * @param  ?\DateTimeInterface  $latestEstimatedDeliveryDate  Date-time formatted timestamp.
      * @param  ?AvailableShippingServiceOptions  $availableShippingServiceOptions  The available shipping service options.
@@ -57,7 +57,7 @@ final class ShippingService extends Dto
         public readonly \DateTimeInterface $shipDate,
         public readonly CurrencyAmount $rate,
         public readonly ShippingServiceOptions $shippingServiceOptions,
-        public readonly bool $requiresAdditionalSellerInputs,
+        public readonly ?bool $requiresAdditionalSellerInputs = null,
         public readonly ?\DateTimeInterface $earliestEstimatedDeliveryDate = null,
         public readonly ?\DateTimeInterface $latestEstimatedDeliveryDate = null,
         public readonly ?AvailableShippingServiceOptions $availableShippingServiceOptions = null,

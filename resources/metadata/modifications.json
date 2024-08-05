@@ -46,6 +46,24 @@
         }
       ]
     },
+    "merchant-fulfillment": {
+      "0": [
+        {
+          "comment": "Remove required 'RequiresAdditionalSellerInputs', its not always present in response",
+          "action": "replace",
+          "path": "components.schemas.ShippingService.required",
+          "value": [
+            "CarrierName",
+            "Rate",
+            "ShipDate",
+            "ShippingServiceId",
+            "ShippingServiceName",
+            "ShippingServiceOfferId",
+            "ShippingServiceOptions"
+          ]
+        }
+      ]
+    },
     "orders": {
       "0": [
         {

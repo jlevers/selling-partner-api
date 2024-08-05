@@ -43,6 +43,7 @@ If you've found any of my packages useful, please consider [becoming a Sponsor](
 * Supports all Selling Partner API operations (for Sellers and Vendors) as of 6/19/2024
 * Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents
+* Can handle the end-to-end OAuth flow, from building authorization URLs to converting authorization codes into refresh tokens
 
 
 ## Installation
@@ -73,6 +74,9 @@ This README is divided into several sections:
     * [Downloading a report document](#downloading-a-report-document)
     * [Uploading a feed document](#uploading-a-feed-document)
     * [Downloading a feed result document](#downloading-a-feed-result-document)
+* [OAuth](#oauth)
+    * [Building authorization URIs](#building-authorization-uris)
+    * [Generating a refresh token from an authorization code](#generating-a-refresh-token-from-an-authorization-code)
 * [Naming conventions](#naming-conventions)
 
 ## Getting Started
@@ -537,6 +541,65 @@ $feedDocument = $response->dto();
 
 $contents = $feedResultDocument->download($feedType);
 ```
+
+## OAuth
+
+The Selling Partner API OAuth flow is fully documented [here](https://developer-docs.amazon.com/sp-api/docs/website-authorization-workflow). I highly recommend reading that page in its entirety before trying to implement the OAuth flow.
+
+Once your SP API application is configured for OAuth by specifying login and redirect URIs, you can use this library's [`OAuth`](https://github.com/jlevers/selling-partner-api/tree/main/src/OAuth.php) connector to generate the authorization URIs you need, and to convert incoming OAuth requests into working client credentials.
+
+### Building authorization URIs
+
+To create a seller-specific authorization URI, you'll need:
+* Your app's ID, LWA client ID and secret
+* A redirect URI that matches one you specified in your application config in Seller Central
+* A base64-encoded state string, which is used to verify that the authorization request was not altered
+
+Then, all you need to do is:
+
+```php
+use SellingPartnerApi\Enums\Marketplace;
+use SellingPartnerApi\OAuth;
+
+$oauth = new OAuth(
+    clientId: 'amzn1.application-oa2-client.asdfqwertyuiop...',
+    clientSecret: 'amzn1.oa2-cs.v1.1234567890asdfghjkl...',
+    redirectUri: 'https://example.com/redirect',
+);
+
+$authUrl = $oauth->getAuthorizationUri(
+    appId: 'amzn1.sp.solution...',
+    state: 'unique-base64-encoded-string',
+    // The marketplace that you want to authorize the seller in
+    marketplace: Marketplace::US,
+    // If your app is published on the Marketplace Appstore, pass this parameter:
+    // draftApp: false,
+);
+
+// Redirect your user to $authUrl...
+```
+
+### Generating a refresh token from an authorization code
+
+The other half of the OAuth equation is receiving the inbound request from Amazon when the user finishes the authorization flow, and converting the authorization code from that request into working SP API credentials. Amazon sends that authorization code to the redirect URI you specified in the authorization URI, in the `spapi_oauth_code` query parameter. Once you've verified that the incoming `state` parameter matches the `state` value passed to `OAuth::getAuthorizationUri()`, you can generate a refresh token like so:
+
+```php
+use SellingPartnerApi\OAuth;
+
+// Parse query parameters from inbound Amazon request...
+$authCode = $query['spapi_oauth_code'];
+
+$oauth = new OAuth(
+    clientId: 'amzn1.application-oa2-client.asdfqwertyuiop...',
+    clientSecret: 'amzn1.oa2-cs.v1.1234567890asdfghjkl...',
+    redirectUri: 'https://example.com/redirect',
+);
+
+$refreshToken = $oauth->getRefreshToken($authCode);
+```
+
+Now you can pass `$refreshToken` to `SellingPartnerApi::seller()` in order to make calls to the SP API as the seller that you authorized!
+
 
 ## Naming conventions
 

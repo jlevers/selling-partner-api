@@ -52,7 +52,7 @@ class OAuthTest extends TestCase
         );
     }
 
-    public function testConvertsAuthCodeToRedirectUri(): void
+    public function testConvertsAuthCodeToRefreshToken(): void
     {
         $mockClient = new MockClient([
             GetAccessTokenRequest::class => fn () => MockResponse::make([

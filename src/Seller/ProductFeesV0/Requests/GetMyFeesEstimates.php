@@ -16,8 +16,8 @@ use Saloon\Enums\Method;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
+use SellingPartnerApi\Seller\ProductFeesV0\Dto\FeesEstimateResult;
 use SellingPartnerApi\Seller\ProductFeesV0\Responses\GetMyFeesEstimatesErrorList;
-use SellingPartnerApi\Seller\ProductFeesV0\Responses\GetMyFeesEstimatesResponse;
 
 /**
  * getMyFeesEstimates
@@ -40,16 +40,23 @@ class GetMyFeesEstimates extends Request implements HasBody
         return '/products/fees/v0/feesEstimate';
     }
 
-    public function createDtoFromResponse(Response $response): GetMyFeesEstimatesResponse|GetMyFeesEstimatesErrorList
+    /**
+     * @return FeesEstimateResult[]|GetMyFeesEstimatesErrorList
+     */
+    public function createDtoFromResponse(Response $response): array|GetMyFeesEstimatesErrorList
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            200 => GetMyFeesEstimatesResponse::class,
+            200 => [FeesEstimateResult::class],
             400, 401, 403, 404, 429, 500, 503 => GetMyFeesEstimatesErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 
-        return $responseCls::deserialize($response->json(), $responseCls);
+        if (is_array($responseCls)) {
+            return array_map(fn ($el) => $responseCls[0]::deserialize($el), $response->json());
+        } else {
+            return $responseCls::deserialize($response->json());
+        }
     }
 
     public function defaultBody(): array

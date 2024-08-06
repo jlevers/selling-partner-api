@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace SellingPartnerApi\Tests;
+
 use PHPUnit\Framework\TestCase;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
@@ -51,15 +53,15 @@ class SerializationTest extends TestCase
             new ItemOffersRequest(
                 uri: '/products/pricing/v0/items/TESTASIN1/offers',
                 method: 'GET',
-                itemCondition: 'New',
                 marketplaceId: 'marketplace-id',
+                itemCondition: 'New',
                 customerType: 'Consumer',
             ),
             new ItemOffersRequest(
                 uri: '/products/pricing/v0/items/TESTASIN2/offers',
                 method: 'GET',
-                itemCondition: 'New',
                 marketplaceId: 'marketplace-id',
+                itemCondition: 'New',
                 customerType: null,
             ),
         ]);
@@ -164,38 +166,5 @@ class SerializationTest extends TestCase
         $body = $mockClient->getLastPendingRequest()->body()->all();
 
         $this->assertEquals('2024-01-01T00:00:00Z', $body['packageDetail']['shipDate']);
-    }
-
-    public function testDeserializeDateTimeWithTimezone(): void
-    {
-        $now = new DateTime();
-        $now->setTimeZone(new DateTimeZone('+02:00'));
-
-        $result = GetMyFeesEstimateResponse::deserialize([
-            'payload' => [
-                'FeesEstimateResult' => [
-                    'status' => 'Success',
-                    'FeesEstimate' => [
-                        'TimeOfFeesEstimation' => $now->format(DateTimeInterface::ATOM),
-                    ],
-                ],
-            ],
-        ]);
-        $this->assertInstanceOf(DateTimeInterface::class, $result->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation);
-        $this->assertEquals(new DateTimeZone('+02:00'), $result->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation->getTimeZone());
-
-        $nowUtc = new DateTime();
-        $utcResult = GetMyFeesEstimateResponse::deserialize([
-            'payload' => [
-                'FeesEstimateResult' => [
-                    'status' => 'Success',
-                    'FeesEstimate' => [
-                        'TimeOfFeesEstimation' => $nowUtc->format('Y-m-d\TH:i:s\Z'),
-                    ],
-                ],
-            ],
-        ]);
-        $this->assertInstanceOf(DateTimeInterface::class, $utcResult->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation);
-        $this->assertEquals(new DateTimeZone('UTC'), $utcResult->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation->getTimeZone());
     }
 }

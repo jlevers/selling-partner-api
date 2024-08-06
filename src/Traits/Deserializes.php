@@ -15,14 +15,11 @@ trait Deserializes
 {
     use HasComplexArrayTypes;
 
-    protected static string $datetimeFormat = 'Y-m-d\TH:i:s\Z';
-
-    protected static string $dateFormat = 'Y-m-d';
-
     protected static array $validDatetimeFormats = [
         'Y-m-d\TH:i:s\Z',
         DATE_ATOM,
         'Y-m-d\TH:i:s.vp',
+        'Y-m-d\TH:i\Z',
         'Y-m-d',
     ];
 

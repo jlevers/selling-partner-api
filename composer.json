@@ -51,7 +51,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "SellingPartnerApi\\Tests\\": "test/"
+            "SellingPartnerApi\\Tests\\": "tests/"
         }
     },
     "scripts": {

@@ -1,6 +1,8 @@
 <?php
 
-namespace Seller\FBAInboundV0\Requests;
+declare(strict_types=1);
+
+namespace SellingPartnerApi\Tests\Seller\FBAInboundV0\Requests;
 
 use DateTime;
 use PHPUnit\Framework\TestCase;

@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+namespace SellingPartnerApi\Tests\Seller\ShippingV2\Requests;
+
 use PHPUnit\Framework\TestCase;
 use Saloon\Config;
 use Saloon\Http\Faking\MockClient;

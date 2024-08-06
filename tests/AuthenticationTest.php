@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace SellingPartnerApi\Tests;
+
 use PHPUnit\Framework\TestCase;
 use Saloon\Config;
 use Saloon\Exceptions\Request\Statuses\UnauthorizedException;

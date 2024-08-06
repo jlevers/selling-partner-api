@@ -9,7 +9,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ListDeliveryWindowOpt
 
 class ListDeliveryWindowOptionsTest extends TestCase
 {
-    function testDeserializeDateTimeWithoutSeconds(): void
+    public function testDeserializeDateTimeWithoutSeconds(): void
     {
         $now = new DateTime();
         $result = ListDeliveryWindowOptionsResponse::deserialize([
@@ -23,7 +23,7 @@ class ListDeliveryWindowOptionsTest extends TestCase
                     'validUntil' => '2024-09-24T00:00Z',
                     'deliveryWindowOptionId' => 'dwf5ab76c1-ed8a-4885-beb6-3a9992b6954e',
                     'startDate' => $now->format('Y-m-d\TH:i\Z'),
-                ]
+                ],
             ],
         ]);
         $this->assertNotNull($result);

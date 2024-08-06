@@ -1,6 +1,6 @@
 <?php
 
-namespace Seller\ReportsV20210630\Responses;
+namespace SellingPartnerApi\Tests\Seller\ReportsV20210630\Responses;
 
 use DateTime;
 use DateTimeInterface;

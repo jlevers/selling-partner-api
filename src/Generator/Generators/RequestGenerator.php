@@ -127,15 +127,31 @@ class RequestGenerator extends SDKGenerator
             // We should support multiple response types in the future
             ->mapWithKeys(function (array $response, int $httpCode) use ($namespace, $responseNamespace) {
                 if (count($response) === 0) {
+                    $isArrayResponse = false;
                     $cls = "{$this->config->baseFilesNamespace()}\\EmptyResponse";
                 } else {
-                    $className = NameHelper::responseClassName($response[array_key_first($response)]->name);
-                    $cls = "{$responseNamespace}\\{$className}";
+                    $responseSchema = $response[array_key_first($response)];
+                    $isArrayResponse = $responseSchema->type === 'array';
+
+                    if ($isArrayResponse) {
+                        $name = $responseSchema->items->name;
+                        // Array responses don't have their own response class, and the array item type will be a DTO,
+                        // not a response type
+                        $className = NameHelper::dtoClassName($name);
+                        $ns = $this->config->dtoNamespace();
+                    } else {
+                        $name = $responseSchema->name;
+                        $className = NameHelper::responseClassName($name);
+                        $ns = $responseNamespace;
+                    }
+
+                    $cls = "{$ns}\\{$className}";
                 }
                 $namespace->addUse($cls);
                 $alias = array_flip($namespace->getUses())[$cls];
+                $responseType = $isArrayResponse ? "{$alias}[]" : $alias;
 
-                return [$httpCode => $alias];
+                return [$httpCode => $responseType];
             })
             ->reduce(function (Collection $carry, string $className, int $httpCode) {
                 $carry->put(
@@ -150,26 +166,57 @@ class RequestGenerator extends SDKGenerator
             ->addUse($baseRequestClass)
             ->addUse(Exception::class)
             ->addUse(Response::class);
-
         $aliasMap = $namespace->getUses();
-        $returnType = $codesByResponseType->map(fn (array $codes, string $className) => $aliasMap[$className])->implode('|');
+
+        $returnType = $codesByResponseType->map(
+            fn (array $codes, string $className) => str_ends_with($className, '[]') ? 'array' : $aliasMap[$className]
+        )->unique()
+            ->implode('|');
+
+        $returnTypeHint = $codesByResponseType->map(
+            function (array $_, string $className) {
+                $isArrayType = str_ends_with($className, '[]');
+                $aliasKey = $isArrayType ? substr($className, 0, -2) : $className;
+                //                $shortName = Helpers::extractShortName($aliasMap[$aliasKey]);
+                $shortName = Helpers::extractShortName($aliasKey);
+
+                return $isArrayType ? "{$shortName}[]" : $shortName;
+            }
+        )->implode('|');
+
         $createDtoMethod = $classType->addMethod('createDtoFromResponse')
             ->setPublic()
             ->setReturnType($returnType)
+            ->addComment("@return $returnTypeHint")
             ->addBody('$status = $response->status();')
             ->addBody('$responseCls = match ($status) {')
             ->addBody(
                 $codesByResponseType
-                    ->map(fn (array $codes, string $className) => sprintf(
-                        '    %s => %s::class,',
-                        implode(', ', $codes), Helpers::extractShortName($className)
-                    ))
+                    ->map(function (array $codes, string $className) {
+                        $isArrayResponse = str_ends_with($className, '[]');
+                        $_className = $isArrayResponse ? substr($className, 0, -2) : $className;
+                        $clsFormatStr = $isArrayResponse ? '[%s::class]' : '%s::class';
+
+                        return sprintf("    %s => $clsFormatStr,", implode(', ', $codes), Helpers::extractShortName($_className));
+                    })
                     ->values()
                     ->implode("\n")
             )
             ->addBody('    default => throw new Exception("Unhandled response status: {$status}")')
-            ->addBody('};')
-            ->addBody('return $responseCls::deserialize($response->json(), $responseCls);');
+            ->addBody('};');
+
+        $standardDeserializer = '   return $responseCls::deserialize($response->json());';
+        if (str_contains($returnType, 'array')) {
+            $createDtoMethod
+                ->addBody("\nif (is_array(\$responseCls)) {")
+                ->addBody('    return array_map(fn ($el) => $responseCls[0]::deserialize($el), $response->json());')
+                ->addBody('} else {')
+                ->addBody($standardDeserializer)
+                ->addBody('}');
+        } else {
+            $createDtoMethod->addBody($standardDeserializer);
+        }
+
         $createDtoMethod
             ->addParameter('response')
             ->setType(Response::class);

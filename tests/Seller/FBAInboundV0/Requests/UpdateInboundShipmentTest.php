@@ -64,7 +64,7 @@ final class UpdateInboundShipmentTest extends TestCase
         );
         $connector->withMockClient($mockClient);
 
-        $dto = $connector->fbaInboundV0()->updateInboundShipment(123456, new InboundShipmentRequest(
+        $dto = $connector->fbaInboundV0()->updateInboundShipment('123456', new InboundShipmentRequest(
             inboundShipmentHeader: new InboundShipmentHeader(
                 shipmentName: 'shipment-name',
                 shipFromAddress: new Address(

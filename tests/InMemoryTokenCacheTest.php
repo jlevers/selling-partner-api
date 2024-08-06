@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace SellingPartnerApi\Tests;
 
+use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
 use SellingPartnerApi\Authentication\AccessTokenAuthenticator;
 use SellingPartnerApi\Authentication\InMemoryTokenCache;

@@ -82,6 +82,29 @@ class SchemaVersion
             $schema->paths->{$path} = $operations;
         }
 
+        foreach ($schema->components->schemas as $name => $component) {
+            // Some models have ErrorList components that are incorrectly marked as arrays, when in fact the data format
+            // returned by the SP API is actually an object with an `errors` property, which is an array of Errors
+            if ($name === 'ErrorList' && $component->type === 'array') {
+                $errorListObj = [
+                    'required' => ['errors'],
+                    'type' => 'object',
+                    'description' => $component->description,
+                    'properties' => [
+                        'errors' => [
+                            'type' => 'array',
+                            'description' => $component->description,
+                            'items' => [
+                                '$ref' => '#/components/schemas/Error',
+                            ],
+                        ],
+                    ],
+                ];
+
+                $schema->components->schemas->ErrorList = json_decode(json_encode($errorListObj));
+            }
+        }
+
         $schema = $this->modifySchema($schema);
 
         $path = $this->path();

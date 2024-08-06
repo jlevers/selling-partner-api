@@ -4748,10 +4748,19 @@
                 "description": "Error response returned when the request is unsuccessful."
             },
             "ErrorList": {
-                "type": "array",
+                "required": [
+                    "errors"
+                ],
+                "type": "object",
                 "description": "A list of error responses returned when a request is unsuccessful.",
-                "items": {
-                    "$ref": "#/components/schemas/Error"
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "description": "A list of error responses returned when a request is unsuccessful.",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
                 }
             },
             "ASINInboundGuidance": {

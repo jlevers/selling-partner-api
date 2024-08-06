@@ -686,10 +686,19 @@
                 "description": "The response object which contains the ASIN, marketplaceId if required, eligibility program, the eligibility status (boolean), and a list of ineligibility reason codes."
             },
             "ErrorList": {
-                "type": "array",
+                "required": [
+                    "errors"
+                ],
+                "type": "object",
                 "description": "A list of error responses returned when a request is unsuccessful.",
-                "items": {
-                    "$ref": "#/components/schemas/Error"
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "description": "A list of error responses returned when a request is unsuccessful.",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
                 }
             },
             "Error": {

@@ -15,12 +15,12 @@ use SellingPartnerApi\Seller\ServicesV1\Dto\Error;
 
 final class ErrorList extends Response
 {
-    protected static array $complexArrayTypes = ['errorList' => Error::class];
+    protected static array $complexArrayTypes = ['errors' => Error::class];
 
     /**
-     * @param  Error[]  $errorList  A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
-        public readonly array $errorList,
+        public readonly array $errors,
     ) {}
 }

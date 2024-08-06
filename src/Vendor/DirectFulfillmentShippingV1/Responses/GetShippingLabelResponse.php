@@ -11,19 +11,17 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Responses;
 
 use SellingPartnerApi\Response;
-use SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Dto\Error;
+use SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Dto\ErrorList;
 use SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Dto\ShippingLabel;
 
 final class GetShippingLabelResponse extends Response
 {
-    protected static array $complexArrayTypes = ['errors' => Error::class];
-
     /**
      * @param  ?ShippingLabel  $payload  Shipping label information for an order, including the purchase order number, selling party, ship from party, label format, and package details.
-     * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
+     * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?ShippingLabel $payload = null,
-        public readonly ?array $errors = null,
+        public readonly ?ErrorList $errors = null,
     ) {}
 }

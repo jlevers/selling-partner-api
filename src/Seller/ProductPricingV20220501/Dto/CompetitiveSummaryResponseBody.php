@@ -18,7 +18,6 @@ final class CompetitiveSummaryResponseBody extends Dto
         'featuredBuyingOptions' => FeaturedBuyingOption::class,
         'lowestPricedOffers' => LowestPricedOffer::class,
         'referencePrices' => ReferencePrice::class,
-        'errors' => Error::class,
     ];
 
     /**
@@ -27,7 +26,7 @@ final class CompetitiveSummaryResponseBody extends Dto
      * @param  FeaturedBuyingOption[]|null  $featuredBuyingOptions  A list of featured buying options for the given ASIN `marketplaceId` combination.
      * @param  LowestPricedOffer[]|null  $lowestPricedOffers  A list of the lowest priced offers for the given ASIN `marketplaceId` combination.
      * @param  ReferencePrice[]|null  $referencePrices  A list of reference prices for the given ASIN `marketplaceId` combination.
-     * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
+     * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly string $asin,
@@ -35,6 +34,6 @@ final class CompetitiveSummaryResponseBody extends Dto
         public readonly ?array $featuredBuyingOptions = null,
         public readonly ?array $lowestPricedOffers = null,
         public readonly ?array $referencePrices = null,
-        public readonly ?array $errors = null,
+        public readonly ?ErrorList $errors = null,
     ) {}
 }

@@ -62,7 +62,7 @@ class PatchListingsItem extends Request implements HasBody
             default => throw new Exception("Unhandled response status: {$status}")
         };
 
-        return $responseCls::deserialize($response->json(), $responseCls);
+        return $responseCls::deserialize($response->json());
     }
 
     public function defaultBody(): array

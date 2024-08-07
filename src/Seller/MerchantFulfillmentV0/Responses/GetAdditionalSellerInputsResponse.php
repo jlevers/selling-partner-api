@@ -17,7 +17,7 @@ use SellingPartnerApi\Seller\MerchantFulfillmentV0\Dto\GetAdditionalSellerInputs
 final class GetAdditionalSellerInputsResponse extends Response
 {
     /**
-     * @param  ?GetAdditionalSellerInputsResult  $payload  The payload for the `getAdditionalSellerInputs` operation.
+     * @param  ?GetAdditionalSellerInputsResult  $payload  The payload for the getAdditionalSellerInputs operation.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

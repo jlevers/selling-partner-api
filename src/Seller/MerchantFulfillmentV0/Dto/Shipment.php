@@ -37,7 +37,7 @@ final class Shipment extends Dto
     /**
      * @param  string  $shipmentId  An Amazon-defined shipment identifier.
      * @param  string  $amazonOrderId  An Amazon-defined order identifier, in 3-7-7 format.
-     * @param  Item[]  $itemList  The list of items you want to include in a shipment.
+     * @param  Item[]  $itemList  The list of items to be included in a shipment.
      * @param  Address  $shipFromAddress  The postal address information.
      * @param  Address  $shipToAddress  The postal address information.
      * @param  PackageDimensions  $packageDimensions  The dimensions of a package contained in a shipment.

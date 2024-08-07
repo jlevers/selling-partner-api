@@ -24,7 +24,9 @@ final class ShippingServiceOptions extends Dto
 
     /**
      * @param  string  $deliveryExperience  The delivery confirmation level.
-     * @param  bool  $carrierWillPickUp  When true, the carrier will pick up the package. Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
+     * @param  bool  $carrierWillPickUp  When true, the carrier will pick up the package.
+     *
+     * Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
      * @param  ?CurrencyAmount  $declaredValue  Currency type and amount.
      * @param  ?string  $carrierWillPickUpOption  Carrier will pick up option.
      * @param  ?string  $labelFormat  The label format.

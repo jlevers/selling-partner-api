@@ -23,7 +23,7 @@ final class DangerousGoodsDetails extends Dto
 
     /**
      * @param  ?string  $unitedNationsRegulatoryId  The specific UNID of the item being shipped.
-     * @param  ?string  $transportationRegulatoryClass  The specific regulatory class of the shipped item.
+     * @param  ?string  $transportationRegulatoryClass  The specific regulatory class  of the item being shipped.
      * @param  ?string  $packingGroup  The specific packaging group of the item being shipped.
      * @param  ?string  $packingInstruction  The specific packing instruction of the item being shipped.
      */

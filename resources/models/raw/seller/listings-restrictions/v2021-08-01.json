@@ -1,0 +1,684 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Selling Partner API for Listings Restrictions",
+        "description": "The Selling Partner API for Listings Restrictions provides programmatic access to restrictions on Amazon catalog listings.\n\nFor more information, see the [Listings Restrictions API Use Case Guide](doc:listings-restrictions-api-v2021-08-01-use-case-guide).",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "2021-08-01"
+    },
+    "servers": [
+        {
+            "url": "https://sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/listings/2021-08-01/restrictions": {
+            "get": {
+                "tags": [
+                    "listings"
+                ],
+                "description": "Returns listing restrictions for an item in the Amazon Catalog. \n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getListingsRestrictions",
+                "parameters": [
+                    {
+                        "name": "asin",
+                        "in": "query",
+                        "description": "The Amazon Standard Identification Number (ASIN) of the item.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "B0000ASIN1"
+                    },
+                    {
+                        "name": "conditionType",
+                        "in": "query",
+                        "description": "The condition used to filter restrictions.",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "new_new",
+                                "new_open_box",
+                                "new_oem",
+                                "refurbished_refurbished",
+                                "used_like_new",
+                                "used_very_good",
+                                "used_good",
+                                "used_acceptable",
+                                "collectible_like_new",
+                                "collectible_very_good",
+                                "collectible_good",
+                                "collectible_acceptable",
+                                "club_club"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "value": "new_new",
+                                    "description": "New"
+                                },
+                                {
+                                    "value": "new_open_box",
+                                    "description": "New - Open Box."
+                                },
+                                {
+                                    "value": "new_oem",
+                                    "description": "New - OEM."
+                                },
+                                {
+                                    "value": "refurbished_refurbished",
+                                    "description": "Refurbished"
+                                },
+                                {
+                                    "value": "used_like_new",
+                                    "description": "Used - Like New."
+                                },
+                                {
+                                    "value": "used_very_good",
+                                    "description": "Used - Very Good."
+                                },
+                                {
+                                    "value": "used_good",
+                                    "description": "Used - Good."
+                                },
+                                {
+                                    "value": "used_acceptable",
+                                    "description": "Used - Acceptable."
+                                },
+                                {
+                                    "value": "collectible_like_new",
+                                    "description": "Collectible - Like New."
+                                },
+                                {
+                                    "value": "collectible_very_good",
+                                    "description": "Collectible - Very Good."
+                                },
+                                {
+                                    "value": "collectible_good",
+                                    "description": "Collectible - Good."
+                                },
+                                {
+                                    "value": "collectible_acceptable",
+                                    "description": "Collectible - Acceptable."
+                                },
+                                {
+                                    "value": "club_club",
+                                    "description": "Club"
+                                }
+                            ]
+                        },
+                        "example": "used_very_good",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "new_new",
+                                "description": "New"
+                            },
+                            {
+                                "value": "new_open_box",
+                                "description": "New - Open Box."
+                            },
+                            {
+                                "value": "new_oem",
+                                "description": "New - OEM."
+                            },
+                            {
+                                "value": "refurbished_refurbished",
+                                "description": "Refurbished"
+                            },
+                            {
+                                "value": "used_like_new",
+                                "description": "Used - Like New."
+                            },
+                            {
+                                "value": "used_very_good",
+                                "description": "Used - Very Good."
+                            },
+                            {
+                                "value": "used_good",
+                                "description": "Used - Good."
+                            },
+                            {
+                                "value": "used_acceptable",
+                                "description": "Used - Acceptable."
+                            },
+                            {
+                                "value": "collectible_like_new",
+                                "description": "Collectible - Like New."
+                            },
+                            {
+                                "value": "collectible_very_good",
+                                "description": "Collectible - Very Good."
+                            },
+                            {
+                                "value": "collectible_good",
+                                "description": "Collectible - Good."
+                            },
+                            {
+                                "value": "collectible_acceptable",
+                                "description": "Collectible - Acceptable."
+                            },
+                            {
+                                "value": "club_club",
+                                "description": "Club"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "sellerId",
+                        "in": "query",
+                        "description": "A selling partner identifier, such as a merchant account.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "marketplaceIds",
+                        "in": "query",
+                        "description": "A comma-delimited list of Amazon marketplace identifiers for the request.",
+                        "required": true,
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "example": "ATVPDKIKX0DER"
+                    },
+                    {
+                        "name": "reasonLocale",
+                        "in": "query",
+                        "description": "A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \"en_US\", \"fr_CA\", \"fr_FR\". Localized messages default to \"en_US\" when a localization is not available in the specified locale.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "en_US"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully retrieved the listings restrictions.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RestrictionList"
+                                },
+                                "example": {
+                                    "restrictions": [
+                                        {
+                                            "marketplaceId": "ATVPDKIKX0DER",
+                                            "conditionType": "used_acceptable",
+                                            "reasons": [
+                                                {
+                                                    "message": "You cannot list the product in this condition.",
+                                                    "links": [
+                                                        {
+                                                            "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B0000ASIN1",
+                                                            "verb": "GET",
+                                                            "title": "Request Approval via Seller Central.",
+                                                            "type": "text/html"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {}
+                                        }
+                                    },
+                                    "response": {
+                                        "restrictions": [
+                                            {
+                                                "marketplaceId": "ATVPDKIKX0DER",
+                                                "conditionType": "used_acceptable",
+                                                "reasons": [
+                                                    {
+                                                        "message": "You cannot list the product in this condition.",
+                                                        "links": [
+                                                            {
+                                                                "resource": "https://sellercentral.amazon.com/hz/approvalrequest/restrictions/approve?asin=B0000ASIN1",
+                                                                "verb": "GET",
+                                                                "title": "Request Approval via Seller Central.",
+                                                                "type": "text/html"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "asin": {
+                                                "value": "BAD_ASIN"
+                                            }
+                                        }
+                                    },
+                                    "response": [
+                                        {
+                                            "code": "BAD_REQUEST",
+                                            "message": "Invalid 'asin' provided."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "RestrictionList": {
+                "required": [
+                    "restrictions"
+                ],
+                "type": "object",
+                "properties": {
+                    "restrictions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Restriction"
+                        }
+                    }
+                },
+                "description": "A list of restrictions for the specified Amazon catalog item."
+            },
+            "Restriction": {
+                "required": [
+                    "marketplaceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "marketplaceId": {
+                        "type": "string",
+                        "description": "A marketplace identifier. Identifies the Amazon marketplace where the restriction is enforced."
+                    },
+                    "conditionType": {
+                        "type": "string",
+                        "description": "The condition that applies to the restriction.",
+                        "enum": [
+                            "new_new",
+                            "new_open_box",
+                            "new_oem",
+                            "refurbished_refurbished",
+                            "used_like_new",
+                            "used_very_good",
+                            "used_good",
+                            "used_acceptable",
+                            "collectible_like_new",
+                            "collectible_very_good",
+                            "collectible_good",
+                            "collectible_acceptable",
+                            "club_club"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "new_new",
+                                "description": "New"
+                            },
+                            {
+                                "value": "new_open_box",
+                                "description": "New - Open Box."
+                            },
+                            {
+                                "value": "new_oem",
+                                "description": "New - OEM."
+                            },
+                            {
+                                "value": "refurbished_refurbished",
+                                "description": "Refurbished"
+                            },
+                            {
+                                "value": "used_like_new",
+                                "description": "Used - Like New."
+                            },
+                            {
+                                "value": "used_very_good",
+                                "description": "Used - Very Good."
+                            },
+                            {
+                                "value": "used_good",
+                                "description": "Used - Good."
+                            },
+                            {
+                                "value": "used_acceptable",
+                                "description": "Used - Acceptable."
+                            },
+                            {
+                                "value": "collectible_like_new",
+                                "description": "Collectible - Like New."
+                            },
+                            {
+                                "value": "collectible_very_good",
+                                "description": "Collectible - Very Good."
+                            },
+                            {
+                                "value": "collectible_good",
+                                "description": "Collectible - Good."
+                            },
+                            {
+                                "value": "collectible_acceptable",
+                                "description": "Collectible - Acceptable."
+                            },
+                            {
+                                "value": "club_club",
+                                "description": "Club"
+                            }
+                        ]
+                    },
+                    "reasons": {
+                        "type": "array",
+                        "description": "A list of reasons for the restriction.",
+                        "items": {
+                            "$ref": "#/components/schemas/Reason"
+                        }
+                    }
+                },
+                "description": "A listing restriction, optionally qualified by a condition, with a list of reasons for the restriction."
+            },
+            "Reason": {
+                "required": [
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "description": "A message describing the reason for the restriction."
+                    },
+                    "reasonCode": {
+                        "type": "string",
+                        "description": "A code indicating why the listing is restricted.",
+                        "enum": [
+                            "APPROVAL_REQUIRED",
+                            "ASIN_NOT_FOUND",
+                            "NOT_ELIGIBLE"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "APPROVAL_REQUIRED",
+                                "description": "Approval is required to create a listing for the specified ASIN. A path forward link will be provided that may allow Selling Partners to remove the restriction."
+                            },
+                            {
+                                "value": "ASIN_NOT_FOUND",
+                                "description": "The specified ASIN does not exist in the requested marketplace."
+                            },
+                            {
+                                "value": "NOT_ELIGIBLE",
+                                "description": "Not eligible to create a listing for the specified ASIN. No path forward link will be provided to remove the restriction."
+                            }
+                        ]
+                    },
+                    "links": {
+                        "type": "array",
+                        "description": "A list of path forward links that may allow Selling Partners to remove the restriction.",
+                        "items": {
+                            "$ref": "#/components/schemas/Link"
+                        }
+                    }
+                },
+                "description": "A reason for the restriction, including path forward links that may allow Selling Partners to remove the restriction, if available."
+            },
+            "Link": {
+                "required": [
+                    "resource",
+                    "verb"
+                ],
+                "type": "object",
+                "properties": {
+                    "resource": {
+                        "type": "string",
+                        "description": "The URI of the related resource.",
+                        "format": "uri"
+                    },
+                    "verb": {
+                        "type": "string",
+                        "description": "The HTTP verb used to interact with the related resource.",
+                        "enum": [
+                            "GET"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "GET",
+                                "description": "The provided resource is accessed with the HTTP GET method."
+                            }
+                        ]
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the related resource."
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The media type of the related resource."
+                    }
+                },
+                "description": "A link to resources related to a listing restriction."
+            },
+            "ErrorList": {
+                "type": "array",
+                "description": "A list of error responses returned when a request is unsuccessful.",
+                "items": {
+                    "$ref": "#/components/schemas/Error"
+                }
+            },
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional details that can help the caller understand or fix the issue."
+                    }
+                },
+                "description": "Error response returned when the request is unsuccessful."
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

@@ -1,0 +1,3375 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Selling Partner API for Retail Procurement Shipments",
+        "description": "The Selling Partner API for Retail Procurement Shipments provides programmatic access to retail shipping data for vendors.",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/vendor/shipping/v1/shipmentConfirmations": {
+            "post": {
+                "tags": [
+                    "vendorShipping"
+                ],
+                "description": "Submits one or more shipment confirmations for vendor orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "SubmitShipmentConfirmations",
+                "requestBody": {
+                    "description": "A request to submit shipment confirmation.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SubmitShipmentConfirmationsRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                },
+                                "example": {
+                                    "payload": {
+                                        "transactionId": {
+                                            "description": "GUID assigned by Amazon to identify this transaction. It will be used in Transaction Status API as reference to get status of this transaction.",
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "shipmentConfirmations": [
+                                                        {
+                                                            "shipmentIdentifier": "TestShipmentConfirmation202",
+                                                            "shipmentConfirmationDate": "2021-03-11T12:38:23.388Z",
+                                                            "sellingParty": {
+                                                                "partyId": "ABCD1"
+                                                            },
+                                                            "shipFromParty": {
+                                                                "partyId": "EFGH1"
+                                                            },
+                                                            "shipToParty": {
+                                                                "partyId": "JKL1"
+                                                            },
+                                                            "shipmentConfirmationType": "Original",
+                                                            "shippedItems": [
+                                                                {
+                                                                    "itemSequenceNumber": "001",
+                                                                    "shippedQuantity": {
+                                                                        "amount": 100,
+                                                                        "unitOfMeasure": "Eaches"
+                                                                    },
+                                                                    "itemDetails": {
+                                                                        "purchaseOrderNumber": "TestOrder202"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "payload": {
+                                            "transactionId": "20190905010908-8a3b6901-ef20-412f-9270-21c021796605"
+                                        }
+                                    }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {}
+                                        }
+                                    },
+                                    "response": {
+                                        "payload": {
+                                            "transactionId": "mock-TransactionId-20190905010908-8a3b6901-ef20-412f-9270-21c021796605"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        },
+                        "x-amazon-spds-sandbox-behaviors": [
+                            {
+                                "request": {
+                                    "parameters": {
+                                        "body": {
+                                            "value": {
+                                                "shipmentConfirmations": [
+                                                    {
+                                                        "shipmentIdentifier": "MOCKSHIPMENTID"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                "response": {
+                                    "errors": [
+                                        {
+                                            "code": "InvalidInput",
+                                            "message": "Invalid Shipment ID"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
+            }
+        },
+        "/vendor/shipping/v1/shipments": {
+            "get": {
+                "tags": [
+                    "vendorShipping"
+                ],
+                "description": "Returns the Details about Shipment, Carrier Details,  status of the shipment, container details and other details related to shipment based on the filter parameters value that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "GetShipmentDetails",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The limit to the number of records returned. Default value is 50 records.",
+                        "schema": {
+                            "maximum": 50,
+                            "minimum": 1,
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "sortOrder",
+                        "in": "query",
+                        "description": "Sort in ascending or descending order by purchase order creation date.",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "ASC",
+                                "DESC"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "value": "ASC",
+                                    "description": "Sort in ascending order by shipment creation date."
+                                },
+                                {
+                                    "value": "DESC",
+                                    "description": "Sort in descending order by shipment creation date."
+                                }
+                            ]
+                        },
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "ASC",
+                                "description": "Sort in ascending order by shipment creation date."
+                            },
+                            {
+                                "value": "DESC",
+                                "description": "Sort in descending order by shipment creation date."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "nextToken",
+                        "in": "query",
+                        "description": "Used for pagination when there are more shipments than the specified result size limit.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "createdAfter",
+                        "in": "query",
+                        "description": "Get Shipment Details that became available after this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "createdBefore",
+                        "in": "query",
+                        "description": "Get Shipment Details that became available before this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "shipmentConfirmedBefore",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Shipment confirmed create Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "shipmentConfirmedAfter",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Shipment confirmed create Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "packageLabelCreatedBefore",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Package label create Date by buyer. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "packageLabelCreatedAfter",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Package label create Date After by buyer. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "shippedBefore",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Shipped Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "shippedAfter",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Shipped Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "estimatedDeliveryBefore",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Estimated Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "estimatedDeliveryAfter",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Estimated Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "shipmentDeliveryBefore",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Shipment Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "shipmentDeliveryAfter",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Shipment Delivery Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "requestedPickUpBefore",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Before Requested pickup date. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "requestedPickUpAfter",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing After Requested pickup date. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "scheduledPickUpBefore",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Before scheduled pickup date. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "scheduledPickUpAfter",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing After Scheduled pickup date. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "currentShipmentStatus",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Current shipment status.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "vendorShipmentIdentifier",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing Vendor Shipment ID",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "buyerReferenceNumber",
+                        "in": "query",
+                        "description": "Get Shipment Details by passing buyer Reference ID",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "buyerWarehouseCode",
+                        "in": "query",
+                        "description": "Get Shipping Details based on buyer warehouse code. This value should be same as 'shipToParty.partyId' in the Shipment.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sellerWarehouseCode",
+                        "in": "query",
+                        "description": "Get Shipping Details based on vendor warehouse code. This value should be same as 'sellingParty.partyId' in the Shipment.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                },
+                                "example": {
+                                    "payload": {
+                                        "pagination": {
+                                            "nextToken": "MDAwMDAwMDAwMQ=="
+                                        },
+                                        "shipments": [
+                                            {
+                                                "vendorShipmentIdentifier": "00050003",
+                                                "buyerReferenceNumber": "1234567",
+                                                "currentShipmentStatus": "CarrierAssigned",
+                                                "currentshipmentStatusDate": "2019-08-09T19:56:45.632",
+                                                "shipmentStatusDetails": [
+                                                    {
+                                                        "shipmentStatus": "CarrierAssigned",
+                                                        "shipmentStatusDate": "2019-08-09T19:56:45.632"
+                                                    },
+                                                    {
+                                                        "shipmentStatus": "TransportationRequested",
+                                                        "shipmentStatusDate": "2019-07-07T19:56:45.632"
+                                                    },
+                                                    {
+                                                        "shipmentStatus": "Created",
+                                                        "shipmentStatusDate": "2019-07-06T19:56:45.632"
+                                                    }
+                                                ],
+                                                "shipmentCreateDate": "2019-07-07T19:56:45.632",
+                                                "shipmentConfirmDate": "2019-08-07T19:56:45.632",
+                                                "packageLabelCreateDate": "2019-08-07T19:56:45.632",
+                                                "shipmentFreightTerm": "Collect",
+                                                "sellingParty": {
+                                                    "partyId": "998US"
+                                                },
+                                                "shipFromParty": {
+                                                    "address": {
+                                                        "name": "ABC electronics warehouse",
+                                                        "addressLine1": "DEF 1st street",
+                                                        "city": "Lisses",
+                                                        "stateOrRegion": "abcland",
+                                                        "postalCode": "91090",
+                                                        "countryCode": "DE"
+                                                    },
+                                                    "partyId": "ABCD12"
+                                                },
+                                                "shipToParty": {
+                                                    "partyId": "999US"
+                                                },
+                                                "shipmentMeasurements": {
+                                                    "totalCartonCount": 30,
+                                                    "totalPalletStackable": 30,
+                                                    "totalPalletNonStackable": 30,
+                                                    "shipmentWeight": {
+                                                        "unitOfMeasure": "Kg",
+                                                        "value": "120.45"
+                                                    },
+                                                    "shipmentVolume": {
+                                                        "unitOfMeasure": "CuFt",
+                                                        "value": "2.4"
+                                                    }
+                                                },
+                                                "collectFreightPickupDetails": {
+                                                    "requestedPickUp": "2019-08-07T19:56:45.632",
+                                                    "scheduledPickUp": "2019-08-07T19:56:45.632",
+                                                    "carrierAssignmentDate": "2019-08-07T19:56:45.632"
+                                                },
+                                                "purchaseOrders": [
+                                                    {
+                                                        "purchaseOrderNumber": "1BBBAAAA",
+                                                        "purchaseOrderDate": "2019-08-06T19:56:45.632",
+                                                        "shipWindow": "08/25/2021 - 08/31/2021",
+                                                        "items": [
+                                                            {
+                                                                "itemSequenceNumber": "001",
+                                                                "vendorProductIdentifier": "9782700001659",
+                                                                "buyerProductIdentifier": "9782700001690",
+                                                                "shippedQuantity": {
+                                                                    "amount": 100,
+                                                                    "unitOfMeasure": "Eaches",
+                                                                    "unitSize": 1
+                                                                },
+                                                                "maximumRetailPrice": {
+                                                                    "currencyCode": "USD",
+                                                                    "amount": "12345"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "importDetails": {
+                                                    "methodOfPayment": "PaidByBuyer",
+                                                    "sealNumber": "1232142132",
+                                                    "route": {
+                                                        "stops": [
+                                                            {
+                                                                "functionCode": "PortOfDischarge",
+                                                                "locationIdentification": {
+                                                                    "type": "string",
+                                                                    "locationCode": "string",
+                                                                    "countryCode": "US"
+                                                                },
+                                                                "arrivalTime": "2021-07-12T22:22:25.038Z",
+                                                                "departureTime": "2021-07-12T22:22:25.038Z"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "importContainers": "string",
+                                                    "billableWeight": {
+                                                        "unitOfMeasure": "G",
+                                                        "value": "10"
+                                                    },
+                                                    "estimatedShipByDate": "2021-07-12T22:22:25.038Z",
+                                                    "handlingInstructions": "Oversized"
+                                                },
+                                                "containers": [
+                                                    {
+                                                        "containerType": "carton",
+                                                        "containerSequenceNumber": "001",
+                                                        "containerIdentifiers": [
+                                                            {
+                                                                "containerIdentificationType": "SSCC",
+                                                                "containerIdentificationNumber": "213124134213"
+                                                            }
+                                                        ],
+                                                        "trackingNumber": "XXXX",
+                                                        "dimensions": {
+                                                            "length": "12",
+                                                            "width": "12",
+                                                            "height": "12",
+                                                            "unitOfMeasure": "IN"
+                                                        },
+                                                        "weight": {
+                                                            "unitOfMeasure": "KG",
+                                                            "value": "10"
+                                                        },
+                                                        "packedItems": [
+                                                            {
+                                                                "itemSequenceNumber": "001",
+                                                                "buyerProductIdentifier": "B07DFVDRAA",
+                                                                "vendorProductIdentifier": "12312412421",
+                                                                "packedQuantity": {
+                                                                    "amount": 1,
+                                                                    "unitOfMeasure": "Each"
+                                                                },
+                                                                "itemDetails": {
+                                                                    "purchaseOrderNumber": "string",
+                                                                    "lotNumber": "string",
+                                                                    "expiry": {
+                                                                        "manufacturerDate": "2021-07-12T22:22:25.038Z",
+                                                                        "expiryDate": "2021-07-12T22:22:25.038Z",
+                                                                        "expiryAfterDuration": {
+                                                                            "durationUnit": "Days",
+                                                                            "durationValue": 0
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                "containerType": "pallet",
+                                                                "containerSequenceNumber": "002",
+                                                                "containerIdentifiers": [
+                                                                    {
+                                                                        "containerIdentificationType": "SSCC",
+                                                                        "containerIdentificationNumber": "ARK123214214213"
+                                                                    }
+                                                                ],
+                                                                "trackingNumber": "TRACK001",
+                                                                "dimensions": {
+                                                                    "length": "12",
+                                                                    "width": "12",
+                                                                    "height": "12",
+                                                                    "unitOfMeasure": "IN"
+                                                                },
+                                                                "weight": {
+                                                                    "unitOfMeasure": "KG",
+                                                                    "value": "10"
+                                                                },
+                                                                "tier": 2,
+                                                                "block": 2,
+                                                                "innerContainersDetails": {
+                                                                    "containerCount": 10,
+                                                                    "containerSequenceNumbers": [
+                                                                        {
+                                                                            "containerSequenceNumber": "002"
+                                                                        },
+                                                                        {
+                                                                            "containerSequenceNumber": "003"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "packedItems": [
+                                                                    {
+                                                                        "itemSequenceNumber": "001",
+                                                                        "buyerProductIdentifier": "B07DFVDRAA",
+                                                                        "vendorProductIdentifier": "12312412421",
+                                                                        "packedQuantity": {
+                                                                            "amount": 1,
+                                                                            "unitOfMeasure": "Each"
+                                                                        },
+                                                                        "itemDetails": {
+                                                                            "purchaseOrderNumber": "string",
+                                                                            "lotNumber": "string",
+                                                                            "expiry": {
+                                                                                "manufacturerDate": "2021-07-12T22:22:25.038Z",
+                                                                                "expiryDate": "2021-07-12T22:22:25.038Z",
+                                                                                "expiryAfterDuration": {
+                                                                                    "durationUnit": "Days",
+                                                                                    "durationValue": 0
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "transportationDetails": {
+                                                    "shipMode": "LessThanTruckLoad",
+                                                    "transportationMode": "Road",
+                                                    "shippedDate": "2019-08-07T19:56:45.632",
+                                                    "estimatedDeliveryDate": "2019-08-07T19:56:45.632",
+                                                    "shipmentDeliveryDate": "2019-08-07T19:56:45.632",
+                                                    "carrierDetails": {
+                                                        "name": "UPS",
+                                                        "phone": "1234567890",
+                                                        "email": "abc@xyz.com",
+                                                        "code": "string",
+                                                        "shipmentReferenceNumber": "TRACK001"
+                                                    },
+                                                    "billOfLadingNumber": "string"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "x-amazon-spds-sandbox-behaviors": [
+                            {
+                                "request": {
+                                    "parameters": {
+                                        "vendorShipmentIdentifier": {
+                                            "value": "12345678"
+                                        }
+                                    }
+                                },
+                                "response": {
+                                    "payload": {
+                                        "pagination": {
+                                            "nextToken": "MDAwMDAwMDAwMQ=="
+                                        },
+                                        "shipments": [
+                                            {
+                                                "vendorShipmentIdentifier": "00050003",
+                                                "buyerReferenceNumber": "1234567",
+                                                "currentShipmentStatus": "Created",
+                                                "currentshipmentStatusDate": "2019-08-07T19:56:45.632",
+                                                "shipmentStatusDetails": [
+                                                    {
+                                                        "shipmentStatus": "Created",
+                                                        "shipmentStatusDate": "2019-08-07T19:56:45.632"
+                                                    }
+                                                ],
+                                                "shipmentCreateDate": "2019-07-07T19:56:45.632",
+                                                "shipmentConfirmDate": "2019-08-07T19:56:45.632",
+                                                "packageLabelCreateDate": "2019-08-07T19:56:45.632",
+                                                "shipmentFreightTerm": "Collect",
+                                                "sellingParty": {
+                                                    "partyId": "998US"
+                                                },
+                                                "shipFromParty": {
+                                                    "address": {
+                                                        "name": "ABC electronics warehouse",
+                                                        "addressLine1": "DEF 1st street",
+                                                        "city": "Lisses",
+                                                        "stateOrRegion": "abcland",
+                                                        "postalCode": "91090",
+                                                        "countryCode": "DE"
+                                                    },
+                                                    "partyId": "ABCD12"
+                                                },
+                                                "shipToParty": {
+                                                    "partyId": "999US"
+                                                },
+                                                "shipmentMeasurements": {
+                                                    "totalCartonCount": 30,
+                                                    "totalPalletStackable": 30,
+                                                    "totalPalletNonStackable": 30,
+                                                    "shipmentWeight": {
+                                                        "unitOfMeasure": "Kg",
+                                                        "value": "120.45"
+                                                    },
+                                                    "shipmentVolume": {
+                                                        "unitOfMeasure": "CuFt",
+                                                        "value": "2.4"
+                                                    }
+                                                },
+                                                "collectFreightPickupDetails": {
+                                                    "requestedPickUp": "2019-08-07T19:56:45.632",
+                                                    "scheduledPickUp": "2019-08-07T19:56:45.632",
+                                                    "carrierAssignmentDate": "2019-08-07T19:56:45.632"
+                                                },
+                                                "purchaseOrders": [
+                                                    {
+                                                        "purchaseOrderNumber": "1BBBAAAA",
+                                                        "purchaseOrderDate": "2019-08-07T19:56:45.632",
+                                                        "shipWindow": "08/25/2021 - 08/31/2021",
+                                                        "items": [
+                                                            {
+                                                                "itemSequenceNumber": "001",
+                                                                "vendorProductIdentifier": "9782700001659",
+                                                                "buyerProductIdentifier": "9782700001690",
+                                                                "shippedQuantity": {
+                                                                    "amount": 100,
+                                                                    "unitOfMeasure": "Eaches",
+                                                                    "unitSize": 1
+                                                                },
+                                                                "maximumRetailPrice": {
+                                                                    "currencyCode": "USD",
+                                                                    "amount": "12345"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "importDetails": {
+                                                    "methodOfPayment": "PaidByBuyer",
+                                                    "sealNumber": "1232142132",
+                                                    "route": {
+                                                        "stops": [
+                                                            {
+                                                                "functionCode": "PortOfDischarge",
+                                                                "locationIdentification": {
+                                                                    "type": "string",
+                                                                    "locationCode": "string",
+                                                                    "countryCode": "US"
+                                                                },
+                                                                "arrivalTime": "2021-07-12T22:22:25.038Z",
+                                                                "departureTime": "2021-07-12T22:22:25.038Z"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "importContainers": "string",
+                                                    "billableWeight": {
+                                                        "unitOfMeasure": "G",
+                                                        "value": "10"
+                                                    },
+                                                    "estimatedShipByDate": "2021-07-12T22:22:25.038Z",
+                                                    "handlingInstructions": "Oversized"
+                                                },
+                                                "containers": [
+                                                    {
+                                                        "containerType": "carton",
+                                                        "containerSequenceNumber": "001",
+                                                        "containerIdentifiers": [
+                                                            {
+                                                                "containerIdentificationType": "SSCC",
+                                                                "containerIdentificationNumber": "213124134213"
+                                                            }
+                                                        ],
+                                                        "trackingNumber": "XXXX",
+                                                        "dimensions": {
+                                                            "length": "12",
+                                                            "width": "12",
+                                                            "height": "12",
+                                                            "unitOfMeasure": "IN"
+                                                        },
+                                                        "weight": {
+                                                            "unitOfMeasure": "KG",
+                                                            "value": "10"
+                                                        },
+                                                        "packedItems": [
+                                                            {
+                                                                "itemSequenceNumber": "001",
+                                                                "buyerProductIdentifier": "B07DFVDRAA",
+                                                                "vendorProductIdentifier": "12312412421",
+                                                                "packedQuantity": {
+                                                                    "amount": 1,
+                                                                    "unitOfMeasure": "Each"
+                                                                },
+                                                                "itemDetails": {
+                                                                    "purchaseOrderNumber": "string",
+                                                                    "lotNumber": "string",
+                                                                    "expiry": {
+                                                                        "manufacturerDate": "2021-07-12T22:22:25.038Z",
+                                                                        "expiryDate": "2021-07-12T22:22:25.038Z",
+                                                                        "expiryAfterDuration": {
+                                                                            "durationUnit": "Days",
+                                                                            "durationValue": 0
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "containerType": "pallet",
+                                                        "containerSequenceNumber": "002",
+                                                        "containerIdentifiers": [
+                                                            {
+                                                                "containerIdentificationType": "SSCC",
+                                                                "containerIdentificationNumber": "ARK123214214213"
+                                                            }
+                                                        ],
+                                                        "trackingNumber": "TRACK001",
+                                                        "dimensions": {
+                                                            "length": "12",
+                                                            "width": "12",
+                                                            "height": "12",
+                                                            "unitOfMeasure": "IN"
+                                                        },
+                                                        "weight": {
+                                                            "unitOfMeasure": "KG",
+                                                            "value": "10"
+                                                        },
+                                                        "tier": 2,
+                                                        "block": 2,
+                                                        "innerContainersDetails": {
+                                                            "containerCount": 10,
+                                                            "containerSequenceNumbers": [
+                                                                {
+                                                                    "containerSequenceNumber": "002"
+                                                                },
+                                                                {
+                                                                    "containerSequenceNumber": "003"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "packedItems": [
+                                                            {
+                                                                "itemSequenceNumber": "001",
+                                                                "buyerProductIdentifier": "B07DFVDRAA",
+                                                                "vendorProductIdentifier": "12312412421",
+                                                                "packedQuantity": {
+                                                                    "amount": 1,
+                                                                    "unitOfMeasure": "Each"
+                                                                },
+                                                                "itemDetails": {
+                                                                    "purchaseOrderNumber": "123142341",
+                                                                    "lotNumber": "A12312412",
+                                                                    "expiry": {
+                                                                        "manufacturerDate": "2021-07-12T22:22:25.038Z",
+                                                                        "expiryDate": "2021-07-12T22:22:25.038Z",
+                                                                        "expiryAfterDuration": {
+                                                                            "durationUnit": "Days",
+                                                                            "durationValue": 0
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "transportationDetails": {
+                                                    "shipMode": "LessThanTruckLoad",
+                                                    "transportationMode": "Road",
+                                                    "shippedDate": "2019-08-07T19:56:45.632",
+                                                    "estimatedDeliveryDate": "2019-08-07T19:56:45.632",
+                                                    "shipmentDeliveryDate": "2019-08-07T19:56:45.632",
+                                                    "carrierDetails": {
+                                                        "name": "UPS",
+                                                        "phone": "1234567890",
+                                                        "email": "abc@xyz.com",
+                                                        "code": "1-1231",
+                                                        "shipmentReferenceNumber": "TRACK001"
+                                                    },
+                                                    "billOfLadingNumber": "12534233421"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        },
+                        "x-amazon-spds-sandbox-behaviors": [
+                            {
+                                "request": {
+                                    "parameters": {
+                                        "vendorShipmentIdentifier": {
+                                            "value": "null"
+                                        }
+                                    }
+                                },
+                                "response": {
+                                    "errors": [
+                                        {
+                                            "code": "InvalidRequest",
+                                            "message": "Request is missing or has invalid parameters",
+                                            "details": "vendor Shipment Identifier cannot be null"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "401": {
+                        "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "vendorShipping"
+                ],
+                "description": "Submits one or more shipment request for vendor Orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "SubmitShipments",
+                "requestBody": {
+                    "description": "A request to submit shipment request.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SubmitShipments"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        },
+                        "x-amazon-spds-sandbox-behaviors": [
+                            {
+                                "request": {
+                                    "parameters": {
+                                        "body": {
+                                            "value": {
+                                                "shipments": [
+                                                    {
+                                                        "vendorShipmentIdentifier": "00050003",
+                                                        "buyerReferenceNumber": "1234567",
+                                                        "transactionType": "New",
+                                                        "transactionDate": "2019-08-07T19:56:45.632",
+                                                        "shipmentFreightTerm": "Collect",
+                                                        "sellingParty": {
+                                                            "partyId": "PQRSS"
+                                                        },
+                                                        "shipFromParty": {
+                                                            "address": {
+                                                                "name": "ABC electronics warehouse",
+                                                                "addressLine1": "DEF 1st street",
+                                                                "city": "Lisses",
+                                                                "stateOrRegion": "abcland",
+                                                                "postalCode": "91090",
+                                                                "countryCode": "DE"
+                                                            },
+                                                            "partyId": "999US"
+                                                        },
+                                                        "shipToParty": {
+                                                            "partyId": "ABCDF"
+                                                        },
+                                                        "shipmentMeasurements": {
+                                                            "totalCartonCount": 30,
+                                                            "totalPalletStackable": 30,
+                                                            "totalPalletNonStackable": 30,
+                                                            "shipmentWeight": {
+                                                                "unitOfMeasure": "Kg",
+                                                                "value": "120.45"
+                                                            },
+                                                            "shipmentVolume": {
+                                                                "unitOfMeasure": "CuFt",
+                                                                "value": "2.4"
+                                                            }
+                                                        },
+                                                        "collectFreightPickupDetails": {
+                                                            "requestedPickUp": "2019-08-07T19:56:45.632"
+                                                        },
+                                                        "purchaseOrders": [
+                                                            {
+                                                                "purchaseOrderNumber": "1BBBAAAA",
+                                                                "items": [
+                                                                    {
+                                                                        "itemSequenceNumber": "001",
+                                                                        "vendorProductIdentifier": "9782700001659",
+                                                                        "buyerProductIdentifier": "9782700001610",
+                                                                        "shippedQuantity": {
+                                                                            "amount": 100,
+                                                                            "unitOfMeasure": "Eaches",
+                                                                            "unitSize": 1
+                                                                        },
+                                                                        "maximumRetailPrice": {
+                                                                            "currencyCode": "USD",
+                                                                            "amount": "90.80"
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "importDetails": {
+                                                            "methodOfPayment": "PaidByBuyer",
+                                                            "sealNumber": "0010101",
+                                                            "route": {
+                                                                "stops": [
+                                                                    {
+                                                                        "functionCode": "PortOfDischarge",
+                                                                        "locationIdentification": {
+                                                                            "type": "string",
+                                                                            "locationCode": "string",
+                                                                            "countryCode": "US"
+                                                                        },
+                                                                        "arrivalTime": "2021-07-12T22:22:25.038Z",
+                                                                        "departureTime": "2021-07-12T22:22:25.038Z"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "importContainers": "string",
+                                                            "billableWeight": {
+                                                                "unitOfMeasure": "G",
+                                                                "value": "string"
+                                                            },
+                                                            "estimatedShipByDate": "2021-07-12T22:22:25.038Z"
+                                                        },
+                                                        "containers": [
+                                                            {
+                                                                "containerType": "carton",
+                                                                "containerSequenceNumber": "001",
+                                                                "containerIdentifiers": [
+                                                                    {
+                                                                        "containerIdentificationType": "SSCC",
+                                                                        "containerIdentificationNumber": "4251245123534"
+                                                                    }
+                                                                ],
+                                                                "trackingNumber": "1Z69663R0347795889",
+                                                                "dimensions": {
+                                                                    "length": "12",
+                                                                    "width": "12",
+                                                                    "height": "12",
+                                                                    "unitOfMeasure": "IN"
+                                                                },
+                                                                "weight": {
+                                                                    "unitOfMeasure": "KG",
+                                                                    "value": "10"
+                                                                },
+                                                                "packedItems": [
+                                                                    {
+                                                                        "itemSequenceNumber": "001",
+                                                                        "buyerProductIdentifier": "B07DFVDRAA",
+                                                                        "vendorProductIdentifier": "12312412421",
+                                                                        "packedQuantity": {
+                                                                            "amount": 1,
+                                                                            "unitOfMeasure": "Each"
+                                                                        },
+                                                                        "itemDetails": {
+                                                                            "purchaseOrderNumber": "MBvnLr0fw",
+                                                                            "lotNumber": "10101010",
+                                                                            "expiry": {
+                                                                                "manufacturerDate": "2021-07-12T22:22:25.038Z",
+                                                                                "expiryDate": "2021-07-12T22:22:25.038Z",
+                                                                                "expiryAfterDuration": {
+                                                                                    "durationUnit": "Days",
+                                                                                    "durationValue": 0
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "containerType": "pallet",
+                                                                "containerSequenceNumber": "002",
+                                                                "containerIdentifiers": [
+                                                                    {
+                                                                        "containerIdentificationType": "SSCC",
+                                                                        "containerIdentificationNumber": "ATR123213216"
+                                                                    }
+                                                                ],
+                                                                "trackingNumber": "TRACK12345",
+                                                                "dimensions": {
+                                                                    "length": "12",
+                                                                    "width": "12",
+                                                                    "height": "12",
+                                                                    "unitOfMeasure": "IN"
+                                                                },
+                                                                "weight": {
+                                                                    "unitOfMeasure": "KG",
+                                                                    "value": "10"
+                                                                },
+                                                                "tier": 2,
+                                                                "block": 2,
+                                                                "innerContainersDetails": {
+                                                                    "containerCount": 10,
+                                                                    "containerSequenceNumbers": [
+                                                                        {
+                                                                            "containerSequenceNumber": "002"
+                                                                        },
+                                                                        {
+                                                                            "containerSequenceNumber": "003"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "packedItems": [
+                                                                    {
+                                                                        "itemSequenceNumber": "001",
+                                                                        "buyerProductIdentifier": "B07DFVDRAA",
+                                                                        "vendorProductIdentifier": "12312412421",
+                                                                        "packedQuantity": {
+                                                                            "amount": 1,
+                                                                            "unitOfMeasure": "Each"
+                                                                        },
+                                                                        "itemDetails": {
+                                                                            "purchaseOrderNumber": "MBvnLr0fw",
+                                                                            "lotNumber": "101001",
+                                                                            "expiry": {
+                                                                                "manufacturerDate": "2021-07-12T22:22:25.038Z",
+                                                                                "expiryDate": "2021-07-12T22:22:25.038Z",
+                                                                                "expiryAfterDuration": {
+                                                                                    "durationUnit": "Days",
+                                                                                    "durationValue": 0
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "transportationDetails": {
+                                                            "shipMode": "LessThanTruckLoad",
+                                                            "transportationMode": "Road",
+                                                            "shippedDate": "2019-08-07T19:56:45.632",
+                                                            "estimatedDeliveryDate": "2019-08-07T19:56:45.632",
+                                                            "shipmentDeliveryDate": "2019-08-07T19:56:45.632",
+                                                            "carrierDetails": {
+                                                                "name": "UPS",
+                                                                "phone": "1234567890",
+                                                                "email": "abc@xyz.com",
+                                                                "code": "string",
+                                                                "shipmentReferenceNumber": "TRACK123123"
+                                                            },
+                                                            "billOfLadingNumber": "1234567890"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                "response": {
+                                    "payload": {
+                                        "transactionId": "mock-TransactionId-5a3066ab-e904-42bd-b6ae-bc70ca1c37e6-20210728234390"
+                                    }
+                                }
+                            },
+                            {
+                                "request": {
+                                    "parameters": {
+                                        "body": {
+                                            "value": {
+                                                "shipments": [
+                                                    {
+                                                        "vendorShipmentIdentifier": "00050003",
+                                                        "buyerReferenceNumber": "1234567",
+                                                        "transactionType": "Cancel",
+                                                        "transactionDate": "2019-08-07T19:56:45.632",
+                                                        "shipmentFreightTerm": "Collect",
+                                                        "sellingParty": {
+                                                            "partyId": "PQRSS"
+                                                        },
+                                                        "shipFromParty": {
+                                                            "address": {
+                                                                "name": "ABC electronics warehouse",
+                                                                "addressLine1": "DEF 1st street",
+                                                                "city": "Lisses",
+                                                                "stateOrRegion": "abcland",
+                                                                "postalCode": "91090",
+                                                                "countryCode": "DE"
+                                                            },
+                                                            "partyId": "999US"
+                                                        },
+                                                        "shipToParty": {
+                                                            "partyId": "ABCDF"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                "response": {
+                                    "payload": {
+                                        "transactionId": "mock-TransactionId-5a3066ab-e904-42bd-b6ae-bc70ca1c37e6-20210728234390"
+                                    }
+                                }
+                            },
+                            {
+                                "request": {
+                                    "parameters": {
+                                        "body": {}
+                                    }
+                                },
+                                "response": {
+                                    "payload": {
+                                        "transactionId": "mock-TransactionId-a3066ab-e904-42bd-b6ae-bc70ca1c37e6-20210728234395"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        },
+                        "x-amazon-spds-sandbox-behaviors": [
+                            {
+                                "request": {
+                                    "parameters": {
+                                        "body": {
+                                            "value": {
+                                                "shipments": [
+                                                    {
+                                                        "vendorShipmentIdentifier": "MOCKSHIPID"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                "response": {
+                                    "errors": [
+                                        {
+                                            "code": "InvalidInput",
+                                            "message": "Invalid Vendor Shipment ID"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationsResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "SubmitShipmentConfirmationsRequest": {
+                "type": "object",
+                "properties": {
+                    "shipmentConfirmations": {
+                        "type": "array",
+                        "description": "A list of one or more shipment confirmations.",
+                        "items": {
+                            "$ref": "#/components/schemas/ShipmentConfirmation"
+                        }
+                    }
+                },
+                "description": "The request schema for the SubmitShipmentConfirmations operation."
+            },
+            "SubmitShipments": {
+                "type": "object",
+                "properties": {
+                    "shipments": {
+                        "type": "array",
+                        "description": "A list of one or more shipments with underlying details.",
+                        "items": {
+                            "$ref": "#/components/schemas/Shipment"
+                        }
+                    }
+                },
+                "description": "The request schema for the SubmitShipments operation."
+            },
+            "GetShipmentDetailsResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#/components/schemas/ShipmentDetails"
+                    },
+                    "errors": {
+                        "$ref": "#/components/schemas/ErrorList"
+                    }
+                },
+                "description": "The response schema for the GetShipmentDetails operation."
+            },
+            "ShipmentDetails": {
+                "type": "object",
+                "properties": {
+                    "pagination": {
+                        "$ref": "#/components/schemas/Pagination"
+                    },
+                    "shipments": {
+                        "type": "array",
+                        "description": "A list of one or more shipments with underlying details.",
+                        "items": {
+                            "$ref": "#/components/schemas/Shipment"
+                        }
+                    }
+                },
+                "description": "The request schema for the GetShipmentDetails operation."
+            },
+            "Pagination": {
+                "type": "object",
+                "properties": {
+                    "nextToken": {
+                        "type": "string",
+                        "description": "A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more shipment items to return."
+                    }
+                },
+                "description": "The pagination elements required to retrieve the remaining data."
+            },
+            "ShipmentConfirmation": {
+                "required": [
+                    "sellingParty",
+                    "shipFromParty",
+                    "shipToParty",
+                    "shipmentConfirmationDate",
+                    "shipmentConfirmationType",
+                    "shipmentIdentifier",
+                    "shippedItems"
+                ],
+                "type": "object",
+                "properties": {
+                    "shipmentIdentifier": {
+                        "type": "string",
+                        "description": "Unique shipment ID (not used over the last 365 days)."
+                    },
+                    "shipmentConfirmationType": {
+                        "type": "string",
+                        "description": "Indicates if this shipment confirmation is the initial confirmation, or intended to replace an already posted shipment confirmation. If replacing an existing shipment confirmation, be sure to provide the identical shipmentIdentifier and sellingParty information as in the previous confirmation.",
+                        "enum": [
+                            "Original",
+                            "Replace"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Original",
+                                "description": "Initial shipment confirmation message."
+                            },
+                            {
+                                "value": "Replace",
+                                "description": "Replace the original shipment confirmation message."
+                            }
+                        ]
+                    },
+                    "shipmentType": {
+                        "type": "string",
+                        "description": "The type of shipment.",
+                        "enum": [
+                            "TruckLoad",
+                            "LessThanTruckLoad",
+                            "SmallParcel"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "TruckLoad",
+                                "description": "Truckload shipping is the movement of large amounts of homogeneous cargo, generally the amount necessary to fill an entire semi-trailer or intermodal container."
+                            },
+                            {
+                                "value": "LessThanTruckLoad",
+                                "description": "Shipping does not fill the entire truck."
+                            },
+                            {
+                                "value": "SmallParcel",
+                                "description": "Small parcel shipments are under 70 pounds per and shipped in your own packaging or carrier supplied boxes."
+                            }
+                        ]
+                    },
+                    "shipmentStructure": {
+                        "type": "string",
+                        "description": "Shipment hierarchical structure.",
+                        "enum": [
+                            "PalletizedAssortmentCase",
+                            "LooseAssortmentCase",
+                            "PalletOfItems",
+                            "PalletizedStandardCase",
+                            "LooseStandardCase",
+                            "MasterPallet",
+                            "MasterCase"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "PalletizedAssortmentCase",
+                                "description": "Shipment -> Order -> Pallet/Tare -> Carton/Package -> Item"
+                            },
+                            {
+                                "value": "LooseAssortmentCase",
+                                "description": "Shipment -> Order -> Carton/Package -> Item"
+                            },
+                            {
+                                "value": "PalletOfItems",
+                                "description": "Shipment -> Order -> Pallet/Tare -> Item"
+                            },
+                            {
+                                "value": "PalletizedStandardCase",
+                                "description": "Shipment -> Order -> Pallet/Tare -> Item -> Carton/Package"
+                            },
+                            {
+                                "value": "LooseStandardCase",
+                                "description": "Shipment -> Order -> Item -> Carton/Package"
+                            },
+                            {
+                                "value": "MasterPallet",
+                                "description": "Shipment -> Pallet/Tare -> Order -> Item"
+                            },
+                            {
+                                "value": "MasterCase",
+                                "description": "Shipment -> Carton/Package -> Order -> Item"
+                            }
+                        ]
+                    },
+                    "transportationDetails": {
+                        "$ref": "#/components/schemas/TransportationDetailsForShipmentConfirmation"
+                    },
+                    "amazonReferenceNumber": {
+                        "type": "string",
+                        "description": "The Amazon Reference Number is a unique identifier generated by Amazon for all Collect/WePay shipments when you submit  a routing request. This field is mandatory for Collect/WePay shipments."
+                    },
+                    "shipmentConfirmationDate": {
+                        "type": "string",
+                        "description": "Date on which the shipment confirmation was submitted.",
+                        "format": "date-time"
+                    },
+                    "shippedDate": {
+                        "type": "string",
+                        "description": "The date and time of the departure of the shipment from the vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the buyer destination warehouse, whichever is sooner. Shipped date mentioned in the shipment confirmation should not be in the future.",
+                        "format": "date-time"
+                    },
+                    "estimatedDeliveryDate": {
+                        "type": "string",
+                        "description": "The date and time on which the shipment is estimated to reach buyer's warehouse. It needs to be an estimate based on the average transit time between ship from location and the destination. The exact appointment time will be provided by the buyer and is potentially not known when creating the shipment confirmation.",
+                        "format": "date-time"
+                    },
+                    "sellingParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "shipFromParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "shipToParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "shipmentMeasurements": {
+                        "$ref": "#/components/schemas/ShipmentMeasurements"
+                    },
+                    "importDetails": {
+                        "$ref": "#/components/schemas/ImportDetails"
+                    },
+                    "shippedItems": {
+                        "type": "array",
+                        "description": "A list of the items in this shipment and their associated details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level.",
+                        "items": {
+                            "$ref": "#/components/schemas/Item"
+                        }
+                    },
+                    "cartons": {
+                        "type": "array",
+                        "description": "A list of the cartons in this shipment.",
+                        "items": {
+                            "$ref": "#/components/schemas/Carton"
+                        }
+                    },
+                    "pallets": {
+                        "type": "array",
+                        "description": "A list of the pallets in this shipment.",
+                        "items": {
+                            "$ref": "#/components/schemas/Pallet"
+                        }
+                    }
+                },
+                "description": "A list of one or more shipment confirmations."
+            },
+            "Shipment": {
+                "required": [
+                    "sellingParty",
+                    "shipFromParty",
+                    "shipToParty",
+                    "transactionDate",
+                    "transactionType",
+                    "vendorShipmentIdentifier"
+                ],
+                "type": "object",
+                "properties": {
+                    "vendorShipmentIdentifier": {
+                        "type": "string",
+                        "description": "Unique Transportation ID created by Vendor (Should not be used over the last 365 days)."
+                    },
+                    "transactionType": {
+                        "type": "string",
+                        "description": "Indicates the type of  transportation request such as (New,Cancel,Confirm and PackageLabelRequest). Each transactiontype has a unique set of operation and there are corresponding details to be populated for each operation.",
+                        "enum": [
+                            "New",
+                            "Cancel"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "New",
+                                "description": "Initial shipment Request."
+                            },
+                            {
+                                "value": "Cancel",
+                                "description": "Cancel existing shipment Request message. should be used only to cancel Shipment request"
+                            },
+                            {
+                                "value": "Confirm",
+                                "description": "Confirm the original Transport Request confirmation message."
+                            },
+                            {
+                                "value": "PackageLabelRequest",
+                                "description": "Label request the original Transport Request confirmation message."
+                            }
+                        ]
+                    },
+                    "buyerReferenceNumber": {
+                        "type": "string",
+                        "description": "The buyer Reference Number is a unique identifier generated by buyer for all Collect/WePay shipments when you submit a transportation request. This field is mandatory for Collect/WePay shipments."
+                    },
+                    "transactionDate": {
+                        "type": "string",
+                        "description": "Date on which the transportation request was submitted.",
+                        "format": "date-time"
+                    },
+                    "currentShipmentStatus": {
+                        "type": "string",
+                        "description": "Indicates the current shipment status.",
+                        "enum": [
+                            "Created",
+                            "TransportationRequested",
+                            "CarrierAssigned",
+                            "Shipped"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Created",
+                                "description": "Shipment request was received by buyer."
+                            },
+                            {
+                                "value": "Transportation requested",
+                                "description": "Buyer to confirm with the carrier for pickup"
+                            },
+                            {
+                                "value": "Carrier assigned",
+                                "description": "Shipment is assigned to a carrier for pickup from vendor warehouse to Buyer FC / Warehouse."
+                            },
+                            {
+                                "value": "Shipped",
+                                "description": "Shipment sent to buyer warehouse."
+                            }
+                        ]
+                    },
+                    "currentshipmentStatusDate": {
+                        "type": "string",
+                        "description": "Date and time when the last status was updated.",
+                        "format": "date-time"
+                    },
+                    "shipmentStatusDetails": {
+                        "type": "array",
+                        "description": "Indicates the list of current shipment status details and when the last update was received from carrier this is available on shipment Details response.",
+                        "items": {
+                            "$ref": "#/components/schemas/ShipmentStatusDetails"
+                        }
+                    },
+                    "shipmentCreateDate": {
+                        "type": "string",
+                        "description": "The date and time of the shipment request created by vendor.",
+                        "format": "date-time"
+                    },
+                    "shipmentConfirmDate": {
+                        "type": "string",
+                        "description": "The date and time of the departure of the shipment from the vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the Buyer destination warehouse, whichever is sooner. Shipped date mentioned in the shipment confirmation should not be in the future.",
+                        "format": "date-time"
+                    },
+                    "packageLabelCreateDate": {
+                        "type": "string",
+                        "description": "The date and time of the package label created for the shipment by buyer.",
+                        "format": "date-time"
+                    },
+                    "shipmentFreightTerm": {
+                        "type": "string",
+                        "description": "Indicates if this transportation request is WePay/Collect or TheyPay/Prepaid. This is a mandatory information.",
+                        "enum": [
+                            "Collect",
+                            "Prepaid"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Collect",
+                                "description": "Buyer Pays / We Pay for the the transportation. Buyer pays for the shipment and provides Vendor and picks up shipment from vendor warehouse / location"
+                            },
+                            {
+                                "value": "Prepaid",
+                                "description": "Vendor pays / They Pay for the transportation. Vendor pays for the shipment and ships the goods to buyer warehouse / location"
+                            }
+                        ]
+                    },
+                    "sellingParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "shipFromParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "shipToParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "shipmentMeasurements": {
+                        "$ref": "#/components/schemas/TransportShipmentMeasurements"
+                    },
+                    "collectFreightPickupDetails": {
+                        "$ref": "#/components/schemas/CollectFreightPickupDetails"
+                    },
+                    "purchaseOrders": {
+                        "type": "array",
+                        "description": "Indicates the purchase orders involved for the transportation request. This group is an array create 1 for each PO and list their corresponding items. This information is used for deciding the route,truck allocation and storage efficiently. This is a mandatory information for Buyer performing transportation from vendor warehouse (WePay/Collect)",
+                        "items": {
+                            "$ref": "#/components/schemas/PurchaseOrders"
+                        }
+                    },
+                    "importDetails": {
+                        "$ref": "#/components/schemas/ImportDetails"
+                    },
+                    "containers": {
+                        "type": "array",
+                        "description": "A list of the items in this transportation and their associated inner container details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level.",
+                        "items": {
+                            "$ref": "#/components/schemas/Containers"
+                        }
+                    },
+                    "transportationDetails": {
+                        "$ref": "#/components/schemas/TransportationDetails"
+                    }
+                },
+                "description": "A list of one or more shipments with respective details."
+            },
+            "ShipmentMeasurements": {
+                "type": "object",
+                "properties": {
+                    "grossShipmentWeight": {
+                        "$ref": "#/components/schemas/Weight"
+                    },
+                    "shipmentVolume": {
+                        "$ref": "#/components/schemas/Volume"
+                    },
+                    "cartonCount": {
+                        "type": "integer",
+                        "description": "Number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments."
+                    },
+                    "palletCount": {
+                        "type": "integer",
+                        "description": "Number of pallets present in the shipment. Provide the palletCount only for palletized shipments."
+                    }
+                },
+                "description": "Shipment measurement details."
+            },
+            "ShipmentStatusDetails": {
+                "type": "object",
+                "properties": {
+                    "shipmentStatus": {
+                        "type": "string",
+                        "description": "Current status of the shipment on whether it is picked up or scheduled.",
+                        "enum": [
+                            "Created",
+                            "TransportationRequested",
+                            "CarrierAssigned",
+                            "Shipped"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Created",
+                                "description": "Shipment request was received by buyer."
+                            },
+                            {
+                                "value": "Transportation requested",
+                                "description": "Buyer to confirm with the carrier for pickup"
+                            },
+                            {
+                                "value": "Carrier assigned",
+                                "description": "Shipment is assigned to a carrier for pickup from vendor warehouse to Buyer FC / Warehouse."
+                            },
+                            {
+                                "value": "Shipped",
+                                "description": "Shipment done to buyer warehouse."
+                            }
+                        ]
+                    },
+                    "shipmentStatusDate": {
+                        "type": "string",
+                        "description": "Date and time on last status update received for the shipment",
+                        "format": "date-time"
+                    }
+                },
+                "description": "Shipment Status details."
+            },
+            "TransportShipmentMeasurements": {
+                "type": "object",
+                "properties": {
+                    "totalCartonCount": {
+                        "type": "integer",
+                        "description": "Total number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments."
+                    },
+                    "totalPalletStackable": {
+                        "type": "integer",
+                        "description": "Total number of Stackable Pallets present in the shipment."
+                    },
+                    "totalPalletNonStackable": {
+                        "type": "integer",
+                        "description": "Total number of Non Stackable Pallets present in the shipment."
+                    },
+                    "shipmentWeight": {
+                        "$ref": "#/components/schemas/Weight"
+                    },
+                    "shipmentVolume": {
+                        "$ref": "#/components/schemas/Volume"
+                    }
+                },
+                "description": "Shipment measurement details."
+            },
+            "CollectFreightPickupDetails": {
+                "type": "object",
+                "properties": {
+                    "requestedPickUp": {
+                        "type": "string",
+                        "description": "Date on which the items can be picked up from vendor warehouse by Buyer used for WePay/Collect vendors.",
+                        "format": "date-time"
+                    },
+                    "scheduledPickUp": {
+                        "type": "string",
+                        "description": "Date on which the items are scheduled to be picked from vendor warehouse by Buyer used for WePay/Collect vendors.",
+                        "format": "date-time"
+                    },
+                    "carrierAssignmentDate": {
+                        "type": "string",
+                        "description": "Date on which the carrier is being scheduled to pickup items from vendor warehouse by Byer used for WePay/Collect vendors.",
+                        "format": "date-time"
+                    }
+                },
+                "description": "Transport Request pickup date from Vendor Warehouse by Buyer"
+            },
+            "PurchaseOrders": {
+                "type": "object",
+                "properties": {
+                    "purchaseOrderNumber": {
+                        "type": "string",
+                        "description": "Purchase order numbers involved in this shipment, list all the PO that are involved as part of this shipment."
+                    },
+                    "purchaseOrderDate": {
+                        "type": "string",
+                        "description": "Purchase order numbers involved in this shipment, list all the PO that are involved as part of this shipment.",
+                        "format": "date-time"
+                    },
+                    "shipWindow": {
+                        "type": "string",
+                        "description": "Date range in which shipment is expected for these purchase orders."
+                    },
+                    "items": {
+                        "type": "array",
+                        "description": "A list of the items that are associated to the PO in this transport and their associated details.",
+                        "items": {
+                            "$ref": "#/components/schemas/PurchaseOrderItems"
+                        }
+                    }
+                },
+                "description": "Transport Request pickup date"
+            },
+            "TransportationDetails": {
+                "type": "object",
+                "properties": {
+                    "shipMode": {
+                        "type": "string",
+                        "description": "The type of shipment.",
+                        "enum": [
+                            "TruckLoad",
+                            "LessThanTruckLoad",
+                            "SmallParcel"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "TruckLoad",
+                                "description": "Truckload shipping is the movement of large amounts of homogeneous cargo, generally the amount necessary to fill an entire semi-trailer or intermodal container."
+                            },
+                            {
+                                "value": "LessThanTruckLoad",
+                                "description": "Shipping does not fill the entire truck."
+                            },
+                            {
+                                "value": "SmallParcel",
+                                "description": "Small parcel shipments are under 70 pounds per parcel and shipped with your own packaging or carrier supplied boxes."
+                            }
+                        ]
+                    },
+                    "transportationMode": {
+                        "type": "string",
+                        "description": "The mode of transportation for this shipment.",
+                        "enum": [
+                            "Road",
+                            "Air",
+                            "Ocean"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Road",
+                                "description": "The mode of transportation is by Road (on a truck)."
+                            },
+                            {
+                                "value": "Air",
+                                "description": "The mode of transportation is by Air (on a plane)."
+                            },
+                            {
+                                "value": "Ocean",
+                                "description": "The mode of transportation is by Ocean (on a ship)."
+                            }
+                        ]
+                    },
+                    "shippedDate": {
+                        "type": "string",
+                        "description": "Date when shipment is performed by the Vendor to Buyer",
+                        "format": "date-time"
+                    },
+                    "estimatedDeliveryDate": {
+                        "type": "string",
+                        "description": "Estimated Date on which shipment will be delivered from Vendor to Buyer",
+                        "format": "date-time"
+                    },
+                    "shipmentDeliveryDate": {
+                        "type": "string",
+                        "description": "Date on which shipment will be delivered from Vendor to Buyer",
+                        "format": "date-time"
+                    },
+                    "carrierDetails": {
+                        "$ref": "#/components/schemas/CarrierDetails"
+                    },
+                    "billOfLadingNumber": {
+                        "type": "string",
+                        "description": "The Bill of Lading (BOL) number is a unique number assigned to each shipment of goods by the vendor or shipper during the creation of the Bill of Lading. This number must be unique for every shipment and cannot be a date/time or single character. The BOL numer is mandatory in Shipment Confirmation message for FTL and LTL shipments, and must match the paper BOL provided with the shipment. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field."
+                    }
+                },
+                "description": "Transportation details for this shipment."
+            },
+            "TransportationDetailsForShipmentConfirmation": {
+                "type": "object",
+                "properties": {
+                    "carrierScac": {
+                        "type": "string",
+                        "description": "Code that identifies the carrier for the shipment. The Standard Carrier Alpha Code (SCAC) is a unique two to four letter code used to identify a carrier. Carrier SCAC codes are assigned and maintained by the NMFTA (National Motor Freight Association). This field is mandatory for US, CA, MX shipment confirmations."
+                    },
+                    "carrierShipmentReferenceNumber": {
+                        "type": "string",
+                        "description": "The field also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for UA, CA, MX shipment confirmations."
+                    },
+                    "transportationMode": {
+                        "type": "string",
+                        "description": "The mode of transportation for this shipment.",
+                        "enum": [
+                            "Road",
+                            "Air",
+                            "Ocean"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Road",
+                                "description": "The mode of transportation is by Road (on a truck)."
+                            },
+                            {
+                                "value": "Air",
+                                "description": "The mode of transportation is by Air (on a plane)."
+                            },
+                            {
+                                "value": "Ocean",
+                                "description": "The mode of transportation is by Ocean (on a ship)."
+                            }
+                        ]
+                    },
+                    "billOfLadingNumber": {
+                        "type": "string",
+                        "description": "The Bill of Lading (BOL) number is a unique number assigned to each shipment of goods by the vendor or shipper during the creation of the Bill of Lading. This number must be unique for every shipment and cannot be a date/time or single character. The BOL numer is mandatory in Shipment Confirmation message for FTL and LTL shipments, and must match the paper BOL provided with the shipment. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field."
+                    }
+                },
+                "description": "Transportation details for this shipment."
+            },
+            "CarrierDetails": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The field is used to represent the carrier used for performing the shipment."
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "Code that identifies the carrier for the shipment. The Standard Carrier Alpha Code (SCAC) is a unique two to four letter code used to identify a carrier. Carrier SCAC codes are assigned and maintained by the NMFTA (National Motor Freight Association)."
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "The field is used to represent the Carrier contact number."
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "The field is used to represent the carrier Email id."
+                    },
+                    "shipmentReferenceNumber": {
+                        "type": "string",
+                        "description": "The field is also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for US, CA, MX shipment confirmations."
+                    }
+                },
+                "description": "Indicates the carrier details and their contact informations"
+            },
+            "ImportDetails": {
+                "type": "object",
+                "properties": {
+                    "methodOfPayment": {
+                        "type": "string",
+                        "description": "This is used for import purchase orders only. If the recipient requests, this field will contain the shipment method of payment.",
+                        "enum": [
+                            "PaidByBuyer",
+                            "CollectOnDelivery",
+                            "DefinedByBuyerAndSeller",
+                            "FOBPortOfCall",
+                            "PrepaidBySeller",
+                            "PaidBySeller"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "PaidByBuyer",
+                                "description": "Buyer pays for shipping."
+                            },
+                            {
+                                "value": "CollectOnDelivery",
+                                "description": "Buyer pays for shipping on delivery."
+                            },
+                            {
+                                "value": "DefinedByBuyerAndSeller",
+                                "description": "Shipping costs paid as agreed upon between buyer and seller."
+                            },
+                            {
+                                "value": "FOBPortOfCall",
+                                "description": "Seller pays for transportation incl. loading, shipping."
+                            },
+                            {
+                                "value": "PrepaidBySeller",
+                                "description": "Seller prepays for shipping."
+                            },
+                            {
+                                "value": "PaidBySeller",
+                                "description": "Seller pays for shipping."
+                            }
+                        ]
+                    },
+                    "sealNumber": {
+                        "type": "string",
+                        "description": "The container's seal number."
+                    },
+                    "route": {
+                        "$ref": "#/components/schemas/Route"
+                    },
+                    "importContainers": {
+                        "maxLength": 64,
+                        "type": "string",
+                        "description": "Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if shipment has multiple containers."
+                    },
+                    "billableWeight": {
+                        "$ref": "#/components/schemas/Weight"
+                    },
+                    "estimatedShipByDate": {
+                        "type": "string",
+                        "description": "Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future.",
+                        "format": "date-time"
+                    },
+                    "handlingInstructions": {
+                        "type": "string",
+                        "description": "Identification of the instructions on how specified item/carton/pallet should be handled.",
+                        "enum": [
+                            "Oversized",
+                            "Fragile",
+                            "Food",
+                            "HandleWithCare"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Oversized",
+                                "description": "A package weighing 150 pounds or less and measuring greater than 130 inches in length and girth is classified as an oversized package."
+                            },
+                            {
+                                "value": "Fragile",
+                                "description": "A package containing easily breakable items."
+                            },
+                            {
+                                "value": "Food",
+                                "description": "A package containing edible items."
+                            },
+                            {
+                                "value": "HandleWithCare",
+                                "description": "A package containing fragile or dangerous items."
+                            }
+                        ]
+                    }
+                },
+                "description": "Provide these fields only if this shipment is a direct import."
+            },
+            "Containers": {
+                "required": [
+                    "containerIdentifiers",
+                    "containerType"
+                ],
+                "type": "object",
+                "properties": {
+                    "containerType": {
+                        "type": "string",
+                        "description": "The type of container.",
+                        "enum": [
+                            "carton",
+                            "pallet"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "carton",
+                                "description": "A carton is a box or container usually made of liquid packaging board, paperboard and sometimes of corrugated fiberboard"
+                            },
+                            {
+                                "value": "pallet",
+                                "description": "A flat transport structure which supports goods in a stable fashion while being lifted by a forklift."
+                            }
+                        ]
+                    },
+                    "containerSequenceNumber": {
+                        "type": "string",
+                        "description": "An integer that must be submitted for multi-box shipments only, where one item may come in separate packages."
+                    },
+                    "containerIdentifiers": {
+                        "type": "array",
+                        "description": "A list of carton identifiers.",
+                        "items": {
+                            "$ref": "#/components/schemas/ContainerIdentification"
+                        }
+                    },
+                    "trackingNumber": {
+                        "type": "string",
+                        "description": "The tracking number used for identifying the shipment."
+                    },
+                    "dimensions": {
+                        "$ref": "#/components/schemas/Dimensions"
+                    },
+                    "weight": {
+                        "$ref": "#/components/schemas/Weight"
+                    },
+                    "tier": {
+                        "type": "integer",
+                        "description": "Number of layers per pallet."
+                    },
+                    "block": {
+                        "type": "integer",
+                        "description": "Number of cartons per layer on the pallet."
+                    },
+                    "innerContainersDetails": {
+                        "$ref": "#/components/schemas/InnerContainersDetails"
+                    },
+                    "packedItems": {
+                        "type": "array",
+                        "description": "A list of packed items.",
+                        "items": {
+                            "$ref": "#/components/schemas/PackedItems"
+                        }
+                    }
+                },
+                "description": "A list of the items in this transportation and their associated inner container details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level."
+            },
+            "PackedItems": {
+                "type": "object",
+                "properties": {
+                    "itemSequenceNumber": {
+                        "type": "string",
+                        "description": "Item sequence number for the item. The first item will be 001, the second 002, and so on. This number is used as a reference to refer to this item from the carton or pallet level."
+                    },
+                    "buyerProductIdentifier": {
+                        "type": "string",
+                        "description": "Buyer Standard Identification Number (ASIN) of an item."
+                    },
+                    "vendorProductIdentifier": {
+                        "type": "string",
+                        "description": "The vendor selected product identification of the item. Should be the same as was sent in the purchase order."
+                    },
+                    "packedQuantity": {
+                        "$ref": "#/components/schemas/ItemQuantity"
+                    },
+                    "itemDetails": {
+                        "$ref": "#/components/schemas/PackageItemDetails"
+                    }
+                },
+                "description": "Details of the item being shipped."
+            },
+            "Item": {
+                "required": [
+                    "itemSequenceNumber",
+                    "shippedQuantity"
+                ],
+                "type": "object",
+                "properties": {
+                    "itemSequenceNumber": {
+                        "type": "string",
+                        "description": "Item sequence number for the item. The first item will be 001, the second 002, and so on. This number is used as a reference to refer to this item from the carton or pallet level."
+                    },
+                    "amazonProductIdentifier": {
+                        "type": "string",
+                        "description": "Buyer Standard Identification Number (ASIN) of an item."
+                    },
+                    "vendorProductIdentifier": {
+                        "type": "string",
+                        "description": "The vendor selected product identification of the item. Should be the same as was sent in the purchase order."
+                    },
+                    "shippedQuantity": {
+                        "$ref": "#/components/schemas/ItemQuantity"
+                    },
+                    "itemDetails": {
+                        "$ref": "#/components/schemas/ItemDetails"
+                    }
+                },
+                "description": "Details of the item being shipped."
+            },
+            "PurchaseOrderItems": {
+                "required": [
+                    "itemSequenceNumber",
+                    "shippedQuantity"
+                ],
+                "type": "object",
+                "properties": {
+                    "itemSequenceNumber": {
+                        "type": "string",
+                        "description": "Item sequence number for the item. The first item will be 001, the second 002, and so on. This number is used as a reference to refer to this item from the carton or pallet level."
+                    },
+                    "buyerProductIdentifier": {
+                        "type": "string",
+                        "description": "Amazon Standard Identification Number (ASIN) for a SKU"
+                    },
+                    "vendorProductIdentifier": {
+                        "type": "string",
+                        "description": "The vendor selected product identification of the item. Should be the same as was sent in the purchase order."
+                    },
+                    "shippedQuantity": {
+                        "$ref": "#/components/schemas/ItemQuantity"
+                    },
+                    "maximumRetailPrice": {
+                        "$ref": "#/components/schemas/Money"
+                    }
+                },
+                "description": "Details of the item being shipped."
+            },
+            "Carton": {
+                "required": [
+                    "cartonSequenceNumber",
+                    "items"
+                ],
+                "type": "object",
+                "properties": {
+                    "cartonIdentifiers": {
+                        "type": "array",
+                        "description": "A list of carton identifiers.",
+                        "items": {
+                            "$ref": "#/components/schemas/ContainerIdentification"
+                        }
+                    },
+                    "cartonSequenceNumber": {
+                        "type": "string",
+                        "description": "Carton sequence number for the carton. The first carton will be 001, the second 002, and so on. This number is used as a reference to refer to this carton from the pallet level."
+                    },
+                    "dimensions": {
+                        "$ref": "#/components/schemas/Dimensions"
+                    },
+                    "weight": {
+                        "$ref": "#/components/schemas/Weight"
+                    },
+                    "trackingNumber": {
+                        "type": "string",
+                        "description": "This is required to be provided for every carton in the small parcel shipments."
+                    },
+                    "items": {
+                        "type": "array",
+                        "description": "A list of container item details.",
+                        "items": {
+                            "$ref": "#/components/schemas/ContainerItem"
+                        }
+                    }
+                },
+                "description": "Details of the carton/package being shipped."
+            },
+            "InnerContainersDetails": {
+                "type": "object",
+                "properties": {
+                    "containerCount": {
+                        "type": "integer",
+                        "description": "Total containers as part of the shipment"
+                    },
+                    "containerSequenceNumbers": {
+                        "type": "array",
+                        "description": "Container sequence numbers that are involved in this shipment.",
+                        "items": {
+                            "$ref": "#/components/schemas/ContainerSequenceNumbers"
+                        }
+                    }
+                },
+                "description": "Details of the innerContainersDetails."
+            },
+            "ContainerSequenceNumbers": {
+                "type": "object",
+                "properties": {
+                    "containerSequenceNumber": {
+                        "type": "string",
+                        "description": "A list of containers shipped"
+                    }
+                },
+                "description": "Container sequence numbers that are involved in this shipment."
+            },
+            "Pallet": {
+                "required": [
+                    "palletIdentifiers"
+                ],
+                "type": "object",
+                "properties": {
+                    "palletIdentifiers": {
+                        "type": "array",
+                        "description": "A list of pallet identifiers.",
+                        "items": {
+                            "$ref": "#/components/schemas/ContainerIdentification"
+                        }
+                    },
+                    "tier": {
+                        "type": "integer",
+                        "description": "Number of layers per pallet. Only applicable to container type Pallet."
+                    },
+                    "block": {
+                        "type": "integer",
+                        "description": "Number of cartons per layer on the pallet. Only applicable to container type Pallet."
+                    },
+                    "dimensions": {
+                        "$ref": "#/components/schemas/Dimensions"
+                    },
+                    "weight": {
+                        "$ref": "#/components/schemas/Weight"
+                    },
+                    "cartonReferenceDetails": {
+                        "$ref": "#/components/schemas/CartonReferenceDetails"
+                    },
+                    "items": {
+                        "type": "array",
+                        "description": "A list of container item details.",
+                        "items": {
+                            "$ref": "#/components/schemas/ContainerItem"
+                        }
+                    }
+                },
+                "description": "Details of the Pallet/Tare being shipped."
+            },
+            "ItemDetails": {
+                "type": "object",
+                "properties": {
+                    "purchaseOrderNumber": {
+                        "type": "string",
+                        "description": "The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code."
+                    },
+                    "lotNumber": {
+                        "type": "string",
+                        "description": "The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items."
+                    },
+                    "expiry": {
+                        "$ref": "#/components/schemas/Expiry"
+                    },
+                    "maximumRetailPrice": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "handlingCode": {
+                        "type": "string",
+                        "description": "Identification of the instructions on how specified item/carton/pallet should be handled.",
+                        "enum": [
+                            "Oversized",
+                            "Fragile",
+                            "Food",
+                            "HandleWithCare"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Oversized",
+                                "description": "A package weighing 150 pounds or less and measuring greater than 130 inches in length and girth is classified as an oversized package."
+                            },
+                            {
+                                "value": "Fragile",
+                                "description": "A package containing easily breakable items."
+                            },
+                            {
+                                "value": "Food",
+                                "description": "A package containing edible items."
+                            },
+                            {
+                                "value": "HandleWithCare",
+                                "description": "A package containing fragile or dangerous items."
+                            }
+                        ]
+                    }
+                },
+                "description": "Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate."
+            },
+            "PackageItemDetails": {
+                "type": "object",
+                "properties": {
+                    "purchaseOrderNumber": {
+                        "type": "string",
+                        "description": "The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code."
+                    },
+                    "lotNumber": {
+                        "type": "string",
+                        "description": "The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items."
+                    },
+                    "expiry": {
+                        "$ref": "#/components/schemas/Expiry"
+                    }
+                },
+                "description": "Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate."
+            },
+            "ContainerIdentification": {
+                "required": [
+                    "containerIdentificationNumber",
+                    "containerIdentificationType"
+                ],
+                "type": "object",
+                "properties": {
+                    "containerIdentificationType": {
+                        "type": "string",
+                        "description": "The container identification type.",
+                        "enum": [
+                            "SSCC",
+                            "AMZNCC",
+                            "GTIN",
+                            "BPS",
+                            "CID"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "SSCC",
+                                "description": "2 Digit Application Identifier (00) followed by unique 18-digit Serial Shipment Container Code (SSCC) to be included to define a pallet/carton and to identify its contents."
+                            },
+                            {
+                                "value": "AMZNCC",
+                                "description": "Amazon Container Code - a substitute for a SSCC that is generated by Amazon for small vendors and associated with a pallet/carton label."
+                            },
+                            {
+                                "value": "GTIN",
+                                "description": "Global Trade Identification Number (part of the standard GS1 barcoding and product identification system)."
+                            },
+                            {
+                                "value": "BPS",
+                                "description": "Barcode Packing Slip."
+                            },
+                            {
+                                "value": "CID",
+                                "description": "Container identifier for import shipments."
+                            }
+                        ]
+                    },
+                    "containerIdentificationNumber": {
+                        "type": "string",
+                        "description": "Container identification number that adheres to the definition of the container identification type."
+                    }
+                },
+                "description": "A list of carton identifiers."
+            },
+            "ContainerItem": {
+                "required": [
+                    "itemReference",
+                    "shippedQuantity"
+                ],
+                "type": "object",
+                "properties": {
+                    "itemReference": {
+                        "type": "string",
+                        "description": "The reference number for the item. Please provide the itemSequenceNumber from the 'items' segment to refer to that item's details here."
+                    },
+                    "shippedQuantity": {
+                        "$ref": "#/components/schemas/ItemQuantity"
+                    },
+                    "itemDetails": {
+                        "$ref": "#/components/schemas/ItemDetails"
+                    }
+                },
+                "description": "Carton/Pallet level details for the item."
+            },
+            "CartonReferenceDetails": {
+                "required": [
+                    "cartonReferenceNumbers"
+                ],
+                "type": "object",
+                "properties": {
+                    "cartonCount": {
+                        "type": "integer",
+                        "description": "Pallet level carton count is mandatory for single item pallet and optional for mixed item pallet."
+                    },
+                    "cartonReferenceNumbers": {
+                        "type": "array",
+                        "description": "Array of reference numbers for the carton that are part of this pallet/shipment. Please provide the cartonSequenceNumber from the 'cartons' segment to refer to that carton's details here.",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "description": "Carton reference details."
+            },
+            "PartyIdentification": {
+                "required": [
+                    "partyId"
+                ],
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "partyId": {
+                        "type": "string",
+                        "description": "Assigned identification for the party."
+                    },
+                    "taxRegistrationDetails": {
+                        "type": "array",
+                        "description": "Tax registration details of the entity.",
+                        "items": {
+                            "$ref": "#/components/schemas/TaxRegistrationDetails"
+                        }
+                    }
+                },
+                "description": "Name/Address and tax details of the party."
+            },
+            "TaxRegistrationDetails": {
+                "required": [
+                    "taxRegistrationNumber",
+                    "taxRegistrationType"
+                ],
+                "type": "object",
+                "properties": {
+                    "taxRegistrationType": {
+                        "type": "string",
+                        "description": "Tax registration type for the entity.",
+                        "enum": [
+                            "VAT",
+                            "GST"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "VAT",
+                                "description": "Value-added tax."
+                            },
+                            {
+                                "value": "GST",
+                                "description": "Goods and Services tax."
+                            }
+                        ]
+                    },
+                    "taxRegistrationNumber": {
+                        "type": "string",
+                        "description": "Tax registration number for the entity. For example, VAT ID."
+                    }
+                },
+                "description": "Tax registration details of the entity."
+            },
+            "Address": {
+                "required": [
+                    "addressLine1",
+                    "countryCode",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the person, business or institution at that address."
+                    },
+                    "addressLine1": {
+                        "type": "string",
+                        "description": "First line of the address."
+                    },
+                    "addressLine2": {
+                        "type": "string",
+                        "description": "Additional street address information, if required."
+                    },
+                    "addressLine3": {
+                        "type": "string",
+                        "description": "Additional street address information, if required."
+                    },
+                    "city": {
+                        "type": "string",
+                        "description": "The city where the person, business or institution is located."
+                    },
+                    "county": {
+                        "type": "string",
+                        "description": "The county where person, business or institution is located."
+                    },
+                    "district": {
+                        "type": "string",
+                        "description": "The district where person, business or institution is located."
+                    },
+                    "stateOrRegion": {
+                        "type": "string",
+                        "description": "The state or region where person, business or institution is located."
+                    },
+                    "postalCode": {
+                        "type": "string",
+                        "description": "The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation."
+                    },
+                    "countryCode": {
+                        "type": "string",
+                        "description": "The two digit country code in ISO 3166-1 alpha-2 format."
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "The phone number of the person, business or institution located at that address."
+                    }
+                },
+                "description": "Address of the party."
+            },
+            "Route": {
+                "required": [
+                    "stops"
+                ],
+                "type": "object",
+                "properties": {
+                    "stops": {
+                        "type": "array",
+                        "description": "The port or location involved in transporting the cargo, as specified in transportation contracts or operational plans.",
+                        "items": {
+                            "$ref": "#/components/schemas/Stop"
+                        }
+                    }
+                },
+                "description": "This is used only for direct import shipment confirmations."
+            },
+            "Stop": {
+                "required": [
+                    "functionCode"
+                ],
+                "type": "object",
+                "properties": {
+                    "functionCode": {
+                        "type": "string",
+                        "description": "Provide the function code.",
+                        "enum": [
+                            "PortOfDischarge",
+                            "FreightPayableAt",
+                            "PortOfLoading"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "PortOfDischarge",
+                                "description": "Port of Discharge is a place where a vessel discharges or unloads some or all of its shipments."
+                            },
+                            {
+                                "value": "FreightPayableAt",
+                                "description": "Place where the payment for the freight is made."
+                            },
+                            {
+                                "value": "PortOfLoading",
+                                "description": "The port where goods are put on a ship."
+                            }
+                        ]
+                    },
+                    "locationIdentification": {
+                        "$ref": "#/components/schemas/Location"
+                    },
+                    "arrivalTime": {
+                        "type": "string",
+                        "description": "Date and time of the arrival of the cargo.",
+                        "format": "date-time"
+                    },
+                    "departureTime": {
+                        "type": "string",
+                        "description": "Date and time of the departure of the cargo.",
+                        "format": "date-time"
+                    }
+                },
+                "description": "Contractual or operational port or point relevant to the movement of the cargo."
+            },
+            "Location": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "Type of location identification."
+                    },
+                    "locationCode": {
+                        "type": "string",
+                        "description": "Location code."
+                    },
+                    "countryCode": {
+                        "type": "string",
+                        "description": "The two digit country code. In ISO 3166-1 alpha-2 format."
+                    }
+                },
+                "description": "Location identifier."
+            },
+            "Dimensions": {
+                "required": [
+                    "height",
+                    "length",
+                    "unitOfMeasure",
+                    "width"
+                ],
+                "type": "object",
+                "properties": {
+                    "length": {
+                        "$ref": "#/components/schemas/Decimal"
+                    },
+                    "width": {
+                        "$ref": "#/components/schemas/Decimal"
+                    },
+                    "height": {
+                        "$ref": "#/components/schemas/Decimal"
+                    },
+                    "unitOfMeasure": {
+                        "type": "string",
+                        "description": "The unit of measure for dimensions.",
+                        "enum": [
+                            "In",
+                            "Ft",
+                            "Meter",
+                            "Yard"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "In",
+                                "description": "Inches"
+                            },
+                            {
+                                "value": "Ft",
+                                "description": "Feet"
+                            },
+                            {
+                                "value": "Meter",
+                                "description": "Meters"
+                            },
+                            {
+                                "value": "Yard",
+                                "description": "Yards"
+                            }
+                        ]
+                    }
+                },
+                "description": "Physical dimensional measurements of a container."
+            },
+            "Volume": {
+                "required": [
+                    "unitOfMeasure",
+                    "value"
+                ],
+                "type": "object",
+                "properties": {
+                    "unitOfMeasure": {
+                        "type": "string",
+                        "description": "The unit of measurement.",
+                        "enum": [
+                            "CuFt",
+                            "CuIn",
+                            "CuM",
+                            "CuY"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "CuFt",
+                                "description": "Cubic feet."
+                            },
+                            {
+                                "value": "CuIn",
+                                "description": "Cubic inches."
+                            },
+                            {
+                                "value": "CuM",
+                                "description": "Cubic meter."
+                            },
+                            {
+                                "value": "CuY",
+                                "description": "Cubic yard."
+                            }
+                        ]
+                    },
+                    "value": {
+                        "$ref": "#/components/schemas/Decimal"
+                    }
+                },
+                "description": "The volume of the shipment."
+            },
+            "Weight": {
+                "required": [
+                    "unitOfMeasure",
+                    "value"
+                ],
+                "type": "object",
+                "properties": {
+                    "unitOfMeasure": {
+                        "type": "string",
+                        "description": "The unit of measurement.",
+                        "enum": [
+                            "G",
+                            "Kg",
+                            "Oz",
+                            "Lb"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "G",
+                                "description": "Grams"
+                            },
+                            {
+                                "value": "Kg",
+                                "description": "Kilograms"
+                            },
+                            {
+                                "value": "Oz",
+                                "description": "Ounces"
+                            },
+                            {
+                                "value": "Lb",
+                                "description": "Pounds"
+                            }
+                        ]
+                    },
+                    "value": {
+                        "$ref": "#/components/schemas/Decimal"
+                    }
+                },
+                "description": "The weight of the shipment."
+            },
+            "Money": {
+                "required": [
+                    "amount",
+                    "currencyCode"
+                ],
+                "type": "object",
+                "properties": {
+                    "currencyCode": {
+                        "type": "string",
+                        "description": "Three digit currency code in ISO 4217 format."
+                    },
+                    "amount": {
+                        "$ref": "#/components/schemas/Decimal"
+                    }
+                },
+                "description": "An amount of money, including units in the form of currency."
+            },
+            "Decimal": {
+                "type": "string",
+                "description": "A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`."
+            },
+            "ItemQuantity": {
+                "required": [
+                    "amount",
+                    "unitOfMeasure"
+                ],
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "type": "integer",
+                        "description": "Amount of units shipped for a specific item at a shipment level. If the item is present only in certain cartons or pallets within the shipment, please provide this at the appropriate carton or pallet level."
+                    },
+                    "unitOfMeasure": {
+                        "type": "string",
+                        "description": "Unit of measure for the shipped quantity.",
+                        "enum": [
+                            "Cases",
+                            "Eaches"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Cases",
+                                "description": "Packing of individual items into a case."
+                            },
+                            {
+                                "value": "Eaches",
+                                "description": "Individual items."
+                            }
+                        ]
+                    },
+                    "unitSize": {
+                        "type": "integer",
+                        "description": "The case size, in the event that we ordered using cases. Otherwise, 1."
+                    }
+                },
+                "description": "Details of item quantity."
+            },
+            "Expiry": {
+                "type": "object",
+                "properties": {
+                    "manufacturerDate": {
+                        "type": "string",
+                        "description": "Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context.",
+                        "format": "date-time"
+                    },
+                    "expiryDate": {
+                        "type": "string",
+                        "description": "The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.",
+                        "format": "date-time"
+                    },
+                    "expiryAfterDuration": {
+                        "$ref": "#/components/schemas/Duration"
+                    }
+                },
+                "description": "Expiry refers to the collection of dates required  for certain items. These could be either expiryDate or mfgDate and expiryAfterDuration. These are mandatory for perishable items."
+            },
+            "Duration": {
+                "required": [
+                    "durationUnit",
+                    "durationValue"
+                ],
+                "type": "object",
+                "properties": {
+                    "durationUnit": {
+                        "type": "string",
+                        "description": "Unit for duration.",
+                        "enum": [
+                            "Days",
+                            "Months"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Days",
+                                "description": "Days"
+                            },
+                            {
+                                "value": "Months",
+                                "description": "Months"
+                            }
+                        ]
+                    },
+                    "durationValue": {
+                        "type": "integer",
+                        "description": "Value for the duration in terms of the durationUnit."
+                    }
+                },
+                "description": "Duration after manufacturing date during which the product is valid for consumption."
+            },
+            "SubmitShipmentConfirmationsResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#/components/schemas/TransactionReference"
+                    },
+                    "errors": {
+                        "$ref": "#/components/schemas/ErrorList"
+                    }
+                },
+                "description": "The response schema for the SubmitShipmentConfirmations operation."
+            },
+            "TransactionReference": {
+                "type": "object",
+                "properties": {
+                    "transactionId": {
+                        "type": "string",
+                        "description": "GUID assigned by Buyer to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction."
+                    }
+                },
+                "description": "The response payload for the SubmitShipmentConfirmations operation."
+            },
+            "ErrorList": {
+                "type": "array",
+                "description": "A list of error responses returned when a request is unsuccessful.",
+                "items": {
+                    "$ref": "#/components/schemas/Error"
+                }
+            },
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional details that can help the caller understand or fix the issue."
+                    }
+                },
+                "description": "Error response returned when the request is unsuccessful."
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

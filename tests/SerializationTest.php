@@ -165,6 +165,6 @@ class SerializationTest extends TestCase
 
         $body = $mockClient->getLastPendingRequest()->body()->all();
 
-        $this->assertEquals('2024-01-01T00:00:00Z', $body['packageDetail']['shipDate']);
+        $this->assertEquals('2024-01-01T00:00:00.000Z', $body['packageDetail']['shipDate']);
     }
 }

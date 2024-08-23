@@ -12,7 +12,7 @@ trait HasArrayableAttributes
 {
     use HasComplexArrayTypes;
 
-    protected static string $datetimeFormat = 'Y-m-d\TH:i:s\Z';
+    protected static string $datetimeFormat = 'Y-m-d\TH:i:s.v\Z';
 
     /**
      * @var array{string, string}

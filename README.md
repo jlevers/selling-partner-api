@@ -13,8 +13,8 @@
 ## Selling Partner API for PHP
 A PHP library for connecting to Amazon's [Selling Partner API](https://github.com/amzn/selling-partner-api-docs/).
 
-> [!NOTE]
-> If you're looking for the documentation for v5 of this package, you can find it [here](https://github.com/jlevers/selling-partner-api/tree/v5.0).
+> [!WARNING]
+> Amazon has deprecated [most listings-related XML and flat-file feeds](https://developer-docs.amazon.com/sp-api/docs/sp-api-release-notes#feeds). I built an [**Amazon feed converter**](https://tools.highsidelabs.co) tool for easily converting the deprecated feeds to the newer `JSON_LISTINGS_FEED` format with a few lines of code. Read the full documentation [here](https://docs.highsidelabs.co/feed-transformer).
 
 ### Related packages
 
@@ -22,7 +22,6 @@ A PHP library for connecting to Amazon's [Selling Partner API](https://github.co
 * [`highsidelabs/amazon-business-api`](https://github.com/highsidelabs/amazon-business-api): A PHP library for Amazon's [Business API](https://developer-docs.amazon.com/amazon-business/docs).
 * [`highsidelabs/walmart-api`](https://github.com/highsidelabs/walmart-api-php): A PHP library for [Walmart's seller and supplier APIs](https://developer.walmart.com), including the Marketplace, Drop Ship Vendor, Content Provider, and Warehouse Supplier APIs.
 * [`shipstream/fedex-rest-sdk`](https://github.com/shipstream/fedex-rest-php-sdk): A PHP library for interacting with FedEx's REST APIs, built by me on behalf of [ShipStream](https://shipstream.io).
-* [`highsidelabs/saloon-sdk-generator`](https://github.com/highsidelabs/saloon-sdk-generator): A tool for autogenerating [Saloon](https://docs.saloon.dev) SDKs from OpenAPI models.
 
 ---
 
@@ -37,6 +36,9 @@ If you've found any of my packages useful, please consider [becoming a Sponsor](
 ### Sponsored by **[Tesmo](https://tesmollc.com)**.
 
 ---
+
+> [!NOTE]
+> If you're looking for the documentation for v5 of this package, you can find it [here](https://github.com/jlevers/selling-partner-api/tree/v5.0).
 
 ## Features
 

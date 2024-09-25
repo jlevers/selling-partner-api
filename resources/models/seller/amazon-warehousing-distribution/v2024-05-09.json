@@ -36,6 +36,21 @@
                             "minLength": 1,
                             "type": "string"
                         }
+                    },
+                    {
+                        "name": "skuQuantities",
+                        "in": "path",
+                        "description": "If equal to `SHOW`, the response includes the shipment SKU quantity details.\n\nDefaults to `HIDE`, in which case the response does not contain SKU quantities",
+                        "required": false,
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string",
+                            "enum": [
+                                "SHOW",
+                                "HIDE"
+                            ],
+                            "default": "HIDE"
+                        }
                     }
                 ],
                 "responses": {
@@ -1435,6 +1450,13 @@
                         "type": "string",
                         "description": "Unique shipment ID."
                     },
+                    "shipmentSkuQuantities": {
+                        "type": "array",
+                        "description": "Quantity details at SKU level for the shipment. This attribute will only appear if the skuQuantities parameter in the request is set to SHOW.",
+                        "items": {
+                            "$ref": "#/components/schemas/SkuQuantity"
+                        }
+                    },
                     "shipmentStatus": {
                         "$ref": "#/components/schemas/InboundShipmentStatus"
                     },
@@ -1885,6 +1907,26 @@
                         "value": "KILOGRAMS"
                     }
                 ]
+            },
+            "SkuQuantity": {
+                "required": [
+                    "expectedQuantity",
+                    "sku"
+                ],
+                "type": "object",
+                "description": "Quantity details for a SKU as part of a shipment",
+                "properties": {
+                    "expectedQuantity": {
+                        "$ref": "#/components/schemas/InventoryQuantity"
+                    },
+                    "receivedQuantity": {
+                        "$ref": "#/components/schemas/InventoryQuantity"
+                    },
+                    "sku": {
+                        "description": "The merchant stock keeping unit",
+                        "type": "string"
+                    }
+                }
             }
         }
     },

@@ -26,9 +26,13 @@ class GetInboundShipment extends Request
 
     /**
      * @param  string  $shipmentId  ID for the shipment. A shipment contains the cases being inbounded.
+     * @param  ?string  $skuQuantities  If equal to `SHOW`, the response includes the shipment SKU quantity details.
+     *
+     * Defaults to `HIDE`, in which case the response does not contain SKU quantities
      */
     public function __construct(
         protected string $shipmentId,
+        protected ?string $skuQuantities = null,
     ) {}
 
     public function resolveEndpoint(): string

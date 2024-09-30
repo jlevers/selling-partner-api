@@ -12,17 +12,20 @@ class Api extends BaseResource
 {
     /**
      * @param  string  $shipmentId  ID for the shipment. A shipment contains the cases being inbounded.
+     * @param  ?string  $skuQuantities  If equal to `SHOW`, the response includes the shipment SKU quantity details.
+     *
+     * Defaults to `HIDE`, in which case the response does not contain SKU quantities
      */
-    public function getInboundShipment(string $shipmentId): Response
+    public function getInboundShipment(string $shipmentId, ?string $skuQuantities = null): Response
     {
-        $request = new GetInboundShipment($shipmentId);
+        $request = new GetInboundShipment($shipmentId, $skuQuantities);
 
         return $this->connector->send($request);
     }
 
     /**
-     * @param  ?string  $sortBy  Field to sort results by. Required if `sortOrder` is provided.
-     * @param  ?string  $sortOrder  Sort the response in `ASCENDING` or `DESCENDING` order.
+     * @param  ?string  $sortBy  Field to sort results by. By default, the response will be sorted by UPDATED_AT.
+     * @param  ?string  $sortOrder  Sort the response in ASCENDING or DESCENDING order. By default, the response will be sorted in DESCENDING order.
      * @param  ?string  $shipmentStatus  Filter by inbound shipment status.
      * @param  ?\DateTimeInterface  $updatedAfter  List the inbound shipments that were updated after a certain time (inclusive). The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?\DateTimeInterface  $updatedBefore  List the inbound shipments that were updated before a certain time (inclusive). The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.

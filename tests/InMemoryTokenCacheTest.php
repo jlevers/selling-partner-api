@@ -16,7 +16,7 @@ class InMemoryTokenCacheTest extends TestCase
 
     public function setup(): void
     {
-        $this->cache = new InMemoryTokenCache();
+        $this->cache = new InMemoryTokenCache;
     }
 
     public function testStoresToken(): void

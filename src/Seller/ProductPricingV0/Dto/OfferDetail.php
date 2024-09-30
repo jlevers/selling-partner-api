@@ -38,12 +38,10 @@ final class OfferDetail extends Dto
      * @param  DetailedShippingTimeType  $shippingTime  The time range in which an item will likely be shipped once an order has been placed.
      * @param  bool  $isFulfilledByAmazon  When true, the offer is fulfilled by Amazon.
      * @param  ?bool  $myOffer  When true, this is the seller's offer.
-     * @param  ?string  $offerType
      * @param  ?string  $sellerId  The seller identifier for the offer.
      * @param  ?string  $conditionNotes  Information about the condition of the item.
      * @param  ?SellerFeedbackType  $sellerFeedbackRating  Information about the seller's feedback, including the percentage of positive feedback, and the total number of ratings received.
      * @param  QuantityDiscountPriceType[]|null  $quantityDiscountPrices
-     * @param  ?Points  $points
      * @param  ?ShipsFromType  $shipsFrom  The state and country from where the item is shipped.
      * @param  ?PrimeInformationType  $primeInformation  Amazon Prime information.
      * @param  ?bool  $isBuyBoxWinner  When true, the offer is currently in the Buy Box. There can be up to two Buy Box winners at any time per ASIN, one that is eligible for Prime and one that is not eligible for Prime.

@@ -17,7 +17,7 @@ final class SubmitAcknowledgementRequest extends Dto
     protected static array $complexArrayTypes = ['acknowledgements' => OrderAcknowledgement::class];
 
     /**
-     * @param  OrderAcknowledgement[]|null  $acknowledgements  An array of order acknowledgements to be submitted.
+     * @param  OrderAcknowledgement[]|null  $acknowledgements
      */
     public function __construct(
         public readonly ?array $acknowledgements = null,

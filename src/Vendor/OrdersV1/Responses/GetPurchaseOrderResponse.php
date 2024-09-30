@@ -17,7 +17,6 @@ use SellingPartnerApi\Vendor\OrdersV1\Dto\Order;
 final class GetPurchaseOrderResponse extends Response
 {
     /**
-     * @param  ?Order  $payload  Represents an order placed by Amazon, including the purchase order number, current state, and order details.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

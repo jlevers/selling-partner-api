@@ -25,7 +25,7 @@ class TokenCacheTest extends TestCase
     {
         MockClient::destroyGlobal();
         Config::preventStrayRequests();
-        $this->cache = new InMemoryTokenCache();
+        $this->cache = new InMemoryTokenCache;
         $this->cache->clear();
     }
 

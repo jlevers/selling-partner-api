@@ -27,10 +27,10 @@ class GetPurchaseOrdersStatus extends Request
      * @param  ?int  $limit  The limit to the number of records returned. Default value is 100 records.
      * @param  ?string  $sortOrder  Sort in ascending or descending order by purchase order creation date.
      * @param  ?string  $nextToken  Used for pagination when there are more purchase orders than the specified result size limit.
-     * @param  ?\DateTimeInterface  $createdAfter  Purchase orders that became available after this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  ?\DateTimeInterface  $createdBefore  Purchase orders that became available before this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  ?\DateTimeInterface  $updatedAfter  Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  ?\DateTimeInterface  $updatedBefore  Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param  ?\DateTimeInterface  $createdAfter  Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?\DateTimeInterface  $createdBefore  Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?\DateTimeInterface  $updatedAfter  Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?\DateTimeInterface  $updatedBefore  Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $purchaseOrderNumber  Provides purchase order status for the specified purchase order number.
      * @param  ?string  $purchaseOrderStatus  Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
      * @param  ?string  $itemConfirmationStatus  Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included.

@@ -73,7 +73,7 @@ class Api extends BaseResource
 
     public function getDestinations(): Response
     {
-        $request = new GetDestinations();
+        $request = new GetDestinations;
 
         return $this->connector->send($request);
     }

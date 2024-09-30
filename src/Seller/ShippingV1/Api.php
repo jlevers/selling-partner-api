@@ -90,7 +90,7 @@ class Api extends BaseResource
 
     public function getAccount(): Response
     {
-        $request = new GetAccount();
+        $request = new GetAccount;
 
         return $this->connector->send($request);
     }

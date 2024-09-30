@@ -31,7 +31,7 @@ class GetAccessTokenRequest extends Request implements HasBody
         protected string $refreshToken,
         protected ?GrantlessScope $scope = null,
     ) {
-        $this->authenticate(new NullAuthenticator());
+        $this->authenticate(new NullAuthenticator);
     }
 
     public function resolveEndpoint(): string

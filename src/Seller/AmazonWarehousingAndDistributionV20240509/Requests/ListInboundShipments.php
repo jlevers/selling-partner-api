@@ -25,8 +25,8 @@ class ListInboundShipments extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  ?string  $sortBy  Field to sort results by. Required if `sortOrder` is provided.
-     * @param  ?string  $sortOrder  Sort the response in `ASCENDING` or `DESCENDING` order.
+     * @param  ?string  $sortBy  Field to sort results by. By default, the response will be sorted by UPDATED_AT.
+     * @param  ?string  $sortOrder  Sort the response in ASCENDING or DESCENDING order. By default, the response will be sorted in DESCENDING order.
      * @param  ?string  $shipmentStatus  Filter by inbound shipment status.
      * @param  ?\DateTimeInterface  $updatedAfter  List the inbound shipments that were updated after a certain time (inclusive). The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?\DateTimeInterface  $updatedBefore  List the inbound shipments that were updated before a certain time (inclusive). The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.

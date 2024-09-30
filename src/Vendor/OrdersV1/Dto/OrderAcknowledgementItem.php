@@ -22,8 +22,8 @@ final class OrderAcknowledgementItem extends Dto
      * @param  ?string  $itemSequenceNumber  Line item sequence number for the item.
      * @param  ?string  $amazonProductIdentifier  Amazon Standard Identification Number (ASIN) of an item.
      * @param  ?string  $vendorProductIdentifier  The vendor selected product identification of the item. Should be the same as was sent in the purchase order.
-     * @param  ?Money  $netCost  An amount of money, including units in the form of currency.
-     * @param  ?Money  $listPrice  An amount of money, including units in the form of currency.
+     * @param  ?Money  $netCost  An amount of money. Includes the currency code and an optional unit of measure for items priced by weight.
+     * @param  ?Money  $listPrice  An amount of money. Includes the currency code and an optional unit of measure for items priced by weight.
      * @param  ?string  $discountMultiplier  The discount multiplier that should be applied to the price if a vendor sells books with a list price. This is a multiplier factor to arrive at a final discounted price. A multiplier of .90 would be the factor if a 10% discount is given.
      */
     public function __construct(

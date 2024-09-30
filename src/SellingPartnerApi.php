@@ -231,7 +231,7 @@ abstract class SellingPartnerApi extends Connector
                 VarDumper::setHandler(function ($var) use ($outputPath, $label) {
                     $file = fopen($outputPath, 'a');
 
-                    $cloner = new VarCloner();
+                    $cloner = new VarCloner;
                     $dumper = new CliDumper($file);
                     $cloned = $cloner->cloneVar($var)
                         ->withContext(['label' => 'Saloon Request('.$label.') ->']);
@@ -272,7 +272,7 @@ abstract class SellingPartnerApi extends Connector
                 VarDumper::setHandler(function ($var) use ($outputPath, $label) {
                     $file = fopen($outputPath, 'a');
 
-                    $cloner = new VarCloner();
+                    $cloner = new VarCloner;
                     $dumper = new CliDumper($file);
                     $cloned = $cloner->cloneVar($var)
                         ->withContext(['label' => 'Saloon Response('.$label.') ->']);

@@ -123,7 +123,7 @@ class SchemaVersion
      */
     public function download(): void
     {
-        $client = new Client();
+        $client = new Client;
         $convertUrl = 'https://converter.swagger.io/api/convert';
 
         if ($this->selector !== null) {

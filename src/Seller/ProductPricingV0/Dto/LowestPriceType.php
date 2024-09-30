@@ -24,12 +24,7 @@ final class LowestPriceType extends Dto
     /**
      * @param  string  $condition  Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
      * @param  string  $fulfillmentChannel  Indicates whether the item is fulfilled by Amazon or by the seller.
-     * @param  ?string  $offerType
      * @param  ?int  $quantityTier  Indicates at what quantity this price becomes active.
-     * @param  ?string  $quantityDiscountType
-     * @param  ?MoneyType  $landedPrice
-     * @param  ?MoneyType  $shipping
-     * @param  ?Points  $points
      */
     public function __construct(
         public readonly string $condition,

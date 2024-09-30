@@ -27,7 +27,7 @@ class ReportTest extends TestCase
 
     public function testDeserializeDateTime()
     {
-        $now = new DateTime();
+        $now = new DateTime;
         $result = Report::deserialize([
             'reportId' => 12345,
             'reportType' => 'TEST_REPORT',

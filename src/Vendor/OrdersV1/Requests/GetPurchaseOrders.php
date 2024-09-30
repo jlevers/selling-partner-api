@@ -25,15 +25,15 @@ class GetPurchaseOrders extends Request
 
     /**
      * @param  ?int  $limit  The limit to the number of records returned. Default value is 100 records.
-     * @param  ?\DateTimeInterface  $createdAfter  Purchase orders that became available after this time will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  ?\DateTimeInterface  $createdBefore  Purchase orders that became available before this time will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param  ?\DateTimeInterface  $createdAfter  Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?\DateTimeInterface  $createdBefore  Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $sortOrder  Sort in ascending or descending order by purchase order creation date.
      * @param  ?string  $nextToken  Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call
-     * @param  ?string  $includeDetails  When `true`, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is `true`.
-     * @param  ?\DateTimeInterface  $changedAfter  Purchase orders that changed after this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  ?\DateTimeInterface  $changedBefore  Purchase orders that changed before this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  ?string  $poItemState  Current state of the purchase order item. If this value is `Cancelled`, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
-     * @param  ?string  $isPoChanged  When `true`, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is `false`.
+     * @param  ?string  $includeDetails  When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true.
+     * @param  ?\DateTimeInterface  $changedAfter  Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?\DateTimeInterface  $changedBefore  Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?string  $poItemState  Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
+     * @param  ?string  $isPoChanged  When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false.
      * @param  ?string  $purchaseOrderState  Filters purchase orders based on the purchase order state.
      * @param  ?string  $orderingVendorCode  Filters purchase orders based on the specified ordering vendor code. This value should be same as 'sellingParty.partyId' in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned.
      */

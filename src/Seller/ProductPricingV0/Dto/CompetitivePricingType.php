@@ -28,7 +28,6 @@ final class CompetitivePricingType extends Dto
     /**
      * @param  CompetitivePriceType[]  $competitivePrices  A list of competitive pricing information.
      * @param  OfferListingCountType[]  $numberOfOfferListings  The number of active offer listings for the item that was submitted. The listing count is returned by condition, one for each listing condition value that is returned.
-     * @param  ?MoneyType  $tradeInValue
      */
     public function __construct(
         public readonly array $competitivePrices,

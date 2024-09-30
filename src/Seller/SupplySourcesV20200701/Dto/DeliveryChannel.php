@@ -15,7 +15,6 @@ use SellingPartnerApi\Dto;
 final class DeliveryChannel extends Dto
 {
     /**
-     * @param  ?bool  $isSupported
      * @param  ?OperationalConfiguration  $operationalConfiguration  The operational configuration of `supplySources`.
      */
     public function __construct(

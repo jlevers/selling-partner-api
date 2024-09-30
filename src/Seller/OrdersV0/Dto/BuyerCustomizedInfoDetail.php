@@ -17,7 +17,7 @@ final class BuyerCustomizedInfoDetail extends Dto
     protected static array $attributeMap = ['customizedUrl' => 'CustomizedURL'];
 
     /**
-     * @param  ?string  $customizedUrl  The location of a zip file containing Amazon Custom data.
+     * @param  ?string  $customizedUrl  The location of a ZIP file containing Amazon Custom data.
      */
     public function __construct(
         public readonly ?string $customizedUrl = null,

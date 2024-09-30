@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class OrderItems extends Dto
 {
     /**
-     * @param  ?string  $orderItemId  The unique identifier of the order item.
+     * @param  ?string  $orderItemId  The order item's unique identifier.
      * @param  ?int  $quantity  The quantity for which to update the shipment status.
      */
     public function __construct(

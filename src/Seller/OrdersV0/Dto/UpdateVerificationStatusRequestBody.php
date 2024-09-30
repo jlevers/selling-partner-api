@@ -15,13 +15,15 @@ use SellingPartnerApi\Dto;
 final class UpdateVerificationStatusRequestBody extends Dto
 {
     /**
-     * @param  string  $status  The verification status of the order.
-     * @param  string  $externalReviewerId  The identifier for the order's regulated information reviewer.
-     * @param  ?string  $rejectionReasonId  The unique identifier for the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected.
+     * @param  string  $externalReviewerId  The identifier of the order's regulated information reviewer.
+     * @param  ?string  $status  The verification status of the order.
+     * @param  ?string  $rejectionReasonId  The unique identifier of the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected.
+     * @param  ?VerificationDetails  $verificationDetails  Additional information related to the verification of a regulated order.
      */
     public function __construct(
-        public readonly string $status,
         public readonly string $externalReviewerId,
+        public readonly ?string $status = null,
         public readonly ?string $rejectionReasonId = null,
+        public readonly ?VerificationDetails $verificationDetails = null,
     ) {}
 }

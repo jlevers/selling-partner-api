@@ -4102,8 +4102,7 @@
                             }
                         }
                     }
-                },
-                "deprecated": true
+                }
             }
         },
         "/fba/inbound/v0/shipments/{shipmentId}/items": {
@@ -4362,8 +4361,7 @@
                             }
                         }
                     }
-                },
-                "deprecated": true
+                }
             }
         },
         "/fba/inbound/v0/shipmentItems": {
@@ -4718,8 +4716,7 @@
                             }
                         }
                     }
-                },
-                "deprecated": true
+                }
             }
         }
     },

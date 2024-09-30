@@ -31,15 +31,14 @@ final class AffordabilityExpenseEvent extends Dto
      * @param  Currency  $taxTypeSgst  A currency type and amount.
      * @param  Currency  $taxTypeIgst  A currency type and amount.
      * @param  ?string  $amazonOrderId  An Amazon-defined identifier for an order.
-     * @param  ?\DateTimeInterface  $postedDate
-     * @param  ?string  $marketplaceId  An encrypted, Amazon-defined marketplace identifier.
-     * @param  ?string  $transactionType  Indicates the type of transaction.
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @param  ?string  $marketplaceId  The Amazon-defined marketplace identifier.
+     * @param  ?string  $transactionType  The type of transaction.
      *
      * Possible values:
      *
-     * * Charge - For an affordability promotion expense.
-     *
-     * * Refund - For an affordability promotion expense reversal.
+     * * `Charge`: an affordability promotion expense.
+     * * `Refund`: an affordability promotion expense reversal.
      * @param  ?Currency  $baseExpense  A currency type and amount.
      * @param  ?Currency  $totalExpense  A currency type and amount.
      */

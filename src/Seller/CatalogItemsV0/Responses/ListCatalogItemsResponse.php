@@ -17,7 +17,6 @@ use SellingPartnerApi\Seller\CatalogItemsV0\Dto\ListMatchingItemsResponse;
 final class ListCatalogItemsResponse extends Response
 {
     /**
-     * @param  ?ListMatchingItemsResponse  $payload
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

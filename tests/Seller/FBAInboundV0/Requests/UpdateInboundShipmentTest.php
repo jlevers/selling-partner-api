@@ -86,7 +86,7 @@ final class UpdateInboundShipmentTest extends TestCase
                     shipmentId: 'shipment-id',
                     quantityReceived: 1,
                     quantityInCase: 1,
-                    releaseDate: new DateTime(),
+                    releaseDate: new DateTime,
                     prepDetailsList: [
                         new PrepDetails(
                             prepInstruction: 'prep-instruction',

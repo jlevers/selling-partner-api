@@ -17,8 +17,8 @@ final class TaxWithholdingPeriod extends Dto
     protected static array $attributeMap = ['startDate' => 'StartDate', 'endDate' => 'EndDate'];
 
     /**
-     * @param  ?\DateTimeInterface  $startDate
-     * @param  ?\DateTimeInterface  $endDate
+     * @param  ?\DateTimeInterface  $startDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @param  ?\DateTimeInterface  $endDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function __construct(
         public readonly ?\DateTimeInterface $startDate = null,

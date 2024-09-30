@@ -40,9 +40,6 @@ final class Summary extends Dto
      * @param  OfferCountType[]|null  $numberOfOffers
      * @param  LowestPriceType[]|null  $lowestPrices
      * @param  BuyBoxPriceType[]|null  $buyBoxPrices
-     * @param  ?MoneyType  $listPrice
-     * @param  ?MoneyType  $competitivePriceThreshold
-     * @param  ?MoneyType  $suggestedLowerPricePlusShipping
      * @param  SalesRankType[]|null  $salesRankings  A list of sales rank information for the item, by category.
      * @param  OfferCountType[]|null  $buyBoxEligibleOffers
      * @param  ?\DateTimeInterface  $offersAvailableTime  When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing.

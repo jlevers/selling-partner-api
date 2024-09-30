@@ -22,10 +22,8 @@ final class ValueAddedServiceChargeEvent extends Dto
     ];
 
     /**
-     * @param  ?string  $transactionType  Indicates the type of transaction.
-     *
-     * Example: 'Other Support Service fees'
-     * @param  ?\DateTimeInterface  $postedDate
+     * @param  ?string  $transactionType  The transaction type. For example, 'Other Support Service fees'
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?string  $description  A short description of the service charge event.
      * @param  ?Currency  $transactionAmount  A currency type and amount.
      */

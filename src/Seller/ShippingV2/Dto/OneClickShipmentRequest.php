@@ -32,7 +32,6 @@ final class OneClickShipmentRequest extends Dto
      * @param  OneClickShipmentValueAddedService[]|null  $valueAddedServicesDetails  The value-added services to be added to a shipping service purchase.
      * @param  TaxDetail[]|null  $taxDetails  A list of tax detail information.
      * @param  ?ShipperInstruction  $shipperInstruction  The shipper instruction.
-     * @param  ?AccessPointDetails  $destinationAccessPointDetails
      */
     public function __construct(
         public readonly Address $shipFrom,

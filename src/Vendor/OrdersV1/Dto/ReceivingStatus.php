@@ -17,7 +17,7 @@ final class ReceivingStatus extends Dto
     /**
      * @param  ?string  $receiveStatus  Receive status of the line item.
      * @param  ?ItemQuantity  $receivedQuantity  Details of quantity ordered.
-     * @param  ?\DateTimeInterface  $lastReceiveDate  The date when the most recent item was received at the buyer's warehouse. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param  ?\DateTimeInterface  $lastReceiveDate  The date when the most recent item was received at the buyer's warehouse. Must be in ISO-8601 date/time format.
      */
     public function __construct(
         public readonly ?string $receiveStatus = null,

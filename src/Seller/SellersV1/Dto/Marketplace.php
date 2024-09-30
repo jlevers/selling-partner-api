@@ -16,7 +16,7 @@ final class Marketplace extends Dto
 {
     /**
      * @param  string  $id  The encrypted marketplace value.
-     * @param  string  $name  Marketplace name.
+     * @param  string  $name  The marketplace name.
      * @param  string  $countryCode  The ISO 3166-1 alpha-2 format country code of the marketplace.
      * @param  string  $defaultCurrencyCode  The ISO 4217 format currency code of the marketplace.
      * @param  string  $defaultLanguageCode  The ISO 639-1 format language code of the marketplace.

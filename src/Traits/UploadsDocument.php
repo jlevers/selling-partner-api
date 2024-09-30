@@ -17,7 +17,7 @@ trait UploadsDocument
         string|StreamInterface|callable|Iterator $data,
         ?string $charset = null
     ): void {
-        $client = new Client();
+        $client = new Client;
         $response = $client->put($this->url, [
             RequestOptions::HEADERS => [
                 'Content-Type' => static::getContentType($feedType, $charset),

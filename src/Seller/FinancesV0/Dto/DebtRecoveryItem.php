@@ -24,8 +24,8 @@ final class DebtRecoveryItem extends Dto
     /**
      * @param  ?Currency  $recoveryAmount  A currency type and amount.
      * @param  ?Currency  $originalAmount  A currency type and amount.
-     * @param  ?\DateTimeInterface  $groupBeginDate
-     * @param  ?\DateTimeInterface  $groupEndDate
+     * @param  ?\DateTimeInterface  $groupBeginDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @param  ?\DateTimeInterface  $groupEndDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function __construct(
         public readonly ?Currency $recoveryAmount = null,

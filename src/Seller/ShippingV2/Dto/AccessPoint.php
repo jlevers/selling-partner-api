@@ -27,7 +27,6 @@ final class AccessPoint extends Dto
      * @param  ?AccessibilityAttributes  $accessibilityAttributes  Defines the accessibility details of the access point.
      * @param  ?Address  $address  The address.
      * @param  ExceptionOperatingHours[]|null  $exceptionOperatingHours
-     * @param  ?string  $assistanceType
      * @param  ?string  $score  The score of access point, based on proximity to postal code and sorting preference. This can be used to sort access point results on shipper's end.
      * @param  ?OperatingHours[]  $standardOperatingHours  Map of day of the week to operating hours of that day
      */

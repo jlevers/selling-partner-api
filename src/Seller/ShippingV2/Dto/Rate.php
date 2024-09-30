@@ -34,7 +34,7 @@ final class Rate extends Dto
      * @param  AvailableValueAddedServiceGroup[]|null  $availableValueAddedServiceGroups  A list of value-added services available for a shipping service offering.
      * @param  RateItem[]|null  $rateItemList  A list of RateItem
      * @param  ?string  $paymentType  Payment type of the purchase.
-     * @param  ?Benefits  $benefits  Representing the included/excluded benefits that we offer for each ShippingOffering/Rate. Benefits being services provided by Amazon when sellers purchase shipping through Amazon.
+     * @param  ?Benefits  $benefits  Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (eg. CLAIMS_PROTECTED, etc.) when sellers purchase shipping through Amazon. Benefit details will be made available for any shipment placed on or after January 1st 2024 00:00 UTC.
      */
     public function __construct(
         public readonly string $rateId,

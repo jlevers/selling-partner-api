@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Selling Partner API for Finances",
-        "description": "The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.",
+        "description": "The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range. ",
         "contact": {
             "name": "Selling Partner API Developer Support",
             "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
@@ -21,25 +21,25 @@
     "paths": {
         "/finances/v0/financialEventGroups": {
             "get": {
-                "description": "Returns financial event groups for a given date range. It may take up to 48 hours for orders to appear in your financial events.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns financial event groups for a given date range. Orders from the last 48 hours might not be included in financial events.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "listFinancialEventGroups",
                 "parameters": [
                     {
                         "name": "MaxResultsPerPage",
                         "in": "query",
-                        "description": "The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'.",
+                        "description": "The maximum number of results per page. If the response exceeds the maximum number of transactions or 10 MB, the response is `InvalidInput`.",
                         "schema": {
                             "maximum": 100,
                             "minimum": 1,
                             "type": "integer",
                             "format": "int32",
-                            "default": 100
+                            "default": 10
                         }
                     },
                     {
                         "name": "FinancialEventGroupStartedBefore",
                         "in": "query",
-                        "description": "A date used for selecting financial event groups that opened before (but not at) a specified date and time, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned.",
+                        "description": "A date that selects financial event groups that opened before (but not at) a specified date and time, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. The date-time must be after `FinancialEventGroupStartedAfter` and more than two minutes before the time of request. If `FinancialEventGroupStartedAfter` and `FinancialEventGroupStartedBefore` are more than 180 days apart, no financial event groups are returned.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -48,7 +48,7 @@
                     {
                         "name": "FinancialEventGroupStartedAfter",
                         "in": "query",
-                        "description": "A date used for selecting financial event groups that opened after (or at) a specified date and time, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. The date-time must be no later than two minutes before the request was submitted.",
+                        "description": "A date that selects financial event groups that opened after (or at) a specified date and time, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. The date-time must be more than two minutes before you submit the request.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -57,7 +57,7 @@
                     {
                         "name": "NextToken",
                         "in": "query",
-                        "description": "A string token returned in the response of your previous request.",
+                        "description": "The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
                         "schema": {
                             "type": "string"
                         }
@@ -66,6 +66,20 @@
                 "responses": {
                     "200": {
                         "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -124,6 +138,20 @@
                     },
                     "400": {
                         "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -203,12 +231,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -224,12 +246,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -251,12 +267,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -275,13 +285,13 @@
         },
         "/finances/v0/financialEventGroups/{eventGroupId}/financialEvents": {
             "get": {
-                "description": "Returns all financial events for the specified financial event group. It may take up to 48 hours for orders to appear in your financial events.\n\n**Note:** This operation will only retrieve group's data for the past two years. If a request is submitted for data spanning more than two years, an empty response is returned.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns all financial events for the specified financial event group. Orders from the last 48 hours might not be included in financial events.\n\n**Note:** This operation only retrieves a group's data for the past two years. A request for data spanning more than two years produces an empty response.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "listFinancialEventsByGroupId",
                 "parameters": [
                     {
                         "name": "MaxResultsPerPage",
                         "in": "query",
-                        "description": "The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'.",
+                        "description": "The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the response is `InvalidInput`.",
                         "schema": {
                             "maximum": 100,
                             "minimum": 1,
@@ -293,7 +303,7 @@
                     {
                         "name": "PostedAfter",
                         "in": "query",
-                        "description": "A date used for selecting financial events posted after (or at) a specified time. The date-time **must** be more than two minutes before the time of the request, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.",
+                        "description": "The response includes financial events posted after (or on) this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The date-time must be more than two minutes before the time of the request.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -302,7 +312,7 @@
                     {
                         "name": "PostedBefore",
                         "in": "query",
-                        "description": "A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than `PostedAfter` and no later than two minutes before the request was submitted, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. If `PostedAfter` and `PostedBefore` are more than 180 days apart, no financial events are returned. You must specify the `PostedAfter` parameter if you specify the `PostedBefore` parameter. Default: Now minus two minutes.",
+                        "description": "The response includes financial events posted before (but not on) this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.\n\nThe date-time must be later than `PostedAfter` and more than two minutes before the requestd was submitted. If `PostedAfter` and `PostedBefore` are more than 180 days apart, the response is empty. If you include the `PostedBefore` parameter in your request, you must also specify the `PostedAfter` parameter.\n\n**Default:** Two minutes before the time of the request.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -320,7 +330,7 @@
                     {
                         "name": "NextToken",
                         "in": "query",
-                        "description": "A string token returned in the response of your previous request.",
+                        "description": "The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
                         "schema": {
                             "type": "string"
                         }
@@ -329,6 +339,20 @@
                 "responses": {
                     "200": {
                         "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -701,6 +725,20 @@
                     },
                     "400": {
                         "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -780,12 +818,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -801,12 +833,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -828,12 +854,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -852,7 +872,7 @@
         },
         "/finances/v0/orders/{orderId}/financialEvents": {
             "get": {
-                "description": "Returns all financial events for the specified order. It may take up to 48 hours for orders to appear in your financial events.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns all financial events for the specified order. Orders from the last 48 hours might not be included in financial events.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "listFinancialEventsByOrderId",
                 "parameters": [
                     {
@@ -867,7 +887,7 @@
                     {
                         "name": "MaxResultsPerPage",
                         "in": "query",
-                        "description": "The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'.",
+                        "description": "The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the response is `InvalidInput`.",
                         "schema": {
                             "maximum": 100,
                             "minimum": 1,
@@ -879,7 +899,7 @@
                     {
                         "name": "NextToken",
                         "in": "query",
-                        "description": "A string token returned in the response of your previous request.",
+                        "description": "The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
                         "schema": {
                             "type": "string"
                         }
@@ -888,6 +908,20 @@
                 "responses": {
                     "200": {
                         "description": "Financial Events successfully retrieved.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1038,6 +1072,20 @@
                     },
                     "400": {
                         "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1117,12 +1165,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1138,12 +1180,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1165,12 +1201,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1189,13 +1219,13 @@
         },
         "/finances/v0/financialEvents": {
             "get": {
-                "description": "Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events. **Note:** in `ListFinancialEvents`, deferred events don't show up in responses until in they are released.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns financial events for the specified data range. Orders from the last 48 hours might not be included in financial events.\n\n**Note:** in `ListFinancialEvents`, deferred events don't show up in responses until in they are released.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "listFinancialEvents",
                 "parameters": [
                     {
                         "name": "MaxResultsPerPage",
                         "in": "query",
-                        "description": "The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'.",
+                        "description": "The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the response is `InvalidInput`.",
                         "schema": {
                             "maximum": 100,
                             "minimum": 1,
@@ -1207,7 +1237,7 @@
                     {
                         "name": "PostedAfter",
                         "in": "query",
-                        "description": "A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.",
+                        "description": "The response includes financial events posted after (or on) this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The date-time must be more than two minutes before the time of the request.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -1216,7 +1246,7 @@
                     {
                         "name": "PostedBefore",
                         "in": "query",
-                        "description": "A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.",
+                        "description": "The response includes financial events posted before (but not on) this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.\n\nThe date-time must be later than `PostedAfter` and more than two minutes before the request was submitted. If `PostedAfter` and `PostedBefore` are more than 180 days apart, the response is empty. If you include the `PostedBefore` parameter in your request, you must also specify the `PostedAfter` parameter.\n\n**Default:** Two minutes before the time of the request.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -1225,7 +1255,7 @@
                     {
                         "name": "NextToken",
                         "in": "query",
-                        "description": "A string token returned in the response of your previous request.",
+                        "description": "The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
                         "schema": {
                             "type": "string"
                         }
@@ -1234,6 +1264,20 @@
                 "responses": {
                     "200": {
                         "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1380,6 +1424,20 @@
                     },
                     "400": {
                         "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1459,12 +1517,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1483,12 +1535,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1504,12 +1550,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1537,7 +1577,7 @@
                 "properties": {
                     "TransactionType": {
                         "type": "string",
-                        "description": "Indicates the type of transaction.\n\nExample: \"Disbursed to Amazon Gift Card balance\""
+                        "description": "The type of transaction. For example, \"Disbursed to Amazon Gift Card balance\"."
                     },
                     "PostedDate": {
                         "$ref": "#/components/schemas/Date"
@@ -1564,7 +1604,7 @@
                 "properties": {
                     "AdjustmentType": {
                         "type": "string",
-                        "description": "The type of adjustment.\n\nPossible values:\n\n* FBAInventoryReimbursement - An FBA inventory reimbursement to a seller's account. This occurs if a seller's inventory is damaged.\n\n* ReserveEvent - A reserve event that is generated at the time of a settlement period closing. This occurs when some money from a seller's account is held back.\n\n* PostageBilling - The amount paid by a seller for shipping labels.\n\n* PostageRefund - The reimbursement of shipping labels purchased for orders that were canceled or refunded.\n\n* LostOrDamagedReimbursement - An Amazon Easy Ship reimbursement to a seller's account for a package that we lost or damaged.\n\n* CanceledButPickedUpReimbursement - An Amazon Easy Ship reimbursement to a seller's account. This occurs when a package is picked up and the order is subsequently canceled. This value is used only in the India marketplace.\n\n* ReimbursementClawback - An Amazon Easy Ship reimbursement clawback from a seller's account. This occurs when a prior reimbursement is reversed. This value is used only in the India marketplace.\n\n* SellerRewards - An award credited to a seller's account for their participation in an offer in the Seller Rewards program. Applies only to the India marketplace."
+                        "description": "The type of adjustment.\n\nPossible values:\n\n* `FBAInventoryReimbursement`: An FBA inventory reimbursement to a seller's account. This occurs if a seller's inventory is damaged.\n* `ReserveEvent`: A reserve event that is generated at the time a settlement period closes. This occurs when some money from a seller's account is held back.\n* `PostageBilling`: The amount paid by a seller for shipping labels.\n* `PostageRefund`: The reimbursement of shipping labels purchased for orders that were canceled or refunded.\n* `LostOrDamagedReimbursement`: An Amazon Easy Ship reimbursement to a seller's account for a package that we lost or damaged.\n* `CanceledButPickedUpReimbursement`: An Amazon Easy Ship reimbursement to a seller's account. This occurs when a package is picked up and the order is subsequently canceled. This value is used only in the India marketplace.\n* `ReimbursementClawback`: An Amazon Easy Ship reimbursement clawback from a seller's account. This occurs when a prior reimbursement is reversed. This value is used only in the India marketplace.\n* `SellerRewards`: An award credited to a seller's account for their participation in an offer in the Seller Rewards program. Applies only to the India marketplace."
                     },
                     "PostedDate": {
                         "$ref": "#/components/schemas/Date"
@@ -1590,7 +1630,7 @@
                 "properties": {
                     "Quantity": {
                         "type": "string",
-                        "description": "Represents the number of units in the seller's inventory when the AdustmentType is FBAInventoryReimbursement."
+                        "description": "Represents the number of units in the seller's inventory when the `AdjustmentType` is `FBAInventoryReimbursement`."
                     },
                     "PerUnitAmount": {
                         "$ref": "#/components/schemas/Currency"
@@ -1641,11 +1681,11 @@
                     },
                     "MarketplaceId": {
                         "type": "string",
-                        "description": "An encrypted, Amazon-defined marketplace identifier."
+                        "description": "The Amazon-defined marketplace identifier."
                     },
                     "TransactionType": {
                         "type": "string",
-                        "description": "Indicates the type of transaction. \n\nPossible values:\n\n* Charge - For an affordability promotion expense.\n\n* Refund - For an affordability promotion expense reversal."
+                        "description": "The type of transaction. \n\nPossible values:\n\n* `Charge`: an affordability promotion expense.\n* `Refund`: an affordability promotion expense reversal."
                     },
                     "BaseExpense": {
                         "$ref": "#/components/schemas/Currency"
@@ -1673,7 +1713,8 @@
                 }
             },
             "BigDecimal": {
-                "type": "number"
+                "type": "number",
+                "description": "A signed decimal number."
             },
             "ChargeComponent": {
                 "type": "object",
@@ -1686,7 +1727,7 @@
                         "$ref": "#/components/schemas/Currency"
                     }
                 },
-                "description": "A charge on the seller's account.\n\nPossible values:\n\n* Principal - The selling price of the order item, equal to the selling price of the item multiplied by the quantity ordered.\n\n* Tax - The tax collected by the seller on the Principal.\n\n* MarketplaceFacilitatorTax-Principal - The tax withheld on the Principal.\n\n* MarketplaceFacilitatorTax-Shipping - The tax withheld on the ShippingCharge.\n\n* MarketplaceFacilitatorTax-Giftwrap - The tax withheld on the Giftwrap charge.\n\n* MarketplaceFacilitatorTax-Other - The tax withheld on other miscellaneous charges.\n\n* Discount - The promotional discount for an order item.\n\n* TaxDiscount - The tax amount deducted for promotional rebates.\n\n* CODItemCharge - The COD charge for an order item.\n\n* CODItemTaxCharge - The tax collected by the seller on a CODItemCharge.\n\n* CODOrderCharge - The COD charge for an order.\n\n* CODOrderTaxCharge - The tax collected by the seller on a CODOrderCharge.\n\n* CODShippingCharge - Shipping charges for a COD order.\n\n* CODShippingTaxCharge - The tax collected by the seller on a CODShippingCharge.\n\n* ShippingCharge - The shipping charge.\n\n* ShippingTax - The tax collected by the seller on a ShippingCharge.\n\n* Goodwill - The amount given to a buyer as a gesture of goodwill or to compensate for pain and suffering in the buying experience.\n\n* Giftwrap - The gift wrap charge.\n\n* GiftwrapTax - The tax collected by the seller on a Giftwrap charge.\n\n* RestockingFee - The charge applied to the buyer when returning a product in certain categories.\n\n* ReturnShipping - The amount given to the buyer to compensate for shipping the item back in the event we are at fault.\n\n* PointsFee - The value of Amazon Points deducted from the refund if the buyer does not have enough Amazon Points to cover the deduction.\n\n* GenericDeduction - A generic bad debt deduction.\n\n* FreeReplacementReturnShipping - The compensation for return shipping when a buyer receives the wrong item, requests a free replacement, and returns the incorrect item.\n\n* PaymentMethodFee - The fee collected for certain payment methods in certain marketplaces.\n\n* ExportCharge - The export duty that is charged when an item is shipped to an international destination as part of the Amazon Global program.\n\n* SAFE-TReimbursement - The SAFE-T claim amount for the item.\n\n* TCS-CGST - Tax Collected at Source (TCS) for Central Goods and Services Tax (CGST).\n\n* TCS-SGST - Tax Collected at Source for State Goods and Services Tax (SGST).\n\n* TCS-IGST - Tax Collected at Source for Integrated Goods and Services Tax (IGST).\n\n* TCS-UTGST - Tax Collected at Source for Union Territories Goods and Services Tax (UTGST)."
+                "description": "A charge on the seller's account.\n\nPossible values:\n\n* `Principal`: The selling price of the order item, which is equal to the selling price of the item multiplied by the quantity ordered.\n\n* `Tax`: The tax on the principal that is collected by the seller.\n\n* `MarketplaceFacilitatorTax-Principal`: The tax that is withheld on the principal.\n\n* `MarketplaceFacilitatorTax-Shipping`: The tax that is withheld on the `ShippingCharge`.\n\n* `MarketplaceFacilitatorTax-Giftwrap`: The tax that is withheld on the Giftwrap charge.\n\n* `MarketplaceFacilitatorTax-Other`: The tax that is withheld on other miscellaneous charges.\n\n* `Discount`: The promotional discount for an order item.\n\n* `TaxDiscount`: The tax that is deducted for promotional rebates.\n\n* `CODItemCharge`: The COD charge for an order item.\n\n* `CODItemTaxCharge`: The tax that is collected by the seller on a `CODItemCharge`.\n\n* `CODOrderCharge`: The COD charge for an order.\n\n* `CODOrderTaxCharge`: The tax that is collected by the seller on a `CODOrderCharge`.\n\n* `CODShippingCharge`: Shipping charges for a COD order.\n\n* `CODShippingTaxCharge`: The tax that is collected by the seller on a `CODShippingCharge`.\n\n* `ShippingCharge`: The shipping charge.\n\n* `ShippingTax`: The tax that is collected by the seller on a `ShippingCharge`.\n\n* `Goodwill`: The amount of money that is given to a buyer as a gesture of goodwill or to compensate for pain and suffering in the buying experience.\n\n* `Giftwrap`: The gift wrap charge.\n\n* `GiftwrapTax`: The tax that is collected by the seller on a gift wrap charge.\n\n* `RestockingFee`: The charge that is applied to the buyer when returning a product in certain categories.\n\n* `ReturnShipping`: The amount of money that is given to the buyer to compensate for shipping the item back if we are at fault.\n\n* `PointsFee`: The value of Amazon Points deducted from the refund if the buyer does not have enough Amazon Points to cover the deduction.\n\n* `GenericDeduction`: A generic bad debt deduction.\n\n* `FreeReplacementReturnShipping`: The compensation for return shipping when a buyer receives the wrong item, requests a free replacement, and returns the incorrect item.\n\n* `PaymentMethodFee`: The fee that is collected for certain payment methods in certain marketplaces.\n\n* `ExportCharge`: The export duty that is charged when an item is shipped to an international destination as part of the Amazon Global program.\n\n* `SAFE-TReimbursement`: The SAFE-T claim amount for the item.\n\n* `TCS-CGST`: Tax Collected at Source (TCS) for Central Goods and Services Tax (CGST).\n\n* `TCS-SGST`: Tax Collected at Source for State Goods and Services Tax (SGST).\n\n* `TCS-IGST`: Tax Collected at Source for Integrated Goods and Services Tax (IGST).\n\n* `TCS-UTGST`: Tax Collected at Source for Union Territories Goods and Services Tax (UTGST)."
             },
             "ChargeComponentList": {
                 "type": "array",
@@ -1727,11 +1768,11 @@
                     },
                     "ReasonCode": {
                         "type": "string",
-                        "description": "The reason given for a charge refund.\n\nExample: `SubscriptionFeeCorrection`"
+                        "description": "The reason given for a charge refund. For example, `SubscriptionFeeCorrection`."
                     },
                     "ReasonCodeDescription": {
                         "type": "string",
-                        "description": "A description of the Reason Code. \n\nExample: `SubscriptionFeeCorrection`"
+                        "description": "A description of the Reason Code. For example, `SubscriptionFeeCorrection`."
                     },
                     "ChargeRefundTransactions": {
                         "$ref": "#/components/schemas/ChargeRefundTransactions"
@@ -1823,6 +1864,7 @@
             },
             "Date": {
                 "type": "string",
+                "description": "A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
                 "format": "date-time"
             },
             "DebtRecoveryEvent": {
@@ -1830,7 +1872,7 @@
                 "properties": {
                     "DebtRecoveryType": {
                         "type": "string",
-                        "description": "The debt recovery type.\n\nPossible values:\n\n* DebtPayment\n\n* DebtPaymentFailure\n\n*DebtAdjustment"
+                        "description": "The debt recovery type.\n\nPossible values:\n\n* `DebtPayment`\n* `DebtPaymentFailure`\n* `DebtAdjustment`"
                     },
                     "RecoveryAmount": {
                         "$ref": "#/components/schemas/Currency"
@@ -1884,7 +1926,7 @@
                 "properties": {
                     "DirectPaymentType": {
                         "type": "string",
-                        "description": "The type of payment.\n\nPossible values:\n\n* StoredValueCardRevenue - The amount that is deducted from the seller's account because the seller received money through a stored value card.\n\n* StoredValueCardRefund - The amount that Amazon returns to the seller if the order that is bought using a stored value card is refunded.\n\n* PrivateLabelCreditCardRevenue - The amount that is deducted from the seller's account because the seller received money through a private label credit card offered by Amazon.\n\n* PrivateLabelCreditCardRefund - The amount that Amazon returns to the seller if the order that is bought using a private label credit card offered by Amazon is refunded.\n\n* CollectOnDeliveryRevenue - The COD amount that the seller collected directly from the buyer.\n\n* CollectOnDeliveryRefund - The amount that Amazon refunds to the buyer if an order paid for by COD is refunded."
+                        "description": "The type of payment.\n\nPossible values:\n\n* `StoredValueCardRevenue` - The amount that is deducted from the seller's account because the seller received money through a stored value card.\n\n* `StoredValueCardRefund` - The amount that Amazon returns to the seller if the order that is purchased using a stored value card is refunded.\n\n* `PrivateLabelCreditCardRevenue` - The amount that is deducted from the seller's account because the seller received money through a private label credit card offered by Amazon.\n\n* `PrivateLabelCreditCardRefund` - The amount that Amazon returns to the seller if the order that is purchased using a private label credit card offered by Amazon is refunded.\n\n* `CollectOnDeliveryRevenue` - The COD amount that the seller collected directly from the buyer.\n\n* `CollectOnDeliveryRefund` - The amount that Amazon refunds to the buyer if an order paid for by COD is refunded."
                     },
                     "DirectPaymentAmount": {
                         "$ref": "#/components/schemas/Currency"
@@ -1901,7 +1943,7 @@
             },
             "FailedAdhocDisbursementEventList": {
                 "type": "array",
-                "description": "A list of `FailedAdhocDisbursementEvent`s.",
+                "description": "A list of `FailedAdhocDisbursementEvent`.",
                 "items": {
                     "$ref": "#/components/schemas/FailedAdhocDisbursementEvent"
                 }
@@ -1911,7 +1953,7 @@
                 "properties": {
                     "FundsTransfersType": {
                         "type": "string",
-                        "description": "The type of fund transfer. \n\nExample \"Refund\""
+                        "description": "The type of fund transfer. For example, `Refund`."
                     },
                     "TransferId": {
                         "type": "string",
@@ -1923,11 +1965,11 @@
                     },
                     "PaymentDisbursementType": {
                         "type": "string",
-                        "description": "The type of payment for disbursement. \n\nExample `CREDIT_CARD`"
+                        "description": "The type of payment for disbursement. For example, `CREDIT_CARD`."
                     },
                     "Status": {
                         "type": "string",
-                        "description": "The status of the failed `AdhocDisbursement`. \n\nExample `HARD_DECLINED`"
+                        "description": "The status of the failed `AdhocDisbursement`. For example, `HARD_DECLINED`."
                     },
                     "TransferAmount": {
                         "$ref": "#/components/schemas/Currency"
@@ -1993,7 +2035,7 @@
                     },
                     "ProcessingStatus": {
                         "type": "string",
-                        "description": "The processing status of the financial event group indicates whether the balance of the financial event group is settled.\n\nPossible values:\n\n* Open\n\n* Closed"
+                        "description": "The processing status of the financial event group indicates whether the balance of the financial event group is settled.\n\nPossible values:\n\n* `Open`\n* `Closed`"
                     },
                     "FundTransferStatus": {
                         "type": "string",
@@ -2138,7 +2180,7 @@
                         "$ref": "#/components/schemas/CapacityReservationBillingEventList"
                     }
                 },
-                "description": "Contains all information related to a financial event."
+                "description": "All the information that is related to a financial event."
             },
             "ImagingServicesFeeEvent": {
                 "type": "object",
@@ -2178,7 +2220,7 @@
                         "$ref": "#/components/schemas/FinancialEventGroupList"
                     }
                 },
-                "description": "The payload for the listFinancialEventGroups operation."
+                "description": "The payload for the `listFinancialEventGroups` operation."
             },
             "ListFinancialEventGroupsResponse": {
                 "type": "object",
@@ -2190,7 +2232,7 @@
                         "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the listFinancialEventGroups operation."
+                "description": "The response schema for the `listFinancialEventGroups` operation."
             },
             "ListFinancialEventsPayload": {
                 "type": "object",
@@ -2203,7 +2245,7 @@
                         "$ref": "#/components/schemas/FinancialEvents"
                     }
                 },
-                "description": "The payload for the listFinancialEvents operation."
+                "description": "The payload for the `listFinancialEvents` operation."
             },
             "ListFinancialEventsResponse": {
                 "type": "object",
@@ -2215,7 +2257,7 @@
                         "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the listFinancialEvents operation."
+                "description": "The response schema for the `listFinancialEvents` operation."
             },
             "LoanServicingEvent": {
                 "type": "object",
@@ -2225,7 +2267,7 @@
                     },
                     "SourceBusinessEventType": {
                         "type": "string",
-                        "description": "The type of event.\n\nPossible values:\n\n* LoanAdvance\n\n* LoanPayment\n\n* LoanRefund"
+                        "description": "The type of event.\n\nPossible values:\n\n* `LoanAdvance`\n\n* `LoanPayment`\n\n* `LoanRefund`"
                     }
                 },
                 "description": "A loan advance, loan payment, or loan refund."
@@ -2242,7 +2284,7 @@
                 "properties": {
                     "TransactionType": {
                         "type": "string",
-                        "description": "The type of network item swap.\n\nPossible values:\n\n* NetCo - A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.\n\n* ComminglingVAT - A commingling VAT transaction. Available only in the UK, Spain, France, Germany, and Italy marketplaces."
+                        "description": "The type of network item swap.\n\nPossible values:\n\n* `NetCo`: A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.\n\n* `ComminglingVAT`: A commingling VAT transaction. Available only in the Spain, UK, France, Germany, and Italy marketplaces."
                     },
                     "PostedDate": {
                         "$ref": "#/components/schemas/Date"
@@ -2305,7 +2347,7 @@
                     },
                     "PaymentAmountType": {
                         "type": "string",
-                        "description": "The type of payment.\n\nPossible values:\n\n* Sales"
+                        "description": "The type of payment.\n\nPossible values:\n\n* `Sales`"
                     },
                     "AmountDescription": {
                         "type": "string",
@@ -2313,11 +2355,11 @@
                     },
                     "FulfillmentChannel": {
                         "type": "string",
-                        "description": "The fulfillment channel.\n\nPossible values:\n\n* AFN - Amazon Fulfillment Network (Fulfillment by Amazon)\n\n* MFN - Merchant Fulfillment Network (self-fulfilled)"
+                        "description": "The fulfillment channel.\n\nPossible values:\n\n* `AFN`: Amazon Fulfillment Network (Fulfillment by Amazon)\n\n* `MFN`: Merchant Fulfillment Network (self-fulfilled)"
                     },
                     "StoreName": {
                         "type": "string",
-                        "description": "The store name where the event occurred."
+                        "description": "The name of the store where the event occurred."
                     }
                 },
                 "description": "An event related to the seller's Pay with Amazon account."
@@ -2337,11 +2379,11 @@
                     },
                     "transactionType": {
                         "type": "string",
-                        "description": "Indicates if the transaction is for a charge or a refund.\n\nPossible values:\n\n* charge - Charge\n\n* refund - Refund"
+                        "description": "Indicates if the transaction is for a charge or a refund.\n\nPossible values:\n\n* `charge`\n\n* `refund`"
                     },
                     "invoiceId": {
                         "type": "string",
-                        "description": "Identifier for the invoice that the transaction appears in."
+                        "description": "The identifier for the invoice that includes the transaction."
                     },
                     "baseValue": {
                         "$ref": "#/components/schemas/Currency"
@@ -2394,7 +2436,7 @@
                     },
                     "MerchantOrderId": {
                         "type": "string",
-                        "description": "The merchant removal orderId."
+                        "description": "The merchant removal `orderId`."
                     },
                     "OrderId": {
                         "type": "string",
@@ -2402,7 +2444,11 @@
                     },
                     "TransactionType": {
                         "type": "string",
-                        "description": "The type of removal order.\n\nPossible values:\n\n* WHOLESALE_LIQUIDATION"
+                        "description": "The type of removal order.\n\nPossible values:\n\n* `WHOLESALE_LIQUIDATION`"
+                    },
+                    "StoreName": {
+                        "type": "string",
+                        "description": "The name of the store where the event occurred."
                     },
                     "RemovalShipmentItemList": {
                         "$ref": "#/components/schemas/RemovalShipmentItemList"
@@ -2426,7 +2472,7 @@
                     },
                     "TaxCollectionModel": {
                         "type": "string",
-                        "description": "The tax collection model applied to the item.\n\nPossible values:\n\n* MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.\n\n* Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon."
+                        "description": "The tax collection model that is applied to the item.\n\nPossible values:\n\n* `MarketplaceFacilitator`: Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.\n* `Standard`: Tax is paid to the seller and not remitted to the taxing authority by Amazon."
                     },
                     "FulfillmentNetworkSKU": {
                         "type": "string",
@@ -2454,7 +2500,7 @@
             },
             "RemovalShipmentItemList": {
                 "type": "array",
-                "description": "A list of information about removal shipment items.",
+                "description": "A list of `RemovalShipmentItem`.",
                 "items": {
                     "$ref": "#/components/schemas/RemovalShipmentItem"
                 }
@@ -2479,11 +2525,11 @@
                     },
                     "TransactionType": {
                         "type": "string",
-                        "description": "The type of removal order.\n\nPossible values:\n\n* WHOLESALE_LIQUIDATION."
+                        "description": "The type of removal order.\n\nPossible values:\n\n* `WHOLESALE_LIQUIDATION`."
                     },
                     "RemovalShipmentItemAdjustmentList": {
                         "type": "array",
-                        "description": "A comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory.",
+                        "description": "A comma-delimited list of `RemovalShipmentItemAdjustment` details for FBA inventory.",
                         "items": {
                             "$ref": "#/components/schemas/RemovalShipmentItemAdjustment"
                         }
@@ -2493,7 +2539,7 @@
             },
             "RemovalShipmentAdjustmentEventList": {
                 "type": "array",
-                "description": "A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.",
+                "description": "A comma-delimited list of `RemovalShipmentAdjustment` details for FBA inventory.",
                 "items": {
                     "$ref": "#/components/schemas/RemovalShipmentAdjustmentEvent"
                 }
@@ -2507,7 +2553,7 @@
                     },
                     "TaxCollectionModel": {
                         "type": "string",
-                        "description": "The tax collection model applied to the item.\n\nPossible values:\n\n* MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.\n\n* Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon."
+                        "description": "The tax collection model that is applied to the item.\n\nPossible values:\n\n* `MarketplaceFacilitator`: Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.\n* `Standard`: Tax is paid to the seller and not remitted to the taxing authority by Amazon."
                     },
                     "FulfillmentNetworkSKU": {
                         "type": "string",
@@ -2515,7 +2561,7 @@
                     },
                     "AdjustedQuantity": {
                         "type": "integer",
-                        "description": "Adjusted quantity of removal shipmentItemAdjustment items.",
+                        "description": "Adjusted quantity of `RemovalShipmentItemAdjustment` items.",
                         "format": "int32"
                     },
                     "RevenueAdjustment": {
@@ -2539,11 +2585,11 @@
                     },
                     "RentalEventType": {
                         "type": "string",
-                        "description": "The type of rental event.\n\nPossible values:\n\n* RentalCustomerPayment-Buyout - Transaction type that represents when the customer wants to buy out a rented item.\n\n* RentalCustomerPayment-Extension - Transaction type that represents when the customer wants to extend the rental period.\n\n* RentalCustomerRefund-Buyout - Transaction type that represents when the customer requests a refund for the buyout of the rented item.\n\n* RentalCustomerRefund-Extension - Transaction type that represents when the customer requests a refund over the extension on the rented item.\n\n* RentalHandlingFee - Transaction type that represents the fee that Amazon charges sellers who rent through Amazon.\n\n* RentalChargeFailureReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a failed charge.\n\n* RentalLostItemReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a lost item."
+                        "description": "The type of rental event.\n\nPossible values:\n\n* `RentalCustomerPayment-Buyout`: A transaction type that represents when the customer wants to buy out a rented item.\n\n* `RentalCustomerPayment-Extension`: A transaction type that represents when the customer wants to extend the rental period.\n\n* `RentalCustomerRefund-Buyout`: A transaction type that represents when the customer requests a refund for the buyout of the rented item.\n\n* `RentalCustomerRefund-Extension`: A transaction type that represents when the customer requests a refund over the extension on the rented item.\n\n* `RentalHandlingFee`: A transaction type that represents the fee that Amazon charges sellers who rent through Amazon.\n\n* `RentalChargeFailureReimbursement`: A transaction type that represents when Amazon sends money to the seller to compensate for a failed charge.\n\n* `RentalLostItemReimbursement`: A transaction type that represents when Amazon sends money to the seller to compensate for a lost item."
                     },
                     "ExtensionLength": {
                         "type": "integer",
-                        "description": "The number of days that the buyer extended an already rented item. This value is only returned for RentalCustomerPayment-Extension and RentalCustomerRefund-Extension events.",
+                        "description": "The number of days that the buyer extended an already rented item. This value is only returned for `RentalCustomerPayment-Extension` and `RentalCustomerRefund-Extension` events.",
                         "format": "int32"
                     },
                     "PostedDate": {
@@ -2583,7 +2629,7 @@
                 "properties": {
                     "RetrochargeEventType": {
                         "type": "string",
-                        "description": "The type of event.\n\nPossible values:\n\n* Retrocharge\n\n* RetrochargeReversal"
+                        "description": "The type of event.\n\nPossible values:\n\n* `Retrocharge`\n\n* `RetrochargeReversal`"
                     },
                     "AmazonOrderId": {
                         "type": "string",
@@ -2610,7 +2656,7 @@
             },
             "RetrochargeEventList": {
                 "type": "array",
-                "description": "A list of information about Retrocharge or RetrochargeReversal events.",
+                "description": "A list of information about `Retrocharge` or `RetrochargeReversal` events.",
                 "items": {
                     "$ref": "#/components/schemas/RetrochargeEvent"
                 }
@@ -2640,7 +2686,7 @@
             },
             "SAFETReimbursementEventList": {
                 "type": "array",
-                "description": "A list of SAFETReimbursementEvents.",
+                "description": "A list of `SAFETReimbursementEvent`.",
                 "items": {
                     "$ref": "#/components/schemas/SAFETReimbursementEvent"
                 }
@@ -2664,7 +2710,7 @@
             },
             "SAFETReimbursementItemList": {
                 "type": "array",
-                "description": "A list of SAFETReimbursementItems.",
+                "description": "A list of `SAFETReimbursementItem`.",
                 "items": {
                     "$ref": "#/components/schemas/SAFETReimbursementItem"
                 }
@@ -2685,11 +2731,11 @@
                     },
                     "eventType": {
                         "type": "string",
-                        "description": "The type of event: SellerDealComplete."
+                        "description": "The type of event: `SellerDealComplete`."
                     },
                     "feeType": {
                         "type": "string",
-                        "description": "The type of fee: RunLightningDealFee."
+                        "description": "The type of fee: `RunLightningDealFee`."
                     },
                     "feeAmount": {
                         "$ref": "#/components/schemas/Currency"
@@ -2772,6 +2818,10 @@
                     "ASIN": {
                         "type": "string",
                         "description": "The Amazon Standard Identification Number (ASIN) of the item."
+                    },
+                    "StoreName": {
+                        "type": "string",
+                        "description": "The name of the store where the event occurred."
                     }
                 },
                 "description": "A service fee on the seller's account."
@@ -2797,6 +2847,10 @@
                     "MarketplaceName": {
                         "type": "string",
                         "description": "The name of the marketplace where the event occurred."
+                    },
+                    "StoreName": {
+                        "type": "string",
+                        "description": "The name of the store where the event occurred."
                     },
                     "OrderChargeList": {
                         "$ref": "#/components/schemas/ChargeComponentList"
@@ -2948,7 +3002,7 @@
             },
             "SolutionProviderCreditEventList": {
                 "type": "array",
-                "description": "A list of information about solution provider credits.",
+                "description": "A list of `SolutionProviderCreditEvent`.",
                 "items": {
                     "$ref": "#/components/schemas/SolutionProviderCreditEvent"
                 }
@@ -2963,7 +3017,7 @@
                         "$ref": "#/components/schemas/Date"
                     }
                 },
-                "description": "Period which taxwithholding on seller's account is calculated."
+                "description": "The period during which tax withholding on a seller's account is calculated."
             },
             "TaxWithholdingEvent": {
                 "type": "object",
@@ -2981,11 +3035,11 @@
                         "$ref": "#/components/schemas/TaxWithholdingPeriod"
                     }
                 },
-                "description": "A TaxWithholding event on seller's account."
+                "description": "A tax withholding event on a seller's account."
             },
             "TaxWithholdingEventList": {
                 "type": "array",
-                "description": "A list of `TaxWithholding` events.",
+                "description": "A list of tax withholding events.",
                 "items": {
                     "$ref": "#/components/schemas/TaxWithholdingEvent"
                 }
@@ -2995,7 +3049,7 @@
                 "properties": {
                     "TaxCollectionModel": {
                         "type": "string",
-                        "description": "The tax collection model applied to the item.\n\nPossible values:\n\n* MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.\n\n* Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon."
+                        "description": "The tax collection model applied to the item.\n\nPossible values:\n\n* `MarketplaceFacilitator`: Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.\n* `Standard`: Tax is paid to the seller and not remitted to the taxing authority by Amazon."
                     },
                     "TaxesWithheld": {
                         "$ref": "#/components/schemas/ChargeComponentList"
@@ -3076,7 +3130,7 @@
                 "properties": {
                     "TransactionType": {
                         "type": "string",
-                        "description": "Indicates the type of transaction.\n\nExample: 'Other Support Service fees'"
+                        "description": "The transaction type. For example, 'Other Support Service fees'"
                     },
                     "PostedDate": {
                         "$ref": "#/components/schemas/Date"
@@ -3096,7 +3150,7 @@
                 "properties": {
                     "TransactionType": {
                         "type": "string",
-                        "description": "Indicates the type of transaction. For example, FBA Inventory Fee"
+                        "description": "The transaction type. For example, FBA Inventory Fee."
                     },
                     "PostedDate": {
                         "$ref": "#/components/schemas/Date"

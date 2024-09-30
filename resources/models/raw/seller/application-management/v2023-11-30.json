@@ -46,7 +46,7 @@
                         "content": {}
                     },
                     "400": {
-                        "description": "The application has not enrolled for programmatic rotations. Please visit your developer console to enroll.",
+                        "description": "Application is not enrolled for rotation notification. Please update application notification preference in Developer console.",
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",

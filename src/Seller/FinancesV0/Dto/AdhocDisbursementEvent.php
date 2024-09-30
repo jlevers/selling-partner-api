@@ -22,10 +22,8 @@ final class AdhocDisbursementEvent extends Dto
     ];
 
     /**
-     * @param  ?string  $transactionType  Indicates the type of transaction.
-     *
-     * Example: "Disbursed to Amazon Gift Card balance"
-     * @param  ?\DateTimeInterface  $postedDate
+     * @param  ?string  $transactionType  The type of transaction. For example, "Disbursed to Amazon Gift Card balance".
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?string  $transactionId  The identifier for the transaction.
      * @param  ?Currency  $transactionAmount  A currency type and amount.
      */

@@ -20,8 +20,8 @@ final class OrderItem extends Dto
      * @param  bool  $isBackOrderAllowed  When true, we will accept backorder confirmations for this item.
      * @param  ?string  $amazonProductIdentifier  Amazon Standard Identification Number (ASIN) of an item.
      * @param  ?string  $vendorProductIdentifier  The vendor selected product identification of the item.
-     * @param  ?Money  $netCost  An amount of money, including units in the form of currency.
-     * @param  ?Money  $listPrice  An amount of money, including units in the form of currency.
+     * @param  ?Money  $netCost  An amount of money. Includes the currency code and an optional unit of measure for items priced by weight.
+     * @param  ?Money  $listPrice  An amount of money. Includes the currency code and an optional unit of measure for items priced by weight.
      */
     public function __construct(
         public readonly string $itemSequenceNumber,

@@ -1824,9 +1824,6 @@
                 "description": "A list of error responses returned when a request is unsuccessful."
             },
             "FeaturedOfferExpectedPriceResponseBody": {
-                "required": [
-                    "offerIdentifier"
-                ],
                 "type": "object",
                 "properties": {
                     "offerIdentifier": {

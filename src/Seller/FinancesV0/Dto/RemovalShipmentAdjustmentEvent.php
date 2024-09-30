@@ -28,7 +28,7 @@ final class RemovalShipmentAdjustmentEvent extends Dto
     ];
 
     /**
-     * @param  ?\DateTimeInterface  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?string  $adjustmentEventId  The unique identifier for the adjustment event.
      * @param  ?string  $merchantOrderId  The merchant removal orderId.
      * @param  ?string  $orderId  The orderId for shipping inventory.
@@ -36,8 +36,8 @@ final class RemovalShipmentAdjustmentEvent extends Dto
      *
      * Possible values:
      *
-     * * WHOLESALE_LIQUIDATION.
-     * @param  RemovalShipmentItemAdjustment[]|null  $removalShipmentItemAdjustmentList  A comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory.
+     * * `WHOLESALE_LIQUIDATION`.
+     * @param  RemovalShipmentItemAdjustment[]|null  $removalShipmentItemAdjustmentList  A comma-delimited list of `RemovalShipmentItemAdjustment` details for FBA inventory.
      */
     public function __construct(
         public readonly ?\DateTimeInterface $postedDate = null,

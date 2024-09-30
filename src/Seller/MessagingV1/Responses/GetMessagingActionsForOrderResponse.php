@@ -20,8 +20,6 @@ final class GetMessagingActionsForOrderResponse extends Response
     protected static array $attributeMap = ['links' => '_links', 'embedded' => '_embedded'];
 
     /**
-     * @param  ?Links  $links
-     * @param  ?Embedded  $embedded
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

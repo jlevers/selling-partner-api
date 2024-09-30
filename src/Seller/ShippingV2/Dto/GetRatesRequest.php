@@ -32,7 +32,6 @@ final class GetRatesRequest extends Dto
      * @param  TaxDetail[]|null  $taxDetails  A list of tax detail information.
      * @param  ClientReferenceDetail[]|null  $clientReferenceDetails  Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
      * @param  ?string  $shipmentType  Shipment type.
-     * @param  ?AccessPointDetails  $destinationAccessPointDetails
      */
     public function __construct(
         public readonly Address $shipFrom,

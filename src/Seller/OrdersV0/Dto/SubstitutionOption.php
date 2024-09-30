@@ -23,10 +23,10 @@ final class SubstitutionOption extends Dto
     ];
 
     /**
-     * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
+     * @param  ?string  $asin  The item's Amazon Standard Identification Number (ASIN).
      * @param  ?int  $quantityOrdered  The number of items to be picked for this substitution option.
-     * @param  ?string  $sellerSku  The seller stock keeping unit (SKU) of the item.
-     * @param  ?string  $title  The title of the item.
+     * @param  ?string  $sellerSku  The item's seller stock keeping unit (SKU).
+     * @param  ?string  $title  The item's title.
      * @param  ?Measurement  $measurement  Measurement information for an order item.
      */
     public function __construct(

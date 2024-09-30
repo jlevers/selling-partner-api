@@ -29,7 +29,7 @@ final class BuyerInfo extends Dto
      *
      * **Note**: This attribute is only available in the Brazil marketplace.
      * @param  ?BuyerTaxInfo  $buyerTaxInfo  Tax information about the buyer.
-     * @param  ?string  $purchaseOrderNumber  The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
+     * @param  ?string  $purchaseOrderNumber  The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.
      */
     public function __construct(
         public readonly ?string $buyerEmail = null,

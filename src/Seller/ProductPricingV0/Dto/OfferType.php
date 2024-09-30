@@ -33,8 +33,6 @@ final class OfferType extends Dto
      * @param  string  $itemCondition  The item condition for the offer listing. Possible values: New, Used, Collectible, Refurbished, or Club.
      * @param  string  $itemSubCondition  The item subcondition for the offer listing. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
      * @param  string  $sellerSku  The seller stock keeping unit (SKU) of the item.
-     * @param  ?string  $offerType
-     * @param  ?MoneyType  $businessPrice
      * @param  QuantityDiscountPriceType[]|null  $quantityDiscountPrices
      */
     public function __construct(

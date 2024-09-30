@@ -170,10 +170,15 @@ class Api extends BaseResource
      * @param  string  $featureName  The name of the feature for which to return a list of eligible inventory.
      * @param  string  $marketplaceId  The marketplace for which to return a list of the inventory that is eligible for the specified feature.
      * @param  ?string  $nextToken  A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
+     * @param  ?\DateTimeInterface  $queryStartDate  A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ
      */
-    public function getFeatureInventory(string $featureName, string $marketplaceId, ?string $nextToken = null): Response
-    {
-        $request = new GetFeatureInventory($featureName, $marketplaceId, $nextToken);
+    public function getFeatureInventory(
+        string $featureName,
+        string $marketplaceId,
+        ?string $nextToken = null,
+        ?\DateTimeInterface $queryStartDate = null,
+    ): Response {
+        $request = new GetFeatureInventory($featureName, $marketplaceId, $nextToken, $queryStartDate);
 
         return $this->connector->send($request);
     }

@@ -23,6 +23,7 @@ final class InventorySummary extends Dto
      * @param  ?\DateTimeInterface  $lastUpdatedTime  The date and time that any quantity was last updated.
      * @param  ?string  $productName  The localized language product title of the item within the specific marketplace.
      * @param  ?int  $totalQuantity  The total number of units in an inbound shipment or in Amazon fulfillment centers.
+     * @param  ?string[]  $stores  A list of seller-enrolled stores that apply to this seller SKU.
      */
     public function __construct(
         public readonly ?string $asin = null,
@@ -33,5 +34,6 @@ final class InventorySummary extends Dto
         public readonly ?\DateTimeInterface $lastUpdatedTime = null,
         public readonly ?string $productName = null,
         public readonly ?int $totalQuantity = null,
+        public readonly ?array $stores = null,
     ) {}
 }

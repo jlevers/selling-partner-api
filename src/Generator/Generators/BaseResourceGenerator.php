@@ -21,7 +21,7 @@ class BaseResourceGenerator extends SDKGenerator
             ->setType(SellingPartnerApi::class)
             ->setProtected();
 
-        $classFile = new PhpFile();
+        $classFile = new PhpFile;
         $classFile->setStrictTypes()
             ->addNamespace(PACKAGE_NAMESPACE)
             ->addUse(SellingPartnerApi::class)

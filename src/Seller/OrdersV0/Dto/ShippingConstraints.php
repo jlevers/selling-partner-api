@@ -14,12 +14,23 @@ use SellingPartnerApi\Dto;
 
 final class ShippingConstraints extends Dto
 {
-    protected static array $attributeMap = ['palletDelivery' => 'PalletDelivery'];
+    protected static array $attributeMap = [
+        'palletDelivery' => 'PalletDelivery',
+        'signatureConfirmation' => 'SignatureConfirmation',
+        'recipientIdentityVerification' => 'RecipientIdentityVerification',
+        'recipientAgeVerification' => 'RecipientAgeVerification',
+    ];
 
     /**
      * @param  ?string  $palletDelivery  Details the importance of the constraint present on the item
+     * @param  ?string  $signatureConfirmation  Details the importance of the constraint present on the item
+     * @param  ?string  $recipientIdentityVerification  Details the importance of the constraint present on the item
+     * @param  ?string  $recipientAgeVerification  Details the importance of the constraint present on the item
      */
     public function __construct(
         public readonly ?string $palletDelivery = null,
+        public readonly ?string $signatureConfirmation = null,
+        public readonly ?string $recipientIdentityVerification = null,
+        public readonly ?string $recipientAgeVerification = null,
     ) {}
 }

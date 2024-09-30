@@ -71,42 +71,42 @@ final class Order extends Dto
      * @param  string  $purchaseDate  The date when the order was created.
      * @param  string  $lastUpdateDate  The date when the order was last updated.
      *
-     * **Note**: `LastUpdateDate` is returned with an incorrect date for orders that were last updated before 2009-04-01.
+     * __Note__: `LastUpdateDate` is returned with an incorrect date for orders that were last updated before 2009-04-01.
      * @param  string  $orderStatus  The current order status.
      * @param  ?string  $sellerOrderId  A seller-defined order identifier.
-     * @param  ?string  $fulfillmentChannel  Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN).
-     * @param  ?string  $salesChannel  The sales channel of the first item in the order.
-     * @param  ?string  $orderChannel  The order channel of the first item in the order.
-     * @param  ?string  $shipServiceLevel  The shipment service level of the order.
+     * @param  ?string  $fulfillmentChannel  Whether the order was fulfilled by Amazon (`AFN`) or by the seller (`MFN`).
+     * @param  ?string  $salesChannel  The sales channel for the first item in the order.
+     * @param  ?string  $orderChannel  The order channel for the first item in the order.
+     * @param  ?string  $shipServiceLevel  The order's shipment service level.
      * @param  ?Money  $orderTotal  The monetary value of the order.
      * @param  ?int  $numberOfItemsShipped  The number of items shipped.
      * @param  ?int  $numberOfItemsUnshipped  The number of items unshipped.
      * @param  PaymentExecutionDetailItem[]|null  $paymentExecutionDetail  A list of payment execution detail items.
-     * @param  ?string  $paymentMethod  The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the `PaymentExecutionDetailItem` object, we recommend using the `PaymentMethodDetails` property to get payment method information.
+     * @param  ?string  $paymentMethod  The payment method for the order. This property is limited to COD and CVS payment methods. Unless you need the specific COD payment information provided by the `PaymentExecutionDetailItem` object, we recommend using the `PaymentMethodDetails` property to get payment method information.
      * @param  ?string[]  $paymentMethodDetails  A list of payment method detail items.
      * @param  ?string  $marketplaceId  The identifier for the marketplace where the order was placed.
-     * @param  ?string  $shipmentServiceLevelCategory  The shipment service level category of the order.
+     * @param  ?string  $shipmentServiceLevelCategory  The shipment service level category for the order.
      *
-     * **Possible values**: `Expedited`, `FreeEconomy`, `NextDay`, `Priority`, `SameDay`, `SecondDay`, `Scheduled`, `Standard`.
-     * @param  ?string  $easyShipShipmentStatus  The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.
+     * **Possible values**: `Expedited`, `FreeEconomy`, `NextDay`, `Priority`, `SameDay`, `SecondDay`, `Scheduled`, and `Standard`.
+     * @param  ?string  $easyShipShipmentStatus  The status of the Amazon Easy Ship order. This property is only included for Amazon Easy Ship orders.
      * @param  ?string  $cbaDisplayableShippingLabel  Custom ship label for Checkout by Amazon (CBA).
-     * @param  ?string  $orderType  The type of the order.
-     * @param  ?string  $earliestShipDate  The start of the time period within which you have committed to ship the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.
+     * @param  ?string  $orderType  The order's type.
+     * @param  ?string  $earliestShipDate  The start of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.
      *
-     * **Note**: `EarliestShipDate` might not be returned for orders placed before February 1, 2013.
-     * @param  ?string  $latestShipDate  The end of the time period within which you have committed to ship the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.
+     * __Note__: `EarliestShipDate` might not be returned for orders placed before February 1, 2013.
+     * @param  ?string  $latestShipDate  The end of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.
      *
-     * **Note**: `LatestShipDate` might not be returned for orders placed before February 1, 2013.
-     * @param  ?string  $earliestDeliveryDate  The start of the time period within which you have committed to fulfill the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.
-     * @param  ?string  $latestDeliveryDate  The end of the time period within which you have committed to fulfill the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders that do not have a `PendingAvailability`, Pending, or Canceled status.
+     * __Note__: `LatestShipDate` might not be returned for orders placed before February 1, 2013.
+     * @param  ?string  $earliestDeliveryDate  The start of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.
+     * @param  ?string  $latestDeliveryDate  The end of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders that do not have a `PendingAvailability`, `Pending`, or `Canceled` status.
      * @param  ?bool  $isBusinessOrder  When true, the order is an Amazon Business order. An Amazon Business order is an order where the buyer is a Verified Business Buyer.
      * @param  ?bool  $isPrime  When true, the order is a seller-fulfilled Amazon Prime order.
-     * @param  ?bool  $isPremiumOrder  When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, see "Premium Shipping Options" in the Seller Central Help for your marketplace.
-     * @param  ?bool  $isGlobalExpressEnabled  When true, the order is a GlobalExpress order.
-     * @param  ?string  $replacedOrderId  The order ID value for the order that is being replaced. Returned only if `IsReplacementOrder` = true.
+     * @param  ?bool  $isPremiumOrder  When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, refer to "Premium Shipping Options" in the Seller Central Help for your marketplace.
+     * @param  ?bool  $isGlobalExpressEnabled  When true, the order is a `GlobalExpress` order.
+     * @param  ?string  $replacedOrderId  The order ID value for the order that is being replaced. Returned only if IsReplacementOrder = true.
      * @param  ?bool  $isReplacementOrder  When true, this is a replacement order.
-     * @param  ?string  $promiseResponseDueDate  Indicates the date by which the seller must respond to the buyer with an estimated ship date. Returned only for Sourcing on Demand orders.
-     * @param  ?bool  $isEstimatedShipDateSet  When true, the estimated ship date is specified for the order. Returned only for Sourcing on Demand orders.
+     * @param  ?string  $promiseResponseDueDate  Indicates the date by which the seller must respond to the buyer with an estimated ship date. Only returned for Sourcing on Demand orders.
+     * @param  ?bool  $isEstimatedShipDateSet  When true, the estimated ship date is set for the order. Only returned for Sourcing on Demand orders.
      * @param  ?bool  $isSoldByAb  When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
      * @param  ?bool  $isIba  When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
      * @param  ?Address  $defaultShipFromLocationAddress  The shipping address for the order.
@@ -114,7 +114,7 @@ final class Order extends Dto
      *
      * **Note**: This attribute is only available in the Turkey marketplace.
      * @param  ?BuyerTaxInformation  $buyerTaxInformation  Contains the business invoice tax information. Available only in the TR marketplace.
-     * @param  ?FulfillmentInstruction  $fulfillmentInstruction  Contains the instructions about the fulfillment like where should it be fulfilled from.
+     * @param  ?FulfillmentInstruction  $fulfillmentInstruction  Contains the instructions about the fulfillment, such as the location from where you want the order filled.
      * @param  ?bool  $isIspu  When true, this order is marked to be picked up from a store rather than delivered.
      * @param  ?bool  $isAccessPointOrder  When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers.
      * @param  ?MarketplaceTaxInfo  $marketplaceTaxInfo  Tax information about the marketplace.

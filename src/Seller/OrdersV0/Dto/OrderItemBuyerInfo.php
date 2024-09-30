@@ -30,7 +30,7 @@ final class OrderItemBuyerInfo extends Dto
      * @param  ?Money  $giftWrapTax  The monetary value of the order.
      * @param  ?string  $giftMessageText  A gift message provided by the buyer.
      *
-     * **Note**: This attribute is only available for MFN (Fulfilled by the seller) orders.
+     * **Note**: This attribute is only available for MFN (fulfilled by seller) orders.
      * @param  ?string  $giftWrapLevel  The gift wrap level specified by the buyer.
      */
     public function __construct(

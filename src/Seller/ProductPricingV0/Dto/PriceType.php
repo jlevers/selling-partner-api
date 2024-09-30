@@ -21,11 +21,6 @@ final class PriceType extends Dto
         'points' => 'Points',
     ];
 
-    /**
-     * @param  ?MoneyType  $landedPrice
-     * @param  ?MoneyType  $shipping
-     * @param  ?Points  $points
-     */
     public function __construct(
         public readonly MoneyType $listingPrice,
         public readonly ?MoneyType $landedPrice = null,

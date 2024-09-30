@@ -54,17 +54,18 @@ final class OrderItem extends Dto
         'substitutionPreferences' => 'SubstitutionPreferences',
         'measurement' => 'Measurement',
         'shippingConstraints' => 'ShippingConstraints',
+        'amazonPrograms' => 'AmazonPrograms',
     ];
 
     protected static array $complexArrayTypes = ['associatedItems' => AssociatedItem::class];
 
     /**
-     * @param  string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
+     * @param  string  $asin  The item's Amazon Standard Identification Number (ASIN).
      * @param  string  $orderItemId  An Amazon-defined order item identifier.
      * @param  int  $quantityOrdered  The number of items in the order.
-     * @param  ?string  $sellerSku  The seller stock keeping unit (SKU) of the item.
+     * @param  ?string  $sellerSku  The item's seller stock keeping unit (SKU).
      * @param  AssociatedItem[]|null  $associatedItems  A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.
-     * @param  ?string  $title  The name of the item.
+     * @param  ?string  $title  The item's name.
      * @param  ?int  $quantityShipped  The number of items shipped.
      * @param  ?ProductInfoDetail  $productInfo  Product information on the number of items.
      * @param  ?PointsGrantedDetail  $pointsGranted  The number of Amazon Points offered with the purchase of an item, and their monetary value.
@@ -81,29 +82,29 @@ final class OrderItem extends Dto
      * @param  ?Money  $codFeeDiscount  The monetary value of the order.
      * @param  ?string  $isGift  Indicates whether the item is a gift.
      *
-     * **Possible values**: `true`, `false`.
-     * @param  ?string  $conditionNote  The condition of the item as described by the seller.
+     * **Possible values**: `true` and `false`.
+     * @param  ?string  $conditionNote  The condition of the item, as described by the seller.
      * @param  ?string  $conditionId  The condition of the item.
      *
-     * **Possible values**: `New`, `Used`, `Collectible`, `Refurbished`, `Preorder`, `Club`.
+     * **Possible values**: `New`, `Used`, `Collectible`, `Refurbished`, `Preorder`, and `Club`.
      * @param  ?string  $conditionSubtypeId  The subcondition of the item.
      *
-     * **Possible values**: `New`, `Mint`, `Very Good`, `Good`, `Acceptable`, `Poor`, `Club`, `OEM`, `Warranty`, `Refurbished Warranty`, `Refurbished`, `Open Box`, `Any`, `Other`.
-     * @param  ?string  $scheduledDeliveryStartDate  The start date of the scheduled delivery window in the time zone of the order destination. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
-     * @param  ?string  $scheduledDeliveryEndDate  The end date of the scheduled delivery window in the time zone of the order destination. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
-     * @param  ?string  $priceDesignation  Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to [Amazon Business](https://business.amazon.com).
+     * **Possible values**: `New`, `Mint`, `Very Good`, `Good`, `Acceptable`, `Poor`, `Club`, `OEM`, `Warranty`, `Refurbished Warranty`, `Refurbished`, `Open Box`, `Any`, and `Other`.
+     * @param  ?string  $scheduledDeliveryStartDate  The start date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
+     * @param  ?string  $scheduledDeliveryEndDate  The end date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
+     * @param  ?string  $priceDesignation  Indicates that the selling price is a special price that is only available for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).
      *
-     * **Possible values**: `BusinessPrice` - A special price that is available only for Amazon Business orders.
+     * **Possible values**: `BusinessPrice`
      * @param  ?TaxCollection  $taxCollection  Information about withheld taxes.
      * @param  ?bool  $serialNumberRequired  When true, the product type for this item has a serial number.
      *
-     * Returned only for Amazon Easy Ship orders.
-     * @param  ?bool  $isTransparency  When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:
+     *  Only returned for Amazon Easy Ship orders.
+     * @param  ?bool  $isTransparency  When true, the ASIN is enrolled in Transparency. The Transparency serial number that you must submit is determined by:
      *
      * **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN).
-     * **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode.
+     * **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number is applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode.
      * **QR code SN:** Submit the URL that the QR code generates.
-     * @param  ?string  $iossNumber  The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
+     * @param  ?string  $iossNumber  The IOSS number of the marketplace. Sellers shipping to the EU from outside the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
      * @param  ?string  $storeChainStoreId  The store chain store identifier. Linked to a specific store in a store chain.
      * @param  ?string  $deemedResellerCategory  The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK.
      * @param  ?ItemBuyerInfo  $buyerInfo  A single item's buyer information.
@@ -112,6 +113,10 @@ final class OrderItem extends Dto
      * @param  ?SubstitutionPreferences  $substitutionPreferences  Substitution preferences for an order item.
      * @param  ?Measurement  $measurement  Measurement information for an order item.
      * @param  ?ShippingConstraints  $shippingConstraints  Delivery constraints applicable to this order.
+     * @param  ?AmazonPrograms  $amazonPrograms  Contains the list of programs that are associated with an item.
+     *
+     * Possible programs are:
+     *  - **Subscribe and Save**: Offers recurring, scheduled deliveries to Amazon customers and Amazon Business customers for their frequently ordered products.
      */
     public function __construct(
         public readonly string $asin,
@@ -153,5 +158,6 @@ final class OrderItem extends Dto
         public readonly ?SubstitutionPreferences $substitutionPreferences = null,
         public readonly ?Measurement $measurement = null,
         public readonly ?ShippingConstraints $shippingConstraints = null,
+        public readonly ?AmazonPrograms $amazonPrograms = null,
     ) {}
 }

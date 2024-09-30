@@ -10,6 +10,7 @@ use SellingPartnerApi\Seller\ListingsItemsV20210801\Requests\DeleteListingsItem;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Requests\GetListingsItem;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Requests\PatchListingsItem;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Requests\PutListingsItem;
+use SellingPartnerApi\Seller\ListingsItemsV20210801\Requests\SearchListingsItems;
 
 class Api extends BaseResource
 {
@@ -91,6 +92,37 @@ class Api extends BaseResource
         ?string $issueLocale = null,
     ): Response {
         $request = new PatchListingsItem($sellerId, $sku, $listingsItemPatchRequest, $marketplaceIds, $includedData, $mode, $issueLocale);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $sellerId  A selling partner identifier, such as a merchant account or vendor code.
+     * @param  array  $marketplaceIds  A comma-delimited list of Amazon marketplace identifiers for the request.
+     * @param  ?array  $identifiers  A comma-delimited list of product identifiers to search for listings items by.
+     *
+     * **Note**:
+     * 1. Required when `identifiersType` is provided.
+     * @param  ?string  $identifiersType  Type of product identifiers to search for listings items by.
+     *
+     * **Note**:
+     * 1. Required when `identifiers` is provided.
+     * @param  ?int  $pageSize  Number of results to be returned per page.
+     * @param  ?string  $pageToken  A token to fetch a certain page when there are multiple pages worth of results.
+     * @param  ?array  $includedData  A comma-delimited list of data sets to include in the response. Default: summaries.
+     * @param  ?string  $issueLocale  A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: "en_US", "fr_CA", "fr_FR". Localized messages default to "en_US" when a localization is not available in the specified locale.
+     */
+    public function searchListingsItems(
+        string $sellerId,
+        array $marketplaceIds,
+        ?array $identifiers = null,
+        ?string $identifiersType = null,
+        ?int $pageSize = null,
+        ?string $pageToken = null,
+        ?array $includedData = null,
+        ?string $issueLocale = null,
+    ): Response {
+        $request = new SearchListingsItems($sellerId, $marketplaceIds, $identifiers, $identifiersType, $pageSize, $pageToken, $includedData, $issueLocale);
 
         return $this->connector->send($request);
     }

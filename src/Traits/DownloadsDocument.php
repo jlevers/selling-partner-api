@@ -38,7 +38,7 @@ trait DownloadsDocument
             );
         }
 
-        $client = new Client();
+        $client = new Client;
 
         if ($documentType) {
             $this->documentTypeInfo = static::documentTypeInfo($documentType);
@@ -91,7 +91,7 @@ trait DownloadsDocument
      */
     public function downloadStream(): StreamInterface
     {
-        $client = new Client();
+        $client = new Client;
         try {
             $response = $client->request('GET', $this->url, ['stream' => true]);
         } catch (ClientException $e) {
@@ -137,9 +137,9 @@ trait DownloadsDocument
         fclose($tempFile);
 
         $options = match ($this->documentTypeInfo['contentType']) {
-            ContentType::CSV => new Options(),
-            ContentType::TAB => new Options(),
-            ContentType::XLSX => new XLSXOptions(),
+            ContentType::CSV => new Options,
+            ContentType::TAB => new Options,
+            ContentType::XLSX => new XLSXOptions,
         };
         if ($this->documentTypeInfo['contentType'] === ContentType::TAB) {
             $options->FIELD_DELIMITER = "\t";

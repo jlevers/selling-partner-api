@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Selling Partner API for Orders",
-        "description": "The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.\n\n**Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.",
+        "description": "Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools. \n\n_Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).",
         "contact": {
             "name": "Selling Partner API Developer Support",
             "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
@@ -24,13 +24,13 @@
                 "tags": [
                     "ordersV0"
                 ],
-                "description": "Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.0167 | 20 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns orders that are created or updated during the specified time period. If you want to return specific types of orders, you can apply filters to your request. `NextToken` doesn't affect any filters that you include in your request; it only impacts the pagination for the filtered orders response. \n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.0167 | 20 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.",
                 "operationId": "getOrders",
                 "parameters": [
                     {
                         "name": "CreatedAfter",
                         "in": "query",
-                        "description": "A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.\n\n**Note**: Either the `CreatedAfter` parameter or the `LastUpdatedAfter` parameter is required. You could specify `CreatedBefore` but not provide `LastUpdatedAfter` or `LastUpdatedBefore` when `CreatedAfter` is specified.",
+                        "description": "Use this date to select orders created after (or at) a specified time. Only orders placed after the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.\n\n**Note**: Either the `CreatedAfter` parameter or the `LastUpdatedAfter` parameter is required. Both cannot be empty. `LastUpdatedAfter` and `LastUpdatedBefore` cannot be set when `CreatedAfter` is set.",
                         "schema": {
                             "type": "string"
                         }
@@ -38,7 +38,7 @@
                     {
                         "name": "CreatedBefore",
                         "in": "query",
-                        "description": "A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.\n\n**Note**: `CreatedBefore` is optional when `CreatedAfter` is specified. But if specified, `CreatedBefore` should be equal to or after the `CreatedAfter` date and at least 2 minutes before the current time.",
+                        "description": "Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.\n\n**Note**: `CreatedBefore` is optional when `CreatedAfter` is set. If specified, `CreatedBefore` must be equal to or after the `CreatedAfter` date and at least two minutes before current time.",
                         "schema": {
                             "type": "string"
                         }
@@ -46,7 +46,7 @@
                     {
                         "name": "LastUpdatedAfter",
                         "in": "query",
-                        "description": "A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.\n\n**Note**: `LastUpdatedBefore` is optional when `LastUpdatedAfter` is specified. But if specified, `LastUpdatedBefore` should be equal to or after the `LastUpdatedAfter` date and at least 2 minutes before current time.",
+                        "description": "Use this date to select orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.\n\n**Note**: Either the `CreatedAfter` parameter or the `LastUpdatedAfter` parameter is required. Both cannot be empty. `CreatedAfter` or `CreatedBefore` cannot be set when `LastUpdatedAfter` is set.",
                         "schema": {
                             "type": "string"
                         }
@@ -54,7 +54,7 @@
                     {
                         "name": "LastUpdatedBefore",
                         "in": "query",
-                        "description": "A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.\n\n**Note**: LastUpdatedBefore is optional when LastUpdatedAfter is set. But if specified, LastUpdatedBefore should be equal to or after the LastUpdatedAfter date and at least 2 minutes before current time.",
+                        "description": "Use this date to select orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.\n\n**Note**: `LastUpdatedBefore` is optional when `LastUpdatedAfter` is set. But if specified, `LastUpdatedBefore` must be equal to or after the `LastUpdatedAfter` date and at least two minutes before current time.",
                         "schema": {
                             "type": "string"
                         }
@@ -75,7 +75,7 @@
                     {
                         "name": "MarketplaceIds",
                         "in": "query",
-                        "description": "A list of `MarketplaceId` values. Used to select orders that were placed in the specified marketplaces.\n\nRefer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of `MarketplaceId` values.",
+                        "description": "A list of `MarketplaceId` values. Used to select orders that were placed in the specified marketplaces.\n\nRefer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of `marketplaceId` values.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -90,7 +90,7 @@
                     {
                         "name": "FulfillmentChannels",
                         "in": "query",
-                        "description": "A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. \n\n**Possible values**: `AFN` (Fulfillment by Amazon); `MFN` (Fulfilled by the seller).",
+                        "description": "A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. \n\n**Possible values**: `AFN` (fulfilled by Amazon), `MFN` (fulfilled by seller).",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -103,7 +103,7 @@
                     {
                         "name": "PaymentMethods",
                         "in": "query",
-                        "description": "A list of payment method values. Used to select orders paid using the specified payment methods.\n\n**Possible values**: `COD` (Cash on delivery); `CVS` (Convenience store payment); `Other` (Any payment method other than `COD` or `CVS`).",
+                        "description": "A list of payment method values. Use this field to select orders that were paid with the specified payment methods.\n\n**Possible values**: `COD` (cash on delivery), `CVS` (convenience store), `Other` (Any payment method other than COD or CVS).",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -124,7 +124,7 @@
                     {
                         "name": "SellerOrderId",
                         "in": "query",
-                        "description": "An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If SellerOrderId is specified, then FulfillmentChannels, OrderStatuses, PaymentMethod, LastUpdatedAfter, LastUpdatedBefore, and BuyerEmail cannot be specified.",
+                        "description": "An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If `SellerOrderId` is specified, then `FulfillmentChannels`, `OrderStatuses`, `PaymentMethod`, `LastUpdatedAfter`, LastUpdatedBefore, and `BuyerEmail` cannot be specified.",
                         "schema": {
                             "type": "string"
                         }
@@ -174,7 +174,7 @@
                     {
                         "name": "AmazonOrderIds",
                         "in": "query",
-                        "description": "A list of AmazonOrderId values. An AmazonOrderId is an Amazon-defined order identifier, in 3-7-7 format.",
+                        "description": "A list of `AmazonOrderId` values. An `AmazonOrderId` is an Amazon-defined order identifier, in 3-7-7 format.",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -188,7 +188,7 @@
                     {
                         "name": "ActualFulfillmentSupplySourceId",
                         "in": "query",
-                        "description": "Denotes the recommended sourceId where the order should be fulfilled from.",
+                        "description": "The `sourceId` of the location from where you want the order fulfilled.",
                         "schema": {
                             "type": "string"
                         }
@@ -212,7 +212,7 @@
                     {
                         "name": "EarliestDeliveryDateBefore",
                         "in": "query",
-                        "description": "A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "description": "Use this date to select orders with a earliest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
                         "schema": {
                             "type": "string"
                         }
@@ -220,7 +220,7 @@
                     {
                         "name": "EarliestDeliveryDateAfter",
                         "in": "query",
-                        "description": "A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "description": "Use this date to select orders with a earliest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
                         "schema": {
                             "type": "string"
                         }
@@ -228,7 +228,7 @@
                     {
                         "name": "LatestDeliveryDateBefore",
                         "in": "query",
-                        "description": "A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "description": "Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
                         "schema": {
                             "type": "string"
                         }
@@ -236,7 +236,7 @@
                     {
                         "name": "LatestDeliveryDateAfter",
                         "in": "query",
-                        "description": "A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "description": "Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
                         "schema": {
                             "type": "string"
                         }
@@ -679,7 +679,7 @@
                 "tags": [
                     "ordersV0"
                 ],
-                "description": "Returns the order that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the order that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getOrder",
                 "parameters": [
                     {
@@ -1059,7 +1059,7 @@
                 "tags": [
                     "ordersV0"
                 ],
-                "description": "Returns buyer information for the order that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns buyer information for the order that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getOrderBuyerInfo",
                 "parameters": [
                     {
@@ -1277,7 +1277,7 @@
                 "tags": [
                     "ordersV0"
                 ],
-                "description": "Returns the shipping address for the order that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the shipping address for the order that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getOrderAddress",
                 "parameters": [
                     {
@@ -1505,7 +1505,7 @@
                 "tags": [
                     "ordersV0"
                 ],
-                "description": "Returns detailed order item information for the order that you specify. If `NextToken` is provided, it's used to retrieve the next page of order items.\n\n**Note**: When an order is in the Pending state (the order has been placed but payment has not been authorized), the `getOrderItems` operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the `Unshipped`, `Partially Shipped`, or `Shipped` state, the `getOrderItems` operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns detailed order item information for the order that you specify. If `NextToken` is provided, it's used to retrieve the next page of order items.\n\n__Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getOrderItems",
                 "parameters": [
                     {
@@ -1848,7 +1848,7 @@
                 "tags": [
                     "ordersV0"
                 ],
-                "description": "Returns buyer information for the order items in the order that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns buyer information for the order items in the order that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getOrderItemsBuyerInfo",
                 "parameters": [
                     {
@@ -2088,7 +2088,7 @@
                 "tags": [
                     "shipment"
                 ],
-                "description": "Update the shipment status for an order that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Update the shipment status for an order that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "updateShipmentStatus",
                 "parameters": [
                     {
@@ -2181,7 +2181,7 @@
                                         "errors": [
                                             {
                                                 "code": "InvalidInput",
-                                                "message": "Marketplace id is not defined",
+                                                "message": "Marketplace ID is not defined",
                                                 "details": "1001"
                                             }
                                         ]
@@ -2331,7 +2331,7 @@
                 "tags": [
                     "ordersV0"
                 ],
-                "description": "Returns regulated information for the order that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns regulated information for the order that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getOrderRegulatedInfo",
                 "parameters": [
                     {
@@ -2526,6 +2526,191 @@
                                             }
                                         }
                                     }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": "902-2592119-3531015"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "payload": {
+                                            "AmazonOrderId": "902-2592119-3531015",
+                                            "RequiresDosageLabel": false,
+                                            "RegulatedInformation": {
+                                                "Fields": [
+                                                    {
+                                                        "FieldId": "pets_rx_scName",
+                                                        "FieldLabel": "Pet name",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "Woofer"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scType",
+                                                        "FieldLabel": "Pet type",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "Dog"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scBreed",
+                                                        "FieldLabel": "Pet breed",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "Husky"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scGender",
+                                                        "FieldLabel": "Pet gender",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "Female"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scDateOfBirth",
+                                                        "FieldLabel": "Pet Birth Date",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "2016-05-01"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scWeight",
+                                                        "FieldLabel": "Weight",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "12"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scWeightUnit",
+                                                        "FieldLabel": "Weight Unit",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "Pound"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scHasAllergies",
+                                                        "FieldLabel": "Does your pet have allergies?",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "False"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scTakesAdditionalMedications",
+                                                        "FieldLabel": "Is your pet on any other medication?",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "False"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scHasOtherProblems",
+                                                        "FieldLabel": "Any pet health problems?",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "False"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scSourceClinicId",
+                                                        "FieldLabel": "Source Clinic ID",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "Clinic-1234"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scVetClinicName",
+                                                        "FieldLabel": "Vet Clinic Name",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "Test Clinic"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scVetClinicCity",
+                                                        "FieldLabel": "Vet Clinic City",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "Seattle"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scVetClinicState",
+                                                        "FieldLabel": "Vet Clinic State",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "WA"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scVetClinicZipCode",
+                                                        "FieldLabel": "Vet Clinic Zip Code",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "98000"
+                                                    },
+                                                    {
+                                                        "FieldId": "pets_rx_scVetClinicPhoneNumber",
+                                                        "FieldLabel": "Vet Clinic Phone Number",
+                                                        "FieldType": "Text",
+                                                        "FieldValue": "2060000000"
+                                                    }
+                                                ]
+                                            },
+                                            "RegulatedOrderVerificationStatus": {
+                                                "Status": "Pending",
+                                                "RequiresMerchantAction": true,
+                                                "ValidRejectionReasons": [
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_incorrect_product",
+                                                        "RejectionReasonDescription": "Canceled order due to veterinarian indicating wrong product ordered"
+                                                    },
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_no_vcpr",
+                                                        "RejectionReasonDescription": "Canceled order due to veterinarian indicating they do not have you as their client"
+                                                    },
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_visit_required",
+                                                        "RejectionReasonDescription": "Canceled order due to veterinarian indicating they need to see your pet for an appointment"
+                                                    },
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_wrx_required",
+                                                        "RejectionReasonDescription": "Canceled order due to veterinarian policy requiring you pick up a written prescription and mail to pharmacy"
+                                                    },
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_other",
+                                                        "RejectionReasonDescription": "Canceled order due to prescription denied - contact your vetinarian"
+                                                    },
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_therapy_change",
+                                                        "RejectionReasonDescription": "Canceled order due to a change in therapy, follow up with your veterinarian"
+                                                    },
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_wrong_weight",
+                                                        "RejectionReasonDescription": "Canceled order due to incorrect pet weight on file, update weight and replace order or order correct product"
+                                                    },
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_early_refill",
+                                                        "RejectionReasonDescription": "Canceled due to refilling prescription order too soon"
+                                                    },
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_wrong_species",
+                                                        "RejectionReasonDescription": "Canceled due to ordering for wrong pet species, replace order for correct product"
+                                                    },
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_duplicate",
+                                                        "RejectionReasonDescription": "Canceled due to duplicate order identified"
+                                                    },
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_invalid_rx",
+                                                        "RejectionReasonDescription": "Canceled due to not receiving a valid prescription"
+                                                    },
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_address_validation_error",
+                                                        "RejectionReasonDescription": "Canceled due to a non-verified address, correct address and replace order"
+                                                    },
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_no_clinic_match",
+                                                        "RejectionReasonDescription": "Canceled due to no valid clinic match, provide complete and accurate details for vet clinic and replace order"
+                                                    },
+                                                    {
+                                                        "RejectionReasonId": "pets_rx_sc_pharmacist_canceled",
+                                                        "RejectionReasonDescription": "Order canceled by pharmacy"
+                                                    }
+                                                ],
+                                                "ValidVerificationDetails": [
+                                                    {
+                                                        "VerificationDetailType": "prescriptionDetail",
+                                                        "ValidVerificationStatuses": [
+                                                            "Approved"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
                                 }
                             ]
                         }
@@ -2677,7 +2862,7 @@
                 "tags": [
                     "ordersV0"
                 ],
-                "description": "Updates (approves or rejects) the verification status of an order containing regulated products.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Updates (approves or rejects) the verification status of an order containing regulated products.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "updateVerificationStatus",
                 "parameters": [
                     {
@@ -2733,6 +2918,34 @@
                                                         "status": "Rejected",
                                                         "externalReviewerId": "reviewer1234",
                                                         "rejectionReasonId": "shield_pom_vps_reject_incorrect_weight"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {}
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": "902-3159896-1390916"
+                                            },
+                                            "body": {
+                                                "value": {
+                                                    "regulatedOrderVerificationStatus": {
+                                                        "externalReviewerId": "reviewer1234",
+                                                        "verificationDetails": {
+                                                            "prescriptionDetail": {
+                                                                "prescriptionId": "Rx-1234",
+                                                                "expirationDate": "2024-01-01T00:00:00Z",
+                                                                "writtenQuantity": 3,
+                                                                "totalRefillsAuthorized": 10,
+                                                                "usageInstructions": "Take one per day by mouth with food",
+                                                                "refillsRemaining": 10,
+                                                                "clinicId": "ABC-1234"
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }
@@ -2817,6 +3030,80 @@
                                             {
                                                 "code": "InvalidInput",
                                                 "message": "Invalid request parameter `status`. Must be one of [Approved, Rejected]."
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": "902-3159896-1390916"
+                                            },
+                                            "body": {
+                                                "value": {
+                                                    "regulatedOrderVerificationStatus": {
+                                                        "status": "Rejected",
+                                                        "rejectionReasonId": "shield_pom_vps_reject_incorrect_weight",
+                                                        "verificationDetails": {
+                                                            "prescriptionDetail": {
+                                                                "prescriptionId": "Rx-1234",
+                                                                "expirationDate": "2024-01-01T00:00:00Z",
+                                                                "writtenQuantity": 3,
+                                                                "totalRefillsAuthorized": 10,
+                                                                "usageInstructions": "Take one per day by mouth with food",
+                                                                "refillsRemaining": 10,
+                                                                "clinicId": "ABC-1234"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Verification Detail `prescriptionDetail` is not supported when order is in Rejected status."
+                                            },
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Missing request parameter: externalReviewerId."
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": "902-3159896-1390916"
+                                            },
+                                            "body": {
+                                                "value": {
+                                                    "regulatedOrderVerificationStatus": {
+                                                        "externalReviewerId": "reviewer1234",
+                                                        "verificationDetails": {
+                                                            "prescriptionDetail": {
+                                                                "prescriptionId": "Rx-1234",
+                                                                "expirationDate": "2024-01-01T00:00:00Z",
+                                                                "writtenQuantity": 3,
+                                                                "totalRefillsAuthorized": 10,
+                                                                "usageInstructions": "Take one per day by mouth with food",
+                                                                "refillsRemaining": 10
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Missing required parameter(s) from prescriptionDetail value: clinicId"
                                             }
                                         ]
                                     }
@@ -2965,7 +3252,7 @@
                 "tags": [
                     "ordersV0"
                 ],
-                "description": "Updates the shipment confirmation status for a specified order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Updates the shipment confirmation status for a specified order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "confirmShipment",
                 "parameters": [
                     {
@@ -2979,7 +3266,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "The request body of the `confirmShipment` operation.",
+                    "description": "Request body of `confirmShipment`.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -3267,8 +3554,7 @@
             },
             "UpdateVerificationStatusRequestBody": {
                 "required": [
-                    "externalReviewerId",
-                    "status"
+                    "externalReviewerId"
                 ],
                 "type": "object",
                 "properties": {
@@ -3277,11 +3563,14 @@
                     },
                     "externalReviewerId": {
                         "type": "string",
-                        "description": "The identifier for the order's regulated information reviewer."
+                        "description": "The identifier of the order's regulated information reviewer."
                     },
                     "rejectionReasonId": {
                         "type": "string",
-                        "description": "The unique identifier for the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected."
+                        "description": "The unique identifier of the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected."
+                    },
+                    "verificationDetails": {
+                        "$ref": "#/components/schemas/VerificationDetails"
                     }
                 },
                 "description": "The updated values of the `VerificationStatus` field."
@@ -3321,7 +3610,7 @@
                     "properties": {
                         "orderItemId": {
                             "type": "string",
-                            "description": "The unique identifier of the order item."
+                            "description": "The order item's unique identifier."
                         },
                         "quantity": {
                             "type": "integer",
@@ -3447,11 +3736,11 @@
                     },
                     "LastUpdatedBefore": {
                         "type": "string",
-                        "description": "A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format."
+                        "description": "Use this date to select orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format."
                     },
                     "CreatedBefore": {
                         "type": "string",
-                        "description": "A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format."
+                        "description": "Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format."
                     }
                 },
                 "description": "A list of orders along with additional information to make subsequent API calls."
@@ -3486,7 +3775,7 @@
                     },
                     "LastUpdateDate": {
                         "type": "string",
-                        "description": "The date when the order was last updated.\n\n**Note**: `LastUpdateDate` is returned with an incorrect date for orders that were last updated before 2009-04-01."
+                        "description": "The date when the order was last updated.\n\n__Note__: `LastUpdateDate` is returned with an incorrect date for orders that were last updated before 2009-04-01."
                     },
                     "OrderStatus": {
                         "type": "string",
@@ -3504,7 +3793,7 @@
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "Pending",
-                                "description": "The order has been placed but payment has not been authorized. The order is not ready for shipment. Note that for orders with OrderType = Standard, the initial order status is Pending. For orders with OrderType = Preorder, the initial order status is PendingAvailability, and the order passes into the Pending status when the payment authorization process begins."
+                                "description": "The order has been placed but payment has not been authorized. The order is not ready for shipment. Note that for orders with `OrderType = Standard`, the initial order status is Pending. For orders with `OrderType = Preorder`, the initial order status is `PendingAvailability`, and the order passes into the Pending status when the payment authorization process begins."
                             },
                             {
                                 "value": "Unshipped",
@@ -3532,13 +3821,13 @@
                             },
                             {
                                 "value": "PendingAvailability",
-                                "description": "This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future. The order is not ready for shipment."
+                                "description": "This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date for the item is in the future. The order is not ready for shipment."
                             }
                         ]
                     },
                     "FulfillmentChannel": {
                         "type": "string",
-                        "description": "Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN).",
+                        "description": "Whether the order was fulfilled by Amazon (`AFN`) or by the seller (`MFN`).",
                         "enum": [
                             "MFN",
                             "AFN"
@@ -3556,15 +3845,15 @@
                     },
                     "SalesChannel": {
                         "type": "string",
-                        "description": "The sales channel of the first item in the order."
+                        "description": "The sales channel for the first item in the order."
                     },
                     "OrderChannel": {
                         "type": "string",
-                        "description": "The order channel of the first item in the order."
+                        "description": "The order channel for the first item in the order."
                     },
                     "ShipServiceLevel": {
                         "type": "string",
-                        "description": "The shipment service level of the order."
+                        "description": "The order's shipment service level."
                     },
                     "OrderTotal": {
                         "$ref": "#/components/schemas/Money"
@@ -3582,7 +3871,7 @@
                     },
                     "PaymentMethod": {
                         "type": "string",
-                        "description": "The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the `PaymentExecutionDetailItem` object, we recommend using the `PaymentMethodDetails` property to get payment method information.",
+                        "description": "The payment method for the order. This property is limited to COD and CVS payment methods. Unless you need the specific COD payment information provided by the `PaymentExecutionDetailItem` object, we recommend using the `PaymentMethodDetails` property to get payment method information.",
                         "enum": [
                             "COD",
                             "CVS",
@@ -3612,7 +3901,7 @@
                     },
                     "ShipmentServiceLevelCategory": {
                         "type": "string",
-                        "description": "The shipment service level category of the order.\n\n**Possible values**: `Expedited`, `FreeEconomy`, `NextDay`, `Priority`, `SameDay`, `SecondDay`, `Scheduled`, `Standard`."
+                        "description": "The shipment service level category for the order.\n\n**Possible values**: `Expedited`, `FreeEconomy`, `NextDay`, `Priority`, `SameDay`, `SecondDay`, `Scheduled`, and `Standard`."
                     },
                     "EasyShipShipmentStatus": {
                         "$ref": "#/components/schemas/EasyShipShipmentStatus"
@@ -3623,7 +3912,7 @@
                     },
                     "OrderType": {
                         "type": "string",
-                        "description": "The type of the order.",
+                        "description": "The order's type.",
                         "enum": [
                             "StandardOrder",
                             "LongLeadTimeOrder",
@@ -3656,19 +3945,19 @@
                     },
                     "EarliestShipDate": {
                         "type": "string",
-                        "description": "The start of the time period within which you have committed to ship the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.\n\n**Note**: `EarliestShipDate` might not be returned for orders placed before February 1, 2013."
+                        "description": "The start of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.\n\n__Note__: `EarliestShipDate` might not be returned for orders placed before February 1, 2013."
                     },
                     "LatestShipDate": {
                         "type": "string",
-                        "description": "The end of the time period within which you have committed to ship the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.\n\n**Note**: `LatestShipDate` might not be returned for orders placed before February 1, 2013."
+                        "description": "The end of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.\n\n__Note__: `LatestShipDate` might not be returned for orders placed before February 1, 2013."
                     },
                     "EarliestDeliveryDate": {
                         "type": "string",
-                        "description": "The start of the time period within which you have committed to fulfill the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders."
+                        "description": "The start of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders."
                     },
                     "LatestDeliveryDate": {
                         "type": "string",
-                        "description": "The end of the time period within which you have committed to fulfill the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders that do not have a `PendingAvailability`, Pending, or Canceled status."
+                        "description": "The end of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders that do not have a `PendingAvailability`, `Pending`, or `Canceled` status."
                     },
                     "IsBusinessOrder": {
                         "type": "boolean",
@@ -3680,15 +3969,15 @@
                     },
                     "IsPremiumOrder": {
                         "type": "boolean",
-                        "description": "When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, see \"Premium Shipping Options\" in the Seller Central Help for your marketplace."
+                        "description": "When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, refer to \"Premium Shipping Options\" in the Seller Central Help for your marketplace."
                     },
                     "IsGlobalExpressEnabled": {
                         "type": "boolean",
-                        "description": "When true, the order is a GlobalExpress order."
+                        "description": "When true, the order is a `GlobalExpress` order."
                     },
                     "ReplacedOrderId": {
                         "type": "string",
-                        "description": "The order ID value for the order that is being replaced. Returned only if `IsReplacementOrder` = true."
+                        "description": "The order ID value for the order that is being replaced. Returned only if IsReplacementOrder = true."
                     },
                     "IsReplacementOrder": {
                         "type": "boolean",
@@ -3696,11 +3985,11 @@
                     },
                     "PromiseResponseDueDate": {
                         "type": "string",
-                        "description": "Indicates the date by which the seller must respond to the buyer with an estimated ship date. Returned only for Sourcing on Demand orders."
+                        "description": "Indicates the date by which the seller must respond to the buyer with an estimated ship date. Only returned for Sourcing on Demand orders."
                     },
                     "IsEstimatedShipDateSet": {
                         "type": "boolean",
-                        "description": "When true, the estimated ship date is specified for the order. Returned only for Sourcing on Demand orders."
+                        "description": "When true, the estimated ship date is set for the order. Only returned for Sourcing on Demand orders."
                     },
                     "IsSoldByAB": {
                         "type": "boolean",
@@ -3723,11 +4012,11 @@
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "INDIVIDUAL",
-                                "description": "Buyer should be issued an individual invoice."
+                                "description": "Issues an individual invoice to the buyer."
                             },
                             {
                                 "value": "BUSINESS",
-                                "description": "Buyer should be issued a business invoice. Tax information is available in `BuyerTaxInformation` structure."
+                                "description": "Issues a business invoice to the buyer. Tax information is available in `BuyerTaxInformation`."
                             }
                         ]
                     },
@@ -3798,7 +4087,7 @@
                     },
                     "PurchaseOrderNumber": {
                         "type": "string",
-                        "description": "The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout."
+                        "description": "The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout."
                     }
                 },
                 "description": "Buyer information for an order."
@@ -3856,14 +4145,21 @@
                     },
                     "ReviewDate": {
                         "type": "string",
-                        "description": "The date the order was reviewed. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format."
+                        "description": "The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format."
                     },
                     "ExternalReviewerId": {
                         "type": "string",
                         "description": "The identifier for the order's regulated information reviewer."
+                    },
+                    "ValidVerificationDetails": {
+                        "type": "array",
+                        "description": "A list of valid verification details that may be provided and the criteria required for when the verification detail can be provided.",
+                        "items": {
+                            "$ref": "#/components/schemas/ValidVerificationDetail"
+                        }
                     }
                 },
-                "description": "The verification status of the order along with associated approval or rejection metadata."
+                "description": "The verification status of the order, along with associated approval or rejection metadata."
             },
             "RejectionReason": {
                 "required": [
@@ -3881,7 +4177,84 @@
                         "description": "The description of this rejection reason."
                     }
                 },
-                "description": "The reason for rejecting the order's regulated information. Not present if the order isn't rejected."
+                "description": "The reason for rejecting the order's regulated information. This is only present if the order is rejected."
+            },
+            "PrescriptionDetail": {
+                "required": [
+                    "clinicId",
+                    "expirationDate",
+                    "prescriptionId",
+                    "refillsRemaining",
+                    "totalRefillsAuthorized",
+                    "usageInstructions",
+                    "writtenQuantity"
+                ],
+                "type": "object",
+                "properties": {
+                    "prescriptionId": {
+                        "type": "string",
+                        "description": "The identifier for the prescription used to verify the regulated product."
+                    },
+                    "expirationDate": {
+                        "type": "string",
+                        "description": "The expiration date of the prescription used to verify the regulated product, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.",
+                        "format": "date-time"
+                    },
+                    "writtenQuantity": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "The number of units in each fill as provided in the prescription."
+                    },
+                    "totalRefillsAuthorized": {
+                        "minimum": 0,
+                        "type": "integer",
+                        "description": "The total number of refills written in the original prescription used to verify the regulated product. If a prescription originally had no refills, this value must be 0."
+                    },
+                    "refillsRemaining": {
+                        "minimum": 0,
+                        "type": "integer",
+                        "description": "The number of refills remaining for the prescription used to verify the regulated product. If a prescription originally had 10 total refills, this value must be `10` for the first order, `9` for the second order, and `0` for the eleventh order. If a prescription originally had no refills, this value must be 0."
+                    },
+                    "clinicId": {
+                        "type": "string",
+                        "description": "The identifier for the clinic which provided the prescription used to verify the regulated product."
+                    },
+                    "usageInstructions": {
+                        "type": "string",
+                        "description": "The instructions for the prescription as provided by the approver of the regulated product."
+                    }
+                },
+                "description": "Information about the prescription that is used to verify a regulated product. This must be provided once per order and reflect the seller\u2019s own records. Only approved orders can have prescriptions."
+            },
+            "ValidVerificationDetail": {
+                "required": [
+                    "ValidVerificationStatuses",
+                    "VerificationDetailType"
+                ],
+                "type": "object",
+                "properties": {
+                    "VerificationDetailType": {
+                        "type": "string",
+                        "description": "A supported type of verification detail. The type indicates which verification detail could be shared while updating the regulated order. Valid value: `prescriptionDetail`."
+                    },
+                    "ValidVerificationStatuses": {
+                        "type": "array",
+                        "description": "A list of valid verification statuses where the associated verification detail type may be provided. For example, if the value of this field is [\"Approved\"], calls to provide the associated verification detail will fail for orders with a `VerificationStatus` of `Pending`, `Rejected`, `Expired`, or `Cancelled`.",
+                        "items": {
+                            "$ref": "#/components/schemas/VerificationStatus"
+                        }
+                    }
+                },
+                "description": "The types of verification details that may be provided for the order and the criteria required for when the type of verification detail can be provided. The types of verification details allowed depend on the type of regulated product and will not change order to order."
+            },
+            "VerificationDetails": {
+                "type": "object",
+                "properties": {
+                    "prescriptionDetail": {
+                        "$ref": "#/components/schemas/PrescriptionDetail"
+                    }
+                },
+                "description": "Additional information related to the verification of a regulated order."
             },
             "VerificationStatus": {
                 "type": "string",
@@ -3943,11 +4316,11 @@
                 "properties": {
                     "FieldId": {
                         "type": "string",
-                        "description": "The unique identifier for the field."
+                        "description": "The unique identifier of the field."
                     },
                     "FieldLabel": {
                         "type": "string",
-                        "description": "The name for the field."
+                        "description": "The name of the field."
                     },
                     "FieldType": {
                         "type": "string",
@@ -3959,17 +4332,17 @@
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "Text",
-                                "description": "This field is a text representation of a response collected from the regulatory form."
+                                "description": "This field is a text representation of the response collected from the regulatory form."
                             },
                             {
                                 "value": "FileAttachment",
-                                "description": "This field contains the link to an attachment collected from the regulatory form."
+                                "description": "This field contains a link to an attachment collected from the regulatory form."
                             }
                         ]
                     },
                     "FieldValue": {
                         "type": "string",
-                        "description": "The content of the field as collected in regulatory form. Note that `FileAttachment` type fields will contain a URL to download the attachment here."
+                        "description": "The content of the field as collected in regulatory form. Note that `FileAttachment` type fields contain a URL where you can download the attachment."
                     }
                 },
                 "description": "A field collected from the regulatory form."
@@ -3986,7 +4359,7 @@
                     },
                     "BuyerCompanyName": {
                         "type": "string",
-                        "description": "The company name of the contact buyer. For Invoice By Amazon (IBA) orders, the buyer company should be Amazon entities."
+                        "description": "The company name of the contact buyer. For IBA orders, the buyer company must be Amazon entities."
                     },
                     "ShippingAddress": {
                         "$ref": "#/components/schemas/Address"
@@ -4053,7 +4426,7 @@
                     },
                     "Phone": {
                         "type": "string",
-                        "description": "The phone number of the buyer.\n\n**Note**: \n1. This attribute is only available for shipping address.\n2. The buyer `Phone` number is suppressed in some cases, including but not limited to \na. `Phone` is suppressed for all Fulfillment by Amazon (FBA) orders.\nb. `Phone` is suppressed for the shipped MFN(Fulfilled by the seller) order when current date is past Latest Delivery Date."
+                        "description": "The phone number of the buyer.\n\n**Note**: \n1. This attribute is only available for shipping address.\n2. In some cases, the buyer phone number is suppressed: \na. Phone is suppressed for all `AFN` (fulfilled by Amazon) orders.\nb. Phone is suppressed for the shipped `MFN` (fulfilled by seller) order when the current date is past the Latest Delivery Date."
                     },
                     "ExtendedFields": {
                         "$ref": "#/components/schemas/AddressExtendedFields"
@@ -4088,7 +4461,7 @@
                     },
                     "StreetNumber": {
                         "type": "string",
-                        "description": "The house number/building number/property number in the street."
+                        "description": "The house, building, or property number associated with the location's street address."
                     },
                     "Complement": {
                         "type": "string",
@@ -4096,10 +4469,10 @@
                     },
                     "Neighborhood": {
                         "type": "string",
-                        "description": "The neighborhood. It's smaller than a region and an integral part of an address. It is used in some countries like Brazil."
+                        "description": "The neighborhood. This value is only used in some countries (such as Brazil)."
                     }
                 },
-                "description": "The container of extended address fields. For example, street name, street number. Only available with Brazil shipping addresses as of now."
+                "description": "The container for address extended fields (such as `street name` and `street number`). Currently only available with Brazil shipping addresses."
             },
             "DeliveryPreferences": {
                 "type": "object",
@@ -4137,7 +4510,7 @@
                     },
                     "ExceptionDates": {
                         "type": "array",
-                        "description": "Dates when the business is closed in the next 30 days.",
+                        "description": "Dates when the business is closed during the next 30 days.",
                         "items": {
                             "$ref": "#/components/schemas/ExceptionDates"
                         }
@@ -4311,7 +4684,7 @@
                     },
                     "PaymentMethod": {
                         "type": "string",
-                        "description": "A sub-payment method for a COD order.\n\n**Possible values**:\n* `COD`: Cash On Delivery.\n* `GC`: Gift Card.\n* `PointsAccount`: Amazon Points.\n* `Invoice`: Invoice."
+                        "description": "A sub-payment method for a COD order.\n\n**Possible values**:\n* `COD`: Cash on delivery \n* `GC`: Gift card \n* `PointsAccount`: Amazon Points\n* `Invoice`: Invoice"
                     }
                 },
                 "description": "Information about a sub-payment method used to pay for a COD order."
@@ -4362,7 +4735,7 @@
                         "description": "The buyer's tax identifier."
                     }
                 },
-                "description": "The tax classification for the order."
+                "description": "The tax classification of the order."
             },
             "OrderItemsList": {
                 "required": [
@@ -4402,11 +4775,11 @@
                 "properties": {
                     "ASIN": {
                         "type": "string",
-                        "description": "The Amazon Standard Identification Number (ASIN) of the item."
+                        "description": "The item's Amazon Standard Identification Number (ASIN)."
                     },
                     "SellerSKU": {
                         "type": "string",
-                        "description": "The seller stock keeping unit (SKU) of the item."
+                        "description": "The item's seller stock keeping unit (SKU)."
                     },
                     "OrderItemId": {
                         "type": "string",
@@ -4421,7 +4794,7 @@
                     },
                     "Title": {
                         "type": "string",
-                        "description": "The name of the item."
+                        "description": "The item's name."
                     },
                     "QuantityOrdered": {
                         "type": "integer",
@@ -4472,46 +4845,46 @@
                     },
                     "IsGift": {
                         "type": "string",
-                        "description": "Indicates whether the item is a gift.\n\n**Possible values**: `true`, `false`."
+                        "description": "Indicates whether the item is a gift.\n\n**Possible values**: `true` and `false`."
                     },
                     "ConditionNote": {
                         "type": "string",
-                        "description": "The condition of the item as described by the seller."
+                        "description": "The condition of the item, as described by the seller."
                     },
                     "ConditionId": {
                         "type": "string",
-                        "description": "The condition of the item.\n\n**Possible values**: `New`, `Used`, `Collectible`, `Refurbished`, `Preorder`, `Club`."
+                        "description": "The condition of the item.\n\n**Possible values**: `New`, `Used`, `Collectible`, `Refurbished`, `Preorder`, and `Club`."
                     },
                     "ConditionSubtypeId": {
                         "type": "string",
-                        "description": "The subcondition of the item.\n\n**Possible values**: `New`, `Mint`, `Very Good`, `Good`, `Acceptable`, `Poor`, `Club`, `OEM`, `Warranty`, `Refurbished Warranty`, `Refurbished`, `Open Box`, `Any`, `Other`."
+                        "description": "The subcondition of the item.\n\n**Possible values**: `New`, `Mint`, `Very Good`, `Good`, `Acceptable`, `Poor`, `Club`, `OEM`, `Warranty`, `Refurbished Warranty`, `Refurbished`, `Open Box`, `Any`, and `Other`."
                     },
                     "ScheduledDeliveryStartDate": {
                         "type": "string",
-                        "description": "The start date of the scheduled delivery window in the time zone of the order destination. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format."
+                        "description": "The start date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format."
                     },
                     "ScheduledDeliveryEndDate": {
                         "type": "string",
-                        "description": "The end date of the scheduled delivery window in the time zone of the order destination. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format."
+                        "description": "The end date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format."
                     },
                     "PriceDesignation": {
                         "type": "string",
-                        "description": "Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to [Amazon Business](https://business.amazon.com). \n\n**Possible values**: `BusinessPrice` - A special price that is available only for Amazon Business orders."
+                        "description": "Indicates that the selling price is a special price that is only available for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business). \n\n**Possible values**: `BusinessPrice`"
                     },
                     "TaxCollection": {
                         "$ref": "#/components/schemas/TaxCollection"
                     },
                     "SerialNumberRequired": {
                         "type": "boolean",
-                        "description": "When true, the product type for this item has a serial number.\n\nReturned only for Amazon Easy Ship orders."
+                        "description": "When true, the product type for this item has a serial number.\n\n Only returned for Amazon Easy Ship orders."
                     },
                     "IsTransparency": {
                         "type": "boolean",
-                        "description": "When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:\n\n**1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN).\n**2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode.\n**QR code SN:** Submit the URL that the QR code generates."
+                        "description": "When true, the ASIN is enrolled in Transparency. The Transparency serial number that you must submit is determined by:\n\n**1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN).\n**2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number is applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode.\n**QR code SN:** Submit the URL that the QR code generates."
                     },
                     "IossNumber": {
                         "type": "string",
-                        "description": "The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale."
+                        "description": "The IOSS number of the marketplace. Sellers shipping to the EU from outside the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale."
                     },
                     "StoreChainStoreId": {
                         "type": "string",
@@ -4556,9 +4929,28 @@
                     },
                     "ShippingConstraints": {
                         "$ref": "#/components/schemas/ShippingConstraints"
+                    },
+                    "AmazonPrograms": {
+                        "$ref": "#/components/schemas/AmazonPrograms"
                     }
                 },
                 "description": "A single order item."
+            },
+            "AmazonPrograms": {
+                "required": [
+                    "Programs"
+                ],
+                "type": "object",
+                "properties": {
+                    "Programs": {
+                        "type": "array",
+                        "description": "A list of the programs that are associated with the specified order item.\n\n**Possible values**: `SUBSCRIBE_AND_SAVE`",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "description": "Contains the list of programs that are associated with an item.\n\nPossible programs are:\n - **Subscribe and Save**: Offers recurring, scheduled deliveries to Amazon customers and Amazon Business customers for their frequently ordered products."
             },
             "SubstitutionPreferences": {
                 "required": [
@@ -4585,7 +4977,7 @@
                             },
                             {
                                 "value": "DO_NOT_SUBSTITUTE",
-                                "description": "Do not provide substitute if item is not found."
+                                "description": "Do not provide a substitute if item is not found."
                             }
                         ]
                     },
@@ -4607,7 +4999,7 @@
                 "properties": {
                     "ASIN": {
                         "type": "string",
-                        "description": "The Amazon Standard Identification Number (ASIN) of the item."
+                        "description": "The item's Amazon Standard Identification Number (ASIN)."
                     },
                     "QuantityOrdered": {
                         "type": "integer",
@@ -4615,11 +5007,11 @@
                     },
                     "SellerSKU": {
                         "type": "string",
-                        "description": "The seller stock keeping unit (SKU) of the item."
+                        "description": "The item's seller stock keeping unit (SKU)."
                     },
                     "Title": {
                         "type": "string",
-                        "description": "The title of the item."
+                        "description": "The item's title."
                     },
                     "Measurement": {
                         "$ref": "#/components/schemas/Measurement"
@@ -4636,7 +5028,7 @@
                 "properties": {
                     "Unit": {
                         "type": "string",
-                        "description": "The unit of measure for this measurement.",
+                        "description": "The unit of measure.",
                         "enum": [
                             "OUNCES",
                             "POUNDS",
@@ -4666,105 +5058,105 @@
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "OUNCES",
-                                "description": "Indicates the item's measurement is measured in ounces."
+                                "description": "The item is measured in ounces."
                             },
                             {
                                 "value": "POUNDS",
-                                "description": "Indicates the item's measurement is measured in pounds."
+                                "description": "The item is measured in pounds."
                             },
                             {
                                 "value": "KILOGRAMS",
-                                "description": "Indicates the item's measurement is measured in kilograms."
+                                "description": "The item is measured in kilograms."
                             },
                             {
                                 "value": "GRAMS",
-                                "description": "Indicates the item's measurement is measured in grams."
+                                "description": "The item is measured in grams."
                             },
                             {
                                 "value": "MILLIGRAMS",
-                                "description": "Indicates the item's measurement is measured in milligrams."
+                                "description": "The item is measured in milligrams."
                             },
                             {
                                 "value": "INCHES",
-                                "description": "Indicates the item's measurement is measured in inches."
+                                "description": "The item is measured in inches."
                             },
                             {
                                 "value": "FEET",
-                                "description": "Indicates the item's measurement is measured in feet."
+                                "description": "The item is measured in feet."
                             },
                             {
                                 "value": "METERS",
-                                "description": "Indicates the item's measurement is measured in meters."
+                                "description": "The item is measured in meters."
                             },
                             {
                                 "value": "CENTIMETERS",
-                                "description": "Indicates the item's measurement is measured in centimeters."
+                                "description": "The item is measured in centimeters."
                             },
                             {
                                 "value": "MILLIMETERS",
-                                "description": "Indicates the item's measurement is measured in millimeters."
+                                "description": "The item is measured in millimeters."
                             },
                             {
                                 "value": "SQUARE_METERS",
-                                "description": "Indicates the item's measurement is measured in square meters."
+                                "description": "The item is measured in square meters."
                             },
                             {
                                 "value": "SQUARE_CENTIMETERS",
-                                "description": "Indicates the item's measurement is measured in square centimeters."
+                                "description": "The item is measured in square centimeters."
                             },
                             {
                                 "value": "SQUARE_FEET",
-                                "description": "Indicates the item's measurement is measured in square feet."
+                                "description": "The item is measured in square feet."
                             },
                             {
                                 "value": "SQUARE_INCHES",
-                                "description": "Indicates the item's measurement is measured in square inches."
+                                "description": "The item is measured in square inches."
                             },
                             {
                                 "value": "GALLONS",
-                                "description": "Indicates the item's measurement is measured in gallons."
+                                "description": "The item is measured in gallons."
                             },
                             {
                                 "value": "PINTS",
-                                "description": "Indicates the item's measurement is measured in pints."
+                                "description": "The item is measured in pints."
                             },
                             {
                                 "value": "QUARTS",
-                                "description": "Indicates the item's measurement is measured in quarts."
+                                "description": "The item is measured in quarts."
                             },
                             {
                                 "value": "FLUID_OUNCES",
-                                "description": "Indicates the item's measurement is measured in fluid ounces."
+                                "description": "The item is measured in fluid ounces."
                             },
                             {
                                 "value": "LITERS",
-                                "description": "Indicates the item's measurement is measured in liters."
+                                "description": "The item is measured in liters."
                             },
                             {
                                 "value": "CUBIC_METERS",
-                                "description": "Indicates the item's measurement is measured in cubic meters."
+                                "description": "The item is measured in cubic meters."
                             },
                             {
                                 "value": "CUBIC_FEET",
-                                "description": "Indicates the item's measurement is measured in cubic feet."
+                                "description": "The item is measured in cubic feet."
                             },
                             {
                                 "value": "CUBIC_INCHES",
-                                "description": "Indicates the item's measurement is measured in cubic inches."
+                                "description": "The item is measured in cubic inches."
                             },
                             {
                                 "value": "CUBIC_CENTIMETERS",
-                                "description": "Indicates the item's measurement is measured in cubic centimeters."
+                                "description": "The item is measured in cubic centimeters."
                             },
                             {
                                 "value": "COUNT",
-                                "description": "Indicates the item's measurement is measured by count."
+                                "description": "The item is measured by count."
                             }
                         ]
                     },
                     "Value": {
                         "type": "number",
-                        "description": "The value of the measurement."
+                        "description": "The measurement value."
                     }
                 },
                 "description": "Measurement information for an order item."
@@ -4784,7 +5176,7 @@
                         "$ref": "#/components/schemas/AssociationType"
                     }
                 },
-                "description": "An item associated with an order item. For example, a tire installation service purchased with tires."
+                "description": "An item that is associated with an order item. For example, a tire installation service that is purchased with tires."
             },
             "AssociationType": {
                 "type": "string",
@@ -4848,7 +5240,7 @@
                     },
                     "GiftMessageText": {
                         "type": "string",
-                        "description": "A gift message provided by the buyer.\n\n**Note**: This attribute is only available for MFN (Fulfilled by the seller) orders."
+                        "description": "A gift message provided by the buyer.\n\n**Note**: This attribute is only available for MFN (fulfilled by seller) orders."
                     },
                     "GiftWrapLevel": {
                         "type": "string",
@@ -4892,7 +5284,7 @@
                 "properties": {
                     "CustomizedURL": {
                         "type": "string",
-                        "description": "The location of a zip file containing Amazon Custom data."
+                        "description": "The location of a ZIP file containing Amazon Custom data."
                     }
                 },
                 "description": "Buyer information for custom orders from the Amazon Custom program."
@@ -4956,15 +5348,24 @@
                 "properties": {
                     "FulfillmentSupplySourceId": {
                         "type": "string",
-                        "description": "Denotes the recommended `sourceId` where the order should be fulfilled from."
+                        "description": "The `sourceId` of the location from where you want the order fulfilled."
                     }
                 },
-                "description": "Contains the instructions about the fulfillment like where should it be fulfilled from."
+                "description": "Contains the instructions about the fulfillment, such as the location from where you want the order filled."
             },
             "ShippingConstraints": {
                 "type": "object",
                 "properties": {
                     "PalletDelivery": {
+                        "$ref": "#/components/schemas/ConstraintType"
+                    },
+                    "SignatureConfirmation": {
+                        "$ref": "#/components/schemas/ConstraintType"
+                    },
+                    "RecipientIdentityVerification": {
+                        "$ref": "#/components/schemas/ConstraintType"
+                    },
+                    "RecipientAgeVerification": {
                         "$ref": "#/components/schemas/ConstraintType"
                     }
                 },
@@ -5003,7 +5404,7 @@
                     },
                     "PurchaseOrderNumber": {
                         "type": "string",
-                        "description": "The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout."
+                        "description": "The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout."
                     }
                 },
                 "description": "Buyer information."
@@ -5022,7 +5423,7 @@
                     },
                     "GiftMessageText": {
                         "type": "string",
-                        "description": "A gift message provided by the buyer.\n\n**Note**: This attribute is only available for MFN (Fulfilled by the seller) orders."
+                        "description": "A gift message provided by the buyer.\n\n**Note**: This attribute is only available for MFN (fulfilled by seller) orders."
                     },
                     "GiftWrapLevel": {
                         "type": "string",
@@ -5065,7 +5466,7 @@
             },
             "EasyShipShipmentStatus": {
                 "type": "string",
-                "description": "The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.",
+                "description": "The status of the Amazon Easy Ship order. This property is only included for Amazon Easy Ship orders.",
                 "enum": [
                     "PendingSchedule",
                     "PendingPickUp",
@@ -5196,7 +5597,7 @@
                     },
                     "codCollectionMethod": {
                         "type": "string",
-                        "description": "The cod collection method, support in JP only. ",
+                        "description": "The COD collection method (only supported in the JP marketplace).",
                         "enum": [
                             "DirectPayment"
                         ]
@@ -5231,11 +5632,11 @@
                     },
                     "carrierCode": {
                         "type": "string",
-                        "description": "Identifies the carrier that will deliver the package. This field is required for all marketplaces. For the acceptable `CarrierCode` value, refer to the list of <a href='https://images-na.ssl-images-amazon.com/images/G/01/rainier/help/xsd/release_1_9/amzn-base._TTH_.xsd'>CarrierCode</a>."
+                        "description": "Identifies the carrier that will deliver the package. This field is required for all marketplaces. For more information, refer to the [`CarrierCode` announcement](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces)."
                     },
                     "carrierName": {
                         "type": "string",
-                        "description": "Carrier Name that will deliver the package. Required when carrierCode is \"Others\" "
+                        "description": "Carrier Name that will deliver the package. Required when `carrierCode` is \"Others\" "
                     },
                     "shippingMethod": {
                         "type": "string",
@@ -5252,7 +5653,7 @@
                     },
                     "shipFromSupplySourceId": {
                         "type": "string",
-                        "description": "The unique identifier of the supply source."
+                        "description": "The unique identifier for the supply source."
                     },
                     "orderItems": {
                         "$ref": "#/components/schemas/ConfirmShipmentOrderItemsList"
@@ -5276,11 +5677,11 @@
                 "properties": {
                     "orderItemId": {
                         "type": "string",
-                        "description": "The unique identifier of the order item."
+                        "description": "The order item's unique identifier."
                     },
                     "quantity": {
                         "type": "integer",
-                        "description": "The quantity of the item."
+                        "description": "The item's quantity."
                     },
                     "transparencyCodes": {
                         "$ref": "#/components/schemas/TransparencyCodeList"
@@ -5297,7 +5698,7 @@
             },
             "TransparencyCode": {
                 "type": "string",
-                "description": "The Transparency code associated with the item."
+                "description": "The transparency code associated with the item."
             },
             "PackageReferenceId": {
                 "type": "string",

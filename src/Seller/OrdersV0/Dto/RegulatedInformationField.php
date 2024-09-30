@@ -22,10 +22,10 @@ final class RegulatedInformationField extends Dto
     ];
 
     /**
-     * @param  string  $fieldId  The unique identifier for the field.
-     * @param  string  $fieldLabel  The name for the field.
+     * @param  string  $fieldId  The unique identifier of the field.
+     * @param  string  $fieldLabel  The name of the field.
      * @param  string  $fieldType  The type of field.
-     * @param  string  $fieldValue  The content of the field as collected in regulatory form. Note that `FileAttachment` type fields will contain a URL to download the attachment here.
+     * @param  string  $fieldValue  The content of the field as collected in regulatory form. Note that `FileAttachment` type fields contain a URL where you can download the attachment.
      */
     public function __construct(
         public readonly string $fieldId,

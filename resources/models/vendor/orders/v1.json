@@ -24,7 +24,7 @@
                 "tags": [
                     "OrdersV1"
                 ],
-                "description": "Returns a list of purchase orders created or changed during the time frame that you specify. You define the time frame using the `createdAfter`, `createdBefore`, `changedAfter` and `changedBefore` parameters. The date range to search must not be more than 7 days. You can choose to get only the purchase order numbers by setting `includeDetails` to false. You can then use the `getPurchaseOrder` operation to receive details for a specific purchase order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a list of purchase orders created or changed during the time frame that you specify. You define the time frame using the `createdAfter`, `createdBefore`, `changedAfter` and `changedBefore` parameters. The date range to search must not be more than 7 days. You can choose to get only the purchase order numbers by setting `includeDetails` to false. You can then use the `getPurchaseOrder` operation to receive details for a specific purchase order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getPurchaseOrders",
                 "parameters": [
                     {
@@ -41,7 +41,7 @@
                     {
                         "name": "createdAfter",
                         "in": "query",
-                        "description": "Purchase orders that became available after this time will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -50,7 +50,7 @@
                     {
                         "name": "createdBefore",
                         "in": "query",
-                        "description": "Purchase orders that became available before this time will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -99,7 +99,7 @@
                     {
                         "name": "includeDetails",
                         "in": "query",
-                        "description": "When `true`, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is `true`.",
+                        "description": "When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true.",
                         "schema": {
                             "type": "string",
                             "format": "boolean"
@@ -108,7 +108,7 @@
                     {
                         "name": "changedAfter",
                         "in": "query",
-                        "description": "Purchase orders that changed after this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -117,7 +117,7 @@
                     {
                         "name": "changedBefore",
                         "in": "query",
-                        "description": "Purchase orders that changed before this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -126,7 +126,7 @@
                     {
                         "name": "poItemState",
                         "in": "query",
-                        "description": "Current state of the purchase order item. If this value is `Cancelled`, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.",
+                        "description": "Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.",
                         "schema": {
                             "type": "string",
                             "enum": [
@@ -149,7 +149,7 @@
                     {
                         "name": "isPOChanged",
                         "in": "query",
-                        "description": "When `true`, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is `false`.",
+                        "description": "When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false.",
                         "schema": {
                             "type": "string",
                             "format": "boolean"
@@ -382,11 +382,13 @@
                                                                 "isBackOrderAllowed": true,
                                                                 "netCost": {
                                                                     "amount": "94.97",
-                                                                    "currencyCode": "USD"
+                                                                    "currencyCode": "USD",
+                                                                    "unitOfMeasure": "POUNDS"
                                                                 },
                                                                 "listPrice": {
                                                                     "amount": "94.97",
-                                                                    "currencyCode": "USD"
+                                                                    "currencyCode": "USD",
+                                                                    "unitOfMeasure": "POUNDS"
                                                                 }
                                                             }
                                                         ]
@@ -937,7 +939,8 @@
                                                                 "isBackOrderAllowed": true,
                                                                 "netCost": {
                                                                     "amount": "94.97",
-                                                                    "currencyCode": "INR"
+                                                                    "currencyCode": "INR",
+                                                                    "unitOfMeasure": "POUNDS"
                                                                 }
                                                             }
                                                         ]
@@ -1008,10 +1011,16 @@
                         }
                     },
                     "403": {
-                        "description": "Indicates that access to the resource is forbidden. Possible reasons include `Access Denied`, `Unauthorized`, `Expired Token`, or `Invalid Signature`.",
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1057,6 +1066,12 @@
                                 "schema": {
                                     "type": "string"
                                 }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
                             }
                         },
                         "content": {
@@ -1072,6 +1087,12 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1093,6 +1114,12 @@
                                 "schema": {
                                     "type": "string"
                                 }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
                             }
                         },
                         "content": {
@@ -1108,6 +1135,12 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1129,7 +1162,7 @@
                 "tags": [
                     "OrdersV1"
                 ],
-                "description": "Returns a purchase order based on the `purchaseOrderNumber` value that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a purchase order based on the `purchaseOrderNumber` value that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getPurchaseOrder",
                 "parameters": [
                     {
@@ -1431,10 +1464,16 @@
                         }
                     },
                     "401": {
-                        "description": "The request's authorization header is not formatted correctly or does not contain a valid token.",
+                        "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1449,10 +1488,16 @@
                         }
                     },
                     "403": {
-                        "description": "Indicates that access to the resource is forbidden. Possible reasons include `Access Denied`, `Unauthorized`, `Expired Token`, or `Invalid Signature`.",
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1498,6 +1543,12 @@
                                 "schema": {
                                     "type": "string"
                                 }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
                             }
                         },
                         "content": {
@@ -1513,6 +1564,12 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1534,6 +1591,12 @@
                                 "schema": {
                                     "type": "string"
                                 }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
                             }
                         },
                         "content": {
@@ -1549,6 +1612,12 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1570,10 +1639,9 @@
                 "tags": [
                     "OrdersV1"
                 ],
-                "description": "Submits acknowledgements for one or more purchase orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Submits acknowledgements for one or more purchase orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "submitAcknowledgement",
                 "requestBody": {
-                    "description": "Submits acknowledgements for one or more purchase orders from a vendor.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1726,10 +1794,16 @@
                         }
                     },
                     "403": {
-                        "description": "Indicates that access to the resource is forbidden. Possible reasons include `Access Denied`, `Unauthorized,` `Expired Token`, or `Invalid Signature`.",
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1775,6 +1849,12 @@
                                 "schema": {
                                     "type": "string"
                                 }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
                             }
                         },
                         "content": {
@@ -1790,6 +1870,12 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1811,6 +1897,12 @@
                                 "schema": {
                                     "type": "string"
                                 }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
                             }
                         },
                         "content": {
@@ -1829,6 +1921,12 @@
                                 "schema": {
                                     "type": "string"
                                 }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
                             }
                         },
                         "content": {
@@ -1844,6 +1942,12 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1866,7 +1970,7 @@
                 "tags": [
                     "OrdersV1"
                 ],
-                "description": "Returns purchase order statuses based on the filters that you specify. Date range to search must not be more than 7 days. You can return a list of purchase order statuses using the available filters, or a single purchase order status by providing the purchase order number.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns purchase order statuses based on the filters that you specify. Date range to search must not be more than 7 days. You can return a list of purchase order statuses using the available filters, or a single purchase order status by providing the purchase order number.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getPurchaseOrdersStatus",
                 "parameters": [
                     {
@@ -1923,7 +2027,7 @@
                     {
                         "name": "createdAfter",
                         "in": "query",
-                        "description": "Purchase orders that became available after this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -1932,7 +2036,7 @@
                     {
                         "name": "createdBefore",
                         "in": "query",
-                        "description": "Purchase orders that became available before this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -1941,7 +2045,7 @@
                     {
                         "name": "updatedAfter",
                         "in": "query",
-                        "description": "Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -1950,7 +2054,7 @@
                     {
                         "name": "updatedBefore",
                         "in": "query",
-                        "description": "Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -2812,10 +2916,16 @@
                         }
                     },
                     "403": {
-                        "description": "Indicates that access to the resource is forbidden. Possible reasons include `Access Denied`, `Unauthorized`, `Expired Token`, or `Invalid Signature`.",
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -2861,6 +2971,12 @@
                                 "schema": {
                                     "type": "string"
                                 }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
                             }
                         },
                         "content": {
@@ -2876,6 +2992,12 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -2897,6 +3019,12 @@
                                 "schema": {
                                     "type": "string"
                                 }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
                             }
                         },
                         "content": {
@@ -2912,6 +3040,12 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -2941,7 +3075,7 @@
                         "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the `getPurchaseOrders` operation."
+                "description": "The response schema for the getPurchaseOrders operation."
             },
             "GetPurchaseOrderResponse": {
                 "type": "object",
@@ -2953,7 +3087,7 @@
                         "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the `getPurchaseOrder` operation."
+                "description": "The response schema for the getPurchaseOrder operation."
             },
             "OrderList": {
                 "type": "object",
@@ -2963,23 +3097,20 @@
                     },
                     "orders": {
                         "type": "array",
-                        "description": "Represents an individual order within the `OrderList`.",
                         "items": {
                             "$ref": "#/components/schemas/Order"
                         }
                     }
-                },
-                "description": "A list of orders returned as response."
+                }
             },
             "Pagination": {
                 "type": "object",
                 "properties": {
                     "nextToken": {
                         "type": "string",
-                        "description": "A generated string used to pass information to your next request. If `NextToken` is returned, pass the value of `NextToken` to the next request. If `NextToken` is not returned, there are no more purchase order items to return."
+                        "description": "A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more purchase order items to return."
                     }
-                },
-                "description": "The pagination elements required to retrieve the remaining data."
+                }
             },
             "Order": {
                 "required": [
@@ -3003,11 +3134,11 @@
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "New",
-                                "description": "The purchase order is newly created and needs to be acknowledged by the vendor."
+                                "description": "The purchase order is newly created and needs to be acknowledged by vendor."
                             },
                             {
                                 "value": "Acknowledged",
-                                "description": "The purchase order has been acknowledged by the vendor."
+                                "description": "The purchase order has been acknowledged by vendor."
                             },
                             {
                                 "value": "Closed",
@@ -3018,8 +3149,7 @@
                     "orderDetails": {
                         "$ref": "#/components/schemas/OrderDetails"
                     }
-                },
-                "description": "Represents an order placed by Amazon, including the purchase order number, current state, and order details."
+                }
             },
             "OrderDetails": {
                 "required": [
@@ -3031,17 +3161,17 @@
                 "properties": {
                     "purchaseOrderDate": {
                         "type": "string",
-                        "description": "The date the purchase order was placed. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "The date the purchase order was placed. Must be in ISO-8601 date/time format.",
                         "format": "date-time"
                     },
                     "purchaseOrderChangedDate": {
                         "type": "string",
-                        "description": "The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than 'purchaseOrderDate'. This means the PO data was changed on that date and vendors are required to fulfill the updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than 'purchaseOrderDate'. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.",
                         "format": "date-time"
                     },
                     "purchaseOrderStateChangedDate": {
                         "type": "string",
-                        "description": "The date when current purchase order state was changed. Current purchase order state is available in the field 'purchaseOrderState'. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "The date when current purchase order state was changed. Current purchase order state is available in the field 'purchaseOrderState'. Must be in ISO-8601 date/time format.",
                         "format": "date-time"
                     },
                     "purchaseOrderType": {
@@ -3242,12 +3372,12 @@
                     "portOfDelivery": {
                         "maxLength": 64,
                         "type": "string",
-                        "description": "The port where goods on an import purchase order must be delivered by the vendor. This should only be specified when the `internationalCommercialTerms` is `FOB`."
+                        "description": "The port where goods on an import purchase order must be delivered by the vendor. This should only be specified when the internationalCommercialTerms is FOB."
                     },
                     "importContainers": {
                         "maxLength": 64,
                         "type": "string",
-                        "description": "Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if the shipment has multiple containers. HC signifies a high-capacity container. Free-text field, limited to 64 characters. The format will be a comma-delimited list containing values of the type: `$NUMBER_OF_CONTAINERS_OF_THIS_TYPE-$CONTAINER_TYPE`. The list of values for the container type is: `40'`(40-foot container), `40'HC` (40-foot high-capacity container), `45'`, `45'HC`, `30'`, `30'HC`, `20'`, `20'HC`."
+                        "description": "Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if the shipment has multiple containers. HC signifies a high-capacity container. Free-text field, limited to 64 characters. The format will be a comma-delimited list containing values of the type: $NUMBER_OF_CONTAINERS_OF_THIS_TYPE-$CONTAINER_TYPE. The list of values for the container type is: 40'(40-foot container), 40'HC (40-foot high-capacity container), 45', 45'HC, 30', 30'HC, 20', 20'HC."
                     },
                     "shippingInstructions": {
                         "type": "string",
@@ -3258,7 +3388,7 @@
             },
             "DateTimeInterval": {
                 "type": "string",
-                "description": "Defines a date time interval according to <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a>. Interval is separated by double hyphen (--)."
+                "description": "Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--)."
             },
             "PartyIdentification": {
                 "required": [
@@ -3276,8 +3406,7 @@
                     "taxInfo": {
                         "$ref": "#/components/schemas/TaxRegistrationDetails"
                     }
-                },
-                "description": "Name, address and tax details of a party."
+                }
             },
             "TaxRegistrationDetails": {
                 "required": [
@@ -3306,7 +3435,7 @@
                     },
                     "taxRegistrationNumber": {
                         "type": "string",
-                        "description": "Tax registration number for the entity. For example, `VAT ID`."
+                        "description": "Tax registration number for the entity. For example, VAT ID."
                     }
                 },
                 "description": "Tax registration details of the entity."
@@ -3353,7 +3482,7 @@
                     },
                     "postalCode": {
                         "type": "string",
-                        "description": "The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation."
+                        "description": "The postal code of that address. It conatins a series of letters or digits or both, sometimes including spaces or punctuation."
                     },
                     "countryCode": {
                         "maxLength": 2,
@@ -3400,8 +3529,7 @@
                     "listPrice": {
                         "$ref": "#/components/schemas/Money"
                     }
-                },
-                "description": "Represents an individual item in an order, including item details, quantities, pricing, and backorder information."
+                }
             },
             "Money": {
                 "type": "object",
@@ -3413,9 +3541,37 @@
                     },
                     "amount": {
                         "$ref": "#/components/schemas/Decimal"
+                    },
+                    "unitOfMeasure": {
+                        "type": "string",
+                        "description": "The unit of measure for prices of items sold by weight. If this field is absent, the item is sold by eaches.",
+                        "enum": [
+                            "POUNDS",
+                            "OUNCES",
+                            "GRAMS",
+                            "KILOGRAMS"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "POUNDS",
+                                "description": "Priced per Pound."
+                            },
+                            {
+                                "value": "OUNCES",
+                                "description": "Priced per Ounce."
+                            },
+                            {
+                                "value": "GRAMS",
+                                "description": "Priced per Gram."
+                            },
+                            {
+                                "value": "KILOGRAMS",
+                                "description": "Priced per Kilogram."
+                            }
+                        ]
                     }
                 },
-                "description": "An amount of money, including units in the form of currency."
+                "description": "An amount of money. Includes the currency code and an optional unit of measure for items priced by weight."
             },
             "Decimal": {
                 "type": "string",
@@ -3431,7 +3587,7 @@
                         "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the `submitAcknowledgement` operation"
+                "description": "The response schema for the submitAcknowledgement operation"
             },
             "TransactionId": {
                 "type": "object",
@@ -3440,8 +3596,7 @@
                         "type": "string",
                         "description": "GUID assigned by Amazon to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction."
                     }
-                },
-                "description": "Response containing the transaction ID."
+                }
             },
             "ErrorList": {
                 "required": [
@@ -3464,13 +3619,12 @@
                 "properties": {
                     "acknowledgements": {
                         "type": "array",
-                        "description": "An array of order acknowledgements to be submitted.",
                         "items": {
                             "$ref": "#/components/schemas/OrderAcknowledgement"
                         }
                     }
                 },
-                "description": "The request schema for the `submitAcknowledgment` operation."
+                "description": "The request schema for the submitAcknowledgment operation."
             },
             "OrderAcknowledgement": {
                 "required": [
@@ -3490,7 +3644,7 @@
                     },
                     "acknowledgementDate": {
                         "type": "string",
-                        "description": "The date and time when the purchase order is acknowledged, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.",
                         "format": "date-time"
                     },
                     "items": {
@@ -3500,8 +3654,7 @@
                             "$ref": "#/components/schemas/OrderAcknowledgementItem"
                         }
                     }
-                },
-                "description": "Represents an acknowledgement for an order, including the purchase order number, selling party details, acknowledgement date, and a list of acknowledged items."
+                }
             },
             "OrderAcknowledgementItem": {
                 "required": [
@@ -3567,7 +3720,7 @@
                             },
                             {
                                 "value": "Backordered",
-                                "description": "Vendor placed a backorder to fulfill the original order and provides a `scheduledShipDate` or `scheduledDeliveryDate` which is different than the `expectedShipDate` or `expectedDeliveryDate` provided in the purchase order."
+                                "description": "Vendor placed a backorder to fulfill the original order and provides a scheduledShipDate or scheduledDeliveryDate which is different than the expectedShipDate or expectedDeliveryDate provided in the purchase order."
                             },
                             {
                                 "value": "Rejected",
@@ -3580,12 +3733,12 @@
                     },
                     "scheduledShipDate": {
                         "type": "string",
-                        "description": "Estimated ship date per line item. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "Estimated ship date per line item. Must be in ISO-8601 date/time format.",
                         "format": "date-time"
                     },
                     "scheduledDeliveryDate": {
                         "type": "string",
-                        "description": "Estimated delivery date per line item. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "Estimated delivery date per line item. Must be in ISO-8601 date/time format.",
                         "format": "date-time"
                     },
                     "rejectionReason": {
@@ -3611,8 +3764,7 @@
                             }
                         ]
                     }
-                },
-                "description": "Represents the acknowledgement details for an individual order item, including the acknowledgement code, acknowledged quantity, scheduled ship and delivery dates, and rejection reason (if applicable)."
+                }
             },
             "ItemQuantity": {
                 "type": "object",
@@ -3656,7 +3808,7 @@
                         "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the `getPurchaseOrdersStatus` operation."
+                "description": "The response schema for the getPurchaseOrdersStatus operation."
             },
             "OrderListStatus": {
                 "type": "object",
@@ -3666,13 +3818,11 @@
                     },
                     "ordersStatus": {
                         "type": "array",
-                        "description": "Represents an order status within the `OrderListStatus`.",
                         "items": {
                             "$ref": "#/components/schemas/OrderStatus"
                         }
                     }
-                },
-                "description": "A list of order statuses."
+                }
             },
             "OrderStatus": {
                 "required": [
@@ -3709,12 +3859,12 @@
                     },
                     "purchaseOrderDate": {
                         "type": "string",
-                        "description": "The date the purchase order was placed. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "The date the purchase order was placed. Must be in ISO-8601 date/time format.",
                         "format": "date-time"
                     },
                     "lastUpdatedDate": {
                         "type": "string",
-                        "description": "The date when the purchase order was last updated. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "The date when the purchase order was last updated. Must be in ISO-8601 date/time format.",
                         "format": "date-time"
                     },
                     "sellingParty": {
@@ -3854,21 +4004,20 @@
                             },
                             "lastReceiveDate": {
                                 "type": "string",
-                                "description": "The date when the most recent item was received at the buyer's warehouse. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                                "description": "The date when the most recent item was received at the buyer's warehouse. Must be in ISO-8601 date/time format.",
                                 "format": "date-time"
                             }
                         },
                         "description": "Item receive status at the buyer's warehouse."
                     }
-                },
-                "description": "Represents the current status of an order item, including acknowledgement and receiving details."
+                }
             },
             "OrderedQuantityDetails": {
                 "type": "object",
                 "properties": {
                     "updatedDate": {
                         "type": "string",
-                        "description": "The date when the line item quantity was updated by the buyer. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.",
                         "format": "date-time"
                     },
                     "orderedQuantity": {
@@ -3878,14 +4027,14 @@
                         "$ref": "#/components/schemas/ItemQuantity"
                     }
                 },
-                "description": "Details of the item quantity ordered."
+                "description": "Details of item quantity ordered"
             },
             "AcknowledgementStatusDetails": {
                 "type": "object",
                 "properties": {
                     "acknowledgementDate": {
                         "type": "string",
-                        "description": "The date when the line item was confirmed by the vendor. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.",
+                        "description": "The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.",
                         "format": "date-time"
                     },
                     "acceptedQuantity": {
@@ -3895,7 +4044,7 @@
                         "$ref": "#/components/schemas/ItemQuantity"
                     }
                 },
-                "description": "Details of the item quantity ordered"
+                "description": "Details of item quantity ordered"
             },
             "Error": {
                 "required": [

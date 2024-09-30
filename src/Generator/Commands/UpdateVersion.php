@@ -26,7 +26,7 @@ class UpdateVersion extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $rawVersion = Package::version();
-        $versionParser = new VersionParser();
+        $versionParser = new VersionParser;
         // This will throw an exception if the version is invalid
         $currentVersion = $versionParser->normalize($rawVersion);
 

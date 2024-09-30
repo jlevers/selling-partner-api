@@ -19,27 +19,30 @@ final class RemovalShipmentEvent extends Dto
         'merchantOrderId' => 'MerchantOrderId',
         'orderId' => 'OrderId',
         'transactionType' => 'TransactionType',
+        'storeName' => 'StoreName',
         'removalShipmentItemList' => 'RemovalShipmentItemList',
     ];
 
     protected static array $complexArrayTypes = ['removalShipmentItemList' => RemovalShipmentItem::class];
 
     /**
-     * @param  ?\DateTimeInterface  $postedDate
-     * @param  ?string  $merchantOrderId  The merchant removal orderId.
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @param  ?string  $merchantOrderId  The merchant removal `orderId`.
      * @param  ?string  $orderId  The identifier for the removal shipment order.
      * @param  ?string  $transactionType  The type of removal order.
      *
      * Possible values:
      *
-     * * WHOLESALE_LIQUIDATION
-     * @param  RemovalShipmentItem[]|null  $removalShipmentItemList  A list of information about removal shipment items.
+     * * `WHOLESALE_LIQUIDATION`
+     * @param  ?string  $storeName  The name of the store where the event occurred.
+     * @param  RemovalShipmentItem[]|null  $removalShipmentItemList  A list of `RemovalShipmentItem`.
      */
     public function __construct(
         public readonly ?\DateTimeInterface $postedDate = null,
         public readonly ?string $merchantOrderId = null,
         public readonly ?string $orderId = null,
         public readonly ?string $transactionType = null,
+        public readonly ?string $storeName = null,
         public readonly ?array $removalShipmentItemList = null,
     ) {}
 }

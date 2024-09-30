@@ -277,9 +277,17 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
     ```php
     $feedsApi = $sellerConnector->feedsV20210630();
     ```
+* **Finances API (v2024-06-19)** ([docs](https://developer-docs.amazon.com/sp-api/docs/finances-api-v2024-06-19-reference))
+    ```php
+    $financesApi = $sellerConnector->financesV20240619();
+    ```
 * **Finances API (v0)** ([docs](https://developer-docs.amazon.com/sp-api/docs/finances-api-reference))
     ```php
     $financesApi = $sellerConnector->financesV0();
+    ```
+* **Invoices API (v2024-06-19)** ([docs](https://developer-docs.amazon.com/sp-api/docs/invoices-api-v2024-06-19-reference))
+    ```php
+    $invoicesApi = $sellerConnector->invoicesV20240619();
     ```
 * **Listings Items API (v2021-08-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-reference))
     ```php

@@ -15,11 +15,11 @@ use SellingPartnerApi\Dto;
 final class SellerDealPaymentEvent extends Dto
 {
     /**
-     * @param  ?\DateTimeInterface  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?string  $dealId  The unique identifier of the deal.
      * @param  ?string  $dealDescription  The internal description of the deal.
-     * @param  ?string  $eventType  The type of event: SellerDealComplete.
-     * @param  ?string  $feeType  The type of fee: RunLightningDealFee.
+     * @param  ?string  $eventType  The type of event: `SellerDealComplete`.
+     * @param  ?string  $feeType  The type of fee: `RunLightningDealFee`.
      * @param  ?Currency  $feeAmount  A currency type and amount.
      * @param  ?Currency  $taxAmount  A currency type and amount.
      * @param  ?Currency  $totalAmount  A currency type and amount.

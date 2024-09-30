@@ -15,7 +15,6 @@ use SellingPartnerApi\Dto;
 final class OutboundCapability extends Dto
 {
     /**
-     * @param  ?bool  $isSupported
      * @param  ?OperationalConfiguration  $operationalConfiguration  The operational configuration of `supplySources`.
      * @param  ?ReturnLocation  $returnLocation  The address or reference to another `supplySourceId` to act as a return location.
      * @param  ?DeliveryChannel  $deliveryChannel  The delivery channel of a supply source.

@@ -17,8 +17,7 @@ final class OrderList extends Dto
     protected static array $complexArrayTypes = ['orders' => Order::class];
 
     /**
-     * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.
-     * @param  Order[]|null  $orders  Represents an individual order within the `OrderList`.
+     * @param  Order[]|null  $orders
      */
     public function __construct(
         public readonly ?Pagination $pagination = null,

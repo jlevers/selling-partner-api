@@ -6117,6 +6117,9 @@
                     },
                     "packageDocumentDetail": {
                         "$ref": "#/components/schemas/PackageDocumentDetail"
+                    },
+                    "benefits": {
+                        "$ref": "#/components/schemas/Benefits"
                     }
                 },
                 "description": "The payload for the getShipmentDocuments operation."
@@ -6238,6 +6241,9 @@
                     },
                     "promise": {
                         "$ref": "#/components/schemas/Promise"
+                    },
+                    "benefits": {
+                        "$ref": "#/components/schemas/Benefits"
                     }
                 },
                 "description": "The payload for the purchaseShipment operation."
@@ -6860,7 +6866,7 @@
                         "$ref": "#/components/schemas/ExcludedBenefits"
                     }
                 },
-                "description": "Representing the included/excluded benefits that we offer for each ShippingOffering/Rate. Benefits being services provided by Amazon when sellers purchase shipping through Amazon."
+                "description": "Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (eg. CLAIMS_PROTECTED, etc.) when sellers purchase shipping through Amazon. Benefit details will be made available for any shipment placed on or after January 1st 2024 00:00 UTC."
             },
             "IncludedBenefits": {
                 "type": "array",
@@ -6879,18 +6885,26 @@
             "ExcludedBenefit": {
                 "required": [
                     "benefit",
-                    "reasonCode"
+                    "reasonCodes"
                 ],
                 "type": "object",
                 "properties": {
                     "benefit": {
                         "type": "string"
                     },
-                    "reasonCode": {
-                        "type": "string"
+                    "reasonCodes": {
+                        "$ref": "#/components/schemas/ExcludedBenefitReasonCodes"
                     }
                 },
                 "description": "Object representing an excluded benefit that is excluded for an ShippingOffering/Rate."
+            },
+            "ExcludedBenefitReasonCodes": {
+                "minItems": 1,
+                "type": "array",
+                "description": "List of reasons (eg. LATE_DELIVERY_RISK, etc.) indicating why a benefit is excluded for a shipping offer.",
+                "items": {
+                    "type": "string"
+                }
             },
             "ServiceSelection": {
                 "required": [

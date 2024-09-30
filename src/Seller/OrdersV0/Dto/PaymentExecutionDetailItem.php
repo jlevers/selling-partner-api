@@ -21,10 +21,10 @@ final class PaymentExecutionDetailItem extends Dto
      * @param  string  $paymentMethod  A sub-payment method for a COD order.
      *
      * **Possible values**:
-     * * `COD`: Cash On Delivery.
-     * * `GC`: Gift Card.
-     * * `PointsAccount`: Amazon Points.
-     * * `Invoice`: Invoice.
+     * * `COD`: Cash on delivery
+     * * `GC`: Gift card
+     * * `PointsAccount`: Amazon Points
+     * * `Invoice`: Invoice
      */
     public function __construct(
         public readonly Money $payment,

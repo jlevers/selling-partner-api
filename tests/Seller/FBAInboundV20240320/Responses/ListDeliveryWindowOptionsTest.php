@@ -11,7 +11,7 @@ class ListDeliveryWindowOptionsTest extends TestCase
 {
     public function testDeserializeDateTimeWithoutSeconds(): void
     {
-        $now = new DateTime();
+        $now = new DateTime;
         $result = ListDeliveryWindowOptionsResponse::deserialize([
             'pagination' => [
                 'nextToken' => 'aafd8957-77f9-434c-b432-3277b795156d',

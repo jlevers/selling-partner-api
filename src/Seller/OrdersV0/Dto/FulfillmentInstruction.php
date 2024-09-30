@@ -17,7 +17,7 @@ final class FulfillmentInstruction extends Dto
     protected static array $attributeMap = ['fulfillmentSupplySourceId' => 'FulfillmentSupplySourceId'];
 
     /**
-     * @param  ?string  $fulfillmentSupplySourceId  Denotes the recommended `sourceId` where the order should be fulfilled from.
+     * @param  ?string  $fulfillmentSupplySourceId  The `sourceId` of the location from where you want the order fulfilled.
      */
     public function __construct(
         public readonly ?string $fulfillmentSupplySourceId = null,

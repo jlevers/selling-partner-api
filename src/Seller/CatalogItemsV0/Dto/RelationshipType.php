@@ -41,7 +41,6 @@ final class RelationshipType extends Dto
     ];
 
     /**
-     * @param  ?IdentifierType  $identifiers
      * @param  ?string  $color  The color variation of the item.
      * @param  ?string  $edition  The edition variation of the item.
      * @param  ?string  $flavor  The flavor variation of the item.

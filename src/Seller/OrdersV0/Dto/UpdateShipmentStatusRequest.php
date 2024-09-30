@@ -17,7 +17,6 @@ final class UpdateShipmentStatusRequest extends Dto
     /**
      * @param  string  $marketplaceId  The unobfuscated marketplace identifier.
      * @param  string  $shipmentStatus  The shipment status to apply.
-     * @param  ?OrderItems  $orderItems
      */
     public function __construct(
         public readonly string $marketplaceId,

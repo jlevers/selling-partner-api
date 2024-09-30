@@ -18,6 +18,7 @@ final class ShipmentEvent extends Dto
         'amazonOrderId' => 'AmazonOrderId',
         'sellerOrderId' => 'SellerOrderId',
         'marketplaceName' => 'MarketplaceName',
+        'storeName' => 'StoreName',
         'orderChargeList' => 'OrderChargeList',
         'orderChargeAdjustmentList' => 'OrderChargeAdjustmentList',
         'shipmentFeeList' => 'ShipmentFeeList',
@@ -46,6 +47,7 @@ final class ShipmentEvent extends Dto
      * @param  ?string  $amazonOrderId  An Amazon-defined identifier for an order.
      * @param  ?string  $sellerOrderId  A seller-defined identifier for an order.
      * @param  ?string  $marketplaceName  The name of the marketplace where the event occurred.
+     * @param  ?string  $storeName  The name of the store where the event occurred.
      * @param  ChargeComponent[]|null  $orderChargeList  A list of charge information on the seller's account.
      * @param  ChargeComponent[]|null  $orderChargeAdjustmentList  A list of charge information on the seller's account.
      * @param  FeeComponent[]|null  $shipmentFeeList  A list of fee component information.
@@ -53,7 +55,7 @@ final class ShipmentEvent extends Dto
      * @param  FeeComponent[]|null  $orderFeeList  A list of fee component information.
      * @param  FeeComponent[]|null  $orderFeeAdjustmentList  A list of fee component information.
      * @param  DirectPayment[]|null  $directPaymentList  A list of direct payment information.
-     * @param  ?\DateTimeInterface  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ShipmentItem[]|null  $shipmentItemList  A list of shipment items.
      * @param  ShipmentItem[]|null  $shipmentItemAdjustmentList  A list of shipment items.
      */
@@ -61,6 +63,7 @@ final class ShipmentEvent extends Dto
         public readonly ?string $amazonOrderId = null,
         public readonly ?string $sellerOrderId = null,
         public readonly ?string $marketplaceName = null,
+        public readonly ?string $storeName = null,
         public readonly ?array $orderChargeList = null,
         public readonly ?array $orderChargeAdjustmentList = null,
         public readonly ?array $shipmentFeeList = null,

@@ -23,7 +23,7 @@ final class PreferredDeliveryTime extends Dto
 
     /**
      * @param  BusinessHours[]|null  $businessHours  Business hours when the business is open for deliveries.
-     * @param  ExceptionDates[]|null  $exceptionDates  Dates when the business is closed in the next 30 days.
+     * @param  ExceptionDates[]|null  $exceptionDates  Dates when the business is closed during the next 30 days.
      */
     public function __construct(
         public readonly ?array $businessHours = null,

@@ -84,9 +84,19 @@ class SellerConnector extends SellingPartnerApi
         return new FeedsV20210630\Api($this);
     }
 
+    public function financesV20240619(): FinancesV20240619\Api
+    {
+        return new FinancesV20240619\Api($this);
+    }
+
     public function financesV0(): FinancesV0\Api
     {
         return new FinancesV0\Api($this);
+    }
+
+    public function invoicesV20240619(): InvoicesV20240619\Api
+    {
+        return new InvoicesV20240619\Api($this);
     }
 
     public function listingsItemsV20210801(): ListingsItemsV20210801\Api

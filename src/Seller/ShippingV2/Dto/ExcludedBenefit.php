@@ -14,8 +14,11 @@ use SellingPartnerApi\Dto;
 
 final class ExcludedBenefit extends Dto
 {
+    /**
+     * @param  string[]  $reasonCodes  List of reasons (eg. LATE_DELIVERY_RISK, etc.) indicating why a benefit is excluded for a shipping offer.
+     */
     public function __construct(
         public readonly string $benefit,
-        public readonly string $reasonCode,
+        public readonly array $reasonCodes,
     ) {}
 }

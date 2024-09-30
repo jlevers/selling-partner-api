@@ -1,0 +1,2656 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "The Selling Partner API for Invoices.",
+        "description": "Use the Selling Partner API for Invoices to retrieve and manage invoice-related operations, which can help selling partners manage their bookkeeping processes.",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "2024-06-19"
+    },
+    "servers": [
+        {
+            "url": "https://sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/tax/invoices/2024-06-19/attributes": {
+            "get": {
+                "tags": [
+                    "InvoicesV20240619"
+                ],
+                "description": "Returns marketplace-dependent schemas and their respective set of possible values.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getInvoicesAttributes",
+                "parameters": [
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The marketplace identifier.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoicesAttributesResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "marketplaceId": {
+                                                "value": "A2Q3Y263D00KWC"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "invoicesAttributes": {
+                                            "invoiceStatusOptions": [
+                                                {
+                                                    "description": "The government authorized the invoice.",
+                                                    "value": "AUTHORIZED"
+                                                },
+                                                {
+                                                    "description": "The government rejected the invoice.",
+                                                    "value": "REJECTED"
+                                                },
+                                                {
+                                                    "description": "The invoice is canceled.",
+                                                    "value": "CANCELED"
+                                                }
+                                            ],
+                                            "invoiceTypeOptions": [],
+                                            "transactionIdentifierNameOptions": [],
+                                            "transactionTypeOptions": []
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "400",
+                                                "details": "Missing required parameter: 'marketplaceId'",
+                                                "message": "Invalid Request."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "description": "A list of error responses returned when a request is unsuccessful.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tax/invoices/2024-06-19/documents/{invoicesDocumentId}": {
+            "get": {
+                "tags": [
+                    "InvoicesV20240619"
+                ],
+                "description": "Returns the invoice document's ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.0167 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getInvoicesDocument",
+                "parameters": [
+                    {
+                        "name": "invoicesDocumentId",
+                        "in": "path",
+                        "description": "The export document identifier.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoicesDocumentResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "invoicesDocumentId": {
+                                                "value": "18c598f5-75db-4c1a-bd3e-4c64b36781c5"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "invoicesDocument": {
+                                            "invoicesDocumentId": "18c598f5-75db-4c1a-bd3e-4c64b36781c5",
+                                            "invoicesDocumentUrl": "https://invoicesdocumentbucket.s3.eu-east-1.amazonaws.com/18c598f5-75db-4c1a-bd3e-4c64b36781c5.xml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=<CREDENTIAL>&X-Amz-Date=20240710T171315Z&X-Amz-Expires=300&X-Amz-Signature=<SIGNATURE>&X-Amz-SignedHeaders=host"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "400",
+                                                "details": "Missing required parameter 'invoiceId'",
+                                                "message": "Invalid Request."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "description": "A list of error responses returned when a request is unsuccessful.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tax/invoices/2024-06-19/exports": {
+            "get": {
+                "tags": [
+                    "InvoicesV20240619"
+                ],
+                "description": "Returns invoice exports details for exports that match the filters that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.1 | 20 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getInvoicesExports",
+                "parameters": [
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The returned exports match the specified marketplace.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "dateStart",
+                        "in": "query",
+                        "description": "The earliest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is 30 days ago.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "nextToken",
+                        "in": "query",
+                        "description": "The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "description": "The maximum number of invoices to return in a single call.\n\nMinimum: 1\n\nMaximum: 100",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "dateEnd",
+                        "in": "query",
+                        "description": "The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "Return exports matching the status specified. ",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "REQUESTED",
+                                "PROCESSING",
+                                "DONE",
+                                "ERROR"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "description": "The export request was created, but has not started yet.",
+                                    "value": "REQUESTED"
+                                },
+                                {
+                                    "description": "The export request is being processed",
+                                    "value": "PROCESSING"
+                                },
+                                {
+                                    "description": "The export request is finished with success. Use the document IDs to download the output documents.",
+                                    "value": "DONE"
+                                },
+                                {
+                                    "description": "The export request resulted in an error. Check the `errorMessage` attribute for more details.",
+                                    "value": "ERROR"
+                                }
+                            ]
+                        },
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "The export request was created, but has not started yet.",
+                                "value": "REQUESTED"
+                            },
+                            {
+                                "description": "The export request is being processed",
+                                "value": "PROCESSING"
+                            },
+                            {
+                                "description": "The export request is finished with success. Use the document IDs to download the output documents.",
+                                "value": "DONE"
+                            },
+                            {
+                                "description": "The export request resulted in an error. Check the `errorMessage` attribute for more details.",
+                                "value": "ERROR"
+                            }
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoicesExportsResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "dateEnd": {
+                                                "value": "2024-07-10T23:59:59.000Z"
+                                            },
+                                            "dateStart": {
+                                                "value": "2024-07-10T00:00:00.000Z"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A2Q3Y263D00KWC"
+                                            },
+                                            "pageSize": {
+                                                "value": 1
+                                            },
+                                            "status": {
+                                                "value": "DONE"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "exports": [
+                                            {
+                                                "errorMessage": "",
+                                                "exportId": "4bdd8293-0cd7-4208-bed5-78b2c6ecefef",
+                                                "generateExportFinishedAt": "2024-07-10T16:00:00.000Z",
+                                                "generateExportStartedAt": "2024-07-10T15:00:00.000Z",
+                                                "invoicesDocumentIds": [
+                                                    "18c598f5-75db-4c1a-bd3e-4c64b36781c5"
+                                                ],
+                                                "status": "DONE"
+                                            }
+                                        ],
+                                        "nextToken": "WTtGLzlBkat22iOI5C1yrpSPqMpz9UHYxdvm5U4DqEVJL5hqxv9xMuXe3eg35i17"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "marketplaceId": {
+                                                "value": "A2Q3Y263D00KWC"
+                                            },
+                                            "nextToken": {
+                                                "value": "WTtGLzlBkat22iOI5C1yrpSPqMpz9UHYxdvm5U4DqEVJL5hqxv9xMuXe3eg35i17"
+                                            },
+                                            "status": {
+                                                "value": "DONE"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "400",
+                                                "details": "Specifying nextToken with any other parameters will cause the request to fail.",
+                                                "message": "Invalid Request."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "description": "A list of error responses returned when a request is unsuccessful.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "InvoicesV20240619"
+                ],
+                "description": "Creates an invoice export request.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.167 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "createInvoicesExport",
+                "requestBody": {
+                    "description": "Information required to create the export request.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ExportInvoicesRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ExportInvoicesResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "dateEnd": "2024-07-30T23:59:59",
+                                                    "dateStart": "2024-07-01T00:00:00",
+                                                    "externalInvoiceId": "1283743",
+                                                    "fileFormat": "XML",
+                                                    "invoiceType": "SYMBOLIC_RETURN",
+                                                    "marketplaceId": "A2Q3Y263D00KWC",
+                                                    "series": "32",
+                                                    "statuses": [
+                                                        "AUTHORIZED"
+                                                    ],
+                                                    "transactionIdentifier": {
+                                                        "name": "BUSINESS_TRANSACTION_ID",
+                                                        "id": "94cd4e1a-5cc5-486d-b592-045a95a168e1"
+                                                    },
+                                                    "transactionType": "CUSTOMER_SALES"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "exportId": "4bdd8293-0cd7-4208-bed5-78b2c6ecefef"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "400",
+                                                "details": "Missing required attribute(s): 'marketplaceId'.",
+                                                "message": "Request has missing or invalid parameters and cannot be parsed."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "description": "A list of error responses returned when a request is unsuccessful.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
+            }
+        },
+        "/tax/invoices/2024-06-19/exports/{exportId}": {
+            "get": {
+                "tags": [
+                    "InvoicesV20240619"
+                ],
+                "description": "Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getInvoicesExport",
+                "parameters": [
+                    {
+                        "name": "exportId",
+                        "in": "path",
+                        "description": "The unique identifier for the export.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoicesExportResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "exportId": {
+                                                "value": "4bdd8293-0cd7-4208-bed5-78b2c6ecefef"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "export": {
+                                            "errorMessage": "",
+                                            "exportId": "4bdd8293-0cd7-4208-bed5-78b2c6ecefef",
+                                            "generateExportFinishedAt": "2024-07-10T16:00:00.000Z",
+                                            "generateExportStartedAt": "2024-07-10T15:00:00.000Z",
+                                            "invoicesDocumentIds": [
+                                                "18c598f5-75db-4c1a-bd3e-4c64b36781c5"
+                                            ],
+                                            "status": "DONE"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "400",
+                                                "details": "Missing required parameter 'exportId'",
+                                                "message": "Invalid Request."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "description": "A list of error responses returned when a request is unsuccessful.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tax/invoices/2024-06-19/invoices": {
+            "get": {
+                "tags": [
+                    "InvoicesV20240619"
+                ],
+                "description": "Returns invoice details for the invoices that match the filters that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.1 | 20 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getInvoices",
+                "parameters": [
+                    {
+                        "name": "transactionIdentifierName",
+                        "in": "query",
+                        "description": "The name of the transaction identifier filter. If you provide a value for this field, you must also provide a value for the `transactionIdentifierId` field.Use the `getInvoicesAttributes` operation to check `transactionIdentifierName` options.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "description": "The maximum number of invoices you want to return in a single call.\n\nMinimum: 1\n\nMaximum: 200",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "dateEnd",
+                        "in": "query",
+                        "description": "The latest invoice creation date for invoices that you want to include in the response. Dates are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is the current date-time.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The response includes only the invoices that match the specified marketplace.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "transactionType",
+                        "in": "query",
+                        "description": "The marketplace-specific classification of the transaction type for which the invoice was created. Use the `getInvoicesAttributes` operation to check `transactionType` options.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "transactionIdentifierId",
+                        "in": "query",
+                        "description": "The ID of the transaction identifier filter. If you provide a value for this field, you must also provide a value for the `transactionIdentifierName` field.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "dateStart",
+                        "in": "query",
+                        "description": "The earliest invoice creation date for invoices that you want to include in the response. Dates are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is 24 hours prior to the time of the request.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "series",
+                        "in": "query",
+                        "description": "Return invoices with the specified series number.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "nextToken",
+                        "in": "query",
+                        "description": "The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sortOrder",
+                        "in": "query",
+                        "description": "Sort the invoices in the response in ascending or descending order.",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "DESC",
+                                "ASC"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "description": "Sort in descending order.",
+                                    "value": "DESC"
+                                },
+                                {
+                                    "description": "Sort in ascending order.",
+                                    "value": "ASC"
+                                }
+                            ]
+                        },
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "Sort in descending order.",
+                                "value": "DESC"
+                            },
+                            {
+                                "description": "Sort in ascending order.",
+                                "value": "ASC"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "invoiceType",
+                        "in": "query",
+                        "description": "The marketplace-specific classification of the invoice type. Use the `getInvoicesAttributes` operation to check `invoiceType` options.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "statuses",
+                        "in": "query",
+                        "description": "A list of statuses that you can use to filter invoices. Use the `getInvoicesAttributes` operation to check invoice status options.\n\nMin count: 1",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "externalInvoiceId",
+                        "in": "query",
+                        "description": "Return invoices that match this external ID. This is typically the Government Invoice ID.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "in": "query",
+                        "description": "The attribute by which you want to sort the invoices in the response.",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "START_DATE_TIME"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "description": "Sort by date time.",
+                                    "value": "START_DATE_TIME"
+                                }
+                            ]
+                        },
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "Sort by date time.",
+                                "value": "START_DATE_TIME"
+                            }
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoicesResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "dateEnd": {
+                                                "value": "2024-07-20T23:59:59"
+                                            },
+                                            "dateStart": {
+                                                "value": "2024-07-01T00:00:00"
+                                            },
+                                            "invoiceType": {
+                                                "value": "SYMBOLIC_RETURN"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A2Q3Y263D00KWC"
+                                            },
+                                            "pageSize": {
+                                                "value": 1
+                                            },
+                                            "sortBy": {
+                                                "value": "START_DATE_TIME"
+                                            },
+                                            "sortOrder": {
+                                                "value": "DESC"
+                                            },
+                                            "transactionIdentifierId": {
+                                                "value": "94cd4e1a-5cc5-486d-b592-045a95a168e1"
+                                            },
+                                            "transactionIdentifierName": {
+                                                "value": "BUSINESS_TRANSACTION_ID"
+                                            },
+                                            "transactionType": {
+                                                "value": "CUSTOMER_SALES"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "invoices": [
+                                            {
+                                                "date": "2024-07-10T15:00:00.000Z",
+                                                "errorCode": "",
+                                                "externalInvoiceId": "1283743",
+                                                "govResponse": "",
+                                                "id": "ad5b9dcd-6981-4dc4-a3d7-dd2568298a94",
+                                                "invoiceType": "SYMBOLIC_RETURN",
+                                                "series": "32",
+                                                "status": "AUTHORIZED",
+                                                "transactionIds": [
+                                                    {
+                                                        "name": "BUSINESS_TRANSACTION_ID",
+                                                        "id": "94cd4e1a-5cc5-486d-b592-045a95a168e1"
+                                                    }
+                                                ],
+                                                "transactionType": "CUSTOMER_SALES"
+                                            }
+                                        ],
+                                        "nextToken": "WTtGLzlBkat22iOI5C1yrpSPqMpz9UHYxdvm5U4DqEVJL5hqxv9xMuXe3eg35i17"
+                                    }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "externalInvoiceId": {
+                                                "value": "1283743"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A2Q3Y263D00KWC"
+                                            },
+                                            "series": {
+                                                "value": "32"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "invoices": [
+                                            {
+                                                "date": "2024-07-10T15:00:00.000Z",
+                                                "errorCode": "",
+                                                "externalInvoiceId": "1283743",
+                                                "govResponse": "",
+                                                "id": "ad5b9dcd-6981-4dc4-a3d7-dd2568298a94",
+                                                "invoiceType": "SYMBOLIC_RETURN",
+                                                "series": "32",
+                                                "status": "AUTHORIZED",
+                                                "transactionIds": [
+                                                    {
+                                                        "name": "BUSINESS_TRANSACTION_ID",
+                                                        "id": "94cd4e1a-5cc5-486d-b592-045a95a168e1"
+                                                    }
+                                                ],
+                                                "transactionType": "CUSTOMER_SALES"
+                                            }
+                                        ],
+                                        "nextToken": "WTtGLzlBkat22iOI5C1yrpSPqMpz9UHYxdvm5U4DqEVJL5hqxv9xMuXe3eg35i17"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "marketplaceId": {
+                                                "value": "A2Q3Y263D00KWC"
+                                            },
+                                            "nextToken": {
+                                                "value": "WTtGLzlBkat22iOI5C1yrpSPqMpz9UHYxdvm5U4DqEVJL5hqxv9xMuXe3eg35i17"
+                                            },
+                                            "statuses": {
+                                                "value": [
+                                                    "REJECTED"
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "400",
+                                                "details": "Specifying nextToken with any other parameters will cause the request to fail.",
+                                                "message": "Invalid Request."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "description": "A list of error responses returned when a request is unsuccessful.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tax/invoices/2024-06-19/invoices/{invoiceId}": {
+            "get": {
+                "tags": [
+                    "InvoicesV20240619"
+                ],
+                "description": "Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes.\nTo get the full invoice, use the `createInvoicesExport` operation to start an export request.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getInvoice",
+                "parameters": [
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The marketplace from which you want the invoice.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "invoiceId",
+                        "in": "path",
+                        "description": "The invoice identifier.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoiceResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "invoiceId": {
+                                                "value": "ad5b9dcd-6981-4dc4-a3d7-dd2568298a94"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A2Q3Y263D00KWC"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "invoice": {
+                                            "date": "2024-07-10T15:00:00.000Z",
+                                            "errorCode": "",
+                                            "externalInvoiceId": "1283743",
+                                            "govResponse": "",
+                                            "id": "ad5b9dcd-6981-4dc4-a3d7-dd2568298a94",
+                                            "invoiceType": "CUSTOMER_SALES",
+                                            "series": "32",
+                                            "status": "AUTHORIZED",
+                                            "transactionIds": [
+                                                {
+                                                    "name": "BUSINESS_TRANSACTION_ID",
+                                                    "id": "94cd4e1a-5cc5-486d-b592-045a95a168e1"
+                                                }
+                                            ],
+                                            "transactionType": "CUSTOMER_SALES_SYMBOLIC"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "marketplaceId": {
+                                                "value": "A2Q3Y263D00KWC"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "400",
+                                                "details": "Missing required parameter 'invoiceId'",
+                                                "message": "Invalid Request."
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "invoiceId": {
+                                                "value": "ad5b9dcd-6981-4dc4-a3d7-dd2568298a94"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "400",
+                                                "details": "Missing required parameter 'marketplaceId'",
+                                                "message": "Invalid Request."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "description": "A list of error responses returned when a request is unsuccessful.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AttributeOption": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the attribute value."
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "The possible values for the attribute option."
+                    }
+                },
+                "description": "The definition of the attribute option."
+            },
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional details that can help the caller understand or fix the issue."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition."
+                    }
+                },
+                "description": "The error response that is returned when the request is unsuccessful."
+            },
+            "Export": {
+                "type": "object",
+                "properties": {
+                    "errorMessage": {
+                        "type": "string",
+                        "description": "When the export generation fails, this attribute contains a description of the error."
+                    },
+                    "exportId": {
+                        "type": "string",
+                        "description": "The export identifier."
+                    },
+                    "generateExportFinishedAt": {
+                        "type": "string",
+                        "description": "The date and time when the export generation finished. Vales are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
+                        "format": "date-time"
+                    },
+                    "generateExportStartedAt": {
+                        "type": "string",
+                        "description": "The date and time when the export generation started. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
+                        "format": "date-time"
+                    },
+                    "invoicesDocumentIds": {
+                        "type": "array",
+                        "description": "The identifier for the export documents. To get the information required to retrieve the export document's contents, pass each ID in the `getInvoicesDocument` operation.\n\nThis list is empty until the status is `DONE`.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/ExportStatus"
+                    }
+                },
+                "description": "Detailed information about the export."
+            },
+            "ExportInvoicesRequest": {
+                "required": [
+                    "marketplaceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "dateEnd": {
+                        "type": "string",
+                        "description": "The latest invoice creation date for invoices that you want to include in the response. Dates are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is the time of the request.",
+                        "format": "date"
+                    },
+                    "dateStart": {
+                        "type": "string",
+                        "description": "The earliest invoice creation date for invoices that you want to include in the response. Dates are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default is 24 hours prior to the time of the request.",
+                        "format": "date"
+                    },
+                    "externalInvoiceId": {
+                        "type": "string",
+                        "description": "The external ID of the invoices you want included in the response."
+                    },
+                    "fileFormat": {
+                        "$ref": "#/components/schemas/FileFormat"
+                    },
+                    "invoiceType": {
+                        "type": "string",
+                        "description": "The marketplace-specific classification of the invoice type. Use the `getInvoicesAttributes` operation to check `invoiceType` options."
+                    },
+                    "marketplaceId": {
+                        "type": "string",
+                        "description": "The ID of the marketplace from which you want the invoices."
+                    },
+                    "series": {
+                        "type": "string",
+                        "description": "The series number of the invoices you want included in the response."
+                    },
+                    "statuses": {
+                        "minItems": 1,
+                        "type": "array",
+                        "description": "A list of statuses that you can use to filter invoices. Use the `getInvoicesAttributes` operation to check invoice status options.\n\nMin count: 1",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "transactionIdentifier": {
+                        "$ref": "#/components/schemas/TransactionIdentifier"
+                    },
+                    "transactionType": {
+                        "type": "string",
+                        "description": "The marketplace-specific classification of the transaction type for which the invoice was created. Use the `getInvoicesAttributes` operation to check `transactionType` options"
+                    }
+                },
+                "description": "The information required to create the export request.",
+                "example": {
+                    "dateEnd": "2024-07-30T23:59:59",
+                    "dateStart": "2024-07-01T00:00:00",
+                    "externalInvoiceId": "1283743",
+                    "fileFormat": "XML",
+                    "invoiceType": "SYMBOLIC_RETURN",
+                    "marketplaceId": "A2Q3Y263D00KWC",
+                    "series": "32",
+                    "statuses": [
+                        "AUTHORIZED"
+                    ],
+                    "transactionIdentifier": {
+                        "name": "BUSINESS_TRANSACTION_ID",
+                        "id": "94cd4e1a-5cc5-486d-b592-045a95a168e1"
+                    },
+                    "transactionType": "CUSTOMER_SALES"
+                }
+            },
+            "ExportInvoicesResponse": {
+                "type": "object",
+                "properties": {
+                    "exportId": {
+                        "type": "string",
+                        "description": "The export identifier."
+                    }
+                },
+                "description": "Success."
+            },
+            "ExportStatus": {
+                "type": "string",
+                "description": "The current status of the request.",
+                "enum": [
+                    "REQUESTED",
+                    "PROCESSING",
+                    "DONE",
+                    "ERROR"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "The export request was created, but has not yet started.",
+                        "value": "REQUESTED"
+                    },
+                    {
+                        "description": "The export request is being processed.",
+                        "value": "PROCESSING"
+                    },
+                    {
+                        "description": "The export request has finished successfully. Use the document IDs to download the output documents.",
+                        "value": "DONE"
+                    },
+                    {
+                        "description": "The export request resulted in an error. Refer to the `errorMessage` attribute for more information.",
+                        "value": "ERROR"
+                    }
+                ]
+            },
+            "FileFormat": {
+                "type": "string",
+                "description": "Supported invoice file extensions.",
+                "enum": [
+                    "XML"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "The invoice file is in XML format.",
+                        "value": "XML"
+                    }
+                ]
+            },
+            "GetInvoiceResponse": {
+                "type": "object",
+                "properties": {
+                    "invoice": {
+                        "$ref": "#/components/schemas/Invoice"
+                    }
+                },
+                "description": "Success."
+            },
+            "GetInvoicesAttributesResponse": {
+                "type": "object",
+                "properties": {
+                    "invoicesAttributes": {
+                        "$ref": "#/components/schemas/InvoicesAttributes"
+                    }
+                },
+                "description": "Success."
+            },
+            "GetInvoicesDocumentResponse": {
+                "type": "object",
+                "properties": {
+                    "invoicesDocument": {
+                        "$ref": "#/components/schemas/InvoicesDocument"
+                    }
+                },
+                "description": "Success."
+            },
+            "GetInvoicesExportResponse": {
+                "type": "object",
+                "properties": {
+                    "export": {
+                        "$ref": "#/components/schemas/Export"
+                    }
+                },
+                "description": "Success."
+            },
+            "GetInvoicesExportsResponse": {
+                "type": "object",
+                "properties": {
+                    "exports": {
+                        "maxItems": 100,
+                        "type": "array",
+                        "description": "A list of exports.",
+                        "items": {
+                            "$ref": "#/components/schemas/Export"
+                        }
+                    },
+                    "nextToken": {
+                        "type": "string",
+                        "description": "This token is returned when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the `getInvoices` operation and include this token with the previous call parameters."
+                    }
+                },
+                "description": "Success."
+            },
+            "GetInvoicesResponse": {
+                "type": "object",
+                "properties": {
+                    "invoices": {
+                        "maxItems": 100,
+                        "type": "array",
+                        "description": "A list of invoices.",
+                        "items": {
+                            "$ref": "#/components/schemas/Invoice"
+                        }
+                    },
+                    "nextToken": {
+                        "type": "string",
+                        "description": "This token is returned when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the `getInvoices` operation and include this token with the previous call parameters."
+                    }
+                },
+                "description": "Success."
+            },
+            "Invoice": {
+                "type": "object",
+                "properties": {
+                    "date": {
+                        "type": "string",
+                        "description": "The date and time the invoice is issued. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
+                        "format": "date-time"
+                    },
+                    "errorCode": {
+                        "type": "string",
+                        "description": "If the invoice is in an error state, this attribute displays the error code."
+                    },
+                    "externalInvoiceId": {
+                        "type": "string",
+                        "description": "The invoice identifier that is used by an external party. This is typically the government agency that authorized the invoice."
+                    },
+                    "govResponse": {
+                        "type": "string",
+                        "description": "The response message from the government authority when there is an error during invoice issuance."
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The invoice identifier."
+                    },
+                    "invoiceType": {
+                        "type": "string",
+                        "description": "The classification of the invoice type. This varies across marketplaces. Use the `getInvoicesAttributes` operation to check `invoiceType` options."
+                    },
+                    "series": {
+                        "type": "string",
+                        "description": "Use this identifier in conjunction with `externalInvoiceId` to identify invoices from the same seller."
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "The invoice status classification. Use the `getInvoicesAttributes` operation to check invoice status options."
+                    },
+                    "transactionIds": {
+                        "type": "array",
+                        "description": "List with identifiers for the transactions associated to the invoice.",
+                        "items": {
+                            "$ref": "#/components/schemas/TransactionIdentifier"
+                        }
+                    },
+                    "transactionType": {
+                        "type": "string",
+                        "description": "Classification of the transaction that originated this invoice. Use the `getInvoicesAttributes` operation to check `transactionType` options."
+                    }
+                },
+                "description": "Provides detailed information about an invoice."
+            },
+            "InvoicesAttributes": {
+                "type": "object",
+                "properties": {
+                    "invoiceStatusOptions": {
+                        "type": "array",
+                        "description": "A list of all the options that are available for the invoice status attribute.",
+                        "items": {
+                            "$ref": "#/components/schemas/AttributeOption"
+                        }
+                    },
+                    "invoiceTypeOptions": {
+                        "type": "array",
+                        "description": "A list of all the options that are available for the invoice type attribute.",
+                        "items": {
+                            "$ref": "#/components/schemas/AttributeOption"
+                        }
+                    },
+                    "transactionIdentifierNameOptions": {
+                        "type": "array",
+                        "description": "A list of all the options that are available for the transaction identifier name attribute.",
+                        "items": {
+                            "$ref": "#/components/schemas/AttributeOption"
+                        }
+                    },
+                    "transactionTypeOptions": {
+                        "type": "array",
+                        "description": "A list of all the options that are available for the transaction type attribute.",
+                        "items": {
+                            "$ref": "#/components/schemas/AttributeOption"
+                        }
+                    }
+                },
+                "description": "An object that contains the invoice attributes definition."
+            },
+            "InvoicesDocument": {
+                "type": "object",
+                "properties": {
+                    "invoicesDocumentId": {
+                        "type": "string",
+                        "description": "The identifier of the export document."
+                    },
+                    "invoicesDocumentUrl": {
+                        "type": "string",
+                        "description": "A pre-signed URL that you can use to download the invoices document in zip format. This URL expires after 30 seconds."
+                    }
+                },
+                "description": "An object that contains the `documentId` and an S3 pre-signed URL that you can use to download the specified file."
+            },
+            "TransactionIdentifier": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The transaction identifier name. Use the `getInvoicesAttributes` operation to check `transactionIdentifierName` options."
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The transaction identifier."
+                    }
+                },
+                "description": "The identifier for a transaction."
+            },
+            "ErrorList": {
+                "required": [
+                    "errors"
+                ],
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "description": "List of errors.",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                },
+                "description": "A list of error responses that are returned when a request is unsuccessful."
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

@@ -25,8 +25,8 @@ class ListFinancialEventsByOrderId extends Request
 
     /**
      * @param  string  $orderId  An Amazon-defined order identifier, in 3-7-7 format.
-     * @param  ?int  $maxResultsPerPage  The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'.
-     * @param  ?string  $nextToken  A string token returned in the response of your previous request.
+     * @param  ?int  $maxResultsPerPage  The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the response is `InvalidInput`.
+     * @param  ?string  $nextToken  The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
      */
     public function __construct(
         protected string $orderId,

@@ -18,8 +18,8 @@ final class OrderItemStatus extends Dto
      * @param  string  $itemSequenceNumber  Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
      * @param  ?string  $buyerProductIdentifier  Buyer's Standard Identification Number (ASIN) of an item.
      * @param  ?string  $vendorProductIdentifier  The vendor selected product identification of the item.
-     * @param  ?Money  $netCost  An amount of money, including units in the form of currency.
-     * @param  ?Money  $listPrice  An amount of money, including units in the form of currency.
+     * @param  ?Money  $netCost  An amount of money. Includes the currency code and an optional unit of measure for items priced by weight.
+     * @param  ?Money  $listPrice  An amount of money. Includes the currency code and an optional unit of measure for items priced by weight.
      * @param  ?OrderedQuantity  $orderedQuantity  Ordered quantity information.
      * @param  ?AcknowledgementStatus  $acknowledgementStatus  Acknowledgement status information.
      * @param  ?ReceivingStatus  $receivingStatus  Item receive status at the buyer's warehouse.

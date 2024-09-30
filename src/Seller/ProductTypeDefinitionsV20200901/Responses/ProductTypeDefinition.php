@@ -28,7 +28,6 @@ final class ProductTypeDefinition extends Response
      * @param  string  $productType  The name of the Amazon product type that this product type definition applies to.
      * @param  string  $displayName  Human-readable and localized description of the Amazon product type.
      * @param  ProductTypeVersion  $productTypeVersion  The version details for an Amazon product type.
-     * @param  ?SchemaLink  $metaSchema
      */
     public function __construct(
         public readonly SchemaLink $schema,

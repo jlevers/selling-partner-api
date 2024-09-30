@@ -23,9 +23,9 @@ final class AddressExtendedFields extends Dto
 
     /**
      * @param  ?string  $streetName  The street name.
-     * @param  ?string  $streetNumber  The house number/building number/property number in the street.
+     * @param  ?string  $streetNumber  The house, building, or property number associated with the location's street address.
      * @param  ?string  $complement  The floor number/unit number in the building/private house number.
-     * @param  ?string  $neighborhood  The neighborhood. It's smaller than a region and an integral part of an address. It is used in some countries like Brazil.
+     * @param  ?string  $neighborhood  The neighborhood. This value is only used in some countries (such as Brazil).
      */
     public function __construct(
         public readonly ?string $streetName = null,

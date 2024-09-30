@@ -17,8 +17,6 @@ final class GetMessagingActionResponse extends Dto
     protected static array $attributeMap = ['links' => '_links', 'embedded' => '_embedded'];
 
     /**
-     * @param  ?Links2  $links
-     * @param  ?Embedded2  $embedded
      * @param  ?MessagingAction  $payload  A simple object containing the name of the template.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */

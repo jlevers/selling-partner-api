@@ -12,7 +12,7 @@ class GetMyFeesEstimateResponseTest extends TestCase
 {
     public function testDeserializeDateTimeWithMs()
     {
-        $now = new DateTime();
+        $now = new DateTime;
         $ms = $now->format('v');
         $result = GetMyFeesEstimateResponse::deserialize([
             'payload' => [
@@ -31,7 +31,7 @@ class GetMyFeesEstimateResponseTest extends TestCase
 
     public function testDeserializeDateTimeWithTimezone(): void
     {
-        $now = new DateTime();
+        $now = new DateTime;
         $now->setTimeZone(new DateTimeZone('+02:00'));
 
         $result = GetMyFeesEstimateResponse::deserialize([
@@ -47,7 +47,7 @@ class GetMyFeesEstimateResponseTest extends TestCase
         $this->assertInstanceOf(DateTimeInterface::class, $result->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation);
         $this->assertEquals(new DateTimeZone('+02:00'), $result->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation->getTimeZone());
 
-        $nowUtc = new DateTime();
+        $nowUtc = new DateTime;
         $utcResult = GetMyFeesEstimateResponse::deserialize([
             'payload' => [
                 'FeesEstimateResult' => [

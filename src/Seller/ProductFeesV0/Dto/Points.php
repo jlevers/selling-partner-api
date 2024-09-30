@@ -19,10 +19,6 @@ final class Points extends Dto
         'pointsMonetaryValue' => 'PointsMonetaryValue',
     ];
 
-    /**
-     * @param  ?int  $pointsNumber
-     * @param  ?MoneyType  $pointsMonetaryValue
-     */
     public function __construct(
         public readonly ?int $pointsNumber = null,
         public readonly ?MoneyType $pointsMonetaryValue = null,

@@ -18,7 +18,7 @@ final class Currency extends Dto
 
     /**
      * @param  ?string  $currencyCode  The three-digit currency code in ISO 4217 format.
-     * @param  ?float  $currencyAmount
+     * @param  ?float  $currencyAmount  A signed decimal number.
      */
     public function __construct(
         public readonly ?string $currencyCode = null,

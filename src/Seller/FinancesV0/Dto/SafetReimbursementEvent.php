@@ -25,11 +25,11 @@ final class SafetReimbursementEvent extends Dto
     protected static array $complexArrayTypes = ['safetReimbursementItemList' => SafetReimbursementItem::class];
 
     /**
-     * @param  ?\DateTimeInterface  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?string  $safetClaimId  A SAFE-T claim identifier.
      * @param  ?Currency  $reimbursedAmount  A currency type and amount.
      * @param  ?string  $reasonCode  Indicates why the seller was reimbursed.
-     * @param  SafetReimbursementItem[]|null  $safetReimbursementItemList  A list of SAFETReimbursementItems.
+     * @param  SafetReimbursementItem[]|null  $safetReimbursementItemList  A list of `SAFETReimbursementItem`.
      */
     public function __construct(
         public readonly ?\DateTimeInterface $postedDate = null,

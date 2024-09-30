@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.1",
     "info": {
-        "title": "The Selling Partner API for AWD",
-        "description": "The Selling Partner API for Amazon Warehousing and Distribution (AWD).",
+        "title": "The Selling Partner API for Amazon Warehousing and Distribution",
+        "description": "The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. ",
         "contact": {
             "name": "Selling Partner API Developer Support",
             "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
@@ -36,6 +36,39 @@
                             "minLength": 1,
                             "type": "string"
                         }
+                    },
+                    {
+                        "name": "skuQuantities",
+                        "in": "query",
+                        "description": "If equal to `SHOW`, the response includes the shipment SKU quantity details.\n\nDefaults to `HIDE`, in which case the response does not contain SKU quantities",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "SHOW",
+                                "HIDE"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "description": "Show the additional SKU quantity details.",
+                                    "value": "SHOW"
+                                },
+                                {
+                                    "description": "Hide the additional SKU quantity details.",
+                                    "value": "HIDE"
+                                }
+                            ]
+                        },
+                        "example": "SHOW",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "Show the additional SKU quantity details.",
+                                "value": "SHOW"
+                            },
+                            {
+                                "description": "Hide the additional SKU quantity details.",
+                                "value": "HIDE"
+                            }
+                        ]
                     }
                 ],
                 "responses": {
@@ -134,6 +167,19 @@
                                         ],
                                         "shipmentId": "TestShipmentId",
                                         "shipmentStatus": "CREATED",
+                                        "shipmentSkuQuantities": [
+                                            {
+                                                "sku": "testPen",
+                                                "expectedQuantity": {
+                                                    "quantity": 2,
+                                                    "unitOfMeasurement": "CASE"
+                                                },
+                                                "receivedQuantity": {
+                                                    "quantity": 0,
+                                                    "unitOfMeasurement": "CASE"
+                                                }
+                                            }
+                                        ],
                                         "updatedAt": "2023-06-07T12:12:09.061Z"
                                     }
                                 }
@@ -326,13 +372,13 @@
                 "tags": [
                     "AmazonWarehousingAndDistributionV20240509"
                 ],
-                "description": "Retrieves a summary for all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Retrieves a summary of all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "listInboundShipments",
                 "parameters": [
                     {
                         "name": "sortBy",
                         "in": "query",
-                        "description": "Field to sort results by. Required if `sortOrder` is provided.",
+                        "description": "Field to sort results by. By default, the response will be sorted by UPDATED_AT.",
                         "schema": {
                             "type": "string",
                             "enum": [
@@ -341,22 +387,22 @@
                             ],
                             "x-docgen-enum-table-extension": [
                                 {
-                                    "description": "Sort by `Updated at`timestamp.",
+                                    "description": "Sort by the time of update.",
                                     "value": "UPDATED_AT"
                                 },
                                 {
-                                    "description": "Sort by `Created at` timestamp.",
+                                    "description": "Sort by the time of creation.",
                                     "value": "CREATED_AT"
                                 }
                             ]
                         },
                         "x-docgen-enum-table-extension": [
                             {
-                                "description": "Sort by `Updated at`timestamp.",
+                                "description": "Sort by the time of update.",
                                 "value": "UPDATED_AT"
                             },
                             {
-                                "description": "Sort by `Created at` timestamp.",
+                                "description": "Sort by the time of creation.",
                                 "value": "CREATED_AT"
                             }
                         ]
@@ -364,7 +410,7 @@
                     {
                         "name": "sortOrder",
                         "in": "query",
-                        "description": "Sort the response in `ASCENDING` or `DESCENDING` order.",
+                        "description": "Sort the response in ASCENDING or DESCENDING order. By default, the response will be sorted in DESCENDING order.",
                         "schema": {
                             "type": "string",
                             "enum": [
@@ -878,6 +924,7 @@
                                         "inventory": [
                                             {
                                                 "totalOnhandQuantity": 20,
+                                                "totalInboundQuantity": 10,
                                                 "sku": "100TestSKU1Pen",
                                                 "inventoryDetails": {
                                                     "availableDistributableQuantity": 10,
@@ -886,6 +933,7 @@
                                             },
                                             {
                                                 "totalOnhandQuantity": 20,
+                                                "totalInboundQuantity": 5,
                                                 "sku": "2U-BKEX-VW4D",
                                                 "inventoryDetails": {
                                                     "availableDistributableQuantity": 10,
@@ -1180,7 +1228,7 @@
                 ],
                 "x-docgen-enum-table-extension": [
                     {
-                        "description": "Standard Carrier Alpha Code. Ref: https://help.cbp.gov/s/article/Article-572?language=en_US.",
+                        "description": "Standard Carrier Alpha Code. Refer to [What is a Standard Carrier Alpha Code](https://www.help.cbp.gov/s/article/Article-1420?language=en_US) for more information.",
                         "value": "SCAC"
                     }
                 ]
@@ -1435,6 +1483,13 @@
                         "type": "string",
                         "description": "Unique shipment ID."
                     },
+                    "shipmentSkuQuantities": {
+                        "type": "array",
+                        "description": "Quantity details at SKU level for the shipment. This attribute will only appear if the skuQuantities parameter in the request is set to SHOW.",
+                        "items": {
+                            "$ref": "#/components/schemas/SkuQuantity"
+                        }
+                    },
                     "shipmentStatus": {
                         "$ref": "#/components/schemas/InboundShipmentStatus"
                     },
@@ -1624,6 +1679,11 @@
                         "type": "string",
                         "description": "The seller or merchant SKU."
                     },
+                    "totalInboundQuantity": {
+                        "type": "integer",
+                        "description": "Total quantity that is in-transit from the seller and has not yet been received at an AWD Distribution Center",
+                        "format": "int64"
+                    },
                     "totalOnhandQuantity": {
                         "type": "integer",
                         "description": "Total quantity that is present in AWD distribution centers.",
@@ -1769,10 +1829,6 @@
                     "attributes": {
                         "type": "array",
                         "description": "Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU.",
-                        "example": {
-                            "name": "TestAttribute",
-                            "value": "TestAttributeValue"
-                        },
                         "items": {
                             "$ref": "#/components/schemas/ProductAttribute"
                         }
@@ -1825,6 +1881,45 @@
                         "value": "CREATED_AT"
                     }
                 ]
+            },
+            "SkuQuantitiesVisibility": {
+                "type": "string",
+                "description": "Enum to specify if returned shipment should include SKU quantity details",
+                "example": "SHOW",
+                "enum": [
+                    "SHOW",
+                    "HIDE"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "Show the additional SKU quantity details",
+                        "value": "SHOW"
+                    },
+                    {
+                        "description": "Hide the additional SKU quantity details",
+                        "value": "HIDE"
+                    }
+                ]
+            },
+            "SkuQuantity": {
+                "required": [
+                    "expectedQuantity",
+                    "sku"
+                ],
+                "type": "object",
+                "properties": {
+                    "expectedQuantity": {
+                        "$ref": "#/components/schemas/InventoryQuantity"
+                    },
+                    "receivedQuantity": {
+                        "$ref": "#/components/schemas/InventoryQuantity"
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "The merchant stock keeping unit"
+                    }
+                },
+                "description": "Quantity details for a SKU as part of a shipment"
             },
             "SortOrder": {
                 "type": "string",

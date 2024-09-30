@@ -17,8 +17,8 @@ final class OrderItemAcknowledgement extends Dto
     /**
      * @param  string  $acknowledgementCode  This indicates the acknowledgement code.
      * @param  ItemQuantity  $acknowledgedQuantity  Details of quantity ordered.
-     * @param  ?\DateTimeInterface  $scheduledShipDate  Estimated ship date per line item. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  ?\DateTimeInterface  $scheduledDeliveryDate  Estimated delivery date per line item. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param  ?\DateTimeInterface  $scheduledShipDate  Estimated ship date per line item. Must be in ISO-8601 date/time format.
+     * @param  ?\DateTimeInterface  $scheduledDeliveryDate  Estimated delivery date per line item. Must be in ISO-8601 date/time format.
      * @param  ?string  $rejectionReason  Indicates the reason for rejection.
      */
     public function __construct(

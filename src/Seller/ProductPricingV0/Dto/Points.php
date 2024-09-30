@@ -21,7 +21,6 @@ final class Points extends Dto
 
     /**
      * @param  ?int  $pointsNumber  The number of points.
-     * @param  ?MoneyType  $pointsMonetaryValue
      */
     public function __construct(
         public readonly ?int $pointsNumber = null,

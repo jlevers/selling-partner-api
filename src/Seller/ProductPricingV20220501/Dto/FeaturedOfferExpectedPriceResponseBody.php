@@ -19,12 +19,12 @@ final class FeaturedOfferExpectedPriceResponseBody extends Dto
     ];
 
     /**
-     * @param  OfferIdentifier  $offerIdentifier  Identifies an offer from a particular seller on an ASIN.
+     * @param  ?OfferIdentifier  $offerIdentifier  Identifies an offer from a particular seller on an ASIN.
      * @param  FeaturedOfferExpectedPriceResult[]|null  $featuredOfferExpectedPriceResults  A list of featured offer expected price results for the requested offer.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
-        public readonly OfferIdentifier $offerIdentifier,
+        public readonly ?OfferIdentifier $offerIdentifier = null,
         public readonly ?array $featuredOfferExpectedPriceResults = null,
         public readonly ?ErrorList $errors = null,
     ) {}

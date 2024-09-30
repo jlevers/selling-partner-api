@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class OrderedQuantityDetails extends Dto
 {
     /**
-     * @param  ?\DateTimeInterface  $updatedDate  The date when the line item quantity was updated by the buyer. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param  ?\DateTimeInterface  $updatedDate  The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.
      * @param  ?ItemQuantity  $orderedQuantity  Details of quantity ordered.
      * @param  ?ItemQuantity  $cancelledQuantity  Details of quantity ordered.
      */

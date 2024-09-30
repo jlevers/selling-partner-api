@@ -30,10 +30,10 @@ final class NetworkComminglingTransactionEvent extends Dto
      *
      * Possible values:
      *
-     * * NetCo - A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.
+     * * `NetCo`: A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.
      *
-     * * ComminglingVAT - A commingling VAT transaction. Available only in the UK, Spain, France, Germany, and Italy marketplaces.
-     * @param  ?\DateTimeInterface  $postedDate
+     * * `ComminglingVAT`: A commingling VAT transaction. Available only in the Spain, UK, France, Germany, and Italy marketplaces.
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?string  $netCoTransactionId  The identifier for the network item swap.
      * @param  ?string  $swapReason  The reason for the network item swap.
      * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the swapped item.

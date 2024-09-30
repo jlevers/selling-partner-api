@@ -24,7 +24,7 @@ final class Address extends Dto
      * @param  ?string  $county  The county where person, business or institution is located.
      * @param  ?string  $district  The district where person, business or institution is located.
      * @param  ?string  $stateOrRegion  The state or region where person, business or institution is located.
-     * @param  ?string  $postalCode  The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
+     * @param  ?string  $postalCode  The postal code of that address. It conatins a series of letters or digits or both, sometimes including spaces or punctuation.
      * @param  ?string  $phone  The phone number of the person, business or institution located at that address.
      */
     public function __construct(

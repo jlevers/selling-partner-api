@@ -27,7 +27,7 @@ final class TrialShipmentEvent extends Dto
     /**
      * @param  ?string  $amazonOrderId  An Amazon-defined identifier for an order.
      * @param  ?string  $financialEventGroupId  The identifier of the financial event group.
-     * @param  ?\DateTimeInterface  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?string  $sku  The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
      * @param  FeeComponent[]|null  $feeList  A list of fee component information.
      */

@@ -21,7 +21,7 @@ final class TdsReimbursementEvent extends Dto
     ];
 
     /**
-     * @param  ?\DateTimeInterface  $postedDate
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?string  $tdsOrderId  The Tax-Deducted-at-Source (TDS) identifier.
      * @param  ?Currency  $reimbursedAmount  A currency type and amount.
      */

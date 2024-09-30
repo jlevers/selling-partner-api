@@ -17,20 +17,16 @@ final class OrderDetails extends Dto
     protected static array $complexArrayTypes = ['items' => OrderItem::class];
 
     /**
-     * @param  \DateTimeInterface  $purchaseOrderDate  The date the purchase order was placed. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  \DateTimeInterface  $purchaseOrderStateChangedDate  The date when current purchase order state was changed. Current purchase order state is available in the field 'purchaseOrderState'. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param  \DateTimeInterface  $purchaseOrderDate  The date the purchase order was placed. Must be in ISO-8601 date/time format.
+     * @param  \DateTimeInterface  $purchaseOrderStateChangedDate  The date when current purchase order state was changed. Current purchase order state is available in the field 'purchaseOrderState'. Must be in ISO-8601 date/time format.
      * @param  OrderItem[]  $items  A list of items in this purchase order.
-     * @param  ?\DateTimeInterface  $purchaseOrderChangedDate  The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than 'purchaseOrderDate'. This means the PO data was changed on that date and vendors are required to fulfill the updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param  ?\DateTimeInterface  $purchaseOrderChangedDate  The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than 'purchaseOrderDate'. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.
      * @param  ?string  $purchaseOrderType  Type of purchase order.
      * @param  ?ImportDetails  $importDetails  Import details for an import order.
      * @param  ?string  $dealCode  If requested by the recipient, this field will contain a promotional/deal number. The discount code line is optional. It is used to obtain a price discount on items on the order.
      * @param  ?string  $paymentMethod  Payment method used.
-     * @param  ?PartyIdentification  $buyingParty  Name, address and tax details of a party.
-     * @param  ?PartyIdentification  $sellingParty  Name, address and tax details of a party.
-     * @param  ?PartyIdentification  $shipToParty  Name, address and tax details of a party.
-     * @param  ?PartyIdentification  $billToParty  Name, address and tax details of a party.
-     * @param  ?string  $shipWindow  Defines a date time interval according to <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a>. Interval is separated by double hyphen (--).
-     * @param  ?string  $deliveryWindow  Defines a date time interval according to <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a>. Interval is separated by double hyphen (--).
+     * @param  ?string  $shipWindow  Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
+     * @param  ?string  $deliveryWindow  Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
      */
     public function __construct(
         public readonly \DateTimeInterface $purchaseOrderDate,

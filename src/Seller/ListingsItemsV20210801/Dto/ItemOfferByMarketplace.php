@@ -19,11 +19,13 @@ final class ItemOfferByMarketplace extends Dto
      * @param  string  $offerType  Type of offer for the listings item.
      * @param  Money  $price  The currency type and amount.
      * @param  ?Points  $points  The number of Amazon Points offered with the purchase of an item, and their monetary value. Note that the `Points` element is only returned in Japan (JP).
+     * @param  ?Audience  $audience  Buyer segment or program this offer is applicable to.
      */
     public function __construct(
         public readonly string $marketplaceId,
         public readonly string $offerType,
         public readonly Money $price,
         public readonly ?Points $points = null,
+        public readonly ?Audience $audience = null,
     ) {}
 }

@@ -14,6 +14,16 @@ class SellerConnector extends SellingPartnerApi
         return new AmazonWarehousingAndDistributionV20240509\Api($this);
     }
 
+    public function appIntegrationsV20240401(): AppIntegrationsV20240401\Api
+    {
+        return new AppIntegrationsV20240401\Api($this);
+    }
+
+    public function applicationManagementV20231130(): ApplicationManagementV20231130\Api
+    {
+        return new ApplicationManagementV20231130\Api($this);
+    }
+
     public function aPlusContentV20201101(): APlusContentV20201101\Api
     {
         return new APlusContentV20201101\Api($this);

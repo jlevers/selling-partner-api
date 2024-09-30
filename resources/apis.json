@@ -9,6 +9,15 @@
                 }
             ]
         },
+        "app-integrations": {
+            "name": "App Integrations",
+            "versions": [
+                {
+                    "version": "2024-04-01",
+                    "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/refs/heads/main/models/application-integrations-api-model/appIntegrations-2024-04-01.json"
+                }
+            ]
+        },
         "application-management": {
             "name": "Application Management",
             "versions": [

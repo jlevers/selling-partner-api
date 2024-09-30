@@ -225,6 +225,10 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
     ```php
     $amazonWarehousingAndDistributionApi = $sellerConnector->amazonWarehousingAndDistributionV20240509();
     ```
+* **App Integrations API (v2024-04-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/app-integrations-api-v2024-04-01-reference))
+    ```php
+    $appIntegrationsApi = $sellerConnector->appIntegrationsV20240401();
+    ```
 * **Application Management API (v2023-11-30)** ([docs](https://developer-docs.amazon.com/sp-api/docs/application-management-api-v2023-11-30-reference))
     ```php
     $applicationManagementApi = $sellerConnector->applicationManagementV20231130();

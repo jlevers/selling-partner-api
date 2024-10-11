@@ -37,7 +37,8 @@ class OAuth extends Connector
         $this->oauthConfig = OAuthConfig::make()
             ->setClientId($this->clientId)
             ->setClientSecret($this->clientSecret)
-            ->setRedirectUri($this->redirectUri);
+            ->setRedirectUri($this->redirectUri)
+            ->setTokenEndpoint(self::TOKEN_URL);
     }
 
     public function resolveBaseUrl(): string

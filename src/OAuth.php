@@ -85,7 +85,7 @@ class OAuth extends Connector
 
             Marketplace::AU => 'https://sellercentral.amazon.com.au',
             Marketplace::JP => 'https://sellercentral.amazon.co.jp',
-            Marketplace::SG => 'https://sellercentral.amazon.com.sg',
+            Marketplace::SG => 'https://sellercentral.amazon.sg',
         };
 
         return $baseUrl.'/apps/authorize/consent?'.http_build_query($queryParams);

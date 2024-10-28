@@ -1,4 +1,7 @@
 {
+  "/applications/2023-11-30/clientSecret": {
+    "post": "sellingpartnerapi::client_credentials:rotation"
+  },
   "/authorization/v1/authorizationCode": {
     "get": "sellingpartnerapi::migration"
   },

@@ -14,6 +14,8 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
 use SellingPartnerApi\EmptyResponse;
+use SellingPartnerApi\Enums\GrantlessScope;
+use SellingPartnerApi\Middleware\Grantless;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\ApplicationManagementV20231130\Responses\ErrorList;
 
@@ -23,6 +25,11 @@ use SellingPartnerApi\Seller\ApplicationManagementV20231130\Responses\ErrorList;
 class RotateApplicationClientSecret extends Request
 {
     protected Method $method = Method::POST;
+
+    public function __construct()
+    {
+        $this->middleware()->onRequest(new Grantless(GrantlessScope::ROTATE_TOKEN));
+    }
 
     public function resolveEndpoint(): string
     {

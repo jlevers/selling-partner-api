@@ -17,7 +17,7 @@ final class TaxDetails extends Dto
     protected static array $complexArrayTypes = ['taxRates' => TaxRate::class];
 
     /**
-     * @param  ?Currency  $declaredValue  Currency definition.
+     * @param  ?Currency  $declaredValue  The type and amount of currency.
      * @param  ?string  $hsnCode  Harmonized System of Nomenclature code.
      * @param  TaxRate[]|null  $taxRates  List of tax rates.
      */

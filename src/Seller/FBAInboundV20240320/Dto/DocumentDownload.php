@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class DocumentDownload extends Dto
 {
     /**
-     * @param  string  $downloadType  The type of download. Can be `URL`.
+     * @param  string  $downloadType  The type of download. Possible values: `URL`.
      * @param  string  $uri  Uniform resource identifier to identify where the document is located.
-     * @param  ?\DateTimeInterface  $expiration  The timestamp of expiration of the URI. This is in ISO 8601 datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param  ?\DateTimeInterface  $expiration  The URI's expiration time. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
     public function __construct(
         public string $downloadType,

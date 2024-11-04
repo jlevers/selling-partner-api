@@ -15,34 +15,34 @@ use Saloon\Enums\Method;
 use Saloon\Http\Response;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ErrorList;
-use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ListItemComplianceDetailsResponse;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ListPrepDetailsResponse;
 
 /**
- * listItemComplianceDetails
+ * listPrepDetails
  */
-class ListItemComplianceDetails extends Request
+class ListPrepDetails extends Request
 {
     protected Method $method = Method::GET;
 
     /**
+     * @param  string  $marketplaceId  The marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  array  $mskus  A list of merchant SKUs, a merchant-supplied identifier of a specific SKU.
-     * @param  string  $marketplaceId  The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function __construct(
-        protected array $mskus,
         protected string $marketplaceId,
+        protected array $mskus,
     ) {}
 
     public function resolveEndpoint(): string
     {
-        return '/inbound/fba/2024-03-20/items/compliance';
+        return '/inbound/fba/2024-03-20/items/prepDetails';
     }
 
-    public function createDtoFromResponse(Response $response): ListItemComplianceDetailsResponse|ErrorList
+    public function createDtoFromResponse(Response $response): ListPrepDetailsResponse|ErrorList
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            200 => ListItemComplianceDetailsResponse::class,
+            200 => ListPrepDetailsResponse::class,
             400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
@@ -52,6 +52,6 @@ class ListItemComplianceDetails extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['mskus' => $this->mskus, 'marketplaceId' => $this->marketplaceId]);
+        return array_filter(['marketplaceId' => $this->marketplaceId, 'mskus' => $this->mskus]);
     }
 }

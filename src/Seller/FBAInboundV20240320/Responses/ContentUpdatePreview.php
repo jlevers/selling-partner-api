@@ -18,13 +18,13 @@ final class ContentUpdatePreview extends Response
 {
     /**
      * @param  string  $contentUpdatePreviewId  Identifier of a content update preview.
-     * @param  string  $expiration  The date in ISO 8601 format for when the content update expires.
+     * @param  \DateTimeInterface  $expiration  The time at which the content update expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      * @param  RequestedUpdates  $requestedUpdates  Objects that were included in the update request.
      * @param  TransportationOption  $transportationOption  Contains information pertaining to a transportation option and the related carrier.
      */
     public function __construct(
         public readonly string $contentUpdatePreviewId,
-        public readonly string $expiration,
+        public readonly \DateTimeInterface $expiration,
         public readonly RequestedUpdates $requestedUpdates,
         public readonly TransportationOption $transportationOption,
     ) {}

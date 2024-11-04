@@ -17,7 +17,7 @@ final class TaxRate extends Dto
     /**
      * @param  ?float  $cessRate  Rate of cess tax.
      * @param  ?float  $gstRate  Rate of gst tax.
-     * @param  ?string  $taxType  Type of tax. Can be: `CGST`, `SGST`, `IGST`, `TOTAL_TAX`.
+     * @param  ?string  $taxType  Type of tax. Possible values: `CGST`, `SGST`, `IGST`, `TOTAL_TAX`.
      */
     public function __construct(
         public ?float $cessRate = null,

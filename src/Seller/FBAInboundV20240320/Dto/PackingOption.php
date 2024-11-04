@@ -25,9 +25,9 @@ final class PackingOption extends Dto
      * @param  Incentive[]  $fees  Fee for the offered option.
      * @param  string[]  $packingGroups  Packing group IDs.
      * @param  string  $packingOptionId  Identifier of a packing option.
-     * @param  string  $status  The status of the packing option. Can be: `OFFERED`, `ACCEPTED`, or `EXPIRED`.
+     * @param  string  $status  The status of the packing option. Possible values: `OFFERED`, `ACCEPTED`, `EXPIRED`.
      * @param  ShippingConfiguration[]  $supportedShippingConfigurations  List of supported shipping modes.
-     * @param  ?\DateTimeInterface  $expiration  The timestamp at which this packing option becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param  ?\DateTimeInterface  $expiration  The time at which this packing option is no longer valid. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
     public function __construct(
         public array $discounts,

@@ -16,7 +16,7 @@ final class PlacementOptionSummary extends Dto
 {
     /**
      * @param  string  $placementOptionId  The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
-     * @param  string  $status  The status of a placement option. Can be: `OFFERED` or `ACCEPTED`.
+     * @param  string  $status  The status of a placement option. Possible values: `OFFERED`, `ACCEPTED`.
      */
     public function __construct(
         public string $placementOptionId,

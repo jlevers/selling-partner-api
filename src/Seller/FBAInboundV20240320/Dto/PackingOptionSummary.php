@@ -16,7 +16,7 @@ final class PackingOptionSummary extends Dto
 {
     /**
      * @param  string  $packingOptionId  Identifier of a packing option.
-     * @param  string  $status  The status of a packing option. Can be 'OFFERED', 'ACCEPTED', or 'EXPIRED'.
+     * @param  string  $status  The status of a packing option. Possible values: 'OFFERED', 'ACCEPTED', 'EXPIRED'.
      */
     public function __construct(
         public string $packingOptionId,

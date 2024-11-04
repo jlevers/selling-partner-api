@@ -14,6 +14,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\GenerateShipmentContentUpda
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\GenerateTransportationOptionsRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\ScheduleSelfShipAppointmentRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\SetPackingInformationRequest;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\SetPrepDetailsRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\UpdateInboundPlanNameRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\UpdateItemComplianceDetailsRequest;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\UpdateShipmentNameRequest;
@@ -50,6 +51,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListPackingGroupBoxes;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListPackingGroupItems;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListPackingOptions;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListPlacementOptions;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListPrepDetails;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListShipmentBoxes;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListShipmentContentUpdatePreviews;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListShipmentItems;
@@ -57,6 +59,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListShipmentPallets;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ListTransportationOptions;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\ScheduleSelfShipAppointment;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\SetPackingInformation;
+use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\SetPrepDetails;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\UpdateInboundPlanName;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\UpdateItemComplianceDetails;
 use SellingPartnerApi\Seller\FBAInboundV20240320\Requests\UpdateShipmentName;
@@ -627,8 +630,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  array  $mskus  List of merchant SKUs - a merchant-supplied identifier for a specific SKU.
-     * @param  string  $marketplaceId  The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values.
+     * @param  array  $mskus  A list of merchant SKUs, a merchant-supplied identifier of a specific SKU.
+     * @param  string  $marketplaceId  The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function listItemComplianceDetails(array $mskus, string $marketplaceId): Response
     {
@@ -639,7 +642,7 @@ class Api extends BaseResource
 
     /**
      * @param  UpdateItemComplianceDetailsRequest  $updateItemComplianceDetailsRequest  The `updateItemComplianceDetails` request.
-     * @param  string  $marketplaceId  The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values.
+     * @param  string  $marketplaceId  The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function updateItemComplianceDetails(
         UpdateItemComplianceDetailsRequest $updateItemComplianceDetailsRequest,
@@ -657,6 +660,27 @@ class Api extends BaseResource
         CreateMarketplaceItemLabelsRequest $createMarketplaceItemLabelsRequest,
     ): Response {
         $request = new CreateMarketplaceItemLabels($createMarketplaceItemLabelsRequest);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $marketplaceId  The marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  array  $mskus  A list of merchant SKUs, a merchant-supplied identifier of a specific SKU.
+     */
+    public function listPrepDetails(string $marketplaceId, array $mskus): Response
+    {
+        $request = new ListPrepDetails($marketplaceId, $mskus);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  SetPrepDetailsRequest  $setPrepDetailsRequest  The `setPrepDetails` request.
+     */
+    public function setPrepDetails(SetPrepDetailsRequest $setPrepDetailsRequest): Response
+    {
+        $request = new SetPrepDetails($setPrepDetailsRequest);
 
         return $this->connector->send($request);
     }

@@ -15,13 +15,13 @@ use SellingPartnerApi\Dto;
 final class InboundPlanSummary extends Dto
 {
     /**
-     * @param  \DateTimeInterface  $createdAt  The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param  \DateTimeInterface  $createdAt  The time at which the inbound plan was created. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
      * @param  string  $inboundPlanId  Identifier of an inbound plan.
-     * @param  \DateTimeInterface  $lastUpdatedAt  The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
-     * @param  string[]  $marketplaceIds  Marketplace IDs.
+     * @param  \DateTimeInterface  $lastUpdatedAt  The time at which the inbound plan was last updated. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
+     * @param  string[]  $marketplaceIds  A list of marketplace IDs.
      * @param  string  $name  Human-readable name of the inbound plan.
      * @param  Address  $sourceAddress  Specific details to identify a place.
-     * @param  string  $status  Current status of the inbound plan. Can be: `ACTIVE`, `VOIDED`, `SHIPPED`, 'ERRORED'.
+     * @param  string  $status  The current status of the inbound plan. Possible values: `ACTIVE`, `VOIDED`, `SHIPPED`, `ERRORED`.
      */
     public function __construct(
         public \DateTimeInterface $createdAt,

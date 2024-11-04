@@ -17,8 +17,8 @@ final class SelfShipAppointmentSlotsAvailability extends Dto
     protected static array $complexArrayTypes = ['slots' => AppointmentSlot::class];
 
     /**
-     * @param  ?\DateTimeInterface  $expiresAt  The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
-     * @param  AppointmentSlot[]|null  $slots  List of appointment slots.
+     * @param  ?\DateTimeInterface  $expiresAt  The time at which the self ship appointment slot expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
+     * @param  AppointmentSlot[]|null  $slots  A list of appointment slots.
      */
     public function __construct(
         public ?\DateTimeInterface $expiresAt = null,

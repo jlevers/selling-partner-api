@@ -26,8 +26,8 @@ final class TdsReimbursementEvent extends Dto
      * @param  ?Currency  $reimbursedAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $tdsOrderId = null,
-        public readonly ?Currency $reimbursedAmount = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $tdsOrderId = null,
+        public ?Currency $reimbursedAmount = null,
     ) {}
 }

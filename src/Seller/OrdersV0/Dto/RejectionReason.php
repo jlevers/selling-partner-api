@@ -24,7 +24,7 @@ final class RejectionReason extends Dto
      * @param  string  $rejectionReasonDescription  The description of this rejection reason.
      */
     public function __construct(
-        public readonly string $rejectionReasonId,
-        public readonly string $rejectionReasonDescription,
+        public string $rejectionReasonId,
+        public string $rejectionReasonDescription,
     ) {}
 }

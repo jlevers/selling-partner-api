@@ -20,8 +20,8 @@ final class AcknowledgementStatusDetails extends Dto
      * @param  ?ItemQuantity  $rejectedQuantity  Details of quantity ordered.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $acknowledgementDate = null,
-        public readonly ?ItemQuantity $acceptedQuantity = null,
-        public readonly ?ItemQuantity $rejectedQuantity = null,
+        public ?\DateTimeInterface $acknowledgementDate = null,
+        public ?ItemQuantity $acceptedQuantity = null,
+        public ?ItemQuantity $rejectedQuantity = null,
     ) {}
 }

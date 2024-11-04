@@ -22,10 +22,10 @@ final class FeatureSku extends Dto
      * @param  ?string[]  $overlappingSkus  Other seller SKUs that are shared across the same inventory.
      */
     public function __construct(
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $fnSku = null,
-        public readonly ?string $asin = null,
-        public readonly ?float $skuCount = null,
-        public readonly ?array $overlappingSkus = null,
+        public ?string $sellerSku = null,
+        public ?string $fnSku = null,
+        public ?string $asin = null,
+        public ?float $skuCount = null,
+        public ?array $overlappingSkus = null,
     ) {}
 }

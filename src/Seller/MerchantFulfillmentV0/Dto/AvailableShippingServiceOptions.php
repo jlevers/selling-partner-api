@@ -29,7 +29,7 @@ final class AvailableShippingServiceOptions extends Dto
      * @param  AvailableDeliveryExperienceOption[]  $availableDeliveryExperienceOptions  List of available delivery experience options.
      */
     public function __construct(
-        public readonly array $availableCarrierWillPickUpOptions,
-        public readonly array $availableDeliveryExperienceOptions,
+        public array $availableCarrierWillPickUpOptions,
+        public array $availableDeliveryExperienceOptions,
     ) {}
 }

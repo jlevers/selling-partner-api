@@ -40,15 +40,15 @@ final class SolutionProviderCreditEvent extends Dto
      * @param  ?\DateTimeInterface  $transactionCreationDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function __construct(
-        public readonly ?string $providerTransactionType = null,
-        public readonly ?string $sellerOrderId = null,
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $marketplaceCountryCode = null,
-        public readonly ?string $sellerId = null,
-        public readonly ?string $sellerStoreName = null,
-        public readonly ?string $providerId = null,
-        public readonly ?string $providerStoreName = null,
-        public readonly ?Currency $transactionAmount = null,
-        public readonly ?\DateTimeInterface $transactionCreationDate = null,
+        public ?string $providerTransactionType = null,
+        public ?string $sellerOrderId = null,
+        public ?string $marketplaceId = null,
+        public ?string $marketplaceCountryCode = null,
+        public ?string $sellerId = null,
+        public ?string $sellerStoreName = null,
+        public ?string $providerId = null,
+        public ?string $providerStoreName = null,
+        public ?Currency $transactionAmount = null,
+        public ?\DateTimeInterface $transactionCreationDate = null,
     ) {}
 }

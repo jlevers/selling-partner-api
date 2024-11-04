@@ -21,9 +21,9 @@ final class TaxRegistrationDetails extends Dto
      * @param  ?string  $taxRegistrationMessages  Tax registration message that can be used for additional tax related details.
      */
     public function __construct(
-        public readonly string $taxRegistrationNumber,
-        public readonly ?string $taxRegistrationType = null,
-        public readonly ?Address $taxRegistrationAddress = null,
-        public readonly ?string $taxRegistrationMessages = null,
+        public string $taxRegistrationNumber,
+        public ?string $taxRegistrationType = null,
+        public ?Address $taxRegistrationAddress = null,
+        public ?string $taxRegistrationMessages = null,
     ) {}
 }

@@ -20,6 +20,6 @@ final class Embedded extends Dto
      * @param  GetMessagingActionResponse[]  $actions
      */
     public function __construct(
-        public readonly array $actions,
+        public array $actions,
     ) {}
 }

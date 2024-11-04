@@ -22,10 +22,10 @@ final class ContentMetadata extends Dto
      * @param  \DateTimeInterface  $updateTime  The approximate age of the A+ Content document and metadata.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly string $marketplaceId,
-        public readonly string $status,
-        public readonly array $badgeSet,
-        public readonly \DateTimeInterface $updateTime,
+        public string $name,
+        public string $marketplaceId,
+        public string $status,
+        public array $badgeSet,
+        public \DateTimeInterface $updateTime,
     ) {}
 }

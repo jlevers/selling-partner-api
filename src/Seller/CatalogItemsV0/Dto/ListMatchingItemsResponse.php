@@ -22,6 +22,6 @@ final class ListMatchingItemsResponse extends Dto
      * @param  Item[]|null  $items  A list of items.
      */
     public function __construct(
-        public readonly ?array $items = null,
+        public ?array $items = null,
     ) {}
 }

@@ -22,10 +22,10 @@ final class ItemDetails extends Dto
      * @param  ?string  $handlingCode  Identification of the instructions on how specified item/carton/pallet should be handled.
      */
     public function __construct(
-        public readonly ?string $purchaseOrderNumber = null,
-        public readonly ?string $lotNumber = null,
-        public readonly ?Expiry $expiry = null,
-        public readonly ?Money $maximumRetailPrice = null,
-        public readonly ?string $handlingCode = null,
+        public ?string $purchaseOrderNumber = null,
+        public ?string $lotNumber = null,
+        public ?Expiry $expiry = null,
+        public ?Money $maximumRetailPrice = null,
+        public ?string $handlingCode = null,
     ) {}
 }

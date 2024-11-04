@@ -21,7 +21,7 @@ final class ListFinancialEventsPayload extends Dto
      * @param  ?FinancialEvents  $financialEvents  All the information that is related to a financial event.
      */
     public function __construct(
-        public readonly ?string $nextToken = null,
-        public readonly ?FinancialEvents $financialEvents = null,
+        public ?string $nextToken = null,
+        public ?FinancialEvents $financialEvents = null,
     ) {}
 }

@@ -30,10 +30,10 @@ final class AutomatedShippingSettings extends Dto
      * @param  ?string  $automatedCarrierName  The name of the automated carrier.
      */
     public function __construct(
-        public readonly ?bool $hasAutomatedShippingSettings = null,
-        public readonly ?string $automatedCarrier = null,
-        public readonly ?string $automatedShipMethod = null,
-        public readonly ?string $automatedShipMethodName = null,
-        public readonly ?string $automatedCarrierName = null,
+        public ?bool $hasAutomatedShippingSettings = null,
+        public ?string $automatedCarrier = null,
+        public ?string $automatedShipMethod = null,
+        public ?string $automatedShipMethodName = null,
+        public ?string $automatedCarrierName = null,
     ) {}
 }

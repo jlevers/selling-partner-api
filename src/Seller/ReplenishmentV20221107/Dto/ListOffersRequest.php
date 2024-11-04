@@ -20,8 +20,8 @@ final class ListOffersRequest extends Dto
      * @param  ?ListOffersRequestSort  $sort  Use these parameters to sort the response.
      */
     public function __construct(
-        public readonly ListOffersRequestPagination $pagination,
-        public readonly ListOffersRequestFilters $filters,
-        public readonly ?ListOffersRequestSort $sort = null,
+        public ListOffersRequestPagination $pagination,
+        public ListOffersRequestFilters $filters,
+        public ?ListOffersRequestSort $sort = null,
     ) {}
 }

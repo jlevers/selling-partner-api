@@ -23,7 +23,7 @@ final class PartneredSmallParcelDataOutput extends Dto
      * @param  ?PartneredEstimate  $partneredEstimate  The estimated shipping cost for a shipment using an Amazon-partnered carrier.
      */
     public function __construct(
-        public readonly array $packageList,
-        public readonly ?PartneredEstimate $partneredEstimate = null,
+        public array $packageList,
+        public ?PartneredEstimate $partneredEstimate = null,
     ) {}
 }

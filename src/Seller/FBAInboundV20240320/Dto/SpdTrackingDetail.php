@@ -20,6 +20,6 @@ final class SpdTrackingDetail extends Dto
      * @param  SpdTrackingItem[]|null  $spdTrackingItems  List of Small Parcel Delivery (SPD) tracking items.
      */
     public function __construct(
-        public readonly ?array $spdTrackingItems = null,
+        public ?array $spdTrackingItems = null,
     ) {}
 }

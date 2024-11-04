@@ -23,9 +23,9 @@ final class Account extends Dto
      * @param  ?PrimaryContact  $primaryContact  Information about the seller's primary contact.
      */
     public function __construct(
-        public readonly array $marketplaceLevelAttributes,
-        public readonly string $businessType,
-        public readonly ?Business $business = null,
-        public readonly ?PrimaryContact $primaryContact = null,
+        public array $marketplaceLevelAttributes,
+        public string $businessType,
+        public ?Business $business = null,
+        public ?PrimaryContact $primaryContact = null,
     ) {}
 }

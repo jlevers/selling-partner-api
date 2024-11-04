@@ -28,9 +28,9 @@ final class BuyerTaxInformation extends Dto
      * @param  ?string  $buyerTaxOffice  Business buyer's tax office.
      */
     public function __construct(
-        public readonly ?string $buyerLegalCompanyName = null,
-        public readonly ?string $buyerBusinessAddress = null,
-        public readonly ?string $buyerTaxRegistrationId = null,
-        public readonly ?string $buyerTaxOffice = null,
+        public ?string $buyerLegalCompanyName = null,
+        public ?string $buyerBusinessAddress = null,
+        public ?string $buyerTaxRegistrationId = null,
+        public ?string $buyerTaxOffice = null,
     ) {}
 }

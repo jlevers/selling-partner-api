@@ -28,9 +28,9 @@ final class CapacityReservationBillingEvent extends Dto
      * @param  ?Currency  $transactionAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?string $transactionType = null,
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $description = null,
-        public readonly ?Currency $transactionAmount = null,
+        public ?string $transactionType = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $description = null,
+        public ?Currency $transactionAmount = null,
     ) {}
 }

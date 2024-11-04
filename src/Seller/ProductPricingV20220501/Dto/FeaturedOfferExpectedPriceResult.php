@@ -21,9 +21,9 @@ final class FeaturedOfferExpectedPriceResult extends Dto
      * @param  ?FeaturedOffer  $currentFeaturedOffer  Schema for `currentFeaturedOffer` or `competingFeaturedOffer`.
      */
     public function __construct(
-        public readonly string $resultStatus,
-        public readonly ?FeaturedOfferExpectedPrice $featuredOfferExpectedPrice = null,
-        public readonly ?FeaturedOffer $competingFeaturedOffer = null,
-        public readonly ?FeaturedOffer $currentFeaturedOffer = null,
+        public string $resultStatus,
+        public ?FeaturedOfferExpectedPrice $featuredOfferExpectedPrice = null,
+        public ?FeaturedOffer $competingFeaturedOffer = null,
+        public ?FeaturedOffer $currentFeaturedOffer = null,
     ) {}
 }

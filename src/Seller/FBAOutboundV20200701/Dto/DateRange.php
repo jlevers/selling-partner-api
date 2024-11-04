@@ -19,7 +19,7 @@ final class DateRange extends Dto
      * @param  \DateTimeInterface  $latest  Date timestamp
      */
     public function __construct(
-        public readonly \DateTimeInterface $earliest,
-        public readonly \DateTimeInterface $latest,
+        public \DateTimeInterface $earliest,
+        public \DateTimeInterface $latest,
     ) {}
 }

@@ -26,12 +26,12 @@ final class PurchaseShipmentRequest extends Dto
      * @param  ?\DateTimeInterface  $shipDate  The start date and time. This defaults to the current date and time.
      */
     public function __construct(
-        public readonly string $clientReferenceId,
-        public readonly Address $shipTo,
-        public readonly Address $shipFrom,
-        public readonly string $serviceType,
-        public readonly array $containers,
-        public readonly LabelSpecification $labelSpecification,
-        public readonly ?\DateTimeInterface $shipDate = null,
+        public string $clientReferenceId,
+        public Address $shipTo,
+        public Address $shipFrom,
+        public string $serviceType,
+        public array $containers,
+        public LabelSpecification $labelSpecification,
+        public ?\DateTimeInterface $shipDate = null,
     ) {}
 }

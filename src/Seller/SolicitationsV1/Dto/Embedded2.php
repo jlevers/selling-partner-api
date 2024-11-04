@@ -15,6 +15,6 @@ use SellingPartnerApi\Dto;
 final class Embedded2 extends Dto
 {
     public function __construct(
-        public readonly ?GetSchemaResponse $schema = null,
+        public ?GetSchemaResponse $schema = null,
     ) {}
 }

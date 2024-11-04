@@ -20,8 +20,8 @@ final class PropertyGroup extends Dto
      * @param  ?string[]  $propertyNames  The names of the schema properties for the property group.
      */
     public function __construct(
-        public readonly ?string $title = null,
-        public readonly ?string $description = null,
-        public readonly ?array $propertyNames = null,
+        public ?string $title = null,
+        public ?string $description = null,
+        public ?array $propertyNames = null,
     ) {}
 }

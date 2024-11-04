@@ -19,7 +19,7 @@ final class ReturnLocation extends Dto
      * @param  ?AddressWithContact  $addressWithContact  The address and contact details.
      */
     public function __construct(
-        public readonly ?string $supplySourceId = null,
-        public readonly ?AddressWithContact $addressWithContact = null,
+        public ?string $supplySourceId = null,
+        public ?AddressWithContact $addressWithContact = null,
     ) {}
 }

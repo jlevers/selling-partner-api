@@ -19,7 +19,7 @@ final class GenerateSelfShipAppointmentSlotsRequest extends Dto
      * @param  ?\DateTimeInterface  $desiredStartDate  The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $desiredEndDate = null,
-        public readonly ?\DateTimeInterface $desiredStartDate = null,
+        public ?\DateTimeInterface $desiredEndDate = null,
+        public ?\DateTimeInterface $desiredStartDate = null,
     ) {}
 }

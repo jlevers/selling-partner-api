@@ -18,6 +18,6 @@ final class ProductIdentifier extends Dto
      * @param  string  $merchantSku  The merchant SKU for the product.
      */
     public function __construct(
-        public readonly string $merchantSku,
+        public string $merchantSku,
     ) {}
 }

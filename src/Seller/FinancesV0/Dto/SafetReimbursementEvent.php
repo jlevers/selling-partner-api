@@ -32,10 +32,10 @@ final class SafetReimbursementEvent extends Dto
      * @param  SafetReimbursementItem[]|null  $safetReimbursementItemList  A list of `SAFETReimbursementItem`.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $safetClaimId = null,
-        public readonly ?Currency $reimbursedAmount = null,
-        public readonly ?string $reasonCode = null,
-        public readonly ?array $safetReimbursementItemList = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $safetClaimId = null,
+        public ?Currency $reimbursedAmount = null,
+        public ?string $reasonCode = null,
+        public ?array $safetReimbursementItemList = null,
     ) {}
 }

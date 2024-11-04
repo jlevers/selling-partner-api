@@ -32,10 +32,10 @@ final class ShippingServiceOptions extends Dto
      * @param  ?string  $labelFormat  The label format.
      */
     public function __construct(
-        public readonly string $deliveryExperience,
-        public readonly bool $carrierWillPickUp,
-        public readonly ?CurrencyAmount $declaredValue = null,
-        public readonly ?string $carrierWillPickUpOption = null,
-        public readonly ?string $labelFormat = null,
+        public string $deliveryExperience,
+        public bool $carrierWillPickUp,
+        public ?CurrencyAmount $declaredValue = null,
+        public ?string $carrierWillPickUpOption = null,
+        public ?string $labelFormat = null,
     ) {}
 }

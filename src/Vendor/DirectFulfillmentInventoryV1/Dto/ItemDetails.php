@@ -21,9 +21,9 @@ final class ItemDetails extends Dto
      * @param  ?bool  $isObsolete  When `true`, the item is permanently unavailable.
      */
     public function __construct(
-        public readonly ItemQuantity $availableQuantity,
-        public readonly ?string $buyerProductIdentifier = null,
-        public readonly ?string $vendorProductIdentifier = null,
-        public readonly ?bool $isObsolete = null,
+        public ItemQuantity $availableQuantity,
+        public ?string $buyerProductIdentifier = null,
+        public ?string $vendorProductIdentifier = null,
+        public ?bool $isObsolete = null,
     ) {}
 }

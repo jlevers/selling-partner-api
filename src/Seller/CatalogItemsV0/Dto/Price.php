@@ -21,7 +21,7 @@ final class Price extends Dto
      * @param  ?string  $currencyCode  The currency code of the amount.
      */
     public function __construct(
-        public readonly ?float $amount = null,
-        public readonly ?string $currencyCode = null,
+        public ?float $amount = null,
+        public ?string $currencyCode = null,
     ) {}
 }

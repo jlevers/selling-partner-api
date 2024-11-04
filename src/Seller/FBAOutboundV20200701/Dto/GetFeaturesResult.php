@@ -20,6 +20,6 @@ final class GetFeaturesResult extends Dto
      * @param  Feature[]  $features  An array of features.
      */
     public function __construct(
-        public readonly array $features,
+        public array $features,
     ) {}
 }

@@ -24,7 +24,7 @@ final class AdditionalInputs extends Dto
      * @param  ?SellerInputDefinition  $sellerInputDefinition  Specifies characteristics that apply to a seller input.
      */
     public function __construct(
-        public readonly ?string $additionalInputFieldName = null,
-        public readonly ?SellerInputDefinition $sellerInputDefinition = null,
+        public ?string $additionalInputFieldName = null,
+        public ?SellerInputDefinition $sellerInputDefinition = null,
     ) {}
 }

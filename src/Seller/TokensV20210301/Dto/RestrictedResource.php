@@ -28,8 +28,8 @@ final class RestrictedResource extends Dto
      *                                   - **buyerTaxInformation**. This includes information for issuing tax invoices.
      */
     public function __construct(
-        public readonly string $method,
-        public readonly string $path,
-        public readonly ?array $dataElements = null,
+        public string $method,
+        public string $path,
+        public ?array $dataElements = null,
     ) {}
 }

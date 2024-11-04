@@ -20,8 +20,8 @@ final class CreateInventoryItemRequest extends Dto
      * @param  string  $productName  The name of the item.
      */
     public function __construct(
-        public readonly string $sellerSku,
-        public readonly string $marketplaceId,
-        public readonly string $productName,
+        public string $sellerSku,
+        public string $marketplaceId,
+        public string $productName,
     ) {}
 }

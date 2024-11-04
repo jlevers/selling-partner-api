@@ -21,9 +21,9 @@ final class GetSolicitationActionResponse extends Dto
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
-        public readonly ?Links2 $links = null,
-        public readonly ?Embedded2 $embedded = null,
-        public readonly ?SolicitationsAction $payload = null,
-        public readonly ?ErrorList $errors = null,
+        public ?Links2 $links = null,
+        public ?Embedded2 $embedded = null,
+        public ?SolicitationsAction $payload = null,
+        public ?ErrorList $errors = null,
     ) {}
 }

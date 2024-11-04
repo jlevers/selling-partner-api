@@ -19,7 +19,7 @@ final class CreateDestinationRequest extends Dto
      * @param  string  $name  A developer-defined name to help identify this destination.
      */
     public function __construct(
-        public readonly DestinationResourceSpecification $resourceSpecification,
-        public readonly string $name,
+        public DestinationResourceSpecification $resourceSpecification,
+        public string $name,
     ) {}
 }

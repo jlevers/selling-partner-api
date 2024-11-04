@@ -20,6 +20,6 @@ final class GetDeliveryOffersResult extends Dto
      * @param  DeliveryOffer[]|null  $deliveryOffers  An array of delivery offer information.
      */
     public function __construct(
-        public readonly ?array $deliveryOffers = null,
+        public ?array $deliveryOffers = null,
     ) {}
 }

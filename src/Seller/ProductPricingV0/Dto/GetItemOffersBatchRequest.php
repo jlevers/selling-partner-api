@@ -20,6 +20,6 @@ final class GetItemOffersBatchRequest extends Dto
      * @param  ItemOffersRequest[]|null  $requests  A list of `getListingOffers` batched requests to run.
      */
     public function __construct(
-        public readonly ?array $requests = null,
+        public ?array $requests = null,
     ) {}
 }

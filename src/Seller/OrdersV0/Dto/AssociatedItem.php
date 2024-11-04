@@ -26,8 +26,8 @@ final class AssociatedItem extends Dto
      * @param  ?string  $associationType  The type of association an item has with an order item.
      */
     public function __construct(
-        public readonly ?string $orderId = null,
-        public readonly ?string $orderItemId = null,
-        public readonly ?string $associationType = null,
+        public ?string $orderId = null,
+        public ?string $orderItemId = null,
+        public ?string $associationType = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class Currency extends Dto
      * @param  string  $unit  A 3-character currency code.
      */
     public function __construct(
-        public readonly float $value,
-        public readonly string $unit,
+        public float $value,
+        public string $unit,
     ) {}
 }

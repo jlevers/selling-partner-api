@@ -19,7 +19,7 @@ final class IssueExemption extends Dto
      * @param  ?\DateTimeInterface  $expiryDate  This field represents the timestamp, following the ISO 8601 format, which specifies the date when temporary exemptions, if applicable, will expire, and Amazon will begin enforcing the listed actions.
      */
     public function __construct(
-        public readonly string $status,
-        public readonly ?\DateTimeInterface $expiryDate = null,
+        public string $status,
+        public ?\DateTimeInterface $expiryDate = null,
     ) {}
 }

@@ -41,13 +41,13 @@ final class RemovalShipmentItem extends Dto
      * @param  ?Currency  $taxWithheld  A currency type and amount.
      */
     public function __construct(
-        public readonly ?string $removalShipmentItemId = null,
-        public readonly ?string $taxCollectionModel = null,
-        public readonly ?string $fulfillmentNetworkSku = null,
-        public readonly ?int $quantity = null,
-        public readonly ?Currency $revenue = null,
-        public readonly ?Currency $feeAmount = null,
-        public readonly ?Currency $taxAmount = null,
-        public readonly ?Currency $taxWithheld = null,
+        public ?string $removalShipmentItemId = null,
+        public ?string $taxCollectionModel = null,
+        public ?string $fulfillmentNetworkSku = null,
+        public ?int $quantity = null,
+        public ?Currency $revenue = null,
+        public ?Currency $feeAmount = null,
+        public ?Currency $taxAmount = null,
+        public ?Currency $taxWithheld = null,
     ) {}
 }

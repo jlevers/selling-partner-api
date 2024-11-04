@@ -19,7 +19,7 @@ final class Granularity extends Dto
      * @param  ?string  $granularityId  The granularity ID for the specified granularity type. When granularityType is Marketplace, specify the marketplaceId.
      */
     public function __construct(
-        public readonly ?string $granularityType = null,
-        public readonly ?string $granularityId = null,
+        public ?string $granularityType = null,
+        public ?string $granularityId = null,
     ) {}
 }

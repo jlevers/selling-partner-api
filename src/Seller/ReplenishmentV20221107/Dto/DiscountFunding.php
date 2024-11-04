@@ -18,6 +18,6 @@ final class DiscountFunding extends Dto
      * @param  float[]|null  $percentage  Filters the results to only include offers with the percentage specified.
      */
     public function __construct(
-        public readonly ?array $percentage = null,
+        public ?array $percentage = null,
     ) {}
 }

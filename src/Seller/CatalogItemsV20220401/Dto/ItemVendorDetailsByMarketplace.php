@@ -25,13 +25,13 @@ final class ItemVendorDetailsByMarketplace extends Dto
      * @param  ?string  $replenishmentCategory  Replenishment category associated with an Amazon catalog item.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly ?string $brandCode = null,
-        public readonly ?string $manufacturerCode = null,
-        public readonly ?string $manufacturerCodeParent = null,
-        public readonly ?ItemVendorDetailsCategory $productCategory = null,
-        public readonly ?string $productGroup = null,
-        public readonly ?ItemVendorDetailsCategory $productSubcategory = null,
-        public readonly ?string $replenishmentCategory = null,
+        public string $marketplaceId,
+        public ?string $brandCode = null,
+        public ?string $manufacturerCode = null,
+        public ?string $manufacturerCodeParent = null,
+        public ?ItemVendorDetailsCategory $productCategory = null,
+        public ?string $productGroup = null,
+        public ?ItemVendorDetailsCategory $productSubcategory = null,
+        public ?string $replenishmentCategory = null,
     ) {}
 }

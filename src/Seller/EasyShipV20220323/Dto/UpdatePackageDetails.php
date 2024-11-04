@@ -19,7 +19,7 @@ final class UpdatePackageDetails extends Dto
      * @param  TimeSlot  $packageTimeSlot  A time window to hand over an Easy Ship package to Amazon Logistics.
      */
     public function __construct(
-        public readonly ScheduledPackageId $scheduledPackageId,
-        public readonly TimeSlot $packageTimeSlot,
+        public ScheduledPackageId $scheduledPackageId,
+        public TimeSlot $packageTimeSlot,
     ) {}
 }

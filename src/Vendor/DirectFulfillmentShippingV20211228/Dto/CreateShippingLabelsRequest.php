@@ -22,8 +22,8 @@ final class CreateShippingLabelsRequest extends Dto
      * @param  Container[]|null  $containers  A list of the packages in this shipment.
      */
     public function __construct(
-        public readonly PartyIdentification $sellingParty,
-        public readonly PartyIdentification $shipFromParty,
-        public readonly ?array $containers = null,
+        public PartyIdentification $sellingParty,
+        public PartyIdentification $shipFromParty,
+        public ?array $containers = null,
     ) {}
 }

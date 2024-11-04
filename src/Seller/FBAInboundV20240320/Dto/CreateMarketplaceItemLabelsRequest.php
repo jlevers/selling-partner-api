@@ -26,12 +26,12 @@ final class CreateMarketplaceItemLabelsRequest extends Dto
      * @param  ?float  $width  The width of the item label.
      */
     public function __construct(
-        public readonly string $labelType,
-        public readonly string $marketplaceId,
-        public readonly array $mskuQuantities,
-        public readonly ?float $height = null,
-        public readonly ?string $localeCode = null,
-        public readonly ?string $pageType = null,
-        public readonly ?float $width = null,
+        public string $labelType,
+        public string $marketplaceId,
+        public array $mskuQuantities,
+        public ?float $height = null,
+        public ?string $localeCode = null,
+        public ?string $pageType = null,
+        public ?float $width = null,
     ) {}
 }

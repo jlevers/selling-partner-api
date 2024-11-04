@@ -19,7 +19,7 @@ final class HttpStatusLine extends Dto
      * @param  ?string  $reasonPhrase  The HTTP response Reason-Phase.
      */
     public function __construct(
-        public readonly ?int $statusCode = null,
-        public readonly ?string $reasonPhrase = null,
+        public ?int $statusCode = null,
+        public ?string $reasonPhrase = null,
     ) {}
 }

@@ -24,10 +24,10 @@ final class ShippingLabel extends Dto
      * @param  LabelData[]  $labelData  Provides the details of the packages in this shipment.
      */
     public function __construct(
-        public readonly string $purchaseOrderNumber,
-        public readonly PartyIdentification $sellingParty,
-        public readonly PartyIdentification $shipFromParty,
-        public readonly string $labelFormat,
-        public readonly array $labelData,
+        public string $purchaseOrderNumber,
+        public PartyIdentification $sellingParty,
+        public PartyIdentification $shipFromParty,
+        public string $labelFormat,
+        public array $labelData,
     ) {}
 }

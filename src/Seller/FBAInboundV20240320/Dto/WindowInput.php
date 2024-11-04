@@ -18,6 +18,6 @@ final class WindowInput extends Dto
      * @param  \DateTimeInterface  $start  The start date of the window. The time component must be zero.
      */
     public function __construct(
-        public readonly \DateTimeInterface $start,
+        public \DateTimeInterface $start,
     ) {}
 }

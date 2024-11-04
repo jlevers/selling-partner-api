@@ -30,11 +30,11 @@ final class FeeDetail extends Dto
      * @param  IncludedFeeDetail[]|null  $includedFeeDetailList  A list of other fees that contribute to a given fee.
      */
     public function __construct(
-        public readonly string $feeType,
-        public readonly MoneyType $feeAmount,
-        public readonly MoneyType $finalFee,
-        public readonly ?MoneyType $feePromotion = null,
-        public readonly ?MoneyType $taxAmount = null,
-        public readonly ?array $includedFeeDetailList = null,
+        public string $feeType,
+        public MoneyType $feeAmount,
+        public MoneyType $finalFee,
+        public ?MoneyType $feePromotion = null,
+        public ?MoneyType $taxAmount = null,
+        public ?array $includedFeeDetailList = null,
     ) {}
 }

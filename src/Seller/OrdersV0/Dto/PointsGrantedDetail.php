@@ -24,7 +24,7 @@ final class PointsGrantedDetail extends Dto
      * @param  ?Money  $pointsMonetaryValue  The monetary value of the order.
      */
     public function __construct(
-        public readonly ?int $pointsNumber = null,
-        public readonly ?Money $pointsMonetaryValue = null,
+        public ?int $pointsNumber = null,
+        public ?Money $pointsMonetaryValue = null,
     ) {}
 }

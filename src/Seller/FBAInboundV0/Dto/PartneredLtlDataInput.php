@@ -36,12 +36,12 @@ final class PartneredLtlDataInput extends Dto
      * @param  ?Amount  $sellerDeclaredValue  The monetary value.
      */
     public function __construct(
-        public readonly ?Contact $contact = null,
-        public readonly ?int $boxCount = null,
-        public readonly ?string $sellerFreightClass = null,
-        public readonly ?\DateTimeInterface $freightReadyDate = null,
-        public readonly ?array $palletList = null,
-        public readonly ?Weight $totalWeight = null,
-        public readonly ?Amount $sellerDeclaredValue = null,
+        public ?Contact $contact = null,
+        public ?int $boxCount = null,
+        public ?string $sellerFreightClass = null,
+        public ?\DateTimeInterface $freightReadyDate = null,
+        public ?array $palletList = null,
+        public ?Weight $totalWeight = null,
+        public ?Amount $sellerDeclaredValue = null,
     ) {}
 }

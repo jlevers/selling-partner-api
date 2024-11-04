@@ -25,11 +25,11 @@ final class OneClickShipmentResult extends Dto
      * @param  Currency  $totalCharge  The monetary value in the currency indicated, in ISO 4217 standard format.
      */
     public function __construct(
-        public readonly string $shipmentId,
-        public readonly array $packageDocumentDetails,
-        public readonly Promise $promise,
-        public readonly Carrier $carrier,
-        public readonly Service $service,
-        public readonly Currency $totalCharge,
+        public string $shipmentId,
+        public array $packageDocumentDetails,
+        public Promise $promise,
+        public Carrier $carrier,
+        public Service $service,
+        public Currency $totalCharge,
     ) {}
 }

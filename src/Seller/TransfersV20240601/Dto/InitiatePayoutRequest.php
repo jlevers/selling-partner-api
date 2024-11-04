@@ -19,7 +19,7 @@ final class InitiatePayoutRequest extends Dto
      * @param  string  $accountType  The account type in the selected marketplace for which a payout has to be initiated. For the supported EU marketplaces, the only account type is `Standard Orders`.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $accountType,
+        public string $marketplaceId,
+        public string $accountType,
     ) {}
 }

@@ -39,12 +39,12 @@ final class RegulatedOrderVerificationStatus extends Dto
      * @param  ValidVerificationDetail[]|null  $validVerificationDetails  A list of valid verification details that may be provided and the criteria required for when the verification detail can be provided.
      */
     public function __construct(
-        public readonly string $status,
-        public readonly bool $requiresMerchantAction,
-        public readonly array $validRejectionReasons,
-        public readonly ?RejectionReason $rejectionReason = null,
-        public readonly ?string $reviewDate = null,
-        public readonly ?string $externalReviewerId = null,
-        public readonly ?array $validVerificationDetails = null,
+        public string $status,
+        public bool $requiresMerchantAction,
+        public array $validRejectionReasons,
+        public ?RejectionReason $rejectionReason = null,
+        public ?string $reviewDate = null,
+        public ?string $externalReviewerId = null,
+        public ?array $validVerificationDetails = null,
     ) {}
 }

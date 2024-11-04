@@ -20,6 +20,6 @@ final class SetPackingInformationRequest extends Dto
      * @param  PackageGroupingInput[]  $packageGroupings  List of packing information for the inbound plan.
      */
     public function __construct(
-        public readonly array $packageGroupings,
+        public array $packageGroupings,
     ) {}
 }

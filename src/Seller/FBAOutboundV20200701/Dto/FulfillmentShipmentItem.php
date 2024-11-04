@@ -23,11 +23,11 @@ final class FulfillmentShipmentItem extends Dto
      * @param  ?string[]  $manufacturerLotCodes  String list
      */
     public function __construct(
-        public readonly string $sellerSku,
-        public readonly string $sellerFulfillmentOrderItemId,
-        public readonly int $quantity,
-        public readonly ?int $packageNumber = null,
-        public readonly ?string $serialNumber = null,
-        public readonly ?array $manufacturerLotCodes = null,
+        public string $sellerSku,
+        public string $sellerFulfillmentOrderItemId,
+        public int $quantity,
+        public ?int $packageNumber = null,
+        public ?string $serialNumber = null,
+        public ?array $manufacturerLotCodes = null,
     ) {}
 }

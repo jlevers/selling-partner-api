@@ -26,8 +26,8 @@ final class FeesEstimateByIdRequest extends Dto
      * @param  ?FeesEstimateRequest  $feesEstimateRequest  A product, marketplace, and proposed price used to request estimated fees.
      */
     public function __construct(
-        public readonly string $idType,
-        public readonly string $idValue,
-        public readonly ?FeesEstimateRequest $feesEstimateRequest = null,
+        public string $idType,
+        public string $idValue,
+        public ?FeesEstimateRequest $feesEstimateRequest = null,
     ) {}
 }

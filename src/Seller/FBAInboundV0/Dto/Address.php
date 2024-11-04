@@ -40,13 +40,13 @@ final class Address extends Dto
      * If postal codes are used in your marketplace, we recommended that you include one with your request. This helps Amazon select the most appropriate Amazon fulfillment center for the inbound shipment plan.
      */
     public function __construct(
-        public readonly ?string $name = null,
-        public readonly ?string $addressLine1 = null,
-        public readonly ?string $addressLine2 = null,
-        public readonly ?string $districtOrCounty = null,
-        public readonly ?string $city = null,
-        public readonly ?string $stateOrProvinceCode = null,
-        public readonly ?string $countryCode = null,
-        public readonly ?string $postalCode = null,
+        public ?string $name = null,
+        public ?string $addressLine1 = null,
+        public ?string $addressLine2 = null,
+        public ?string $districtOrCounty = null,
+        public ?string $city = null,
+        public ?string $stateOrProvinceCode = null,
+        public ?string $countryCode = null,
+        public ?string $postalCode = null,
     ) {}
 }

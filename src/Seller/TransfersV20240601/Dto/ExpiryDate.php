@@ -19,7 +19,7 @@ final class ExpiryDate extends Dto
      * @param  ?string  $year  A string with digits
      */
     public function __construct(
-        public readonly ?string $month = null,
-        public readonly ?string $year = null,
+        public ?string $month = null,
+        public ?string $year = null,
     ) {}
 }

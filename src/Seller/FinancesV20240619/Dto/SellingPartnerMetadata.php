@@ -20,8 +20,8 @@ final class SellingPartnerMetadata extends Dto
      * @param  ?string  $marketplaceId  The identifier of the marketplace where the transaction occurred.
      */
     public function __construct(
-        public readonly ?string $sellingPartnerId = null,
-        public readonly ?string $accountType = null,
-        public readonly ?string $marketplaceId = null,
+        public ?string $sellingPartnerId = null,
+        public ?string $accountType = null,
+        public ?string $marketplaceId = null,
     ) {}
 }

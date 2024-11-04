@@ -21,9 +21,9 @@ final class ItemClassificationSalesRank extends Dto
      * @param  ?string  $link  Corresponding Amazon retail website link, or URL, for the sales rank.
      */
     public function __construct(
-        public readonly string $classificationId,
-        public readonly string $title,
-        public readonly int $rank,
-        public readonly ?string $link = null,
+        public string $classificationId,
+        public string $title,
+        public int $rank,
+        public ?string $link = null,
     ) {}
 }

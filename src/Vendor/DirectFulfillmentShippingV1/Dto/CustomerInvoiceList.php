@@ -21,7 +21,7 @@ final class CustomerInvoiceList extends Dto
      * @param  CustomerInvoice[]|null  $customerInvoices  Represents a customer invoice within the `CustomerInvoiceList`.
      */
     public function __construct(
-        public readonly ?Pagination $pagination = null,
-        public readonly ?array $customerInvoices = null,
+        public ?Pagination $pagination = null,
+        public ?array $customerInvoices = null,
     ) {}
 }

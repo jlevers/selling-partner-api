@@ -21,9 +21,9 @@ final class GetPaymentMethodsRequest extends Dto
      * @param  ?PaymentMethodFilter  $paymentMethodFilter  The object used to filter payment methods based on different factors.
      */
     public function __construct(
-        public readonly ?string $owningCustomerId = null,
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $requestId = null,
-        public readonly ?PaymentMethodFilter $paymentMethodFilter = null,
+        public ?string $owningCustomerId = null,
+        public ?string $marketplaceId = null,
+        public ?string $requestId = null,
+        public ?PaymentMethodFilter $paymentMethodFilter = null,
     ) {}
 }

@@ -21,7 +21,7 @@ final class TaxClassification extends Dto
      * @param  ?string  $value  The buyer's tax identifier.
      */
     public function __construct(
-        public readonly ?string $name = null,
-        public readonly ?string $value = null,
+        public ?string $name = null,
+        public ?string $value = null,
     ) {}
 }

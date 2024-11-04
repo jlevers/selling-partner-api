@@ -19,7 +19,7 @@ final class ShippingOption extends Dto
      * @param  MoneyType  $price  Currency type and monetary value. Schema for demonstrating pricing info.
      */
     public function __construct(
-        public readonly string $shippingOptionType,
-        public readonly MoneyType $price,
+        public string $shippingOptionType,
+        public MoneyType $price,
     ) {}
 }

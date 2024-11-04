@@ -23,11 +23,11 @@ final class AsinMetadata extends Dto
      * @param  ?string[]  $contentReferenceKeySet  A set of content reference keys.
      */
     public function __construct(
-        public readonly string $asin,
-        public readonly ?array $badgeSet = null,
-        public readonly ?string $parent = null,
-        public readonly ?string $title = null,
-        public readonly ?string $imageUrl = null,
-        public readonly ?array $contentReferenceKeySet = null,
+        public string $asin,
+        public ?array $badgeSet = null,
+        public ?string $parent = null,
+        public ?string $title = null,
+        public ?string $imageUrl = null,
+        public ?array $contentReferenceKeySet = null,
     ) {}
 }

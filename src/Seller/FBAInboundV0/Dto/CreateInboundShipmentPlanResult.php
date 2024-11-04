@@ -22,6 +22,6 @@ final class CreateInboundShipmentPlanResult extends Dto
      * @param  InboundShipmentPlan[]|null  $inboundShipmentPlans  A list of inbound shipment plan information
      */
     public function __construct(
-        public readonly ?array $inboundShipmentPlans = null,
+        public ?array $inboundShipmentPlans = null,
     ) {}
 }

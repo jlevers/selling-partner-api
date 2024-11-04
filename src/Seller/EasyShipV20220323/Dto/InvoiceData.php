@@ -19,7 +19,7 @@ final class InvoiceData extends Dto
      * @param  ?\DateTimeInterface  $invoiceDate  A datetime value in ISO 8601 format.
      */
     public function __construct(
-        public readonly string $invoiceNumber,
-        public readonly ?\DateTimeInterface $invoiceDate = null,
+        public string $invoiceNumber,
+        public ?\DateTimeInterface $invoiceDate = null,
     ) {}
 }

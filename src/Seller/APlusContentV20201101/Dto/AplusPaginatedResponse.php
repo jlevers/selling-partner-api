@@ -21,7 +21,7 @@ final class AplusPaginatedResponse extends Dto
      * @param  ?string  $nextPageToken  A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
      */
     public function __construct(
-        public readonly ?array $warnings = null,
-        public readonly ?string $nextPageToken = null,
+        public ?array $warnings = null,
+        public ?string $nextPageToken = null,
     ) {}
 }

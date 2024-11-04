@@ -20,6 +20,6 @@ final class InvoiceRequest extends Dto
      * @param  Attachment[]|null  $attachments  Attachments to include in the message to the buyer.
      */
     public function __construct(
-        public readonly ?array $attachments = null,
+        public ?array $attachments = null,
     ) {}
 }

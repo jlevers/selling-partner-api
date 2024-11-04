@@ -24,12 +24,12 @@ final class PiDetails extends Dto
      * @param  ?string  $paymentInstrumentType  The payment instrument type.
      */
     public function __construct(
-        public readonly ?string $encryptedAccountHolderName = null,
-        public readonly ?string $paymentInstrumentId = null,
-        public readonly ?string $tail = null,
-        public readonly ?ExpiryDate $expiryDate = null,
-        public readonly ?string $countryCode = null,
-        public readonly ?array $defaultMarketplaces = null,
-        public readonly ?string $paymentInstrumentType = null,
+        public ?string $encryptedAccountHolderName = null,
+        public ?string $paymentInstrumentId = null,
+        public ?string $tail = null,
+        public ?ExpiryDate $expiryDate = null,
+        public ?string $countryCode = null,
+        public ?array $defaultMarketplaces = null,
+        public ?string $paymentInstrumentType = null,
     ) {}
 }

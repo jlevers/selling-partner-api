@@ -19,7 +19,7 @@ final class InventoryQuantity extends Dto
      * @param  string  $unitOfMeasurement  Unit of measurement for the inventory.
      */
     public function __construct(
-        public readonly float $quantity,
-        public readonly string $unitOfMeasurement,
+        public float $quantity,
+        public string $unitOfMeasurement,
     ) {}
 }

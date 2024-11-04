@@ -23,9 +23,9 @@ final class AppointmentSlotReport extends Dto
      * @param  AppointmentSlot[]|null  $appointmentSlots  A list of time windows along with associated capacity in which the service can be performed.
      */
     public function __construct(
-        public readonly ?string $schedulingType = null,
-        public readonly ?\DateTimeInterface $startTime = null,
-        public readonly ?\DateTimeInterface $endTime = null,
-        public readonly ?array $appointmentSlots = null,
+        public ?string $schedulingType = null,
+        public ?\DateTimeInterface $startTime = null,
+        public ?\DateTimeInterface $endTime = null,
+        public ?array $appointmentSlots = null,
     ) {}
 }

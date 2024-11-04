@@ -15,6 +15,6 @@ use SellingPartnerApi\Dto;
 final class ContactDetails extends Dto
 {
     public function __construct(
-        public readonly ?Primary $primary = null,
+        public ?Primary $primary = null,
     ) {}
 }

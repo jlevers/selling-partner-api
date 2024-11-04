@@ -24,12 +24,12 @@ final class PrescriptionDetail extends Dto
      * @param  string  $usageInstructions  The instructions for the prescription as provided by the approver of the regulated product.
      */
     public function __construct(
-        public readonly string $prescriptionId,
-        public readonly \DateTimeInterface $expirationDate,
-        public readonly int $writtenQuantity,
-        public readonly int $totalRefillsAuthorized,
-        public readonly int $refillsRemaining,
-        public readonly string $clinicId,
-        public readonly string $usageInstructions,
+        public string $prescriptionId,
+        public \DateTimeInterface $expirationDate,
+        public int $writtenQuantity,
+        public int $totalRefillsAuthorized,
+        public int $refillsRemaining,
+        public string $clinicId,
+        public string $usageInstructions,
     ) {}
 }

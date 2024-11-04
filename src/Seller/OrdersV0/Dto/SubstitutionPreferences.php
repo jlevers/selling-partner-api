@@ -26,7 +26,7 @@ final class SubstitutionPreferences extends Dto
      * @param  SubstitutionOption[]|null  $substitutionOptions  A collection of substitution options.
      */
     public function __construct(
-        public readonly string $substitutionType,
-        public readonly ?array $substitutionOptions = null,
+        public string $substitutionType,
+        public ?array $substitutionOptions = null,
     ) {}
 }

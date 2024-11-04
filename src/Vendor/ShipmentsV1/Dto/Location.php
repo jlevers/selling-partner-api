@@ -20,8 +20,8 @@ final class Location extends Dto
      * @param  ?string  $countryCode  The two digit country code. In ISO 3166-1 alpha-2 format.
      */
     public function __construct(
-        public readonly ?string $type = null,
-        public readonly ?string $locationCode = null,
-        public readonly ?string $countryCode = null,
+        public ?string $type = null,
+        public ?string $locationCode = null,
+        public ?string $countryCode = null,
     ) {}
 }

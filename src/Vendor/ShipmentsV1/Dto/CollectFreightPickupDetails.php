@@ -20,8 +20,8 @@ final class CollectFreightPickupDetails extends Dto
      * @param  ?\DateTimeInterface  $carrierAssignmentDate  Date on which the carrier is being scheduled to pickup items from vendor warehouse by Byer used for WePay/Collect vendors.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $requestedPickUp = null,
-        public readonly ?\DateTimeInterface $scheduledPickUp = null,
-        public readonly ?\DateTimeInterface $carrierAssignmentDate = null,
+        public ?\DateTimeInterface $requestedPickUp = null,
+        public ?\DateTimeInterface $scheduledPickUp = null,
+        public ?\DateTimeInterface $carrierAssignmentDate = null,
     ) {}
 }

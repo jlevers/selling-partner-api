@@ -23,11 +23,11 @@ final class Rate extends Dto
      * @param  ?ShippingPromiseSet  $promise  The promised delivery time and pickup time.
      */
     public function __construct(
-        public readonly ?string $rateId = null,
-        public readonly ?Currency $totalCharge = null,
-        public readonly ?Weight $billedWeight = null,
-        public readonly ?\DateTimeInterface $expirationTime = null,
-        public readonly ?string $serviceType = null,
-        public readonly ?ShippingPromiseSet $promise = null,
+        public ?string $rateId = null,
+        public ?Currency $totalCharge = null,
+        public ?Weight $billedWeight = null,
+        public ?\DateTimeInterface $expirationTime = null,
+        public ?string $serviceType = null,
+        public ?ShippingPromiseSet $promise = null,
     ) {}
 }

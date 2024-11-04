@@ -19,7 +19,7 @@ final class ShipmentSource extends Dto
      * @param  ?Address  $address  Specific details to identify a place.
      */
     public function __construct(
-        public readonly string $sourceType,
-        public readonly ?Address $address = null,
+        public string $sourceType,
+        public ?Address $address = null,
     ) {}
 }

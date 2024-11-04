@@ -20,8 +20,8 @@ final class ConfirmShipmentRequest extends Dto
      * @param  ?string  $codCollectionMethod  The COD collection method (only supported in the JP marketplace).
      */
     public function __construct(
-        public readonly PackageDetail $packageDetail,
-        public readonly string $marketplaceId,
-        public readonly ?string $codCollectionMethod = null,
+        public PackageDetail $packageDetail,
+        public string $marketplaceId,
+        public ?string $codCollectionMethod = null,
     ) {}
 }

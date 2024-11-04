@@ -34,12 +34,12 @@ final class AdjustmentItem extends Dto
      * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
      */
     public function __construct(
-        public readonly ?string $quantity = null,
-        public readonly ?Currency $perUnitAmount = null,
-        public readonly ?Currency $totalAmount = null,
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $fnSku = null,
-        public readonly ?string $productDescription = null,
-        public readonly ?string $asin = null,
+        public ?string $quantity = null,
+        public ?Currency $perUnitAmount = null,
+        public ?Currency $totalAmount = null,
+        public ?string $sellerSku = null,
+        public ?string $fnSku = null,
+        public ?string $productDescription = null,
+        public ?string $asin = null,
     ) {}
 }

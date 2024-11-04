@@ -26,10 +26,10 @@ final class PurchaseShipmentRequest extends Dto
      * Additional inputs are only required when indicated by the requiresAdditionalInputs property in the response to the getRates operation.
      */
     public function __construct(
-        public readonly string $requestToken,
-        public readonly string $rateId,
-        public readonly RequestedDocumentSpecification $requestedDocumentSpecification,
-        public readonly ?array $requestedValueAddedServices = null,
-        public readonly ?array $additionalInputs = null,
+        public string $requestToken,
+        public string $rateId,
+        public RequestedDocumentSpecification $requestedDocumentSpecification,
+        public ?array $requestedValueAddedServices = null,
+        public ?array $additionalInputs = null,
     ) {}
 }

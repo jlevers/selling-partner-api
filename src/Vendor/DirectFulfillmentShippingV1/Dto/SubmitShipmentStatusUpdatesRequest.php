@@ -20,6 +20,6 @@ final class SubmitShipmentStatusUpdatesRequest extends Dto
      * @param  ShipmentStatusUpdate[]|null  $shipmentStatusUpdates  Contains a list of one or more `ShipmentStatusUpdate` objects, each representing an update to the status of a specific shipment.
      */
     public function __construct(
-        public readonly ?array $shipmentStatusUpdates = null,
+        public ?array $shipmentStatusUpdates = null,
     ) {}
 }

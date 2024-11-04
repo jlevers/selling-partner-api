@@ -24,7 +24,7 @@ final class StandardComparisonTableModule extends Dto
      * @param  PlainTextItem[]|null  $metricRowLabels
      */
     public function __construct(
-        public readonly ?array $productColumns = null,
-        public readonly ?array $metricRowLabels = null,
+        public ?array $productColumns = null,
+        public ?array $metricRowLabels = null,
     ) {}
 }

@@ -26,8 +26,8 @@ final class AsinInboundGuidance extends Dto
      * @param  ?string[]  $guidanceReasonList  A list of inbound guidance reason information.
      */
     public function __construct(
-        public readonly string $asin,
-        public readonly string $inboundGuidance,
-        public readonly ?array $guidanceReasonList = null,
+        public string $asin,
+        public string $inboundGuidance,
+        public ?array $guidanceReasonList = null,
     ) {}
 }

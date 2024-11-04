@@ -23,7 +23,7 @@ final class GenerateTransportationOptionsRequest extends Dto
      * @param  ShipmentTransportationConfiguration[]  $shipmentTransportationConfigurations  List of shipment transportation configurations.
      */
     public function __construct(
-        public readonly string $placementOptionId,
-        public readonly array $shipmentTransportationConfigurations,
+        public string $placementOptionId,
+        public array $shipmentTransportationConfigurations,
     ) {}
 }

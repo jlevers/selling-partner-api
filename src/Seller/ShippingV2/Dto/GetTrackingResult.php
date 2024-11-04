@@ -24,10 +24,10 @@ final class GetTrackingResult extends Dto
      * @param  TrackingSummary  $summary  A package status summary.
      */
     public function __construct(
-        public readonly string $trackingId,
-        public readonly string $alternateLegTrackingId,
-        public readonly array $eventHistory,
-        public readonly \DateTimeInterface $promisedDeliveryDate,
-        public readonly TrackingSummary $summary,
+        public string $trackingId,
+        public string $alternateLegTrackingId,
+        public array $eventHistory,
+        public \DateTimeInterface $promisedDeliveryDate,
+        public TrackingSummary $summary,
     ) {}
 }

@@ -31,11 +31,11 @@ final class GetFulfillmentOrderResult extends Dto
      * @param  PaymentInformation[]|null  $paymentInformation  An array of various payment attributes related to this fulfillment order.
      */
     public function __construct(
-        public readonly FulfillmentOrder $fulfillmentOrder,
-        public readonly array $fulfillmentOrderItems,
-        public readonly array $returnItems,
-        public readonly array $returnAuthorizations,
-        public readonly ?array $fulfillmentShipments = null,
-        public readonly ?array $paymentInformation = null,
+        public FulfillmentOrder $fulfillmentOrder,
+        public array $fulfillmentOrderItems,
+        public array $returnItems,
+        public array $returnAuthorizations,
+        public ?array $fulfillmentShipments = null,
+        public ?array $paymentInformation = null,
     ) {}
 }

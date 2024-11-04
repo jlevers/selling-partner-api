@@ -18,6 +18,6 @@ final class Party extends Dto
      * @param  ?string  $accountId  This is the Amazon Shipping account id generated during the Amazon Shipping onboarding process.
      */
     public function __construct(
-        public readonly ?string $accountId = null,
+        public ?string $accountId = null,
     ) {}
 }

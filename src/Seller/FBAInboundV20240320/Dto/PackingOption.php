@@ -30,12 +30,12 @@ final class PackingOption extends Dto
      * @param  ?\DateTimeInterface  $expiration  The timestamp at which this packing option becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
     public function __construct(
-        public readonly array $discounts,
-        public readonly array $fees,
-        public readonly array $packingGroups,
-        public readonly string $packingOptionId,
-        public readonly string $status,
-        public readonly array $supportedShippingConfigurations,
-        public readonly ?\DateTimeInterface $expiration = null,
+        public array $discounts,
+        public array $fees,
+        public array $packingGroups,
+        public string $packingOptionId,
+        public string $status,
+        public array $supportedShippingConfigurations,
+        public ?\DateTimeInterface $expiration = null,
     ) {}
 }

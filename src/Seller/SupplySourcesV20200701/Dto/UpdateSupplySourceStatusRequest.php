@@ -18,6 +18,6 @@ final class UpdateSupplySourceStatusRequest extends Dto
      * @param  ?string  $status  The `SupplySource` status
      */
     public function __construct(
-        public readonly ?string $status = null,
+        public ?string $status = null,
     ) {}
 }

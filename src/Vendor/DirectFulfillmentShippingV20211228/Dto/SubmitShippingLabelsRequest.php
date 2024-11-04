@@ -20,6 +20,6 @@ final class SubmitShippingLabelsRequest extends Dto
      * @param  ShippingLabelRequest[]|null  $shippingLabelRequests  An array of shipping label requests you want to process.
      */
     public function __construct(
-        public readonly ?array $shippingLabelRequests = null,
+        public ?array $shippingLabelRequests = null,
     ) {}
 }

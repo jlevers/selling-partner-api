@@ -21,9 +21,9 @@ final class ParkingWithAddressConfiguration extends Dto
      * @param  ?Address  $address  A physical address.
      */
     public function __construct(
-        public readonly ?string $parkingCostType = null,
-        public readonly ?string $parkingSpotIdentificationType = null,
-        public readonly ?int $numberOfParkingSpots = null,
-        public readonly ?Address $address = null,
+        public ?string $parkingCostType = null,
+        public ?string $parkingSpotIdentificationType = null,
+        public ?int $numberOfParkingSpots = null,
+        public ?Address $address = null,
     ) {}
 }

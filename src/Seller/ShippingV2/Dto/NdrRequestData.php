@@ -19,7 +19,7 @@ final class NdrRequestData extends Dto
      * @param  ?string  $additionalAddressNotes  Address notes to re-attempt delivery with.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $rescheduleDate = null,
-        public readonly ?string $additionalAddressNotes = null,
+        public ?\DateTimeInterface $rescheduleDate = null,
+        public ?string $additionalAddressNotes = null,
     ) {}
 }

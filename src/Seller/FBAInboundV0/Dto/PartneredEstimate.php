@@ -26,8 +26,8 @@ final class PartneredEstimate extends Dto
      * @param  ?\DateTimeInterface  $voidDeadline  Timestamp in ISO 8601 format.
      */
     public function __construct(
-        public readonly Amount $amount,
-        public readonly ?\DateTimeInterface $confirmDeadline = null,
-        public readonly ?\DateTimeInterface $voidDeadline = null,
+        public Amount $amount,
+        public ?\DateTimeInterface $confirmDeadline = null,
+        public ?\DateTimeInterface $voidDeadline = null,
     ) {}
 }

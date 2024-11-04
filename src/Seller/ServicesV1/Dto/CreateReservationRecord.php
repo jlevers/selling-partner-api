@@ -23,8 +23,8 @@ final class CreateReservationRecord extends Dto
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
-        public readonly ?Reservation $reservation = null,
-        public readonly ?array $warnings = null,
-        public readonly ?ErrorList $errors = null,
+        public ?Reservation $reservation = null,
+        public ?array $warnings = null,
+        public ?ErrorList $errors = null,
     ) {}
 }

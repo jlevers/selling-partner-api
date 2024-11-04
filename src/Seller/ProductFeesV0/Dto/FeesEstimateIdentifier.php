@@ -36,13 +36,13 @@ final class FeesEstimateIdentifier extends Dto
      * @param  ?string  $optionalFulfillmentProgram  An optional enrollment program to return the estimated fees when the offer is fulfilled by Amazon (IsAmazonFulfilled is set to true).
      */
     public function __construct(
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $sellerId = null,
-        public readonly ?string $idType = null,
-        public readonly ?string $idValue = null,
-        public readonly ?bool $isAmazonFulfilled = null,
-        public readonly ?PriceToEstimateFees $priceToEstimateFees = null,
-        public readonly ?string $sellerInputIdentifier = null,
-        public readonly ?string $optionalFulfillmentProgram = null,
+        public ?string $marketplaceId = null,
+        public ?string $sellerId = null,
+        public ?string $idType = null,
+        public ?string $idValue = null,
+        public ?bool $isAmazonFulfilled = null,
+        public ?PriceToEstimateFees $priceToEstimateFees = null,
+        public ?string $sellerInputIdentifier = null,
+        public ?string $optionalFulfillmentProgram = null,
     ) {}
 }

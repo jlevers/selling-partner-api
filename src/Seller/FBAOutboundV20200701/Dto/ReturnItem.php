@@ -28,16 +28,16 @@ final class ReturnItem extends Dto
      * @param  ?string  $fulfillmentCenterId  The identifier for the Amazon fulfillment center that processed the return item.
      */
     public function __construct(
-        public readonly string $sellerReturnItemId,
-        public readonly string $sellerFulfillmentOrderItemId,
-        public readonly string $amazonShipmentId,
-        public readonly string $status,
-        public readonly \DateTimeInterface $statusChangedDate,
-        public readonly ?string $sellerReturnReasonCode = null,
-        public readonly ?string $returnComment = null,
-        public readonly ?string $amazonReturnReasonCode = null,
-        public readonly ?string $returnAuthorizationId = null,
-        public readonly ?string $returnReceivedCondition = null,
-        public readonly ?string $fulfillmentCenterId = null,
+        public string $sellerReturnItemId,
+        public string $sellerFulfillmentOrderItemId,
+        public string $amazonShipmentId,
+        public string $status,
+        public \DateTimeInterface $statusChangedDate,
+        public ?string $sellerReturnReasonCode = null,
+        public ?string $returnComment = null,
+        public ?string $amazonReturnReasonCode = null,
+        public ?string $returnAuthorizationId = null,
+        public ?string $returnReceivedCondition = null,
+        public ?string $fulfillmentCenterId = null,
     ) {}
 }

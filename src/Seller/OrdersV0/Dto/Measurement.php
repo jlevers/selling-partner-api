@@ -21,7 +21,7 @@ final class Measurement extends Dto
      * @param  float  $value  The measurement value.
      */
     public function __construct(
-        public readonly string $unit,
-        public readonly float $value,
+        public string $unit,
+        public float $value,
     ) {}
 }

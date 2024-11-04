@@ -50,19 +50,19 @@ final class ShipmentDetail extends Dto
      * @param  ShipmentItem[]|null  $shipmentItems  A list of shipment items.
      */
     public function __construct(
-        public readonly ?string $warehouseId = null,
-        public readonly ?string $amazonOrderId = null,
-        public readonly ?string $amazonShipmentId = null,
-        public readonly ?\DateTimeInterface $purchaseDate = null,
-        public readonly ?Address $shippingAddress = null,
-        public readonly ?array $paymentMethodDetails = null,
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $sellerId = null,
-        public readonly ?string $buyerName = null,
-        public readonly ?string $buyerCounty = null,
-        public readonly ?BuyerTaxInfo $buyerTaxInfo = null,
-        public readonly ?MarketplaceTaxInfo $marketplaceTaxInfo = null,
-        public readonly ?string $sellerDisplayName = null,
-        public readonly ?array $shipmentItems = null,
+        public ?string $warehouseId = null,
+        public ?string $amazonOrderId = null,
+        public ?string $amazonShipmentId = null,
+        public ?\DateTimeInterface $purchaseDate = null,
+        public ?Address $shippingAddress = null,
+        public ?array $paymentMethodDetails = null,
+        public ?string $marketplaceId = null,
+        public ?string $sellerId = null,
+        public ?string $buyerName = null,
+        public ?string $buyerCounty = null,
+        public ?BuyerTaxInfo $buyerTaxInfo = null,
+        public ?MarketplaceTaxInfo $marketplaceTaxInfo = null,
+        public ?string $sellerDisplayName = null,
+        public ?array $shipmentItems = null,
     ) {}
 }

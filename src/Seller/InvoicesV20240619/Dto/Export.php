@@ -25,11 +25,11 @@ final class Export extends Dto
      * @param  ?string  $status  The current status of the request.
      */
     public function __construct(
-        public readonly ?string $errorMessage = null,
-        public readonly ?string $exportId = null,
-        public readonly ?\DateTimeInterface $generateExportFinishedAt = null,
-        public readonly ?\DateTimeInterface $generateExportStartedAt = null,
-        public readonly ?array $invoicesDocumentIds = null,
-        public readonly ?string $status = null,
+        public ?string $errorMessage = null,
+        public ?string $exportId = null,
+        public ?\DateTimeInterface $generateExportFinishedAt = null,
+        public ?\DateTimeInterface $generateExportStartedAt = null,
+        public ?array $invoicesDocumentIds = null,
+        public ?string $status = null,
     ) {}
 }

@@ -22,8 +22,8 @@ final class Reason extends Dto
      * @param  Link[]|null  $links  A list of path forward links that may allow Selling Partners to remove the restriction.
      */
     public function __construct(
-        public readonly string $message,
-        public readonly ?string $reasonCode = null,
-        public readonly ?array $links = null,
+        public string $message,
+        public ?string $reasonCode = null,
+        public ?array $links = null,
     ) {}
 }

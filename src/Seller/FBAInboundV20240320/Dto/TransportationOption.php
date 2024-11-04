@@ -25,13 +25,13 @@ final class TransportationOption extends Dto
      * @param  ?Quote  $quote  The estimated shipping cost associated with the transportation option.
      */
     public function __construct(
-        public readonly Carrier $carrier,
-        public readonly array $preconditions,
-        public readonly string $shipmentId,
-        public readonly string $shippingMode,
-        public readonly string $shippingSolution,
-        public readonly string $transportationOptionId,
-        public readonly ?CarrierAppointment $carrierAppointment = null,
-        public readonly ?Quote $quote = null,
+        public Carrier $carrier,
+        public array $preconditions,
+        public string $shipmentId,
+        public string $shippingMode,
+        public string $shippingSolution,
+        public string $transportationOptionId,
+        public ?CarrierAppointment $carrierAppointment = null,
+        public ?Quote $quote = null,
     ) {}
 }

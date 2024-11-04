@@ -24,12 +24,12 @@ final class AssociatedItem extends Dto
      * @param  ?ItemDelivery  $itemDelivery  Delivery information for the item.
      */
     public function __construct(
-        public readonly ?string $asin = null,
-        public readonly ?string $title = null,
-        public readonly ?int $quantity = null,
-        public readonly ?string $orderId = null,
-        public readonly ?string $itemStatus = null,
-        public readonly ?string $brandName = null,
-        public readonly ?ItemDelivery $itemDelivery = null,
+        public ?string $asin = null,
+        public ?string $title = null,
+        public ?int $quantity = null,
+        public ?string $orderId = null,
+        public ?string $itemStatus = null,
+        public ?string $brandName = null,
+        public ?ItemDelivery $itemDelivery = null,
     ) {}
 }

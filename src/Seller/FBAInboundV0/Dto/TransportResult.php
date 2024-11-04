@@ -26,8 +26,8 @@ final class TransportResult extends Dto
      * @param  ?string  $errorDescription  A message that describes the error condition.
      */
     public function __construct(
-        public readonly string $transportStatus,
-        public readonly ?string $errorCode = null,
-        public readonly ?string $errorDescription = null,
+        public string $transportStatus,
+        public ?string $errorCode = null,
+        public ?string $errorDescription = null,
     ) {}
 }

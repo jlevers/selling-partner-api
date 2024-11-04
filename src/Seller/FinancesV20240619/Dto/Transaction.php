@@ -45,17 +45,17 @@ final class Transaction extends Dto
      * @param  Breakdown[]|null  $breakdowns  A list of breakdowns that provide details on how the total amount is calculated for the transaction.
      */
     public function __construct(
-        public readonly ?SellingPartnerMetadata $sellingPartnerMetadata = null,
-        public readonly ?array $relatedIdentifiers = null,
-        public readonly ?string $transactionType = null,
-        public readonly ?string $transactionId = null,
-        public readonly ?string $transactionStatus = null,
-        public readonly ?string $description = null,
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?Currency $totalAmount = null,
-        public readonly ?MarketplaceDetails $marketplaceDetails = null,
-        public readonly ?array $items = null,
-        public readonly ?array $contexts = null,
-        public readonly ?array $breakdowns = null,
+        public ?SellingPartnerMetadata $sellingPartnerMetadata = null,
+        public ?array $relatedIdentifiers = null,
+        public ?string $transactionType = null,
+        public ?string $transactionId = null,
+        public ?string $transactionStatus = null,
+        public ?string $description = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?Currency $totalAmount = null,
+        public ?MarketplaceDetails $marketplaceDetails = null,
+        public ?array $items = null,
+        public ?array $contexts = null,
+        public ?array $breakdowns = null,
     ) {}
 }

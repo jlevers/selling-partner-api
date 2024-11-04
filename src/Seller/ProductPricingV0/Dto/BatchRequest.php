@@ -28,8 +28,8 @@ final class BatchRequest extends Dto
      * @param  ?string[]  $headers  A mapping of additional HTTP headers to send/receive for the individual batch request.
      */
     public function __construct(
-        public readonly string $uri,
-        public readonly string $method,
-        public readonly ?array $headers = null,
+        public string $uri,
+        public string $method,
+        public ?array $headers = null,
     ) {}
 }

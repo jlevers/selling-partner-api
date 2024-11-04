@@ -24,7 +24,7 @@ final class Constraint extends Dto
      * @param  ?string  $validationRegEx  A regular expression.
      */
     public function __construct(
-        public readonly string $validationString,
-        public readonly ?string $validationRegEx = null,
+        public string $validationString,
+        public ?string $validationRegEx = null,
     ) {}
 }

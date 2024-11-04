@@ -19,7 +19,7 @@ final class Weight extends Dto
      * @param  ?string  $unit  The unit of measurement used to measure the weight.
      */
     public function __construct(
-        public readonly ?float $value = null,
-        public readonly ?string $unit = null,
+        public ?float $value = null,
+        public ?string $unit = null,
     ) {}
 }

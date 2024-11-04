@@ -26,10 +26,10 @@ final class IncludedFeeDetail extends Dto
      * @param  string  $feeType  The type of fee charged to a seller.
      */
     public function __construct(
-        public readonly string $feeType,
-        public readonly MoneyType $feeAmount,
-        public readonly MoneyType $finalFee,
-        public readonly ?MoneyType $feePromotion = null,
-        public readonly ?MoneyType $taxAmount = null,
+        public string $feeType,
+        public MoneyType $feeAmount,
+        public MoneyType $finalFee,
+        public ?MoneyType $feePromotion = null,
+        public ?MoneyType $taxAmount = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class SupplySourceCapabilities extends Dto
      * @param  ?ServicesCapability  $services  The services capability of a supply source.
      */
     public function __construct(
-        public readonly ?OutboundCapability $outbound = null,
-        public readonly ?ServicesCapability $services = null,
+        public ?OutboundCapability $outbound = null,
+        public ?ServicesCapability $services = null,
     ) {}
 }

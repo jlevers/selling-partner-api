@@ -19,7 +19,7 @@ final class FeaturedOfferSegment extends Dto
      * @param  SegmentDetails  $segmentDetails  The details about the segment.
      */
     public function __construct(
-        public readonly string $customerMembership,
-        public readonly SegmentDetails $segmentDetails,
+        public string $customerMembership,
+        public SegmentDetails $segmentDetails,
     ) {}
 }

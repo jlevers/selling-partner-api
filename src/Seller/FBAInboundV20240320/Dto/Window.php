@@ -20,8 +20,8 @@ final class Window extends Dto
      * @param  ?\DateTimeInterface  $editableUntil  The timestamp at which this Window can no longer be edited.
      */
     public function __construct(
-        public readonly \DateTimeInterface $end,
-        public readonly \DateTimeInterface $start,
-        public readonly ?\DateTimeInterface $editableUntil = null,
+        public \DateTimeInterface $end,
+        public \DateTimeInterface $start,
+        public ?\DateTimeInterface $editableUntil = null,
     ) {}
 }

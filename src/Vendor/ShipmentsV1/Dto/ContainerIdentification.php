@@ -19,7 +19,7 @@ final class ContainerIdentification extends Dto
      * @param  string  $containerIdentificationNumber  Container identification number that adheres to the definition of the container identification type.
      */
     public function __construct(
-        public readonly string $containerIdentificationType,
-        public readonly string $containerIdentificationNumber,
+        public string $containerIdentificationType,
+        public string $containerIdentificationNumber,
     ) {}
 }

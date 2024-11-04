@@ -18,6 +18,6 @@ final class UpdateVerificationStatusRequest extends Dto
      * @param  UpdateVerificationStatusRequestBody  $regulatedOrderVerificationStatus  The updated values of the `VerificationStatus` field.
      */
     public function __construct(
-        public readonly UpdateVerificationStatusRequestBody $regulatedOrderVerificationStatus,
+        public UpdateVerificationStatusRequestBody $regulatedOrderVerificationStatus,
     ) {}
 }

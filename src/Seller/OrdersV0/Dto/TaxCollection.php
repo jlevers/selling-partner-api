@@ -21,7 +21,7 @@ final class TaxCollection extends Dto
      * @param  ?string  $responsibleParty  The party responsible for withholding the taxes and remitting them to the taxing authority.
      */
     public function __construct(
-        public readonly ?string $model = null,
-        public readonly ?string $responsibleParty = null,
+        public ?string $model = null,
+        public ?string $responsibleParty = null,
     ) {}
 }

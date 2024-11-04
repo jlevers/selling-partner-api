@@ -19,7 +19,7 @@ final class DestinationResource extends Dto
      * @param  ?EventBridgeResource  $eventBridge  The Amazon EventBridge destination.
      */
     public function __construct(
-        public readonly ?SqsResource $sqs = null,
-        public readonly ?EventBridgeResource $eventBridge = null,
+        public ?SqsResource $sqs = null,
+        public ?EventBridgeResource $eventBridge = null,
     ) {}
 }

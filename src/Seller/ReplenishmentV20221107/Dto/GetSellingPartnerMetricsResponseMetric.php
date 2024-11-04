@@ -36,17 +36,17 @@ final class GetSellingPartnerMetricsResponseMetric extends Dto
      * @param  ?string  $currencyCode  The currency code in ISO 4217 format.
      */
     public function __construct(
-        public readonly ?float $notDeliveredDueToOos = null,
-        public readonly ?float $totalSubscriptionsRevenue = null,
-        public readonly ?float $shippedSubscriptionUnits = null,
-        public readonly ?float $activeSubscriptions = null,
-        public readonly ?float $subscriberAverageRevenue = null,
-        public readonly ?float $nonSubscriberAverageRevenue = null,
-        public readonly ?float $lostRevenueDueToOos = null,
-        public readonly ?float $subscriberAverageReorders = null,
-        public readonly ?float $nonSubscriberAverageReorders = null,
-        public readonly ?float $couponsRevenuePenetration = null,
-        public readonly ?TimeInterval $timeInterval = null,
-        public readonly ?string $currencyCode = null,
+        public ?float $notDeliveredDueToOos = null,
+        public ?float $totalSubscriptionsRevenue = null,
+        public ?float $shippedSubscriptionUnits = null,
+        public ?float $activeSubscriptions = null,
+        public ?float $subscriberAverageRevenue = null,
+        public ?float $nonSubscriberAverageRevenue = null,
+        public ?float $lostRevenueDueToOos = null,
+        public ?float $subscriberAverageReorders = null,
+        public ?float $nonSubscriberAverageReorders = null,
+        public ?float $couponsRevenuePenetration = null,
+        public ?TimeInterval $timeInterval = null,
+        public ?string $currencyCode = null,
     ) {}
 }

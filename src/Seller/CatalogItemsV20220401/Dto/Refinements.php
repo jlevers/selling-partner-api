@@ -24,7 +24,7 @@ final class Refinements extends Dto
      * @param  ClassificationRefinement[]  $classifications  Classification search refinements.
      */
     public function __construct(
-        public readonly array $brands,
-        public readonly array $classifications,
+        public array $brands,
+        public array $classifications,
     ) {}
 }

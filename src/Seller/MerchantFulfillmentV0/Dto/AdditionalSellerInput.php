@@ -38,14 +38,14 @@ final class AdditionalSellerInput extends Dto
      * @param  ?CurrencyAmount  $valueAsCurrency  Currency type and amount.
      */
     public function __construct(
-        public readonly ?string $dataType = null,
-        public readonly ?string $valueAsString = null,
-        public readonly ?bool $valueAsBoolean = null,
-        public readonly ?int $valueAsInteger = null,
-        public readonly ?\DateTimeInterface $valueAsTimestamp = null,
-        public readonly ?Address $valueAsAddress = null,
-        public readonly ?Weight $valueAsWeight = null,
-        public readonly ?Length $valueAsDimension = null,
-        public readonly ?CurrencyAmount $valueAsCurrency = null,
+        public ?string $dataType = null,
+        public ?string $valueAsString = null,
+        public ?bool $valueAsBoolean = null,
+        public ?int $valueAsInteger = null,
+        public ?\DateTimeInterface $valueAsTimestamp = null,
+        public ?Address $valueAsAddress = null,
+        public ?Weight $valueAsWeight = null,
+        public ?Length $valueAsDimension = null,
+        public ?CurrencyAmount $valueAsCurrency = null,
     ) {}
 }

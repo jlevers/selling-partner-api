@@ -21,9 +21,9 @@ final class AvailabilityRecord extends Dto
      * @param  ?int  $capacity  Signifies the capacity of a resource which is available.
      */
     public function __construct(
-        public readonly \DateTimeInterface $startTime,
-        public readonly \DateTimeInterface $endTime,
-        public readonly ?Recurrence $recurrence = null,
-        public readonly ?int $capacity = null,
+        public \DateTimeInterface $startTime,
+        public \DateTimeInterface $endTime,
+        public ?Recurrence $recurrence = null,
+        public ?int $capacity = null,
     ) {}
 }

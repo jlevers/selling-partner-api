@@ -21,7 +21,7 @@ final class DecimalWithUnits extends Dto
      * @param  ?string  $units  The unit of the decimal value.
      */
     public function __construct(
-        public readonly ?float $value = null,
-        public readonly ?string $units = null,
+        public ?float $value = null,
+        public ?string $units = null,
     ) {}
 }

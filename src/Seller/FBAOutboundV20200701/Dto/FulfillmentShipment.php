@@ -30,13 +30,13 @@ final class FulfillmentShipment extends Dto
      * @param  FulfillmentShipmentPackage[]|null  $fulfillmentShipmentPackage  An array of fulfillment shipment package information.
      */
     public function __construct(
-        public readonly string $amazonShipmentId,
-        public readonly string $fulfillmentCenterId,
-        public readonly string $fulfillmentShipmentStatus,
-        public readonly array $fulfillmentShipmentItem,
-        public readonly ?\DateTimeInterface $shippingDate = null,
-        public readonly ?\DateTimeInterface $estimatedArrivalDate = null,
-        public readonly ?array $shippingNotes = null,
-        public readonly ?array $fulfillmentShipmentPackage = null,
+        public string $amazonShipmentId,
+        public string $fulfillmentCenterId,
+        public string $fulfillmentShipmentStatus,
+        public array $fulfillmentShipmentItem,
+        public ?\DateTimeInterface $shippingDate = null,
+        public ?\DateTimeInterface $estimatedArrivalDate = null,
+        public ?array $shippingNotes = null,
+        public ?array $fulfillmentShipmentPackage = null,
     ) {}
 }

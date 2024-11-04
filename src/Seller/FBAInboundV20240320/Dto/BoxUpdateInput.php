@@ -25,11 +25,11 @@ final class BoxUpdateInput extends Dto
      * @param  ?string  $packageId  Primary key to uniquely identify a Box Package. PackageId must be provided if the intent is to update an existing box. Adding a new box will not require providing this value. Any existing PackageIds not provided will be treated as to-be-removed
      */
     public function __construct(
-        public readonly string $contentInformationSource,
-        public readonly Dimensions $dimensions,
-        public readonly int $quantity,
-        public readonly Weight $weight,
-        public readonly ?array $items = null,
-        public readonly ?string $packageId = null,
+        public string $contentInformationSource,
+        public Dimensions $dimensions,
+        public int $quantity,
+        public Weight $weight,
+        public ?array $items = null,
+        public ?string $packageId = null,
     ) {}
 }

@@ -22,8 +22,8 @@ final class Restriction extends Dto
      * @param  Reason[]|null  $reasons  A list of reasons for the restriction.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly ?string $conditionType = null,
-        public readonly ?array $reasons = null,
+        public string $marketplaceId,
+        public ?string $conditionType = null,
+        public ?array $reasons = null,
     ) {}
 }

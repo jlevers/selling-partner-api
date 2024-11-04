@@ -21,7 +21,7 @@ final class UpdateScheduledPackagesRequest extends Dto
      * @param  UpdatePackageDetails[]  $updatePackageDetailsList  A list of package update details.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly array $updatePackageDetailsList,
+        public string $marketplaceId,
+        public array $updatePackageDetailsList,
     ) {}
 }

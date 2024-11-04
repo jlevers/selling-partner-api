@@ -21,7 +21,7 @@ final class CreateShipmentResult extends Dto
      * @param  Rate[]  $eligibleRates  A list of all the available rates that can be used to send the shipment.
      */
     public function __construct(
-        public readonly string $shipmentId,
-        public readonly array $eligibleRates,
+        public string $shipmentId,
+        public array $eligibleRates,
     ) {}
 }

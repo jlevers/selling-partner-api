@@ -19,7 +19,7 @@ final class ShippingConfiguration extends Dto
      * @param  ?string  $shippingSolution  Shipping program for the option. Can be: `AMAZON_PARTNERED_CARRIER`, `USE_YOUR_OWN_CARRIER`.
      */
     public function __construct(
-        public readonly ?string $shippingMode = null,
-        public readonly ?string $shippingSolution = null,
+        public ?string $shippingMode = null,
+        public ?string $shippingSolution = null,
     ) {}
 }

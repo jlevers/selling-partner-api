@@ -22,8 +22,8 @@ final class PackageGroupingInput extends Dto
      * @param  ?string  $shipmentId  The ID of the shipment that packages are grouped according to. The `ShipmentId` can only be provided after placement confirmation, and the shipment must belong to the confirmed placement option. One of `ShipmentId` or `PackingGroupId` must be provided with every request.
      */
     public function __construct(
-        public readonly array $boxes,
-        public readonly ?string $packingGroupId = null,
-        public readonly ?string $shipmentId = null,
+        public array $boxes,
+        public ?string $packingGroupId = null,
+        public ?string $shipmentId = null,
     ) {}
 }

@@ -23,9 +23,9 @@ final class CreateShipmentRequest extends Dto
      * @param  Container[]  $containers  A list of container.
      */
     public function __construct(
-        public readonly string $clientReferenceId,
-        public readonly Address $shipTo,
-        public readonly Address $shipFrom,
-        public readonly array $containers,
+        public string $clientReferenceId,
+        public Address $shipTo,
+        public Address $shipFrom,
+        public array $containers,
     ) {}
 }

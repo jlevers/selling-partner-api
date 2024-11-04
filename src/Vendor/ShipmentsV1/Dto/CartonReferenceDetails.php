@@ -19,7 +19,7 @@ final class CartonReferenceDetails extends Dto
      * @param  ?int  $cartonCount  Pallet level carton count is mandatory for single item pallet and optional for mixed item pallet.
      */
     public function __construct(
-        public readonly array $cartonReferenceNumbers,
-        public readonly ?int $cartonCount = null,
+        public array $cartonReferenceNumbers,
+        public ?int $cartonCount = null,
     ) {}
 }

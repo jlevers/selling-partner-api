@@ -28,9 +28,9 @@ final class DeliveryPreferences extends Dto
      * @param  ?string  $addressInstructions  Building instructions, nearby landmark or navigation instructions.
      */
     public function __construct(
-        public readonly ?string $dropOffLocation = null,
-        public readonly ?PreferredDeliveryTime $preferredDeliveryTime = null,
-        public readonly ?array $otherAttributes = null,
-        public readonly ?string $addressInstructions = null,
+        public ?string $dropOffLocation = null,
+        public ?PreferredDeliveryTime $preferredDeliveryTime = null,
+        public ?array $otherAttributes = null,
+        public ?string $addressInstructions = null,
     ) {}
 }

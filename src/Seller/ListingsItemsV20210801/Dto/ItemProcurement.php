@@ -18,6 +18,6 @@ final class ItemProcurement extends Dto
      * @param  Money  $costPrice  The currency type and amount.
      */
     public function __construct(
-        public readonly Money $costPrice,
+        public Money $costPrice,
     ) {}
 }

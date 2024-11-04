@@ -19,7 +19,7 @@ final class CompetitiveSummaryResponse extends Dto
      * @param  CompetitiveSummaryResponseBody  $body  The `competitiveSummaryResponse` body for a requested ASIN and `marketplaceId`.
      */
     public function __construct(
-        public readonly HttpStatusLine $status,
-        public readonly CompetitiveSummaryResponseBody $body,
+        public HttpStatusLine $status,
+        public CompetitiveSummaryResponseBody $body,
     ) {}
 }

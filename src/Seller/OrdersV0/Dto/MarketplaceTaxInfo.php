@@ -22,6 +22,6 @@ final class MarketplaceTaxInfo extends Dto
      * @param  TaxClassification[]|null  $taxClassifications  A list of tax classifications that apply to the order.
      */
     public function __construct(
-        public readonly ?array $taxClassifications = null,
+        public ?array $taxClassifications = null,
     ) {}
 }

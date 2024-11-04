@@ -21,9 +21,9 @@ final class PalletInput extends Dto
      * @param  ?Weight  $weight  The weight of a package.
      */
     public function __construct(
-        public readonly int $quantity,
-        public readonly ?Dimensions $dimensions = null,
-        public readonly ?string $stackability = null,
-        public readonly ?Weight $weight = null,
+        public int $quantity,
+        public ?Dimensions $dimensions = null,
+        public ?string $stackability = null,
+        public ?Weight $weight = null,
     ) {}
 }

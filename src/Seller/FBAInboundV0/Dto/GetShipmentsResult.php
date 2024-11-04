@@ -23,7 +23,7 @@ final class GetShipmentsResult extends Dto
      * @param  ?string  $nextToken  When present and not empty, pass this string token in the next request to return the next response page.
      */
     public function __construct(
-        public readonly ?array $shipmentData = null,
-        public readonly ?string $nextToken = null,
+        public ?array $shipmentData = null,
+        public ?string $nextToken = null,
     ) {}
 }

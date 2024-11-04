@@ -20,8 +20,8 @@ final class Feature extends Dto
      * @param  ?bool  $sellerEligible  When true, indicates that the seller is eligible to use the feature.
      */
     public function __construct(
-        public readonly string $featureName,
-        public readonly string $featureDescription,
-        public readonly ?bool $sellerEligible = null,
+        public string $featureName,
+        public string $featureDescription,
+        public ?bool $sellerEligible = null,
     ) {}
 }

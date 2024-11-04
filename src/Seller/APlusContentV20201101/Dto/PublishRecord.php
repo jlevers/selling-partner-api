@@ -24,11 +24,11 @@ final class PublishRecord extends Dto
      * @param  ?string  $contentSubType  The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $locale,
-        public readonly string $asin,
-        public readonly string $contentType,
-        public readonly string $contentReferenceKey,
-        public readonly ?string $contentSubType = null,
+        public string $marketplaceId,
+        public string $locale,
+        public string $asin,
+        public string $contentType,
+        public string $contentReferenceKey,
+        public ?string $contentSubType = null,
     ) {}
 }

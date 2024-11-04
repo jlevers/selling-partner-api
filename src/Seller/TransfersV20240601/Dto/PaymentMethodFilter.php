@@ -21,9 +21,9 @@ final class PaymentMethodFilter extends Dto
      * @param  ?string[]  $paymentInstrumentTypes  The list of payment instrument types that are present.
      */
     public function __construct(
-        public readonly ?string $paymentInstrumentId = null,
-        public readonly ?array $subscribedMarketplaces = null,
-        public readonly ?AssignmentFilter $assignmentFilter = null,
-        public readonly ?array $paymentInstrumentTypes = null,
+        public ?string $paymentInstrumentId = null,
+        public ?array $subscribedMarketplaces = null,
+        public ?AssignmentFilter $assignmentFilter = null,
+        public ?array $paymentInstrumentTypes = null,
     ) {}
 }

@@ -22,10 +22,10 @@ final class Business extends Dto
      * @param  ?string  $nonLatinName  The non-Latin script version of the registered business name, if applicable.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly Address $registeredBusinessAddress,
-        public readonly ?string $companyRegistrationNumber = null,
-        public readonly ?string $companyTaxIdentificationNumber = null,
-        public readonly ?string $nonLatinName = null,
+        public string $name,
+        public Address $registeredBusinessAddress,
+        public ?string $companyRegistrationNumber = null,
+        public ?string $companyTaxIdentificationNumber = null,
+        public ?string $nonLatinName = null,
     ) {}
 }

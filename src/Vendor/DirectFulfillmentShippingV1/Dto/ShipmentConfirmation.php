@@ -25,11 +25,11 @@ final class ShipmentConfirmation extends Dto
      * @param  Container[]|null  $containers  Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
      */
     public function __construct(
-        public readonly string $purchaseOrderNumber,
-        public readonly ShipmentDetails $shipmentDetails,
-        public readonly PartyIdentification $sellingParty,
-        public readonly PartyIdentification $shipFromParty,
-        public readonly array $items,
-        public readonly ?array $containers = null,
+        public string $purchaseOrderNumber,
+        public ShipmentDetails $shipmentDetails,
+        public PartyIdentification $sellingParty,
+        public PartyIdentification $shipFromParty,
+        public array $items,
+        public ?array $containers = null,
     ) {}
 }

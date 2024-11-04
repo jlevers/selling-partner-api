@@ -20,6 +20,6 @@ final class BuyerCustomizedInfoDetail extends Dto
      * @param  ?string  $customizedUrl  The location of a ZIP file containing Amazon Custom data.
      */
     public function __construct(
-        public readonly ?string $customizedUrl = null,
+        public ?string $customizedUrl = null,
     ) {}
 }

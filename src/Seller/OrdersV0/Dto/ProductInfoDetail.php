@@ -20,6 +20,6 @@ final class ProductInfoDetail extends Dto
      * @param  ?string  $numberOfItems  The total number of items that are included in the ASIN.
      */
     public function __construct(
-        public readonly ?string $numberOfItems = null,
+        public ?string $numberOfItems = null,
     ) {}
 }

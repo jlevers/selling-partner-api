@@ -20,8 +20,8 @@ final class ScheduledDeliveryShipment extends Dto
      * @param  ?\DateTimeInterface  $latestNominatedDeliveryDate  Latest nominated delivery date for the scheduled delivery.
      */
     public function __construct(
-        public readonly ?string $scheduledDeliveryServiceType = null,
-        public readonly ?\DateTimeInterface $earliestNominatedDeliveryDate = null,
-        public readonly ?\DateTimeInterface $latestNominatedDeliveryDate = null,
+        public ?string $scheduledDeliveryServiceType = null,
+        public ?\DateTimeInterface $earliestNominatedDeliveryDate = null,
+        public ?\DateTimeInterface $latestNominatedDeliveryDate = null,
     ) {}
 }

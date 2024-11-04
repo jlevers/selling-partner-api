@@ -26,8 +26,8 @@ final class CreateFulfillmentReturnResult extends Dto
      * @param  ReturnAuthorization[]|null  $returnAuthorizations  An array of return authorization information.
      */
     public function __construct(
-        public readonly ?array $returnItems = null,
-        public readonly ?array $invalidReturnItems = null,
-        public readonly ?array $returnAuthorizations = null,
+        public ?array $returnItems = null,
+        public ?array $invalidReturnItems = null,
+        public ?array $returnAuthorizations = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class TrackingDetailCodes extends Dto
      * @param  string[]  $returns  Contains detail codes that provide additional details related to the return leg of the shipment.
      */
     public function __construct(
-        public readonly array $forward,
-        public readonly array $returns,
+        public array $forward,
+        public array $returns,
     ) {}
 }

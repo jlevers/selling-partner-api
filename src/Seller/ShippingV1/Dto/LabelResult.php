@@ -20,8 +20,8 @@ final class LabelResult extends Dto
      * @param  ?Label  $label  The label details of the container.
      */
     public function __construct(
-        public readonly ?string $containerReferenceId = null,
-        public readonly ?string $trackingId = null,
-        public readonly ?Label $label = null,
+        public ?string $containerReferenceId = null,
+        public ?string $trackingId = null,
+        public ?Label $label = null,
     ) {}
 }

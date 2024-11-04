@@ -19,7 +19,7 @@ final class TransactionIdentifier extends Dto
      * @param  ?string  $id  The transaction identifier.
      */
     public function __construct(
-        public readonly ?string $name = null,
-        public readonly ?string $id = null,
+        public ?string $name = null,
+        public ?string $id = null,
     ) {}
 }

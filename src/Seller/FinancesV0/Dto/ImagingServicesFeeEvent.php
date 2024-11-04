@@ -30,9 +30,9 @@ final class ImagingServicesFeeEvent extends Dto
      * @param  FeeComponent[]|null  $feeList  A list of fee component information.
      */
     public function __construct(
-        public readonly ?string $imagingRequestBillingItemId = null,
-        public readonly ?string $asin = null,
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?array $feeList = null,
+        public ?string $imagingRequestBillingItemId = null,
+        public ?string $asin = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?array $feeList = null,
     ) {}
 }

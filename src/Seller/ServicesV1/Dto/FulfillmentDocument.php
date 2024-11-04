@@ -19,7 +19,7 @@ final class FulfillmentDocument extends Dto
      * @param  ?string  $contentSha256  Sha256 hash of the file content. This value is used to determine if the file has been corrupted or tampered with during transit.
      */
     public function __construct(
-        public readonly ?string $uploadDestinationId = null,
-        public readonly ?string $contentSha256 = null,
+        public ?string $uploadDestinationId = null,
+        public ?string $contentSha256 = null,
     ) {}
 }

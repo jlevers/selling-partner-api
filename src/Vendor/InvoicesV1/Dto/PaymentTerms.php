@@ -21,9 +21,9 @@ final class PaymentTerms extends Dto
      * @param  ?float  $netDueDays  The number of calendar days from the base date (invoice date) until the total amount on the invoice is due.
      */
     public function __construct(
-        public readonly ?string $type = null,
-        public readonly ?string $discountPercent = null,
-        public readonly ?float $discountDueDays = null,
-        public readonly ?float $netDueDays = null,
+        public ?string $type = null,
+        public ?string $discountPercent = null,
+        public ?float $discountDueDays = null,
+        public ?float $netDueDays = null,
     ) {}
 }

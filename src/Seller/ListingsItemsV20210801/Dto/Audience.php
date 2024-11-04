@@ -25,7 +25,7 @@ final class Audience extends Dto
      * @param  ?string  $displayName  Localized display name for the audience.
      */
     public function __construct(
-        public readonly ?string $value = null,
-        public readonly ?string $displayName = null,
+        public ?string $value = null,
+        public ?string $displayName = null,
     ) {}
 }

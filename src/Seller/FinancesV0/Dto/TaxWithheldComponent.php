@@ -31,7 +31,7 @@ final class TaxWithheldComponent extends Dto
      * @param  ChargeComponent[]|null  $taxesWithheld  A list of charge information on the seller's account.
      */
     public function __construct(
-        public readonly ?string $taxCollectionModel = null,
-        public readonly ?array $taxesWithheld = null,
+        public ?string $taxCollectionModel = null,
+        public ?array $taxesWithheld = null,
     ) {}
 }

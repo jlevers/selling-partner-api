@@ -21,9 +21,9 @@ final class Dimensions extends Dto
      * @param  ?Dimension  $width  Individual dimension value of an Amazon catalog item or item package.
      */
     public function __construct(
-        public readonly ?Dimension $height = null,
-        public readonly ?Dimension $length = null,
-        public readonly ?Dimension $weight = null,
-        public readonly ?Dimension $width = null,
+        public ?Dimension $height = null,
+        public ?Dimension $length = null,
+        public ?Dimension $weight = null,
+        public ?Dimension $width = null,
     ) {}
 }

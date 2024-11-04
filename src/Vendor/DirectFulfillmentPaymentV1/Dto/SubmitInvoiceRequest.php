@@ -20,6 +20,6 @@ final class SubmitInvoiceRequest extends Dto
      * @param  InvoiceDetail[]|null  $invoices  An array of invoice details you want to submit.
      */
     public function __construct(
-        public readonly ?array $invoices = null,
+        public ?array $invoices = null,
     ) {}
 }

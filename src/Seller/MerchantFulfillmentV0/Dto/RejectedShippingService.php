@@ -30,10 +30,10 @@ final class RejectedShippingService extends Dto
      * @param  ?string  $rejectionReasonMessage  A localized human readable description of the rejected reason.
      */
     public function __construct(
-        public readonly string $carrierName,
-        public readonly string $shippingServiceName,
-        public readonly string $shippingServiceId,
-        public readonly string $rejectionReasonCode,
-        public readonly ?string $rejectionReasonMessage = null,
+        public string $carrierName,
+        public string $shippingServiceName,
+        public string $shippingServiceId,
+        public string $rejectionReasonCode,
+        public ?string $rejectionReasonMessage = null,
     ) {}
 }

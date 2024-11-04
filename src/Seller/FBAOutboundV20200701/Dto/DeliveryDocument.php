@@ -19,7 +19,7 @@ final class DeliveryDocument extends Dto
      * @param  ?string  $url  A URL that you can use to download the document. This URL has a `Content-Type` header. Note that the URL expires after one hour. To get a new URL, you must call the API again.
      */
     public function __construct(
-        public readonly string $documentType,
-        public readonly ?string $url = null,
+        public string $documentType,
+        public ?string $url = null,
     ) {}
 }

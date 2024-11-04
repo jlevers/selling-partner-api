@@ -21,9 +21,9 @@ final class Error extends Dto
      * @param  ?string  $errorLevel  The type of error.
      */
     public function __construct(
-        public readonly string $code,
-        public readonly string $message,
-        public readonly ?string $details = null,
-        public readonly ?string $errorLevel = null,
+        public string $code,
+        public string $message,
+        public ?string $details = null,
+        public ?string $errorLevel = null,
     ) {}
 }

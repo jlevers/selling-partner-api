@@ -23,9 +23,9 @@ final class RateItem extends Dto
      * @param  ?string  $rateItemNameLocalization  Used for the localization.
      */
     public function __construct(
-        public readonly ?string $rateItemId = null,
-        public readonly ?string $rateItemType = null,
-        public readonly ?Currency $rateItemCharge = null,
-        public readonly ?string $rateItemNameLocalization = null,
+        public ?string $rateItemId = null,
+        public ?string $rateItemType = null,
+        public ?Currency $rateItemCharge = null,
+        public ?string $rateItemNameLocalization = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class GetDeliveryOffersProduct extends Dto
      * @param  ?Amount  $amount  A quantity based on unit of measure.
      */
     public function __construct(
-        public readonly ProductIdentifier $productIdentifier,
-        public readonly ?Amount $amount = null,
+        public ProductIdentifier $productIdentifier,
+        public ?Amount $amount = null,
     ) {}
 }

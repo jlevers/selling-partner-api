@@ -24,12 +24,12 @@ final class ListOffersRequestFilters extends Dto
      * @param  ?Promotion  $promotions  Offer promotions to include in the result filter criteria.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly array $programTypes,
-        public readonly ?array $skus = null,
-        public readonly ?array $asins = null,
-        public readonly ?array $eligibilities = null,
-        public readonly ?Preference $preferences = null,
-        public readonly ?Promotion $promotions = null,
+        public string $marketplaceId,
+        public array $programTypes,
+        public ?array $skus = null,
+        public ?array $asins = null,
+        public ?array $eligibilities = null,
+        public ?Preference $preferences = null,
+        public ?Promotion $promotions = null,
     ) {}
 }

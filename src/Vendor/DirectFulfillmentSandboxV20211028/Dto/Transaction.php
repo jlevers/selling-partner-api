@@ -20,8 +20,8 @@ final class Transaction extends Dto
      * @param  ?TestCaseData  $testCaseData  The set of test case data returned in response to the test data request.
      */
     public function __construct(
-        public readonly string $transactionId,
-        public readonly string $status,
-        public readonly ?TestCaseData $testCaseData = null,
+        public string $transactionId,
+        public string $status,
+        public ?TestCaseData $testCaseData = null,
     ) {}
 }

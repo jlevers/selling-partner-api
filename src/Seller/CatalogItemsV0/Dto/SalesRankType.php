@@ -21,7 +21,7 @@ final class SalesRankType extends Dto
      * @param  int  $rank  The sales rank of the item within the item category.
      */
     public function __construct(
-        public readonly string $productCategoryId,
-        public readonly int $rank,
+        public string $productCategoryId,
+        public int $rank,
     ) {}
 }

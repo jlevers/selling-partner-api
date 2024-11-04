@@ -19,7 +19,7 @@ final class Points extends Dto
      * @param  ?MoneyType  $pointsMonetaryValue  Currency type and monetary value. Schema for demonstrating pricing info.
      */
     public function __construct(
-        public readonly ?int $pointsNumber = null,
-        public readonly ?MoneyType $pointsMonetaryValue = null,
+        public ?int $pointsNumber = null,
+        public ?MoneyType $pointsMonetaryValue = null,
     ) {}
 }

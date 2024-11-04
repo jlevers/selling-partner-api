@@ -20,7 +20,7 @@ final class DropOffLocation extends Dto
      *                                 If the `type` is set to `FALLBACK_NEIGHBOR_DELIVERY`, the `attributes` object should include the exact keys `neighborName` and `houseNumber` to provide the name and house number of the designated neighbor.
      */
     public function __construct(
-        public readonly string $type,
-        public readonly ?array $attributes = null,
+        public string $type,
+        public ?array $attributes = null,
     ) {}
 }

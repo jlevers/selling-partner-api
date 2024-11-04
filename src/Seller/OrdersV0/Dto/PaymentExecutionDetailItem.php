@@ -27,7 +27,7 @@ final class PaymentExecutionDetailItem extends Dto
      * * `Invoice`: Invoice
      */
     public function __construct(
-        public readonly Money $payment,
-        public readonly string $paymentMethod,
+        public Money $payment,
+        public string $paymentMethod,
     ) {}
 }

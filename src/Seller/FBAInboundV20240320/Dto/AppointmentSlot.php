@@ -19,7 +19,7 @@ final class AppointmentSlot extends Dto
      * @param  AppointmentSlotTime  $slotTime  An appointment slot time with start and end.
      */
     public function __construct(
-        public readonly string $slotId,
-        public readonly AppointmentSlotTime $slotTime,
+        public string $slotId,
+        public AppointmentSlotTime $slotTime,
     ) {}
 }

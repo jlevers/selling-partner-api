@@ -41,10 +41,10 @@ final class DebtRecoveryEvent extends Dto
      * @param  ChargeInstrument[]|null  $chargeInstrumentList  A list of payment instruments.
      */
     public function __construct(
-        public readonly ?string $debtRecoveryType = null,
-        public readonly ?Currency $recoveryAmount = null,
-        public readonly ?Currency $overPaymentCredit = null,
-        public readonly ?array $debtRecoveryItemList = null,
-        public readonly ?array $chargeInstrumentList = null,
+        public ?string $debtRecoveryType = null,
+        public ?Currency $recoveryAmount = null,
+        public ?Currency $overPaymentCredit = null,
+        public ?array $debtRecoveryItemList = null,
+        public ?array $chargeInstrumentList = null,
     ) {}
 }

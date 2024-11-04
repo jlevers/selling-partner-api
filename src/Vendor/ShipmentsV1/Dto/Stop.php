@@ -21,9 +21,9 @@ final class Stop extends Dto
      * @param  ?\DateTimeInterface  $departureTime  Date and time of the departure of the cargo.
      */
     public function __construct(
-        public readonly string $functionCode,
-        public readonly ?Location $locationIdentification = null,
-        public readonly ?\DateTimeInterface $arrivalTime = null,
-        public readonly ?\DateTimeInterface $departureTime = null,
+        public string $functionCode,
+        public ?Location $locationIdentification = null,
+        public ?\DateTimeInterface $arrivalTime = null,
+        public ?\DateTimeInterface $departureTime = null,
     ) {}
 }

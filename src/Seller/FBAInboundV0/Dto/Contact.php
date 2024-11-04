@@ -23,9 +23,9 @@ final class Contact extends Dto
      * @param  ?string  $fax  The fax number of the contact person.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly string $phone,
-        public readonly string $email,
-        public readonly ?string $fax = null,
+        public string $name,
+        public string $phone,
+        public string $email,
+        public ?string $fax = null,
     ) {}
 }

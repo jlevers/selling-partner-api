@@ -19,7 +19,7 @@ final class StandardSingleSideImageModule extends Dto
      * @param  ?StandardImageTextBlock  $block  The A+ Content standard image and text box block.
      */
     public function __construct(
-        public readonly string $imagePositionType,
-        public readonly ?StandardImageTextBlock $block = null,
+        public string $imagePositionType,
+        public ?StandardImageTextBlock $block = null,
     ) {}
 }

@@ -28,14 +28,14 @@ final class Box extends Dto
      * @param  ?Weight  $weight  The weight of a package.
      */
     public function __construct(
-        public readonly string $packageId,
-        public readonly ?string $boxId = null,
-        public readonly ?string $contentInformationSource = null,
-        public readonly ?Region $destinationRegion = null,
-        public readonly ?Dimensions $dimensions = null,
-        public readonly ?array $items = null,
-        public readonly ?int $quantity = null,
-        public readonly ?string $templateName = null,
-        public readonly ?Weight $weight = null,
+        public string $packageId,
+        public ?string $boxId = null,
+        public ?string $contentInformationSource = null,
+        public ?Region $destinationRegion = null,
+        public ?Dimensions $dimensions = null,
+        public ?array $items = null,
+        public ?int $quantity = null,
+        public ?string $templateName = null,
+        public ?Weight $weight = null,
     ) {}
 }

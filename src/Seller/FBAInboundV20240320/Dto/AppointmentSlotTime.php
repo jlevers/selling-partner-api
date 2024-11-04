@@ -19,7 +19,7 @@ final class AppointmentSlotTime extends Dto
      * @param  \DateTimeInterface  $startTime  The start timestamp of the appointment in UTC.
      */
     public function __construct(
-        public readonly \DateTimeInterface $endTime,
-        public readonly \DateTimeInterface $startTime,
+        public \DateTimeInterface $endTime,
+        public \DateTimeInterface $startTime,
     ) {}
 }

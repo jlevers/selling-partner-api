@@ -21,7 +21,7 @@ final class ItemIdentifiersByMarketplace extends Dto
      * @param  ItemIdentifier[]  $identifiers  Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly array $identifiers,
+        public string $marketplaceId,
+        public array $identifiers,
     ) {}
 }

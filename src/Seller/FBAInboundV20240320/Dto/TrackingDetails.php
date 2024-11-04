@@ -19,7 +19,7 @@ final class TrackingDetails extends Dto
      * @param  ?SpdTrackingDetail  $spdTrackingDetail  Contains information related to Small Parcel Delivery (SPD) shipment tracking.
      */
     public function __construct(
-        public readonly ?LtlTrackingDetail $ltlTrackingDetail = null,
-        public readonly ?SpdTrackingDetail $spdTrackingDetail = null,
+        public ?LtlTrackingDetail $ltlTrackingDetail = null,
+        public ?SpdTrackingDetail $spdTrackingDetail = null,
     ) {}
 }

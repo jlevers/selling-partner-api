@@ -23,11 +23,11 @@ final class RequestedDocumentSpecification extends Dto
      * @param  ?string  $pageLayout  Indicates the position of the label on the paper. Should be the same value as returned in getRates response.
      */
     public function __construct(
-        public readonly string $format,
-        public readonly DocumentSize $size,
-        public readonly bool $needFileJoining,
-        public readonly array $requestedDocumentTypes,
-        public readonly ?int $dpi = null,
-        public readonly ?string $pageLayout = null,
+        public string $format,
+        public DocumentSize $size,
+        public bool $needFileJoining,
+        public array $requestedDocumentTypes,
+        public ?int $dpi = null,
+        public ?string $pageLayout = null,
     ) {}
 }

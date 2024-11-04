@@ -42,16 +42,16 @@ final class Address extends Dto
      * @param  ?string  $stateOrProvinceCode  The state or province code. **Note.** Required in the Canada, US, and UK marketplaces. Also required for shipments originating from China.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly string $addressLine1,
-        public readonly string $email,
-        public readonly string $city,
-        public readonly string $postalCode,
-        public readonly string $countryCode,
-        public readonly string $phone,
-        public readonly ?string $addressLine2 = null,
-        public readonly ?string $addressLine3 = null,
-        public readonly ?string $districtOrCounty = null,
-        public readonly ?string $stateOrProvinceCode = null,
+        public string $name,
+        public string $addressLine1,
+        public string $email,
+        public string $city,
+        public string $postalCode,
+        public string $countryCode,
+        public string $phone,
+        public ?string $addressLine2 = null,
+        public ?string $addressLine3 = null,
+        public ?string $districtOrCounty = null,
+        public ?string $stateOrProvinceCode = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class Links2 extends Dto
      * @param  LinkObject  $schema  A Link object.
      */
     public function __construct(
-        public readonly LinkObject $self,
-        public readonly LinkObject $schema,
+        public LinkObject $self,
+        public LinkObject $schema,
     ) {}
 }

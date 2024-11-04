@@ -19,7 +19,7 @@ final class Currency extends Dto
      * @param  ?float  $currencyAmount  A signed decimal number.
      */
     public function __construct(
-        public readonly ?string $currencyCode = null,
-        public readonly ?float $currencyAmount = null,
+        public ?string $currencyCode = null,
+        public ?float $currencyAmount = null,
     ) {}
 }

@@ -22,10 +22,10 @@ final class FulfillmentPreviewItem extends Dto
      * @param  ?string  $shippingWeightCalculationMethod  The method used to calculate the estimated shipping weight.
      */
     public function __construct(
-        public readonly string $sellerSku,
-        public readonly int $quantity,
-        public readonly string $sellerFulfillmentOrderItemId,
-        public readonly ?Weight $estimatedShippingWeight = null,
-        public readonly ?string $shippingWeightCalculationMethod = null,
+        public string $sellerSku,
+        public int $quantity,
+        public string $sellerFulfillmentOrderItemId,
+        public ?Weight $estimatedShippingWeight = null,
+        public ?string $shippingWeightCalculationMethod = null,
     ) {}
 }

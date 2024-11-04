@@ -21,7 +21,7 @@ final class Scenario extends Dto
      * @param  TestOrder[]  $orders  A list of orders that can be used by the caller to test each life cycle or scenario.
      */
     public function __construct(
-        public readonly string $scenarioId,
-        public readonly array $orders,
+        public string $scenarioId,
+        public array $orders,
     ) {}
 }

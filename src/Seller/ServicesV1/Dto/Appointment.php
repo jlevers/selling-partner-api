@@ -25,11 +25,11 @@ final class Appointment extends Dto
      * @param  ?Poa  $poa  Proof of Appointment (POA) details.
      */
     public function __construct(
-        public readonly ?string $appointmentId = null,
-        public readonly ?string $appointmentStatus = null,
-        public readonly ?AppointmentTime $appointmentTime = null,
-        public readonly ?array $assignedTechnicians = null,
-        public readonly ?string $rescheduledAppointmentId = null,
-        public readonly ?Poa $poa = null,
+        public ?string $appointmentId = null,
+        public ?string $appointmentStatus = null,
+        public ?AppointmentTime $appointmentTime = null,
+        public ?array $assignedTechnicians = null,
+        public ?string $rescheduledAppointmentId = null,
+        public ?Poa $poa = null,
     ) {}
 }

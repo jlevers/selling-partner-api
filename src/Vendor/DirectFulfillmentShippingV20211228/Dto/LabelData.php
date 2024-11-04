@@ -22,10 +22,10 @@ final class LabelData extends Dto
      * @param  ?string  $shipMethodName  Shipping method name for internal reference.
      */
     public function __construct(
-        public readonly string $content,
-        public readonly ?string $packageIdentifier = null,
-        public readonly ?string $trackingNumber = null,
-        public readonly ?string $shipMethod = null,
-        public readonly ?string $shipMethodName = null,
+        public string $content,
+        public ?string $packageIdentifier = null,
+        public ?string $trackingNumber = null,
+        public ?string $shipMethod = null,
+        public ?string $shipMethodName = null,
     ) {}
 }

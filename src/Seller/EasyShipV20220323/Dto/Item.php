@@ -19,7 +19,7 @@ final class Item extends Dto
      * @param  ?string[]  $orderItemSerialNumbers  A list of serial numbers for the items associated with the `OrderItemId` value.
      */
     public function __construct(
-        public readonly ?string $orderItemId = null,
-        public readonly ?array $orderItemSerialNumbers = null,
+        public ?string $orderItemId = null,
+        public ?array $orderItemSerialNumbers = null,
     ) {}
 }

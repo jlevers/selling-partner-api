@@ -19,7 +19,7 @@ final class OneClickShipmentValueAddedService extends Dto
      * @param  ?Currency  $amount  The monetary value in the currency indicated, in ISO 4217 standard format.
      */
     public function __construct(
-        public readonly string $id,
-        public readonly ?Currency $amount = null,
+        public string $id,
+        public ?Currency $amount = null,
     ) {}
 }

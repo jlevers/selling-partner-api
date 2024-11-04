@@ -34,11 +34,11 @@ final class InboundShipmentPlanRequestItem extends Dto
      * @param  PrepDetails[]|null  $prepDetailsList  A list of preparation instructions and who is responsible for that preparation.
      */
     public function __construct(
-        public readonly string $sellerSku,
-        public readonly string $asin,
-        public readonly string $condition,
-        public readonly int $quantity,
-        public readonly ?int $quantityInCase = null,
-        public readonly ?array $prepDetailsList = null,
+        public string $sellerSku,
+        public string $asin,
+        public string $condition,
+        public int $quantity,
+        public ?int $quantityInCase = null,
+        public ?array $prepDetailsList = null,
     ) {}
 }

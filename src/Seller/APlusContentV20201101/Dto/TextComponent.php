@@ -21,7 +21,7 @@ final class TextComponent extends Dto
      * @param  Decorator[]|null  $decoratorSet  A set of content decorators.
      */
     public function __construct(
-        public readonly string $value,
-        public readonly ?array $decoratorSet = null,
+        public string $value,
+        public ?array $decoratorSet = null,
     ) {}
 }

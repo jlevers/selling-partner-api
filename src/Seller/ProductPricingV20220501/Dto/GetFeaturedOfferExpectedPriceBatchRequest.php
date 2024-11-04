@@ -20,6 +20,6 @@ final class GetFeaturedOfferExpectedPriceBatchRequest extends Dto
      * @param  FeaturedOfferExpectedPriceRequest[]|null  $requests  A batched list of featured offer expected price requests.
      */
     public function __construct(
-        public readonly ?array $requests = null,
+        public ?array $requests = null,
     ) {}
 }

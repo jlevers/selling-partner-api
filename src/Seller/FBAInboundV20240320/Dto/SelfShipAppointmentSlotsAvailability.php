@@ -21,7 +21,7 @@ final class SelfShipAppointmentSlotsAvailability extends Dto
      * @param  AppointmentSlot[]|null  $slots  List of appointment slots.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $expiresAt = null,
-        public readonly ?array $slots = null,
+        public ?\DateTimeInterface $expiresAt = null,
+        public ?array $slots = null,
     ) {}
 }

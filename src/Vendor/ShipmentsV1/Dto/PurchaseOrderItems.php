@@ -22,10 +22,10 @@ final class PurchaseOrderItems extends Dto
      * @param  ?Money  $maximumRetailPrice  An amount of money, including units in the form of currency.
      */
     public function __construct(
-        public readonly string $itemSequenceNumber,
-        public readonly ItemQuantity $shippedQuantity,
-        public readonly ?string $buyerProductIdentifier = null,
-        public readonly ?string $vendorProductIdentifier = null,
-        public readonly ?Money $maximumRetailPrice = null,
+        public string $itemSequenceNumber,
+        public ItemQuantity $shippedQuantity,
+        public ?string $buyerProductIdentifier = null,
+        public ?string $vendorProductIdentifier = null,
+        public ?Money $maximumRetailPrice = null,
     ) {}
 }

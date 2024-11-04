@@ -31,17 +31,17 @@ final class Container extends Dto
      * @param  ?Dimensions  $dimensions  Physical dimensional measurements of a container.
      */
     public function __construct(
-        public readonly string $containerType,
-        public readonly string $containerIdentifier,
-        public readonly Weight $weight,
-        public readonly array $packedItems,
-        public readonly ?string $trackingNumber = null,
-        public readonly ?string $manifestId = null,
-        public readonly ?string $manifestDate = null,
-        public readonly ?string $shipMethod = null,
-        public readonly ?string $scacCode = null,
-        public readonly ?string $carrier = null,
-        public readonly ?int $containerSequenceNumber = null,
-        public readonly ?Dimensions $dimensions = null,
+        public string $containerType,
+        public string $containerIdentifier,
+        public Weight $weight,
+        public array $packedItems,
+        public ?string $trackingNumber = null,
+        public ?string $manifestId = null,
+        public ?string $manifestDate = null,
+        public ?string $shipMethod = null,
+        public ?string $scacCode = null,
+        public ?string $carrier = null,
+        public ?int $containerSequenceNumber = null,
+        public ?Dimensions $dimensions = null,
     ) {}
 }

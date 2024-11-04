@@ -28,9 +28,9 @@ final class ShippingConstraints extends Dto
      * @param  ?string  $recipientAgeVerification  Details the importance of the constraint present on the item
      */
     public function __construct(
-        public readonly ?string $palletDelivery = null,
-        public readonly ?string $signatureConfirmation = null,
-        public readonly ?string $recipientIdentityVerification = null,
-        public readonly ?string $recipientAgeVerification = null,
+        public ?string $palletDelivery = null,
+        public ?string $signatureConfirmation = null,
+        public ?string $recipientIdentityVerification = null,
+        public ?string $recipientAgeVerification = null,
     ) {}
 }

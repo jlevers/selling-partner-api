@@ -19,7 +19,7 @@ final class ClientReferenceDetail extends Dto
      * @param  string  $clientReferenceId  The Client Reference Id.
      */
     public function __construct(
-        public readonly string $clientReferenceType,
-        public readonly string $clientReferenceId,
+        public string $clientReferenceType,
+        public string $clientReferenceId,
     ) {}
 }

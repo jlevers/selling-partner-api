@@ -21,9 +21,9 @@ final class Location extends Dto
      * @param  ?string  $postalCode  The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
      */
     public function __construct(
-        public readonly ?string $stateOrRegion = null,
-        public readonly ?string $city = null,
-        public readonly ?string $countryCode = null,
-        public readonly ?string $postalCode = null,
+        public ?string $stateOrRegion = null,
+        public ?string $city = null,
+        public ?string $countryCode = null,
+        public ?string $postalCode = null,
     ) {}
 }

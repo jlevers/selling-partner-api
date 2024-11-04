@@ -20,6 +20,6 @@ final class SubmitShipmentConfirmationsRequest extends Dto
      * @param  ShipmentConfirmation[]|null  $shipmentConfirmations  A list of one or more shipment confirmations.
      */
     public function __construct(
-        public readonly ?array $shipmentConfirmations = null,
+        public ?array $shipmentConfirmations = null,
     ) {}
 }

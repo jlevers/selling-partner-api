@@ -21,8 +21,8 @@ final class GetSchemaResponse extends Dto
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
-        public readonly ?Links3 $links = null,
-        public readonly ?array $payload = null,
-        public readonly ?ErrorList $errors = null,
+        public ?Links3 $links = null,
+        public ?array $payload = null,
+        public ?ErrorList $errors = null,
     ) {}
 }

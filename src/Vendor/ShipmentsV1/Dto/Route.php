@@ -20,6 +20,6 @@ final class Route extends Dto
      * @param  Stop[]  $stops  The port or location involved in transporting the cargo, as specified in transportation contracts or operational plans.
      */
     public function __construct(
-        public readonly array $stops,
+        public array $stops,
     ) {}
 }

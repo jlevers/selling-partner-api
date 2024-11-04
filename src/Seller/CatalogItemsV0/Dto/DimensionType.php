@@ -28,9 +28,9 @@ final class DimensionType extends Dto
      * @param  ?DecimalWithUnits  $weight  The decimal value and unit.
      */
     public function __construct(
-        public readonly ?DecimalWithUnits $height = null,
-        public readonly ?DecimalWithUnits $length = null,
-        public readonly ?DecimalWithUnits $width = null,
-        public readonly ?DecimalWithUnits $weight = null,
+        public ?DecimalWithUnits $height = null,
+        public ?DecimalWithUnits $length = null,
+        public ?DecimalWithUnits $width = null,
+        public ?DecimalWithUnits $weight = null,
     ) {}
 }

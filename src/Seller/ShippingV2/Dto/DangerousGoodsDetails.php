@@ -21,9 +21,9 @@ final class DangerousGoodsDetails extends Dto
      * @param  ?string  $packingInstruction  The specific packing instruction of the item being shipped.
      */
     public function __construct(
-        public readonly ?string $unitedNationsRegulatoryId = null,
-        public readonly ?string $transportationRegulatoryClass = null,
-        public readonly ?string $packingGroup = null,
-        public readonly ?string $packingInstruction = null,
+        public ?string $unitedNationsRegulatoryId = null,
+        public ?string $transportationRegulatoryClass = null,
+        public ?string $packingGroup = null,
+        public ?string $packingInstruction = null,
     ) {}
 }

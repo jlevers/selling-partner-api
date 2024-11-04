@@ -21,9 +21,9 @@ final class ScopeOfWork extends Dto
      * @param  ?string[]  $requiredSkills  A list of skills required to perform the job.
      */
     public function __construct(
-        public readonly ?string $asin = null,
-        public readonly ?string $title = null,
-        public readonly ?int $quantity = null,
-        public readonly ?array $requiredSkills = null,
+        public ?string $asin = null,
+        public ?string $title = null,
+        public ?int $quantity = null,
+        public ?array $requiredSkills = null,
     ) {}
 }

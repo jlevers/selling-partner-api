@@ -21,7 +21,7 @@ final class InvalidSku extends Dto
      * @param  ?string  $errorReason  The reason that the ASIN is invalid.
      */
     public function __construct(
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $errorReason = null,
+        public ?string $sellerSku = null,
+        public ?string $errorReason = null,
     ) {}
 }

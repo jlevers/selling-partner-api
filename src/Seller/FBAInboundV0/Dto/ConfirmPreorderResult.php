@@ -24,7 +24,7 @@ final class ConfirmPreorderResult extends Dto
      * @param  ?\DateTimeInterface  $confirmedFulfillableDate  Type containing date in string format
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $confirmedNeedByDate = null,
-        public readonly ?\DateTimeInterface $confirmedFulfillableDate = null,
+        public ?\DateTimeInterface $confirmedNeedByDate = null,
+        public ?\DateTimeInterface $confirmedFulfillableDate = null,
     ) {}
 }

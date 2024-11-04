@@ -22,8 +22,8 @@ final class ProductQuantity extends Dto
      * @param  ProductAttribute[]|null  $attributes  Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU.
      */
     public function __construct(
-        public readonly int $quantity,
-        public readonly string $sku,
-        public readonly ?array $attributes = null,
+        public int $quantity,
+        public string $sku,
+        public ?array $attributes = null,
     ) {}
 }

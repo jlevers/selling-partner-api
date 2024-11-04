@@ -19,7 +19,7 @@ final class ListOfferMetricsRequestPagination extends Dto
      * @param  int  $offset  The offset from which to retrieve the number of results specified by the `limit` value. The first result is at offset 0.
      */
     public function __construct(
-        public readonly int $limit,
-        public readonly int $offset,
+        public int $limit,
+        public int $offset,
     ) {}
 }

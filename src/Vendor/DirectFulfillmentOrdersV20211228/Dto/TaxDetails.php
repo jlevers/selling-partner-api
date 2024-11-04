@@ -21,9 +21,9 @@ final class TaxDetails extends Dto
      * @param  ?string  $type  Tax type.
      */
     public function __construct(
-        public readonly Money $taxAmount,
-        public readonly ?string $taxRate = null,
-        public readonly ?Money $taxableAmount = null,
-        public readonly ?string $type = null,
+        public Money $taxAmount,
+        public ?string $taxRate = null,
+        public ?Money $taxableAmount = null,
+        public ?string $type = null,
     ) {}
 }

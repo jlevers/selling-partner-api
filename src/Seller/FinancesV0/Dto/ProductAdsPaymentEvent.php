@@ -29,11 +29,11 @@ final class ProductAdsPaymentEvent extends Dto
      * @param  ?Currency  $transactionValue  A currency type and amount.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $transactionType = null,
-        public readonly ?string $invoiceId = null,
-        public readonly ?Currency $baseValue = null,
-        public readonly ?Currency $taxValue = null,
-        public readonly ?Currency $transactionValue = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $transactionType = null,
+        public ?string $invoiceId = null,
+        public ?Currency $baseValue = null,
+        public ?Currency $taxValue = null,
+        public ?Currency $transactionValue = null,
     ) {}
 }

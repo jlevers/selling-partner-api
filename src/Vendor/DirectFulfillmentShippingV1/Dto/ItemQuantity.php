@@ -19,7 +19,7 @@ final class ItemQuantity extends Dto
      * @param  string  $unitOfMeasure  Unit of measure for the shipped quantity.
      */
     public function __construct(
-        public readonly int $amount,
-        public readonly string $unitOfMeasure,
+        public int $amount,
+        public string $unitOfMeasure,
     ) {}
 }

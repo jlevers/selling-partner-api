@@ -26,7 +26,7 @@ final class ListFinancialEventGroupsPayload extends Dto
      * @param  FinancialEventGroup[]|null  $financialEventGroupList  A list of financial event group information.
      */
     public function __construct(
-        public readonly ?string $nextToken = null,
-        public readonly ?array $financialEventGroupList = null,
+        public ?string $nextToken = null,
+        public ?array $financialEventGroupList = null,
     ) {}
 }

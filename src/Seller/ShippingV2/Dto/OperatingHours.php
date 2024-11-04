@@ -22,8 +22,8 @@ final class OperatingHours extends Dto
      * @param  TimeOfDay[]|null  $midDayClosures
      */
     public function __construct(
-        public readonly ?TimeOfDay $closingTime = null,
-        public readonly ?TimeOfDay $openingTime = null,
-        public readonly ?array $midDayClosures = null,
+        public ?TimeOfDay $closingTime = null,
+        public ?TimeOfDay $openingTime = null,
+        public ?array $midDayClosures = null,
     ) {}
 }

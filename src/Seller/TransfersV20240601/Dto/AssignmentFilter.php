@@ -18,6 +18,6 @@ final class AssignmentFilter extends Dto
      * @param  ?string[]  $assignmentTypes  The list of assignment types.
      */
     public function __construct(
-        public readonly ?array $assignmentTypes = null,
+        public ?array $assignmentTypes = null,
     ) {}
 }

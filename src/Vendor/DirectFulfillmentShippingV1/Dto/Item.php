@@ -21,9 +21,9 @@ final class Item extends Dto
      * @param  ?string  $vendorProductIdentifier  The vendor selected product identification of the item. Should be the same as was sent in the purchase order, like SKU Number.
      */
     public function __construct(
-        public readonly int $itemSequenceNumber,
-        public readonly ItemQuantity $shippedQuantity,
-        public readonly ?string $buyerProductIdentifier = null,
-        public readonly ?string $vendorProductIdentifier = null,
+        public int $itemSequenceNumber,
+        public ItemQuantity $shippedQuantity,
+        public ?string $buyerProductIdentifier = null,
+        public ?string $vendorProductIdentifier = null,
     ) {}
 }

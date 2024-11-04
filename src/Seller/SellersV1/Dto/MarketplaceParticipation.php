@@ -19,7 +19,7 @@ final class MarketplaceParticipation extends Dto
      * @param  Participation  $participation  Information that is specific to a seller in a marketplace.
      */
     public function __construct(
-        public readonly Marketplace $marketplace,
-        public readonly Participation $participation,
+        public Marketplace $marketplace,
+        public Participation $participation,
     ) {}
 }

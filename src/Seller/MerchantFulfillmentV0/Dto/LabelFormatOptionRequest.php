@@ -20,6 +20,6 @@ final class LabelFormatOptionRequest extends Dto
      * @param  ?bool  $includePackingSlipWithLabel  When true, include a packing slip with the label.
      */
     public function __construct(
-        public readonly ?bool $includePackingSlipWithLabel = null,
+        public ?bool $includePackingSlipWithLabel = null,
     ) {}
 }

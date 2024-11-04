@@ -19,7 +19,7 @@ final class OrderScenarioRequest extends Dto
      * @param  PartyIdentification  $shipFromParty  The identification object for the party information. For example, warehouse code or vendor code.
      */
     public function __construct(
-        public readonly PartyIdentification $sellingParty,
-        public readonly PartyIdentification $shipFromParty,
+        public PartyIdentification $sellingParty,
+        public PartyIdentification $shipFromParty,
     ) {}
 }

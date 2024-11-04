@@ -28,9 +28,9 @@ final class FeesEstimateError extends Dto
      * @param  mixed[]  $detail
      */
     public function __construct(
-        public readonly string $type,
-        public readonly string $code,
-        public readonly string $message,
-        public readonly array $detail,
+        public string $type,
+        public string $code,
+        public string $message,
+        public array $detail,
     ) {}
 }

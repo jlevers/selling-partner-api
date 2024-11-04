@@ -19,7 +19,7 @@ final class RejectedOrder extends Dto
      * @param  ?Error  $error  Error response returned when the request is unsuccessful.
      */
     public function __construct(
-        public readonly string $amazonOrderId,
-        public readonly ?Error $error = null,
+        public string $amazonOrderId,
+        public ?Error $error = null,
     ) {}
 }

@@ -28,16 +28,16 @@ final class Address extends Dto
      * @param  ?string  $phoneNumber  The phone number of the person, business or institution located at that address.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly string $addressLine1,
-        public readonly string $stateOrRegion,
-        public readonly string $city,
-        public readonly string $countryCode,
-        public readonly string $postalCode,
-        public readonly ?string $addressLine2 = null,
-        public readonly ?string $addressLine3 = null,
-        public readonly ?string $email = null,
-        public readonly ?array $copyEmails = null,
-        public readonly ?string $phoneNumber = null,
+        public string $name,
+        public string $addressLine1,
+        public string $stateOrRegion,
+        public string $city,
+        public string $countryCode,
+        public string $postalCode,
+        public ?string $addressLine2 = null,
+        public ?string $addressLine3 = null,
+        public ?string $email = null,
+        public ?array $copyEmails = null,
+        public ?string $phoneNumber = null,
     ) {}
 }

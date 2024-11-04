@@ -20,8 +20,8 @@ final class ImageComponent extends Dto
      * @param  string  $altText  The alternative text for the image.
      */
     public function __construct(
-        public readonly string $uploadDestinationId,
-        public readonly ImageCropSpecification $imageCropSpecification,
-        public readonly string $altText,
+        public string $uploadDestinationId,
+        public ImageCropSpecification $imageCropSpecification,
+        public string $altText,
     ) {}
 }

@@ -28,8 +28,8 @@ final class BuyerTaxInfo extends Dto
      * @param  TaxClassification[]|null  $taxClassifications  A list of tax classifications that apply to the order.
      */
     public function __construct(
-        public readonly ?string $companyLegalName = null,
-        public readonly ?string $taxingRegion = null,
-        public readonly ?array $taxClassifications = null,
+        public ?string $companyLegalName = null,
+        public ?string $taxingRegion = null,
+        public ?array $taxClassifications = null,
     ) {}
 }

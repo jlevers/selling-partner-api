@@ -29,17 +29,17 @@ final class Address extends Dto
      * @param  ?Geocode  $geocode  Defines the latitude and longitude of the access point.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly string $addressLine1,
-        public readonly string $city,
-        public readonly string $countryCode,
-        public readonly string $postalCode,
-        public readonly ?string $addressLine2 = null,
-        public readonly ?string $addressLine3 = null,
-        public readonly ?string $companyName = null,
-        public readonly ?string $stateOrRegion = null,
-        public readonly ?string $email = null,
-        public readonly ?string $phoneNumber = null,
-        public readonly ?Geocode $geocode = null,
+        public string $name,
+        public string $addressLine1,
+        public string $city,
+        public string $countryCode,
+        public string $postalCode,
+        public ?string $addressLine2 = null,
+        public ?string $addressLine3 = null,
+        public ?string $companyName = null,
+        public ?string $stateOrRegion = null,
+        public ?string $email = null,
+        public ?string $phoneNumber = null,
+        public ?Geocode $geocode = null,
     ) {}
 }

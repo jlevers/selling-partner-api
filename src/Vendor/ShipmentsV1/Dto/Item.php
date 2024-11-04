@@ -22,10 +22,10 @@ final class Item extends Dto
      * @param  ?ItemDetails  $itemDetails  Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate.
      */
     public function __construct(
-        public readonly string $itemSequenceNumber,
-        public readonly ItemQuantity $shippedQuantity,
-        public readonly ?string $amazonProductIdentifier = null,
-        public readonly ?string $vendorProductIdentifier = null,
-        public readonly ?ItemDetails $itemDetails = null,
+        public string $itemSequenceNumber,
+        public ItemQuantity $shippedQuantity,
+        public ?string $amazonProductIdentifier = null,
+        public ?string $vendorProductIdentifier = null,
+        public ?ItemDetails $itemDetails = null,
     ) {}
 }

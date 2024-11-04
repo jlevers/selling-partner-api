@@ -60,19 +60,19 @@ final class ShipmentEvent extends Dto
      * @param  ShipmentItem[]|null  $shipmentItemAdjustmentList  A list of shipment items.
      */
     public function __construct(
-        public readonly ?string $amazonOrderId = null,
-        public readonly ?string $sellerOrderId = null,
-        public readonly ?string $marketplaceName = null,
-        public readonly ?string $storeName = null,
-        public readonly ?array $orderChargeList = null,
-        public readonly ?array $orderChargeAdjustmentList = null,
-        public readonly ?array $shipmentFeeList = null,
-        public readonly ?array $shipmentFeeAdjustmentList = null,
-        public readonly ?array $orderFeeList = null,
-        public readonly ?array $orderFeeAdjustmentList = null,
-        public readonly ?array $directPaymentList = null,
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?array $shipmentItemList = null,
-        public readonly ?array $shipmentItemAdjustmentList = null,
+        public ?string $amazonOrderId = null,
+        public ?string $sellerOrderId = null,
+        public ?string $marketplaceName = null,
+        public ?string $storeName = null,
+        public ?array $orderChargeList = null,
+        public ?array $orderChargeAdjustmentList = null,
+        public ?array $shipmentFeeList = null,
+        public ?array $shipmentFeeAdjustmentList = null,
+        public ?array $orderFeeList = null,
+        public ?array $orderFeeAdjustmentList = null,
+        public ?array $directPaymentList = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?array $shipmentItemList = null,
+        public ?array $shipmentItemAdjustmentList = null,
     ) {}
 }

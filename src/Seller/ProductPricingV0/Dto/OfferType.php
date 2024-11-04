@@ -36,14 +36,14 @@ final class OfferType extends Dto
      * @param  QuantityDiscountPriceType[]|null  $quantityDiscountPrices
      */
     public function __construct(
-        public readonly PriceType $buyingPrice,
-        public readonly MoneyType $regularPrice,
-        public readonly string $fulfillmentChannel,
-        public readonly string $itemCondition,
-        public readonly string $itemSubCondition,
-        public readonly string $sellerSku,
-        public readonly ?string $offerType = null,
-        public readonly ?MoneyType $businessPrice = null,
-        public readonly ?array $quantityDiscountPrices = null,
+        public PriceType $buyingPrice,
+        public MoneyType $regularPrice,
+        public string $fulfillmentChannel,
+        public string $itemCondition,
+        public string $itemSubCondition,
+        public string $sellerSku,
+        public ?string $offerType = null,
+        public ?MoneyType $businessPrice = null,
+        public ?array $quantityDiscountPrices = null,
     ) {}
 }

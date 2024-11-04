@@ -29,15 +29,15 @@ final class Invoice extends Dto
      * @param  ?string  $transactionType  Classification of the transaction that originated this invoice. Use the `getInvoicesAttributes` operation to check `transactionType` options.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $date = null,
-        public readonly ?string $errorCode = null,
-        public readonly ?string $externalInvoiceId = null,
-        public readonly ?string $govResponse = null,
-        public readonly ?string $id = null,
-        public readonly ?string $invoiceType = null,
-        public readonly ?string $series = null,
-        public readonly ?string $status = null,
-        public readonly ?array $transactionIds = null,
-        public readonly ?string $transactionType = null,
+        public ?\DateTimeInterface $date = null,
+        public ?string $errorCode = null,
+        public ?string $externalInvoiceId = null,
+        public ?string $govResponse = null,
+        public ?string $id = null,
+        public ?string $invoiceType = null,
+        public ?string $series = null,
+        public ?string $status = null,
+        public ?array $transactionIds = null,
+        public ?string $transactionType = null,
     ) {}
 }

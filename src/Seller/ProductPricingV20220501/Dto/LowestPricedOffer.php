@@ -21,7 +21,7 @@ final class LowestPricedOffer extends Dto
      * @param  Offer[]  $offers  A list of up to 20 lowest priced offers that match the criteria specified in the `lowestPricedOffersInput` parameter.
      */
     public function __construct(
-        public readonly LowestPricedOffersInput $lowestPricedOffersInput,
-        public readonly array $offers,
+        public LowestPricedOffersInput $lowestPricedOffersInput,
+        public array $offers,
     ) {}
 }

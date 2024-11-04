@@ -21,9 +21,9 @@ final class OperationProblem extends Dto
      * @param  ?string  $details  Additional details that can help the caller understand or fix the issue.
      */
     public function __construct(
-        public readonly string $code,
-        public readonly string $message,
-        public readonly string $severity,
-        public readonly ?string $details = null,
+        public string $code,
+        public string $message,
+        public string $severity,
+        public ?string $details = null,
     ) {}
 }

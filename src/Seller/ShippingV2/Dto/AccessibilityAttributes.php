@@ -19,7 +19,7 @@ final class AccessibilityAttributes extends Dto
      * @param  ?int  $driveTime  The approximate (static) drive time from input postal code's centroid.
      */
     public function __construct(
-        public readonly ?string $distance = null,
-        public readonly ?int $driveTime = null,
+        public ?string $distance = null,
+        public ?int $driveTime = null,
     ) {}
 }

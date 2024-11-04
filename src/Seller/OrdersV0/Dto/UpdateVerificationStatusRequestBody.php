@@ -21,9 +21,9 @@ final class UpdateVerificationStatusRequestBody extends Dto
      * @param  ?VerificationDetails  $verificationDetails  Additional information related to the verification of a regulated order.
      */
     public function __construct(
-        public readonly string $externalReviewerId,
-        public readonly ?string $status = null,
-        public readonly ?string $rejectionReasonId = null,
-        public readonly ?VerificationDetails $verificationDetails = null,
+        public string $externalReviewerId,
+        public ?string $status = null,
+        public ?string $rejectionReasonId = null,
+        public ?VerificationDetails $verificationDetails = null,
     ) {}
 }

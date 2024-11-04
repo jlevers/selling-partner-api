@@ -27,13 +27,13 @@ final class PackageDetail extends Dto
      * @param  ?string  $shipFromSupplySourceId  The unique identifier for the supply source.
      */
     public function __construct(
-        public readonly string $packageReferenceId,
-        public readonly string $carrierCode,
-        public readonly string $trackingNumber,
-        public readonly \DateTimeInterface $shipDate,
-        public readonly array $orderItems,
-        public readonly ?string $carrierName = null,
-        public readonly ?string $shippingMethod = null,
-        public readonly ?string $shipFromSupplySourceId = null,
+        public string $packageReferenceId,
+        public string $carrierCode,
+        public string $trackingNumber,
+        public \DateTimeInterface $shipDate,
+        public array $orderItems,
+        public ?string $carrierName = null,
+        public ?string $shippingMethod = null,
+        public ?string $shipFromSupplySourceId = null,
     ) {}
 }

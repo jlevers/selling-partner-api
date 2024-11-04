@@ -21,7 +21,7 @@ final class OrderedQuantity extends Dto
      * @param  OrderedQuantityDetails[]|null  $orderedQuantityDetails  Details of item quantity ordered.
      */
     public function __construct(
-        public readonly ?ItemQuantity $orderedQuantity = null,
-        public readonly ?array $orderedQuantityDetails = null,
+        public ?ItemQuantity $orderedQuantity = null,
+        public ?array $orderedQuantityDetails = null,
     ) {}
 }

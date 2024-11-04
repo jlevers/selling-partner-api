@@ -24,12 +24,12 @@ final class InboundPlanSummary extends Dto
      * @param  string  $status  Current status of the inbound plan. Can be: `ACTIVE`, `VOIDED`, `SHIPPED`, 'ERRORED'.
      */
     public function __construct(
-        public readonly \DateTimeInterface $createdAt,
-        public readonly string $inboundPlanId,
-        public readonly \DateTimeInterface $lastUpdatedAt,
-        public readonly array $marketplaceIds,
-        public readonly string $name,
-        public readonly Address $sourceAddress,
-        public readonly string $status,
+        public \DateTimeInterface $createdAt,
+        public string $inboundPlanId,
+        public \DateTimeInterface $lastUpdatedAt,
+        public array $marketplaceIds,
+        public string $name,
+        public Address $sourceAddress,
+        public string $status,
     ) {}
 }

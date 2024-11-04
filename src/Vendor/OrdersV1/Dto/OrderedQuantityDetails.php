@@ -20,8 +20,8 @@ final class OrderedQuantityDetails extends Dto
      * @param  ?ItemQuantity  $cancelledQuantity  Details of quantity ordered.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $updatedDate = null,
-        public readonly ?ItemQuantity $orderedQuantity = null,
-        public readonly ?ItemQuantity $cancelledQuantity = null,
+        public ?\DateTimeInterface $updatedDate = null,
+        public ?ItemQuantity $orderedQuantity = null,
+        public ?ItemQuantity $cancelledQuantity = null,
     ) {}
 }

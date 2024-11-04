@@ -27,13 +27,13 @@ final class Item extends Dto
      * @param  ?string  $manufacturingLotCode  The manufacturing lot code.
      */
     public function __construct(
-        public readonly string $asin,
-        public readonly string $fnsku,
-        public readonly string $labelOwner,
-        public readonly string $msku,
-        public readonly array $prepInstructions,
-        public readonly int $quantity,
-        public readonly ?string $expiration = null,
-        public readonly ?string $manufacturingLotCode = null,
+        public string $asin,
+        public string $fnsku,
+        public string $labelOwner,
+        public string $msku,
+        public array $prepInstructions,
+        public int $quantity,
+        public ?string $expiration = null,
+        public ?string $manufacturingLotCode = null,
     ) {}
 }

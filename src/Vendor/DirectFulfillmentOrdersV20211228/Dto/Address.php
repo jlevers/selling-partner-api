@@ -29,17 +29,17 @@ final class Address extends Dto
      * @param  ?string  $phone  The phone number of the person, business or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly string $addressLine1,
-        public readonly string $stateOrRegion,
-        public readonly string $countryCode,
-        public readonly ?string $attention = null,
-        public readonly ?string $addressLine2 = null,
-        public readonly ?string $addressLine3 = null,
-        public readonly ?string $city = null,
-        public readonly ?string $county = null,
-        public readonly ?string $district = null,
-        public readonly ?string $postalCode = null,
-        public readonly ?string $phone = null,
+        public string $name,
+        public string $addressLine1,
+        public string $stateOrRegion,
+        public string $countryCode,
+        public ?string $attention = null,
+        public ?string $addressLine2 = null,
+        public ?string $addressLine3 = null,
+        public ?string $city = null,
+        public ?string $county = null,
+        public ?string $district = null,
+        public ?string $postalCode = null,
+        public ?string $phone = null,
     ) {}
 }

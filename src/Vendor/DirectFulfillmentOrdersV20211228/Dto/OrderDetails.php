@@ -29,15 +29,15 @@ final class OrderDetails extends Dto
      * @param  ?TaxItemDetails  $taxTotal  Total tax details for the line item.
      */
     public function __construct(
-        public readonly string $customerOrderNumber,
-        public readonly \DateTimeInterface $orderDate,
-        public readonly ShipmentDetails $shipmentDetails,
-        public readonly PartyIdentification $sellingParty,
-        public readonly PartyIdentification $shipFromParty,
-        public readonly Address $shipToParty,
-        public readonly PartyIdentification $billToParty,
-        public readonly array $items,
-        public readonly ?string $orderStatus = null,
-        public readonly ?TaxItemDetails $taxTotal = null,
+        public string $customerOrderNumber,
+        public \DateTimeInterface $orderDate,
+        public ShipmentDetails $shipmentDetails,
+        public PartyIdentification $sellingParty,
+        public PartyIdentification $shipFromParty,
+        public Address $shipToParty,
+        public PartyIdentification $billToParty,
+        public array $items,
+        public ?string $orderStatus = null,
+        public ?TaxItemDetails $taxTotal = null,
     ) {}
 }

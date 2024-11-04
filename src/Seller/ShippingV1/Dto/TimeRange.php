@@ -19,7 +19,7 @@ final class TimeRange extends Dto
      * @param  ?\DateTimeInterface  $end  The end date and time. This must come after the value of start. This defaults to the next business day from the start.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $start = null,
-        public readonly ?\DateTimeInterface $end = null,
+        public ?\DateTimeInterface $start = null,
+        public ?\DateTimeInterface $end = null,
     ) {}
 }

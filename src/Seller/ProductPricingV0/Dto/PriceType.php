@@ -22,9 +22,9 @@ final class PriceType extends Dto
     ];
 
     public function __construct(
-        public readonly MoneyType $listingPrice,
-        public readonly ?MoneyType $landedPrice = null,
-        public readonly ?MoneyType $shipping = null,
-        public readonly ?Points $points = null,
+        public MoneyType $listingPrice,
+        public ?MoneyType $landedPrice = null,
+        public ?MoneyType $shipping = null,
+        public ?Points $points = null,
     ) {}
 }

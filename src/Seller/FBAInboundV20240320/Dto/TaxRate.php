@@ -20,8 +20,8 @@ final class TaxRate extends Dto
      * @param  ?string  $taxType  Type of tax. Can be: `CGST`, `SGST`, `IGST`, `TOTAL_TAX`.
      */
     public function __construct(
-        public readonly ?float $cessRate = null,
-        public readonly ?float $gstRate = null,
-        public readonly ?string $taxType = null,
+        public ?float $cessRate = null,
+        public ?float $gstRate = null,
+        public ?string $taxType = null,
     ) {}
 }

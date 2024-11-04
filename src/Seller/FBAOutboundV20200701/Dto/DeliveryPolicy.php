@@ -18,6 +18,6 @@ final class DeliveryPolicy extends Dto
      * @param  ?DeliveryMessage  $message  Localized messaging for a delivery offering.
      */
     public function __construct(
-        public readonly ?DeliveryMessage $message = null,
+        public ?DeliveryMessage $message = null,
     ) {}
 }

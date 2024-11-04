@@ -21,9 +21,9 @@ final class UnfulfillablePreviewItem extends Dto
      * @param  ?string[]  $itemUnfulfillableReasons  String list
      */
     public function __construct(
-        public readonly string $sellerSku,
-        public readonly int $quantity,
-        public readonly string $sellerFulfillmentOrderItemId,
-        public readonly ?array $itemUnfulfillableReasons = null,
+        public string $sellerSku,
+        public int $quantity,
+        public string $sellerFulfillmentOrderItemId,
+        public ?array $itemUnfulfillableReasons = null,
     ) {}
 }

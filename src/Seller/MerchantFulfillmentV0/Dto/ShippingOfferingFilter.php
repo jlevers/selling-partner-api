@@ -28,9 +28,9 @@ final class ShippingOfferingFilter extends Dto
      * @param  ?string  $deliveryExperience  The delivery confirmation level.
      */
     public function __construct(
-        public readonly ?bool $includePackingSlipWithLabel = null,
-        public readonly ?bool $includeComplexShippingOptions = null,
-        public readonly ?string $carrierWillPickUp = null,
-        public readonly ?string $deliveryExperience = null,
+        public ?bool $includePackingSlipWithLabel = null,
+        public ?bool $includeComplexShippingOptions = null,
+        public ?string $carrierWillPickUp = null,
+        public ?string $deliveryExperience = null,
     ) {}
 }

@@ -25,10 +25,10 @@ final class ContentDocument extends Dto
      * @param  ?string  $contentSubType  The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly string $contentType,
-        public readonly string $locale,
-        public readonly array $contentModuleList,
-        public readonly ?string $contentSubType = null,
+        public string $name,
+        public string $contentType,
+        public string $locale,
+        public array $contentModuleList,
+        public ?string $contentSubType = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class MskuQuantity extends Dto
      * @param  int  $quantity  A positive integer.
      */
     public function __construct(
-        public readonly string $msku,
-        public readonly int $quantity,
+        public string $msku,
+        public int $quantity,
     ) {}
 }

@@ -29,15 +29,15 @@ final class ExportInvoicesRequest extends Dto
      * @param  ?string  $transactionType  The marketplace-specific classification of the transaction type for which the invoice was created. Use the `getInvoicesAttributes` operation to check `transactionType` options
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly ?\DateTimeInterface $dateEnd = null,
-        public readonly ?\DateTimeInterface $dateStart = null,
-        public readonly ?string $externalInvoiceId = null,
-        public readonly ?string $fileFormat = null,
-        public readonly ?string $invoiceType = null,
-        public readonly ?string $series = null,
-        public readonly ?array $statuses = null,
-        public readonly ?TransactionIdentifier $transactionIdentifier = null,
-        public readonly ?string $transactionType = null,
+        public string $marketplaceId,
+        public ?\DateTimeInterface $dateEnd = null,
+        public ?\DateTimeInterface $dateStart = null,
+        public ?string $externalInvoiceId = null,
+        public ?string $fileFormat = null,
+        public ?string $invoiceType = null,
+        public ?string $series = null,
+        public ?array $statuses = null,
+        public ?TransactionIdentifier $transactionIdentifier = null,
+        public ?string $transactionType = null,
     ) {}
 }

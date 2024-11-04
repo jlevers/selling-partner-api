@@ -20,8 +20,8 @@ final class ShipmentDestination extends Dto
      * @param  ?string  $warehouseId  The warehouse that the shipment should be sent to. Empty if the destination type is `AMAZON_OPTIMIZED`.
      */
     public function __construct(
-        public readonly string $destinationType,
-        public readonly ?Address $address = null,
-        public readonly ?string $warehouseId = null,
+        public string $destinationType,
+        public ?Address $address = null,
+        public ?string $warehouseId = null,
     ) {}
 }

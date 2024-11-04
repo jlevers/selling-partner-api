@@ -18,6 +18,6 @@ final class OfferProgramConfigurationPromotionsDiscountFunding extends Dto
      * @param  ?float  $percentage  The percentage discount on the offer.
      */
     public function __construct(
-        public readonly ?float $percentage = null,
+        public ?float $percentage = null,
     ) {}
 }

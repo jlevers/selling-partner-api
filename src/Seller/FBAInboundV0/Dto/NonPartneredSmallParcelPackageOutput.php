@@ -26,8 +26,8 @@ final class NonPartneredSmallParcelPackageOutput extends Dto
      * @param  string  $packageStatus  The shipment status of the package.
      */
     public function __construct(
-        public readonly string $carrierName,
-        public readonly string $trackingId,
-        public readonly string $packageStatus,
+        public string $carrierName,
+        public string $trackingId,
+        public string $packageStatus,
     ) {}
 }

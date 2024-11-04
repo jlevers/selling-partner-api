@@ -21,7 +21,7 @@ final class PrepDetails extends Dto
      * @param  string  $prepOwner  Indicates who will prepare the item.
      */
     public function __construct(
-        public readonly string $prepInstruction,
-        public readonly string $prepOwner,
+        public string $prepInstruction,
+        public string $prepOwner,
     ) {}
 }

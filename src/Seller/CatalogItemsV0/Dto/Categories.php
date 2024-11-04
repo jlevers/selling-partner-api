@@ -25,8 +25,8 @@ final class Categories extends Dto
      * @param  ?mixed[]  $parent  The parent product category.
      */
     public function __construct(
-        public readonly ?string $productCategoryId = null,
-        public readonly ?string $productCategoryName = null,
-        public readonly ?array $parent = null,
+        public ?string $productCategoryId = null,
+        public ?string $productCategoryName = null,
+        public ?array $parent = null,
     ) {}
 }

@@ -37,19 +37,19 @@ final class ServiceJob extends Dto
      * @param  ?ServiceLocation  $serviceLocation  Information about the location of the service job.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $createTime = null,
-        public readonly ?string $serviceJobId = null,
-        public readonly ?string $serviceJobStatus = null,
-        public readonly ?ScopeOfWork $scopeOfWork = null,
-        public readonly ?Seller $seller = null,
-        public readonly ?ServiceJobProvider $serviceJobProvider = null,
-        public readonly ?array $preferredAppointmentTimes = null,
-        public readonly ?array $appointments = null,
-        public readonly ?string $serviceOrderId = null,
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $storeId = null,
-        public readonly ?Buyer $buyer = null,
-        public readonly ?array $associatedItems = null,
-        public readonly ?ServiceLocation $serviceLocation = null,
+        public ?\DateTimeInterface $createTime = null,
+        public ?string $serviceJobId = null,
+        public ?string $serviceJobStatus = null,
+        public ?ScopeOfWork $scopeOfWork = null,
+        public ?Seller $seller = null,
+        public ?ServiceJobProvider $serviceJobProvider = null,
+        public ?array $preferredAppointmentTimes = null,
+        public ?array $appointments = null,
+        public ?string $serviceOrderId = null,
+        public ?string $marketplaceId = null,
+        public ?string $storeId = null,
+        public ?Buyer $buyer = null,
+        public ?array $associatedItems = null,
+        public ?ServiceLocation $serviceLocation = null,
     ) {}
 }

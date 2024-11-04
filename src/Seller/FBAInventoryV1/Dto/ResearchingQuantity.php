@@ -21,7 +21,7 @@ final class ResearchingQuantity extends Dto
      * @param  ResearchingQuantityEntry[]|null  $researchingQuantityBreakdown  A list of quantity details for items currently being researched.
      */
     public function __construct(
-        public readonly ?int $totalResearchingQuantity = null,
-        public readonly ?array $researchingQuantityBreakdown = null,
+        public ?int $totalResearchingQuantity = null,
+        public ?array $researchingQuantityBreakdown = null,
     ) {}
 }

@@ -25,11 +25,11 @@ final class StandardComparisonProductBlock extends Dto
      * @param  PlainTextItem[]|null  $metrics  Comparison metrics for the product.
      */
     public function __construct(
-        public readonly int $position,
-        public readonly ?ImageComponent $image = null,
-        public readonly ?string $title = null,
-        public readonly ?string $asin = null,
-        public readonly ?bool $highlight = null,
-        public readonly ?array $metrics = null,
+        public int $position,
+        public ?ImageComponent $image = null,
+        public ?string $title = null,
+        public ?string $asin = null,
+        public ?bool $highlight = null,
+        public ?array $metrics = null,
     ) {}
 }

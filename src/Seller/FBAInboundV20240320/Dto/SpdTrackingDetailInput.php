@@ -20,6 +20,6 @@ final class SpdTrackingDetailInput extends Dto
      * @param  SpdTrackingItemInput[]  $spdTrackingItems  List of Small Parcel Delivery (SPD) tracking items input.
      */
     public function __construct(
-        public readonly array $spdTrackingItems,
+        public array $spdTrackingItems,
     ) {}
 }

@@ -38,13 +38,13 @@ final class InboundShipmentItem extends Dto
      * @param  PrepDetails[]|null  $prepDetailsList  A list of preparation instructions and who is responsible for that preparation.
      */
     public function __construct(
-        public readonly string $sellerSku,
-        public readonly int $quantityShipped,
-        public readonly ?string $shipmentId = null,
-        public readonly ?string $fulfillmentNetworkSku = null,
-        public readonly ?int $quantityReceived = null,
-        public readonly ?int $quantityInCase = null,
-        public readonly ?\DateTimeInterface $releaseDate = null,
-        public readonly ?array $prepDetailsList = null,
+        public string $sellerSku,
+        public int $quantityShipped,
+        public ?string $shipmentId = null,
+        public ?string $fulfillmentNetworkSku = null,
+        public ?int $quantityReceived = null,
+        public ?int $quantityInCase = null,
+        public ?\DateTimeInterface $releaseDate = null,
+        public ?array $prepDetailsList = null,
     ) {}
 }

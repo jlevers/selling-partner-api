@@ -21,7 +21,7 @@ final class RequestedUpdates extends Dto
      * @param  ItemInput[]|null  $items  A list of all items that will be present in the shipment after the update.
      */
     public function __construct(
-        public readonly ?array $boxes = null,
-        public readonly ?array $items = null,
+        public ?array $boxes = null,
+        public ?array $items = null,
     ) {}
 }

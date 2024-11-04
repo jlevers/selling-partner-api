@@ -26,8 +26,8 @@ final class TransportContent extends Dto
      * @param  TransportResult  $transportResult  The workflow status for a shipment with an Amazon-partnered carrier.
      */
     public function __construct(
-        public readonly TransportHeader $transportHeader,
-        public readonly TransportDetailOutput $transportDetails,
-        public readonly TransportResult $transportResult,
+        public TransportHeader $transportHeader,
+        public TransportDetailOutput $transportDetails,
+        public TransportResult $transportResult,
     ) {}
 }

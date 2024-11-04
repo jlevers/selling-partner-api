@@ -18,6 +18,6 @@ final class PrimeDetails extends Dto
      * @param  string  $eligibility  Indicates whether the offer is an Amazon Prime offer.
      */
     public function __construct(
-        public readonly string $eligibility,
+        public string $eligibility,
     ) {}
 }

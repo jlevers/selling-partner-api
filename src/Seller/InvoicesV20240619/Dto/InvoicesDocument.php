@@ -19,7 +19,7 @@ final class InvoicesDocument extends Dto
      * @param  ?string  $invoicesDocumentUrl  A pre-signed URL that you can use to download the invoices document in zip format. This URL expires after 30 seconds.
      */
     public function __construct(
-        public readonly ?string $invoicesDocumentId = null,
-        public readonly ?string $invoicesDocumentUrl = null,
+        public ?string $invoicesDocumentId = null,
+        public ?string $invoicesDocumentUrl = null,
     ) {}
 }

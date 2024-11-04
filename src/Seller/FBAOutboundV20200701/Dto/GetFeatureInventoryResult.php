@@ -23,9 +23,9 @@ final class GetFeatureInventoryResult extends Dto
      * @param  FeatureSku[]|null  $featureSkus  An array of SKUs eligible for this feature and the quantity available.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $featureName,
-        public readonly ?string $nextToken = null,
-        public readonly ?array $featureSkus = null,
+        public string $marketplaceId,
+        public string $featureName,
+        public ?string $nextToken = null,
+        public ?array $featureSkus = null,
     ) {}
 }

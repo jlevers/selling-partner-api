@@ -20,6 +20,6 @@ final class GeneratePlacementOptionsRequest extends Dto
      * @param  CustomPlacementInput[]|null  $customPlacement  Custom placement options to be added to the plan.
      */
     public function __construct(
-        public readonly ?array $customPlacement = null,
+        public ?array $customPlacement = null,
     ) {}
 }

@@ -26,8 +26,8 @@ final class BoxContentsFeeDetails extends Dto
      * @param  ?Amount  $totalFee  The monetary value.
      */
     public function __construct(
-        public readonly ?int $totalUnits = null,
-        public readonly ?Amount $feePerUnit = null,
-        public readonly ?Amount $totalFee = null,
+        public ?int $totalUnits = null,
+        public ?Amount $feePerUnit = null,
+        public ?Amount $totalFee = null,
     ) {}
 }

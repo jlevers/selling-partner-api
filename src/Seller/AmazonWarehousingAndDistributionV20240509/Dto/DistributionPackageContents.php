@@ -24,7 +24,7 @@ final class DistributionPackageContents extends Dto
      * @param  ProductQuantity[]|null  $products  This is required only when `DistributionPackageType=CASE`.
      */
     public function __construct(
-        public readonly ?array $packages = null,
-        public readonly ?array $products = null,
+        public ?array $packages = null,
+        public ?array $products = null,
     ) {}
 }

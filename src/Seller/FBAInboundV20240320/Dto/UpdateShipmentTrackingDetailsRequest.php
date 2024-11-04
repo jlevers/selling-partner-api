@@ -18,6 +18,6 @@ final class UpdateShipmentTrackingDetailsRequest extends Dto
      * @param  TrackingDetailsInput  $trackingDetails  Tracking information input for Less-Than-Truckload (LTL) and Small Parcel Delivery (SPD) shipments.
      */
     public function __construct(
-        public readonly TrackingDetailsInput $trackingDetails,
+        public TrackingDetailsInput $trackingDetails,
     ) {}
 }

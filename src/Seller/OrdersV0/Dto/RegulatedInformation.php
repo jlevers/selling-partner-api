@@ -22,6 +22,6 @@ final class RegulatedInformation extends Dto
      * @param  RegulatedInformationField[]  $fields  A list of regulated information fields as collected from the regulatory form.
      */
     public function __construct(
-        public readonly array $fields,
+        public array $fields,
     ) {}
 }

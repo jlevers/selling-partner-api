@@ -19,7 +19,7 @@ final class TrackingSummary extends Dto
      * @param  ?TrackingDetailCodes  $trackingDetailCodes  Contains detail codes that provide additional details related to the forward and return leg of the shipment.
      */
     public function __construct(
-        public readonly ?string $status = null,
-        public readonly ?TrackingDetailCodes $trackingDetailCodes = null,
+        public ?string $status = null,
+        public ?TrackingDetailCodes $trackingDetailCodes = null,
     ) {}
 }

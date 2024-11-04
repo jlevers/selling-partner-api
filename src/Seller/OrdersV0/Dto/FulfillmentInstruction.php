@@ -20,6 +20,6 @@ final class FulfillmentInstruction extends Dto
      * @param  ?string  $fulfillmentSupplySourceId  The `sourceId` of the location from where you want the order fulfilled.
      */
     public function __construct(
-        public readonly ?string $fulfillmentSupplySourceId = null,
+        public ?string $fulfillmentSupplySourceId = null,
     ) {}
 }

@@ -28,9 +28,9 @@ final class AsinPrepInstructions extends Dto
      * @param  ?string[]  $prepInstructionList  A list of preparation instructions to help with item sourcing decisions.
      */
     public function __construct(
-        public readonly ?string $asin = null,
-        public readonly ?string $barcodeInstruction = null,
-        public readonly ?string $prepGuidance = null,
-        public readonly ?array $prepInstructionList = null,
+        public ?string $asin = null,
+        public ?string $barcodeInstruction = null,
+        public ?string $prepGuidance = null,
+        public ?array $prepInstructionList = null,
     ) {}
 }

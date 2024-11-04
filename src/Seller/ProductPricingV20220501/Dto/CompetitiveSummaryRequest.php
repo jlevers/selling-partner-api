@@ -25,11 +25,11 @@ final class CompetitiveSummaryRequest extends Dto
      * @param  LowestPricedOffersInput[]|null  $lowestPricedOffersInputs  The list of `lowestPricedOffersInput` parameters used to build the `lowestPricedOffers` in the response. This attribute is valid only if `lowestPricedOffers` is requested in `includedData`.
      */
     public function __construct(
-        public readonly string $asin,
-        public readonly string $marketplaceId,
-        public readonly array $includedData,
-        public readonly string $method,
-        public readonly string $uri,
-        public readonly ?array $lowestPricedOffersInputs = null,
+        public string $asin,
+        public string $marketplaceId,
+        public array $includedData,
+        public string $method,
+        public string $uri,
+        public ?array $lowestPricedOffersInputs = null,
     ) {}
 }

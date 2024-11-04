@@ -18,6 +18,6 @@ final class Pagination extends Dto
      * @param  ?string  $nextToken  A generated token that retrieves the next set of results. This token is specified in the next request.
      */
     public function __construct(
-        public readonly ?string $nextToken = null,
+        public ?string $nextToken = null,
     ) {}
 }

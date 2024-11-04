@@ -21,7 +21,7 @@ final class PartneredSmallParcelPackageInput extends Dto
      * @param  Weight  $weight  The weight of the package.
      */
     public function __construct(
-        public readonly Dimensions $dimensions,
-        public readonly Weight $weight,
+        public Dimensions $dimensions,
+        public Weight $weight,
     ) {}
 }

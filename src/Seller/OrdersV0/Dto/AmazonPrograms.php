@@ -22,6 +22,6 @@ final class AmazonPrograms extends Dto
      * **Possible values**: `SUBSCRIBE_AND_SAVE`
      */
     public function __construct(
-        public readonly array $programs,
+        public array $programs,
     ) {}
 }

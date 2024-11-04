@@ -21,7 +21,7 @@ final class DirectFulfillmentItemIdentifiers extends Dto
      * @param  ?string  $pieceNumber  A unique identifier for an item provided by the client for a direct fulfillment shipment. This is only populated if a single line item has multiple pieces. Defaults to 1.
      */
     public function __construct(
-        public readonly string $lineItemId,
-        public readonly ?string $pieceNumber = null,
+        public string $lineItemId,
+        public ?string $pieceNumber = null,
     ) {}
 }

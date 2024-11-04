@@ -19,7 +19,7 @@ final class SpdTrackingItemInput extends Dto
      * @param  string  $trackingId  The tracking Id associated with each box in a non-Amazon partnered Small Parcel Delivery (SPD) shipment. The seller must provide this information.
      */
     public function __construct(
-        public readonly string $boxId,
-        public readonly string $trackingId,
+        public string $boxId,
+        public string $trackingId,
     ) {}
 }

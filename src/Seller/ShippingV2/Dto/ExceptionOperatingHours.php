@@ -19,7 +19,7 @@ final class ExceptionOperatingHours extends Dto
      * @param  ?OperatingHours  $operatingHours  The hours in which the access point shall remain operational
      */
     public function __construct(
-        public readonly ?DateRange $dateRange = null,
-        public readonly ?OperatingHours $operatingHours = null,
+        public ?DateRange $dateRange = null,
+        public ?OperatingHours $operatingHours = null,
     ) {}
 }

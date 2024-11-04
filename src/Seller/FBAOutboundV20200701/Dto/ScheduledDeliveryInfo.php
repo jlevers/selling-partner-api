@@ -21,7 +21,7 @@ final class ScheduledDeliveryInfo extends Dto
      * @param  DeliveryWindow[]  $deliveryWindows  An array of delivery windows.
      */
     public function __construct(
-        public readonly string $deliveryTimeZone,
-        public readonly array $deliveryWindows,
+        public string $deliveryTimeZone,
+        public array $deliveryWindows,
     ) {}
 }

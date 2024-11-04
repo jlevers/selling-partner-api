@@ -20,6 +20,6 @@ final class AddInventoryRequest extends Dto
      * @param  InventoryItem[]|null  $inventoryItems  List of Inventory to be added
      */
     public function __construct(
-        public readonly ?array $inventoryItems = null,
+        public ?array $inventoryItems = null,
     ) {}
 }

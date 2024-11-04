@@ -21,9 +21,9 @@ final class Incentive extends Dto
      * @param  Currency  $value  Currency definition.
      */
     public function __construct(
-        public readonly string $description,
-        public readonly string $target,
-        public readonly string $type,
-        public readonly Currency $value,
+        public string $description,
+        public string $target,
+        public string $type,
+        public Currency $value,
     ) {}
 }

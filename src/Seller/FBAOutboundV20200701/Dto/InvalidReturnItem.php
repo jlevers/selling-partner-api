@@ -20,8 +20,8 @@ final class InvalidReturnItem extends Dto
      * @param  InvalidItemReason  $invalidItemReason  The reason that the item is invalid for return.
      */
     public function __construct(
-        public readonly string $sellerReturnItemId,
-        public readonly string $sellerFulfillmentOrderItemId,
-        public readonly InvalidItemReason $invalidItemReason,
+        public string $sellerReturnItemId,
+        public string $sellerFulfillmentOrderItemId,
+        public InvalidItemReason $invalidItemReason,
     ) {}
 }

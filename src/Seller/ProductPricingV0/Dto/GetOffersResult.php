@@ -37,13 +37,13 @@ final class GetOffersResult extends Dto
      * @param  ?string  $sku  The stock keeping unit (SKU) of the item.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $itemCondition,
-        public readonly string $status,
-        public readonly ItemIdentifier $identifier,
-        public readonly Summary $summary,
-        public readonly array $offers,
-        public readonly ?string $asin = null,
-        public readonly ?string $sku = null,
+        public string $marketplaceId,
+        public string $itemCondition,
+        public string $status,
+        public ItemIdentifier $identifier,
+        public Summary $summary,
+        public array $offers,
+        public ?string $asin = null,
+        public ?string $sku = null,
     ) {}
 }

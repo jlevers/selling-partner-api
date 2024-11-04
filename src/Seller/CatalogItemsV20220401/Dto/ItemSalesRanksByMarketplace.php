@@ -25,8 +25,8 @@ final class ItemSalesRanksByMarketplace extends Dto
      * @param  ItemDisplayGroupSalesRank[]|null  $displayGroupRanks  Sales ranks of an Amazon catalog item for an Amazon marketplace by website display group.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly ?array $classificationRanks = null,
-        public readonly ?array $displayGroupRanks = null,
+        public string $marketplaceId,
+        public ?array $classificationRanks = null,
+        public ?array $displayGroupRanks = null,
     ) {}
 }

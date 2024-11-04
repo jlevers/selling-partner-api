@@ -20,8 +20,8 @@ final class InventoryItem extends Dto
      * @param  int  $quantity  The quantity of item to add.
      */
     public function __construct(
-        public readonly string $sellerSku,
-        public readonly string $marketplaceId,
-        public readonly int $quantity,
+        public string $sellerSku,
+        public string $marketplaceId,
+        public int $quantity,
     ) {}
 }

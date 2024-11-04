@@ -20,8 +20,8 @@ final class RangeSlot extends Dto
      * @param  ?int  $capacity  Capacity of the slot.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $startDateTime = null,
-        public readonly ?\DateTimeInterface $endDateTime = null,
-        public readonly ?int $capacity = null,
+        public ?\DateTimeInterface $startDateTime = null,
+        public ?\DateTimeInterface $endDateTime = null,
+        public ?int $capacity = null,
     ) {}
 }

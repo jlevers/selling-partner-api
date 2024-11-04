@@ -22,8 +22,8 @@ final class GetRatesResult extends Dto
      * @param  IneligibleRate[]|null  $ineligibleRates  A list of ineligible shipping service offerings.
      */
     public function __construct(
-        public readonly string $requestToken,
-        public readonly array $rates,
-        public readonly ?array $ineligibleRates = null,
+        public string $requestToken,
+        public array $rates,
+        public ?array $ineligibleRates = null,
     ) {}
 }

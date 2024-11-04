@@ -27,15 +27,15 @@ final class OrderItem extends Dto
      * @param  ?Money  $totalPrice  An amount of money, including units in the form of currency.
      */
     public function __construct(
-        public readonly string $itemSequenceNumber,
-        public readonly ItemQuantity $orderedQuantity,
-        public readonly Money $netPrice,
-        public readonly ?string $buyerProductIdentifier = null,
-        public readonly ?string $vendorProductIdentifier = null,
-        public readonly ?string $title = null,
-        public readonly ?ScheduledDeliveryShipment $scheduledDeliveryShipment = null,
-        public readonly ?GiftDetails $giftDetails = null,
-        public readonly ?TaxDetails $taxDetails = null,
-        public readonly ?Money $totalPrice = null,
+        public string $itemSequenceNumber,
+        public ItemQuantity $orderedQuantity,
+        public Money $netPrice,
+        public ?string $buyerProductIdentifier = null,
+        public ?string $vendorProductIdentifier = null,
+        public ?string $title = null,
+        public ?ScheduledDeliveryShipment $scheduledDeliveryShipment = null,
+        public ?GiftDetails $giftDetails = null,
+        public ?TaxDetails $taxDetails = null,
+        public ?Money $totalPrice = null,
     ) {}
 }

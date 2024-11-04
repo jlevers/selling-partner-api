@@ -19,7 +19,7 @@ final class ItemDelivery extends Dto
      * @param  ?ItemDeliveryPromise  $itemDeliveryPromise  Promised delivery information for the item.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $estimatedDeliveryDate = null,
-        public readonly ?ItemDeliveryPromise $itemDeliveryPromise = null,
+        public ?\DateTimeInterface $estimatedDeliveryDate = null,
+        public ?ItemDeliveryPromise $itemDeliveryPromise = null,
     ) {}
 }

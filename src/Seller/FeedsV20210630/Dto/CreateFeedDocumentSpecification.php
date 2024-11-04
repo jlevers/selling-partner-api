@@ -18,6 +18,6 @@ final class CreateFeedDocumentSpecification extends Dto
      * @param  string  $contentType  The content type of the feed.
      */
     public function __construct(
-        public readonly string $contentType,
+        public string $contentType,
     ) {}
 }

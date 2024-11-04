@@ -18,6 +18,6 @@ final class TestOrder extends Dto
      * @param  string  $orderId  An error code that identifies the type of error that occurred.
      */
     public function __construct(
-        public readonly string $orderId,
+        public string $orderId,
     ) {}
 }

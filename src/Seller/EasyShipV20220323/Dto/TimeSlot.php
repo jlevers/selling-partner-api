@@ -21,9 +21,9 @@ final class TimeSlot extends Dto
      * @param  ?string  $handoverMethod  Identifies the method by which a seller will hand a package over to Amazon Logistics.
      */
     public function __construct(
-        public readonly string $slotId,
-        public readonly ?\DateTimeInterface $startTime = null,
-        public readonly ?\DateTimeInterface $endTime = null,
-        public readonly ?string $handoverMethod = null,
+        public string $slotId,
+        public ?\DateTimeInterface $startTime = null,
+        public ?\DateTimeInterface $endTime = null,
+        public ?string $handoverMethod = null,
     ) {}
 }

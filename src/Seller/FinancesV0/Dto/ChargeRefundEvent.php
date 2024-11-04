@@ -30,9 +30,9 @@ final class ChargeRefundEvent extends Dto
      * @param  ChargeRefundTransaction[]|null  $chargeRefundTransactions  A list of `ChargeRefund` transactions
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $reasonCode = null,
-        public readonly ?string $reasonCodeDescription = null,
-        public readonly ?array $chargeRefundTransactions = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $reasonCode = null,
+        public ?string $reasonCodeDescription = null,
+        public ?array $chargeRefundTransactions = null,
     ) {}
 }

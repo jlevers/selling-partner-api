@@ -19,7 +19,7 @@ final class CreateReservationRequest extends Dto
      * @param  Reservation  $reservation  Reservation object reduces the capacity of a resource.
      */
     public function __construct(
-        public readonly string $resourceId,
-        public readonly Reservation $reservation,
+        public string $resourceId,
+        public Reservation $reservation,
     ) {}
 }

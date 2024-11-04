@@ -20,8 +20,8 @@ final class PackingSlip extends Dto
      * @param  ?string  $contentType  The format of the file such as PDF, JPEG etc.
      */
     public function __construct(
-        public readonly string $purchaseOrderNumber,
-        public readonly string $content,
-        public readonly ?string $contentType = null,
+        public string $purchaseOrderNumber,
+        public string $content,
+        public ?string $contentType = null,
     ) {}
 }

@@ -22,8 +22,8 @@ final class TaxDetails extends Dto
      * @param  TaxRate[]|null  $taxRates  List of tax rates.
      */
     public function __construct(
-        public readonly ?Currency $declaredValue = null,
-        public readonly ?string $hsnCode = null,
-        public readonly ?array $taxRates = null,
+        public ?Currency $declaredValue = null,
+        public ?string $hsnCode = null,
+        public ?array $taxRates = null,
     ) {}
 }

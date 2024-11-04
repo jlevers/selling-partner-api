@@ -26,7 +26,7 @@ final class BuyerRequestedCancel extends Dto
      * @param  ?string  $buyerCancelReason  The reason that the buyer requested cancellation.
      */
     public function __construct(
-        public readonly ?string $isBuyerRequestedCancel = null,
-        public readonly ?string $buyerCancelReason = null,
+        public ?string $isBuyerRequestedCancel = null,
+        public ?string $buyerCancelReason = null,
     ) {}
 }

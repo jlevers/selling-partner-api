@@ -44,17 +44,17 @@ final class Address extends Dto
      * @param  ?string  $addressType  The shipping address type.
      */
     public function __construct(
-        public readonly ?string $name = null,
-        public readonly ?string $addressLine1 = null,
-        public readonly ?string $addressLine2 = null,
-        public readonly ?string $addressLine3 = null,
-        public readonly ?string $city = null,
-        public readonly ?string $county = null,
-        public readonly ?string $district = null,
-        public readonly ?string $stateOrRegion = null,
-        public readonly ?string $postalCode = null,
-        public readonly ?string $countryCode = null,
-        public readonly ?string $phone = null,
-        public readonly ?string $addressType = null,
+        public ?string $name = null,
+        public ?string $addressLine1 = null,
+        public ?string $addressLine2 = null,
+        public ?string $addressLine3 = null,
+        public ?string $city = null,
+        public ?string $county = null,
+        public ?string $district = null,
+        public ?string $stateOrRegion = null,
+        public ?string $postalCode = null,
+        public ?string $countryCode = null,
+        public ?string $phone = null,
+        public ?string $addressType = null,
     ) {}
 }

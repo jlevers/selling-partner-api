@@ -19,7 +19,7 @@ final class FulfillmentTime extends Dto
      * @param  ?\DateTimeInterface  $endTime  The date, time in UTC of the fulfillment end time in ISO 8601 format.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $startTime = null,
-        public readonly ?\DateTimeInterface $endTime = null,
+        public ?\DateTimeInterface $startTime = null,
+        public ?\DateTimeInterface $endTime = null,
     ) {}
 }

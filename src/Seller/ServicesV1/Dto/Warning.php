@@ -20,8 +20,8 @@ final class Warning extends Dto
      * @param  ?string  $details  Additional details that can help the caller understand or address the warning.
      */
     public function __construct(
-        public readonly string $code,
-        public readonly string $message,
-        public readonly ?string $details = null,
+        public string $code,
+        public string $message,
+        public ?string $details = null,
     ) {}
 }

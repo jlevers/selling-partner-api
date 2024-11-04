@@ -19,7 +19,7 @@ final class TaxRegistrationDetails extends Dto
      * @param  string  $taxRegistrationNumber  Tax registration number for the entity. For example, VAT ID.
      */
     public function __construct(
-        public readonly string $taxRegistrationType,
-        public readonly string $taxRegistrationNumber,
+        public string $taxRegistrationType,
+        public string $taxRegistrationNumber,
     ) {}
 }

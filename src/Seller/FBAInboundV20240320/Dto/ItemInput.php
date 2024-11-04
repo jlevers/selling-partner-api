@@ -23,11 +23,11 @@ final class ItemInput extends Dto
      * @param  ?string  $manufacturingLotCode  The manufacturing lot code.
      */
     public function __construct(
-        public readonly string $labelOwner,
-        public readonly string $msku,
-        public readonly string $prepOwner,
-        public readonly int $quantity,
-        public readonly ?string $expiration = null,
-        public readonly ?string $manufacturingLotCode = null,
+        public string $labelOwner,
+        public string $msku,
+        public string $prepOwner,
+        public int $quantity,
+        public ?string $expiration = null,
+        public ?string $manufacturingLotCode = null,
     ) {}
 }

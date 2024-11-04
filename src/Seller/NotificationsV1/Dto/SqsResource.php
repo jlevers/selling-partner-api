@@ -18,6 +18,6 @@ final class SqsResource extends Dto
      * @param  string  $arn  The Amazon Resource Name (ARN) associated with the SQS queue.
      */
     public function __construct(
-        public readonly string $arn,
+        public string $arn,
     ) {}
 }

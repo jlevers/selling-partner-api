@@ -19,7 +19,7 @@ final class TrackingDetailsInput extends Dto
      * @param  ?SpdTrackingDetailInput  $spdTrackingDetail  Contains input information to update Small Parcel Delivery (SPD) tracking information.
      */
     public function __construct(
-        public readonly ?LtlTrackingDetailInput $ltlTrackingDetail = null,
-        public readonly ?SpdTrackingDetailInput $spdTrackingDetail = null,
+        public ?LtlTrackingDetailInput $ltlTrackingDetail = null,
+        public ?SpdTrackingDetailInput $spdTrackingDetail = null,
     ) {}
 }

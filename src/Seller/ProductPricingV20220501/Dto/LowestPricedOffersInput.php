@@ -19,7 +19,7 @@ final class LowestPricedOffersInput extends Dto
      * @param  string  $offerType  The type of offers requested for the `LowestPricedOffers`. The `offerType` options are `Consumer` or `Business`. The default `offerType` is `Consumer`.
      */
     public function __construct(
-        public readonly string $itemCondition,
-        public readonly string $offerType,
+        public string $itemCondition,
+        public string $offerType,
     ) {}
 }

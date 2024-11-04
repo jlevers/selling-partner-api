@@ -24,12 +24,12 @@ final class ImportDetails extends Dto
      * @param  ?string  $handlingInstructions  Identification of the instructions on how specified item/carton/pallet should be handled.
      */
     public function __construct(
-        public readonly ?string $methodOfPayment = null,
-        public readonly ?string $sealNumber = null,
-        public readonly ?Route $route = null,
-        public readonly ?string $importContainers = null,
-        public readonly ?Weight $billableWeight = null,
-        public readonly ?\DateTimeInterface $estimatedShipByDate = null,
-        public readonly ?string $handlingInstructions = null,
+        public ?string $methodOfPayment = null,
+        public ?string $sealNumber = null,
+        public ?Route $route = null,
+        public ?string $importContainers = null,
+        public ?Weight $billableWeight = null,
+        public ?\DateTimeInterface $estimatedShipByDate = null,
+        public ?string $handlingInstructions = null,
     ) {}
 }

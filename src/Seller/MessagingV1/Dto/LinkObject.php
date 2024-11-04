@@ -19,7 +19,7 @@ final class LinkObject extends Dto
      * @param  ?string  $name  An identifier for this object.
      */
     public function __construct(
-        public readonly string $href,
-        public readonly ?string $name = null,
+        public string $href,
+        public ?string $name = null,
     ) {}
 }

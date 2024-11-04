@@ -20,6 +20,6 @@ final class UpdateScheduleRequest extends Dto
      * @param  AvailabilityRecord[]  $schedules  List of `AvailabilityRecord`s to represent the capacity of a resource over a time range.
      */
     public function __construct(
-        public readonly array $schedules,
+        public array $schedules,
     ) {}
 }

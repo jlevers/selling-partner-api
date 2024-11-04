@@ -21,7 +21,7 @@ final class ShipsFromType extends Dto
      * @param  ?string  $country  The country from where the item is shipped.
      */
     public function __construct(
-        public readonly ?string $state = null,
-        public readonly ?string $country = null,
+        public ?string $state = null,
+        public ?string $country = null,
     ) {}
 }

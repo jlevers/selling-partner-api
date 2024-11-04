@@ -20,8 +20,8 @@ final class PaymentInformation extends Dto
      * @param  \DateTimeInterface  $paymentDate  Date timestamp
      */
     public function __construct(
-        public readonly string $paymentTransactionId,
-        public readonly string $paymentMode,
-        public readonly \DateTimeInterface $paymentDate,
+        public string $paymentTransactionId,
+        public string $paymentMode,
+        public \DateTimeInterface $paymentDate,
     ) {}
 }

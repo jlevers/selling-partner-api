@@ -20,8 +20,8 @@ final class Quote extends Dto
      * @param  ?\DateTimeInterface  $voidableUntil  Voidable until timestamp.
      */
     public function __construct(
-        public readonly Currency $cost,
-        public readonly ?\DateTimeInterface $expiration = null,
-        public readonly ?\DateTimeInterface $voidableUntil = null,
+        public Currency $cost,
+        public ?\DateTimeInterface $expiration = null,
+        public ?\DateTimeInterface $voidableUntil = null,
     ) {}
 }

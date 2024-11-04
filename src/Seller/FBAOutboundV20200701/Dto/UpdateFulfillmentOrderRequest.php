@@ -34,17 +34,17 @@ final class UpdateFulfillmentOrderRequest extends Dto
      * @param  UpdateFulfillmentOrderItem[]|null  $items  An array of fulfillment order item information for updating a fulfillment order.
      */
     public function __construct(
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $displayableOrderId = null,
-        public readonly ?\DateTimeInterface $displayableOrderDate = null,
-        public readonly ?string $displayableOrderComment = null,
-        public readonly ?string $shippingSpeedCategory = null,
-        public readonly ?Address $destinationAddress = null,
-        public readonly ?string $fulfillmentAction = null,
-        public readonly ?string $fulfillmentPolicy = null,
-        public readonly ?string $shipFromCountryCode = null,
-        public readonly ?array $notificationEmails = null,
-        public readonly ?array $featureConstraints = null,
-        public readonly ?array $items = null,
+        public ?string $marketplaceId = null,
+        public ?string $displayableOrderId = null,
+        public ?\DateTimeInterface $displayableOrderDate = null,
+        public ?string $displayableOrderComment = null,
+        public ?string $shippingSpeedCategory = null,
+        public ?Address $destinationAddress = null,
+        public ?string $fulfillmentAction = null,
+        public ?string $fulfillmentPolicy = null,
+        public ?string $shipFromCountryCode = null,
+        public ?array $notificationEmails = null,
+        public ?array $featureConstraints = null,
+        public ?array $items = null,
     ) {}
 }

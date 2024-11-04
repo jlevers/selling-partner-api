@@ -21,9 +21,9 @@ final class PaymentsContext extends Dto
      * @param  ?\DateTimeInterface  $paymentDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function __construct(
-        public readonly ?string $paymentType = null,
-        public readonly ?string $paymentMethod = null,
-        public readonly ?string $paymentReference = null,
-        public readonly ?\DateTimeInterface $paymentDate = null,
+        public ?string $paymentType = null,
+        public ?string $paymentMethod = null,
+        public ?string $paymentReference = null,
+        public ?\DateTimeInterface $paymentDate = null,
     ) {}
 }

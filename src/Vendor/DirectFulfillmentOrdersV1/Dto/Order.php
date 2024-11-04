@@ -19,7 +19,7 @@ final class Order extends Dto
      * @param  ?OrderDetails  $orderDetails  Details of an order.
      */
     public function __construct(
-        public readonly string $purchaseOrderNumber,
-        public readonly ?OrderDetails $orderDetails = null,
+        public string $purchaseOrderNumber,
+        public ?OrderDetails $orderDetails = null,
     ) {}
 }

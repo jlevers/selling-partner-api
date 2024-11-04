@@ -26,14 +26,14 @@ final class ItemSummaryByMarketplace extends Dto
      * @param  ?string  $styleName  Name of the style associated with an Amazon catalog item.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly ?string $brandName = null,
-        public readonly ?string $browseNode = null,
-        public readonly ?string $colorName = null,
-        public readonly ?string $itemName = null,
-        public readonly ?string $manufacturer = null,
-        public readonly ?string $modelNumber = null,
-        public readonly ?string $sizeName = null,
-        public readonly ?string $styleName = null,
+        public string $marketplaceId,
+        public ?string $brandName = null,
+        public ?string $browseNode = null,
+        public ?string $colorName = null,
+        public ?string $itemName = null,
+        public ?string $manufacturer = null,
+        public ?string $modelNumber = null,
+        public ?string $sizeName = null,
+        public ?string $styleName = null,
     ) {}
 }

@@ -20,8 +20,8 @@ final class Money extends Dto
      * @param  ?string  $unitOfMeasure  The unit of measure for prices of items sold by weight. If this field is absent, the item is sold by eaches.
      */
     public function __construct(
-        public readonly ?string $currencyCode = null,
-        public readonly ?string $amount = null,
-        public readonly ?string $unitOfMeasure = null,
+        public ?string $currencyCode = null,
+        public ?string $amount = null,
+        public ?string $unitOfMeasure = null,
     ) {}
 }

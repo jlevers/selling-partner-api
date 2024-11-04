@@ -21,7 +21,7 @@ final class ShipmentInvoiceStatusInfo extends Dto
      * @param  ?string  $invoiceStatus  The shipment invoice status.
      */
     public function __construct(
-        public readonly ?string $amazonShipmentId = null,
-        public readonly ?string $invoiceStatus = null,
+        public ?string $amazonShipmentId = null,
+        public ?string $invoiceStatus = null,
     ) {}
 }

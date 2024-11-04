@@ -20,8 +20,8 @@ final class PackageItemDetails extends Dto
      * @param  ?Expiry  $expiry  Expiry refers to the collection of dates required  for certain items. These could be either expiryDate or mfgDate and expiryAfterDuration. These are mandatory for perishable items.
      */
     public function __construct(
-        public readonly ?string $purchaseOrderNumber = null,
-        public readonly ?string $lotNumber = null,
-        public readonly ?Expiry $expiry = null,
+        public ?string $purchaseOrderNumber = null,
+        public ?string $lotNumber = null,
+        public ?Expiry $expiry = null,
     ) {}
 }

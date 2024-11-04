@@ -20,6 +20,6 @@ final class CompetitiveSummaryBatchRequest extends Dto
      * @param  CompetitiveSummaryRequest[]  $requests  A batched list of `competitiveSummary` requests.
      */
     public function __construct(
-        public readonly array $requests,
+        public array $requests,
     ) {}
 }

@@ -29,19 +29,19 @@ final class OrderDetails extends Dto
      * @param  ?string  $deliveryWindow  Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
      */
     public function __construct(
-        public readonly \DateTimeInterface $purchaseOrderDate,
-        public readonly \DateTimeInterface $purchaseOrderStateChangedDate,
-        public readonly array $items,
-        public readonly ?\DateTimeInterface $purchaseOrderChangedDate = null,
-        public readonly ?string $purchaseOrderType = null,
-        public readonly ?ImportDetails $importDetails = null,
-        public readonly ?string $dealCode = null,
-        public readonly ?string $paymentMethod = null,
-        public readonly ?PartyIdentification $buyingParty = null,
-        public readonly ?PartyIdentification $sellingParty = null,
-        public readonly ?PartyIdentification $shipToParty = null,
-        public readonly ?PartyIdentification $billToParty = null,
-        public readonly ?string $shipWindow = null,
-        public readonly ?string $deliveryWindow = null,
+        public \DateTimeInterface $purchaseOrderDate,
+        public \DateTimeInterface $purchaseOrderStateChangedDate,
+        public array $items,
+        public ?\DateTimeInterface $purchaseOrderChangedDate = null,
+        public ?string $purchaseOrderType = null,
+        public ?ImportDetails $importDetails = null,
+        public ?string $dealCode = null,
+        public ?string $paymentMethod = null,
+        public ?PartyIdentification $buyingParty = null,
+        public ?PartyIdentification $sellingParty = null,
+        public ?PartyIdentification $shipToParty = null,
+        public ?PartyIdentification $billToParty = null,
+        public ?string $shipWindow = null,
+        public ?string $deliveryWindow = null,
     ) {}
 }

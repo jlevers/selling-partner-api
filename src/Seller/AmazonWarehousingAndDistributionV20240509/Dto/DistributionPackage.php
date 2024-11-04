@@ -20,8 +20,8 @@ final class DistributionPackage extends Dto
      * @param  string  $type  Type of distribution packages.
      */
     public function __construct(
-        public readonly DistributionPackageContents $contents,
-        public readonly MeasurementData $measurements,
-        public readonly string $type,
+        public DistributionPackageContents $contents,
+        public MeasurementData $measurements,
+        public string $type,
     ) {}
 }

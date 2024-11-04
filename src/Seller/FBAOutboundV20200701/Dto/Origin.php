@@ -18,6 +18,6 @@ final class Origin extends Dto
      * @param  string  $countryCode  The two digit country code the items should ship from. In ISO 3166-1 alpha-2 format.
      */
     public function __construct(
-        public readonly string $countryCode,
+        public string $countryCode,
     ) {}
 }

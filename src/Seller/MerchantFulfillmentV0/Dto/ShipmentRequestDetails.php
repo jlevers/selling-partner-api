@@ -42,15 +42,15 @@ final class ShipmentRequestDetails extends Dto
      * @param  ?LabelCustomization  $labelCustomization  Custom text for shipping labels.
      */
     public function __construct(
-        public readonly string $amazonOrderId,
-        public readonly array $itemList,
-        public readonly Address $shipFromAddress,
-        public readonly PackageDimensions $packageDimensions,
-        public readonly Weight $weight,
-        public readonly ShippingServiceOptions $shippingServiceOptions,
-        public readonly ?string $sellerOrderId = null,
-        public readonly ?\DateTimeInterface $mustArriveByDate = null,
-        public readonly ?\DateTimeInterface $shipDate = null,
-        public readonly ?LabelCustomization $labelCustomization = null,
+        public string $amazonOrderId,
+        public array $itemList,
+        public Address $shipFromAddress,
+        public PackageDimensions $packageDimensions,
+        public Weight $weight,
+        public ShippingServiceOptions $shippingServiceOptions,
+        public ?string $sellerOrderId = null,
+        public ?\DateTimeInterface $mustArriveByDate = null,
+        public ?\DateTimeInterface $shipDate = null,
+        public ?LabelCustomization $labelCustomization = null,
     ) {}
 }

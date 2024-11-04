@@ -26,14 +26,14 @@ final class InventorySummary extends Dto
      * @param  ?string[]  $stores  A list of seller-enrolled stores that apply to this seller SKU.
      */
     public function __construct(
-        public readonly ?string $asin = null,
-        public readonly ?string $fnSku = null,
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $condition = null,
-        public readonly ?InventoryDetails $inventoryDetails = null,
-        public readonly ?\DateTimeInterface $lastUpdatedTime = null,
-        public readonly ?string $productName = null,
-        public readonly ?int $totalQuantity = null,
-        public readonly ?array $stores = null,
+        public ?string $asin = null,
+        public ?string $fnSku = null,
+        public ?string $sellerSku = null,
+        public ?string $condition = null,
+        public ?InventoryDetails $inventoryDetails = null,
+        public ?\DateTimeInterface $lastUpdatedTime = null,
+        public ?string $productName = null,
+        public ?int $totalQuantity = null,
+        public ?array $stores = null,
     ) {}
 }

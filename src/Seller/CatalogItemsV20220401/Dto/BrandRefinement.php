@@ -19,7 +19,7 @@ final class BrandRefinement extends Dto
      * @param  string  $brandName  Brand name. For display and can be used as a search refinement.
      */
     public function __construct(
-        public readonly int $numberOfResults,
-        public readonly string $brandName,
+        public int $numberOfResults,
+        public string $brandName,
     ) {}
 }

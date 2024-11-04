@@ -20,8 +20,8 @@ final class DocumentSize extends Dto
      * @param  string  $unit  The unit of measurement.
      */
     public function __construct(
-        public readonly float $width,
-        public readonly float $length,
-        public readonly string $unit,
+        public float $width,
+        public float $length,
+        public string $unit,
     ) {}
 }

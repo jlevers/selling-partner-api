@@ -20,8 +20,8 @@ final class ListingsItemPutRequest extends Dto
      * @param  ?string  $requirements  The name of the requirements set for the provided data.
      */
     public function __construct(
-        public readonly string $productType,
-        public readonly array $attributes,
-        public readonly ?string $requirements = null,
+        public string $productType,
+        public array $attributes,
+        public ?string $requirements = null,
     ) {}
 }

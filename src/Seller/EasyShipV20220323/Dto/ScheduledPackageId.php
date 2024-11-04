@@ -19,7 +19,7 @@ final class ScheduledPackageId extends Dto
      * @param  ?string  $packageId  An Amazon-defined identifier for the scheduled package.
      */
     public function __construct(
-        public readonly string $amazonOrderId,
-        public readonly ?string $packageId = null,
+        public string $amazonOrderId,
+        public ?string $packageId = null,
     ) {}
 }

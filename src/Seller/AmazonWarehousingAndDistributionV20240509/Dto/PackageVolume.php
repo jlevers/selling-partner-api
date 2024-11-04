@@ -19,7 +19,7 @@ final class PackageVolume extends Dto
      * @param  float  $volume  The package volume value.
      */
     public function __construct(
-        public readonly string $unitOfMeasurement,
-        public readonly float $volume,
+        public string $unitOfMeasurement,
+        public float $volume,
     ) {}
 }

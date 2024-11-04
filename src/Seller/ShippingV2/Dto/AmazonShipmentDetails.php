@@ -18,6 +18,6 @@ final class AmazonShipmentDetails extends Dto
      * @param  string  $shipmentId  This attribute is required only for a Direct Fulfillment shipment. This is the encrypted shipment ID.
      */
     public function __construct(
-        public readonly string $shipmentId,
+        public string $shipmentId,
     ) {}
 }

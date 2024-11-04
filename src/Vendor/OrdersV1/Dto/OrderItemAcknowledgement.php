@@ -22,10 +22,10 @@ final class OrderItemAcknowledgement extends Dto
      * @param  ?string  $rejectionReason  Indicates the reason for rejection.
      */
     public function __construct(
-        public readonly string $acknowledgementCode,
-        public readonly ItemQuantity $acknowledgedQuantity,
-        public readonly ?\DateTimeInterface $scheduledShipDate = null,
-        public readonly ?\DateTimeInterface $scheduledDeliveryDate = null,
-        public readonly ?string $rejectionReason = null,
+        public string $acknowledgementCode,
+        public ItemQuantity $acknowledgedQuantity,
+        public ?\DateTimeInterface $scheduledShipDate = null,
+        public ?\DateTimeInterface $scheduledDeliveryDate = null,
+        public ?string $rejectionReason = null,
     ) {}
 }

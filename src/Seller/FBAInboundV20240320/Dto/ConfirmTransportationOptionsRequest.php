@@ -20,6 +20,6 @@ final class ConfirmTransportationOptionsRequest extends Dto
      * @param  TransportationSelection[]  $transportationSelections  Information needed to confirm one of the available transportation options.
      */
     public function __construct(
-        public readonly array $transportationSelections,
+        public array $transportationSelections,
     ) {}
 }

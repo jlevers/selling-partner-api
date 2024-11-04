@@ -41,11 +41,11 @@ final class Issue extends Dto
      * @param  ?IssueEnforcements  $enforcements  This field provides information about the enforcement actions taken by Amazon that affect the publishing or status of a listing. It also includes details about any associated exemptions.
      */
     public function __construct(
-        public readonly string $code,
-        public readonly string $message,
-        public readonly string $severity,
-        public readonly array $categories,
-        public readonly ?array $attributeNames = null,
-        public readonly ?IssueEnforcements $enforcements = null,
+        public string $code,
+        public string $message,
+        public string $severity,
+        public array $categories,
+        public ?array $attributeNames = null,
+        public ?IssueEnforcements $enforcements = null,
     ) {}
 }

@@ -31,14 +31,14 @@ final class SegmentedFeaturedOffer extends Dto
      * @param  ?PrimeDetails  $primeDetails  Amazon Prime details.
      */
     public function __construct(
-        public readonly string $sellerId,
-        public readonly string $condition,
-        public readonly string $fulfillmentType,
-        public readonly MoneyType $listingPrice,
-        public readonly array $featuredOfferSegments,
-        public readonly ?string $subCondition = null,
-        public readonly ?array $shippingOptions = null,
-        public readonly ?Points $points = null,
-        public readonly ?PrimeDetails $primeDetails = null,
+        public string $sellerId,
+        public string $condition,
+        public string $fulfillmentType,
+        public MoneyType $listingPrice,
+        public array $featuredOfferSegments,
+        public ?string $subCondition = null,
+        public ?array $shippingOptions = null,
+        public ?Points $points = null,
+        public ?PrimeDetails $primeDetails = null,
     ) {}
 }

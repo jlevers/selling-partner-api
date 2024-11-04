@@ -33,9 +33,9 @@ final class Item extends Dto
      * @param  SalesRankType[]|null  $salesRankings  A list of sales rank information for the item by category.
      */
     public function __construct(
-        public readonly IdentifierType $identifiers,
-        public readonly ?array $attributeSets = null,
-        public readonly ?array $relationships = null,
-        public readonly ?array $salesRankings = null,
+        public IdentifierType $identifiers,
+        public ?array $attributeSets = null,
+        public ?array $relationships = null,
+        public ?array $salesRankings = null,
     ) {}
 }

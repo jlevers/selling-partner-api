@@ -19,7 +19,7 @@ final class AppointmentTimeInput extends Dto
      * @param  ?int  $durationInMinutes  The duration of an appointment in minutes.
      */
     public function __construct(
-        public readonly \DateTimeInterface $startTime,
-        public readonly ?int $durationInMinutes = null,
+        public \DateTimeInterface $startTime,
+        public ?int $durationInMinutes = null,
     ) {}
 }

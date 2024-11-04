@@ -22,10 +22,10 @@ final class CreateReturnItem extends Dto
      * @param  ?string  $returnComment  An optional comment about the return item.
      */
     public function __construct(
-        public readonly string $sellerReturnItemId,
-        public readonly string $sellerFulfillmentOrderItemId,
-        public readonly string $amazonShipmentId,
-        public readonly string $returnReasonCode,
-        public readonly ?string $returnComment = null,
+        public string $sellerReturnItemId,
+        public string $sellerFulfillmentOrderItemId,
+        public string $amazonShipmentId,
+        public string $returnReasonCode,
+        public ?string $returnComment = null,
     ) {}
 }

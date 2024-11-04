@@ -19,7 +19,7 @@ final class StandardTextModule extends Dto
      * @param  ?TextComponent  $headline  Rich text content.
      */
     public function __construct(
-        public readonly ParagraphComponent $body,
-        public readonly ?TextComponent $headline = null,
+        public ParagraphComponent $body,
+        public ?TextComponent $headline = null,
     ) {}
 }

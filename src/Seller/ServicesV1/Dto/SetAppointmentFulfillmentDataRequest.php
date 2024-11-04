@@ -25,8 +25,8 @@ final class SetAppointmentFulfillmentDataRequest extends Dto
      * @param  FulfillmentDocument[]|null  $fulfillmentDocuments  List of documents captured during service appointment fulfillment.
      */
     public function __construct(
-        public readonly ?FulfillmentTime $fulfillmentTime = null,
-        public readonly ?array $appointmentResources = null,
-        public readonly ?array $fulfillmentDocuments = null,
+        public ?FulfillmentTime $fulfillmentTime = null,
+        public ?array $appointmentResources = null,
+        public ?array $fulfillmentDocuments = null,
     ) {}
 }

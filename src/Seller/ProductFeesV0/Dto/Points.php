@@ -20,7 +20,7 @@ final class Points extends Dto
     ];
 
     public function __construct(
-        public readonly ?int $pointsNumber = null,
-        public readonly ?MoneyType $pointsMonetaryValue = null,
+        public ?int $pointsNumber = null,
+        public ?MoneyType $pointsMonetaryValue = null,
     ) {}
 }

@@ -28,10 +28,10 @@ final class Item extends Dto
      * @param  Context[]|null  $contexts  A list of additional information about the item.
      */
     public function __construct(
-        public readonly ?string $description = null,
-        public readonly ?array $relatedIdentifiers = null,
-        public readonly ?Currency $totalAmount = null,
-        public readonly ?array $breakdowns = null,
-        public readonly ?array $contexts = null,
+        public ?string $description = null,
+        public ?array $relatedIdentifiers = null,
+        public ?Currency $totalAmount = null,
+        public ?array $breakdowns = null,
+        public ?array $contexts = null,
     ) {}
 }

@@ -20,8 +20,8 @@ final class EncryptionDetails extends Dto
      * @param  string  $key  The encryption key used to encrypt or decrypt the document contents.
      */
     public function __construct(
-        public readonly string $standard,
-        public readonly string $initializationVector,
-        public readonly string $key,
+        public string $standard,
+        public string $initializationVector,
+        public string $key,
     ) {}
 }

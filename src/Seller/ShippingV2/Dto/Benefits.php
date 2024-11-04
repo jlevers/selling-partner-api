@@ -21,7 +21,7 @@ final class Benefits extends Dto
      * @param  ExcludedBenefit[]  $excludedBenefits  A list of excluded benefit. Refer to the ExcludeBenefit object for further documentation
      */
     public function __construct(
-        public readonly array $includedBenefits,
-        public readonly array $excludedBenefits,
+        public array $includedBenefits,
+        public array $excludedBenefits,
     ) {}
 }

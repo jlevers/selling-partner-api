@@ -20,8 +20,8 @@ final class DeliveryOffer extends Dto
      * @param  ?DeliveryPolicy  $policy  The policy for a delivery offering.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $expiresAt = null,
-        public readonly ?DateRange $dateRange = null,
-        public readonly ?DeliveryPolicy $policy = null,
+        public ?\DateTimeInterface $expiresAt = null,
+        public ?DateRange $dateRange = null,
+        public ?DeliveryPolicy $policy = null,
     ) {}
 }

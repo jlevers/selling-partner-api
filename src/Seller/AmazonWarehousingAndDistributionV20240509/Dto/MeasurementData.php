@@ -20,8 +20,8 @@ final class MeasurementData extends Dto
      * @param  ?PackageVolume  $volume  Represents the volume of the package with a unit of measurement.
      */
     public function __construct(
-        public readonly PackageWeight $weight,
-        public readonly ?PackageDimensions $dimensions = null,
-        public readonly ?PackageVolume $volume = null,
+        public PackageWeight $weight,
+        public ?PackageDimensions $dimensions = null,
+        public ?PackageVolume $volume = null,
     ) {}
 }

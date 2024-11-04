@@ -21,7 +21,7 @@ final class ItemRelationshipsByMarketplace extends Dto
      * @param  ItemRelationship[]  $relationships  Relationships for the item.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly array $relationships,
+        public string $marketplaceId,
+        public array $relationships,
     ) {}
 }

@@ -21,7 +21,7 @@ final class AsinIdentifier extends Dto
      * @param  string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $asin,
+        public string $marketplaceId,
+        public string $asin,
     ) {}
 }

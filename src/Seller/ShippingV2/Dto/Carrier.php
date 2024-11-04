@@ -19,7 +19,7 @@ final class Carrier extends Dto
      * @param  string  $name  The carrier name for the offering.
      */
     public function __construct(
-        public readonly string $id,
-        public readonly string $name,
+        public string $id,
+        public string $name,
     ) {}
 }

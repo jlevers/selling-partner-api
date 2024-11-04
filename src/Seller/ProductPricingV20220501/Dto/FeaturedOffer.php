@@ -20,8 +20,8 @@ final class FeaturedOffer extends Dto
      * @param  ?Price  $price  Schema for item's price information, including listing price, shipping price, and Amazon points.
      */
     public function __construct(
-        public readonly OfferIdentifier $offerIdentifier,
-        public readonly ?string $condition = null,
-        public readonly ?Price $price = null,
+        public OfferIdentifier $offerIdentifier,
+        public ?string $condition = null,
+        public ?Price $price = null,
     ) {}
 }

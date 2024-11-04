@@ -20,8 +20,8 @@ final class Reservation extends Dto
      * @param  ?string  $reservationId  Unique identifier for a reservation. If present, it is treated as an update reservation request and will update the corresponding reservation. Otherwise, it is treated as a new create reservation request.
      */
     public function __construct(
-        public readonly string $type,
-        public readonly AvailabilityRecord $availability,
-        public readonly ?string $reservationId = null,
+        public string $type,
+        public AvailabilityRecord $availability,
+        public ?string $reservationId = null,
     ) {}
 }

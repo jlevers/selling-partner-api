@@ -20,8 +20,8 @@ final class DocumentDownload extends Dto
      * @param  ?\DateTimeInterface  $expiration  The timestamp of expiration of the URI. This is in ISO 8601 datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
     public function __construct(
-        public readonly string $downloadType,
-        public readonly string $uri,
-        public readonly ?\DateTimeInterface $expiration = null,
+        public string $downloadType,
+        public string $uri,
+        public ?\DateTimeInterface $expiration = null,
     ) {}
 }

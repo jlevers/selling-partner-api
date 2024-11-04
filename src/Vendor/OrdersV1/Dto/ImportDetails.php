@@ -22,10 +22,10 @@ final class ImportDetails extends Dto
      * @param  ?string  $shippingInstructions  Special instructions regarding the shipment. This field is for import purchase orders.
      */
     public function __construct(
-        public readonly ?string $methodOfPayment = null,
-        public readonly ?string $internationalCommercialTerms = null,
-        public readonly ?string $portOfDelivery = null,
-        public readonly ?string $importContainers = null,
-        public readonly ?string $shippingInstructions = null,
+        public ?string $methodOfPayment = null,
+        public ?string $internationalCommercialTerms = null,
+        public ?string $portOfDelivery = null,
+        public ?string $importContainers = null,
+        public ?string $shippingInstructions = null,
     ) {}
 }

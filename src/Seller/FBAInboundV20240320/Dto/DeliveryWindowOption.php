@@ -22,10 +22,10 @@ final class DeliveryWindowOption extends Dto
      * @param  \DateTimeInterface  $validUntil  The timestamp at which this window delivery option becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
     public function __construct(
-        public readonly string $availabilityType,
-        public readonly string $deliveryWindowOptionId,
-        public readonly \DateTimeInterface $endDate,
-        public readonly \DateTimeInterface $startDate,
-        public readonly \DateTimeInterface $validUntil,
+        public string $availabilityType,
+        public string $deliveryWindowOptionId,
+        public \DateTimeInterface $endDate,
+        public \DateTimeInterface $startDate,
+        public \DateTimeInterface $validUntil,
     ) {}
 }

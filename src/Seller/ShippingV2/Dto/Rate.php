@@ -37,19 +37,19 @@ final class Rate extends Dto
      * @param  ?Benefits  $benefits  Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (eg. CLAIMS_PROTECTED, etc.) when sellers purchase shipping through Amazon. Benefit details will be made available for any shipment placed on or after January 1st 2024 00:00 UTC.
      */
     public function __construct(
-        public readonly string $rateId,
-        public readonly string $carrierId,
-        public readonly string $carrierName,
-        public readonly string $serviceId,
-        public readonly string $serviceName,
-        public readonly Currency $totalCharge,
-        public readonly Promise $promise,
-        public readonly array $supportedDocumentSpecifications,
-        public readonly bool $requiresAdditionalInputs,
-        public readonly ?Weight $billedWeight = null,
-        public readonly ?array $availableValueAddedServiceGroups = null,
-        public readonly ?array $rateItemList = null,
-        public readonly ?string $paymentType = null,
-        public readonly ?Benefits $benefits = null,
+        public string $rateId,
+        public string $carrierId,
+        public string $carrierName,
+        public string $serviceId,
+        public string $serviceName,
+        public Currency $totalCharge,
+        public Promise $promise,
+        public array $supportedDocumentSpecifications,
+        public bool $requiresAdditionalInputs,
+        public ?Weight $billedWeight = null,
+        public ?array $availableValueAddedServiceGroups = null,
+        public ?array $rateItemList = null,
+        public ?string $paymentType = null,
+        public ?Benefits $benefits = null,
     ) {}
 }

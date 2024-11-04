@@ -19,7 +19,7 @@ final class ItemProductTypeByMarketplace extends Dto
      * @param  ?string  $productType  Name of the product type associated with the Amazon catalog item.
      */
     public function __construct(
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $productType = null,
+        public ?string $marketplaceId = null,
+        public ?string $productType = null,
     ) {}
 }

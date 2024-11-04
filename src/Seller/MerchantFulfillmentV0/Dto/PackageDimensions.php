@@ -32,10 +32,10 @@ final class PackageDimensions extends Dto
      * Note: Please note that carriers can have restrictions on the type of package allowed for certain ship methods. Check the carrier website for all details. Example: Flat rate pricing is available when materials are sent by USPS in a USPS-produced Flat Rate Envelope or Box.
      */
     public function __construct(
-        public readonly ?float $length = null,
-        public readonly ?float $width = null,
-        public readonly ?float $height = null,
-        public readonly ?string $unit = null,
-        public readonly ?string $predefinedPackageDimensions = null,
+        public ?float $length = null,
+        public ?float $width = null,
+        public ?float $height = null,
+        public ?string $unit = null,
+        public ?string $predefinedPackageDimensions = null,
     ) {}
 }

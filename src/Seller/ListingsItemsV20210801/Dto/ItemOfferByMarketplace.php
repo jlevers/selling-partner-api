@@ -22,10 +22,10 @@ final class ItemOfferByMarketplace extends Dto
      * @param  ?Audience  $audience  Buyer segment or program this offer is applicable to.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $offerType,
-        public readonly Money $price,
-        public readonly ?Points $points = null,
-        public readonly ?Audience $audience = null,
+        public string $marketplaceId,
+        public string $offerType,
+        public Money $price,
+        public ?Points $points = null,
+        public ?Audience $audience = null,
     ) {}
 }

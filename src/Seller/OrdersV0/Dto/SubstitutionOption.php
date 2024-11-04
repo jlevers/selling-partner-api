@@ -30,10 +30,10 @@ final class SubstitutionOption extends Dto
      * @param  ?Measurement  $measurement  Measurement information for an order item.
      */
     public function __construct(
-        public readonly ?string $asin = null,
-        public readonly ?int $quantityOrdered = null,
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $title = null,
-        public readonly ?Measurement $measurement = null,
+        public ?string $asin = null,
+        public ?int $quantityOrdered = null,
+        public ?string $sellerSku = null,
+        public ?string $title = null,
+        public ?Measurement $measurement = null,
     ) {}
 }

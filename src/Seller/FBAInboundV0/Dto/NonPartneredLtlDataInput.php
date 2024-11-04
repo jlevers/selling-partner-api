@@ -21,7 +21,7 @@ final class NonPartneredLtlDataInput extends Dto
      * @param  string  $proNumber  The PRO number ("progressive number" or "progressive ID") assigned to the shipment by the carrier.
      */
     public function __construct(
-        public readonly string $carrierName,
-        public readonly string $proNumber,
+        public string $carrierName,
+        public string $proNumber,
     ) {}
 }

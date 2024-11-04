@@ -19,7 +19,7 @@ final class TimeWindow extends Dto
      * @param  ?\DateTimeInterface  $end  The end time of the time window.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $start = null,
-        public readonly ?\DateTimeInterface $end = null,
+        public ?\DateTimeInterface $start = null,
+        public ?\DateTimeInterface $end = null,
     ) {}
 }

@@ -18,6 +18,6 @@ final class Links3 extends Dto
      * @param  LinkObject  $self  A Link object.
      */
     public function __construct(
-        public readonly LinkObject $self,
+        public LinkObject $self,
     ) {}
 }

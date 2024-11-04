@@ -19,7 +19,7 @@ final class OrderItems extends Dto
      * @param  ?int  $quantity  The quantity for which to update the shipment status.
      */
     public function __construct(
-        public readonly ?string $orderItemId = null,
-        public readonly ?int $quantity = null,
+        public ?string $orderItemId = null,
+        public ?int $quantity = null,
     ) {}
 }

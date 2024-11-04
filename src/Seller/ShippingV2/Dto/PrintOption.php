@@ -25,9 +25,9 @@ final class PrintOption extends Dto
      * @param  int[]|null  $supportedDpIs  A list of the supported DPI options for a document.
      */
     public function __construct(
-        public readonly array $supportedPageLayouts,
-        public readonly array $supportedFileJoiningOptions,
-        public readonly array $supportedDocumentDetails,
-        public readonly ?array $supportedDpIs = null,
+        public array $supportedPageLayouts,
+        public array $supportedFileJoiningOptions,
+        public array $supportedDocumentDetails,
+        public ?array $supportedDpIs = null,
     ) {}
 }

@@ -22,8 +22,8 @@ final class CreateSubscriptionRequest extends Dto
      * This feature is currently only supported by the `ANY_OFFER_CHANGED` and `ORDER_CHANGE` `notificationType`s.
      */
     public function __construct(
-        public readonly string $payloadVersion,
-        public readonly string $destinationId,
-        public readonly ?ProcessingDirective $processingDirective = null,
+        public string $payloadVersion,
+        public string $destinationId,
+        public ?ProcessingDirective $processingDirective = null,
     ) {}
 }

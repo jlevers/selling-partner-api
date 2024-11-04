@@ -25,13 +25,13 @@ final class OrderItemStatus extends Dto
      * @param  ?ReceivingStatus  $receivingStatus  Item receive status at the buyer's warehouse.
      */
     public function __construct(
-        public readonly string $itemSequenceNumber,
-        public readonly ?string $buyerProductIdentifier = null,
-        public readonly ?string $vendorProductIdentifier = null,
-        public readonly ?Money $netCost = null,
-        public readonly ?Money $listPrice = null,
-        public readonly ?OrderedQuantity $orderedQuantity = null,
-        public readonly ?AcknowledgementStatus $acknowledgementStatus = null,
-        public readonly ?ReceivingStatus $receivingStatus = null,
+        public string $itemSequenceNumber,
+        public ?string $buyerProductIdentifier = null,
+        public ?string $vendorProductIdentifier = null,
+        public ?Money $netCost = null,
+        public ?Money $listPrice = null,
+        public ?OrderedQuantity $orderedQuantity = null,
+        public ?AcknowledgementStatus $acknowledgementStatus = null,
+        public ?ReceivingStatus $receivingStatus = null,
     ) {}
 }

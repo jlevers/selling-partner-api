@@ -21,9 +21,9 @@ final class ContainerItem extends Dto
      * @param  string  $title  A descriptive title of the item.
      */
     public function __construct(
-        public readonly float $quantity,
-        public readonly Currency $unitPrice,
-        public readonly Weight $unitWeight,
-        public readonly string $title,
+        public float $quantity,
+        public Currency $unitPrice,
+        public Weight $unitWeight,
+        public string $title,
     ) {}
 }

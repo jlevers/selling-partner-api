@@ -41,9 +41,9 @@ final class AdjustmentEvent extends Dto
      * @param  AdjustmentItem[]|null  $adjustmentItemList  A list of information about items in an adjustment to the seller's account.
      */
     public function __construct(
-        public readonly ?string $adjustmentType = null,
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?Currency $adjustmentAmount = null,
-        public readonly ?array $adjustmentItemList = null,
+        public ?string $adjustmentType = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?Currency $adjustmentAmount = null,
+        public ?array $adjustmentItemList = null,
     ) {}
 }

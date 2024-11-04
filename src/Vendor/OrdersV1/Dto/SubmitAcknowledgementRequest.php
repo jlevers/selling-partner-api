@@ -20,6 +20,6 @@ final class SubmitAcknowledgementRequest extends Dto
      * @param  OrderAcknowledgement[]|null  $acknowledgements
      */
     public function __construct(
-        public readonly ?array $acknowledgements = null,
+        public ?array $acknowledgements = null,
     ) {}
 }

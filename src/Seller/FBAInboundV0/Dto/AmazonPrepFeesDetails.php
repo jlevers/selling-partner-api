@@ -21,7 +21,7 @@ final class AmazonPrepFeesDetails extends Dto
      * @param  ?Amount  $feePerUnit  The monetary value.
      */
     public function __construct(
-        public readonly ?string $prepInstruction = null,
-        public readonly ?Amount $feePerUnit = null,
+        public ?string $prepInstruction = null,
+        public ?Amount $feePerUnit = null,
     ) {}
 }

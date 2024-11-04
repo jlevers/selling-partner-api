@@ -20,6 +20,6 @@ final class CreateFulfillmentReturnRequest extends Dto
      * @param  CreateReturnItem[]  $items  An array of items to be returned.
      */
     public function __construct(
-        public readonly array $items,
+        public array $items,
     ) {}
 }

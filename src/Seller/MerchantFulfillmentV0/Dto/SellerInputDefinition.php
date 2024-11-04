@@ -36,12 +36,12 @@ final class SellerInputDefinition extends Dto
      * @param  ?string[]  $restrictedSetValues  The set of fixed values in an additional seller input.
      */
     public function __construct(
-        public readonly bool $isRequired,
-        public readonly string $dataType,
-        public readonly array $constraints,
-        public readonly string $inputDisplayText,
-        public readonly AdditionalSellerInput $storedValue,
-        public readonly ?string $inputTarget = null,
-        public readonly ?array $restrictedSetValues = null,
+        public bool $isRequired,
+        public string $dataType,
+        public array $constraints,
+        public string $inputDisplayText,
+        public AdditionalSellerInput $storedValue,
+        public ?string $inputTarget = null,
+        public ?array $restrictedSetValues = null,
     ) {}
 }

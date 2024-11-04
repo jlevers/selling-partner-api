@@ -22,8 +22,8 @@ final class Image extends Dto
      * @param  ?DecimalWithUnits  $width  The decimal value and unit.
      */
     public function __construct(
-        public readonly ?string $url = null,
-        public readonly ?DecimalWithUnits $height = null,
-        public readonly ?DecimalWithUnits $width = null,
+        public ?string $url = null,
+        public ?DecimalWithUnits $height = null,
+        public ?DecimalWithUnits $width = null,
     ) {}
 }

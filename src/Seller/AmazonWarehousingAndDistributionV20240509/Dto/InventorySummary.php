@@ -21,9 +21,9 @@ final class InventorySummary extends Dto
      * @param  ?int  $totalOnhandQuantity  Total quantity that is present in AWD distribution centers.
      */
     public function __construct(
-        public readonly string $sku,
-        public readonly ?InventoryDetails $inventoryDetails = null,
-        public readonly ?int $totalInboundQuantity = null,
-        public readonly ?int $totalOnhandQuantity = null,
+        public string $sku,
+        public ?InventoryDetails $inventoryDetails = null,
+        public ?int $totalInboundQuantity = null,
+        public ?int $totalOnhandQuantity = null,
     ) {}
 }

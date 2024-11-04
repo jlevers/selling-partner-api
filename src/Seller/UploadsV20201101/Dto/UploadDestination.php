@@ -20,8 +20,8 @@ final class UploadDestination extends Dto
      * @param  ?mixed[]  $headers  The headers to include in the upload request.
      */
     public function __construct(
-        public readonly ?string $uploadDestinationId = null,
-        public readonly ?string $url = null,
-        public readonly ?array $headers = null,
+        public ?string $uploadDestinationId = null,
+        public ?string $url = null,
+        public ?array $headers = null,
     ) {}
 }

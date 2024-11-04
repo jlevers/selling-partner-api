@@ -21,9 +21,9 @@ final class EventFilter extends Dto
      * @param  ?string[]  $orderChangeTypes  A list of order change types to subscribe to (for example: `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
      */
     public function __construct(
-        public readonly string $eventFilterType,
-        public readonly ?AggregationSettings $aggregationSettings = null,
-        public readonly ?array $marketplaceIds = null,
-        public readonly ?array $orderChangeTypes = null,
+        public string $eventFilterType,
+        public ?AggregationSettings $aggregationSettings = null,
+        public ?array $marketplaceIds = null,
+        public ?array $orderChangeTypes = null,
     ) {}
 }

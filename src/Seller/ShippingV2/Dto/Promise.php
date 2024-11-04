@@ -19,7 +19,7 @@ final class Promise extends Dto
      * @param  ?TimeWindow  $pickupWindow  The start and end time that specifies the time interval of an event.
      */
     public function __construct(
-        public readonly ?TimeWindow $deliveryWindow = null,
-        public readonly ?TimeWindow $pickupWindow = null,
+        public ?TimeWindow $deliveryWindow = null,
+        public ?TimeWindow $pickupWindow = null,
     ) {}
 }

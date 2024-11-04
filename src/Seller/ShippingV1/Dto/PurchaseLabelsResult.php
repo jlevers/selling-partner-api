@@ -23,9 +23,9 @@ final class PurchaseLabelsResult extends Dto
      * @param  ?string  $clientReferenceId  Client reference id.
      */
     public function __construct(
-        public readonly string $shipmentId,
-        public readonly AcceptedRate $acceptedRate,
-        public readonly array $labelResults,
-        public readonly ?string $clientReferenceId = null,
+        public string $shipmentId,
+        public AcceptedRate $acceptedRate,
+        public array $labelResults,
+        public ?string $clientReferenceId = null,
     ) {}
 }

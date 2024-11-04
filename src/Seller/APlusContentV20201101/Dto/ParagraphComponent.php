@@ -20,6 +20,6 @@ final class ParagraphComponent extends Dto
      * @param  TextComponent[]  $textList
      */
     public function __construct(
-        public readonly array $textList,
+        public array $textList,
     ) {}
 }

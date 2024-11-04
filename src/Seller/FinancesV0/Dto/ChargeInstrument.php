@@ -22,8 +22,8 @@ final class ChargeInstrument extends Dto
      * @param  ?Currency  $amount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?string $description = null,
-        public readonly ?string $tail = null,
-        public readonly ?Currency $amount = null,
+        public ?string $description = null,
+        public ?string $tail = null,
+        public ?Currency $amount = null,
     ) {}
 }

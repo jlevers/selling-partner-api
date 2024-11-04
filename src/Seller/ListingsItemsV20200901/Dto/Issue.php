@@ -21,9 +21,9 @@ final class Issue extends Dto
      * @param  ?string  $attributeName  Name of the attribute associated with the issue, if applicable.
      */
     public function __construct(
-        public readonly string $code,
-        public readonly string $message,
-        public readonly string $severity,
-        public readonly ?string $attributeName = null,
+        public string $code,
+        public string $message,
+        public string $severity,
+        public ?string $attributeName = null,
     ) {}
 }

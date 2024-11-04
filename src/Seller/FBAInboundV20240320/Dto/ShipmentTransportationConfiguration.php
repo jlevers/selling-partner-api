@@ -24,10 +24,10 @@ final class ShipmentTransportationConfiguration extends Dto
      * @param  PalletInput[]|null  $pallets  List of pallet configuration inputs.
      */
     public function __construct(
-        public readonly WindowInput $readyToShipWindow,
-        public readonly string $shipmentId,
-        public readonly ?ContactInformation $contactInformation = null,
-        public readonly ?FreightInformation $freightInformation = null,
-        public readonly ?array $pallets = null,
+        public WindowInput $readyToShipWindow,
+        public string $shipmentId,
+        public ?ContactInformation $contactInformation = null,
+        public ?FreightInformation $freightInformation = null,
+        public ?array $pallets = null,
     ) {}
 }

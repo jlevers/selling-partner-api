@@ -22,10 +22,10 @@ final class CreateReportScheduleSpecification extends Dto
      * @param  ?\DateTimeInterface  $nextReportCreationTime  The date and time when the schedule will create its next report, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
      */
     public function __construct(
-        public readonly string $reportType,
-        public readonly array $marketplaceIds,
-        public readonly string $period,
-        public readonly ?array $reportOptions = null,
-        public readonly ?\DateTimeInterface $nextReportCreationTime = null,
+        public string $reportType,
+        public array $marketplaceIds,
+        public string $period,
+        public ?array $reportOptions = null,
+        public ?\DateTimeInterface $nextReportCreationTime = null,
     ) {}
 }

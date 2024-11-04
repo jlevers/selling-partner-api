@@ -20,6 +20,6 @@ final class TestCaseData extends Dto
      * @param  Scenario[]|null  $scenarios  Set of use cases that describes the possible test scenarios.
      */
     public function __construct(
-        public readonly ?array $scenarios = null,
+        public ?array $scenarios = null,
     ) {}
 }

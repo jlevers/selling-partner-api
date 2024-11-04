@@ -27,15 +27,15 @@ final class ItemSummaryByMarketplace extends Dto
      * @param  ?ItemImage  $mainImage  The image for the listings item.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $asin,
-        public readonly string $productType,
-        public readonly array $status,
-        public readonly string $itemName,
-        public readonly \DateTimeInterface $createdDate,
-        public readonly \DateTimeInterface $lastUpdatedDate,
-        public readonly ?string $conditionType = null,
-        public readonly ?string $fnSku = null,
-        public readonly ?ItemImage $mainImage = null,
+        public string $marketplaceId,
+        public string $asin,
+        public string $productType,
+        public array $status,
+        public string $itemName,
+        public \DateTimeInterface $createdDate,
+        public \DateTimeInterface $lastUpdatedDate,
+        public ?string $conditionType = null,
+        public ?string $fnSku = null,
+        public ?ItemImage $mainImage = null,
     ) {}
 }

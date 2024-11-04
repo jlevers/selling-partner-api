@@ -29,12 +29,12 @@ final class Pallet extends Dto
      * @param  ContainerItem[]|null  $items  A list of container item details.
      */
     public function __construct(
-        public readonly array $palletIdentifiers,
-        public readonly ?int $tier = null,
-        public readonly ?int $block = null,
-        public readonly ?Dimensions $dimensions = null,
-        public readonly ?Weight $weight = null,
-        public readonly ?CartonReferenceDetails $cartonReferenceDetails = null,
-        public readonly ?array $items = null,
+        public array $palletIdentifiers,
+        public ?int $tier = null,
+        public ?int $block = null,
+        public ?Dimensions $dimensions = null,
+        public ?Weight $weight = null,
+        public ?CartonReferenceDetails $cartonReferenceDetails = null,
+        public ?array $items = null,
     ) {}
 }

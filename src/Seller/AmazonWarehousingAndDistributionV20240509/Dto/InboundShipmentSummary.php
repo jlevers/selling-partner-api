@@ -23,11 +23,11 @@ final class InboundShipmentSummary extends Dto
      * @param  ?\DateTimeInterface  $updatedAt  Timestamp when the shipment was updated.
      */
     public function __construct(
-        public readonly string $orderId,
-        public readonly string $shipmentId,
-        public readonly string $shipmentStatus,
-        public readonly ?\DateTimeInterface $createdAt = null,
-        public readonly ?string $externalReferenceId = null,
-        public readonly ?\DateTimeInterface $updatedAt = null,
+        public string $orderId,
+        public string $shipmentId,
+        public string $shipmentStatus,
+        public ?\DateTimeInterface $createdAt = null,
+        public ?string $externalReferenceId = null,
+        public ?\DateTimeInterface $updatedAt = null,
     ) {}
 }

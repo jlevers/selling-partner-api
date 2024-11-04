@@ -31,19 +31,19 @@ final class FulfillmentOrderItem extends Dto
      * @param  ?Money  $perUnitDeclaredValue  An amount of money, including units in the form of currency.
      */
     public function __construct(
-        public readonly string $sellerSku,
-        public readonly string $sellerFulfillmentOrderItemId,
-        public readonly int $quantity,
-        public readonly int $cancelledQuantity,
-        public readonly int $unfulfillableQuantity,
-        public readonly ?string $giftMessage = null,
-        public readonly ?string $displayableComment = null,
-        public readonly ?string $fulfillmentNetworkSku = null,
-        public readonly ?string $orderItemDisposition = null,
-        public readonly ?\DateTimeInterface $estimatedShipDate = null,
-        public readonly ?\DateTimeInterface $estimatedArrivalDate = null,
-        public readonly ?Money $perUnitPrice = null,
-        public readonly ?Money $perUnitTax = null,
-        public readonly ?Money $perUnitDeclaredValue = null,
+        public string $sellerSku,
+        public string $sellerFulfillmentOrderItemId,
+        public int $quantity,
+        public int $cancelledQuantity,
+        public int $unfulfillableQuantity,
+        public ?string $giftMessage = null,
+        public ?string $displayableComment = null,
+        public ?string $fulfillmentNetworkSku = null,
+        public ?string $orderItemDisposition = null,
+        public ?\DateTimeInterface $estimatedShipDate = null,
+        public ?\DateTimeInterface $estimatedArrivalDate = null,
+        public ?Money $perUnitPrice = null,
+        public ?Money $perUnitTax = null,
+        public ?Money $perUnitDeclaredValue = null,
     ) {}
 }

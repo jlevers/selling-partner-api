@@ -19,7 +19,7 @@ final class PlacementOptionSummary extends Dto
      * @param  string  $status  The status of a placement option. Can be: `OFFERED` or `ACCEPTED`.
      */
     public function __construct(
-        public readonly string $placementOptionId,
-        public readonly string $status,
+        public string $placementOptionId,
+        public string $status,
     ) {}
 }

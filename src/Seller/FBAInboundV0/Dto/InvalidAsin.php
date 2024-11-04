@@ -21,7 +21,7 @@ final class InvalidAsin extends Dto
      * @param  ?string  $errorReason  The reason that the ASIN is invalid.
      */
     public function __construct(
-        public readonly ?string $asin = null,
-        public readonly ?string $errorReason = null,
+        public ?string $asin = null,
+        public ?string $errorReason = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class MarketplaceDetails extends Dto
      * @param  ?string  $marketplaceName  The name of the marketplace where the transaction occurred. For example: `Amazon.com`,`Amazon.in`
      */
     public function __construct(
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $marketplaceName = null,
+        public ?string $marketplaceId = null,
+        public ?string $marketplaceName = null,
     ) {}
 }

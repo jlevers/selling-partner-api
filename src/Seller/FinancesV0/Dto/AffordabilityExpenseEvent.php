@@ -43,14 +43,14 @@ final class AffordabilityExpenseEvent extends Dto
      * @param  ?Currency  $totalExpense  A currency type and amount.
      */
     public function __construct(
-        public readonly Currency $taxTypeCgst,
-        public readonly Currency $taxTypeSgst,
-        public readonly Currency $taxTypeIgst,
-        public readonly ?string $amazonOrderId = null,
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $transactionType = null,
-        public readonly ?Currency $baseExpense = null,
-        public readonly ?Currency $totalExpense = null,
+        public Currency $taxTypeCgst,
+        public Currency $taxTypeSgst,
+        public Currency $taxTypeIgst,
+        public ?string $amazonOrderId = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $marketplaceId = null,
+        public ?string $transactionType = null,
+        public ?Currency $baseExpense = null,
+        public ?Currency $totalExpense = null,
     ) {}
 }

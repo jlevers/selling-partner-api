@@ -21,9 +21,9 @@ final class OrderItemAcknowledgement extends Dto
      * @param  ?string  $vendorProductIdentifier  The vendor selected product identification of the item. Should be the same as was provided in the purchase order.
      */
     public function __construct(
-        public readonly string $itemSequenceNumber,
-        public readonly ItemQuantity $acknowledgedQuantity,
-        public readonly ?string $buyerProductIdentifier = null,
-        public readonly ?string $vendorProductIdentifier = null,
+        public string $itemSequenceNumber,
+        public ItemQuantity $acknowledgedQuantity,
+        public ?string $buyerProductIdentifier = null,
+        public ?string $vendorProductIdentifier = null,
     ) {}
 }

@@ -31,12 +31,12 @@ final class GetFulfillmentPreviewRequest extends Dto
      * @param  FeatureSettings[]|null  $featureConstraints  A list of features and their fulfillment policies to apply to the order.
      */
     public function __construct(
-        public readonly Address $address,
-        public readonly array $items,
-        public readonly ?string $marketplaceId = null,
-        public readonly ?array $shippingSpeedCategories = null,
-        public readonly ?bool $includeCodFulfillmentPreview = null,
-        public readonly ?bool $includeDeliveryWindows = null,
-        public readonly ?array $featureConstraints = null,
+        public Address $address,
+        public array $items,
+        public ?string $marketplaceId = null,
+        public ?array $shippingSpeedCategories = null,
+        public ?bool $includeCodFulfillmentPreview = null,
+        public ?bool $includeDeliveryWindows = null,
+        public ?array $featureConstraints = null,
     ) {}
 }

@@ -34,12 +34,12 @@ final class FailedAdhocDisbursementEvent extends Dto
      * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function __construct(
-        public readonly ?string $fundsTransfersType = null,
-        public readonly ?string $transferId = null,
-        public readonly ?string $disbursementId = null,
-        public readonly ?string $paymentDisbursementType = null,
-        public readonly ?string $status = null,
-        public readonly ?Currency $transferAmount = null,
-        public readonly ?\DateTimeInterface $postedDate = null,
+        public ?string $fundsTransfersType = null,
+        public ?string $transferId = null,
+        public ?string $disbursementId = null,
+        public ?string $paymentDisbursementType = null,
+        public ?string $status = null,
+        public ?Currency $transferAmount = null,
+        public ?\DateTimeInterface $postedDate = null,
     ) {}
 }

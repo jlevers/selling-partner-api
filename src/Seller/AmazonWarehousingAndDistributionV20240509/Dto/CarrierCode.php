@@ -19,7 +19,7 @@ final class CarrierCode extends Dto
      * @param  ?string  $carrierCodeValue  Value of the carrier code.
      */
     public function __construct(
-        public readonly ?string $carrierCodeType = null,
-        public readonly ?string $carrierCodeValue = null,
+        public ?string $carrierCodeType = null,
+        public ?string $carrierCodeValue = null,
     ) {}
 }

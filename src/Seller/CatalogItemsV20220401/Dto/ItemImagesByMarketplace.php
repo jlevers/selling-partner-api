@@ -21,7 +21,7 @@ final class ItemImagesByMarketplace extends Dto
      * @param  ItemImage[]  $images  Images for an item in the Amazon catalog for the indicated Amazon marketplace.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly array $images,
+        public string $marketplaceId,
+        public array $images,
     ) {}
 }

@@ -22,8 +22,8 @@ final class SafetReimbursementItem extends Dto
      * @param  ?string  $quantity  The number of units of the item being reimbursed.
      */
     public function __construct(
-        public readonly ?array $itemChargeList = null,
-        public readonly ?string $productDescription = null,
-        public readonly ?string $quantity = null,
+        public ?array $itemChargeList = null,
+        public ?string $productDescription = null,
+        public ?string $quantity = null,
     ) {}
 }

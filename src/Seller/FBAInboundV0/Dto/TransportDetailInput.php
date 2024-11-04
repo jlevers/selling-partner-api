@@ -28,9 +28,9 @@ final class TransportDetailInput extends Dto
      * @param  ?NonPartneredLtlDataInput  $nonPartneredLtlData  Information that you provide to Amazon about a Less Than Truckload/Full Truckload (LTL/FTL) shipment by a carrier that has not partnered with Amazon.
      */
     public function __construct(
-        public readonly ?PartneredSmallParcelDataInput $partneredSmallParcelData = null,
-        public readonly ?NonPartneredSmallParcelDataInput $nonPartneredSmallParcelData = null,
-        public readonly ?PartneredLtlDataInput $partneredLtlData = null,
-        public readonly ?NonPartneredLtlDataInput $nonPartneredLtlData = null,
+        public ?PartneredSmallParcelDataInput $partneredSmallParcelData = null,
+        public ?NonPartneredSmallParcelDataInput $nonPartneredSmallParcelData = null,
+        public ?PartneredLtlDataInput $partneredLtlData = null,
+        public ?NonPartneredLtlDataInput $nonPartneredLtlData = null,
     ) {}
 }

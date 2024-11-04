@@ -19,7 +19,7 @@ final class ItemVariationTheme extends Dto
      * @param  ?string  $theme  Variation theme indicating the combination of Amazon item catalog attributes that define the variation family.
      */
     public function __construct(
-        public readonly ?array $attributes = null,
-        public readonly ?string $theme = null,
+        public ?array $attributes = null,
+        public ?string $theme = null,
     ) {}
 }

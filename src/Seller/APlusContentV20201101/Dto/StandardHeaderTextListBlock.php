@@ -19,7 +19,7 @@ final class StandardHeaderTextListBlock extends Dto
      * @param  ?StandardTextListBlock  $block  The A+ Content standard fixed length list of text, usually presented as bullet points.
      */
     public function __construct(
-        public readonly ?TextComponent $headline = null,
-        public readonly ?StandardTextListBlock $block = null,
+        public ?TextComponent $headline = null,
+        public ?StandardTextListBlock $block = null,
     ) {}
 }

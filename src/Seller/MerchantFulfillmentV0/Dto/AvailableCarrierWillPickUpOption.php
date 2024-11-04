@@ -21,7 +21,7 @@ final class AvailableCarrierWillPickUpOption extends Dto
      * @param  CurrencyAmount  $charge  Currency type and amount.
      */
     public function __construct(
-        public readonly string $carrierWillPickUpOption,
-        public readonly CurrencyAmount $charge,
+        public string $carrierWillPickUpOption,
+        public CurrencyAmount $charge,
     ) {}
 }

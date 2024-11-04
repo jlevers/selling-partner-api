@@ -21,9 +21,9 @@ final class SupplySourceList extends Dto
      * @param  ?Address  $address  A physical address.
      */
     public function __construct(
-        public readonly ?string $alias = null,
-        public readonly ?string $supplySourceId = null,
-        public readonly ?string $supplySourceCode = null,
-        public readonly ?Address $address = null,
+        public ?string $alias = null,
+        public ?string $supplySourceId = null,
+        public ?string $supplySourceCode = null,
+        public ?Address $address = null,
     ) {}
 }

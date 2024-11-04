@@ -19,7 +19,7 @@ final class StandardTextPairBlock extends Dto
      * @param  ?TextComponent  $description  Rich text content.
      */
     public function __construct(
-        public readonly ?TextComponent $label = null,
-        public readonly ?TextComponent $description = null,
+        public ?TextComponent $label = null,
+        public ?TextComponent $description = null,
     ) {}
 }

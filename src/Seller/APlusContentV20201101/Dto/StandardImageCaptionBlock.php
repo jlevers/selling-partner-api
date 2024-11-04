@@ -19,7 +19,7 @@ final class StandardImageCaptionBlock extends Dto
      * @param  ?TextComponent  $caption  Rich text content.
      */
     public function __construct(
-        public readonly ?ImageComponent $image = null,
-        public readonly ?TextComponent $caption = null,
+        public ?ImageComponent $image = null,
+        public ?TextComponent $caption = null,
     ) {}
 }

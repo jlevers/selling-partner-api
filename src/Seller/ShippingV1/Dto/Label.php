@@ -19,7 +19,7 @@ final class Label extends Dto
      * @param  ?LabelSpecification  $labelSpecification  The label specification info.
      */
     public function __construct(
-        public readonly ?string $labelStream = null,
-        public readonly ?LabelSpecification $labelSpecification = null,
+        public ?string $labelStream = null,
+        public ?LabelSpecification $labelSpecification = null,
     ) {}
 }

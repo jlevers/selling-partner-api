@@ -20,6 +20,6 @@ final class StandardMultipleImageTextModule extends Dto
      * @param  StandardImageTextCaptionBlock[]|null  $blocks
      */
     public function __construct(
-        public readonly ?array $blocks = null,
+        public ?array $blocks = null,
     ) {}
 }

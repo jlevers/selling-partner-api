@@ -26,12 +26,12 @@ final class OrderAcknowledgementItem extends Dto
      * @param  OrderItemAcknowledgement[]  $itemAcknowledgements  Item details including acknowledged quantity.
      */
     public function __construct(
-        public readonly string $purchaseOrderNumber,
-        public readonly string $vendorOrderNumber,
-        public readonly \DateTimeInterface $acknowledgementDate,
-        public readonly AcknowledgementStatus $acknowledgementStatus,
-        public readonly PartyIdentification $sellingParty,
-        public readonly PartyIdentification $shipFromParty,
-        public readonly array $itemAcknowledgements,
+        public string $purchaseOrderNumber,
+        public string $vendorOrderNumber,
+        public \DateTimeInterface $acknowledgementDate,
+        public AcknowledgementStatus $acknowledgementStatus,
+        public PartyIdentification $sellingParty,
+        public PartyIdentification $shipFromParty,
+        public array $itemAcknowledgements,
     ) {}
 }

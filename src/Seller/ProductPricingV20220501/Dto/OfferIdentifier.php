@@ -22,10 +22,10 @@ final class OfferIdentifier extends Dto
      * @param  ?string  $fulfillmentType  Indicates whether the item is fulfilled by Amazon or by the seller (merchant).
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $asin,
-        public readonly ?string $sellerId = null,
-        public readonly ?string $sku = null,
-        public readonly ?string $fulfillmentType = null,
+        public string $marketplaceId,
+        public string $asin,
+        public ?string $sellerId = null,
+        public ?string $sku = null,
+        public ?string $fulfillmentType = null,
     ) {}
 }

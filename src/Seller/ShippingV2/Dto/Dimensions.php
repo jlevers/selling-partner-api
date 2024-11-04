@@ -21,9 +21,9 @@ final class Dimensions extends Dto
      * @param  string  $unit  The unit of measurement.
      */
     public function __construct(
-        public readonly float $length,
-        public readonly float $width,
-        public readonly float $height,
-        public readonly string $unit,
+        public float $length,
+        public float $width,
+        public float $height,
+        public string $unit,
     ) {}
 }

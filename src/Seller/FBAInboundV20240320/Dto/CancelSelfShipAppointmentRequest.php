@@ -18,6 +18,6 @@ final class CancelSelfShipAppointmentRequest extends Dto
      * @param  ?string  $reasonComment  Reason for cancelling or rescheduling a self-ship appointment.
      */
     public function __construct(
-        public readonly ?string $reasonComment = null,
+        public ?string $reasonComment = null,
     ) {}
 }

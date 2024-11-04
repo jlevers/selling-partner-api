@@ -35,9 +35,9 @@ final class GetPrepInstructionsResult extends Dto
      * @param  InvalidAsin[]|null  $invalidAsinList  A list of invalid ASIN values and the reasons they are invalid.
      */
     public function __construct(
-        public readonly ?array $skuPrepInstructionsList = null,
-        public readonly ?array $invalidSkuList = null,
-        public readonly ?array $asinPrepInstructionsList = null,
-        public readonly ?array $invalidAsinList = null,
+        public ?array $skuPrepInstructionsList = null,
+        public ?array $invalidSkuList = null,
+        public ?array $asinPrepInstructionsList = null,
+        public ?array $invalidAsinList = null,
     ) {}
 }

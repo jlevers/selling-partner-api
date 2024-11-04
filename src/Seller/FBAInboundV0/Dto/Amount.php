@@ -21,7 +21,7 @@ final class Amount extends Dto
      * @param  float  $value  Number format that supports decimal.
      */
     public function __construct(
-        public readonly string $currencyCode,
-        public readonly float $value,
+        public string $currencyCode,
+        public float $value,
     ) {}
 }

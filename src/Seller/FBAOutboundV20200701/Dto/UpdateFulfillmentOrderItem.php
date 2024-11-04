@@ -27,15 +27,15 @@ final class UpdateFulfillmentOrderItem extends Dto
      * @param  ?Money  $perUnitTax  An amount of money, including units in the form of currency.
      */
     public function __construct(
-        public readonly string $sellerFulfillmentOrderItemId,
-        public readonly int $quantity,
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $giftMessage = null,
-        public readonly ?string $displayableComment = null,
-        public readonly ?string $fulfillmentNetworkSku = null,
-        public readonly ?string $orderItemDisposition = null,
-        public readonly ?Money $perUnitDeclaredValue = null,
-        public readonly ?Money $perUnitPrice = null,
-        public readonly ?Money $perUnitTax = null,
+        public string $sellerFulfillmentOrderItemId,
+        public int $quantity,
+        public ?string $sellerSku = null,
+        public ?string $giftMessage = null,
+        public ?string $displayableComment = null,
+        public ?string $fulfillmentNetworkSku = null,
+        public ?string $orderItemDisposition = null,
+        public ?Money $perUnitDeclaredValue = null,
+        public ?Money $perUnitPrice = null,
+        public ?Money $perUnitTax = null,
     ) {}
 }

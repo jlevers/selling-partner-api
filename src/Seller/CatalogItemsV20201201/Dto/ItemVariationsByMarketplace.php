@@ -20,8 +20,8 @@ final class ItemVariationsByMarketplace extends Dto
      * @param  string  $variationType  Type of variation relationship of the Amazon catalog item in the request to the related item(s): "PARENT" or "CHILD".
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly array $asins,
-        public readonly string $variationType,
+        public string $marketplaceId,
+        public array $asins,
+        public string $variationType,
     ) {}
 }

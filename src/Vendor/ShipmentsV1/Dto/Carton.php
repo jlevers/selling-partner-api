@@ -28,11 +28,11 @@ final class Carton extends Dto
      * @param  ?string  $trackingNumber  This is required to be provided for every carton in the small parcel shipments.
      */
     public function __construct(
-        public readonly string $cartonSequenceNumber,
-        public readonly array $items,
-        public readonly ?array $cartonIdentifiers = null,
-        public readonly ?Dimensions $dimensions = null,
-        public readonly ?Weight $weight = null,
-        public readonly ?string $trackingNumber = null,
+        public string $cartonSequenceNumber,
+        public array $items,
+        public ?array $cartonIdentifiers = null,
+        public ?Dimensions $dimensions = null,
+        public ?Weight $weight = null,
+        public ?string $trackingNumber = null,
     ) {}
 }

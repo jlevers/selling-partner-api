@@ -21,7 +21,7 @@ final class Money extends Dto
      * @param  ?string  $amount  The currency amount.
      */
     public function __construct(
-        public readonly ?string $currencyCode = null,
-        public readonly ?string $amount = null,
+        public ?string $currencyCode = null,
+        public ?string $amount = null,
     ) {}
 }

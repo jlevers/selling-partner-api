@@ -21,9 +21,9 @@ final class Promotion extends Dto
      * @param  ?DiscountFunding  $amazonFundedTieredDiscount  The discount funding on the offer.
      */
     public function __construct(
-        public readonly ?DiscountFunding $sellingPartnerFundedBaseDiscount = null,
-        public readonly ?DiscountFunding $sellingPartnerFundedTieredDiscount = null,
-        public readonly ?DiscountFunding $amazonFundedBaseDiscount = null,
-        public readonly ?DiscountFunding $amazonFundedTieredDiscount = null,
+        public ?DiscountFunding $sellingPartnerFundedBaseDiscount = null,
+        public ?DiscountFunding $sellingPartnerFundedTieredDiscount = null,
+        public ?DiscountFunding $amazonFundedBaseDiscount = null,
+        public ?DiscountFunding $amazonFundedTieredDiscount = null,
     ) {}
 }

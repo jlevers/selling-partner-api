@@ -18,6 +18,6 @@ final class Pagination2 extends Dto
      * @param  ?string  $nextToken  A token that can be used to fetch the next page of results.
      */
     public function __construct(
-        public readonly ?string $nextToken = null,
+        public ?string $nextToken = null,
     ) {}
 }

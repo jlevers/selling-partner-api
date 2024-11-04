@@ -28,8 +28,8 @@ final class OrderItemsBuyerInfoList extends Dto
      * @param  ?string  $nextToken  When present and not empty, pass this string token in the next request to return the next response page.
      */
     public function __construct(
-        public readonly array $orderItems,
-        public readonly string $amazonOrderId,
-        public readonly ?string $nextToken = null,
+        public array $orderItems,
+        public string $amazonOrderId,
+        public ?string $nextToken = null,
     ) {}
 }

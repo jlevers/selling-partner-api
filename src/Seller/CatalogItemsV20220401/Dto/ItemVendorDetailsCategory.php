@@ -19,7 +19,7 @@ final class ItemVendorDetailsCategory extends Dto
      * @param  ?string  $value  Value (code) of the product category or subcategory.
      */
     public function __construct(
-        public readonly ?string $displayName = null,
-        public readonly ?string $value = null,
+        public ?string $displayName = null,
+        public ?string $value = null,
     ) {}
 }

@@ -20,8 +20,8 @@ final class ConfirmShipmentOrderItem extends Dto
      * @param  ?string[]  $transparencyCodes  A list of order items.
      */
     public function __construct(
-        public readonly string $orderItemId,
-        public readonly int $quantity,
-        public readonly ?array $transparencyCodes = null,
+        public string $orderItemId,
+        public int $quantity,
+        public ?array $transparencyCodes = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class LabelSpecification extends Dto
      * @param  string  $labelStockSize  The label stock size specification in length and height. Enum of 4x6 only for now.
      */
     public function __construct(
-        public readonly string $labelFormat,
-        public readonly string $labelStockSize,
+        public string $labelFormat,
+        public string $labelStockSize,
     ) {}
 }

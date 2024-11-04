@@ -20,8 +20,8 @@ final class ContentRecord extends Dto
      * @param  ?ContentDocument  $contentDocument  The A+ Content document. This is the enhanced content that is published to product detail pages.
      */
     public function __construct(
-        public readonly string $contentReferenceKey,
-        public readonly ?ContentMetadata $contentMetadata = null,
-        public readonly ?ContentDocument $contentDocument = null,
+        public string $contentReferenceKey,
+        public ?ContentMetadata $contentMetadata = null,
+        public ?ContentDocument $contentDocument = null,
     ) {}
 }

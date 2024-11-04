@@ -21,9 +21,9 @@ final class ShipmentMeasurements extends Dto
      * @param  ?int  $palletCount  Number of pallets present in the shipment. Provide the palletCount only for palletized shipments.
      */
     public function __construct(
-        public readonly ?Weight $grossShipmentWeight = null,
-        public readonly ?Volume $shipmentVolume = null,
-        public readonly ?int $cartonCount = null,
-        public readonly ?int $palletCount = null,
+        public ?Weight $grossShipmentWeight = null,
+        public ?Volume $shipmentVolume = null,
+        public ?int $cartonCount = null,
+        public ?int $palletCount = null,
     ) {}
 }

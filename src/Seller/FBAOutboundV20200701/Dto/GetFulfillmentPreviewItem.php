@@ -21,9 +21,9 @@ final class GetFulfillmentPreviewItem extends Dto
      * @param  ?Money  $perUnitDeclaredValue  An amount of money, including units in the form of currency.
      */
     public function __construct(
-        public readonly string $sellerSku,
-        public readonly int $quantity,
-        public readonly string $sellerFulfillmentOrderItemId,
-        public readonly ?Money $perUnitDeclaredValue = null,
+        public string $sellerSku,
+        public int $quantity,
+        public string $sellerFulfillmentOrderItemId,
+        public ?Money $perUnitDeclaredValue = null,
     ) {}
 }

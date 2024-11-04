@@ -20,8 +20,8 @@ final class PrimaryContact extends Dto
      * @param  ?string  $nonLatinName  The non-Latin script version of the primary contact's name, if applicable.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly Address $address,
-        public readonly ?string $nonLatinName = null,
+        public string $name,
+        public Address $address,
+        public ?string $nonLatinName = null,
     ) {}
 }

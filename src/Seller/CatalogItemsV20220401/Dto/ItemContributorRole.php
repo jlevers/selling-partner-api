@@ -19,7 +19,7 @@ final class ItemContributorRole extends Dto
      * @param  ?string  $displayName  Display name of the role in the requested locale, such as Author or Actor.
      */
     public function __construct(
-        public readonly string $value,
-        public readonly ?string $displayName = null,
+        public string $value,
+        public ?string $displayName = null,
     ) {}
 }

@@ -18,6 +18,6 @@ final class UpdateInboundPlanNameRequest extends Dto
      * @param  string  $name  A human-readable name to update the inbound plan name to.
      */
     public function __construct(
-        public readonly string $name,
+        public string $name,
     ) {}
 }

@@ -29,15 +29,15 @@ final class InvoiceItem extends Dto
      * @param  ChargeDetails[]|null  $chargeDetails  Individual charge details per line item.
      */
     public function __construct(
-        public readonly string $itemSequenceNumber,
-        public readonly ItemQuantity $invoicedQuantity,
-        public readonly Money $netCost,
-        public readonly string $purchaseOrderNumber,
-        public readonly ?string $buyerProductIdentifier = null,
-        public readonly ?string $vendorProductIdentifier = null,
-        public readonly ?string $vendorOrderNumber = null,
-        public readonly ?string $hsnCode = null,
-        public readonly ?array $taxDetails = null,
-        public readonly ?array $chargeDetails = null,
+        public string $itemSequenceNumber,
+        public ItemQuantity $invoicedQuantity,
+        public Money $netCost,
+        public string $purchaseOrderNumber,
+        public ?string $buyerProductIdentifier = null,
+        public ?string $vendorProductIdentifier = null,
+        public ?string $vendorOrderNumber = null,
+        public ?string $hsnCode = null,
+        public ?array $taxDetails = null,
+        public ?array $chargeDetails = null,
     ) {}
 }

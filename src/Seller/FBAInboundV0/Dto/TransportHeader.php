@@ -34,9 +34,9 @@ final class TransportHeader extends Dto
      * @param  string  $shipmentType  Specifies the carrier shipment type in a putTransportDetails request.
      */
     public function __construct(
-        public readonly string $sellerId,
-        public readonly string $shipmentId,
-        public readonly bool $isPartnered,
-        public readonly string $shipmentType,
+        public string $sellerId,
+        public string $shipmentId,
+        public bool $isPartnered,
+        public string $shipmentType,
     ) {}
 }

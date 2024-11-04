@@ -20,8 +20,8 @@ final class ItemQuantity extends Dto
      * @param  ?int  $unitSize  The case size, in the event that we ordered using cases.
      */
     public function __construct(
-        public readonly ?int $amount = null,
-        public readonly ?string $unitOfMeasure = null,
-        public readonly ?int $unitSize = null,
+        public ?int $amount = null,
+        public ?string $unitOfMeasure = null,
+        public ?int $unitSize = null,
     ) {}
 }

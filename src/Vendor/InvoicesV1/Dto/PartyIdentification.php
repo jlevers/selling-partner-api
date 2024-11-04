@@ -22,8 +22,8 @@ final class PartyIdentification extends Dto
      * @param  TaxRegistrationDetails[]|null  $taxRegistrationDetails  Tax registration details of the party.
      */
     public function __construct(
-        public readonly string $partyId,
-        public readonly ?Address $address = null,
-        public readonly ?array $taxRegistrationDetails = null,
+        public string $partyId,
+        public ?Address $address = null,
+        public ?array $taxRegistrationDetails = null,
     ) {}
 }

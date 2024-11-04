@@ -22,10 +22,10 @@ final class FixedSlot extends Dto
      * @param  ?int  $reservedCapacity  Reserved capacity corresponding to the slot. This capacity represents the capacity made unavailable due to events like Breaks/Leaves/Lunch.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $startDateTime = null,
-        public readonly ?int $scheduledCapacity = null,
-        public readonly ?int $availableCapacity = null,
-        public readonly ?int $encumberedCapacity = null,
-        public readonly ?int $reservedCapacity = null,
+        public ?\DateTimeInterface $startDateTime = null,
+        public ?int $scheduledCapacity = null,
+        public ?int $availableCapacity = null,
+        public ?int $encumberedCapacity = null,
+        public ?int $reservedCapacity = null,
     ) {}
 }

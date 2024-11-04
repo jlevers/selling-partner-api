@@ -19,7 +19,7 @@ final class IntegerWithUnits extends Dto
      * @param  string  $units  The unit of measurement.
      */
     public function __construct(
-        public readonly int $value,
-        public readonly string $units,
+        public int $value,
+        public string $units,
     ) {}
 }

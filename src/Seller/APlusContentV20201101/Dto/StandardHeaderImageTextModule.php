@@ -19,7 +19,7 @@ final class StandardHeaderImageTextModule extends Dto
      * @param  ?StandardImageTextBlock  $block  The A+ Content standard image and text box block.
      */
     public function __construct(
-        public readonly ?TextComponent $headline = null,
-        public readonly ?StandardImageTextBlock $block = null,
+        public ?TextComponent $headline = null,
+        public ?StandardImageTextBlock $block = null,
     ) {}
 }

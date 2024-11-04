@@ -50,19 +50,19 @@ final class ShippingService extends Dto
      * @param  ?Benefits  $benefits  Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (eg. CLAIMS_PROTECTED, etc.) when sellers purchase shipping through Amazon. Benefit details will be made available for any shipment placed on or after January 1st 2024 00:00 UTC
      */
     public function __construct(
-        public readonly string $shippingServiceName,
-        public readonly string $carrierName,
-        public readonly string $shippingServiceId,
-        public readonly string $shippingServiceOfferId,
-        public readonly \DateTimeInterface $shipDate,
-        public readonly CurrencyAmount $rate,
-        public readonly ShippingServiceOptions $shippingServiceOptions,
-        public readonly ?\DateTimeInterface $earliestEstimatedDeliveryDate = null,
-        public readonly ?\DateTimeInterface $latestEstimatedDeliveryDate = null,
-        public readonly ?AvailableShippingServiceOptions $availableShippingServiceOptions = null,
-        public readonly ?array $availableLabelFormats = null,
-        public readonly ?array $availableFormatOptionsForLabel = null,
-        public readonly ?bool $requiresAdditionalSellerInputs = null,
-        public readonly ?Benefits $benefits = null,
+        public string $shippingServiceName,
+        public string $carrierName,
+        public string $shippingServiceId,
+        public string $shippingServiceOfferId,
+        public \DateTimeInterface $shipDate,
+        public CurrencyAmount $rate,
+        public ShippingServiceOptions $shippingServiceOptions,
+        public ?\DateTimeInterface $earliestEstimatedDeliveryDate = null,
+        public ?\DateTimeInterface $latestEstimatedDeliveryDate = null,
+        public ?AvailableShippingServiceOptions $availableShippingServiceOptions = null,
+        public ?array $availableLabelFormats = null,
+        public ?array $availableFormatOptionsForLabel = null,
+        public ?bool $requiresAdditionalSellerInputs = null,
+        public ?Benefits $benefits = null,
     ) {}
 }

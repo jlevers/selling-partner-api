@@ -18,6 +18,6 @@ final class AppointmentResource extends Dto
      * @param  ?string  $resourceId  The resource identifier.
      */
     public function __construct(
-        public readonly ?string $resourceId = null,
+        public ?string $resourceId = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class Money extends Dto
      * @param  string  $value  A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.
      */
     public function __construct(
-        public readonly string $currencyCode,
-        public readonly string $value,
+        public string $currencyCode,
+        public string $value,
     ) {}
 }

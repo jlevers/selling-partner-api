@@ -21,9 +21,9 @@ final class Link extends Dto
      * @param  ?string  $type  The media type of the related resource.
      */
     public function __construct(
-        public readonly string $resource,
-        public readonly string $verb,
-        public readonly ?string $title = null,
-        public readonly ?string $type = null,
+        public string $resource,
+        public string $verb,
+        public ?string $title = null,
+        public ?string $type = null,
     ) {}
 }

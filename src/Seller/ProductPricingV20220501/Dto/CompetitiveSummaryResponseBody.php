@@ -29,11 +29,11 @@ final class CompetitiveSummaryResponseBody extends Dto
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
-        public readonly string $asin,
-        public readonly string $marketplaceId,
-        public readonly ?array $featuredBuyingOptions = null,
-        public readonly ?array $lowestPricedOffers = null,
-        public readonly ?array $referencePrices = null,
-        public readonly ?ErrorList $errors = null,
+        public string $asin,
+        public string $marketplaceId,
+        public ?array $featuredBuyingOptions = null,
+        public ?array $lowestPricedOffers = null,
+        public ?array $referencePrices = null,
+        public ?ErrorList $errors = null,
     ) {}
 }

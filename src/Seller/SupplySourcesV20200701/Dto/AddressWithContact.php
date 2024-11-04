@@ -19,7 +19,7 @@ final class AddressWithContact extends Dto
      * @param  ?Address  $address  A physical address.
      */
     public function __construct(
-        public readonly ?ContactDetails $contactDetails = null,
-        public readonly ?Address $address = null,
+        public ?ContactDetails $contactDetails = null,
+        public ?Address $address = null,
     ) {}
 }

@@ -21,7 +21,7 @@ final class IssueEnforcements extends Dto
      * @param  IssueExemption  $exemption  Conveying the status of the listed enforcement actions and, if applicable, provides information about the exemption's expiry date.
      */
     public function __construct(
-        public readonly array $actions,
-        public readonly IssueExemption $exemption,
+        public array $actions,
+        public IssueExemption $exemption,
     ) {}
 }

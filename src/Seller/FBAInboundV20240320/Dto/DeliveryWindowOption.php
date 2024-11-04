@@ -17,15 +17,15 @@ final class DeliveryWindowOption extends Dto
     /**
      * @param  string  $availabilityType  Identifies type of Delivery Window Availability. Values: `AVAILABLE`, `CONGESTED`
      * @param  string  $deliveryWindowOptionId  Identifier of a delivery window option. A delivery window option represent one option for when a shipment is expected to be delivered.
-     * @param  \DateTimeInterface  $endDate  The timestamp at which this delivery window option ends. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
-     * @param  \DateTimeInterface  $startDate  The timestamp at which this delivery window option starts. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
-     * @param  \DateTimeInterface  $validUntil  The timestamp at which this window delivery option becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param  \DateTimeInterface  $endDate  The time at which this delivery window option ends. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
+     * @param  \DateTimeInterface  $startDate  The time at which this delivery window option starts. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
+     * @param  \DateTimeInterface  $validUntil  The time at which this window delivery option is no longer valid. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
      */
     public function __construct(
-        public readonly string $availabilityType,
-        public readonly string $deliveryWindowOptionId,
-        public readonly \DateTimeInterface $endDate,
-        public readonly \DateTimeInterface $startDate,
-        public readonly \DateTimeInterface $validUntil,
+        public string $availabilityType,
+        public string $deliveryWindowOptionId,
+        public \DateTimeInterface $endDate,
+        public \DateTimeInterface $startDate,
+        public \DateTimeInterface $validUntil,
     ) {}
 }

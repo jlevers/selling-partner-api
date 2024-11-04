@@ -19,7 +19,7 @@ final class AcknowledgementStatus extends Dto
      * @param  ?string  $description  Reason for the acknowledgement code.
      */
     public function __construct(
-        public readonly ?string $code = null,
-        public readonly ?string $description = null,
+        public ?string $code = null,
+        public ?string $description = null,
     ) {}
 }

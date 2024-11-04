@@ -22,10 +22,10 @@ final class CarrierDetails extends Dto
      * @param  ?string  $shipmentReferenceNumber  The field is also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for US, CA, MX shipment confirmations.
      */
     public function __construct(
-        public readonly ?string $name = null,
-        public readonly ?string $code = null,
-        public readonly ?string $phone = null,
-        public readonly ?string $email = null,
-        public readonly ?string $shipmentReferenceNumber = null,
+        public ?string $name = null,
+        public ?string $code = null,
+        public ?string $phone = null,
+        public ?string $email = null,
+        public ?string $shipmentReferenceNumber = null,
     ) {}
 }

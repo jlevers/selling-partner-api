@@ -22,8 +22,8 @@ final class PackageDetails extends Dto
      * @param  ?string  $packageIdentifier  Optional seller-created identifier that is printed on the shipping label to help the seller identify the package.
      */
     public function __construct(
-        public readonly TimeSlot $packageTimeSlot,
-        public readonly ?array $packageItems = null,
-        public readonly ?string $packageIdentifier = null,
+        public TimeSlot $packageTimeSlot,
+        public ?array $packageItems = null,
+        public ?string $packageIdentifier = null,
     ) {}
 }

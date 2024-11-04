@@ -28,9 +28,9 @@ final class RegulatedInformationField extends Dto
      * @param  string  $fieldValue  The content of the field as collected in regulatory form. Note that `FileAttachment` type fields contain a URL where you can download the attachment.
      */
     public function __construct(
-        public readonly string $fieldId,
-        public readonly string $fieldLabel,
-        public readonly string $fieldType,
-        public readonly string $fieldValue,
+        public string $fieldId,
+        public string $fieldLabel,
+        public string $fieldType,
+        public string $fieldValue,
     ) {}
 }

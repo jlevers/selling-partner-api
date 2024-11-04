@@ -21,9 +21,9 @@ final class ServiceRate extends Dto
      * @param  ShippingPromiseSet  $promise  The promised delivery time and pickup time.
      */
     public function __construct(
-        public readonly Currency $totalCharge,
-        public readonly Weight $billableWeight,
-        public readonly string $serviceType,
-        public readonly ShippingPromiseSet $promise,
+        public Currency $totalCharge,
+        public Weight $billableWeight,
+        public string $serviceType,
+        public ShippingPromiseSet $promise,
     ) {}
 }

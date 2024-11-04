@@ -21,7 +21,7 @@ final class GenerateShipmentContentUpdatePreviewsRequest extends Dto
      * @param  ItemInput[]  $items  A list of all items that will be present in the shipment after the update.
      */
     public function __construct(
-        public readonly array $boxes,
-        public readonly array $items,
+        public array $boxes,
+        public array $items,
     ) {}
 }

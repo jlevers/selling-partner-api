@@ -21,7 +21,7 @@ final class ChargeRefundTransaction extends Dto
      * @param  ?string  $chargeType  The type of charge.
      */
     public function __construct(
-        public readonly ?Currency $chargeAmount = null,
-        public readonly ?string $chargeType = null,
+        public ?Currency $chargeAmount = null,
+        public ?string $chargeType = null,
     ) {}
 }

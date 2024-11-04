@@ -19,7 +19,7 @@ final class FeaturedOfferExpectedPrice extends Dto
      * @param  ?Points  $points  The number of Amazon Points offered with the purchase of an item, and their monetary value.
      */
     public function __construct(
-        public readonly MoneyType $listingPrice,
-        public readonly ?Points $points = null,
+        public MoneyType $listingPrice,
+        public ?Points $points = null,
     ) {}
 }

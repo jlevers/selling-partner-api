@@ -21,9 +21,9 @@ final class TaxDetail extends Dto
      * @param  ?Money  $taxableAmount  An amount of money, including units in the form of currency.
      */
     public function __construct(
-        public readonly string $taxType,
-        public readonly Money $taxAmount,
-        public readonly ?string $taxRate = null,
-        public readonly ?Money $taxableAmount = null,
+        public string $taxType,
+        public Money $taxAmount,
+        public ?string $taxRate = null,
+        public ?Money $taxableAmount = null,
     ) {}
 }

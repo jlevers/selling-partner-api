@@ -21,7 +21,7 @@ final class AvailableDeliveryExperienceOption extends Dto
      * @param  CurrencyAmount  $charge  Currency type and amount.
      */
     public function __construct(
-        public readonly string $deliveryExperienceOption,
-        public readonly CurrencyAmount $charge,
+        public string $deliveryExperienceOption,
+        public CurrencyAmount $charge,
     ) {}
 }

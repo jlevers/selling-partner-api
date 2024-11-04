@@ -42,12 +42,12 @@ final class InboundShipmentHeader extends Dto
      * @param  ?string  $intendedBoxContentsSource  How the seller intends to provide box contents information for a shipment. Leaving this field blank is equivalent to selecting `NONE`, which will incur a fee if the seller does not provide box contents information.
      */
     public function __construct(
-        public readonly string $shipmentName,
-        public readonly Address $shipFromAddress,
-        public readonly string $destinationFulfillmentCenterId,
-        public readonly string $shipmentStatus,
-        public readonly string $labelPrepPreference,
-        public readonly ?bool $areCasesRequired = null,
-        public readonly ?string $intendedBoxContentsSource = null,
+        public string $shipmentName,
+        public Address $shipFromAddress,
+        public string $destinationFulfillmentCenterId,
+        public string $shipmentStatus,
+        public string $labelPrepPreference,
+        public ?bool $areCasesRequired = null,
+        public ?string $intendedBoxContentsSource = null,
     ) {}
 }

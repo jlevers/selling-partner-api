@@ -20,8 +20,8 @@ final class GetShipmentDocumentsResult extends Dto
      * @param  ?Benefits  $benefits  Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (eg. CLAIMS_PROTECTED, etc.) when sellers purchase shipping through Amazon. Benefit details will be made available for any shipment placed on or after January 1st 2024 00:00 UTC.
      */
     public function __construct(
-        public readonly string $shipmentId,
-        public readonly PackageDocumentDetail $packageDocumentDetail,
-        public readonly ?Benefits $benefits = null,
+        public string $shipmentId,
+        public PackageDocumentDetail $packageDocumentDetail,
+        public ?Benefits $benefits = null,
     ) {}
 }

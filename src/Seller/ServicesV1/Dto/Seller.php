@@ -18,6 +18,6 @@ final class Seller extends Dto
      * @param  ?string  $sellerId  The identifier of the seller of the service job.
      */
     public function __construct(
-        public readonly ?string $sellerId = null,
+        public ?string $sellerId = null,
     ) {}
 }

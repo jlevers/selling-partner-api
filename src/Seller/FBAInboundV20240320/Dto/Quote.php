@@ -15,13 +15,13 @@ use SellingPartnerApi\Dto;
 final class Quote extends Dto
 {
     /**
-     * @param  Currency  $cost  Currency definition.
-     * @param  ?\DateTimeInterface  $expiration  The timestamp at which this transportation option quote becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param  Currency  $cost  The type and amount of currency.
+     * @param  ?\DateTimeInterface  $expiration  The time at which this transportation option quote expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      * @param  ?\DateTimeInterface  $voidableUntil  Voidable until timestamp.
      */
     public function __construct(
-        public readonly Currency $cost,
-        public readonly ?\DateTimeInterface $expiration = null,
-        public readonly ?\DateTimeInterface $voidableUntil = null,
+        public Currency $cost,
+        public ?\DateTimeInterface $expiration = null,
+        public ?\DateTimeInterface $voidableUntil = null,
     ) {}
 }

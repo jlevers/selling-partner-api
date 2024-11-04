@@ -25,8 +25,8 @@ class ListItemComplianceDetails extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  array  $mskus  List of merchant SKUs - a merchant-supplied identifier for a specific SKU.
-     * @param  string  $marketplaceId  The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values.
+     * @param  array  $mskus  A list of merchant SKUs, a merchant-supplied identifier of a specific SKU.
+     * @param  string  $marketplaceId  The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function __construct(
         protected array $mskus,

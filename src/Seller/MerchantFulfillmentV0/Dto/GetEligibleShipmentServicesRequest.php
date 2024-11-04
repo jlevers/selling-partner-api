@@ -24,7 +24,7 @@ final class GetEligibleShipmentServicesRequest extends Dto
      * @param  ?ShippingOfferingFilter  $shippingOfferingFilter  Filter for use when requesting eligible shipping services.
      */
     public function __construct(
-        public readonly ShipmentRequestDetails $shipmentRequestDetails,
-        public readonly ?ShippingOfferingFilter $shippingOfferingFilter = null,
+        public ShipmentRequestDetails $shipmentRequestDetails,
+        public ?ShippingOfferingFilter $shippingOfferingFilter = null,
     ) {}
 }

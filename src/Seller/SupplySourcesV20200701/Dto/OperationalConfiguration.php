@@ -21,9 +21,9 @@ final class OperationalConfiguration extends Dto
      * @param  ?Duration  $handlingTime  The duration of time.
      */
     public function __construct(
-        public readonly ?ContactDetails $contactDetails = null,
-        public readonly ?ThroughputConfig $throughputConfig = null,
-        public readonly ?OperatingHoursByDay $operatingHoursByDay = null,
-        public readonly ?Duration $handlingTime = null,
+        public ?ContactDetails $contactDetails = null,
+        public ?ThroughputConfig $throughputConfig = null,
+        public ?OperatingHoursByDay $operatingHoursByDay = null,
+        public ?Duration $handlingTime = null,
     ) {}
 }

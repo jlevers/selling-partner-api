@@ -17,9 +17,9 @@ final class GeneratePlacementOptionsRequest extends Dto
     protected static array $complexArrayTypes = ['customPlacement' => CustomPlacementInput::class];
 
     /**
-     * @param  CustomPlacementInput[]|null  $customPlacement  Custom placement options to be added to the plan.
+     * @param  CustomPlacementInput[]|null  $customPlacement  Custom placement options you want to add to the plan. This is only used for the India (IN - A21TJRUUN4KGV) marketplace.
      */
     public function __construct(
-        public readonly ?array $customPlacement = null,
+        public ?array $customPlacement = null,
     ) {}
 }

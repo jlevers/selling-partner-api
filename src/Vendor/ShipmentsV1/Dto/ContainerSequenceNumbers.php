@@ -18,6 +18,6 @@ final class ContainerSequenceNumbers extends Dto
      * @param  ?string  $containerSequenceNumber  A list of containers shipped
      */
     public function __construct(
-        public readonly ?string $containerSequenceNumber = null,
+        public ?string $containerSequenceNumber = null,
     ) {}
 }

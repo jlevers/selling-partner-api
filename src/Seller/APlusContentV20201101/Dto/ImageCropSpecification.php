@@ -19,7 +19,7 @@ final class ImageCropSpecification extends Dto
      * @param  ?ImageOffsets  $offset  The top left corner of the cropped image, specified in the original image's coordinate space.
      */
     public function __construct(
-        public readonly ImageDimensions $size,
-        public readonly ?ImageOffsets $offset = null,
+        public ImageDimensions $size,
+        public ?ImageOffsets $offset = null,
     ) {}
 }

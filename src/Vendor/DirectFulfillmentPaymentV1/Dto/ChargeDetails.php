@@ -22,8 +22,8 @@ final class ChargeDetails extends Dto
      * @param  TaxDetail[]|null  $taxDetails  Individual tax details per line item.
      */
     public function __construct(
-        public readonly string $type,
-        public readonly Money $chargeAmount,
-        public readonly ?array $taxDetails = null,
+        public string $type,
+        public Money $chargeAmount,
+        public ?array $taxDetails = null,
     ) {}
 }

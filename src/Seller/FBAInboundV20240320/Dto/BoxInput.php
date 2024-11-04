@@ -24,10 +24,10 @@ final class BoxInput extends Dto
      * @param  ItemInput[]|null  $items  The items and their quantity in the box. This must be empty if the box `contentInformationSource` is `BARCODE_2D` or `MANUAL_PROCESS`.
      */
     public function __construct(
-        public readonly string $contentInformationSource,
-        public readonly Dimensions $dimensions,
-        public readonly int $quantity,
-        public readonly Weight $weight,
-        public readonly ?array $items = null,
+        public string $contentInformationSource,
+        public Dimensions $dimensions,
+        public int $quantity,
+        public Weight $weight,
+        public ?array $items = null,
     ) {}
 }

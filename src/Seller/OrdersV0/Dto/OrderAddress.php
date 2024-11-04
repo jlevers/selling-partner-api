@@ -28,9 +28,9 @@ final class OrderAddress extends Dto
      * @param  ?DeliveryPreferences  $deliveryPreferences  Contains all of the delivery instructions provided by the customer for the shipping address.
      */
     public function __construct(
-        public readonly string $amazonOrderId,
-        public readonly ?string $buyerCompanyName = null,
-        public readonly ?Address $shippingAddress = null,
-        public readonly ?DeliveryPreferences $deliveryPreferences = null,
+        public string $amazonOrderId,
+        public ?string $buyerCompanyName = null,
+        public ?Address $shippingAddress = null,
+        public ?DeliveryPreferences $deliveryPreferences = null,
     ) {}
 }

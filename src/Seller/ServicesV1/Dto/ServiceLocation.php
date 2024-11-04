@@ -19,7 +19,7 @@ final class ServiceLocation extends Dto
      * @param  ?Address  $address  The shipping address for the service job.
      */
     public function __construct(
-        public readonly ?string $serviceLocationType = null,
-        public readonly ?Address $address = null,
+        public ?string $serviceLocationType = null,
+        public ?Address $address = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class Participation extends Dto
      * @param  bool  $hasSuspendedListings  Specifies if the seller has suspended listings. `true` if the seller Listing Status is set to Inactive, otherwise `false`.
      */
     public function __construct(
-        public readonly bool $isParticipating,
-        public readonly bool $hasSuspendedListings,
+        public bool $isParticipating,
+        public bool $hasSuspendedListings,
     ) {}
 }

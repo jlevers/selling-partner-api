@@ -23,11 +23,11 @@ final class StatusUpdateDetails extends Dto
      * @param  ?ShipmentSchedule  $shipmentSchedule  Details about the estimated delivery window.
      */
     public function __construct(
-        public readonly string $trackingNumber,
-        public readonly string $statusCode,
-        public readonly string $reasonCode,
-        public readonly \DateTimeInterface $statusDateTime,
-        public readonly Address $statusLocationAddress,
-        public readonly ?ShipmentSchedule $shipmentSchedule = null,
+        public string $trackingNumber,
+        public string $statusCode,
+        public string $reasonCode,
+        public \DateTimeInterface $statusDateTime,
+        public Address $statusLocationAddress,
+        public ?ShipmentSchedule $shipmentSchedule = null,
     ) {}
 }

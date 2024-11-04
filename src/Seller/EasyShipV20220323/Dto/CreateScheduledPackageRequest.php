@@ -20,8 +20,8 @@ final class CreateScheduledPackageRequest extends Dto
      * @param  PackageDetails  $packageDetails  Package details. Includes `packageItems`, `packageTimeSlot`, and `packageIdentifier`.
      */
     public function __construct(
-        public readonly string $amazonOrderId,
-        public readonly string $marketplaceId,
-        public readonly PackageDetails $packageDetails,
+        public string $amazonOrderId,
+        public string $marketplaceId,
+        public PackageDetails $packageDetails,
     ) {}
 }

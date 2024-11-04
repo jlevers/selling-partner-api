@@ -28,9 +28,9 @@ final class TaxWithholdingEvent extends Dto
      * @param  ?TaxWithholdingPeriod  $taxWithholdingPeriod  The period during which tax withholding on a seller's account is calculated.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?Currency $baseAmount = null,
-        public readonly ?Currency $withheldAmount = null,
-        public readonly ?TaxWithholdingPeriod $taxWithholdingPeriod = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?Currency $baseAmount = null,
+        public ?Currency $withheldAmount = null,
+        public ?TaxWithholdingPeriod $taxWithholdingPeriod = null,
     ) {}
 }

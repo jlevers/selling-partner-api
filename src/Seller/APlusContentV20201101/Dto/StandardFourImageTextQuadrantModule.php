@@ -21,9 +21,9 @@ final class StandardFourImageTextQuadrantModule extends Dto
      * @param  StandardImageTextBlock  $block4  The A+ Content standard image and text box block.
      */
     public function __construct(
-        public readonly StandardImageTextBlock $block1,
-        public readonly StandardImageTextBlock $block2,
-        public readonly StandardImageTextBlock $block3,
-        public readonly StandardImageTextBlock $block4,
+        public StandardImageTextBlock $block1,
+        public StandardImageTextBlock $block2,
+        public StandardImageTextBlock $block3,
+        public StandardImageTextBlock $block4,
     ) {}
 }

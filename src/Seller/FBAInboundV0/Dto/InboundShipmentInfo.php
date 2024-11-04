@@ -40,15 +40,15 @@ final class InboundShipmentInfo extends Dto
      * @param  ?BoxContentsFeeDetails  $estimatedBoxContentsFee  The manual processing fee per unit and total fee for a shipment.
      */
     public function __construct(
-        public readonly Address $shipFromAddress,
-        public readonly ?string $shipmentId = null,
-        public readonly ?string $shipmentName = null,
-        public readonly ?string $destinationFulfillmentCenterId = null,
-        public readonly ?string $shipmentStatus = null,
-        public readonly ?string $labelPrepType = null,
-        public readonly ?bool $areCasesRequired = null,
-        public readonly ?\DateTimeInterface $confirmedNeedByDate = null,
-        public readonly ?string $boxContentsSource = null,
-        public readonly ?BoxContentsFeeDetails $estimatedBoxContentsFee = null,
+        public Address $shipFromAddress,
+        public ?string $shipmentId = null,
+        public ?string $shipmentName = null,
+        public ?string $destinationFulfillmentCenterId = null,
+        public ?string $shipmentStatus = null,
+        public ?string $labelPrepType = null,
+        public ?bool $areCasesRequired = null,
+        public ?\DateTimeInterface $confirmedNeedByDate = null,
+        public ?string $boxContentsSource = null,
+        public ?BoxContentsFeeDetails $estimatedBoxContentsFee = null,
     ) {}
 }

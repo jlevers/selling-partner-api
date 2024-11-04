@@ -24,12 +24,12 @@ final class ShipmentDetails extends Dto
      * @param  ?bool  $isGift  When true, the order contain a gift. Include the gift message and gift wrap information.
      */
     public function __construct(
-        public readonly bool $isPriorityShipment,
-        public readonly bool $isPslipRequired,
-        public readonly string $shipMethod,
-        public readonly ShipmentDates $shipmentDates,
-        public readonly string $messageToCustomer,
-        public readonly ?bool $isScheduledDeliveryShipment = null,
-        public readonly ?bool $isGift = null,
+        public bool $isPriorityShipment,
+        public bool $isPslipRequired,
+        public string $shipMethod,
+        public ShipmentDates $shipmentDates,
+        public string $messageToCustomer,
+        public ?bool $isScheduledDeliveryShipment = null,
+        public ?bool $isGift = null,
     ) {}
 }

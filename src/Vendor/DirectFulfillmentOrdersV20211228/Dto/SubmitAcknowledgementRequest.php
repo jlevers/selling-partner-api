@@ -20,6 +20,6 @@ final class SubmitAcknowledgementRequest extends Dto
      * @param  OrderAcknowledgementItem[]|null  $orderAcknowledgements  A list of one or more purchase orders.
      */
     public function __construct(
-        public readonly ?array $orderAcknowledgements = null,
+        public ?array $orderAcknowledgements = null,
     ) {}
 }

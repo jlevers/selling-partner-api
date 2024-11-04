@@ -19,7 +19,7 @@ final class ReferencePrice extends Dto
      * @param  MoneyType  $price  Currency type and monetary value. Schema for demonstrating pricing info.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly MoneyType $price,
+        public string $name,
+        public MoneyType $price,
     ) {}
 }

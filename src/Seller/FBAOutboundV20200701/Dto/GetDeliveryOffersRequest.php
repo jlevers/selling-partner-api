@@ -19,7 +19,7 @@ final class GetDeliveryOffersRequest extends Dto
      * @param  GetDeliveryOffersTerms  $terms  The delivery terms for the delivery offer.
      */
     public function __construct(
-        public readonly GetDeliveryOffersProduct $product,
-        public readonly GetDeliveryOffersTerms $terms,
+        public GetDeliveryOffersProduct $product,
+        public GetDeliveryOffersTerms $terms,
     ) {}
 }

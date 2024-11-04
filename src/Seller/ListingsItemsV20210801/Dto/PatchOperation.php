@@ -20,8 +20,8 @@ final class PatchOperation extends Dto
      * @param  mixed[][]|null  $value  JSON value to add, replace, or delete.
      */
     public function __construct(
-        public readonly string $op,
-        public readonly string $path,
-        public readonly ?array $value = null,
+        public string $op,
+        public string $path,
+        public ?array $value = null,
     ) {}
 }

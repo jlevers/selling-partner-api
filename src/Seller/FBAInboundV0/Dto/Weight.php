@@ -21,7 +21,7 @@ final class Weight extends Dto
      * @param  string  $unit  Indicates the unit of weight.
      */
     public function __construct(
-        public readonly float $value,
-        public readonly string $unit,
+        public float $value,
+        public string $unit,
     ) {}
 }

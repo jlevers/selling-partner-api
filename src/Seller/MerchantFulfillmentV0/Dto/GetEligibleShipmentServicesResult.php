@@ -35,9 +35,9 @@ final class GetEligibleShipmentServicesResult extends Dto
      * @param  TermsAndConditionsNotAcceptedCarrier[]|null  $termsAndConditionsNotAcceptedCarrierList  List of carriers whose terms and conditions were not accepted by the seller.
      */
     public function __construct(
-        public readonly array $shippingServiceList,
-        public readonly ?array $rejectedShippingServiceList = null,
-        public readonly ?array $temporarilyUnavailableCarrierList = null,
-        public readonly ?array $termsAndConditionsNotAcceptedCarrierList = null,
+        public array $shippingServiceList,
+        public ?array $rejectedShippingServiceList = null,
+        public ?array $temporarilyUnavailableCarrierList = null,
+        public ?array $termsAndConditionsNotAcceptedCarrierList = null,
     ) {}
 }

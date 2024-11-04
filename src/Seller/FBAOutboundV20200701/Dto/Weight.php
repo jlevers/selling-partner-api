@@ -19,7 +19,7 @@ final class Weight extends Dto
      * @param  string  $value  The weight value.
      */
     public function __construct(
-        public readonly string $unit,
-        public readonly string $value,
+        public string $unit,
+        public string $value,
     ) {}
 }

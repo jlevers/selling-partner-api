@@ -19,7 +19,7 @@ final class Destination extends Dto
      * @param  ?string  $ipAddress  An IP Address.
      */
     public function __construct(
-        public readonly ?VariablePrecisionAddress $deliveryAddress = null,
-        public readonly ?string $ipAddress = null,
+        public ?VariablePrecisionAddress $deliveryAddress = null,
+        public ?string $ipAddress = null,
     ) {}
 }

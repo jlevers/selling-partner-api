@@ -23,7 +23,7 @@ final class ItemLevelFields extends Dto
      * @param  AdditionalInputs[]  $additionalInputs  A list of additional inputs.
      */
     public function __construct(
-        public readonly string $asin,
-        public readonly array $additionalInputs,
+        public string $asin,
+        public array $additionalInputs,
     ) {}
 }

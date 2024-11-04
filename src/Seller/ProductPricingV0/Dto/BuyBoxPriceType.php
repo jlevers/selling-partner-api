@@ -27,14 +27,14 @@ final class BuyBoxPriceType extends Dto
      * @param  ?string  $sellerId  The seller identifier for the offer.
      */
     public function __construct(
-        public readonly string $condition,
-        public readonly MoneyType $landedPrice,
-        public readonly MoneyType $listingPrice,
-        public readonly MoneyType $shipping,
-        public readonly ?string $offerType = null,
-        public readonly ?int $quantityTier = null,
-        public readonly ?string $quantityDiscountType = null,
-        public readonly ?Points $points = null,
-        public readonly ?string $sellerId = null,
+        public string $condition,
+        public MoneyType $landedPrice,
+        public MoneyType $listingPrice,
+        public MoneyType $shipping,
+        public ?string $offerType = null,
+        public ?int $quantityTier = null,
+        public ?string $quantityDiscountType = null,
+        public ?Points $points = null,
+        public ?string $sellerId = null,
     ) {}
 }

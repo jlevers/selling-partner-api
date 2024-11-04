@@ -20,8 +20,8 @@ final class ValueAddedService extends Dto
      * @param  Currency  $cost  The monetary value in the currency indicated, in ISO 4217 standard format.
      */
     public function __construct(
-        public readonly string $id,
-        public readonly string $name,
-        public readonly Currency $cost,
+        public string $id,
+        public string $name,
+        public Currency $cost,
     ) {}
 }

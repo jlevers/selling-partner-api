@@ -21,10 +21,10 @@ final class PickupChannel extends Dto
      * @param  ?CurbsidePickupConfiguration  $curbsidePickupConfiguration  The curbside pickup configuration of a supply source.
      */
     public function __construct(
-        public readonly ?Duration $inventoryHoldPeriod = null,
-        public readonly ?bool $isSupported = null,
-        public readonly ?OperationalConfiguration $operationalConfiguration = null,
-        public readonly ?InStorePickupConfiguration $inStorePickupConfiguration = null,
-        public readonly ?CurbsidePickupConfiguration $curbsidePickupConfiguration = null,
+        public ?Duration $inventoryHoldPeriod = null,
+        public ?bool $isSupported = null,
+        public ?OperationalConfiguration $operationalConfiguration = null,
+        public ?InStorePickupConfiguration $inStorePickupConfiguration = null,
+        public ?CurbsidePickupConfiguration $curbsidePickupConfiguration = null,
     ) {}
 }

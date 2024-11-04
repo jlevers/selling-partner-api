@@ -19,7 +19,7 @@ final class InvalidItemReason extends Dto
      * @param  string  $description  A human readable description of the invalid item reason code.
      */
     public function __construct(
-        public readonly string $invalidItemReasonCode,
-        public readonly string $description,
+        public string $invalidItemReasonCode,
+        public string $description,
     ) {}
 }

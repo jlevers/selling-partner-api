@@ -27,13 +27,13 @@ final class Package extends Dto
      * @param  ChargeComponent[]|null  $charges  A list of charges based on the shipping service charges applied on a package.
      */
     public function __construct(
-        public readonly Dimensions $dimensions,
-        public readonly Weight $weight,
-        public readonly Currency $insuredValue,
-        public readonly string $packageClientReferenceId,
-        public readonly array $items,
-        public readonly ?bool $isHazmat = null,
-        public readonly ?string $sellerDisplayName = null,
-        public readonly ?array $charges = null,
+        public Dimensions $dimensions,
+        public Weight $weight,
+        public Currency $insuredValue,
+        public string $packageClientReferenceId,
+        public array $items,
+        public ?bool $isHazmat = null,
+        public ?string $sellerDisplayName = null,
+        public ?array $charges = null,
     ) {}
 }

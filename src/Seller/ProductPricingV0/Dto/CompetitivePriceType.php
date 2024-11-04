@@ -30,14 +30,14 @@ final class CompetitivePriceType extends Dto
      * @param  ?bool  $belongsToRequester  Indicates whether or not the pricing information is for an offer listing that belongs to the requester. The requester is the seller associated with the SellerId that was submitted with the request. Possible values are: true and false.
      */
     public function __construct(
-        public readonly string $competitivePriceId,
-        public readonly PriceType $price,
-        public readonly ?string $condition = null,
-        public readonly ?string $subcondition = null,
-        public readonly ?string $offerType = null,
-        public readonly ?int $quantityTier = null,
-        public readonly ?string $quantityDiscountType = null,
-        public readonly ?string $sellerId = null,
-        public readonly ?bool $belongsToRequester = null,
+        public string $competitivePriceId,
+        public PriceType $price,
+        public ?string $condition = null,
+        public ?string $subcondition = null,
+        public ?string $offerType = null,
+        public ?int $quantityTier = null,
+        public ?string $quantityDiscountType = null,
+        public ?string $sellerId = null,
+        public ?bool $belongsToRequester = null,
     ) {}
 }

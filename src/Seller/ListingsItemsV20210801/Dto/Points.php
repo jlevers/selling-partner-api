@@ -15,6 +15,6 @@ use SellingPartnerApi\Dto;
 final class Points extends Dto
 {
     public function __construct(
-        public readonly int $pointsNumber,
+        public int $pointsNumber,
     ) {}
 }

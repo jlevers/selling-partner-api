@@ -19,7 +19,7 @@ final class StandardImageTextOverlayModule extends Dto
      * @param  ?StandardImageTextBlock  $block  The A+ Content standard image and text box block.
      */
     public function __construct(
-        public readonly string $overlayColorType,
-        public readonly ?StandardImageTextBlock $block = null,
+        public string $overlayColorType,
+        public ?StandardImageTextBlock $block = null,
     ) {}
 }

@@ -20,8 +20,8 @@ final class Transaction extends Dto
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
-        public readonly string $transactionId,
-        public readonly string $status,
-        public readonly ?ErrorList $errors = null,
+        public string $transactionId,
+        public string $status,
+        public ?ErrorList $errors = null,
     ) {}
 }

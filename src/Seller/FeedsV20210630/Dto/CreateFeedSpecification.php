@@ -21,9 +21,9 @@ final class CreateFeedSpecification extends Dto
      * @param  ?string[]  $feedOptions  Additional options to control the feed. These vary by feed type.
      */
     public function __construct(
-        public readonly string $feedType,
-        public readonly array $marketplaceIds,
-        public readonly string $inputFeedDocumentId,
-        public readonly ?array $feedOptions = null,
+        public string $feedType,
+        public array $marketplaceIds,
+        public string $inputFeedDocumentId,
+        public ?array $feedOptions = null,
     ) {}
 }

@@ -30,9 +30,9 @@ final class OrdersList extends Dto
      * @param  ?string  $createdBefore  Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      */
     public function __construct(
-        public readonly array $orders,
-        public readonly ?string $nextToken = null,
-        public readonly ?string $lastUpdatedBefore = null,
-        public readonly ?string $createdBefore = null,
+        public array $orders,
+        public ?string $nextToken = null,
+        public ?string $lastUpdatedBefore = null,
+        public ?string $createdBefore = null,
     ) {}
 }

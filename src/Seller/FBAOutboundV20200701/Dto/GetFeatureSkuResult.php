@@ -27,10 +27,10 @@ final class GetFeatureSkuResult extends Dto
      * @param  ?FeatureSku  $skuInfo  Information about an SKU, including the count available, identifiers, and a list of overlapping SKUs that share the same inventory pool.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $featureName,
-        public readonly bool $isEligible,
-        public readonly ?array $ineligibleReasons = null,
-        public readonly ?FeatureSku $skuInfo = null,
+        public string $marketplaceId,
+        public string $featureName,
+        public bool $isEligible,
+        public ?array $ineligibleReasons = null,
+        public ?FeatureSku $skuInfo = null,
     ) {}
 }

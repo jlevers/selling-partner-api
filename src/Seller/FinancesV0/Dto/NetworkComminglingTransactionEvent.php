@@ -42,13 +42,13 @@ final class NetworkComminglingTransactionEvent extends Dto
      * @param  ?Currency  $taxAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?string $transactionType = null,
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $netCoTransactionId = null,
-        public readonly ?string $swapReason = null,
-        public readonly ?string $asin = null,
-        public readonly ?string $marketplaceId = null,
-        public readonly ?Currency $taxExclusiveAmount = null,
-        public readonly ?Currency $taxAmount = null,
+        public ?string $transactionType = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $netCoTransactionId = null,
+        public ?string $swapReason = null,
+        public ?string $asin = null,
+        public ?string $marketplaceId = null,
+        public ?Currency $taxExclusiveAmount = null,
+        public ?Currency $taxAmount = null,
     ) {}
 }

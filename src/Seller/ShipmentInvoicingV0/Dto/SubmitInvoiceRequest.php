@@ -26,8 +26,8 @@ final class SubmitInvoiceRequest extends Dto
      * @param  ?string  $marketplaceId  An Amazon marketplace identifier.
      */
     public function __construct(
-        public readonly string $invoiceContent,
-        public readonly string $contentMd5value,
-        public readonly ?string $marketplaceId = null,
+        public string $invoiceContent,
+        public string $contentMd5value,
+        public ?string $marketplaceId = null,
     ) {}
 }

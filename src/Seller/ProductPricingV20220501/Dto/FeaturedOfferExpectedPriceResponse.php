@@ -21,9 +21,9 @@ final class FeaturedOfferExpectedPriceResponse extends Dto
      * @param  ?FeaturedOfferExpectedPriceResponseBody  $body  The featured offer expected price response data for a requested SKU.
      */
     public function __construct(
-        public readonly array $headers,
-        public readonly HttpStatusLine $status,
-        public readonly FeaturedOfferExpectedPriceRequestParams $request,
-        public readonly ?FeaturedOfferExpectedPriceResponseBody $body = null,
+        public array $headers,
+        public HttpStatusLine $status,
+        public FeaturedOfferExpectedPriceRequestParams $request,
+        public ?FeaturedOfferExpectedPriceResponseBody $body = null,
     ) {}
 }

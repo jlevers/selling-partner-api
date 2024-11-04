@@ -19,7 +19,7 @@ final class ItemIdentifier extends Dto
      * @param  string  $identifier  Identifier.
      */
     public function __construct(
-        public readonly string $identifierType,
-        public readonly string $identifier,
+        public string $identifierType,
+        public string $identifier,
     ) {}
 }

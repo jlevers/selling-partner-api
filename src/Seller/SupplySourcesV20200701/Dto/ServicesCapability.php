@@ -19,7 +19,7 @@ final class ServicesCapability extends Dto
      * @param  ?OperationalConfiguration  $operationalConfiguration  The operational configuration of `supplySources`.
      */
     public function __construct(
-        public readonly ?bool $isSupported = null,
-        public readonly ?OperationalConfiguration $operationalConfiguration = null,
+        public ?bool $isSupported = null,
+        public ?OperationalConfiguration $operationalConfiguration = null,
     ) {}
 }

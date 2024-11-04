@@ -24,12 +24,12 @@ final class ListOffersResponseOffer extends Dto
      * @param  ?string[]  $vendorCodes  A list of vendor codes associated with the offer.
      */
     public function __construct(
-        public readonly ?string $sku = null,
-        public readonly ?string $asin = null,
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $eligibility = null,
-        public readonly ?OfferProgramConfiguration $offerProgramConfiguration = null,
-        public readonly ?string $programType = null,
-        public readonly ?array $vendorCodes = null,
+        public ?string $sku = null,
+        public ?string $asin = null,
+        public ?string $marketplaceId = null,
+        public ?string $eligibility = null,
+        public ?OfferProgramConfiguration $offerProgramConfiguration = null,
+        public ?string $programType = null,
+        public ?array $vendorCodes = null,
     ) {}
 }

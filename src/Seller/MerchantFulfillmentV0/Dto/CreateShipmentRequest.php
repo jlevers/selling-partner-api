@@ -34,11 +34,11 @@ final class CreateShipmentRequest extends Dto
      * @param  AdditionalSellerInputs[]|null  $shipmentLevelSellerInputsList  A list of additional seller input pairs required to purchase shipping.
      */
     public function __construct(
-        public readonly ShipmentRequestDetails $shipmentRequestDetails,
-        public readonly string $shippingServiceId,
-        public readonly ?string $shippingServiceOfferId = null,
-        public readonly ?string $hazmatType = null,
-        public readonly ?LabelFormatOptionRequest $labelFormatOption = null,
-        public readonly ?array $shipmentLevelSellerInputsList = null,
+        public ShipmentRequestDetails $shipmentRequestDetails,
+        public string $shippingServiceId,
+        public ?string $shippingServiceOfferId = null,
+        public ?string $hazmatType = null,
+        public ?LabelFormatOptionRequest $labelFormatOption = null,
+        public ?array $shipmentLevelSellerInputsList = null,
     ) {}
 }

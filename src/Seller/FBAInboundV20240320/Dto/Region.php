@@ -20,8 +20,8 @@ final class Region extends Dto
      * @param  ?string  $warehouseId  An identifier for a warehouse, such as a FC, IXD, upstream storage.
      */
     public function __construct(
-        public readonly ?string $countryCode = null,
-        public readonly ?string $state = null,
-        public readonly ?string $warehouseId = null,
+        public ?string $countryCode = null,
+        public ?string $state = null,
+        public ?string $warehouseId = null,
     ) {}
 }

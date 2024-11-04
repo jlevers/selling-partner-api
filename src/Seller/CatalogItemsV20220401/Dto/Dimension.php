@@ -19,7 +19,7 @@ final class Dimension extends Dto
      * @param  ?float  $value  Numeric dimension value.
      */
     public function __construct(
-        public readonly ?string $unit = null,
-        public readonly ?float $value = null,
+        public ?string $unit = null,
+        public ?float $value = null,
     ) {}
 }

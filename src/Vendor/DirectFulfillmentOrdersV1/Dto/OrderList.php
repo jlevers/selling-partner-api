@@ -21,7 +21,7 @@ final class OrderList extends Dto
      * @param  Order[]|null  $orders  Represents a purchase order within the `OrderList`.
      */
     public function __construct(
-        public readonly ?Pagination $pagination = null,
-        public readonly ?array $orders = null,
+        public ?Pagination $pagination = null,
+        public ?array $orders = null,
     ) {}
 }

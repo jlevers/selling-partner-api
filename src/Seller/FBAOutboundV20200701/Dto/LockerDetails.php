@@ -19,7 +19,7 @@ final class LockerDetails extends Dto
      * @param  ?string  $lockerAccessCode  Indicates the locker access code
      */
     public function __construct(
-        public readonly ?string $lockerNumber = null,
-        public readonly ?string $lockerAccessCode = null,
+        public ?string $lockerNumber = null,
+        public ?string $lockerAccessCode = null,
     ) {}
 }

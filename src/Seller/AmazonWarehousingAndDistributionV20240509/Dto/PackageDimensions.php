@@ -21,9 +21,9 @@ final class PackageDimensions extends Dto
      * @param  float  $width  Width of the package.
      */
     public function __construct(
-        public readonly float $height,
-        public readonly float $length,
-        public readonly string $unitOfMeasurement,
-        public readonly float $width,
+        public float $height,
+        public float $length,
+        public string $unitOfMeasurement,
+        public float $width,
     ) {}
 }

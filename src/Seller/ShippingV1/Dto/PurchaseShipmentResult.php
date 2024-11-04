@@ -22,8 +22,8 @@ final class PurchaseShipmentResult extends Dto
      * @param  LabelResult[]  $labelResults  A list of label results
      */
     public function __construct(
-        public readonly string $shipmentId,
-        public readonly ServiceRate $serviceRate,
-        public readonly array $labelResults,
+        public string $shipmentId,
+        public ServiceRate $serviceRate,
+        public array $labelResults,
     ) {}
 }

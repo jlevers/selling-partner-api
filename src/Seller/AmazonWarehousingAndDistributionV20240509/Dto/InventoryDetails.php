@@ -19,7 +19,7 @@ final class InventoryDetails extends Dto
      * @param  ?int  $reservedDistributableQuantity  Quantity that is reserved for a downstream channel replenishment order that is being prepared for shipment.
      */
     public function __construct(
-        public readonly ?int $availableDistributableQuantity = null,
-        public readonly ?int $reservedDistributableQuantity = null,
+        public ?int $availableDistributableQuantity = null,
+        public ?int $reservedDistributableQuantity = null,
     ) {}
 }

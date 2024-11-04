@@ -18,6 +18,6 @@ final class ValueAddedServiceDetails extends Dto
      * @param  ?CollectOnDelivery  $collectOnDelivery  The amount to collect on delivery.
      */
     public function __construct(
-        public readonly ?CollectOnDelivery $collectOnDelivery = null,
+        public ?CollectOnDelivery $collectOnDelivery = null,
     ) {}
 }

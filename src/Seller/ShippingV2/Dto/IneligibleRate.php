@@ -24,10 +24,10 @@ final class IneligibleRate extends Dto
      * @param  IneligibilityReason[]  $ineligibilityReasons  A list of reasons why a shipping service offering is ineligible.
      */
     public function __construct(
-        public readonly string $serviceId,
-        public readonly string $serviceName,
-        public readonly string $carrierName,
-        public readonly string $carrierId,
-        public readonly array $ineligibilityReasons,
+        public string $serviceId,
+        public string $serviceName,
+        public string $carrierName,
+        public string $carrierId,
+        public array $ineligibilityReasons,
     ) {}
 }

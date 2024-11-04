@@ -19,7 +19,7 @@ final class DistributionPackageQuantity extends Dto
      * @param  DistributionPackage  $distributionPackage  Represents an AWD distribution package.
      */
     public function __construct(
-        public readonly int $count,
-        public readonly DistributionPackage $distributionPackage,
+        public int $count,
+        public DistributionPackage $distributionPackage,
     ) {}
 }

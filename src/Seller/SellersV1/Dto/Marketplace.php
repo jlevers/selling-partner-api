@@ -23,11 +23,11 @@ final class Marketplace extends Dto
      * @param  string  $domainName  The domain name of the marketplace.
      */
     public function __construct(
-        public readonly string $id,
-        public readonly string $name,
-        public readonly string $countryCode,
-        public readonly string $defaultCurrencyCode,
-        public readonly string $defaultLanguageCode,
-        public readonly string $domainName,
+        public string $id,
+        public string $name,
+        public string $countryCode,
+        public string $defaultCurrencyCode,
+        public string $defaultLanguageCode,
+        public string $domainName,
     ) {}
 }

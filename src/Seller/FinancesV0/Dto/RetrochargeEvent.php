@@ -42,12 +42,12 @@ final class RetrochargeEvent extends Dto
      * @param  TaxWithheldComponent[]|null  $retrochargeTaxWithheldList  A list of information about taxes withheld.
      */
     public function __construct(
-        public readonly ?string $retrochargeEventType = null,
-        public readonly ?string $amazonOrderId = null,
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?Currency $baseTax = null,
-        public readonly ?Currency $shippingTax = null,
-        public readonly ?string $marketplaceName = null,
-        public readonly ?array $retrochargeTaxWithheldList = null,
+        public ?string $retrochargeEventType = null,
+        public ?string $amazonOrderId = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?Currency $baseTax = null,
+        public ?Currency $shippingTax = null,
+        public ?string $marketplaceName = null,
+        public ?array $retrochargeTaxWithheldList = null,
     ) {}
 }

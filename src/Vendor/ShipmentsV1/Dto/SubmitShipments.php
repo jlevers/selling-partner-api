@@ -20,6 +20,6 @@ final class SubmitShipments extends Dto
      * @param  Shipment[]|null  $shipments  A list of one or more shipments with underlying details.
      */
     public function __construct(
-        public readonly ?array $shipments = null,
+        public ?array $shipments = null,
     ) {}
 }

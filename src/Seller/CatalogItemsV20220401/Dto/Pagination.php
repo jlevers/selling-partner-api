@@ -19,7 +19,7 @@ final class Pagination extends Dto
      * @param  ?string  $previousToken  A token that can be used to fetch the previous page.
      */
     public function __construct(
-        public readonly ?string $nextToken = null,
-        public readonly ?string $previousToken = null,
+        public ?string $nextToken = null,
+        public ?string $previousToken = null,
     ) {}
 }

@@ -20,6 +20,6 @@ final class Payload extends Dto
      * @param  Warning[]|null  $warnings  A list of warnings returned in the sucessful execution response of an API request.
      */
     public function __construct(
-        public readonly ?array $warnings = null,
+        public ?array $warnings = null,
     ) {}
 }

@@ -20,8 +20,8 @@ final class OfferProgramConfiguration extends Dto
      * @param  ?string  $enrollmentMethod  The enrollment method used to enroll the offer into the program.
      */
     public function __construct(
-        public readonly ?OfferProgramConfigurationPreferences $preferences = null,
-        public readonly ?OfferProgramConfigurationPromotions $promotions = null,
-        public readonly ?string $enrollmentMethod = null,
+        public ?OfferProgramConfigurationPreferences $preferences = null,
+        public ?OfferProgramConfigurationPromotions $promotions = null,
+        public ?string $enrollmentMethod = null,
     ) {}
 }

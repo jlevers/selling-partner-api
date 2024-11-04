@@ -23,11 +23,11 @@ final class OrderMetricsInterval extends Dto
      * @param  Money  $totalSales  The currency type and the amount.
      */
     public function __construct(
-        public readonly string $interval,
-        public readonly int $unitCount,
-        public readonly int $orderItemCount,
-        public readonly int $orderCount,
-        public readonly Money $averageUnitPrice,
-        public readonly Money $totalSales,
+        public string $interval,
+        public int $unitCount,
+        public int $orderItemCount,
+        public int $orderCount,
+        public Money $averageUnitPrice,
+        public Money $totalSales,
     ) {}
 }

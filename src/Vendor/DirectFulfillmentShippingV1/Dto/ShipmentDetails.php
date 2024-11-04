@@ -22,10 +22,10 @@ final class ShipmentDetails extends Dto
      * @param  ?\DateTimeInterface  $estimatedDeliveryDate  Date on which the shipment is expected to reach the buyer's warehouse. It needs to be an estimate based on the average transit time between the ship-from location and the destination. The exact appointment time will be provided by buyer and is potentially not known when creating the shipment confirmation.
      */
     public function __construct(
-        public readonly \DateTimeInterface $shippedDate,
-        public readonly string $shipmentStatus,
-        public readonly ?bool $isPriorityShipment = null,
-        public readonly ?string $vendorOrderNumber = null,
-        public readonly ?\DateTimeInterface $estimatedDeliveryDate = null,
+        public \DateTimeInterface $shippedDate,
+        public string $shipmentStatus,
+        public ?bool $isPriorityShipment = null,
+        public ?string $vendorOrderNumber = null,
+        public ?\DateTimeInterface $estimatedDeliveryDate = null,
     ) {}
 }

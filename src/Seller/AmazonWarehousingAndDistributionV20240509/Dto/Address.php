@@ -28,16 +28,16 @@ final class Address extends Dto
      * @param  ?string  $postalCode  Optional postal code where this address is located.
      */
     public function __construct(
-        public readonly string $addressLine1,
-        public readonly string $countryCode,
-        public readonly string $name,
-        public readonly string $stateOrRegion,
-        public readonly ?string $addressLine2 = null,
-        public readonly ?string $addressLine3 = null,
-        public readonly ?string $city = null,
-        public readonly ?string $county = null,
-        public readonly ?string $district = null,
-        public readonly ?string $phoneNumber = null,
-        public readonly ?string $postalCode = null,
+        public string $addressLine1,
+        public string $countryCode,
+        public string $name,
+        public string $stateOrRegion,
+        public ?string $addressLine2 = null,
+        public ?string $addressLine3 = null,
+        public ?string $city = null,
+        public ?string $county = null,
+        public ?string $district = null,
+        public ?string $phoneNumber = null,
+        public ?string $postalCode = null,
     ) {}
 }

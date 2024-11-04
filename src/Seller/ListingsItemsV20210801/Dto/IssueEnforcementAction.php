@@ -28,6 +28,6 @@ final class IssueEnforcementAction extends Dto
      * * `SEARCH_SUPPRESSED` - This value indicates that the catalog item is hidden from search results.
      */
     public function __construct(
-        public readonly string $action,
+        public string $action,
     ) {}
 }

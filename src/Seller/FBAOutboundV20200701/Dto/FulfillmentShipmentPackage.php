@@ -23,11 +23,11 @@ final class FulfillmentShipmentPackage extends Dto
      * @param  ?DeliveryInformation  $deliveryInformation  The delivery information for the package. This information is available after the package is delivered.
      */
     public function __construct(
-        public readonly int $packageNumber,
-        public readonly string $carrierCode,
-        public readonly ?string $trackingNumber = null,
-        public readonly ?\DateTimeInterface $estimatedArrivalDate = null,
-        public readonly ?LockerDetails $lockerDetails = null,
-        public readonly ?DeliveryInformation $deliveryInformation = null,
+        public int $packageNumber,
+        public string $carrierCode,
+        public ?string $trackingNumber = null,
+        public ?\DateTimeInterface $estimatedArrivalDate = null,
+        public ?LockerDetails $lockerDetails = null,
+        public ?DeliveryInformation $deliveryInformation = null,
     ) {}
 }

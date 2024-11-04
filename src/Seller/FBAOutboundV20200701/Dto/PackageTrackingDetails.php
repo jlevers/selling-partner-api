@@ -35,19 +35,19 @@ final class PackageTrackingDetails extends Dto
      * @param  TrackingEvent[]|null  $trackingEvents  An array of tracking event information.
      */
     public function __construct(
-        public readonly int $packageNumber,
-        public readonly ?string $trackingNumber = null,
-        public readonly ?string $customerTrackingLink = null,
-        public readonly ?string $carrierCode = null,
-        public readonly ?string $carrierPhoneNumber = null,
-        public readonly ?string $carrierUrl = null,
-        public readonly ?\DateTimeInterface $shipDate = null,
-        public readonly ?\DateTimeInterface $estimatedArrivalDate = null,
-        public readonly ?TrackingAddress $shipToAddress = null,
-        public readonly ?string $currentStatus = null,
-        public readonly ?string $currentStatusDescription = null,
-        public readonly ?string $signedForBy = null,
-        public readonly ?string $additionalLocationInfo = null,
-        public readonly ?array $trackingEvents = null,
+        public int $packageNumber,
+        public ?string $trackingNumber = null,
+        public ?string $customerTrackingLink = null,
+        public ?string $carrierCode = null,
+        public ?string $carrierPhoneNumber = null,
+        public ?string $carrierUrl = null,
+        public ?\DateTimeInterface $shipDate = null,
+        public ?\DateTimeInterface $estimatedArrivalDate = null,
+        public ?TrackingAddress $shipToAddress = null,
+        public ?string $currentStatus = null,
+        public ?string $currentStatusDescription = null,
+        public ?string $signedForBy = null,
+        public ?string $additionalLocationInfo = null,
+        public ?array $trackingEvents = null,
     ) {}
 }

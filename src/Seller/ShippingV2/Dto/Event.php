@@ -21,9 +21,9 @@ final class Event extends Dto
      * @param  ?string  $shipmentType  Shipment type.
      */
     public function __construct(
-        public readonly string $eventCode,
-        public readonly \DateTimeInterface $eventTime,
-        public readonly ?Location $location = null,
-        public readonly ?string $shipmentType = null,
+        public string $eventCode,
+        public \DateTimeInterface $eventTime,
+        public ?Location $location = null,
+        public ?string $shipmentType = null,
     ) {}
 }

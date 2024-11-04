@@ -23,9 +23,9 @@ final class AcknowledgementStatus extends Dto
      * @param  AcknowledgementStatusDetails[]|null  $acknowledgementStatusDetails  Details of item quantity confirmed.
      */
     public function __construct(
-        public readonly ?string $confirmationStatus = null,
-        public readonly ?ItemQuantity $acceptedQuantity = null,
-        public readonly ?ItemQuantity $rejectedQuantity = null,
-        public readonly ?array $acknowledgementStatusDetails = null,
+        public ?string $confirmationStatus = null,
+        public ?ItemQuantity $acceptedQuantity = null,
+        public ?ItemQuantity $rejectedQuantity = null,
+        public ?array $acknowledgementStatusDetails = null,
     ) {}
 }

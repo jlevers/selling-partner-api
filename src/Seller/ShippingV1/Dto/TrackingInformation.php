@@ -23,9 +23,9 @@ final class TrackingInformation extends Dto
      * @param  Event[]  $eventHistory  A list of events of a shipment.
      */
     public function __construct(
-        public readonly string $trackingId,
-        public readonly TrackingSummary $summary,
-        public readonly \DateTimeInterface $promisedDeliveryDate,
-        public readonly array $eventHistory,
+        public string $trackingId,
+        public TrackingSummary $summary,
+        public \DateTimeInterface $promisedDeliveryDate,
+        public array $eventHistory,
     ) {}
 }

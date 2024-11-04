@@ -18,6 +18,6 @@ final class UpdateShipmentSourceAddressRequest extends Dto
      * @param  AddressInput  $address  Specific details to identify a place.
      */
     public function __construct(
-        public readonly AddressInput $address,
+        public AddressInput $address,
     ) {}
 }

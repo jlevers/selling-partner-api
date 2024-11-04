@@ -24,10 +24,10 @@ final class ReturnAuthorization extends Dto
      * @param  string  $rmaPageUrl  A URL for a web page that contains the return authorization barcode and the mailing label. This does not include pre-paid shipping.
      */
     public function __construct(
-        public readonly string $returnAuthorizationId,
-        public readonly string $fulfillmentCenterId,
-        public readonly Address $returnToAddress,
-        public readonly string $amazonRmaId,
-        public readonly string $rmaPageUrl,
+        public string $returnAuthorizationId,
+        public string $fulfillmentCenterId,
+        public Address $returnToAddress,
+        public string $amazonRmaId,
+        public string $rmaPageUrl,
     ) {}
 }

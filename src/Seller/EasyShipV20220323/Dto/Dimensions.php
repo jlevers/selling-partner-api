@@ -22,10 +22,10 @@ final class Dimensions extends Dto
      * @param  ?string  $identifier  A string of up to 255 characters.
      */
     public function __construct(
-        public readonly ?float $length = null,
-        public readonly ?float $width = null,
-        public readonly ?float $height = null,
-        public readonly ?string $unit = null,
-        public readonly ?string $identifier = null,
+        public ?float $length = null,
+        public ?float $width = null,
+        public ?float $height = null,
+        public ?string $unit = null,
+        public ?string $identifier = null,
     ) {}
 }

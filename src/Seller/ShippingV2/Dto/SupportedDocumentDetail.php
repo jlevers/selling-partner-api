@@ -19,7 +19,7 @@ final class SupportedDocumentDetail extends Dto
      * @param  bool  $isMandatory  When true, the supported document type is required.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly bool $isMandatory,
+        public string $name,
+        public bool $isMandatory,
     ) {}
 }

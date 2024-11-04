@@ -18,18 +18,18 @@ final class PlacementOption extends Dto
 
     /**
      * @param  Incentive[]  $discounts  Discount for the offered option.
-     * @param  Incentive[]  $fees  Fee for the offered option.
+     * @param  Incentive[]  $fees  The fee for the offered option.
      * @param  string  $placementOptionId  The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
      * @param  string[]  $shipmentIds  Shipment ids.
-     * @param  string  $status  The status of a placement option. Can be: `OFFERED`, `ACCEPTED`, or `EXPIRED`.
-     * @param  ?\DateTimeInterface  $expiration  The expiration date of the placement option. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param  string  $status  The status of a placement option. Possible values: `OFFERED`, `ACCEPTED`, `EXPIRED`.
+     * @param  ?\DateTimeInterface  $expiration  The expiration date of the placement option. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
     public function __construct(
-        public readonly array $discounts,
-        public readonly array $fees,
-        public readonly string $placementOptionId,
-        public readonly array $shipmentIds,
-        public readonly string $status,
-        public readonly ?\DateTimeInterface $expiration = null,
+        public array $discounts,
+        public array $fees,
+        public string $placementOptionId,
+        public array $shipmentIds,
+        public string $status,
+        public ?\DateTimeInterface $expiration = null,
     ) {}
 }

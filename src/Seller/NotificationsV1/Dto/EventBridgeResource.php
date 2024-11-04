@@ -20,8 +20,8 @@ final class EventBridgeResource extends Dto
      * @param  string  $accountId  The identifier for the AWS account that is responsible for charges related to receiving notifications.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly string $region,
-        public readonly string $accountId,
+        public string $name,
+        public string $region,
+        public string $accountId,
     ) {}
 }

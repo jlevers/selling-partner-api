@@ -18,6 +18,6 @@ final class StandardProductDescriptionModule extends Dto
      * @param  ParagraphComponent  $body  A list of rich text content, usually presented in a text box.
      */
     public function __construct(
-        public readonly ParagraphComponent $body,
+        public ParagraphComponent $body,
     ) {}
 }

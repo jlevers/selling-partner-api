@@ -19,7 +19,7 @@ final class PurchaseLabelsRequest extends Dto
      * @param  LabelSpecification  $labelSpecification  The label specification info.
      */
     public function __construct(
-        public readonly string $rateId,
-        public readonly LabelSpecification $labelSpecification,
+        public string $rateId,
+        public LabelSpecification $labelSpecification,
     ) {}
 }

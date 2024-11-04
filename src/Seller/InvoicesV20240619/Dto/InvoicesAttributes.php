@@ -28,9 +28,9 @@ final class InvoicesAttributes extends Dto
      * @param  AttributeOption[]|null  $transactionTypeOptions  A list of all the options that are available for the transaction type attribute.
      */
     public function __construct(
-        public readonly ?array $invoiceStatusOptions = null,
-        public readonly ?array $invoiceTypeOptions = null,
-        public readonly ?array $transactionIdentifierNameOptions = null,
-        public readonly ?array $transactionTypeOptions = null,
+        public ?array $invoiceStatusOptions = null,
+        public ?array $invoiceTypeOptions = null,
+        public ?array $transactionIdentifierNameOptions = null,
+        public ?array $transactionTypeOptions = null,
     ) {}
 }

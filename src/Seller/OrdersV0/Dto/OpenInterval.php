@@ -21,7 +21,7 @@ final class OpenInterval extends Dto
      * @param  ?OpenTimeInterval  $endTime  The time when the business opens or closes.
      */
     public function __construct(
-        public readonly ?OpenTimeInterval $startTime = null,
-        public readonly ?OpenTimeInterval $endTime = null,
+        public ?OpenTimeInterval $startTime = null,
+        public ?OpenTimeInterval $endTime = null,
     ) {}
 }

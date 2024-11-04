@@ -30,7 +30,7 @@ final class TimeInterval extends Dto
      *  Note: The end date may be adjusted to a lower value based on the data available in our system.
      */
     public function __construct(
-        public readonly \DateTimeInterface $startDate,
-        public readonly \DateTimeInterface $endDate,
+        public \DateTimeInterface $startDate,
+        public \DateTimeInterface $endDate,
     ) {}
 }

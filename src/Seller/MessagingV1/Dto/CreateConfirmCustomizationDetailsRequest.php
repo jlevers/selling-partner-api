@@ -21,7 +21,7 @@ final class CreateConfirmCustomizationDetailsRequest extends Dto
      * @param  Attachment[]|null  $attachments  Attachments to include in the message to the buyer.
      */
     public function __construct(
-        public readonly ?string $text = null,
-        public readonly ?array $attachments = null,
+        public ?string $text = null,
+        public ?array $attachments = null,
     ) {}
 }

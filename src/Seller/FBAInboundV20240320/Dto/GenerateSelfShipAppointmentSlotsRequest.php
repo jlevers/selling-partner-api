@@ -15,11 +15,11 @@ use SellingPartnerApi\Dto;
 final class GenerateSelfShipAppointmentSlotsRequest extends Dto
 {
     /**
-     * @param  ?\DateTimeInterface  $desiredEndDate  The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
-     * @param  ?\DateTimeInterface  $desiredStartDate  The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param  ?\DateTimeInterface  $desiredEndDate  The desired end date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
+     * @param  ?\DateTimeInterface  $desiredStartDate  The desired start date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $desiredEndDate = null,
-        public readonly ?\DateTimeInterface $desiredStartDate = null,
+        public ?\DateTimeInterface $desiredEndDate = null,
+        public ?\DateTimeInterface $desiredStartDate = null,
     ) {}
 }

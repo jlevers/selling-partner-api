@@ -19,7 +19,7 @@ final class Fee extends Dto
      * @param  Money  $amount  An amount of money, including units in the form of currency.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly Money $amount,
+        public string $name,
+        public Money $amount,
     ) {}
 }

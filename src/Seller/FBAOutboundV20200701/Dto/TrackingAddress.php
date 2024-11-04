@@ -20,8 +20,8 @@ final class TrackingAddress extends Dto
      * @param  string  $country  The country.
      */
     public function __construct(
-        public readonly string $city,
-        public readonly string $state,
-        public readonly string $country,
+        public string $city,
+        public string $state,
+        public string $country,
     ) {}
 }

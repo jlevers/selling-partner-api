@@ -28,9 +28,9 @@ final class OrderRegulatedInfo extends Dto
      * @param  RegulatedOrderVerificationStatus  $regulatedOrderVerificationStatus  The verification status of the order, along with associated approval or rejection metadata.
      */
     public function __construct(
-        public readonly string $amazonOrderId,
-        public readonly RegulatedInformation $regulatedInformation,
-        public readonly bool $requiresDosageLabel,
-        public readonly RegulatedOrderVerificationStatus $regulatedOrderVerificationStatus,
+        public string $amazonOrderId,
+        public RegulatedInformation $regulatedInformation,
+        public bool $requiresDosageLabel,
+        public RegulatedOrderVerificationStatus $regulatedOrderVerificationStatus,
     ) {}
 }

@@ -32,15 +32,15 @@ final class Containers extends Dto
      * @param  PackedItems[]|null  $packedItems  A list of packed items.
      */
     public function __construct(
-        public readonly string $containerType,
-        public readonly array $containerIdentifiers,
-        public readonly ?string $containerSequenceNumber = null,
-        public readonly ?string $trackingNumber = null,
-        public readonly ?Dimensions $dimensions = null,
-        public readonly ?Weight $weight = null,
-        public readonly ?int $tier = null,
-        public readonly ?int $block = null,
-        public readonly ?InnerContainersDetails $innerContainersDetails = null,
-        public readonly ?array $packedItems = null,
+        public string $containerType,
+        public array $containerIdentifiers,
+        public ?string $containerSequenceNumber = null,
+        public ?string $trackingNumber = null,
+        public ?Dimensions $dimensions = null,
+        public ?Weight $weight = null,
+        public ?int $tier = null,
+        public ?int $block = null,
+        public ?InnerContainersDetails $innerContainersDetails = null,
+        public ?array $packedItems = null,
     ) {}
 }

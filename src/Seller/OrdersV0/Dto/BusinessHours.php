@@ -23,7 +23,7 @@ final class BusinessHours extends Dto
      * @param  OpenInterval[]|null  $openIntervals  Time window during the day when the business is open.
      */
     public function __construct(
-        public readonly ?string $dayOfWeek = null,
-        public readonly ?array $openIntervals = null,
+        public ?string $dayOfWeek = null,
+        public ?array $openIntervals = null,
     ) {}
 }

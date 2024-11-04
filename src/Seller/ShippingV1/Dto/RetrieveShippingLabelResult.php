@@ -19,7 +19,7 @@ final class RetrieveShippingLabelResult extends Dto
      * @param  LabelSpecification  $labelSpecification  The label specification info.
      */
     public function __construct(
-        public readonly string $labelStream,
-        public readonly LabelSpecification $labelSpecification,
+        public string $labelStream,
+        public LabelSpecification $labelSpecification,
     ) {}
 }

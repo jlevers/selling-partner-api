@@ -21,7 +21,7 @@ final class ExcludedBenefit extends Dto
      * @param  ?string[]  $reasonCodes  List of reasons (eg. LATE_DELIVERY_RISK, etc.) indicating why a benefit is excluded for a shipping offer.
      */
     public function __construct(
-        public readonly ?string $benefit = null,
-        public readonly ?array $reasonCodes = null,
+        public ?string $benefit = null,
+        public ?array $reasonCodes = null,
     ) {}
 }

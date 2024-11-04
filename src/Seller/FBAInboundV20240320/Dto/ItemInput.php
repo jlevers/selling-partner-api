@@ -16,18 +16,18 @@ final class ItemInput extends Dto
 {
     /**
      * @param  string  $labelOwner  Specifies who will label the items. Options include `AMAZON`, `SELLER` or `NONE`.
-     * @param  string  $msku  Merchant SKU.
-     * @param  string  $prepOwner  In some situations, special preparations are required for items and this field reflects the owner of the preparations. Options include `AMAZON`, `SELLER` or `NONE`.
-     * @param  int  $quantity  The number of units of the specified msku that will be shipped.
-     * @param  ?string  $expiration  The expiration date of the MSKU in ISO 8601 format. The same MSKU with different expiration dates cannot go into the same box.
+     * @param  string  $msku  The merchant SKU, a merchant-supplied identifier of a specific SKU.
+     * @param  string  $prepOwner  The owner of the preparations, if special preparations are required.
+     * @param  int  $quantity  The number of units of the specified MSKU that will be shipped.
+     * @param  ?string  $expiration  The expiration date of the MSKU. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `YYYY-MM-DD`. Items with the same MSKU but different expiration dates cannot go into the same box.
      * @param  ?string  $manufacturingLotCode  The manufacturing lot code.
      */
     public function __construct(
-        public readonly string $labelOwner,
-        public readonly string $msku,
-        public readonly string $prepOwner,
-        public readonly int $quantity,
-        public readonly ?string $expiration = null,
-        public readonly ?string $manufacturingLotCode = null,
+        public string $labelOwner,
+        public string $msku,
+        public string $prepOwner,
+        public int $quantity,
+        public ?string $expiration = null,
+        public ?string $manufacturingLotCode = null,
     ) {}
 }

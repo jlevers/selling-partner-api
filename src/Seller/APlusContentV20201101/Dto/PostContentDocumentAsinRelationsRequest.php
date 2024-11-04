@@ -18,6 +18,6 @@ final class PostContentDocumentAsinRelationsRequest extends Dto
      * @param  string[]  $asinSet  The set of ASINs.
      */
     public function __construct(
-        public readonly array $asinSet,
+        public array $asinSet,
     ) {}
 }

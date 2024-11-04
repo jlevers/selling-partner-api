@@ -28,9 +28,9 @@ final class FbaLiquidationEvent extends Dto
      * @param  ?Currency  $liquidationFeeAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $originalRemovalOrderId = null,
-        public readonly ?Currency $liquidationProceedsAmount = null,
-        public readonly ?Currency $liquidationFeeAmount = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $originalRemovalOrderId = null,
+        public ?Currency $liquidationProceedsAmount = null,
+        public ?Currency $liquidationFeeAmount = null,
     ) {}
 }

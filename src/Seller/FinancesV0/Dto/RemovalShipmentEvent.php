@@ -38,11 +38,11 @@ final class RemovalShipmentEvent extends Dto
      * @param  RemovalShipmentItem[]|null  $removalShipmentItemList  A list of `RemovalShipmentItem`.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $merchantOrderId = null,
-        public readonly ?string $orderId = null,
-        public readonly ?string $transactionType = null,
-        public readonly ?string $storeName = null,
-        public readonly ?array $removalShipmentItemList = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $merchantOrderId = null,
+        public ?string $orderId = null,
+        public ?string $transactionType = null,
+        public ?string $storeName = null,
+        public ?array $removalShipmentItemList = null,
     ) {}
 }

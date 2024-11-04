@@ -25,11 +25,11 @@ final class GetSellingPartnerMetricsRequest extends Dto
      * @param  ?string[]  $metrics  The list of metrics requested. If no metric value is provided, data for all of the metrics will be returned.
      */
     public function __construct(
-        public readonly TimeInterval $timeInterval,
-        public readonly string $timePeriodType,
-        public readonly string $marketplaceId,
-        public readonly array $programTypes,
-        public readonly ?string $aggregationFrequency = null,
-        public readonly ?array $metrics = null,
+        public TimeInterval $timeInterval,
+        public string $timePeriodType,
+        public string $marketplaceId,
+        public array $programTypes,
+        public ?string $aggregationFrequency = null,
+        public ?array $metrics = null,
     ) {}
 }

@@ -20,6 +20,6 @@ final class Embedded extends Dto
      * @param  GetSolicitationActionResponse[]  $actions
      */
     public function __construct(
-        public readonly array $actions,
+        public array $actions,
     ) {}
 }

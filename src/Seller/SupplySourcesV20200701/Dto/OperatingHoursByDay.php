@@ -34,12 +34,12 @@ final class OperatingHoursByDay extends Dto
      * @param  OperatingHour[]|null  $sunday  A list of Operating Hours.
      */
     public function __construct(
-        public readonly ?array $monday = null,
-        public readonly ?array $tuesday = null,
-        public readonly ?array $wednesday = null,
-        public readonly ?array $thursday = null,
-        public readonly ?array $friday = null,
-        public readonly ?array $saturday = null,
-        public readonly ?array $sunday = null,
+        public ?array $monday = null,
+        public ?array $tuesday = null,
+        public ?array $wednesday = null,
+        public ?array $thursday = null,
+        public ?array $friday = null,
+        public ?array $saturday = null,
+        public ?array $sunday = null,
     ) {}
 }

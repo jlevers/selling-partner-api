@@ -52,10 +52,10 @@ final class CreateInboundShipmentPlanRequest extends Dto
      * Note: Not required. Specifying both ShipToCountryCode and ShipToCountrySubdivisionCode returns an error.
      */
     public function __construct(
-        public readonly Address $shipFromAddress,
-        public readonly string $labelPrepPreference,
-        public readonly array $inboundShipmentPlanRequestItems,
-        public readonly ?string $shipToCountryCode = null,
-        public readonly ?string $shipToCountrySubdivisionCode = null,
+        public Address $shipFromAddress,
+        public string $labelPrepPreference,
+        public array $inboundShipmentPlanRequestItems,
+        public ?string $shipToCountryCode = null,
+        public ?string $shipToCountrySubdivisionCode = null,
     ) {}
 }

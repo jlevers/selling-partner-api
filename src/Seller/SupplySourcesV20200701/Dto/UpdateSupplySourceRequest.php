@@ -20,8 +20,8 @@ final class UpdateSupplySourceRequest extends Dto
      * @param  ?SupplySourceCapabilities  $capabilities  The capabilities of a supply source.
      */
     public function __construct(
-        public readonly ?string $alias = null,
-        public readonly ?SupplySourceConfiguration $configuration = null,
-        public readonly ?SupplySourceCapabilities $capabilities = null,
+        public ?string $alias = null,
+        public ?SupplySourceConfiguration $configuration = null,
+        public ?SupplySourceCapabilities $capabilities = null,
     ) {}
 }

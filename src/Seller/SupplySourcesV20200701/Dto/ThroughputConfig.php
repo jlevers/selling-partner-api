@@ -19,7 +19,7 @@ final class ThroughputConfig extends Dto
      * @param  ?ThroughputCap  $throughputCap  The throughput capacity
      */
     public function __construct(
-        public readonly string $throughputUnit,
-        public readonly ?ThroughputCap $throughputCap = null,
+        public string $throughputUnit,
+        public ?ThroughputCap $throughputCap = null,
     ) {}
 }

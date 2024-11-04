@@ -19,7 +19,7 @@ final class GetDeliveryOffersTerms extends Dto
      * @param  Destination  $destination  The destination for the delivery offer.
      */
     public function __construct(
-        public readonly Origin $origin,
-        public readonly Destination $destination,
+        public Origin $origin,
+        public Destination $destination,
     ) {}
 }

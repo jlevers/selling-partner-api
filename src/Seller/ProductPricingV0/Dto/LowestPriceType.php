@@ -27,14 +27,14 @@ final class LowestPriceType extends Dto
      * @param  ?int  $quantityTier  Indicates at what quantity this price becomes active.
      */
     public function __construct(
-        public readonly string $condition,
-        public readonly string $fulfillmentChannel,
-        public readonly MoneyType $listingPrice,
-        public readonly ?string $offerType = null,
-        public readonly ?int $quantityTier = null,
-        public readonly ?string $quantityDiscountType = null,
-        public readonly ?MoneyType $landedPrice = null,
-        public readonly ?MoneyType $shipping = null,
-        public readonly ?Points $points = null,
+        public string $condition,
+        public string $fulfillmentChannel,
+        public MoneyType $listingPrice,
+        public ?string $offerType = null,
+        public ?int $quantityTier = null,
+        public ?string $quantityDiscountType = null,
+        public ?MoneyType $landedPrice = null,
+        public ?MoneyType $shipping = null,
+        public ?Points $points = null,
     ) {}
 }

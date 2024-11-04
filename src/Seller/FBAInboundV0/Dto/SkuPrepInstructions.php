@@ -34,11 +34,11 @@ final class SkuPrepInstructions extends Dto
      * @param  AmazonPrepFeesDetails[]|null  $amazonPrepFeesDetailsList  A list of preparation instructions and fees for Amazon to prep goods for shipment.
      */
     public function __construct(
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $asin = null,
-        public readonly ?string $barcodeInstruction = null,
-        public readonly ?string $prepGuidance = null,
-        public readonly ?array $prepInstructionList = null,
-        public readonly ?array $amazonPrepFeesDetailsList = null,
+        public ?string $sellerSku = null,
+        public ?string $asin = null,
+        public ?string $barcodeInstruction = null,
+        public ?string $prepGuidance = null,
+        public ?array $prepInstructionList = null,
+        public ?array $amazonPrepFeesDetailsList = null,
     ) {}
 }

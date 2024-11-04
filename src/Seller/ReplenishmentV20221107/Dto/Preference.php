@@ -18,6 +18,6 @@ final class Preference extends Dto
      * @param  ?string[]  $autoEnrollment  Filters the results to only include offers with the auto-enrollment preference specified.
      */
     public function __construct(
-        public readonly ?array $autoEnrollment = null,
+        public ?array $autoEnrollment = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class ContentMetadataRecord extends Dto
      * @param  ContentMetadata  $contentMetadata  The metadata of an A+ Content document.
      */
     public function __construct(
-        public readonly string $contentReferenceKey,
-        public readonly ContentMetadata $contentMetadata,
+        public string $contentReferenceKey,
+        public ContentMetadata $contentMetadata,
     ) {}
 }

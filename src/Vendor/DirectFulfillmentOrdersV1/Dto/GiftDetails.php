@@ -19,7 +19,7 @@ final class GiftDetails extends Dto
      * @param  ?string  $giftWrapId  Gift wrap identifier for the gift wrapping, if any.
      */
     public function __construct(
-        public readonly ?string $giftMessage = null,
-        public readonly ?string $giftWrapId = null,
+        public ?string $giftMessage = null,
+        public ?string $giftWrapId = null,
     ) {}
 }

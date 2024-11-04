@@ -19,7 +19,7 @@ final class RelatedIdentifier extends Dto
      * @param  ?string  $relatedIdentifierValue  Corresponding value of `RelatedIdentifierName`.
      */
     public function __construct(
-        public readonly ?string $relatedIdentifierName = null,
-        public readonly ?string $relatedIdentifierValue = null,
+        public ?string $relatedIdentifierName = null,
+        public ?string $relatedIdentifierValue = null,
     ) {}
 }

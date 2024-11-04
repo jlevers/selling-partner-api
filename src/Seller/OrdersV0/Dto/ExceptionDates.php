@@ -28,8 +28,8 @@ final class ExceptionDates extends Dto
      * @param  OpenInterval[]|null  $openIntervals  Time window during the day when the business is open.
      */
     public function __construct(
-        public readonly ?string $exceptionDate = null,
-        public readonly ?bool $isOpen = null,
-        public readonly ?array $openIntervals = null,
+        public ?string $exceptionDate = null,
+        public ?bool $isOpen = null,
+        public ?array $openIntervals = null,
     ) {}
 }

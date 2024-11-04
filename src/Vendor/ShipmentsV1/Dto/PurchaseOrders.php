@@ -23,9 +23,9 @@ final class PurchaseOrders extends Dto
      * @param  PurchaseOrderItems[]|null  $items  A list of the items that are associated to the PO in this transport and their associated details.
      */
     public function __construct(
-        public readonly ?string $purchaseOrderNumber = null,
-        public readonly ?\DateTimeInterface $purchaseOrderDate = null,
-        public readonly ?string $shipWindow = null,
-        public readonly ?array $items = null,
+        public ?string $purchaseOrderNumber = null,
+        public ?\DateTimeInterface $purchaseOrderDate = null,
+        public ?string $shipWindow = null,
+        public ?array $items = null,
     ) {}
 }

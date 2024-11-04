@@ -20,8 +20,8 @@ final class ItemImage extends Dto
      * @param  int  $width  The width of the image in pixels.
      */
     public function __construct(
-        public readonly string $link,
-        public readonly int $height,
-        public readonly int $width,
+        public string $link,
+        public int $height,
+        public int $width,
     ) {}
 }

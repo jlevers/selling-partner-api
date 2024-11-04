@@ -19,7 +19,7 @@ final class Primary extends Dto
      * @param  ?string  $phone  The phone number of the person, business or institution.
      */
     public function __construct(
-        public readonly ?string $email = null,
-        public readonly ?string $phone = null,
+        public ?string $email = null,
+        public ?string $phone = null,
     ) {}
 }

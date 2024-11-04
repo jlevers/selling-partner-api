@@ -20,8 +20,8 @@ final class ChannelDetails extends Dto
      * @param  ?AmazonShipmentDetails  $amazonShipmentDetails  Amazon shipment information.
      */
     public function __construct(
-        public readonly string $channelType,
-        public readonly ?AmazonOrderDetails $amazonOrderDetails = null,
-        public readonly ?AmazonShipmentDetails $amazonShipmentDetails = null,
+        public string $channelType,
+        public ?AmazonOrderDetails $amazonOrderDetails = null,
+        public ?AmazonShipmentDetails $amazonShipmentDetails = null,
     ) {}
 }

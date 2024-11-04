@@ -24,12 +24,12 @@ final class UnfulfillableQuantity extends Dto
      * @param  ?int  $expiredQuantity  The number of units in expired disposition.
      */
     public function __construct(
-        public readonly ?int $totalUnfulfillableQuantity = null,
-        public readonly ?int $customerDamagedQuantity = null,
-        public readonly ?int $warehouseDamagedQuantity = null,
-        public readonly ?int $distributorDamagedQuantity = null,
-        public readonly ?int $carrierDamagedQuantity = null,
-        public readonly ?int $defectiveQuantity = null,
-        public readonly ?int $expiredQuantity = null,
+        public ?int $totalUnfulfillableQuantity = null,
+        public ?int $customerDamagedQuantity = null,
+        public ?int $warehouseDamagedQuantity = null,
+        public ?int $distributorDamagedQuantity = null,
+        public ?int $carrierDamagedQuantity = null,
+        public ?int $defectiveQuantity = null,
+        public ?int $expiredQuantity = null,
     ) {}
 }

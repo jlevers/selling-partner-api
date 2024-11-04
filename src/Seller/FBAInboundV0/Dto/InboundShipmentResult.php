@@ -20,6 +20,6 @@ final class InboundShipmentResult extends Dto
      * @param  string  $shipmentId  The shipment identifier submitted in the request.
      */
     public function __construct(
-        public readonly string $shipmentId,
+        public string $shipmentId,
     ) {}
 }

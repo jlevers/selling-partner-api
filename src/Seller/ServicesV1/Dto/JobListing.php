@@ -23,9 +23,9 @@ final class JobListing extends Dto
      * @param  ServiceJob[]|null  $jobs  List of job details for the given input.
      */
     public function __construct(
-        public readonly ?int $totalResultSize = null,
-        public readonly ?string $nextPageToken = null,
-        public readonly ?string $previousPageToken = null,
-        public readonly ?array $jobs = null,
+        public ?int $totalResultSize = null,
+        public ?string $nextPageToken = null,
+        public ?string $previousPageToken = null,
+        public ?array $jobs = null,
     ) {}
 }

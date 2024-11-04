@@ -23,11 +23,11 @@ final class StandardImageSidebarModule extends Dto
      * @param  ?StandardTextListBlock  $sidebarListBlock  The A+ Content standard fixed length list of text, usually presented as bullet points.
      */
     public function __construct(
-        public readonly ?TextComponent $headline = null,
-        public readonly ?StandardImageCaptionBlock $imageCaptionBlock = null,
-        public readonly ?StandardTextBlock $descriptionTextBlock = null,
-        public readonly ?StandardTextListBlock $descriptionListBlock = null,
-        public readonly ?StandardImageTextBlock $sidebarImageTextBlock = null,
-        public readonly ?StandardTextListBlock $sidebarListBlock = null,
+        public ?TextComponent $headline = null,
+        public ?StandardImageCaptionBlock $imageCaptionBlock = null,
+        public ?StandardTextBlock $descriptionTextBlock = null,
+        public ?StandardTextListBlock $descriptionListBlock = null,
+        public ?StandardImageTextBlock $sidebarImageTextBlock = null,
+        public ?StandardTextListBlock $sidebarListBlock = null,
     ) {}
 }

@@ -20,8 +20,8 @@ final class StandardImageTextBlock extends Dto
      * @param  ?ParagraphComponent  $body  A list of rich text content, usually presented in a text box.
      */
     public function __construct(
-        public readonly ?ImageComponent $image = null,
-        public readonly ?TextComponent $headline = null,
-        public readonly ?ParagraphComponent $body = null,
+        public ?ImageComponent $image = null,
+        public ?TextComponent $headline = null,
+        public ?ParagraphComponent $body = null,
     ) {}
 }

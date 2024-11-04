@@ -24,7 +24,7 @@ final class AdditionalSellerInputs extends Dto
      * @param  AdditionalSellerInput  $additionalSellerInput  Additional information required to purchase shipping.
      */
     public function __construct(
-        public readonly string $additionalInputFieldName,
-        public readonly AdditionalSellerInput $additionalSellerInput,
+        public string $additionalInputFieldName,
+        public AdditionalSellerInput $additionalSellerInput,
     ) {}
 }

@@ -19,7 +19,7 @@ final class AppointmentTime extends Dto
      * @param  int  $durationInMinutes  The duration of the appointment window, in minutes.
      */
     public function __construct(
-        public readonly \DateTimeInterface $startTime,
-        public readonly int $durationInMinutes,
+        public \DateTimeInterface $startTime,
+        public int $durationInMinutes,
     ) {}
 }

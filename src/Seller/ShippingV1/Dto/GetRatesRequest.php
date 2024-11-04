@@ -24,10 +24,10 @@ final class GetRatesRequest extends Dto
      * @param  ?\DateTimeInterface  $shipDate  The start date and time. This defaults to the current date and time.
      */
     public function __construct(
-        public readonly Address $shipTo,
-        public readonly Address $shipFrom,
-        public readonly array $serviceTypes,
-        public readonly array $containerSpecifications,
-        public readonly ?\DateTimeInterface $shipDate = null,
+        public Address $shipTo,
+        public Address $shipFrom,
+        public array $serviceTypes,
+        public array $containerSpecifications,
+        public ?\DateTimeInterface $shipDate = null,
     ) {}
 }

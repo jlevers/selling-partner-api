@@ -20,6 +20,6 @@ final class GenerateOrderScenarioRequest extends Dto
      * @param  OrderScenarioRequest[]|null  $orders  The list of test orders requested as indicated by party identifiers.
      */
     public function __construct(
-        public readonly ?array $orders = null,
+        public ?array $orders = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class ShipmentDates extends Dto
      * @param  ?\DateTimeInterface  $promisedDeliveryDate  Delivery date promised to the Amazon customer.
      */
     public function __construct(
-        public readonly \DateTimeInterface $requiredShipDate,
-        public readonly ?\DateTimeInterface $promisedDeliveryDate = null,
+        public \DateTimeInterface $requiredShipDate,
+        public ?\DateTimeInterface $promisedDeliveryDate = null,
     ) {}
 }

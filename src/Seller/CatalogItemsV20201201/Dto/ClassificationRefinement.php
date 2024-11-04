@@ -20,8 +20,8 @@ final class ClassificationRefinement extends Dto
      * @param  string  $classificationId  Identifier for the classification that can be used for search refinement purposes.
      */
     public function __construct(
-        public readonly int $numberOfResults,
-        public readonly string $displayName,
-        public readonly string $classificationId,
+        public int $numberOfResults,
+        public string $displayName,
+        public string $classificationId,
     ) {}
 }

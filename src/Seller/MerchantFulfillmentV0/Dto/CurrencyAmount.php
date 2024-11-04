@@ -21,7 +21,7 @@ final class CurrencyAmount extends Dto
      * @param  float  $amount  The currency amount.
      */
     public function __construct(
-        public readonly string $currencyCode,
-        public readonly float $amount,
+        public string $currencyCode,
+        public float $amount,
     ) {}
 }

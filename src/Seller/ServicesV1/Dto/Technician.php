@@ -19,7 +19,7 @@ final class Technician extends Dto
      * @param  ?string  $name  The name of the technician.
      */
     public function __construct(
-        public readonly ?string $technicianId = null,
-        public readonly ?string $name = null,
+        public ?string $technicianId = null,
+        public ?string $name = null,
     ) {}
 }

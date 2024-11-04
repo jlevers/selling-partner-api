@@ -19,7 +19,7 @@ final class DeliveryMessage extends Dto
      * @param  ?string  $locale  The locale for the message (for example, en_US).
      */
     public function __construct(
-        public readonly ?string $text = null,
-        public readonly ?string $locale = null,
+        public ?string $text = null,
+        public ?string $locale = null,
     ) {}
 }

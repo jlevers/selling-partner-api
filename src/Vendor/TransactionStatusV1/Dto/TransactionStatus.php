@@ -18,6 +18,6 @@ final class TransactionStatus extends Dto
      * @param  ?Transaction  $transactionStatus  The transaction status.
      */
     public function __construct(
-        public readonly ?Transaction $transactionStatus = null,
+        public ?Transaction $transactionStatus = null,
     ) {}
 }

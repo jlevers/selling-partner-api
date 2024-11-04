@@ -22,8 +22,8 @@ final class LabelDimensions extends Dto
      * @param  string  $unit  The unit of length.
      */
     public function __construct(
-        public readonly float $length,
-        public readonly float $width,
-        public readonly string $unit,
+        public float $length,
+        public float $width,
+        public string $unit,
     ) {}
 }

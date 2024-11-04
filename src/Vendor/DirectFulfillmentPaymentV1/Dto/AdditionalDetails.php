@@ -20,8 +20,8 @@ final class AdditionalDetails extends Dto
      * @param  ?string  $languageCode  The language code of the additional information detail.
      */
     public function __construct(
-        public readonly string $type,
-        public readonly string $detail,
-        public readonly ?string $languageCode = null,
+        public string $type,
+        public string $detail,
+        public ?string $languageCode = null,
     ) {}
 }

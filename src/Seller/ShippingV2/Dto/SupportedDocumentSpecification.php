@@ -22,8 +22,8 @@ final class SupportedDocumentSpecification extends Dto
      * @param  PrintOption[]  $printOptions  A list of the format options for a label.
      */
     public function __construct(
-        public readonly string $format,
-        public readonly DocumentSize $size,
-        public readonly array $printOptions,
+        public string $format,
+        public DocumentSize $size,
+        public array $printOptions,
     ) {}
 }

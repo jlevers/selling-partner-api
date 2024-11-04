@@ -23,7 +23,7 @@ final class NonPartneredSmallParcelDataInput extends Dto
      * @param  NonPartneredSmallParcelPackageInput[]  $packageList  A list of package tracking information.
      */
     public function __construct(
-        public readonly string $carrierName,
-        public readonly array $packageList,
+        public string $carrierName,
+        public array $packageList,
     ) {}
 }

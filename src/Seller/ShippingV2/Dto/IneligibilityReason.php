@@ -19,7 +19,7 @@ final class IneligibilityReason extends Dto
      * @param  string  $message  The ineligibility reason.
      */
     public function __construct(
-        public readonly string $code,
-        public readonly string $message,
+        public string $code,
+        public string $message,
     ) {}
 }

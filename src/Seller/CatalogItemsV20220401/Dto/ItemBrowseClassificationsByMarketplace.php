@@ -21,7 +21,7 @@ final class ItemBrowseClassificationsByMarketplace extends Dto
      * @param  ItemBrowseClassification[]|null  $classifications  Classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly ?array $classifications = null,
+        public string $marketplaceId,
+        public ?array $classifications = null,
     ) {}
 }

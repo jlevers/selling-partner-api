@@ -19,7 +19,7 @@ final class Link extends Dto
      * @param  string  $verb  HTTP method for the link operation.
      */
     public function __construct(
-        public readonly string $resource,
-        public readonly string $verb,
+        public string $resource,
+        public string $verb,
     ) {}
 }

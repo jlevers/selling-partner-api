@@ -19,7 +19,7 @@ final class ShippingPromiseSet extends Dto
      * @param  ?TimeRange  $receiveWindow  The time range.
      */
     public function __construct(
-        public readonly ?TimeRange $deliveryWindow = null,
-        public readonly ?TimeRange $receiveWindow = null,
+        public ?TimeRange $deliveryWindow = null,
+        public ?TimeRange $receiveWindow = null,
     ) {}
 }

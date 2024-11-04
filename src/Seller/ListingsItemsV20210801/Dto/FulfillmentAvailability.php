@@ -19,7 +19,7 @@ final class FulfillmentAvailability extends Dto
      * @param  ?int  $quantity  The quantity of the item you are making available for sale.
      */
     public function __construct(
-        public readonly string $fulfillmentChannelCode,
-        public readonly ?int $quantity = null,
+        public string $fulfillmentChannelCode,
+        public ?int $quantity = null,
     ) {}
 }

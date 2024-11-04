@@ -21,9 +21,9 @@ final class ItemRelationship extends Dto
      * @param  ?ItemVariationTheme  $variationTheme  Variation theme indicating the combination of Amazon item catalog attributes that define the variation family.
      */
     public function __construct(
-        public readonly string $type,
-        public readonly ?array $childAsins = null,
-        public readonly ?array $parentAsins = null,
-        public readonly ?ItemVariationTheme $variationTheme = null,
+        public string $type,
+        public ?array $childAsins = null,
+        public ?array $parentAsins = null,
+        public ?ItemVariationTheme $variationTheme = null,
     ) {}
 }

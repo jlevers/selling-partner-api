@@ -21,7 +21,7 @@ final class SubmitAcknowledgementResponse extends Dto
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
-        public readonly ?TransactionId $payload = null,
-        public readonly ?ErrorList $errors = null,
+        public ?TransactionId $payload = null,
+        public ?ErrorList $errors = null,
     ) {}
 }

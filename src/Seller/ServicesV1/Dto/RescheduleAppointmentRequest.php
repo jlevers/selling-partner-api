@@ -19,7 +19,7 @@ final class RescheduleAppointmentRequest extends Dto
      * @param  string  $rescheduleReasonCode  The appointment reschedule reason code.
      */
     public function __construct(
-        public readonly AppointmentTimeInput $appointmentTime,
-        public readonly string $rescheduleReasonCode,
+        public AppointmentTimeInput $appointmentTime,
+        public string $rescheduleReasonCode,
     ) {}
 }

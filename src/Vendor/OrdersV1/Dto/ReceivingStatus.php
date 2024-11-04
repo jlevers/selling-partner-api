@@ -20,8 +20,8 @@ final class ReceivingStatus extends Dto
      * @param  ?\DateTimeInterface  $lastReceiveDate  The date when the most recent item was received at the buyer's warehouse. Must be in ISO-8601 date/time format.
      */
     public function __construct(
-        public readonly ?string $receiveStatus = null,
-        public readonly ?ItemQuantity $receivedQuantity = null,
-        public readonly ?\DateTimeInterface $lastReceiveDate = null,
+        public ?string $receiveStatus = null,
+        public ?ItemQuantity $receivedQuantity = null,
+        public ?\DateTimeInterface $lastReceiveDate = null,
     ) {}
 }

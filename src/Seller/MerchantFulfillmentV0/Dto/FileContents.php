@@ -22,8 +22,8 @@ final class FileContents extends Dto
      * @param  string  $checksum  An MD5 hash to validate the PDF document data, in the form of a Base64-encoded string.
      */
     public function __construct(
-        public readonly string $contents,
-        public readonly string $fileType,
-        public readonly string $checksum,
+        public string $contents,
+        public string $fileType,
+        public string $checksum,
     ) {}
 }

@@ -62,15 +62,15 @@ final class RentalTransactionEvent extends Dto
      * @param  TaxWithheldComponent[]|null  $rentalTaxWithheldList  A list of information about taxes withheld.
      */
     public function __construct(
-        public readonly ?string $amazonOrderId = null,
-        public readonly ?string $rentalEventType = null,
-        public readonly ?int $extensionLength = null,
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?array $rentalChargeList = null,
-        public readonly ?array $rentalFeeList = null,
-        public readonly ?string $marketplaceName = null,
-        public readonly ?Currency $rentalInitialValue = null,
-        public readonly ?Currency $rentalReimbursement = null,
-        public readonly ?array $rentalTaxWithheldList = null,
+        public ?string $amazonOrderId = null,
+        public ?string $rentalEventType = null,
+        public ?int $extensionLength = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?array $rentalChargeList = null,
+        public ?array $rentalFeeList = null,
+        public ?string $marketplaceName = null,
+        public ?Currency $rentalInitialValue = null,
+        public ?Currency $rentalReimbursement = null,
+        public ?array $rentalTaxWithheldList = null,
     ) {}
 }

@@ -20,8 +20,8 @@ final class SkuQuantity extends Dto
      * @param  ?InventoryQuantity  $receivedQuantity  Quantity of inventory with an associated measurement unit context.
      */
     public function __construct(
-        public readonly InventoryQuantity $expectedQuantity,
-        public readonly string $sku,
-        public readonly ?InventoryQuantity $receivedQuantity = null,
+        public InventoryQuantity $expectedQuantity,
+        public string $sku,
+        public ?InventoryQuantity $receivedQuantity = null,
     ) {}
 }

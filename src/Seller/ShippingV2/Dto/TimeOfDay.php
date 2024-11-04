@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class TimeOfDay extends Dto
 {
     public function __construct(
-        public readonly ?int $hourOfDay = null,
-        public readonly ?int $minuteOfHour = null,
-        public readonly ?int $secondOfMinute = null,
+        public ?int $hourOfDay = null,
+        public ?int $minuteOfHour = null,
+        public ?int $secondOfMinute = null,
     ) {}
 }

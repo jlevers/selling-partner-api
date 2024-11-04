@@ -26,8 +26,8 @@ final class PutTransportDetailsRequest extends Dto
      * @param  TransportDetailInput  $transportDetails  Information required to create an Amazon-partnered carrier shipping estimate, or to alert the Amazon fulfillment center to the arrival of an inbound shipment by a non-Amazon-partnered carrier.
      */
     public function __construct(
-        public readonly bool $isPartnered,
-        public readonly string $shipmentType,
-        public readonly TransportDetailInput $transportDetails,
+        public bool $isPartnered,
+        public string $shipmentType,
+        public TransportDetailInput $transportDetails,
     ) {}
 }

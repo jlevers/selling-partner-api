@@ -21,9 +21,9 @@ final class ListHandoverSlotsRequest extends Dto
      * @param  Weight  $packageWeight  The weight of the scheduled package
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $amazonOrderId,
-        public readonly Dimensions $packageDimensions,
-        public readonly Weight $packageWeight,
+        public string $marketplaceId,
+        public string $amazonOrderId,
+        public Dimensions $packageDimensions,
+        public Weight $packageWeight,
     ) {}
 }

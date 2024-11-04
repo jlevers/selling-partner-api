@@ -19,7 +19,7 @@ final class ItemRelatedIdentifier extends Dto
      * @param  ?string  $itemRelatedIdentifierValue  Corresponding value to `ItemRelatedIdentifierName`.
      */
     public function __construct(
-        public readonly ?string $itemRelatedIdentifierName = null,
-        public readonly ?string $itemRelatedIdentifierValue = null,
+        public ?string $itemRelatedIdentifierName = null,
+        public ?string $itemRelatedIdentifierValue = null,
     ) {}
 }

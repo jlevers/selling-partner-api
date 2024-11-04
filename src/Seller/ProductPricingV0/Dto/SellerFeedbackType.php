@@ -24,7 +24,7 @@ final class SellerFeedbackType extends Dto
      * @param  ?float  $sellerPositiveFeedbackRating  The percentage of positive feedback for the seller in the past 365 days.
      */
     public function __construct(
-        public readonly int $feedbackCount,
-        public readonly ?float $sellerPositiveFeedbackRating = null,
+        public int $feedbackCount,
+        public ?float $sellerPositiveFeedbackRating = null,
     ) {}
 }

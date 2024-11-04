@@ -25,16 +25,16 @@ final class InboundPlan extends Response
     ];
 
     /**
-     * @param  \DateTimeInterface  $createdAt  The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param  \DateTimeInterface  $createdAt  The time at which the inbound plan was created. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern `yyyy-MM-ddTHH:mm:ssZ`.
      * @param  string  $inboundPlanId  Identifier of an inbound plan.
-     * @param  \DateTimeInterface  $lastUpdatedAt  The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
-     * @param  string[]  $marketplaceIds  Marketplace IDs.
+     * @param  \DateTimeInterface  $lastUpdatedAt  The time at which the inbound plan was last updated. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
+     * @param  string[]  $marketplaceIds  A list of marketplace IDs.
      * @param  string  $name  Human-readable name of the inbound plan.
      * @param  Address  $sourceAddress  Specific details to identify a place.
-     * @param  string  $status  Current status of the inbound plan. Can be: `ACTIVE`, `VOIDED`, `SHIPPED`, 'ERRORED'.
+     * @param  string  $status  Current status of the inbound plan. Possible values: `ACTIVE`, `VOIDED`, `SHIPPED`, `ERRORED`.
      * @param  PackingOptionSummary[]|null  $packingOptions  Packing options for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, only packing options for that placement option will be returned. If there are confirmed shipments, only packing options for those shipments will be returned. Query the packing option for more details.
      * @param  PlacementOptionSummary[]|null  $placementOptions  Placement options for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, that will be the only returned option. Query the placement option for more details.
-     * @param  ShipmentSummary[]|null  $shipments  Shipment IDs for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, only shipments for that option will be returned. If there are confirmed shipments, only those shipments will be returned. Query the shipment for more details.
+     * @param  ShipmentSummary[]|null  $shipments  A list of shipment IDs for the inbound plan. This property is populated when it has been generated with the `confirmPlacementOptions` operation. Only shipments from the chosen placement option are returned. Query the shipment for more details.
      */
     public function __construct(
         public readonly \DateTimeInterface $createdAt,

@@ -20,6 +20,6 @@ final class ListReturnReasonCodesResult extends Dto
      * @param  ReasonCodeDetails[]|null  $reasonCodeDetails  An array of return reason code details.
      */
     public function __construct(
-        public readonly ?array $reasonCodeDetails = null,
+        public ?array $reasonCodeDetails = null,
     ) {}
 }

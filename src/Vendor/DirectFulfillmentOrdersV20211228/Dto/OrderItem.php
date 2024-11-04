@@ -28,16 +28,16 @@ final class OrderItem extends Dto
      * @param  ?BuyerCustomizedInfoDetail  $buyerCustomizedInfo  The details of the products the vendor has configured as customizable.
      */
     public function __construct(
-        public readonly string $itemSequenceNumber,
-        public readonly ItemQuantity $orderedQuantity,
-        public readonly Money $netPrice,
-        public readonly ?string $buyerProductIdentifier = null,
-        public readonly ?string $vendorProductIdentifier = null,
-        public readonly ?string $title = null,
-        public readonly ?ScheduledDeliveryShipment $scheduledDeliveryShipment = null,
-        public readonly ?GiftDetails $giftDetails = null,
-        public readonly ?TaxItemDetails $taxDetails = null,
-        public readonly ?Money $totalPrice = null,
-        public readonly ?BuyerCustomizedInfoDetail $buyerCustomizedInfo = null,
+        public string $itemSequenceNumber,
+        public ItemQuantity $orderedQuantity,
+        public Money $netPrice,
+        public ?string $buyerProductIdentifier = null,
+        public ?string $vendorProductIdentifier = null,
+        public ?string $title = null,
+        public ?ScheduledDeliveryShipment $scheduledDeliveryShipment = null,
+        public ?GiftDetails $giftDetails = null,
+        public ?TaxItemDetails $taxDetails = null,
+        public ?Money $totalPrice = null,
+        public ?BuyerCustomizedInfoDetail $buyerCustomizedInfo = null,
     ) {}
 }

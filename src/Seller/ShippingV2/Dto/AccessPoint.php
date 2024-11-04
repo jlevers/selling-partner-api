@@ -31,15 +31,15 @@ final class AccessPoint extends Dto
      * @param  ?OperatingHours[]  $standardOperatingHours  Map of day of the week to operating hours of that day
      */
     public function __construct(
-        public readonly ?string $accessPointId = null,
-        public readonly ?string $name = null,
-        public readonly ?string $timezone = null,
-        public readonly ?string $type = null,
-        public readonly ?AccessibilityAttributes $accessibilityAttributes = null,
-        public readonly ?Address $address = null,
-        public readonly ?array $exceptionOperatingHours = null,
-        public readonly ?string $assistanceType = null,
-        public readonly ?string $score = null,
-        public readonly ?array $standardOperatingHours = null,
+        public ?string $accessPointId = null,
+        public ?string $name = null,
+        public ?string $timezone = null,
+        public ?string $type = null,
+        public ?AccessibilityAttributes $accessibilityAttributes = null,
+        public ?Address $address = null,
+        public ?array $exceptionOperatingHours = null,
+        public ?string $assistanceType = null,
+        public ?string $score = null,
+        public ?array $standardOperatingHours = null,
     ) {}
 }

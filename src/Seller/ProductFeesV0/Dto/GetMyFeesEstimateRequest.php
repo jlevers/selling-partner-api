@@ -20,6 +20,6 @@ final class GetMyFeesEstimateRequest extends Dto
      * @param  ?FeesEstimateRequest  $feesEstimateRequest  A product, marketplace, and proposed price used to request estimated fees.
      */
     public function __construct(
-        public readonly ?FeesEstimateRequest $feesEstimateRequest = null,
+        public ?FeesEstimateRequest $feesEstimateRequest = null,
     ) {}
 }

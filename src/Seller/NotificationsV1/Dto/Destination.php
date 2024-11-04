@@ -20,8 +20,8 @@ final class Destination extends Dto
      * @param  DestinationResource  $resource  The destination resource types.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly string $destinationId,
-        public readonly DestinationResource $resource,
+        public string $name,
+        public string $destinationId,
+        public DestinationResource $resource,
     ) {}
 }

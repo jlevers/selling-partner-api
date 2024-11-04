@@ -20,6 +20,6 @@ final class GetRatesResult extends Dto
      * @param  ServiceRate[]  $serviceRates  A list of service rates.
      */
     public function __construct(
-        public readonly array $serviceRates,
+        public array $serviceRates,
     ) {}
 }

@@ -21,7 +21,7 @@ final class PackingSlipList extends Dto
      * @param  PackingSlip[]|null  $packingSlips  An array of packing slip objects.
      */
     public function __construct(
-        public readonly ?Pagination $pagination = null,
-        public readonly ?array $packingSlips = null,
+        public ?Pagination $pagination = null,
+        public ?array $packingSlips = null,
     ) {}
 }

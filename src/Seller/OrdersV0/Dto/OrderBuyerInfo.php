@@ -34,11 +34,11 @@ final class OrderBuyerInfo extends Dto
      * @param  ?string  $purchaseOrderNumber  The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.
      */
     public function __construct(
-        public readonly string $amazonOrderId,
-        public readonly ?string $buyerEmail = null,
-        public readonly ?string $buyerName = null,
-        public readonly ?string $buyerCounty = null,
-        public readonly ?BuyerTaxInfo $buyerTaxInfo = null,
-        public readonly ?string $purchaseOrderNumber = null,
+        public string $amazonOrderId,
+        public ?string $buyerEmail = null,
+        public ?string $buyerName = null,
+        public ?string $buyerCounty = null,
+        public ?BuyerTaxInfo $buyerTaxInfo = null,
+        public ?string $purchaseOrderNumber = null,
     ) {}
 }

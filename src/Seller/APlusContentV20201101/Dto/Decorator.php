@@ -21,9 +21,9 @@ final class Decorator extends Dto
      * @param  ?int  $depth  The relative intensity or variation of this decorator. Decorators such as bullet-points, for example, can have multiple indentation depths.
      */
     public function __construct(
-        public readonly ?string $type = null,
-        public readonly ?int $offset = null,
-        public readonly ?int $length = null,
-        public readonly ?int $depth = null,
+        public ?string $type = null,
+        public ?int $offset = null,
+        public ?int $length = null,
+        public ?int $depth = null,
     ) {}
 }

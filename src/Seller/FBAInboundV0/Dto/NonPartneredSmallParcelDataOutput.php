@@ -22,6 +22,6 @@ final class NonPartneredSmallParcelDataOutput extends Dto
      * @param  NonPartneredSmallParcelPackageOutput[]  $packageList  A list of packages, including carrier, tracking number, and status information for each package.
      */
     public function __construct(
-        public readonly array $packageList,
+        public array $packageList,
     ) {}
 }

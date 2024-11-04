@@ -100,13 +100,13 @@ final class CouponPaymentEvent extends Dto
      * @param  ?Currency  $totalAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $couponId = null,
-        public readonly ?string $sellerCouponDescription = null,
-        public readonly ?int $clipOrRedemptionCount = null,
-        public readonly ?string $paymentEventId = null,
-        public readonly ?FeeComponent $feeComponent = null,
-        public readonly ?ChargeComponent $chargeComponent = null,
-        public readonly ?Currency $totalAmount = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $couponId = null,
+        public ?string $sellerCouponDescription = null,
+        public ?int $clipOrRedemptionCount = null,
+        public ?string $paymentEventId = null,
+        public ?FeeComponent $feeComponent = null,
+        public ?ChargeComponent $chargeComponent = null,
+        public ?Currency $totalAmount = null,
     ) {}
 }

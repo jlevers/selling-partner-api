@@ -19,7 +19,7 @@ final class ShipmentStatusDetails extends Dto
      * @param  ?\DateTimeInterface  $shipmentStatusDate  Date and time on last status update received for the shipment
      */
     public function __construct(
-        public readonly ?string $shipmentStatus = null,
-        public readonly ?\DateTimeInterface $shipmentStatusDate = null,
+        public ?string $shipmentStatus = null,
+        public ?\DateTimeInterface $shipmentStatusDate = null,
     ) {}
 }

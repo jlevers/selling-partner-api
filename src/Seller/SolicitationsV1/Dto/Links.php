@@ -21,7 +21,7 @@ final class Links extends Dto
      * @param  LinkObject[]  $actions  Eligible actions for the specified amazonOrderId.
      */
     public function __construct(
-        public readonly LinkObject $self,
-        public readonly array $actions,
+        public LinkObject $self,
+        public array $actions,
     ) {}
 }

@@ -19,7 +19,7 @@ final class TimeRangeContext extends Dto
      * @param  ?\DateTimeInterface  $endTime  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $startTime = null,
-        public readonly ?\DateTimeInterface $endTime = null,
+        public ?\DateTimeInterface $startTime = null,
+        public ?\DateTimeInterface $endTime = null,
     ) {}
 }

@@ -21,9 +21,9 @@ final class ReservedQuantity extends Dto
      * @param  ?int  $fcProcessingQuantity  The number of units that have been sidelined at the fulfillment center for additional processing.
      */
     public function __construct(
-        public readonly ?int $totalReservedQuantity = null,
-        public readonly ?int $pendingCustomerOrderQuantity = null,
-        public readonly ?int $pendingTransshipmentQuantity = null,
-        public readonly ?int $fcProcessingQuantity = null,
+        public ?int $totalReservedQuantity = null,
+        public ?int $pendingCustomerOrderQuantity = null,
+        public ?int $pendingTransshipmentQuantity = null,
+        public ?int $fcProcessingQuantity = null,
     ) {}
 }

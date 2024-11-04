@@ -28,9 +28,9 @@ final class ItemOffersRequestParams extends Dto
      * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the item. This is the same Asin passed as a request parameter.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $itemCondition,
-        public readonly ?string $customerType = null,
-        public readonly ?string $asin = null,
+        public string $marketplaceId,
+        public string $itemCondition,
+        public ?string $customerType = null,
+        public ?string $asin = null,
     ) {}
 }

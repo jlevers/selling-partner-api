@@ -26,8 +26,8 @@ final class Promotion extends Dto
      * @param  ?Currency  $promotionAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?string $promotionType = null,
-        public readonly ?string $promotionId = null,
-        public readonly ?Currency $promotionAmount = null,
+        public ?string $promotionType = null,
+        public ?string $promotionId = null,
+        public ?Currency $promotionAmount = null,
     ) {}
 }

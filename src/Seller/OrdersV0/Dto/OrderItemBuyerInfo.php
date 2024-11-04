@@ -34,11 +34,11 @@ final class OrderItemBuyerInfo extends Dto
      * @param  ?string  $giftWrapLevel  The gift wrap level specified by the buyer.
      */
     public function __construct(
-        public readonly string $orderItemId,
-        public readonly ?BuyerCustomizedInfoDetail $buyerCustomizedInfo = null,
-        public readonly ?Money $giftWrapPrice = null,
-        public readonly ?Money $giftWrapTax = null,
-        public readonly ?string $giftMessageText = null,
-        public readonly ?string $giftWrapLevel = null,
+        public string $orderItemId,
+        public ?BuyerCustomizedInfoDetail $buyerCustomizedInfo = null,
+        public ?Money $giftWrapPrice = null,
+        public ?Money $giftWrapTax = null,
+        public ?string $giftMessageText = null,
+        public ?string $giftWrapLevel = null,
     ) {}
 }

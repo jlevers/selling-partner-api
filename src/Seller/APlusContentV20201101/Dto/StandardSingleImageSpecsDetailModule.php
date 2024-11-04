@@ -25,13 +25,13 @@ final class StandardSingleImageSpecsDetailModule extends Dto
      * @param  ?StandardTextBlock  $specificationTextBlock  The A+ Content standard text box block, comprised of a paragraph with a headline.
      */
     public function __construct(
-        public readonly ?TextComponent $headline = null,
-        public readonly ?ImageComponent $image = null,
-        public readonly ?TextComponent $descriptionHeadline = null,
-        public readonly ?StandardTextBlock $descriptionBlock1 = null,
-        public readonly ?StandardTextBlock $descriptionBlock2 = null,
-        public readonly ?TextComponent $specificationHeadline = null,
-        public readonly ?StandardHeaderTextListBlock $specificationListBlock = null,
-        public readonly ?StandardTextBlock $specificationTextBlock = null,
+        public ?TextComponent $headline = null,
+        public ?ImageComponent $image = null,
+        public ?TextComponent $descriptionHeadline = null,
+        public ?StandardTextBlock $descriptionBlock1 = null,
+        public ?StandardTextBlock $descriptionBlock2 = null,
+        public ?TextComponent $specificationHeadline = null,
+        public ?StandardHeaderTextListBlock $specificationListBlock = null,
+        public ?StandardTextBlock $specificationTextBlock = null,
     ) {}
 }

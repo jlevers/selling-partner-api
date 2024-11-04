@@ -20,6 +20,6 @@ final class TaxItemDetails extends Dto
      * @param  TaxDetails[]|null  $taxLineItem  A list of tax line items.
      */
     public function __construct(
-        public readonly ?array $taxLineItem = null,
+        public ?array $taxLineItem = null,
     ) {}
 }

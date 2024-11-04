@@ -20,8 +20,8 @@ final class Recurrence extends Dto
      * @param  int[]|null  $daysOfMonth  Days of the month when recurrence is valid.
      */
     public function __construct(
-        public readonly \DateTimeInterface $endTime,
-        public readonly ?array $daysOfWeek = null,
-        public readonly ?array $daysOfMonth = null,
+        public \DateTimeInterface $endTime,
+        public ?array $daysOfWeek = null,
+        public ?array $daysOfMonth = null,
     ) {}
 }

@@ -21,7 +21,7 @@ final class CustomPlacementInput extends Dto
      * @param  string  $warehouseId  Warehouse Id.
      */
     public function __construct(
-        public readonly array $items,
-        public readonly string $warehouseId,
+        public array $items,
+        public string $warehouseId,
     ) {}
 }

@@ -24,12 +24,12 @@ final class OrderItem extends Dto
      * @param  ?Money  $listPrice  An amount of money. Includes the currency code and an optional unit of measure for items priced by weight.
      */
     public function __construct(
-        public readonly string $itemSequenceNumber,
-        public readonly ItemQuantity $orderedQuantity,
-        public readonly bool $isBackOrderAllowed,
-        public readonly ?string $amazonProductIdentifier = null,
-        public readonly ?string $vendorProductIdentifier = null,
-        public readonly ?Money $netCost = null,
-        public readonly ?Money $listPrice = null,
+        public string $itemSequenceNumber,
+        public ItemQuantity $orderedQuantity,
+        public bool $isBackOrderAllowed,
+        public ?string $amazonProductIdentifier = null,
+        public ?string $vendorProductIdentifier = null,
+        public ?Money $netCost = null,
+        public ?Money $listPrice = null,
     ) {}
 }

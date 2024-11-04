@@ -20,6 +20,6 @@ final class TermsAndConditionsNotAcceptedCarrier extends Dto
      * @param  string  $carrierName  The name of the carrier.
      */
     public function __construct(
-        public readonly string $carrierName,
+        public string $carrierName,
     ) {}
 }

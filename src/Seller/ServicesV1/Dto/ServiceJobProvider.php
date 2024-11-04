@@ -18,6 +18,6 @@ final class ServiceJobProvider extends Dto
      * @param  ?string  $serviceJobProviderId  The identifier of the service job provider.
      */
     public function __construct(
-        public readonly ?string $serviceJobProviderId = null,
+        public ?string $serviceJobProviderId = null,
     ) {}
 }

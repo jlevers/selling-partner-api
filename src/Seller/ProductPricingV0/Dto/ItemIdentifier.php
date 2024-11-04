@@ -28,9 +28,9 @@ final class ItemIdentifier extends Dto
      * @param  ?string  $sellerSku  The seller stock keeping unit (SKU) of the item.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $itemCondition,
-        public readonly ?string $asin = null,
-        public readonly ?string $sellerSku = null,
+        public string $marketplaceId,
+        public string $itemCondition,
+        public ?string $asin = null,
+        public ?string $sellerSku = null,
     ) {}
 }

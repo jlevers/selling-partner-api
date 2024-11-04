@@ -40,11 +40,11 @@ final class RemovalShipmentAdjustmentEvent extends Dto
      * @param  RemovalShipmentItemAdjustment[]|null  $removalShipmentItemAdjustmentList  A comma-delimited list of `RemovalShipmentItemAdjustment` details for FBA inventory.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $adjustmentEventId = null,
-        public readonly ?string $merchantOrderId = null,
-        public readonly ?string $orderId = null,
-        public readonly ?string $transactionType = null,
-        public readonly ?array $removalShipmentItemAdjustmentList = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $adjustmentEventId = null,
+        public ?string $merchantOrderId = null,
+        public ?string $orderId = null,
+        public ?string $transactionType = null,
+        public ?array $removalShipmentItemAdjustmentList = null,
     ) {}
 }

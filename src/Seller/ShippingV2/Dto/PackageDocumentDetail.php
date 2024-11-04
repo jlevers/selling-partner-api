@@ -22,8 +22,8 @@ final class PackageDocumentDetail extends Dto
      * @param  ?string  $trackingId  The carrier generated identifier for a package in a purchased shipment.
      */
     public function __construct(
-        public readonly string $packageClientReferenceId,
-        public readonly array $packageDocuments,
-        public readonly ?string $trackingId = null,
+        public string $packageClientReferenceId,
+        public array $packageDocuments,
+        public ?string $trackingId = null,
     ) {}
 }

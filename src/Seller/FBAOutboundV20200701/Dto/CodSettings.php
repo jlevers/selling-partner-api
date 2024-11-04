@@ -22,10 +22,10 @@ final class CodSettings extends Dto
      * @param  ?Money  $shippingChargeTax  An amount of money, including units in the form of currency.
      */
     public function __construct(
-        public readonly bool $isCodRequired,
-        public readonly ?Money $codCharge = null,
-        public readonly ?Money $codChargeTax = null,
-        public readonly ?Money $shippingCharge = null,
-        public readonly ?Money $shippingChargeTax = null,
+        public bool $isCodRequired,
+        public ?Money $codCharge = null,
+        public ?Money $codChargeTax = null,
+        public ?Money $shippingCharge = null,
+        public ?Money $shippingChargeTax = null,
     ) {}
 }

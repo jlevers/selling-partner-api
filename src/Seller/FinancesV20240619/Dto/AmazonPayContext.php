@@ -20,8 +20,8 @@ final class AmazonPayContext extends Dto
      * @param  ?string  $channel  Channel details of related transaction.
      */
     public function __construct(
-        public readonly ?string $storeName = null,
-        public readonly ?string $orderType = null,
-        public readonly ?string $channel = null,
+        public ?string $storeName = null,
+        public ?string $orderType = null,
+        public ?string $channel = null,
     ) {}
 }

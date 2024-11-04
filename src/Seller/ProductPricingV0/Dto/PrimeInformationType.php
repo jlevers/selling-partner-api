@@ -21,7 +21,7 @@ final class PrimeInformationType extends Dto
      * @param  bool  $isNationalPrime  Indicates whether the offer is an Amazon Prime offer throughout the entire marketplace where it is listed.
      */
     public function __construct(
-        public readonly bool $isPrime,
-        public readonly bool $isNationalPrime,
+        public bool $isPrime,
+        public bool $isNationalPrime,
     ) {}
 }

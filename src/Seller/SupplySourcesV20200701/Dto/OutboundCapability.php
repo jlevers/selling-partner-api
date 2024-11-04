@@ -21,10 +21,10 @@ final class OutboundCapability extends Dto
      * @param  ?PickupChannel  $pickupChannel  The pick up channel of a supply source.
      */
     public function __construct(
-        public readonly ?bool $isSupported = null,
-        public readonly ?OperationalConfiguration $operationalConfiguration = null,
-        public readonly ?ReturnLocation $returnLocation = null,
-        public readonly ?DeliveryChannel $deliveryChannel = null,
-        public readonly ?PickupChannel $pickupChannel = null,
+        public ?bool $isSupported = null,
+        public ?OperationalConfiguration $operationalConfiguration = null,
+        public ?ReturnLocation $returnLocation = null,
+        public ?DeliveryChannel $deliveryChannel = null,
+        public ?PickupChannel $pickupChannel = null,
     ) {}
 }

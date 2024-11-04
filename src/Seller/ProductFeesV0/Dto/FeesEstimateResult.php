@@ -28,9 +28,9 @@ final class FeesEstimateResult extends Dto
      * @param  ?FeesEstimateError  $error  An unexpected error occurred during this operation.
      */
     public function __construct(
-        public readonly ?string $status = null,
-        public readonly ?FeesEstimateIdentifier $feesEstimateIdentifier = null,
-        public readonly ?FeesEstimate $feesEstimate = null,
-        public readonly ?FeesEstimateError $error = null,
+        public ?string $status = null,
+        public ?FeesEstimateIdentifier $feesEstimateIdentifier = null,
+        public ?FeesEstimate $feesEstimate = null,
+        public ?FeesEstimateError $error = null,
     ) {}
 }

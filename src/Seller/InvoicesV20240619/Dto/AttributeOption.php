@@ -19,7 +19,7 @@ final class AttributeOption extends Dto
      * @param  ?string  $value  The possible values for the attribute option.
      */
     public function __construct(
-        public readonly ?string $description = null,
-        public readonly ?string $value = null,
+        public ?string $description = null,
+        public ?string $value = null,
     ) {}
 }

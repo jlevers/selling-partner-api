@@ -19,7 +19,7 @@ final class MoneyType extends Dto
      * @param  ?float  $amount  The monetary value.
      */
     public function __construct(
-        public readonly ?string $currencyCode = null,
-        public readonly ?float $amount = null,
+        public ?string $currencyCode = null,
+        public ?float $amount = null,
     ) {}
 }

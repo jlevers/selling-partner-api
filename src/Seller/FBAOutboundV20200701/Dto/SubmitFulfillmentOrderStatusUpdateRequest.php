@@ -18,6 +18,6 @@ final class SubmitFulfillmentOrderStatusUpdateRequest extends Dto
      * @param  ?string  $fulfillmentOrderStatus  The current status of the fulfillment order.
      */
     public function __construct(
-        public readonly ?string $fulfillmentOrderStatus = null,
+        public ?string $fulfillmentOrderStatus = null,
     ) {}
 }

@@ -21,7 +21,7 @@ final class ListAllFulfillmentOrdersResult extends Dto
      * @param  FulfillmentOrder[]|null  $fulfillmentOrders  An array of fulfillment order information.
      */
     public function __construct(
-        public readonly ?string $nextToken = null,
-        public readonly ?array $fulfillmentOrders = null,
+        public ?string $nextToken = null,
+        public ?array $fulfillmentOrders = null,
     ) {}
 }

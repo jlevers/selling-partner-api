@@ -96,11 +96,11 @@ final class SellerReviewEnrollmentPaymentEvent extends Dto
      * @param  ?Currency  $totalAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $enrollmentId = null,
-        public readonly ?string $parentAsin = null,
-        public readonly ?FeeComponent $feeComponent = null,
-        public readonly ?ChargeComponent $chargeComponent = null,
-        public readonly ?Currency $totalAmount = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $enrollmentId = null,
+        public ?string $parentAsin = null,
+        public ?FeeComponent $feeComponent = null,
+        public ?ChargeComponent $chargeComponent = null,
+        public ?Currency $totalAmount = null,
     ) {}
 }

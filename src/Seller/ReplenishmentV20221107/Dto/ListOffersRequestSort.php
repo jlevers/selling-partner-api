@@ -19,7 +19,7 @@ final class ListOffersRequestSort extends Dto
      * @param  string  $key  The attribute to use to sort the results.
      */
     public function __construct(
-        public readonly string $order,
-        public readonly string $key,
+        public string $order,
+        public string $key,
     ) {}
 }

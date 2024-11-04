@@ -24,8 +24,8 @@ final class FeaturedOfferExpectedPriceResponseBody extends Dto
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
-        public readonly ?OfferIdentifier $offerIdentifier = null,
-        public readonly ?array $featuredOfferExpectedPriceResults = null,
-        public readonly ?ErrorList $errors = null,
+        public ?OfferIdentifier $offerIdentifier = null,
+        public ?array $featuredOfferExpectedPriceResults = null,
+        public ?ErrorList $errors = null,
     ) {}
 }

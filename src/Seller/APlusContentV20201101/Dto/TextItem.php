@@ -19,7 +19,7 @@ final class TextItem extends Dto
      * @param  TextComponent  $text  Rich text content.
      */
     public function __construct(
-        public readonly int $position,
-        public readonly TextComponent $text,
+        public int $position,
+        public TextComponent $text,
     ) {}
 }

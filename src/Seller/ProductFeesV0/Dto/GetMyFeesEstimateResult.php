@@ -20,6 +20,6 @@ final class GetMyFeesEstimateResult extends Dto
      * @param  ?FeesEstimateResult  $feesEstimateResult  An item identifier and the estimated fees for the item.
      */
     public function __construct(
-        public readonly ?FeesEstimateResult $feesEstimateResult = null,
+        public ?FeesEstimateResult $feesEstimateResult = null,
     ) {}
 }

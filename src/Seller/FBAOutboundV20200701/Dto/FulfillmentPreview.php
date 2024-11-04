@@ -37,16 +37,16 @@ final class FulfillmentPreview extends Dto
      * @param  FeatureSettings[]|null  $featureConstraints  A list of features and their fulfillment policies to apply to the order.
      */
     public function __construct(
-        public readonly string $shippingSpeedCategory,
-        public readonly bool $isFulfillable,
-        public readonly bool $isCodCapable,
-        public readonly string $marketplaceId,
-        public readonly ?ScheduledDeliveryInfo $scheduledDeliveryInfo = null,
-        public readonly ?Weight $estimatedShippingWeight = null,
-        public readonly ?array $estimatedFees = null,
-        public readonly ?array $fulfillmentPreviewShipments = null,
-        public readonly ?array $unfulfillablePreviewItems = null,
-        public readonly ?array $orderUnfulfillableReasons = null,
-        public readonly ?array $featureConstraints = null,
+        public string $shippingSpeedCategory,
+        public bool $isFulfillable,
+        public bool $isCodCapable,
+        public string $marketplaceId,
+        public ?ScheduledDeliveryInfo $scheduledDeliveryInfo = null,
+        public ?Weight $estimatedShippingWeight = null,
+        public ?array $estimatedFees = null,
+        public ?array $fulfillmentPreviewShipments = null,
+        public ?array $unfulfillablePreviewItems = null,
+        public ?array $orderUnfulfillableReasons = null,
+        public ?array $featureConstraints = null,
     ) {}
 }

@@ -21,9 +21,9 @@ final class OfferProgramConfigurationPromotions extends Dto
      * @param  ?OfferProgramConfigurationPromotionsDiscountFunding  $amazonFundedTieredDiscount  A promotional percentage discount applied to the offer.
      */
     public function __construct(
-        public readonly ?OfferProgramConfigurationPromotionsDiscountFunding $sellingPartnerFundedBaseDiscount = null,
-        public readonly ?OfferProgramConfigurationPromotionsDiscountFunding $sellingPartnerFundedTieredDiscount = null,
-        public readonly ?OfferProgramConfigurationPromotionsDiscountFunding $amazonFundedBaseDiscount = null,
-        public readonly ?OfferProgramConfigurationPromotionsDiscountFunding $amazonFundedTieredDiscount = null,
+        public ?OfferProgramConfigurationPromotionsDiscountFunding $sellingPartnerFundedBaseDiscount = null,
+        public ?OfferProgramConfigurationPromotionsDiscountFunding $sellingPartnerFundedTieredDiscount = null,
+        public ?OfferProgramConfigurationPromotionsDiscountFunding $amazonFundedBaseDiscount = null,
+        public ?OfferProgramConfigurationPromotionsDiscountFunding $amazonFundedTieredDiscount = null,
     ) {}
 }

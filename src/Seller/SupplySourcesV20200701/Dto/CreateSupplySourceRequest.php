@@ -20,8 +20,8 @@ final class CreateSupplySourceRequest extends Dto
      * @param  Address  $address  A physical address.
      */
     public function __construct(
-        public readonly string $supplySourceCode,
-        public readonly string $alias,
-        public readonly Address $address,
+        public string $supplySourceCode,
+        public string $alias,
+        public Address $address,
     ) {}
 }

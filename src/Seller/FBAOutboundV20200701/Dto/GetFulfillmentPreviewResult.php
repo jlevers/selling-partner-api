@@ -20,6 +20,6 @@ final class GetFulfillmentPreviewResult extends Dto
      * @param  FulfillmentPreview[]|null  $fulfillmentPreviews  An array of fulfillment preview information.
      */
     public function __construct(
-        public readonly ?array $fulfillmentPreviews = null,
+        public ?array $fulfillmentPreviews = null,
     ) {}
 }

@@ -21,7 +21,7 @@ final class TaxWithholdingPeriod extends Dto
      * @param  ?\DateTimeInterface  $endDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $startDate = null,
-        public readonly ?\DateTimeInterface $endDate = null,
+        public ?\DateTimeInterface $startDate = null,
+        public ?\DateTimeInterface $endDate = null,
     ) {}
 }

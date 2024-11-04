@@ -20,8 +20,8 @@ final class SelfShipAppointmentDetails extends Dto
      * @param  ?string  $appointmentStatus  Status of the appointment.
      */
     public function __construct(
-        public readonly ?float $appointmentId = null,
-        public readonly ?AppointmentSlotTime $appointmentSlotTime = null,
-        public readonly ?string $appointmentStatus = null,
+        public ?float $appointmentId = null,
+        public ?AppointmentSlotTime $appointmentSlotTime = null,
+        public ?string $appointmentStatus = null,
     ) {}
 }

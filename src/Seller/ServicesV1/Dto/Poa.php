@@ -24,10 +24,10 @@ final class Poa extends Dto
      * @param  ?string  $poaType  The type of POA uploaded.
      */
     public function __construct(
-        public readonly ?AppointmentTime $appointmentTime = null,
-        public readonly ?array $technicians = null,
-        public readonly ?string $uploadingTechnician = null,
-        public readonly ?\DateTimeInterface $uploadTime = null,
-        public readonly ?string $poaType = null,
+        public ?AppointmentTime $appointmentTime = null,
+        public ?array $technicians = null,
+        public ?string $uploadingTechnician = null,
+        public ?\DateTimeInterface $uploadTime = null,
+        public ?string $poaType = null,
     ) {}
 }

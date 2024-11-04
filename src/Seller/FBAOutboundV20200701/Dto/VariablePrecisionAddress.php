@@ -25,13 +25,13 @@ final class VariablePrecisionAddress extends Dto
      * @param  ?string  $stateOrRegion  The state or region where the person, business or institution is located.
      */
     public function __construct(
-        public readonly string $postalCode,
-        public readonly string $countryCode,
-        public readonly ?string $addressLine1 = null,
-        public readonly ?string $addressLine2 = null,
-        public readonly ?string $addressLine3 = null,
-        public readonly ?string $city = null,
-        public readonly ?string $districtOrCounty = null,
-        public readonly ?string $stateOrRegion = null,
+        public string $postalCode,
+        public string $countryCode,
+        public ?string $addressLine1 = null,
+        public ?string $addressLine2 = null,
+        public ?string $addressLine3 = null,
+        public ?string $city = null,
+        public ?string $districtOrCounty = null,
+        public ?string $stateOrRegion = null,
     ) {}
 }

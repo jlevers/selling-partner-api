@@ -18,6 +18,6 @@ final class VerificationDetails extends Dto
      * @param  ?PrescriptionDetail  $prescriptionDetail  Information about the prescription that is used to verify a regulated product. This must be provided once per order and reflect the seller’s own records. Only approved orders can have prescriptions.
      */
     public function __construct(
-        public readonly ?PrescriptionDetail $prescriptionDetail = null,
+        public ?PrescriptionDetail $prescriptionDetail = null,
     ) {}
 }

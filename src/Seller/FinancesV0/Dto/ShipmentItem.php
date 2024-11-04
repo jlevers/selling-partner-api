@@ -56,18 +56,18 @@ final class ShipmentItem extends Dto
      * @param  ?Currency  $costOfPointsReturned  A currency type and amount.
      */
     public function __construct(
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $orderItemId = null,
-        public readonly ?string $orderAdjustmentItemId = null,
-        public readonly ?int $quantityShipped = null,
-        public readonly ?array $itemChargeList = null,
-        public readonly ?array $itemChargeAdjustmentList = null,
-        public readonly ?array $itemFeeList = null,
-        public readonly ?array $itemFeeAdjustmentList = null,
-        public readonly ?array $itemTaxWithheldList = null,
-        public readonly ?array $promotionList = null,
-        public readonly ?array $promotionAdjustmentList = null,
-        public readonly ?Currency $costOfPointsGranted = null,
-        public readonly ?Currency $costOfPointsReturned = null,
+        public ?string $sellerSku = null,
+        public ?string $orderItemId = null,
+        public ?string $orderAdjustmentItemId = null,
+        public ?int $quantityShipped = null,
+        public ?array $itemChargeList = null,
+        public ?array $itemChargeAdjustmentList = null,
+        public ?array $itemFeeList = null,
+        public ?array $itemFeeAdjustmentList = null,
+        public ?array $itemTaxWithheldList = null,
+        public ?array $promotionList = null,
+        public ?array $promotionAdjustmentList = null,
+        public ?Currency $costOfPointsGranted = null,
+        public ?Currency $costOfPointsReturned = null,
     ) {}
 }

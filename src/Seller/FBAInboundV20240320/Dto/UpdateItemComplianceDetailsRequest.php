@@ -19,7 +19,7 @@ final class UpdateItemComplianceDetailsRequest extends Dto
      * @param  TaxDetails  $taxDetails  Information used to determine the tax compliance.
      */
     public function __construct(
-        public readonly string $msku,
-        public readonly TaxDetails $taxDetails,
+        public string $msku,
+        public TaxDetails $taxDetails,
     ) {}
 }

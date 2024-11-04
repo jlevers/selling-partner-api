@@ -28,9 +28,9 @@ final class GetPreorderInfoResult extends Dto
      * @param  ?\DateTimeInterface  $confirmedFulfillableDate  Type containing date in string format
      */
     public function __construct(
-        public readonly ?bool $shipmentContainsPreorderableItems = null,
-        public readonly ?bool $shipmentConfirmedForPreorder = null,
-        public readonly ?\DateTimeInterface $needByDate = null,
-        public readonly ?\DateTimeInterface $confirmedFulfillableDate = null,
+        public ?bool $shipmentContainsPreorderableItems = null,
+        public ?bool $shipmentConfirmedForPreorder = null,
+        public ?\DateTimeInterface $needByDate = null,
+        public ?\DateTimeInterface $confirmedFulfillableDate = null,
     ) {}
 }

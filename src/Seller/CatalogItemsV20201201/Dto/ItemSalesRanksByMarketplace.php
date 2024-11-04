@@ -21,7 +21,7 @@ final class ItemSalesRanksByMarketplace extends Dto
      * @param  ItemSalesRank[]  $ranks  Sales ranks of an Amazon catalog item for an Amazon marketplace.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly array $ranks,
+        public string $marketplaceId,
+        public array $ranks,
     ) {}
 }

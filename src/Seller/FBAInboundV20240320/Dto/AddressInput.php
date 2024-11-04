@@ -27,15 +27,15 @@ final class AddressInput extends Dto
      * @param  ?string  $stateOrProvinceCode  The state or province code.
      */
     public function __construct(
-        public readonly string $addressLine1,
-        public readonly string $city,
-        public readonly string $countryCode,
-        public readonly string $name,
-        public readonly string $phoneNumber,
-        public readonly string $postalCode,
-        public readonly ?string $addressLine2 = null,
-        public readonly ?string $companyName = null,
-        public readonly ?string $email = null,
-        public readonly ?string $stateOrProvinceCode = null,
+        public string $addressLine1,
+        public string $city,
+        public string $countryCode,
+        public string $name,
+        public string $phoneNumber,
+        public string $postalCode,
+        public ?string $addressLine2 = null,
+        public ?string $companyName = null,
+        public ?string $email = null,
+        public ?string $stateOrProvinceCode = null,
     ) {}
 }

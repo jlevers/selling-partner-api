@@ -34,11 +34,11 @@ final class Product extends Dto
      * @param  OfferType[]|null  $offers  A list of offers.
      */
     public function __construct(
-        public readonly IdentifierType $identifiers,
-        public readonly ?array $attributeSets = null,
-        public readonly ?array $relationships = null,
-        public readonly ?CompetitivePricingType $competitivePricing = null,
-        public readonly ?array $salesRankings = null,
-        public readonly ?array $offers = null,
+        public IdentifierType $identifiers,
+        public ?array $attributeSets = null,
+        public ?array $relationships = null,
+        public ?CompetitivePricingType $competitivePricing = null,
+        public ?array $salesRankings = null,
+        public ?array $offers = null,
     ) {}
 }

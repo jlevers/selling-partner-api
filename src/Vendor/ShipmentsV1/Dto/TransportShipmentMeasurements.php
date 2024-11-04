@@ -22,10 +22,10 @@ final class TransportShipmentMeasurements extends Dto
      * @param  ?Volume  $shipmentVolume  The volume of the shipment.
      */
     public function __construct(
-        public readonly ?int $totalCartonCount = null,
-        public readonly ?int $totalPalletStackable = null,
-        public readonly ?int $totalPalletNonStackable = null,
-        public readonly ?Weight $shipmentWeight = null,
-        public readonly ?Volume $shipmentVolume = null,
+        public ?int $totalCartonCount = null,
+        public ?int $totalPalletStackable = null,
+        public ?int $totalPalletNonStackable = null,
+        public ?Weight $shipmentWeight = null,
+        public ?Volume $shipmentVolume = null,
     ) {}
 }

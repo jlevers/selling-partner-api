@@ -21,7 +21,7 @@ final class CreatorType extends Dto
      * @param  ?string  $role  The role of the value.
      */
     public function __construct(
-        public readonly ?string $value = null,
-        public readonly ?string $role = null,
+        public ?string $value = null,
+        public ?string $role = null,
     ) {}
 }

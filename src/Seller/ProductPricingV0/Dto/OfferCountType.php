@@ -22,8 +22,8 @@ final class OfferCountType extends Dto
      * @param  ?int  $offerCount  The number of offers in a fulfillment channel that meet a specific condition.
      */
     public function __construct(
-        public readonly ?string $condition = null,
-        public readonly ?string $fulfillmentChannel = null,
-        public readonly ?int $offerCount = null,
+        public ?string $condition = null,
+        public ?string $fulfillmentChannel = null,
+        public ?int $offerCount = null,
     ) {}
 }

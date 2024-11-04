@@ -34,17 +34,17 @@ final class GetRatesRequest extends Dto
      * @param  ?string  $shipmentType  Shipment type.
      */
     public function __construct(
-        public readonly Address $shipFrom,
-        public readonly array $packages,
-        public readonly ChannelDetails $channelDetails,
-        public readonly ?Address $shipTo = null,
-        public readonly ?Address $returnTo = null,
-        public readonly ?\DateTimeInterface $shipDate = null,
-        public readonly ?ShipperInstruction $shipperInstruction = null,
-        public readonly ?ValueAddedServiceDetails $valueAddedServices = null,
-        public readonly ?array $taxDetails = null,
-        public readonly ?array $clientReferenceDetails = null,
-        public readonly ?string $shipmentType = null,
-        public readonly ?AccessPointDetails $destinationAccessPointDetails = null,
+        public Address $shipFrom,
+        public array $packages,
+        public ChannelDetails $channelDetails,
+        public ?Address $shipTo = null,
+        public ?Address $returnTo = null,
+        public ?\DateTimeInterface $shipDate = null,
+        public ?ShipperInstruction $shipperInstruction = null,
+        public ?ValueAddedServiceDetails $valueAddedServices = null,
+        public ?array $taxDetails = null,
+        public ?array $clientReferenceDetails = null,
+        public ?string $shipmentType = null,
+        public ?AccessPointDetails $destinationAccessPointDetails = null,
     ) {}
 }

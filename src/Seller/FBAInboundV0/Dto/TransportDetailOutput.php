@@ -28,9 +28,9 @@ final class TransportDetailOutput extends Dto
      * @param  ?NonPartneredLtlDataOutput  $nonPartneredLtlData  Information returned by Amazon about a Less Than Truckload/Full Truckload (LTL/FTL) shipment shipped by a carrier that has not partnered with Amazon.
      */
     public function __construct(
-        public readonly ?PartneredSmallParcelDataOutput $partneredSmallParcelData = null,
-        public readonly ?NonPartneredSmallParcelDataOutput $nonPartneredSmallParcelData = null,
-        public readonly ?PartneredLtlDataOutput $partneredLtlData = null,
-        public readonly ?NonPartneredLtlDataOutput $nonPartneredLtlData = null,
+        public ?PartneredSmallParcelDataOutput $partneredSmallParcelData = null,
+        public ?NonPartneredSmallParcelDataOutput $nonPartneredSmallParcelData = null,
+        public ?PartneredLtlDataOutput $partneredLtlData = null,
+        public ?NonPartneredLtlDataOutput $nonPartneredLtlData = null,
     ) {}
 }

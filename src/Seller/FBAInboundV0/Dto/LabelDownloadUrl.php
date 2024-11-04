@@ -20,6 +20,6 @@ final class LabelDownloadUrl extends Dto
      * @param  ?string  $downloadUrl  URL to download the label for the package. Note: The URL will only be valid for 15 seconds
      */
     public function __construct(
-        public readonly ?string $downloadUrl = null,
+        public ?string $downloadUrl = null,
     ) {}
 }

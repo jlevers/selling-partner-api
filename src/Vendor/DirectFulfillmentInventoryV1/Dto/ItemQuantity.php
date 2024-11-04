@@ -19,7 +19,7 @@ final class ItemQuantity extends Dto
      * @param  ?int  $amount  Quantity of units available for a specific item.
      */
     public function __construct(
-        public readonly string $unitOfMeasure,
-        public readonly ?int $amount = null,
+        public string $unitOfMeasure,
+        public ?int $amount = null,
     ) {}
 }

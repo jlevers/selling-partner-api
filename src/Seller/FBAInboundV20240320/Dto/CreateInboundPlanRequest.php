@@ -23,9 +23,9 @@ final class CreateInboundPlanRequest extends Dto
      * @param  ?string  $name  Name for the Inbound Plan. If one isn't provided, a default name will be provided.
      */
     public function __construct(
-        public readonly array $destinationMarketplaces,
-        public readonly array $items,
-        public readonly AddressInput $sourceAddress,
-        public readonly ?string $name = null,
+        public array $destinationMarketplaces,
+        public array $items,
+        public AddressInput $sourceAddress,
+        public ?string $name = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class ThroughputCap extends Dto
      * @param  ?string  $timeUnit  The time unit
      */
     public function __construct(
-        public readonly ?int $value = null,
-        public readonly ?string $timeUnit = null,
+        public ?int $value = null,
+        public ?string $timeUnit = null,
     ) {}
 }

@@ -28,9 +28,9 @@ final class AddressExtendedFields extends Dto
      * @param  ?string  $neighborhood  The neighborhood. This value is only used in some countries (such as Brazil).
      */
     public function __construct(
-        public readonly ?string $streetName = null,
-        public readonly ?string $streetNumber = null,
-        public readonly ?string $complement = null,
-        public readonly ?string $neighborhood = null,
+        public ?string $streetName = null,
+        public ?string $streetNumber = null,
+        public ?string $complement = null,
+        public ?string $neighborhood = null,
     ) {}
 }

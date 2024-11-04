@@ -22,8 +22,8 @@ final class CreateWarrantyRequest extends Dto
      * @param  ?\DateTimeInterface  $coverageEndDate  The end date of the warranty coverage to include in the message to the buyer.
      */
     public function __construct(
-        public readonly ?array $attachments = null,
-        public readonly ?\DateTimeInterface $coverageStartDate = null,
-        public readonly ?\DateTimeInterface $coverageEndDate = null,
+        public ?array $attachments = null,
+        public ?\DateTimeInterface $coverageStartDate = null,
+        public ?\DateTimeInterface $coverageEndDate = null,
     ) {}
 }

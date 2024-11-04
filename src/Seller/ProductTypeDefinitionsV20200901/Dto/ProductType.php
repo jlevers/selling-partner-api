@@ -20,8 +20,8 @@ final class ProductType extends Dto
      * @param  string[]  $marketplaceIds  The Amazon marketplace identifiers for which the product type definition is available.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly string $displayName,
-        public readonly array $marketplaceIds,
+        public string $name,
+        public string $displayName,
+        public array $marketplaceIds,
     ) {}
 }

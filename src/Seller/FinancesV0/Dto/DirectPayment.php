@@ -38,7 +38,7 @@ final class DirectPayment extends Dto
      * @param  ?Currency  $directPaymentAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?string $directPaymentType = null,
-        public readonly ?Currency $directPaymentAmount = null,
+        public ?string $directPaymentType = null,
+        public ?Currency $directPaymentAmount = null,
     ) {}
 }

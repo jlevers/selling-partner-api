@@ -20,8 +20,8 @@ final class Breakdown extends Dto
      * @param  ?Breakdown  $breakdowns  Details about the movement of money in the financial transaction. Breakdowns are further categorized into breakdown types, breakdown amounts, and further breakdowns.
      */
     public function __construct(
-        public readonly ?string $breakdownType = null,
-        public readonly ?Currency $breakdownAmount = null,
-        public readonly ?Breakdown $breakdowns = null,
+        public ?string $breakdownType = null,
+        public ?Currency $breakdownAmount = null,
+        public ?Breakdown $breakdowns = null,
     ) {}
 }

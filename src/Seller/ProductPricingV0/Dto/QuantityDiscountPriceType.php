@@ -18,8 +18,8 @@ final class QuantityDiscountPriceType extends Dto
      * @param  int  $quantityTier  Indicates at what quantity this price becomes active.
      */
     public function __construct(
-        public readonly int $quantityTier,
-        public readonly string $quantityDiscountType,
-        public readonly MoneyType $listingPrice,
+        public int $quantityTier,
+        public string $quantityDiscountType,
+        public MoneyType $listingPrice,
     ) {}
 }

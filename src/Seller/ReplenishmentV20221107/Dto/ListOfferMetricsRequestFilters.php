@@ -25,11 +25,11 @@ final class ListOfferMetricsRequestFilters extends Dto
      * @param  ?string[]  $asins  A list of Amazon Standard Identification Numbers (ASINs).
      */
     public function __construct(
-        public readonly TimeInterval $timeInterval,
-        public readonly string $timePeriodType,
-        public readonly string $marketplaceId,
-        public readonly array $programTypes,
-        public readonly ?string $aggregationFrequency = null,
-        public readonly ?array $asins = null,
+        public TimeInterval $timeInterval,
+        public string $timePeriodType,
+        public string $marketplaceId,
+        public array $programTypes,
+        public ?string $aggregationFrequency = null,
+        public ?array $asins = null,
     ) {}
 }

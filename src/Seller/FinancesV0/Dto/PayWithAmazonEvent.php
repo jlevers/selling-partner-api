@@ -116,15 +116,15 @@ final class PayWithAmazonEvent extends Dto
      * @param  ?string  $storeName  The name of the store where the event occurred.
      */
     public function __construct(
-        public readonly ?string $sellerOrderId = null,
-        public readonly ?\DateTimeInterface $transactionPostedDate = null,
-        public readonly ?string $businessObjectType = null,
-        public readonly ?string $salesChannel = null,
-        public readonly ?ChargeComponent $charge = null,
-        public readonly ?array $feeList = null,
-        public readonly ?string $paymentAmountType = null,
-        public readonly ?string $amountDescription = null,
-        public readonly ?string $fulfillmentChannel = null,
-        public readonly ?string $storeName = null,
+        public ?string $sellerOrderId = null,
+        public ?\DateTimeInterface $transactionPostedDate = null,
+        public ?string $businessObjectType = null,
+        public ?string $salesChannel = null,
+        public ?ChargeComponent $charge = null,
+        public ?array $feeList = null,
+        public ?string $paymentAmountType = null,
+        public ?string $amountDescription = null,
+        public ?string $fulfillmentChannel = null,
+        public ?string $storeName = null,
     ) {}
 }

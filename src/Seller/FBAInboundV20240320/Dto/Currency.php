@@ -19,7 +19,7 @@ final class Currency extends Dto
      * @param  string  $code  ISO 4217 standard of a currency code.
      */
     public function __construct(
-        public readonly float $amount,
-        public readonly string $code,
+        public float $amount,
+        public string $code,
     ) {}
 }

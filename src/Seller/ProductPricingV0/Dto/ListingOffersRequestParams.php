@@ -28,9 +28,9 @@ final class ListingOffersRequestParams extends Dto
      * @param  ?string  $customerType  Indicates whether to request Consumer or Business offers. Default is Consumer.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $itemCondition,
-        public readonly string $sellerSku,
-        public readonly ?string $customerType = null,
+        public string $marketplaceId,
+        public string $itemCondition,
+        public string $sellerSku,
+        public ?string $customerType = null,
     ) {}
 }

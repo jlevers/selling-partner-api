@@ -23,9 +23,9 @@ final class Price extends Dto
      * @param  ?Product  $product  An item.
      */
     public function __construct(
-        public readonly string $status,
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $asin = null,
-        public readonly ?Product $product = null,
+        public string $status,
+        public ?string $sellerSku = null,
+        public ?string $asin = null,
+        public ?Product $product = null,
     ) {}
 }

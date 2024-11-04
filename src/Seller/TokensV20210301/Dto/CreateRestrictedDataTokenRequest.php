@@ -22,7 +22,7 @@ final class CreateRestrictedDataTokenRequest extends Dto
      * @param  ?string  $targetApplication  The application ID for the target application to which access is being delegated.
      */
     public function __construct(
-        public readonly array $restrictedResources,
-        public readonly ?string $targetApplication = null,
+        public array $restrictedResources,
+        public ?string $targetApplication = null,
     ) {}
 }

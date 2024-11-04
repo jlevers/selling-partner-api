@@ -25,11 +25,11 @@ final class Container extends Dto
      * @param  ?string  $containerType  The type of physical container being used. (always 'PACKAGE')
      */
     public function __construct(
-        public readonly string $containerReferenceId,
-        public readonly Currency $value,
-        public readonly Dimensions $dimensions,
-        public readonly array $items,
-        public readonly Weight $weight,
-        public readonly ?string $containerType = null,
+        public string $containerReferenceId,
+        public Currency $value,
+        public Dimensions $dimensions,
+        public array $items,
+        public Weight $weight,
+        public ?string $containerType = null,
     ) {}
 }

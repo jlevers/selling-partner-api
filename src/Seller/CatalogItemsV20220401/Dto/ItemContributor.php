@@ -19,7 +19,7 @@ final class ItemContributor extends Dto
      * @param  string  $value  Name of the contributor, such as Jane Austen.
      */
     public function __construct(
-        public readonly ItemContributorRole $role,
-        public readonly string $value,
+        public ItemContributorRole $role,
+        public string $value,
     ) {}
 }

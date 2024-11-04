@@ -19,7 +19,7 @@ final class PlainTextItem extends Dto
      * @param  string  $value  The actual plain text.
      */
     public function __construct(
-        public readonly int $position,
-        public readonly string $value,
+        public int $position,
+        public string $value,
     ) {}
 }

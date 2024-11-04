@@ -21,9 +21,9 @@ final class MarketplaceLevelAttributes extends Dto
      * @param  string  $sellingPlan  The selling plan details.
      */
     public function __construct(
-        public readonly Marketplace $marketplace,
-        public readonly string $storeName,
-        public readonly string $listingStatus,
-        public readonly string $sellingPlan,
+        public Marketplace $marketplace,
+        public string $storeName,
+        public string $listingStatus,
+        public string $sellingPlan,
     ) {}
 }

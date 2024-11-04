@@ -23,8 +23,8 @@ final class UpdateScheduleRecord extends Dto
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
-        public readonly ?AvailabilityRecord $availability = null,
-        public readonly ?array $warnings = null,
-        public readonly ?ErrorList $errors = null,
+        public ?AvailabilityRecord $availability = null,
+        public ?array $warnings = null,
+        public ?ErrorList $errors = null,
     ) {}
 }

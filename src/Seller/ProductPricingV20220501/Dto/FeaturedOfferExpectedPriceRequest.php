@@ -23,11 +23,11 @@ final class FeaturedOfferExpectedPriceRequest extends Dto
      * @param  ?string[]  $headers  A mapping of additional HTTP headers to send/receive for an individual request within a batch.
      */
     public function __construct(
-        public readonly string $uri,
-        public readonly string $method,
-        public readonly string $marketplaceId,
-        public readonly string $sku,
-        public readonly ?array $body = null,
-        public readonly ?array $headers = null,
+        public string $uri,
+        public string $method,
+        public string $marketplaceId,
+        public string $sku,
+        public ?array $body = null,
+        public ?array $headers = null,
     ) {}
 }

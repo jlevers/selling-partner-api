@@ -31,7 +31,7 @@ class UpdateItemComplianceDetails extends Request implements HasBody
 
     /**
      * @param  UpdateItemComplianceDetailsRequest  $updateItemComplianceDetailsRequest  The `updateItemComplianceDetails` request.
-     * @param  string  $marketplaceId  The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values.
+     * @param  string  $marketplaceId  The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function __construct(
         public UpdateItemComplianceDetailsRequest $updateItemComplianceDetailsRequest,

@@ -22,10 +22,10 @@ final class ItemEligibilityPreview extends Dto
      * @param  ?string[]  $ineligibilityReasonList  Potential Ineligibility Reason Codes.
      */
     public function __construct(
-        public readonly string $asin,
-        public readonly string $program,
-        public readonly bool $isEligibleForProgram,
-        public readonly ?string $marketplaceId = null,
-        public readonly ?array $ineligibilityReasonList = null,
+        public string $asin,
+        public string $program,
+        public bool $isEligibleForProgram,
+        public ?string $marketplaceId = null,
+        public ?array $ineligibilityReasonList = null,
     ) {}
 }

@@ -23,11 +23,11 @@ final class Address extends Dto
      * @param  ?string  $postalCode  The postal code.
      */
     public function __construct(
-        public readonly string $addressLine1,
-        public readonly string $countryCode,
-        public readonly ?string $addressLine2 = null,
-        public readonly ?string $stateOrProvinceCode = null,
-        public readonly ?string $city = null,
-        public readonly ?string $postalCode = null,
+        public string $addressLine1,
+        public string $countryCode,
+        public ?string $addressLine2 = null,
+        public ?string $stateOrProvinceCode = null,
+        public ?string $city = null,
+        public ?string $postalCode = null,
     ) {}
 }

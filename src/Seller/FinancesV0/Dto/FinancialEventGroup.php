@@ -47,16 +47,16 @@ final class FinancialEventGroup extends Dto
      * @param  ?\DateTimeInterface  $financialEventGroupEnd  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function __construct(
-        public readonly ?string $financialEventGroupId = null,
-        public readonly ?string $processingStatus = null,
-        public readonly ?string $fundTransferStatus = null,
-        public readonly ?Currency $originalTotal = null,
-        public readonly ?Currency $convertedTotal = null,
-        public readonly ?\DateTimeInterface $fundTransferDate = null,
-        public readonly ?string $traceId = null,
-        public readonly ?string $accountTail = null,
-        public readonly ?Currency $beginningBalance = null,
-        public readonly ?\DateTimeInterface $financialEventGroupStart = null,
-        public readonly ?\DateTimeInterface $financialEventGroupEnd = null,
+        public ?string $financialEventGroupId = null,
+        public ?string $processingStatus = null,
+        public ?string $fundTransferStatus = null,
+        public ?Currency $originalTotal = null,
+        public ?Currency $convertedTotal = null,
+        public ?\DateTimeInterface $fundTransferDate = null,
+        public ?string $traceId = null,
+        public ?string $accountTail = null,
+        public ?Currency $beginningBalance = null,
+        public ?\DateTimeInterface $financialEventGroupStart = null,
+        public ?\DateTimeInterface $financialEventGroupEnd = null,
     ) {}
 }

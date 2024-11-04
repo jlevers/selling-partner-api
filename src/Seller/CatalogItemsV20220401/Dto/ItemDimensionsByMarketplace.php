@@ -20,8 +20,8 @@ final class ItemDimensionsByMarketplace extends Dto
      * @param  ?Dimensions  $package  Dimensions of an Amazon catalog item or item in its packaging.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly ?Dimensions $item = null,
-        public readonly ?Dimensions $package = null,
+        public string $marketplaceId,
+        public ?Dimensions $item = null,
+        public ?Dimensions $package = null,
     ) {}
 }

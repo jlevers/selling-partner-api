@@ -21,7 +21,7 @@ final class ListingsItemPatchRequest extends Dto
      * @param  PatchOperation[]  $patches  One or more JSON Patch operations to perform on the listings item.
      */
     public function __construct(
-        public readonly string $productType,
-        public readonly array $patches,
+        public string $productType,
+        public array $patches,
     ) {}
 }

@@ -42,16 +42,16 @@ final class ShipmentItem extends Dto
      * @param  ?string[]  $serialNumbers  The list of serial numbers.
      */
     public function __construct(
-        public readonly ?string $asin = null,
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $orderItemId = null,
-        public readonly ?string $title = null,
-        public readonly ?float $quantityOrdered = null,
-        public readonly ?Money $itemPrice = null,
-        public readonly ?Money $shippingPrice = null,
-        public readonly ?Money $giftWrapPrice = null,
-        public readonly ?Money $shippingDiscount = null,
-        public readonly ?Money $promotionDiscount = null,
-        public readonly ?array $serialNumbers = null,
+        public ?string $asin = null,
+        public ?string $sellerSku = null,
+        public ?string $orderItemId = null,
+        public ?string $title = null,
+        public ?float $quantityOrdered = null,
+        public ?Money $itemPrice = null,
+        public ?Money $shippingPrice = null,
+        public ?Money $giftWrapPrice = null,
+        public ?Money $shippingDiscount = null,
+        public ?Money $promotionDiscount = null,
+        public ?array $serialNumbers = null,
     ) {}
 }

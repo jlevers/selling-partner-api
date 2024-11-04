@@ -37,18 +37,18 @@ final class InvoiceDetail extends Dto
      * @param  ChargeDetails[]|null  $chargeDetails  Total charge amount details for all line items.
      */
     public function __construct(
-        public readonly string $invoiceNumber,
-        public readonly \DateTimeInterface $invoiceDate,
-        public readonly PartyIdentification $remitToParty,
-        public readonly PartyIdentification $shipFromParty,
-        public readonly Money $invoiceTotal,
-        public readonly array $items,
-        public readonly ?string $referenceNumber = null,
-        public readonly ?PartyIdentification $billToParty = null,
-        public readonly ?string $shipToCountryCode = null,
-        public readonly ?string $paymentTermsCode = null,
-        public readonly ?array $taxTotals = null,
-        public readonly ?array $additionalDetails = null,
-        public readonly ?array $chargeDetails = null,
+        public string $invoiceNumber,
+        public \DateTimeInterface $invoiceDate,
+        public PartyIdentification $remitToParty,
+        public PartyIdentification $shipFromParty,
+        public Money $invoiceTotal,
+        public array $items,
+        public ?string $referenceNumber = null,
+        public ?PartyIdentification $billToParty = null,
+        public ?string $shipToCountryCode = null,
+        public ?string $paymentTermsCode = null,
+        public ?array $taxTotals = null,
+        public ?array $additionalDetails = null,
+        public ?array $chargeDetails = null,
     ) {}
 }

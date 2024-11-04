@@ -21,7 +21,7 @@ final class ShippingLabelList extends Dto
      * @param  ShippingLabel[]|null  $shippingLabels  An array containing the details of the generated shipping labels.
      */
     public function __construct(
-        public readonly ?Pagination $pagination = null,
-        public readonly ?array $shippingLabels = null,
+        public ?Pagination $pagination = null,
+        public ?array $shippingLabels = null,
     ) {}
 }

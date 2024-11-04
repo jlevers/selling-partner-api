@@ -38,13 +38,13 @@ final class ServiceFeeEvent extends Dto
      * @param  ?string  $storeName  The name of the store where the event occurred.
      */
     public function __construct(
-        public readonly ?string $amazonOrderId = null,
-        public readonly ?string $feeReason = null,
-        public readonly ?array $feeList = null,
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $fnSku = null,
-        public readonly ?string $feeDescription = null,
-        public readonly ?string $asin = null,
-        public readonly ?string $storeName = null,
+        public ?string $amazonOrderId = null,
+        public ?string $feeReason = null,
+        public ?array $feeList = null,
+        public ?string $sellerSku = null,
+        public ?string $fnSku = null,
+        public ?string $feeDescription = null,
+        public ?string $asin = null,
+        public ?string $storeName = null,
     ) {}
 }

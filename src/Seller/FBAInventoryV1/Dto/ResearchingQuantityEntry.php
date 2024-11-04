@@ -19,7 +19,7 @@ final class ResearchingQuantityEntry extends Dto
      * @param  int  $quantity  The number of units.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly int $quantity,
+        public string $name,
+        public int $quantity,
     ) {}
 }

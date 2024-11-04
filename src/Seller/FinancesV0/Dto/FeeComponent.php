@@ -21,7 +21,7 @@ final class FeeComponent extends Dto
      * @param  ?Currency  $feeAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?string $feeType = null,
-        public readonly ?Currency $feeAmount = null,
+        public ?string $feeType = null,
+        public ?Currency $feeAmount = null,
     ) {}
 }

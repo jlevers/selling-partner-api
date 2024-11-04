@@ -20,8 +20,8 @@ final class ContactInformation extends Dto
      * @param  ?string  $email  The email address.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly string $phoneNumber,
-        public readonly ?string $email = null,
+        public string $name,
+        public string $phoneNumber,
+        public ?string $email = null,
     ) {}
 }

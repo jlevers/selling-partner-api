@@ -17,7 +17,7 @@ final class IdentifierType extends Dto
     protected static array $attributeMap = ['marketplaceAsin' => 'MarketplaceASIN', 'skuIdentifier' => 'SKUIdentifier'];
 
     public function __construct(
-        public readonly ?AsinIdentifier $marketplaceAsin = null,
-        public readonly ?SellerSkuIdentifier $skuIdentifier = null,
+        public ?AsinIdentifier $marketplaceAsin = null,
+        public ?SellerSkuIdentifier $skuIdentifier = null,
     ) {}
 }

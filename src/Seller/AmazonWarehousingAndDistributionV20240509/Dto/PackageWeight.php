@@ -19,7 +19,7 @@ final class PackageWeight extends Dto
      * @param  float  $weight  The package weight value.
      */
     public function __construct(
-        public readonly string $unitOfMeasurement,
-        public readonly float $weight,
+        public string $unitOfMeasurement,
+        public float $weight,
     ) {}
 }

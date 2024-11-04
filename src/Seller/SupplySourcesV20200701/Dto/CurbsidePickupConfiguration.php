@@ -20,8 +20,8 @@ final class CurbsidePickupConfiguration extends Dto
      * @param  ?ParkingWithAddressConfiguration  $parkingWithAddressConfiguration  The parking configuration with the address.
      */
     public function __construct(
-        public readonly ?bool $isSupported = null,
-        public readonly ?OperationalConfiguration $operationalConfiguration = null,
-        public readonly ?ParkingWithAddressConfiguration $parkingWithAddressConfiguration = null,
+        public ?bool $isSupported = null,
+        public ?OperationalConfiguration $operationalConfiguration = null,
+        public ?ParkingWithAddressConfiguration $parkingWithAddressConfiguration = null,
     ) {}
 }

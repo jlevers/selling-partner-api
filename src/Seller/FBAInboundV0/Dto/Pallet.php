@@ -22,8 +22,8 @@ final class Pallet extends Dto
      * @param  ?Weight  $weight  The weight of the package.
      */
     public function __construct(
-        public readonly Dimensions $dimensions,
-        public readonly bool $isStacked,
-        public readonly ?Weight $weight = null,
+        public Dimensions $dimensions,
+        public bool $isStacked,
+        public ?Weight $weight = null,
     ) {}
 }

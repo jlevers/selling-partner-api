@@ -40,14 +40,14 @@ final class Item extends Dto
      * @param  ?DangerousGoodsDetails  $dangerousGoodsDetails  Details related to any dangerous goods/items that are being shipped.
      */
     public function __construct(
-        public readonly string $orderItemId,
-        public readonly int $quantity,
-        public readonly ?Weight $itemWeight = null,
-        public readonly ?string $itemDescription = null,
-        public readonly ?array $transparencyCodeList = null,
-        public readonly ?array $itemLevelSellerInputsList = null,
-        public readonly ?LiquidVolume $liquidVolume = null,
-        public readonly ?bool $isHazmat = null,
-        public readonly ?DangerousGoodsDetails $dangerousGoodsDetails = null,
+        public string $orderItemId,
+        public int $quantity,
+        public ?Weight $itemWeight = null,
+        public ?string $itemDescription = null,
+        public ?array $transparencyCodeList = null,
+        public ?array $itemLevelSellerInputsList = null,
+        public ?LiquidVolume $liquidVolume = null,
+        public ?bool $isHazmat = null,
+        public ?DangerousGoodsDetails $dangerousGoodsDetails = null,
     ) {}
 }

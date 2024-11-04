@@ -23,9 +23,9 @@ final class AvailableValueAddedServiceGroup extends Dto
      * @param  ValueAddedService[]|null  $valueAddedServices  A list of optional value-added services available for purchase with a shipping service offering.
      */
     public function __construct(
-        public readonly string $groupId,
-        public readonly string $groupDescription,
-        public readonly bool $isRequired,
-        public readonly ?array $valueAddedServices = null,
+        public string $groupId,
+        public string $groupDescription,
+        public bool $isRequired,
+        public ?array $valueAddedServices = null,
     ) {}
 }

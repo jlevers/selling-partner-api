@@ -21,9 +21,9 @@ final class ProductContext extends Dto
      * @param  ?string  $fulfillmentNetwork  The fulfillment network of the item.
      */
     public function __construct(
-        public readonly ?string $asin = null,
-        public readonly ?string $sku = null,
-        public readonly ?int $quantityShipped = null,
-        public readonly ?string $fulfillmentNetwork = null,
+        public ?string $asin = null,
+        public ?string $sku = null,
+        public ?int $quantityShipped = null,
+        public ?string $fulfillmentNetwork = null,
     ) {}
 }

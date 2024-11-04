@@ -22,8 +22,8 @@ final class CreateScheduledPackagesRequest extends Dto
      * @param  string  $labelFormat  The file format in which the shipping label will be created.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly array $orderScheduleDetailsList,
-        public readonly string $labelFormat,
+        public string $marketplaceId,
+        public array $orderScheduleDetailsList,
+        public string $labelFormat,
     ) {}
 }

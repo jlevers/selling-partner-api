@@ -20,8 +20,8 @@ final class Error extends Dto
      * @param  ?string  $details  Additional information that can help the caller understand or fix the issue.
      */
     public function __construct(
-        public readonly string $code,
-        public readonly ?string $message = null,
-        public readonly ?string $details = null,
+        public string $code,
+        public ?string $message = null,
+        public ?string $details = null,
     ) {}
 }

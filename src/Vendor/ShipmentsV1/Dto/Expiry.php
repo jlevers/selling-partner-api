@@ -20,8 +20,8 @@ final class Expiry extends Dto
      * @param  ?Duration  $expiryAfterDuration  Duration after manufacturing date during which the product is valid for consumption.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $manufacturerDate = null,
-        public readonly ?\DateTimeInterface $expiryDate = null,
-        public readonly ?Duration $expiryAfterDuration = null,
+        public ?\DateTimeInterface $manufacturerDate = null,
+        public ?\DateTimeInterface $expiryDate = null,
+        public ?Duration $expiryAfterDuration = null,
     ) {}
 }

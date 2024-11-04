@@ -20,8 +20,8 @@ final class PackageDocument extends Dto
      * @param  string  $contents  A Base64 encoded string of the file contents.
      */
     public function __construct(
-        public readonly string $type,
-        public readonly string $format,
-        public readonly string $contents,
+        public string $type,
+        public string $format,
+        public string $contents,
     ) {}
 }

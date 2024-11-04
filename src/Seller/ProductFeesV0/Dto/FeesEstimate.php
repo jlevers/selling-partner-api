@@ -27,8 +27,8 @@ final class FeesEstimate extends Dto
      * @param  FeeDetail[]|null  $feeDetailList  A list of other fees that contribute to a given fee.
      */
     public function __construct(
-        public readonly \DateTimeInterface $timeOfFeesEstimation,
-        public readonly ?MoneyType $totalFeesEstimate = null,
-        public readonly ?array $feeDetailList = null,
+        public \DateTimeInterface $timeOfFeesEstimation,
+        public ?MoneyType $totalFeesEstimate = null,
+        public ?array $feeDetailList = null,
     ) {}
 }

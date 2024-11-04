@@ -24,12 +24,12 @@ final class OrderStatus extends Dto
      * @param  ?\DateTimeInterface  $lastUpdatedDate  The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
      */
     public function __construct(
-        public readonly string $purchaseOrderNumber,
-        public readonly string $purchaseOrderStatus,
-        public readonly \DateTimeInterface $purchaseOrderDate,
-        public readonly PartyIdentification $sellingParty,
-        public readonly PartyIdentification $shipToParty,
-        public readonly array $itemStatus,
-        public readonly ?\DateTimeInterface $lastUpdatedDate = null,
+        public string $purchaseOrderNumber,
+        public string $purchaseOrderStatus,
+        public \DateTimeInterface $purchaseOrderDate,
+        public PartyIdentification $sellingParty,
+        public PartyIdentification $shipToParty,
+        public array $itemStatus,
+        public ?\DateTimeInterface $lastUpdatedDate = null,
     ) {}
 }

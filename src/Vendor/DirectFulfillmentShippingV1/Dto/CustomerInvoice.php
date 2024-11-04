@@ -19,7 +19,7 @@ final class CustomerInvoice extends Dto
      * @param  string  $content  The `Base64encoded` customer invoice.
      */
     public function __construct(
-        public readonly string $purchaseOrderNumber,
-        public readonly string $content,
+        public string $purchaseOrderNumber,
+        public string $content,
     ) {}
 }

@@ -21,9 +21,9 @@ final class ListingOffersResponse extends Dto
      * @param  ?GetOffersHttpStatusLine  $status  The HTTP status line associated with the response.  For more information, consult [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).
      */
     public function __construct(
-        public readonly GetOffersResponse $body,
-        public readonly ?HttpResponseHeaders $headers = null,
-        public readonly ?GetOffersHttpStatusLine $status = null,
-        public readonly ?ListingOffersRequestParams $request = null,
+        public GetOffersResponse $body,
+        public ?HttpResponseHeaders $headers = null,
+        public ?GetOffersHttpStatusLine $status = null,
+        public ?ListingOffersRequestParams $request = null,
     ) {}
 }

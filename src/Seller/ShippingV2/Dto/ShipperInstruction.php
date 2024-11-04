@@ -18,6 +18,6 @@ final class ShipperInstruction extends Dto
      * @param  ?string  $deliveryNotes  The delivery notes for the shipment
      */
     public function __construct(
-        public readonly ?string $deliveryNotes = null,
+        public ?string $deliveryNotes = null,
     ) {}
 }

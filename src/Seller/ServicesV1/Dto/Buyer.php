@@ -21,9 +21,9 @@ final class Buyer extends Dto
      * @param  ?bool  $isPrimeMember  When true, the service is for an Amazon Prime buyer.
      */
     public function __construct(
-        public readonly ?string $buyerId = null,
-        public readonly ?string $name = null,
-        public readonly ?string $phone = null,
-        public readonly ?bool $isPrimeMember = null,
+        public ?string $buyerId = null,
+        public ?string $name = null,
+        public ?string $phone = null,
+        public ?bool $isPrimeMember = null,
     ) {}
 }

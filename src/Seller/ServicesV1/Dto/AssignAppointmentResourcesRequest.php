@@ -20,6 +20,6 @@ final class AssignAppointmentResourcesRequest extends Dto
      * @param  AppointmentResource[]  $resources  List of resources that performs or performed job appointment fulfillment.
      */
     public function __construct(
-        public readonly array $resources,
+        public array $resources,
     ) {}
 }

@@ -24,12 +24,12 @@ final class InventoryDetails extends Dto
      * @param  ?UnfulfillableQuantity  $unfulfillableQuantity  The quantity of unfulfillable inventory.
      */
     public function __construct(
-        public readonly ?int $fulfillableQuantity = null,
-        public readonly ?int $inboundWorkingQuantity = null,
-        public readonly ?int $inboundShippedQuantity = null,
-        public readonly ?int $inboundReceivingQuantity = null,
-        public readonly ?ReservedQuantity $reservedQuantity = null,
-        public readonly ?ResearchingQuantity $researchingQuantity = null,
-        public readonly ?UnfulfillableQuantity $unfulfillableQuantity = null,
+        public ?int $fulfillableQuantity = null,
+        public ?int $inboundWorkingQuantity = null,
+        public ?int $inboundShippedQuantity = null,
+        public ?int $inboundReceivingQuantity = null,
+        public ?ReservedQuantity $reservedQuantity = null,
+        public ?ResearchingQuantity $researchingQuantity = null,
+        public ?UnfulfillableQuantity $unfulfillableQuantity = null,
     ) {}
 }

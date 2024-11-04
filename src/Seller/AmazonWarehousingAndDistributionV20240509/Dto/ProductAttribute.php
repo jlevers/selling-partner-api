@@ -19,7 +19,7 @@ final class ProductAttribute extends Dto
      * @param  ?string  $value  Product attribute value.
      */
     public function __construct(
-        public readonly ?string $name = null,
-        public readonly ?string $value = null,
+        public ?string $name = null,
+        public ?string $value = null,
     ) {}
 }

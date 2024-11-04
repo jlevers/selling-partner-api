@@ -22,8 +22,8 @@ final class DeferredContext extends Dto
      * @param  ?string  $deferralStatus  The status of the transaction. For example, `HOLD`,`RELEASE`.
      */
     public function __construct(
-        public readonly ?string $deferralReason = null,
-        public readonly ?\DateTimeInterface $maturityDate = null,
-        public readonly ?string $deferralStatus = null,
+        public ?string $deferralReason = null,
+        public ?\DateTimeInterface $maturityDate = null,
+        public ?string $deferralStatus = null,
     ) {}
 }

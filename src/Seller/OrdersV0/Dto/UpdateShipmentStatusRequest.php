@@ -19,8 +19,8 @@ final class UpdateShipmentStatusRequest extends Dto
      * @param  string  $shipmentStatus  The shipment status to apply.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $shipmentStatus,
-        public readonly ?OrderItems $orderItems = null,
+        public string $marketplaceId,
+        public string $shipmentStatus,
+        public ?OrderItems $orderItems = null,
     ) {}
 }

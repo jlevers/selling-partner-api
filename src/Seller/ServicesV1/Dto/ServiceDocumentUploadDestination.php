@@ -21,9 +21,9 @@ final class ServiceDocumentUploadDestination extends Dto
      * @param  ?mixed[]  $headers  The headers to include in the upload request.
      */
     public function __construct(
-        public readonly string $uploadDestinationId,
-        public readonly string $url,
-        public readonly EncryptionDetails $encryptionDetails,
-        public readonly ?array $headers = null,
+        public string $uploadDestinationId,
+        public string $url,
+        public EncryptionDetails $encryptionDetails,
+        public ?array $headers = null,
     ) {}
 }

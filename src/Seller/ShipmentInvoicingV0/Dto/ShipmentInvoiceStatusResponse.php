@@ -20,6 +20,6 @@ final class ShipmentInvoiceStatusResponse extends Dto
      * @param  ?ShipmentInvoiceStatusInfo  $shipments  The shipment invoice status information.
      */
     public function __construct(
-        public readonly ?ShipmentInvoiceStatusInfo $shipments = null,
+        public ?ShipmentInvoiceStatusInfo $shipments = null,
     ) {}
 }

@@ -19,7 +19,7 @@ final class StandardTextBlock extends Dto
      * @param  ?ParagraphComponent  $body  A list of rich text content, usually presented in a text box.
      */
     public function __construct(
-        public readonly ?TextComponent $headline = null,
-        public readonly ?ParagraphComponent $body = null,
+        public ?TextComponent $headline = null,
+        public ?ParagraphComponent $body = null,
     ) {}
 }

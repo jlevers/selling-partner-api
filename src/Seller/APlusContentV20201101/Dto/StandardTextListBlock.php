@@ -20,6 +20,6 @@ final class StandardTextListBlock extends Dto
      * @param  TextItem[]  $textList
      */
     public function __construct(
-        public readonly array $textList,
+        public array $textList,
     ) {}
 }

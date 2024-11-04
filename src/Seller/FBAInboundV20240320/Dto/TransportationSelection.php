@@ -20,8 +20,8 @@ final class TransportationSelection extends Dto
      * @param  ?ContactInformation  $contactInformation  The seller's contact information.
      */
     public function __construct(
-        public readonly string $shipmentId,
-        public readonly string $transportationOptionId,
-        public readonly ?ContactInformation $contactInformation = null,
+        public string $shipmentId,
+        public string $transportationOptionId,
+        public ?ContactInformation $contactInformation = null,
     ) {}
 }

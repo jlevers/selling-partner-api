@@ -19,7 +19,7 @@ final class FeaturedOfferExpectedPriceRequestParams extends Dto
      * @param  string  $sku  The seller SKU of the item.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $sku,
+        public string $marketplaceId,
+        public string $sku,
     ) {}
 }

@@ -19,7 +19,7 @@ final class DateRange extends Dto
      * @param  ?string  $endDate  end date for query.
      */
     public function __construct(
-        public readonly ?string $startDate = null,
-        public readonly ?string $endDate = null,
+        public ?string $startDate = null,
+        public ?string $endDate = null,
     ) {}
 }

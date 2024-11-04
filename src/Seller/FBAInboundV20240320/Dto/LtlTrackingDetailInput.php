@@ -19,7 +19,7 @@ final class LtlTrackingDetailInput extends Dto
      * @param  ?string  $billOfLadingNumber  The number of the carrier shipment acknowledgement document.
      */
     public function __construct(
-        public readonly array $freightBillNumber,
-        public readonly ?string $billOfLadingNumber = null,
+        public array $freightBillNumber,
+        public ?string $billOfLadingNumber = null,
     ) {}
 }

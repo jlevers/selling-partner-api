@@ -18,6 +18,6 @@ final class ServiceSelection extends Dto
      * @param  string[]  $serviceId  A list of ServiceId.
      */
     public function __construct(
-        public readonly array $serviceId,
+        public array $serviceId,
     ) {}
 }

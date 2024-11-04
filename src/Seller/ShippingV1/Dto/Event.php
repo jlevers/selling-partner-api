@@ -20,8 +20,8 @@ final class Event extends Dto
      * @param  ?Location  $location  The location where the person, business or institution is located.
      */
     public function __construct(
-        public readonly string $eventCode,
-        public readonly \DateTimeInterface $eventTime,
-        public readonly ?Location $location = null,
+        public string $eventCode,
+        public \DateTimeInterface $eventTime,
+        public ?Location $location = null,
     ) {}
 }

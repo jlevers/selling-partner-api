@@ -26,7 +26,7 @@ final class LabelCustomization extends Dto
      * @param  ?string  $standardIdForLabel  The type of standard identifier to print on the label.
      */
     public function __construct(
-        public readonly ?string $customTextForLabel = null,
-        public readonly ?string $standardIdForLabel = null,
+        public ?string $customTextForLabel = null,
+        public ?string $standardIdForLabel = null,
     ) {}
 }

@@ -24,8 +24,8 @@ final class HttpResponseHeaders extends Dto
      * @param  ?string  $xAmznRequestId  Unique request reference ID.
      */
     public function __construct(
-        public readonly ?string $date = null,
-        public readonly ?string $xAmznRequestId = null,
+        public ?string $date = null,
+        public ?string $xAmznRequestId = null,
         ?string ...$additionalProperties,
     ) {
         $this->additionalProperties = $additionalProperties;

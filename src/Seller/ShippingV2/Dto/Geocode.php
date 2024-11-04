@@ -19,7 +19,7 @@ final class Geocode extends Dto
      * @param  ?string  $longitude  The longitude of access point.
      */
     public function __construct(
-        public readonly ?string $latitude = null,
-        public readonly ?string $longitude = null,
+        public ?string $latitude = null,
+        public ?string $longitude = null,
     ) {}
 }

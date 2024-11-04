@@ -18,6 +18,6 @@ final class PartyIdentification extends Dto
      * @param  string  $partyId  Assigned identification for the party. For example, warehouse code or vendor code.
      */
     public function __construct(
-        public readonly string $partyId,
+        public string $partyId,
     ) {}
 }

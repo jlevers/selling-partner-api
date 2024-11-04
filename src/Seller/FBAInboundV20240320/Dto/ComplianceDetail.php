@@ -21,9 +21,9 @@ final class ComplianceDetail extends Dto
      * @param  ?TaxDetails  $taxDetails  Information used to determine the tax compliance.
      */
     public function __construct(
-        public readonly ?string $asin = null,
-        public readonly ?string $fnsku = null,
-        public readonly ?string $msku = null,
-        public readonly ?TaxDetails $taxDetails = null,
+        public ?string $asin = null,
+        public ?string $fnsku = null,
+        public ?string $msku = null,
+        public ?TaxDetails $taxDetails = null,
     ) {}
 }

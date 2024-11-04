@@ -25,13 +25,13 @@ final class SellerDealPaymentEvent extends Dto
      * @param  ?Currency  $totalAmount  A currency type and amount.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $dealId = null,
-        public readonly ?string $dealDescription = null,
-        public readonly ?string $eventType = null,
-        public readonly ?string $feeType = null,
-        public readonly ?Currency $feeAmount = null,
-        public readonly ?Currency $taxAmount = null,
-        public readonly ?Currency $totalAmount = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $dealId = null,
+        public ?string $dealDescription = null,
+        public ?string $eventType = null,
+        public ?string $feeType = null,
+        public ?Currency $feeAmount = null,
+        public ?Currency $taxAmount = null,
+        public ?Currency $totalAmount = null,
     ) {}
 }

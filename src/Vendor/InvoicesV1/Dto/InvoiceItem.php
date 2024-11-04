@@ -34,16 +34,16 @@ final class InvoiceItem extends Dto
      * @param  AllowanceDetails[]|null  $allowanceDetails  Individual allowance details per line item.
      */
     public function __construct(
-        public readonly int $itemSequenceNumber,
-        public readonly ItemQuantity $invoicedQuantity,
-        public readonly Money $netCost,
-        public readonly ?string $amazonProductIdentifier = null,
-        public readonly ?string $vendorProductIdentifier = null,
-        public readonly ?string $purchaseOrderNumber = null,
-        public readonly ?string $hsnCode = null,
-        public readonly ?CreditNoteDetails $creditNoteDetails = null,
-        public readonly ?array $taxDetails = null,
-        public readonly ?array $chargeDetails = null,
-        public readonly ?array $allowanceDetails = null,
+        public int $itemSequenceNumber,
+        public ItemQuantity $invoicedQuantity,
+        public Money $netCost,
+        public ?string $amazonProductIdentifier = null,
+        public ?string $vendorProductIdentifier = null,
+        public ?string $purchaseOrderNumber = null,
+        public ?string $hsnCode = null,
+        public ?CreditNoteDetails $creditNoteDetails = null,
+        public ?array $taxDetails = null,
+        public ?array $chargeDetails = null,
+        public ?array $allowanceDetails = null,
     ) {}
 }

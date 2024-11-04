@@ -29,17 +29,17 @@ final class Item extends Dto
      * @param  ?DirectFulfillmentItemIdentifiers  $directFulfillmentItemIdentifiers  Item identifiers for an item in a direct fulfillment shipment.
      */
     public function __construct(
-        public readonly int $quantity,
-        public readonly ?Currency $itemValue = null,
-        public readonly ?string $description = null,
-        public readonly ?string $itemIdentifier = null,
-        public readonly ?Weight $weight = null,
-        public readonly ?LiquidVolume $liquidVolume = null,
-        public readonly ?bool $isHazmat = null,
-        public readonly ?DangerousGoodsDetails $dangerousGoodsDetails = null,
-        public readonly ?string $productType = null,
-        public readonly ?InvoiceDetails $invoiceDetails = null,
-        public readonly ?array $serialNumbers = null,
-        public readonly ?DirectFulfillmentItemIdentifiers $directFulfillmentItemIdentifiers = null,
+        public int $quantity,
+        public ?Currency $itemValue = null,
+        public ?string $description = null,
+        public ?string $itemIdentifier = null,
+        public ?Weight $weight = null,
+        public ?LiquidVolume $liquidVolume = null,
+        public ?bool $isHazmat = null,
+        public ?DangerousGoodsDetails $dangerousGoodsDetails = null,
+        public ?string $productType = null,
+        public ?InvoiceDetails $invoiceDetails = null,
+        public ?array $serialNumbers = null,
+        public ?DirectFulfillmentItemIdentifiers $directFulfillmentItemIdentifiers = null,
     ) {}
 }

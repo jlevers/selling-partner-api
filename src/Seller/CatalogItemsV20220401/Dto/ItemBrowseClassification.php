@@ -20,8 +20,8 @@ final class ItemBrowseClassification extends Dto
      * @param  ?ItemBrowseClassification  $parent  Classification (browse node) associated with an Amazon catalog item.
      */
     public function __construct(
-        public readonly string $displayName,
-        public readonly string $classificationId,
-        public readonly ?ItemBrowseClassification $parent = null,
+        public string $displayName,
+        public string $classificationId,
+        public ?ItemBrowseClassification $parent = null,
     ) {}
 }

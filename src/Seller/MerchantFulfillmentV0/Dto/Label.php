@@ -32,10 +32,10 @@ final class Label extends Dto
      * @param  ?string  $standardIdForLabel  The type of standard identifier to print on the label.
      */
     public function __construct(
-        public readonly LabelDimensions $dimensions,
-        public readonly FileContents $fileContents,
-        public readonly ?string $customTextForLabel = null,
-        public readonly ?string $labelFormat = null,
-        public readonly ?string $standardIdForLabel = null,
+        public LabelDimensions $dimensions,
+        public FileContents $fileContents,
+        public ?string $customTextForLabel = null,
+        public ?string $labelFormat = null,
+        public ?string $standardIdForLabel = null,
     ) {}
 }

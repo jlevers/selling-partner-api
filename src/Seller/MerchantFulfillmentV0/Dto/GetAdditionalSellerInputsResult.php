@@ -29,7 +29,7 @@ final class GetAdditionalSellerInputsResult extends Dto
      * @param  ItemLevelFields[]|null  $itemLevelFieldsList  A list of item level fields.
      */
     public function __construct(
-        public readonly ?array $shipmentLevelFields = null,
-        public readonly ?array $itemLevelFieldsList = null,
+        public ?array $shipmentLevelFields = null,
+        public ?array $itemLevelFieldsList = null,
     ) {}
 }

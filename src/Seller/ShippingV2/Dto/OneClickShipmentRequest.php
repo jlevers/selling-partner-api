@@ -34,17 +34,17 @@ final class OneClickShipmentRequest extends Dto
      * @param  ?ShipperInstruction  $shipperInstruction  The shipper instruction.
      */
     public function __construct(
-        public readonly Address $shipFrom,
-        public readonly array $packages,
-        public readonly ChannelDetails $channelDetails,
-        public readonly RequestedDocumentSpecification $labelSpecifications,
-        public readonly ServiceSelection $serviceSelection,
-        public readonly ?Address $shipTo = null,
-        public readonly ?Address $returnTo = null,
-        public readonly ?\DateTimeInterface $shipDate = null,
-        public readonly ?array $valueAddedServicesDetails = null,
-        public readonly ?array $taxDetails = null,
-        public readonly ?ShipperInstruction $shipperInstruction = null,
-        public readonly ?AccessPointDetails $destinationAccessPointDetails = null,
+        public Address $shipFrom,
+        public array $packages,
+        public ChannelDetails $channelDetails,
+        public RequestedDocumentSpecification $labelSpecifications,
+        public ServiceSelection $serviceSelection,
+        public ?Address $shipTo = null,
+        public ?Address $returnTo = null,
+        public ?\DateTimeInterface $shipDate = null,
+        public ?array $valueAddedServicesDetails = null,
+        public ?array $taxDetails = null,
+        public ?ShipperInstruction $shipperInstruction = null,
+        public ?AccessPointDetails $destinationAccessPointDetails = null,
     ) {}
 }

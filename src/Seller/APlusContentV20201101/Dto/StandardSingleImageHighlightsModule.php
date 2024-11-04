@@ -23,11 +23,11 @@ final class StandardSingleImageHighlightsModule extends Dto
      * @param  ?StandardHeaderTextListBlock  $bulletedListBlock  The A+ standard fixed-length list of text, with a related headline.
      */
     public function __construct(
-        public readonly ?ImageComponent $image = null,
-        public readonly ?TextComponent $headline = null,
-        public readonly ?StandardTextBlock $textBlock1 = null,
-        public readonly ?StandardTextBlock $textBlock2 = null,
-        public readonly ?StandardTextBlock $textBlock3 = null,
-        public readonly ?StandardHeaderTextListBlock $bulletedListBlock = null,
+        public ?ImageComponent $image = null,
+        public ?TextComponent $headline = null,
+        public ?StandardTextBlock $textBlock1 = null,
+        public ?StandardTextBlock $textBlock2 = null,
+        public ?StandardTextBlock $textBlock3 = null,
+        public ?StandardHeaderTextListBlock $bulletedListBlock = null,
     ) {}
 }

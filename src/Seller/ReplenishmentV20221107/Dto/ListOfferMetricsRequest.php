@@ -20,8 +20,8 @@ final class ListOfferMetricsRequest extends Dto
      * @param  ?ListOfferMetricsRequestSort  $sort  Use these parameters to sort the response.
      */
     public function __construct(
-        public readonly ListOfferMetricsRequestPagination $pagination,
-        public readonly ListOfferMetricsRequestFilters $filters,
-        public readonly ?ListOfferMetricsRequestSort $sort = null,
+        public ListOfferMetricsRequestPagination $pagination,
+        public ListOfferMetricsRequestFilters $filters,
+        public ?ListOfferMetricsRequestSort $sort = null,
     ) {}
 }

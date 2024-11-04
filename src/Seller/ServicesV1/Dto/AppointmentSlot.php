@@ -20,8 +20,8 @@ final class AppointmentSlot extends Dto
      * @param  ?int  $capacity  Number of resources for which a slot can be reserved.
      */
     public function __construct(
-        public readonly ?\DateTimeInterface $startTime = null,
-        public readonly ?\DateTimeInterface $endTime = null,
-        public readonly ?int $capacity = null,
+        public ?\DateTimeInterface $startTime = null,
+        public ?\DateTimeInterface $endTime = null,
+        public ?int $capacity = null,
     ) {}
 }

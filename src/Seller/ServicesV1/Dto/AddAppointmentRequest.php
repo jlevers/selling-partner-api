@@ -18,6 +18,6 @@ final class AddAppointmentRequest extends Dto
      * @param  AppointmentTimeInput  $appointmentTime  The input appointment time details.
      */
     public function __construct(
-        public readonly AppointmentTimeInput $appointmentTime,
+        public AppointmentTimeInput $appointmentTime,
     ) {}
 }

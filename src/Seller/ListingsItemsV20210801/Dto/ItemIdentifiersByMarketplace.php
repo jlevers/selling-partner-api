@@ -19,7 +19,7 @@ final class ItemIdentifiersByMarketplace extends Dto
      * @param  ?string  $asin  Amazon Standard Identification Number (ASIN) of the listings item.
      */
     public function __construct(
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $asin = null,
+        public ?string $marketplaceId = null,
+        public ?string $asin = null,
     ) {}
 }

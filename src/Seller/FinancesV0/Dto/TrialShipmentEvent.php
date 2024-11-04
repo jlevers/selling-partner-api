@@ -32,10 +32,10 @@ final class TrialShipmentEvent extends Dto
      * @param  FeeComponent[]|null  $feeList  A list of fee component information.
      */
     public function __construct(
-        public readonly ?string $amazonOrderId = null,
-        public readonly ?string $financialEventGroupId = null,
-        public readonly ?\DateTimeInterface $postedDate = null,
-        public readonly ?string $sku = null,
-        public readonly ?array $feeList = null,
+        public ?string $amazonOrderId = null,
+        public ?string $financialEventGroupId = null,
+        public ?\DateTimeInterface $postedDate = null,
+        public ?string $sku = null,
+        public ?array $feeList = null,
     ) {}
 }

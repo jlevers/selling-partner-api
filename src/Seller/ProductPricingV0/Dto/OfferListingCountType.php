@@ -21,7 +21,7 @@ final class OfferListingCountType extends Dto
      * @param  string  $condition  The condition of the item.
      */
     public function __construct(
-        public readonly int $count,
-        public readonly string $condition,
+        public int $count,
+        public string $condition,
     ) {}
 }

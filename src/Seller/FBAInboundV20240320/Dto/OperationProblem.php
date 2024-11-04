@@ -17,13 +17,13 @@ final class OperationProblem extends Dto
     /**
      * @param  string  $code  An error code that identifies the type of error that occurred.
      * @param  string  $message  A message that describes the error condition.
-     * @param  string  $severity  The severity of the problem. Can be: `WARNING`, `ERROR`.
+     * @param  string  $severity  The severity of the problem. Possible values: `WARNING`, `ERROR`.
      * @param  ?string  $details  Additional details that can help the caller understand or fix the issue.
      */
     public function __construct(
-        public readonly string $code,
-        public readonly string $message,
-        public readonly string $severity,
-        public readonly ?string $details = null,
+        public string $code,
+        public string $message,
+        public string $severity,
+        public ?string $details = null,
     ) {}
 }

@@ -45,15 +45,15 @@ final class Summary extends Dto
      * @param  ?\DateTimeInterface  $offersAvailableTime  When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing.
      */
     public function __construct(
-        public readonly int $totalOfferCount,
-        public readonly ?array $numberOfOffers = null,
-        public readonly ?array $lowestPrices = null,
-        public readonly ?array $buyBoxPrices = null,
-        public readonly ?MoneyType $listPrice = null,
-        public readonly ?MoneyType $competitivePriceThreshold = null,
-        public readonly ?MoneyType $suggestedLowerPricePlusShipping = null,
-        public readonly ?array $salesRankings = null,
-        public readonly ?array $buyBoxEligibleOffers = null,
-        public readonly ?\DateTimeInterface $offersAvailableTime = null,
+        public int $totalOfferCount,
+        public ?array $numberOfOffers = null,
+        public ?array $lowestPrices = null,
+        public ?array $buyBoxPrices = null,
+        public ?MoneyType $listPrice = null,
+        public ?MoneyType $competitivePriceThreshold = null,
+        public ?MoneyType $suggestedLowerPricePlusShipping = null,
+        public ?array $salesRankings = null,
+        public ?array $buyBoxEligibleOffers = null,
+        public ?\DateTimeInterface $offersAvailableTime = null,
     ) {}
 }

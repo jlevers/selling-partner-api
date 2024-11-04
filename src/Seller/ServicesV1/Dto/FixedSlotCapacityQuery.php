@@ -21,9 +21,9 @@ final class FixedSlotCapacityQuery extends Dto
      * @param  ?float  $slotDuration  Size in which slots are being requested. This value should be a multiple of 5 and fall in the range: 5 <= `slotDuration` <= 360.
      */
     public function __construct(
-        public readonly \DateTimeInterface $startDateTime,
-        public readonly \DateTimeInterface $endDateTime,
-        public readonly ?array $capacityTypes = null,
-        public readonly ?float $slotDuration = null,
+        public \DateTimeInterface $startDateTime,
+        public \DateTimeInterface $endDateTime,
+        public ?array $capacityTypes = null,
+        public ?float $slotDuration = null,
     ) {}
 }

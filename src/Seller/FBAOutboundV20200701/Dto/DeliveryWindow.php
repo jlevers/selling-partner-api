@@ -19,7 +19,7 @@ final class DeliveryWindow extends Dto
      * @param  \DateTimeInterface  $endDate  Date timestamp
      */
     public function __construct(
-        public readonly \DateTimeInterface $startDate,
-        public readonly \DateTimeInterface $endDate,
+        public \DateTimeInterface $startDate,
+        public \DateTimeInterface $endDate,
     ) {}
 }

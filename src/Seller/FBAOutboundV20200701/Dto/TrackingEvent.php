@@ -21,9 +21,9 @@ final class TrackingEvent extends Dto
      * @param  string  $eventDescription  A description for the corresponding event code.
      */
     public function __construct(
-        public readonly \DateTimeInterface $eventDate,
-        public readonly TrackingAddress $eventAddress,
-        public readonly string $eventCode,
-        public readonly string $eventDescription,
+        public \DateTimeInterface $eventDate,
+        public TrackingAddress $eventAddress,
+        public string $eventCode,
+        public string $eventDescription,
     ) {}
 }

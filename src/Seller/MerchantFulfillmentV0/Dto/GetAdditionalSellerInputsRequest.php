@@ -26,8 +26,8 @@ final class GetAdditionalSellerInputsRequest extends Dto
      * @param  string  $orderId  An Amazon-defined order identifier, in 3-7-7 format.
      */
     public function __construct(
-        public readonly string $shippingServiceId,
-        public readonly Address $shipFromAddress,
-        public readonly string $orderId,
+        public string $shippingServiceId,
+        public Address $shipFromAddress,
+        public string $orderId,
     ) {}
 }

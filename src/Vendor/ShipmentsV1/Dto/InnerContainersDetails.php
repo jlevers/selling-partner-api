@@ -21,7 +21,7 @@ final class InnerContainersDetails extends Dto
      * @param  ContainerSequenceNumbers[]|null  $containerSequenceNumbers  Container sequence numbers that are involved in this shipment.
      */
     public function __construct(
-        public readonly ?int $containerCount = null,
-        public readonly ?array $containerSequenceNumbers = null,
+        public ?int $containerCount = null,
+        public ?array $containerSequenceNumbers = null,
     ) {}
 }

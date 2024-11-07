@@ -664,6 +664,20 @@
     "schedulable": false,
     "quoteEnclosure": false
   },
+  "GET_FBA_SNS_FORECAST_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_SNS_PERFORMANCE_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
   "GET_FBA_UNO_INVENTORY_DATA": {
     "contentType": "text/tab-separated-values",
     "restricted": false,

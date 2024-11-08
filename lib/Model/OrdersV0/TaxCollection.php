@@ -143,6 +143,7 @@ class TaxCollection extends BaseModel implements ModelInterface, ArrayAccess, \J
     {
         $baseVals = [
             self::RESPONSIBLE_PARTY_AMAZON_SERVICES_INC,
+            ''
         ];
 
         // This is necessary because Amazon does not consistently capitalize their

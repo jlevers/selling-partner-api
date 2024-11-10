@@ -12,5 +12,5 @@ enum GrantlessScope: string
 
     case NOTIFICATIONS = 'sellingpartnerapi::notifications';
     case TOKEN_MIGRATION = 'sellingpartnerapi::migration';
-    case ROTATE_TOKEN = 'sellingpartnerapi::client_credentials:rotation';
+    case ROTATE_TOKEN = 'sellingpartnerapi::client_credential:rotation';
 }

@@ -146,6 +146,8 @@ The `SellingPartnerApi::seller()` and `SellingPartnerApi::vendor()` builder meth
 To get detailed debugging output, you can take advantage of [Saloon's debugging hooks](https://docs.saloon.dev/digging-deeper/debugging). This package is built on top of Saloon, so anything that works in Saloon will work here. For instance, to debug requests:
 
 ```php
+use Psr\Http\Message\RequestInterface;
+use Saloon\Http\PendingRequest;
 use SellingPartnerApi\SellingPartnerApi;
 
 $connector = SellingPartnerApi::seller(

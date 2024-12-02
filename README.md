@@ -133,7 +133,7 @@ The `SellingPartnerApi::seller()` and `SellingPartnerApi::vendor()` builder meth
 
 * `clientId (string)`: Required. The LWA client ID of the SP API application to use to execute API requests.
 * `clientSecret (string)`: Required. The LWA client secret of the SP API application to use to execute API requests.
-* `refreshToken (string)`: The LWA refresh token of the SP API application to use to execute API requests. Required, unless you're only using [grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
+* `refreshToken (string)`: The LWA refresh token of the SP API application to use to execute API requests. Required, unless you're only using [grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations), in which case you can pass a dummy string like `'grantless'`.
 * `endpoint`: Required. An instance of the [`SellingPartnerApi\Enums\Endpoint` enum](https://github.com/jlevers/selling-partner-api/blob/main/src/Enums/Endpoint.php). Primary endpoints are `Endpoint::NA`, `Endpoint::EU`, and `Endpoint::FE`. Sandbox endpoints are `Endpoint::NA_SANDBOX`, `Endpoint::EU_SANDBOX`, and `Endpoint::FE_SANDBOX`.
 * `dataElements (array)`: Optional. An array of data elements to pass to restricted operations. See the [Restricted operations](#restricted-operations) section for more details.
 * `delegatee (string)`: Optional. The application ID of a delegatee application to generate RDTs on behalf of.
@@ -159,7 +159,7 @@ $connector = SellingPartnerApi::seller(
 
 $connector->debugRequest(
     function (PendingRequest $pendingRequest, RequestInterface $psrRequest) {
-        dd($pendingRequest->headers()->all(), $psrRequest);
+        var_dump($pendingRequest->headers()->all(), $psrRequest);
     }
 );
 ```

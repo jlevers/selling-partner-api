@@ -853,15 +853,16 @@ class CatalogItemsV20220401Api extends BaseApi
                 'Missing the required parameter $marketplace_ids when calling searchCatalogItems'
             );
         }
-        if (count( explode(",", $marketplace_ids) ) > 1) {
+
+        if ($this->getMarketplaceCount($marketplace_ids) > 1) {
             throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling CatalogItemsV20220401Api.searchCatalogItems, number of items must be less than or equal to 1.');
         }
 
-        if ($identifiers !== null && count( explode(",", $identifiers) ) > 20) {
+        if ($identifiers !== null && $this->getMarketplaceCount($identifiers) > 20) {
             throw new \InvalidArgumentException('invalid value for "$identifiers" when calling CatalogItemsV20220401Api.searchCatalogItems, number of items must be less than or equal to 20.');
         }
 
-        if ($keywords !== null && count( explode(",", $keywords) ) > 20) {
+        if ($keywords !== null && $this->getMarketplaceCount($keywords) > 20) {
             throw new \InvalidArgumentException('invalid value for "$keywords" when calling CatalogItemsV20220401Api.searchCatalogItems, number of items must be less than or equal to 20.');
         }
 
@@ -1029,4 +1030,14 @@ class CatalogItemsV20220401Api extends BaseApi
         );
     }
 
+    /**
+     * Get the marketplace count demanded by the value type
+     *
+     * @param $value
+     * @return int
+     */
+    private function getMarketplaceCount($value): int
+    {
+        return is_array($value) ? count($value) : count(explode(",", (string)$value));
+    }
 }

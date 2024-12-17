@@ -1,0 +1,2036 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Selling Partner API for Catalog Items",
+        "description": "The Selling Partner API for Catalog Items helps you programmatically retrieve item details for items in the catalog.",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "v0"
+    },
+    "servers": [
+        {
+            "url": "https://sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/catalog/v0/items": {
+            "get": {
+                "tags": [
+                    "catalog"
+                ],
+                "description": "Effective September 30, 2022, the `listCatalogItems` operation will no longer be available in the Selling Partner API for Catalog Items v0. As an alternative, `searchCatalogItems` is available in the latest version of the [Selling Partner API for Catalog Items v2022-04-01](doc:catalog-items-api-v2022-04-01-reference). Integrations that rely on the `listCatalogItems` operation should migrate to the `searchCatalogItems`operation to avoid service disruption. \n_Note:_ The [`listCatalogCategories`](#get-catalogv0categories) operation is not being deprecated and you can continue to make calls to it.",
+                "operationId": "listCatalogItems",
+                "parameters": [
+                    {
+                        "name": "MarketplaceId",
+                        "in": "query",
+                        "description": "A marketplace identifier. Specifies the marketplace for which items are returned.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Query",
+                        "in": "query",
+                        "description": "Keyword(s) to use to search for items in the catalog. Example: 'harry potter books'.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "QueryContextId",
+                        "in": "query",
+                        "description": "An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "SellerSKU",
+                        "in": "query",
+                        "description": "Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "UPC",
+                        "in": "query",
+                        "description": "A 12-digit bar code used for retail packaging.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "EAN",
+                        "in": "query",
+                        "description": "A European article number that uniquely identifies the catalog item, manufacturer, and its attributes.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "ISBN",
+                        "in": "query",
+                        "description": "The unique commercial book identifier used to identify books internationally.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "JAN",
+                        "in": "query",
+                        "description": "A Japanese article number that uniquely identifies the product, manufacturer, and its attributes.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "MarketplaceId": {
+                                                "value": "TEST_CASE_200"
+                                            },
+                                            "SellerSKU": {
+                                                "value": "SKU_200"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "payload": {
+                                            "Items": [
+                                                {
+                                                    "Identifiers": {
+                                                        "MarketplaceASIN": {
+                                                            "MarketplaceId": "ATVPDKIKX0DER",
+                                                            "ASIN": "A00551Q3CA"
+                                                        },
+                                                        "SKUIdentifier": {
+                                                            "MarketplaceId": "",
+                                                            "SellerId": "",
+                                                            "SellerSKU": ""
+                                                        }
+                                                    },
+                                                    "AttributeSets": [
+                                                        {
+                                                            "Actor": [
+                                                                "actor1",
+                                                                "actor2"
+                                                            ],
+                                                            "Artist": [
+                                                                "Artist1",
+                                                                "Artist2"
+                                                            ],
+                                                            "Author": [
+                                                                "Author1",
+                                                                "Author2"
+                                                            ],
+                                                            "Director": [
+                                                                "Director1",
+                                                                "Director2"
+                                                            ],
+                                                            "DisplaySize": {
+                                                                "Units": "inches",
+                                                                "value": 52
+                                                            },
+                                                            "Feature": [
+                                                                "Feature1",
+                                                                "Feature2"
+                                                            ],
+                                                            "Format": [
+                                                                "Format1",
+                                                                "Format2"
+                                                            ],
+                                                            "GemType": [
+                                                                "Gem1",
+                                                                "Gem2"
+                                                            ],
+                                                            "MaterialType": [
+                                                                "MaterialType1",
+                                                                "MaterialType2"
+                                                            ],
+                                                            "MediaType": [
+                                                                "MediaType1",
+                                                                "MediaType2"
+                                                            ],
+                                                            "OperatingSystem": [
+                                                                "OperatingSystem1",
+                                                                "OperatingSystem2"
+                                                            ],
+                                                            "Platform": [
+                                                                "Platform1",
+                                                                "Platform2"
+                                                            ],
+                                                            "AspectRatio": "4:3",
+                                                            "AudienceRating": "4.5",
+                                                            "BackFinding": "BackFinding",
+                                                            "BandMaterialType": "BandMaterialType",
+                                                            "Binding": "Health and Beauty",
+                                                            "BlurayRegion": "BlurayRegion",
+                                                            "Brand": "Nature Made",
+                                                            "CeroAgeRating": "CeroAgeRating",
+                                                            "ChainType": "ChainType",
+                                                            "ClaspType": "ClaspType",
+                                                            "Color": "Full Strength Mini",
+                                                            "CpuManufacturer": "CpuManufacturer",
+                                                            "CpuSpeed": {},
+                                                            "CpuType": "CpuType",
+                                                            "Department": "Department",
+                                                            "Edition": "1",
+                                                            "EpisodeSequence": "5",
+                                                            "EsrbAgeRating": "9.5",
+                                                            "Flavor": "031604028657",
+                                                            "Genre": "Genre",
+                                                            "GolfClubFlex": "GolfClubFlex",
+                                                            "GolfClubLoft": {
+                                                                "Units": "mm",
+                                                                "value": 100
+                                                            },
+                                                            "HandOrientation": "HandOrientation",
+                                                            "HardDiskInterface": "HardDiskInterface",
+                                                            "HardDiskSize": {
+                                                                "Units": "cm",
+                                                                "value": 10
+                                                            },
+                                                            "HardwarePlatform": "HardwarePlatform",
+                                                            "HazardousMaterialType": "HazardousMaterialType",
+                                                            "ItemDimensions": {
+                                                                "Height": {
+                                                                    "value": 4.5,
+                                                                    "Units": "mm"
+                                                                },
+                                                                "Length": {
+                                                                    "value": 1.44,
+                                                                    "Units": "inches"
+                                                                },
+                                                                "Width": {
+                                                                    "value": 2.44,
+                                                                    "Units": "cm"
+                                                                },
+                                                                "Weight": {
+                                                                    "value": 0.16,
+                                                                    "Units": "pounds"
+                                                                }
+                                                            },
+                                                            "IsAdultProduct": false,
+                                                            "IsAutographed": true,
+                                                            "IsEligibleForTradeIn": false,
+                                                            "IsMemorabilia": true,
+                                                            "IssuesPerYear": "12",
+                                                            "ItemPartNumber": "3YUIUIR439534",
+                                                            "Label": "Pharmavite",
+                                                            "Languages": [
+                                                                {
+                                                                    "Name": "Tamil",
+                                                                    "Type": "published",
+                                                                    "AudioFormat": "TSV"
+                                                                },
+                                                                {
+                                                                    "Name": "English",
+                                                                    "Type": "unknown",
+                                                                    "AudioFormat": "ESV"
+                                                                }
+                                                            ],
+                                                            "LegalDisclaimer": "LegalDisclaimer",
+                                                            "ListPrice": {
+                                                                "Amount": 10.99,
+                                                                "CurrencyCode": "USD"
+                                                            },
+                                                            "Manufacturer": "Pharmavite",
+                                                            "ManufacturerMaximumAge": {
+                                                                "Units": "age",
+                                                                "value": 60
+                                                            },
+                                                            "ManufacturerMinimumAge": {
+                                                                "Units": "age",
+                                                                "value": 10
+                                                            },
+                                                            "ManufacturerPartsWarrantyDescription": "ManufacturerPartsWarrantyDescription",
+                                                            "MetalStamp": "MetalStamp",
+                                                            "MetalType": "MetalType",
+                                                            "Model": "2865"
+                                                        }
+                                                    ],
+                                                    "Relationships": [
+                                                        {
+                                                            "Edition": "1",
+                                                            "GolfClubFlex": "GolfClubFlex",
+                                                            "Size": "Small",
+                                                            "GolfClubLoft": {
+                                                                "Units": "meters",
+                                                                "value": 11
+                                                            },
+                                                            "TotalDiamondWeight": {
+                                                                "Units": "ss",
+                                                                "value": 234
+                                                            },
+                                                            "TotalGemWeight": {
+                                                                "Units": "ee",
+                                                                "value": 544
+                                                            }
+                                                        },
+                                                        {
+                                                            "Color": "Black",
+                                                            "Flavor": "Grape",
+                                                            "HandOrientation": "Left",
+                                                            "HardwarePlatform": "Windows"
+                                                        },
+                                                        {
+                                                            "MetalType": "Steel",
+                                                            "Model": "5.0",
+                                                            "ProductTypeSubcategory": "Electronics"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Identifiers": {
+                                                        "MarketplaceASIN": {
+                                                            "MarketplaceId": "ATVPDKIKX0DER",
+                                                            "ASIN": "B00551Q3CS"
+                                                        },
+                                                        "SKUIdentifier": {
+                                                            "MarketplaceId": "",
+                                                            "SellerId": "",
+                                                            "SellerSKU": ""
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "MarketplaceId": {
+                                                "value": "TEST_CASE_400"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid Input"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The specified resource does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogItemsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/catalog/v0/items/{asin}": {
+            "get": {
+                "tags": [
+                    "catalog"
+                ],
+                "description": "Effective September 30, 2022, the `getCatalogItem` operation will no longer be available in the Selling Partner API for Catalog Items v0. This operation is available in the latest version of the [Selling Partner API for Catalog Items v2022-04-01](doc:catalog-items-api-v2022-04-01-reference). Integrations that rely on this operation should migrate to the latest version to avoid service disruption. \n_Note:_ The [`listCatalogCategories`](#get-catalogv0categories) operation is not being deprecated and you can continue to make calls to it.",
+                "operationId": "getCatalogItem",
+                "parameters": [
+                    {
+                        "name": "MarketplaceId",
+                        "in": "query",
+                        "description": "A marketplace identifier. Specifies the marketplace for the item.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "asin",
+                        "in": "path",
+                        "description": "The Amazon Standard Identification Number (ASIN) of the item.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "MarketplaceId": {
+                                                "value": "TEST_CASE_200"
+                                            },
+                                            "asin": {
+                                                "value": "ASIN_200"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "payload": {
+                                            "Identifiers": {
+                                                "MarketplaceASIN": {
+                                                    "MarketplaceId": "ATVPDKIKX0DER",
+                                                    "ASIN": "B00551Q3CS"
+                                                },
+                                                "SKUIdentifier": {
+                                                    "MarketplaceId": "",
+                                                    "SellerId": "",
+                                                    "SellerSKU": ""
+                                                }
+                                            },
+                                            "AttributeSets": [
+                                                {
+                                                    "NumberOfDiscs": 11,
+                                                    "NumberOfIssues": 12,
+                                                    "NumberOfItems": 1,
+                                                    "NumberOfPages": 234,
+                                                    "NumberOfTracks": 104,
+                                                    "OpticalZoom": {
+                                                        "Units": "nm",
+                                                        "value": 101
+                                                    },
+                                                    "PackageDimensions": {
+                                                        "Height": {
+                                                            "value": 5.44,
+                                                            "Units": "mm"
+                                                        },
+                                                        "Length": {
+                                                            "value": 4.5,
+                                                            "Units": "inches"
+                                                        },
+                                                        "Width": {
+                                                            "value": 2.44,
+                                                            "Units": "cm"
+                                                        },
+                                                        "Weight": {
+                                                            "value": 0.16,
+                                                            "Units": "pounds"
+                                                        }
+                                                    },
+                                                    "Creator": [
+                                                        {
+                                                            "Role": "someRole",
+                                                            "value": "4.5"
+                                                        },
+                                                        {
+                                                            "Role": "someRole2",
+                                                            "value": "45.5"
+                                                        }
+                                                    ],
+                                                    "PackageQuantity": 1,
+                                                    "PartNumber": "2865",
+                                                    "PegiRating": "PegiRating",
+                                                    "ProcessorCount": 23,
+                                                    "ProductGroup": "Health and Beauty",
+                                                    "ProductTypeName": "HEALTH_PERSONAL_CARE",
+                                                    "ProductTypeSubcategory": "ProductTypeSubcategory",
+                                                    "PublicationDate": "2012-07-27",
+                                                    "Publisher": "Pharmavite",
+                                                    "RegionCode": "RegionCode",
+                                                    "ReleaseDate": "ReleaseDate",
+                                                    "RingSize": "RingSize",
+                                                    "RunningTime": {
+                                                        "Units": "minutes",
+                                                        "value": 131
+                                                    },
+                                                    "ShaftMaterial": "ShaftMaterial",
+                                                    "Scent": "Scent",
+                                                    "SeasonSequence": "Publisher",
+                                                    "SeikodoProductCode": "SeikodoProductCode",
+                                                    "Size": "Size",
+                                                    "SizePerPearl": "SizePerPearl",
+                                                    "SmallImage": {
+                                                        "URL": "http://g-ecx.images-amazon.com/images/G/01/x-site/icons/no-img-sm._CB1535416344_.gif",
+                                                        "Height": {
+                                                            "Units": "pixels",
+                                                            "value": 40
+                                                        },
+                                                        "Width": {
+                                                            "Units": "pixels",
+                                                            "value": 60
+                                                        }
+                                                    },
+                                                    "Studio": "Pharmavite",
+                                                    "SubscriptionLength": {
+                                                        "Units": "months",
+                                                        "value": 12
+                                                    },
+                                                    "SystemMemorySize": {
+                                                        "Units": "GB",
+                                                        "value": 256
+                                                    },
+                                                    "SystemMemoryType": "SystemMemoryType",
+                                                    "TheatricalReleaseDate": "2020-11-11",
+                                                    "Title": "Nature Made Super B Complex Full Strength Softgel, 60 Count",
+                                                    "TotalDiamondWeight": {
+                                                        "Units": "gms",
+                                                        "value": 22
+                                                    },
+                                                    "TotalGemWeight": {
+                                                        "Units": "carat",
+                                                        "value": 23
+                                                    },
+                                                    "Warranty": "Warranty",
+                                                    "WeeeTaxValue": {
+                                                        "Amount": 11.99,
+                                                        "CurrencyCode": "EUR"
+                                                    }
+                                                }
+                                            ],
+                                            "Relationships": [
+                                                {
+                                                    "RingSize": "1",
+                                                    "ShaftMaterial": "Asbestos",
+                                                    "Scent": "Happy",
+                                                    "PackageQuantity": 102
+                                                },
+                                                {
+                                                    "SizePerPearl": "2",
+                                                    "GemType": [
+                                                        "Gemmy1",
+                                                        "Gemmy2"
+                                                    ],
+                                                    "OperatingSystem": [
+                                                        "WIN",
+                                                        "MAC"
+                                                    ],
+                                                    "MaterialType": [
+                                                        "Steel",
+                                                        "Nickel"
+                                                    ],
+                                                    "ItemDimensions": {
+                                                        "Height": {
+                                                            "value": 4.5,
+                                                            "Units": "mm"
+                                                        },
+                                                        "Length": {
+                                                            "value": 1.44,
+                                                            "Units": "inches"
+                                                        },
+                                                        "Width": {
+                                                            "value": 2.44,
+                                                            "Units": "cm"
+                                                        },
+                                                        "Weight": {
+                                                            "value": 0.16,
+                                                            "Units": "pounds"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "MarketplaceId": {
+                                                "value": "TEST_CASE_400"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid Input"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The specified resource does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCatalogItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/catalog/v0/categories": {
+            "get": {
+                "tags": [
+                    "catalog"
+                ],
+                "description": "Returns the parent categories to which an item belongs, based on the specified ASIN or SellerSKU.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "listCatalogCategories",
+                "parameters": [
+                    {
+                        "name": "MarketplaceId",
+                        "in": "query",
+                        "description": "A marketplace identifier. Specifies the marketplace for the item.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "ASIN",
+                        "in": "query",
+                        "description": "The Amazon Standard Identification Number (ASIN) of the item.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "SellerSKU",
+                        "in": "query",
+                        "description": "Used to identify items in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "MarketplaceId": {
+                                                "value": "TEST_CASE_200"
+                                            },
+                                            "ASIN": {
+                                                "value": "asin_200"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "payload": [
+                                            {
+                                                "ProductCategoryId": "26752675",
+                                                "ProductCategoryName": "Project Management",
+                                                "parent": {}
+                                            },
+                                            {
+                                                "ProductCategoryId": "468220445",
+                                                "ProductCategoryName": "Art",
+                                                "parent": {}
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "MarketplaceId": {
+                                                "value": "TEST_CASE_400"
+                                            },
+                                            "ASIN": {
+                                                "value": "ASIN_TO_TEST"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid Input"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The specified resource does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCatalogCategoriesResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ListCatalogItemsResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#/components/schemas/ListMatchingItemsResponse"
+                    },
+                    "errors": {
+                        "$ref": "#/components/schemas/ErrorList"
+                    }
+                }
+            },
+            "ListMatchingItemsResponse": {
+                "type": "object",
+                "properties": {
+                    "Items": {
+                        "$ref": "#/components/schemas/ItemList"
+                    }
+                }
+            },
+            "ItemList": {
+                "type": "array",
+                "description": "A list of items.",
+                "items": {
+                    "$ref": "#/components/schemas/Item"
+                }
+            },
+            "GetCatalogItemResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#/components/schemas/Item"
+                    },
+                    "errors": {
+                        "$ref": "#/components/schemas/ErrorList"
+                    }
+                }
+            },
+            "Item": {
+                "required": [
+                    "Identifiers"
+                ],
+                "type": "object",
+                "properties": {
+                    "Identifiers": {
+                        "$ref": "#/components/schemas/IdentifierType"
+                    },
+                    "AttributeSets": {
+                        "$ref": "#/components/schemas/AttributeSetList"
+                    },
+                    "Relationships": {
+                        "$ref": "#/components/schemas/RelationshipList"
+                    },
+                    "SalesRankings": {
+                        "$ref": "#/components/schemas/SalesRankList"
+                    }
+                },
+                "description": "An item in the Amazon catalog."
+            },
+            "IdentifierType": {
+                "type": "object",
+                "properties": {
+                    "MarketplaceASIN": {
+                        "$ref": "#/components/schemas/ASINIdentifier"
+                    },
+                    "SKUIdentifier": {
+                        "$ref": "#/components/schemas/SellerSKUIdentifier"
+                    }
+                }
+            },
+            "ASINIdentifier": {
+                "required": [
+                    "ASIN",
+                    "MarketplaceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "MarketplaceId": {
+                        "type": "string",
+                        "description": "A marketplace identifier."
+                    },
+                    "ASIN": {
+                        "type": "string",
+                        "description": "The Amazon Standard Identification Number (ASIN) of the item."
+                    }
+                }
+            },
+            "SellerSKUIdentifier": {
+                "required": [
+                    "MarketplaceId",
+                    "SellerId",
+                    "SellerSKU"
+                ],
+                "type": "object",
+                "properties": {
+                    "MarketplaceId": {
+                        "type": "string",
+                        "description": "A marketplace identifier."
+                    },
+                    "SellerId": {
+                        "type": "string",
+                        "description": "The seller identifier submitted for the operation."
+                    },
+                    "SellerSKU": {
+                        "type": "string",
+                        "description": "The seller stock keeping unit (SKU) of the item."
+                    }
+                }
+            },
+            "AttributeSetList": {
+                "type": "array",
+                "description": "A list of attributes for the item.",
+                "items": {
+                    "$ref": "#/components/schemas/AttributeSetListType"
+                }
+            },
+            "AttributeSetListType": {
+                "type": "object",
+                "properties": {
+                    "Actor": {
+                        "type": "array",
+                        "description": "The actor attributes of the item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "Artist": {
+                        "type": "array",
+                        "description": "The artist attributes of the item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "AspectRatio": {
+                        "type": "string",
+                        "description": "The aspect ratio attribute of the item."
+                    },
+                    "AudienceRating": {
+                        "type": "string",
+                        "description": "The audience rating attribute of the item."
+                    },
+                    "Author": {
+                        "type": "array",
+                        "description": "The author attributes of the item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "BackFinding": {
+                        "type": "string",
+                        "description": "The back finding attribute of the item."
+                    },
+                    "BandMaterialType": {
+                        "type": "string",
+                        "description": "The band material type attribute of the item."
+                    },
+                    "Binding": {
+                        "type": "string",
+                        "description": "The binding attribute of the item."
+                    },
+                    "BlurayRegion": {
+                        "type": "string",
+                        "description": "The Bluray region attribute of the item."
+                    },
+                    "Brand": {
+                        "type": "string",
+                        "description": "The brand attribute of the item."
+                    },
+                    "CeroAgeRating": {
+                        "type": "string",
+                        "description": "The CERO age rating attribute of the item."
+                    },
+                    "ChainType": {
+                        "type": "string",
+                        "description": "The chain type attribute of the item."
+                    },
+                    "ClaspType": {
+                        "type": "string",
+                        "description": "The clasp type attribute of the item."
+                    },
+                    "Color": {
+                        "type": "string",
+                        "description": "The color attribute of the item."
+                    },
+                    "CpuManufacturer": {
+                        "type": "string",
+                        "description": "The CPU manufacturer attribute of the item."
+                    },
+                    "CpuSpeed": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "CpuType": {
+                        "type": "string",
+                        "description": "The CPU type attribute of the item."
+                    },
+                    "Creator": {
+                        "type": "array",
+                        "description": "The creator attributes of the item.",
+                        "items": {
+                            "$ref": "#/components/schemas/CreatorType"
+                        }
+                    },
+                    "Department": {
+                        "type": "string",
+                        "description": "The department attribute of the item."
+                    },
+                    "Director": {
+                        "type": "array",
+                        "description": "The director attributes of the item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "DisplaySize": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "Edition": {
+                        "type": "string",
+                        "description": "The edition attribute of the item."
+                    },
+                    "EpisodeSequence": {
+                        "type": "string",
+                        "description": "The episode sequence attribute of the item."
+                    },
+                    "EsrbAgeRating": {
+                        "type": "string",
+                        "description": "The ESRB age rating attribute of the item."
+                    },
+                    "Feature": {
+                        "type": "array",
+                        "description": "The feature attributes of the item",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "Flavor": {
+                        "type": "string",
+                        "description": "The flavor attribute of the item."
+                    },
+                    "Format": {
+                        "type": "array",
+                        "description": "The format attributes of the item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "GemType": {
+                        "type": "array",
+                        "description": "The gem type attributes of the item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "Genre": {
+                        "type": "string",
+                        "description": "The genre attribute of the item."
+                    },
+                    "GolfClubFlex": {
+                        "type": "string",
+                        "description": "The golf club flex attribute of the item."
+                    },
+                    "GolfClubLoft": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "HandOrientation": {
+                        "type": "string",
+                        "description": "The hand orientation attribute of the item."
+                    },
+                    "HardDiskInterface": {
+                        "type": "string",
+                        "description": "The hard disk interface attribute of the item."
+                    },
+                    "HardDiskSize": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "HardwarePlatform": {
+                        "type": "string",
+                        "description": "The hardware platform attribute of the item."
+                    },
+                    "HazardousMaterialType": {
+                        "type": "string",
+                        "description": "The hazardous material type attribute of the item."
+                    },
+                    "ItemDimensions": {
+                        "$ref": "#/components/schemas/DimensionType"
+                    },
+                    "IsAdultProduct": {
+                        "type": "boolean",
+                        "description": "The adult product attribute of the item."
+                    },
+                    "IsAutographed": {
+                        "type": "boolean",
+                        "description": "The autographed attribute of the item."
+                    },
+                    "IsEligibleForTradeIn": {
+                        "type": "boolean",
+                        "description": "The is eligible for trade in attribute of the item."
+                    },
+                    "IsMemorabilia": {
+                        "type": "boolean",
+                        "description": "The is memorabilia attribute of the item."
+                    },
+                    "IssuesPerYear": {
+                        "type": "string",
+                        "description": "The issues per year attribute of the item."
+                    },
+                    "ItemPartNumber": {
+                        "type": "string",
+                        "description": "The item part number attribute of the item."
+                    },
+                    "Label": {
+                        "type": "string",
+                        "description": "The label attribute of the item."
+                    },
+                    "Languages": {
+                        "type": "array",
+                        "description": "The languages attribute of the item.",
+                        "items": {
+                            "$ref": "#/components/schemas/LanguageType"
+                        }
+                    },
+                    "LegalDisclaimer": {
+                        "type": "string",
+                        "description": "The legal disclaimer attribute of the item."
+                    },
+                    "ListPrice": {
+                        "$ref": "#/components/schemas/Price"
+                    },
+                    "Manufacturer": {
+                        "type": "string",
+                        "description": "The manufacturer attribute of the item."
+                    },
+                    "ManufacturerMaximumAge": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "ManufacturerMinimumAge": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "ManufacturerPartsWarrantyDescription": {
+                        "type": "string",
+                        "description": "The manufacturer parts warranty description attribute of the item."
+                    },
+                    "MaterialType": {
+                        "type": "array",
+                        "description": "The material type attributes of the item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "MaximumResolution": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "MediaType": {
+                        "type": "array",
+                        "description": "The media type attributes of the item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "MetalStamp": {
+                        "type": "string",
+                        "description": "The metal stamp attribute of the item."
+                    },
+                    "MetalType": {
+                        "type": "string",
+                        "description": "The metal type attribute of the item."
+                    },
+                    "Model": {
+                        "type": "string",
+                        "description": "The model attribute of the item."
+                    },
+                    "NumberOfDiscs": {
+                        "type": "integer",
+                        "description": "The number of discs attribute of the item."
+                    },
+                    "NumberOfIssues": {
+                        "type": "integer",
+                        "description": "The number of issues attribute of the item."
+                    },
+                    "NumberOfItems": {
+                        "type": "integer",
+                        "description": "The number of items attribute of the item."
+                    },
+                    "NumberOfPages": {
+                        "type": "integer",
+                        "description": "The number of pages attribute of the item."
+                    },
+                    "NumberOfTracks": {
+                        "type": "integer",
+                        "description": "The number of tracks attribute of the item."
+                    },
+                    "OperatingSystem": {
+                        "type": "array",
+                        "description": "The operating system attributes of the item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "OpticalZoom": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "PackageDimensions": {
+                        "$ref": "#/components/schemas/DimensionType"
+                    },
+                    "PackageQuantity": {
+                        "type": "integer",
+                        "description": "The package quantity attribute of the item."
+                    },
+                    "PartNumber": {
+                        "type": "string",
+                        "description": "The part number attribute of the item."
+                    },
+                    "PegiRating": {
+                        "type": "string",
+                        "description": "The PEGI rating attribute of the item."
+                    },
+                    "Platform": {
+                        "type": "array",
+                        "description": "The platform attributes of the item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "ProcessorCount": {
+                        "type": "integer",
+                        "description": "The processor count attribute of the item."
+                    },
+                    "ProductGroup": {
+                        "type": "string",
+                        "description": "The product group attribute of the item."
+                    },
+                    "ProductTypeName": {
+                        "type": "string",
+                        "description": "The product type name attribute of the item."
+                    },
+                    "ProductTypeSubcategory": {
+                        "type": "string",
+                        "description": "The product type subcategory attribute of the item."
+                    },
+                    "PublicationDate": {
+                        "type": "string",
+                        "description": "The publication date attribute of the item."
+                    },
+                    "Publisher": {
+                        "type": "string",
+                        "description": "The publisher attribute of the item."
+                    },
+                    "RegionCode": {
+                        "type": "string",
+                        "description": "The region code attribute of the item."
+                    },
+                    "ReleaseDate": {
+                        "type": "string",
+                        "description": "The release date attribute of the item."
+                    },
+                    "RingSize": {
+                        "type": "string",
+                        "description": "The ring size attribute of the item."
+                    },
+                    "RunningTime": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "ShaftMaterial": {
+                        "type": "string",
+                        "description": "The shaft material attribute of the item."
+                    },
+                    "Scent": {
+                        "type": "string",
+                        "description": "The scent attribute of the item."
+                    },
+                    "SeasonSequence": {
+                        "type": "string",
+                        "description": "The season sequence attribute of the item."
+                    },
+                    "SeikodoProductCode": {
+                        "type": "string",
+                        "description": "The Seikodo product code attribute of the item."
+                    },
+                    "Size": {
+                        "type": "string",
+                        "description": "The size attribute of the item."
+                    },
+                    "SizePerPearl": {
+                        "type": "string",
+                        "description": "The size per pearl attribute of the item."
+                    },
+                    "SmallImage": {
+                        "$ref": "#/components/schemas/Image"
+                    },
+                    "Studio": {
+                        "type": "string",
+                        "description": "The studio attribute of the item."
+                    },
+                    "SubscriptionLength": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "SystemMemorySize": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "SystemMemoryType": {
+                        "type": "string",
+                        "description": "The system memory type attribute of the item."
+                    },
+                    "TheatricalReleaseDate": {
+                        "type": "string",
+                        "description": "The theatrical release date attribute of the item."
+                    },
+                    "Title": {
+                        "type": "string",
+                        "description": "The title attribute of the item."
+                    },
+                    "TotalDiamondWeight": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "TotalGemWeight": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "Warranty": {
+                        "type": "string",
+                        "description": "The warranty attribute of the item."
+                    },
+                    "WeeeTaxValue": {
+                        "$ref": "#/components/schemas/Price"
+                    }
+                },
+                "description": "The attributes of the item."
+            },
+            "DecimalWithUnits": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "The decimal value."
+                    },
+                    "Units": {
+                        "type": "string",
+                        "description": "The unit of the decimal value."
+                    }
+                },
+                "description": "The decimal value and unit."
+            },
+            "CreatorType": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "string",
+                        "description": "The value of the attribute."
+                    },
+                    "Role": {
+                        "type": "string",
+                        "description": "The role of the value."
+                    }
+                },
+                "description": "The creator type attribute of an item."
+            },
+            "DimensionType": {
+                "type": "object",
+                "properties": {
+                    "Height": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "Length": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "Width": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "Weight": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    }
+                },
+                "description": "The dimension type attribute of an item."
+            },
+            "LanguageType": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "description": "The name attribute of the item."
+                    },
+                    "Type": {
+                        "type": "string",
+                        "description": "The type attribute of the item."
+                    },
+                    "AudioFormat": {
+                        "type": "string",
+                        "description": "The audio format attribute of the item."
+                    }
+                },
+                "description": "The language type attribute of an item."
+            },
+            "Image": {
+                "type": "object",
+                "properties": {
+                    "URL": {
+                        "type": "string",
+                        "description": "The image URL attribute of the item."
+                    },
+                    "Height": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "Width": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    }
+                },
+                "description": "The image attribute of the item."
+            },
+            "Price": {
+                "type": "object",
+                "properties": {
+                    "Amount": {
+                        "type": "number",
+                        "description": "The amount."
+                    },
+                    "CurrencyCode": {
+                        "type": "string",
+                        "description": "The currency code of the amount."
+                    }
+                },
+                "description": "The price attribute of the item."
+            },
+            "RelationshipList": {
+                "type": "array",
+                "description": "A list of variation relationship information, if applicable for the item.",
+                "items": {
+                    "$ref": "#/components/schemas/RelationshipType"
+                }
+            },
+            "RelationshipType": {
+                "type": "object",
+                "properties": {
+                    "Identifiers": {
+                        "$ref": "#/components/schemas/IdentifierType"
+                    },
+                    "Color": {
+                        "type": "string",
+                        "description": "The color variation of the item."
+                    },
+                    "Edition": {
+                        "type": "string",
+                        "description": "The edition variation of the item."
+                    },
+                    "Flavor": {
+                        "type": "string",
+                        "description": "The flavor variation of the item."
+                    },
+                    "GemType": {
+                        "type": "array",
+                        "description": "The gem type variations of the item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "GolfClubFlex": {
+                        "type": "string",
+                        "description": "The golf club flex variation of an item."
+                    },
+                    "HandOrientation": {
+                        "type": "string",
+                        "description": "The hand orientation variation of an item."
+                    },
+                    "HardwarePlatform": {
+                        "type": "string",
+                        "description": "The hardware platform variation of an item."
+                    },
+                    "MaterialType": {
+                        "type": "array",
+                        "description": "The material type variations of an item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "MetalType": {
+                        "type": "string",
+                        "description": "The metal type variation of an item."
+                    },
+                    "Model": {
+                        "type": "string",
+                        "description": "The model variation of an item."
+                    },
+                    "OperatingSystem": {
+                        "type": "array",
+                        "description": "The operating system variations of an item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "ProductTypeSubcategory": {
+                        "type": "string",
+                        "description": "The product type subcategory variation of an item."
+                    },
+                    "RingSize": {
+                        "type": "string",
+                        "description": "The ring size variation of an item."
+                    },
+                    "ShaftMaterial": {
+                        "type": "string",
+                        "description": "The shaft material variation of an item."
+                    },
+                    "Scent": {
+                        "type": "string",
+                        "description": "The scent variation of an item."
+                    },
+                    "Size": {
+                        "type": "string",
+                        "description": "The size variation of an item."
+                    },
+                    "SizePerPearl": {
+                        "type": "string",
+                        "description": "The size per pearl variation of an item."
+                    },
+                    "GolfClubLoft": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "TotalDiamondWeight": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "TotalGemWeight": {
+                        "$ref": "#/components/schemas/DecimalWithUnits"
+                    },
+                    "PackageQuantity": {
+                        "type": "integer",
+                        "description": "The package quantity variation of an item."
+                    },
+                    "ItemDimensions": {
+                        "$ref": "#/components/schemas/DimensionType"
+                    }
+                },
+                "description": "Specific variations of the item."
+            },
+            "SalesRankList": {
+                "type": "array",
+                "description": "A list of sales rank information for the item by category.",
+                "items": {
+                    "$ref": "#/components/schemas/SalesRankType"
+                }
+            },
+            "SalesRankType": {
+                "required": [
+                    "ProductCategoryId",
+                    "Rank"
+                ],
+                "type": "object",
+                "properties": {
+                    "ProductCategoryId": {
+                        "type": "string",
+                        "description": "Identifies the item category from which the sales rank is taken."
+                    },
+                    "Rank": {
+                        "type": "integer",
+                        "description": "The sales rank of the item within the item category.",
+                        "format": "int32"
+                    }
+                }
+            },
+            "ListCatalogCategoriesResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#/components/schemas/ListOfCategories"
+                    },
+                    "errors": {
+                        "$ref": "#/components/schemas/ErrorList"
+                    }
+                }
+            },
+            "ListOfCategories": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Categories"
+                }
+            },
+            "Categories": {
+                "type": "object",
+                "properties": {
+                    "ProductCategoryId": {
+                        "type": "string",
+                        "description": "The identifier for the product category (or browse node)."
+                    },
+                    "ProductCategoryName": {
+                        "type": "string",
+                        "description": "The name of the product category (or browse node)."
+                    },
+                    "parent": {
+                        "type": "object",
+                        "properties": {},
+                        "description": "The parent product category."
+                    }
+                }
+            },
+            "ErrorList": {
+                "type": "array",
+                "description": "A list of error responses returned when a request is unsuccessful.",
+                "items": {
+                    "$ref": "#/components/schemas/Error"
+                }
+            },
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition in a human-readable form."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional information that can help the caller understand or fix the issue."
+                    }
+                },
+                "description": "Error response returned when the request is unsuccessful."
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

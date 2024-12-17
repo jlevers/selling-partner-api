@@ -1,0 +1,1342 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Selling Partner API for Shipment Invoicing",
+        "description": "The Selling Partner API for Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil marketplace for a selling partner\u2019s Fulfillment by Amazon (FBA) orders.",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "v0"
+    },
+    "servers": [
+        {
+            "url": "/"
+        }
+    ],
+    "paths": {
+        "/fba/outbound/brazil/v0/shipments/{shipmentId}": {
+            "get": {
+                "tags": [
+                    "shipmentInvoice"
+                ],
+                "description": "Returns the shipment details required to issue an invoice for the specified shipment.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1.133 | 25 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getShipmentDetails",
+                "parameters": [
+                    {
+                        "name": "shipmentId",
+                        "in": "path",
+                        "description": "The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "shipmentId": {
+                                                "value": "shipmentId1"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "payload": {
+                                            "WarehouseId": "wID1234",
+                                            "AmazonOrderId": "222-333-4444333",
+                                            "AmazonShipmentId": "F4385943758",
+                                            "PurchaseDate": "2020-10-07T17:36:47.470Z",
+                                            "ShippingAddress": {
+                                                "Name": "User Address1",
+                                                "AddressLine1": "123 any st",
+                                                "City": "Ann Arbor",
+                                                "County": "Washtenaw",
+                                                "StateOrRegion": "MI",
+                                                "PostalCode": "48104",
+                                                "CountryCode": "US",
+                                                "Phone": "333-444-5555",
+                                                "AddressType": "Residential"
+                                            },
+                                            "PaymentMethodDetails": [
+                                                "GiftCertificate"
+                                            ],
+                                            "MarketplaceId": "ATV943520DER",
+                                            "SellerId": "TEST34509GOGM",
+                                            "BuyerName": "1",
+                                            "BuyerCounty": "Washtenaw",
+                                            "BuyerTaxInfo": {
+                                                "CompanyLegalName": "Buyer Company",
+                                                "TaxingRegion": "MI",
+                                                "TaxClassifications": [
+                                                    {
+                                                        "Name": "Millage",
+                                                        "Value": "10"
+                                                    }
+                                                ]
+                                            },
+                                            "MarketplaceTaxInfo": {
+                                                "CompanyLegalName": "Seller Legal Company Name",
+                                                "TaxingRegion": "SP",
+                                                "TaxClassifications": [
+                                                    {
+                                                        "Name": "CNPJ",
+                                                        "Value": "15436940000103"
+                                                    }
+                                                ]
+                                            },
+                                            "SellerDisplayName": "Seller Display Name in the marketplace",
+                                            "ShipmentItems": [
+                                                {
+                                                    "ASIN": "BKUO9348543",
+                                                    "SellerSKU": "BKUO9348543SKU",
+                                                    "OrderItemId": "23423424",
+                                                    "Title": "Pencil",
+                                                    "QuantityOrdered": 1,
+                                                    "ItemPrice": {
+                                                        "CurrencyCode": "USD",
+                                                        "Amount": "100"
+                                                    },
+                                                    "ShippingPrice": {
+                                                        "CurrencyCode": "USD",
+                                                        "Amount": "20"
+                                                    },
+                                                    "GiftWrapPrice": {
+                                                        "CurrencyCode": "USD",
+                                                        "Amount": "1"
+                                                    },
+                                                    "ShippingDiscount": {
+                                                        "CurrencyCode": "USD",
+                                                        "Amount": "10"
+                                                    },
+                                                    "PromotionDiscount": {
+                                                        "CurrencyCode": "USD",
+                                                        "Amount": "10"
+                                                    },
+                                                    "SerialNumbers": [
+                                                        "23424",
+                                                        "23423"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "shipmentId": {
+                                                "value": "BadShipId"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid Shipment ID",
+                                                "details": "'BadShipId' is an invalid ShipmentID"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetShipmentDetailsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/fba/outbound/brazil/v0/shipments/{shipmentId}/invoice": {
+            "post": {
+                "tags": [
+                    "shipmentInvoice"
+                ],
+                "description": "Submits a shipment invoice document for a given shipment.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1.133 | 25 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "submitInvoice",
+                "parameters": [
+                    {
+                        "name": "shipmentId",
+                        "in": "path",
+                        "description": "The identifier for the shipment.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SubmitInvoiceRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "shipmentId": {
+                                                "value": "shipmentId1"
+                                            },
+                                            "body": {
+                                                "value": {
+                                                    "InvoiceContent": "SGF2ZSB0byBkZWFsIHdpdGggQmFzZTY0IGZvcm1hdD8=",
+                                                    "ContentMD5Value": "9906bd8f227f6a43f1e27db4b9258ad4"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {}
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "shipmentId": {
+                                                "value": "BadIDForShipment"
+                                            },
+                                            "body": {
+                                                "value": {
+                                                    "InvoiceContent": "NonBase64EncodedValue",
+                                                    "ContentMD5Value": "8f6df519a2125946820bc34a561164c2"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Shipment ID is invalid",
+                                                "details": "InvoiceContent fails encoding. Shipment 'BadIDForShipment' does not exist"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoiceResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
+            }
+        },
+        "/fba/outbound/brazil/v0/shipments/{shipmentId}/invoice/status": {
+            "get": {
+                "tags": [
+                    "shipmentInvoice"
+                ],
+                "description": "Returns the invoice status for the shipment you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1.133 | 25 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getInvoiceStatus",
+                "parameters": [
+                    {
+                        "name": "shipmentId",
+                        "in": "path",
+                        "description": "The shipment identifier for the shipment.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "shipmentId": {
+                                                "value": "shipmentId1"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "payload": {
+                                            "Shipments": {
+                                                "AmazonShipmentId": "shipmentId1",
+                                                "InvoiceStatus": "Accepted"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "shipmentId": {
+                                                "value": "BadShipId"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid Shipment ID",
+                                                "details": "'BadShipId' is an invalid ShipmentID"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "401": {
+                        "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetInvoiceStatusResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetShipmentDetailsResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#/components/schemas/ShipmentDetail"
+                    },
+                    "errors": {
+                        "$ref": "#/components/schemas/ErrorList"
+                    }
+                },
+                "description": "The response schema for the getShipmentDetails operation."
+            },
+            "ShipmentDetail": {
+                "type": "object",
+                "properties": {
+                    "WarehouseId": {
+                        "type": "string",
+                        "description": "The Amazon-defined identifier for the warehouse."
+                    },
+                    "AmazonOrderId": {
+                        "type": "string",
+                        "description": "The Amazon-defined identifier for the order."
+                    },
+                    "AmazonShipmentId": {
+                        "type": "string",
+                        "description": "The Amazon-defined identifier for the shipment."
+                    },
+                    "PurchaseDate": {
+                        "type": "string",
+                        "description": "The date and time when the order was created.",
+                        "format": "date-time"
+                    },
+                    "ShippingAddress": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "PaymentMethodDetails": {
+                        "$ref": "#/components/schemas/PaymentMethodDetailItemList"
+                    },
+                    "MarketplaceId": {
+                        "type": "string",
+                        "description": "The identifier for the marketplace where the order was placed."
+                    },
+                    "SellerId": {
+                        "type": "string",
+                        "description": "The seller identifier."
+                    },
+                    "BuyerName": {
+                        "type": "string",
+                        "description": "The name of the buyer."
+                    },
+                    "BuyerCounty": {
+                        "type": "string",
+                        "description": "The county of the buyer."
+                    },
+                    "BuyerTaxInfo": {
+                        "$ref": "#/components/schemas/BuyerTaxInfo"
+                    },
+                    "MarketplaceTaxInfo": {
+                        "$ref": "#/components/schemas/MarketplaceTaxInfo"
+                    },
+                    "SellerDisplayName": {
+                        "type": "string",
+                        "description": "The seller\u2019s friendly name registered in the marketplace."
+                    },
+                    "ShipmentItems": {
+                        "$ref": "#/components/schemas/ShipmentItems"
+                    }
+                },
+                "description": "The information required by a selling partner to issue a shipment invoice."
+            },
+            "Address": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "description": "The name."
+                    },
+                    "AddressLine1": {
+                        "type": "string",
+                        "description": "The street address."
+                    },
+                    "AddressLine2": {
+                        "type": "string",
+                        "description": "Additional street address information, if required."
+                    },
+                    "AddressLine3": {
+                        "type": "string",
+                        "description": "Additional street address information, if required."
+                    },
+                    "City": {
+                        "type": "string",
+                        "description": "The city."
+                    },
+                    "County": {
+                        "type": "string",
+                        "description": "The county."
+                    },
+                    "District": {
+                        "type": "string",
+                        "description": "The district."
+                    },
+                    "StateOrRegion": {
+                        "type": "string",
+                        "description": "The state or region."
+                    },
+                    "PostalCode": {
+                        "type": "string",
+                        "description": "The postal code."
+                    },
+                    "CountryCode": {
+                        "type": "string",
+                        "description": "The country code."
+                    },
+                    "Phone": {
+                        "type": "string",
+                        "description": "The phone number."
+                    },
+                    "AddressType": {
+                        "$ref": "#/components/schemas/AddressTypeEnum"
+                    }
+                },
+                "description": "The shipping address details of the shipment."
+            },
+            "AddressTypeEnum": {
+                "type": "string",
+                "description": "The shipping address type.",
+                "enum": [
+                    "Residential",
+                    "Commercial"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "Residential",
+                        "description": "The address type is residential."
+                    },
+                    {
+                        "value": "Commercial",
+                        "description": "The address type is commercial."
+                    }
+                ]
+            },
+            "PaymentMethodDetailItemList": {
+                "type": "array",
+                "description": "The list of payment method details.",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "BuyerTaxInfo": {
+                "type": "object",
+                "properties": {
+                    "CompanyLegalName": {
+                        "type": "string",
+                        "description": "The legal name of the company."
+                    },
+                    "TaxingRegion": {
+                        "type": "string",
+                        "description": "The country or region imposing the tax."
+                    },
+                    "TaxClassifications": {
+                        "$ref": "#/components/schemas/TaxClassificationList"
+                    }
+                },
+                "description": "Tax information about the buyer."
+            },
+            "MarketplaceTaxInfo": {
+                "type": "object",
+                "properties": {
+                    "CompanyLegalName": {
+                        "type": "string",
+                        "description": "The legal name of the company."
+                    },
+                    "TaxingRegion": {
+                        "type": "string",
+                        "description": "The country or region imposing the tax."
+                    },
+                    "TaxClassifications": {
+                        "$ref": "#/components/schemas/TaxClassificationList"
+                    }
+                },
+                "description": "Tax information about the marketplace."
+            },
+            "TaxClassificationList": {
+                "type": "array",
+                "description": "The list of tax classifications.",
+                "items": {
+                    "$ref": "#/components/schemas/TaxClassification"
+                }
+            },
+            "TaxClassification": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "description": "The type of tax."
+                    },
+                    "Value": {
+                        "type": "string",
+                        "description": "The entity's tax identifier."
+                    }
+                },
+                "description": "The tax classification for the entity."
+            },
+            "ShipmentItems": {
+                "type": "array",
+                "description": "A list of shipment items.",
+                "items": {
+                    "$ref": "#/components/schemas/ShipmentItem"
+                }
+            },
+            "ShipmentItem": {
+                "type": "object",
+                "properties": {
+                    "ASIN": {
+                        "type": "string",
+                        "description": "The Amazon Standard Identification Number (ASIN) of the item."
+                    },
+                    "SellerSKU": {
+                        "type": "string",
+                        "description": "The seller SKU of the item."
+                    },
+                    "OrderItemId": {
+                        "type": "string",
+                        "description": "The Amazon-defined identifier for the order item."
+                    },
+                    "Title": {
+                        "type": "string",
+                        "description": "The name of the item."
+                    },
+                    "QuantityOrdered": {
+                        "type": "number",
+                        "description": "The number of items ordered."
+                    },
+                    "ItemPrice": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "ShippingPrice": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "GiftWrapPrice": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "ShippingDiscount": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "PromotionDiscount": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "SerialNumbers": {
+                        "$ref": "#/components/schemas/SerialNumbersList"
+                    }
+                },
+                "description": "The shipment item information required by a seller to issue a shipment invoice."
+            },
+            "Money": {
+                "type": "object",
+                "properties": {
+                    "CurrencyCode": {
+                        "type": "string",
+                        "description": "Three-digit currency code in ISO 4217 format."
+                    },
+                    "Amount": {
+                        "type": "string",
+                        "description": "The currency amount."
+                    }
+                },
+                "description": "The currency type and amount."
+            },
+            "SerialNumbersList": {
+                "type": "array",
+                "description": "The list of serial numbers.",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "ErrorList": {
+                "type": "array",
+                "description": "A list of error responses returned when a request is unsuccessful.",
+                "items": {
+                    "$ref": "#/components/schemas/Error"
+                }
+            },
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional details that can help the caller understand or fix the issue."
+                    }
+                },
+                "description": "An error response returned when the request is unsuccessful."
+            },
+            "SubmitInvoiceRequest": {
+                "required": [
+                    "ContentMD5Value",
+                    "InvoiceContent"
+                ],
+                "type": "object",
+                "properties": {
+                    "InvoiceContent": {
+                        "$ref": "#/components/schemas/Blob"
+                    },
+                    "MarketplaceId": {
+                        "type": "string",
+                        "description": "An Amazon marketplace identifier."
+                    },
+                    "ContentMD5Value": {
+                        "type": "string",
+                        "description": "MD5 sum for validating the invoice data. For more information about calculating this value, see [Working with Content-MD5 Checksums](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_MD5.html)."
+                    }
+                },
+                "description": "The request schema for the submitInvoice operation."
+            },
+            "Blob": {
+                "type": "string",
+                "description": "Shipment invoice document content.",
+                "format": "byte"
+            },
+            "SubmitInvoiceResponse": {
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "$ref": "#/components/schemas/ErrorList"
+                    }
+                },
+                "description": "The response schema for the submitInvoice operation."
+            },
+            "ShipmentInvoiceStatusInfo": {
+                "type": "object",
+                "properties": {
+                    "AmazonShipmentId": {
+                        "type": "string",
+                        "description": "The Amazon-defined shipment identifier."
+                    },
+                    "InvoiceStatus": {
+                        "$ref": "#/components/schemas/ShipmentInvoiceStatus"
+                    }
+                },
+                "description": "The shipment invoice status information."
+            },
+            "ShipmentInvoiceStatus": {
+                "type": "string",
+                "description": "The shipment invoice status.",
+                "enum": [
+                    "Processing",
+                    "Accepted",
+                    "Errored",
+                    "NotFound"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "Processing",
+                        "description": "The invoice validation process is in progress."
+                    },
+                    {
+                        "value": "Accepted",
+                        "description": "The invoice validation process succeeded, and the invoice was successfully ingested."
+                    },
+                    {
+                        "value": "Errored",
+                        "description": "The invoice validation process failed."
+                    },
+                    {
+                        "value": "NotFound",
+                        "description": "The requested invoice was not found."
+                    }
+                ]
+            },
+            "ShipmentInvoiceStatusResponse": {
+                "type": "object",
+                "properties": {
+                    "Shipments": {
+                        "$ref": "#/components/schemas/ShipmentInvoiceStatusInfo"
+                    }
+                },
+                "description": "The shipment invoice status response."
+            },
+            "GetInvoiceStatusResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#/components/schemas/ShipmentInvoiceStatusResponse"
+                    },
+                    "errors": {
+                        "$ref": "#/components/schemas/ErrorList"
+                    }
+                },
+                "description": "The response schema for the getInvoiceStatus operation."
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

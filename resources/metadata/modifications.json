@@ -1,0 +1,149 @@
+{
+  "seller": {
+    "catalog-items": {
+      "2022-04-01": [
+        {
+          "comment": "Remove required 'Pagination' and 'Refinements', see https://github.com/jlevers/selling-partner-api/issues/740",
+          "action": "replace",
+          "path": "components.schemas.ItemSearchResults.required",
+          "value": [
+            "items",
+            "numberOfResults"
+          ]
+        }
+      ]
+    },
+    "fba-inbound": {
+      "0": [
+        {
+          "comment": "Responses from Amazon have been missing one or more required Address parts",
+          "action": "delete",
+          "path": "components.schemas.Address.required"
+        },
+        {
+          "comment": "Responses from Amazon do not have the AreCasesRequired value",
+          "action": "replace",
+          "path": "components.schemas.InboundShipmentInfo.required",
+          "value": [
+            "ShipFromAddress"
+          ]
+        }
+      ]
+    },
+    "fba-outbound": {
+      "2020-07-01": [
+        {
+          "comment": "Remove required 'sellerReturnReasonCode', see https://github.com/jlevers/selling-partner-api/issues/706",
+          "action": "replace",
+          "path": "components.schemas.ReturnItem.required",
+          "value": [
+            "amazonShipmentId",
+            "sellerFulfillmentOrderItemId",
+            "sellerReturnItemId",
+            "status",
+            "statusChangedDate"
+          ]
+        }
+      ]
+    },
+    "merchant-fulfillment": {
+      "0": [
+        {
+          "comment": "Remove required 'RequiresAdditionalSellerInputs', its not always present in response",
+          "action": "replace",
+          "path": "components.schemas.ShippingService.required",
+          "value": [
+            "CarrierName",
+            "Rate",
+            "ShipDate",
+            "ShippingServiceId",
+            "ShippingServiceName",
+            "ShippingServiceOfferId",
+            "ShippingServiceOptions"
+          ]
+        }
+      ]
+    },
+    "orders": {
+      "0": [
+        {
+          "action": "delete",
+          "path": "components.schemas.Address.required"
+        },
+        {
+          "action": "merge",
+          "path": "components.schemas.AutomatedShippingSettings.properties",
+          "value": {
+            "AutomatedShipMethodName": {
+              "type": "string",
+              "description": "The name of the automated shipping method."
+            },
+            "AutomatedCarrierName": {
+              "type": "string",
+              "description": "The name of the automated carrier."
+            }
+          }
+        }
+      ]
+    },
+    "reports": {
+      "2021-06-30": [
+        {
+          "action": "merge",
+          "path": "paths./reports/2021-06-30/documents/{reportDocumentId}.get.parameters",
+          "value": [
+            {
+              "name": "reportType",
+              "in": "query",
+              "description": "The report type of the report document.",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "shipping": {
+      "2": [
+        {
+          "comment": "Make the x-amzn-shipping-business-id header optional, because making it required would break backwards compatibility. This will be removed in the next major release.",
+          "action": "replace",
+          "path": "paths./shipping/v2/shipments/rates.post.parameters.1.required",
+          "value": false
+        },
+        {
+          "comment": "Make the x-amzn-shipping-business-id header optional, because making it required would break backwards compatibility. This will be removed in the next major release.",
+          "action": "replace",
+          "path": "paths./shipping/v2/shipments.post.parameters.1.required",
+          "value": false
+        },
+        {
+          "comment": "Make the x-amzn-shipping-business-id header optional, because making it required would break backwards compatibility. This will be removed in the next major release.",
+          "action": "replace",
+          "path": "paths./shipping/v2/oneClickShipment.post.parameters.1.required",
+          "value": false
+        },
+        {
+          "comment": "Make the x-amzn-shipping-business-id header optional, because making it required would break backwards compatibility. This will be removed in the next major release.",
+          "action": "replace",
+          "path": "paths./shipping/v2/shipments/{shipmentId}/documents.get.parameters.5.required",
+          "value": false
+        },
+        {
+          "comment": "Make the x-amzn-shipping-business-id header optional, because making it required would break backwards compatibility. This will be removed in the next major release.",
+          "action": "replace",
+          "path": "paths./shipping/v2/shipments/{shipmentId}/cancel.put.parameters.2.required",
+          "value": false
+        },
+        {
+          "comment": "Make the x-amzn-shipping-business-id header optional, because making it required would break backwards compatibility. This will be removed in the next major release.",
+          "action": "replace",
+          "path": "paths./shipping/v2/accessPoints.get.parameters.4.required",
+          "value": false
+        }
+      ]
+    }
+  }
+}

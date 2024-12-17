@@ -1,0 +1,1078 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Selling Partner API for Retail Procurement Payments",
+        "description": "The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/vendor/payments/v1/invoices": {
+            "post": {
+                "tags": [
+                    "InvoicesV1"
+                ],
+                "description": "Submit new invoices to Amazon.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "submitInvoices",
+                "requestBody": {
+                    "description": "The request body containing the invoice data to submit.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SubmitInvoicesRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
+                                },
+                                "example": {
+                                    "payload": {
+                                        "transactionId": "20190904171225-e1275c33-d75b-4bfe-b95c-15a9abfc09cc"
+                                    }
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "invoices": [
+                                                        {
+                                                            "id": "TestInvoice202",
+                                                            "date": "2020-06-08T12:00:00.000Z",
+                                                            "billToParty": {
+                                                                "partyId": "TES1"
+                                                            },
+                                                            "invoiceType": "Invoice",
+                                                            "remitToParty": {
+                                                                "partyId": "ABCDE"
+                                                            },
+                                                            "invoiceTotal": {
+                                                                "amount": "112.05",
+                                                                "currencyCode": "USD"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "payload": {
+                                            "transactionId": "20190904171225-e1275c33-d75b-4bfe-b95c-15a9abfc09cc"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "invoices": [
+                                                        {
+                                                            "invoiceType": "Invoic"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Value 'Invoic' is not valid with respect to enumeration '[CreditNote, Invoice]'. It must be a value from the enumeration.",
+                                                "details": ""
+                                            },
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "The value 'Invoic' of element 'invoiceType' is not valid.",
+                                                "details": ""
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitInvoicesResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "SubmitInvoicesResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#/components/schemas/TransactionId"
+                    },
+                    "errors": {
+                        "$ref": "#/components/schemas/ErrorList"
+                    }
+                },
+                "description": "The response schema for the `submitInvoices` operation."
+            },
+            "TransactionId": {
+                "type": "object",
+                "properties": {
+                    "transactionId": {
+                        "type": "string",
+                        "description": "GUID to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction."
+                    }
+                },
+                "description": "Response containing the transaction ID."
+            },
+            "ErrorList": {
+                "required": [
+                    "errors"
+                ],
+                "type": "object",
+                "description": "A list of error responses returned when a request is unsuccessful.",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "description": "A list of error responses returned when a request is unsuccessful.",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                }
+            },
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional details that can help the caller understand or fix the issue."
+                    }
+                },
+                "description": "Error response returned when the request is unsuccessful."
+            },
+            "SubmitInvoicesRequest": {
+                "type": "object",
+                "properties": {
+                    "invoices": {
+                        "type": "array",
+                        "description": "An array of Invoice objects representing the invoices or credit notes to be submitted.",
+                        "items": {
+                            "$ref": "#/components/schemas/Invoice"
+                        }
+                    }
+                },
+                "description": "The request schema for the `submitInvoices` operation."
+            },
+            "Invoice": {
+                "required": [
+                    "date",
+                    "id",
+                    "invoiceTotal",
+                    "invoiceType",
+                    "remitToParty"
+                ],
+                "type": "object",
+                "properties": {
+                    "invoiceType": {
+                        "type": "string",
+                        "description": "Identifies the type of invoice.",
+                        "enum": [
+                            "Invoice",
+                            "CreditNote"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Invoice",
+                                "description": "A commercial document issued by a seller to a buyer, relating to a sale transaction and indicating the products, quantities, and agreed prices for products or services the seller had provided the buyer."
+                            },
+                            {
+                                "value": "CreditNote",
+                                "description": "A commercial document issued by a seller to a buyer. It is evidence of the reduction in sales."
+                            }
+                        ]
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Unique number relating to the charges defined in this document. This will be invoice number if the document type is Invoice or CreditNote number if the document type is Credit Note. Failure to provide this reference will result in a rejection."
+                    },
+                    "referenceNumber": {
+                        "type": "string",
+                        "description": "An additional unique reference number used for regulatory or other purposes."
+                    },
+                    "date": {
+                        "$ref": "#/components/schemas/DateTime"
+                    },
+                    "remitToParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "shipToParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "shipFromParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "billToParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "paymentTerms": {
+                        "$ref": "#/components/schemas/PaymentTerms"
+                    },
+                    "invoiceTotal": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "taxDetails": {
+                        "type": "array",
+                        "description": "Total tax amount details for all line items.",
+                        "items": {
+                            "$ref": "#/components/schemas/TaxDetails"
+                        }
+                    },
+                    "additionalDetails": {
+                        "type": "array",
+                        "description": "Additional details provided by the selling party, for tax related or other purposes.",
+                        "items": {
+                            "$ref": "#/components/schemas/AdditionalDetails"
+                        }
+                    },
+                    "chargeDetails": {
+                        "type": "array",
+                        "description": "Total charge amount details for all line items.",
+                        "items": {
+                            "$ref": "#/components/schemas/ChargeDetails"
+                        }
+                    },
+                    "allowanceDetails": {
+                        "type": "array",
+                        "description": "Total allowance amount details for all line items.",
+                        "items": {
+                            "$ref": "#/components/schemas/AllowanceDetails"
+                        }
+                    },
+                    "items": {
+                        "type": "array",
+                        "description": "The list of invoice items.",
+                        "items": {
+                            "$ref": "#/components/schemas/InvoiceItem"
+                        }
+                    }
+                },
+                "description": "Represents an invoice or credit note document with details about the transaction, parties involved, and line items."
+            },
+            "PartyIdentification": {
+                "required": [
+                    "partyId"
+                ],
+                "type": "object",
+                "properties": {
+                    "partyId": {
+                        "type": "string",
+                        "description": "Assigned identification for the party."
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "taxRegistrationDetails": {
+                        "type": "array",
+                        "description": "Tax registration details of the party.",
+                        "items": {
+                            "$ref": "#/components/schemas/TaxRegistrationDetails"
+                        }
+                    }
+                },
+                "description": "Name, address, and tax details of a party."
+            },
+            "TaxRegistrationDetails": {
+                "required": [
+                    "taxRegistrationNumber",
+                    "taxRegistrationType"
+                ],
+                "type": "object",
+                "properties": {
+                    "taxRegistrationType": {
+                        "type": "string",
+                        "description": "The tax registration type for the entity.",
+                        "enum": [
+                            "VAT",
+                            "GST"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "VAT",
+                                "description": "Value-added tax."
+                            },
+                            {
+                                "value": "GST",
+                                "description": "Goods and services tax."
+                            }
+                        ]
+                    },
+                    "taxRegistrationNumber": {
+                        "type": "string",
+                        "description": "The tax registration number for the entity. For example, VAT ID, Consumption Tax ID."
+                    }
+                },
+                "description": "Tax registration details of the entity."
+            },
+            "Address": {
+                "required": [
+                    "addressLine1",
+                    "countryCode",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the person, business or institution at that address."
+                    },
+                    "addressLine1": {
+                        "type": "string",
+                        "description": "First line of street address."
+                    },
+                    "addressLine2": {
+                        "type": "string",
+                        "description": "Additional address information, if required."
+                    },
+                    "addressLine3": {
+                        "type": "string",
+                        "description": "Additional address information, if required."
+                    },
+                    "city": {
+                        "type": "string",
+                        "description": "The city where the person, business, or institution is located."
+                    },
+                    "county": {
+                        "type": "string",
+                        "description": "The county where person, business, or institution is located."
+                    },
+                    "district": {
+                        "type": "string",
+                        "description": "The district where person, business, or institution is located."
+                    },
+                    "stateOrRegion": {
+                        "type": "string",
+                        "description": "The state or region where person, business, or institution is located."
+                    },
+                    "postalOrZipCode": {
+                        "type": "string",
+                        "description": "The postal or zip code of that address. It contains a series of letters, digits, or both, sometimes including spaces or punctuation."
+                    },
+                    "countryCode": {
+                        "maxLength": 2,
+                        "type": "string",
+                        "description": "The two digit country code. In ISO 3166-1 alpha-2 format."
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "The phone number of the person, business or institution located at that address."
+                    }
+                },
+                "description": "A physical address."
+            },
+            "InvoiceItem": {
+                "required": [
+                    "invoicedQuantity",
+                    "itemSequenceNumber",
+                    "netCost"
+                ],
+                "type": "object",
+                "properties": {
+                    "itemSequenceNumber": {
+                        "type": "integer",
+                        "description": "Unique number related to this line item."
+                    },
+                    "amazonProductIdentifier": {
+                        "type": "string",
+                        "description": "Amazon Standard Identification Number (ASIN) of an item."
+                    },
+                    "vendorProductIdentifier": {
+                        "type": "string",
+                        "description": "The vendor selected product identifier of the item. Should be the same as was provided in the purchase order."
+                    },
+                    "invoicedQuantity": {
+                        "$ref": "#/components/schemas/ItemQuantity"
+                    },
+                    "netCost": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "purchaseOrderNumber": {
+                        "type": "string",
+                        "description": "The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when `invoiceType` is `Invoice`, and is not required when `invoiceType` is `CreditNote`."
+                    },
+                    "hsnCode": {
+                        "type": "string",
+                        "description": "The HSN Tax code. The HSN number cannot contain alphabets."
+                    },
+                    "creditNoteDetails": {
+                        "$ref": "#/components/schemas/CreditNoteDetails"
+                    },
+                    "taxDetails": {
+                        "type": "array",
+                        "description": "Individual tax details per line item.",
+                        "items": {
+                            "$ref": "#/components/schemas/TaxDetails"
+                        }
+                    },
+                    "chargeDetails": {
+                        "type": "array",
+                        "description": "Individual charge details per line item.",
+                        "items": {
+                            "$ref": "#/components/schemas/ChargeDetails"
+                        }
+                    },
+                    "allowanceDetails": {
+                        "type": "array",
+                        "description": "Individual allowance details per line item.",
+                        "items": {
+                            "$ref": "#/components/schemas/AllowanceDetails"
+                        }
+                    }
+                },
+                "description": "Details of the item being invoiced."
+            },
+            "TaxDetails": {
+                "required": [
+                    "taxAmount",
+                    "taxType"
+                ],
+                "type": "object",
+                "properties": {
+                    "taxType": {
+                        "type": "string",
+                        "description": "Type of the tax applied.",
+                        "enum": [
+                            "CGST",
+                            "SGST",
+                            "CESS",
+                            "UTGST",
+                            "IGST",
+                            "MwSt.",
+                            "PST",
+                            "TVA",
+                            "VAT",
+                            "GST",
+                            "ST",
+                            "Consumption",
+                            "MutuallyDefined",
+                            "DomesticVAT"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "CGST",
+                                "description": "Central Goods and Services Tax (CGST) is levied by the Indian government for intrastate movement of goods and services."
+                            },
+                            {
+                                "value": "SGST",
+                                "description": "State Goods and Services Tax (SGST) is an indirect tax levied and collected by a State Government in India on the intra-state supplies."
+                            },
+                            {
+                                "value": "CESS",
+                                "description": "A CESS is a form of tax levied by the government on tax with specific purposes till the time the government gets enough money for that purpose."
+                            },
+                            {
+                                "value": "UTGST",
+                                "description": "Union Territory Goods and Services Tax in India."
+                            },
+                            {
+                                "value": "IGST",
+                                "description": "Integrated Goods and Services Tax (IGST) is a tax levied on all Inter-State supplies of goods and/or services in India."
+                            },
+                            {
+                                "value": "MwSt.",
+                                "description": "Mehrwertsteuer, MwSt, is German for value-added tax."
+                            },
+                            {
+                                "value": "PST",
+                                "description": "A provincial sales tax (PST) is imposed on consumers of goods and particular services in many Canadian provinces."
+                            },
+                            {
+                                "value": "TVA",
+                                "description": "Taxe sur la Valeur Ajout&#233;e (TVA) is French for value-added tax."
+                            },
+                            {
+                                "value": "VAT",
+                                "description": "Value-added tax."
+                            },
+                            {
+                                "value": "GST",
+                                "description": "Tax levied on most goods and services sold for domestic consumption."
+                            },
+                            {
+                                "value": "ST",
+                                "description": "Sales tax."
+                            },
+                            {
+                                "value": "Consumption",
+                                "description": "Tax levied on consumption spending on goods and services."
+                            },
+                            {
+                                "value": "MutuallyDefined",
+                                "description": "Tax component that was mutually agreed upon between Amazon and vendor."
+                            },
+                            {
+                                "value": "DomesticVAT",
+                                "description": "Domestic value-added tax."
+                            }
+                        ]
+                    },
+                    "taxRate": {
+                        "$ref": "#/components/schemas/Decimal"
+                    },
+                    "taxAmount": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "taxableAmount": {
+                        "$ref": "#/components/schemas/Money"
+                    }
+                },
+                "description": "Details of tax amount applied."
+            },
+            "Money": {
+                "type": "object",
+                "properties": {
+                    "currencyCode": {
+                        "type": "string",
+                        "description": "Three-digit currency code in ISO 4217 format."
+                    },
+                    "amount": {
+                        "$ref": "#/components/schemas/Decimal"
+                    }
+                },
+                "description": "An amount of money, including units in the form of currency."
+            },
+            "AdditionalDetails": {
+                "required": [
+                    "detail",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "The type of the additional information provided by the selling party.",
+                        "enum": [
+                            "SUR",
+                            "OCR",
+                            "CartonCount"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "SUR",
+                                "description": "An additional tax on something already taxed, such as a higher rate of tax on incomes above a certain level."
+                            },
+                            {
+                                "value": "OCR",
+                                "description": "OCR."
+                            },
+                            {
+                                "value": "CartonCount",
+                                "description": "The total number of cartons invoiced."
+                            }
+                        ]
+                    },
+                    "detail": {
+                        "type": "string",
+                        "description": "The detail of the additional information provided by the selling party."
+                    },
+                    "languageCode": {
+                        "type": "string",
+                        "description": "The language code of the additional information detail."
+                    }
+                },
+                "description": "Additional information provided by the selling party for tax-related or any other purpose."
+            },
+            "ChargeDetails": {
+                "required": [
+                    "chargeAmount",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "Type of the charge applied.",
+                        "enum": [
+                            "Freight",
+                            "Packing",
+                            "Duty",
+                            "Service",
+                            "SmallOrder",
+                            "InsurancePlacementCost",
+                            "InsuranceFee",
+                            "SpecialHandlingService",
+                            "CollectionAndRecyclingService",
+                            "EnvironmentalProtectionService",
+                            "TaxCollectedAtSource"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Freight",
+                                "description": "Freight charges."
+                            },
+                            {
+                                "value": "Packing",
+                                "description": "Packing fee."
+                            },
+                            {
+                                "value": "Duty",
+                                "description": "Duty charges."
+                            },
+                            {
+                                "value": "Service",
+                                "description": "Service fee."
+                            },
+                            {
+                                "value": "SmallOrder",
+                                "description": "Small order fee."
+                            },
+                            {
+                                "value": "InsurancePlacementCost",
+                                "description": "Insurance placement cost."
+                            },
+                            {
+                                "value": "InsuranceFee",
+                                "description": "Insurance fee."
+                            },
+                            {
+                                "value": "SpecialHandlingService",
+                                "description": "Special handling service fee."
+                            },
+                            {
+                                "value": "CollectionAndRecyclingService",
+                                "description": "Collection and recycling service fee."
+                            },
+                            {
+                                "value": "EnvironmentalProtectionService",
+                                "description": "Environmental protection service fee."
+                            },
+                            {
+                                "value": "TaxCollectedAtSource",
+                                "description": "Tax collected at source."
+                            }
+                        ]
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the charge."
+                    },
+                    "chargeAmount": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "taxDetails": {
+                        "type": "array",
+                        "description": "Tax amount details applied on this charge.",
+                        "items": {
+                            "$ref": "#/components/schemas/TaxDetails"
+                        }
+                    }
+                },
+                "description": "Monetary and tax details of the charge."
+            },
+            "AllowanceDetails": {
+                "required": [
+                    "allowanceAmount",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "Type of the allowance applied.",
+                        "enum": [
+                            "Discount",
+                            "DiscountIncentive",
+                            "Defective",
+                            "Promotional",
+                            "UnsaleableMerchandise",
+                            "Special"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Discount",
+                                "description": "Discount allowance."
+                            },
+                            {
+                                "value": "DiscountIncentive",
+                                "description": "Discount incentive allowance."
+                            },
+                            {
+                                "value": "Defective",
+                                "description": "Allowance applied for defective item."
+                            },
+                            {
+                                "value": "Promotional",
+                                "description": "Promotional allowance."
+                            },
+                            {
+                                "value": "UnsaleableMerchandise",
+                                "description": "Allowance applied due to unsaleable merchandise."
+                            },
+                            {
+                                "value": "Special",
+                                "description": "Special allowances."
+                            }
+                        ]
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the allowance."
+                    },
+                    "allowanceAmount": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "taxDetails": {
+                        "type": "array",
+                        "description": "Tax amount details applied on this allowance.",
+                        "items": {
+                            "$ref": "#/components/schemas/TaxDetails"
+                        }
+                    }
+                },
+                "description": "Monetary and tax details of the allowance."
+            },
+            "PaymentTerms": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "The payment term type for the invoice.",
+                        "enum": [
+                            "Basic",
+                            "EndOfMonth",
+                            "FixedDate",
+                            "Proximo",
+                            "PaymentDueUponReceiptOfInvoice",
+                            "LetterofCredit"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Basic",
+                                "description": "Payment term that buyer and seller have agreed to."
+                            },
+                            {
+                                "value": "EndOfMonth",
+                                "description": "Payment term where seller gets paid end of month."
+                            },
+                            {
+                                "value": "FixedDate",
+                                "description": "Payment term where seller gets paid on a fixed date as agreed with buyer."
+                            },
+                            {
+                                "value": "Proximo",
+                                "description": "Payment term where seller gets paid end of following month."
+                            },
+                            {
+                                "value": "PaymentDueUponReceiptOfInvoice",
+                                "description": "Payment term where seller gets paid upon receipt of the invoice by the buyer."
+                            },
+                            {
+                                "value": "LetterofCredit",
+                                "description": "A payment undertaking given by a bank to the seller and is issued on behalf of the applicant i.e. the buyer."
+                            }
+                        ]
+                    },
+                    "discountPercent": {
+                        "$ref": "#/components/schemas/Decimal"
+                    },
+                    "discountDueDays": {
+                        "type": "number",
+                        "description": "The number of calendar days from the base date (Invoice date) until the discount is no longer valid."
+                    },
+                    "netDueDays": {
+                        "type": "number",
+                        "description": "The number of calendar days from the base date (invoice date) until the total amount on the invoice is due."
+                    }
+                },
+                "description": "Terms of the payment for the invoice. The basis of the payment terms is the invoice date."
+            },
+            "CreditNoteDetails": {
+                "type": "object",
+                "properties": {
+                    "referenceInvoiceNumber": {
+                        "type": "string",
+                        "description": "Original invoice number when sending a credit note relating to an existing invoice. One invoice only to be processed per credit note. This is mandatory for AP credit notes."
+                    },
+                    "debitNoteNumber": {
+                        "type": "string",
+                        "description": "Debit note number as generated by Amazon. Recommended for returns and COOP credit notes."
+                    },
+                    "returnsReferenceNumber": {
+                        "type": "string",
+                        "description": "Identifies the returns notice number. Mandatory for all returns credit notes."
+                    },
+                    "goodsReturnDate": {
+                        "$ref": "#/components/schemas/DateTime"
+                    },
+                    "rmaId": {
+                        "type": "string",
+                        "description": "Identifies the Returned Merchandise Authorization ID, if generated."
+                    },
+                    "coopReferenceNumber": {
+                        "type": "string",
+                        "description": "Identifies the COOP reference used for COOP agreement. Failure to provide the COOP reference number or the debit note number may lead to a rejection of the credit note."
+                    },
+                    "consignorsReferenceNumber": {
+                        "type": "string",
+                        "description": "Identifies the consignor reference number (VRET number), if generated by Amazon."
+                    }
+                },
+                "description": "References required in order to process a credit note. This information is required only if `InvoiceType` is `CreditNote`."
+            },
+            "ItemQuantity": {
+                "required": [
+                    "amount",
+                    "unitOfMeasure"
+                ],
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "type": "integer",
+                        "description": "Quantity of an item. This value should not be zero."
+                    },
+                    "unitOfMeasure": {
+                        "type": "string",
+                        "description": "Unit of measure for the quantity.",
+                        "enum": [
+                            "Cases",
+                            "Eaches"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Cases",
+                                "description": "Packing of individual items into a case."
+                            },
+                            {
+                                "value": "Eaches",
+                                "description": "Individual items."
+                            }
+                        ]
+                    },
+                    "unitSize": {
+                        "type": "integer",
+                        "description": "The case size, if the unit of measure value is `Cases`."
+                    }
+                },
+                "description": "Details of quantity."
+            },
+            "Decimal": {
+                "type": "string",
+                "description": "A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`."
+            },
+            "DateTime": {
+                "type": "string",
+                "description": "Defines a date and time according to <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a>.",
+                "format": "date-time"
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

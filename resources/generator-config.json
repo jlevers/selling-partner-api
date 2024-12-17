@@ -1,0 +1,16 @@
+{
+    "version": "7.0.3",
+    "type": "openapi",
+    "outputDir": "src",
+    "force": true,
+    "connectorName": "SellingPartnerApi",
+    "namespace": "SellingPartnerApi",
+    "baseFilesNamespace": "SellingPartnerApi",
+    "namespaceSuffixes": {
+        "resource": null
+    },
+    "datetimeFormat": "Y-m-d\\TH:i:s\\Z",
+    "ignoredParams": {
+      "header": ["x-amz-access-token"]
+    }
+}

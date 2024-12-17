@@ -1,0 +1,20 @@
+<?php declare(strict_types=1);
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use SellingPartnerApi\Generator\Commands\DownloadSchemas;
+use SellingPartnerApi\Generator\Commands\GenerateSchemas;
+use SellingPartnerApi\Generator\Commands\RefactorSchemas;
+use SellingPartnerApi\Generator\Commands\UpdateVersion;
+use Symfony\Component\Console\Application;
+
+// Initialize the Console Application
+$application = new Application();
+
+$application->add(new DownloadSchemas());
+$application->add(new RefactorSchemas());
+$application->add(new GenerateSchemas());
+$application->add(new UpdateVersion());
+
+// Run the application
+$application->run();

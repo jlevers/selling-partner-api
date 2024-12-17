@@ -1,0 +1,886 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "The Selling Partner API for Transfers.",
+        "description": "Use the Transfers API v2024-06-01 to initiate payouts for your seller accounts. This API is available in private beta only.",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "2024-06-01"
+    },
+    "servers": [
+        {
+            "url": "https://sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/finances/transfers/2024-06-01/payouts": {
+            "post": {
+                "description": "Initiates an on-demand payout to the seller's default deposit method in Seller Central for the given `marketplaceId` and `accountType` (if eligible). Only one on-demand payout can be initiated for each marketplace and account type within a 24-hour period. \n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the requested operation. The preceding table shows the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may yield higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "initiatePayout",
+                "requestBody": {
+                    "description": "The request body for the `initiatePayout` operation.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/InitiatePayoutRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/InitiatePayoutResponse"
+                                },
+                                "example": {
+                                    "payoutReferenceId": "3DM7DQi8DPAMOLOSaN5HxT0q2waNwH95fopx3AD2Lgc"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "marketplaceId": "A1PA6795UKMFR9",
+                                                    "accountType": "Standard Orders"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "payoutReferenceId": "3DM7DQi8DPAMOLOSaN5HxT0q2waNwH95fopx3AD2Lgc"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed. Possible values include:\n\nINVALID_INPUT: The marketplaceId/accountType provided in the input is invalid.\n\nNOT_ELIGIBLE_FOR_ON_DEMAND_PAYOUT: The seller is not eligible for On-Demand Payouts. Retries would most likely fail.\n\nNO_DEPOSIT_METHOD: No deposit method found for the selling partner. Please add a valid deposit method and try again.\n\nINSUFFICIENT_PAYOUT_AMOUNT: The outstanding balance is less than the minimum permissible payout amount, hence no payout will be initiated.\n\nPAYOUT_FREQUENCY_EXCEEDED: This occurs if there has already been a payout initiated for the given marketplace and accountType in the last 24 hours. A selling partner can request payout once in every 24 hours for a given marketplace and accountType.\n\nNote: The error codes listed here are not an exhaustive representation. The API's error handling is subject to change, and additional error codes may be introduced in the future.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "NO_DEPOSIT_METHOD",
+                                            "message": "No deposit method found for the selling partner. Add a valid deposit method and try again."
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "marketplaceId": "A1F83G8C2ARO7P",
+                                                    "accountType": "Standard Orders"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "NO_DEPOSIT_METHOD",
+                                                "message": "No deposit method found for the selling partner. Add a valid deposit method and try again."
+                                            },
+                                            {
+                                                "code": "INSUFFICIENT_PAYOUT_AMOUNT",
+                                                "message": "The available balance is less than the minimum permissible payout amount. No payout will be initiated."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
+            }
+        },
+        "/finances/transfers/2024-06-01/paymentmethods": {
+            "post": {
+                "description": "The list of payment methods added for a particular seller. These payment methods can be used for payouts.",
+                "operationId": "getPaymentMethods",
+                "requestBody": {
+                    "description": "The request schema of the `getPaymentMethods` operation.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetPaymentMethodsRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetPaymentMethodsResponse"
+                                },
+                                "example": {
+                                    "piDetails": [
+                                        {
+                                            "countryCode": "US",
+                                            "defaultMarketplaces": [
+                                                "ATVPDKIKX0DER"
+                                            ],
+                                            "encryptedAccountHolderName": "?SIEGE|Rufus!00AAAAAAYIARAAGgAAAAAADgjowvyyBhAAGAAgADIAAAAAkQAAAAAAAAAA1goTnyZO5d+yqPgsktNT/nEAAAAAAAAAP0MonpF3YDVi4nembq6SlQ+4vdiDYdw3yAQnHXMw7xQtF7vzrLY/MJPd3nisz3cIf8mXj5Q6OLDmVukyrqBS0ZDq12OuNAqwh3O1w/tAba31f7UBWfhg3XJFwflqHOX028hd7wmGl72o9NNk6ylY18g=!EGEIS?",
+                                            "paymentInstrumentId": "0h_TU_CUS_4058fe2a-da6b-4b82-8e48-b20ff2eb4f6d",
+                                            "paymentInstrumentType": "BANK_ACCOUNT",
+                                            "tail": "677"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "owningCustomerId": "ACUULBDVZHYZZ",
+                                                    "marketplaceId": "ATVPDKIKX0DER",
+                                                    "requestId": "Rufus",
+                                                    "paymentMethodFilter": {
+                                                        "subscribedMarketplaces": [
+                                                            "ATVPDKIKX0DER",
+                                                            "A2EUQ1WTGCTBG2"
+                                                        ],
+                                                        "assignmentFilter": {
+                                                            "assignmentTypes": [
+                                                                "DEFAULT"
+                                                            ]
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "piDetails": [
+                                            {
+                                                "countryCode": "US",
+                                                "defaultMarketplaces": [
+                                                    "ATVPDKIKX0DER",
+                                                    "A2EUQ1WTGCTBG2"
+                                                ],
+                                                "encryptedAccountHolderName": "?SIEGE|Rufus!00AAAAAAYIARAAGgAAAAAADgjowvyyBhAAGAAgADIAAAAAkQAAAAAAAAAA1goTnyZO5d+yqPgsktNT/nEAAAAAAAAAP0MonpF3YDVi4nembq6SlQ+4vdiDYdw3yAQnHXMw7xQtF7vzrLY/MJPd3nisz3cIf8mXj5Q6OLDmVukyrqBS0ZDq12OuNAqwh3O1w/tAba31f7UBWfhg3XJFwflqHOX028hd7wmGl72o9NNk6ylY18g=!EGEIS?",
+                                                "paymentInstrumentId": "0h_TU_CUS_4058fe2a-da6b-4b82-8e48-b20ff2eb4f6d",
+                                                "paymentInstrumentType": "BANK_ACCOUNT",
+                                                "tail": "677"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "400",
+                                            "message": "Validation failed for obfuscatedId:ACUULBDVZHYZ1"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "owningCustomerId": "ACUULBDVZHYZ1",
+                                                    "marketplaceId": "ATVPDKIKX0DER",
+                                                    "requestId": "Rufus",
+                                                    "paymentMethodFilter": {
+                                                        "subscribedMarketplaces": [
+                                                            "ATVPDKIKX0DER"
+                                                        ],
+                                                        "assignmentFilter": {
+                                                            "assignmentTypes": [
+                                                                "DEFAULT"
+                                                            ]
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "400",
+                                                "message": "Validation failed for obfuscatedId:ACUULBDVZHYZ1"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "InitiatePayoutRequest": {
+                "required": [
+                    "accountType",
+                    "marketplaceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "marketplaceId": {
+                        "type": "string",
+                        "description": "A marketplace identifier. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
+                    },
+                    "accountType": {
+                        "type": "string",
+                        "description": "The account type in the selected marketplace for which a payout has to be initiated. For the supported EU marketplaces, the only account type is `Standard Orders`."
+                    }
+                },
+                "description": "The request schema for the `initiatePayout` operation.",
+                "example": {
+                    "marketplaceId": "APJ6JRA9NG5V4",
+                    "accountType": "Standard Orders"
+                }
+            },
+            "InitiatePayoutResponse": {
+                "required": [
+                    "payoutReferenceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "payoutReferenceId": {
+                        "type": "string",
+                        "description": "The financial event group ID for a successfully initiated payout. You can use this ID to track payout information."
+                    }
+                },
+                "description": "The response schema for the `initiatePayout` operation.",
+                "example": {
+                    "payoutReferenceId": "3DM7DQi8DPAMOLOSaN5HxT0q2waNwH95fopx3AD2Lgc"
+                }
+            },
+            "GetPaymentMethodsRequest": {
+                "type": "object",
+                "properties": {
+                    "owningCustomerId": {
+                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
+                    },
+                    "marketplaceId": {
+                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
+                    },
+                    "requestId": {
+                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
+                    },
+                    "paymentMethodFilter": {
+                        "$ref": "#/components/schemas/PaymentMethodFilter"
+                    }
+                },
+                "description": "The request schema for the `getPaymentMethods` operation.",
+                "example": {
+                    "owningCustomerId": "ACUULBDVZHYZZ",
+                    "marketplaceId": "ATVPDKIKX0DER",
+                    "requestId": "Rufus",
+                    "paymentMethodFilter": {
+                        "subscribedMarketplaces": [
+                            "ATVPDKIKX0DER"
+                        ],
+                        "assignmentFilter": {
+                            "assignmentTypes": [
+                                "DEFAULT"
+                            ]
+                        }
+                    }
+                }
+            },
+            "GetPaymentMethodsResponse": {
+                "type": "object",
+                "properties": {
+                    "piDetails": {
+                        "$ref": "#/components/schemas/ListOfPIDetails"
+                    }
+                },
+                "description": "The response schema for the `getPaymentMethodsResponse` operation.",
+                "example": {
+                    "piDetails": [
+                        {
+                            "countryCode": "US",
+                            "defaultMarketplaces": [
+                                "ATVPDKIKX0DER"
+                            ],
+                            "encryptedAccountHolderName": "?SIEGE|Rufus!00AAAAAAYIARAAGgAAAAAADgjowvyyBhAAGAAgADIAAAAAkQAAAAAAAAAA1goTnyZO5d+yqPgsktNT/nEAAAAAAAAAP0MonpF3YDVi4nembq6SlQ+4vdiDYdw3yAQnHXMw7xQtF7vzrLY/MJPd3nisz3cIf8mXj5Q6OLDmVukyrqBS0ZDq12OuNAqwh3O1w/tAba31f7UBWfhg3XJFwflqHOX028hd7wmGl72o9NNk6ylY18g=!EGEIS?",
+                            "paymentInstrumentId": "0h_TU_CUS_4058fe2a-da6b-4b82-8e48-b20ff2eb4f6d",
+                            "paymentInstrumentType": "CARD",
+                            "expiryDate": {
+                                "month": "3",
+                                "year": "2029"
+                            },
+                            "tail": "677"
+                        }
+                    ]
+                }
+            },
+            "PaymentMethodFilter": {
+                "type": "object",
+                "properties": {
+                    "paymentInstrumentId": {
+                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
+                    },
+                    "subscribedMarketplaces": {
+                        "$ref": "#/components/schemas/ListOfStrings"
+                    },
+                    "assignmentFilter": {
+                        "$ref": "#/components/schemas/AssignmentFilter"
+                    },
+                    "paymentInstrumentTypes": {
+                        "$ref": "#/components/schemas/ListOfPaymentInstrumentType"
+                    }
+                },
+                "description": "The object used to filter payment methods based on different factors.",
+                "example": {
+                    "paymentInstrumentId": "0h_PU_CUS_da62b97f-8629-46a1-8f8b-6f7fde4b5751",
+                    "paymentInstrumentTypes": [
+                        "BANK_ACCOUNT"
+                    ]
+                }
+            },
+            "AssignmentFilter": {
+                "type": "object",
+                "properties": {
+                    "assignmentTypes": {
+                        "$ref": "#/components/schemas/ListOfAssignmentType"
+                    }
+                },
+                "description": "The list of default payment instruments that are returned when you use the `assignmentFilter`."
+            },
+            "ListOfAssignmentType": {
+                "type": "array",
+                "description": "The list of assignment types.",
+                "items": {
+                    "$ref": "#/components/schemas/AssignmentType"
+                }
+            },
+            "AssignmentType": {
+                "type": "string",
+                "description": "The filter that returns payment methods based on the type of assignment.",
+                "enum": [
+                    "DEFAULT"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "DEFAULT",
+                        "description": "The payment instrument that is used as the primary payout method."
+                    }
+                ]
+            },
+            "ListOfPIDetails": {
+                "type": "array",
+                "description": "The list of payment instruments.",
+                "items": {
+                    "$ref": "#/components/schemas/PIDetails"
+                }
+            },
+            "PIDetails": {
+                "type": "object",
+                "properties": {
+                    "encryptedAccountHolderName": {
+                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
+                    },
+                    "paymentInstrumentId": {
+                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
+                    },
+                    "tail": {
+                        "$ref": "#/components/schemas/StringWithDigits"
+                    },
+                    "expiryDate": {
+                        "$ref": "#/components/schemas/ExpiryDate"
+                    },
+                    "countryCode": {
+                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
+                    },
+                    "defaultMarketplaces": {
+                        "$ref": "#/components/schemas/ListOfStrings"
+                    },
+                    "paymentInstrumentType": {
+                        "$ref": "#/components/schemas/PaymentInstrumentType"
+                    }
+                },
+                "description": "The details of a payment instrument."
+            },
+            "ExpiryDate": {
+                "type": "object",
+                "properties": {
+                    "month": {
+                        "$ref": "#/components/schemas/StringWithDigits"
+                    },
+                    "year": {
+                        "$ref": "#/components/schemas/StringWithDigits"
+                    }
+                },
+                "description": "The expiration date of a card used for payment. If the payment instrument is not a card, the expiration date is null."
+            },
+            "ListOfPaymentInstrumentType": {
+                "type": "array",
+                "description": "The list of payment instrument types that are present.",
+                "example": [
+                    "BANK_ACCOUNT, CARD"
+                ],
+                "items": {
+                    "$ref": "#/components/schemas/PaymentInstrumentType"
+                }
+            },
+            "PaymentInstrumentType": {
+                "type": "string",
+                "description": "The payment instrument type.",
+                "enum": [
+                    "BANK_ACCOUNT",
+                    "CARD",
+                    "SELLER_WALLET"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "BANK_ACCOUNT",
+                        "description": "Bank Account."
+                    },
+                    {
+                        "value": "CARD",
+                        "description": "Card"
+                    },
+                    {
+                        "value": "SELLER_WALLET",
+                        "description": "Seller Wallet Virtual Bank Account."
+                    }
+                ]
+            },
+            "ListOfStrings": {
+                "type": "array",
+                "description": "A list of strings.",
+                "items": {
+                    "$ref": "#/components/schemas/StringWithNoWhiteSpace"
+                }
+            },
+            "StringWithDigits": {
+                "pattern": "^[0-9]*",
+                "type": "string",
+                "description": "A string with digits",
+                "example": "ATVPDKIKX0DER"
+            },
+            "StringWithNoWhiteSpace": {
+                "pattern": "\\S+",
+                "type": "string",
+                "description": "A string with no white spaces.",
+                "example": "ATVPDKIKX0DER"
+            },
+            "ErrorList": {
+                "required": [
+                    "errors"
+                ],
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "description": "array of errors",
+                        "example": [
+                            {
+                                "code": "InvalidInput",
+                                "message": "The input request had one or more invalid input parameters."
+                            }
+                        ],
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                },
+                "description": "A list of error responses returned when a request is unsuccessful."
+            },
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred.",
+                        "example": "InvalidInput"
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition.",
+                        "example": "The input request had one or more invalid input parameters."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional details that can help the caller understand or fix the issue.",
+                        "example": "The following input parameters are invalid : [ marketplaceId ]."
+                    }
+                },
+                "description": "Error response returned when the request is unsuccessful.",
+                "example": {
+                    "code": "InvalidInput",
+                    "message": "The input request had one or more invalid input parameters."
+                }
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

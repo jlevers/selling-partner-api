@@ -1,0 +1,931 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Selling Partner API for Sellers",
+        "description": "The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:\n\n- The marketplaces a seller can list in\n- The default language and currency of a marketplace\n- Whether the seller has suspended listings\n\nRefer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/sellers/v1/marketplaceParticipations": {
+            "get": {
+                "tags": [
+                    "SellersV1"
+                ],
+                "description": "Returns a list of marketplaces where the seller can list items and information about the seller's participation in those marketplaces.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.016 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getMarketplaceParticipations",
+                "responses": {
+                    "200": {
+                        "description": "Marketplace participations successfully retrieved.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {
+                                        "payload": [
+                                            {
+                                                "marketplace": {
+                                                    "id": "ATVPDKIKX0DER",
+                                                    "countryCode": "US",
+                                                    "name": "Amazon.com",
+                                                    "defaultCurrencyCode": "USD",
+                                                    "defaultLanguageCode": "en_US",
+                                                    "domainName": "www.amazon.com"
+                                                },
+                                                "participation": {
+                                                    "isParticipating": true,
+                                                    "hasSuspendedListings": false
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The entity of the request is in a format not supported by the requested resource.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Encountered an unexpected condition which prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetMarketplaceParticipationsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sellers/v1/account": {
+            "get": {
+                "tags": [
+                    "SellersV1"
+                ],
+                "description": "Returns information about a seller account and its marketplaces.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.016 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getAccount",
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetAccountResponse"
+                                },
+                                "example": {
+                                    "payload": {
+                                        "businessType": "PRIVATE_LIMITED",
+                                        "marketplaceLevelAttributes": [
+                                            {
+                                                "marketplace": {
+                                                    "id": "ATVPDKIKX0DER",
+                                                    "name": "United States",
+                                                    "countryCode": "US",
+                                                    "domainName": "www.amazon.com"
+                                                },
+                                                "storeName": "BestSellerStore",
+                                                "listingStatus": "ACTIVE",
+                                                "sellingPlan": "PROFESSIONAL"
+                                            }
+                                        ],
+                                        "business": {
+                                            "name": "BestSeller Inc.",
+                                            "nonLatinName": "\u30d9\u30b9\u30c8\u30bb\u30e9\u30fc\u682a\u5f0f\u4f1a\u793e",
+                                            "registeredBusinessAddress": {
+                                                "addressLine1": "123 Main St",
+                                                "addressLine2": "Suite 500",
+                                                "city": "Seattle",
+                                                "stateOrProvinceCode": "WA",
+                                                "postalCode": "98101",
+                                                "countryCode": "US"
+                                            },
+                                            "companyRegistrationNumber": "123456789"
+                                        },
+                                        "primaryContact": {
+                                            "name": "John Doe",
+                                            "nonLatinName": "\u30b8\u30e7\u30f3\u30fb\u30c9\u30a5",
+                                            "address": {
+                                                "addressLine1": "456 Oak St",
+                                                "addressLine2": "Apt 12",
+                                                "city": "Seattle",
+                                                "stateOrProvinceCode": "WA",
+                                                "postalCode": "98102",
+                                                "countryCode": "US"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "response": {
+                                        "payload": {
+                                            "marketplaceLevelAttributes": [
+                                                {
+                                                    "marketplace": {
+                                                        "id": "ATVPDKIKX0DER",
+                                                        "name": "United States",
+                                                        "countryCode": "US",
+                                                        "domainName": "www.amazon.com"
+                                                    },
+                                                    "storeName": "BestSellerStore",
+                                                    "listingStatus": "ACTIVE",
+                                                    "sellingPlan": "PROFESSIONAL"
+                                                }
+                                            ],
+                                            "businessType": "SOLE_PROPRIETORSHIP",
+                                            "business": {
+                                                "name": "BestSeller Inc.",
+                                                "registeredBusinessAddress": {
+                                                    "addressLine1": "123 Main St",
+                                                    "addressLine2": "Suite 500",
+                                                    "city": "Seattle",
+                                                    "stateOrProvinceCode": "WA",
+                                                    "postalCode": "98101",
+                                                    "countryCode": "US"
+                                                },
+                                                "companyTaxIdentificationNumber": "TAX123456"
+                                            },
+                                            "primaryContact": {
+                                                "name": "John Doe",
+                                                "nonLatinName": "\u30b8\u30e7\u30f3\u30fb\u30c9\u30a5",
+                                                "address": {
+                                                    "addressLine1": "456 Oak St",
+                                                    "addressLine2": "Apt 12",
+                                                    "city": "Seattle",
+                                                    "stateOrProvinceCode": "WA",
+                                                    "postalCode": "98102",
+                                                    "countryCode": "US"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetAccountResponse"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "400",
+                                            "message": "Validation failed for obfuscatedId:ACUULBDVZHYZ1"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "400",
+                                                "message": "Validation failed for obfuscatedId:ACUULBDVZHYZ1"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetAccountResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetAccountResponse"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetAccountResponse"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetAccountResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetAccountResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetAccountResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetAccountResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition in a human-readable form."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional details that can help you understand or fix the issue."
+                    }
+                },
+                "description": "Error response returned when the request is unsuccessful."
+            },
+            "ErrorList": {
+                "required": [
+                    "errors"
+                ],
+                "type": "object",
+                "description": "A list of error responses returned when a request is unsuccessful.",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "description": "A list of error responses returned when a request is unsuccessful.",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                }
+            },
+            "MarketplaceParticipation": {
+                "required": [
+                    "marketplace",
+                    "participation"
+                ],
+                "type": "object",
+                "properties": {
+                    "marketplace": {
+                        "$ref": "#/components/schemas/Marketplace"
+                    },
+                    "participation": {
+                        "$ref": "#/components/schemas/Participation"
+                    }
+                }
+            },
+            "MarketplaceParticipationList": {
+                "type": "array",
+                "description": "List of marketplace participations.",
+                "items": {
+                    "$ref": "#/components/schemas/MarketplaceParticipation"
+                }
+            },
+            "GetMarketplaceParticipationsResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#/components/schemas/MarketplaceParticipationList"
+                    },
+                    "errors": {
+                        "$ref": "#/components/schemas/ErrorList"
+                    }
+                },
+                "description": "The response schema for the `getMarketplaceParticipations` operation."
+            },
+            "Marketplace": {
+                "required": [
+                    "countryCode",
+                    "defaultCurrencyCode",
+                    "defaultLanguageCode",
+                    "domainName",
+                    "id",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The encrypted marketplace value."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The marketplace name."
+                    },
+                    "countryCode": {
+                        "pattern": "^([A-Z]{2})$",
+                        "type": "string",
+                        "description": "The ISO 3166-1 alpha-2 format country code of the marketplace."
+                    },
+                    "defaultCurrencyCode": {
+                        "type": "string",
+                        "description": "The ISO 4217 format currency code of the marketplace."
+                    },
+                    "defaultLanguageCode": {
+                        "type": "string",
+                        "description": "The ISO 639-1 format language code of the marketplace."
+                    },
+                    "domainName": {
+                        "type": "string",
+                        "description": "The domain name of the marketplace."
+                    }
+                },
+                "description": "Information about an Amazon marketplace where a seller can list items and customers can view and purchase items."
+            },
+            "Participation": {
+                "required": [
+                    "hasSuspendedListings",
+                    "isParticipating"
+                ],
+                "type": "object",
+                "properties": {
+                    "isParticipating": {
+                        "type": "boolean",
+                        "description": "If `true`, the seller participates in the marketplace. Otherwise `false`."
+                    },
+                    "hasSuspendedListings": {
+                        "type": "boolean",
+                        "description": "Specifies if the seller has suspended listings. `true` if the seller Listing Status is set to Inactive, otherwise `false`."
+                    }
+                },
+                "description": "Information that is specific to a seller in a marketplace."
+            },
+            "GetAccountResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#/components/schemas/Account"
+                    },
+                    "errors": {
+                        "$ref": "#/components/schemas/ErrorList"
+                    }
+                },
+                "description": "The response schema for the `getAccount` operation."
+            },
+            "MarketplaceLevelAttributes": {
+                "required": [
+                    "listingStatus",
+                    "marketplace",
+                    "sellingPlan",
+                    "storeName"
+                ],
+                "type": "object",
+                "properties": {
+                    "marketplace": {
+                        "$ref": "#/components/schemas/Marketplace"
+                    },
+                    "storeName": {
+                        "type": "string",
+                        "description": "The name of the seller's store as displayed in the marketplace."
+                    },
+                    "listingStatus": {
+                        "type": "string",
+                        "description": "The current status of the seller's listings.",
+                        "enum": [
+                            "ACTIVE",
+                            "INACTIVE"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "ACTIVE",
+                                "description": "The seller's listings are currently active."
+                            },
+                            {
+                                "value": "INACTIVE",
+                                "description": "The seller's listings are currently inactive."
+                            }
+                        ]
+                    },
+                    "sellingPlan": {
+                        "type": "string",
+                        "description": "The selling plan details.",
+                        "enum": [
+                            "PROFESSIONAL",
+                            "INDIVIDUAL"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "PROFESSIONAL",
+                                "description": "The seller has a professional selling plan."
+                            },
+                            {
+                                "value": "INDIVIDUAL",
+                                "description": "The seller has an individual selling plan."
+                            }
+                        ]
+                    }
+                },
+                "description": "Attributes that define the seller's presence and status within a specific marketplace. These attributes include the marketplace details, store name, listing status, and the selling plan the seller is subscribed to."
+            },
+            "Account": {
+                "required": [
+                    "businessType",
+                    "marketplaceLevelAttributes"
+                ],
+                "type": "object",
+                "properties": {
+                    "marketplaceLevelAttributes": {
+                        "type": "array",
+                        "description": "A list of details of the marketplaces where the seller account is active.",
+                        "items": {
+                            "$ref": "#/components/schemas/MarketplaceLevelAttributes"
+                        }
+                    },
+                    "businessType": {
+                        "type": "string",
+                        "description": "The type of business registered for the seller account.",
+                        "enum": [
+                            "CHARITY",
+                            "CRAFTSMAN",
+                            "NATURAL_PERSON_COMPANY",
+                            "PUBLIC_LISTED",
+                            "PRIVATE_LIMITED",
+                            "SOLE_PROPRIETORSHIP",
+                            "STATE_OWNED",
+                            "INDIVIDUAL"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "CHARITY",
+                                "description": "The business is registered as a charity."
+                            },
+                            {
+                                "value": "CRAFTSMAN",
+                                "description": "The business is registered as a craftsman."
+                            },
+                            {
+                                "value": "NATURAL_PERSON_COMPANY",
+                                "description": "The business is a natural person company."
+                            },
+                            {
+                                "value": "PUBLIC_LISTED",
+                                "description": "The business is a publicly listed company."
+                            },
+                            {
+                                "value": "PRIVATE_LIMITED",
+                                "description": "The business is a private limited company."
+                            },
+                            {
+                                "value": "SOLE_PROPRIETORSHIP",
+                                "description": "The business is a sole proprietorship."
+                            },
+                            {
+                                "value": "STATE_OWNED",
+                                "description": "The business is state-owned."
+                            },
+                            {
+                                "value": "INDIVIDUAL",
+                                "description": "The entity is not a business but an individual."
+                            }
+                        ]
+                    },
+                    "business": {
+                        "$ref": "#/components/schemas/Business"
+                    },
+                    "primaryContact": {
+                        "$ref": "#/components/schemas/PrimaryContact"
+                    }
+                },
+                "description": "The response schema for the `getAccount` operation."
+            },
+            "Business": {
+                "required": [
+                    "name",
+                    "registeredBusinessAddress"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The registered business name."
+                    },
+                    "registeredBusinessAddress": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "companyRegistrationNumber": {
+                        "type": "string",
+                        "description": "The seller's company registration number, if applicable. This field will be absent for individual sellers and sole proprietorships."
+                    },
+                    "companyTaxIdentificationNumber": {
+                        "type": "string",
+                        "description": "The seller's company tax identification number, if applicable. This field will be present for certain business types only, such as sole proprietorships."
+                    },
+                    "nonLatinName": {
+                        "type": "string",
+                        "description": "The non-Latin script version of the registered business name, if applicable."
+                    }
+                },
+                "description": "Information about the seller's business. Certain fields may be omitted depending on the seller's `businessType`."
+            },
+            "Address": {
+                "required": [
+                    "addressLine1",
+                    "countryCode"
+                ],
+                "type": "object",
+                "properties": {
+                    "addressLine1": {
+                        "type": "string",
+                        "description": "Street address information."
+                    },
+                    "addressLine2": {
+                        "type": "string",
+                        "description": "Additional street address information."
+                    },
+                    "countryCode": {
+                        "type": "string",
+                        "description": "The country code in two-character ISO 3166-1 alpha-2 format."
+                    },
+                    "stateOrProvinceCode": {
+                        "type": "string",
+                        "description": "The state or province code."
+                    },
+                    "city": {
+                        "type": "string",
+                        "description": "The city."
+                    },
+                    "postalCode": {
+                        "type": "string",
+                        "description": "The postal code."
+                    }
+                },
+                "description": "Represents an address"
+            },
+            "PrimaryContact": {
+                "required": [
+                    "address",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The full name of the seller's primary contact."
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "nonLatinName": {
+                        "type": "string",
+                        "description": "The non-Latin script version of the primary contact's name, if applicable."
+                    }
+                },
+                "description": "Information about the seller's primary contact."
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

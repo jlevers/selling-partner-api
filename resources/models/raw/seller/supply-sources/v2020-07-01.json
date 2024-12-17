@@ -1,0 +1,2739 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Selling Partner API for Supply Sources",
+        "description": "Manage configurations and capabilities of seller supply sources.",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "2020-07-01"
+    },
+    "servers": [
+        {
+            "url": "https://sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/supplySources/2020-07-01/supplySources": {
+            "get": {
+                "tags": [
+                    "supplySources"
+                ],
+                "description": "The path to retrieve paginated supply sources.",
+                "operationId": "getSupplySources",
+                "parameters": [
+                    {
+                        "name": "nextPageToken",
+                        "in": "query",
+                        "description": "The pagination token to retrieve a specific page of results.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "description": "The number of supply sources to return per paginated request.",
+                        "schema": {
+                            "type": "number",
+                            "default": 10
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetSupplySourcesResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {
+                                        "supplySources": [
+                                            {
+                                                "supplySourceId": "ed85fcf9-798c-4b63-a47e-8d4f0d273ddb",
+                                                "supplySourceCode": "owner_s2cs_test_010101_aaaas",
+                                                "alias": "alias_jksjdkf_aaaas",
+                                                "address": {
+                                                    "addressLine1": "addresline 1234 010101 asaaab",
+                                                    "city": "Red",
+                                                    "stateOrRegion": "string",
+                                                    "postalCode": "99999",
+                                                    "countryCode": "US"
+                                                }
+                                            }
+                                        ],
+                                        "nextPageToken": "eyJzMl9zb3J0X2tleSI6eyJzIjoic3VwcGx5U291cmNlQ29kZSNvd25lcl9zMmNzX3Rlc3RfMDEwMTAxX2FhYWFzIiwibiI6bnVsbCwiYiI6bnVsbCwibSI6bnVsbCwibCI6bnVsbCwiYnMiOm51bGwsIm5zIjpudWxsLCJzcyI6bnVsbCwibnVsbCI6bnVsbCwiYm9vbCI6bnVsbH0sInMyX3ByaW1hcnlfa2V5Ijp7InMiOiJvd25lciNNZXJjaGFudDpBMU1QWVFRSjVUVThRVSIsIm4iOm51bGwsImIiOm51bGwsIm0iOm51bGwsImwiOm51bGwsImJzIjpudWxsLCJucyI6bnVsbCwic3MiOm51bGwsIm51bGwiOm51bGwsImJvb2wiOm51bGx9LCJsc2lTS0xpdmVDcmVhdGVkVGltZSI6eyJzIjpudWxsLCJuIjoiMTU5NzEyNjU2MSIsImIiOm51bGwsIm0iOm51bGwsImwiOm51bGwsImJzIjpudWxsLCJucyI6bnVsbCwic3MiOm51bGwsIm51bGwiOm51bGwsImJvb2wiOm51bGx9fQ=="
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "The request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "pageSize": {
+                                                "value": 3
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid or malformed address Id.",
+                                                "details": "1012"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "An error that indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "The temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "supplySources"
+                ],
+                "description": "Create a new supply source.",
+                "operationId": "createSupplySource",
+                "requestBody": {
+                    "description": "A request to create a supply source.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateSupplySourceRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateSupplySourceResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {
+                                        "supplySourceId": "ed85fcf9-798c-4b63-a47e-8d4f0d273ddb",
+                                        "supplySourceCode": "owner_s2cs_test_010101_aaaas"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "The request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "supplySourceCode": "owner_s2cs_test_010101_aaaab",
+                                                    "alias": "alias_jksjdkf_aaaab",
+                                                    "address": {
+                                                        "name": "name",
+                                                        "addressLine1": "addresline 1234 010101 asaaab",
+                                                        "city": "Red",
+                                                        "county": "King",
+                                                        "stateOrRegion": "string",
+                                                        "postalCode": "99999",
+                                                        "countryCode": "US",
+                                                        "phone": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Supply Source with given Code already exists",
+                                                "details": "1004"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "An error that indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "The temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "payload"
+            }
+        },
+        "/supplySources/2020-07-01/supplySources/{supplySourceId}": {
+            "get": {
+                "tags": [
+                    "supplySources"
+                ],
+                "description": "Retrieve a supply source.",
+                "operationId": "getSupplySource",
+                "parameters": [
+                    {
+                        "name": "supplySourceId",
+                        "in": "path",
+                        "description": "The unique identifier of a supply source.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SupplySource"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {
+                                        "supplySourceId": "cbc976e5-1e55-4d33-855b-35e6254f5a58",
+                                        "supplySourceCode": "test-gw-435dgh2o39",
+                                        "alias": "test-gw-ssss",
+                                        "status": "Inactive",
+                                        "address": {
+                                            "addressLine1": "tst-addressLine1-423",
+                                            "addressLine2": "tes-addressLine2-gew",
+                                            "addressLine3": "Rufus",
+                                            "city": "Gekl",
+                                            "county": "",
+                                            "district": "",
+                                            "stateOrRegion": "WA",
+                                            "postalCode": "59202",
+                                            "countryCode": "US"
+                                        },
+                                        "configuration": {
+                                            "operationalConfiguration": {
+                                                "contactDetails": {
+                                                    "primary": {
+                                                        "email": "test324@gmail.com",
+                                                        "phone": "4813924781"
+                                                    }
+                                                },
+                                                "throughputConfig": {
+                                                    "throughputCap": {
+                                                        "value": 1,
+                                                        "timeUnit": "Days"
+                                                    },
+                                                    "throughputUnit": "ORDER"
+                                                },
+                                                "handlingTime": {
+                                                    "value": 1,
+                                                    "timeUnit": "Hours"
+                                                },
+                                                "operatingHoursByDay": {
+                                                    "monday": [
+                                                        {
+                                                            "startTime": "00:59",
+                                                            "endTime": "06:01"
+                                                        }
+                                                    ],
+                                                    "tuesday": [
+                                                        {
+                                                            "startTime": "19:03",
+                                                            "endTime": "23:25"
+                                                        }
+                                                    ],
+                                                    "wednesday": [
+                                                        {
+                                                            "startTime": "00:00",
+                                                            "endTime": "00:00"
+                                                        }
+                                                    ],
+                                                    "thursday": [
+                                                        {
+                                                            "startTime": "00:00",
+                                                            "endTime": "00:00"
+                                                        }
+                                                    ],
+                                                    "friday": [
+                                                        {
+                                                            "startTime": "00:00",
+                                                            "endTime": "00:00"
+                                                        }
+                                                    ],
+                                                    "saturday": [
+                                                        {
+                                                            "startTime": "00:00",
+                                                            "endTime": "00:00"
+                                                        }
+                                                    ],
+                                                    "sunday": [
+                                                        {
+                                                            "startTime": "00:00",
+                                                            "endTime": "00:00"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "timezone": "Africa/Accra"
+                                        },
+                                        "capabilities": {
+                                            "outbound": {
+                                                "isSupported": true,
+                                                "operationalConfiguration": {
+                                                    "contactDetails": {
+                                                        "primary": {
+                                                            "email": "tet@gmail.com",
+                                                            "phone": "4281937491"
+                                                        }
+                                                    },
+                                                    "throughputConfig": {
+                                                        "throughputCap": {
+                                                            "value": 1,
+                                                            "timeUnit": "Days"
+                                                        },
+                                                        "throughputUnit": "ORDER"
+                                                    },
+                                                    "handlingTime": {
+                                                        "value": 1,
+                                                        "timeUnit": "Hours"
+                                                    },
+                                                    "operatingHoursByDay": {
+                                                        "monday": [
+                                                            {
+                                                                "startTime": "00:43",
+                                                                "endTime": "04:05"
+                                                            }
+                                                        ],
+                                                        "tuesday": [
+                                                            {
+                                                                "startTime": "00:00",
+                                                                "endTime": "00:00"
+                                                            }
+                                                        ],
+                                                        "wednesday": [
+                                                            {
+                                                                "startTime": "00:00",
+                                                                "endTime": "00:00"
+                                                            }
+                                                        ],
+                                                        "thursday": [
+                                                            {
+                                                                "startTime": "00:00",
+                                                                "endTime": "00:00"
+                                                            }
+                                                        ],
+                                                        "friday": [
+                                                            {
+                                                                "startTime": "00:00",
+                                                                "endTime": "00:00"
+                                                            }
+                                                        ],
+                                                        "saturday": [
+                                                            {
+                                                                "startTime": "00:00",
+                                                                "endTime": "00:00"
+                                                            }
+                                                        ],
+                                                        "sunday": [
+                                                            {
+                                                                "startTime": "00:00",
+                                                                "endTime": "00:00"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                "deliveryChannel": {
+                                                    "isSupported": false,
+                                                    "operationalConfiguration": {
+                                                        "contactDetails": {
+                                                            "primary": {
+                                                                "email": "",
+                                                                "phone": ""
+                                                            }
+                                                        },
+                                                        "throughputConfig": {
+                                                            "throughputCap": {
+                                                                "value": 1,
+                                                                "timeUnit": "Days"
+                                                            },
+                                                            "throughputUnit": "ORDER"
+                                                        },
+                                                        "handlingTime": {
+                                                            "value": 1,
+                                                            "timeUnit": "Hours"
+                                                        }
+                                                    }
+                                                },
+                                                "pickupChannel": {
+                                                    "isSupported": true,
+                                                    "inventoryHoldPeriod": {
+                                                        "value": 452,
+                                                        "timeUnit": "Minutes"
+                                                    },
+                                                    "operationalConfiguration": {
+                                                        "contactDetails": {
+                                                            "primary": {
+                                                                "email": "yre4@gmail.com",
+                                                                "phone": "4381232840"
+                                                            }
+                                                        },
+                                                        "throughputConfig": {
+                                                            "throughputCap": {
+                                                                "value": 1,
+                                                                "timeUnit": "Days"
+                                                            },
+                                                            "throughputUnit": "ORDER"
+                                                        },
+                                                        "handlingTime": {
+                                                            "value": 1,
+                                                            "timeUnit": "Hours"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "services": {
+                                                "isSupported": true,
+                                                "operationalConfiguration": {
+                                                    "contactDetails": {
+                                                        "primary": {
+                                                            "email": "testservices@gmail.com",
+                                                            "phone": "4281937491"
+                                                        }
+                                                    },
+                                                    "operatingHoursByDay": {
+                                                        "monday": [
+                                                            {
+                                                                "startTime": "00:43",
+                                                                "endTime": "04:05"
+                                                            }
+                                                        ],
+                                                        "tuesday": [
+                                                            {
+                                                                "startTime": "00:00",
+                                                                "endTime": "00:00"
+                                                            }
+                                                        ],
+                                                        "wednesday": [
+                                                            {
+                                                                "startTime": "00:00",
+                                                                "endTime": "00:00"
+                                                            }
+                                                        ],
+                                                        "thursday": [
+                                                            {
+                                                                "startTime": "00:00",
+                                                                "endTime": "00:00"
+                                                            }
+                                                        ],
+                                                        "friday": [
+                                                            {
+                                                                "startTime": "00:00",
+                                                                "endTime": "00:00"
+                                                            }
+                                                        ],
+                                                        "saturday": [
+                                                            {
+                                                                "startTime": "00:00",
+                                                                "endTime": "00:00"
+                                                            }
+                                                        ],
+                                                        "sunday": [
+                                                            {
+                                                                "startTime": "00:00",
+                                                                "endTime": "00:00"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "createdAt": "1.596578152E9",
+                                        "updatedAt": "1.596842808E9"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "The request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "supplySourceId": {
+                                                "value": "cbc976e5-1e55-4d33-855b-35e6254f5a5"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid Input",
+                                                "details": ""
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "An error that indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "The temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "supplySources"
+                ],
+                "description": "Update the configuration and capabilities of a supply source.",
+                "operationId": "updateSupplySource",
+                "parameters": [
+                    {
+                        "name": "supplySourceId",
+                        "in": "path",
+                        "description": "The unique identitier of a supply source.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateSupplySourceRequest"
+                            }
+                        }
+                    },
+                    "required": false
+                },
+                "responses": {
+                    "204": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {}
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "The request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "supplySourceId": {
+                                                "value": "cf146560-392a-43e6-bf99-2ca3b5d42b5c"
+                                            },
+                                            "body": {
+                                                "value": {
+                                                    "alias": "test-config",
+                                                    "configuration": {
+                                                        "operationalConfiguration": {
+                                                            "contactDetails": {
+                                                                "primary": {
+                                                                    "email": "111@gmail.com",
+                                                                    "phone": "111"
+                                                                }
+                                                            },
+                                                            "operatingHoursByDay": {
+                                                                "monday": [
+                                                                    {
+                                                                        "startTime": "01:30",
+                                                                        "endTime": "02:40"
+                                                                    }
+                                                                ],
+                                                                "tuesday": [
+                                                                    {
+                                                                        "startTime": "2:00",
+                                                                        "endTime": "2:00"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "throughputConfig": {
+                                                                "throughputCap": {
+                                                                    "value": 17,
+                                                                    "timeUnit": "Hours"
+                                                                }
+                                                            },
+                                                            "handlingTime": {
+                                                                "value": 1,
+                                                                "timeUnit": "Hours"
+                                                            }
+                                                        },
+                                                        "timezone": "Africa/Accra"
+                                                    },
+                                                    "capabilities": {
+                                                        "outbound": {
+                                                            "isSupported": true,
+                                                            "operationalConfiguration": {
+                                                                "contactDetails": {
+                                                                    "primary": {
+                                                                        "email": "outbound@gmail.com",
+                                                                        "phone": "222"
+                                                                    }
+                                                                },
+                                                                "operatingHoursByDay": {
+                                                                    "wednesday": [
+                                                                        {
+                                                                            "startTime": "03:30",
+                                                                            "endTime": "03:40"
+                                                                        }
+                                                                    ],
+                                                                    "thursday": [
+                                                                        {
+                                                                            "startTime": "4:00",
+                                                                            "endTime": "4:00"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "throughputConfig": {
+                                                                    "throughputCap": {
+                                                                        "value": 10,
+                                                                        "timeUnit": "Hours"
+                                                                    }
+                                                                },
+                                                                "handlingTime": {
+                                                                    "value": 1,
+                                                                    "timeUnit": "Hours"
+                                                                }
+                                                            },
+                                                            "returnLocation": {
+                                                                "addressWithContact": {
+                                                                    "address": {
+                                                                        "addressLine1": "returnLocation",
+                                                                        "countryCode": "na"
+                                                                    },
+                                                                    "contactDetails": {
+                                                                        "primary": {
+                                                                            "email": "returnLocation@gmail.com",
+                                                                            "phone": "333"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "supplySourceId": "cbb1658a-949e-4c42-9d29-6c38ac1c4746"
+                                                            },
+                                                            "deliveryChannel": {
+                                                                "isSupported": true,
+                                                                "operationalConfiguration": {
+                                                                    "contactDetails": {
+                                                                        "primary": {
+                                                                            "email": "deliveryChannel@gmail.com",
+                                                                            "phone": "444"
+                                                                        }
+                                                                    },
+                                                                    "operatingHoursByDay": {
+                                                                        "friday": [
+                                                                            {
+                                                                                "startTime": "03:30",
+                                                                                "endTime": "03:40"
+                                                                            }
+                                                                        ],
+                                                                        "thursday": [
+                                                                            {
+                                                                                "startTime": "4:00",
+                                                                                "endTime": "4:00"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "throughputConfig": {
+                                                                        "throughputCap": {
+                                                                            "value": 4,
+                                                                            "timeUnit": "Hours"
+                                                                        }
+                                                                    },
+                                                                    "handlingTime": {
+                                                                        "value": 1,
+                                                                        "timeUnit": "Hours"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "pickupChannel": {
+                                                                "isSupported": true,
+                                                                "inventoryHoldPeriod": {
+                                                                    "value": 4,
+                                                                    "timeUnit": "Minutes"
+                                                                },
+                                                                "operationalConfiguration": {
+                                                                    "contactDetails": {
+                                                                        "primary": {
+                                                                            "email": "pickupChannel@gmail.com",
+                                                                            "phone": "555"
+                                                                        }
+                                                                    },
+                                                                    "operatingHoursByDay": {
+                                                                        "saturday": [
+                                                                            {
+                                                                                "startTime": "12:30",
+                                                                                "endTime": "03:40"
+                                                                            }
+                                                                        ],
+                                                                        "sunday": [
+                                                                            {
+                                                                                "startTime": "5:00",
+                                                                                "endTime": "23:30"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "throughputConfig": {
+                                                                        "throughputCap": {
+                                                                            "value": 3,
+                                                                            "timeUnit": "Hours"
+                                                                        }
+                                                                    },
+                                                                    "handlingTime": {
+                                                                        "value": 1,
+                                                                        "timeUnit": "Hours"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "services": {
+                                                            "isSupported": true,
+                                                            "operationalConfiguration": {
+                                                                "contactDetails": {
+                                                                    "primary": {
+                                                                        "email": "services@gmail.com",
+                                                                        "phone": "222"
+                                                                    }
+                                                                },
+                                                                "operatingHoursByDay": {
+                                                                    "wednesday": [
+                                                                        {
+                                                                            "startTime": "03:30",
+                                                                            "endTime": "03:40"
+                                                                        }
+                                                                    ],
+                                                                    "thursday": [
+                                                                        {
+                                                                            "startTime": "4:00",
+                                                                            "endTime": "4:00"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Supply Source has been archived and cannot be modified.",
+                                                "details": "1005"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "An error that indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "The temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "payload"
+            },
+            "delete": {
+                "tags": [
+                    "supplySources"
+                ],
+                "description": "Archive a supply source, making it inactive. Cannot be undone.",
+                "operationId": "archiveSupplySource",
+                "parameters": [
+                    {
+                        "name": "supplySourceId",
+                        "in": "path",
+                        "description": "The unique identifier of a supply source.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {}
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "The request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "supplySourceId": {
+                                                "value": "cf146560-392a-43e6-bf99-2ca3b5d42b5c"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Supply Source has been archived and cannot be modified.",
+                                                "details": "1005"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "The temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/supplySources/2020-07-01/supplySources/{supplySourceId}/status": {
+            "put": {
+                "tags": [
+                    "supplySources"
+                ],
+                "description": "Update the status of a supply source.",
+                "operationId": "updateSupplySourceStatus",
+                "parameters": [
+                    {
+                        "name": "supplySourceId",
+                        "in": "path",
+                        "description": "The unique identifier of a supply source.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateSupplySourceStatusRequest"
+                            }
+                        }
+                    },
+                    "required": false
+                },
+                "responses": {
+                    "204": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {}
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "The request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "supplySourceId": {
+                                                "value": "cf146560-392a-43e6-bf99-2ca3b5d42b5c"
+                                            },
+                                            "body": {
+                                                "value": {
+                                                    "status": "Inactive"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Supply Source has been archived and cannot be modified.",
+                                                "details": "1005"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "supplySourceId": {
+                                                "value": "cf146560-392a-43e6-bf99-2ca3b5d42b5c"
+                                            },
+                                            "body": {
+                                                "value": {
+                                                    "status": "Active"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Supply Source has been archived and cannot be modified.",
+                                                "details": "1005"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "The temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "The unique request reference ID.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "payload"
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occured."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition in a human-readable form."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "The additional details that can help the caller understand or fix the issue."
+                    }
+                },
+                "description": "An error response returned when the request is unsuccessful."
+            },
+            "ErrorList": {
+                "required": [
+                    "errors"
+                ],
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "description": "A list of error responses returned when a request is unsuccessful.",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                },
+                "description": "A list of error responses returned when a request is unsuccessful."
+            },
+            "GetSupplySourcesResponse": {
+                "type": "object",
+                "properties": {
+                    "supplySources": {
+                        "$ref": "#/components/schemas/SupplySourceList"
+                    },
+                    "nextPageToken": {
+                        "type": "string",
+                        "description": "If present, use this pagination token to retrieve the next page of supply sources."
+                    }
+                },
+                "description": "The paginated list of supply sources."
+            },
+            "UpdateSupplySourceStatusRequest": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "$ref": "#/components/schemas/SupplySourceStatus"
+                    }
+                },
+                "description": "A request to update the status of a supply source."
+            },
+            "CreateSupplySourceRequest": {
+                "required": [
+                    "address",
+                    "alias",
+                    "supplySourceCode"
+                ],
+                "type": "object",
+                "properties": {
+                    "supplySourceCode": {
+                        "$ref": "#/components/schemas/SupplySourceCode"
+                    },
+                    "alias": {
+                        "$ref": "#/components/schemas/SupplySourceAlias"
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/Address"
+                    }
+                },
+                "description": "A request to create a supply source."
+            },
+            "CreateSupplySourceResponse": {
+                "required": [
+                    "supplySourceCode",
+                    "supplySourceId"
+                ],
+                "type": "object",
+                "properties": {
+                    "supplySourceId": {
+                        "$ref": "#/components/schemas/SupplySourceId"
+                    },
+                    "supplySourceCode": {
+                        "$ref": "#/components/schemas/SupplySourceCode"
+                    }
+                },
+                "description": "The result of creating a new supply source."
+            },
+            "UpdateSupplySourceRequest": {
+                "type": "object",
+                "properties": {
+                    "alias": {
+                        "$ref": "#/components/schemas/SupplySourceAlias"
+                    },
+                    "configuration": {
+                        "$ref": "#/components/schemas/SupplySourceConfiguration"
+                    },
+                    "capabilities": {
+                        "$ref": "#/components/schemas/SupplySourceCapabilities"
+                    }
+                },
+                "description": "A request to update the configuration and capabilities of a supply source."
+            },
+            "SupplySource": {
+                "type": "object",
+                "properties": {
+                    "supplySourceId": {
+                        "$ref": "#/components/schemas/SupplySourceId"
+                    },
+                    "supplySourceCode": {
+                        "$ref": "#/components/schemas/SupplySourceCode"
+                    },
+                    "alias": {
+                        "$ref": "#/components/schemas/SupplySourceAlias"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/SupplySourceStatusReadOnly"
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "configuration": {
+                        "$ref": "#/components/schemas/SupplySourceConfiguration"
+                    },
+                    "capabilities": {
+                        "$ref": "#/components/schemas/SupplySourceCapabilities"
+                    },
+                    "createdAt": {
+                        "$ref": "#/components/schemas/DateTime"
+                    },
+                    "updatedAt": {
+                        "$ref": "#/components/schemas/DateTime"
+                    }
+                },
+                "description": "The supply source details, including configurations and capabilities."
+            },
+            "SupplySourceConfiguration": {
+                "type": "object",
+                "properties": {
+                    "operationalConfiguration": {
+                        "$ref": "#/components/schemas/OperationalConfiguration"
+                    },
+                    "timezone": {
+                        "type": "string",
+                        "description": "Please see RFC 6557, should be a canonical time zone ID as listed here: https://www.joda.org/joda-time/timezones.html."
+                    }
+                },
+                "description": "Includes configuration and timezone of a supply source."
+            },
+            "SupplySourceCapabilities": {
+                "type": "object",
+                "properties": {
+                    "outbound": {
+                        "$ref": "#/components/schemas/OutboundCapability"
+                    },
+                    "services": {
+                        "$ref": "#/components/schemas/ServicesCapability"
+                    }
+                },
+                "description": "The capabilities of a supply source."
+            },
+            "SupplySourceList": {
+                "type": "array",
+                "description": "The list of `SupplySource`s.",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "alias": {
+                            "$ref": "#/components/schemas/SupplySourceAlias"
+                        },
+                        "supplySourceId": {
+                            "$ref": "#/components/schemas/SupplySourceId"
+                        },
+                        "supplySourceCode": {
+                            "$ref": "#/components/schemas/SupplySourceCode"
+                        },
+                        "address": {
+                            "$ref": "#/components/schemas/Address"
+                        }
+                    }
+                }
+            },
+            "SupplySourceId": {
+                "type": "string",
+                "description": "An Amazon generated unique supply source ID."
+            },
+            "SupplySourceCode": {
+                "type": "string",
+                "description": "The seller-provided unique supply source code."
+            },
+            "SupplySourceAlias": {
+                "type": "string",
+                "description": "The custom alias for this supply source"
+            },
+            "SupplySourceStatusReadOnly": {
+                "type": "string",
+                "description": "The `SupplySource` status.",
+                "enum": [
+                    "Active",
+                    "Inactive",
+                    "Archived"
+                ]
+            },
+            "SupplySourceStatus": {
+                "type": "string",
+                "description": "The `SupplySource` status",
+                "enum": [
+                    "Active",
+                    "Inactive"
+                ]
+            },
+            "OutboundCapability": {
+                "type": "object",
+                "properties": {
+                    "isSupported": {
+                        "type": "boolean"
+                    },
+                    "operationalConfiguration": {
+                        "$ref": "#/components/schemas/OperationalConfiguration"
+                    },
+                    "returnLocation": {
+                        "$ref": "#/components/schemas/ReturnLocation"
+                    },
+                    "deliveryChannel": {
+                        "$ref": "#/components/schemas/DeliveryChannel"
+                    },
+                    "pickupChannel": {
+                        "$ref": "#/components/schemas/PickupChannel"
+                    }
+                },
+                "description": "The outbound capability of a supply source."
+            },
+            "ServicesCapability": {
+                "type": "object",
+                "properties": {
+                    "isSupported": {
+                        "type": "boolean",
+                        "description": "When true, `SupplySource` supports the Service capability."
+                    },
+                    "operationalConfiguration": {
+                        "$ref": "#/components/schemas/OperationalConfiguration"
+                    }
+                },
+                "description": "The services capability of a supply source."
+            },
+            "PickupChannel": {
+                "type": "object",
+                "properties": {
+                    "inventoryHoldPeriod": {
+                        "$ref": "#/components/schemas/Duration"
+                    },
+                    "isSupported": {
+                        "type": "boolean"
+                    },
+                    "operationalConfiguration": {
+                        "$ref": "#/components/schemas/OperationalConfiguration"
+                    },
+                    "inStorePickupConfiguration": {
+                        "$ref": "#/components/schemas/InStorePickupConfiguration"
+                    },
+                    "curbsidePickupConfiguration": {
+                        "$ref": "#/components/schemas/CurbsidePickupConfiguration"
+                    }
+                },
+                "description": "The pick up channel of a supply source."
+            },
+            "ParkingConfiguration": {
+                "type": "object",
+                "properties": {
+                    "parkingCostType": {
+                        "$ref": "#/components/schemas/ParkingCostType"
+                    },
+                    "parkingSpotIdentificationType": {
+                        "$ref": "#/components/schemas/ParkingSpotIdentificationType"
+                    },
+                    "numberOfParkingSpots": {
+                        "$ref": "#/components/schemas/NonNegativeInteger"
+                    }
+                },
+                "description": "The parking configuration."
+            },
+            "ParkingCostType": {
+                "type": "string",
+                "description": "The parking cost type.",
+                "enum": [
+                    "Free",
+                    "Other"
+                ]
+            },
+            "ParkingSpotIdentificationType": {
+                "type": "string",
+                "description": "The type of parking spot identification.",
+                "enum": [
+                    "Numbered",
+                    "Other"
+                ]
+            },
+            "InStorePickupConfiguration": {
+                "type": "object",
+                "properties": {
+                    "isSupported": {
+                        "type": "boolean",
+                        "description": "When true, in-store pickup is supported by the supply source (default: `isSupported` value in `PickupChannel`)."
+                    },
+                    "parkingConfiguration": {
+                        "$ref": "#/components/schemas/ParkingConfiguration"
+                    }
+                },
+                "description": "The in-store pickup configuration of a supply source."
+            },
+            "CurbsidePickupConfiguration": {
+                "type": "object",
+                "properties": {
+                    "isSupported": {
+                        "type": "boolean",
+                        "description": "When true, curbside pickup is supported by the supply source."
+                    },
+                    "operationalConfiguration": {
+                        "$ref": "#/components/schemas/OperationalConfiguration"
+                    },
+                    "parkingWithAddressConfiguration": {
+                        "$ref": "#/components/schemas/ParkingWithAddressConfiguration"
+                    }
+                },
+                "description": "The curbside pickup configuration of a supply source."
+            },
+            "ParkingWithAddressConfiguration": {
+                "description": "The parking configuration with the address.",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/ParkingConfiguration"
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "address": {
+                                "$ref": "#/components/schemas/Address"
+                            }
+                        }
+                    }
+                ]
+            },
+            "DeliveryChannel": {
+                "type": "object",
+                "properties": {
+                    "isSupported": {
+                        "type": "boolean"
+                    },
+                    "operationalConfiguration": {
+                        "$ref": "#/components/schemas/OperationalConfiguration"
+                    }
+                },
+                "description": "The delivery channel of a supply source."
+            },
+            "OperationalConfiguration": {
+                "type": "object",
+                "properties": {
+                    "contactDetails": {
+                        "$ref": "#/components/schemas/ContactDetails"
+                    },
+                    "throughputConfig": {
+                        "$ref": "#/components/schemas/ThroughputConfig"
+                    },
+                    "operatingHoursByDay": {
+                        "$ref": "#/components/schemas/OperatingHoursByDay"
+                    },
+                    "handlingTime": {
+                        "$ref": "#/components/schemas/Duration"
+                    }
+                },
+                "description": "The operational configuration of `supplySources`."
+            },
+            "Duration": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "$ref": "#/components/schemas/NonNegativeInteger"
+                    },
+                    "timeUnit": {
+                        "$ref": "#/components/schemas/TimeUnit"
+                    }
+                },
+                "description": "The duration of time."
+            },
+            "ThroughputConfig": {
+                "required": [
+                    "throughputUnit"
+                ],
+                "type": "object",
+                "properties": {
+                    "throughputCap": {
+                        "$ref": "#/components/schemas/ThroughputCap"
+                    },
+                    "throughputUnit": {
+                        "$ref": "#/components/schemas/ThroughputUnit"
+                    }
+                },
+                "description": "The throughput configuration."
+            },
+            "ReturnLocation": {
+                "type": "object",
+                "properties": {
+                    "supplySourceId": {
+                        "type": "string",
+                        "description": "The Amazon provided `supplySourceId` where orders can be returned to."
+                    },
+                    "addressWithContact": {
+                        "$ref": "#/components/schemas/AddressWithContact"
+                    }
+                },
+                "description": "The address or reference to another `supplySourceId` to act as a return location."
+            },
+            "AddressWithContact": {
+                "type": "object",
+                "properties": {
+                    "contactDetails": {
+                        "$ref": "#/components/schemas/ContactDetails"
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/Address"
+                    }
+                },
+                "description": "The address and contact details."
+            },
+            "ContactDetails": {
+                "type": "object",
+                "properties": {
+                    "primary": {
+                        "type": "object",
+                        "properties": {
+                            "email": {
+                                "$ref": "#/components/schemas/EmailAddress"
+                            },
+                            "phone": {
+                                "type": "string",
+                                "description": "The phone number of the person, business or institution."
+                            }
+                        }
+                    }
+                },
+                "description": "The contact details"
+            },
+            "ThroughputCap": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "$ref": "#/components/schemas/NonNegativeInteger"
+                    },
+                    "timeUnit": {
+                        "$ref": "#/components/schemas/TimeUnit"
+                    }
+                },
+                "description": "The throughput capacity"
+            },
+            "OperatingHour": {
+                "type": "object",
+                "properties": {
+                    "startTime": {
+                        "type": "string",
+                        "description": "The opening time, ISO 8601 formatted timestamp without date, HH:mm."
+                    },
+                    "endTime": {
+                        "type": "string",
+                        "description": "The closing time, ISO 8601 formatted timestamp without date, HH:mm."
+                    }
+                },
+                "description": "The operating hour schema"
+            },
+            "OperatingHours": {
+                "type": "array",
+                "description": "A list of Operating Hours.",
+                "items": {
+                    "$ref": "#/components/schemas/OperatingHour"
+                }
+            },
+            "ThroughputUnit": {
+                "type": "string",
+                "description": "The throughput unit",
+                "enum": [
+                    "Order"
+                ]
+            },
+            "OperatingHoursByDay": {
+                "type": "object",
+                "properties": {
+                    "monday": {
+                        "$ref": "#/components/schemas/OperatingHours"
+                    },
+                    "tuesday": {
+                        "$ref": "#/components/schemas/OperatingHours"
+                    },
+                    "wednesday": {
+                        "$ref": "#/components/schemas/OperatingHours"
+                    },
+                    "thursday": {
+                        "$ref": "#/components/schemas/OperatingHours"
+                    },
+                    "friday": {
+                        "$ref": "#/components/schemas/OperatingHours"
+                    },
+                    "saturday": {
+                        "$ref": "#/components/schemas/OperatingHours"
+                    },
+                    "sunday": {
+                        "$ref": "#/components/schemas/OperatingHours"
+                    }
+                },
+                "description": "The operating hours per day"
+            },
+            "TimeUnit": {
+                "type": "string",
+                "description": "The time unit",
+                "enum": [
+                    "Hours",
+                    "Minutes",
+                    "Days"
+                ]
+            },
+            "NonNegativeInteger": {
+                "minimum": 0,
+                "type": "integer",
+                "description": "An unsigned integer that can be only positive or zero."
+            },
+            "EmailAddress": {
+                "pattern": "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$",
+                "type": "string",
+                "description": "The email address to which email messages are delivered."
+            },
+            "Address": {
+                "required": [
+                    "addressLine1",
+                    "countryCode",
+                    "name",
+                    "stateOrRegion"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the person, business or institution at that address."
+                    },
+                    "addressLine1": {
+                        "type": "string",
+                        "description": "The first line of the address."
+                    },
+                    "addressLine2": {
+                        "type": "string",
+                        "description": "The additional address information, if required."
+                    },
+                    "addressLine3": {
+                        "type": "string",
+                        "description": "The additional address information, if required."
+                    },
+                    "city": {
+                        "type": "string",
+                        "description": "The city where the person, business or institution is located."
+                    },
+                    "county": {
+                        "type": "string",
+                        "description": "The county where person, business or institution is located."
+                    },
+                    "district": {
+                        "type": "string",
+                        "description": "The district where person, business or institution is located."
+                    },
+                    "stateOrRegion": {
+                        "type": "string",
+                        "description": "The state or region where person, business or institution is located."
+                    },
+                    "postalCode": {
+                        "type": "string",
+                        "description": "The postal code of that address. It conatins a series of letters or digits or both, sometimes including spaces or punctuation."
+                    },
+                    "countryCode": {
+                        "type": "string",
+                        "description": "The two digit country code. In ISO 3166-1 alpha-2 format."
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "The phone number of the person, business or institution located at that address."
+                    }
+                },
+                "description": "A physical address."
+            },
+            "DateTime": {
+                "type": "string",
+                "description": "A date and time in the rfc3339 format."
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

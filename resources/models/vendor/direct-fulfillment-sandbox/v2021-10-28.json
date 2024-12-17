@@ -1,0 +1,633 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Selling Partner API for Vendor Direct Fulfillment Sandbox Test Data",
+        "description": "The Selling Partner API for Vendor Direct Fulfillment Sandbox Test Data provides programmatic access to vendor direct fulfillment sandbox test data.",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "2021-10-28"
+    },
+    "servers": [
+        {
+            "url": "https://sandbox.sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/vendor/directFulfillment/sandbox/2021-10-28/orders": {
+            "post": {
+                "tags": [
+                    "DirectFulfillmentSandboxV20211028"
+                ],
+                "description": "Submits a request to generate test order data for Vendor Direct Fulfillment API entities.",
+                "operationId": "generateOrderScenarios",
+                "requestBody": {
+                    "description": "The request payload that contain parameters to generate test order data scenarios.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GenerateOrderScenarioRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionReference"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-amzn-api-sandbox": {
+                    "dynamic": {}
+                },
+                "x-amzn-api-sandbox-only": true,
+                "x-codegen-request-body-name": "body"
+            }
+        },
+        "/vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}": {
+            "get": {
+                "tags": [
+                    "DirectFulfillmentSandboxV20211028"
+                ],
+                "description": "Retrieves the transaction status identified by the specified `transactionId`, and returns the requested test order data if the transaction is successful.",
+                "operationId": "getOrderScenarios",
+                "parameters": [
+                    {
+                        "name": "transactionId",
+                        "in": "path",
+                        "description": "The transaction identifier returned in the response for the `generateOrderScenarios` operation.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransactionStatus"
+                                },
+                                "example": {
+                                    "transactionStatus": {
+                                        "transactionId": "ff35f39e-e69f-499e-903e-6c4f6c32609f-20210827003391",
+                                        "status": "Success",
+                                        "testCaseData": {
+                                            "scenarios": [
+                                                {
+                                                    "scenarioId": "SCENARIO_1",
+                                                    "orders": [
+                                                        {
+                                                            "orderId": "T11121"
+                                                        },
+                                                        {
+                                                            "orderId": "T11123"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "scenarioId": "SCENARIO_2",
+                                                    "orders": [
+                                                        {
+                                                            "orderId": "T22241"
+                                                        },
+                                                        {
+                                                            "orderId": "T22244"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "The request's authorization header is not formatted correctly or does not contain a valid token.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-amzn-api-sandbox": {
+                    "dynamic": {}
+                },
+                "x-amzn-api-sandbox-only": true
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GenerateOrderScenarioRequest": {
+                "type": "object",
+                "properties": {
+                    "orders": {
+                        "type": "array",
+                        "description": "The list of test orders requested as indicated by party identifiers.",
+                        "items": {
+                            "$ref": "#/components/schemas/OrderScenarioRequest"
+                        }
+                    }
+                },
+                "description": "The `generateOrderScenarios` request body."
+            },
+            "OrderScenarioRequest": {
+                "required": [
+                    "sellingParty",
+                    "shipFromParty"
+                ],
+                "type": "object",
+                "properties": {
+                    "sellingParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "shipFromParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    }
+                },
+                "description": "The party identifiers required to generate the test data."
+            },
+            "PartyIdentification": {
+                "required": [
+                    "partyId"
+                ],
+                "type": "object",
+                "properties": {
+                    "partyId": {
+                        "type": "string",
+                        "description": "Assigned identification for the party. For example, warehouse code or vendor code."
+                    }
+                },
+                "description": "The identification object for the party information. For example, warehouse code or vendor code."
+            },
+            "Pagination": {
+                "type": "object",
+                "properties": {
+                    "nextToken": {
+                        "type": "string",
+                        "description": "A generated token that retrieves the next set of results. This token is specified in the next request."
+                    }
+                },
+                "description": "A generated string used to pass information to your next request. If `NextToken` is returned, pass the value of `NextToken` to the next request. If `NextToken` is not returned, there are no more order items to return."
+            },
+            "TransactionReference": {
+                "type": "object",
+                "properties": {
+                    "transactionId": {
+                        "type": "string",
+                        "description": "A GUID (Globally Unique Identifier) assigned by Amazon to uniquely identify the transaction."
+                    }
+                },
+                "description": "A GUID assigned by Amazon to identify this transaction."
+            },
+            "TransactionStatus": {
+                "type": "object",
+                "properties": {
+                    "transactionStatus": {
+                        "$ref": "#/components/schemas/Transaction"
+                    }
+                },
+                "description": "The payload for `getOrderScenarios`."
+            },
+            "Transaction": {
+                "required": [
+                    "status",
+                    "transactionId"
+                ],
+                "type": "object",
+                "properties": {
+                    "transactionId": {
+                        "type": "string",
+                        "description": "The unique identifier returned in the response for the `generateOrderScenarios` request."
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "The current processing status of the transaction.",
+                        "enum": [
+                            "FAILURE",
+                            "PROCESSING",
+                            "SUCCESS"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "FAILURE",
+                                "description": "Transaction has failed."
+                            },
+                            {
+                                "value": "PROCESSING",
+                                "description": "Transaction is in process."
+                            },
+                            {
+                                "value": "SUCCESS",
+                                "description": "Transaction has completed successfully."
+                            }
+                        ]
+                    },
+                    "testCaseData": {
+                        "$ref": "#/components/schemas/TestCaseData"
+                    }
+                },
+                "description": "The transaction details that include the status. If the transaction is successful, also includes the requested test order data."
+            },
+            "TestCaseData": {
+                "type": "object",
+                "properties": {
+                    "scenarios": {
+                        "type": "array",
+                        "description": "Set of use cases that describes the possible test scenarios.",
+                        "items": {
+                            "$ref": "#/components/schemas/Scenario"
+                        }
+                    }
+                },
+                "description": "The set of test case data returned in response to the test data request."
+            },
+            "Scenario": {
+                "required": [
+                    "orders",
+                    "scenarioId"
+                ],
+                "type": "object",
+                "properties": {
+                    "scenarioId": {
+                        "type": "string",
+                        "description": "An identifier that identifies the type of scenario that user can use for testing."
+                    },
+                    "orders": {
+                        "type": "array",
+                        "description": "A list of orders that can be used by the caller to test each life cycle or scenario.",
+                        "items": {
+                            "$ref": "#/components/schemas/TestOrder"
+                        }
+                    }
+                },
+                "description": "A scenario test case response returned when the request is successful."
+            },
+            "TestOrder": {
+                "required": [
+                    "orderId"
+                ],
+                "type": "object",
+                "properties": {
+                    "orderId": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    }
+                },
+                "description": "Error response returned when the request is unsuccessful."
+            },
+            "ErrorList": {
+                "required": [
+                    "errors"
+                ],
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "description": "An array of individual error objects that contain error details.",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                },
+                "description": "A list of error responses returned when a request is unsuccessful."
+            },
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional details that can help the caller understand or fix the issue."
+                    }
+                },
+                "description": "Error response returned when the request is unsuccessful."
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

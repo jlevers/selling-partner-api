@@ -1,0 +1,1441 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Selling Partner API for Product Type Definitions",
+        "description": "The Selling Partner API for Product Type Definitions provides programmatic access to attribute and data requirements for product types in the Amazon catalog. Use this API to return the JSON Schema for a product type that you can then use with other Selling Partner APIs, such as the Selling Partner API for Listings Items, the Selling Partner API for Catalog Items, and the Selling Partner API for Feeds (for JSON-based listing feeds).\n\nFor more information, see the [Product Type Definitions API Use Case Guide](doc:product-type-api-use-case-guide).",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "2020-09-01"
+    },
+    "servers": [
+        {
+            "url": "https://sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/definitions/2020-09-01/productTypes": {
+            "get": {
+                "tags": [
+                    "ProductTypeDefinitionsV20200901"
+                ],
+                "description": "Search for and return a list of Amazon product types that have definitions available.\n\n**Usage Plans:**\n\n| Plan type | Rate (requests per second) | Burst |\n| ---- | ---- | ---- |\n|Default| 5 | 10 |\n|Selling partner specific| Variable | Variable |\n\nThe x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "searchDefinitionsProductTypes",
+                "parameters": [
+                    {
+                        "name": "keywords",
+                        "in": "query",
+                        "description": "A comma-delimited list of keywords to search product types. **Note:** Cannot be used with `itemName`.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "example": "LUGGAGE"
+                    },
+                    {
+                        "name": "marketplaceIds",
+                        "in": "query",
+                        "description": "A comma-delimited list of Amazon marketplace identifiers for the request.",
+                        "required": true,
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "example": "ATVPDKIKX0DER"
+                    },
+                    {
+                        "name": "itemName",
+                        "in": "query",
+                        "description": "The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with `keywords`.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Running shoes"
+                    },
+                    {
+                        "name": "locale",
+                        "in": "query",
+                        "description": "The locale for the display names in the response. Defaults to the primary locale of the marketplace.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "en_US"
+                    },
+                    {
+                        "name": "searchLocale",
+                        "in": "query",
+                        "description": "The locale used for the `keywords` and `itemName` parameters. Defaults to the primary locale of the marketplace.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "en_US"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully retrieved a list of Amazon product types that have definitions available.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProductTypeList"
+                                },
+                                "example": {
+                                    "productTypes": [
+                                        {
+                                            "name": "LUGGAGE",
+                                            "displayName": "Luggage",
+                                            "marketplaceIds": [
+                                                "ATVPDKIKX0DER"
+                                            ]
+                                        }
+                                    ],
+                                    "productTypeVersion": "UHqSqmb4FNUk="
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {
+                                        "productTypes": [
+                                            {
+                                                "name": "LUGGAGE",
+                                                "displayName": "Luggage",
+                                                "marketplaceIds": [
+                                                    "ATVPDKIKX0DER"
+                                                ]
+                                            }
+                                        ],
+                                        "productTypeVersion": "UHqSqmb4FNUk="
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "keywords": {
+                                                "value": [
+                                                    "Invalid Request"
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "message": "Invalid input",
+                                                "details": "Invalid input"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/definitions/2020-09-01/productTypes/{productType}": {
+            "get": {
+                "tags": [
+                    "ProductTypeDefinitionsV20200901"
+                ],
+                "description": "Retrieve an Amazon product type definition.\n\n**Usage Plans:**\n\n| Plan type | Rate (requests per second) | Burst |\n| ---- | ---- | ---- |\n|Default| 5 | 10 |\n|Selling partner specific| Variable | Variable |\n\nThe x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getDefinitionsProductType",
+                "parameters": [
+                    {
+                        "name": "productType",
+                        "in": "path",
+                        "description": "The Amazon product type name.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "LUGGAGE"
+                    },
+                    {
+                        "name": "sellerId",
+                        "in": "query",
+                        "description": "A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "marketplaceIds",
+                        "in": "query",
+                        "description": "A comma-delimited list of Amazon marketplace identifiers for the request.\nNote: This parameter is limited to one marketplaceId at this time.",
+                        "required": true,
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "example": "ATVPDKIKX0DER"
+                    },
+                    {
+                        "name": "productTypeVersion",
+                        "in": "query",
+                        "description": "The version of the Amazon product type to retrieve. Defaults to \"LATEST\",. Prerelease versions of product type definitions may be retrieved with \"RELEASE_CANDIDATE\". If no prerelease version is currently available, the \"LATEST\" live version will be provided.",
+                        "schema": {
+                            "type": "string",
+                            "default": "LATEST"
+                        },
+                        "example": "LATEST"
+                    },
+                    {
+                        "name": "requirements",
+                        "in": "query",
+                        "description": "The name of the requirements set to retrieve requirements for.",
+                        "schema": {
+                            "type": "string",
+                            "default": "LISTING",
+                            "enum": [
+                                "LISTING",
+                                "LISTING_PRODUCT_ONLY",
+                                "LISTING_OFFER_ONLY"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "value": "LISTING",
+                                    "description": "Request schema containing product facts and sales terms."
+                                },
+                                {
+                                    "value": "LISTING_PRODUCT_ONLY",
+                                    "description": "Request schema containing product facts only."
+                                },
+                                {
+                                    "value": "LISTING_OFFER_ONLY",
+                                    "description": "Request schema containing sales terms only."
+                                }
+                            ]
+                        },
+                        "example": "LISTING",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "LISTING",
+                                "description": "Request schema containing product facts and sales terms."
+                            },
+                            {
+                                "value": "LISTING_PRODUCT_ONLY",
+                                "description": "Request schema containing product facts only."
+                            },
+                            {
+                                "value": "LISTING_OFFER_ONLY",
+                                "description": "Request schema containing sales terms only."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "requirementsEnforced",
+                        "in": "query",
+                        "description": "Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).",
+                        "schema": {
+                            "type": "string",
+                            "default": "ENFORCED",
+                            "enum": [
+                                "ENFORCED",
+                                "NOT_ENFORCED"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "value": "ENFORCED",
+                                    "description": "Request schema with required and conditionally required attributes enforced (used for full payload validation)."
+                                },
+                                {
+                                    "value": "NOT_ENFORCED",
+                                    "description": "Request schema with required and conditionally required attributes not enforced (used for partial payload validation, such as for single attributes)."
+                                }
+                            ]
+                        },
+                        "example": "ENFORCED",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "ENFORCED",
+                                "description": "Request schema with required and conditionally required attributes enforced (used for full payload validation)."
+                            },
+                            {
+                                "value": "NOT_ENFORCED",
+                                "description": "Request schema with required and conditionally required attributes not enforced (used for partial payload validation, such as for single attributes)."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "locale",
+                        "in": "query",
+                        "description": "Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.",
+                        "schema": {
+                            "type": "string",
+                            "default": "DEFAULT",
+                            "enum": [
+                                "DEFAULT",
+                                "ar",
+                                "ar_AE",
+                                "de",
+                                "de_DE",
+                                "en",
+                                "en_AE",
+                                "en_AU",
+                                "en_CA",
+                                "en_GB",
+                                "en_IN",
+                                "en_SG",
+                                "en_US",
+                                "es",
+                                "es_ES",
+                                "es_MX",
+                                "es_US",
+                                "fr",
+                                "fr_CA",
+                                "fr_FR",
+                                "it",
+                                "it_IT",
+                                "ja",
+                                "ja_JP",
+                                "nl",
+                                "nl_NL",
+                                "pl",
+                                "pl_PL",
+                                "pt",
+                                "pt_BR",
+                                "pt_PT",
+                                "sv",
+                                "sv_SE",
+                                "tr",
+                                "tr_TR",
+                                "zh",
+                                "zh_CN",
+                                "zh_TW"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "value": "DEFAULT",
+                                    "description": "Default locale of the requested Amazon marketplace."
+                                },
+                                {
+                                    "value": "ar",
+                                    "description": "Arabic"
+                                },
+                                {
+                                    "value": "ar_AE",
+                                    "description": "Arabic (U.A.E.)"
+                                },
+                                {
+                                    "value": "de",
+                                    "description": "German"
+                                },
+                                {
+                                    "value": "de_DE",
+                                    "description": "German (Germany)"
+                                },
+                                {
+                                    "value": "en",
+                                    "description": "English"
+                                },
+                                {
+                                    "value": "en_AE",
+                                    "description": "English (U.A.E.)"
+                                },
+                                {
+                                    "value": "en_AU",
+                                    "description": "English (Australia)"
+                                },
+                                {
+                                    "value": "en_CA",
+                                    "description": "English (Canada)"
+                                },
+                                {
+                                    "value": "en_GB",
+                                    "description": "English (United Kingdom)"
+                                },
+                                {
+                                    "value": "en_IN",
+                                    "description": "English (India)"
+                                },
+                                {
+                                    "value": "en_SG",
+                                    "description": "English (Singapore)"
+                                },
+                                {
+                                    "value": "en_US",
+                                    "description": "English (United States)"
+                                },
+                                {
+                                    "value": "es",
+                                    "description": "Spanish"
+                                },
+                                {
+                                    "value": "es_ES",
+                                    "description": "Spanish (Spain)"
+                                },
+                                {
+                                    "value": "es_MX",
+                                    "description": "Spanish (Mexico)"
+                                },
+                                {
+                                    "value": "es_US",
+                                    "description": "Spanish (United States)"
+                                },
+                                {
+                                    "value": "fr",
+                                    "description": "French"
+                                },
+                                {
+                                    "value": "fr_CA",
+                                    "description": "French (Canada)"
+                                },
+                                {
+                                    "value": "fr_FR",
+                                    "description": "French (France)"
+                                },
+                                {
+                                    "value": "it",
+                                    "description": "Italian"
+                                },
+                                {
+                                    "value": "it_IT",
+                                    "description": "Italian (Italy)"
+                                },
+                                {
+                                    "value": "ja",
+                                    "description": "Japanese"
+                                },
+                                {
+                                    "value": "ja_JP",
+                                    "description": "Japanese (Japan)"
+                                },
+                                {
+                                    "value": "nl",
+                                    "description": "Dutch"
+                                },
+                                {
+                                    "value": "nl_NL",
+                                    "description": "Dutch (Netherlands)"
+                                },
+                                {
+                                    "value": "pl",
+                                    "description": "Polish"
+                                },
+                                {
+                                    "value": "pl_PL",
+                                    "description": "Polish (Poland)"
+                                },
+                                {
+                                    "value": "pt",
+                                    "description": "Portuguese"
+                                },
+                                {
+                                    "value": "pt_BR",
+                                    "description": "Portuguese (Brazil)"
+                                },
+                                {
+                                    "value": "pt_PT",
+                                    "description": "Portuguese (Portugal)"
+                                },
+                                {
+                                    "value": "sv",
+                                    "description": "Swedish"
+                                },
+                                {
+                                    "value": "sv_SE",
+                                    "description": "Swedish (Sweden)"
+                                },
+                                {
+                                    "value": "tr",
+                                    "description": "Turkish"
+                                },
+                                {
+                                    "value": "tr_TR",
+                                    "description": "Turkish (Turkey)"
+                                },
+                                {
+                                    "value": "zh",
+                                    "description": "Chinese"
+                                },
+                                {
+                                    "value": "zh_CN",
+                                    "description": "Chinese (Simplified)"
+                                },
+                                {
+                                    "value": "zh_TW",
+                                    "description": "Chinese (Traditional)"
+                                }
+                            ]
+                        },
+                        "example": "DEFAULT",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "DEFAULT",
+                                "description": "Default locale of the requested Amazon marketplace."
+                            },
+                            {
+                                "value": "ar",
+                                "description": "Arabic"
+                            },
+                            {
+                                "value": "ar_AE",
+                                "description": "Arabic (U.A.E.)"
+                            },
+                            {
+                                "value": "de",
+                                "description": "German"
+                            },
+                            {
+                                "value": "de_DE",
+                                "description": "German (Germany)"
+                            },
+                            {
+                                "value": "en",
+                                "description": "English"
+                            },
+                            {
+                                "value": "en_AE",
+                                "description": "English (U.A.E.)"
+                            },
+                            {
+                                "value": "en_AU",
+                                "description": "English (Australia)"
+                            },
+                            {
+                                "value": "en_CA",
+                                "description": "English (Canada)"
+                            },
+                            {
+                                "value": "en_GB",
+                                "description": "English (United Kingdom)"
+                            },
+                            {
+                                "value": "en_IN",
+                                "description": "English (India)"
+                            },
+                            {
+                                "value": "en_SG",
+                                "description": "English (Singapore)"
+                            },
+                            {
+                                "value": "en_US",
+                                "description": "English (United States)"
+                            },
+                            {
+                                "value": "es",
+                                "description": "Spanish"
+                            },
+                            {
+                                "value": "es_ES",
+                                "description": "Spanish (Spain)"
+                            },
+                            {
+                                "value": "es_MX",
+                                "description": "Spanish (Mexico)"
+                            },
+                            {
+                                "value": "es_US",
+                                "description": "Spanish (United States)"
+                            },
+                            {
+                                "value": "fr",
+                                "description": "French"
+                            },
+                            {
+                                "value": "fr_CA",
+                                "description": "French (Canada)"
+                            },
+                            {
+                                "value": "fr_FR",
+                                "description": "French (France)"
+                            },
+                            {
+                                "value": "it",
+                                "description": "Italian"
+                            },
+                            {
+                                "value": "it_IT",
+                                "description": "Italian (Italy)"
+                            },
+                            {
+                                "value": "ja",
+                                "description": "Japanese"
+                            },
+                            {
+                                "value": "ja_JP",
+                                "description": "Japanese (Japan)"
+                            },
+                            {
+                                "value": "nl",
+                                "description": "Dutch"
+                            },
+                            {
+                                "value": "nl_NL",
+                                "description": "Dutch (Netherlands)"
+                            },
+                            {
+                                "value": "pl",
+                                "description": "Polish"
+                            },
+                            {
+                                "value": "pl_PL",
+                                "description": "Polish (Poland)"
+                            },
+                            {
+                                "value": "pt",
+                                "description": "Portuguese"
+                            },
+                            {
+                                "value": "pt_BR",
+                                "description": "Portuguese (Brazil)"
+                            },
+                            {
+                                "value": "pt_PT",
+                                "description": "Portuguese (Portugal)"
+                            },
+                            {
+                                "value": "sv",
+                                "description": "Swedish"
+                            },
+                            {
+                                "value": "sv_SE",
+                                "description": "Swedish (Sweden)"
+                            },
+                            {
+                                "value": "tr",
+                                "description": "Turkish"
+                            },
+                            {
+                                "value": "tr_TR",
+                                "description": "Turkish (Turkey)"
+                            },
+                            {
+                                "value": "zh",
+                                "description": "Chinese"
+                            },
+                            {
+                                "value": "zh_CN",
+                                "description": "Chinese (Simplified)"
+                            },
+                            {
+                                "value": "zh_TW",
+                                "description": "Chinese (Traditional)"
+                            }
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully retrieved an Amazon product type definition.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProductTypeDefinition"
+                                },
+                                "example": {
+                                    "metaSchema": {
+                                        "link": {
+                                            "resource": "https://meta-schema-url",
+                                            "verb": "GET"
+                                        },
+                                        "checksum": "c7af9479ca7261645cea9db56c5f720d"
+                                    },
+                                    "schema": {
+                                        "link": {
+                                            "resource": "https://schema-url",
+                                            "verb": "GET"
+                                        },
+                                        "checksum": "c7af9479ca7261645cea9db56c5f720d"
+                                    },
+                                    "requirements": "LISTING",
+                                    "requirementsEnforced": "ENFORCED",
+                                    "propertyGroups": {
+                                        "product_identity": {
+                                            "title": "Product Identity",
+                                            "description": "Information to uniquely identify your product (e.g., UPC, EAN, GTIN, Product Type, Brand)",
+                                            "propertyNames": [
+                                                "item_name",
+                                                "brand",
+                                                "external_product_id",
+                                                "gtin_exemption_reason",
+                                                "merchant_suggested_asin",
+                                                "product_type",
+                                                "product_category",
+                                                "product_subcategory",
+                                                "item_type_keyword"
+                                            ]
+                                        }
+                                    },
+                                    "locale": "en_US",
+                                    "marketplaceIds": [
+                                        "ATVPDKIKX0DER"
+                                    ],
+                                    "productType": "LUGGAGE",
+                                    "displayName": "Luggage",
+                                    "productTypeVersion": {
+                                        "version": "UHqSqmb4FNUk=",
+                                        "latest": true,
+                                        "releaseCandidate": false
+                                    }
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {
+                                        "metaSchema": {
+                                            "link": {
+                                                "resource": "https://meta-schema-url",
+                                                "verb": "GET"
+                                            },
+                                            "checksum": "c7af9479ca7261645cea9db56c5f720d"
+                                        },
+                                        "schema": {
+                                            "link": {
+                                                "resource": "https://schema-url",
+                                                "verb": "GET"
+                                            },
+                                            "checksum": "c7af9479ca7261645cea9db56c5f720d"
+                                        },
+                                        "requirements": "LISTING",
+                                        "requirementsEnforced": "ENFORCED",
+                                        "propertyGroups": {
+                                            "product_identity": {
+                                                "title": "Product Identity",
+                                                "description": "Information to uniquely identify your product (e.g., UPC, EAN, GTIN, Product Type, Brand)",
+                                                "propertyNames": [
+                                                    "item_name",
+                                                    "brand",
+                                                    "external_product_id",
+                                                    "gtin_exemption_reason",
+                                                    "merchant_suggested_asin",
+                                                    "product_type",
+                                                    "product_category",
+                                                    "product_subcategory",
+                                                    "item_type_keyword"
+                                                ]
+                                            }
+                                        },
+                                        "locale": "en_US",
+                                        "marketplaceIds": [
+                                            "ATVPDKIKX0DER"
+                                        ],
+                                        "productType": "LUGGAGE",
+                                        "displayName": "Luggage",
+                                        "productTypeVersion": {
+                                            "version": "UHqSqmb4FNUk=",
+                                            "latest": true,
+                                            "releaseCandidate": false
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "productType": {
+                                                "value": "INVALID"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "message": "Invalid input",
+                                                "details": "Invalid input"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional details that can help the caller understand or fix the issue."
+                    }
+                },
+                "description": "Error response returned when the request is unsuccessful."
+            },
+            "ErrorList": {
+                "required": [
+                    "errors"
+                ],
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                },
+                "description": "A list of error responses returned when a request is unsuccessful."
+            },
+            "SchemaLink": {
+                "required": [
+                    "checksum",
+                    "link"
+                ],
+                "type": "object",
+                "properties": {
+                    "link": {
+                        "required": [
+                            "resource",
+                            "verb"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "resource": {
+                                "type": "string",
+                                "description": "URI resource for the link."
+                            },
+                            "verb": {
+                                "type": "string",
+                                "description": "HTTP method for the link operation.",
+                                "enum": [
+                                    "GET"
+                                ],
+                                "x-docgen-enum-table-extension": [
+                                    {
+                                        "value": "GET",
+                                        "description": "The provided resource is accessed with the HTTP GET method."
+                                    }
+                                ]
+                            }
+                        },
+                        "description": "Link to retrieve the schema."
+                    },
+                    "checksum": {
+                        "type": "string",
+                        "description": "Checksum hash of the schema (Base64 MD5). Can be used to verify schema contents, identify changes between schema versions, and for caching."
+                    }
+                }
+            },
+            "ProductTypeDefinition": {
+                "required": [
+                    "displayName",
+                    "locale",
+                    "marketplaceIds",
+                    "productType",
+                    "productTypeVersion",
+                    "propertyGroups",
+                    "requirements",
+                    "requirementsEnforced",
+                    "schema"
+                ],
+                "type": "object",
+                "properties": {
+                    "metaSchema": {
+                        "$ref": "#/components/schemas/SchemaLink"
+                    },
+                    "schema": {
+                        "$ref": "#/components/schemas/SchemaLink"
+                    },
+                    "requirements": {
+                        "type": "string",
+                        "description": "Name of the requirements set represented in this product type definition.",
+                        "enum": [
+                            "LISTING",
+                            "LISTING_PRODUCT_ONLY",
+                            "LISTING_OFFER_ONLY"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "LISTING",
+                                "description": "Indicates the schema contains product facts and sales terms."
+                            },
+                            {
+                                "value": "LISTING_PRODUCT_ONLY",
+                                "description": "Indicates the schema data contains product facts only."
+                            },
+                            {
+                                "value": "LISTING_OFFER_ONLY",
+                                "description": "Indicates the schema data contains sales terms only."
+                            }
+                        ]
+                    },
+                    "requirementsEnforced": {
+                        "type": "string",
+                        "description": "Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all of the required attributes being present (such as for partial updates).",
+                        "enum": [
+                            "ENFORCED",
+                            "NOT_ENFORCED"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "ENFORCED",
+                                "description": "Schema enforces required and conditionally required attributes (used for full payload validation)."
+                            },
+                            {
+                                "value": "NOT_ENFORCED",
+                                "description": "Schema does not enforce required and conditionally required attributes (used for partial payload validation, such as for single attributes)."
+                            }
+                        ]
+                    },
+                    "propertyGroups": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/PropertyGroup"
+                        },
+                        "description": "Mapping of property group names to property groups. Property groups represent logical groupings of schema properties that can be used for display or informational purposes."
+                    },
+                    "locale": {
+                        "type": "string",
+                        "description": "Locale of the display elements contained in the product type definition."
+                    },
+                    "marketplaceIds": {
+                        "type": "array",
+                        "description": "Amazon marketplace identifiers for which the product type definition is applicable.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "productType": {
+                        "type": "string",
+                        "description": "The name of the Amazon product type that this product type definition applies to."
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "description": "Human-readable and localized description of the Amazon product type."
+                    },
+                    "productTypeVersion": {
+                        "$ref": "#/components/schemas/ProductTypeVersion"
+                    }
+                },
+                "description": "A product type definition represents the attributes and data requirements for a product type in the Amazon catalog. Product type definitions are used interchangeably between the Selling Partner API for Listings Items, Selling Partner API for Catalog Items, and JSON-based listings feeds in the Selling Partner API for Feeds."
+            },
+            "PropertyGroup": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "description": "The display label of the property group."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the property group."
+                    },
+                    "propertyNames": {
+                        "type": "array",
+                        "description": "The names of the schema properties for the property group.",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "description": "A property group represents a logical grouping of schema properties that can be used for display or informational purposes."
+            },
+            "ProductTypeVersion": {
+                "required": [
+                    "latest",
+                    "version"
+                ],
+                "type": "object",
+                "properties": {
+                    "version": {
+                        "type": "string",
+                        "description": "Version identifier."
+                    },
+                    "latest": {
+                        "type": "boolean",
+                        "description": "When true, the version indicated by the version identifier is the latest available for the Amazon product type."
+                    },
+                    "releaseCandidate": {
+                        "type": "boolean",
+                        "description": "When true, the version indicated by the version identifier is the prerelease (release candidate) for the Amazon product type."
+                    }
+                },
+                "description": "The version details for an Amazon product type."
+            },
+            "ProductType": {
+                "required": [
+                    "displayName",
+                    "marketplaceIds",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the Amazon product type."
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "description": "The human-readable and localized description of the Amazon product type."
+                    },
+                    "marketplaceIds": {
+                        "type": "array",
+                        "description": "The Amazon marketplace identifiers for which the product type definition is available.",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "description": "An Amazon product type with a definition available."
+            },
+            "ProductTypeList": {
+                "required": [
+                    "productTypeVersion",
+                    "productTypes"
+                ],
+                "type": "object",
+                "properties": {
+                    "productTypes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductType"
+                        }
+                    },
+                    "productTypeVersion": {
+                        "type": "string",
+                        "description": "Amazon product type version identifier."
+                    }
+                },
+                "description": "A list of Amazon product types with definitions available."
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

@@ -25,6 +25,7 @@ enum Marketplace: string
     case ES = 'A1RKKUPIHCS9HS';
     case FR = 'A13V1IB3VIYZZH';
     case GB = 'A1F83G8C2ARO7P';
+    case IE = 'A28R8C7NBKEWEA';
     case IN = 'A21TJRUUN4KGV';
     case IT = 'APJ6JRA9NG5V4';
     case NL = 'A1805IZSGTT6HS';
@@ -56,7 +57,7 @@ enum Marketplace: string
             Marketplace::BR, Marketplace::CA, Marketplace::MX, Marketplace::US => Region::NA,
 
             Marketplace::AE, Marketplace::BE, Marketplace::DE, Marketplace::EG, Marketplace::ES, Marketplace::FR,
-            Marketplace::GB, Marketplace::IN, Marketplace::IT, Marketplace::NL, Marketplace::PL, Marketplace::SA,
+            Marketplace::GB, Marketplace::IE, Marketplace::IN, Marketplace::IT, Marketplace::NL, Marketplace::PL, Marketplace::SA,
             Marketplace::SE, Marketplace::TR, Marketplace::ZA => Region::EU,
 
             Marketplace::AU, Marketplace::JP, Marketplace::SG => Region::FE,

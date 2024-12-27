@@ -29,7 +29,7 @@ class SubmitInvoices extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  SubmitInvoicesRequest  $submitInvoicesRequest  The request schema for the `submitInvoices` operation.
+     * @param  SubmitInvoicesRequest  $submitInvoicesRequest  The request schema for the submitInvoices operation.
      */
     public function __construct(
         public SubmitInvoicesRequest $submitInvoicesRequest,

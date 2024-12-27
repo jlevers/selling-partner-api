@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "The Selling Partner API for Transfers.",
-        "description": "Use the Transfers API v2024-06-01 to initiate payouts for your seller accounts. This API is available in private beta only.",
+        "description": "The Selling Partner API for Transfers enables selling partners to retrieve payment methods and initiate payouts for their seller accounts. This API supports the following marketplaces: DE, FR, IT, ES, SE, NL, PL, and BE.",
         "contact": {
             "name": "Selling Partner API Developer Support",
             "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
@@ -21,7 +21,7 @@
     "paths": {
         "/finances/transfers/2024-06-01/payouts": {
             "post": {
-                "description": "Initiates an on-demand payout to the seller's default deposit method in Seller Central for the given `marketplaceId` and `accountType` (if eligible). Only one on-demand payout can be initiated for each marketplace and account type within a 24-hour period. \n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the requested operation. The preceding table shows the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may yield higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Initiates an on-demand payout to the seller's default deposit method in Seller Central for the given `marketplaceId` and `accountType`, if eligible. You can only initiate one on-demand payout for each marketplace and account type within a 24-hour period. \n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.017 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "initiatePayout",
                 "requestBody": {
                     "description": "The request body for the `initiatePayout` operation.",
@@ -82,7 +82,7 @@
                         }
                     },
                     "400": {
-                        "description": "Request has missing or invalid parameters and cannot be parsed. Possible values include:\n\nINVALID_INPUT: The marketplaceId/accountType provided in the input is invalid.\n\nNOT_ELIGIBLE_FOR_ON_DEMAND_PAYOUT: The seller is not eligible for On-Demand Payouts. Retries would most likely fail.\n\nNO_DEPOSIT_METHOD: No deposit method found for the selling partner. Please add a valid deposit method and try again.\n\nINSUFFICIENT_PAYOUT_AMOUNT: The outstanding balance is less than the minimum permissible payout amount, hence no payout will be initiated.\n\nPAYOUT_FREQUENCY_EXCEEDED: This occurs if there has already been a payout initiated for the given marketplace and accountType in the last 24 hours. A selling partner can request payout once in every 24 hours for a given marketplace and accountType.\n\nNote: The error codes listed here are not an exhaustive representation. The API's error handling is subject to change, and additional error codes may be introduced in the future.",
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
@@ -105,7 +105,7 @@
                                 "example": {
                                     "errors": [
                                         {
-                                            "code": "NO_DEPOSIT_METHOD",
+                                            "code": "NoDepositMethod",
                                             "message": "No deposit method found for the selling partner. Add a valid deposit method and try again."
                                         }
                                     ]
@@ -128,11 +128,11 @@
                                     "response": {
                                         "errors": [
                                             {
-                                                "code": "NO_DEPOSIT_METHOD",
+                                                "code": "NoDepositMethod",
                                                 "message": "No deposit method found for the selling partner. Add a valid deposit method and try again."
                                             },
                                             {
-                                                "code": "INSUFFICIENT_PAYOUT_AMOUNT",
+                                                "code": "InsufficientPayoutAmount",
                                                 "message": "The available balance is less than the minimum permissible payout amount. No payout will be initiated."
                                             }
                                         ]
@@ -280,21 +280,57 @@
                 ]
             }
         },
-        "/finances/transfers/2024-06-01/paymentmethods": {
-            "post": {
-                "description": "The list of payment methods added for a particular seller. These payment methods can be used for payouts.",
+        "/finances/transfers/2024-06-01/paymentMethods": {
+            "get": {
+                "description": "Returns the list of payment methods for the seller, which can be filtered by method type.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| .5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getPaymentMethods",
-                "requestBody": {
-                    "description": "The request schema of the `getPaymentMethods` operation.",
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/GetPaymentMethodsRequest"
-                            }
-                        }
+                "parameters": [
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "ATVPDKIKX0DER"
                     },
-                    "required": true
-                },
+                    {
+                        "name": "paymentMethodTypes",
+                        "in": "query",
+                        "description": "A comma-separated list of the payment method types you want to include in the response.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "minItems": 1,
+                            "uniqueItems": true,
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "BANK_ACCOUNT",
+                                    "CARD",
+                                    "SELLER_WALLET"
+                                ],
+                                "x-docgen-enum-table-extension": [
+                                    {
+                                        "value": "BANK_ACCOUNT",
+                                        "description": "The payment is from a bank account."
+                                    },
+                                    {
+                                        "value": "CARD",
+                                        "description": "The payment is from a card."
+                                    },
+                                    {
+                                        "value": "SELLER_WALLET",
+                                        "description": "The payment is from a [Seller Wallet](https://sell.amazon.com/tools/seller-wallet) virtual bank account."
+                                    }
+                                ]
+                            }
+                        },
+                        "example": "BANK_ACCOUNT,CARD"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Success.",
@@ -318,15 +354,23 @@
                                     "$ref": "#/components/schemas/GetPaymentMethodsResponse"
                                 },
                                 "example": {
-                                    "piDetails": [
+                                    "paymentMethods": [
+                                        {
+                                            "accountHolderName": "John Doe",
+                                            "paymentMethodId": "0h_TU_CUS_4058fe2a-da6b-4b82-8e48-b20ff2eb4f6d",
+                                            "paymentMethodType": "BANK_ACCOUNT",
+                                            "tail": "677",
+                                            "assignmentType": "DEFAULT_DEPOSIT_METHOD"
+                                        },
                                         {
                                             "countryCode": "US",
-                                            "defaultMarketplaces": [
-                                                "ATVPDKIKX0DER"
-                                            ],
-                                            "encryptedAccountHolderName": "?SIEGE|Rufus!00AAAAAAYIARAAGgAAAAAADgjowvyyBhAAGAAgADIAAAAAkQAAAAAAAAAA1goTnyZO5d+yqPgsktNT/nEAAAAAAAAAP0MonpF3YDVi4nembq6SlQ+4vdiDYdw3yAQnHXMw7xQtF7vzrLY/MJPd3nisz3cIf8mXj5Q6OLDmVukyrqBS0ZDq12OuNAqwh3O1w/tAba31f7UBWfhg3XJFwflqHOX028hd7wmGl72o9NNk6ylY18g=!EGEIS?",
-                                            "paymentInstrumentId": "0h_TU_CUS_4058fe2a-da6b-4b82-8e48-b20ff2eb4f6d",
-                                            "paymentInstrumentType": "BANK_ACCOUNT",
+                                            "accountHolderName": "John Doe",
+                                            "paymentMethodId": "0h_TU_CUS_4058fe2a-da6b-4b82-8e48-b20ff2eb4f6d",
+                                            "paymentMethodType": "CARD",
+                                            "expiryDate": {
+                                                "month": "3",
+                                                "year": "2029"
+                                            },
                                             "tail": "677"
                                         }
                                     ]
@@ -338,37 +382,18 @@
                                 {
                                     "request": {
                                         "parameters": {
-                                            "body": {
-                                                "value": {
-                                                    "owningCustomerId": "ACUULBDVZHYZZ",
-                                                    "marketplaceId": "ATVPDKIKX0DER",
-                                                    "requestId": "Rufus",
-                                                    "paymentMethodFilter": {
-                                                        "subscribedMarketplaces": [
-                                                            "ATVPDKIKX0DER",
-                                                            "A2EUQ1WTGCTBG2"
-                                                        ],
-                                                        "assignmentFilter": {
-                                                            "assignmentTypes": [
-                                                                "DEFAULT"
-                                                            ]
-                                                        }
-                                                    }
-                                                }
+                                            "marketplaceId": {
+                                                "value": "ATVPDKIKX0DER"
                                             }
                                         }
                                     },
                                     "response": {
-                                        "piDetails": [
+                                        "paymentMethods": [
                                             {
                                                 "countryCode": "US",
-                                                "defaultMarketplaces": [
-                                                    "ATVPDKIKX0DER",
-                                                    "A2EUQ1WTGCTBG2"
-                                                ],
-                                                "encryptedAccountHolderName": "?SIEGE|Rufus!00AAAAAAYIARAAGgAAAAAADgjowvyyBhAAGAAgADIAAAAAkQAAAAAAAAAA1goTnyZO5d+yqPgsktNT/nEAAAAAAAAAP0MonpF3YDVi4nembq6SlQ+4vdiDYdw3yAQnHXMw7xQtF7vzrLY/MJPd3nisz3cIf8mXj5Q6OLDmVukyrqBS0ZDq12OuNAqwh3O1w/tAba31f7UBWfhg3XJFwflqHOX028hd7wmGl72o9NNk6ylY18g=!EGEIS?",
-                                                "paymentInstrumentId": "0h_TU_CUS_4058fe2a-da6b-4b82-8e48-b20ff2eb4f6d",
-                                                "paymentInstrumentType": "BANK_ACCOUNT",
+                                                "accountHolderName": "John Doe",
+                                                "paymentMethodId": "0h_TU_CUS_4058fe2a-da6b-4b82-8e48-b20ff2eb4f6d",
+                                                "paymentMethodType": "BANK_ACCOUNT",
                                                 "tail": "677"
                                             }
                                         ]
@@ -401,7 +426,7 @@
                                 "example": {
                                     "errors": [
                                         {
-                                            "code": "400",
+                                            "code": "InvalidInput",
                                             "message": "Validation failed for obfuscatedId:ACUULBDVZHYZ1"
                                         }
                                     ]
@@ -413,30 +438,16 @@
                                 {
                                     "request": {
                                         "parameters": {
-                                            "body": {
-                                                "value": {
-                                                    "owningCustomerId": "ACUULBDVZHYZ1",
-                                                    "marketplaceId": "ATVPDKIKX0DER",
-                                                    "requestId": "Rufus",
-                                                    "paymentMethodFilter": {
-                                                        "subscribedMarketplaces": [
-                                                            "ATVPDKIKX0DER"
-                                                        ],
-                                                        "assignmentFilter": {
-                                                            "assignmentTypes": [
-                                                                "DEFAULT"
-                                                            ]
-                                                        }
-                                                    }
-                                                }
+                                            "marketplaceId": {
+                                                "value": "ABCMARKET"
                                             }
                                         }
                                     },
                                     "response": {
                                         "errors": [
                                             {
-                                                "code": "400",
-                                                "message": "Validation failed for obfuscatedId:ACUULBDVZHYZ1"
+                                                "code": "InvalidInput",
+                                                "message": "Validation failed for: ABCMARKET"
                                             }
                                         ]
                                     }
@@ -577,7 +588,6 @@
                         }
                     }
                 },
-                "x-codegen-request-body-name": "body",
                 "tags": [
                     "TransfersV20240601"
                 ]
@@ -594,12 +604,11 @@
                 "type": "object",
                 "properties": {
                     "marketplaceId": {
-                        "type": "string",
-                        "description": "A marketplace identifier. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
+                        "$ref": "#/components/schemas/MarketplaceId"
                     },
                     "accountType": {
                         "type": "string",
-                        "description": "The account type in the selected marketplace for which a payout has to be initiated. For the supported EU marketplaces, the only account type is `Standard Orders`."
+                        "description": "The account type in the selected marketplace for which a payout must be initiated. For supported EU marketplaces, the only account type is `Standard Orders`."
                     }
                 },
                 "description": "The request schema for the `initiatePayout` operation.",
@@ -624,57 +633,28 @@
                     "payoutReferenceId": "3DM7DQi8DPAMOLOSaN5HxT0q2waNwH95fopx3AD2Lgc"
                 }
             },
-            "GetPaymentMethodsRequest": {
-                "type": "object",
-                "properties": {
-                    "owningCustomerId": {
-                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
-                    },
-                    "marketplaceId": {
-                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
-                    },
-                    "requestId": {
-                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
-                    },
-                    "paymentMethodFilter": {
-                        "$ref": "#/components/schemas/PaymentMethodFilter"
-                    }
-                },
-                "description": "The request schema for the `getPaymentMethods` operation.",
-                "example": {
-                    "owningCustomerId": "ACUULBDVZHYZZ",
-                    "marketplaceId": "ATVPDKIKX0DER",
-                    "requestId": "Rufus",
-                    "paymentMethodFilter": {
-                        "subscribedMarketplaces": [
-                            "ATVPDKIKX0DER"
-                        ],
-                        "assignmentFilter": {
-                            "assignmentTypes": [
-                                "DEFAULT"
-                            ]
-                        }
-                    }
-                }
-            },
             "GetPaymentMethodsResponse": {
                 "type": "object",
                 "properties": {
-                    "piDetails": {
-                        "$ref": "#/components/schemas/ListOfPIDetails"
+                    "paymentMethods": {
+                        "$ref": "#/components/schemas/PaymentMethodList"
                     }
                 },
-                "description": "The response schema for the `getPaymentMethodsResponse` operation.",
+                "description": "The response schema for the `getPaymentMethods` operation.",
                 "example": {
-                    "piDetails": [
+                    "paymentMethods": [
+                        {
+                            "accountHolderName": "John Doe",
+                            "paymentMethodId": "0h_TU_CUS_4058fe2a-da6b-4b82-8e48-b20ff2eb4f6d",
+                            "paymentMethodType": "BANK_ACCOUNT",
+                            "tail": "677",
+                            "assignmentType": "DEFAULT_DEPOSIT_METHOD"
+                        },
                         {
                             "countryCode": "US",
-                            "defaultMarketplaces": [
-                                "ATVPDKIKX0DER"
-                            ],
-                            "encryptedAccountHolderName": "?SIEGE|Rufus!00AAAAAAYIARAAGgAAAAAADgjowvyyBhAAGAAgADIAAAAAkQAAAAAAAAAA1goTnyZO5d+yqPgsktNT/nEAAAAAAAAAP0MonpF3YDVi4nembq6SlQ+4vdiDYdw3yAQnHXMw7xQtF7vzrLY/MJPd3nisz3cIf8mXj5Q6OLDmVukyrqBS0ZDq12OuNAqwh3O1w/tAba31f7UBWfhg3XJFwflqHOX028hd7wmGl72o9NNk6ylY18g=!EGEIS?",
-                            "paymentInstrumentId": "0h_TU_CUS_4058fe2a-da6b-4b82-8e48-b20ff2eb4f6d",
-                            "paymentInstrumentType": "CARD",
+                            "accountHolderName": "John Doe",
+                            "paymentMethodId": "0h_TU_CUS_4058fe2a-da6b-4b82-8e48-b20ff2eb4f6d",
+                            "paymentMethodType": "CARD",
                             "expiryDate": {
                                 "month": "3",
                                 "year": "2029"
@@ -684,118 +664,76 @@
                     ]
                 }
             },
-            "PaymentMethodFilter": {
-                "type": "object",
-                "properties": {
-                    "paymentInstrumentId": {
-                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
-                    },
-                    "subscribedMarketplaces": {
-                        "$ref": "#/components/schemas/ListOfStrings"
-                    },
-                    "assignmentFilter": {
-                        "$ref": "#/components/schemas/AssignmentFilter"
-                    },
-                    "paymentInstrumentTypes": {
-                        "$ref": "#/components/schemas/ListOfPaymentInstrumentType"
-                    }
-                },
-                "description": "The object used to filter payment methods based on different factors.",
-                "example": {
-                    "paymentInstrumentId": "0h_PU_CUS_da62b97f-8629-46a1-8f8b-6f7fde4b5751",
-                    "paymentInstrumentTypes": [
-                        "BANK_ACCOUNT"
-                    ]
-                }
-            },
-            "AssignmentFilter": {
-                "type": "object",
-                "properties": {
-                    "assignmentTypes": {
-                        "$ref": "#/components/schemas/ListOfAssignmentType"
-                    }
-                },
-                "description": "The list of default payment instruments that are returned when you use the `assignmentFilter`."
-            },
-            "ListOfAssignmentType": {
+            "PaymentMethodList": {
                 "type": "array",
-                "description": "The list of assignment types.",
+                "description": "The list of payment methods with payment method details.",
                 "items": {
-                    "$ref": "#/components/schemas/AssignmentType"
+                    "$ref": "#/components/schemas/PaymentMethodDetails"
                 }
             },
-            "AssignmentType": {
-                "type": "string",
-                "description": "The filter that returns payment methods based on the type of assignment.",
-                "enum": [
-                    "DEFAULT"
-                ],
-                "x-docgen-enum-table-extension": [
-                    {
-                        "value": "DEFAULT",
-                        "description": "The payment instrument that is used as the primary payout method."
-                    }
-                ]
-            },
-            "ListOfPIDetails": {
-                "type": "array",
-                "description": "The list of payment instruments.",
-                "items": {
-                    "$ref": "#/components/schemas/PIDetails"
-                }
-            },
-            "PIDetails": {
+            "PaymentMethodDetails": {
                 "type": "object",
                 "properties": {
-                    "encryptedAccountHolderName": {
-                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
+                    "accountHolderName": {
+                        "type": "string",
+                        "description": "The name of the account holder who is registered for the payment method."
                     },
-                    "paymentInstrumentId": {
-                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
+                    "paymentMethodId": {
+                        "type": "string",
+                        "description": "The payment method identifier.",
+                        "example": "0h_TU_CUS_4058fe2a-da6b-4b82-8e48-b20ff2eb4f6d"
                     },
                     "tail": {
-                        "$ref": "#/components/schemas/StringWithDigits"
+                        "type": "string",
+                        "description": "The last three or four digits of the payment method.",
+                        "example": "321"
                     },
                     "expiryDate": {
                         "$ref": "#/components/schemas/ExpiryDate"
                     },
                     "countryCode": {
-                        "$ref": "#/components/schemas/StringWithNoWhiteSpace"
+                        "type": "string",
+                        "description": "The two-letter country code in ISO 3166-1 alpha-2 format. For payment methods in the `card` category, the code is for the country where the card was issued. For payment methods in the `bank account` category, the code is for the country where the account is located.",
+                        "example": "US"
                     },
-                    "defaultMarketplaces": {
-                        "$ref": "#/components/schemas/ListOfStrings"
+                    "paymentMethodType": {
+                        "$ref": "#/components/schemas/PaymentMethodType"
                     },
-                    "paymentInstrumentType": {
-                        "$ref": "#/components/schemas/PaymentInstrumentType"
+                    "assignmentType": {
+                        "$ref": "#/components/schemas/AssignmentType"
                     }
                 },
-                "description": "The details of a payment instrument."
+                "description": "The details of a payment method."
             },
             "ExpiryDate": {
                 "type": "object",
                 "properties": {
                     "month": {
-                        "$ref": "#/components/schemas/StringWithDigits"
+                        "type": "string",
+                        "description": "The month the card expires expressed as a number from `1` to `12`.",
+                        "example": "3"
                     },
                     "year": {
-                        "$ref": "#/components/schemas/StringWithDigits"
+                        "type": "string",
+                        "description": "Year",
+                        "example": "2024"
                     }
                 },
-                "description": "The expiration date of a card used for payment. If the payment instrument is not a card, the expiration date is null."
+                "description": "The expiration date of the card used for payment. If the payment method is not `card`, the expiration date is `null`."
             },
-            "ListOfPaymentInstrumentType": {
+            "PaymentMethodTypeList": {
                 "type": "array",
-                "description": "The list of payment instrument types that are present.",
+                "description": "The list of payment method types that are present.",
                 "example": [
                     "BANK_ACCOUNT, CARD"
                 ],
                 "items": {
-                    "$ref": "#/components/schemas/PaymentInstrumentType"
+                    "$ref": "#/components/schemas/PaymentMethodType"
                 }
             },
-            "PaymentInstrumentType": {
+            "PaymentMethodType": {
                 "type": "string",
-                "description": "The payment instrument type.",
+                "description": "The type of payment method.",
                 "enum": [
                     "BANK_ACCOUNT",
                     "CARD",
@@ -804,36 +742,35 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "BANK_ACCOUNT",
-                        "description": "Bank Account."
+                        "description": "The payment is from a bank account."
                     },
                     {
                         "value": "CARD",
-                        "description": "Card"
+                        "description": "The payment is from a card."
                     },
                     {
                         "value": "SELLER_WALLET",
-                        "description": "Seller Wallet Virtual Bank Account."
+                        "description": "The payment is from a [Seller Wallet](https://sell.amazon.com/tools/seller-wallet) virtual bank account."
                     }
                 ]
             },
-            "ListOfStrings": {
-                "type": "array",
-                "description": "A list of strings.",
-                "items": {
-                    "$ref": "#/components/schemas/StringWithNoWhiteSpace"
-                }
-            },
-            "StringWithDigits": {
-                "pattern": "^[0-9]*",
+            "AssignmentType": {
                 "type": "string",
-                "description": "A string with digits",
-                "example": "ATVPDKIKX0DER"
+                "description": "The default payment method type.",
+                "enum": [
+                    "DEFAULT_DEPOSIT_METHOD"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "DEFAULT_DEPOSIT_METHOD",
+                        "description": "The default deposit method."
+                    }
+                ]
             },
-            "StringWithNoWhiteSpace": {
-                "pattern": "\\S+",
+            "MarketplaceId": {
                 "type": "string",
-                "description": "A string with no white spaces.",
-                "example": "ATVPDKIKX0DER"
+                "description": "The identifier of the Amazon marketplace. For the list of all marketplace IDs, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                "example": "A1PA6795UKMFR9"
             },
             "ErrorList": {
                 "required": [

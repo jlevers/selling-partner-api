@@ -30,7 +30,7 @@ class GenerateOrderScenarios extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  GenerateOrderScenarioRequest  $generateOrderScenarioRequest  The `generateOrderScenarios` request body.
+     * @param  GenerateOrderScenarioRequest  $generateOrderScenarioRequest  The request body for the generateOrderScenarios operation.
      */
     public function __construct(
         public GenerateOrderScenarioRequest $generateOrderScenarioRequest,

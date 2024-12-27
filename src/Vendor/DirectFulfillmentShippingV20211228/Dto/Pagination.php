@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class Pagination extends Dto
 {
     /**
-     * @param  ?string  $nextToken  A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more order items to return.
+     * @param  ?string  $nextToken  Pagination occurs when a request produces a response that exceeds the `pageSize`. This means that the response is divided into individual pages. To retrieve the next page or the previous page, you must pass the `nextToken` value or the `previousToken` value as the `pageToken` parameter in the next request. There is no `nextToken` in the pagination object on the last page.
      */
     public function __construct(
         public ?string $nextToken = null,

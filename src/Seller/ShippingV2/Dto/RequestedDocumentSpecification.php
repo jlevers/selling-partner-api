@@ -21,6 +21,7 @@ final class RequestedDocumentSpecification extends Dto
      * @param  string[]  $requestedDocumentTypes  A list of the document types requested.
      * @param  ?int  $dpi  The dots per inch (DPI) value used in printing. This value represents a measure of the resolution of the document.
      * @param  ?string  $pageLayout  Indicates the position of the label on the paper. Should be the same value as returned in getRates response.
+     * @param  ?RequestedLabelCustomization  $requestedLabelCustomization  Object contains customised data requested by a shipper to be printed on a shipping label.
      */
     public function __construct(
         public string $format,
@@ -29,5 +30,6 @@ final class RequestedDocumentSpecification extends Dto
         public array $requestedDocumentTypes,
         public ?int $dpi = null,
         public ?string $pageLayout = null,
+        public ?RequestedLabelCustomization $requestedLabelCustomization = null,
     ) {}
 }

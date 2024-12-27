@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class OrderScenarioRequest extends Dto
 {
     /**
-     * @param  PartyIdentification  $sellingParty  The identification object for the party information. For example, warehouse code or vendor code.
-     * @param  PartyIdentification  $shipFromParty  The identification object for the party information. For example, warehouse code or vendor code.
+     * @param  PartyIdentification  $sellingParty  The identification object for the party information. For example, warehouse code or vendor code. Please refer to specific party for more details.
+     * @param  PartyIdentification  $shipFromParty  The identification object for the party information. For example, warehouse code or vendor code. Please refer to specific party for more details.
      */
     public function __construct(
         public PartyIdentification $sellingParty,

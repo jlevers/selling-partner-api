@@ -23,11 +23,11 @@ final class SegmentedFeaturedOffer extends Dto
      * @param  string  $sellerId  The seller identifier for the offer.
      * @param  string  $condition  The condition of the item.
      * @param  string  $fulfillmentType  Indicates whether the item is fulfilled by Amazon or by the seller (merchant).
-     * @param  MoneyType  $listingPrice  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  MoneyType  $listingPrice  Currency type and monetary value schema to demonstrate pricing information.
      * @param  FeaturedOfferSegment[]  $featuredOfferSegments  The list of segment information in which the offer is featured.
-     * @param  ?string  $subCondition  The item subcondition for the offer.
+     * @param  ?string  $subCondition  The item subcondition of the offer.
      * @param  ShippingOption[]|null  $shippingOptions  A list of shipping options associated with this offer
-     * @param  ?Points  $points  The number of Amazon Points offered with the purchase of an item, and their monetary value.
+     * @param  ?Points  $points  The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points.
      * @param  ?PrimeDetails  $primeDetails  Amazon Prime details.
      */
     public function __construct(

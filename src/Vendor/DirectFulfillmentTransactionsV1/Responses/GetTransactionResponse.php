@@ -17,7 +17,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentTransactionsV1\Dto\TransactionStat
 final class GetTransactionResponse extends Response
 {
     /**
-     * @param  ?TransactionStatus  $payload  The payload for the `getTransactionStatus` operation.
+     * @param  ?TransactionStatus  $payload  The payload for the getTransactionStatus operation.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

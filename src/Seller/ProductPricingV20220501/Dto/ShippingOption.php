@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class ShippingOption extends Dto
 {
     /**
-     * @param  string  $shippingOptionType  The type of the shipping option.
-     * @param  MoneyType  $price  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  string  $shippingOptionType  The type of shipping option.
+     * @param  MoneyType  $price  Currency type and monetary value schema to demonstrate pricing information.
      */
     public function __construct(
         public string $shippingOptionType,

@@ -14,14 +14,18 @@ use SellingPartnerApi\Dto;
 
 final class InventorySummary extends Dto
 {
+    protected static array $complexArrayTypes = ['expirationDetails' => ExpirationDetails::class];
+
     /**
      * @param  string  $sku  The seller or merchant SKU.
+     * @param  ExpirationDetails[]|null  $expirationDetails  The expiration details of the inventory. This object will only appear if the `details` parameter in the request is set to `SHOW`.
      * @param  ?InventoryDetails  $inventoryDetails  Additional inventory details. This object is only displayed if the details parameter in the request is set to `SHOW`.
      * @param  ?int  $totalInboundQuantity  Total quantity that is in-transit from the seller and has not yet been received at an AWD Distribution Center
      * @param  ?int  $totalOnhandQuantity  Total quantity that is present in AWD distribution centers.
      */
     public function __construct(
         public string $sku,
+        public ?array $expirationDetails = null,
         public ?InventoryDetails $inventoryDetails = null,
         public ?int $totalInboundQuantity = null,
         public ?int $totalOnhandQuantity = null,

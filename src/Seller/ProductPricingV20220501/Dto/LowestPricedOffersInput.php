@@ -16,7 +16,7 @@ final class LowestPricedOffersInput extends Dto
 {
     /**
      * @param  string  $itemCondition  The condition of the item.
-     * @param  string  $offerType  The type of offers requested for the `LowestPricedOffers`. The `offerType` options are `Consumer` or `Business`. The default `offerType` is `Consumer`.
+     * @param  string  $offerType  The input parameter specifies the type of offers requested for `LowestPricedOffers`. This applies to `Consumer` and `Business` offers. `Consumer` is the default `offerType`.
      */
     public function __construct(
         public string $itemCondition,

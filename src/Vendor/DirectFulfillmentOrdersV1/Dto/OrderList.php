@@ -18,7 +18,7 @@ final class OrderList extends Dto
 
     /**
      * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.
-     * @param  Order[]|null  $orders  Represents a purchase order within the `OrderList`.
+     * @param  Order[]|null  $orders  Represents a purchase order within the OrderList.
      */
     public function __construct(
         public ?Pagination $pagination = null,

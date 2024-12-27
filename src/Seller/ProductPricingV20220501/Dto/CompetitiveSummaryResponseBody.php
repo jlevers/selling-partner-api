@@ -21,12 +21,12 @@ final class CompetitiveSummaryResponseBody extends Dto
     ];
 
     /**
-     * @param  string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
+     * @param  string  $asin  The ASIN of the item.
      * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for which data is returned.
-     * @param  FeaturedBuyingOption[]|null  $featuredBuyingOptions  A list of featured buying options for the given ASIN `marketplaceId` combination.
-     * @param  LowestPricedOffer[]|null  $lowestPricedOffers  A list of the lowest priced offers for the given ASIN `marketplaceId` combination.
-     * @param  ReferencePrice[]|null  $referencePrices  A list of reference prices for the given ASIN `marketplaceId` combination.
-     * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
+     * @param  FeaturedBuyingOption[]|null  $featuredBuyingOptions  A list of featured buying options for the specified ASIN `marketplaceId` combination.
+     * @param  LowestPricedOffer[]|null  $lowestPricedOffers  A list of lowest priced offers for the specified ASIN `marketplaceId` combination.
+     * @param  ReferencePrice[]|null  $referencePrices  A list of reference prices for the specified ASIN `marketplaceId` combination.
+     * @param  ?ErrorList  $errors  A list of error responses that are returned when a request is unsuccessful.
      */
     public function __construct(
         public string $asin,

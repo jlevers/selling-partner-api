@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\ProductPricingV20220501\Dto\ErrorList;
 final class Errors extends Response
 {
     /**
-     * @param  ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
+     * @param  ErrorList  $errors  A list of error responses that are returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ErrorList $errors,

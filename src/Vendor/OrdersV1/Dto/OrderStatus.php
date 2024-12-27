@@ -20,6 +20,8 @@ final class OrderStatus extends Dto
      * @param  string  $purchaseOrderNumber  The buyer's purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
      * @param  string  $purchaseOrderStatus  The status of the buyer's purchase order for this order.
      * @param  \DateTimeInterface  $purchaseOrderDate  The date the purchase order was placed. Must be in ISO-8601 date/time format.
+     * @param  PartyIdentification  $sellingParty  Name, address and tax details of a party.
+     * @param  PartyIdentification  $shipToParty  Name, address and tax details of a party.
      * @param  OrderItemStatus[]  $itemStatus  Detailed description of items order status.
      * @param  ?\DateTimeInterface  $lastUpdatedDate  The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
      */

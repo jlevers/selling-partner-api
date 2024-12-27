@@ -26,7 +26,8 @@ final class AccessPoint extends Dto
      * @param  ?string  $type  The type of access point, like counter (HELIX), lockers, etc.
      * @param  ?AccessibilityAttributes  $accessibilityAttributes  Defines the accessibility details of the access point.
      * @param  ?Address  $address  The address.
-     * @param  ExceptionOperatingHours[]|null  $exceptionOperatingHours
+     * @param  ExceptionOperatingHours[]|null  $exceptionOperatingHours  Exception operating hours for Access Point
+     * @param  ?string  $assistanceType  Assistance type enum for Access point i.e. STAFF_ASSISTED or SELF_ASSISTED
      * @param  ?string  $score  The score of access point, based on proximity to postal code and sorting preference. This can be used to sort access point results on shipper's end.
      * @param  ?OperatingHours[]  $standardOperatingHours  Map of day of the week to operating hours of that day
      */

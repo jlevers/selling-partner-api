@@ -24,9 +24,13 @@ final class ChargeRefundEvent extends Dto
     protected static array $complexArrayTypes = ['chargeRefundTransactions' => ChargeRefundTransaction::class];
 
     /**
-     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @param  ?string  $reasonCode  The reason given for a charge refund. For example, `SubscriptionFeeCorrection`.
-     * @param  ?string  $reasonCodeDescription  A description of the Reason Code. For example, `SubscriptionFeeCorrection`.
+     * @param  ?\DateTimeInterface  $postedDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?string  $reasonCode  The reason given for a charge refund.
+     *
+     * Example: `SubscriptionFeeCorrection`
+     * @param  ?string  $reasonCodeDescription  A description of the Reason Code.
+     *
+     * Example: `SubscriptionFeeCorrection`
      * @param  ChargeRefundTransaction[]|null  $chargeRefundTransactions  A list of `ChargeRefund` transactions
      */
     public function __construct(

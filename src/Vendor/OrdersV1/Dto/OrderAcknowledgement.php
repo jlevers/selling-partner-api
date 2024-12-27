@@ -18,6 +18,7 @@ final class OrderAcknowledgement extends Dto
 
     /**
      * @param  string  $purchaseOrderNumber  The purchase order number. Formatting Notes: 8-character alpha-numeric code.
+     * @param  PartyIdentification  $sellingParty  Name, address and tax details of a party.
      * @param  \DateTimeInterface  $acknowledgementDate  The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.
      * @param  OrderAcknowledgementItem[]  $items  A list of the items being acknowledged with associated details.
      */

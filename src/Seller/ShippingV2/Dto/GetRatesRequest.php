@@ -18,6 +18,7 @@ final class GetRatesRequest extends Dto
         'packages' => Package::class,
         'taxDetails' => TaxDetail::class,
         'clientReferenceDetails' => ClientReferenceDetail::class,
+        'carrierAccounts' => CarrierAccount::class,
     ];
 
     /**
@@ -32,6 +33,8 @@ final class GetRatesRequest extends Dto
      * @param  TaxDetail[]|null  $taxDetails  A list of tax detail information.
      * @param  ClientReferenceDetail[]|null  $clientReferenceDetails  Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
      * @param  ?string  $shipmentType  Shipment type.
+     * @param  ?AccessPointDetails  $destinationAccessPointDetails  AccessPointDetails object
+     * @param  CarrierAccount[]|null  $carrierAccounts  A list of CarrierAccounts
      */
     public function __construct(
         public Address $shipFrom,
@@ -46,5 +49,6 @@ final class GetRatesRequest extends Dto
         public ?array $clientReferenceDetails = null,
         public ?string $shipmentType = null,
         public ?AccessPointDetails $destinationAccessPointDetails = null,
+        public ?array $carrierAccounts = null,
     ) {}
 }

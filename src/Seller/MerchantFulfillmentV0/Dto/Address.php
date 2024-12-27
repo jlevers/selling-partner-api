@@ -34,12 +34,12 @@ final class Address extends Dto
      * @param  string  $email  The email address.
      * @param  string  $city  The city.
      * @param  string  $postalCode  The zip code or postal code.
-     * @param  string  $countryCode  The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
+     * @param  string  $countryCode  The two-letter country code in [ISO 3166-1 alpha-2](https://www.iban.com/country-codes) format.
      * @param  string  $phone  The phone number.
      * @param  ?string  $addressLine2  Additional street address information.
      * @param  ?string  $addressLine3  Additional street address information.
      * @param  ?string  $districtOrCounty  The district or county.
-     * @param  ?string  $stateOrProvinceCode  The state or province code. **Note.** Required in the Canada, US, and UK marketplaces. Also required for shipments originating from China.
+     * @param  ?string  $stateOrProvinceCode  The state or province code. This is a required field in Canada, US, and UK marketplaces, and for shipments that originate in China.
      */
     public function __construct(
         public string $name,

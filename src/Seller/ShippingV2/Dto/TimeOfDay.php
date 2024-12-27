@@ -14,6 +14,11 @@ use SellingPartnerApi\Dto;
 
 final class TimeOfDay extends Dto
 {
+    /**
+     * @param  ?int  $hourOfDay  Denotes hour of the day, used for defining opening or closing time of access points
+     * @param  ?int  $minuteOfHour  Denotes minute of the hour, used for defining opening or closing time of access points
+     * @param  ?int  $secondOfMinute  Denotes second of the minute, used for defining opening or closing time of access points
+     */
     public function __construct(
         public ?int $hourOfDay = null,
         public ?int $minuteOfHour = null,

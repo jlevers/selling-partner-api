@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.1",
     "info": {
-        "title": "Selling Partner API for Retail Procurement Payments",
+        "title": "Vendor Invoices v1",
         "description": "The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.",
         "contact": {
             "name": "Selling Partner API Developer Support",
@@ -22,9 +22,10 @@
         "/vendor/payments/v1/invoices": {
             "post": {
                 "tags": [
-                    "vendorPayments"
+                    "Vendor Invoices"
                 ],
-                "description": "Submit new invoices to Amazon.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "summary": "submitInvoices",
+                "description": "Submit new invoices to Amazon.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "submitInvoices",
                 "requestBody": {
                     "description": "The request body containing the invoice data to submit.",
@@ -309,7 +310,7 @@
                         "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the `submitInvoices` operation."
+                "description": "The response schema for the submitInvoices operation."
             },
             "TransactionId": {
                 "type": "object",
@@ -361,7 +362,7 @@
                         }
                     }
                 },
-                "description": "The request schema for the `submitInvoices` operation."
+                "description": "The request schema for the submitInvoices operation."
             },
             "Invoice": {
                 "required": [
@@ -479,7 +480,7 @@
                         }
                     }
                 },
-                "description": "Name, address, and tax details of a party."
+                "description": "Name, address and tax details of a party."
             },
             "TaxRegistrationDetails": {
                 "required": [
@@ -539,23 +540,23 @@
                     },
                     "city": {
                         "type": "string",
-                        "description": "The city where the person, business, or institution is located."
+                        "description": "The city where the person, business or institution is located."
                     },
                     "county": {
                         "type": "string",
-                        "description": "The county where person, business, or institution is located."
+                        "description": "The county where person, business or institution is located."
                     },
                     "district": {
                         "type": "string",
-                        "description": "The district where person, business, or institution is located."
+                        "description": "The district where person, business or institution is located."
                     },
                     "stateOrRegion": {
                         "type": "string",
-                        "description": "The state or region where person, business, or institution is located."
+                        "description": "The state or region where person, business or institution is located."
                     },
                     "postalOrZipCode": {
                         "type": "string",
-                        "description": "The postal or zip code of that address. It contains a series of letters, digits, or both, sometimes including spaces or punctuation."
+                        "description": "The postal or zip code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation."
                     },
                     "countryCode": {
                         "maxLength": 2,
@@ -595,13 +596,16 @@
                     "netCost": {
                         "$ref": "#/components/schemas/Money"
                     },
+                    "netCostUnitOfMeasure": {
+                        "$ref": "#/components/schemas/NetCostUnitOfMeasure"
+                    },
                     "purchaseOrderNumber": {
                         "type": "string",
-                        "description": "The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when `invoiceType` is `Invoice`, and is not required when `invoiceType` is `CreditNote`."
+                        "description": "The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote."
                     },
                     "hsnCode": {
                         "type": "string",
-                        "description": "The HSN Tax code. The HSN number cannot contain alphabets."
+                        "description": "HSN Tax code. The HSN number cannot contain alphabets."
                     },
                     "creditNoteDetails": {
                         "$ref": "#/components/schemas/CreditNoteDetails"
@@ -976,7 +980,7 @@
                     },
                     "discountDueDays": {
                         "type": "number",
-                        "description": "The number of calendar days from the base date (Invoice date) until the discount is no longer valid."
+                        "description": "The number of calendar days from the Base date (Invoice date) until the discount is no longer valid."
                     },
                     "netDueDays": {
                         "type": "number",
@@ -990,15 +994,15 @@
                 "properties": {
                     "referenceInvoiceNumber": {
                         "type": "string",
-                        "description": "Original invoice number when sending a credit note relating to an existing invoice. One invoice only to be processed per credit note. This is mandatory for AP credit notes."
+                        "description": "Original Invoice Number when sending a credit note relating to an existing invoice. One Invoice only to be processed per Credit Note. This is mandatory for AP Credit Notes."
                     },
                     "debitNoteNumber": {
                         "type": "string",
-                        "description": "Debit note number as generated by Amazon. Recommended for returns and COOP credit notes."
+                        "description": "Debit Note Number as generated by Amazon. Recommended for Returns and COOP Credit Notes."
                     },
                     "returnsReferenceNumber": {
                         "type": "string",
-                        "description": "Identifies the returns notice number. Mandatory for all returns credit notes."
+                        "description": "Identifies the Returns Notice Number. Mandatory for all Returns Credit Notes."
                     },
                     "goodsReturnDate": {
                         "$ref": "#/components/schemas/DateTime"
@@ -1009,14 +1013,42 @@
                     },
                     "coopReferenceNumber": {
                         "type": "string",
-                        "description": "Identifies the COOP reference used for COOP agreement. Failure to provide the COOP reference number or the debit note number may lead to a rejection of the credit note."
+                        "description": "Identifies the COOP reference used for COOP agreement. Failure to provide the COOP reference number or the Debit Note number may lead to a rejection of the Credit Note."
                     },
                     "consignorsReferenceNumber": {
                         "type": "string",
                         "description": "Identifies the consignor reference number (VRET number), if generated by Amazon."
                     }
                 },
-                "description": "References required in order to process a credit note. This information is required only if `InvoiceType` is `CreditNote`."
+                "description": "References required in order to process a credit note. This information is required only if InvoiceType is CreditNote."
+            },
+            "NetCostUnitOfMeasure": {
+                "type": "string",
+                "description": "This field represents weight unit of measure of items that are ordered by cases and supporting priced by weight.",
+                "enum": [
+                    "POUNDS",
+                    "OUNCES",
+                    "GRAMS",
+                    "KILOGRAMS"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "POUNDS",
+                        "description": "Priced per Pound."
+                    },
+                    {
+                        "value": "OUNCES",
+                        "description": "Priced per Ounce."
+                    },
+                    {
+                        "value": "GRAMS",
+                        "description": "Priced per Gram."
+                    },
+                    {
+                        "value": "KILOGRAMS",
+                        "description": "Priced per Kilogram."
+                    }
+                ]
             },
             "ItemQuantity": {
                 "required": [
@@ -1049,10 +1081,54 @@
                     },
                     "unitSize": {
                         "type": "integer",
-                        "description": "The case size, if the unit of measure value is `Cases`."
+                        "description": "The case size, if the unit of measure value is Cases."
+                    },
+                    "totalWeight": {
+                        "$ref": "#/components/schemas/TotalWeight"
                     }
                 },
                 "description": "Details of quantity."
+            },
+            "TotalWeight": {
+                "required": [
+                    "amount",
+                    "unitOfMeasure"
+                ],
+                "type": "object",
+                "properties": {
+                    "unitOfMeasure": {
+                        "type": "string",
+                        "description": "The unit of measure for items sold by weight.",
+                        "enum": [
+                            "POUNDS",
+                            "OUNCES",
+                            "GRAMS",
+                            "KILOGRAMS"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "POUNDS",
+                                "description": "Weight in Pound."
+                            },
+                            {
+                                "value": "OUNCES",
+                                "description": "Weight in Ounce."
+                            },
+                            {
+                                "value": "GRAMS",
+                                "description": "Weight in Gram."
+                            },
+                            {
+                                "value": "KILOGRAMS",
+                                "description": "Weight in Kilogram."
+                            }
+                        ]
+                    },
+                    "amount": {
+                        "$ref": "#/components/schemas/Decimal"
+                    }
+                },
+                "description": "The aggregate weight of this item being invoiced. This information will be available for items sold by weight."
             },
             "Decimal": {
                 "type": "string",
@@ -1060,7 +1136,7 @@
             },
             "DateTime": {
                 "type": "string",
-                "description": "Defines a date and time according to <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a>.",
+                "description": "Defines a date and time according to ISO8601.",
                 "format": "date-time"
             }
         }

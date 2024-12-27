@@ -17,8 +17,8 @@ final class ExcludedBenefit extends Dto
     protected static array $attributeMap = ['benefit' => 'Benefit', 'reasonCodes' => 'ReasonCodes'];
 
     /**
-     * @param  ?string  $benefit  Benefit that is being excluded from a shipment.
-     * @param  ?string[]  $reasonCodes  List of reasons (eg. LATE_DELIVERY_RISK, etc.) indicating why a benefit is excluded for a shipping offer.
+     * @param  ?string  $benefit  A benefit that is being excluded from a shipment.
+     * @param  ?string[]  $reasonCodes  List of reasons why a benefit is excluded for a shipping offer (for example, `LATE_DELIVERY_RISK`).
      */
     public function __construct(
         public ?string $benefit = null,

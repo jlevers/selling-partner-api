@@ -14,6 +14,9 @@ use SellingPartnerApi\Dto;
 
 final class Embedded2 extends Dto
 {
+    /**
+     * @param  ?GetSchemaResponse  $schema  The `GET` request schema response.
+     */
     public function __construct(
         public ?GetSchemaResponse $schema = null,
     ) {}

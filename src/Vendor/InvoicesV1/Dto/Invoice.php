@@ -25,13 +25,13 @@ final class Invoice extends Dto
     /**
      * @param  string  $invoiceType  Identifies the type of invoice.
      * @param  string  $id  Unique number relating to the charges defined in this document. This will be invoice number if the document type is Invoice or CreditNote number if the document type is Credit Note. Failure to provide this reference will result in a rejection.
-     * @param  \DateTimeInterface  $date  Defines a date and time according to <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a>.
-     * @param  PartyIdentification  $remitToParty  Name, address, and tax details of a party.
+     * @param  \DateTimeInterface  $date  Defines a date and time according to ISO8601.
+     * @param  PartyIdentification  $remitToParty  Name, address and tax details of a party.
      * @param  Money  $invoiceTotal  An amount of money, including units in the form of currency.
      * @param  ?string  $referenceNumber  An additional unique reference number used for regulatory or other purposes.
-     * @param  ?PartyIdentification  $shipToParty  Name, address, and tax details of a party.
-     * @param  ?PartyIdentification  $shipFromParty  Name, address, and tax details of a party.
-     * @param  ?PartyIdentification  $billToParty  Name, address, and tax details of a party.
+     * @param  ?PartyIdentification  $shipToParty  Name, address and tax details of a party.
+     * @param  ?PartyIdentification  $shipFromParty  Name, address and tax details of a party.
+     * @param  ?PartyIdentification  $billToParty  Name, address and tax details of a party.
      * @param  ?PaymentTerms  $paymentTerms  Terms of the payment for the invoice. The basis of the payment terms is the invoice date.
      * @param  TaxDetails[]|null  $taxDetails  Total tax amount details for all line items.
      * @param  AdditionalDetails[]|null  $additionalDetails  Additional details provided by the selling party, for tax related or other purposes.

@@ -20,9 +20,9 @@ use SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Requests\SubmitShipping
 class Api extends BaseResource
 {
     /**
-     * @param  \DateTimeInterface  $createdAfter  Shipping labels that became available after this date and time will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  \DateTimeInterface  $createdBefore  Shipping labels that became available before this date and time will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  ?string  $shipFromPartyId  The vendor `warehouseId` for order fulfillment. If not specified, the result will contain orders for all warehouses.
+     * @param  \DateTimeInterface  $createdAfter  Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  \DateTimeInterface  $createdBefore  Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?string  $shipFromPartyId  The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
      * @param  ?int  $limit  The limit to the number of records returned.
      * @param  ?string  $sortOrder  Sort ASC or DESC by order creation date.
      * @param  ?string  $nextToken  Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
@@ -41,7 +41,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  SubmitShippingLabelsRequest  $submitShippingLabelsRequest  The request schema for the `submitShippingLabelRequest` operation.
+     * @param  SubmitShippingLabelsRequest  $submitShippingLabelsRequest  The request schema for the submitShippingLabelRequest operation.
      */
     public function submitShippingLabelRequest(SubmitShippingLabelsRequest $submitShippingLabelsRequest): Response
     {
@@ -51,7 +51,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $purchaseOrderNumber  The purchase order number for which you want to return the shipping label. It should be the same `purchaseOrderNumber` as received in the order.
+     * @param  string  $purchaseOrderNumber  The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order.
      */
     public function getShippingLabel(string $purchaseOrderNumber): Response
     {
@@ -61,7 +61,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  SubmitShipmentConfirmationsRequest  $submitShipmentConfirmationsRequest  The request schema for the `submitShipmentConfirmations` operation.
+     * @param  SubmitShipmentConfirmationsRequest  $submitShipmentConfirmationsRequest  The request schema for the submitShipmentConfirmations operation.
      */
     public function submitShipmentConfirmations(
         SubmitShipmentConfirmationsRequest $submitShipmentConfirmationsRequest,
@@ -72,7 +72,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  SubmitShipmentStatusUpdatesRequest  $submitShipmentStatusUpdatesRequest  Represents the request payload for submitting updates to the status of shipments, containing an array of one or more `ShipmentStatusUpdate` objects.
+     * @param  SubmitShipmentStatusUpdatesRequest  $submitShipmentStatusUpdatesRequest  Represents the request payload for submitting updates to the status of shipments, containing an array of one or more ShipmentStatusUpdate objects.
      */
     public function submitShipmentStatusUpdates(
         SubmitShipmentStatusUpdatesRequest $submitShipmentStatusUpdatesRequest,
@@ -83,9 +83,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  \DateTimeInterface  $createdAfter  Orders that became available after this date and time will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  \DateTimeInterface  $createdBefore  Orders that became available before this date and time will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  ?string  $shipFromPartyId  The vendor `warehouseId` for order fulfillment. If not specified, the result will contain orders for all warehouses.
+     * @param  \DateTimeInterface  $createdAfter  Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  \DateTimeInterface  $createdBefore  Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?string  $shipFromPartyId  The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
      * @param  ?int  $limit  The limit to the number of records returned
      * @param  ?string  $sortOrder  Sort ASC or DESC by order creation date.
      * @param  ?string  $nextToken  Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
@@ -114,9 +114,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  \DateTimeInterface  $createdAfter  Packing slips that became available after this date and time will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  \DateTimeInterface  $createdBefore  Packing slips that became available before this date and time will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
-     * @param  ?string  $shipFromPartyId  The vendor `warehouseId` for order fulfillment. If not specified the result will contain orders for all warehouses.
+     * @param  \DateTimeInterface  $createdAfter  Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  \DateTimeInterface  $createdBefore  Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?string  $shipFromPartyId  The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
      * @param  ?int  $limit  The limit to the number of records returned
      * @param  ?string  $sortOrder  Sort ASC or DESC by packing slip creation date.
      * @param  ?string  $nextToken  Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
@@ -135,7 +135,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $purchaseOrderNumber  The `purchaseOrderNumber` for the packing slip you want.
+     * @param  string  $purchaseOrderNumber  The purchaseOrderNumber for the packing slip you want.
      */
     public function getPackingSlip(string $purchaseOrderNumber): Response
     {

@@ -37,7 +37,7 @@ final class SolutionProviderCreditEvent extends Dto
      * @param  ?string  $providerId  The Amazon-defined identifier of the solution provider.
      * @param  ?string  $providerStoreName  The store name where the payment event occurred.
      * @param  ?Currency  $transactionAmount  A currency type and amount.
-     * @param  ?\DateTimeInterface  $transactionCreationDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @param  ?\DateTimeInterface  $transactionCreationDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
      */
     public function __construct(
         public ?string $providerTransactionType = null,

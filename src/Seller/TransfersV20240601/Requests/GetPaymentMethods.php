@@ -11,34 +11,31 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\TransfersV20240601\Requests;
 
 use Exception;
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
-use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
-use SellingPartnerApi\Seller\TransfersV20240601\Dto\GetPaymentMethodsRequest;
 use SellingPartnerApi\Seller\TransfersV20240601\Responses\ErrorList;
 use SellingPartnerApi\Seller\TransfersV20240601\Responses\GetPaymentMethodsResponse;
 
 /**
  * getPaymentMethods
  */
-class GetPaymentMethods extends Request implements HasBody
+class GetPaymentMethods extends Request
 {
-    use HasJsonBody;
-
-    protected Method $method = Method::POST;
+    protected Method $method = Method::GET;
 
     /**
-     * @param  GetPaymentMethodsRequest  $getPaymentMethodsRequest  The request schema for the `getPaymentMethods` operation.
+     * @param  string  $marketplaceId  The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  ?array  $paymentMethodTypes  A comma-separated list of the payment method types you want to include in the response.
      */
     public function __construct(
-        public GetPaymentMethodsRequest $getPaymentMethodsRequest,
+        protected string $marketplaceId,
+        protected ?array $paymentMethodTypes = null,
     ) {}
 
     public function resolveEndpoint(): string
     {
-        return '/finances/transfers/2024-06-01/paymentmethods';
+        return '/finances/transfers/2024-06-01/paymentMethods';
     }
 
     public function createDtoFromResponse(Response $response): GetPaymentMethodsResponse|ErrorList
@@ -53,8 +50,8 @@ class GetPaymentMethods extends Request implements HasBody
         return $responseCls::deserialize($response->json());
     }
 
-    public function defaultBody(): array
+    public function defaultQuery(): array
     {
-        return $this->getPaymentMethodsRequest->toArray();
+        return array_filter(['marketplaceId' => $this->marketplaceId, 'paymentMethodTypes' => $this->paymentMethodTypes]);
     }
 }

@@ -14,6 +14,9 @@ use SellingPartnerApi\Dto;
 
 final class MessagingAction extends Dto
 {
+    /**
+     * @param  string  $name  The name of the template.
+     */
     public function __construct(
         public string $name,
     ) {}

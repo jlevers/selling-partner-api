@@ -266,7 +266,18 @@
                                                     "rateItemType": "MANDATORY"
                                                 }
                                             ],
-                                            "paymentType": "PAY_THROUGH_AMAZON"
+                                            "paymentType": "PAY_THROUGH_AMAZON",
+                                            "benefits": {
+                                                "includedBenefits": [],
+                                                "excludedBenefits": [
+                                                    {
+                                                        "benefit": "CLAIMS_PROTECTED",
+                                                        "reasonCodes": [
+                                                            "LATE_DELIVERY_RISK"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
                                         }
                                     ],
                                     "ineligibleRates": [
@@ -720,6 +731,12 @@
                                             "start": "2019-12-13T07:09:05.513Z",
                                             "end": "2019-12-13T09:09:05.513Z"
                                         }
+                                    },
+                                    "benefits": {
+                                        "includedBenefits": [
+                                            "CLAIMS_PROTECTED"
+                                        ],
+                                        "excludedBenefits": []
                                     }
                                 }
                             }
@@ -2083,7 +2100,13 @@
                                                 "format": "PNG",
                                                 "contents": "sdioadaiosfhdodsaiufhouafhoudfhdouahfac=="
                                             }
-                                        ]
+                                        ],
+                                        "benefits": {
+                                            "includedBenefits": [
+                                                "CLAIMS_PROTECTED"
+                                            ],
+                                            "excludedBenefits": []
+                                        }
                                     }
                                 }
                             }
@@ -2800,6 +2823,7 @@
                     {
                         "name": "accessPointTypes",
                         "in": "query",
+                        "description": "Access point types",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -2853,7 +2877,6 @@
                                 }
                             ]
                         },
-                        "example": "HELIX",
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "HELIX",
@@ -2892,6 +2915,7 @@
                     {
                         "name": "countryCode",
                         "in": "query",
+                        "description": "Country code for access point",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -2901,6 +2925,7 @@
                     {
                         "name": "postalCode",
                         "in": "query",
+                        "description": "postal code for access point",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -4319,6 +4344,7 @@
                 "properties": {
                     "errors": {
                         "type": "array",
+                        "description": "Array of Errors",
                         "items": {
                             "$ref": "#/components/schemas/Error"
                         }
@@ -4552,6 +4578,10 @@
                 "type": "string",
                 "description": "The carrier name for the offering."
             },
+            "AccountId": {
+                "type": "string",
+                "description": "Identifier for the seller's carrier account."
+            },
             "PackageClientReferenceId": {
                 "type": "string",
                 "description": "A client provided unique identifier for a package being shipped. This value should be saved by the client to pass as a parameter to the getShipmentDocuments operation."
@@ -4582,15 +4612,18 @@
                     "DeliveredToRearDoor",
                     "DeliveredToReceptionist",
                     "DeliveredToShed",
+                    "DeliveredWithOTP",
                     "Signed",
                     "Damaged",
                     "IncorrectItems",
                     "NotRequired",
                     "Rejected",
+                    "RejectedByRecipientWithVerification",
                     "CancelledByRecipient",
                     "AddressNotFound",
                     "HazmatShipment",
-                    "Undeliverable"
+                    "Undeliverable",
+                    "ArrivedAtLocalFacility"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
@@ -4666,6 +4699,10 @@
                         "description": "Shipment delivered to shed."
                     },
                     {
+                        "value": "DeliveredWithOTP",
+                        "description": "Shipment delivered with onetime passcode."
+                    },
+                    {
                         "value": "Signed",
                         "description": "Shipment delivered and signature received."
                     },
@@ -4686,6 +4723,10 @@
                         "description": "Recipient refused to accept the shipment."
                     },
                     {
+                        "value": "RejectedByRecipientWithVerification",
+                        "description": "Recipient refused to accept the shipment and provided verification."
+                    },
+                    {
                         "value": "CancelledByRecipient",
                         "description": "Shipment was cancelled by the recipient. This tag is paired with the rejected shipment status."
                     },
@@ -4700,6 +4741,10 @@
                     {
                         "value": "Undeliverable",
                         "description": "Shipment is undeliverable and is returning to the seller."
+                    },
+                    {
+                        "value": "ArrivedAtLocalFacility",
+                        "description": "Package arrived at the local facility."
                     }
                 ]
             },
@@ -4765,7 +4810,8 @@
                     "city",
                     "countryCode",
                     "name",
-                    "postalCode"
+                    "postalCode",
+                    "stateOrRegion"
                 ],
                 "type": "object",
                 "properties": {
@@ -4941,6 +4987,45 @@
                 "type": "string",
                 "description": "A Base64 encoded string of the file contents."
             },
+            "RequestedLabelCustomization": {
+                "type": "object",
+                "properties": {
+                    "requestAttributes": {
+                        "$ref": "#/components/schemas/RequestAttributes"
+                    }
+                },
+                "description": "Object contains customised data requested by a shipper to be printed on a shipping label."
+            },
+            "RequestAttributes": {
+                "type": "array",
+                "description": "Specify the type of attributes to be added on a label.",
+                "items": {
+                    "$ref": "#/components/schemas/LabelAttribute"
+                }
+            },
+            "LabelAttribute": {
+                "type": "string",
+                "description": "Enumerates the attributes supported to be printed on a shipping label. The values for these attributes are retrieved from GetRates/OneClickShipment request",
+                "enum": [
+                    "PACKAGE_CLIENT_REFERENCE_ID",
+                    "SELLER_DISPLAY_NAME",
+                    "COLLECT_ON_DELIVERY_AMOUNT"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "PACKAGE_CLIENT_REFERENCE_ID",
+                        "description": "Prints client reference ID on the shipping label"
+                    },
+                    {
+                        "value": "SELLER_DISPLAY_NAME",
+                        "description": "Prints seller name on the shipping label"
+                    },
+                    {
+                        "value": "COLLECT_ON_DELIVERY_AMOUNT",
+                        "description": "Prints Collect On Delivery amount on the shipping label."
+                    }
+                ]
+            },
             "PackageDocumentList": {
                 "type": "array",
                 "description": "A list of documents related to a package.",
@@ -5098,6 +5183,9 @@
                         "items": {
                             "$ref": "#/components/schemas/DocumentType"
                         }
+                    },
+                    "requestedLabelCustomization": {
+                        "$ref": "#/components/schemas/RequestedLabelCustomization"
                     }
                 },
                 "description": "The document specifications requested. For calls to the purchaseShipment operation, the shipment purchase fails if the specified document specifications are not among those returned in the response to the getRates operation."
@@ -5411,7 +5499,7 @@
                 "type": "object",
                 "properties": {
                     "unitedNationsRegulatoryId": {
-                        "pattern": "^(UN)[0-9]{4}$",
+                        "pattern": "^(UN|ID|NA)[0-9]{4}$",
                         "type": "string",
                         "description": "The specific UNID of the item being shipped."
                     },
@@ -5572,7 +5660,8 @@
                     "Undeliverable",
                     "PickupCancelled",
                     "ReturnInitiated",
-                    "AvailableForPickup"
+                    "AvailableForPickup",
+                    "RecipientRequestedAlternateDeliveryTiming"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
@@ -5626,6 +5715,10 @@
                     {
                         "value": "AvailableForPickup",
                         "description": "Package held for recipient pickup."
+                    },
+                    {
+                        "value": "RecipientRequestedAlternateDeliveryTiming",
+                        "description": "Recipient has requested an update to their delivery date."
                     }
                 ]
             },
@@ -6027,6 +6120,9 @@
                     },
                     "destinationAccessPointDetails": {
                         "$ref": "#/components/schemas/AccessPointDetails"
+                    },
+                    "carrierAccounts": {
+                        "$ref": "#/components/schemas/CarrierAccounts"
                     }
                 },
                 "description": "The request schema for the getRates operation. When the channelType is Amazon, the shipTo address is not required and will be ignored."
@@ -6037,7 +6133,8 @@
                     "accessPointId": {
                         "$ref": "#/components/schemas/AccessPointId"
                     }
-                }
+                },
+                "description": "AccessPointDetails object"
             },
             "NdrAction": {
                 "type": "string",
@@ -6461,12 +6558,14 @@
                     },
                     "exceptionOperatingHours": {
                         "type": "array",
+                        "description": "Exception operating hours for Access Point",
                         "items": {
                             "$ref": "#/components/schemas/ExceptionOperatingHours"
                         }
                     },
                     "assistanceType": {
                         "type": "string",
+                        "description": "Assistance type enum for Access point i.e. STAFF_ASSISTED or SELF_ASSISTED",
                         "enum": [
                             "STAFF_ASSISTED",
                             "SELF_ASSISTED"
@@ -6507,6 +6606,7 @@
                     },
                     "midDayClosures": {
                         "type": "array",
+                        "description": "midDayClosures operating hours array",
                         "items": {
                             "$ref": "#/components/schemas/TimeOfDay"
                         }
@@ -6518,13 +6618,16 @@
                 "type": "object",
                 "properties": {
                     "hourOfDay": {
-                        "type": "integer"
+                        "type": "integer",
+                        "description": "Denotes hour of the day, used for defining opening or closing time of access points"
                     },
                     "minuteOfHour": {
-                        "type": "integer"
+                        "type": "integer",
+                        "description": "Denotes minute of the hour, used for defining opening or closing time of access points"
                     },
                     "secondOfMinute": {
-                        "type": "integer"
+                        "type": "integer",
+                        "description": "Denotes second of the minute, used for defining opening or closing time of access points"
                     }
                 },
                 "description": "Denotes time of the day, used for defining opening or closing time of access points"
@@ -6621,6 +6724,29 @@
                     }
                 ]
             },
+            "CarrierAccounts": {
+                "type": "array",
+                "description": "A list of CarrierAccounts",
+                "items": {
+                    "$ref": "#/components/schemas/CarrierAccount"
+                }
+            },
+            "CarrierAccount": {
+                "required": [
+                    "carrierAccountId",
+                    "carrierId"
+                ],
+                "type": "object",
+                "properties": {
+                    "carrierAccountId": {
+                        "$ref": "#/components/schemas/AccountId"
+                    },
+                    "carrierId": {
+                        "$ref": "#/components/schemas/CarrierId"
+                    }
+                },
+                "description": "Carrier Account details used to fetch rates."
+            },
             "DateRange": {
                 "type": "object",
                 "properties": {
@@ -6712,7 +6838,12 @@
                     "RESIDENTIAL_SURCHARGE",
                     "ADDITIONAL_SURCHARGE",
                     "SURCHARGE",
-                    "REBATE"
+                    "REBATE",
+                    "HIGH_CUBE_SURCHARGE",
+                    "HIGH_LENGTH_SURCHARGE",
+                    "HIGH_WIDTH_SURCHARGE",
+                    "DEMAND_SURCHARGE",
+                    "NONSTANDARD_FEE"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
@@ -6826,6 +6957,26 @@
                     {
                         "value": "REBATE",
                         "description": "Rebate."
+                    },
+                    {
+                        "value": "HIGH_CUBE_SURCHARGE",
+                        "description": "High Cube Surcharge."
+                    },
+                    {
+                        "value": "HIGH_LENGTH_SURCHARGE",
+                        "description": "High Length Surcharge."
+                    },
+                    {
+                        "value": "HIGH_WIDTH_SURCHARGE",
+                        "description": "High Width Surcharge."
+                    },
+                    {
+                        "value": "DEMAND_SURCHARGE",
+                        "description": "A fee that is applied during specific periods of increased demand on the network as specified in the Amazon Shipping Service guide."
+                    },
+                    {
+                        "value": "NONSTANDARD_FEE",
+                        "description": "A fee that applies for packages that are outside the standard size for processing and sorting as specified in the Amazon Shipping Service guide."
                     }
                 ]
             },
@@ -6884,19 +7035,19 @@
             },
             "ExcludedBenefit": {
                 "required": [
-                    "benefit",
-                    "reasonCodes"
+                    "benefit"
                 ],
                 "type": "object",
                 "properties": {
                     "benefit": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "benefit"
                     },
                     "reasonCodes": {
                         "$ref": "#/components/schemas/ExcludedBenefitReasonCodes"
                     }
                 },
-                "description": "Object representing an excluded benefit that is excluded for an ShippingOffering/Rate."
+                "description": "Object representing a benefit that is excluded for a shipping offer or rate."
             },
             "ExcludedBenefitReasonCodes": {
                 "minItems": 1,

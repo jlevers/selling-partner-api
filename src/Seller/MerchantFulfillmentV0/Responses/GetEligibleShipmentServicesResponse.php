@@ -17,7 +17,7 @@ use SellingPartnerApi\Seller\MerchantFulfillmentV0\Dto\GetEligibleShipmentServic
 final class GetEligibleShipmentServicesResponse extends Response
 {
     /**
-     * @param  ?GetEligibleShipmentServicesResult  $payload  The payload for the getEligibleShipmentServices operation.
+     * @param  ?GetEligibleShipmentServicesResult  $payload  The payload for the `getEligibleShipmentServices` operation.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

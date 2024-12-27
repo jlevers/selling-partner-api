@@ -26,16 +26,16 @@ final class RemovalShipmentEvent extends Dto
     protected static array $complexArrayTypes = ['removalShipmentItemList' => RemovalShipmentItem::class];
 
     /**
-     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @param  ?string  $merchantOrderId  The merchant removal `orderId`.
+     * @param  ?\DateTimeInterface  $postedDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?string  $merchantOrderId  The merchant removal orderId.
      * @param  ?string  $orderId  The identifier for the removal shipment order.
      * @param  ?string  $transactionType  The type of removal order.
      *
      * Possible values:
      *
-     * * `WHOLESALE_LIQUIDATION`
+     * * WHOLESALE_LIQUIDATION
      * @param  ?string  $storeName  The name of the store where the event occurred.
-     * @param  RemovalShipmentItem[]|null  $removalShipmentItemList  A list of `RemovalShipmentItem`.
+     * @param  RemovalShipmentItem[]|null  $removalShipmentItemList  A list of information about removal shipment items.
      */
     public function __construct(
         public ?\DateTimeInterface $postedDate = null,

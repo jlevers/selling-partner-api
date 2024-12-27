@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Selling Partner API for Direct Fulfillment Shipping",
-        "description": "The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.",
+        "description": "Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.",
         "contact": {
             "name": "Selling Partner API Developer Support",
             "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
@@ -24,13 +24,14 @@
                 "tags": [
                     "DirectFulfillmentShippingV20211228"
                 ],
-                "description": "Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "summary": "getShippingLabels",
+                "description": "Returns a list of shipping labels created during the time frame that you specify. Use the `createdAfter` and `createdBefore` parameters to define the time frame. You must use both of these parameters. The date range to search must not be more than seven days.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "getShippingLabels",
                 "parameters": [
                     {
                         "name": "shipFromPartyId",
                         "in": "query",
-                        "description": "The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.",
+                        "description": "The vendor `warehouseId` for order fulfillment. If not specified, the result contains orders for all warehouses.",
                         "schema": {
                             "type": "string"
                         }
@@ -48,7 +49,7 @@
                     {
                         "name": "createdAfter",
                         "in": "query",
-                        "description": "Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.",
+                        "description": "Shipping labels that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -58,7 +59,7 @@
                     {
                         "name": "createdBefore",
                         "in": "query",
-                        "description": "Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.",
+                        "description": "Shipping labels that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -68,7 +69,7 @@
                     {
                         "name": "sortOrder",
                         "in": "query",
-                        "description": "Sort ASC or DESC by order creation date.",
+                        "description": "The sort order creation date. You can choose between ascending (`ASC`) or descending (`DESC`) sort order.",
                         "schema": {
                             "type": "string",
                             "default": "ASC",
@@ -287,10 +288,11 @@
                 "tags": [
                     "DirectFulfillmentShippingV20211228"
                 ],
-                "description": "Creates a shipping label for a purchase order and returns a transactionId for reference.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "summary": "submitShippingLabelRequest",
+                "description": "Creates a shipping label for a purchase order and returns a `transactionId` for reference.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "submitShippingLabelRequest",
                 "requestBody": {
-                    "description": "Request body that contains the shipping labels data.",
+                    "description": "The request body that contains the shipping labels data.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -493,13 +495,14 @@
                 "tags": [
                     "DirectFulfillmentShippingV20211228"
                 ],
-                "description": "Returns a shipping label for the purchaseOrderNumber that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "summary": "getShippingLabel",
+                "description": "Returns a shipping label for the `purchaseOrderNumber` that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "getShippingLabel",
                 "parameters": [
                     {
                         "name": "purchaseOrderNumber",
                         "in": "path",
-                        "description": "The purchase order number for which you want to return the shipping label. Should be the same `purchaseOrderNumber` as received in the order.",
+                        "description": "The purchase order number for which you want to return the shipping label. It should be the same `purchaseOrderNumber` that you received in the order.",
                         "required": true,
                         "schema": {
                             "pattern": "^[a-zA-Z0-9]+$",
@@ -716,13 +719,14 @@
                 "tags": [
                     "DirectFulfillmentShippingV20211228"
                 ],
-                "description": "Creates shipping labels for a purchase order and returns the labels.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "summary": "createShippingLabels",
+                "description": "Creates shipping labels for a purchase order and returns the labels.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "createShippingLabels",
                 "parameters": [
                     {
                         "name": "purchaseOrderNumber",
                         "in": "path",
-                        "description": "The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.",
+                        "description": "The purchase order number for which you want to return the shipping labels. It should be the same number as the `purchaseOrderNumber` in the order.",
                         "required": true,
                         "schema": {
                             "pattern": "^[a-zA-Z0-9]+$",
@@ -731,7 +735,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "The request payload that contains parameters for creating shipping labels.",
+                    "description": "The request payload that contains the parameters for creating shipping labels.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -952,7 +956,8 @@
                 "tags": [
                     "DirectFulfillmentShippingV20211228"
                 ],
-                "description": "Submits one or more shipment confirmations for vendor orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "summary": "submitShipmentConfirmations",
+                "description": "Submits one or more shipment confirmations for vendor orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "submitShipmentConfirmations",
                 "requestBody": {
                     "description": "Request body containing the shipment confirmations data.",
@@ -1158,10 +1163,11 @@
                 "tags": [
                     "DirectFulfillmentShippingV20211228"
                 ],
-                "description": "This operation is only to be used by Vendor-Own-Carrier (VOC) vendors. Calling this API submits a shipment status update for the package that a vendor has shipped. It will provide the Amazon customer visibility on their order, when the package is outside of Amazon Network visibility.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "summary": "submitShipmentStatusUpdates",
+                "description": "This operation is only to be used by Vendor-Own-Carrier (VOC) vendors. Calling this API submits a shipment status update for the package that a vendor has shipped. It will provide the Amazon customer visibility on their order, when the package is outside of Amazon Network visibility.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "submitShipmentStatusUpdates",
                 "requestBody": {
-                    "description": "Request body that contains the shipment status update data.",
+                    "description": "Request body containing the shipment status update data.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1364,7 +1370,8 @@
                 "tags": [
                     "DirectFulfillmentShippingV20211228"
                 ],
-                "description": "Returns a list of customer invoices created during a time frame that you specify. You define the time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must be no more than 7 days.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "summary": "getCustomerInvoices",
+                "description": "Returns a list of customer invoices created during a time frame that you specify. You define the time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must be no more than 7 days.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "getCustomerInvoices",
                 "parameters": [
                     {
@@ -1388,7 +1395,7 @@
                     {
                         "name": "createdAfter",
                         "in": "query",
-                        "description": "Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.",
+                        "description": "Orders that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1398,7 +1405,7 @@
                     {
                         "name": "createdBefore",
                         "in": "query",
-                        "description": "Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.",
+                        "description": "Orders that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1628,7 +1635,8 @@
                 "tags": [
                     "DirectFulfillmentShippingV20211228"
                 ],
-                "description": "Returns a customer invoice based on the purchaseOrderNumber that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "summary": "getCustomerInvoice",
+                "description": "Returns a customer invoice based on the purchaseOrderNumber that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "getCustomerInvoice",
                 "parameters": [
                     {
@@ -1838,13 +1846,14 @@
                 "tags": [
                     "DirectFulfillmentShippingV20211228"
                 ],
-                "description": "Returns a list of packing slips for the purchase orders that match the criteria specified. Date range to search must not be more than 7 days.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "summary": "getPackingSlips",
+                "description": "Returns a list of packing slips for the purchase orders that match the criteria specified. Date range to search must not be more than 7 days.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "getPackingSlips",
                 "parameters": [
                     {
                         "name": "shipFromPartyId",
                         "in": "query",
-                        "description": "The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.",
+                        "description": "The vendor `warehouseId` for order fulfillment. If not specified, the result contains orders for all warehouses.",
                         "schema": {
                             "type": "string"
                         }
@@ -1852,7 +1861,7 @@
                     {
                         "name": "limit",
                         "in": "query",
-                        "description": "The limit to the number of records returned",
+                        "description": "The maximum number of records to return.",
                         "schema": {
                             "maximum": 100,
                             "minimum": 1,
@@ -1862,7 +1871,7 @@
                     {
                         "name": "createdAfter",
                         "in": "query",
-                        "description": "Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.",
+                        "description": "Packing slips that become available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1872,7 +1881,7 @@
                     {
                         "name": "createdBefore",
                         "in": "query",
-                        "description": "Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.",
+                        "description": "Packing slips that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -1882,7 +1891,7 @@
                     {
                         "name": "sortOrder",
                         "in": "query",
-                        "description": "Sort ASC or DESC by packing slip creation date.",
+                        "description": "The packing slip creation dates, which are sorted by ascending or descending order.",
                         "schema": {
                             "type": "string",
                             "default": "ASC",
@@ -2138,13 +2147,14 @@
                 "tags": [
                     "DirectFulfillmentShippingV20211228"
                 ],
-                "description": "Returns a packing slip based on the purchaseOrderNumber that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "summary": "getPackingSlip",
+                "description": "Returns a packing slip based on the purchaseOrderNumber that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "getPackingSlip",
                 "parameters": [
                     {
                         "name": "purchaseOrderNumber",
                         "in": "path",
-                        "description": "The purchaseOrderNumber for the packing slip you want.",
+                        "description": "The `purchaseOrderNumber` for the packing slip that you want.",
                         "required": true,
                         "schema": {
                             "pattern": "^[a-zA-Z0-9]+$",
@@ -2343,6 +2353,213 @@
                     "dynamic": {}
                 }
             }
+        },
+        "/vendor/directFulfillment/shipping/2021-12-28/containerLabel": {
+            "post": {
+                "tags": [
+                    "DirectFulfillmentShippingV20211228"
+                ],
+                "summary": "createContainerLabel",
+                "description": "Creates a container (pallet) label for the associated shipment package.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "createContainerLabel",
+                "requestBody": {
+                    "description": "Request body containing the container label data.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateContainerLabelRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateContainerLabelResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-amzn-api-sandbox": {
+                    "dynamic": {}
+                },
+                "x-codegen-request-body-name": "body"
+            }
         }
     },
     "components": {
@@ -2423,7 +2640,7 @@
                 "properties": {
                     "shippingLabelRequests": {
                         "type": "array",
-                        "description": "An array of shipping label requests you want to process.",
+                        "description": "An array of shipping label requests to be processed.",
                         "items": {
                             "$ref": "#/components/schemas/ShippingLabelRequest"
                         }
@@ -2442,7 +2659,7 @@
                     "purchaseOrderNumber": {
                         "pattern": "^[a-zA-Z0-9]+$",
                         "type": "string",
-                        "description": "Purchase order number of the order for which to create a shipping label."
+                        "description": "The purchase order number of the order for which to create a shipping label."
                     },
                     "sellingParty": {
                         "$ref": "#/components/schemas/PartyIdentification"
@@ -2458,7 +2675,7 @@
                         }
                     }
                 },
-                "description": "Represents the request payload to create a shipping label. Contains the purchase order number, selling party, ship from party, and a list of containers or packages in the shipment."
+                "description": "Represents the request payload for creating a shipping label, containing the purchase order number, selling party, ship from party, and a list of containers or packages in the shipment."
             },
             "Item": {
                 "required": [
@@ -2469,15 +2686,15 @@
                 "properties": {
                     "itemSequenceNumber": {
                         "type": "integer",
-                        "description": "Item Sequence Number for the item. This must be the same value as sent in order for a given item."
+                        "description": "The sequence number of the item. The number must be the same as the order number of the item."
                     },
                     "buyerProductIdentifier": {
                         "type": "string",
-                        "description": "Buyer's Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required."
+                        "description": "The buyer's Amazon Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required."
                     },
                     "vendorProductIdentifier": {
                         "type": "string",
-                        "description": "The vendor selected product identification of the item. Should be the same as was sent in the purchase order, like SKU Number."
+                        "description": "An item's product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order."
                     },
                     "shippedQuantity": {
                         "$ref": "#/components/schemas/ItemQuantity"
@@ -2494,11 +2711,11 @@
                 "properties": {
                     "itemSequenceNumber": {
                         "type": "integer",
-                        "description": "Item Sequence Number for the item. This must be the same value as sent in the order for a given item."
+                        "description": "The sequence number of the item. The number must be the same as the order number of the item."
                     },
                     "buyerProductIdentifier": {
                         "type": "string",
-                        "description": "Buyer's Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required."
+                        "description": "The buyer's Amazon Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required."
                     },
                     "pieceNumber": {
                         "type": "integer",
@@ -2506,13 +2723,13 @@
                     },
                     "vendorProductIdentifier": {
                         "type": "string",
-                        "description": "The vendor selected product identification of the item. Should be the same as was sent in the Purchase Order, like SKU Number."
+                        "description": "An item's product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order."
                     },
                     "packedQuantity": {
                         "$ref": "#/components/schemas/ItemQuantity"
                     }
                 },
-                "description": "Represents an item packed into a container for shipping."
+                "description": "An item that has been packed into a container for shipping."
             },
             "PartyIdentification": {
                 "required": [
@@ -2522,20 +2739,20 @@
                 "properties": {
                     "partyId": {
                         "type": "string",
-                        "description": "Assigned Identification for the party."
+                        "description": "The identifier of the party."
                     },
                     "address": {
                         "$ref": "#/components/schemas/Address"
                     },
                     "taxRegistrationDetails": {
                         "type": "array",
-                        "description": "Tax registration details of the entity.",
+                        "description": "The tax registration details of the party.",
                         "items": {
                             "$ref": "#/components/schemas/TaxRegistrationDetails"
                         }
                     }
                 },
-                "description": "Name, address, and tax details for a party."
+                "description": "The name, address, and tax details of a party."
             },
             "ShipmentDetails": {
                 "required": [
@@ -2546,12 +2763,12 @@
                 "properties": {
                     "shippedDate": {
                         "type": "string",
-                        "description": "This field indicates the date of the departure of the shipment from vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the Amazon destination warehouse, whichever is sooner. Shipped date mentioned in the Shipment Confirmation should not be in the future.",
+                        "description": "The date of the shipment's departure from vendor's location. Vendors send ASNs within 30 minutes of departure from their warehouse/distribution center or six hours prior to the appointment time at the Amazon destination warehouse. The shipped date mentioned in the shipment confirmation cannot be in the future.",
                         "format": "date-time"
                     },
                     "shipmentStatus": {
                         "type": "string",
-                        "description": "Indicate the shipment status.",
+                        "description": "The shipment status.",
                         "enum": [
                             "SHIPPED",
                             "FLOOR_DENIAL"
@@ -2577,7 +2794,7 @@
                     },
                     "estimatedDeliveryDate": {
                         "type": "string",
-                        "description": "Date on which the shipment is expected to reach the buyer's warehouse. It needs to be an estimate based on the average transit time between the ship-from location and the destination. The exact appointment time will be provided by buyer and is potentially not known when creating the shipment confirmation.",
+                        "description": "The date on which the shipment is expected to reach the buyer's warehouse. The date is estimated based on the average transit time between the ship-from location and the destination. Usually, the exact appointment time is unknown when creating the shipment confirmation and is later provided by the buyer.",
                         "format": "date-time"
                     }
                 },
@@ -2595,19 +2812,19 @@
                 "properties": {
                     "trackingNumber": {
                         "type": "string",
-                        "description": "This is required to be provided for every package and should match with the trackingNumber sent for the shipment confirmation."
+                        "description": "The shipment tracking number is required for every package and should match the `trackingNumber` sent for the shipment confirmation."
                     },
                     "statusCode": {
                         "type": "string",
-                        "description": "The shipment status code for the package that provides transportation information for Amazon tracking systems and the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation)."
+                        "description": "Indicates the shipment status code of the package that provides transportation information for Amazon tracking systems and ultimately for the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation)."
                     },
                     "reasonCode": {
                         "type": "string",
-                        "description": "Provides a reason code for the package status that provides additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation)."
+                        "description": "Provides a reason code for the status of the package that will provide additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation)."
                     },
                     "statusDateTime": {
                         "type": "string",
-                        "description": "The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.",
+                        "description": "The date and time when the shipment status was updated. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.",
                         "format": "date-time"
                     },
                     "statusLocationAddress": {
@@ -2703,7 +2920,7 @@
                     },
                     "countryCode": {
                         "type": "string",
-                        "description": "The two digit country code in ISO 3166-1 alpha-2 format."
+                        "description": "The two-letter country code in [ISO 3166-1 alpha-2](https://www.iban.com/country-codes) format."
                     },
                     "phone": {
                         "type": "string",
@@ -2717,17 +2934,17 @@
                 "properties": {
                     "estimatedDeliveryDateTime": {
                         "type": "string",
-                        "description": "Date on which the shipment is expected to reach the customer delivery location. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.",
+                        "description": "Date on which the shipment is expected to reach the customer delivery location. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.",
                         "format": "date-time"
                     },
                     "apptWindowStartDateTime": {
                         "type": "string",
-                        "description": "This field indicates the date and time at the start of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.",
+                        "description": "The date and time at the start of the appointment window when the shipment is expected to be delivered. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.",
                         "format": "date-time"
                     },
                     "apptWindowEndDateTime": {
                         "type": "string",
-                        "description": "This field indicates the date and time at the end of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.",
+                        "description": "The date and time at the end of the appointment window when the shipment is expected to be delivered. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.",
                         "format": "date-time"
                     }
                 },
@@ -2833,13 +3050,13 @@
                     },
                     "shippingLabels": {
                         "type": "array",
-                        "description": "An array that contains the details of the generated shipping labels.",
+                        "description": "An array containing the details of the generated shipping labels.",
                         "items": {
                             "$ref": "#/components/schemas/ShippingLabel"
                         }
                     }
                 },
-                "description": "Response payload with the shipping labels list."
+                "description": "Response payload with the list of shipping labels."
             },
             "LabelData": {
                 "required": [
@@ -2917,20 +3134,20 @@
                         }
                     }
                 },
-                "description": "Shipping label information for an order. Includes the purchase order number, selling party, ship from party, label format, and package details."
+                "description": "Shipping label information for an order, including the purchase order number, selling party, ship from party, label format, and package details."
             },
             "SubmitShipmentConfirmationsRequest": {
                 "type": "object",
                 "properties": {
                     "shipmentConfirmations": {
                         "type": "array",
-                        "description": "An array of `ShipmentConfirmation` objects, each represents confirmation details for a specific shipment.",
+                        "description": "Array of `ShipmentConfirmation` objects. Each `ShipmentConfirmation` object represents the confirmation details for a specific shipment.",
                         "items": {
                             "$ref": "#/components/schemas/ShipmentConfirmation"
                         }
                     }
                 },
-                "description": "The `submitShipmentConfirmations` request schema."
+                "description": "The request schema for the submitShipmentConfirmations operation."
             },
             "ShipmentConfirmation": {
                 "required": [
@@ -2971,7 +3188,7 @@
                         }
                     }
                 },
-                "description": "Represents the confirmation details of a shipment. Includes the purchase order number and other shipment details."
+                "description": "Represents the confirmation details of a shipment, including the purchase order number and other shipment details."
             },
             "SubmitShipmentStatusUpdatesRequest": {
                 "type": "object",
@@ -2979,13 +3196,13 @@
                     "shipmentStatusUpdates": {
                         "minItems": 1,
                         "type": "array",
-                        "description": "Contains a list of one or more `ShipmentStatusUpdate` objects, each represents a status update of a specific shipment.",
+                        "description": "Contains a list of one or more `ShipmentStatusUpdate` objects. Each `ShipmentStatusUpdate` object represents an update to the status of a specific shipment.",
                         "items": {
                             "$ref": "#/components/schemas/ShipmentStatusUpdate"
                         }
                     }
                 },
-                "description": "The `submitShipmentStatusUpdates` request schema."
+                "description": "The request schema for the `submitShipmentStatusUpdates` operation."
             },
             "ShipmentStatusUpdate": {
                 "required": [
@@ -3011,7 +3228,7 @@
                         "$ref": "#/components/schemas/StatusUpdateDetails"
                     }
                 },
-                "description": "Represents a shipment status update."
+                "description": "Represents an update to the status of a shipment."
             },
             "CustomerInvoiceList": {
                 "type": "object",
@@ -3034,7 +3251,7 @@
                 "properties": {
                     "nextToken": {
                         "type": "string",
-                        "description": "A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more order items to return."
+                        "description": "Pagination occurs when a request produces a response that exceeds the `pageSize`. This means that the response is divided into individual pages. To retrieve the next page or the previous page, you must pass the `nextToken` value or the `previousToken` value as the `pageToken` parameter in the next request. There is no `nextToken` in the pagination object on the last page."
                     }
                 },
                 "description": "The pagination elements required to retrieve the remaining data."
@@ -3066,7 +3283,7 @@
                         "description": "GUID to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction."
                     }
                 },
-                "description": "Response that contains the transaction ID."
+                "description": "Response containing the transaction ID."
             },
             "ErrorList": {
                 "required": [
@@ -3076,7 +3293,7 @@
                 "properties": {
                     "errors": {
                         "type": "array",
-                        "description": "An array of error objects that represents individual errors encountered during the request.",
+                        "description": "An array of Error objects representing individual errors encountered during the request.",
                         "items": {
                             "$ref": "#/components/schemas/Error"
                         }
@@ -3125,7 +3342,7 @@
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "Carton",
-                                "description": "Packing container type. Typically used for drinks or food."
+                                "description": "A packing container type that is typically used for drinks or food."
                             },
                             {
                                 "value": "Pallet",
@@ -3151,7 +3368,7 @@
                     },
                     "shipMethod": {
                         "type": "string",
-                        "description": "The shipment method. This property is required when calling the submitShipmentConfirmations operation, and optional otherwise."
+                        "description": "The shipment method. This property is required when calling the `submitShipmentConfirmations` operation, and optional otherwise."
                     },
                     "scacCode": {
                         "type": "string",
@@ -3179,7 +3396,123 @@
                         }
                     }
                 },
-                "description": "A container for shipping and packing items."
+                "description": "A container used for shipping and packing items."
+            },
+            "CreateContainerLabelRequest": {
+                "required": [
+                    "carrierId",
+                    "packages",
+                    "sellingParty",
+                    "shipFromParty",
+                    "vendorContainerId"
+                ],
+                "type": "object",
+                "properties": {
+                    "sellingParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "shipFromParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "carrierId": {
+                        "$ref": "#/components/schemas/CarrierId"
+                    },
+                    "vendorContainerId": {
+                        "$ref": "#/components/schemas/VendorContainerId"
+                    },
+                    "packages": {
+                        "$ref": "#/components/schemas/Packages"
+                    }
+                },
+                "description": "The request body schema for the `createContainerLabel` operation."
+            },
+            "Packages": {
+                "type": "array",
+                "description": "An array of package objects in a container.",
+                "items": {
+                    "$ref": "#/components/schemas/Package"
+                }
+            },
+            "Package": {
+                "required": [
+                    "packageTrackingNumber"
+                ],
+                "type": "object",
+                "properties": {
+                    "packageTrackingNumber": {
+                        "type": "string",
+                        "description": "The tracking number on the label of shipment package, that you can fetch from the `shippingLabels` response. You can also scan the bar code on the shipping label to get the tracking number."
+                    }
+                },
+                "description": "The package that is associated with the container."
+            },
+            "VendorContainerId": {
+                "type": "string",
+                "description": "The unique, vendor-provided identifier for the container."
+            },
+            "CarrierId": {
+                "type": "string",
+                "description": "The unique carrier code for the carrier for whom container labels are requested.",
+                "enum": [
+                    "SWA"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "SWA",
+                        "description": "Ship with Amazon Carrier."
+                    }
+                ]
+            },
+            "CreateContainerLabelResponse": {
+                "required": [
+                    "containerLabel"
+                ],
+                "type": "object",
+                "properties": {
+                    "containerLabel": {
+                        "$ref": "#/components/schemas/ContainerLabel"
+                    }
+                },
+                "description": "The response schema for the `createContainerLabel` operation."
+            },
+            "ContainerLabel": {
+                "required": [
+                    "content",
+                    "format"
+                ],
+                "type": "object",
+                "properties": {
+                    "containerTrackingNumber": {
+                        "type": "string",
+                        "description": "The container (pallet) tracking identifier from the shipping carrier."
+                    },
+                    "content": {
+                        "type": "string",
+                        "description": "The `Base64encoded` string of the container label content."
+                    },
+                    "format": {
+                        "$ref": "#/components/schemas/ContainerLabelFormat"
+                    }
+                },
+                "description": "The details of the container label."
+            },
+            "ContainerLabelFormat": {
+                "type": "string",
+                "description": "The format of the container label.",
+                "enum": [
+                    "PNG",
+                    "ZPL"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "PNG",
+                        "description": "Portable Network Graphics (png) format."
+                    },
+                    {
+                        "value": "ZPL",
+                        "description": "Zebra Programming Language (zpl) format."
+                    }
+                ]
             }
         }
     },

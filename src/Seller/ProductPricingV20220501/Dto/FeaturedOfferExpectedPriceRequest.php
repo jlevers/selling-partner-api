@@ -15,12 +15,12 @@ use SellingPartnerApi\Dto;
 final class FeaturedOfferExpectedPriceRequest extends Dto
 {
     /**
-     * @param  string  $uri  The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this should be `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
+     * @param  string  $uri  The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this is `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
      * @param  string  $method  The HTTP method associated with an individual request within a batch.
      * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for which data is returned.
      * @param  string  $sku  The seller SKU of the item.
-     * @param  ?array[]  $body  Additional HTTP body information associated with an individual request within a batch.
-     * @param  ?string[]  $headers  A mapping of additional HTTP headers to send/receive for an individual request within a batch.
+     * @param  ?array[]  $body  Additional HTTP body information that is associated with an individual request within a batch.
+     * @param  ?string[]  $headers  A mapping of additional HTTP headers to send or receive for an individual request within a batch.
      */
     public function __construct(
         public string $uri,

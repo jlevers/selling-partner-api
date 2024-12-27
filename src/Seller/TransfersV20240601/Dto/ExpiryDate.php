@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class ExpiryDate extends Dto
 {
     /**
-     * @param  ?string  $month  A string with digits
-     * @param  ?string  $year  A string with digits
+     * @param  ?string  $month  The month the card expires expressed as a number from `1` to `12`.
+     * @param  ?string  $year  Year
      */
     public function __construct(
         public ?string $month = null,

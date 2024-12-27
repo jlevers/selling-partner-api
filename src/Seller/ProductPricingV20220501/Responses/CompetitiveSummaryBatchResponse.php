@@ -18,7 +18,7 @@ final class CompetitiveSummaryBatchResponse extends Response
     protected static array $complexArrayTypes = ['responses' => CompetitiveSummaryResponse::class];
 
     /**
-     * @param  CompetitiveSummaryResponse[]  $responses  The response list of the `competitiveSummaryBatch` operation.
+     * @param  CompetitiveSummaryResponse[]  $responses  The response list for the `competitiveSummaryBatch` operation.
      */
     public function __construct(
         public readonly array $responses,

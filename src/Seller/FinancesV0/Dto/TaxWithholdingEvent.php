@@ -22,10 +22,10 @@ final class TaxWithholdingEvent extends Dto
     ];
 
     /**
-     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @param  ?\DateTimeInterface  $postedDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
      * @param  ?Currency  $baseAmount  A currency type and amount.
      * @param  ?Currency  $withheldAmount  A currency type and amount.
-     * @param  ?TaxWithholdingPeriod  $taxWithholdingPeriod  The period during which tax withholding on a seller's account is calculated.
+     * @param  ?TaxWithholdingPeriod  $taxWithholdingPeriod  Period which taxwithholding on seller's account is calculated.
      */
     public function __construct(
         public ?\DateTimeInterface $postedDate = null,

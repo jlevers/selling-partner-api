@@ -1113,12 +1113,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1161,12 +1155,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1182,12 +1170,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1209,12 +1191,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1230,12 +1206,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1566,12 +1536,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1587,12 +1551,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1638,12 +1596,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1659,12 +1611,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1686,12 +1632,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1707,12 +1647,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1737,6 +1671,7 @@
                 "description": "Submits acknowledgements for one or more purchase orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "submitAcknowledgement",
                 "requestBody": {
+                    "description": "Submits acknowledgements for one or more purchase orders from a vendor.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1896,12 +1831,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1944,12 +1873,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1965,12 +1888,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1992,12 +1909,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2016,12 +1927,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2037,12 +1942,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3018,12 +2917,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -3066,12 +2959,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -3087,12 +2974,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3114,12 +2995,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -3135,12 +3010,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3192,11 +3061,13 @@
                     },
                     "orders": {
                         "type": "array",
+                        "description": "Represents an individual order within the OrderList.",
                         "items": {
                             "$ref": "#/components/schemas/Order"
                         }
                     }
-                }
+                },
+                "description": "A list of orders returned as response."
             },
             "Pagination": {
                 "type": "object",
@@ -3205,7 +3076,8 @@
                         "type": "string",
                         "description": "A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more purchase order items to return."
                     }
-                }
+                },
+                "description": "The pagination elements required to retrieve the remaining data."
             },
             "Order": {
                 "required": [
@@ -3244,7 +3116,8 @@
                     "orderDetails": {
                         "$ref": "#/components/schemas/OrderDetails"
                     }
-                }
+                },
+                "description": "Represents an order placed by Amazon, including the purchase order number, current state, and order details."
             },
             "OrderDetails": {
                 "required": [
@@ -3501,7 +3374,8 @@
                     "taxInfo": {
                         "$ref": "#/components/schemas/TaxRegistrationDetails"
                     }
-                }
+                },
+                "description": "Name, address and tax details of a party."
             },
             "TaxRegistrationDetails": {
                 "required": [
@@ -3624,7 +3498,8 @@
                     "listPrice": {
                         "$ref": "#/components/schemas/Money"
                     }
-                }
+                },
+                "description": "Represents an individual item in an order, including item details, quantities, pricing, and backorder information."
             },
             "Money": {
                 "type": "object",
@@ -3691,7 +3566,8 @@
                         "type": "string",
                         "description": "GUID assigned by Amazon to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction."
                     }
-                }
+                },
+                "description": "Response containing the transaction ID."
             },
             "ErrorList": {
                 "type": "array",
@@ -3705,6 +3581,7 @@
                 "properties": {
                     "acknowledgements": {
                         "type": "array",
+                        "description": "An array of order acknowledgements to be submitted.",
                         "items": {
                             "$ref": "#/components/schemas/OrderAcknowledgement"
                         }
@@ -3740,7 +3617,8 @@
                             "$ref": "#/components/schemas/OrderAcknowledgementItem"
                         }
                     }
-                }
+                },
+                "description": "Represents an acknowledgement for an order, including the purchase order number, selling party details, acknowledgement date, and a list of acknowledged items."
             },
             "OrderAcknowledgementItem": {
                 "required": [
@@ -3850,7 +3728,8 @@
                             }
                         ]
                     }
-                }
+                },
+                "description": "Represents the acknowledgement details for an individual order item, including the acknowledgement code, acknowledged quantity, scheduled ship and delivery dates, and rejection reason (if applicable)."
             },
             "ItemQuantity": {
                 "type": "object",
@@ -3904,11 +3783,13 @@
                     },
                     "ordersStatus": {
                         "type": "array",
+                        "description": "Represents an order status within the OrderListStatus.",
                         "items": {
                             "$ref": "#/components/schemas/OrderStatus"
                         }
                     }
-                }
+                },
+                "description": "A list of order statuses."
             },
             "OrderStatus": {
                 "required": [
@@ -4096,7 +3977,8 @@
                         },
                         "description": "Item receive status at the buyer's warehouse."
                     }
-                }
+                },
+                "description": "Represents the current status of an order item, including acknowledgement and receiving details."
             },
             "OrderedQuantityDetails": {
                 "type": "object",
@@ -4113,7 +3995,7 @@
                         "$ref": "#/components/schemas/ItemQuantity"
                     }
                 },
-                "description": "Details of item quantity ordered"
+                "description": "Details of item quantity ordered."
             },
             "AcknowledgementStatusDetails": {
                 "type": "object",

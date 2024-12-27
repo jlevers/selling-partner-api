@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class FeaturedOfferExpectedPrice extends Dto
 {
     /**
-     * @param  MoneyType  $listingPrice  Currency type and monetary value. Schema for demonstrating pricing info.
-     * @param  ?Points  $points  The number of Amazon Points offered with the purchase of an item, and their monetary value.
+     * @param  MoneyType  $listingPrice  Currency type and monetary value schema to demonstrate pricing information.
+     * @param  ?Points  $points  The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points.
      */
     public function __construct(
         public MoneyType $listingPrice,

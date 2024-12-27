@@ -17,6 +17,7 @@ use SellingPartnerApi\Vendor\OrdersV1\Dto\OrderList;
 final class GetPurchaseOrdersResponse extends Response
 {
     /**
+     * @param  ?OrderList  $payload  A list of orders returned as response.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

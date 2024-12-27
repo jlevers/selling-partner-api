@@ -19,7 +19,7 @@ final class OperatingHours extends Dto
     /**
      * @param  ?TimeOfDay  $closingTime  Denotes time of the day, used for defining opening or closing time of access points
      * @param  ?TimeOfDay  $openingTime  Denotes time of the day, used for defining opening or closing time of access points
-     * @param  TimeOfDay[]|null  $midDayClosures
+     * @param  TimeOfDay[]|null  $midDayClosures  midDayClosures operating hours array
      */
     public function __construct(
         public ?TimeOfDay $closingTime = null,

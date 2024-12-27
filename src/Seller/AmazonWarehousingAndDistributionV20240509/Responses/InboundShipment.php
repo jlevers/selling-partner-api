@@ -38,6 +38,7 @@ final class InboundShipment extends Response
      * @param  InventoryQuantity[]|null  $receivedQuantity  Quantity received (at the receiving end) as part of this shipment.
      * @param  ?\DateTimeInterface  $shipBy  Timestamp when the shipment will be shipped.
      * @param  SkuQuantity[]|null  $shipmentSkuQuantities  Quantity details at SKU level for the shipment. This attribute will only appear if the skuQuantities parameter in the request is set to SHOW.
+     * @param  ?string  $destinationRegion  Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east]
      * @param  ?string  $trackingId  Carrier-unique tracking ID for this shipment.
      * @param  ?\DateTimeInterface  $updatedAt  Timestamp when the shipment was updated. The date is returned in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?string  $warehouseReferenceId  An AWD-provided reference ID that you can use to interact with the warehouse. For example, a carrier appointment booking.
@@ -55,6 +56,7 @@ final class InboundShipment extends Response
         public readonly ?array $receivedQuantity = null,
         public readonly ?\DateTimeInterface $shipBy = null,
         public readonly ?array $shipmentSkuQuantities = null,
+        public readonly ?string $destinationRegion = null,
         public readonly ?string $trackingId = null,
         public readonly ?\DateTimeInterface $updatedAt = null,
         public readonly ?string $warehouseReferenceId = null,

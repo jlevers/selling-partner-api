@@ -24,7 +24,7 @@
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Returns a list of message types that are available for an order that you specify. A message type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a message.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a list of message types that are available for an order that you specify. A message type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a message.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getMessagingActionsForOrder",
                 "parameters": [
                     {
@@ -39,7 +39,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.",
+                        "description": "A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -268,12 +268,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -289,12 +283,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -316,12 +304,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -337,12 +319,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -364,12 +340,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -388,13 +358,13 @@
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message asking a buyer to provide or verify customization details such as name spelling, images, initials, etc.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a message asking a buyer to provide or verify customization details such as name spelling, images, initials, etc.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "confirmCustomizationDetails",
                 "parameters": [
                     {
                         "name": "amazonOrderId",
                         "in": "path",
-                        "description": "An Amazon order identifier. This specifies the order for which a message is sent.",
+                        "description": "An Amazon order identifier. This identifies the order for which a message is sent.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -403,7 +373,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.",
+                        "description": "A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -417,6 +387,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "This contains the message body for a message.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -576,12 +547,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -597,12 +562,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -624,12 +583,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -648,12 +601,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -669,12 +616,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -697,13 +638,13 @@
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message to a buyer to arrange a delivery or to confirm contact information for making a delivery.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a message to a buyer to arrange a delivery or to confirm contact information for making a delivery.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createConfirmDeliveryDetails",
                 "parameters": [
                     {
                         "name": "amazonOrderId",
                         "in": "path",
-                        "description": "An Amazon order identifier. This specifies the order for which a message is sent.",
+                        "description": "An Amazon order identifier. This identifies the order for which a message is sent.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -712,7 +653,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.",
+                        "description": "A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -726,6 +667,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "This contains the message body for a message.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -875,12 +817,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -896,12 +832,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -923,12 +853,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -947,12 +871,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -968,12 +886,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -996,13 +908,13 @@
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a critical message that contains documents that a seller is legally obligated to provide to the buyer. This message should only be used to deliver documents that are required by law.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a critical message that contains documents that a seller is legally obligated to provide to the buyer. This message should only be used to deliver documents that are required by law.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createLegalDisclosure",
                 "parameters": [
                     {
                         "name": "amazonOrderId",
                         "in": "path",
-                        "description": "An Amazon order identifier. This specifies the order for which a message is sent.",
+                        "description": "An Amazon order identifier. This identifies the order for which a message is sent.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1011,7 +923,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.",
+                        "description": "A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -1025,6 +937,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "This contains the message body for a message.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1183,12 +1096,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1204,12 +1111,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1231,12 +1132,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1255,12 +1150,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1276,12 +1165,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1304,13 +1187,13 @@
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer's problem.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer's problem.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createNegativeFeedbackRemoval",
                 "parameters": [
                     {
                         "name": "amazonOrderId",
                         "in": "path",
-                        "description": "An Amazon order identifier. This specifies the order for which a message is sent.",
+                        "description": "An Amazon order identifier. This identifies the order for which a message is sent.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1319,7 +1202,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.",
+                        "description": "A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -1467,12 +1350,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1488,12 +1365,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1515,12 +1386,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1536,12 +1401,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1563,12 +1422,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1587,13 +1440,13 @@
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message to ask a buyer an order-related question prior to shipping their order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a message to ask a buyer an order-related question prior to shipping their order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createConfirmOrderDetails",
                 "parameters": [
                     {
                         "name": "amazonOrderId",
                         "in": "path",
-                        "description": "An Amazon order identifier. This specifies the order for which a message is sent.",
+                        "description": "An Amazon order identifier. This identifies the order for which a message is sent.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1602,7 +1455,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.",
+                        "description": "A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -1616,6 +1469,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "This contains the message body for a message.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1765,12 +1619,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1786,12 +1634,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1813,12 +1655,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1837,12 +1673,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1858,12 +1688,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1886,13 +1710,13 @@
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message to contact a Home Service customer to arrange a service call or to gather information prior to a service call.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a message to contact a Home Service customer to arrange a service call or to gather information prior to a service call.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createConfirmServiceDetails",
                 "parameters": [
                     {
                         "name": "amazonOrderId",
                         "in": "path",
-                        "description": "An Amazon order identifier. This specifies the order for which a message is sent.",
+                        "description": "An Amazon order identifier. This identifies the order for which a message is sent.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1901,7 +1725,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.",
+                        "description": "A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -1915,6 +1739,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "This contains the message body for a message.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -2064,12 +1889,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2085,12 +1904,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -2112,12 +1925,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2136,12 +1943,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2157,12 +1958,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -2185,13 +1980,13 @@
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message to a buyer to provide details about an Amazon Motors order. This message can only be sent by Amazon Motors sellers.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a message to a buyer to provide details about an Amazon Motors order. This message can only be sent by Amazon Motors sellers.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "CreateAmazonMotors",
                 "parameters": [
                     {
                         "name": "amazonOrderId",
                         "in": "path",
-                        "description": "An Amazon order identifier. This specifies the order for which a message is sent.",
+                        "description": "An Amazon order identifier. This identifies the order for which a message is sent.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -2200,7 +1995,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.",
+                        "description": "A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -2214,6 +2009,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "This contains the message body for a message.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -2368,12 +2164,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2389,12 +2179,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -2416,12 +2200,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2440,12 +2218,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2461,12 +2233,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -2489,13 +2255,13 @@
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message to a buyer to provide details about warranty information on a purchase in their order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a message to a buyer to provide details about warranty information on a purchase in their order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "CreateWarranty",
                 "parameters": [
                     {
                         "name": "amazonOrderId",
                         "in": "path",
-                        "description": "An Amazon order identifier. This specifies the order for which a message is sent.",
+                        "description": "An Amazon order identifier. This identifies the order for which a message is sent.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -2504,7 +2270,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.",
+                        "description": "A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -2518,6 +2284,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "This contains the message body for a message.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -2674,12 +2441,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2695,12 +2456,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -2722,12 +2477,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2746,12 +2495,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -2767,12 +2510,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -2801,7 +2538,7 @@
                     {
                         "name": "amazonOrderId",
                         "in": "path",
-                        "description": "An Amazon order identifier. This specifies the order for which a message is sent.",
+                        "description": "An Amazon order identifier. This identifies the order for which a message is sent.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -2810,7 +2547,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.",
+                        "description": "A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -2994,12 +2731,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -3024,12 +2755,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3060,12 +2785,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -3090,12 +2809,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3126,12 +2839,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -3159,13 +2866,13 @@
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a message to a buyer to share a digital access key needed to utilize digital content in their order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a buyer a message to share a digital access key that is required to utilize digital content in their order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createDigitalAccessKey",
                 "parameters": [
                     {
                         "name": "amazonOrderId",
                         "in": "path",
-                        "description": "An Amazon order identifier. This specifies the order for which a message is sent.",
+                        "description": "An Amazon order identifier. This identifies the order for which a message is sent.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -3174,7 +2881,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.",
+                        "description": "A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -3188,6 +2895,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "This contains the message body for a message.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -3347,12 +3055,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -3368,12 +3070,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3395,12 +3091,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -3419,12 +3109,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -3440,12 +3124,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3468,13 +3146,13 @@
                 "tags": [
                     "MessagingV1"
                 ],
-                "description": "Sends a critical message to a buyer that an unexpected problem was encountered affecting the completion of the order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Sends a critical message to a buyer that an unexpected problem was encountered affecting the completion of the order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createUnexpectedProblem",
                 "parameters": [
                     {
                         "name": "amazonOrderId",
                         "in": "path",
-                        "description": "An Amazon order identifier. This specifies the order for which a message is sent.",
+                        "description": "An Amazon order identifier. This identifies the order for which a message is sent.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -3483,7 +3161,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.",
+                        "description": "A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -3497,6 +3175,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "This contains the message body for a message.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -3646,12 +3325,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -3667,12 +3340,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3694,12 +3361,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -3718,12 +3379,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -3739,12 +3394,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3773,7 +3422,7 @@
                     {
                         "name": "amazonOrderId",
                         "in": "path",
-                        "description": "An Amazon order identifier. This specifies the order for which a message is sent.",
+                        "description": "An Amazon order identifier. This identifies the order for which a message is sent.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -3782,7 +3431,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.",
+                        "description": "A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -3796,6 +3445,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "This contains the message body for a message.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -3810,7 +3460,7 @@
                         "description": "The message was created for the order.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference id.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3848,7 +3498,7 @@
                         "description": "Request has missing or invalid parameters and cannot be parsed.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference id.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3894,7 +3544,7 @@
                         "description": "403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference id.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3912,7 +3562,7 @@
                         "description": "The resource specified does not exist.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference id.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3936,13 +3586,7 @@
                         "description": "The request size exceeded the maximum accepted size.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference id.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3960,13 +3604,7 @@
                         "description": "The entity of the request is in a format not supported by the requested resource.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference id.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -3984,13 +3622,7 @@
                         "description": "The frequency of requests was greater than allowed.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference id.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -4008,13 +3640,7 @@
                         "description": "Encountered an unexpected condition which prevented the server from fulfilling the request.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference id.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -4032,13 +3658,7 @@
                         "description": "Temporary overloading or maintenance of the server.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference id.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -4068,14 +3688,14 @@
                 "properties": {
                     "uploadDestinationId": {
                         "type": "string",
-                        "description": "The identifier of the upload destination. Get this value by calling the [createUploadDestinationForResource](doc:uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Uploads API."
+                        "description": "The identifier for the upload destination. To retrieve this value, call the Uploads API [`createUploadDestinationForResource`](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation."
                     },
                     "fileName": {
                         "type": "string",
                         "description": "The name of the file, including the extension. This is the file name that will appear in the message. This does not need to match the file name of the file that you uploaded."
                     }
                 },
-                "description": "Represents a file uploaded to a destination that was created by the [createUploadDestinationForResource](doc:uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Selling Partner API for Uploads."
+                "description": "Represents a file that was uploaded to a destination that was created by the Uploads API [`createUploadDestinationForResource`](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation."
             },
             "LinkObject": {
                 "required": [
@@ -4101,7 +3721,8 @@
                 "type": "object",
                 "properties": {
                     "name": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The name of the template."
                     }
                 },
                 "description": "A simple object containing the name of the template."
@@ -4133,7 +3754,8 @@
                                     "$ref": "#/components/schemas/LinkObject"
                                 }
                             }
-                        }
+                        },
+                        "description": "The links response that is associated with the specified `amazonOrderId`."
                     },
                     "_embedded": {
                         "required": [
@@ -4147,13 +3769,14 @@
                                     "$ref": "#/components/schemas/GetMessagingActionResponse"
                                 }
                             }
-                        }
+                        },
+                        "description": "The messaging actions response that is associated with the specified `amazonOrderId`."
                     },
                     "errors": {
                         "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the getMessagingActionsForOrder operation."
+                "description": "The response schema for the `getMessagingActionsForOrder` operation."
             },
             "GetMessagingActionResponse": {
                 "type": "object",
@@ -4171,7 +3794,8 @@
                             "schema": {
                                 "$ref": "#/components/schemas/LinkObject"
                             }
-                        }
+                        },
+                        "description": "The links response that is associated with the messaging action."
                     },
                     "_embedded": {
                         "type": "object",
@@ -4179,7 +3803,8 @@
                             "schema": {
                                 "$ref": "#/components/schemas/GetSchemaResponse"
                             }
-                        }
+                        },
+                        "description": "The embedded response associated with the messaging action."
                     },
                     "payload": {
                         "$ref": "#/components/schemas/MessagingAction"
@@ -4202,7 +3827,8 @@
                             "self": {
                                 "$ref": "#/components/schemas/LinkObject"
                             }
-                        }
+                        },
+                        "description": "The links response that is associated with the object."
                     },
                     "payload": {
                         "$ref": "#/components/schemas/Schema"
@@ -4210,7 +3836,8 @@
                     "errors": {
                         "$ref": "#/components/schemas/ErrorList"
                     }
-                }
+                },
+                "description": "The `GET` request schema response."
             },
             "InvoiceRequest": {
                 "type": "object",
@@ -4223,7 +3850,7 @@
                         }
                     }
                 },
-                "description": "The request schema for the sendInvoice operation."
+                "description": "The request schema for the `sendInvoice` operation."
             },
             "InvoiceResponse": {
                 "type": "object",
@@ -4436,17 +4063,17 @@
                         "maxLength": 400,
                         "minLength": 1,
                         "type": "string",
-                        "description": "The text to be sent to the buyer. Only links related to the digital access key are allowed. Do not include HTML or email addresses. The text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation."
+                        "description": "The text that is sent to the buyer. Only links that are related to the digital access key are allowed. Do not include HTML or email addresses. The text must be written in the buyer's preferred language, which you can retrieve from the `GetAttributes` operation."
                     },
                     "attachments": {
                         "type": "array",
-                        "description": "Attachments to include in the message to the buyer.",
+                        "description": "Attachments that you want to include in the message to the buyer.",
                         "items": {
                             "$ref": "#/components/schemas/Attachment"
                         }
                     }
                 },
-                "description": "The request schema for the createDigitalAccessKey operation."
+                "description": "The request schema for the `createDigitalAccessKey` operation."
             },
             "CreateDigitalAccessKeyResponse": {
                 "type": "object",
@@ -4455,7 +4082,7 @@
                         "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the createDigitalAccessKey operation."
+                "description": "The response schema for the `createDigitalAccessKey` operation."
             },
             "CreateUnexpectedProblemRequest": {
                 "type": "object",

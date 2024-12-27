@@ -27,28 +27,55 @@ class SearchListingsItems extends Request
     /**
      * @param  string  $sellerId  A selling partner identifier, such as a merchant account or vendor code.
      * @param  array  $marketplaceIds  A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @param  ?array  $identifiers  A comma-delimited list of product identifiers to search for listings items by.
+     * @param  ?string  $issueLocale  A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: "en_US", "fr_CA", "fr_FR". When a localization is not available in the specified locale, localized messages default to "en_US".
+     * @param  ?array  $includedData  A comma-delimited list of datasets that you want to include in the response. Default: `summaries`.
+     * @param  ?array  $identifiers  A comma-delimited list of product identifiers that you can use to search for listings items.
      *
      * **Note**:
-     * 1. Required when `identifiersType` is provided.
-     * @param  ?string  $identifiersType  Type of product identifiers to search for listings items by.
+     * 1. This is required when you specify `identifiersType`.
+     * 2. You cannot use 'identifiers' if you specify `variationParentSku` or `packageHierarchySku`.
+     * @param  ?string  $identifiersType  A type of product identifiers that you can use to search for listings items.
      *
      * **Note**:
-     * 1. Required when `identifiers` is provided.
-     * @param  ?int  $pageSize  Number of results to be returned per page.
-     * @param  ?string  $pageToken  A token to fetch a certain page when there are multiple pages worth of results.
-     * @param  ?array  $includedData  A comma-delimited list of data sets to include in the response. Default: summaries.
-     * @param  ?string  $issueLocale  A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: "en_US", "fr_CA", "fr_FR". Localized messages default to "en_US" when a localization is not available in the specified locale.
+     * This is required when `identifiers` is provided.
+     * @param  ?string  $variationParentSku  Filters results to include listing items that are variation children of the specified SKU.
+     *
+     * **Note**: You cannot use `variationParentSku` if you include `identifiers` or `packageHierarchySku` in your request.
+     * @param  ?string  $packageHierarchySku  Filter results to include listing items that contain or are contained by the specified SKU.
+     *
+     * **Note**: You cannot use `packageHierarchySku` if you include `identifiers` or `variationParentSku` in your request.
+     * @param  ?\DateTimeInterface  $createdAfter  A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @param  ?\DateTimeInterface  $createdBefore  A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @param  ?\DateTimeInterface  $lastUpdatedAfter  A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @param  ?\DateTimeInterface  $lastUpdatedBefore  A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @param  ?array  $withIssueSeverity  Filter results to include only listing items that have issues that match one or more of the specified severity levels.
+     * @param  ?array  $withStatus  Filter results to include only listing items that have the specified status.
+     * @param  ?array  $withoutStatus  Filter results to include only listing items that don't contain the specified statuses.
+     * @param  ?string  $sortBy  An attribute by which to sort the returned listing items.
+     * @param  ?string  $sortOrder  The order in which to sort the result items.
+     * @param  ?int  $pageSize  The number of results that you want to include on each page.
+     * @param  ?string  $pageToken  A token that you can use to fetch a specific page when there are multiple pages of results.
      */
     public function __construct(
         protected string $sellerId,
         protected array $marketplaceIds,
+        protected ?string $issueLocale = null,
+        protected ?array $includedData = null,
         protected ?array $identifiers = null,
         protected ?string $identifiersType = null,
+        protected ?string $variationParentSku = null,
+        protected ?string $packageHierarchySku = null,
+        protected ?\DateTimeInterface $createdAfter = null,
+        protected ?\DateTimeInterface $createdBefore = null,
+        protected ?\DateTimeInterface $lastUpdatedAfter = null,
+        protected ?\DateTimeInterface $lastUpdatedBefore = null,
+        protected ?array $withIssueSeverity = null,
+        protected ?array $withStatus = null,
+        protected ?array $withoutStatus = null,
+        protected ?string $sortBy = null,
+        protected ?string $sortOrder = null,
         protected ?int $pageSize = null,
         protected ?string $pageToken = null,
-        protected ?array $includedData = null,
-        protected ?string $issueLocale = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -72,12 +99,23 @@ class SearchListingsItems extends Request
     {
         return array_filter([
             'marketplaceIds' => $this->marketplaceIds,
+            'issueLocale' => $this->issueLocale,
+            'includedData' => $this->includedData,
             'identifiers' => $this->identifiers,
             'identifiersType' => $this->identifiersType,
+            'variationParentSku' => $this->variationParentSku,
+            'packageHierarchySku' => $this->packageHierarchySku,
+            'createdAfter' => $this->createdAfter?->format('Y-m-d\TH:i:s\Z'),
+            'createdBefore' => $this->createdBefore?->format('Y-m-d\TH:i:s\Z'),
+            'lastUpdatedAfter' => $this->lastUpdatedAfter?->format('Y-m-d\TH:i:s\Z'),
+            'lastUpdatedBefore' => $this->lastUpdatedBefore?->format('Y-m-d\TH:i:s\Z'),
+            'withIssueSeverity' => $this->withIssueSeverity,
+            'withStatus' => $this->withStatus,
+            'withoutStatus' => $this->withoutStatus,
+            'sortBy' => $this->sortBy,
+            'sortOrder' => $this->sortOrder,
             'pageSize' => $this->pageSize,
             'pageToken' => $this->pageToken,
-            'includedData' => $this->includedData,
-            'issueLocale' => $this->issueLocale,
         ]);
     }
 }

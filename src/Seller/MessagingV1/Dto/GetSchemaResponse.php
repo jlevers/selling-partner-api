@@ -17,6 +17,7 @@ final class GetSchemaResponse extends Dto
     protected static array $attributeMap = ['links' => '_links'];
 
     /**
+     * @param  ?Links3  $links  The links response that is associated with the object.
      * @param  ?array[]  $payload  A JSON schema document describing the expected payload of the action. This object can be validated against <a href=http://json-schema.org/draft-04/schema>http://json-schema.org/draft-04/schema</a>.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */

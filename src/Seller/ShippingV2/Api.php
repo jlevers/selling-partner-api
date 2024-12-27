@@ -100,6 +100,9 @@ class Api extends BaseResource
     }
 
     /**
+     * @param  array  $accessPointTypes  Access point types
+     * @param  string  $countryCode  Country code for access point
+     * @param  string  $postalCode  postal code for access point
      * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function getAccessPoints(

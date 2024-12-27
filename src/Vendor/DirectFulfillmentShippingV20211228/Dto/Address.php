@@ -17,7 +17,7 @@ final class Address extends Dto
     /**
      * @param  string  $name  The name of the person, business or institution at that address.
      * @param  string  $addressLine1  First line of the address.
-     * @param  string  $countryCode  The two digit country code in ISO 3166-1 alpha-2 format.
+     * @param  string  $countryCode  The two-letter country code in [ISO 3166-1 alpha-2](https://www.iban.com/country-codes) format.
      * @param  ?string  $addressLine2  Additional street address information, if required.
      * @param  ?string  $addressLine3  Additional street address information, if required.
      * @param  ?string  $city  The city where the person, business or institution is located.

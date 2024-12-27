@@ -19,7 +19,7 @@ final class ShippingLabelList extends Response
 
     /**
      * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.
-     * @param  ShippingLabel[]|null  $shippingLabels  An array that contains the details of the generated shipping labels.
+     * @param  ShippingLabel[]|null  $shippingLabels  An array containing the details of the generated shipping labels.
      */
     public function __construct(
         public readonly ?Pagination $pagination = null,

@@ -27,7 +27,7 @@
                 "description": "Submits a request to generate test order data for Vendor Direct Fulfillment API entities.",
                 "operationId": "generateOrderScenarios",
                 "requestBody": {
-                    "description": "The request payload that contain parameters to generate test order data scenarios.",
+                    "description": "The request payload containing parameters for generating test order data scenarios.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -213,13 +213,13 @@
                 "tags": [
                     "DirectFulfillmentSandboxV20211028"
                 ],
-                "description": "Retrieves the transaction status identified by the specified `transactionId`, and returns the requested test order data if the transaction is successful.",
+                "description": "Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.",
                 "operationId": "getOrderScenarios",
                 "parameters": [
                     {
                         "name": "transactionId",
                         "in": "path",
-                        "description": "The transaction identifier returned in the response for the `generateOrderScenarios` operation.",
+                        "description": "The transaction identifier returned in the response to the generateOrderScenarios operation.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -296,7 +296,7 @@
                         }
                     },
                     "401": {
-                        "description": "The request's authorization header is not formatted correctly or does not contain a valid token.",
+                        "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
@@ -442,7 +442,7 @@
                         }
                     }
                 },
-                "description": "The `generateOrderScenarios` request body."
+                "description": "The request body for the generateOrderScenarios operation."
             },
             "OrderScenarioRequest": {
                 "required": [
@@ -468,20 +468,20 @@
                 "properties": {
                     "partyId": {
                         "type": "string",
-                        "description": "Assigned identification for the party. For example, warehouse code or vendor code."
+                        "description": "Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details."
                     }
                 },
-                "description": "The identification object for the party information. For example, warehouse code or vendor code."
+                "description": "The identification object for the party information. For example, warehouse code or vendor code. Please refer to specific party for more details."
             },
             "Pagination": {
                 "type": "object",
                 "properties": {
                     "nextToken": {
                         "type": "string",
-                        "description": "A generated token that retrieves the next set of results. This token is specified in the next request."
+                        "description": "A generated token to be passed in the next request to retrieve the next set of results."
                     }
                 },
-                "description": "A generated string used to pass information to your next request. If `NextToken` is returned, pass the value of `NextToken` to the next request. If `NextToken` is not returned, there are no more order items to return."
+                "description": "A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more order items to return."
             },
             "TransactionReference": {
                 "type": "object",
@@ -500,7 +500,7 @@
                         "$ref": "#/components/schemas/Transaction"
                     }
                 },
-                "description": "The payload for `getOrderScenarios`."
+                "description": "The payload for the getOrderScenarios operation."
             },
             "Transaction": {
                 "required": [
@@ -511,7 +511,7 @@
                 "properties": {
                     "transactionId": {
                         "type": "string",
-                        "description": "The unique identifier returned in the response for the `generateOrderScenarios` request."
+                        "description": "The unique identifier returned in the response to the generateOrderScenarios request."
                     },
                     "status": {
                         "type": "string",
@@ -540,7 +540,7 @@
                         "$ref": "#/components/schemas/TestCaseData"
                     }
                 },
-                "description": "The transaction details that include the status. If the transaction is successful, also includes the requested test order data."
+                "description": "The transaction details including the status. If the transaction was successful, also includes the requested test order data."
             },
             "TestCaseData": {
                 "type": "object",
@@ -597,7 +597,7 @@
                 "properties": {
                     "errors": {
                         "type": "array",
-                        "description": "An array of individual error objects that contain error details.",
+                        "description": "An array of individual error objects containing error details.",
                         "items": {
                             "$ref": "#/components/schemas/Error"
                         }

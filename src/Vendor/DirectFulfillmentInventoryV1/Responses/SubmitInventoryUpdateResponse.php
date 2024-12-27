@@ -17,7 +17,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentInventoryV1\Dto\TransactionReferen
 final class SubmitInventoryUpdateResponse extends Response
 {
     /**
-     * @param  ?TransactionReference  $payload  A response that contains the transaction ID.
+     * @param  ?TransactionReference  $payload  Response containing the transaction ID.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

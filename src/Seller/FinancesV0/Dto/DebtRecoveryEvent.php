@@ -32,9 +32,11 @@ final class DebtRecoveryEvent extends Dto
      *
      * Possible values:
      *
-     * * `DebtPayment`
-     * * `DebtPaymentFailure`
-     * * `DebtAdjustment`
+     * * DebtPayment
+     *
+     * * DebtPaymentFailure
+     *
+     * * DebtAdjustment
      * @param  ?Currency  $recoveryAmount  A currency type and amount.
      * @param  ?Currency  $overPaymentCredit  A currency type and amount.
      * @param  DebtRecoveryItem[]|null  $debtRecoveryItemList  A list of debt recovery item information.

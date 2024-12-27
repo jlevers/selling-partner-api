@@ -29,7 +29,7 @@ class SubmitShippingLabelRequest extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  SubmitShippingLabelsRequest  $submitShippingLabelsRequest  The request schema for the `submitShippingLabelRequest` operation.
+     * @param  SubmitShippingLabelsRequest  $submitShippingLabelsRequest  The request schema for the submitShippingLabelRequest operation.
      */
     public function __construct(
         public SubmitShippingLabelsRequest $submitShippingLabelsRequest,

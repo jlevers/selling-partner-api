@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class HttpStatusLine extends Dto
 {
     /**
-     * @param  ?int  $statusCode  The HTTP response Status-Code.
-     * @param  ?string  $reasonPhrase  The HTTP response Reason-Phase.
+     * @param  ?int  $statusCode  The HTTP response status code.
+     * @param  ?string  $reasonPhrase  The HTTP response reason phrase.
      */
     public function __construct(
         public ?int $statusCode = null,

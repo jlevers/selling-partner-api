@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class Pagination extends Dto
 {
     /**
-     * @param  ?string  $nextToken  A generated token that retrieves the next set of results. This token is specified in the next request.
+     * @param  ?string  $nextToken  A generated token to be passed in the next request to retrieve the next set of results.
      */
     public function __construct(
         public ?string $nextToken = null,

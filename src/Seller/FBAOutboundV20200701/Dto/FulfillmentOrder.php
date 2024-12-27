@@ -22,7 +22,8 @@ final class FulfillmentOrder extends Dto
      * @param  string  $displayableOrderId  A fulfillment order identifier submitted with the `createFulfillmentOrder` operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
      * @param  \DateTimeInterface  $displayableOrderDate  Date timestamp
      * @param  string  $displayableOrderComment  A text block submitted with the `createFulfillmentOrder` operation. Displays in recipient-facing materials such as the packing slip.
-     * @param  string  $shippingSpeedCategory  The shipping method used for the fulfillment order. When this value is `ScheduledDelivery`, choose Ship for the `fulfillmentAction`. Hold is not a valid `fulfillmentAction` value when the `shippingSpeedCategory` value is `ScheduledDelivery`.
+     * @param  string  $shippingSpeedCategory  The shipping method used for the fulfillment order. When this value is `ScheduledDelivery`, choose `Ship` for the `fulfillmentAction`. `Hold` is not a valid `fulfillmentAction` value when the `shippingSpeedCategory` value is `ScheduledDelivery`.
+     *                                         Note: Shipping method service level agreements vary by marketplace. Sellers should refer to the [Seller Central](https://developer-docs.amazon.com/sp-api/docs/seller-central-urls) website in their marketplace for shipping method service level agreements and fulfillment fees.
      * @param  Address  $destinationAddress  A physical address.
      * @param  \DateTimeInterface  $receivedDate  Date timestamp
      * @param  string  $fulfillmentOrderStatus  The current status of the fulfillment order.

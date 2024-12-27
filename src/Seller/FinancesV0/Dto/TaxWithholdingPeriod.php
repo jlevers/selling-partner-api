@@ -17,8 +17,8 @@ final class TaxWithholdingPeriod extends Dto
     protected static array $attributeMap = ['startDate' => 'StartDate', 'endDate' => 'EndDate'];
 
     /**
-     * @param  ?\DateTimeInterface  $startDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @param  ?\DateTimeInterface  $endDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @param  ?\DateTimeInterface  $startDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?\DateTimeInterface  $endDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
      */
     public function __construct(
         public ?\DateTimeInterface $startDate = null,

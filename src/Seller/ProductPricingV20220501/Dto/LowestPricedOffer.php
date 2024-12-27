@@ -17,8 +17,8 @@ final class LowestPricedOffer extends Dto
     protected static array $complexArrayTypes = ['offers' => Offer::class];
 
     /**
-     * @param  LowestPricedOffersInput  $lowestPricedOffersInput  The input required for building the `LowestPricedOffers` data in the response.
-     * @param  Offer[]  $offers  A list of up to 20 lowest priced offers that match the criteria specified in the `lowestPricedOffersInput` parameter.
+     * @param  LowestPricedOffersInput  $lowestPricedOffersInput  The input required for building `LowestPricedOffers` data in the response.
+     * @param  Offer[]  $offers  A list of up to 20 lowest priced offers that match the criteria specified in `lowestPricedOffersInput`.
      */
     public function __construct(
         public LowestPricedOffersInput $lowestPricedOffersInput,

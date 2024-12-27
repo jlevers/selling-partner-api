@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class FeaturedOffer extends Dto
 {
     /**
-     * @param  OfferIdentifier  $offerIdentifier  Identifies an offer from a particular seller on an ASIN.
+     * @param  OfferIdentifier  $offerIdentifier  Identifies an offer from a particular seller for a specified ASIN.
      * @param  ?string  $condition  The condition of the item.
-     * @param  ?Price  $price  Schema for item's price information, including listing price, shipping price, and Amazon points.
+     * @param  ?Price  $price  The schema for item's price information, including listing price, shipping price, and Amazon Points.
      */
     public function __construct(
         public OfferIdentifier $offerIdentifier,

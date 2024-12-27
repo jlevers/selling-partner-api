@@ -22,16 +22,18 @@ final class AdjustmentItem extends Dto
         'fnSku' => 'FnSKU',
         'productDescription' => 'ProductDescription',
         'asin' => 'ASIN',
+        'transactionNumber' => 'TransactionNumber',
     ];
 
     /**
-     * @param  ?string  $quantity  Represents the number of units in the seller's inventory when the `AdjustmentType` is `FBAInventoryReimbursement`.
+     * @param  ?string  $quantity  Represents the number of units in the seller's inventory when the AdustmentType is FBAInventoryReimbursement.
      * @param  ?Currency  $perUnitAmount  A currency type and amount.
      * @param  ?Currency  $totalAmount  A currency type and amount.
      * @param  ?string  $sellerSku  The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
      * @param  ?string  $fnSku  A unique identifier assigned to products stored in and fulfilled from a fulfillment center.
      * @param  ?string  $productDescription  A short description of the item.
      * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
+     * @param  ?string  $transactionNumber  The transaction number that is related to the adjustment.
      */
     public function __construct(
         public ?string $quantity = null,
@@ -41,5 +43,6 @@ final class AdjustmentItem extends Dto
         public ?string $fnSku = null,
         public ?string $productDescription = null,
         public ?string $asin = null,
+        public ?string $transactionNumber = null,
     ) {}
 }

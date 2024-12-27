@@ -39,21 +39,21 @@ final class RentalTransactionEvent extends Dto
      *
      * Possible values:
      *
-     * * `RentalCustomerPayment-Buyout`: A transaction type that represents when the customer wants to buy out a rented item.
+     * * RentalCustomerPayment-Buyout - Transaction type that represents when the customer wants to buy out a rented item.
      *
-     * * `RentalCustomerPayment-Extension`: A transaction type that represents when the customer wants to extend the rental period.
+     * * RentalCustomerPayment-Extension - Transaction type that represents when the customer wants to extend the rental period.
      *
-     * * `RentalCustomerRefund-Buyout`: A transaction type that represents when the customer requests a refund for the buyout of the rented item.
+     * * RentalCustomerRefund-Buyout - Transaction type that represents when the customer requests a refund for the buyout of the rented item.
      *
-     * * `RentalCustomerRefund-Extension`: A transaction type that represents when the customer requests a refund over the extension on the rented item.
+     * * RentalCustomerRefund-Extension - Transaction type that represents when the customer requests a refund over the extension on the rented item.
      *
-     * * `RentalHandlingFee`: A transaction type that represents the fee that Amazon charges sellers who rent through Amazon.
+     * * RentalHandlingFee - Transaction type that represents the fee that Amazon charges sellers who rent through Amazon.
      *
-     * * `RentalChargeFailureReimbursement`: A transaction type that represents when Amazon sends money to the seller to compensate for a failed charge.
+     * * RentalChargeFailureReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a failed charge.
      *
-     * * `RentalLostItemReimbursement`: A transaction type that represents when Amazon sends money to the seller to compensate for a lost item.
-     * @param  ?int  $extensionLength  The number of days that the buyer extended an already rented item. This value is only returned for `RentalCustomerPayment-Extension` and `RentalCustomerRefund-Extension` events.
-     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * * RentalLostItemReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a lost item.
+     * @param  ?int  $extensionLength  The number of days that the buyer extended an already rented item. This value is only returned for RentalCustomerPayment-Extension and RentalCustomerRefund-Extension events.
+     * @param  ?\DateTimeInterface  $postedDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
      * @param  ChargeComponent[]|null  $rentalChargeList  A list of charge information on the seller's account.
      * @param  FeeComponent[]|null  $rentalFeeList  A list of fee component information.
      * @param  ?string  $marketplaceName  The name of the marketplace.

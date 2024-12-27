@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class FeaturedOfferSegment extends Dto
 {
     /**
-     * @param  string  $customerMembership  The customer membership type that make up this segment
+     * @param  string  $customerMembership  The customer membership type that makes up this segment
      * @param  SegmentDetails  $segmentDetails  The details about the segment.
      */
     public function __construct(

@@ -26,7 +26,7 @@ class GetShippingLabel extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $purchaseOrderNumber  The purchase order number for which you want to return the shipping label. Should be the same `purchaseOrderNumber` as received in the order.
+     * @param  string  $purchaseOrderNumber  The purchase order number for which you want to return the shipping label. It should be the same `purchaseOrderNumber` that you received in the order.
      */
     public function __construct(
         protected string $purchaseOrderNumber,

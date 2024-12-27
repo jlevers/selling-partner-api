@@ -1729,7 +1729,7 @@
                 "description": "Submits acknowledgements for one or more purchase orders.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "submitAcknowledgement",
                 "requestBody": {
-                    "description": "The request body that contains the order acknowledgement.",
+                    "description": "The request body containing the acknowledgement to an order.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -2047,13 +2047,13 @@
                     },
                     "orders": {
                         "type": "array",
-                        "description": "Represents a purchase order within the `OrderList`.",
+                        "description": "Represents a purchase order within the OrderList.",
                         "items": {
                             "$ref": "#/components/schemas/Order"
                         }
                     }
                 },
-                "description": "A purchase orders list returned as a response."
+                "description": "A list of purchase orders returned as response."
             },
             "Pagination": {
                 "type": "object",
@@ -2141,7 +2141,7 @@
                                 "$ref": "#/components/schemas/TaxLineItem"
                             }
                         },
-                        "description": "The total tax object within the shipment that relates to the order."
+                        "description": "The total Tax object within shipment that relates to the order."
                     },
                     "sellingParty": {
                         "$ref": "#/components/schemas/PartyIdentification"
@@ -2182,7 +2182,7 @@
                         "$ref": "#/components/schemas/TaxRegistrationDetails"
                     }
                 },
-                "description": "Name, address, and tax details of a party."
+                "description": "Name, address and tax details of a party."
             },
             "TaxRegistrationDetails": {
                 "required": [
@@ -2233,7 +2233,7 @@
                 "properties": {
                     "name": {
                         "type": "string",
-                        "description": "The name of the person, business, or institution at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
+                        "description": "The name of the person, business or institution at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "attention": {
                         "type": "string",
@@ -2253,15 +2253,15 @@
                     },
                     "city": {
                         "type": "string",
-                        "description": "The city where the person, business, or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
+                        "description": "The city where the person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "county": {
                         "type": "string",
-                        "description": "The county where the person, business, or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
+                        "description": "The county where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "district": {
                         "type": "string",
-                        "description": "The district where the person, business, or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
+                        "description": "The district where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     },
                     "stateOrRegion": {
                         "type": "string",
@@ -2277,7 +2277,7 @@
                     },
                     "phone": {
                         "type": "string",
-                        "description": "The phone number of the person, business, or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
+                        "description": "The phone number of the person, business or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`."
                     }
                 },
                 "description": "Address of the party."
@@ -2331,7 +2331,7 @@
                         "$ref": "#/components/schemas/Money"
                     }
                 },
-                "description": "An order item."
+                "description": "An item within an order"
             },
             "Money": {
                 "type": "object",
@@ -2370,7 +2370,7 @@
                         "description": "GUID assigned by Amazon to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction."
                     }
                 },
-                "description": "Response that contains the transaction ID."
+                "description": "Response containing the transaction ID."
             },
             "ErrorList": {
                 "type": "array",
@@ -2459,7 +2459,7 @@
                         "$ref": "#/components/schemas/ItemQuantity"
                     }
                 },
-                "description": "Individual item details within the acknowledged order."
+                "description": "Details of an individual item within the order being acknowledged."
             },
             "ItemQuantity": {
                 "type": "object",
@@ -2550,7 +2550,7 @@
                         ]
                     }
                 },
-                "description": "The order's tax details."
+                "description": "The tax details related to the order."
             },
             "AcknowledgementStatus": {
                 "type": "object",

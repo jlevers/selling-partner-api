@@ -27,19 +27,20 @@ final class ListOfferMetricsResponseOffer extends Dto
 
     /**
      * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN).
-     * @param  ?float  $notDeliveredDueToOos  The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the `PERFORMANCE` `timePeriodType`.
-     * @param  ?float  $totalSubscriptionsRevenue  The revenue generated from subscriptions over a period of time. Applicable only for the `PERFORMANCE` `timePeriodType`.
-     * @param  ?float  $shippedSubscriptionUnits  The number of units shipped to the subscribers over a period of time. Applicable only for the `PERFORMANCE` `timePeriodType`.
-     * @param  ?float  $activeSubscriptions  The number of active subscriptions present at the end of the period. Applicable only for the `PERFORMANCE` `timePeriodType`.
-     * @param  ?float  $revenuePenetration  The percentage of total program revenue out of total product revenue. Applicable only for the `PERFORMANCE` `timePeriodType`.
-     * @param  ?float  $lostRevenueDueToOos  The revenue that would have been generated had there not been out of stock. Applicable only for the PERFORMANCE timePeriodType.
-     * @param  ?float  $couponsRevenuePenetration  The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable only for the PERFORMANCE timePeriodType.
-     * @param  ?float  $next30dayTotalSubscriptionsRevenue  The forecasted total subscription revenue for the next 30 days. Applicable only for the `FORECAST` `timePeriodType`.
-     * @param  ?float  $next60dayTotalSubscriptionsRevenue  The forecasted total subscription revenue for the next 60 days. Applicable only for the `FORECAST` `timePeriodType`.
-     * @param  ?float  $next90dayTotalSubscriptionsRevenue  The forecasted total subscription revenue for the next 90 days. Applicable only for the `FORECAST` `timePeriodType`.
-     * @param  ?float  $next30dayShippedSubscriptionUnits  The forecasted shipped subscription units for the next 30 days. Applicable only for the `FORECAST` `timePeriodType`.
-     * @param  ?float  $next60dayShippedSubscriptionUnits  The forecasted shipped subscription units for the next 60 days. Applicable only for the `FORECAST` `timePeriodType`.
-     * @param  ?float  $next90dayShippedSubscriptionUnits  The forecasted shipped subscription units for the next 90 days. Applicable only for the `FORECAST` `timePeriodType`.
+     * @param  ?float  $notDeliveredDueToOos  The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $totalSubscriptionsRevenue  The revenue generated from subscriptions over a period of time. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $shippedSubscriptionUnits  The number of units shipped to the subscribers over a period of time. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $activeSubscriptions  The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $revenuePenetration  The percentage of total program revenue out of total product revenue. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $lostRevenueDueToOos  The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $couponsRevenuePenetration  The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $shareOfCouponSubscriptions  The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $next30dayTotalSubscriptionsRevenue  The forecasted total subscription revenue for the next 30 days. Applicable to FORECAST timePeriodType.
+     * @param  ?float  $next60dayTotalSubscriptionsRevenue  The forecasted total subscription revenue for the next 60 days. Applicable to FORECAST timePeriodType.
+     * @param  ?float  $next90dayTotalSubscriptionsRevenue  The forecasted total subscription revenue for the next 90 days. Applicable to FORECAST timePeriodType.
+     * @param  ?float  $next30dayShippedSubscriptionUnits  The forecasted shipped subscription units for the next 30 days. Applicable to FORECAST timePeriodType.
+     * @param  ?float  $next60dayShippedSubscriptionUnits  The forecasted shipped subscription units for the next 60 days. Applicable to FORECAST timePeriodType.
+     * @param  ?float  $next90dayShippedSubscriptionUnits  The forecasted shipped subscription units for the next 90 days. Applicable to FORECAST timePeriodType.
      * @param  ?TimeInterval  $timeInterval  A date-time interval in ISO 8601 format which is used to compute metrics. Only the date is required, but you must pass the complete date and time value. For example, November 11, 2022 should be passed as "2022-11-07T00:00:00Z". Note that only data for the trailing 2 years is supported.
      *
      *  **Note**: The `listOfferMetrics` operation only supports a time interval which covers a single unit of the aggregation frequency. For example, for a MONTH aggregation frequency, the duration of the interval between the startDate and endDate can not be more than 1 month.
@@ -54,6 +55,7 @@ final class ListOfferMetricsResponseOffer extends Dto
         public ?float $revenuePenetration = null,
         public ?float $lostRevenueDueToOos = null,
         public ?float $couponsRevenuePenetration = null,
+        public ?float $shareOfCouponSubscriptions = null,
         public ?float $next30dayTotalSubscriptionsRevenue = null,
         public ?float $next60dayTotalSubscriptionsRevenue = null,
         public ?float $next90dayTotalSubscriptionsRevenue = null,

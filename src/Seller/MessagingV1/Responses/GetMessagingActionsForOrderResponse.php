@@ -20,6 +20,8 @@ final class GetMessagingActionsForOrderResponse extends Response
     protected static array $attributeMap = ['links' => '_links', 'embedded' => '_embedded'];
 
     /**
+     * @param  ?Links  $links  The links response that is associated with the specified `amazonOrderId`.
+     * @param  ?Embedded  $embedded  The messaging actions response that is associated with the specified `amazonOrderId`.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

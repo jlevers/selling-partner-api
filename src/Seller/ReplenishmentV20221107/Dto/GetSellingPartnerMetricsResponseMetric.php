@@ -17,19 +17,35 @@ final class GetSellingPartnerMetricsResponseMetric extends Dto
     protected static array $attributeMap = [
         'notDeliveredDueToOos' => 'notDeliveredDueToOOS',
         'lostRevenueDueToOos' => 'lostRevenueDueToOOS',
+        'subscriberRetentionFor30days' => 'subscriberRetentionFor30Days',
+        'subscriberRetentionFor90days' => 'subscriberRetentionFor90Days',
+        'revenuePenetrationFor0percentSellerFunding' => 'revenuePenetrationFor0PercentSellerFunding',
+        'revenuePenetrationFor5percentSellerFunding' => 'revenuePenetrationFor5PercentSellerFunding',
+        'revenuePenetrationFor10percentSellerFunding' => 'revenuePenetrationFor10PercentSellerFunding',
+        'revenuePenetrationFor5plusPercentSellerFunding' => 'revenuePenetrationFor5PlusPercentSellerFunding',
     ];
 
     /**
-     * @param  ?float  $notDeliveredDueToOos  The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the `PERFORMANCE` `timePeriodType`.
-     * @param  ?float  $totalSubscriptionsRevenue  The revenue generated from subscriptions over a period of time. Applicable for both the `PERFORMANCE` and `FORECAST` `timePeriodType`.
-     * @param  ?float  $shippedSubscriptionUnits  The number of units shipped to the subscribers over a period of time. Applicable for both the `PERFORMANCE` and `FORECAST` `timePeriodType`.
-     * @param  ?float  $activeSubscriptions  The number of active subscriptions present at the end of the period. Applicable only for the `PERFORMANCE` `timePeriodType`.
-     * @param  ?float  $subscriberAverageRevenue  The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the `PERFORMANCE` `timePeriodType`.
-     * @param  ?float  $nonSubscriberAverageRevenue  The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the `PERFORMANCE` `timePeriodType`.
-     * @param  ?float  $lostRevenueDueToOos  The revenue that would have been generated had there not been out of stock. Applicable only for the PERFORMANCE timePeriodType.
-     * @param  ?float  $subscriberAverageReorders  The average reorders per subscriber of the program over a period of 12 months. Applicable only for the PERFORMANCE timePeriodType.
-     * @param  ?float  $nonSubscriberAverageReorders  The average reorders per non-subscriber of the program over a period of past 12 months. Applicable only for the PERFORMANCE timePeriodType.
-     * @param  ?float  $couponsRevenuePenetration  The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable only for the PERFORMANCE timePeriodType.
+     * @param  ?float  $notDeliveredDueToOos  The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $totalSubscriptionsRevenue  The revenue generated from subscriptions over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.
+     * @param  ?float  $shippedSubscriptionUnits  The number of units shipped to the subscribers over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.
+     * @param  ?float  $activeSubscriptions  The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $subscriberAverageRevenue  The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $nonSubscriberAverageRevenue  The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $lostRevenueDueToOos  The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $subscriberAverageReorders  The average reorders per subscriber of the program over a period of 12 months. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $nonSubscriberAverageReorders  The average reorders per non-subscriber of the program over a period of past 12 months. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $couponsRevenuePenetration  The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $revenueFromSubscriptionsWithMultipleDeliveries  The subscription revenue generated from subscriptions with over two deliveries over the past 12 months. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $revenueFromActiveSubscriptionsWithSingleDelivery  The subscription revenue generated from active subscriptions with one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $revenueFromCancelledSubscriptionsAfterSingleDelivery  The subscription revenue generated from subscriptions which are cancelled after one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $subscriberRetentionFor30days  The percentage of subscriptions retained after 30 days of subscription creation. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $subscriberRetentionFor90days  The percentage of subscriptions retained after 90 days of subscription creation. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $revenuePenetrationFor0percentSellerFunding  The percentage of subscription revenue generated by offers with 0% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $revenuePenetrationFor5percentSellerFunding  [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 5% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $revenuePenetrationFor10percentSellerFunding  [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 10% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $revenuePenetrationFor5plusPercentSellerFunding  [Applicable only for vendors] The percentage of subscription revenue generated by offers with 5% or above seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $shareOfCouponSubscriptions  The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.
      * @param  ?TimeInterval  $timeInterval  A date-time interval in ISO 8601 format which is used to compute metrics. Only the date is required, but you must pass the complete date and time value. For example, November 11, 2022 should be passed as "2022-11-07T00:00:00Z". Note that only data for the trailing 2 years is supported.
      *
      *  **Note**: The `listOfferMetrics` operation only supports a time interval which covers a single unit of the aggregation frequency. For example, for a MONTH aggregation frequency, the duration of the interval between the startDate and endDate can not be more than 1 month.
@@ -46,6 +62,16 @@ final class GetSellingPartnerMetricsResponseMetric extends Dto
         public ?float $subscriberAverageReorders = null,
         public ?float $nonSubscriberAverageReorders = null,
         public ?float $couponsRevenuePenetration = null,
+        public ?float $revenueFromSubscriptionsWithMultipleDeliveries = null,
+        public ?float $revenueFromActiveSubscriptionsWithSingleDelivery = null,
+        public ?float $revenueFromCancelledSubscriptionsAfterSingleDelivery = null,
+        public ?float $subscriberRetentionFor30days = null,
+        public ?float $subscriberRetentionFor90days = null,
+        public ?float $revenuePenetrationFor0percentSellerFunding = null,
+        public ?float $revenuePenetrationFor5percentSellerFunding = null,
+        public ?float $revenuePenetrationFor10percentSellerFunding = null,
+        public ?float $revenuePenetrationFor5plusPercentSellerFunding = null,
+        public ?float $shareOfCouponSubscriptions = null,
         public ?TimeInterval $timeInterval = null,
         public ?string $currencyCode = null,
     ) {}

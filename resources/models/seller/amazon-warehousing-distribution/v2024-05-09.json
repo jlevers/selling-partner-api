@@ -554,7 +554,7 @@
                     {
                         "name": "nextToken",
                         "in": "query",
-                        "description": "Token to retrieve the next set of paginated results.",
+                        "description": "A token that is used to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
                         "schema": {
                             "type": "string"
                         },
@@ -872,7 +872,7 @@
                     {
                         "name": "nextToken",
                         "in": "query",
-                        "description": "Token to retrieve the next set of paginated results.",
+                        "description": "A token that is used to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
                         "schema": {
                             "type": "string"
                         },
@@ -929,7 +929,17 @@
                                                 "inventoryDetails": {
                                                     "availableDistributableQuantity": 10,
                                                     "reservedDistributableQuantity": 10
-                                                }
+                                                },
+                                                "expirationDetails": [
+                                                    {
+                                                        "onhandQuantity": 10,
+                                                        "expiration": "2027-01-12T10:00:00.000Z"
+                                                    },
+                                                    {
+                                                        "onhandQuantity": 10,
+                                                        "expiration": "2028-01-12T10:00:00.000Z"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "totalOnhandQuantity": 20,
@@ -938,7 +948,13 @@
                                                 "inventoryDetails": {
                                                     "availableDistributableQuantity": 10,
                                                     "reservedDistributableQuantity": 10
-                                                }
+                                                },
+                                                "expirationDetails": [
+                                                    {
+                                                        "onhandQuantity": 20,
+                                                        "expiration": "2027-01-12T10:00:00.000Z"
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }
@@ -1276,7 +1292,19 @@
                         "products": [
                             {
                                 "quantity": 1,
-                                "sku": "testPen"
+                                "sku": "testPen",
+                                "expiration": "2025-06-07T12:12:09.061Z",
+                                "prepDetails": {
+                                    "prepCategory": "PERFORATED",
+                                    "prepOwner": "AMAZON",
+                                    "labelOwner": "SELF",
+                                    "prepInstructions": [
+                                        {
+                                            "prepType": "ITEM_POLYBAGGING",
+                                            "prepOwner": "AMAZON"
+                                        }
+                                    ]
+                                }
                             }
                         ]
                     },
@@ -1343,7 +1371,19 @@
                             "products": [
                                 {
                                     "quantity": 1,
-                                    "sku": "testPen"
+                                    "sku": "testPen",
+                                    "expiration": "2025-06-07T12:12:09.061Z",
+                                    "prepDetails": {
+                                        "prepCategory": "PERFORATED",
+                                        "prepOwner": "AMAZON",
+                                        "labelOwner": "SELF",
+                                        "prepInstructions": [
+                                            {
+                                                "prepType": "ITEM_POLYBAGGING",
+                                                "prepOwner": "AMAZON"
+                                            }
+                                        ]
+                                    }
                                 }
                             ]
                         },
@@ -1424,6 +1464,486 @@
                 },
                 "description": "This exception is thrown when client inputs are invalid."
             },
+            "FormatType": {
+                "type": "string",
+                "description": "The label format type extension.",
+                "example": "PDF",
+                "enum": [
+                    "PDF"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "PDF format.",
+                        "value": "PDF"
+                    }
+                ]
+            },
+            "InboundEligibility": {
+                "required": [
+                    "packagesToInbound",
+                    "previewedAt",
+                    "status"
+                ],
+                "type": "object",
+                "properties": {
+                    "ineligibilityReasons": {
+                        "type": "array",
+                        "description": "If there are order level eligibility issues, then this list will contain those error codes and descriptions.",
+                        "items": {
+                            "$ref": "#/components/schemas/OrderIneligibilityReason"
+                        }
+                    },
+                    "packagesToInbound": {
+                        "type": "array",
+                        "description": "Details on SKU eligibility for each inbound package.",
+                        "items": {
+                            "$ref": "#/components/schemas/SkuEligibility"
+                        }
+                    },
+                    "previewedAt": {
+                        "type": "string",
+                        "description": "Timestamp when the eligibility check is performed.",
+                        "format": "date-time"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/InboundEligibilityStatus"
+                    }
+                },
+                "description": "Represents the eligibility status of the inbound packages."
+            },
+            "InboundEligibilityStatus": {
+                "type": "string",
+                "description": "Enum denoting the package inbound eligibility.",
+                "enum": [
+                    "ELIGIBLE",
+                    "INELIGIBLE"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "Eligible to inbound.",
+                        "value": "ELIGIBLE"
+                    },
+                    {
+                        "description": "Ineligible to inbound.",
+                        "value": "INELIGIBLE"
+                    }
+                ]
+            },
+            "InboundOrder": {
+                "required": [
+                    "channelPlacedInboundShipments",
+                    "createdAt",
+                    "orderId",
+                    "orderStatus",
+                    "orderVersion",
+                    "originAddress",
+                    "packagesToInbound"
+                ],
+                "type": "object",
+                "properties": {
+                    "channelPlacedInboundShipments": {
+                        "minItems": 1,
+                        "type": "array",
+                        "description": "List of inbound shipments part of this order.",
+                        "items": {
+                            "$ref": "#/components/schemas/InboundShipment"
+                        }
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "description": "Date when this order was created.",
+                        "format": "date-time"
+                    },
+                    "externalReferenceId": {
+                        "type": "string",
+                        "description": "Reference ID that can be used to correlate the order with partner resources.",
+                        "example": "TestReferenceId"
+                    },
+                    "orderId": {
+                        "type": "string",
+                        "description": "Inbound order ID."
+                    },
+                    "orderStatus": {
+                        "$ref": "#/components/schemas/InboundStatus"
+                    },
+                    "orderVersion": {
+                        "type": "string",
+                        "description": "Inbound order version."
+                    },
+                    "originAddress": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "packagesToInbound": {
+                        "minItems": 1,
+                        "type": "array",
+                        "description": "List of packages to be inbounded.",
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionPackageQuantity"
+                        }
+                    },
+                    "preferences": {
+                        "$ref": "#/components/schemas/InboundPreferences"
+                    },
+                    "shipBy": {
+                        "type": "string",
+                        "description": "Date by which this order will be shipped.",
+                        "format": "date-time",
+                        "example": "2023-01-12T10:00:00Z"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "Date when this order was last updated.",
+                        "format": "date-time"
+                    }
+                },
+                "description": "Represents an AWD inbound order.",
+                "example": {
+                    "channelPlacedInboundShipments": [
+                        {
+                            "destinationAddress": {
+                                "addressLine1": "address_1",
+                                "addressLine2": "address_2",
+                                "addressLine3": "address_3",
+                                "city": "Seattle",
+                                "countryCode": "US",
+                                "county": "Washington",
+                                "district": "District1",
+                                "name": "address_name",
+                                "phoneNumber": "+14155552671",
+                                "postalCode": "123456",
+                                "stateOrRegion": "Washington"
+                            },
+                            "orderId": "TestOrderId",
+                            "originAddress": {
+                                "addressLine1": "address_1",
+                                "addressLine2": "address_2",
+                                "addressLine3": "address_3",
+                                "city": "Seattle",
+                                "countryCode": "US",
+                                "county": "Washington",
+                                "district": "District1",
+                                "name": "address_name",
+                                "phoneNumber": "+14155552671",
+                                "postalCode": "123456",
+                                "stateOrRegion": "Washington"
+                            },
+                            "receivedQuantity": [],
+                            "shipmentContainerQuantities": [
+                                {
+                                    "count": 1,
+                                    "distributionPackage": {
+                                        "contents": {
+                                            "packages": [],
+                                            "products": [
+                                                {
+                                                    "quantity": 1,
+                                                    "sku": "testPen"
+                                                }
+                                            ]
+                                        },
+                                        "measurements": {
+                                            "dimensions": {
+                                                "height": 2.54,
+                                                "length": 2.54,
+                                                "unitOfMeasurement": "CENTIMETERS",
+                                                "width": 2.54
+                                            },
+                                            "weight": {
+                                                "unitOfMeasurement": "KILOGRAMS",
+                                                "weight": 0.453592
+                                            }
+                                        },
+                                        "type": "CASE"
+                                    }
+                                }
+                            ],
+                            "shipmentId": "TestShipmentId",
+                            "shipmentStatus": "CREATED"
+                        }
+                    ],
+                    "createdAt": "2023-06-07T12:12:09.061Z",
+                    "externalReferenceId": "TestReferenceId",
+                    "destinationRegion": "us-west",
+                    "orderId": "TestOrderId",
+                    "orderStatus": "DRAFT",
+                    "orderVersion": "2",
+                    "originAddress": {
+                        "addressLine1": "address_1",
+                        "addressLine2": "address_2",
+                        "addressLine3": "address_3",
+                        "city": "Seattle",
+                        "countryCode": "US",
+                        "county": "Washington",
+                        "district": "District1",
+                        "name": "address_name",
+                        "phoneNumber": "+14155552671",
+                        "postalCode": "123456",
+                        "stateOrRegion": "Washington"
+                    },
+                    "packagesToInbound": [
+                        {
+                            "count": 1,
+                            "distributionPackage": {
+                                "contents": {
+                                    "packages": [],
+                                    "products": [
+                                        {
+                                            "quantity": 1,
+                                            "sku": "testPen"
+                                        }
+                                    ]
+                                },
+                                "measurements": {
+                                    "dimensions": {
+                                        "height": 2.54,
+                                        "length": 2.54,
+                                        "unitOfMeasurement": "CENTIMETERS",
+                                        "width": 2.54
+                                    },
+                                    "weight": {
+                                        "unitOfMeasurement": "KILOGRAMS",
+                                        "weight": 0.453592
+                                    }
+                                },
+                                "type": "CASE"
+                            }
+                        }
+                    ],
+                    "shipBy": "2023-06-07T12:12:09.061Z",
+                    "updatedAt": "2023-06-07T12:12:09.061Z",
+                    "preferences": {
+                        "destinationRegion": "us-west"
+                    }
+                }
+            },
+            "InboundOrderCreationData": {
+                "required": [
+                    "originAddress",
+                    "packagesToInbound"
+                ],
+                "type": "object",
+                "properties": {
+                    "externalReferenceId": {
+                        "type": "string",
+                        "description": "Reference ID that can be used to correlate the order with partner resources.",
+                        "example": "TestReferenceId"
+                    },
+                    "originAddress": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "packagesToInbound": {
+                        "minItems": 1,
+                        "type": "array",
+                        "description": "List of packages to be inbounded.",
+                        "example": [
+                            {
+                                "count": 1,
+                                "distributionPackage": {
+                                    "contents": {
+                                        "products": [
+                                            {
+                                                "quantity": 1,
+                                                "sku": "testPen"
+                                            }
+                                        ]
+                                    },
+                                    "measurements": {
+                                        "dimensions": {
+                                            "height": 1,
+                                            "length": 1,
+                                            "unitOfMeasurement": "INCHES",
+                                            "width": 1
+                                        },
+                                        "volume": {
+                                            "unitOfMeasurement": "CUIN",
+                                            "volume": 1
+                                        },
+                                        "weight": {
+                                            "unitOfMeasurement": "POUNDS",
+                                            "weight": 1
+                                        }
+                                    },
+                                    "type": "CASE"
+                                }
+                            }
+                        ],
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionPackageQuantity"
+                        }
+                    },
+                    "preferences": {
+                        "$ref": "#/components/schemas/InboundPreferences"
+                    },
+                    "shipBy": {
+                        "type": "string",
+                        "description": "Estimated date by when goods have to be picked up.",
+                        "format": "date-time",
+                        "example": "2023-06-07T12:12:09.061Z"
+                    }
+                },
+                "description": "Payload for creating an inbound order.",
+                "example": {
+                    "externalReferenceId": "TestReferenceId",
+                    "originAddress": {
+                        "addressLine1": "address_1",
+                        "addressLine2": "address_2",
+                        "addressLine3": "address_3",
+                        "city": "City1",
+                        "countryCode": "CC",
+                        "district": "District1",
+                        "name": "address_name",
+                        "postalCode": "123456",
+                        "stateOrRegion": "State1"
+                    },
+                    "packagesToInbound": [
+                        {
+                            "count": 1,
+                            "distributionPackage": {
+                                "contents": {
+                                    "products": [
+                                        {
+                                            "quantity": 1,
+                                            "sku": "testPen"
+                                        }
+                                    ]
+                                },
+                                "measurements": {
+                                    "dimensions": {
+                                        "height": 1,
+                                        "length": 1,
+                                        "unitOfMeasurement": "INCHES",
+                                        "width": 1
+                                    },
+                                    "volume": {
+                                        "unitOfMeasurement": "CUIN",
+                                        "volume": 1
+                                    },
+                                    "weight": {
+                                        "unitOfMeasurement": "POUNDS",
+                                        "weight": 1
+                                    }
+                                },
+                                "type": "CASE"
+                            }
+                        }
+                    ],
+                    "shipBy": "2023-06-07T12:12:09.061Z",
+                    "preferences": {
+                        "destinationRegion": "us-west"
+                    }
+                }
+            },
+            "InboundOrderReference": {
+                "required": [
+                    "orderId",
+                    "orderVersion"
+                ],
+                "type": "object",
+                "properties": {
+                    "orderId": {
+                        "type": "string",
+                        "description": "Order ID of the inbound order."
+                    },
+                    "orderVersion": {
+                        "type": "string",
+                        "description": "Order version of the inbound order."
+                    }
+                },
+                "description": "A response that contains the reference identifiers for the newly created or updated inbound order. Consists of an order ID and version."
+            },
+            "InboundPackages": {
+                "required": [
+                    "packagesToInbound"
+                ],
+                "type": "object",
+                "properties": {
+                    "packagesToInbound": {
+                        "minItems": 1,
+                        "type": "array",
+                        "description": "List of packages to be inbounded.",
+                        "example": [
+                            {
+                                "count": 1,
+                                "distributionPackage": {
+                                    "contents": {
+                                        "products": [
+                                            {
+                                                "quantity": 1,
+                                                "sku": "testPen"
+                                            }
+                                        ]
+                                    },
+                                    "measurements": {
+                                        "dimensions": {
+                                            "height": 1,
+                                            "length": 1,
+                                            "unitOfMeasurement": "INCHES",
+                                            "width": 1
+                                        },
+                                        "volume": {
+                                            "unitOfMeasurement": "CUIN",
+                                            "volume": 1
+                                        },
+                                        "weight": {
+                                            "unitOfMeasurement": "POUNDS",
+                                            "weight": 1
+                                        }
+                                    },
+                                    "type": "CASE"
+                                }
+                            }
+                        ],
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionPackageQuantity"
+                        }
+                    }
+                },
+                "description": "Represents the packages to inbound.",
+                "example": {
+                    "packagesToInbound": [
+                        {
+                            "count": 1,
+                            "distributionPackage": {
+                                "contents": {
+                                    "products": [
+                                        {
+                                            "quantity": 1,
+                                            "sku": "testPen"
+                                        }
+                                    ]
+                                },
+                                "measurements": {
+                                    "dimensions": {
+                                        "height": 1,
+                                        "length": 1,
+                                        "unitOfMeasurement": "INCHES",
+                                        "width": 1
+                                    },
+                                    "volume": {
+                                        "unitOfMeasurement": "CUIN",
+                                        "volume": 1
+                                    },
+                                    "weight": {
+                                        "unitOfMeasurement": "POUNDS",
+                                        "weight": 1
+                                    }
+                                },
+                                "type": "CASE"
+                            }
+                        }
+                    ]
+                }
+            },
+            "InboundPreferences": {
+                "type": "object",
+                "properties": {
+                    "destinationRegion": {
+                        "type": "string",
+                        "description": "Pass a preferred region so that the inbound order can be shipped to an AWD warehouse located in that region. This doesn't guarantee the order to be assigned in the specified destination region as it depends on warehouse capacity availability. AWD currently supports following region IDs: [us-west, us-east]"
+                    }
+                },
+                "description": "Preferences that can be passed in context of an inbound order"
+            },
             "InboundShipment": {
                 "required": [
                     "destinationAddress",
@@ -1489,6 +2009,11 @@
                         "items": {
                             "$ref": "#/components/schemas/SkuQuantity"
                         }
+                    },
+                    "destinationRegion": {
+                        "type": "string",
+                        "description": "Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east]",
+                        "example": "us-west"
                     },
                     "shipmentStatus": {
                         "$ref": "#/components/schemas/InboundShipmentStatus"
@@ -1593,6 +2118,56 @@
                 },
                 "description": "Summary for an AWD inbound shipment containing the shipment ID, which can be used to retrieve the actual shipment."
             },
+            "InboundStatus": {
+                "type": "string",
+                "description": "The supported statuses for an inbound order.",
+                "enum": [
+                    "DRAFT",
+                    "VALIDATING",
+                    "CONFIRMED",
+                    "CLOSED",
+                    "EXPIRED",
+                    "CANCELLED"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "A newly created inbound order will start in this state.",
+                        "value": "DRAFT"
+                    },
+                    {
+                        "description": "The order is in this state while being updated. Once updated, the order will enter the updated state.",
+                        "value": "VALIDATING"
+                    },
+                    {
+                        "description": "The order enters this state as soon as the order is confirmed.",
+                        "value": "CONFIRMED"
+                    },
+                    {
+                        "description": "The order enters this state when all associated shipments are closed.",
+                        "value": "CLOSED"
+                    },
+                    {
+                        "description": "The order enters this state if it is not confirmed within a time limit.",
+                        "value": "EXPIRED"
+                    }
+                ]
+            },
+            "ExpirationDetails": {
+                "type": "object",
+                "properties": {
+                    "expiration": {
+                        "type": "string",
+                        "description": "The expiration date of the SKU.",
+                        "format": "date-time"
+                    },
+                    "onhandQuantity": {
+                        "type": "integer",
+                        "description": "The quantity that is present in AWD.",
+                        "format": "int64"
+                    }
+                },
+                "description": "The expiration details of the inventory. This object will only appear if the details parameter in the request is set to `SHOW`."
+            },
             "InventoryDetails": {
                 "type": "object",
                 "properties": {
@@ -1643,7 +2218,7 @@
                     },
                     "nextToken": {
                         "type": "string",
-                        "description": "Token to retrieve the next set of paginated results.",
+                        "description": "A token that is used to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
                         "example": "SampleToken"
                     }
                 },
@@ -1672,6 +2247,13 @@
                 ],
                 "type": "object",
                 "properties": {
+                    "expirationDetails": {
+                        "type": "array",
+                        "description": "The expiration details of the inventory. This object will only appear if the `details` parameter in the request is set to `SHOW`.",
+                        "items": {
+                            "$ref": "#/components/schemas/ExpirationDetails"
+                        }
+                    },
                     "inventoryDetails": {
                         "$ref": "#/components/schemas/InventoryDetails"
                     },
@@ -1715,6 +2297,52 @@
                     }
                 ]
             },
+            "LabelOwner": {
+                "type": "string",
+                "description": "The entity that labels the products.",
+                "enum": [
+                    "AMAZON",
+                    "SELF"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "Amazon labels the products.",
+                        "value": "AMAZON"
+                    },
+                    {
+                        "description": "The seller labels the products.",
+                        "value": "SELF"
+                    }
+                ]
+            },
+            "LabelStatus": {
+                "type": "string",
+                "description": "The status of your label.",
+                "enum": [
+                    "GENERATING",
+                    "GENERATED",
+                    "GENERATION_FAILED",
+                    "NOT_READY"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "Labels are being generated.",
+                        "value": "GENERATING"
+                    },
+                    {
+                        "description": "Labels are generated.",
+                        "value": "GENERATED"
+                    },
+                    {
+                        "description": "Label generation failed.",
+                        "value": "GENERATION_FAILED"
+                    },
+                    {
+                        "description": "Not yet ready to start label generation.",
+                        "value": "NOT_READY"
+                    }
+                ]
+            },
             "MeasurementData": {
                 "required": [
                     "weight"
@@ -1732,6 +2360,584 @@
                     }
                 },
                 "description": "Package weight and dimension."
+            },
+            "OrderAttribute": {
+                "required": [
+                    "orderPreference",
+                    "orderPreferenceValue"
+                ],
+                "type": "object",
+                "properties": {
+                    "orderPreference": {
+                        "$ref": "#/components/schemas/OrderPreference"
+                    },
+                    "orderPreferenceValue": {
+                        "$ref": "#/components/schemas/OrderPreferenceValue"
+                    }
+                },
+                "description": "Consists of the order preference and corresponding preference value.",
+                "example": {
+                    "orderPreference": "PARTIAL_ORDER",
+                    "orderPreferenceValue": "SET"
+                }
+            },
+            "OrderIneligibilityReason": {
+                "required": [
+                    "code",
+                    "description"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "Code for the order ineligibility.",
+                        "example": "INVALID_MSKU"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description detailing the ineligibility reason of the order.",
+                        "example": "The MSKU passed as part of order is invalid"
+                    }
+                },
+                "description": "Represents one ineligibility reason for the order (there can be multiple reasons).",
+                "example": {
+                    "code": "INVALID_MSKU",
+                    "description": "The MSKU of an invalid order."
+                }
+            },
+            "OrderPreference": {
+                "type": "string",
+                "description": "Supported preferences for the distribution order.",
+                "example": "PARTIAL_ORDER",
+                "enum": [
+                    "PARTIAL_ORDER"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "Represents a partial order case.",
+                        "value": "PARTIAL_ORDER"
+                    }
+                ]
+            },
+            "OrderPreferenceValue": {
+                "type": "string",
+                "description": "Value for the order preference.",
+                "example": "SET",
+                "enum": [
+                    "SET",
+                    "UNSET"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "Sets the order preference.",
+                        "value": "SET"
+                    },
+                    {
+                        "description": "Unsets the order preference.",
+                        "value": "UNSET"
+                    }
+                ]
+            },
+            "OutboundExecutionError": {
+                "required": [
+                    "failureCode",
+                    "failureReasons"
+                ],
+                "type": "object",
+                "properties": {
+                    "failureCode": {
+                        "type": "string",
+                        "description": "Failure code details for the error.",
+                        "example": "TestErrorCode"
+                    },
+                    "failureReasons": {
+                        "type": "array",
+                        "description": "Failure reasons for the error.",
+                        "example": [
+                            "Test failure reason"
+                        ],
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "MSKU associated with the error.",
+                        "example": "SampleSKU"
+                    }
+                },
+                "description": "Execution errors associated with the outbound order. This field will be populated if the order failed validation.",
+                "example": {
+                    "failureCode": "TestErrorCode",
+                    "failureReasons": [
+                        "Test failure reason"
+                    ],
+                    "sku": "SampleSKU"
+                }
+            },
+            "OutboundListing": {
+                "type": "object",
+                "properties": {
+                    "nextToken": {
+                        "type": "string",
+                        "description": "TA token that is used to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
+                        "example": "SampleToken"
+                    },
+                    "outboundOrders": {
+                        "type": "array",
+                        "description": "List of outbound orders.",
+                        "items": {
+                            "$ref": "#/components/schemas/OutboundOrder"
+                        }
+                    }
+                },
+                "description": "A list of paginated outbound orders filtered by the attributes passed in the request."
+            },
+            "OutboundOrder": {
+                "required": [
+                    "orderId",
+                    "orderStatus",
+                    "outboundShipments"
+                ],
+                "type": "object",
+                "properties": {
+                    "confirmedOn": {
+                        "type": "string",
+                        "description": "Date on which this outbound order was confirmed.",
+                        "format": "date-time",
+                        "example": "2023-01-12T10:00:00Z"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "description": "Date on which this outbound order was created.",
+                        "format": "date-time",
+                        "example": "2023-01-12T10:00:00Z"
+                    },
+                    "eligiblePackagesToOutbound": {
+                        "type": "array",
+                        "description": "List of packages that are eligible for outbound.",
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionPackageQuantity"
+                        }
+                    },
+                    "eligibleProductsToOutbound": {
+                        "type": "array",
+                        "description": "List of product units that are eligible for outbound.",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductQuantity"
+                        }
+                    },
+                    "executionErrors": {
+                        "type": "array",
+                        "description": "Execution errors associated with the outbound order. This field will be populated if the order failed validation.",
+                        "items": {
+                            "$ref": "#/components/schemas/OutboundExecutionError"
+                        }
+                    },
+                    "orderId": {
+                        "type": "string",
+                        "description": "Order ID for the outbound order."
+                    },
+                    "orderPreferences": {
+                        "type": "array",
+                        "description": "Order preferences for this outbound order.",
+                        "items": {
+                            "$ref": "#/components/schemas/OrderAttribute"
+                        }
+                    },
+                    "orderStatus": {
+                        "$ref": "#/components/schemas/OutboundStatus"
+                    },
+                    "outboundShipments": {
+                        "type": "array",
+                        "description": "List of outbound shipments that are part of this order.",
+                        "items": {
+                            "$ref": "#/components/schemas/OutboundShipment"
+                        }
+                    },
+                    "packagesToOutbound": {
+                        "type": "array",
+                        "description": "List of packages to be outbound.",
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionPackageQuantity"
+                        }
+                    },
+                    "productsToOutbound": {
+                        "type": "array",
+                        "description": "List of product units to be outbound.",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductQuantity"
+                        }
+                    },
+                    "shippedOutboundPackages": {
+                        "type": "array",
+                        "description": "Outbound packages that are shipped after the execution has completed post confirmation.",
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionPackageQuantity"
+                        }
+                    },
+                    "shippedOutboundProducts": {
+                        "type": "array",
+                        "description": "Outbound product units that are shipped after the execution has completed post confirmation.",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductQuantity"
+                        }
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "Date on which this outbound order was last updated.",
+                        "format": "date-time",
+                        "example": "2023-01-12T10:00:00Z"
+                    }
+                },
+                "description": "Represents an AWD outbound order."
+            },
+            "OutboundOrderCreationData": {
+                "type": "object",
+                "properties": {
+                    "orderPreferences": {
+                        "type": "array",
+                        "description": "Order preferences for the outbound order.",
+                        "example": [
+                            {
+                                "orderPreference": "PARTIAL_ORDER",
+                                "orderPreferenceValue": "SET"
+                            }
+                        ],
+                        "items": {
+                            "$ref": "#/components/schemas/OrderAttribute"
+                        }
+                    },
+                    "packagesToOutbound": {
+                        "type": "array",
+                        "description": "List of packages to be outbound.",
+                        "example": [
+                            {
+                                "count": 1,
+                                "distributionPackage": {
+                                    "contents": {
+                                        "products": [
+                                            {
+                                                "quantity": 1,
+                                                "sku": "testPen"
+                                            }
+                                        ]
+                                    },
+                                    "measurements": {
+                                        "dimensions": {
+                                            "height": 1,
+                                            "length": 1,
+                                            "unitOfMeasurement": "INCHES",
+                                            "width": 1
+                                        },
+                                        "volume": {
+                                            "unitOfMeasurement": "CUIN",
+                                            "volume": 1
+                                        },
+                                        "weight": {
+                                            "unitOfMeasurement": "POUNDS",
+                                            "weight": 1
+                                        }
+                                    },
+                                    "type": "CASE"
+                                }
+                            }
+                        ],
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionPackageQuantity"
+                        }
+                    },
+                    "productsToOutbound": {
+                        "type": "array",
+                        "description": "List of product units to be outbound.",
+                        "example": [
+                            {
+                                "sku": "TestSKU",
+                                "quantity": 1
+                            }
+                        ],
+                        "items": {
+                            "$ref": "#/components/schemas/ProductQuantity"
+                        }
+                    }
+                },
+                "description": "Payload for creating an outbound order.",
+                "example": {
+                    "packagesToOutbound": [
+                        {
+                            "count": 1,
+                            "distributionPackage": {
+                                "contents": {
+                                    "products": [
+                                        {
+                                            "quantity": 1,
+                                            "sku": "testPen"
+                                        }
+                                    ]
+                                },
+                                "measurements": {
+                                    "dimensions": {
+                                        "height": 1,
+                                        "length": 1,
+                                        "unitOfMeasurement": "INCHES",
+                                        "width": 1
+                                    },
+                                    "volume": {
+                                        "unitOfMeasurement": "CUIN",
+                                        "volume": 1
+                                    },
+                                    "weight": {
+                                        "unitOfMeasurement": "POUNDS",
+                                        "weight": 1
+                                    }
+                                },
+                                "type": "CASE"
+                            }
+                        }
+                    ],
+                    "productsToOutbound": [],
+                    "orderPreferences": [
+                        {
+                            "orderPreference": "PARTIAL_ORDER",
+                            "orderPreferenceValue": "SET"
+                        }
+                    ]
+                }
+            },
+            "OutboundOrderReference": {
+                "required": [
+                    "orderId"
+                ],
+                "type": "object",
+                "properties": {
+                    "orderId": {
+                        "type": "string",
+                        "description": "outbound order ID."
+                    }
+                },
+                "description": "A response that contains the reference identifier for the newly created or updated outbound order. This includes an order ID."
+            },
+            "OutboundShipment": {
+                "required": [
+                    "destinationAddress",
+                    "orderId",
+                    "originAddress",
+                    "shipmentId",
+                    "shipmentStatus"
+                ],
+                "type": "object",
+                "properties": {
+                    "createdAt": {
+                        "type": "string",
+                        "description": "Timestamp when the shipment was created.",
+                        "format": "date-time"
+                    },
+                    "destinationAddress": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "orderId": {
+                        "type": "string",
+                        "description": "Outbound order ID this outbound shipment belongs to."
+                    },
+                    "originAddress": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "shipmentPackageQuantities": {
+                        "type": "array",
+                        "description": "Specific distribution packages that are included in the context of this shipment.",
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionPackageQuantity"
+                        }
+                    },
+                    "shipmentId": {
+                        "type": "string",
+                        "description": "Unique shipment ID."
+                    },
+                    "shipmentProductQuantities": {
+                        "type": "array",
+                        "description": "Specific product units that are included in the context of this shipment.",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductQuantity"
+                        }
+                    },
+                    "shipmentStatus": {
+                        "$ref": "#/components/schemas/OutboundShipmentStatus"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "Timestamp when the shipment was updated.",
+                        "format": "date-time"
+                    }
+                },
+                "description": "Represents an AWD outbound shipment.",
+                "example": {
+                    "createdAt": "2023-01-12T10:00:00.000Z",
+                    "destinationAddress": {
+                        "addressLine1": "address_1",
+                        "addressLine2": "address_2",
+                        "addressLine3": "address_3",
+                        "city": "Seattle",
+                        "countryCode": "US",
+                        "county": "Washington",
+                        "district": "District1",
+                        "name": "address_name",
+                        "phoneNumber": "+14155552671",
+                        "postalCode": "123456",
+                        "stateOrRegion": "Washington"
+                    },
+                    "originAddress": {
+                        "addressLine1": "address_1",
+                        "addressLine2": "address_2",
+                        "addressLine3": "address_3",
+                        "city": "Seattle",
+                        "countryCode": "US",
+                        "county": "Washington",
+                        "district": "District1",
+                        "name": "address_name",
+                        "phoneNumber": "+14155552671",
+                        "postalCode": "123456",
+                        "stateOrRegion": "Washington"
+                    },
+                    "orderId": "TestOrderId",
+                    "shipmentId": "TestShipmentId",
+                    "shipmentPackageQuantities": [
+                        {
+                            "count": 1,
+                            "distributionPackage": {
+                                "contents": {
+                                    "products": [
+                                        {
+                                            "quantity": 1,
+                                            "sku": "testPen"
+                                        }
+                                    ]
+                                },
+                                "measurements": {
+                                    "dimensions": {
+                                        "height": 1,
+                                        "length": 1,
+                                        "unitOfMeasurement": "INCHES",
+                                        "width": 1
+                                    },
+                                    "volume": {
+                                        "unitOfMeasurement": "CUIN",
+                                        "volume": 1
+                                    },
+                                    "weight": {
+                                        "unitOfMeasurement": "POUNDS",
+                                        "weight": 1
+                                    }
+                                },
+                                "type": "CASE"
+                            }
+                        }
+                    ],
+                    "shipmentProductQuantities": [],
+                    "shipmentStatus": "CREATED",
+                    "updatedAt": "2023-01-12T10:00:00.000Z"
+                }
+            },
+            "OutboundShipmentStatus": {
+                "type": "string",
+                "description": "Possible shipment statuses for outbound shipments.",
+                "example": "CREATED",
+                "enum": [
+                    "CREATED",
+                    "IN_TRANSIT",
+                    "DELIVERED",
+                    "RECEIVING",
+                    "RECEIVED",
+                    "CLOSED",
+                    "CANCELLED",
+                    "FAILED"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "Shipment is created. No inventory has been picked up at the source node.",
+                        "value": "CREATED"
+                    },
+                    {
+                        "description": "Carrier acknowledged that the shipment is in transit between the origin node and destination node.",
+                        "value": "IN_TRANSIT"
+                    },
+                    {
+                        "description": "Carrier indicated that the shipment has arrived at the destination node, but the destination node has not acknowledged the delivery.",
+                        "value": "DELIVERED"
+                    },
+                    {
+                        "description": "Destination node acknowledged the arrival of the shipment.",
+                        "value": "RECEIVING"
+                    },
+                    {
+                        "description": "Destination node has received the items.",
+                        "value": "RECEIVED"
+                    },
+                    {
+                        "description": "No more actions are required for the shipment. This is a final state.",
+                        "value": "CLOSED"
+                    },
+                    {
+                        "description": "Shipment has been cancelled by order owner. This is a final state.",
+                        "value": "CANCELLED"
+                    },
+                    {
+                        "description": "Shipment delivery has failed. This is a final state.",
+                        "value": "FAILED"
+                    }
+                ]
+            },
+            "OutboundStatus": {
+                "type": "string",
+                "description": "Statuses supported for an outbound order.",
+                "enum": [
+                    "CONFIRMED",
+                    "DRAFT",
+                    "ELIGIBLE",
+                    "EXECUTING",
+                    "FAILURE",
+                    "INELIGIBLE",
+                    "INVENTORY_OUTBOUND",
+                    "SUCCESS",
+                    "VALIDATING"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "The order enters this state as soon as the order is confirmed.",
+                        "value": "CONFIRMED"
+                    },
+                    {
+                        "description": "A newly created outbound order will always start in this state.",
+                        "value": "DRAFT"
+                    },
+                    {
+                        "description": "This is the only state when an order can be confirmed.",
+                        "value": "ELIGIBLE"
+                    },
+                    {
+                        "description": "The order is being processed in the system.",
+                        "value": "EXECUTING"
+                    },
+                    {
+                        "description": "If any of the shipment reports fail, or if a shipment doesn't reach its destination, the order status is marked as failed.",
+                        "value": "FAILURE"
+                    },
+                    {
+                        "description": "In this state, a validation errors field is provided. This field shows the order errors and provides guidance on fixing them.",
+                        "value": "INELIGIBLE"
+                    },
+                    {
+                        "description": "The order is complete and awaits inventory movement. In this status, the shipments for an order will be visible.",
+                        "value": "INVENTORY_OUTBOUND"
+                    },
+                    {
+                        "description": "If all the shipments are successfully received at the destination channel, the order is marked successful.",
+                        "value": "SUCCESS"
+                    },
+                    {
+                        "description": "The order is being validated asynchronously. The order will be in this state after every item update.",
+                        "value": "VALIDATING"
+                    }
+                ]
             },
             "PackageDimensions": {
                 "required": [
@@ -1799,6 +3005,84 @@
                 },
                 "description": "Represents the weight of the package with a unit of measurement."
             },
+            "PrepDetails": {
+                "type": "object",
+                "properties": {
+                    "labelOwner": {
+                        "$ref": "#/components/schemas/LabelOwner"
+                    },
+                    "prepCategory": {
+                        "type": "string",
+                        "description": "The preparation category for shipping an item to Amazon's fulfillment network."
+                    },
+                    "prepInstructions": {
+                        "type": "array",
+                        "description": "Information that pertains to the preparation of inbound products. This is generated based on the specified category.",
+                        "items": {
+                            "$ref": "#/components/schemas/PrepInstruction"
+                        }
+                    },
+                    "prepOwner": {
+                        "$ref": "#/components/schemas/PrepOwner"
+                    }
+                },
+                "description": "The preparation details for a product. This contains the prep category, prep owner, and label owner.\nPrep instructions are generated based on the specified category."
+            },
+            "PrepInstruction": {
+                "type": "object",
+                "properties": {
+                    "prepOwner": {
+                        "$ref": "#/components/schemas/PrepOwner"
+                    },
+                    "prepType": {
+                        "type": "string",
+                        "description": "The type of preparation to be done. For more information about preparing items, refer to [Prep guidance](https://sellercentral.amazon.com/help/hub/reference/external/GF4G7547KSLDX2KC) on Seller Central."
+                    }
+                },
+                "description": "Information pertaining to the preparation of inbound products."
+            },
+            "PrepOwner": {
+                "type": "string",
+                "description": "The owner of the preparations, if special preparations are required.",
+                "enum": [
+                    "AMAZON",
+                    "SELF"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "Amazon owns the preparation.",
+                        "value": "AMAZON"
+                    },
+                    {
+                        "description": "The seller owns the preparation",
+                        "value": "SELF"
+                    }
+                ]
+            },
+            "PageType": {
+                "type": "string",
+                "description": "Label page type.",
+                "example": "PLAIN_PAPER",
+                "enum": [
+                    "THERMAL_NONPCP",
+                    "PLAIN_PAPER",
+                    "LETTER_6"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "For the use of a thermal printer. Supports non-Amazon-partnered shipments.",
+                        "value": "THERMAL_NONPCP"
+                    },
+                    {
+                        "description": "One label per sheet of US Letter paper. Only for non-Amazon-partnered shipments.",
+                        "value": "PLAIN_PAPER"
+                    },
+                    {
+                        "description": "Six labels per US Letter label sheet.",
+                        "value": "LETTER_6"
+                    }
+                ]
+            },
             "ProductAttribute": {
                 "type": "object",
                 "properties": {
@@ -1829,6 +3113,10 @@
                     "attributes": {
                         "type": "array",
                         "description": "Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU.",
+                        "example": {
+                            "name": "TestAttribute",
+                            "value": "TestAttributeValue"
+                        },
                         "items": {
                             "$ref": "#/components/schemas/ProductAttribute"
                         }
@@ -1841,16 +3129,40 @@
                     "sku": {
                         "type": "string",
                         "description": "The seller or merchant SKU."
+                    },
+                    "expiration": {
+                        "type": "string",
+                        "description": "The expiration date for the SKU. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
+                        "format": "date-time"
+                    },
+                    "prepDetails": {
+                        "$ref": "#/components/schemas/PrepDetails"
                     }
                 },
                 "description": "Represents a product with the SKU details and the corresponding quantity."
+            },
+            "ShipmentLabels": {
+                "required": [
+                    "labelStatus"
+                ],
+                "type": "object",
+                "properties": {
+                    "labelDownloadURL": {
+                        "type": "string",
+                        "description": "URL to download generated labels."
+                    },
+                    "labelStatus": {
+                        "$ref": "#/components/schemas/LabelStatus"
+                    }
+                },
+                "description": "Shipment labels."
             },
             "ShipmentListing": {
                 "type": "object",
                 "properties": {
                     "nextToken": {
                         "type": "string",
-                        "description": "Token to retrieve the next set of paginated results.",
+                        "description": "A token that is used to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
                         "example": "SampleToken"
                     },
                     "shipments": {
@@ -1881,6 +3193,47 @@
                         "value": "CREATED_AT"
                     }
                 ]
+            },
+            "SkuEligibility": {
+                "required": [
+                    "packageQuantity",
+                    "status"
+                ],
+                "type": "object",
+                "properties": {
+                    "ineligibilityReasons": {
+                        "type": "array",
+                        "description": "If not eligible, these are list of error codes and descriptions.",
+                        "items": {
+                            "$ref": "#/components/schemas/SkuIneligibilityReason"
+                        }
+                    },
+                    "packageQuantity": {
+                        "$ref": "#/components/schemas/DistributionPackageQuantity"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/InboundEligibilityStatus"
+                    }
+                },
+                "description": "Represents eligibility of one SKU."
+            },
+            "SkuIneligibilityReason": {
+                "required": [
+                    "code",
+                    "description"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "Code for the SKU ineligibility."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Detailed description of the SKU ineligibility."
+                    }
+                },
+                "description": "Represents the ineligibility reason for one SKU."
             },
             "SkuQuantitiesVisibility": {
                 "type": "string",
@@ -1939,6 +3292,56 @@
                         "value": "DESCENDING"
                     }
                 ]
+            },
+            "TrackingDetails": {
+                "required": [
+                    "shipBy"
+                ],
+                "type": "object",
+                "properties": {
+                    "carrierCode": {
+                        "$ref": "#/components/schemas/CarrierCode"
+                    },
+                    "shipBy": {
+                        "type": "string",
+                        "description": "Timestamp denoting when the shipment will be shipped\nDate should be in ISO 8601 format as defined by date-time.",
+                        "format": "date-time",
+                        "example": "2023-01-12T10:00:00Z"
+                    },
+                    "bookingId": {
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "The identifier that is received from transportation to uniquely identify a booking."
+                    }
+                },
+                "description": "Tracking details for the shipment. If using SPD transportation, this can be for each case. If not using SPD transportation, this is a single tracking entry for the entire shipment."
+            },
+            "TransportationDetails": {
+                "required": [
+                    "trackingDetails"
+                ],
+                "type": "object",
+                "properties": {
+                    "trackingDetails": {
+                        "type": "array",
+                        "description": "Tracking details for the shipment. If using SPD transportation, this can be for each case. If not using SPD transportation, this is a single tracking entry for the entire shipment.",
+                        "items": {
+                            "$ref": "#/components/schemas/TrackingDetails"
+                        }
+                    }
+                },
+                "description": "Transportation details for the shipment.",
+                "example": {
+                    "trackingDetails": [
+                        {
+                            "carrierCode": {
+                                "carrierCodeType": "SCAC"
+                            },
+                            "shipBy": "2024-12-17T07:10:17.886Z",
+                            "bookingId": "TRACKING_ID"
+                        }
+                    ]
+                }
             },
             "VolumeUnitOfMeasurement": {
                 "type": "string",

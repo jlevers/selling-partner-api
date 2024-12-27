@@ -25,11 +25,11 @@ final class LoanServicingEvent extends Dto
      *
      * Possible values:
      *
-     * * `LoanAdvance`
+     * * LoanAdvance
      *
-     * * `LoanPayment`
+     * * LoanPayment
      *
-     * * `LoanRefund`
+     * * LoanRefund
      */
     public function __construct(
         public ?Currency $loanAmount = null,

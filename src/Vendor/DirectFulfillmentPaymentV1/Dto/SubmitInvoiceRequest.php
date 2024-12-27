@@ -17,7 +17,7 @@ final class SubmitInvoiceRequest extends Dto
     protected static array $complexArrayTypes = ['invoices' => InvoiceDetail::class];
 
     /**
-     * @param  InvoiceDetail[]|null  $invoices  An array of invoice details you want to submit.
+     * @param  InvoiceDetail[]|null  $invoices  An array of invoice details to be submitted.
      */
     public function __construct(
         public ?array $invoices = null,

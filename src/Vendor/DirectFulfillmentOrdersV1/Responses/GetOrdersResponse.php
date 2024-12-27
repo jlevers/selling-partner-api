@@ -17,7 +17,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV1\Dto\OrderList;
 final class GetOrdersResponse extends Response
 {
     /**
-     * @param  ?OrderList  $payload  A purchase orders list returned as a response.
+     * @param  ?OrderList  $payload  A list of purchase orders returned as response.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

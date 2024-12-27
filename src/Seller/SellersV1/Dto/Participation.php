@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class Participation extends Dto
 {
     /**
-     * @param  bool  $isParticipating  If `true`, the seller participates in the marketplace. Otherwise `false`.
-     * @param  bool  $hasSuspendedListings  Specifies if the seller has suspended listings. `true` if the seller Listing Status is set to Inactive, otherwise `false`.
+     * @param  bool  $isParticipating  If true, the seller participates in the marketplace.
+     * @param  bool  $hasSuspendedListings  If true, the seller has suspended listings.
      */
     public function __construct(
         public bool $isParticipating,

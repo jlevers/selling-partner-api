@@ -19,8 +19,8 @@ final class ShipmentConfirmation extends Dto
     /**
      * @param  string  $purchaseOrderNumber  Purchase order number corresponding to the shipment.
      * @param  ShipmentDetails  $shipmentDetails  Details about a shipment.
-     * @param  PartyIdentification  $sellingParty  Name, address, and tax details for a party.
-     * @param  PartyIdentification  $shipFromParty  Name, address, and tax details for a party.
+     * @param  PartyIdentification  $sellingParty  The name, address, and tax details of a party.
+     * @param  PartyIdentification  $shipFromParty  The name, address, and tax details of a party.
      * @param  Item[]  $items  Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
      * @param  Container[]|null  $containers  Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
      */

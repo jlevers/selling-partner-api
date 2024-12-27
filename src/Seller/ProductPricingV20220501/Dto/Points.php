@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class Points extends Dto
 {
     /**
-     * @param  ?int  $pointsNumber  The number of points.
-     * @param  ?MoneyType  $pointsMonetaryValue  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  ?int  $pointsNumber  The number of Amazon Points.
+     * @param  ?MoneyType  $pointsMonetaryValue  Currency type and monetary value schema to demonstrate pricing information.
      */
     public function __construct(
         public ?int $pointsNumber = null,

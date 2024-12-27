@@ -17,9 +17,9 @@ final class ShippingLabelRequest extends Dto
     protected static array $complexArrayTypes = ['containers' => Container::class];
 
     /**
-     * @param  string  $purchaseOrderNumber  Purchase order number of the order for which to create a shipping label.
-     * @param  PartyIdentification  $sellingParty  Name, address, and tax details for a party.
-     * @param  PartyIdentification  $shipFromParty  Name, address, and tax details for a party.
+     * @param  string  $purchaseOrderNumber  The purchase order number of the order for which to create a shipping label.
+     * @param  PartyIdentification  $sellingParty  The name, address, and tax details of a party.
+     * @param  PartyIdentification  $shipFromParty  The name, address, and tax details of a party.
      * @param  Container[]|null  $containers  A list of the packages in this shipment.
      */
     public function __construct(

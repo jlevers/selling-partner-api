@@ -15,6 +15,8 @@ use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\FulfillmentAvailability;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\Issue;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\ItemOfferByMarketplace;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\ItemProcurement;
+use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\ItemProductTypeByMarketplace;
+use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\ItemRelationshipsByMarketplace;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\ItemSummaryByMarketplace;
 
 final class Item extends Response
@@ -25,6 +27,8 @@ final class Item extends Response
         'offers' => ItemOfferByMarketplace::class,
         'fulfillmentAvailability' => FulfillmentAvailability::class,
         'procurement' => ItemProcurement::class,
+        'relationships' => ItemRelationshipsByMarketplace::class,
+        'productTypes' => ItemProductTypeByMarketplace::class,
     ];
 
     /**
@@ -35,6 +39,8 @@ final class Item extends Response
      * @param  ItemOfferByMarketplace[]|null  $offers  Offer details for the listings item.
      * @param  FulfillmentAvailability[]|null  $fulfillmentAvailability  The fulfillment availability for the listings item.
      * @param  ItemProcurement[]|null  $procurement  The vendor procurement information for the listings item.
+     * @param  ItemRelationshipsByMarketplace[]|null  $relationships  Relationships for a listing item, by marketplace (for example, variations).
+     * @param  ItemProductTypeByMarketplace[]|null  $productTypes  Product types for a listing item, by marketplace.
      */
     public function __construct(
         public readonly string $sku,
@@ -44,5 +50,7 @@ final class Item extends Response
         public readonly ?array $offers = null,
         public readonly ?array $fulfillmentAvailability = null,
         public readonly ?array $procurement = null,
+        public readonly ?array $relationships = null,
+        public readonly ?array $productTypes = null,
     ) {}
 }

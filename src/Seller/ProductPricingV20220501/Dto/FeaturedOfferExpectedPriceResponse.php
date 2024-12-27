@@ -15,10 +15,10 @@ use SellingPartnerApi\Dto;
 final class FeaturedOfferExpectedPriceResponse extends Dto
 {
     /**
-     * @param  string[]  $headers  A mapping of additional HTTP headers to send/receive for an individual request within a batch.
-     * @param  HttpStatusLine  $status  The HTTP status line associated with the response to an individual request within a batch. For more information, consult [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).
+     * @param  string[]  $headers  A mapping of additional HTTP headers to send or receive for an individual request within a batch.
+     * @param  HttpStatusLine  $status  The HTTP status line associated with the response for an individual request within a batch. For more information, refer to [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).
      * @param  FeaturedOfferExpectedPriceRequestParams  $request  The parameters for an individual request.
-     * @param  ?FeaturedOfferExpectedPriceResponseBody  $body  The featured offer expected price response data for a requested SKU.
+     * @param  ?FeaturedOfferExpectedPriceResponseBody  $body  The FOEP response data for a requested SKU.
      */
     public function __construct(
         public array $headers,

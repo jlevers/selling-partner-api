@@ -26,8 +26,8 @@ class GetCustomerInvoices extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  \DateTimeInterface  $createdAfter  Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  \DateTimeInterface  $createdBefore  Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  \DateTimeInterface  $createdAfter  Orders that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @param  \DateTimeInterface  $createdBefore  Orders that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?string  $shipFromPartyId  The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
      * @param  ?int  $limit  The limit to the number of records returned
      * @param  ?string  $sortOrder  Sort ASC or DESC by order creation date.

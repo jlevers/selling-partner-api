@@ -15,10 +15,10 @@ use SellingPartnerApi\Dto;
 final class ItemDetails extends Dto
 {
     /**
-     * @param  ItemQuantity  $availableQuantity  Details about item quantity.
-     * @param  ?string  $buyerProductIdentifier  The buyer-selected product identification for the item. Either `buyerProductIdentifier` or `vendorProductIdentifier` must be submitted.
-     * @param  ?string  $vendorProductIdentifier  The vendor selected product identification for the item. Either `buyerProductIdentifier` or `vendorProductIdentifier` must be submitted.
-     * @param  ?bool  $isObsolete  When `true`, the item is permanently unavailable.
+     * @param  ItemQuantity  $availableQuantity  Details of item quantity.
+     * @param  ?string  $buyerProductIdentifier  The buyer selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
+     * @param  ?string  $vendorProductIdentifier  The vendor selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
+     * @param  ?bool  $isObsolete  When true, the item is permanently unavailable.
      */
     public function __construct(
         public ItemQuantity $availableQuantity,

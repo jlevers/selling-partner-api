@@ -18,7 +18,7 @@ final class CustomerInvoiceList extends Dto
 
     /**
      * @param  ?Pagination  $pagination  The pagination elements required to retrieve the remaining data.
-     * @param  CustomerInvoice[]|null  $customerInvoices  Represents a customer invoice within the `CustomerInvoiceList`.
+     * @param  CustomerInvoice[]|null  $customerInvoices  Represents a customer invoice within the CustomerInvoiceList.
      */
     public function __construct(
         public ?Pagination $pagination = null,

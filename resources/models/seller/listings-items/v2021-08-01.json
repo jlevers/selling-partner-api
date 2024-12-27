@@ -86,7 +86,9 @@
                                     "issues",
                                     "offers",
                                     "fulfillmentAvailability",
-                                    "procurement"
+                                    "procurement",
+                                    "relationships",
+                                    "productTypes"
                                 ],
                                 "x-docgen-enum-table-extension": [
                                     {
@@ -111,7 +113,15 @@
                                     },
                                     {
                                         "value": "procurement",
-                                        "description": "The vendor procurement details for the listing item. "
+                                        "description": "Vendor procurement details for the listing item. "
+                                    },
+                                    {
+                                        "value": "relationships",
+                                        "description": "Relationship details for a listing item (for example, variations)."
+                                    },
+                                    {
+                                        "value": "productTypes",
+                                        "description": "Product types that are associated with a listing item."
                                     }
                                 ]
                             },
@@ -1257,7 +1267,7 @@
                 "tags": [
                     "ListingsItemsV20210801"
                 ],
-                "description": "Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.\n\n**Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.\n\n**Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.",
                 "operationId": "patchListingsItem",
                 "parameters": [
                     {
@@ -1666,7 +1676,7 @@
                 "tags": [
                     "ListingsItemsV20210801"
                 ],
-                "description": "Search for and return list of listings items and respective details for a selling partner.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Search for and return a list of selling partner listings items and their respective details.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "searchListingsItems",
                 "parameters": [
                     {
@@ -1695,9 +1705,77 @@
                         "example": "ATVPDKIKX0DER"
                     },
                     {
+                        "name": "issueLocale",
+                        "in": "query",
+                        "description": "A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \"en_US\", \"fr_CA\", \"fr_FR\". When a localization is not available in the specified locale, localized messages default to \"en_US\".",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "en_US"
+                    },
+                    {
+                        "name": "includedData",
+                        "in": "query",
+                        "description": "A comma-delimited list of datasets that you want to include in the response. Default: `summaries`.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "summaries",
+                                    "attributes",
+                                    "issues",
+                                    "offers",
+                                    "fulfillmentAvailability",
+                                    "procurement",
+                                    "relationships",
+                                    "productTypes"
+                                ],
+                                "x-docgen-enum-table-extension": [
+                                    {
+                                        "value": "summaries",
+                                        "description": "Summary details for the listing item."
+                                    },
+                                    {
+                                        "value": "attributes",
+                                        "description": "A JSON object that contains structured listing item attribute data, keyed by attribute name."
+                                    },
+                                    {
+                                        "value": "issues",
+                                        "description": "Issues that are associated with the listing item."
+                                    },
+                                    {
+                                        "value": "offers",
+                                        "description": "Current offers for the listing item."
+                                    },
+                                    {
+                                        "value": "fulfillmentAvailability",
+                                        "description": "Fulfillment availability details for the listing item."
+                                    },
+                                    {
+                                        "value": "procurement",
+                                        "description": "Vendor procurement details for the listing item. "
+                                    },
+                                    {
+                                        "value": "relationships",
+                                        "description": "Relationship details for a listing item (for example, variations)."
+                                    },
+                                    {
+                                        "value": "productTypes",
+                                        "description": "Product types associated with a listing item."
+                                    }
+                                ]
+                            },
+                            "default": "[\"summaries\"]"
+                        },
+                        "example": "summaries"
+                    },
+                    {
                         "name": "identifiers",
                         "in": "query",
-                        "description": "A comma-delimited list of product identifiers to search for listings items by. \n\n**Note**: \n1. Required when `identifiersType` is provided.",
+                        "description": "A comma-delimited list of product identifiers that you can use to search for listings items. \n\n**Note**: \n1. This is required when you specify `identifiersType`.\n2. You cannot use 'identifiers' if you specify `variationParentSku` or `packageHierarchySku`.",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -1712,12 +1790,13 @@
                     {
                         "name": "identifiersType",
                         "in": "query",
-                        "description": "Type of product identifiers to search for listings items by. \n\n**Note**: \n1. Required when `identifiers` is provided.",
+                        "description": "A type of product identifiers that you can use to search for listings items. \n\n**Note**: \nThis is required when `identifiers` is provided.",
                         "schema": {
                             "type": "string",
                             "enum": [
                                 "ASIN",
                                 "EAN",
+                                "FNSKU",
                                 "GTIN",
                                 "ISBN",
                                 "JAN",
@@ -1733,6 +1812,10 @@
                                 {
                                     "value": "EAN",
                                     "description": "European Article Number."
+                                },
+                                {
+                                    "value": "FNSKU",
+                                    "description": "Fulfillment Network Stock Keeping Unit."
                                 },
                                 {
                                     "value": "GTIN",
@@ -1752,7 +1835,7 @@
                                 },
                                 {
                                     "value": "SKU",
-                                    "description": "Stock Keeping Unit, a seller-specified identifier for an Amazon listing."
+                                    "description": "Stock Keeping Unit (SKU): A seller-specified identifier for an Amazon listing."
                                 },
                                 {
                                     "value": "UPC",
@@ -1769,6 +1852,10 @@
                             {
                                 "value": "EAN",
                                 "description": "European Article Number."
+                            },
+                            {
+                                "value": "FNSKU",
+                                "description": "Fulfillment Network Stock Keeping Unit."
                             },
                             {
                                 "value": "GTIN",
@@ -1788,7 +1875,7 @@
                             },
                             {
                                 "value": "SKU",
-                                "description": "Stock Keeping Unit, a seller-specified identifier for an Amazon listing."
+                                "description": "Stock Keeping Unit (SKU): A seller-specified identifier for an Amazon listing."
                             },
                             {
                                 "value": "UPC",
@@ -1797,9 +1884,228 @@
                         ]
                     },
                     {
+                        "name": "variationParentSku",
+                        "in": "query",
+                        "description": "Filters results to include listing items that are variation children of the specified SKU. \n\n**Note**: You cannot use `variationParentSku` if you include `identifiers` or `packageHierarchySku` in your request.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "GM-ZDPI-9B4E"
+                    },
+                    {
+                        "name": "packageHierarchySku",
+                        "in": "query",
+                        "description": "Filter results to include listing items that contain or are contained by the specified SKU. \n\n**Note**: You cannot use `packageHierarchySku` if you include `identifiers` or `variationParentSku` in your request.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "GM-ZDPI-9B4E"
+                    },
+                    {
+                        "name": "createdAfter",
+                        "in": "query",
+                        "description": "A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "example": "2024-03-01T01:30:00.000Z"
+                    },
+                    {
+                        "name": "createdBefore",
+                        "in": "query",
+                        "description": "A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "example": "2024-03-31T21:45:00.000Z"
+                    },
+                    {
+                        "name": "lastUpdatedAfter",
+                        "in": "query",
+                        "description": "A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "example": "2024-05-05T23:45:00.000Z"
+                    },
+                    {
+                        "name": "lastUpdatedBefore",
+                        "in": "query",
+                        "description": "A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "example": "2024-05-01T01:15:00.000Z"
+                    },
+                    {
+                        "name": "withIssueSeverity",
+                        "in": "query",
+                        "description": "Filter results to include only listing items that have issues that match one or more of the specified severity levels.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "WARNING",
+                                    "ERROR"
+                                ],
+                                "x-docgen-enum-table-extension": [
+                                    {
+                                        "value": "ERROR",
+                                        "description": "Indicates that an issue has occurred, which prevented the submission from processing. For example, a validation error."
+                                    },
+                                    {
+                                        "value": "WARNING",
+                                        "description": "Indicates an issue has occurred that should be reviewed, but it has not prevented the submission from processing."
+                                    }
+                                ]
+                            }
+                        },
+                        "example": "WARNING"
+                    },
+                    {
+                        "name": "withStatus",
+                        "in": "query",
+                        "description": "Filter results to include only listing items that have the specified status.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "BUYABLE",
+                                    "DISCOVERABLE"
+                                ],
+                                "x-docgen-enum-table-extension": [
+                                    {
+                                        "value": "BUYABLE",
+                                        "description": "The listings item can be purchased by shoppers. This status does not apply to vendor listings."
+                                    },
+                                    {
+                                        "value": "DISCOVERABLE",
+                                        "description": "The listings item is visible to shoppers."
+                                    }
+                                ]
+                            }
+                        },
+                        "example": "DISCOVERABLE"
+                    },
+                    {
+                        "name": "withoutStatus",
+                        "in": "query",
+                        "description": "Filter results to include only listing items that don't contain the specified statuses.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "BUYABLE",
+                                    "DISCOVERABLE"
+                                ],
+                                "x-docgen-enum-table-extension": [
+                                    {
+                                        "value": "BUYABLE",
+                                        "description": "The listings item can be purchased by shoppers. This status does not apply to vendor listings."
+                                    },
+                                    {
+                                        "value": "DISCOVERABLE",
+                                        "description": "The listings item is visible to shoppers."
+                                    }
+                                ]
+                            }
+                        },
+                        "example": "BUYABLE"
+                    },
+                    {
+                        "name": "sortBy",
+                        "in": "query",
+                        "description": "An attribute by which to sort the returned listing items.",
+                        "schema": {
+                            "type": "string",
+                            "default": "lastUpdatedDate",
+                            "enum": [
+                                "sku",
+                                "createdDate",
+                                "lastUpdatedDate"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "value": "sku",
+                                    "description": "Stock Keeping Unit, a seller-specified identifier for an Amazon listing."
+                                },
+                                {
+                                    "value": "createdDate",
+                                    "description": "The date when the listing item was created. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format."
+                                },
+                                {
+                                    "value": "lastUpdatedDate",
+                                    "description": "The date when the listing item was last updated. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format."
+                                }
+                            ]
+                        },
+                        "example": "lastUpdatedDate",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "sku",
+                                "description": "Stock Keeping Unit, a seller-specified identifier for an Amazon listing."
+                            },
+                            {
+                                "value": "createdDate",
+                                "description": "The date when the listing item was created. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format."
+                            },
+                            {
+                                "value": "lastUpdatedDate",
+                                "description": "The date when the listing item was last updated. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "sortOrder",
+                        "in": "query",
+                        "description": "The order in which to sort the result items.",
+                        "schema": {
+                            "type": "string",
+                            "default": "DESC",
+                            "enum": [
+                                "ASC",
+                                "DESC"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "value": "ASC",
+                                    "description": "Ascending order."
+                                },
+                                {
+                                    "value": "DESC",
+                                    "description": "Descending order."
+                                }
+                            ]
+                        },
+                        "example": "DESC",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "ASC",
+                                "description": "Ascending order."
+                            },
+                            {
+                                "value": "DESC",
+                                "description": "Descending order."
+                            }
+                        ]
+                    },
+                    {
                         "name": "pageSize",
                         "in": "query",
-                        "description": "Number of results to be returned per page.",
+                        "description": "The number of results that you want to include on each page.",
                         "schema": {
                             "maximum": 20,
                             "type": "integer",
@@ -1810,69 +2116,11 @@
                     {
                         "name": "pageToken",
                         "in": "query",
-                        "description": "A token to fetch a certain page when there are multiple pages worth of results.",
+                        "description": "A token that you can use to fetch a specific page when there are multiple pages of results.",
                         "schema": {
                             "type": "string"
                         },
                         "example": "sdlkj234lkj234lksjdflkjwdflkjsfdlkj234234234234"
-                    },
-                    {
-                        "name": "includedData",
-                        "in": "query",
-                        "description": "A comma-delimited list of data sets to include in the response. Default: summaries.",
-                        "style": "form",
-                        "explode": false,
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "enum": [
-                                    "summaries",
-                                    "attributes",
-                                    "issues",
-                                    "offers",
-                                    "fulfillmentAvailability",
-                                    "procurement"
-                                ],
-                                "x-docgen-enum-table-extension": [
-                                    {
-                                        "value": "summaries",
-                                        "description": "Summary details of the listing item."
-                                    },
-                                    {
-                                        "value": "attributes",
-                                        "description": "JSON object containing structured listing item attribute data keyed by attribute name."
-                                    },
-                                    {
-                                        "value": "issues",
-                                        "description": "Issues associated with the listing item."
-                                    },
-                                    {
-                                        "value": "offers",
-                                        "description": "Current offers for the listing item."
-                                    },
-                                    {
-                                        "value": "fulfillmentAvailability",
-                                        "description": "Fulfillment availability details for the listing item."
-                                    },
-                                    {
-                                        "value": "procurement",
-                                        "description": "Vendor procurement details for the listing item. "
-                                    }
-                                ]
-                            },
-                            "default": "[\"summaries\"]"
-                        },
-                        "example": "summaries"
-                    },
-                    {
-                        "name": "issueLocale",
-                        "in": "query",
-                        "description": "A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \"en_US\", \"fr_CA\", \"fr_FR\". Localized messages default to \"en_US\" when a localization is not available in the specified locale.",
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "en_US"
                     }
                 ],
                 "responses": {
@@ -1955,7 +2203,7 @@
                                                 "bullet_point": [
                                                     {
                                                         "language_tag": "en_US",
-                                                        "value": "SMART TV WITH UNIVERSAL GUIDE: Simple on-screen Guide is an easy way to find streaming content and live TV shows",
+                                                        "value": "SMART TV WITH UNIVERSAL GUIDE: Simple On-screen Guide is an easy way to find streaming content and live TV shows",
                                                         "marketplace_id": "ATVPDKIKX0DER"
                                                     },
                                                     {
@@ -3000,6 +3248,12 @@
                         "items": {
                             "$ref": "#/components/schemas/ItemProcurement"
                         }
+                    },
+                    "relationships": {
+                        "$ref": "#/components/schemas/ItemRelationships"
+                    },
+                    "productTypes": {
+                        "$ref": "#/components/schemas/ItemProductTypes"
                     }
                 },
                 "description": "A listings item."
@@ -3013,9 +3267,7 @@
             },
             "ItemSummaryByMarketplace": {
                 "required": [
-                    "asin",
                     "createdDate",
-                    "itemName",
                     "lastUpdatedDate",
                     "marketplaceId",
                     "productType",
@@ -3383,6 +3635,127 @@
                     }
                 },
                 "description": "The vendor procurement information for the listings item."
+            },
+            "ItemRelationships": {
+                "type": "array",
+                "description": "Relationships for a listing item, by marketplace (for example, variations).",
+                "items": {
+                    "$ref": "#/components/schemas/ItemRelationshipsByMarketplace"
+                }
+            },
+            "ItemRelationshipsByMarketplace": {
+                "required": [
+                    "marketplaceId",
+                    "relationships"
+                ],
+                "type": "object",
+                "properties": {
+                    "marketplaceId": {
+                        "type": "string",
+                        "description": "Amazon marketplace identifier."
+                    },
+                    "relationships": {
+                        "type": "array",
+                        "description": "Relationships for the listing item.",
+                        "items": {
+                            "$ref": "#/components/schemas/ItemRelationship"
+                        }
+                    }
+                },
+                "description": "Relationship details for the listing item in the specified marketplace."
+            },
+            "ItemRelationship": {
+                "required": [
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "childSkus": {
+                        "type": "array",
+                        "description": "Identifiers (SKUs) of the related items that are children of this listing item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "parentSkus": {
+                        "type": "array",
+                        "description": "Identifiers (SKUs) of the related items that are parents of this listing item.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "variationTheme": {
+                        "$ref": "#/components/schemas/ItemVariationTheme"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The type of relationship.",
+                        "example": "VARIATION",
+                        "enum": [
+                            "VARIATION",
+                            "PACKAGE_HIERARCHY"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "VARIATION",
+                                "description": "The listing item in the request is a variation parent or variation child of the related listing items, indicated by SKU."
+                            },
+                            {
+                                "value": "PACKAGE_HIERARCHY",
+                                "description": "The listing item in the request is a package container or is contained by the related listing items, indicated by SKU."
+                            }
+                        ]
+                    }
+                },
+                "description": "the relationship details for a listing item."
+            },
+            "ItemVariationTheme": {
+                "required": [
+                    "attributes",
+                    "theme"
+                ],
+                "type": "object",
+                "properties": {
+                    "attributes": {
+                        "type": "array",
+                        "description": "The names of the listing item attributes that are associated with the variation theme.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "theme": {
+                        "type": "string",
+                        "description": "The variation theme that indicates the combination of listing item attributes that define the variation family.",
+                        "example": "COLOR_NAME/STYLE_NAME"
+                    }
+                },
+                "description": "A variation theme that indicates the combination of listing item attributes that define the variation family."
+            },
+            "ItemProductTypes": {
+                "type": "array",
+                "description": "Product types for a listing item, by marketplace.",
+                "items": {
+                    "$ref": "#/components/schemas/ItemProductTypeByMarketplace"
+                }
+            },
+            "ItemProductTypeByMarketplace": {
+                "required": [
+                    "marketplaceId",
+                    "productType"
+                ],
+                "type": "object",
+                "properties": {
+                    "marketplaceId": {
+                        "type": "string",
+                        "description": "Amazon marketplace identifier."
+                    },
+                    "productType": {
+                        "type": "string",
+                        "description": "The name of the product type that is submitted by the Selling Partner.",
+                        "example": "LUGGAGE"
+                    }
+                },
+                "description": "Product types that are associated with the listing item for the specified marketplace."
             },
             "FulfillmentAvailability": {
                 "required": [

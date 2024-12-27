@@ -17,7 +17,7 @@ use SellingPartnerApi\Seller\MerchantFulfillmentV0\Dto\Shipment;
 final class GetShipmentResponse extends Response
 {
     /**
-     * @param  ?Shipment  $payload  The details of a shipment, including the shipment status.
+     * @param  ?Shipment  $payload  The details of a shipment. Includes the shipment status.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

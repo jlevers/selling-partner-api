@@ -17,9 +17,9 @@ final class PartyIdentification extends Dto
     protected static array $complexArrayTypes = ['taxRegistrationDetails' => TaxRegistrationDetails::class];
 
     /**
-     * @param  string  $partyId  Assigned Identification for the party.
+     * @param  string  $partyId  The identifier of the party.
      * @param  ?Address  $address  Address of the party.
-     * @param  TaxRegistrationDetails[]|null  $taxRegistrationDetails  Tax registration details of the entity.
+     * @param  TaxRegistrationDetails[]|null  $taxRegistrationDetails  The tax registration details of the party.
      */
     public function __construct(
         public string $partyId,

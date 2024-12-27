@@ -31,7 +31,7 @@ class ListInboundShipments extends Request
      * @param  ?\DateTimeInterface  $updatedAfter  List the inbound shipments that were updated after a certain time (inclusive). The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?\DateTimeInterface  $updatedBefore  List the inbound shipments that were updated before a certain time (inclusive). The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?int  $maxResults  Maximum number of results to return.
-     * @param  ?string  $nextToken  Token to retrieve the next set of paginated results.
+     * @param  ?string  $nextToken  A token that is used to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
      */
     public function __construct(
         protected ?string $sortBy = null,

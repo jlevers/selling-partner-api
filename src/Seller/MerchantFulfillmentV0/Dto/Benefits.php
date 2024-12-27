@@ -23,7 +23,7 @@ final class Benefits extends Dto
 
     /**
      * @param  ?string[]  $includedBenefits  A list of included benefits.
-     * @param  ExcludedBenefit[]|null  $excludedBenefits  A list of excluded benefit. Refer to the ExcludeBenefit object for further documentation.
+     * @param  ExcludedBenefit[]|null  $excludedBenefits  A list of excluded benefits. Refer to the `ExcludeBenefit` object for further documentation.
      */
     public function __construct(
         public ?array $includedBenefits = null,

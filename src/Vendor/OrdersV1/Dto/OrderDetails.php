@@ -25,6 +25,10 @@ final class OrderDetails extends Dto
      * @param  ?ImportDetails  $importDetails  Import details for an import order.
      * @param  ?string  $dealCode  If requested by the recipient, this field will contain a promotional/deal number. The discount code line is optional. It is used to obtain a price discount on items on the order.
      * @param  ?string  $paymentMethod  Payment method used.
+     * @param  ?PartyIdentification  $buyingParty  Name, address and tax details of a party.
+     * @param  ?PartyIdentification  $sellingParty  Name, address and tax details of a party.
+     * @param  ?PartyIdentification  $shipToParty  Name, address and tax details of a party.
+     * @param  ?PartyIdentification  $billToParty  Name, address and tax details of a party.
      * @param  ?string  $shipWindow  Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
      * @param  ?string  $deliveryWindow  Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
      */

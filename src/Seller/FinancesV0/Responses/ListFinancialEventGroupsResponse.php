@@ -17,7 +17,7 @@ use SellingPartnerApi\Seller\FinancesV0\Dto\ListFinancialEventGroupsPayload;
 final class ListFinancialEventGroupsResponse extends Response
 {
     /**
-     * @param  ?ListFinancialEventGroupsPayload  $payload  The payload for the `listFinancialEventGroups` operation.
+     * @param  ?ListFinancialEventGroupsPayload  $payload  The payload for the listFinancialEventGroups operation.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

@@ -17,7 +17,7 @@ final class GetFeaturedOfferExpectedPriceBatchRequest extends Dto
     protected static array $complexArrayTypes = ['requests' => FeaturedOfferExpectedPriceRequest::class];
 
     /**
-     * @param  FeaturedOfferExpectedPriceRequest[]|null  $requests  A batched list of featured offer expected price requests.
+     * @param  FeaturedOfferExpectedPriceRequest[]|null  $requests  A batched list of FOEP requests.
      */
     public function __construct(
         public ?array $requests = null,

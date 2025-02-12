@@ -50,7 +50,7 @@ class UpdateShipmentSourceAddress extends Request implements HasBody
         $status = $response->status();
         $responseCls = match ($status) {
             202 => UpdateShipmentSourceAddressResponse::class,
-            400, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
+            400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

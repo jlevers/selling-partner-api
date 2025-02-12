@@ -8,16 +8,16 @@
 
 declare(strict_types=1);
 
-namespace SellingPartnerApi\Seller\TransfersV20240601\Dto;
+namespace SellingPartnerApi\Seller\FBAInboundV20240320\Dto;
 
 use SellingPartnerApi\Dto;
 
-final class AssignmentFilter extends Dto
+final class BoxRequirements extends Dto
 {
     /**
-     * @param  ?string[]  $assignmentTypes  The list of assignment types.
+     * @param  WeightRange  $weight  The range of weights that are allowed for a package.
      */
     public function __construct(
-        public ?array $assignmentTypes = null,
+        public WeightRange $weight,
     ) {}
 }

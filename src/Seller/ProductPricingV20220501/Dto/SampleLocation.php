@@ -8,16 +8,16 @@
 
 declare(strict_types=1);
 
-namespace SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto;
+namespace SellingPartnerApi\Seller\ProductPricingV20220501\Dto;
 
 use SellingPartnerApi\Dto;
 
-final class OutboundOrderReference extends Dto
+final class SampleLocation extends Dto
 {
     /**
-     * @param  string  $orderId  outbound order ID.
+     * @param  ?PostalCode  $postalCode  Postal code value with country code
      */
     public function __construct(
-        public string $orderId,
+        public ?PostalCode $postalCode = null,
     ) {}
 }

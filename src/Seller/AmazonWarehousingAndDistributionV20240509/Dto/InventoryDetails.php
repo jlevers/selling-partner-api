@@ -16,10 +16,12 @@ final class InventoryDetails extends Dto
 {
     /**
      * @param  ?int  $availableDistributableQuantity  Quantity that is available for downstream channel replenishment.
+     * @param  ?int  $replenishmentQuantity  Quantity that is in transit from AWD and has not yet been received at FBA.
      * @param  ?int  $reservedDistributableQuantity  Quantity that is reserved for a downstream channel replenishment order that is being prepared for shipment.
      */
     public function __construct(
         public ?int $availableDistributableQuantity = null,
+        public ?int $replenishmentQuantity = null,
         public ?int $reservedDistributableQuantity = null,
     ) {}
 }

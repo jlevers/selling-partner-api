@@ -17,9 +17,11 @@ final class FeaturedOfferExpectedPriceRequestParams extends Dto
     /**
      * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for which data is returned.
      * @param  string  $sku  The seller SKU of the item.
+     * @param  ?Segment  $segment  Input segment for featured offer expected price. The segment contains the location information for which featured offer expected price is requested.
      */
     public function __construct(
         public string $marketplaceId,
         public string $sku,
+        public ?Segment $segment = null,
     ) {}
 }

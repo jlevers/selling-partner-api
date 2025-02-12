@@ -16,7 +16,7 @@ final class FeaturedOfferSegment extends Dto
 {
     /**
      * @param  string  $customerMembership  The customer membership type that makes up this segment
-     * @param  SegmentDetails  $segmentDetails  The details about the segment.
+     * @param  SegmentDetails  $segmentDetails  The details about the segment. The FeaturedOfferExpectedPrice API uses only the sampleLocation portion as input.
      */
     public function __construct(
         public string $customerMembership,

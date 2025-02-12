@@ -17,6 +17,7 @@ final class AdjustmentEvent extends Dto
     protected static array $attributeMap = [
         'adjustmentType' => 'AdjustmentType',
         'postedDate' => 'PostedDate',
+        'storeName' => 'StoreName',
         'adjustmentAmount' => 'AdjustmentAmount',
         'adjustmentItemList' => 'AdjustmentItemList',
     ];
@@ -44,12 +45,14 @@ final class AdjustmentEvent extends Dto
      *
      * * SellerRewards - An award credited to a seller's account for their participation in an offer in the Seller Rewards program. Applies only to the India marketplace.
      * @param  ?\DateTimeInterface  $postedDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?string  $storeName  The name of the store where the event occurred.
      * @param  ?Currency  $adjustmentAmount  A currency type and amount.
      * @param  AdjustmentItem[]|null  $adjustmentItemList  A list of information about items in an adjustment to the seller's account.
      */
     public function __construct(
         public ?string $adjustmentType = null,
         public ?\DateTimeInterface $postedDate = null,
+        public ?string $storeName = null,
         public ?Currency $adjustmentAmount = null,
         public ?array $adjustmentItemList = null,
     ) {}

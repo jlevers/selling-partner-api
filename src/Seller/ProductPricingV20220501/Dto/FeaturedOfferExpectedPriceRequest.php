@@ -21,6 +21,7 @@ final class FeaturedOfferExpectedPriceRequest extends Dto
      * @param  string  $sku  The seller SKU of the item.
      * @param  ?array[]  $body  Additional HTTP body information that is associated with an individual request within a batch.
      * @param  ?string[]  $headers  A mapping of additional HTTP headers to send or receive for an individual request within a batch.
+     * @param  ?Segment  $segment  Input segment for featured offer expected price. The segment contains the location information for which featured offer expected price is requested.
      */
     public function __construct(
         public string $uri,
@@ -29,5 +30,6 @@ final class FeaturedOfferExpectedPriceRequest extends Dto
         public string $sku,
         public ?array $body = null,
         public ?array $headers = null,
+        public ?Segment $segment = null,
     ) {}
 }

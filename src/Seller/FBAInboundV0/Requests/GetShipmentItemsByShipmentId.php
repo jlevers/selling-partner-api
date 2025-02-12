@@ -25,11 +25,11 @@ class GetShipmentItemsByShipmentId extends Request
 
     /**
      * @param  string  $shipmentId  A shipment identifier used for selecting items in a specific inbound shipment.
-     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace where the product would be stored.
+     * @param  ?string  $marketplaceId  Deprecated. Do not use.
      */
     public function __construct(
         protected string $shipmentId,
-        protected string $marketplaceId,
+        protected ?string $marketplaceId = null,
     ) {}
 
     public function resolveEndpoint(): string

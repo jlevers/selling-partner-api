@@ -64,7 +64,17 @@
                                         {
                                             "request": {
                                                 "marketplaceId": "MARKETPLACE_ID",
-                                                "sku": "MY_SKU"
+                                                "sku": "MY_SKU",
+                                                "segment": {
+                                                    "segmentDetails": {
+                                                        "sampleLocation": {
+                                                            "postalCode": {
+                                                                "countryCode": "US",
+                                                                "value": "98109"
+                                                            }
+                                                        }
+                                                    }
+                                                }
                                             },
                                             "status": {
                                                 "statusCode": 200,
@@ -236,6 +246,16 @@
                                                         {
                                                             "marketplaceId": "MARKETPLACE_ID",
                                                             "sku": "MY_SKU",
+                                                            "segment": {
+                                                                "segmentDetails": {
+                                                                    "sampleLocation": {
+                                                                        "postalCode": {
+                                                                            "countryCode": "COUNTRY_CODE",
+                                                                            "value": "POSTAL_CODE_VALUE"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
                                                             "method": "GET",
                                                             "uri": "/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice"
                                                         },
@@ -261,7 +281,17 @@
                                             {
                                                 "request": {
                                                     "marketplaceId": "MARKETPLACE_ID",
-                                                    "sku": "MY_SKU"
+                                                    "sku": "MY_SKU",
+                                                    "segment": {
+                                                        "segmentDetails": {
+                                                            "sampleLocation": {
+                                                                "postalCode": {
+                                                                    "countryCode": "COUNTRY_CODE",
+                                                                    "value": "POSTAL_CODE_VALUE"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
                                                 },
                                                 "status": {
                                                     "statusCode": 200,
@@ -678,13 +708,25 @@
                                                                     {
                                                                         "customerMembership": "PRIME",
                                                                         "segmentDetails": {
-                                                                            "glanceViewWeightPercentage": 72
+                                                                            "glanceViewWeightPercentage": 72,
+                                                                            "sampleLocation": {
+                                                                                "postalCode": {
+                                                                                    "countryCode": "US",
+                                                                                    "value": "12345"
+                                                                                }
+                                                                            }
                                                                         }
                                                                     },
                                                                     {
                                                                         "customerMembership": "NON_PRIME",
                                                                         "segmentDetails": {
-                                                                            "glanceViewWeightPercentage": 18
+                                                                            "glanceViewWeightPercentage": 18,
+                                                                            "sampleLocation": {
+                                                                                "postalCode": {
+                                                                                    "countryCode": "US",
+                                                                                    "value": "67890"
+                                                                                }
+                                                                            }
                                                                         }
                                                                     }
                                                                 ]
@@ -717,7 +759,13 @@
                                                                     {
                                                                         "customerMembership": "NON_PRIME",
                                                                         "segmentDetails": {
-                                                                            "glanceViewWeightPercentage": 10
+                                                                            "glanceViewWeightPercentage": 10,
+                                                                            "sampleLocation": {
+                                                                                "postalCode": {
+                                                                                    "countryCode": "US",
+                                                                                    "value": "12345"
+                                                                                }
+                                                                            }
                                                                         }
                                                                     }
                                                                 ]
@@ -927,13 +975,25 @@
                                                                         {
                                                                             "customerMembership": "NON_PRIME",
                                                                             "segmentDetails": {
-                                                                                "glanceViewWeightPercentage": 72
+                                                                                "glanceViewWeightPercentage": 72,
+                                                                                "sampleLocation": {
+                                                                                    "postalCode": {
+                                                                                        "countryCode": "US",
+                                                                                        "value": "67890"
+                                                                                    }
+                                                                                }
                                                                             }
                                                                         },
                                                                         {
                                                                             "customerMembership": "PRIME",
                                                                             "segmentDetails": {
-                                                                                "glanceViewWeightPercentage": 10
+                                                                                "glanceViewWeightPercentage": 10,
+                                                                                "sampleLocation": {
+                                                                                    "postalCode": {
+                                                                                        "countryCode": "US",
+                                                                                        "value": "12345"
+                                                                                    }
+                                                                                }
                                                                             }
                                                                         }
                                                                     ]
@@ -966,7 +1026,13 @@
                                                                         {
                                                                             "customerMembership": "NON_PRIME",
                                                                             "segmentDetails": {
-                                                                                "glanceViewWeightPercentage": 18
+                                                                                "glanceViewWeightPercentage": 18,
+                                                                                "sampleLocation": {
+                                                                                    "postalCode": {
+                                                                                        "countryCode": "US",
+                                                                                        "value": "12345"
+                                                                                    }
+                                                                                }
                                                                             }
                                                                         }
                                                                     ]
@@ -1309,6 +1375,9 @@
                     },
                     "sku": {
                         "$ref": "#/components/schemas/Sku"
+                    },
+                    "segment": {
+                        "$ref": "#/components/schemas/Segment"
                     }
                 },
                 "description": "The parameters for an individual request."
@@ -1841,9 +1910,35 @@
                     "glanceViewWeightPercentage": {
                         "type": "number",
                         "description": "The glance view weighted percentage for this segment, which is the glance views for this segment as a percentage of total glance views across all segments for the ASIN. A higher percentage indicates that more Amazon customers receive this offer as the Featured Offer."
+                    },
+                    "sampleLocation": {
+                        "$ref": "#/components/schemas/SampleLocation"
                     }
                 },
-                "description": "The details about the segment."
+                "description": "The details about the segment. The FeaturedOfferExpectedPrice API uses only the sampleLocation portion as input."
+            },
+            "SampleLocation": {
+                "type": "object",
+                "properties": {
+                    "postalCode": {
+                        "$ref": "#/components/schemas/PostalCode"
+                    }
+                },
+                "description": "Information about a location. It uses a postal code to identify the location."
+            },
+            "PostalCode": {
+                "type": "object",
+                "properties": {
+                    "countryCode": {
+                        "type": "string",
+                        "description": "Country code value"
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "Postal code value "
+                    }
+                },
+                "description": "Postal code value with country code"
             },
             "Errors": {
                 "required": [
@@ -2140,6 +2235,15 @@
             "Sku": {
                 "type": "string",
                 "description": "The seller SKU of the item."
+            },
+            "Segment": {
+                "type": "object",
+                "properties": {
+                    "segmentDetails": {
+                        "$ref": "#/components/schemas/SegmentDetails"
+                    }
+                },
+                "description": "Input segment for featured offer expected price. The segment contains the location information for which featured offer expected price is requested."
             },
             "Condition": {
                 "type": "string",

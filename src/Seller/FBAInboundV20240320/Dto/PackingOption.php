@@ -17,6 +17,7 @@ final class PackingOption extends Dto
     protected static array $complexArrayTypes = [
         'discounts' => Incentive::class,
         'fees' => Incentive::class,
+        'supportedConfigurations' => PackingConfiguration::class,
         'supportedShippingConfigurations' => ShippingConfiguration::class,
     ];
 
@@ -26,7 +27,8 @@ final class PackingOption extends Dto
      * @param  string[]  $packingGroups  Packing group IDs.
      * @param  string  $packingOptionId  Identifier of a packing option.
      * @param  string  $status  The status of the packing option. Possible values: `OFFERED`, `ACCEPTED`, `EXPIRED`.
-     * @param  ShippingConfiguration[]  $supportedShippingConfigurations  List of supported shipping modes.
+     * @param  PackingConfiguration[]  $supportedConfigurations  A list of possible configurations for this option.
+     * @param  ShippingConfiguration[]  $supportedShippingConfigurations  **This field is deprecated**. Use the `shippingRequirements` property under `supportedConfigurations` instead. List of supported shipping modes.
      * @param  ?\DateTimeInterface  $expiration  The time at which this packing option is no longer valid. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
     public function __construct(
@@ -35,6 +37,7 @@ final class PackingOption extends Dto
         public array $packingGroups,
         public string $packingOptionId,
         public string $status,
+        public array $supportedConfigurations,
         public array $supportedShippingConfigurations,
         public ?\DateTimeInterface $expiration = null,
     ) {}

@@ -22,6 +22,8 @@ final class Box extends Dto
      * @param  ?string  $contentInformationSource  Indication of how box content is meant to be provided.
      * @param  ?Region  $destinationRegion  Representation of a location used within the inbounding experience.
      * @param  ?Dimensions  $dimensions  Measurement of a package's dimensions.
+     * @param  ?string  $externalContainerIdentifier  The external identifier for this container / box.
+     * @param  ?string  $externalContainerIdentifierType  Type of the external identifier used. Can be: `AMAZON`, `SSCC`.
      * @param  Item[]|null  $items  Items contained within the box.
      * @param  ?int  $quantity  The number of containers where all other properties like weight or dimensions are identical.
      * @param  ?string  $templateName  Template name of the box.
@@ -33,6 +35,8 @@ final class Box extends Dto
         public ?string $contentInformationSource = null,
         public ?Region $destinationRegion = null,
         public ?Dimensions $dimensions = null,
+        public ?string $externalContainerIdentifier = null,
+        public ?string $externalContainerIdentifierType = null,
         public ?array $items = null,
         public ?int $quantity = null,
         public ?string $templateName = null,

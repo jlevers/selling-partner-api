@@ -4,4 +4,7 @@ declare(strict_types=1);
 
 namespace SellingPartnerApi;
 
-class EmptyResponse extends Response {}
+class EmptyResponse extends Response
+{
+    public function __construct() {}
+}

@@ -93,6 +93,10 @@ trait Deserializes
             if (! class_exists($type) && ! interface_exists($type)) {
                 throw new InvalidAttributeTypeException("Neither the Class nor Interface `$type` exists");
             } elseif ($type == DateTimeInterface::class) {
+                if ($value === null) {
+                    return null;
+                }
+
                 return static::convertValueToDateTime($value);
             }
 

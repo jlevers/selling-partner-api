@@ -5,7 +5,12 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Tests;
 
 use DateTimeImmutable;
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\CurlHandler;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\RequestInterface;
 use Saloon\Config;
 use Saloon\Exceptions\Request\Statuses\UnauthorizedException;
 use Saloon\Http\Faking\MockClient;
@@ -296,5 +301,37 @@ class AuthenticationTest extends TestCase
             ],
             $mockClient->getLastPendingRequest()->body()->all()
         );
+    }
+
+    public function testUsesCustomAuthenticationClient(): void
+    {
+        $called = false;
+        function test_middleware()
+        {
+            return function (callable $handler) use (&$called) {
+                return function (RequestInterface $request, array $options) use ($handler, &$called) {
+                    $called = true;
+                    $request = $request->withHeader('X-Test', 'test');
+                    return $handler($request, $options);
+                };
+            };
+        }
+
+        $stack = new HandlerStack();
+        $stack->setHandler(new MockHandler());
+        $stack->push(test_middleware());
+        $httpClient = new Client(['handler' => $stack]);
+
+        $connector = SellingPartnerApi::seller(
+            clientId: 'client-id',
+            clientSecret: 'client-secret',
+            refreshToken: 'refresh-token',
+            endpoint: Endpoint::NA_SANDBOX,
+            authenticationClient: $httpClient,
+        );
+
+        $connector->defaultAuth();
+
+        $this->assertFalse($called);
     }
 }

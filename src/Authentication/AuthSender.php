@@ -13,6 +13,8 @@ class AuthSender extends GuzzleSender
     {
         if (! $client) {
             parent::__construct();
+        } else {
+            $this->client = $client;
         }
     }
 }

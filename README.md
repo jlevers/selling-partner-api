@@ -538,7 +538,7 @@ $createFeedResponse = $feedsApi->createFeed($createFeedSpec);
 $feedId = $createFeedResponse->dto()->feedId;
 ```
 
-If you are working with feed documents that are too large to fit in memory, you can pass anything that Guzzle can turn into a stream into `FeedDocument::upload()` instead of a string.
+If you are working with feed documents that are too large to fit in memory, you can pass anything that Guzzle can turn into a stream into `FeedDocument::upload()` instead of a string. `FeedDocument::upload()` also has an optional `$client` parameter, for passing custom Guzzle clients.
 
 
 ## Downloading a feed result document

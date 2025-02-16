@@ -15,9 +15,10 @@ trait UploadsDocument
     public function upload(
         string $feedType,
         string|StreamInterface|callable|Iterator $data,
-        ?string $charset = null
+        ?string $charset = null,
+        ?Client $client = null
     ): void {
-        $client = new Client;
+        $client = $client ?? new Client;
         $response = $client->put($this->url, [
             RequestOptions::HEADERS => [
                 'Content-Type' => static::getContentType($feedType, $charset),

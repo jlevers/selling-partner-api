@@ -31,6 +31,7 @@ trait DownloadsDocument
         ?string $documentType = null,
         bool $postProcess = true,
         ?string $encoding = null,
+        ?Client $client = null,
     ): array|string|SimpleXMLElement {
         if (! $documentType && $postProcess) {
             throw new InvalidArgumentException(
@@ -38,7 +39,7 @@ trait DownloadsDocument
             );
         }
 
-        $client = new Client;
+        $client = $client ?? new Client;
 
         if ($documentType) {
             $this->documentTypeInfo = static::documentTypeInfo($documentType);
@@ -89,9 +90,9 @@ trait DownloadsDocument
      *
      * @return StreamInterface The raw (unencrypted) document stream.
      */
-    public function downloadStream(): StreamInterface
+    public function downloadStream(?Client $client = null): StreamInterface
     {
-        $client = new Client;
+        $client = $client ?? new Client;
         try {
             $response = $client->request('GET', $this->url, ['stream' => true]);
         } catch (ClientException $e) {

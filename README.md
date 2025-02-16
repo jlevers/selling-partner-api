@@ -493,12 +493,13 @@ $reportDocument = $response->dto();
 $contents = $reportDocument->download($reportType);
 ```
 
-The `download` method has three parameters:
+The `download` method has four parameters:
 * `documentType` (string): The report type (or feed type of the feed result document being fetched). This is required if you want the document data parsed for you.
 * `preProcess` (bool): Whether to preprocess the document data. If `true`, the document data will be parsed and formatted into a more usable format. If `false`, the raw document text will be returned. Defaults to `true`.
 * `encoding` (string): The encoding of the document data. Defaults to `UTF-8`.
+* `client` (`GuzzleHttp\Client`): An optional custom Guzzle client to use to download the document.
 
-If you are working with huge documents you can use `downloadStream()` to minimize the memory consumption. `downloadStream()` returns a `Psr\Http\Message\StreamInterface`.
+If you are working with huge documents you can use `downloadStream()` to minimize the memory consumption. `downloadStream()` returns a `Psr\Http\Message\StreamInterface`. `downloadStream()` also has an optional `$client` parameter.
 
 ```php
 $streamContents = $reportDocument->downloadStream();  // The raw report stream

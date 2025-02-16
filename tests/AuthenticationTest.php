@@ -6,7 +6,6 @@ namespace SellingPartnerApi\Tests;
 
 use DateTimeImmutable;
 use GuzzleHttp\Client;
-use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use PHPUnit\Framework\TestCase;
@@ -312,13 +311,14 @@ class AuthenticationTest extends TestCase
                 return function (RequestInterface $request, array $options) use ($handler, &$called) {
                     $called = true;
                     $request = $request->withHeader('X-Test', 'test');
+
                     return $handler($request, $options);
                 };
             };
         }
 
-        $stack = new HandlerStack();
-        $stack->setHandler(new MockHandler());
+        $stack = new HandlerStack;
+        $stack->setHandler(new MockHandler);
         $stack->push(test_middleware());
         $httpClient = new Client(['handler' => $stack]);
 

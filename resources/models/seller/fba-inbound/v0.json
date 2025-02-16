@@ -2544,10 +2544,6 @@
                 "description": "The response schema for the getShipments operation."
             },
             "PrepDetails": {
-                "required": [
-                    "PrepInstruction",
-                    "PrepOwner"
-                ],
                 "type": "object",
                 "properties": {
                     "PrepInstruction": {

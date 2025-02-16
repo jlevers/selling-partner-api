@@ -27,6 +27,11 @@
           "value": [
             "ShipFromAddress"
           ]
+        },
+        {
+            "comment": "Sometimes Amazon sends a PrepDetailsList with a single empty PrepDetails object (see https://github.com/jlevers/selling-partner-api/issues/845)",
+            "action": "delete",
+            "path": "components.schemas.PrepDetails.required"
         }
       ]
     },

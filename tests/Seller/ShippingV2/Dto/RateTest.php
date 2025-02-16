@@ -17,23 +17,23 @@ class RateTest extends TestCase
             'serviceName' => '',
             'totalCharge' => [
                 'value' => 4.88,
-                'unit' => 'USD'
+                'unit' => 'USD',
             ],
             'promise' => [
                 'deliveryWindow' => [
                     'start' => '2024-12-29T07:59:59Z',
-                    'end' => '2024-12-29T07:59:59Z'
+                    'end' => '2024-12-29T07:59:59Z',
                 ],
                 'pickupWindow' => [
                     'start' => null,
-                    'end' => null
-                ]
+                    'end' => null,
+                ],
             ],
             'supportedDocumentSpecifications' => [],
             'requiresAdditionalInputs' => false,
             'billedWeight' => [
                 'unit' => 'GRAM',
-                'value' => 205
+                'value' => 205,
             ],
             'availableValueAddedServiceGroups' => [],
         ]);

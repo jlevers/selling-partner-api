@@ -495,7 +495,7 @@ $contents = $reportDocument->download($reportType);
 
 The `download` method has four parameters:
 * `documentType` (string): The report type (or feed type of the feed result document being fetched). This is required if you want the document data parsed for you.
-* `preProcess` (bool): Whether to preprocess the document data. If `true`, the document data will be parsed and formatted into a more usable format. If `false`, the raw document text will be returned. Defaults to `true`.
+* `postProcess` (bool): Whether to postprocess the document data. If `true`, the document data will be parsed and formatted into a more usable format. If `false`, the raw document text will be returned. Defaults to `true`.
 * `encoding` (string): The encoding of the document data. Defaults to `UTF-8`.
 * `client` (`GuzzleHttp\Client`): An optional custom Guzzle client to use to download the document.
 

@@ -27,7 +27,7 @@
         "guzzlehttp/guzzle": "^6.0|^7.0",
         "saloonphp/saloon": "^3.4",
         "openspout/openspout": "^4.23",
-        "illuminate/support": "^11.5"
+        "illuminate/support": "^11.0|^12.0"
     },
     "require-dev": {
         "composer/semver": "^3.4",

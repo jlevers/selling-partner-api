@@ -25,8 +25,8 @@ class GetContentDocument extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  array  $includedDataSet  The set of A+ Content data types to include in the response.
      */
     public function __construct(

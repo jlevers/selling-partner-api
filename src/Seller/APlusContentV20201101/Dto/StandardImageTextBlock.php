@@ -17,7 +17,7 @@ final class StandardImageTextBlock extends Dto
     /**
      * @param  ?ImageComponent  $image  A reference to an image, hosted in the A+ Content media library.
      * @param  ?TextComponent  $headline  Rich text content.
-     * @param  ?ParagraphComponent  $body  A list of rich text content, usually presented in a text box.
+     * @param  ?ParagraphComponent  $body  A list of rich text content that is typically presented in a text box.
      */
     public function __construct(
         public ?ImageComponent $image = null,

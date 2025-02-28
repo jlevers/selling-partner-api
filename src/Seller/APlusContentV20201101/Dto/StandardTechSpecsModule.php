@@ -19,7 +19,7 @@ final class StandardTechSpecsModule extends Dto
     /**
      * @param  StandardTextPairBlock[]  $specificationList  The specification list.
      * @param  ?TextComponent  $headline  Rich text content.
-     * @param  ?int  $tableCount  The number of tables to present. Features are evenly divided between the tables.
+     * @param  ?int  $tableCount  The number of tables you want present. Features are evenly divided between the tables.
      */
     public function __construct(
         public array $specificationList,

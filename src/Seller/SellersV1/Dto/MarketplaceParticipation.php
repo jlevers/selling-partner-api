@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class MarketplaceParticipation extends Dto
 {
     /**
-     * @param  Marketplace  $marketplace  Detailed information about an Amazon market where a seller can list items for sale and customers can view and purchase items.
-     * @param  Participation  $participation  Detailed information that is specific to a seller in a marketplace.
+     * @param  Marketplace  $marketplace  Information about an Amazon marketplace where a seller can list items and customers can view and purchase items.
+     * @param  Participation  $participation  Information that is specific to a seller in a marketplace.
      * @param  string  $storeName  The name of the seller's store as displayed in the marketplace.
      */
     public function __construct(

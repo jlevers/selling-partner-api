@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class RelatedIdentifier extends Dto
 {
     /**
-     * @param  ?string  $relatedIdentifierName  An enumerated set of related business identifier names.
-     * @param  ?string  $relatedIdentifierValue  Corresponding value of `RelatedIdentifierName`.
+     * @param  ?string  $relatedIdentifierName  Enumerated set of related business identifier names.
+     * @param  ?string  $relatedIdentifierValue  Corresponding value of RelatedIdentifierName
      */
     public function __construct(
         public ?string $relatedIdentifierName = null,

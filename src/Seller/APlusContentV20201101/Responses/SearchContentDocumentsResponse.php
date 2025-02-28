@@ -24,7 +24,7 @@ final class SearchContentDocumentsResponse extends Response
     /**
      * @param  ContentMetadataRecord[]  $contentMetadataRecords  A list of A+ Content metadata records.
      * @param  Error[]|null  $warnings  A set of messages to the user, such as warnings or comments.
-     * @param  ?string  $nextPageToken  A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
+     * @param  ?string  $nextPageToken  A token that you use to fetch a specific page when there are multiple pages of results.
      */
     public function __construct(
         public readonly array $contentMetadataRecords,

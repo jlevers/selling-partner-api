@@ -2645,7 +2645,7 @@
                     },
                     "content": {
                         "type": "string",
-                        "description": "A Base64encoded string of the packing slip PDF."
+                        "description": "A Base64 string of the packing slip PDF."
                     },
                     "contentType": {
                         "type": "string",
@@ -3149,7 +3149,7 @@
                     },
                     "content": {
                         "type": "string",
-                        "description": "This field will contain the Base64encoded string of the shipment label content."
+                        "description": "This field will contain the Base64 string of the shipment label content."
                     }
                 },
                 "description": "Details of the shipment label."
@@ -3337,7 +3337,7 @@
                     },
                     "content": {
                         "type": "string",
-                        "description": "The Base64encoded customer invoice."
+                        "description": "The Base64 customer invoice."
                     }
                 },
                 "description": "Represents a customer invoice associated with a purchase order."
@@ -3555,7 +3555,7 @@
                     },
                     "content": {
                         "type": "string",
-                        "description": "The `Base64encoded` string of the container label content."
+                        "description": "The container label content encoded into a Base64 string."
                     },
                     "format": {
                         "$ref": "#/components/schemas/ContainerLabelFormat"

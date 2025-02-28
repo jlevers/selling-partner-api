@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class UpdateFulfillmentOrderItem extends Dto
 {
     /**
-     * @param  string  $sellerFulfillmentOrderItemId  Identifies the fulfillment order item to update. Created with a previous call to the `createFulfillmentOrder` operation.
+     * @param  string  $sellerFulfillmentOrderItemId  Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation.
      * @param  int  $quantity  The item quantity.
      * @param  ?string  $sellerSku  The seller SKU of the item.
      * @param  ?string  $giftMessage  A message to the gift recipient, if applicable.

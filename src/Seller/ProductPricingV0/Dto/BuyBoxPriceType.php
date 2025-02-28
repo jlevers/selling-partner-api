@@ -23,7 +23,13 @@ final class BuyBoxPriceType extends Dto
 
     /**
      * @param  string  $condition  Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
+     * @param  MoneyType  $landedPrice  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  MoneyType  $listingPrice  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  MoneyType  $shipping  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  ?string  $offerType  Indicates whether the offer is a B2B or B2C offer
      * @param  ?int  $quantityTier  Indicates at what quantity this price becomes active.
+     * @param  ?string  $quantityDiscountType  Indicates the type of quantity discount this price applies to.
+     * @param  ?Points  $points  The number of Amazon Points offered with the purchase of an item, and their monetary value.
      * @param  ?string  $sellerId  The seller identifier for the offer.
      */
     public function __construct(

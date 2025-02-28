@@ -32,7 +32,7 @@ final class GetOffersResult extends Dto
      * @param  string  $status  The status of the operation.
      * @param  ItemIdentifier  $identifier  Information that identifies an item.
      * @param  Summary  $summary  Contains price information about the product, including the LowestPrices and BuyBoxPrices, the ListPrice, the SuggestedLowerPricePlusShipping, and NumberOfOffers and NumberOfBuyBoxEligibleOffers.
-     * @param  OfferDetail[]  $offers
+     * @param  OfferDetail[]  $offers  A list of offer details. The list is the same length as the TotalOfferCount in the Summary or 20, whichever is less.
      * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
      * @param  ?string  $sku  The stock keeping unit (SKU) of the item.
      */

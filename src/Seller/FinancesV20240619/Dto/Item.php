@@ -21,11 +21,11 @@ final class Item extends Dto
     ];
 
     /**
-     * @param  ?string  $description  A description of the items in a transaction.
-     * @param  ItemRelatedIdentifier[]|null  $relatedIdentifiers  Related business identifiers of the item in the transaction.
+     * @param  ?string  $description  Description of items in the transaction
+     * @param  ItemRelatedIdentifier[]|null  $relatedIdentifiers  Related Business identifiers of the item in Transaction.
      * @param  ?Currency  $totalAmount  A currency type and amount.
-     * @param  Breakdown[]|null  $breakdowns  A list of breakdowns that provide details on how the total amount is calculated for the transaction.
-     * @param  Context[]|null  $contexts  A list of additional information about the item.
+     * @param  Breakdown[]|null  $breakdowns  List of breakdowns which will provide the details on how the total amount is calculated for the financial transaction.
+     * @param  Context[]|null  $contexts  List of additional Information about the item.
      */
     public function __construct(
         public ?string $description = null,

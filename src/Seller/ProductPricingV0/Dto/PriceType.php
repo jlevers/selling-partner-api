@@ -21,6 +21,12 @@ final class PriceType extends Dto
         'points' => 'Points',
     ];
 
+    /**
+     * @param  MoneyType  $listingPrice  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  ?MoneyType  $landedPrice  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  ?MoneyType  $shipping  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  ?Points  $points  The number of Amazon Points offered with the purchase of an item, and their monetary value.
+     */
     public function __construct(
         public MoneyType $listingPrice,
         public ?MoneyType $landedPrice = null,

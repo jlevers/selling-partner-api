@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class ImageCropSpecification extends Dto
 {
     /**
-     * @param  ImageDimensions  $size  The dimensions extending from the top left corner of the cropped image, or the top left corner of the original image if there is no cropping. Only `pixels` is allowed as the units value for ImageDimensions.
+     * @param  ImageDimensions  $size  The dimensions that extend from the top left corner of the image (this applies to cropped and uncropped images). `ImageDimensions` units must be in pixels.
      * @param  ?ImageOffsets  $offset  The top left corner of the cropped image, specified in the original image's coordinate space.
      */
     public function __construct(

@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class ImageComponent extends Dto
 {
     /**
-     * @param  string  $uploadDestinationId  This identifier is provided by the Selling Partner API for Uploads.
-     * @param  ImageCropSpecification  $imageCropSpecification  The instructions for optionally cropping an image. If no cropping is desired, set the dimensions to the original image size. If the image is cropped and no offset values are provided, then the coordinates of the top left corner of the cropped image, relative to the original image, are defaulted to (0,0).
+     * @param  string  $uploadDestinationId  This identifier is provided by the [Uploads API](https://developer-docs.amazon.com/sp-api/reference/welcome-to-api-references).
+     * @param  ImageCropSpecification  $imageCropSpecification  The instructions for optionally cropping an image. If you don't want to crop the image, set the dimensions to the original image size. If the image is cropped and you don't include offset values, the coordinates of the top left corner of the cropped image are set to (0,0) by default.
      * @param  string  $altText  The alternative text for the image.
      */
     public function __construct(

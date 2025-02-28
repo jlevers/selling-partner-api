@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class StandardImageTextOverlayModule extends Dto
 {
     /**
-     * @param  string  $overlayColorType  The relative color scheme of content.
+     * @param  string  $overlayColorType  The relative color scheme of your content.
      * @param  ?StandardImageTextBlock  $block  The A+ Content standard image and text box block.
      */
     public function __construct(

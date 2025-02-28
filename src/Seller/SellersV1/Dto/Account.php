@@ -20,7 +20,7 @@ final class Account extends Dto
      * @param  MarketplaceParticipation[]  $marketplaceParticipationList  List of marketplace participations.
      * @param  string  $businessType  The type of business registered for the seller account.
      * @param  string  $sellingPlan  The selling plan details.
-     * @param  ?Business  $business  Information about the Seller's business. These fields may be omitted if the Seller is registered as an individual.
+     * @param  ?Business  $business  Information about the seller's business. Certain fields may be omitted depending on the seller's `businessType`.
      * @param  ?PrimaryContact  $primaryContact  Information about the seller's primary contact.
      */
     public function __construct(

@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class ContainerLabel extends Dto
 {
     /**
-     * @param  string  $content  The `Base64encoded` string of the container label content.
+     * @param  string  $content  The container label content encoded into a Base64 string.
      * @param  string  $format  The format of the container label.
      * @param  ?string  $containerTrackingNumber  The container (pallet) tracking identifier from the shipping carrier.
      */

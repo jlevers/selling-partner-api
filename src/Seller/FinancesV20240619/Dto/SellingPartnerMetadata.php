@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class SellingPartnerMetadata extends Dto
 {
     /**
-     * @param  ?string  $sellingPartnerId  A unique seller identifier.
-     * @param  ?string  $accountType  The type of account in the transaction.
-     * @param  ?string  $marketplaceId  The identifier of the marketplace where the transaction occurred.
+     * @param  ?string  $sellingPartnerId  Unique seller identifier.
+     * @param  ?string  $accountType  Account type of transaction.
+     * @param  ?string  $marketplaceId  Marketplace identifier of transaction.
      */
     public function __construct(
         public ?string $sellingPartnerId = null,

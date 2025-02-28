@@ -5040,7 +5040,10 @@
                     },
                     "currentStatusDescription": {
                         "type": "string",
-                        "description": "Description corresponding to the `CurrentStatus` value."
+                        "description": "Description corresponding to the CurrentStatus value."
+                    },
+                    "deliveryWindow": {
+                        "$ref": "#/components/schemas/DateRange"
                     },
                     "signedForBy": {
                         "type": "string",
@@ -5574,7 +5577,7 @@
                     "sellerFulfillmentOrderItemId": {
                         "maxLength": 50,
                         "type": "string",
-                        "description": "Identifies the fulfillment order item to update. Created with a previous call to the `createFulfillmentOrder` operation."
+                        "description": "Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation."
                     },
                     "quantity": {
                         "$ref": "#/components/schemas/Quantity"

@@ -15,10 +15,10 @@ use SellingPartnerApi\Dto;
 final class ProductContext extends Dto
 {
     /**
-     * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
-     * @param  ?string  $sku  The Stock Keeping Unit (SKU) of the item.
-     * @param  ?int  $quantityShipped  The quantity of the item shipped.
-     * @param  ?string  $fulfillmentNetwork  The fulfillment network of the item.
+     * @param  ?string  $asin  Amazon Standard Identification Number (ASIN) of the item.
+     * @param  ?string  $sku  Stock keeping unit (SKU) of the item.
+     * @param  ?int  $quantityShipped  Quantity of the item shipped.
+     * @param  ?string  $fulfillmentNetwork  Fulfillment network of the item.
      */
     public function __construct(
         public ?string $asin = null,

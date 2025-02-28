@@ -18,8 +18,8 @@ final class ListTransactionsResponse extends Response
     protected static array $complexArrayTypes = ['transactions' => Transaction::class];
 
     /**
-     * @param  ?string  $nextToken  The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
-     * @param  Transaction[]|null  $transactions  A list of transactions within the specified time period.
+     * @param  ?string  $nextToken  When present and not empty, pass this string token in the next request to return the next response page.
+     * @param  Transaction[]|null  $transactions  Contains transactions within a given time period.
      */
     public function __construct(
         public readonly ?string $nextToken = null,

@@ -15,8 +15,10 @@ use SellingPartnerApi\Dto;
 final class MarketplaceDetails extends Dto
 {
     /**
-     * @param  ?string  $marketplaceId  The identifier of the marketplace where the transaction occured.
-     * @param  ?string  $marketplaceName  The name of the marketplace where the transaction occurred. For example: `Amazon.com`,`Amazon.in`
+     * @param  ?string  $marketplaceId  The identifier of the marketplace where the transaction was made.
+     * @param  ?string  $marketplaceName  The name of the marketplace where the transaction occurred.
+     *
+     * Example: 'Amazon.com','Amazon.in'
      */
     public function __construct(
         public ?string $marketplaceId = null,

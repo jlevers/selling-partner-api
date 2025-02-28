@@ -19,7 +19,7 @@ final class GetPricingResponse extends Response
     protected static array $complexArrayTypes = ['payload' => Price::class];
 
     /**
-     * @param  Price[]|null  $payload
+     * @param  Price[]|null  $payload  The payload for the `getPricing` and `getCompetitivePricing` operations.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

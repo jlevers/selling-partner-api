@@ -16,6 +16,8 @@ final class QuantityDiscountPriceType extends Dto
 {
     /**
      * @param  int  $quantityTier  Indicates at what quantity this price becomes active.
+     * @param  string  $quantityDiscountType  Indicates the type of quantity discount this price applies to.
+     * @param  MoneyType  $listingPrice  Currency type and monetary value. Schema for demonstrating pricing info.
      */
     public function __construct(
         public int $quantityTier,

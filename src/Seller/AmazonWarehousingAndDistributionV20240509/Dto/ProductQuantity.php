@@ -19,7 +19,7 @@ final class ProductQuantity extends Dto
     /**
      * @param  int  $quantity  Product quantity.
      * @param  string  $sku  The seller or merchant SKU.
-     * @param  ProductAttribute[]|null  $attributes  Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU.
+     * @param  ProductAttribute[]|null  $attributes  Contains attributes for this instance of the product. For example, item color, or other attributes that distinguish the product beyond the SKU. This is metadata for the product and Amazon does not process this data.
      * @param  ?\DateTimeInterface  $expiration  The expiration date for the SKU. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?PrepDetails  $prepDetails  The preparation details for a product. This contains the prep category, prep owner, and label owner.
      *                                     Prep instructions are generated based on the specified category.

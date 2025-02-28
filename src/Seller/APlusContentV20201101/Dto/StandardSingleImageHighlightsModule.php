@@ -17,10 +17,10 @@ final class StandardSingleImageHighlightsModule extends Dto
     /**
      * @param  ?ImageComponent  $image  A reference to an image, hosted in the A+ Content media library.
      * @param  ?TextComponent  $headline  Rich text content.
-     * @param  ?StandardTextBlock  $textBlock1  The A+ Content standard text box block, comprised of a paragraph with a headline.
-     * @param  ?StandardTextBlock  $textBlock2  The A+ Content standard text box block, comprised of a paragraph with a headline.
-     * @param  ?StandardTextBlock  $textBlock3  The A+ Content standard text box block, comprised of a paragraph with a headline.
-     * @param  ?StandardHeaderTextListBlock  $bulletedListBlock  The A+ standard fixed-length list of text, with a related headline.
+     * @param  ?StandardTextBlock  $textBlock1  The A+ Content standard text box block, which contains a paragraph and a headline.
+     * @param  ?StandardTextBlock  $textBlock2  The A+ Content standard text box block, which contains a paragraph and a headline.
+     * @param  ?StandardTextBlock  $textBlock3  The A+ Content standard text box block, which contains a paragraph and a headline.
+     * @param  ?StandardHeaderTextListBlock  $bulletedListBlock  The A+ standard fixed-length list of text and a related headline.
      */
     public function __construct(
         public ?ImageComponent $image = null,

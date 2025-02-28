@@ -98,7 +98,7 @@
                         "description": "Success.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -340,7 +340,7 @@
                         "description": "Request has missing or invalid parameters and cannot be parsed.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -385,7 +385,7 @@
                         "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -409,7 +409,7 @@
                         "description": "Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -427,7 +427,7 @@
                         "description": "The specified resource does not exist.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -451,7 +451,7 @@
                         "description": "The frequency of requests was greater than allowed.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -475,7 +475,7 @@
                         "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -499,7 +499,7 @@
                         "description": "Temporary overloading or maintenance of the server.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -554,7 +554,7 @@
                         "description": "Success.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -749,7 +749,7 @@
                         "description": "Request has missing or invalid parameters and cannot be parsed.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -794,7 +794,7 @@
                         "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -818,7 +818,7 @@
                         "description": "Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -836,7 +836,7 @@
                         "description": "The specified resource does not exist.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -860,7 +860,7 @@
                         "description": "The frequency of requests was greater than allowed.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -884,7 +884,7 @@
                         "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -908,7 +908,7 @@
                         "description": "Temporary overloading or maintenance of the server.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -970,7 +970,7 @@
                         "description": "Success.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1024,7 +1024,7 @@
                         "description": "Request has missing or invalid parameters and cannot be parsed.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1072,7 +1072,7 @@
                         "description": "The request's Authorization header is not formatted correctly or does not contain a valid token.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1096,7 +1096,7 @@
                         "description": "Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1114,7 +1114,7 @@
                         "description": "The specified resource does not exist.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1138,7 +1138,7 @@
                         "description": "The frequency of requests was greater than allowed.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1162,7 +1162,7 @@
                         "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1186,7 +1186,7 @@
                         "description": "Temporary overloading or maintenance of the server.",
                         "headers": {
                             "x-amzn-RequestId": {
-                                "description": "Unique request reference ID.",
+                                "description": "Unique request reference identifier.",
                                 "schema": {
                                     "type": "string"
                                 }

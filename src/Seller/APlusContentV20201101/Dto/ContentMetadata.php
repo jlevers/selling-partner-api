@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class ContentMetadata extends Dto
 {
     /**
-     * @param  string  $name  The A+ Content document name.
-     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
+     * @param  string  $name  The A+ Content document's name.
+     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  string  $status  The submission status of the content document.
      * @param  string[]  $badgeSet  The set of content badges.
      * @param  \DateTimeInterface  $updateTime  The approximate age of the A+ Content document and metadata.

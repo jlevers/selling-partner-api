@@ -16,7 +16,7 @@ final class StandardHeaderTextListBlock extends Dto
 {
     /**
      * @param  ?TextComponent  $headline  Rich text content.
-     * @param  ?StandardTextListBlock  $block  The A+ Content standard fixed length list of text, usually presented as bullet points.
+     * @param  ?StandardTextListBlock  $block  The A+ Content standard fixed-length list of text, usually presented as bullet points.
      */
     public function __construct(
         public ?TextComponent $headline = null,

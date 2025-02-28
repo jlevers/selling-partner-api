@@ -23,6 +23,9 @@ class CancelShipment extends Request
 {
     protected Method $method = Method::POST;
 
+    /**
+     * @param  string  $shipmentId  Shipment Id to cancel a shipment
+     */
     public function __construct(
         protected string $shipmentId,
     ) {}

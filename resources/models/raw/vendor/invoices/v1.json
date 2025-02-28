@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.1",
     "info": {
-        "title": "Vendor Invoices v1",
+        "title": "Selling Partner API for Retail Procurement Payments",
         "description": "The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.",
         "contact": {
             "name": "Selling Partner API Developer Support",
@@ -22,9 +22,8 @@
         "/vendor/payments/v1/invoices": {
             "post": {
                 "tags": [
-                    "Vendor Invoices"
+                    "vendorPayments"
                 ],
-                "summary": "submitInvoices",
                 "description": "Submit new invoices to Amazon.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "submitInvoices",
                 "requestBody": {

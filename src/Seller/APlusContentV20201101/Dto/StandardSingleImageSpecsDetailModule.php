@@ -18,11 +18,11 @@ final class StandardSingleImageSpecsDetailModule extends Dto
      * @param  ?TextComponent  $headline  Rich text content.
      * @param  ?ImageComponent  $image  A reference to an image, hosted in the A+ Content media library.
      * @param  ?TextComponent  $descriptionHeadline  Rich text content.
-     * @param  ?StandardTextBlock  $descriptionBlock1  The A+ Content standard text box block, comprised of a paragraph with a headline.
-     * @param  ?StandardTextBlock  $descriptionBlock2  The A+ Content standard text box block, comprised of a paragraph with a headline.
+     * @param  ?StandardTextBlock  $descriptionBlock1  The A+ Content standard text box block, which contains a paragraph and a headline.
+     * @param  ?StandardTextBlock  $descriptionBlock2  The A+ Content standard text box block, which contains a paragraph and a headline.
      * @param  ?TextComponent  $specificationHeadline  Rich text content.
-     * @param  ?StandardHeaderTextListBlock  $specificationListBlock  The A+ standard fixed-length list of text, with a related headline.
-     * @param  ?StandardTextBlock  $specificationTextBlock  The A+ Content standard text box block, comprised of a paragraph with a headline.
+     * @param  ?StandardHeaderTextListBlock  $specificationListBlock  The A+ standard fixed-length list of text and a related headline.
+     * @param  ?StandardTextBlock  $specificationTextBlock  The A+ Content standard text box block, which contains a paragraph and a headline.
      */
     public function __construct(
         public ?TextComponent $headline = null,

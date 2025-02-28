@@ -16,7 +16,7 @@ final class Currency extends Dto
 {
     /**
      * @param  ?string  $currencyCode  The three-digit currency code in ISO 4217 format.
-     * @param  ?float  $currencyAmount  A signed decimal number.
+     * @param  ?float  $currencyAmount  Fields with a schema type of BigDecimal are a signed decimal number (for example CurrencyAmount).
      */
     public function __construct(
         public ?string $currencyCode = null,

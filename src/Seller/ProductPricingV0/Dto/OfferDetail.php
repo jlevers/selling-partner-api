@@ -36,12 +36,16 @@ final class OfferDetail extends Dto
     /**
      * @param  string  $subCondition  The subcondition of the item. Subcondition values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
      * @param  DetailedShippingTimeType  $shippingTime  The time range in which an item will likely be shipped once an order has been placed.
+     * @param  MoneyType  $listingPrice  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  MoneyType  $shipping  Currency type and monetary value. Schema for demonstrating pricing info.
      * @param  bool  $isFulfilledByAmazon  When true, the offer is fulfilled by Amazon.
      * @param  ?bool  $myOffer  When true, this is the seller's offer.
+     * @param  ?string  $offerType  Indicates whether the offer is a B2B or B2C offer
      * @param  ?string  $sellerId  The seller identifier for the offer.
      * @param  ?string  $conditionNotes  Information about the condition of the item.
      * @param  ?SellerFeedbackType  $sellerFeedbackRating  Information about the seller's feedback, including the percentage of positive feedback, and the total number of ratings received.
-     * @param  QuantityDiscountPriceType[]|null  $quantityDiscountPrices
+     * @param  QuantityDiscountPriceType[]|null  $quantityDiscountPrices  List of `QuantityDiscountPrice` that contains item's pricing information when buy in bulk.
+     * @param  ?Points  $points  The number of Amazon Points offered with the purchase of an item, and their monetary value.
      * @param  ?ShipsFromType  $shipsFrom  The state and country from where the item is shipped.
      * @param  ?PrimeInformationType  $primeInformation  Amazon Prime information.
      * @param  ?bool  $isBuyBoxWinner  When true, the offer is currently in the Buy Box. There can be up to two Buy Box winners at any time per ASIN, one that is eligible for Prime and one that is not eligible for Prime.

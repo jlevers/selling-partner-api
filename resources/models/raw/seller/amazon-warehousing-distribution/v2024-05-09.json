@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "The Selling Partner API for Amazon Warehousing and Distribution",
-        "description": "The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. ",
+        "description": "The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.",
         "contact": {
             "name": "Selling Partner API Developer Support",
             "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
@@ -19,6 +19,1595 @@
         }
     ],
     "paths": {
+        "/awd/2024-05-09/inboundOrders": {
+            "post": {
+                "tags": [
+                    "awd"
+                ],
+                "description": "Creates a draft AWD inbound order with a list of packages for inbound shipment. The operation creates one shipment per order. \n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "createInbound",
+                "requestBody": {
+                    "description": "Payload for creating an inbound order.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/InboundOrderCreationData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "`createInbound` 201 response.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Location": {
+                                "description": "Location header with the order ID for the newly created inbound order.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/InboundOrderReference"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "externalReferenceId": "string",
+                                                    "originAddress": {
+                                                        "addressLine1": "address_1",
+                                                        "addressLine2": "address_2",
+                                                        "addressLine3": "address_3",
+                                                        "city": "City1",
+                                                        "countryCode": "CC",
+                                                        "district": "District1",
+                                                        "name": "address_name",
+                                                        "postalCode": "123456",
+                                                        "stateOrRegion": "State1"
+                                                    },
+                                                    "packagesToInbound": [
+                                                        {
+                                                            "count": 1,
+                                                            "distributionPackage": {
+                                                                "contents": {
+                                                                    "products": [
+                                                                        {
+                                                                            "quantity": 1,
+                                                                            "sku": "testPen",
+                                                                            "expiration": "2025-06-07T12:12:09.061Z",
+                                                                            "prepDetails": {
+                                                                                "prepCategory": "PERFORATED",
+                                                                                "prepOwner": "AMAZON",
+                                                                                "labelOwner": "SELF"
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "measurements": {
+                                                                    "dimensions": {
+                                                                        "height": 1,
+                                                                        "length": 1,
+                                                                        "unitOfMeasurement": "INCHES",
+                                                                        "width": 1
+                                                                    },
+                                                                    "volume": {
+                                                                        "unitOfMeasurement": "CUIN",
+                                                                        "volume": 1
+                                                                    },
+                                                                    "weight": {
+                                                                        "unitOfMeasurement": "POUNDS",
+                                                                        "weight": 1
+                                                                    }
+                                                                },
+                                                                "type": "CASE"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "orderId": "TestOrderId"
+                                    },
+                                    "responseHeaders": {
+                                        "Location": {
+                                            "value": "TestOrderId"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "externalReferenceId": "string",
+                                                    "originAddress": {
+                                                        "addressLine1": "address_1",
+                                                        "addressLine2": "address_2",
+                                                        "addressLine3": "address_3",
+                                                        "city": "City1",
+                                                        "countryCode": "CC",
+                                                        "district": "District1",
+                                                        "name": "address_name",
+                                                        "postalCode": "123456",
+                                                        "stateOrRegion": "State1"
+                                                    },
+                                                    "packagesToInbound": [
+                                                        {
+                                                            "count": 1,
+                                                            "distributionPackage": {
+                                                                "contents": {
+                                                                    "products": [
+                                                                        {
+                                                                            "quantity": 1,
+                                                                            "sku": "testPen",
+                                                                            "expiration": "2025-06-07T12:12:09.061Z",
+                                                                            "prepDetails": {
+                                                                                "prepCategory": "PERFORATED",
+                                                                                "prepOwner": "AMAZON",
+                                                                                "labelOwner": "SELF"
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "measurements": {
+                                                                    "dimensions": {
+                                                                        "height": 1,
+                                                                        "length": 1,
+                                                                        "unitOfMeasurement": "INCHES",
+                                                                        "width": 1
+                                                                    },
+                                                                    "volume": {
+                                                                        "unitOfMeasurement": "CUIN",
+                                                                        "volume": 1
+                                                                    },
+                                                                    "weight": {
+                                                                        "unitOfMeasurement": "POUNDS",
+                                                                        "weight": 1
+                                                                    }
+                                                                },
+                                                                "type": "TEST"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "message": "Invalid value (`TEST`) passed for `DistributionPackageType`. Valid values are: `CASE`, `PALLET`",
+                                                "details": "This exception is thrown when client inputs are invalid."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
+            }
+        },
+        "/awd/2024-05-09/inboundOrders/{orderId}": {
+            "get": {
+                "tags": [
+                    "awd"
+                ],
+                "description": "Retrieves an AWD inbound order.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getInbound",
+                "parameters": [
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "description": "The ID of the inbound order that you want to retrieve.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The 200 response for `getInbound`.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/InboundOrder"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": "TestOrderId"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "destinationDetails": {
+                                            "destinationAddress": {
+                                                "addressLine1": "address_1",
+                                                "addressLine2": "address_2",
+                                                "addressLine3": "address_3",
+                                                "city": "Seattle",
+                                                "countryCode": "US",
+                                                "county": "Washington",
+                                                "district": "District1",
+                                                "name": "address_name",
+                                                "phoneNumber": "+14155552671",
+                                                "postalCode": "123456",
+                                                "stateOrRegion": "Washington"
+                                            },
+                                            "destinationRegion": "us-east"
+                                        },
+                                        "createdAt": "2023-06-07T12:12:09.061Z",
+                                        "externalReferenceId": "TestReferenceId",
+                                        "orderId": "TestOrderId",
+                                        "orderStatus": "DRAFT",
+                                        "originAddress": {
+                                            "addressLine1": "address_1",
+                                            "addressLine2": "address_2",
+                                            "addressLine3": "address_3",
+                                            "city": "Seattle",
+                                            "countryCode": "US",
+                                            "county": "Washington",
+                                            "district": "District1",
+                                            "name": "address_name",
+                                            "phoneNumber": "+14155552671",
+                                            "postalCode": "123456",
+                                            "stateOrRegion": "Washington"
+                                        },
+                                        "packagesToInbound": [
+                                            {
+                                                "count": 1,
+                                                "distributionPackage": {
+                                                    "contents": {
+                                                        "packages": [],
+                                                        "products": [
+                                                            {
+                                                                "quantity": 1,
+                                                                "sku": "testPen",
+                                                                "expiration": "2025-06-07T12:12:09.061Z",
+                                                                "prepDetails": {
+                                                                    "prepCategory": "PERFORATED",
+                                                                    "prepOwner": "AMAZON",
+                                                                    "labelOwner": "SELF",
+                                                                    "prepInstructions": [
+                                                                        {
+                                                                            "prepType": "ITEM_POLYBAGGING",
+                                                                            "prepOwner": "AMAZON"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    "measurements": {
+                                                        "dimensions": {
+                                                            "height": 2.54,
+                                                            "length": 2.54,
+                                                            "unitOfMeasurement": "CENTIMETERS",
+                                                            "width": 2.54
+                                                        },
+                                                        "weight": {
+                                                            "unitOfMeasurement": "KILOGRAMS",
+                                                            "weight": 0.453592
+                                                        }
+                                                    },
+                                                    "type": "CASE"
+                                                }
+                                            }
+                                        ],
+                                        "updatedAt": "2023-06-07T12:12:09.061Z"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": " "
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "details": "This exception is thrown when client inputs are invalid",
+                                                "message": "OrderId should be present for this request"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "awd"
+                ],
+                "description": "Updates an AWD inbound order that is in `DRAFT` status and not yet confirmed. Use this operation to update the `packagesToInbound`, `originAddress` and `preferences` attributes.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "updateInbound",
+                "parameters": [
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "description": "The ID of the inbound order that you want to update.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Represents an AWD inbound order.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/InboundOrder"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "204": {
+                        "description": "The 204 response for `updateInbound`.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {},
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": "TestOrderId1"
+                                            },
+                                            "body": {
+                                                "value": {
+                                                    "createdAt": "2023-06-07T12:12:09.061Z",
+                                                    "destinationDetails": {
+                                                        "destinationAddress": {
+                                                            "addressLine1": "address_1",
+                                                            "addressLine2": "address_2",
+                                                            "addressLine3": "address_3",
+                                                            "city": "Seattle",
+                                                            "countryCode": "US",
+                                                            "county": "Washington",
+                                                            "district": "District1",
+                                                            "name": "address_name",
+                                                            "phoneNumber": "+14155552671",
+                                                            "postalCode": "123456",
+                                                            "stateOrRegion": "Washington"
+                                                        },
+                                                        "destinationRegion": "us-east"
+                                                    },
+                                                    "orderId": "TestOrderId1",
+                                                    "orderStatus": "DRAFT",
+                                                    "originAddress": {
+                                                        "addressLine1": "address_1",
+                                                        "addressLine2": "address_2",
+                                                        "addressLine3": "address_3",
+                                                        "city": "City1",
+                                                        "countryCode": "CC",
+                                                        "district": "District1",
+                                                        "name": "DestinationName",
+                                                        "postalCode": "123456",
+                                                        "stateOrRegion": "State1"
+                                                    },
+                                                    "packagesToInbound": [
+                                                        {
+                                                            "count": 2,
+                                                            "distributionPackage": {
+                                                                "contents": {
+                                                                    "packages": [],
+                                                                    "products": [
+                                                                        {
+                                                                            "quantity": 10,
+                                                                            "sku": "testPen",
+                                                                            "expiration": "2025-06-07T12:12:09.061Z",
+                                                                            "prepDetails": {
+                                                                                "prepCategory": "PERFORATED",
+                                                                                "prepOwner": "AMAZON",
+                                                                                "labelOwner": "SELF",
+                                                                                "prepInstructions": [
+                                                                                    {
+                                                                                        "prepType": "ITEM_POLYBAGGING",
+                                                                                        "prepOwner": "AMAZON"
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "measurements": {
+                                                                    "dimensions": {
+                                                                        "height": 1,
+                                                                        "length": 1,
+                                                                        "unitOfMeasurement": "CENTIMETERS",
+                                                                        "width": 1
+                                                                    },
+                                                                    "weight": {
+                                                                        "unitOfMeasurement": "KILOGRAMS",
+                                                                        "weight": 1
+                                                                    }
+                                                                },
+                                                                "type": "CASE"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "updatedAt": "2023-06-07T12:12:09.061Z"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": "TestOrderId1"
+                                            },
+                                            "body": {
+                                                "value": {
+                                                    "destinationDetails": {
+                                                        "destinationAddress": {
+                                                            "addressLine1": "address_1",
+                                                            "addressLine2": "address_2",
+                                                            "addressLine3": "address_3",
+                                                            "city": "Seattle",
+                                                            "countryCode": "US",
+                                                            "county": "Washington",
+                                                            "district": "District1",
+                                                            "name": "address_name",
+                                                            "phoneNumber": "+14155552671",
+                                                            "postalCode": "123456",
+                                                            "stateOrRegion": "Washington"
+                                                        },
+                                                        "destinationRegion": "us-east"
+                                                    },
+                                                    "createdAt": "2023-06-07T12:12:09.061Z",
+                                                    "orderId": "TestOrderId1",
+                                                    "orderStatus": "DRAFT",
+                                                    "originAddress": {
+                                                        "addressLine1": "address_1",
+                                                        "addressLine2": "address_2",
+                                                        "addressLine3": "address_3",
+                                                        "city": "City1",
+                                                        "countryCode": "CC",
+                                                        "district": "District1",
+                                                        "name": "DestinationName",
+                                                        "postalCode": "123456",
+                                                        "stateOrRegion": "State1"
+                                                    },
+                                                    "packagesToInbound": [
+                                                        {
+                                                            "count": 2,
+                                                            "distributionPackage": {
+                                                                "contents": {
+                                                                    "packages": [],
+                                                                    "products": [
+                                                                        {
+                                                                            "quantity": 10,
+                                                                            "sku": "testPen",
+                                                                            "expiration": "2025-06-07T12:12:09.061Z",
+                                                                            "prepDetails": {
+                                                                                "prepCategory": "PERFORATED",
+                                                                                "prepOwner": "AMAZON",
+                                                                                "labelOwner": "SELF",
+                                                                                "prepInstructions": [
+                                                                                    {
+                                                                                        "prepType": "ITEM_POLYBAGGING",
+                                                                                        "prepOwner": "AMAZON"
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "measurements": {
+                                                                    "dimensions": {
+                                                                        "height": 1,
+                                                                        "length": 1,
+                                                                        "unitOfMeasurement": "CENTIMETERS",
+                                                                        "width": 1
+                                                                    },
+                                                                    "weight": {
+                                                                        "unitOfMeasurement": "KILOGRAMS",
+                                                                        "weight": 1
+                                                                    }
+                                                                },
+                                                                "type": "TEST"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "updatedAt": "2023-06-07T12:12:09.061Z"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "message": "Invalid value (`TEST`) passed for `DistributionPackageType`. Valid values are: `CASE`, `PALLET`",
+                                                "details": "This exception is thrown when client inputs are invalid."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "`ConflictException` 409 response.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
+            }
+        },
+        "/awd/2024-05-09/inboundOrders/{orderId}/cancellation": {
+            "post": {
+                "tags": [
+                    "awd"
+                ],
+                "description": "Cancels an AWD Inbound order and its associated shipment.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "cancelInbound",
+                "parameters": [
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "description": "The ID of the inbound order you want to cancel.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The 204 response for `cancelInbound`.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "example": [
+                                    {}
+                                ]
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": "TestOrderId1"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": " "
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "details": "This exception is thrown when client inputs are invalid",
+                                                "message": "OrderId should be present for this request"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "`ConflictException` 409 response.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/awd/2024-05-09/inboundOrders/{orderId}/confirmation": {
+            "post": {
+                "tags": [
+                    "awd"
+                ],
+                "description": "Confirms an AWD inbound order in `DRAFT` status.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "confirmInbound",
+                "parameters": [
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "description": "The ID of the inbound order that you want to confirm.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The 204 response for `confirmInbound`.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "example": [
+                                    {}
+                                ]
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": "TestOrderId1"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": " "
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "details": "This exception is thrown when client inputs are invalid",
+                                                "message": "OrderId should be present for this request"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "`ConflictException` 409 response.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/awd/2024-05-09/inboundShipments/{shipmentId}": {
             "get": {
                 "tags": [
@@ -365,6 +1954,1016 @@
                         }
                     }
                 }
+            }
+        },
+        "/awd/2024-05-09/inboundShipments/{shipmentId}/labels": {
+            "get": {
+                "tags": [
+                    "awd"
+                ],
+                "description": "Retrieves the box labels for a shipment ID that you specify. This is an asynchronous operation. If the label status is `GENERATED`, then the label URL is available.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getInboundShipmentLabels",
+                "parameters": [
+                    {
+                        "name": "shipmentId",
+                        "in": "path",
+                        "description": "ID for the shipment.",
+                        "required": true,
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageType",
+                        "in": "query",
+                        "description": "Page type for the generated labels. The default is `PLAIN_PAPER`.",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "THERMAL_NONPCP",
+                                "PLAIN_PAPER",
+                                "LETTER_6"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "description": "Use `THERMAL_NONPC` for a thermal printer. Supports non-Amazon-partnered shipments.",
+                                    "value": "THERMAL_NONPCP"
+                                },
+                                {
+                                    "description": "One label per sheet of US Letter paper. Only for non-Amazon-partnered shipments.",
+                                    "value": "PLAIN_PAPER"
+                                },
+                                {
+                                    "description": "Six labels per US Letter label sheet.",
+                                    "value": "LETTER_6"
+                                }
+                            ]
+                        },
+                        "example": "PLAIN_PAPER",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "Use `THERMAL_NONPC` for a thermal printer. Supports non-Amazon-partnered shipments.",
+                                "value": "THERMAL_NONPCP"
+                            },
+                            {
+                                "description": "One label per sheet of US Letter paper. Only for non-Amazon-partnered shipments.",
+                                "value": "PLAIN_PAPER"
+                            },
+                            {
+                                "description": "Six labels per US Letter label sheet.",
+                                "value": "LETTER_6"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "formatType",
+                        "in": "query",
+                        "description": "The format type of the output file that contains your labels. The default format type is `PDF`.",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "PDF"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "description": "PDF format.",
+                                    "value": "PDF"
+                                }
+                            ]
+                        },
+                        "example": "PDF",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "PDF format.",
+                                "value": "PDF"
+                            }
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The 200 response for `getInboundShipmentLabels`.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShipmentLabels"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "shipmentId": {
+                                                "value": "TestShipmentId"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "labelDownloadURL": "TEST_URL",
+                                        "labelStatus": "GENERATED"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "shipmentId": {
+                                                "value": " "
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "details": "This exception is thrown when client inputs are invalid",
+                                                "message": "ShipmentId should be present for this request"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/awd/2024-05-09/inboundShipments/{shipmentId}/transport": {
+            "put": {
+                "tags": [
+                    "awd"
+                ],
+                "description": "Updates transport details for an AWD shipment.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "updateInboundShipmentTransportDetails",
+                "parameters": [
+                    {
+                        "name": "shipmentId",
+                        "in": "path",
+                        "description": "The shipment ID.",
+                        "required": true,
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Transportation details for the shipment.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TransportationDetails"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "204": {
+                        "description": "The 204 response for `updateInboundShipmentTransportDetails`.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {},
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "shipmentId": {
+                                                "value": "TestShipmentId"
+                                            },
+                                            "body": {
+                                                "value": {
+                                                    "trackingDetails": [
+                                                        {
+                                                            "carrierCode": {
+                                                                "carrierCodeType": "SCAC"
+                                                            },
+                                                            "bookingId": "TRACKING_ID"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "shipmentId": {
+                                                "value": " "
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "details": "This exception is thrown when client inputs are invalid",
+                                                "message": "ShipmentId should be present for this request"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
+            }
+        },
+        "/awd/2024-05-09/inboundEligibility": {
+            "post": {
+                "tags": [
+                    "awd"
+                ],
+                "description": "Determines if the packages you specify are eligible for an AWD inbound order and contains error details for ineligible packages.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "checkInboundEligibility",
+                "requestBody": {
+                    "description": "Represents the packages you want to inbound.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/InboundPackages"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "The 200 response for `checkInboundEligibility`.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/InboundEligibility"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "packagesToInbound": [
+                                                        {
+                                                            "count": 1,
+                                                            "distributionPackage": {
+                                                                "contents": {
+                                                                    "products": [
+                                                                        {
+                                                                            "quantity": 1,
+                                                                            "sku": "TestDVDSku"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "measurements": {
+                                                                    "dimensions": {
+                                                                        "height": 1,
+                                                                        "length": 1,
+                                                                        "unitOfMeasurement": "INCHES",
+                                                                        "width": 1
+                                                                    },
+                                                                    "volume": {
+                                                                        "unitOfMeasurement": "CUIN",
+                                                                        "volume": 1
+                                                                    },
+                                                                    "weight": {
+                                                                        "unitOfMeasurement": "POUNDS",
+                                                                        "weight": 1
+                                                                    }
+                                                                },
+                                                                "type": "CASE"
+                                                            }
+                                                        },
+                                                        {
+                                                            "count": 1,
+                                                            "distributionPackage": {
+                                                                "contents": {
+                                                                    "products": [
+                                                                        {
+                                                                            "quantity": 1,
+                                                                            "sku": "testPen"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "measurements": {
+                                                                    "dimensions": {
+                                                                        "height": 1,
+                                                                        "length": 1,
+                                                                        "unitOfMeasurement": "INCHES",
+                                                                        "width": 1
+                                                                    },
+                                                                    "volume": {
+                                                                        "unitOfMeasurement": "CUIN",
+                                                                        "volume": 1
+                                                                    },
+                                                                    "weight": {
+                                                                        "unitOfMeasurement": "POUNDS",
+                                                                        "weight": 1
+                                                                    }
+                                                                },
+                                                                "type": "CASE"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "ineligibilityReasons": [],
+                                        "status": "INELIGIBLE",
+                                        "packagesToInbound": [
+                                            {
+                                                "ineligibilityReasons": [
+                                                    {
+                                                        "description": "You can't use the gating service to buy this item.",
+                                                        "code": "GATING_BLOCK_ON_GL"
+                                                    }
+                                                ],
+                                                "status": "INELIGIBLE",
+                                                "packageQuantity": {
+                                                    "count": 1,
+                                                    "distributionPackage": {
+                                                        "contents": {
+                                                            "packages": [],
+                                                            "products": [
+                                                                {
+                                                                    "quantity": 1,
+                                                                    "sku": "TestDVDSku"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "measurements": {
+                                                            "dimensions": {
+                                                                "height": 1,
+                                                                "length": 1,
+                                                                "unitOfMeasurement": "INCHES",
+                                                                "width": 1
+                                                            },
+                                                            "volume": {
+                                                                "unitOfMeasurement": "CUIN",
+                                                                "volume": 1
+                                                            },
+                                                            "weight": {
+                                                                "unitOfMeasurement": "POUNDS",
+                                                                "weight": 1
+                                                            }
+                                                        },
+                                                        "type": "CASE"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "ineligibilityReasons": [],
+                                                "status": "ELIGIBLE",
+                                                "packageQuantity": {
+                                                    "count": 1,
+                                                    "distributionPackage": {
+                                                        "contents": {
+                                                            "packages": [],
+                                                            "products": [
+                                                                {
+                                                                    "quantity": 1,
+                                                                    "sku": "testPen"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "measurements": {
+                                                            "dimensions": {
+                                                                "height": 1,
+                                                                "length": 1,
+                                                                "unitOfMeasurement": "INCHES",
+                                                                "width": 1
+                                                            },
+                                                            "volume": {
+                                                                "unitOfMeasurement": "CUIN",
+                                                                "volume": 1
+                                                            },
+                                                            "weight": {
+                                                                "unitOfMeasurement": "POUNDS",
+                                                                "weight": 1
+                                                            }
+                                                        },
+                                                        "type": "CASE"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "previewedAt": "1688454771870"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "packagesToInbound": [
+                                                        {
+                                                            "count": 1,
+                                                            "distributionPackage": {
+                                                                "contents": {
+                                                                    "products": [
+                                                                        {
+                                                                            "quantity": 1,
+                                                                            "sku": "TestDVDSku"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "measurements": {
+                                                                    "dimensions": {
+                                                                        "height": 1,
+                                                                        "length": 1,
+                                                                        "unitOfMeasurement": "INCHES",
+                                                                        "width": 1
+                                                                    },
+                                                                    "volume": {
+                                                                        "unitOfMeasurement": "CUIN",
+                                                                        "volume": 1
+                                                                    },
+                                                                    "weight": {
+                                                                        "unitOfMeasurement": "POUNDS",
+                                                                        "weight": 1
+                                                                    }
+                                                                },
+                                                                "type": "CASE"
+                                                            }
+                                                        },
+                                                        {
+                                                            "count": 1,
+                                                            "distributionPackage": {
+                                                                "contents": {
+                                                                    "products": [
+                                                                        {
+                                                                            "quantity": 1,
+                                                                            "sku": "testPen"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "measurements": {
+                                                                    "dimensions": {
+                                                                        "height": 1,
+                                                                        "length": 1,
+                                                                        "unitOfMeasurement": "INCHES",
+                                                                        "width": 1
+                                                                    },
+                                                                    "volume": {
+                                                                        "unitOfMeasurement": "CUIN",
+                                                                        "volume": 1
+                                                                    },
+                                                                    "weight": {
+                                                                        "unitOfMeasurement": "POUNDS",
+                                                                        "weight": 1
+                                                                    }
+                                                                },
+                                                                "type": "TEST"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "details": "This exception is thrown when client inputs are invalid",
+                                                "message": "OrderId should be present for this request"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
             }
         },
         "/awd/2024-05-09/inboundShipments": {
@@ -1251,6 +3850,41 @@
                     }
                 ]
             },
+            "DestinationDetails": {
+                "type": "object",
+                "properties": {
+                    "destinationAddress": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "destinationRegion": {
+                        "type": "string",
+                        "description": "Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east, us-southcentral, us-southeast]",
+                        "example": "us-west"
+                    },
+                    "shipmentId": {
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Unique ID of the confirmed shipment being shipped to the assigned destination. This will be available only after an inbound order is confirmed and can be used to track the shipment."
+                    }
+                },
+                "description": "Destination details of an inbound order based on the assigned region and DC for the order.",
+                "example": {
+                    "destinationAddress": {
+                        "addressLine1": "address_1",
+                        "addressLine2": "address_2",
+                        "addressLine3": "address_3",
+                        "city": "Seattle",
+                        "countryCode": "US",
+                        "county": "Washington",
+                        "district": "District1",
+                        "name": "address_name",
+                        "phoneNumber": "+14155552671",
+                        "postalCode": "123456",
+                        "stateOrRegion": "Washington"
+                    },
+                    "destinationRegion": "us-east"
+                }
+            },
             "DimensionUnitOfMeasurement": {
                 "type": "string",
                 "description": "Unit of measurement for package dimensions.",
@@ -1466,6 +4100,406 @@
                 },
                 "description": "This exception is thrown when client inputs are invalid."
             },
+            "InboundEligibility": {
+                "required": [
+                    "packagesToInbound",
+                    "previewedAt",
+                    "status"
+                ],
+                "type": "object",
+                "properties": {
+                    "ineligibilityReasons": {
+                        "type": "array",
+                        "description": "If there are order level eligibility issues, then this list will contain those error codes and descriptions.",
+                        "items": {
+                            "$ref": "#/components/schemas/OrderIneligibilityReason"
+                        }
+                    },
+                    "packagesToInbound": {
+                        "type": "array",
+                        "description": "Details on SKU eligibility for each inbound package.",
+                        "items": {
+                            "$ref": "#/components/schemas/SkuEligibility"
+                        }
+                    },
+                    "previewedAt": {
+                        "type": "string",
+                        "description": "Timestamp when the eligibility check is performed.",
+                        "format": "date-time"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/InboundEligibilityStatus"
+                    }
+                },
+                "description": "Represents the eligibility status of the inbound packages."
+            },
+            "InboundEligibilityStatus": {
+                "type": "string",
+                "description": "Enum denoting the package inbound eligibility.",
+                "enum": [
+                    "ELIGIBLE",
+                    "INELIGIBLE"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "Eligible to inbound.",
+                        "value": "ELIGIBLE"
+                    },
+                    {
+                        "description": "Ineligible to inbound.",
+                        "value": "INELIGIBLE"
+                    }
+                ]
+            },
+            "InboundOrder": {
+                "required": [
+                    "createdAt",
+                    "orderId",
+                    "orderStatus",
+                    "originAddress",
+                    "packagesToInbound"
+                ],
+                "type": "object",
+                "properties": {
+                    "createdAt": {
+                        "type": "string",
+                        "description": "Date when this order was created.",
+                        "format": "date-time"
+                    },
+                    "destinationDetails": {
+                        "$ref": "#/components/schemas/DestinationDetails"
+                    },
+                    "externalReferenceId": {
+                        "type": "string",
+                        "description": "Reference ID that can be used to correlate the order with partner resources.",
+                        "example": "TestReferenceId"
+                    },
+                    "orderId": {
+                        "type": "string",
+                        "description": "Inbound order ID."
+                    },
+                    "orderStatus": {
+                        "$ref": "#/components/schemas/InboundStatus"
+                    },
+                    "originAddress": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "packagesToInbound": {
+                        "minItems": 1,
+                        "type": "array",
+                        "description": "List of packages to be inbounded.",
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionPackageQuantity"
+                        }
+                    },
+                    "preferences": {
+                        "$ref": "#/components/schemas/InboundPreferences"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "Date when this order was last updated.",
+                        "format": "date-time"
+                    }
+                },
+                "description": "Represents an AWD inbound order.",
+                "example": {
+                    "destinationDetails": {
+                        "destinationAddress": {
+                            "addressLine1": "address_1",
+                            "addressLine2": "address_2",
+                            "addressLine3": "address_3",
+                            "city": "Seattle",
+                            "countryCode": "US",
+                            "county": "Washington",
+                            "district": "District1",
+                            "name": "address_name",
+                            "phoneNumber": "+14155552671",
+                            "postalCode": "123456",
+                            "stateOrRegion": "Washington"
+                        },
+                        "destinationRegion": "us-east",
+                        "shipmentId": "TestShipmentId"
+                    },
+                    "createdAt": "2023-06-07T12:12:09.061Z",
+                    "externalReferenceId": "TestReferenceId",
+                    "orderId": "TestOrderId",
+                    "orderStatus": "DRAFT",
+                    "originAddress": {
+                        "addressLine1": "address_1",
+                        "addressLine2": "address_2",
+                        "addressLine3": "address_3",
+                        "city": "Seattle",
+                        "countryCode": "US",
+                        "county": "Washington",
+                        "district": "District1",
+                        "name": "address_name",
+                        "phoneNumber": "+14155552671",
+                        "postalCode": "123456",
+                        "stateOrRegion": "Washington"
+                    },
+                    "packagesToInbound": [
+                        {
+                            "count": 1,
+                            "distributionPackage": {
+                                "contents": {
+                                    "packages": [],
+                                    "products": [
+                                        {
+                                            "quantity": 1,
+                                            "sku": "testPen",
+                                            "expiration": "2025-06-07T12:12:09.061Z",
+                                            "prepDetails": {
+                                                "prepCategory": "PERFORATED",
+                                                "prepOwner": "AMAZON",
+                                                "labelOwner": "SELF",
+                                                "prepInstructions": [
+                                                    {
+                                                        "prepType": "ITEM_POLYBAGGING",
+                                                        "prepOwner": "AMAZON"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "measurements": {
+                                    "dimensions": {
+                                        "height": 2.54,
+                                        "length": 2.54,
+                                        "unitOfMeasurement": "CENTIMETERS",
+                                        "width": 2.54
+                                    },
+                                    "weight": {
+                                        "unitOfMeasurement": "KILOGRAMS",
+                                        "weight": 0.453592
+                                    }
+                                },
+                                "type": "CASE"
+                            }
+                        }
+                    ],
+                    "updatedAt": "2023-06-07T12:12:09.061Z",
+                    "preferences": {
+                        "destinationRegion": "us-west"
+                    }
+                }
+            },
+            "InboundOrderCreationData": {
+                "required": [
+                    "originAddress",
+                    "packagesToInbound"
+                ],
+                "type": "object",
+                "properties": {
+                    "externalReferenceId": {
+                        "type": "string",
+                        "description": "Reference ID that can be used to correlate the order with partner resources.",
+                        "example": "TestReferenceId"
+                    },
+                    "originAddress": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "packagesToInbound": {
+                        "minItems": 1,
+                        "type": "array",
+                        "description": "List of packages to be inbounded.",
+                        "example": [
+                            {
+                                "count": 1,
+                                "distributionPackage": {
+                                    "contents": {
+                                        "products": [
+                                            {
+                                                "quantity": 1,
+                                                "sku": "testPen"
+                                            }
+                                        ]
+                                    },
+                                    "measurements": {
+                                        "dimensions": {
+                                            "height": 1,
+                                            "length": 1,
+                                            "unitOfMeasurement": "INCHES",
+                                            "width": 1
+                                        },
+                                        "volume": {
+                                            "unitOfMeasurement": "CUIN",
+                                            "volume": 1
+                                        },
+                                        "weight": {
+                                            "unitOfMeasurement": "POUNDS",
+                                            "weight": 1
+                                        }
+                                    },
+                                    "type": "CASE"
+                                }
+                            }
+                        ],
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionPackageQuantity"
+                        }
+                    },
+                    "preferences": {
+                        "$ref": "#/components/schemas/InboundPreferences"
+                    }
+                },
+                "description": "Payload for creating an inbound order.",
+                "example": {
+                    "externalReferenceId": "TestReferenceId",
+                    "originAddress": {
+                        "addressLine1": "address_1",
+                        "addressLine2": "address_2",
+                        "addressLine3": "address_3",
+                        "city": "City1",
+                        "countryCode": "CC",
+                        "district": "District1",
+                        "name": "address_name",
+                        "postalCode": "123456",
+                        "stateOrRegion": "State1"
+                    },
+                    "packagesToInbound": [
+                        {
+                            "count": 1,
+                            "distributionPackage": {
+                                "contents": {
+                                    "products": [
+                                        {
+                                            "quantity": 1,
+                                            "sku": "testPen"
+                                        }
+                                    ]
+                                },
+                                "measurements": {
+                                    "dimensions": {
+                                        "height": 1,
+                                        "length": 1,
+                                        "unitOfMeasurement": "INCHES",
+                                        "width": 1
+                                    },
+                                    "volume": {
+                                        "unitOfMeasurement": "CUIN",
+                                        "volume": 1
+                                    },
+                                    "weight": {
+                                        "unitOfMeasurement": "POUNDS",
+                                        "weight": 1
+                                    }
+                                },
+                                "type": "CASE"
+                            }
+                        }
+                    ],
+                    "preferences": {
+                        "destinationRegion": "us-west"
+                    }
+                }
+            },
+            "InboundOrderReference": {
+                "required": [
+                    "orderId"
+                ],
+                "type": "object",
+                "properties": {
+                    "orderId": {
+                        "type": "string",
+                        "description": "Order ID of the inbound order."
+                    }
+                },
+                "description": "A response that contains the reference identifiers for the newly created or updated inbound order. Consists of an order ID and version."
+            },
+            "InboundPackages": {
+                "required": [
+                    "packagesToInbound"
+                ],
+                "type": "object",
+                "properties": {
+                    "packagesToInbound": {
+                        "minItems": 1,
+                        "type": "array",
+                        "description": "List of packages to be inbounded.",
+                        "example": [
+                            {
+                                "count": 1,
+                                "distributionPackage": {
+                                    "contents": {
+                                        "products": [
+                                            {
+                                                "quantity": 1,
+                                                "sku": "testPen"
+                                            }
+                                        ]
+                                    },
+                                    "measurements": {
+                                        "dimensions": {
+                                            "height": 1,
+                                            "length": 1,
+                                            "unitOfMeasurement": "INCHES",
+                                            "width": 1
+                                        },
+                                        "volume": {
+                                            "unitOfMeasurement": "CUIN",
+                                            "volume": 1
+                                        },
+                                        "weight": {
+                                            "unitOfMeasurement": "POUNDS",
+                                            "weight": 1
+                                        }
+                                    },
+                                    "type": "CASE"
+                                }
+                            }
+                        ],
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionPackageQuantity"
+                        }
+                    }
+                },
+                "description": "Represents the packages to inbound.",
+                "example": {
+                    "packagesToInbound": [
+                        {
+                            "count": 1,
+                            "distributionPackage": {
+                                "contents": {
+                                    "products": [
+                                        {
+                                            "quantity": 1,
+                                            "sku": "testPen"
+                                        }
+                                    ]
+                                },
+                                "measurements": {
+                                    "dimensions": {
+                                        "height": 1,
+                                        "length": 1,
+                                        "unitOfMeasurement": "INCHES",
+                                        "width": 1
+                                    },
+                                    "volume": {
+                                        "unitOfMeasurement": "CUIN",
+                                        "volume": 1
+                                    },
+                                    "weight": {
+                                        "unitOfMeasurement": "POUNDS",
+                                        "weight": 1
+                                    }
+                                },
+                                "type": "CASE"
+                            }
+                        }
+                    ]
+                }
+            },
+            "InboundPreferences": {
+                "type": "object",
+                "properties": {
+                    "destinationRegion": {
+                        "type": "string",
+                        "description": "Pass a preferred region so that the inbound order can be shipped to an AWD warehouse located in that region. This doesn't guarantee the order to be assigned in the specified destination region as it depends on warehouse capacity availability. AWD currently supports following region IDs: [us-west, us-east, us-southcentral, us-southeast]"
+                    }
+                },
+                "description": "Preferences that can be passed in context of an inbound order"
+            },
             "InboundShipment": {
                 "required": [
                     "destinationAddress",
@@ -1534,7 +4568,7 @@
                     },
                     "destinationRegion": {
                         "type": "string",
-                        "description": "Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east]",
+                        "description": "Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east, us-southcentral, us-southeast]",
                         "example": "us-west"
                     },
                     "shipmentStatus": {
@@ -1640,6 +4674,44 @@
                 },
                 "description": "Summary for an AWD inbound shipment containing the shipment ID, which can be used to retrieve the actual shipment."
             },
+            "InboundStatus": {
+                "type": "string",
+                "description": "The supported statuses for an inbound order.",
+                "enum": [
+                    "DRAFT",
+                    "VALIDATING",
+                    "CONFIRMED",
+                    "CLOSED",
+                    "EXPIRED",
+                    "CANCELLED"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "A newly created inbound order will start in this state.",
+                        "value": "DRAFT"
+                    },
+                    {
+                        "description": "The order is in this state while being updated. Once updated, the order will enter the updated state.",
+                        "value": "VALIDATING"
+                    },
+                    {
+                        "description": "The order enters this state as soon as the order is confirmed.",
+                        "value": "CONFIRMED"
+                    },
+                    {
+                        "description": "The order enters this state when all associated shipments are closed.",
+                        "value": "CLOSED"
+                    },
+                    {
+                        "description": "The order enters this state if it is not confirmed within a time limit.",
+                        "value": "EXPIRED"
+                    },
+                    {
+                        "description": "The order enters this state when it is cancelled.",
+                        "value": "CANCELLED"
+                    }
+                ]
+            },
             "ExpirationDetails": {
                 "type": "object",
                 "properties": {
@@ -1692,7 +4764,7 @@
                     },
                     "nextToken": {
                         "type": "string",
-                        "description": "Token to retrieve the next set of paginated results.",
+                        "description": "A token that is used to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
                         "example": "SampleToken"
                     }
                 },
@@ -1789,6 +4861,34 @@
                     }
                 ]
             },
+            "LabelStatus": {
+                "type": "string",
+                "description": "The status of your label.",
+                "enum": [
+                    "GENERATING",
+                    "GENERATED",
+                    "GENERATION_FAILED",
+                    "NOT_READY"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "Labels are being generated.",
+                        "value": "GENERATING"
+                    },
+                    {
+                        "description": "Labels are generated.",
+                        "value": "GENERATED"
+                    },
+                    {
+                        "description": "Label generation failed.",
+                        "value": "GENERATION_FAILED"
+                    },
+                    {
+                        "description": "Not yet ready to start label generation.",
+                        "value": "NOT_READY"
+                    }
+                ]
+            },
             "MeasurementData": {
                 "required": [
                     "weight"
@@ -1806,6 +4906,30 @@
                     }
                 },
                 "description": "Package weight and dimension."
+            },
+            "OrderIneligibilityReason": {
+                "required": [
+                    "code",
+                    "description"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "Code for the order ineligibility.",
+                        "example": "INVALID_MSKU"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description detailing the ineligibility reason of the order.",
+                        "example": "The MSKU passed as part of order is invalid"
+                    }
+                },
+                "description": "Represents one ineligibility reason for the order (there can be multiple reasons).",
+                "example": {
+                    "code": "INVALID_MSKU",
+                    "description": "The MSKU of an invalid order."
+                }
             },
             "PackageDimensions": {
                 "required": [
@@ -1880,12 +5004,11 @@
                         "$ref": "#/components/schemas/LabelOwner"
                     },
                     "prepCategory": {
-                        "type": "string",
-                        "description": "The preparation category for shipping an item to Amazon's fulfillment network."
+                        "$ref": "#/components/schemas/PrepCategory"
                     },
                     "prepInstructions": {
                         "type": "array",
-                        "description": "Information that pertains to the preparation of inbound products. This is generated based on the specified category.",
+                        "description": "Contains information about the preparation of the inbound products. The system auto-generates this field with the use of the `prepCategory`, and if you attempt to pass a value for this field, the system will ignore it.",
                         "items": {
                             "$ref": "#/components/schemas/PrepInstruction"
                         }
@@ -1895,6 +5018,84 @@
                     }
                 },
                 "description": "The preparation details for a product. This contains the prep category, prep owner, and label owner.\nPrep instructions are generated based on the specified category."
+            },
+            "PrepCategory": {
+                "type": "string",
+                "description": "The preparation category for shipping an item to Amazon's fulfillment network.",
+                "enum": [
+                    "ADULT",
+                    "BABY",
+                    "FC_PROVIDED",
+                    "FRAGILE",
+                    "GRANULAR",
+                    "HANGER",
+                    "LIQUID",
+                    "PERFORATED",
+                    "SET",
+                    "SHARP",
+                    "SMALL",
+                    "TEXTILE",
+                    "NO_PREP",
+                    "UNKNOWN"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "ADULT",
+                        "description": "Displays potentially offensive material such as profanity or nudity."
+                    },
+                    {
+                        "value": "BABY",
+                        "description": "Made for a child aged three years or younger, packaging with cutouts greater than one square inch."
+                    },
+                    {
+                        "value": "FC_PROVIDED",
+                        "description": "A prep type has been defined by the Fulfillment Center. This value is provided by Amazon and cannot be used as an input."
+                    },
+                    {
+                        "value": "FRAGILE",
+                        "description": "Glass or otherwise fragile, or a liquid in a glass container."
+                    },
+                    {
+                        "value": "GRANULAR",
+                        "description": "Made of powder, pellets, or granular material."
+                    },
+                    {
+                        "value": "HANGER",
+                        "description": "Made of cloth or fabric and intended to be put on a hanger."
+                    },
+                    {
+                        "value": "LIQUID",
+                        "description": "Liquid or viscous without a double seal."
+                    },
+                    {
+                        "value": "PERFORATED",
+                        "description": "In packaging that has a perforated opening."
+                    },
+                    {
+                        "value": "SET",
+                        "description": "Multiple items that are sold as one unit."
+                    },
+                    {
+                        "value": "SHARP",
+                        "description": "Sharp and easily exposed, not already contained in protective packaging."
+                    },
+                    {
+                        "value": "SMALL",
+                        "description": "Longest side less than 2 1/8 inches (width of a credit card)."
+                    },
+                    {
+                        "value": "TEXTILE",
+                        "description": "Made of cloth or fabric that could be damaged by dirt, dust, moisture, or liquid."
+                    },
+                    {
+                        "value": "NO_PREP",
+                        "description": "Does not require prep."
+                    },
+                    {
+                        "value": "UNKNOWN",
+                        "description": "An unknown prep category was found. This value is provided by Amazon and cannot be used as an input."
+                    }
+                ]
             },
             "PrepInstruction": {
                 "type": "object",
@@ -1956,7 +5157,7 @@
                 "properties": {
                     "attributes": {
                         "type": "array",
-                        "description": "Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU.",
+                        "description": "Contains attributes for this instance of the product. For example, item color, or other attributes that distinguish the product beyond the SKU. This is metadata for the product and Amazon does not process this data.",
                         "example": {
                             "name": "TestAttribute",
                             "value": "TestAttributeValue"
@@ -1985,6 +5186,22 @@
                 },
                 "description": "Represents a product with the SKU details and the corresponding quantity."
             },
+            "ShipmentLabels": {
+                "required": [
+                    "labelStatus"
+                ],
+                "type": "object",
+                "properties": {
+                    "labelDownloadURL": {
+                        "type": "string",
+                        "description": "The URL to download shipment labels. The URL is active for 600 seconds from generation."
+                    },
+                    "labelStatus": {
+                        "$ref": "#/components/schemas/LabelStatus"
+                    }
+                },
+                "description": "Shipment labels."
+            },
             "ShipmentListing": {
                 "type": "object",
                 "properties": {
@@ -2002,6 +5219,47 @@
                     }
                 },
                 "description": "A list of inbound shipment summaries filtered by the attributes specified in the request."
+            },
+            "SkuEligibility": {
+                "required": [
+                    "packageQuantity",
+                    "status"
+                ],
+                "type": "object",
+                "properties": {
+                    "ineligibilityReasons": {
+                        "type": "array",
+                        "description": "If not eligible, these are list of error codes and descriptions.",
+                        "items": {
+                            "$ref": "#/components/schemas/SkuIneligibilityReason"
+                        }
+                    },
+                    "packageQuantity": {
+                        "$ref": "#/components/schemas/DistributionPackageQuantity"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/InboundEligibilityStatus"
+                    }
+                },
+                "description": "Represents eligibility of one SKU."
+            },
+            "SkuIneligibilityReason": {
+                "required": [
+                    "code",
+                    "description"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "Code for the SKU ineligibility."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Detailed description of the SKU ineligibility."
+                    }
+                },
+                "description": "Represents the ineligibility reason for one SKU."
             },
             "SkuQuantity": {
                 "required": [
@@ -2022,6 +5280,49 @@
                     }
                 },
                 "description": "Quantity details for a SKU as part of a shipment"
+            },
+            "TrackingDetails": {
+                "required": [
+                    "bookingId"
+                ],
+                "type": "object",
+                "properties": {
+                    "carrierCode": {
+                        "$ref": "#/components/schemas/CarrierCode"
+                    },
+                    "bookingId": {
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "The identifier that is received from transportation to uniquely identify a booking."
+                    }
+                },
+                "description": "Tracking details for the shipment. If using SPD transportation, this can be for each case. If not using SPD transportation, this is a single tracking entry for the entire shipment."
+            },
+            "TransportationDetails": {
+                "required": [
+                    "trackingDetails"
+                ],
+                "type": "object",
+                "properties": {
+                    "trackingDetails": {
+                        "type": "array",
+                        "description": "Tracking details for the shipment. If using SPD transportation, this can be for each case. If not using SPD transportation, this is a single tracking entry for the entire shipment.",
+                        "items": {
+                            "$ref": "#/components/schemas/TrackingDetails"
+                        }
+                    }
+                },
+                "description": "Transportation details for the shipment.",
+                "example": {
+                    "trackingDetails": [
+                        {
+                            "carrierCode": {
+                                "carrierCodeType": "SCAC"
+                            },
+                            "bookingId": "TRACKING_ID"
+                        }
+                    ]
+                }
             },
             "VolumeUnitOfMeasurement": {
                 "type": "string",

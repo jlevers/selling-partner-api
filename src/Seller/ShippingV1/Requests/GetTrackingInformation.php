@@ -23,6 +23,9 @@ class GetTrackingInformation extends Request
 {
     protected Method $method = Method::GET;
 
+    /**
+     * @param  string  $trackingId  Tracking Id
+     */
     public function __construct(
         protected string $trackingId,
     ) {}

@@ -31,6 +31,9 @@ class Api extends BaseResource
         return $this->connector->send($request);
     }
 
+    /**
+     * @param  string  $shipmentId  Shipment id to return the entire shipment object
+     */
     public function getShipment(string $shipmentId): Response
     {
         $request = new GetShipment($shipmentId);
@@ -38,6 +41,9 @@ class Api extends BaseResource
         return $this->connector->send($request);
     }
 
+    /**
+     * @param  string  $shipmentId  Shipment Id to cancel a shipment
+     */
     public function cancelShipment(string $shipmentId): Response
     {
         $request = new CancelShipment($shipmentId);
@@ -46,6 +52,7 @@ class Api extends BaseResource
     }
 
     /**
+     * @param  string  $shipmentId  Shipment id for purchase shipping label
      * @param  PurchaseLabelsRequest  $purchaseLabelsRequest  The request schema for the purchaseLabels operation.
      */
     public function purchaseLabels(string $shipmentId, PurchaseLabelsRequest $purchaseLabelsRequest): Response
@@ -56,6 +63,8 @@ class Api extends BaseResource
     }
 
     /**
+     * @param  string  $shipmentId  Shipment Id to retreive label
+     * @param  string  $trackingId  Tracking Id
      * @param  RetrieveShippingLabelRequest  $retrieveShippingLabelRequest  The request schema for the retrieveShippingLabel operation.
      */
     public function retrieveShippingLabel(
@@ -95,6 +104,9 @@ class Api extends BaseResource
         return $this->connector->send($request);
     }
 
+    /**
+     * @param  string  $trackingId  Tracking Id
+     */
     public function getTrackingInformation(string $trackingId): Response
     {
         $request = new GetTrackingInformation($trackingId);

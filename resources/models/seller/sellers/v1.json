@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "The Selling Partner API for Sellers",
-        "description": "The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.",
+        "description": "The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:\n\n- The marketplaces a seller can list in\n- The default language and currency of a marketplace\n- Whether the seller has suspended listings\n\nRefer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.",
         "contact": {
             "name": "Selling Partner API Developer Support",
             "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
@@ -24,7 +24,7 @@
                 "tags": [
                     "SellersV1"
                 ],
-                "description": "Returns a list of marketplaces that the seller submitting the request can sell in and information about the seller's participation in those marketplaces.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.016 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns a list of marketplaces where the seller can list items and information about the seller's participation in those marketplaces.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.016 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getMarketplaceParticipations",
                 "responses": {
                     "200": {
@@ -273,7 +273,7 @@
                 "tags": [
                     "SellersV1"
                 ],
-                "description": "Returns information about a seller account and its marketplaces.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.016 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns information about a seller account and its marketplaces.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.016 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getAccount",
                 "responses": {
                     "200": {
@@ -599,7 +599,7 @@
                     },
                     "details": {
                         "type": "string",
-                        "description": "Additional details that can help the caller understand or fix the issue."
+                        "description": "Additional details that can help you understand or fix the issue."
                     }
                 },
                 "description": "Error response returned when the request is unsuccessful."
@@ -676,7 +676,7 @@
                     },
                     "name": {
                         "type": "string",
-                        "description": "Marketplace name."
+                        "description": "The marketplace name."
                     },
                     "countryCode": {
                         "pattern": "^([A-Z]{2})$",
@@ -696,7 +696,7 @@
                         "description": "The domain name of the marketplace."
                     }
                 },
-                "description": "Detailed information about an Amazon market where a seller can list items for sale and customers can view and purchase items."
+                "description": "Information about an Amazon marketplace where a seller can list items and customers can view and purchase items."
             },
             "Participation": {
                 "required": [
@@ -707,14 +707,14 @@
                 "properties": {
                     "isParticipating": {
                         "type": "boolean",
-                        "description": "If true, the seller participates in the marketplace."
+                        "description": "If `true`, the seller participates in the marketplace. Otherwise `false`."
                     },
                     "hasSuspendedListings": {
                         "type": "boolean",
-                        "description": "If true, the seller has suspended listings."
+                        "description": "Specifies if the seller has suspended listings. `true` if the seller Listing Status is set to Inactive, otherwise `false`."
                     }
                 },
-                "description": "Detailed information that is specific to a seller in a marketplace."
+                "description": "Information that is specific to a seller in a marketplace."
             },
             "GetAccountResponse": {
                 "type": "object",
@@ -841,7 +841,7 @@
                         "description": "The non-Latin script version of the registered business name, if applicable."
                     }
                 },
-                "description": "Information about the Seller's business. These fields may be omitted if the Seller is registered as an individual."
+                "description": "Information about the seller's business. Certain fields may be omitted depending on the seller's `businessType`."
             },
             "Address": {
                 "required": [

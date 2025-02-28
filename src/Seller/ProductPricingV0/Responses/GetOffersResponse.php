@@ -17,6 +17,7 @@ use SellingPartnerApi\Seller\ProductPricingV0\Dto\GetOffersResult;
 final class GetOffersResponse extends Response
 {
     /**
+     * @param  ?GetOffersResult  $payload  The payload for the getListingOffers and getItemOffers operations.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

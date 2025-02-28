@@ -55,6 +55,7 @@ final class OrderItem extends Dto
         'measurement' => 'Measurement',
         'shippingConstraints' => 'ShippingConstraints',
         'amazonPrograms' => 'AmazonPrograms',
+        'exportInfo' => 'ExportInfo',
     ];
 
     protected static array $complexArrayTypes = ['associatedItems' => AssociatedItem::class];
@@ -117,6 +118,7 @@ final class OrderItem extends Dto
      *
      * Possible programs are:
      *  - **Subscribe and Save**: Offers recurring, scheduled deliveries to Amazon customers and Amazon Business customers for their frequently ordered products.
+     * @param  ?ExportInfo  $exportInfo  Contains information that is related to the export of an order item.
      */
     public function __construct(
         public string $asin,
@@ -159,5 +161,6 @@ final class OrderItem extends Dto
         public ?Measurement $measurement = null,
         public ?ShippingConstraints $shippingConstraints = null,
         public ?AmazonPrograms $amazonPrograms = null,
+        public ?ExportInfo $exportInfo = null,
     ) {}
 }

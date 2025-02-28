@@ -26,6 +26,8 @@ final class OfferType extends Dto
     protected static array $complexArrayTypes = ['quantityDiscountPrices' => QuantityDiscountPriceType::class];
 
     /**
+     * @param  PriceType  $buyingPrice  Schema for item's price information, including listing price, shipping price, and Amazon points.
+     * @param  MoneyType  $regularPrice  Currency type and monetary value. Schema for demonstrating pricing info.
      * @param  string  $fulfillmentChannel  The fulfillment channel for the offer listing. Possible values:
      *
      * * Amazon - Fulfilled by Amazon.
@@ -33,7 +35,9 @@ final class OfferType extends Dto
      * @param  string  $itemCondition  The item condition for the offer listing. Possible values: New, Used, Collectible, Refurbished, or Club.
      * @param  string  $itemSubCondition  The item subcondition for the offer listing. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
      * @param  string  $sellerSku  The seller stock keeping unit (SKU) of the item.
-     * @param  QuantityDiscountPriceType[]|null  $quantityDiscountPrices
+     * @param  ?string  $offerType  Indicates whether the offer is a B2B or B2C offer
+     * @param  ?MoneyType  $businessPrice  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  QuantityDiscountPriceType[]|null  $quantityDiscountPrices  List of `QuantityDiscountPrice` that contains item's pricing information when buy in bulk.
      */
     public function __construct(
         public PriceType $buyingPrice,

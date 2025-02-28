@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class StandardTextModule extends Dto
 {
     /**
-     * @param  ParagraphComponent  $body  A list of rich text content, usually presented in a text box.
+     * @param  ParagraphComponent  $body  A list of rich text content that is typically presented in a text box.
      * @param  ?TextComponent  $headline  Rich text content.
      */
     public function __construct(

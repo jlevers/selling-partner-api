@@ -37,11 +37,14 @@ final class Summary extends Dto
 
     /**
      * @param  int  $totalOfferCount  The number of unique offers contained in NumberOfOffers.
-     * @param  OfferCountType[]|null  $numberOfOffers
-     * @param  LowestPriceType[]|null  $lowestPrices
-     * @param  BuyBoxPriceType[]|null  $buyBoxPrices
+     * @param  OfferCountType[]|null  $numberOfOffers  A list that contains the total number of offers information for given conditions and fulfillment channels.
+     * @param  LowestPriceType[]|null  $lowestPrices  A list of the lowest prices.
+     * @param  BuyBoxPriceType[]|null  $buyBoxPrices  A list of the Buy Box prices.
+     * @param  ?MoneyType  $listPrice  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  ?MoneyType  $competitivePriceThreshold  Currency type and monetary value. Schema for demonstrating pricing info.
+     * @param  ?MoneyType  $suggestedLowerPricePlusShipping  Currency type and monetary value. Schema for demonstrating pricing info.
      * @param  SalesRankType[]|null  $salesRankings  A list of sales rank information for the item, by category.
-     * @param  OfferCountType[]|null  $buyBoxEligibleOffers
+     * @param  OfferCountType[]|null  $buyBoxEligibleOffers  A list that contains the total number of offers that are eligible for the Buy Box for the given conditions and fulfillment channels.
      * @param  ?\DateTimeInterface  $offersAvailableTime  When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing.
      */
     public function __construct(

@@ -17,7 +17,7 @@ final class Breakdown extends Dto
     /**
      * @param  ?string  $breakdownType  The type of charge.
      * @param  ?Currency  $breakdownAmount  A currency type and amount.
-     * @param  ?Breakdown  $breakdowns  Details about the movement of money in the financial transaction. Breakdowns are further categorized into breakdown types, breakdown amounts, and further breakdowns.
+     * @param  ?Breakdown  $breakdowns  Breakdown provides details regarding the money movement under the financial transaction. Breakdowns get categorized further into breakdown types, breakdown amounts, and further breakdowns into a hierarchical structure.
      */
     public function __construct(
         public ?string $breakdownType = null,

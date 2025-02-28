@@ -17,9 +17,11 @@ final class DeferredContext extends Dto
     /**
      * @param  ?string  $deferralReason  Deferral policy applied on the transaction.
      *
-     * **Examples:** `B2B`,`DD7`
-     * @param  ?\DateTimeInterface  $maturityDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
-     * @param  ?string  $deferralStatus  The status of the transaction. For example, `HOLD`,`RELEASE`.
+     * Example: 'B2B','DD7'
+     * @param  ?\DateTimeInterface  $maturityDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?string  $deferralStatus  Status of the transaction.
+     *
+     * Example: 'HOLD','RELEASE'
      */
     public function __construct(
         public ?string $deferralReason = null,

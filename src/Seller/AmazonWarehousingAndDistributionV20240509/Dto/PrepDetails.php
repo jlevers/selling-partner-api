@@ -19,7 +19,7 @@ final class PrepDetails extends Dto
     /**
      * @param  ?string  $labelOwner  The entity that labels the products.
      * @param  ?string  $prepCategory  The preparation category for shipping an item to Amazon's fulfillment network.
-     * @param  PrepInstruction[]|null  $prepInstructions  Information that pertains to the preparation of inbound products. This is generated based on the specified category.
+     * @param  PrepInstruction[]|null  $prepInstructions  Contains information about the preparation of the inbound products. The system auto-generates this field with the use of the `prepCategory`, and if you attempt to pass a value for this field, the system will ignore it.
      * @param  ?string  $prepOwner  The owner of the preparations, if special preparations are required.
      */
     public function __construct(

@@ -22,27 +22,28 @@ final class Transaction extends Dto
     ];
 
     /**
-     * @param  ?SellingPartnerMetadata  $sellingPartnerMetadata  Metadata that describes the seller.
+     * @param  ?SellingPartnerMetadata  $sellingPartnerMetadata  Metadata describing the seller.
      * @param  RelatedIdentifier[]|null  $relatedIdentifiers  Related business identifiers of the transaction.
      * @param  ?string  $transactionType  The type of transaction.
      *
-     * **Possible value:** `Shipment`
-     * @param  ?string  $transactionId  The unique identifier of the transaction.
-     * @param  ?string  $transactionStatus  The status of the transaction.
+     * Possible values:
      *
-     * **Possible values:**
+     * * Shipment
+     * @param  ?string  $transactionId  The unique identifier for the transaction.
+     * @param  ?string  $transactionStatus  The status for the transaction.
      *
-     * * `Deferred`
-     * * `Released`
+     * Possible values:
+     *
+     * * Deferred *Released
      * @param  ?string  $description  Describes the reasons for the transaction.
      *
-     * **Example:** 'Order Payment', 'Refund Order'
-     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * Example: 'Order Payment','Refund Order'
+     * @param  ?\DateTimeInterface  $postedDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
      * @param  ?Currency  $totalAmount  A currency type and amount.
      * @param  ?MarketplaceDetails  $marketplaceDetails  Information about the marketplace where the transaction occurred.
-     * @param  Item[]|null  $items  A list of items in the transaction.
-     * @param  Context[]|null  $contexts  A list of additional information about the item.
-     * @param  Breakdown[]|null  $breakdowns  A list of breakdowns that provide details on how the total amount is calculated for the transaction.
+     * @param  Item[]|null  $items  List of items in the transaction
+     * @param  Context[]|null  $contexts  List of additional Information about the item.
+     * @param  Breakdown[]|null  $breakdowns  List of breakdowns which will provide the details on how the total amount is calculated for the financial transaction.
      */
     public function __construct(
         public ?SellingPartnerMetadata $sellingPartnerMetadata = null,

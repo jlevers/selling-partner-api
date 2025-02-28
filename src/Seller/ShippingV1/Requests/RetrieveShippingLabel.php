@@ -29,6 +29,8 @@ class RetrieveShippingLabel extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
+     * @param  string  $shipmentId  Shipment Id to retreive label
+     * @param  string  $trackingId  Tracking Id
      * @param  RetrieveShippingLabelRequest  $retrieveShippingLabelRequest  The request schema for the retrieveShippingLabel operation.
      */
     public function __construct(

@@ -18,7 +18,7 @@ final class ValidateContentDocumentAsinRelationsResponse extends Response
     protected static array $complexArrayTypes = ['errors' => Error::class, 'warnings' => Error::class];
 
     /**
-     * @param  Error[]  $errors  A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]  $errors  A list of error responses that are returned when a request is unsuccessful.
      * @param  Error[]|null  $warnings  A set of messages to the user, such as warnings or comments.
      */
     public function __construct(

@@ -30,7 +30,7 @@ class ValidateContentDocumentAsinRelations extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
+     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  ?array  $asinSet  The set of ASINs.
      */
     public function __construct(

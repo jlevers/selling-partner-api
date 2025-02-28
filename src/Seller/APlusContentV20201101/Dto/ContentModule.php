@@ -26,7 +26,7 @@ final class ContentModule extends Dto
      * @param  ?StandardMultipleImageTextModule  $standardMultipleImageText  Standard images with text, presented one at a time. The user clicks on thumbnails to view each block.
      * @param  ?StandardProductDescriptionModule  $standardProductDescription  Standard product description text.
      * @param  ?StandardSingleImageHighlightsModule  $standardSingleImageHighlights  A standard image with several paragraphs and a bulleted list.
-     * @param  ?StandardSingleImageSpecsDetailModule  $standardSingleImageSpecsDetail  A standard image with paragraphs and a bulleted list, and extra space for technical details.
+     * @param  ?StandardSingleImageSpecsDetailModule  $standardSingleImageSpecsDetail  A standard image with paragraphs, a bulleted list, and extra space for technical details.
      * @param  ?StandardSingleSideImageModule  $standardSingleSideImage  A standard headline and body text with an image on the side.
      * @param  ?StandardTechSpecsModule  $standardTechSpecs  The standard table of technical feature names and definitions.
      * @param  ?StandardTextModule  $standardText  A standard headline and body text.

@@ -15,13 +15,13 @@ use SellingPartnerApi\SellingPartnerApi;
 
 final class GetTrackingTest extends TestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         MockClient::destroyGlobal();
         Config::preventStrayRequests();
     }
 
-    public function testAddsHeaderParametersToRequest(): void
+    public function test_adds_header_parameters_to_request(): void
     {
         $mockClient = new MockClient([
             GetAccessTokenRequest::class => fn () => MockResponse::make([

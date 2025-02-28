@@ -9,7 +9,7 @@ use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ListDeliveryWindowOpt
 
 class ListDeliveryWindowOptionsTest extends TestCase
 {
-    public function testDeserializeDateTimeWithoutSeconds(): void
+    public function test_deserialize_date_time_without_seconds(): void
     {
         $now = new DateTime;
         $result = ListDeliveryWindowOptionsResponse::deserialize([

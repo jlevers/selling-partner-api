@@ -21,7 +21,7 @@ class TokenCacheTest extends TestCase
 {
     private TokenCache $cache;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         MockClient::destroyGlobal();
         Config::preventStrayRequests();
@@ -29,7 +29,7 @@ class TokenCacheTest extends TestCase
         $this->cache->clear();
     }
 
-    public function testFetchesTokenFromCache(): void
+    public function test_fetches_token_from_cache(): void
     {
         $faker = Faker\Factory::create();
         $mockClient = new MockClient([
@@ -117,7 +117,7 @@ class TokenCacheTest extends TestCase
         $this->assertNotEquals($dataElementsRdtAuthenticator1->accessToken, $dataElementsRdtAuthenticator2->accessToken);
     }
 
-    public function testMultipleRefreshTokensWithOneClientIdDontCacheTheSameToken(): void
+    public function test_multiple_refresh_tokens_with_one_client_id_dont_cache_the_same_token(): void
     {
         $faker = Faker\Factory::create();
         $mockClient = new MockClient([
@@ -170,7 +170,7 @@ class TokenCacheTest extends TestCase
         $this->assertNotEquals($rdtAuthenticator1->accessToken, $rdtAuthenticator2->accessToken);
     }
 
-    public function testMultipleRefreshTokensWithOneClientIdCachesTheSameGrantlessToken(): void
+    public function test_multiple_refresh_tokens_with_one_client_id_caches_the_same_grantless_token(): void
     {
         $faker = Faker\Factory::create();
         $mockClient = new MockClient([
@@ -206,7 +206,7 @@ class TokenCacheTest extends TestCase
         $this->assertEquals($authenticator1->accessToken, $authenticator2->accessToken);
     }
 
-    public function testWorksWithNoCache(): void
+    public function test_works_with_no_cache(): void
     {
         $faker = Faker\Factory::create();
         $mockClient = new MockClient([

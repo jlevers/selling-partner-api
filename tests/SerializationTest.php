@@ -24,7 +24,7 @@ class SerializationTest extends TestCase
 {
     private SellerConnector $connector;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         MockClient::destroyGlobal();
         $this->connector = SellingPartnerApi::seller(
@@ -35,7 +35,7 @@ class SerializationTest extends TestCase
         );
     }
 
-    public function testNullValuesAreRemovedFromSerialization(): void
+    public function test_null_values_are_removed_from_serialization(): void
     {
         $mockClient = new MockClient([
             GetAccessTokenRequest::class => fn () => MockResponse::make([
@@ -91,7 +91,7 @@ class SerializationTest extends TestCase
         );
     }
 
-    public function testDatesInQueryParametersAreSerializedInZuluFormat(): void
+    public function test_dates_in_query_parameters_are_serialized_in_zulu_format(): void
     {
         $mockClient = new MockClient([
             GetAccessTokenRequest::class => MockResponse::make(
@@ -126,7 +126,7 @@ class SerializationTest extends TestCase
         $this->assertEquals('2024-01-01T00:00:00Z', $query->get('startDateTime'));
     }
 
-    public function testDatesInBodyParametersAreSerializedInZuluFormat(): void
+    public function test_dates_in_body_parameters_are_serialized_in_zulu_format(): void
     {
         $mockClient = new MockClient([
             GetAccessTokenRequest::class => MockResponse::make(

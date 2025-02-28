@@ -23,13 +23,13 @@ use SellingPartnerApi\SellingPartnerApi;
 
 class AuthenticationTest extends TestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         MockClient::destroyGlobal();
         Config::preventStrayRequests();
     }
 
-    public function testFetchesNewAccessToken(): void
+    public function test_fetches_new_access_token(): void
     {
         $mockClient = new MockClient([
             GetAccessTokenRequest::class => fn () => MockResponse::make([
@@ -66,7 +66,7 @@ class AuthenticationTest extends TestCase
         );
     }
 
-    public function testThrowsUnauthorizedErrorIfAccessTokenRequestFails(): void
+    public function test_throws_unauthorized_error_if_access_token_request_fails(): void
     {
         $mockClient = new MockClient([
             GetAccessTokenRequest::class => fn () => MockResponse::make(status: 401),
@@ -84,7 +84,7 @@ class AuthenticationTest extends TestCase
         $connector->defaultAuth();
     }
 
-    public function testFetchesNewGrantlessToken(): void
+    public function test_fetches_new_grantless_token(): void
     {
         $mockClient = new MockClient([
             GetAccessTokenRequest::class => fn () => MockResponse::make([
@@ -119,7 +119,7 @@ class AuthenticationTest extends TestCase
         );
     }
 
-    public function testFetchesNewRestrictedDataTokenFromGenericEndpointPath(): void
+    public function test_fetches_new_restricted_data_token_from_generic_endpoint_path(): void
     {
         $mockClient = new MockClient([
             GetAccessTokenRequest::class => fn () => MockResponse::make([
@@ -167,7 +167,7 @@ class AuthenticationTest extends TestCase
         );
     }
 
-    public function testCreatesNewRestrictedDataTokenFromSpecificEndpointPath(): void
+    public function test_creates_new_restricted_data_token_from_specific_endpoint_path(): void
     {
         $mockClient = new MockClient([
             GetAccessTokenRequest::class => fn () => MockResponse::make([
@@ -212,7 +212,7 @@ class AuthenticationTest extends TestCase
         );
     }
 
-    public function testCreatesNewRestrictedDataTokenWithDataElements(): void
+    public function test_creates_new_restricted_data_token_with_data_elements(): void
     {
         $mockClient = new MockClient([
             GetAccessTokenRequest::class => fn () => MockResponse::make([
@@ -258,7 +258,7 @@ class AuthenticationTest extends TestCase
         );
     }
 
-    public function testCreatesNewDelegatedRestrictedDataToken(): void
+    public function test_creates_new_delegated_restricted_data_token(): void
     {
         $mockClient = new MockClient([
             GetAccessTokenRequest::class => fn () => MockResponse::make([
@@ -302,7 +302,7 @@ class AuthenticationTest extends TestCase
         );
     }
 
-    public function testUsesCustomAuthenticationClient(): void
+    public function test_uses_custom_authentication_client(): void
     {
         $called = false;
         function test_middleware()

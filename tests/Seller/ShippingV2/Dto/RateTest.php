@@ -7,7 +7,7 @@ use SellingPartnerApi\Seller\ShippingV2\Dto\Rate;
 
 class RateTest extends TestCase
 {
-    public function testDeserializeNullDateTime()
+    public function test_deserialize_null_date_time()
     {
         $result = Rate::deserialize([
             'rateId' => '',

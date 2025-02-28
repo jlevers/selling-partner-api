@@ -14,7 +14,7 @@ use SellingPartnerApi\OAuth;
 
 class OAuthTest extends TestCase
 {
-    public function testMakeAuthUrl(): void
+    public function test_make_auth_url(): void
     {
         $oauth = new OAuth('client-id', 'client-secret', 'https://example.com/redirect');
         $authUrl = $oauth->getAuthorizationUri(
@@ -44,7 +44,7 @@ class OAuthTest extends TestCase
         );
     }
 
-    public function testFailToMakeAuthUrlWithNonSslRedirectUri(): void
+    public function test_fail_to_make_auth_url_with_non_ssl_redirect_uri(): void
     {
         $this->expectException(OAuthException::class);
 
@@ -56,7 +56,7 @@ class OAuthTest extends TestCase
         );
     }
 
-    public function testConvertsAuthCodeToRefreshToken(): void
+    public function test_converts_auth_code_to_refresh_token(): void
     {
         $mockClient = new MockClient([
             GetAccessTokenRequest::class => fn () => MockResponse::make([

@@ -10,7 +10,7 @@ use SellingPartnerApi\Seller\ProductFeesV0\Responses\GetMyFeesEstimateResponse;
 
 class GetMyFeesEstimateResponseTest extends TestCase
 {
-    public function testDeserializeDateTimeWithMs()
+    public function test_deserialize_date_time_with_ms()
     {
         $now = new DateTime;
         $ms = $now->format('v');
@@ -29,7 +29,7 @@ class GetMyFeesEstimateResponseTest extends TestCase
         $this->assertEquals($ms, $result->payload->feesEstimateResult->feesEstimate->timeOfFeesEstimation->format('v'));
     }
 
-    public function testDeserializeDateTimeWithTimezone(): void
+    public function test_deserialize_date_time_with_timezone(): void
     {
         $now = new DateTime;
         $now->setTimeZone(new DateTimeZone('+02:00'));

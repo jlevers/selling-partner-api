@@ -14,12 +14,12 @@ class InMemoryTokenCacheTest extends TestCase
 {
     private TokenCache $cache;
 
-    public function setup(): void
+    protected function setup(): void
     {
         $this->cache = new InMemoryTokenCache;
     }
 
-    public function testStoresToken(): void
+    public function test_stores_token(): void
     {
         $token = new AccessTokenAuthenticator('access-token', expiresAt: new DateTimeImmutable('+1 hour'));
         $this->cache->set('token-1', $token);
@@ -28,7 +28,7 @@ class InMemoryTokenCacheTest extends TestCase
         $this->assertSame($token, $fetched);
     }
 
-    public function testExpiresStoredToken(): void
+    public function test_expires_stored_token(): void
     {
         $token = new AccessTokenAuthenticator('access-token', expiresAt: new DateTimeImmutable('-1 hour'));
         $this->cache->set('token-1', $token);
@@ -37,14 +37,14 @@ class InMemoryTokenCacheTest extends TestCase
         $this->assertFalse($fetched);
     }
 
-    public function testDeletesKey(): void
+    public function test_deletes_key(): void
     {
         $this->cache->set('token-1', new AccessTokenAuthenticator('access-token', expiresAt: new DateTimeImmutable('+1 hour')));
         $this->cache->forget('token-1');
         $this->assertFalse($this->cache->get('token-1'));
     }
 
-    public function testClearsCache(): void
+    public function test_clears_cache(): void
     {
         $this->cache->set('token-1', new AccessTokenAuthenticator('access-token-1', expiresAt: new DateTimeImmutable('+1 hour')));
         $this->cache->set('token-2', new AccessTokenAuthenticator('access-token-2', expiresAt: new DateTimeImmutable('+2 hours')));

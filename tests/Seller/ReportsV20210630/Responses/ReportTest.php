@@ -10,13 +10,13 @@ use SellingPartnerApi\Seller\ReportsV20210630\Responses\Report;
 
 class ReportTest extends TestCase
 {
-    public function testDeserialize()
+    public function test_deserialize()
     {
         $nullResult = Report::deserialize(null);
         $this->assertNull($nullResult);
     }
 
-    public function testDeserializeUnknownDateTime()
+    public function test_deserialize_unknown_date_time()
     {
         // German DateTime Format should throw an exception as it is not one of the valid formats
         $this->expectException(UnknownDatetimeFormatException::class);
@@ -25,7 +25,7 @@ class ReportTest extends TestCase
         ]);
     }
 
-    public function testDeserializeDateTime()
+    public function test_deserialize_date_time()
     {
         $now = new DateTime;
         $result = Report::deserialize([

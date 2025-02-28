@@ -11,6 +11,7 @@ use SellingPartnerApi\Generator\Generators\BaseResourceGenerator;
 use SellingPartnerApi\Generator\Generators\RequestGenerator;
 use SellingPartnerApi\Generator\Generators\ResourceGenerator;
 use SellingPartnerApi\Generator\Generators\ResponseGenerator;
+use SellingPartnerApi\Generator\Generators\SupportingFilesGenerator;
 
 class Generator
 {
@@ -33,6 +34,7 @@ class Generator
             responseGenerator: new ResponseGenerator($config),
             connectorGenerator: new NullGenerator($config),
             baseResourceGenerator: new BaseResourceGenerator($config),
+            supportingFilesGenerator: new SupportingFilesGenerator($config),
             fileHandler: new FileHandler($config),
         );
     }

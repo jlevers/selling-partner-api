@@ -345,6 +345,15 @@
                     "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/uploads-api-model/uploads_2020-11-01.json"
                 }
             ]
+        },
+        "vehicles": {
+            "name": "Vehicles",
+            "versions": [
+                {
+                    "version": "2024-11-01",
+                    "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/refs/heads/main/models/vehicles-api-model/vehicles_2024-11-01.json"
+                }
+            ]
         }
     },
     "vendor": {

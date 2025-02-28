@@ -1,0 +1,651 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "The Selling Partner API for Automotive.",
+        "description": "The Selling Partner API for Automotive provides programmatic access to information needed by selling partners to provide compatibility information about their listed products.",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "2024-11-01"
+    },
+    "servers": [
+        {
+            "url": "https://sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/catalog/2024-11-01/automotive/vehicles": {
+            "get": {
+                "tags": [
+                    "VehiclesV20241101"
+                ],
+                "description": "Get the latest collection of vehicles",
+                "operationId": "getVehicles",
+                "parameters": [
+                    {
+                        "name": "pageToken",
+                        "in": "query",
+                        "description": "A token to fetch a certain page when there are multiple pages worth of results.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "sdlkj234lkj234lksjdflkjwdflkjsfdlkj234234234234"
+                    },
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "An identifier for the marketplace in which the resource operates.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "A1PA6795UKMFR9"
+                    },
+                    {
+                        "name": "vehicleType",
+                        "in": "query",
+                        "description": "An identifier for vehicle type.",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "CAR",
+                                "MOTORBIKE"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "description": "Selecting this will return the list of cars.",
+                                    "value": "CAR"
+                                },
+                                {
+                                    "description": "Selecting this will return the list of motorbikes/motorcycles.",
+                                    "value": "MOTORBIKE"
+                                }
+                            ]
+                        },
+                        "example": "CAR",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "Selecting this will return the list of cars.",
+                                "value": "CAR"
+                            },
+                            {
+                                "description": "Selecting this will return the list of motorbikes/motorcycles.",
+                                "value": "MOTORBIKE"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "updatedAfter",
+                        "in": "query",
+                        "description": "Date in ISO 8601 format, if provided only vehicles which are modified/added to Amazon's catalog after this date will be returned.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "2024-01-05T18:00:03+00:00"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VehiclesResponse"
+                                },
+                                "example": {
+                                    "pagination": {
+                                        "nextToken": "xsdflkj324lkjsdlkj3423klkjsdfkljlk2j34klj2l3k4jlksdjl234",
+                                        "previousToken": "mmkjsdflkj234lkjds234234lkjl234lksjdflkj234234lkjsfsdflkj333d"
+                                    },
+                                    "vehicles": [
+                                        {
+                                            "make": "Chevrolet",
+                                            "model": "Aveo",
+                                            "variantName": "1.2",
+                                            "bodyStyle": "Schr\u00e4gheck",
+                                            "driveType": "Frontantrieb",
+                                            "energy": "Benzin",
+                                            "engineOutput": [
+                                                {
+                                                    "value": 51,
+                                                    "unit": "KILOWATT"
+                                                },
+                                                {
+                                                    "value": 69,
+                                                    "unit": "HORSEPOWER"
+                                                }
+                                            ],
+                                            "manufacturingStartDate": {
+                                                "year": 2011,
+                                                "month": 3
+                                            },
+                                            "manufacturingStopDate": {},
+                                            "lastProcessedDate": "2024-09-01T18:00:03+00:00",
+                                            "status": "DELETED",
+                                            "identifiers": [
+                                                {
+                                                    "standard": "KTYPE",
+                                                    "value": "9997"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "pageToken": {
+                                                "value": "urldwkj324lkjsdlkj3423klkjsdfkljlk2j34klj2l3k4jlksdjq130"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A1PA6795UKMFR9"
+                                            },
+                                            "vehicleType": {
+                                                "value": "MOTORBIKE"
+                                            },
+                                            "updatedAfter": {
+                                                "value": "2024-01-05T18:00:03+00:00"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "pagination": {
+                                            "nextToken": "xsdflkj324lkjsdlkj3423klkjsdfkljlk2j34klj2l3k4jlksdjl234",
+                                            "previousToken": "ilkjsdflkj234lkjds234234lkjl234lksjdflkj234234lkjsfsdflkj333d"
+                                        },
+                                        "vehicles": [
+                                            {
+                                                "make": "Chevrolet",
+                                                "model": "Avalanche",
+                                                "variantName": "5.3 Flex-fuel",
+                                                "bodyStyle": "Pick-up",
+                                                "driveType": "Heckantrieb",
+                                                "energy": "Benzin/Ethanol",
+                                                "engineOutput": [
+                                                    {
+                                                        "value": 235,
+                                                        "unit": "KILOWATT"
+                                                    },
+                                                    {
+                                                        "value": 320,
+                                                        "unit": "HORSEPOWER"
+                                                    }
+                                                ],
+                                                "manufacturingStartDate": {
+                                                    "year": 2005,
+                                                    "month": 6
+                                                },
+                                                "manufacturingStopDate": {
+                                                    "year": 2007,
+                                                    "month": 7
+                                                },
+                                                "lastProcessedDate": "2024-09-01T18:00:03+00:00",
+                                                "status": "ACTIVE",
+                                                "identifiers": [
+                                                    {
+                                                        "standard": "KTYPE",
+                                                        "value": "27566"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "message": "Invalid input",
+                                                "details": "Invalid input"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "VehiclesResponse": {
+                "required": [
+                    "vehicles"
+                ],
+                "type": "object",
+                "properties": {
+                    "pagination": {
+                        "$ref": "#/components/schemas/Pagination"
+                    },
+                    "vehicles": {
+                        "type": "array",
+                        "description": "List of vehicles from Amazon's catalog.",
+                        "items": {
+                            "$ref": "#/components/schemas/Vehicle"
+                        }
+                    }
+                },
+                "description": "Get paginated list of vehicle from Amazon's catalog"
+            },
+            "Pagination": {
+                "type": "object",
+                "properties": {
+                    "nextToken": {
+                        "type": "string",
+                        "description": "A token that can be used to fetch the next page."
+                    },
+                    "previousToken": {
+                        "type": "string",
+                        "description": "A token that can be used to fetch the previous page."
+                    }
+                },
+                "description": "When a request produces a response that exceeds the `pageSize`, pagination occurs. This means the response is divided into individual pages. To retrieve the next page or the previous page, you must pass the `nextToken` value or the `previousToken` value as the `pageToken` parameter in the next request. When you receive the last page, there will be no `nextToken` key in the pagination object."
+            },
+            "Vehicle": {
+                "required": [
+                    "identifiers",
+                    "make",
+                    "model"
+                ],
+                "type": "object",
+                "properties": {
+                    "make": {
+                        "type": "string",
+                        "description": "Vehicle Brand."
+                    },
+                    "model": {
+                        "type": "string",
+                        "description": "Specific model of a vehicle."
+                    },
+                    "variantName": {
+                        "type": "string",
+                        "description": "Name of the vehicle variant."
+                    },
+                    "bodyStyle": {
+                        "type": "string",
+                        "description": "Body style of vehicle (example: Hatchback, Cabriolet)."
+                    },
+                    "driveType": {
+                        "type": "string",
+                        "description": "Drive type of vehicle(example: Rear wheel drive)."
+                    },
+                    "energy": {
+                        "type": "string",
+                        "description": "Energy Source for the vehicle(example: Petrol)"
+                    },
+                    "engineOutput": {
+                        "minItems": 1,
+                        "type": "array",
+                        "description": "Engine output of vehicle.",
+                        "items": {
+                            "$ref": "#/components/schemas/EngineOutput"
+                        }
+                    },
+                    "manufacturingStartDate": {
+                        "$ref": "#/components/schemas/MonthAndYear"
+                    },
+                    "manufacturingStopDate": {
+                        "$ref": "#/components/schemas/MonthAndYear"
+                    },
+                    "lastProcessedDate": {
+                        "type": "string",
+                        "description": "The date on which the vehicle was last updated, in ISO-8601 date/time format."
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/VehicleStatusInCatalog"
+                    },
+                    "identifiers": {
+                        "minItems": 1,
+                        "type": "array",
+                        "description": "Identifiers that can be used to identify the vehicle uniquely",
+                        "items": {
+                            "$ref": "#/components/schemas/VehicleIdentifiers"
+                        }
+                    }
+                },
+                "description": "Combinations of attributes and unique identifier that represents a vehicle in vehicle list."
+            },
+            "EngineOutput": {
+                "required": [
+                    "unit",
+                    "value"
+                ],
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "Engine power value in specified unit."
+                    },
+                    "unit": {
+                        "$ref": "#/components/schemas/EngineOutputUnit"
+                    }
+                },
+                "description": "Engine power output of vehicle."
+            },
+            "VehicleIdentifiers": {
+                "required": [
+                    "standard",
+                    "value"
+                ],
+                "type": "object",
+                "properties": {
+                    "standard": {
+                        "$ref": "#/components/schemas/VehicleStandard"
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "Id that can uniquely identify a vehicle based the vehicle identification standard."
+                    }
+                },
+                "description": "Combination of vehicle standard and id that can uniquely identify a vehicle from Amazon's catalog."
+            },
+            "VehicleStandard": {
+                "type": "string",
+                "description": "Standard followed to uniquely identify a vehicle.",
+                "enum": [
+                    "KTYPE",
+                    "AMAZON_ID"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "Unique vehicle identification standard as provided by TecDoc",
+                        "value": "KTYPE"
+                    },
+                    {
+                        "description": "Unique vehicle identification standard as provided by Amazon",
+                        "value": "AMAZON_ID"
+                    }
+                ]
+            },
+            "EngineOutputUnit": {
+                "type": "string",
+                "description": "Unit for measuring engine power.",
+                "enum": [
+                    "KILOWATT",
+                    "HORSEPOWER"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "KILOWATT",
+                        "description": "KILOWATT or kW is a unit used to measure engine power output."
+                    },
+                    {
+                        "value": "HORSEPOWER",
+                        "description": "HORSEPOWER or HP is a unit used to measure engine power output."
+                    }
+                ]
+            },
+            "ErrorList": {
+                "required": [
+                    "errors"
+                ],
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "description": "array of errors",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                },
+                "description": "A list of error responses returned when a request is unsuccessful."
+            },
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional details that can help the caller understand or fix the issue."
+                    }
+                },
+                "description": "Error response returned when the request is unsuccessful."
+            },
+            "MonthAndYear": {
+                "type": "object",
+                "properties": {
+                    "year": {
+                        "$ref": "#/components/schemas/Year"
+                    },
+                    "month": {
+                        "$ref": "#/components/schemas/Month"
+                    }
+                },
+                "description": "Represents a month in a specific year."
+            },
+            "Year": {
+                "pattern": "^[0-9]{4}$",
+                "type": "number",
+                "description": "Year in YYYY format",
+                "example": 2004
+            },
+            "Month": {
+                "pattern": "^(0?[1-9]|1[012])$",
+                "type": "number",
+                "description": "Month in MM format",
+                "example": 11
+            },
+            "VehicleStatusInCatalog": {
+                "type": "string",
+                "description": "Status of vehicle in Amazon's catalog.",
+                "enum": [
+                    "ACTIVE",
+                    "DELETED"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "Vehicle is active in Amazon's catalog.",
+                        "value": "ACTIVE"
+                    },
+                    {
+                        "description": "Vehicle is deleted from Amazon's catalog.",
+                        "value": "DELETED"
+                    }
+                ]
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

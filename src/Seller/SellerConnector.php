@@ -228,4 +228,9 @@ class SellerConnector extends SellingPartnerApi
     {
         return new UploadsV20201101\Api($this);
     }
+
+    public function vehiclesV20241101(): VehiclesV20241101\Api
+    {
+        return new VehiclesV20241101\Api($this);
+    }
 }

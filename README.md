@@ -391,6 +391,10 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
     ```php
     $uploadsApi = $sellerConnector->uploadsV20201101();
     ```
+* **Vehicles API (v2024-11-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vehicles-api-v2024-11-01-reference))
+    ```php
+    $vehiclesApi = $sellerConnector->vehiclesV20241101();
+    ```
 
 ### Vendor APIs
 

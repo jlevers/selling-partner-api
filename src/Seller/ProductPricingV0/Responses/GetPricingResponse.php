@@ -11,19 +11,19 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\ProductPricingV0\Responses;
 
 use SellingPartnerApi\Response;
-use SellingPartnerApi\Seller\ProductPricingV0\Dto\ErrorList;
+use SellingPartnerApi\Seller\ProductPricingV0\Dto\Error;
 use SellingPartnerApi\Seller\ProductPricingV0\Dto\Price;
 
 final class GetPricingResponse extends Response
 {
-    protected static array $complexArrayTypes = ['payload' => Price::class];
+    protected static array $complexArrayTypes = ['payload' => Price::class, 'errors' => Error::class];
 
     /**
      * @param  Price[]|null  $payload  The payload for the `getPricing` and `getCompetitivePricing` operations.
-     * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?array $payload = null,
-        public readonly ?ErrorList $errors = null,
+        public readonly ?array $errors = null,
     ) {}
 }

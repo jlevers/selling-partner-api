@@ -149,6 +149,34 @@
           "value": false
         }
       ]
+    },
+    "product-pricing": {
+      "0": [
+        {
+          "comment": "Error Response from Amazon for GetOffersResponse is an array",
+          "action": "replace",
+          "path": "components.schemas.ErrorList.type",
+          "value": "array"
+        },
+        {
+          "comment": "Error Response from Amazon for GetOffersResponse is an array",
+          "action": "replace",
+          "path": "components.schemas.ErrorList.items",
+          "value": {
+            "$ref": "#/components/schemas/Error"
+          }
+        },
+        {
+          "comment": "Remove unneded objects from ErrorList",
+          "action": "delete",
+          "path": "components.schemas.ErrorList.properties"
+        },
+        {
+          "comment": "Remove unneded objects from ErrorList",
+          "action": "delete",
+          "path": "components.schemas.ErrorList.required"
+        }
+      ]
     }
   }
 }

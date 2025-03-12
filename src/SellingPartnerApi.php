@@ -151,7 +151,6 @@ abstract class SellingPartnerApi extends Connector
         }
 
         // Using $this in closures doesn't work well
-        $dataElements = $this->dataElements;
         $delegatee = $this->delegatee;
         $tokensApi = $this->tokensApi;
         $authenticator = $this->getCacheableAuthenticator(

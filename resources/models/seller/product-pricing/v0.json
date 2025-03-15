@@ -8090,19 +8090,10 @@
                 "description": "Information about the seller's feedback, including the percentage of positive feedback, and the total number of ratings received."
             },
             "ErrorList": {
-                "required": [
-                    "errors"
-                ],
-                "type": "object",
+                "type": "array",
                 "description": "A list of error responses returned when a request is unsuccessful.",
-                "properties": {
-                    "errors": {
-                        "type": "array",
-                        "description": "A list of error responses returned when a request is unsuccessful.",
-                        "items": {
-                            "$ref": "#/components/schemas/Error"
-                        }
-                    }
+                "items": {
+                    "$ref": "#/components/schemas/Error"
                 }
             },
             "DetailedShippingTimeType": {

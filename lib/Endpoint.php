@@ -93,6 +93,8 @@ class Endpoint
             'A2NODRKZP88ZB9' => 'EU',
             // Turkey.
             'A33AVAJ2PDY3EV' => 'EU',
+            // Ireland.
+            'A28R8C7NBKEWEA' => 'EU',
             // Far East.
             // Singapore.
             'A19VAU5U5O7RUS' => 'FE',

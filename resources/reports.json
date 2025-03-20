@@ -1,4 +1,18 @@
 {
+  "GET_BRAND_ANALYTICS_SEARCH_CATALOG_PERFORMANCE_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_BRAND_ANALYTICS_SEARCH_QUERY_PERFORMANCE_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
   "GET_BRAND_ANALYTICS_MARKET_BASKET_REPORT": {
     "contentType": "application/json",
     "restricted": false,

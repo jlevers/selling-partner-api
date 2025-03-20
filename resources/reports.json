@@ -83,6 +83,13 @@
     "schedulable": false,
     "quoteEnclosure": false
   },
+  "GET_VENDOR_REAL_TIME_INVENTORY_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
   "GET_VENDOR_FORECASTING_REPORT": {
     "contentType": "application/json",
     "restricted": false,

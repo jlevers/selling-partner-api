@@ -23,9 +23,10 @@ class DocumentDownloadTest extends TestCase
 {
     private $mockClient;
 
-    private $mockDownloadResponseBody;
-
-    private $mockDownloadResponse;
+    private $mockDownloadResponseBody1;
+    private $mockDownloadResponseBody2;
+    private $mockDownloadResponse1;
+    private $mockDownloadResponse2;
 
     protected function setUp(): void
     {
@@ -36,7 +37,7 @@ class DocumentDownloadTest extends TestCase
     private function prepareMockData($realEncoding, $responseEnconding): void
     {
         $this->mockClient = new MockClient([
-            GetAccessTokenRequest::class => fn () => MockResponse::make([
+            GetAccessTokenRequest::class => fn() => MockResponse::make([
                 'access_token' => 'access-token',
                 'token_type' => 'bearer',
                 'expires_in' => 3600,
@@ -48,27 +49,42 @@ class DocumentDownloadTest extends TestCase
             ]),
         ]);
 
-        $this->mockDownloadResponseBody = Utils::streamFor(
+        $this->mockDownloadResponseBody1 = Utils::streamFor(
             fopen(
                 "./Tests/MockData/{$realEncoding}EncodedFile.txt",
                 'r+',
             ),
         );
-        $this->mockDownloadResponse = new Response(
+        $this->mockDownloadResponse1 = new Response(
             200,
             [
                 'Content-Type' => "text/tab-separated-values; charset={$responseEnconding}",
                 'host' => 'test.com',
             ],
-            $this->mockDownloadResponseBody,
+            $this->mockDownloadResponseBody1,
+        );
+
+        $this->mockDownloadResponseBody2 = Utils::streamFor(
+            fopen(
+                "./Tests/MockData/{$realEncoding}EncodedFile.txt",
+                'r+',
+            ),
+        );
+        $this->mockDownloadResponse2 = new Response(
+            200,
+            [
+                'Content-Type' => "text/tab-separated-values; charset={$responseEnconding}",
+                'host' => 'test.com',
+            ],
+            $this->mockDownloadResponseBody2,
         );
     }
 
-    public function test_document_download_c_p932(): void
+    public function test_document_download_cp932(): void
     {
         $this->prepareMockData('CP932', 'CP932');
 
-        $mockDownload = new MockHandler([$this->mockDownloadResponse, $this->mockDownloadResponse]);
+        $mockDownload = new MockHandler([$this->mockDownloadResponse1, $this->mockDownloadResponse2]);
         $stack = HandlerStack::create($mockDownload);
         $client = new HttpClient(['handler' => $stack]);
 
@@ -89,7 +105,6 @@ class DocumentDownloadTest extends TestCase
         $data = $docToDownload->download('GET_MERCHANT_LISTINGS_ALL_DATA', false, null, $client);
         $this->assertEquals('CP932', mb_detect_encoding($data, 'CP932, UTF-8', true));
         // Processed document data is UTF-8 encoded
-        $this->mockDownloadResponseBody->rewind();
         $data = $docToDownload->download('GET_MERCHANT_LISTINGS_ALL_DATA', true, null, $client);
         $this->assertArrayHasKey(0, $data);
         $this->assertArrayHasKey('Field1', $data[0]);
@@ -102,7 +117,7 @@ class DocumentDownloadTest extends TestCase
     {
         $this->prepareMockData('ISO-8859-1', 'CP1252');
 
-        $mockDownload = new MockHandler([$this->mockDownloadResponse, $this->mockDownloadResponse]);
+        $mockDownload = new MockHandler([$this->mockDownloadResponse1, $this->mockDownloadResponse2]);
         $stack = HandlerStack::create($mockDownload);
         $client = new HttpClient(['handler' => $stack]);
 
@@ -121,9 +136,8 @@ class DocumentDownloadTest extends TestCase
 
         // Unprocessed document data is ISO-8859-1 encoded
         $data = $docToDownload->download('GET_MERCHANT_LISTINGS_ALL_DATA', false, null, $client);
-        $this->assertEquals('ISO-8859-1', mb_detect_encoding($data, 'UTF-8, ISO-8859-1', true));
+        $this->assertEquals('ISO-8859-1', mb_detect_encoding($data, 'ISO-8859-1', true));
         // Processed document data is UTF-8 encoded
-        $this->mockDownloadResponseBody->rewind();
         $data = $docToDownload->download('GET_MERCHANT_LISTINGS_ALL_DATA', true, null, $client);
         $this->assertArrayHasKey(0, $data);
         $this->assertArrayHasKey('Field1', $data[0]);

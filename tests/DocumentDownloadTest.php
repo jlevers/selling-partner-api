@@ -51,7 +51,7 @@ class DocumentDownloadTest extends TestCase
 
         $this->mockDownloadResponseBody1 = Utils::streamFor(
             fopen(
-                "./Tests/MockData/{$realEncoding}EncodedFile.txt",
+                "./tests/MockData/{$realEncoding}EncodedFile.txt",
                 'r+',
             ),
         );
@@ -66,7 +66,7 @@ class DocumentDownloadTest extends TestCase
 
         $this->mockDownloadResponseBody2 = Utils::streamFor(
             fopen(
-                "./Tests/MockData/{$realEncoding}EncodedFile.txt",
+                "./tests/MockData/{$realEncoding}EncodedFile.txt",
                 'r+',
             ),
         );

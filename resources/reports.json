@@ -727,6 +727,13 @@
     "schedulable": false,
     "quoteEnclosure": false
   },
+  "GET_DATE_RANGE_FINANCIAL_TRANSACTION_DATA": {
+    "contentType": "text/csv",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
   "GET_GST_MTR_B2B_CUSTOM": {
     "contentType": "text/tab-separated-values",
     "restricted": true,

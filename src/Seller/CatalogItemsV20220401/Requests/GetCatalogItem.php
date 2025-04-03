@@ -26,9 +26,9 @@ class GetCatalogItem extends Request
 
     /**
      * @param  string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
-     * @param  array  $marketplaceIds  A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
-     * @param  ?array  $includedData  A comma-delimited list of data sets to include in the response. Default: `summaries`.
-     * @param  ?string  $locale  Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
+     * @param  array  $marketplaceIds  A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  ?array  $includedData  A comma-delimited list of datasets to include in the response.
+     * @param  ?string  $locale  The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace.
      */
     public function __construct(
         protected string $asin,

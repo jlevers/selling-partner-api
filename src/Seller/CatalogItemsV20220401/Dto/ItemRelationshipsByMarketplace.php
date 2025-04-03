@@ -17,7 +17,7 @@ final class ItemRelationshipsByMarketplace extends Dto
     protected static array $complexArrayTypes = ['relationships' => ItemRelationship::class];
 
     /**
-     * @param  string  $marketplaceId  Amazon marketplace identifier.
+     * @param  string  $marketplaceId  Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  ItemRelationship[]  $relationships  Relationships for the item.
      */
     public function __construct(

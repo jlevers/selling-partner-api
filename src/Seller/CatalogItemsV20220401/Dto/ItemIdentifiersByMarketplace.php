@@ -17,8 +17,8 @@ final class ItemIdentifiersByMarketplace extends Dto
     protected static array $complexArrayTypes = ['identifiers' => ItemIdentifier::class];
 
     /**
-     * @param  string  $marketplaceId  Amazon marketplace identifier.
-     * @param  ItemIdentifier[]  $identifiers  Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace.
+     * @param  string  $marketplaceId  Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).identifier.
+     * @param  ItemIdentifier[]  $identifiers  Identifiers associated with the item in the Amazon catalog for the indicated `marketplaceId`.
      */
     public function __construct(
         public string $marketplaceId,

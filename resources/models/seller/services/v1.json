@@ -3859,6 +3859,27 @@
                                             },
                                             "body": {
                                                 "value": {
+                                                    "estimatedArrivalTime": {
+                                                        "startTime": "2000-01-01T09:00:00.000Z",
+                                                        "endTime": "2000-01-01T09:30:00.000Z"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": ""
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "serviceJobId": {
+                                                "value": "validJobId-1-9cb9bc29-3d7d-5e49-5709-efb693t25687"
+                                            },
+                                            "appointmentId": {
+                                                "value": "validAppointmentId-1-9cb9bc29-3d7d-5e49-5709-efb693t25687_87b9d5f2-839d-y13e-sd4d-dae1c3996s3d"
+                                            },
+                                            "body": {
+                                                "value": {
                                                     "fulfillmentTime": {
                                                         "startTime": "2020-01-02T13:18:10.668Z",
                                                         "endTime": "2022-01-03T13:18:10.668Z"
@@ -4644,6 +4665,59 @@
                                         {
                                             "code": "InvalidInput",
                                             "message": "Appointment end time should be after start time. Please check the input again.",
+                                            "details": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "serviceJobId": {
+                                                "value": "validJobId-9cb9bc29-3d7d-5e49-5709-efb693d34468"
+                                            },
+                                            "appointmentId": {
+                                                "value": "validJobId-9cb9bc29-3d7d-5e49-5709-efb693d34468_00b9d5f2-839d-c13e-b8cd-dae1c3995b2a"
+                                            },
+                                            "body": {
+                                                "value": {
+                                                    "estimatedArrivalTime": {
+                                                        "startTime": "2021-01-01T10:00:00.000Z"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": [
+                                        {
+                                            "code": "InvalidInput",
+                                            "message": "Failed to process input. Reason: ETA start and end time both are mandatory field as part of estimatedArrivalTime object. Please check the input again",
+                                            "details": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "serviceJobId": {
+                                                "value": "validJobId-9cb9bc29-3d7d-5e49-5709-efb693d34468"
+                                            },
+                                            "appointmentId": {
+                                                "value": "validJobId-9cb9bc29-3d7d-5e49-5709-efb693d34468_00b9d5f2-839d-c13e-b8cd-dae1c3995b2a"
+                                            },
+                                            "body": {
+                                                "value": {
+                                                    "estimatedArrivalTime": {
+                                                        "startTime": "2021-01-01T10-00:00.000Z",
+                                                        "endTime": "2000-01-01T10:30:00.000Z"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": [
+                                        {
+                                            "code": "InvalidInput",
+                                            "message": "Could not parse given time input 2021-01-01T10-00:00.000Z. Please provide time in ISO8601 format",
                                             "details": ""
                                         }
                                     ]
@@ -9898,6 +9972,9 @@
             "SetAppointmentFulfillmentDataRequest": {
                 "type": "object",
                 "properties": {
+                    "estimatedArrivalTime": {
+                        "$ref": "#/components/schemas/DateTimeRange"
+                    },
                     "fulfillmentTime": {
                         "$ref": "#/components/schemas/FulfillmentTime"
                     },
@@ -9925,6 +10002,26 @@
                     }
                 },
                 "description": "Input for fulfillment time details"
+            },
+            "DateTimeRange": {
+                "required": [
+                    "endTime",
+                    "startTime"
+                ],
+                "type": "object",
+                "properties": {
+                    "startTime": {
+                        "type": "string",
+                        "description": "The beginning of the time range. Must be in UTC in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
+                        "format": "date-time"
+                    },
+                    "endTime": {
+                        "type": "string",
+                        "description": "The end of the time range. Must be in UTC in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
+                        "format": "date-time"
+                    }
+                },
+                "description": "A range of time."
             },
             "FulfillmentDocuments": {
                 "type": "array",

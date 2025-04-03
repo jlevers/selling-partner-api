@@ -36,17 +36,17 @@ final class Item extends Response
     ];
 
     /**
-     * @param  string  $asin  Amazon Standard Identification Number (ASIN) is the unique identifier for an item in the Amazon catalog.
-     * @param  ?mixed[]  $attributes  A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
-     * @param  ItemBrowseClassificationsByMarketplace[]|null  $classifications  Array of classifications (browse nodes) associated with the item in the Amazon catalog by Amazon marketplace.
-     * @param  ItemDimensionsByMarketplace[]|null  $dimensions  Array of dimensions associated with the item in the Amazon catalog by Amazon marketplace.
+     * @param  string  $asin  The unique identifier of an item in the Amazon catalog.
+     * @param  ?mixed[]  $attributes  A JSON object containing structured item attribute data that is keyed by attribute name. Catalog item attributes conform to the related Amazon product type definitions that you can get from the [Product Type Definitions API](https://developer-docs.amazon.com/sp-api/docs/product-type-definitions-api-v2020-09-01-reference).
+     * @param  ItemBrowseClassificationsByMarketplace[]|null  $classifications  An array of classifications (browse nodes) that is associated with the item in the Amazon catalog, grouped by `marketplaceId`.
+     * @param  ItemDimensionsByMarketplace[]|null  $dimensions  An array of dimensions that are associated with the item in the Amazon catalog, grouped by `marketplaceId`.
      * @param  ItemIdentifiersByMarketplace[]|null  $identifiers  Identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers.
-     * @param  ItemImagesByMarketplace[]|null  $images  Images for an item in the Amazon catalog.
-     * @param  ItemProductTypeByMarketplace[]|null  $productTypes  Product types associated with the Amazon catalog item.
-     * @param  ItemRelationshipsByMarketplace[]|null  $relationships  Relationships by marketplace for an Amazon catalog item (for example, variations).
+     * @param  ItemImagesByMarketplace[]|null  $images  The images for an item in the Amazon catalog.
+     * @param  ItemProductTypeByMarketplace[]|null  $productTypes  Product types that are associated with the Amazon catalog item.
+     * @param  ItemRelationshipsByMarketplace[]|null  $relationships  Relationships grouped by `marketplaceId` for an Amazon catalog item (for example, variations).
      * @param  ItemSalesRanksByMarketplace[]|null  $salesRanks  Sales ranks of an Amazon catalog item.
-     * @param  ItemSummaryByMarketplace[]|null  $summaries  Summary details of an Amazon catalog item.
-     * @param  ItemVendorDetailsByMarketplace[]|null  $vendorDetails  Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only.
+     * @param  ItemSummaryByMarketplace[]|null  $summaries  Summaries of Amazon catalog items.
+     * @param  ItemVendorDetailsByMarketplace[]|null  $vendorDetails  The vendor details that are associated with an Amazon catalog item. Vendor details are only available to vendors.
      */
     public function __construct(
         public readonly string $asin,

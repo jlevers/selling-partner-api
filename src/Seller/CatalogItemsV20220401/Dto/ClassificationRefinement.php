@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class ClassificationRefinement extends Dto
 {
     /**
-     * @param  int  $numberOfResults  The estimated number of results that would still be returned if refinement key applied.
+     * @param  int  $numberOfResults  The estimated number of results that would be returned if you refine your search by the specified `classificationId`.
      * @param  string  $displayName  Display name for the classification.
-     * @param  string  $classificationId  Identifier for the classification that can be used for search refinement purposes.
+     * @param  string  $classificationId  The identifier of the classification that you can use to refine your search.
      */
     public function __construct(
         public int $numberOfResults,

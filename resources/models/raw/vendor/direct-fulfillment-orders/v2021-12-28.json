@@ -1495,7 +1495,7 @@
                         ]
                     }
                 },
-                "description": "The tax details related to the order."
+                "description": "The tax details for the order.\n_Note:_ Amazon calculates tax on the list price (Amazon retail price)."
             },
             "AcknowledgementStatus": {
                 "type": "object",

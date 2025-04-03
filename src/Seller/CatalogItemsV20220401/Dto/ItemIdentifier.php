@@ -16,7 +16,7 @@ final class ItemIdentifier extends Dto
 {
     /**
      * @param  string  $identifierType  Type of identifier, such as UPC, EAN, or ISBN.
-     * @param  string  $identifier  Identifier.
+     * @param  string  $identifier  Identifier of the item.
      */
     public function __construct(
         public string $identifierType,

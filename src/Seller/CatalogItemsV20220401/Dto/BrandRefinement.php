@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class BrandRefinement extends Dto
 {
     /**
-     * @param  int  $numberOfResults  The estimated number of results that would still be returned if refinement key applied.
-     * @param  string  $brandName  Brand name. For display and can be used as a search refinement.
+     * @param  int  $numberOfResults  The estimated number of results that would be returned if you refine your search by the specified `brandName`.
+     * @param  string  $brandName  The brand name that you can use to refine your search.
      */
     public function __construct(
         public int $numberOfResults,

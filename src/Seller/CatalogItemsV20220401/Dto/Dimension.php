@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class Dimension extends Dto
 {
     /**
-     * @param  ?string  $unit  Measurement unit of the dimension value.
-     * @param  ?float  $value  Numeric dimension value.
+     * @param  ?string  $unit  Unit of measurement for the dimension value.
+     * @param  ?float  $value  Numeric value of the dimension.
      */
     public function __construct(
         public ?string $unit = null,

@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Selling Partner API for Easy Ship",
-        "description": "The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders.\n\nYour Easy Ship applications can:\n\n* Get available time slots for packages to be scheduled for delivery.\n\n* Schedule, reschedule, and cancel Easy Ship orders.\n\n* Print labels, invoices, and warranties.\n\nSee the [Marketplace Support Table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) for the differences in Easy Ship operations by marketplace.",
+        "description": "Use the Selling Partner API for Easy Ship to build applications for sellers to manage and ship Amazon Easy Ship orders. With this API, you can get available time slots, schedule and reschedule Easy Ship orders, and print shipping labels, invoices, and warranties. To review the differences in Easy Ship operations by marketplace, refer to [Marketplace support](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support).",
         "contact": {
             "name": "Selling Partner API Developer Support",
             "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
@@ -2316,6 +2316,69 @@
                     }
                 },
                 "description": "Error response returned when the request is unsuccessful."
+            },
+            "Code": {
+                "type": "string",
+                "description": "An error code that identifies the type of error that occurred. The error codes listed below are specific to the Easy Ship section.",
+                "enum": [
+                    "InvalidInput",
+                    "InvalidTimeSlotId",
+                    "ScheduledPackageAlreadyExists",
+                    "ScheduleWindowExpired",
+                    "RetryableAfterGettingNewSlots",
+                    "TimeSlotNotAvailable",
+                    "ResourceNotFound",
+                    "InvalidOrderState",
+                    "RegionNotSupported",
+                    "OrderNotEligibleForRescheduling",
+                    "InternalServerError"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "InvalidInput",
+                        "description": "HTTP status code 400. Request has missing or invalid parameters and cannot be processed."
+                    },
+                    {
+                        "value": "InvalidTimeSlotId",
+                        "description": "HTTP status code 400. The specified time slot identifier is not valid."
+                    },
+                    {
+                        "value": "ScheduledPackageAlreadyExists",
+                        "description": "HTTP status code 400. The order has already been scheduled."
+                    },
+                    {
+                        "value": "ScheduleWindowExpired",
+                        "description": "HTTP status code 400. The selected time slot has expired. Try calling `listHandoverSlots` again to get a new time slot."
+                    },
+                    {
+                        "value": "RetryableAfterGettingNewSlots",
+                        "description": "HTTP status code 400. Order scheduling has failed because of an issue with the selected time slot. If you see this error, request a new time slot and try to schedule again."
+                    },
+                    {
+                        "value": "TimeSlotNotAvailable",
+                        "description": "HTTP status code 404. No time slot is available due to various factors such as: invalid weight and dimension parameters, or the available slots are only available after the expected cancellation date."
+                    },
+                    {
+                        "value": "ResourceNotFound",
+                        "description": "HTTP status code 404. The specified resource (for example, `amazonOrderId` or `marketplaceId`) does not exist."
+                    },
+                    {
+                        "value": "InvalidOrderState",
+                        "description": "HTTP status code 404. The request cannot be applied to the order in its current state. For example, you cannot cancel an order which has not yet been scheduled or which has already been canceled."
+                    },
+                    {
+                        "value": "RegionNotSupported",
+                        "description": "HTTP status code 404. Amazon Easy Ship is not supported in the specified marketplace."
+                    },
+                    {
+                        "value": "OrderNotEligibleForRescheduling",
+                        "description": "HTTP status code 405. Order is not eligible for rescheduling."
+                    },
+                    {
+                        "value": "InternalServerError",
+                        "description": "HTTP status code 500. There was an internal service failure."
+                    }
+                ]
             }
         }
     },

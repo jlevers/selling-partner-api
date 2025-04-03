@@ -15,10 +15,10 @@ use SellingPartnerApi\Dto;
 final class ItemDisplayGroupSalesRank extends Dto
 {
     /**
-     * @param  string  $websiteDisplayGroup  Name of the website display group associated with the sales rank
-     * @param  string  $title  Title, or name, of the sales rank.
-     * @param  int  $rank  Sales rank value.
-     * @param  ?string  $link  Corresponding Amazon retail website link, or URL, for the sales rank.
+     * @param  string  $websiteDisplayGroup  Name of the website display group that is associated with the sales rank
+     * @param  string  $title  Name of the sales rank.
+     * @param  int  $rank  Sales rank.
+     * @param  ?string  $link  Corresponding Amazon retail website URL for the sales rank.
      */
     public function __construct(
         public string $websiteDisplayGroup,

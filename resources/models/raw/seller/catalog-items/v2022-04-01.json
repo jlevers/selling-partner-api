@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Selling Partner API for Catalog Items",
-        "description": "The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.\n\nFor more information, refer to the [Catalog Items API Use Case Guide](doc:catalog-items-api-v2022-04-01-use-case-guide).",
+        "description": "Use the Selling Partner API for Catalog Items to retrieve information about items in the Amazon catalog.\n\nFor more information, refer to the [Catalog Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/:catalog-items-api-v2022-04-01-use-case-guide).",
         "contact": {
             "name": "Selling Partner API Developer Support",
             "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
@@ -24,13 +24,13 @@
                 "tags": [
                     "catalog"
                 ],
-                "description": "Search for and return a list of Amazon catalog items and associated information either by identifier or by keywords.\n\n**Usage Plans:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Search for a list of Amazon catalog items and item-related information. You can search by identifier or by keywords.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "searchCatalogItems",
                 "parameters": [
                     {
                         "name": "identifiers",
                         "in": "query",
-                        "description": "A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with `keywords`.",
+                        "description": "A comma-delimited list of product identifiers that you can use to search the Amazon catalog. **Note:** You cannot include `identifiers` and `keywords` in the same request.",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -45,7 +45,7 @@
                     {
                         "name": "identifiersType",
                         "in": "query",
-                        "description": "Type of product identifiers to search the Amazon catalog for. **Note:** Required when `identifiers` are provided.",
+                        "description": "The type of product identifiers that you can use to search the Amazon catalog. **Note:** `identifiersType` is required when `identifiers` is in the request.",
                         "schema": {
                             "type": "string",
                             "enum": [
@@ -61,27 +61,27 @@
                             "x-docgen-enum-table-extension": [
                                 {
                                     "value": "ASIN",
-                                    "description": "Amazon Standard Identification Number."
+                                    "description": "Amazon Standard Identification Number"
                                 },
                                 {
                                     "value": "EAN",
-                                    "description": "European Article Number."
+                                    "description": "European Article Number"
                                 },
                                 {
                                     "value": "GTIN",
-                                    "description": "Global Trade Item Number."
+                                    "description": "Global Trade Item Number"
                                 },
                                 {
                                     "value": "ISBN",
-                                    "description": "International Standard Book Number."
+                                    "description": "International Standard Book Number"
                                 },
                                 {
                                     "value": "JAN",
-                                    "description": "Japanese Article Number."
+                                    "description": "Japanese Article Number"
                                 },
                                 {
                                     "value": "MINSAN",
-                                    "description": "Minsan Code."
+                                    "description": "Minsan Code"
                                 },
                                 {
                                     "value": "SKU",
@@ -89,7 +89,7 @@
                                 },
                                 {
                                     "value": "UPC",
-                                    "description": "Universal Product Code."
+                                    "description": "Universal Product Code"
                                 }
                             ]
                         },
@@ -97,27 +97,27 @@
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "ASIN",
-                                "description": "Amazon Standard Identification Number."
+                                "description": "Amazon Standard Identification Number"
                             },
                             {
                                 "value": "EAN",
-                                "description": "European Article Number."
+                                "description": "European Article Number"
                             },
                             {
                                 "value": "GTIN",
-                                "description": "Global Trade Item Number."
+                                "description": "Global Trade Item Number"
                             },
                             {
                                 "value": "ISBN",
-                                "description": "International Standard Book Number."
+                                "description": "International Standard Book Number"
                             },
                             {
                                 "value": "JAN",
-                                "description": "Japanese Article Number."
+                                "description": "Japanese Article Number"
                             },
                             {
                                 "value": "MINSAN",
-                                "description": "Minsan Code."
+                                "description": "Minsan Code"
                             },
                             {
                                 "value": "SKU",
@@ -125,14 +125,14 @@
                             },
                             {
                                 "value": "UPC",
-                                "description": "Universal Product Code."
+                                "description": "Universal Product Code"
                             }
                         ]
                     },
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A comma-delimited list of Amazon marketplace identifiers for the request.",
+                        "description": "A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -148,7 +148,7 @@
                     {
                         "name": "includedData",
                         "in": "query",
-                        "description": "A comma-delimited list of data sets to include in the response. Default: `summaries`.",
+                        "description": "A comma-delimited list of datasets to include in the response.",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -170,7 +170,7 @@
                                 "x-docgen-enum-table-extension": [
                                     {
                                         "value": "attributes",
-                                        "description": "A JSON object containing structured item attribute data keyed by attribute name. Catalog item attributes conform to the related Amazon product type definitions available in the Selling Partner API for Product Type Definitions."
+                                        "description": "A JSON object containing structured item attribute data that is keyed by attribute name. Catalog item attributes conform to the related Amazon product type definitions that you can get from the [Product Type Definitions API](https://developer-docs.amazon.com/sp-api/docs/product-type-definitions-api-v2020-09-01-reference)."
                                     },
                                     {
                                         "value": "classifications",
@@ -178,11 +178,11 @@
                                     },
                                     {
                                         "value": "dimensions",
-                                        "description": "Dimensions for an item in the Amazon catalog."
+                                        "description": "Dimensions of an item in the Amazon catalog."
                                     },
                                     {
                                         "value": "identifiers",
-                                        "description": "Identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers."
+                                        "description": "Identifiers that are associated with the item in the Amazon catalog, such as UPC and EAN."
                                     },
                                     {
                                         "value": "images",
@@ -202,11 +202,11 @@
                                     },
                                     {
                                         "value": "summaries",
-                                        "description": "Summary details of an Amazon catalog item. Refer to the `attributes` of an Amazon catalog item for more details."
+                                        "description": "Summary of an Amazon catalog item. For more information, refer to the `attributes` of an Amazon catalog item."
                                     },
                                     {
                                         "value": "vendorDetails",
-                                        "description": "Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only."
+                                        "description": "Vendor details associated with an Amazon catalog item. Vendor details are only available to vendors."
                                     }
                                 ]
                             },
@@ -217,7 +217,7 @@
                     {
                         "name": "locale",
                         "in": "query",
-                        "description": "Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.",
+                        "description": "The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace.",
                         "schema": {
                             "type": "string"
                         },
@@ -234,7 +234,7 @@
                     {
                         "name": "keywords",
                         "in": "query",
-                        "description": "A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with `identifiers`.",
+                        "description": "A comma-delimited list of keywords that you can use to search the Amazon catalog. **Note:** You cannot include `keywords` and `identifiers` in the same request.",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -249,7 +249,7 @@
                     {
                         "name": "brandNames",
                         "in": "query",
-                        "description": "A comma-delimited list of brand names to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`.",
+                        "description": "A comma-delimited list of brand names that you can use to limit the search in queries based on `keywords`. **Note:** Cannot be used with `identifiers`.",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -263,7 +263,7 @@
                     {
                         "name": "classificationIds",
                         "in": "query",
-                        "description": "A comma-delimited list of classification identifiers to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`.",
+                        "description": "A comma-delimited list of classification identifiers that you can use to limit the search in queries based on `keywords`. **Note:** Cannot be used with `identifiers`.",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -277,7 +277,7 @@
                     {
                         "name": "pageSize",
                         "in": "query",
-                        "description": "Number of results to be returned per page.",
+                        "description": "The number of results to include on each page.",
                         "schema": {
                             "maximum": 20,
                             "type": "integer",
@@ -288,7 +288,7 @@
                     {
                         "name": "pageToken",
                         "in": "query",
-                        "description": "A token to fetch a certain page when there are multiple pages worth of results.",
+                        "description": "A token that you can use to fetch a specific page when there are multiple pages of results.",
                         "schema": {
                             "type": "string"
                         },
@@ -297,7 +297,7 @@
                     {
                         "name": "keywordsLocale",
                         "in": "query",
-                        "description": "The language of the keywords provided for `keywords`-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with `identifiers`.",
+                        "description": "The language of the keywords that are included in queries based on `keywords`. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with `identifiers`.",
                         "schema": {
                             "type": "string"
                         },
@@ -1768,7 +1768,7 @@
                 "tags": [
                     "catalog"
                 ],
-                "description": "Retrieves details for an item in the Amazon catalog.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 2 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to the [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Retrieves details for an item in the Amazon catalog.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getCatalogItem",
                 "parameters": [
                     {
@@ -1783,7 +1783,7 @@
                     {
                         "name": "marketplaceIds",
                         "in": "query",
-                        "description": "A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.",
+                        "description": "A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
                         "required": true,
                         "style": "form",
                         "explode": false,
@@ -1798,7 +1798,7 @@
                     {
                         "name": "includedData",
                         "in": "query",
-                        "description": "A comma-delimited list of data sets to include in the response. Default: `summaries`.",
+                        "description": "A comma-delimited list of datasets to include in the response.",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -1820,7 +1820,7 @@
                                 "x-docgen-enum-table-extension": [
                                     {
                                         "value": "attributes",
-                                        "description": "A JSON object containing structured item attribute data keyed by attribute name. Catalog item attributes conform to the related Amazon product type definitions available in the Selling Partner API for Product Type Definitions."
+                                        "description": "A JSON object containing structured item attribute data that is keyed by attribute name. Catalog item attributes conform to the related Amazon product type definitions that you can get from the [Product Type Definitions API](https://developer-docs.amazon.com/sp-api/docs/product-type-definitions-api-v2020-09-01-reference)."
                                     },
                                     {
                                         "value": "classifications",
@@ -1828,11 +1828,11 @@
                                     },
                                     {
                                         "value": "dimensions",
-                                        "description": "Dimensions for an item in the Amazon catalog."
+                                        "description": "Dimensions of an item in the Amazon catalog."
                                     },
                                     {
                                         "value": "identifiers",
-                                        "description": "Identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers."
+                                        "description": "Identifiers that are associated with the item in the Amazon catalog, such as UPC and EA."
                                     },
                                     {
                                         "value": "images",
@@ -1848,7 +1848,7 @@
                                     },
                                     {
                                         "value": "summaries",
-                                        "description": "Summary details of an Amazon catalog item. Refer to the \"attributes\" of an Amazon catalog item for more details."
+                                        "description": "Summary of an Amazon catalog item. For more information, refer to the `attributes` of an Amazon catalog item."
                                     },
                                     {
                                         "value": "relationships",
@@ -1856,7 +1856,7 @@
                                     },
                                     {
                                         "value": "vendorDetails",
-                                        "description": "Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only."
+                                        "description": "Vendor details associated with an Amazon catalog item. Vendor details are only available to vendors."
                                     }
                                 ]
                             },
@@ -1867,7 +1867,7 @@
                     {
                         "name": "locale",
                         "in": "query",
-                        "description": "Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.",
+                        "description": "The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace.",
                         "schema": {
                             "type": "string"
                         },
@@ -3366,12 +3366,12 @@
             },
             "ItemAsin": {
                 "type": "string",
-                "description": "Amazon Standard Identification Number (ASIN) is the unique identifier for an item in the Amazon catalog."
+                "description": "The unique identifier of an item in the Amazon catalog."
             },
             "ItemAttributes": {
                 "type": "object",
                 "additionalProperties": true,
-                "description": "A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions."
+                "description": "A JSON object containing structured item attribute data that is keyed by attribute name. Catalog item attributes conform to the related Amazon product type definitions that you can get from the [Product Type Definitions API](https://developer-docs.amazon.com/sp-api/docs/product-type-definitions-api-v2020-09-01-reference)."
             },
             "ItemBrowseClassification": {
                 "required": [
@@ -3382,17 +3382,17 @@
                 "properties": {
                     "displayName": {
                         "type": "string",
-                        "description": "Display name for the classification (browse node)."
+                        "description": "Display name for the classification."
                     },
                     "classificationId": {
                         "type": "string",
-                        "description": "Identifier of the classification (browse node identifier)."
+                        "description": "Identifier of the classification."
                     },
                     "parent": {
                         "$ref": "#/components/schemas/ItemBrowseClassification"
                     }
                 },
-                "description": "Classification (browse node) associated with an Amazon catalog item."
+                "description": "Classification (browse node) for an Amazon catalog item."
             },
             "ItemContributor": {
                 "required": [
@@ -3406,7 +3406,7 @@
                     },
                     "value": {
                         "type": "string",
-                        "description": "Name of the contributor, such as Jane Austen."
+                        "description": "Name of the contributor, such as `Jane Austen`."
                     }
                 },
                 "description": "Individual contributor to the creation of an item, such as an author or actor."
@@ -3419,18 +3419,18 @@
                 "properties": {
                     "displayName": {
                         "type": "string",
-                        "description": "Display name of the role in the requested locale, such as Author or Actor."
+                        "description": "Display name of the role in the requested locale, such as `Author` or `Actor`."
                     },
                     "value": {
                         "type": "string",
-                        "description": "Role value for the Amazon catalog item, such as author or actor."
+                        "description": "Role value for the Amazon catalog item, such as `author` or `actor`."
                     }
                 },
                 "description": "Role of an individual contributor in the creation of an item, such as author or actor."
             },
             "ItemBrowseClassifications": {
                 "type": "array",
-                "description": "Array of classifications (browse nodes) associated with the item in the Amazon catalog by Amazon marketplace.",
+                "description": "An array of classifications (browse nodes) that is associated with the item in the Amazon catalog, grouped by `marketplaceId`.",
                 "items": {
                     "$ref": "#/components/schemas/ItemBrowseClassificationsByMarketplace"
                 }
@@ -3443,31 +3443,31 @@
                 "properties": {
                     "marketplaceId": {
                         "type": "string",
-                        "description": "Amazon marketplace identifier."
+                        "description": "Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
                     },
                     "classifications": {
                         "type": "array",
-                        "description": "Classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace.",
+                        "description": "Classifications (browse nodes) that are associated with the item in the Amazon catalog.",
                         "items": {
                             "$ref": "#/components/schemas/ItemBrowseClassification"
                         }
                     }
                 },
-                "description": "Classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace."
+                "description": "Classifications (browse nodes) that are associated with the item in the Amazon catalog for the indicated `marketplaceId`."
             },
             "Dimension": {
                 "type": "object",
                 "properties": {
                     "unit": {
                         "type": "string",
-                        "description": "Measurement unit of the dimension value."
+                        "description": "Unit of measurement for the dimension value."
                     },
                     "value": {
                         "type": "number",
-                        "description": "Numeric dimension value."
+                        "description": "Numeric value of the dimension."
                     }
                 },
-                "description": "Individual dimension value of an Amazon catalog item or item package."
+                "description": "The value of an individual dimension for an Amazon catalog item or item package."
             },
             "Dimensions": {
                 "type": "object",
@@ -3489,7 +3489,7 @@
             },
             "ItemDimensions": {
                 "type": "array",
-                "description": "Array of dimensions associated with the item in the Amazon catalog by Amazon marketplace.",
+                "description": "An array of dimensions that are associated with the item in the Amazon catalog, grouped by `marketplaceId`.",
                 "items": {
                     "$ref": "#/components/schemas/ItemDimensionsByMarketplace"
                 }
@@ -3502,7 +3502,7 @@
                 "properties": {
                     "marketplaceId": {
                         "type": "string",
-                        "description": "Amazon marketplace identifier."
+                        "description": "Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
                     },
                     "item": {
                         "$ref": "#/components/schemas/Dimensions"
@@ -3511,7 +3511,7 @@
                         "$ref": "#/components/schemas/Dimensions"
                     }
                 },
-                "description": "Dimensions associated with the item in the Amazon catalog for the indicated Amazon marketplace."
+                "description": "Dimensions that are associated with the item in the Amazon catalog for the indicated `marketplaceId`."
             },
             "ItemIdentifiers": {
                 "type": "array",
@@ -3529,17 +3529,17 @@
                 "properties": {
                     "marketplaceId": {
                         "type": "string",
-                        "description": "Amazon marketplace identifier."
+                        "description": "Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).identifier."
                     },
                     "identifiers": {
                         "type": "array",
-                        "description": "Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace.",
+                        "description": "Identifiers associated with the item in the Amazon catalog for the indicated `marketplaceId`.",
                         "items": {
                             "$ref": "#/components/schemas/ItemIdentifier"
                         }
                     }
                 },
-                "description": "Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace."
+                "description": "Identifiers that are associated with the item in the Amazon catalog, grouped by `marketplaceId`."
             },
             "ItemIdentifier": {
                 "required": [
@@ -3554,14 +3554,14 @@
                     },
                     "identifier": {
                         "type": "string",
-                        "description": "Identifier."
+                        "description": "Identifier of the item."
                     }
                 },
-                "description": "Identifier associated with the item in the Amazon catalog, such as a UPC or EAN identifier."
+                "description": "The identifier that is associated with the item in the Amazon catalog, such as a UPC or EAN identifier."
             },
             "ItemImages": {
                 "type": "array",
-                "description": "Images for an item in the Amazon catalog.",
+                "description": "The images for an item in the Amazon catalog.",
                 "items": {
                     "$ref": "#/components/schemas/ItemImagesByMarketplace"
                 }
@@ -3575,17 +3575,17 @@
                 "properties": {
                     "marketplaceId": {
                         "type": "string",
-                        "description": "Amazon marketplace identifier."
+                        "description": "Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
                     },
                     "images": {
                         "type": "array",
-                        "description": "Images for an item in the Amazon catalog for the indicated Amazon marketplace.",
+                        "description": "Images for an item in the Amazon catalog, grouped by `marketplaceId`.",
                         "items": {
                             "$ref": "#/components/schemas/ItemImage"
                         }
                     }
                 },
-                "description": "Images for an item in the Amazon catalog for the indicated Amazon marketplace."
+                "description": "Images for an item in the Amazon catalog, grouped by `marketplaceId`."
             },
             "ItemImage": {
                 "required": [
@@ -3615,49 +3615,49 @@
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "MAIN",
-                                "description": "Main image for the item."
+                                "description": "Main image for the item"
                             },
                             {
                                 "value": "PT01",
-                                "description": "Other image #1 for the item."
+                                "description": "Other image #1 for the item"
                             },
                             {
                                 "value": "PT02",
-                                "description": "Other image #2 for the item."
+                                "description": "Other image #2 for the item"
                             },
                             {
                                 "value": "PT03",
-                                "description": "Other image #3 for the item."
+                                "description": "Other image #3 for the item"
                             },
                             {
                                 "value": "PT04",
-                                "description": "Other image #4 for the item."
+                                "description": "Other image #4 for the item"
                             },
                             {
                                 "value": "PT05",
-                                "description": "Other image #5 for the item."
+                                "description": "Other image #5 for the item"
                             },
                             {
                                 "value": "PT06",
-                                "description": "Other image #6 for the item."
+                                "description": "Other image #6 for the item"
                             },
                             {
                                 "value": "PT07",
-                                "description": "Other image #7 for the item."
+                                "description": "Other image #7 for the item"
                             },
                             {
                                 "value": "PT08",
-                                "description": "Other image #8 for the item."
+                                "description": "Other image #8 for the item"
                             },
                             {
                                 "value": "SWCH",
-                                "description": "Swatch image for the item."
+                                "description": "Swatch image for the item"
                             }
                         ]
                     },
                     "link": {
                         "type": "string",
-                        "description": "Link, or URL, for the image."
+                        "description": "URL for the image."
                     },
                     "height": {
                         "type": "integer",
@@ -3672,7 +3672,7 @@
             },
             "ItemProductTypes": {
                 "type": "array",
-                "description": "Product types associated with the Amazon catalog item.",
+                "description": "Product types that are associated with the Amazon catalog item.",
                 "items": {
                     "$ref": "#/components/schemas/ItemProductTypeByMarketplace"
                 }
@@ -3682,15 +3682,15 @@
                 "properties": {
                     "marketplaceId": {
                         "type": "string",
-                        "description": "Amazon marketplace identifier."
+                        "description": "Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
                     },
                     "productType": {
                         "type": "string",
-                        "description": "Name of the product type associated with the Amazon catalog item.",
+                        "description": "Name of the product type that is associated with the Amazon catalog item.",
                         "example": "LUGGAGE"
                     }
                 },
-                "description": "Product type associated with the Amazon catalog item for the indicated Amazon marketplace."
+                "description": "Product type that is associated with the Amazon catalog item, grouped by `marketplaceId`."
             },
             "ItemSalesRanks": {
                 "type": "array",
@@ -3707,24 +3707,24 @@
                 "properties": {
                     "marketplaceId": {
                         "type": "string",
-                        "description": "Amazon marketplace identifier."
+                        "description": "Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
                     },
                     "classificationRanks": {
                         "type": "array",
-                        "description": "Sales ranks of an Amazon catalog item for an Amazon marketplace by classification.",
+                        "description": "Sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by classification.",
                         "items": {
                             "$ref": "#/components/schemas/ItemClassificationSalesRank"
                         }
                     },
                     "displayGroupRanks": {
                         "type": "array",
-                        "description": "Sales ranks of an Amazon catalog item for an Amazon marketplace by website display group.",
+                        "description": "Sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by website display group.",
                         "items": {
                             "$ref": "#/components/schemas/ItemDisplayGroupSalesRank"
                         }
                     }
                 },
-                "description": "Sales ranks of an Amazon catalog item for the indicated Amazon marketplace."
+                "description": "Sales ranks of an Amazon catalog item, grouped by `marketplaceId`."
             },
             "ItemClassificationSalesRank": {
                 "required": [
@@ -3736,22 +3736,22 @@
                 "properties": {
                     "classificationId": {
                         "type": "string",
-                        "description": "Identifier of the classification associated with the sales rank."
+                        "description": "Identifier of the classification that is associated with the sales rank."
                     },
                     "title": {
                         "type": "string",
-                        "description": "Title, or name, of the sales rank."
+                        "description": "Name of the sales rank."
                     },
                     "link": {
                         "type": "string",
-                        "description": "Corresponding Amazon retail website link, or URL, for the sales rank."
+                        "description": "Corresponding Amazon retail website URL for the sales category."
                     },
                     "rank": {
                         "type": "integer",
-                        "description": "Sales rank value."
+                        "description": "Sales rank."
                     }
                 },
-                "description": "Sales rank of an Amazon catalog item by classification."
+                "description": "Sales rank of an Amazon catalog item."
             },
             "ItemDisplayGroupSalesRank": {
                 "required": [
@@ -3763,26 +3763,26 @@
                 "properties": {
                     "websiteDisplayGroup": {
                         "type": "string",
-                        "description": "Name of the website display group associated with the sales rank"
+                        "description": "Name of the website display group that is associated with the sales rank"
                     },
                     "title": {
                         "type": "string",
-                        "description": "Title, or name, of the sales rank."
+                        "description": "Name of the sales rank."
                     },
                     "link": {
                         "type": "string",
-                        "description": "Corresponding Amazon retail website link, or URL, for the sales rank."
+                        "description": "Corresponding Amazon retail website URL for the sales rank."
                     },
                     "rank": {
                         "type": "integer",
-                        "description": "Sales rank value."
+                        "description": "Sales rank."
                     }
                 },
-                "description": "Sales rank of an Amazon catalog item by website display group."
+                "description": "Sales rank of an Amazon catalog item, grouped by website display group."
             },
             "ItemSummaries": {
                 "type": "array",
-                "description": "Summary details of an Amazon catalog item.",
+                "description": "Summaries of Amazon catalog items.",
                 "items": {
                     "$ref": "#/components/schemas/ItemSummaryByMarketplace"
                 }
@@ -3795,37 +3795,37 @@
                 "properties": {
                     "marketplaceId": {
                         "type": "string",
-                        "description": "Amazon marketplace identifier."
+                        "description": "Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
                     },
                     "adultProduct": {
                         "type": "boolean",
-                        "description": "Identifies an Amazon catalog item is intended for an adult audience or is sexual in nature."
+                        "description": "When `true`, the Amazon catalog item is intended for an adult audience or is sexual in nature."
                     },
                     "autographed": {
                         "type": "boolean",
-                        "description": "Identifies an Amazon catalog item is autographed by a player or celebrity."
+                        "description": "When `true`, the Amazon catalog item is autographed."
                     },
                     "brand": {
                         "type": "string",
-                        "description": "Name of the brand associated with an Amazon catalog item."
+                        "description": "Name of the brand that is associated with the Amazon catalog item."
                     },
                     "browseClassification": {
                         "$ref": "#/components/schemas/ItemBrowseClassification"
                     },
                     "color": {
                         "type": "string",
-                        "description": "Name of the color associated with an Amazon catalog item."
+                        "description": "The color that is associated with the Amazon catalog item."
                     },
                     "contributors": {
                         "type": "array",
-                        "description": "Individual contributors to the creation of an item, such as the authors or actors.",
+                        "description": "Individual contributors to the creation of the item, such as the authors or actors.",
                         "items": {
                             "$ref": "#/components/schemas/ItemContributor"
                         }
                     },
                     "itemClassification": {
                         "type": "string",
-                        "description": "Classification type associated with the Amazon catalog item.",
+                        "description": "Classification type that is associated with the Amazon catalog item.",
                         "enum": [
                             "BASE_PRODUCT",
                             "OTHER",
@@ -3835,95 +3835,95 @@
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "BASE_PRODUCT",
-                                "description": "Represents a standard standalone or a variation child item in the Amazon catalog."
+                                "description": "A product that can be directly purchased. Can be a standalone ASIN or a variation child item in the Amazon catalog."
                             },
                             {
                                 "value": "OTHER",
-                                "description": "Represents an item in the Amazon catalog that is not `BASE_PRODUCT`, `PRODUCT_BUNDLE`, or `VARIATION_PARENT`."
+                                "description": "An item in the Amazon catalog that is not `BASE_PRODUCT`, `PRODUCT_BUNDLE`, or `VARIATION_PARENT`."
                             },
                             {
                                 "value": "PRODUCT_BUNDLE",
-                                "description": "Represents a parent Amazon catalog item representing a bundle of items."
+                                "description": "A parent catalog item that represents a bundle of items."
                             },
                             {
                                 "value": "VARIATION_PARENT",
-                                "description": "Represents a parent Amazon catalog item grouping child items into a variation family."
+                                "description": "A parent catalog item that groups child items into a variation family."
                             }
                         ]
                     },
                     "itemName": {
                         "type": "string",
-                        "description": "Name, or title, associated with an Amazon catalog item."
+                        "description": "The name that is associated with the Amazon catalog item."
                     },
                     "manufacturer": {
                         "type": "string",
-                        "description": "Name of the manufacturer associated with an Amazon catalog item."
+                        "description": "The name of the manufacturer that is associated with the Amazon catalog item."
                     },
                     "memorabilia": {
                         "type": "boolean",
-                        "description": "Identifies an Amazon catalog item is memorabilia valued for its connection with historical events, culture, or entertainment."
+                        "description": "When true, the item is classified as memorabilia."
                     },
                     "modelNumber": {
                         "type": "string",
-                        "description": "Model number associated with an Amazon catalog item."
+                        "description": "The model number that is associated with the Amazon catalog item."
                     },
                     "packageQuantity": {
                         "type": "integer",
-                        "description": "Quantity of an Amazon catalog item in one package."
+                        "description": "The quantity of the Amazon catalog item within one package."
                     },
                     "partNumber": {
                         "type": "string",
-                        "description": "Part number associated with an Amazon catalog item."
+                        "description": "The part number that is associated with the Amazon catalog item."
                     },
                     "releaseDate": {
                         "type": "string",
-                        "description": "First date on which an Amazon catalog item is shippable to customers.",
+                        "description": "The earliest date on which the Amazon catalog item can be shipped to customers.",
                         "format": "date"
                     },
                     "size": {
                         "type": "string",
-                        "description": "Name of the size associated with an Amazon catalog item."
+                        "description": "The name of the size of the Amazon catalog item."
                     },
                     "style": {
                         "type": "string",
-                        "description": "Name of the style associated with an Amazon catalog item."
+                        "description": "The name of the style that is associated with the Amazon catalog item."
                     },
                     "tradeInEligible": {
                         "type": "boolean",
-                        "description": "Identifies an Amazon catalog item is eligible for trade-in."
+                        "description": "When true, the Amazon catalog item is eligible for trade-in."
                     },
                     "websiteDisplayGroup": {
                         "type": "string",
-                        "description": "Identifier of the website display group associated with an Amazon catalog item."
+                        "description": "The identifier of the website display group that is associated with the Amazon catalog item."
                     },
                     "websiteDisplayGroupName": {
                         "type": "string",
-                        "description": "Display name of the website display group associated with an Amazon catalog item."
+                        "description": "The display name of the website display group that is associated with the Amazon catalog item."
                     }
                 },
-                "description": "Summary details of an Amazon catalog item for the indicated Amazon marketplace."
+                "description": "Information about an Amazon catalog item for the indicated `marketplaceId`."
             },
             "ItemVariationTheme": {
                 "type": "object",
                 "properties": {
                     "attributes": {
                         "type": "array",
-                        "description": "Names of the Amazon catalog item attributes associated with the variation theme.",
+                        "description": "Names of the Amazon catalog item attributes that are associated with the variation theme.",
                         "items": {
                             "type": "string"
                         }
                     },
                     "theme": {
                         "type": "string",
-                        "description": "Variation theme indicating the combination of Amazon item catalog attributes that define the variation family.",
+                        "description": "Variation theme that indicates the combination of Amazon catalog item attributes that define the variation family.",
                         "example": "COLOR_NAME/STYLE_NAME"
                     }
                 },
-                "description": "Variation theme indicating the combination of Amazon item catalog attributes that define the variation family."
+                "description": "The variation theme is a list of Amazon catalog item attributes that define the variation family."
             },
             "ItemRelationships": {
                 "type": "array",
-                "description": "Relationships by marketplace for an Amazon catalog item (for example, variations).",
+                "description": "Relationships grouped by `marketplaceId` for an Amazon catalog item (for example, variations).",
                 "items": {
                     "$ref": "#/components/schemas/ItemRelationshipsByMarketplace"
                 }
@@ -3937,7 +3937,7 @@
                 "properties": {
                     "marketplaceId": {
                         "type": "string",
-                        "description": "Amazon marketplace identifier."
+                        "description": "Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
                     },
                     "relationships": {
                         "type": "array",
@@ -3947,7 +3947,7 @@
                         }
                     }
                 },
-                "description": "Relationship details for the Amazon catalog item for the indicated Amazon marketplace."
+                "description": "Relationship details for the Amazon catalog item for the specified Amazon `marketplaceId`."
             },
             "ItemRelationship": {
                 "required": [
@@ -3957,14 +3957,14 @@
                 "properties": {
                     "childAsins": {
                         "type": "array",
-                        "description": "Identifiers (ASINs) of the related items that are children of this item.",
+                        "description": "ASINs of the related items that are children of this item.",
                         "items": {
                             "type": "string"
                         }
                     },
                     "parentAsins": {
                         "type": "array",
-                        "description": "Identifiers (ASINs) of the related items that are parents of this item.",
+                        "description": "ASINs of the related items that are parents of this item.",
                         "items": {
                             "type": "string"
                         }
@@ -3983,11 +3983,11 @@
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "VARIATION",
-                                "description": "The Amazon catalog item in the request is a variation parent or variation child of the related item(s) indicated by ASIN."
+                                "description": "The Amazon catalog item in the request is a variation parent or variation child of the related items that are identified by ASIN."
                             },
                             {
                                 "value": "PACKAGE_HIERARCHY",
-                                "description": "The Amazon catalog item in the request is a package container or is contained by the related item(s) indicated by ASIN."
+                                "description": "The Amazon catalog item in the request is a package container or is contained by the related items that are identified by ASIN."
                             }
                         ]
                     }
@@ -3999,18 +3999,18 @@
                 "properties": {
                     "displayName": {
                         "type": "string",
-                        "description": "Display name of the product category or subcategory"
+                        "description": "The display name of the product category or subcategory."
                     },
                     "value": {
                         "type": "string",
-                        "description": "Value (code) of the product category or subcategory."
+                        "description": "The code that identifies the product category or subcategory."
                     }
                 },
-                "description": "Product category or subcategory associated with an Amazon catalog item."
+                "description": "The product category or subcategory that is associated with an Amazon catalog item."
             },
             "ItemVendorDetails": {
                 "type": "array",
-                "description": "Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only.",
+                "description": "The vendor details that are associated with an Amazon catalog item. Vendor details are only available to vendors.",
                 "items": {
                     "$ref": "#/components/schemas/ItemVendorDetailsByMarketplace"
                 }
@@ -4023,33 +4023,33 @@
                 "properties": {
                     "marketplaceId": {
                         "type": "string",
-                        "description": "Amazon marketplace identifier."
+                        "description": "Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
                     },
                     "brandCode": {
                         "type": "string",
-                        "description": "Brand code associated with an Amazon catalog item."
+                        "description": "The brand code that is associated with an Amazon catalog item."
                     },
                     "manufacturerCode": {
                         "type": "string",
-                        "description": "Manufacturer code associated with an Amazon catalog item."
+                        "description": "The manufacturer code that is associated with an Amazon catalog item."
                     },
                     "manufacturerCodeParent": {
                         "type": "string",
-                        "description": "Parent vendor code of the manufacturer code."
+                        "description": "The parent vendor code of the manufacturer code."
                     },
                     "productCategory": {
                         "$ref": "#/components/schemas/ItemVendorDetailsCategory"
                     },
                     "productGroup": {
                         "type": "string",
-                        "description": "Product group associated with an Amazon catalog item."
+                        "description": "The product group that is associated with an Amazon catalog item."
                     },
                     "productSubcategory": {
                         "$ref": "#/components/schemas/ItemVendorDetailsCategory"
                     },
                     "replenishmentCategory": {
                         "type": "string",
-                        "description": "Replenishment category associated with an Amazon catalog item.",
+                        "description": "The replenishment category that is associated with an Amazon catalog item.",
                         "enum": [
                             "ALLOCATED",
                             "BASIC_REPLENISHMENT",
@@ -4065,27 +4065,27 @@
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "ALLOCATED",
-                                "description": "Indicates non-automated purchasing of inventory that has been allocated to Amazon by the vendor."
+                                "description": "The vendor allocates the inventory to Amazon and Amazon manually purchases it."
                             },
                             {
                                 "value": "BASIC_REPLENISHMENT",
-                                "description": "Indicates non-automated purchasing of inventory."
+                                "description": "Inventory is manually purchased."
                             },
                             {
                                 "value": "IN_SEASON",
-                                "description": "Indicates non-automated purchasing of inventory for seasonal items."
+                                "description": "Seasonal item that is manually purchased."
                             },
                             {
                                 "value": "LIMITED_REPLENISHMENT",
-                                "description": "Holding queue replenishment status before an item is `NEW_PRODUCT`."
+                                "description": "Amazon generates orders for this item automatically based on unfilled demand."
                             },
                             {
                                 "value": "MANUFACTURER_OUT_OF_STOCK",
-                                "description": "Indicates vendor is out of stock for a longer period of time and cannot backorder."
+                                "description": "The vendor is out of stock for an extended period of time and cannot backorder."
                             },
                             {
                                 "value": "NEW_PRODUCT",
-                                "description": "Indicates a new item that Amazon does not yet stock in inventory."
+                                "description": "Amazon does not yet stock this item."
                             },
                             {
                                 "value": "NON_REPLENISHABLE",
@@ -4093,20 +4093,20 @@
                             },
                             {
                                 "value": "NON_STOCKUPABLE",
-                                "description": "Indicates drop ship inventory that Amazon does not stock in its fulfillment centers."
+                                "description": "Drop ship inventory that Amazon does not stock in its fulfillment centers."
                             },
                             {
                                 "value": "OBSOLETE",
-                                "description": "Indicates item is obsolete and should not be ordered."
+                                "description": "The item is obsolete and should not be ordered."
                             },
                             {
                                 "value": "PLANNED_REPLENISHMENT",
-                                "description": "Indicates active items that should be automatically ordered."
+                                "description": "Active items that should be automatically ordered."
                             }
                         ]
                     }
                 },
-                "description": "Vendor details associated with an Amazon catalog item for the indicated Amazon marketplace."
+                "description": "The vendor details that are associated with an Amazon catalog item for the specified `marketplaceId`."
             },
             "ItemSearchResults": {
                 "required": [
@@ -4119,7 +4119,7 @@
                 "properties": {
                     "numberOfResults": {
                         "type": "integer",
-                        "description": "For `identifiers`-based searches, the total number of Amazon catalog items found. For `keywords`-based searches, the estimated total number of Amazon catalog items matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).\n\nNote: The maximum number of items (ASINs) that can be returned and paged through is 1000."
+                        "description": "For searches that are based on `identifiers`, `numberOfResults` is the total number of Amazon catalog items found. For searches that are based on `keywords`, `numberOfResults` is the estimated total number of Amazon catalog items that are matched by the search query. Only results up to the page count limit are returned per request regardless of the number found.\n\n**Note:** The maximum number of items (ASINs) that can be returned and paged through is 1,000."
                     },
                     "pagination": {
                         "$ref": "#/components/schemas/Pagination"
@@ -4135,21 +4135,21 @@
                         }
                     }
                 },
-                "description": "Items in the Amazon catalog and search related metadata."
+                "description": "Items in the Amazon catalog and search-related metadata."
             },
             "Pagination": {
                 "type": "object",
                 "properties": {
                     "nextToken": {
                         "type": "string",
-                        "description": "A token that can be used to fetch the next page."
+                        "description": "A token that you can use to retrieve the next page."
                     },
                     "previousToken": {
                         "type": "string",
-                        "description": "A token that can be used to fetch the previous page."
+                        "description": "A token that you can use to retrieve the previous page."
                     }
                 },
-                "description": "When a request produces a response that exceeds the `pageSize`, pagination occurs. This means the response is divided into individual pages. To retrieve the next page or the previous page, you must pass the `nextToken` value or the `previousToken` value as the `pageToken` parameter in the next request. When you receive the last page, there will be no `nextToken` key in the pagination object."
+                "description": "Pagination occurs when a request produces a response that exceeds the `pageSize`. This means that the response is divided into individual pages. To retrieve the next page or the previous page of results, you must pass the `nextToken` value or the `previousToken` value as the `pageToken` parameter in the next request. There is no `nextToken` in the pagination object on the last page."
             },
             "Refinements": {
                 "required": [
@@ -4160,20 +4160,20 @@
                 "properties": {
                     "brands": {
                         "type": "array",
-                        "description": "Brand search refinements.",
+                        "description": "A list of brands you can use to refine your search.",
                         "items": {
                             "$ref": "#/components/schemas/BrandRefinement"
                         }
                     },
                     "classifications": {
                         "type": "array",
-                        "description": "Classification search refinements.",
+                        "description": "A list of classifications you can use to refine your search.",
                         "items": {
                             "$ref": "#/components/schemas/ClassificationRefinement"
                         }
                     }
                 },
-                "description": "Search refinements."
+                "description": "Optional fields that you can use to refine your search results."
             },
             "BrandRefinement": {
                 "required": [
@@ -4184,14 +4184,14 @@
                 "properties": {
                     "numberOfResults": {
                         "type": "integer",
-                        "description": "The estimated number of results that would still be returned if refinement key applied."
+                        "description": "The estimated number of results that would be returned if you refine your search by the specified `brandName`."
                     },
                     "brandName": {
                         "type": "string",
-                        "description": "Brand name. For display and can be used as a search refinement."
+                        "description": "The brand name that you can use to refine your search."
                     }
                 },
-                "description": "Description of a brand that can be used to get more fine-grained search results."
+                "description": "A brand that you can use to refine your search."
             },
             "ClassificationRefinement": {
                 "required": [
@@ -4203,7 +4203,7 @@
                 "properties": {
                     "numberOfResults": {
                         "type": "integer",
-                        "description": "The estimated number of results that would still be returned if refinement key applied."
+                        "description": "The estimated number of results that would be returned if you refine your search by the specified `classificationId`."
                     },
                     "displayName": {
                         "type": "string",
@@ -4211,10 +4211,10 @@
                     },
                     "classificationId": {
                         "type": "string",
-                        "description": "Identifier for the classification that can be used for search refinement purposes."
+                        "description": "The identifier of the classification that you can use to refine your search."
                     }
                 },
-                "description": "Description of a classification that can be used to get more fine-grained search results."
+                "description": "A classification that you can use to refine your search."
             }
         }
     },

@@ -16,7 +16,7 @@ final class ItemImage extends Dto
 {
     /**
      * @param  string  $variant  Variant of the image, such as `MAIN` or `PT01`.
-     * @param  string  $link  Link, or URL, for the image.
+     * @param  string  $link  URL for the image.
      * @param  int  $height  Height of the image in pixels.
      * @param  int  $width  Width of the image in pixels.
      */

@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class ItemDimensionsByMarketplace extends Dto
 {
     /**
-     * @param  string  $marketplaceId  Amazon marketplace identifier.
+     * @param  string  $marketplaceId  Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  ?Dimensions  $item  Dimensions of an Amazon catalog item or item in its packaging.
      * @param  ?Dimensions  $package  Dimensions of an Amazon catalog item or item in its packaging.
      */

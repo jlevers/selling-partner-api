@@ -20,8 +20,8 @@ final class Refinements extends Dto
     ];
 
     /**
-     * @param  BrandRefinement[]  $brands  Brand search refinements.
-     * @param  ClassificationRefinement[]  $classifications  Classification search refinements.
+     * @param  BrandRefinement[]  $brands  A list of brands you can use to refine your search.
+     * @param  ClassificationRefinement[]  $classifications  A list of classifications you can use to refine your search.
      */
     public function __construct(
         public array $brands,

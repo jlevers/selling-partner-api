@@ -24,8 +24,11 @@ class DocumentDownloadTest extends TestCase
     private $mockClient;
 
     private $mockDownloadResponseBody1;
+
     private $mockDownloadResponseBody2;
+
     private $mockDownloadResponse1;
+
     private $mockDownloadResponse2;
 
     protected function setUp(): void
@@ -37,7 +40,7 @@ class DocumentDownloadTest extends TestCase
     private function prepareMockData($realEncoding, $responseEnconding): void
     {
         $this->mockClient = new MockClient([
-            GetAccessTokenRequest::class => fn() => MockResponse::make([
+            GetAccessTokenRequest::class => fn () => MockResponse::make([
                 'access_token' => 'access-token',
                 'token_type' => 'bearer',
                 'expires_in' => 3600,

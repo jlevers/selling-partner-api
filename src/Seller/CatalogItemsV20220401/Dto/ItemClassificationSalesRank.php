@@ -15,10 +15,10 @@ use SellingPartnerApi\Dto;
 final class ItemClassificationSalesRank extends Dto
 {
     /**
-     * @param  string  $classificationId  Identifier of the classification associated with the sales rank.
-     * @param  string  $title  Title, or name, of the sales rank.
-     * @param  int  $rank  Sales rank value.
-     * @param  ?string  $link  Corresponding Amazon retail website link, or URL, for the sales rank.
+     * @param  string  $classificationId  Identifier of the classification that is associated with the sales rank.
+     * @param  string  $title  Name of the sales rank.
+     * @param  int  $rank  Sales rank.
+     * @param  ?string  $link  Corresponding Amazon retail website URL for the sales category.
      */
     public function __construct(
         public string $classificationId,

@@ -16,9 +16,9 @@ final class ItemRelationship extends Dto
 {
     /**
      * @param  string  $type  Type of relationship.
-     * @param  ?string[]  $childAsins  Identifiers (ASINs) of the related items that are children of this item.
-     * @param  ?string[]  $parentAsins  Identifiers (ASINs) of the related items that are parents of this item.
-     * @param  ?ItemVariationTheme  $variationTheme  Variation theme indicating the combination of Amazon item catalog attributes that define the variation family.
+     * @param  ?string[]  $childAsins  ASINs of the related items that are children of this item.
+     * @param  ?string[]  $parentAsins  ASINs of the related items that are parents of this item.
+     * @param  ?ItemVariationTheme  $variationTheme  The variation theme is a list of Amazon catalog item attributes that define the variation family.
      */
     public function __construct(
         public string $type,

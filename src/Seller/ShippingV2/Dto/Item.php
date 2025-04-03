@@ -18,7 +18,7 @@ final class Item extends Dto
      * @param  int  $quantity  The number of units. This value is required.
      * @param  ?Currency  $itemValue  The monetary value in the currency indicated, in ISO 4217 standard format.
      * @param  ?string  $description  The product description of the item.
-     * @param  ?string  $itemIdentifier  A unique identifier for an item provided by the client.
+     * @param  ?string  $itemIdentifier  A unique identifier for an item provided by the client. Please use the Orders SP api and populate this field with the response parameter OrderItemId. Note: This is Required field for Amazon Marketplace Orders (ON Amazon type of requests).
      * @param  ?Weight  $weight  The weight in the units indicated.
      * @param  ?LiquidVolume  $liquidVolume  Liquid Volume.
      * @param  ?bool  $isHazmat  When true, the item qualifies as hazardous materials (hazmat). Defaults to false.

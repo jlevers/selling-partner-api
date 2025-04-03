@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class Pagination extends Dto
 {
     /**
-     * @param  ?string  $nextToken  A token that can be used to fetch the next page.
-     * @param  ?string  $previousToken  A token that can be used to fetch the previous page.
+     * @param  ?string  $nextToken  A token that you can use to retrieve the next page.
+     * @param  ?string  $previousToken  A token that you can use to retrieve the previous page.
      */
     public function __construct(
         public ?string $nextToken = null,

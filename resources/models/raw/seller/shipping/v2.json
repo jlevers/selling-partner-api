@@ -5232,7 +5232,7 @@
                     },
                     "itemIdentifier": {
                         "type": "string",
-                        "description": "A unique identifier for an item provided by the client."
+                        "description": "A unique identifier for an item provided by the client. Please use the Orders SP api and populate this field with the response parameter OrderItemId. Note: This is Required field for Amazon Marketplace Orders (ON Amazon type of requests)."
                     },
                     "quantity": {
                         "type": "integer",
@@ -5643,6 +5643,18 @@
                 "items": {
                     "$ref": "#/components/schemas/TaxDetail"
                 }
+            },
+            "GoodsOwner": {
+                "required": [
+                    "merchantId"
+                ],
+                "type": "object",
+                "properties": {
+                    "merchantId": {
+                        "$ref": "#/components/schemas/MerchantId"
+                    }
+                },
+                "description": "The seller owning the goods before handing them over to the carrier"
             },
             "EventCode": {
                 "type": "string",
@@ -6378,6 +6390,9 @@
                         "description": "The ship date and time (the requested pickup). This defaults to the current date and time.",
                         "format": "date-time"
                     },
+                    "goodsOwner": {
+                        "$ref": "#/components/schemas/GoodsOwner"
+                    },
                     "packages": {
                         "$ref": "#/components/schemas/PackageList"
                     },
@@ -6762,6 +6777,10 @@
                     }
                 },
                 "description": "Date Range for query the results."
+            },
+            "MerchantId": {
+                "type": "string",
+                "description": "merchant Id of provided merchant "
             },
             "PaymentType": {
                 "type": "string",

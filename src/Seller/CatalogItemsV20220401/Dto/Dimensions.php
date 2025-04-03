@@ -15,10 +15,10 @@ use SellingPartnerApi\Dto;
 final class Dimensions extends Dto
 {
     /**
-     * @param  ?Dimension  $height  Individual dimension value of an Amazon catalog item or item package.
-     * @param  ?Dimension  $length  Individual dimension value of an Amazon catalog item or item package.
-     * @param  ?Dimension  $weight  Individual dimension value of an Amazon catalog item or item package.
-     * @param  ?Dimension  $width  Individual dimension value of an Amazon catalog item or item package.
+     * @param  ?Dimension  $height  The value of an individual dimension for an Amazon catalog item or item package.
+     * @param  ?Dimension  $length  The value of an individual dimension for an Amazon catalog item or item package.
+     * @param  ?Dimension  $weight  The value of an individual dimension for an Amazon catalog item or item package.
+     * @param  ?Dimension  $width  The value of an individual dimension for an Amazon catalog item or item package.
      */
     public function __construct(
         public ?Dimension $height = null,

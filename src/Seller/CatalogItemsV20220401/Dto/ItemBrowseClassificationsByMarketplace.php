@@ -17,8 +17,8 @@ final class ItemBrowseClassificationsByMarketplace extends Dto
     protected static array $complexArrayTypes = ['classifications' => ItemBrowseClassification::class];
 
     /**
-     * @param  string  $marketplaceId  Amazon marketplace identifier.
-     * @param  ItemBrowseClassification[]|null  $classifications  Classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace.
+     * @param  string  $marketplaceId  Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  ItemBrowseClassification[]|null  $classifications  Classifications (browse nodes) that are associated with the item in the Amazon catalog.
      */
     public function __construct(
         public string $marketplaceId,

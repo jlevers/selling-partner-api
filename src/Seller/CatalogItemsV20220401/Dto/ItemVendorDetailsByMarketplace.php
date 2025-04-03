@@ -15,14 +15,14 @@ use SellingPartnerApi\Dto;
 final class ItemVendorDetailsByMarketplace extends Dto
 {
     /**
-     * @param  string  $marketplaceId  Amazon marketplace identifier.
-     * @param  ?string  $brandCode  Brand code associated with an Amazon catalog item.
-     * @param  ?string  $manufacturerCode  Manufacturer code associated with an Amazon catalog item.
-     * @param  ?string  $manufacturerCodeParent  Parent vendor code of the manufacturer code.
-     * @param  ?ItemVendorDetailsCategory  $productCategory  Product category or subcategory associated with an Amazon catalog item.
-     * @param  ?string  $productGroup  Product group associated with an Amazon catalog item.
-     * @param  ?ItemVendorDetailsCategory  $productSubcategory  Product category or subcategory associated with an Amazon catalog item.
-     * @param  ?string  $replenishmentCategory  Replenishment category associated with an Amazon catalog item.
+     * @param  string  $marketplaceId  Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  ?string  $brandCode  The brand code that is associated with an Amazon catalog item.
+     * @param  ?string  $manufacturerCode  The manufacturer code that is associated with an Amazon catalog item.
+     * @param  ?string  $manufacturerCodeParent  The parent vendor code of the manufacturer code.
+     * @param  ?ItemVendorDetailsCategory  $productCategory  The product category or subcategory that is associated with an Amazon catalog item.
+     * @param  ?string  $productGroup  The product group that is associated with an Amazon catalog item.
+     * @param  ?ItemVendorDetailsCategory  $productSubcategory  The product category or subcategory that is associated with an Amazon catalog item.
+     * @param  ?string  $replenishmentCategory  The replenishment category that is associated with an Amazon catalog item.
      */
     public function __construct(
         public string $marketplaceId,

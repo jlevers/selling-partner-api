@@ -20,11 +20,13 @@ final class SetAppointmentFulfillmentDataRequest extends Dto
     ];
 
     /**
+     * @param  ?DateTimeRange  $estimatedArrivalTime  A range of time.
      * @param  ?FulfillmentTime  $fulfillmentTime  Input for fulfillment time details
      * @param  AppointmentResource[]|null  $appointmentResources  List of resources that performs or performed job appointment fulfillment.
      * @param  FulfillmentDocument[]|null  $fulfillmentDocuments  List of documents captured during service appointment fulfillment.
      */
     public function __construct(
+        public ?DateTimeRange $estimatedArrivalTime = null,
         public ?FulfillmentTime $fulfillmentTime = null,
         public ?array $appointmentResources = null,
         public ?array $fulfillmentDocuments = null,

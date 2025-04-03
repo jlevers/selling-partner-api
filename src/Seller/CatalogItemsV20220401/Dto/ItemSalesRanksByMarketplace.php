@@ -20,9 +20,9 @@ final class ItemSalesRanksByMarketplace extends Dto
     ];
 
     /**
-     * @param  string  $marketplaceId  Amazon marketplace identifier.
-     * @param  ItemClassificationSalesRank[]|null  $classificationRanks  Sales ranks of an Amazon catalog item for an Amazon marketplace by classification.
-     * @param  ItemDisplayGroupSalesRank[]|null  $displayGroupRanks  Sales ranks of an Amazon catalog item for an Amazon marketplace by website display group.
+     * @param  string  $marketplaceId  Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  ItemClassificationSalesRank[]|null  $classificationRanks  Sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by classification.
+     * @param  ItemDisplayGroupSalesRank[]|null  $displayGroupRanks  Sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by website display group.
      */
     public function __construct(
         public string $marketplaceId,

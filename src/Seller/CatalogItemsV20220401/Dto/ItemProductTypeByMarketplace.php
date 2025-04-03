@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class ItemProductTypeByMarketplace extends Dto
 {
     /**
-     * @param  ?string  $marketplaceId  Amazon marketplace identifier.
-     * @param  ?string  $productType  Name of the product type associated with the Amazon catalog item.
+     * @param  ?string  $marketplaceId  Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  ?string  $productType  Name of the product type that is associated with the Amazon catalog item.
      */
     public function __construct(
         public ?string $marketplaceId = null,

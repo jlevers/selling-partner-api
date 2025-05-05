@@ -16,40 +16,38 @@ use Saloon\Enums\Method;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
-use SellingPartnerApi\Seller\ShippingV2\Dto\PurchaseShipmentRequest;
+use SellingPartnerApi\Seller\ShippingV2\Dto\GetUnmanifestedShipmentsRequest;
 use SellingPartnerApi\Seller\ShippingV2\Responses\ErrorList;
-use SellingPartnerApi\Seller\ShippingV2\Responses\PurchaseShipmentResponse;
+use SellingPartnerApi\Seller\ShippingV2\Responses\GetUnmanifestedShipmentsResponse;
 
 /**
- * purchaseShipment
+ * getUnmanifestedShipments
  */
-class PurchaseShipment extends Request implements HasBody
+class GetUnmanifestedShipments extends Request implements HasBody
 {
     use HasJsonBody;
 
-    protected Method $method = Method::POST;
+    protected Method $method = Method::PUT;
 
     /**
-     * @param  PurchaseShipmentRequest  $purchaseShipmentRequest  The request schema for the purchaseShipment operation.
-     * @param  ?string  $xAmznIdempotencyKey  A unique value which the server uses to recognize subsequent retries of the same request.
+     * @param  GetUnmanifestedShipmentsRequest  $getUnmanifestedShipmentsRequest  The request schema for the GetUnmanifestedShipmentsRequest operation.
      * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function __construct(
-        public PurchaseShipmentRequest $purchaseShipmentRequest,
-        protected ?string $xAmznIdempotencyKey = null,
+        public GetUnmanifestedShipmentsRequest $getUnmanifestedShipmentsRequest,
         protected ?string $xAmznShippingBusinessId = null,
     ) {}
 
     public function resolveEndpoint(): string
     {
-        return '/shipping/v2/shipments';
+        return '/shipping/v2/unmanifestedShipments';
     }
 
-    public function createDtoFromResponse(Response $response): PurchaseShipmentResponse|ErrorList
+    public function createDtoFromResponse(Response $response): GetUnmanifestedShipmentsResponse|ErrorList
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            200 => PurchaseShipmentResponse::class,
+            200 => GetUnmanifestedShipmentsResponse::class,
             400, 401, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
@@ -59,11 +57,11 @@ class PurchaseShipment extends Request implements HasBody
 
     public function defaultBody(): array
     {
-        return $this->purchaseShipmentRequest->toArray();
+        return $this->getUnmanifestedShipmentsRequest->toArray();
     }
 
     public function defaultHeaders(): array
     {
-        return array_filter(['x-amzn-IdempotencyKey' => $this->xAmznIdempotencyKey, 'x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
+        return array_filter(['x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
     }
 }

@@ -16,40 +16,40 @@ use Saloon\Enums\Method;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
-use SellingPartnerApi\Seller\ShippingV2\Dto\PurchaseShipmentRequest;
+use SellingPartnerApi\Seller\ShippingV2\Dto\GenerateCollectionFormRequest;
 use SellingPartnerApi\Seller\ShippingV2\Responses\ErrorList;
-use SellingPartnerApi\Seller\ShippingV2\Responses\PurchaseShipmentResponse;
+use SellingPartnerApi\Seller\ShippingV2\Responses\GenerateCollectionFormResponse;
 
 /**
- * purchaseShipment
+ * generateCollectionForm
  */
-class PurchaseShipment extends Request implements HasBody
+class GenerateCollectionForm extends Request implements HasBody
 {
     use HasJsonBody;
 
     protected Method $method = Method::POST;
 
     /**
-     * @param  PurchaseShipmentRequest  $purchaseShipmentRequest  The request schema for the purchaseShipment operation.
+     * @param  GenerateCollectionFormRequest  $generateCollectionFormRequest  The request schema Call to generate the collection form.
      * @param  ?string  $xAmznIdempotencyKey  A unique value which the server uses to recognize subsequent retries of the same request.
      * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function __construct(
-        public PurchaseShipmentRequest $purchaseShipmentRequest,
+        public GenerateCollectionFormRequest $generateCollectionFormRequest,
         protected ?string $xAmznIdempotencyKey = null,
         protected ?string $xAmznShippingBusinessId = null,
     ) {}
 
     public function resolveEndpoint(): string
     {
-        return '/shipping/v2/shipments';
+        return '/shipping/v2/collectionForms';
     }
 
-    public function createDtoFromResponse(Response $response): PurchaseShipmentResponse|ErrorList
+    public function createDtoFromResponse(Response $response): GenerateCollectionFormResponse|ErrorList
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            200 => PurchaseShipmentResponse::class,
+            200 => GenerateCollectionFormResponse::class,
             400, 401, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
@@ -59,7 +59,7 @@ class PurchaseShipment extends Request implements HasBody
 
     public function defaultBody(): array
     {
-        return $this->purchaseShipmentRequest->toArray();
+        return $this->generateCollectionFormRequest->toArray();
     }
 
     public function defaultHeaders(): array

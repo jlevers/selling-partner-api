@@ -16,40 +16,44 @@ use Saloon\Enums\Method;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
-use SellingPartnerApi\Seller\ShippingV2\Dto\PurchaseShipmentRequest;
+use SellingPartnerApi\Seller\ShippingV2\Dto\DirectPurchaseRequest;
+use SellingPartnerApi\Seller\ShippingV2\Responses\DirectPurchaseResponse;
 use SellingPartnerApi\Seller\ShippingV2\Responses\ErrorList;
-use SellingPartnerApi\Seller\ShippingV2\Responses\PurchaseShipmentResponse;
 
 /**
- * purchaseShipment
+ * directPurchaseShipment
  */
-class PurchaseShipment extends Request implements HasBody
+class DirectPurchaseShipment extends Request implements HasBody
 {
     use HasJsonBody;
 
     protected Method $method = Method::POST;
 
     /**
-     * @param  PurchaseShipmentRequest  $purchaseShipmentRequest  The request schema for the purchaseShipment operation.
+     * @param  DirectPurchaseRequest  $directPurchaseRequest  The request schema for the directPurchaseShipment operation. When the channel type is Amazon, the shipTo address is not required and will be ignored.
      * @param  ?string  $xAmznIdempotencyKey  A unique value which the server uses to recognize subsequent retries of the same request.
+     * @param  ?string  $locale  The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA).
+     *                           The secondary language subtag is almost always a regional designation.
+     *                           This does not support additional subtags beyond the primary and secondary language subtags.
      * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function __construct(
-        public PurchaseShipmentRequest $purchaseShipmentRequest,
+        public DirectPurchaseRequest $directPurchaseRequest,
         protected ?string $xAmznIdempotencyKey = null,
+        protected ?string $locale = null,
         protected ?string $xAmznShippingBusinessId = null,
     ) {}
 
     public function resolveEndpoint(): string
     {
-        return '/shipping/v2/shipments';
+        return '/shipping/v2/shipments/directPurchase';
     }
 
-    public function createDtoFromResponse(Response $response): PurchaseShipmentResponse|ErrorList
+    public function createDtoFromResponse(Response $response): DirectPurchaseResponse|ErrorList
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            200 => PurchaseShipmentResponse::class,
+            200 => DirectPurchaseResponse::class,
             400, 401, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
@@ -59,11 +63,15 @@ class PurchaseShipment extends Request implements HasBody
 
     public function defaultBody(): array
     {
-        return $this->purchaseShipmentRequest->toArray();
+        return $this->directPurchaseRequest->toArray();
     }
 
     public function defaultHeaders(): array
     {
-        return array_filter(['x-amzn-IdempotencyKey' => $this->xAmznIdempotencyKey, 'x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
+        return array_filter([
+            'x-amzn-IdempotencyKey' => $this->xAmznIdempotencyKey,
+            'locale' => $this->locale,
+            'x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId,
+        ]);
     }
 }

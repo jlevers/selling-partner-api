@@ -16,40 +16,38 @@ use Saloon\Enums\Method;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
-use SellingPartnerApi\Seller\ShippingV2\Dto\PurchaseShipmentRequest;
+use SellingPartnerApi\Seller\ShippingV2\Dto\CreateClaimRequest;
+use SellingPartnerApi\Seller\ShippingV2\Responses\CreateClaimResponse;
 use SellingPartnerApi\Seller\ShippingV2\Responses\ErrorList;
-use SellingPartnerApi\Seller\ShippingV2\Responses\PurchaseShipmentResponse;
 
 /**
- * purchaseShipment
+ * createClaim
  */
-class PurchaseShipment extends Request implements HasBody
+class CreateClaim extends Request implements HasBody
 {
     use HasJsonBody;
 
     protected Method $method = Method::POST;
 
     /**
-     * @param  PurchaseShipmentRequest  $purchaseShipmentRequest  The request schema for the purchaseShipment operation.
-     * @param  ?string  $xAmznIdempotencyKey  A unique value which the server uses to recognize subsequent retries of the same request.
+     * @param  CreateClaimRequest  $createClaimRequest  The request schema for the CreateClaim operation
      * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function __construct(
-        public PurchaseShipmentRequest $purchaseShipmentRequest,
-        protected ?string $xAmznIdempotencyKey = null,
+        public CreateClaimRequest $createClaimRequest,
         protected ?string $xAmznShippingBusinessId = null,
     ) {}
 
     public function resolveEndpoint(): string
     {
-        return '/shipping/v2/shipments';
+        return '/shipping/v2/claims';
     }
 
-    public function createDtoFromResponse(Response $response): PurchaseShipmentResponse|ErrorList
+    public function createDtoFromResponse(Response $response): CreateClaimResponse|ErrorList
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            200 => PurchaseShipmentResponse::class,
+            201 => CreateClaimResponse::class,
             400, 401, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
@@ -59,11 +57,11 @@ class PurchaseShipment extends Request implements HasBody
 
     public function defaultBody(): array
     {
-        return $this->purchaseShipmentRequest->toArray();
+        return $this->createClaimRequest->toArray();
     }
 
     public function defaultHeaders(): array
     {
-        return array_filter(['x-amzn-IdempotencyKey' => $this->xAmznIdempotencyKey, 'x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
+        return array_filter(['x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
     }
 }

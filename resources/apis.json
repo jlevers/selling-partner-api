@@ -304,8 +304,7 @@
                 },
                 {
                     "version": 2,
-                    "url": "https://developer-docs.amazon.com/amazon-shipping/docs/shipping-api-v2-model",
-                    "selector": "code[data-lang='json']"
+                    "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/refs/heads/main/models/shipping-api-model/shippingV2.json"
                 }
             ]
         },

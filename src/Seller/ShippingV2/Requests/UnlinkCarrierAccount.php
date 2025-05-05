@@ -16,40 +16,40 @@ use Saloon\Enums\Method;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
-use SellingPartnerApi\Seller\ShippingV2\Dto\PurchaseShipmentRequest;
+use SellingPartnerApi\Seller\ShippingV2\Dto\UnlinkCarrierAccountRequest;
 use SellingPartnerApi\Seller\ShippingV2\Responses\ErrorList;
-use SellingPartnerApi\Seller\ShippingV2\Responses\PurchaseShipmentResponse;
+use SellingPartnerApi\Seller\ShippingV2\Responses\UnlinkCarrierAccountResponse;
 
 /**
- * purchaseShipment
+ * unlinkCarrierAccount
  */
-class PurchaseShipment extends Request implements HasBody
+class UnlinkCarrierAccount extends Request implements HasBody
 {
     use HasJsonBody;
 
-    protected Method $method = Method::POST;
+    protected Method $method = Method::PUT;
 
     /**
-     * @param  PurchaseShipmentRequest  $purchaseShipmentRequest  The request schema for the purchaseShipment operation.
-     * @param  ?string  $xAmznIdempotencyKey  A unique value which the server uses to recognize subsequent retries of the same request.
+     * @param  string  $carrierId  carrier Id to unlink with merchant.
+     * @param  UnlinkCarrierAccountRequest  $unlinkCarrierAccountRequest  The request schema for remove the Carrier Account associated with the provided merchant.
      * @param  ?string  $xAmznShippingBusinessId  Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
      */
     public function __construct(
-        public PurchaseShipmentRequest $purchaseShipmentRequest,
-        protected ?string $xAmznIdempotencyKey = null,
+        protected string $carrierId,
+        public UnlinkCarrierAccountRequest $unlinkCarrierAccountRequest,
         protected ?string $xAmznShippingBusinessId = null,
     ) {}
 
     public function resolveEndpoint(): string
     {
-        return '/shipping/v2/shipments';
+        return "/shipping/v2/carrierAccounts/{$this->carrierId}/unlink";
     }
 
-    public function createDtoFromResponse(Response $response): PurchaseShipmentResponse|ErrorList
+    public function createDtoFromResponse(Response $response): UnlinkCarrierAccountResponse|ErrorList
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            200 => PurchaseShipmentResponse::class,
+            200 => UnlinkCarrierAccountResponse::class,
             400, 401, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
@@ -59,11 +59,11 @@ class PurchaseShipment extends Request implements HasBody
 
     public function defaultBody(): array
     {
-        return $this->purchaseShipmentRequest->toArray();
+        return $this->unlinkCarrierAccountRequest->toArray();
     }
 
     public function defaultHeaders(): array
     {
-        return array_filter(['x-amzn-IdempotencyKey' => $this->xAmznIdempotencyKey, 'x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
+        return array_filter(['x-amzn-shipping-business-id' => $this->xAmznShippingBusinessId]);
     }
 }

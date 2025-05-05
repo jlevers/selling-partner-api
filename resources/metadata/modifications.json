@@ -147,6 +147,12 @@
           "action": "replace",
           "path": "paths./shipping/v2/accessPoints.get.parameters.4.required",
           "value": false
+        },
+        {
+            "comment": "Rename the PUT-based linkCarrierAccount operation to updateLinkedCarrierAccount, since there are two operations named linkCarrierAccount",
+            "action": "replace",
+            "path": "paths./shipping/v2/carrierAccounts/{carrierId}.put.operationId",
+            "value": "updateLinkedCarrierAccount"
         }
       ]
     },

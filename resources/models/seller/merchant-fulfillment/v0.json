@@ -3159,7 +3159,6 @@
             },
             "ShippingServiceOptions": {
                 "required": [
-                    "CarrierWillPickUp",
                     "DeliveryExperience"
                 ],
                 "type": "object",

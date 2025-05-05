@@ -66,6 +66,12 @@
             "ShippingServiceOfferId",
             "ShippingServiceOptions"
           ]
+        },
+        {
+            "comment": "Remove required 'CarrierWillPickUp', it is not always present in Amazon responses",
+            "action": "replace",
+            "path": "components.schemas.ShippingServiceOptions.required",
+            "value": ["DeliveryExperience"]
         }
       ]
     },

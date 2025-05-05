@@ -340,8 +340,7 @@
             "versions": [
                 {
                     "version": "2024-06-01",
-                    "url": "https://developer-docs.amazon.com/sp-api/docs/transfers-api-v2024-06-01-model",
-                    "selector": "code[data-lang='json']"
+                    "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/refs/heads/main/models/finances-api-model/transfers_2024-06-01.json"
                 }
             ]
         },

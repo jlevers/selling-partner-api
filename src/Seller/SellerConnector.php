@@ -184,6 +184,11 @@ class SellerConnector extends SellingPartnerApi
         return new SellersV1\Api($this);
     }
 
+    public function sellerWalletV20240320(): SellerWalletV20240301\Api
+    {
+        return new SellerWalletV20240301\Api($this);
+    }
+
     public function servicesV1(): ServicesV1\Api
     {
         return new ServicesV1\Api($this);

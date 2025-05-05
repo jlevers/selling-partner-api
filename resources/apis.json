@@ -267,6 +267,15 @@
                 }
             ]
         },
+        "seller-wallet": {
+            "name": "Seller Wallet",
+            "versions": [
+                {
+                    "version": "2024-03-01",
+                    "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/refs/heads/main/models/seller-wallet-api-model/sellerWallet_2024-03-01.json"
+                }
+            ]
+        },
         "services": {
             "name": "Services",
             "versions": [

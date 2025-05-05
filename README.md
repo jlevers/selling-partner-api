@@ -355,6 +355,10 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
     ```php
     $sellersApi = $sellerConnector->sellersV1();
     ```
+* **Seller Wallet API (v2024-03-01)** ([docs](https://developer-docs.amazon.com/sp-api/reference/seller-wallet-v2024-03-01))
+    ```php
+    $sellerWalletApi = $sellerConnector->sellerWalletV20240301();
+    ```
 * **Services API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/services-api-v1-reference))
     ```php
     $servicesApi = $sellerConnector->servicesV1();

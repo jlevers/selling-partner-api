@@ -26,13 +26,10 @@ final class Context extends Dto
      * @param  ?string  $paymentMethod  Method of payment made.
      * @param  ?string  $paymentReference  Reference number of payment made.
      * @param  ?\DateTimeInterface  $paymentDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @param  ?string  $deferralReason  Deferral policy applied on the transaction.
+     * @param  ?string  $deferralReason  The deferral policy applied to the transaction.
      *
-     * Example: 'B2B','DD7'
+     * **Examples:** `B2B` (invoiced orders), `DD7` (delivery date policy)
      * @param  ?\DateTimeInterface  $maturityDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @param  ?string  $deferralStatus  Status of the transaction.
-     *
-     * Example: 'HOLD','RELEASE'
      * @param  ?\DateTimeInterface  $startTime  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
      * @param  ?\DateTimeInterface  $endTime  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
      */
@@ -51,7 +48,6 @@ final class Context extends Dto
         public ?\DateTimeInterface $paymentDate = null,
         public ?string $deferralReason = null,
         public ?\DateTimeInterface $maturityDate = null,
-        public ?string $deferralStatus = null,
         public ?\DateTimeInterface $startTime = null,
         public ?\DateTimeInterface $endTime = null,
     ) {}

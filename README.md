@@ -42,7 +42,7 @@ If you've found any of my packages useful, please consider [becoming a Sponsor](
 
 ## Features
 
-* Supports all Selling Partner API operations (for Sellers and Vendors) as of 4/2/2025
+* Supports all Selling Partner API operations (for Sellers and Vendors) as of 5/5/2025
 * Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents
 * Can handle the end-to-end OAuth flow, from building authorization URLs to converting authorization codes into refresh tokens

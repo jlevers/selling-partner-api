@@ -72,7 +72,12 @@ trait Deserializes
             $_value = match ($type) {
                 'int' => (int) $value,
                 'float' => (float) $value,
-                'bool' => (bool) $value,
+                'bool' => is_string($value)
+                    ? match ($value) {
+                        'true' => true,
+                        'false' => false,
+                        default => (bool) $value
+                    } : (bool) $value,
                 'string' => (string) $value,
                 'date', 'datetime' => static::convertValueToDateTime($value),
                 'array', 'mixed' => $value,

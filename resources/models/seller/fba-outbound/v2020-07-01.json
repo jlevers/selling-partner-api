@@ -3823,7 +3823,11 @@
                         "$ref": "#/components/schemas/GetFulfillmentOrderResult"
                     },
                     "errors": {
-                        "$ref": "#/components/schemas/ErrorList"
+                        "type": "array",
+                        "description": "A list of error responses returned when a request is unsuccessful.",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
                     }
                 },
                 "description": "The response schema for the `getFulfillmentOrder` operation."

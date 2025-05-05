@@ -48,6 +48,18 @@
             "status",
             "statusChangedDate"
           ]
+        },
+        {
+            "comment": "Error Response from Amazon for GetFulfillmentOrder is an array",
+            "action": "replace",
+            "path": "components.schemas.GetFulfillmentOrderResponse.properties.errors",
+            "value": {
+                "type": "array",
+                "description": "A list of error responses returned when a request is unsuccessful.",
+                "items": {
+                    "$ref": "#/components/schemas/Error"
+                }
+            }
         }
       ]
     },
@@ -179,12 +191,12 @@
           }
         },
         {
-          "comment": "Remove unneded objects from ErrorList",
+          "comment": "Remove unneeded objects from ErrorList",
           "action": "delete",
           "path": "components.schemas.ErrorList.properties"
         },
         {
-          "comment": "Remove unneded objects from ErrorList",
+          "comment": "Remove unneeded objects from ErrorList",
           "action": "delete",
           "path": "components.schemas.ErrorList.required"
         }

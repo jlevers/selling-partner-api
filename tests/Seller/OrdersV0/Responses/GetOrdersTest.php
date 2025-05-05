@@ -23,13 +23,13 @@ class GetOrdersTest extends TestCase
                         'ShipServiceLevel' => 'Std US D2D Dom',
                         'OrderTotal' => [
                             'CurrencyCode' => 'USD',
-                            'Amount' => '11.01'
+                            'Amount' => '11.01',
                         ],
                         'NumberOfItemsShipped' => 0,
                         'NumberOfItemsUnshipped' => 1,
                         'PaymentMethod' => 'Other',
                         'PaymentMethodDetails' => [
-                            'Standard'
+                            'Standard',
                         ],
                         'IsReplacementOrder' => 'false',
                         'MarketplaceId' => 'ATVPDKIKX0DER',
@@ -53,21 +53,21 @@ class GetOrdersTest extends TestCase
                             'PostalCode' => '98121-2778',
                             'CountryCode' => 'US',
                             'Phone' => '+1 480-386-0930 ext. 73824',
-                            'AddressType' => 'Commercial'
+                            'AddressType' => 'Commercial',
                         ],
                         'FulfillmentInstruction' => [
-                            'FulfillmentSupplySourceId' => 'sampleSupplySourceId'
+                            'FulfillmentSupplySourceId' => 'sampleSupplySourceId',
                         ],
                         'IsISPU' => false,
                         'IsAccessPointOrder' => false,
                         'AutomatedShippingSettings' => [
-                            'HasAutomatedShippingSettings' => false
+                            'HasAutomatedShippingSettings' => false,
                         ],
                         'EasyShipShipmentStatus' => 'PendingPickUp',
-                        'ElectronicInvoiceStatus' => 'NotRequired'
-                    ]
-                ]
-            ]
+                        'ElectronicInvoiceStatus' => 'NotRequired',
+                    ],
+                ],
+            ],
         ]);
 
         $this->assertEquals($result->payload->orders[0]->isReplacementOrder, false);

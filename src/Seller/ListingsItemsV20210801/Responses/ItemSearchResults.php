@@ -18,11 +18,11 @@ final class ItemSearchResults extends Response
     protected static array $complexArrayTypes = ['items' => Item::class];
 
     /**
-     * @param  int  $numberOfResults  The total number of selling partner listings items found for the search criteria (only results up to the page count limit will be returned per request regardless of the number found).
+     * @param  int  $numberOfResults  The total number of selling partner listings items found for the search criteria (only results up to the page count limit is returned per request regardless of the number found).
      *
      * Note: The maximum number of items (SKUs) that can be returned and paged through is 1000.
      * @param  Item[]  $items  A list of listings items.
-     * @param  ?Pagination  $pagination  When a request produces a response that exceeds the `pageSize`, pagination occurs. This means the response is divided into individual pages. To retrieve the next page or the previous page, you must pass the `nextToken` value or the `previousToken` value as the `pageToken` parameter in the next request. When you receive the last page, there will be no `nextToken` key in the pagination object.
+     * @param  ?Pagination  $pagination  When a request produces a response that exceeds the `pageSize`, pagination occurs. This means the response is divided into individual pages. To retrieve the next page or the previous page, you must pass the `nextToken` value or the `previousToken` value as the `pageToken` parameter in the next request. When you receive the last page, there is no `nextToken` key in the pagination object.
      */
     public function __construct(
         public readonly int $numberOfResults,

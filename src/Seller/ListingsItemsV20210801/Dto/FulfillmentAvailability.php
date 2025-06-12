@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class FulfillmentAvailability extends Dto
 {
     /**
-     * @param  string  $fulfillmentChannelCode  The code of the fulfillment network that will be used.
+     * @param  string  $fulfillmentChannelCode  Designates which fulfillment network is used.
      * @param  ?int  $quantity  The quantity of the item you are making available for sale.
      */
     public function __construct(

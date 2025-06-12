@@ -1859,7 +1859,7 @@
                     {
                         "name": "nextToken",
                         "in": "query",
-                        "description": "A token that is used to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
+                        "description": "A token that you use to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
                         "schema": {
                             "type": "string"
                         }
@@ -2497,7 +2497,7 @@
                     },
                     "transactionType": {
                         "type": "string",
-                        "description": "Indicates the type of  transportation request such as (New,Cancel,Confirm and PackageLabelRequest). Each transactiontype has a unique set of operation and there are corresponding details to be populated for each operation.",
+                        "description": "Indicates the type of transportation request (for example, `New` or `Cancel`). Each `transactionType` has a unique set of operations and there are corresponding details to be populated for each operation.",
                         "enum": [
                             "New",
                             "Cancel"
@@ -2587,7 +2587,7 @@
                     },
                     "shipmentFreightTerm": {
                         "type": "string",
-                        "description": "Indicates if this transportation request is WePay/Collect or TheyPay/Prepaid. This is a mandatory information.",
+                        "description": "Specifies if payment is Collect (WePay) or Prepaid (TheyPay). Required.",
                         "enum": [
                             "Collect",
                             "Prepaid"

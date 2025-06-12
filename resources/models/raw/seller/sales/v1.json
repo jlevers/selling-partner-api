@@ -225,6 +225,29 @@
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    {
+                        "name": "amazonProgram",
+                        "in": "query",
+                        "description": "Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** `AmazonHaul` returns order metrics for the Amazon Haul program only.",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "AmazonHaul"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "value": "AmazonHaul",
+                                    "description": "Amazon Haul sales"
+                                }
+                            ]
+                        },
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "AmazonHaul",
+                                "description": "Amazon Haul sales"
+                            }
+                        ]
                     }
                 ],
                 "responses": {

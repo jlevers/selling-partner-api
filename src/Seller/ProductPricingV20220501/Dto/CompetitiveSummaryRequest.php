@@ -18,7 +18,7 @@ final class CompetitiveSummaryRequest extends Dto
 
     /**
      * @param  string  $asin  The ASIN of the item.
-     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for which data is returned.
+     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  string[]  $includedData  The list of requested competitive pricing data for the product.
      * @param  string  $method  The HTTP method associated with an individual request within a batch.
      * @param  string  $uri  The URI associated with the individual APIs that are called as part of the batch request.

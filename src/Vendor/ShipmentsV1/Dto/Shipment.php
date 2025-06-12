@@ -22,7 +22,7 @@ final class Shipment extends Dto
 
     /**
      * @param  string  $vendorShipmentIdentifier  Unique Transportation ID created by Vendor (Should not be used over the last 365 days).
-     * @param  string  $transactionType  Indicates the type of  transportation request such as (New,Cancel,Confirm and PackageLabelRequest). Each transactiontype has a unique set of operation and there are corresponding details to be populated for each operation.
+     * @param  string  $transactionType  Indicates the type of transportation request (for example, `New` or `Cancel`). Each `transactionType` has a unique set of operations and there are corresponding details to be populated for each operation.
      * @param  \DateTimeInterface  $transactionDate  Date on which the transportation request was submitted.
      * @param  PartyIdentification  $sellingParty  Name/Address and tax details of the party.
      * @param  PartyIdentification  $shipFromParty  Name/Address and tax details of the party.
@@ -34,7 +34,7 @@ final class Shipment extends Dto
      * @param  ?\DateTimeInterface  $shipmentCreateDate  The date and time of the shipment request created by vendor.
      * @param  ?\DateTimeInterface  $shipmentConfirmDate  The date and time of the departure of the shipment from the vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the Buyer destination warehouse, whichever is sooner. Shipped date mentioned in the shipment confirmation should not be in the future.
      * @param  ?\DateTimeInterface  $packageLabelCreateDate  The date and time of the package label created for the shipment by buyer.
-     * @param  ?string  $shipmentFreightTerm  Indicates if this transportation request is WePay/Collect or TheyPay/Prepaid. This is a mandatory information.
+     * @param  ?string  $shipmentFreightTerm  Specifies if payment is Collect (WePay) or Prepaid (TheyPay). Required.
      * @param  ?TransportShipmentMeasurements  $shipmentMeasurements  Shipment measurement details.
      * @param  ?CollectFreightPickupDetails  $collectFreightPickupDetails  Transport Request pickup date from Vendor Warehouse by Buyer
      * @param  PurchaseOrders[]|null  $purchaseOrders  Indicates the purchase orders involved for the transportation request. This group is an array create 1 for each PO and list their corresponding items. This information is used for deciding the route,truck allocation and storage efficiently. This is a mandatory information for Buyer performing transportation from vendor warehouse (WePay/Collect)

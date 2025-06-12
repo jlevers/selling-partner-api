@@ -35,6 +35,7 @@ class GetOrderMetrics extends Request
      * @param  ?string  $firstDayOfWeek  Specifies the day that the week starts on when granularity=Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday.
      * @param  ?string  $asin  Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN.
      * @param  ?string  $sku  Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU.
+     * @param  ?string  $amazonProgram  Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** `AmazonHaul` returns order metrics for the Amazon Haul program only.
      */
     public function __construct(
         protected array $marketplaceIds,
@@ -46,6 +47,7 @@ class GetOrderMetrics extends Request
         protected ?string $firstDayOfWeek = null,
         protected ?string $asin = null,
         protected ?string $sku = null,
+        protected ?string $amazonProgram = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -76,6 +78,7 @@ class GetOrderMetrics extends Request
             'firstDayOfWeek' => $this->firstDayOfWeek,
             'asin' => $this->asin,
             'sku' => $this->sku,
+            'amazonProgram' => $this->amazonProgram,
         ]);
     }
 }

@@ -22,7 +22,7 @@ final class CompetitiveSummaryResponseBody extends Dto
 
     /**
      * @param  string  $asin  The ASIN of the item.
-     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for which data is returned.
+     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  FeaturedBuyingOption[]|null  $featuredBuyingOptions  A list of featured buying options for the specified ASIN `marketplaceId` combination.
      * @param  LowestPricedOffer[]|null  $lowestPricedOffers  A list of lowest priced offers for the specified ASIN `marketplaceId` combination.
      * @param  ReferencePrice[]|null  $referencePrices  A list of reference prices for the specified ASIN `marketplaceId` combination.

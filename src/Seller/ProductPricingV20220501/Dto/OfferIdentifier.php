@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class OfferIdentifier extends Dto
 {
     /**
-     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for which data is returned.
+     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  string  $asin  The ASIN of the item.
      * @param  ?string  $sellerId  The seller identifier for the offer.
      * @param  ?string  $sku  The seller SKU of the item. This will only be present for the target offer, which belongs to the requesting seller.

@@ -11,7 +11,7 @@ use SellingPartnerApi\Enums\Endpoint;
 
 class RestrictedReport implements RequestMiddleware
 {
-    public function __invoke(PendingRequest $pendingRequest)
+    public function __invoke(PendingRequest $pendingRequest): void
     {
         $reports = json_decode(file_get_contents(RESOURCE_DIR.'/reports.json'), true);
         $reportType = $pendingRequest->query()->get('reportType');

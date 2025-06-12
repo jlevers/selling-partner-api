@@ -10,7 +10,7 @@ class Grantless implements RequestMiddleware
 {
     public function __construct(protected GrantlessScope $scope) {}
 
-    public function __invoke(PendingRequest $pendingRequest)
+    public function __invoke(PendingRequest $pendingRequest): void
     {
         $connector = $pendingRequest->getConnector();
         $pendingRequest->authenticate($connector->grantlessAuth($this->scope));

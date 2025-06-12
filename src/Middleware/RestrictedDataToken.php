@@ -16,7 +16,7 @@ class RestrictedDataToken implements RequestMiddleware
         protected array $knownDataElements,
     ) {}
 
-    public function __invoke(PendingRequest $pendingRequest)
+    public function __invoke(PendingRequest $pendingRequest): void
     {
         $connector = $pendingRequest->getConnector();
         if (! Endpoint::isSandbox($connector->endpoint)) {

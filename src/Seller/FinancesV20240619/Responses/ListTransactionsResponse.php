@@ -11,18 +11,14 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\FinancesV20240619\Responses;
 
 use SellingPartnerApi\Response;
-use SellingPartnerApi\Seller\FinancesV20240619\Dto\Transaction;
+use SellingPartnerApi\Seller\FinancesV20240619\Dto\TransactionsPayload;
 
 final class ListTransactionsResponse extends Response
 {
-    protected static array $complexArrayTypes = ['transactions' => Transaction::class];
-
     /**
-     * @param  ?string  $nextToken  When present and not empty, pass this string token in the next request to return the next response page.
-     * @param  Transaction[]|null  $transactions  Contains transactions within a given time period.
+     * @param  ?TransactionsPayload  $payload  The payload for the `listTransactions` operation.
      */
     public function __construct(
-        public readonly ?string $nextToken = null,
-        public readonly ?array $transactions = null,
+        public readonly ?TransactionsPayload $payload = null,
     ) {}
 }

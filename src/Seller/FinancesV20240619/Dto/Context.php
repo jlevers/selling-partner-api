@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class Context extends Dto
 {
     /**
-     * @param  ?string  $storeName  Store name related to transaction.
+     * @param  ?string  $storeName  The store name associated with the transaction.
      * @param  ?string  $orderType  Order type of the transaction.
      * @param  ?string  $channel  Channel details of related transaction.
      * @param  ?string  $asin  Amazon Standard Identification Number (ASIN) of the item.

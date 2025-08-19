@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class MarketplaceDetails extends Dto
 {
     /**
-     * @param  ?string  $marketplaceId  The identifier of the marketplace where the transaction was made.
+     * @param  ?string  $marketplaceId  The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  ?string  $marketplaceName  The name of the marketplace where the transaction occurred.
      *
      * Example: 'Amazon.com','Amazon.in'

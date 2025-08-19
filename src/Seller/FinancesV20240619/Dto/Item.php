@@ -24,7 +24,7 @@ final class Item extends Dto
      * @param  ?string  $description  Description of items in the transaction
      * @param  ItemRelatedIdentifier[]|null  $relatedIdentifiers  Related Business identifiers of the item in Transaction.
      * @param  ?Currency  $totalAmount  A currency type and amount.
-     * @param  Breakdown[]|null  $breakdowns  List of breakdowns which will provide the details on how the total amount is calculated for the financial transaction.
+     * @param  Breakdown[]|null  $breakdowns  A list of breakdowns that detail how the total amount is calculated for the transaction.
      * @param  Context[]|null  $contexts  List of additional Information about the item.
      */
     public function __construct(

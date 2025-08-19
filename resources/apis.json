@@ -53,6 +53,15 @@
                 }
             ]
         },
+        "customer-feedback": {
+            "name": "Customer Feedback",
+            "versions": [
+                {
+                    "version": "2024-06-01",
+                    "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/refs/heads/main/models/customer-feedback-api-model/customerFeedback_2024-06-01.json"
+                }
+            ]
+        },
         "data-kiosk": {
             "name": "Data Kiosk",
             "versions": [

@@ -251,6 +251,10 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
     ```php
     $catalogItemsApi = $sellerConnector->catalogItemsV0();
     ```
+* **Customer Feedback API (v2024-06-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/customer-feedback-api-v2024-06-01-reference))
+    ```php
+    $customerFeedbackApi = $sellerConnector->customerFeedbackV20240601();
+    ```
 * **Data Kiosk API (v2023-11-15)** ([docs](https://developer-docs.amazon.com/sp-api/v0/docs/data-kiosk-api-v2023-11-15-reference))
     ```php
     $dataKioskApi = $sellerConnector->dataKioskV20231115();

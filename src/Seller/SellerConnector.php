@@ -49,6 +49,11 @@ class SellerConnector extends SellingPartnerApi
         return new CatalogItemsV0\Api($this);
     }
 
+    public function customerFeedbackV20240601(): CustomerFeedbackV20240601\Api
+    {
+        return new CustomerFeedbackV20240601\Api($this);
+    }
+
     public function dataKioskV20231115(): DataKioskV20231115\Api
     {
         return new DataKioskV20231115\Api($this);

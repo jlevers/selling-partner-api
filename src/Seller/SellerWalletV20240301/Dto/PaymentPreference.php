@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class PaymentPreference extends Dto
 {
     /**
-     * @param  string  $paymentPreferencePaymentType  The type of payment preference.
-     * @param  float  $value  A decimal number, such as an amount or FX rate.
+     * @param  string  $paymentPreferencePaymentType  Represent a type of payment preference.
+     * @param  float  $value  A decimal number such as amount or FX rate.
      */
     public function __construct(
         public string $paymentPreferencePaymentType,

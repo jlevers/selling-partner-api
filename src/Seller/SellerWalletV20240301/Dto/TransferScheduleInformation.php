@@ -15,10 +15,10 @@ use SellingPartnerApi\Dto;
 final class TransferScheduleInformation extends Dto
 {
     /**
-     * @param  ?\DateTimeInterface  $scheduleStartDate  The start date of the scheduled transfer.
-     * @param  ?\DateTimeInterface  $scheduleEndDate  The end date of the scheduled transfer.
-     * @param  ?ScheduleExpression  $scheduleExpression  The configuration of the schedule.
-     * @param  ?string  $scheduleType  The type of schedule the transfer is on. Schedules based on time patterns use EventBridge.
+     * @param  ?\DateTimeInterface  $scheduleStartDate  Field to specify start date of the scheduled transfer
+     * @param  ?\DateTimeInterface  $scheduleEndDate  Field to specify end date of the scheduled transfer
+     * @param  ?ScheduleExpression  $scheduleExpression  Parameters containing information of the expression that defines when the schedule runs. The following formats are supported.
+     * @param  ?string  $scheduleType  Defines the type of schedule trigger used for executing transfers. Schedule based on time patterns using EventBridge.
      */
     public function __construct(
         public ?\DateTimeInterface $scheduleStartDate = null,

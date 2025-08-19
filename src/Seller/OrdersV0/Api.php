@@ -133,7 +133,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $orderId  An `orderId` is an Amazon-defined order identifier, in 3-7-7 format.
+     * @param  string  $orderId  The Amazon order identifier in 3-7-7 format.
      */
     public function getOrderBuyerInfo(string $orderId): Response
     {
@@ -143,7 +143,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $orderId  An `orderId` is an Amazon-defined order identifier, in 3-7-7 format.
+     * @param  string  $orderId  The Amazon order identifier in 3-7-7 format.
      */
     public function getOrderAddress(string $orderId): Response
     {
@@ -188,7 +188,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $orderId  An Amazon-defined order identifier, in 3-7-7 format.
+     * @param  string  $orderId  The Amazon order identifier in 3-7-7 format.
      */
     public function getOrderRegulatedInfo(string $orderId): Response
     {
@@ -198,7 +198,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $orderId  An Amazon-defined order identifier, in 3-7-7 format.
+     * @param  string  $orderId  The Amazon order identifier in 3-7-7 format.
      * @param  UpdateVerificationStatusRequest  $updateVerificationStatusRequest  The request body for the `updateVerificationStatus` operation.
      */
     public function updateVerificationStatus(

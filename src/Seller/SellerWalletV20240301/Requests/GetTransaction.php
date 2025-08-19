@@ -25,7 +25,7 @@ class GetTransaction extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $transactionId  The ID of the Amazon Seller Wallet transaction.
+     * @param  string  $transactionId  ID of the Amazon SW transaction
      */
     public function __construct(
         protected string $transactionId,

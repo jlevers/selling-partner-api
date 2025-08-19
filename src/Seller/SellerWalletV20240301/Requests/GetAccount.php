@@ -25,7 +25,7 @@ class GetAccount extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $accountId  The ID of the Amazon Seller Wallet account.
+     * @param  string  $accountId  ID of the Amazon SW account
      */
     public function __construct(
         protected string $accountId,

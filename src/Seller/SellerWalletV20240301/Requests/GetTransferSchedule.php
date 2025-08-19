@@ -25,7 +25,7 @@ class GetTransferSchedule extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $transferScheduleId  The schedule ID of the Amazon Seller Wallet transfer.
+     * @param  string  $transferScheduleId  Schedule ID of the Amazon SW transfer
      */
     public function __construct(
         protected string $transferScheduleId,

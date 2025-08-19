@@ -25,11 +25,11 @@ class GetTransferPreview extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $sourceCountryCode  Country code of the source transaction account in ISO 3166 format.
-     * @param  string  $sourceCurrencyCode  Currency code of the source transaction country in ISO 4217 format.
-     * @param  string  $destinationCountryCode  Country code of the destination transaction account in ISO 3166 format.
-     * @param  string  $destinationCurrencyCode  Currency code of the destination transaction country in ISO 4217 format.
-     * @param  float  $baseAmount  The base transaction amount without any markup fees.
+     * @param  string  $sourceCountryCode  Represents 2 character country code of source transaction account in ISO 3166 standard format.
+     * @param  string  $sourceCurrencyCode  Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.
+     * @param  string  $destinationCountryCode  Represents 2 character country code of destination transaction account in ISO 3166 standard format.
+     * @param  string  $destinationCurrencyCode  Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.
+     * @param  float  $baseAmount  Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.
      */
     public function __construct(
         protected string $sourceCountryCode,

@@ -17,9 +17,9 @@ final class AmazonPrograms extends Dto
     protected static array $attributeMap = ['programs' => 'Programs'];
 
     /**
-     * @param  string[]  $programs  A list of the programs that are associated with the specified order item.
+     * @param  string[]  $programs  A list of the programs that Amazon associates with the order item.
      *
-     * **Possible values**: `SUBSCRIBE_AND_SAVE`
+     * **Possible values**: `SUBSCRIBE_AND_SAVE`, `FBM_SHIP_PLUS`
      */
     public function __construct(
         public array $programs,

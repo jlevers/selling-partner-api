@@ -15,11 +15,11 @@ use SellingPartnerApi\Dto;
 final class Balance extends Dto
 {
     /**
-     * @param  string  $accountId  The unique identifier provided by Amazon to identify the account.
-     * @param  float  $balanceAmount  A decimal number, such as an amount or FX rate.
-     * @param  string  $balanceCurrency  The Amazon Seller Wallet bank account currency code in ISO 4217 format.
-     * @param  \DateTimeInterface  $lastUpdateDate  The date of the most recent account balance update.
-     * @param  ?string  $balanceType  The type of bank account balance.
+     * @param  string  $accountId  The unique identifier provided by Amazon to identify the account
+     * @param  float  $balanceAmount  A decimal number such as amount or FX rate.
+     * @param  string  $balanceCurrency  The Amazon SW bank account currency code in ISO 4217 format
+     * @param  \DateTimeInterface  $lastUpdateDate  The last update date on the account balance
+     * @param  ?string  $balanceType  Represent a bank account balance type.
      */
     public function __construct(
         public string $accountId,

@@ -23,7 +23,7 @@ use SellingPartnerApi\Seller\SellerWalletV20240301\Requests\UpdateTransferSchedu
 class Api extends BaseResource
 {
     /**
-     * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for which items are returned.
      */
     public function listAccounts(string $marketplaceId): Response
     {
@@ -33,7 +33,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $accountId  The ID of the Amazon Seller Wallet account.
+     * @param  string  $accountId  ID of the Amazon SW account
      */
     public function getAccount(string $accountId): Response
     {
@@ -43,7 +43,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $accountId  The ID of the Amazon Seller Wallet account.
+     * @param  string  $accountId  ID of the Amazon SW account
      */
     public function listAccountBalances(string $accountId): Response
     {
@@ -53,11 +53,11 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $sourceCountryCode  Country code of the source transaction account in ISO 3166 format.
-     * @param  string  $sourceCurrencyCode  Currency code of the source transaction country in ISO 4217 format.
-     * @param  string  $destinationCountryCode  Country code of the destination transaction account in ISO 3166 format.
-     * @param  string  $destinationCurrencyCode  Currency code of the destination transaction country in ISO 4217 format.
-     * @param  float  $baseAmount  The base transaction amount without any markup fees.
+     * @param  string  $sourceCountryCode  Represents 2 character country code of source transaction account in ISO 3166 standard format.
+     * @param  string  $sourceCurrencyCode  Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.
+     * @param  string  $destinationCountryCode  Represents 2 character country code of destination transaction account in ISO 3166 standard format.
+     * @param  string  $destinationCurrencyCode  Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.
+     * @param  float  $baseAmount  Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.
      */
     public function getTransferPreview(
         string $sourceCountryCode,
@@ -72,8 +72,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $accountId  The ID of the Amazon Seller Wallet account.
-     * @param  ?string  $nextPageToken  A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.
+     * @param  string  $accountId  ID of the Amazon SW account
+     * @param  ?string  $nextPageToken  Pagination token to retrieve a specific page of results.
      */
     public function listAccountTransactions(string $accountId, ?string $nextPageToken = null): Response
     {
@@ -83,7 +83,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  TransactionInitiationRequest  $transactionInitiationRequest  Request body to initiate a transaction from a Seller Wallet bank account to another customer-defined bank account.
+     * @param  TransactionInitiationRequest  $transactionInitiationRequest  Request body to initiate a transaction from a SW bank account to another customer defined bank account
      * @param  string  $destAccountDigitalSignature  Digital signature for the destination bank account details.
      * @param  string  $amountDigitalSignature  Digital signature for the source currency transaction amount.
      */
@@ -98,7 +98,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $transactionId  The ID of the Amazon Seller Wallet transaction.
+     * @param  string  $transactionId  ID of the Amazon SW transaction
      */
     public function getTransaction(string $transactionId): Response
     {
@@ -108,8 +108,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $accountId  The ID of the Amazon Seller Wallet account.
-     * @param  ?string  $nextPageToken  A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.
+     * @param  string  $accountId  ID of the Amazon SW account
+     * @param  ?string  $nextPageToken  Pagination token to retrieve a specific page of results.
      */
     public function listTransferSchedules(string $accountId, ?string $nextPageToken = null): Response
     {
@@ -119,7 +119,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  TransferSchedule  $transferSchedule  Transfer schedule details and historical details related to it.
+     * @param  TransferSchedule  $transferSchedule  Transfer schedule details and related historical details.
      * @param  string  $destAccountDigitalSignature  Digital signature for the destination bank account details.
      * @param  string  $amountDigitalSignature  Digital signature for the source currency transaction amount.
      */
@@ -134,7 +134,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  TransferScheduleRequest  $transferScheduleRequest  Request body to initiate a scheduled transfer from a Seller Wallet bank account to another customer-defined bank account.
+     * @param  TransferScheduleRequest  $transferScheduleRequest  Request body to initiate a scheduled transfer from a SW bank account to another customer defined bank account
      * @param  string  $destAccountDigitalSignature  Digital signature for the destination bank account details.
      * @param  string  $amountDigitalSignature  Digital signature for the source currency transaction amount.
      */
@@ -149,21 +149,21 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $transferScheduleId  The schedule ID of the Amazon Seller Wallet transfer.
+     * @param  string  $transferScheduleId  A unique reference id for a scheduled transfer
      */
-    public function getTransferSchedule(string $transferScheduleId): Response
+    public function deleteScheduleTransaction(string $transferScheduleId): Response
     {
-        $request = new GetTransferSchedule($transferScheduleId);
+        $request = new DeleteScheduleTransaction($transferScheduleId);
 
         return $this->connector->send($request);
     }
 
     /**
-     * @param  string  $transferScheduleId  A unique reference ID for a scheduled transfer.
+     * @param  string  $transferScheduleId  Schedule ID of the Amazon SW transfer
      */
-    public function deleteScheduleTransaction(string $transferScheduleId): Response
+    public function getTransferSchedule(string $transferScheduleId): Response
     {
-        $request = new DeleteScheduleTransaction($transferScheduleId);
+        $request = new GetTransferSchedule($transferScheduleId);
 
         return $this->connector->send($request);
     }

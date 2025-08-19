@@ -17,8 +17,8 @@ final class TransactionListing extends Response
     protected static array $complexArrayTypes = ['transactions' => Transaction::class];
 
     /**
-     * @param  Transaction[]  $transactions  A list of transactions.
-     * @param  ?string  $nextPageToken  A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.
+     * @param  Transaction[]  $transactions  Collection that holds Transaction
+     * @param  ?string  $nextPageToken  If present, use this pagination token to retrieve the next page of supply sources, if not provided the API will return same response. The field will only be provided when the list is greater than 100.
      */
     public function __construct(
         public readonly array $transactions,

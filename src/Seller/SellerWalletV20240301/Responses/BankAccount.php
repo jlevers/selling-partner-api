@@ -15,17 +15,17 @@ use SellingPartnerApi\Response;
 final class BankAccount extends Response
 {
     /**
-     * @param  string  $accountHolderName  The bank account holder's name (expected to be an Amazon customer).
-     * @param  string  $bankAccountNumberFormat  The bank account's format type.
-     * @param  string  $bankAccountOwnershipType  The destination bank account's ownership type.
-     * @param  string  $routingNumber  Routing number for automated clearing house transfers. This value is nine consecutive zeros for Amazon Seller Wallet accounts.
-     * @param  string  $bankNumberFormat  The format of the bank number. Also known as the routing number type.
-     * @param  string  $accountCountryCode  The two-digit country code in ISO 3166 format.
-     * @param  string  $accountCurrency  Bank account currency code in ISO 4217 format.
-     * @param  string  $bankAccountNumberTail  The last 3 digit of the bank account number. This value is three consecutive zeros for Amazon Seller Wallet accounts.
-     * @param  ?string  $accountId  The unique identifier provided by Amazon to identify the account.
-     * @param  ?string  $bankName  The name of the bank. This value is Amazon Seller Wallet for Amazon Seller Wallet accounts.
-     * @param  ?string  $bankAccountHolderStatus  The status of the Amazon Seller Wallet account holder.
+     * @param  string  $accountHolderName  BankAccount holder's name (expected to be Amazon customer)
+     * @param  string  $bankAccountNumberFormat  The format of the bank account number.
+     * @param  string  $bankAccountOwnershipType  Represents destination bank account's ownership type.
+     * @param  string  $routingNumber  Routing number for automated clearing house transfers, for all Amazon Seller Wallet account the value will be denoted by nine cosecutive 0's,
+     * @param  string  $bankNumberFormat  Represents a format of a bank number also called routing number type
+     * @param  string  $accountCountryCode  The two digit country code, in ISO 3166 format.
+     * @param  string  $accountCurrency  BankAccount currency code in ISO 4217 format
+     * @param  string  $bankAccountNumberTail  Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0's
+     * @param  ?string  $accountId  The unique identifier provided by Amazon to identify the account
+     * @param  ?string  $bankName  The name of the bank, for all Amazon Seller Wallet account the value will be Amazon Seller Wallet
+     * @param  ?string  $bankAccountHolderStatus  Represents status of the Amazon Seller Wallet accountholder
      */
     public function __construct(
         public readonly string $accountHolderName,

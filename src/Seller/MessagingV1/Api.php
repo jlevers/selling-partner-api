@@ -21,7 +21,6 @@ use SellingPartnerApi\Seller\MessagingV1\Requests\CreateConfirmOrderDetails;
 use SellingPartnerApi\Seller\MessagingV1\Requests\CreateConfirmServiceDetails;
 use SellingPartnerApi\Seller\MessagingV1\Requests\CreateDigitalAccessKey;
 use SellingPartnerApi\Seller\MessagingV1\Requests\CreateLegalDisclosure;
-use SellingPartnerApi\Seller\MessagingV1\Requests\CreateNegativeFeedbackRemoval;
 use SellingPartnerApi\Seller\MessagingV1\Requests\CreateUnexpectedProblem;
 use SellingPartnerApi\Seller\MessagingV1\Requests\CreateWarranty;
 use SellingPartnerApi\Seller\MessagingV1\Requests\GetAttributes;
@@ -82,17 +81,6 @@ class Api extends BaseResource
         array $marketplaceIds,
     ): Response {
         $request = new CreateLegalDisclosure($amazonOrderId, $createLegalDisclosureRequest, $marketplaceIds);
-
-        return $this->connector->send($request);
-    }
-
-    /**
-     * @param  string  $amazonOrderId  An Amazon order identifier. This identifies the order for which a message is sent.
-     * @param  array  $marketplaceIds  A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     */
-    public function createNegativeFeedbackRemoval(string $amazonOrderId, array $marketplaceIds): Response
-    {
-        $request = new CreateNegativeFeedbackRemoval($amazonOrderId, $marketplaceIds);
 
         return $this->connector->send($request);
     }

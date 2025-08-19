@@ -2,8 +2,6 @@
 
 namespace SellingPartnerApi\Tests\Seller\FBAInboundV20240320\Responses;
 
-use DateTime;
-use DateTimeInterface;
 use PHPUnit\Framework\TestCase;
 use SellingPartnerApi\Seller\FBAInventoryV1\Responses\GetInventorySummariesResponse;
 
@@ -24,9 +22,9 @@ class GetInventorySummariesTest extends TestCase
                         'sellerSku' => '1234567890',
                         'condition' => 'New',
                         'lastUpdatedTime' => '',
-                    ]
-                ]
-            ]
+                    ],
+                ],
+            ],
         ]);
         $this->assertNotNull($result);
         $this->assertNull($result->payload->inventorySummaries[0]->lastUpdatedTime);

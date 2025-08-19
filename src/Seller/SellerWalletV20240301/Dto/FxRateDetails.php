@@ -15,10 +15,10 @@ use SellingPartnerApi\Dto;
 final class FxRateDetails extends Dto
 {
     /**
-     * @param  string  $fxRateId  The unique identifier assigned to the fees / foreign exchange rate of a transaction.
-     * @param  float  $baseRate  A decimal number, such as an amount or FX rate.
-     * @param  float  $effectiveFxRate  A decimal number, such as an amount or FX rate.
-     * @param  string  $rateDirection  Whether the customer is buying or selling the source currency.
+     * @param  string  $fxRateId  Unique identifier assigned to the fees/foreign exchange Rate of a transaction.
+     * @param  float  $baseRate  A decimal number such as amount or FX rate.
+     * @param  float  $effectiveFxRate  A decimal number such as amount or FX rate.
+     * @param  string  $rateDirection  Represents the rate direction at which the transaction is performed.
      */
     public function __construct(
         public string $fxRateId,

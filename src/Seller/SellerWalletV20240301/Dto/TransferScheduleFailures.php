@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class TransferScheduleFailures extends Dto
 {
     /**
-     * @param  \DateTimeInterface  $transferScheduleFailureDate  The transfer schedule failure date.
-     * @param  string  $transferScheduleFailureReason  The reason listed for the failure of the transfer schedule.
+     * @param  \DateTimeInterface  $transferScheduleFailureDate  The transfer schedule cancellation date
+     * @param  string  $transferScheduleFailureReason  The statement/reasoning listed for the cancellation of the transfer schedule
      */
     public function __construct(
         public \DateTimeInterface $transferScheduleFailureDate,

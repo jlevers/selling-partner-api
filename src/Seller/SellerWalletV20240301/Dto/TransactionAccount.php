@@ -15,13 +15,13 @@ use SellingPartnerApi\Dto;
 final class TransactionAccount extends Dto
 {
     /**
-     * @param  string  $bankAccountHolderName  The account holder's name.
-     * @param  string  $bankName  The name of the bank.
-     * @param  string  $bankAccountNumberFormat  The bank account's format type.
-     * @param  string  $bankAccountCurrency  The currency code in ISO 4217 format.
-     * @param  ?string  $accountId  The unique identifier provided by Amazon to identify the account.
-     * @param  ?string  $bankAccountNumberTail  The last three digits of the bank account number.
-     * @param  ?string  $bankAccountCountryCode  The two-digit country code, in ISO 3166 format. This field is optional for `transactionSourceAccount`, but is mandatory for `transactionDestinationAccount`.
+     * @param  string  $bankAccountHolderName  BankAccount holder's name
+     * @param  string  $bankName  The name of the bank
+     * @param  string  $bankAccountNumberFormat  The format of the bank account number.
+     * @param  string  $bankAccountCurrency  The currency code in ISO 4217 format
+     * @param  ?string  $accountId  The unique identifier provided by Amazon to identify the account
+     * @param  ?string  $bankAccountNumberTail  Last 3 digit of the bank account number
+     * @param  ?string  $bankAccountCountryCode  The two digit country code, in ISO 3166 format. This field is OPTIONAL for transactionSourceAccount object but is MANDATORY field for transactionDestinationAccount
      */
     public function __construct(
         public string $bankAccountHolderName,

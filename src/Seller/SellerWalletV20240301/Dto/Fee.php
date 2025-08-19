@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class Fee extends Dto
 {
     /**
-     * @param  string  $feeId  The unique identifier assigned to the fee.
-     * @param  string  $feeType  The type of fee on the transaction.
-     * @param  float  $feeRateValue  A decimal number, such as an amount or FX rate.
+     * @param  string  $feeId  Unique identifier assigned to the Fee.
+     * @param  string  $feeType  Represents different types of fees that can be applied on a transaction.
+     * @param  float  $feeRateValue  A decimal number such as amount or FX rate.
      * @param  Currency  $feeAmount  A currency type and amount.
      */
     public function __construct(

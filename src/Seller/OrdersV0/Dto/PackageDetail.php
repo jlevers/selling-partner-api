@@ -22,7 +22,7 @@ final class PackageDetail extends Dto
      * @param  string  $trackingNumber  The tracking number used to obtain tracking and delivery information.
      * @param  \DateTimeInterface  $shipDate  The shipping date for the package. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
      * @param  ConfirmShipmentOrderItem[]  $orderItems  A list of order items.
-     * @param  ?string  $carrierName  Carrier Name that will deliver the package. Required when `carrierCode` is "Others"
+     * @param  ?string  $carrierName  Carrier name that will deliver the package. Required when `carrierCode` is "Other"
      * @param  ?string  $shippingMethod  Ship method to be used for shipping the order.
      * @param  ?string  $shipFromSupplySourceId  The unique identifier for the supply source.
      */

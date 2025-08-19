@@ -18,28 +18,28 @@ use SellingPartnerApi\Seller\SellerWalletV20240301\Dto\TransferRatePreview;
 final class Transaction extends Response
 {
     /**
-     * @param  string  $transactionId  The unique identifier provided by Amazon to the transaction.
-     * @param  string  $transactionType  The type of transaction.
-     * @param  string  $transactionStatus  The current status of the transaction.
-     * @param  \DateTimeInterface  $transactionRequestDate  The date on which the transaction was initiated.
-     * @param  \DateTimeInterface  $lastUpdateDate  The date of the most recent account balance update.
-     * @param  string  $transactionRequesterSource  The transaction initiation source. This value could be the Amazon portal or PISP name that the customer used to start the transaction.
-     * @param  string  $transactionDescription  The description provided by the requester in the transaction request at time of transaction initiation.
-     * @param  TransactionAccount  $transactionSourceAccount  Details of the bank account involved in transaction.
-     * @param  TransactionAccount  $transactionDestinationAccount  Details of the bank account involved in transaction.
+     * @param  string  $transactionId  The unique identifier provided by Amazon to the transaction
+     * @param  string  $transactionType  Represent type of transaction.
+     * @param  string  $transactionStatus  Represents current status of the transaction.
+     * @param  \DateTimeInterface  $transactionRequestDate  The date when the transaction was initiated.
+     * @param  \DateTimeInterface  $lastUpdateDate  The last update date on the transaction
+     * @param  string  $transactionRequesterSource  The transaction initiation source. This value is either the Amazon portal or PISP name that the customer used to start the transaction.
+     * @param  string  $transactionDescription  A description of the transaction that the requester provides when they initiate the transaction.
+     * @param  TransactionAccount  $transactionSourceAccount  Details of the bank account involved in the transaction.
+     * @param  TransactionAccount  $transactionDestinationAccount  Details of the bank account involved in the transaction.
      * @param  Currency  $transactionRequestAmount  A currency type and amount.
-     * @param  TransferRatePreview  $transferRateDetails  The fees and foreign exchange rates applied to the transaction.
+     * @param  TransferRatePreview  $transferRateDetails  The fees and foreign exchange rates that apply to the transaction.
      *
      * If the fees are in terms of the `baseAmount` (source account) currency, then the effective rate is equal to **1 - (fees * `baseRate` / `baseAmount`)**.
      *
      * If the fees are in terms of the `transferAmount` (destination account) currency, then the effective rate is equal to **`baseRate` - (fees / `baseAmount`)**.
      *
      * In the preceding expressions, **fees** is equal to the sum of all `feeAmount.currencyAmount` values in the `fees` array.
-     * @param  ?\DateTimeInterface  $expectedCompletionDate  The expected completion date of the transaction.
-     * @param  ?\DateTimeInterface  $transactionActualCompletionDate  The transaction's completion date.
-     * @param  ?string  $requesterName  The Amazon Seller Wallet customer who requested the transaction.
+     * @param  ?\DateTimeInterface  $expectedCompletionDate  Expected completion date of a transaction, for existing active Payees (Trusted Beneficiaries) it will be 24 hours but for new destination bank accounts the value could go up to 5 days
+     * @param  ?\DateTimeInterface  $transactionActualCompletionDate  Transaction completion date
+     * @param  ?string  $requesterName  Amazon SW customer who requested the transaction
      * @param  ?Currency  $transactionFinalAmount  A currency type and amount.
-     * @param  ?string  $transactionFailureReason  The reason the transaction failed, if applicable.
+     * @param  ?string  $transactionFailureReason  Description in case the transaction fails before completion
      */
     public function __construct(
         public readonly string $transactionId,

@@ -15,14 +15,14 @@ use SellingPartnerApi\Dto;
 final class TransferScheduleRequest extends Dto
 {
     /**
-     * @param  string  $sourceAccountId  The unique identifier of the source Amazon Seller Wallet bank account from which money is debited.
-     * @param  string  $sourceCurrencyCode  The three-letter currency code of the source payment method country, in ISO 4217 format.
-     * @param  string  $destinationAccountId  The unique identifier of the destination bank account where the money is deposited.
-     * @param  TransactionInstrumentDetails  $destinationTransactionInstrument  Details of the destination bank account in the transaction request.
-     * @param  string  $transactionType  The type of transaction.
-     * @param  TransferScheduleInformation  $transferScheduleInformation  Mandatory information for initiating a schedule transfer.
-     * @param  PaymentPreference  $paymentPreference  The type of payment preference in which the transfer is being scheduled.
-     * @param  ?string  $transferScheduleStatus  The schedule status of the transfer.
+     * @param  string  $sourceAccountId  The unique identifier of the source Amazon SW bank account from where the money needs to be debited
+     * @param  string  $sourceCurrencyCode  Represents 3 letter currency code in ISO 4217 standard format of the source payment method country
+     * @param  string  $destinationAccountId  Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited
+     * @param  TransactionInstrumentDetails  $destinationTransactionInstrument  Request body to create transaction instrument, Amazon performs validation and screening (anti-money laundering measuers) on all the transaction instruments before executing a transaction thus it requires transaction instrument holder's contact details as well
+     * @param  string  $transactionType  Represent type of transaction.
+     * @param  TransferScheduleInformation  $transferScheduleInformation  Parameters containing information required for initiating a schedule transfer
+     * @param  PaymentPreference  $paymentPreference  Payment preference type in which transfer is being scheduled
+     * @param  ?string  $transferScheduleStatus  Represents the schedule status of the transfer.
      */
     public function __construct(
         public string $sourceAccountId,

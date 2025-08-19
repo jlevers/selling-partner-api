@@ -37,7 +37,7 @@ final class Item extends Response
 
     /**
      * @param  string  $asin  The unique identifier of an item in the Amazon catalog.
-     * @param  ?mixed[]  $attributes  A JSON object containing structured item attribute data that is keyed by attribute name. Catalog item attributes conform to the related Amazon product type definitions that you can get from the [Product Type Definitions API](https://developer-docs.amazon.com/sp-api/docs/product-type-definitions-api-v2020-09-01-reference).
+     * @param  ?mixed[]  $attributes  A JSON object containing structured item attribute data that is keyed by attribute name. Catalog item attributes conform to the related Amazon product type definitions that you can get from the [Product Type Definitions API](https://developer-docs.amazon.com/sp-api/reference/product-type-definitions-v2020-09-01).
      * @param  ItemBrowseClassificationsByMarketplace[]|null  $classifications  An array of classifications (browse nodes) that is associated with the item in the Amazon catalog, grouped by `marketplaceId`.
      * @param  ItemDimensionsByMarketplace[]|null  $dimensions  An array of dimensions that are associated with the item in the Amazon catalog, grouped by `marketplaceId`.
      * @param  ItemIdentifiersByMarketplace[]|null  $identifiers  Identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers.

@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class Attachment extends Dto
 {
     /**
-     * @param  string  $uploadDestinationId  The identifier for the upload destination. To retrieve this value, call the Uploads API [`createUploadDestinationForResource`](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation.
+     * @param  string  $uploadDestinationId  The identifier for the upload destination. To retrieve this value, call the Uploads API [`createUploadDestinationForResource`](https://developer-docs.amazon.com/sp-api/reference/createuploaddestinationforresource) operation.
      * @param  string  $fileName  The name of the file, including the extension. This is the file name that will appear in the message. This does not need to match the file name of the file that you uploaded.
      */
     public function __construct(

@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class ScheduleExpression extends Dto
 {
     /**
-     * @param  string  $scheduleExpressionType  The type of scheduled transfer expression.
-     * @param  ?string  $recurringFrequency  The frequency at which the transaction is repeated.
+     * @param  string  $scheduleExpressionType  Represent a type of schedule transfer expression.
+     * @param  ?string  $recurringFrequency  Represent parameters to specify recurrence of the scheduled transfer.
      */
     public function __construct(
         public string $scheduleExpressionType,

@@ -15,13 +15,13 @@ use SellingPartnerApi\Dto;
 final class AccountHolderAddress extends Dto
 {
     /**
-     * @param  string  $addressLine1  Address Line 1 of the public address.
-     * @param  string  $city  City name of the public address.
-     * @param  string  $state  State name of the public address. This will be state or region for CN (China) based addresses.
-     * @param  string  $postalCode  Postal code of the public address.
+     * @param  string  $addressLine1  Address Line 1 of the public address
+     * @param  string  $city  City name of the public address
+     * @param  string  $state  State name of the public address. This is the state or region for China-based addresses.
+     * @param  string  $postalCode  Postal code of the public address
      * @param  string  $countryCode  The two digit country code, in ISO 3166 format.
-     * @param  ?string  $addressLine2  Address Line 2 of the public address.
-     * @param  ?string  $country  Country name of the public address.
+     * @param  ?string  $addressLine2  Address Line 2 of the public address
+     * @param  ?string  $country  Country name of the public address
      */
     public function __construct(
         public string $addressLine1,

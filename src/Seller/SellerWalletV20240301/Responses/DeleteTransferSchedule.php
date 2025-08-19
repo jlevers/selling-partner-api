@@ -15,7 +15,7 @@ use SellingPartnerApi\Response;
 final class DeleteTransferSchedule extends Response
 {
     /**
-     * @param  string  $code  A success code that specifies that the delete operation was successful. For example, HTTP 200.
+     * @param  string  $code  A success code that specifies the delete operation was successful. eg:HTTP 200.
      * @param  string  $message  A message that describes the success condition of the delete schedule transaction.
      * @param  ?string  $details  Additional details that can help the caller understand the operation execution.
      */

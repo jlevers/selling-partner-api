@@ -30,7 +30,7 @@ class CreateTransaction extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  TransactionInitiationRequest  $transactionInitiationRequest  Request body to initiate a transaction from a Seller Wallet bank account to another customer-defined bank account.
+     * @param  TransactionInitiationRequest  $transactionInitiationRequest  Request body to initiate a transaction from a SW bank account to another customer defined bank account
      * @param  string  $destAccountDigitalSignature  Digital signature for the destination bank account details.
      * @param  string  $amountDigitalSignature  Digital signature for the source currency transaction amount.
      */

@@ -25,7 +25,7 @@ class ListAccounts extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for which items are returned.
      */
     public function __construct(
         protected string $marketplaceId,

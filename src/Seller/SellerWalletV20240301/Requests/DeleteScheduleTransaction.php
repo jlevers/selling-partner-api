@@ -25,7 +25,7 @@ class DeleteScheduleTransaction extends Request
     protected Method $method = Method::DELETE;
 
     /**
-     * @param  string  $transferScheduleId  A unique reference ID for a scheduled transfer.
+     * @param  string  $transferScheduleId  A unique reference id for a scheduled transfer
      */
     public function __construct(
         protected string $transferScheduleId,
@@ -33,7 +33,7 @@ class DeleteScheduleTransaction extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/finances/transfers/wallet/2024-03-01/transferSchedules/{$this->transferScheduleId}";
+        return '/finances/transfers/wallet/2024-03-01/transferSchedules';
     }
 
     public function createDtoFromResponse(Response $response): DeleteTransferSchedule|ErrorList

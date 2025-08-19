@@ -18,7 +18,7 @@ final class BalanceListing extends Response
     protected static array $complexArrayTypes = ['balances' => Balance::class];
 
     /**
-     * @param  Balance[]|null  $balances  A list of balances in the seller account.
+     * @param  Balance[]|null  $balances  Collection that holds list of balances on the account
      */
     public function __construct(
         public readonly ?array $balances = null,

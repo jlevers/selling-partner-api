@@ -14,10 +14,6 @@
         },
         "version": "2024-03-01"
     },
-    "externalDocs": {
-        "description": "Find out more about PSD",
-        "url": "https://en.wikipedia.org/wiki/Payment_Services_Directive"
-    },
     "servers": [
         {
             "url": "https://sellingpartnerapi-na.amazon.com/"
@@ -26,19 +22,19 @@
     "tags": [
         {
             "name": "Accounts",
-            "description": "Everything about Amazon Seller Wallet customer accounts"
+            "description": "Everything about Amazon SW customer accounts"
         },
         {
             "name": "Transfer Preview",
-            "description": "Access to all transfers with fees and the final amount with FX details in Amazon Seller Wallet"
+            "description": "Access to all transfers with fees and the final amount with FX details in Amazon SW"
         },
         {
             "name": "Transactions",
-            "description": "Access to all transactions in Amazon Seller Wallet account"
+            "description": "Access to all transactions in Amazon SW account"
         },
         {
             "name": "Transfer Schedule",
-            "description": "Access to all transfer schedules in Amazon Seller Wallet account"
+            "description": "Access to all transfer schedules in Amazon SW account"
         }
     ],
     "paths": {
@@ -47,14 +43,14 @@
                 "tags": [
                     "Accounts"
                 ],
-                "summary": "Get all Amazon Seller Wallet accounts for the seller",
-                "description": "Get all Seller Wallet accounts for a given seller.",
+                "summary": "Get all Amazon SW accounts for the seller",
+                "description": "Get Seller Wallet accounts for a seller.",
                 "operationId": "listAccounts",
                 "parameters": [
                     {
                         "name": "marketplaceId",
                         "in": "query",
-                        "description": "The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "description": "A marketplace identifier. Specifies the marketplace for which items are returned.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -458,14 +454,14 @@
                 "tags": [
                     "Accounts"
                 ],
-                "summary": "Find particular Amazon Seller Wallet account by Amazon account identifier",
-                "description": "Retrieve an Amazon Seller Wallet bank account by Amazon account identifier.",
+                "summary": "Find particular Amazon SW account by Amazon account identifier",
+                "description": "Retrieve a Seller Wallet bank account by Amazon account identifier.",
                 "operationId": "getAccount",
                 "parameters": [
                     {
                         "name": "accountId",
                         "in": "path",
-                        "description": "The ID of the Amazon Seller Wallet account.",
+                        "description": "ID of the Amazon SW account",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -865,14 +861,14 @@
                 "tags": [
                     "Accounts"
                 ],
-                "summary": "Find balance in particular Amazon Seller Wallet account by Amazon account identifier",
-                "description": "Retrieve the balance in a given Amazon Seller Wallet bank account.",
+                "summary": "Find balance in particular Amazon SW account by Amazon account identifier",
+                "description": "Retrieve the balance in a given Seller Wallet bank account.",
                 "operationId": "listAccountBalances",
                 "parameters": [
                     {
                         "name": "accountId",
                         "in": "path",
-                        "description": "The ID of the Amazon Seller Wallet account.",
+                        "description": "ID of the Amazon SW account",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1280,13 +1276,13 @@
                     "Transfer Preview"
                 ],
                 "summary": "Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code",
-                "description": "Retrieve a list of potential fees on a transaction.",
+                "description": "Returns list of potential fees on a transaction based on the source and destination country currency code",
                 "operationId": "getTransferPreview",
                 "parameters": [
                     {
                         "name": "sourceCountryCode",
                         "in": "query",
-                        "description": "Country code of the source transaction account in ISO 3166 format.",
+                        "description": "Represents 2 character country code of source transaction account in ISO 3166 standard format.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1296,7 +1292,7 @@
                     {
                         "name": "sourceCurrencyCode",
                         "in": "query",
-                        "description": "Currency code of the source transaction country in ISO 4217 format.",
+                        "description": "Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1306,7 +1302,7 @@
                     {
                         "name": "destinationCountryCode",
                         "in": "query",
-                        "description": "Country code of the destination transaction account in ISO 3166 format.",
+                        "description": "Represents 2 character country code of destination transaction account in ISO 3166 standard format.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1316,7 +1312,7 @@
                     {
                         "name": "destinationCurrencyCode",
                         "in": "query",
-                        "description": "Currency code of the destination transaction country in ISO 4217 format.",
+                        "description": "Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1326,7 +1322,7 @@
                     {
                         "name": "baseAmount",
                         "in": "query",
-                        "description": "The base transaction amount without any markup fees.",
+                        "description": "Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.",
                         "required": true,
                         "schema": {
                             "type": "number"
@@ -1785,14 +1781,14 @@
                 "tags": [
                     "Transactions"
                 ],
-                "summary": "The API will return all the transactions for a given Amazon Seller Wallet account sorted by the transaction request date",
-                "description": "Retrieve a list of transactions for a given Amazon Seller Wallet bank account.",
+                "summary": "The API will return all the transactions for a given Amazon SW account sorted by the transaction request date",
+                "description": "Retrieve a list of transactions for a given Seller Wallet bank account.",
                 "operationId": "listAccountTransactions",
                 "parameters": [
                     {
                         "name": "accountId",
                         "in": "query",
-                        "description": "The ID of the Amazon Seller Wallet account.",
+                        "description": "ID of the Amazon SW account",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1802,7 +1798,7 @@
                     {
                         "name": "nextPageToken",
                         "in": "query",
-                        "description": "A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.",
+                        "description": "Pagination token to retrieve a specific page of results.",
                         "schema": {
                             "type": "string"
                         },
@@ -2258,8 +2254,8 @@
                 "tags": [
                     "Transactions"
                 ],
-                "summary": "Create a transaction request from Amazon Seller Wallet account to another customer-provided account",
-                "description": "Create a transaction request from an Amazon Seller Wallet account to another customer-provided account.",
+                "summary": "Create a transaction request from Amazon SW account to another customer provided account",
+                "description": "Create a transaction request from a Seller Wallet account to another customer-provided account.",
                 "operationId": "createTransaction",
                 "parameters": [
                     {
@@ -2284,7 +2280,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "The payload of the request",
+                    "description": "Defines the actual payload of the request",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -3050,14 +3046,14 @@
                 "tags": [
                     "Transactions"
                 ],
-                "summary": "Find particular Amazon Seller Wallet account transaction by Amazon transaction identifier",
-                "description": "Find a transaction by the Amazon transaction identifier.",
+                "summary": "Find particular Amazon SW account transaction by Amazon transaction identifier",
+                "description": "Returns a transaction",
                 "operationId": "getTransaction",
                 "parameters": [
                     {
                         "name": "transactionId",
                         "in": "path",
-                        "description": "The ID of the Amazon Seller Wallet transaction.",
+                        "description": "ID of the Amazon SW transaction",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -3511,14 +3507,14 @@
                 "tags": [
                     "Transfer Schedule"
                 ],
-                "summary": "The API will return all the transfer schedules for a given Amazon Seller Wallet account",
-                "description": "Returns all transfer schedules of a given Amazon Seller Wallet bank account with the schedule ID in response if present.",
+                "summary": "The API will return all the transfer schedules for a given Amazon SW account",
+                "description": "Retrieve transfer schedules of a Seller Wallet bank account.",
                 "operationId": "listTransferSchedules",
                 "parameters": [
                     {
                         "name": "accountId",
                         "in": "query",
-                        "description": "The ID of the Amazon Seller Wallet account.",
+                        "description": "ID of the Amazon SW account",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -3528,7 +3524,7 @@
                     {
                         "name": "nextPageToken",
                         "in": "query",
-                        "description": "A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.",
+                        "description": "Pagination token to retrieve a specific page of results.",
                         "schema": {
                             "type": "string"
                         },
@@ -3953,7 +3949,7 @@
                     "Transfer Schedule"
                 ],
                 "summary": "Update a transfer schedule information. Only fields (i.e; transferScheduleInformation, paymentPreference, transferScheduleStatus) in the request body can be updated.",
-                "description": "Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.",
+                "description": "Returns a transfer belonging to the updated scheduled transfer request",
                 "operationId": "updateTransferSchedule",
                 "parameters": [
                     {
@@ -3978,7 +3974,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "The payload of the scheduled transfer request that is to be updated.",
+                    "description": "Defines the actual payload of the scheduled transfer request that is to be updated.\n",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -4641,8 +4637,8 @@
                 "tags": [
                     "Transfer Schedule"
                 ],
-                "summary": "Create a transfer schedule request from Amazon Seller Wallet account to another customer-provided account",
-                "description": "Create a transfer schedule request from an Amazon Seller Wallet account to another customer-provided account.",
+                "summary": "Create a transfer schedule request from Amazon SW account to another customer provided account",
+                "description": "Create a transfer schedule request from a Seller Wallet account to another customer-provided account.",
                 "operationId": "createTransferSchedule",
                 "parameters": [
                     {
@@ -4667,7 +4663,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "The payload of the request.",
+                    "description": "Defines the actual payload of the request",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -5392,6 +5388,398 @@
                     }
                 },
                 "x-codegen-request-body-name": "body"
+            },
+            "delete": {
+                "tags": [
+                    "Transfer Schedule"
+                ],
+                "summary": "Delete a transaction request that is scheduled from Amazon SW account to another customer provided account",
+                "description": "Delete a transaction request that is scheduled from a Seller Wallet account to another customer-provided account.",
+                "operationId": "deleteScheduleTransaction",
+                "parameters": [
+                    {
+                        "name": "transferScheduleId",
+                        "in": "path",
+                        "description": "A unique reference id for a scheduled transfer",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "amzn1.scheduletransfer.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully deleted the transfer schedule.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteTransferSchedule"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase200"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "code": "Successful",
+                                        "message": "Deleted transfer schedule",
+                                        "details": "Deleted transfer schedule for ID transferScheduleIdCase200"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase400"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid or Missing signature.",
+                                                "details": "Missing addressDigitalSignature"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase403"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "UnauthorizedRequest",
+                                                "message": "Invalid WAC certificate.",
+                                                "details": "NCA Status for the certificate is invalid"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase404"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "NotFound",
+                                                "message": "Transfer Schedule not found.",
+                                                "details": "Transfer schedule id doesn't exists for invalid TransferScheduleId"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "408": {
+                        "description": "Request Timed Out.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase408"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "RequestTimedOut",
+                                                "message": "Request Timed Out",
+                                                "details": "Server did not respond in time"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase429"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "RequestThrottled",
+                                                "message": "Request Throttled",
+                                                "details": "Server throttled the request"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase500"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InternalServerError",
+                                                "message": "Internal Server Error",
+                                                "details": "Internal Server Error Occurred"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase503"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "ServiceUnavailable",
+                                                "message": "Server Unavailable",
+                                                "details": "Server is not accepting request"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
             }
         },
         "/finances/transfers/wallet/2024-03-01/transferSchedules/{transferScheduleId}": {
@@ -5399,14 +5787,14 @@
                 "tags": [
                     "Transfer Schedule"
                 ],
-                "summary": "Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier",
-                "description": "Find a particular Amazon Seller Wallet account transfer schedule.",
+                "summary": "Find particular Amazon SW account transfer schedule by Amazon transfer schedule identifier",
+                "description": "Find a particular Seller Wallet account transfer schedule.",
                 "operationId": "getTransferSchedule",
                 "parameters": [
                     {
                         "name": "transferScheduleId",
                         "in": "path",
-                        "description": "The schedule ID of the Amazon Seller Wallet transfer.",
+                        "description": "Schedule ID of the Amazon SW transfer",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -5821,398 +6209,6 @@
                         }
                     }
                 }
-            },
-            "delete": {
-                "tags": [
-                    "Transfer Schedule"
-                ],
-                "summary": "Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account",
-                "description": "Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.",
-                "operationId": "deleteScheduleTransaction",
-                "parameters": [
-                    {
-                        "name": "transferScheduleId",
-                        "in": "path",
-                        "description": "A unique reference ID for a scheduled transfer.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "amzn1.scheduletransfer.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successfully deleted the transfer schedule.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/DeleteTransferSchedule"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase200"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "code": "Successful",
-                                        "message": "Deleted transfer schedule",
-                                        "details": "Deleted transfer schedule for ID transferScheduleIdCase200"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "400": {
-                        "description": "Request has missing or invalid parameters and cannot be parsed.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase400"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "InvalidInput",
-                                                "message": "Invalid or Missing signature.",
-                                                "details": "Missing addressDigitalSignature"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "403": {
-                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase403"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "UnauthorizedRequest",
-                                                "message": "Invalid WAC certificate.",
-                                                "details": "NCA Status for the certificate is invalid"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "404": {
-                        "description": "The resource specified does not exist.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase404"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "NotFound",
-                                                "message": "Transfer Schedule not found.",
-                                                "details": "Transfer schedule id doesn't exists for invalid TransferScheduleId"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "408": {
-                        "description": "Request Timed Out.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase408"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "RequestTimedOut",
-                                                "message": "Request Timed Out",
-                                                "details": "Server did not respond in time"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "413": {
-                        "description": "The request size exceeded the maximum accepted size.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        }
-                    },
-                    "415": {
-                        "description": "The request payload is in an unsupported format.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        }
-                    },
-                    "429": {
-                        "description": "The frequency of requests was greater than allowed.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase429"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "RequestThrottled",
-                                                "message": "Request Throttled",
-                                                "details": "Server throttled the request"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "500": {
-                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase500"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "InternalServerError",
-                                                "message": "Internal Server Error",
-                                                "details": "Internal Server Error Occurred"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "503": {
-                        "description": "Temporary overloading or maintenance of the server.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase503"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "ServiceUnavailable",
-                                                "message": "Server Unavailable",
-                                                "details": "Server is not accepting request"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                }
             }
         }
     },
@@ -6230,41 +6226,41 @@
                 "properties": {
                     "addressLine1": {
                         "type": "string",
-                        "description": "Address Line 1 of the public address.",
+                        "description": "Address Line 1 of the public address\n",
                         "example": "678 JFK Street"
                     },
                     "addressLine2": {
                         "type": "string",
-                        "description": "Address Line 2 of the public address.",
+                        "description": "Address Line 2 of the public address\n",
                         "example": "Unit 415"
                     },
                     "city": {
                         "type": "string",
-                        "description": "City name of the public address.",
+                        "description": "City name of the public address\n",
                         "example": "Seattle"
                     },
                     "state": {
                         "type": "string",
-                        "description": "State name of the public address. This will be state or region for CN (China) based addresses.",
+                        "description": "State name of the public address. This is the state or region for China-based addresses.",
                         "example": "WA"
                     },
                     "postalCode": {
                         "type": "string",
-                        "description": "Postal code of the public address.",
+                        "description": "Postal code of the public address\n",
                         "example": "98109"
                     },
                     "country": {
                         "type": "string",
-                        "description": "Country name of the public address.",
+                        "description": "Country name of the public address\n",
                         "example": "United States"
                     },
                     "countryCode": {
                         "type": "string",
-                        "description": "The two digit country code, in ISO 3166 format.",
+                        "description": "The two digit country code, in ISO 3166 format.\n",
                         "example": "US"
                     }
                 },
-                "description": "The Address used to verify the bank account of the payee. This can be a person or business mailing address.",
+                "description": "Address for bank account verification of the Payee. For example, this can be a person or business mailing address\n",
                 "example": {
                     "addressLine1": "678 JFK Street",
                     "city": "Seattle",
@@ -6288,12 +6284,12 @@
                 "properties": {
                     "accountId": {
                         "type": "string",
-                        "description": "The unique identifier provided by Amazon to identify the account.",
+                        "description": "The unique identifier provided by Amazon to identify the account\n",
                         "example": "amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ"
                     },
                     "accountHolderName": {
                         "type": "string",
-                        "description": "The bank account holder's name (expected to be an Amazon customer).",
+                        "description": "BankAccount holder's name (expected to be Amazon customer)\n",
                         "example": "John Doe"
                     },
                     "bankAccountNumberFormat": {
@@ -6301,7 +6297,7 @@
                     },
                     "bankName": {
                         "type": "string",
-                        "description": "The name of the bank. This value is Amazon Seller Wallet for Amazon Seller Wallet accounts.",
+                        "description": "The name of the bank, for all Amazon Seller Wallet account the value will be Amazon Seller Wallet\n",
                         "example": "Bank Of America"
                     },
                     "bankAccountOwnershipType": {
@@ -6309,7 +6305,7 @@
                     },
                     "routingNumber": {
                         "type": "string",
-                        "description": "Routing number for automated clearing house transfers. This value is nine consecutive zeros for Amazon Seller Wallet accounts.",
+                        "description": "Routing number for automated clearing house transfers, for all Amazon Seller Wallet account the value will be denoted by nine cosecutive 0's, \n",
                         "example": "026009593"
                     },
                     "bankNumberFormat": {
@@ -6317,24 +6313,24 @@
                     },
                     "accountCountryCode": {
                         "type": "string",
-                        "description": "The two-digit country code in ISO 3166 format.",
+                        "description": "The two digit country code, in ISO 3166 format.\n",
                         "example": "US"
                     },
                     "accountCurrency": {
                         "type": "string",
-                        "description": "Bank account currency code in ISO 4217 format.",
+                        "description": "BankAccount currency code in ISO 4217 format\n",
                         "example": "USD"
                     },
                     "bankAccountNumberTail": {
                         "type": "string",
-                        "description": "The last 3 digit of the bank account number. This value is three consecutive zeros for Amazon Seller Wallet accounts.",
-                        "example": "123"
+                        "description": "Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0's\n",
+                        "example": "666"
                     },
                     "bankAccountHolderStatus": {
                         "$ref": "#/components/schemas/BankAccountHolderStatus"
                     }
                 },
-                "description": "Details of an Amazon Seller Wallet bank account. This account is used to hold the money that a Seller Wallet customer earns by selling items."
+                "description": "Details of an Amazon SW bank account, used to hold money earned by a SW customer by selling items. NOTE: Not including account_links, short cut links to the account balance and transactions -> since not mandatory\n"
             },
             "BankAccountListing": {
                 "required": [
@@ -6344,13 +6340,13 @@
                 "properties": {
                     "accounts": {
                         "type": "array",
-                        "description": "A list of bank accounts.",
+                        "description": "Collection that holds BankAccount\n",
                         "items": {
                             "$ref": "#/components/schemas/BankAccount"
                         }
                     }
                 },
-                "description": "A list of bank accounts."
+                "description": "Struct that holds collection of accounts."
             },
             "Balance": {
                 "required": [
@@ -6363,7 +6359,7 @@
                 "properties": {
                     "accountId": {
                         "type": "string",
-                        "description": "The unique identifier provided by Amazon to identify the account.",
+                        "description": "The unique identifier provided by Amazon to identify the account\n",
                         "example": "amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ"
                     },
                     "balanceType": {
@@ -6374,16 +6370,16 @@
                     },
                     "balanceCurrency": {
                         "type": "string",
-                        "description": "The Amazon Seller Wallet bank account currency code in ISO 4217 format.",
+                        "description": "The Amazon SW bank account currency code in ISO 4217 format\n",
                         "example": "USD"
                     },
                     "lastUpdateDate": {
                         "type": "string",
-                        "description": "The date of the most recent account balance update.",
+                        "description": "The last update date on the account balance\n",
                         "format": "date-time"
                     }
                 },
-                "description": "The balance amount in the Amazon Seller Wallet bank account.",
+                "description": "Specifies the balance amount in the Amazon SW bank account",
                 "example": {
                     "accountId": "amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ",
                     "balanceType": "AVAILABLE",
@@ -6397,13 +6393,13 @@
                 "properties": {
                     "balances": {
                         "type": "array",
-                        "description": "A list of balances in the seller account.",
+                        "description": "Collection that holds list of balances on the account\n",
                         "items": {
                             "$ref": "#/components/schemas/Balance"
                         }
                     }
                 },
-                "description": "A list of balances in the seller account.",
+                "description": "Struct that holds list of balances on the seller account.",
                 "example": {
                     "balances": [
                         {
@@ -6432,7 +6428,7 @@
             },
             "BalanceType": {
                 "type": "string",
-                "description": "The type of bank account balance.",
+                "description": "Represent a bank account balance type.",
                 "enum": [
                     "AVAILABLE",
                     "LOCKED_IN",
@@ -6442,25 +6438,25 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "AVAILABLE",
-                        "description": "The available balance that is accessible to the seller."
+                        "description": "Available balance that is accessible to the seller."
                     },
                     {
                         "value": "LOCKED_IN",
-                        "description": "The incoming balance in the seller's account."
+                        "description": "The incoming balance in sellers account."
                     },
                     {
                         "value": "LOCKED_OUT",
-                        "description": "The outgoing balance from seller's account"
+                        "description": "The outgoing balance from sellers account"
                     },
                     {
                         "value": "TOTAL",
-                        "description": "The total balance in the seller's account."
+                        "description": "Total balance in the sellers account."
                     }
                 ]
             },
             "BankAccountNumberFormat": {
                 "type": "string",
-                "description": "The bank account's format type.",
+                "description": "The format of the bank account number.",
                 "enum": [
                     "IBAN",
                     "BBAN"
@@ -6468,17 +6464,17 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "IBAN",
-                        "description": "International bank account number."
+                        "description": "International Bank BankAccount Number."
                     },
                     {
                         "value": "BBAN",
-                        "description": "Basic bank account number for domestic bank accounts."
+                        "description": "Basic Bank BankAccount Number which is Domestic bank accounts."
                     }
                 ]
             },
             "BankAccountHolderStatus": {
                 "type": "string",
-                "description": "The status of the Amazon Seller Wallet account holder.",
+                "description": "Represents status of the Amazon Seller Wallet accountholder",
                 "enum": [
                     "ACTIVE",
                     "INACTIVE",
@@ -6488,25 +6484,25 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "ACTIVE",
-                        "description": "The account holder is Active."
+                        "description": "BankAccount holder is Active."
                     },
                     {
                         "value": "INACTIVE",
-                        "description": "The account holder is inactive and cannot make transactions."
+                        "description": "BankAccount holder is Inactive and cannot be used for transactions."
                     },
                     {
                         "value": "UNDER_REVIEW",
-                        "description": "The account holder is currently under review."
+                        "description": "BankAccount holder is currently under review."
                     },
                     {
                         "value": "VERIFICATION_FAILED",
-                        "description": "The account holder KYC (Know Your Customer) verification has failed."
+                        "description": "BankAccount holder KYC(Know Your Customer) verification has failed."
                     }
                 ]
             },
             "BankAccountOwnershipType": {
                 "type": "string",
-                "description": "The destination bank account's ownership type.",
+                "description": "Represents destination bank account's ownership type.",
                 "enum": [
                     "THIRD_PARTY",
                     "SELF",
@@ -6515,21 +6511,21 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "THIRD_PARTY",
-                        "description": "The account is not officially owned by the Payment Service User who is viewing the account and initiating the transaction."
+                        "description": "BankAccount is not officially owned by the Payment Service User who is viewing the account and initiating the transaction."
                     },
                     {
                         "value": "SELF",
-                        "description": "The account is officially owned by the Payment Service User who is viewing the account and initiating the transaction."
+                        "description": "BankAccount officially owned by the Payment Service User who is viewing the account and initiating the transaction."
                     },
                     {
                         "value": "GOVERNMENT",
-                        "description": "The account is officially owned by a government entity and is used for service fees / tax collection."
+                        "description": "BankAccount officially owned by some Government entity and is used for service fee / tax collection."
                     }
                 ]
             },
             "BankNumberFormat": {
                 "type": "string",
-                "description": "The format of the bank number. Also known as the routing number type.",
+                "description": "Represents a format of a bank number also called routing number type",
                 "enum": [
                     "BIC",
                     "BASIC"
@@ -6537,17 +6533,17 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "BIC",
-                        "description": "Business Identifier Code. In ISO_9362 format."
+                        "description": "Business Identifier Code. In ISO 9362 format."
                     },
                     {
                         "value": "BASIC",
-                        "description": "The bank number has a special format specific to the country code provided, such as ABA routing number."
+                        "description": "Basic means the bank number has a special format specific to the country code provided, such as ABA routing number."
                     }
                 ]
             },
             "BigDecimal": {
                 "type": "number",
-                "description": "A decimal number, such as an amount or FX rate."
+                "description": "A decimal number such as amount or FX rate."
             },
             "Currency": {
                 "type": "object",
@@ -6571,7 +6567,7 @@
                 "properties": {
                     "code": {
                         "type": "string",
-                        "description": "A success code that specifies that the delete operation was successful. For example, HTTP 200."
+                        "description": "A success code that specifies the delete operation was successful. eg:HTTP 200."
                     },
                     "message": {
                         "type": "string",
@@ -6582,7 +6578,7 @@
                         "description": "Additional details that can help the caller understand the operation execution."
                     }
                 },
-                "description": "The response returned when the schedule transfer's delete request is successful."
+                "description": "Response returned when the schedule transfer's delete request is successful."
             },
             "Error": {
                 "required": [
@@ -6614,7 +6610,7 @@
                 "properties": {
                     "errors": {
                         "type": "array",
-                        "description": "List of errors",
+                        "description": "List of errors\n",
                         "items": {
                             "$ref": "#/components/schemas/Error"
                         }
@@ -6633,7 +6629,7 @@
                 "properties": {
                     "fxRateId": {
                         "type": "string",
-                        "description": "The unique identifier assigned to the fees / foreign exchange rate of a transaction."
+                        "description": "Unique identifier assigned to the fees/foreign exchange Rate of a transaction.\n"
                     },
                     "baseRate": {
                         "$ref": "#/components/schemas/BigDecimal"
@@ -6645,7 +6641,7 @@
                         "$ref": "#/components/schemas/RateDirection"
                     }
                 },
-                "description": "Foreign exchange rate details.",
+                "description": "Foreign exchange rate details displayed when transfer preview is requested.\n",
                 "example": {
                     "fxRateId": "UNIQUE_FX_RATE_ID_1",
                     "baseRate": 7.2,
@@ -6664,7 +6660,7 @@
                 "properties": {
                     "feeId": {
                         "type": "string",
-                        "description": "The unique identifier assigned to the fee."
+                        "description": "Unique identifier assigned to the Fee.\n"
                     },
                     "feeType": {
                         "$ref": "#/components/schemas/FeeType"
@@ -6676,11 +6672,11 @@
                         "$ref": "#/components/schemas/Currency"
                     }
                 },
-                "description": "Details of the fee."
+                "description": "If the fees is in baseAmount (sourceAccount) currency, effectiveRate =  (baseAmount - sum(fees.feeAmount.currencyAmount)) * baseRate) / baseAmount. If the fees is in transferAmount (destinationAccount) currency, effectiveRate =  (( baseAmount * baseRate ) -  sum(fees.feeAmount.currencyAmount )) / baseAmount\n"
             },
             "FeeType": {
                 "type": "string",
-                "description": "The type of fee on the transaction.",
+                "description": "Represents different types of fees that can be applied on a transaction.",
                 "enum": [
                     "MISCELLANEOUS_FEE",
                     "TAX",
@@ -6689,21 +6685,21 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "MISCELLANEOUS_FEE",
-                        "description": "Any other service charges or additional fee applied by a transaction executor service."
+                        "description": "Represents any other service charges or additional fee applied by a transaction executor service."
                     },
                     {
                         "value": "TAX",
-                        "description": "Taxes on the transaction."
+                        "description": "Represents tax fees if applied on any transaction."
                     },
                     {
                         "value": "TRANSACTION_FEE",
-                        "description": "A per-transaction fee that can be applied by a transaction executor service. This can be both international and domestic fees"
+                        "description": "Represents a per transaction fee that can be applied by a transaction executor service. This can be both INTERNATIONAL and DOMESTIC fees"
                     }
                 ]
             },
             "RateDirection": {
                 "type": "string",
-                "description": "Whether the customer is buying or selling the source currency.",
+                "description": "Represents the rate direction at which the transaction is performed.",
                 "enum": [
                     "BUY",
                     "SELL"
@@ -6711,11 +6707,11 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "BUY",
-                        "description": "The customer is buying the source currency."
+                        "description": "Buy value represents the rate if customer is buying the source currency.\n"
                     },
                     {
                         "value": "SELL",
-                        "description": "The customer is selling the source currency."
+                        "description": "Sell value represents the rate if customer is selling the source currency.\n"
                     }
                 ]
             },
@@ -6733,11 +6729,11 @@
                         "$ref": "#/components/schemas/BigDecimal"
                     }
                 },
-                "description": "The type of payment preference in which the transfer is being scheduled."
+                "description": "Payment preference type in which transfer is being scheduled\n"
             },
             "PaymentPreferencePaymentType": {
                 "type": "string",
-                "description": "The type of payment preference.",
+                "description": "Represent a type of payment preference.",
                 "enum": [
                     "PERCENTAGE",
                     "AMOUNT"
@@ -6745,17 +6741,17 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "PERCENTAGE",
-                        "description": "The scheduled transfer is a percentage of the account total."
+                        "description": "The schedule transfer in percentage."
                     },
                     {
                         "value": "AMOUNT",
-                        "description": "The scheduled transfer is a specific amount."
+                        "description": "The schedule transfer in amount value."
                     }
                 ]
             },
             "RecurringFrequency": {
                 "type": "string",
-                "description": "The frequency at which the transaction is repeated.",
+                "description": "Represent parameters to specify recurrence of the scheduled transfer.",
                 "enum": [
                     "BIWEEKLY",
                     "DAILY",
@@ -6765,19 +6761,19 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "BIWEEKLY",
-                        "description": "The transfer will repeat every two weeks."
+                        "description": "The transfer repeats every two weeks."
                     },
                     {
                         "value": "DAILY",
-                        "description": "The transfer will repeat every day."
+                        "description": "The transfer repeats every day."
                     },
                     {
                         "value": "MONTHLY",
-                        "description": "The transfer will repeat every month."
+                        "description": "The transfer repeats every month."
                     },
                     {
                         "value": "WEEKLY",
-                        "description": "The transfer will repeat every week."
+                        "description": "The transfer repeats every week."
                     }
                 ]
             },
@@ -6786,13 +6782,13 @@
                 "properties": {
                     "scheduleStartDate": {
                         "type": "string",
-                        "description": "The start date of the scheduled transfer.",
+                        "description": "Field to specify start date of the scheduled transfer\n",
                         "format": "date-time",
                         "example": "2024-03-01T00:00:00Z"
                     },
                     "scheduleEndDate": {
                         "type": "string",
-                        "description": "The end date of the scheduled transfer.",
+                        "description": "Field to specify end date of the scheduled transfer\n",
                         "format": "date-time",
                         "example": "2027-03-01T00:00:00Z"
                     },
@@ -6803,7 +6799,7 @@
                         "$ref": "#/components/schemas/ScheduleTransferType"
                     }
                 },
-                "description": "Mandatory information for initiating a schedule transfer.",
+                "description": "Parameters containing information required for initiating a schedule transfer\n",
                 "example": {
                     "scheduleStartDate": "2024-03-01T00:00:00Z",
                     "scheduleEndDate": "2027-03-01T00:00:00Z",
@@ -6827,11 +6823,11 @@
                         "$ref": "#/components/schemas/RecurringFrequency"
                     }
                 },
-                "description": "The configuration of the schedule."
+                "description": "Parameters containing information of the expression that defines when the schedule runs. The following formats are supported.\n"
             },
             "ScheduleExpressionType": {
                 "type": "string",
-                "description": "The type of scheduled transfer expression.",
+                "description": "Represent a type of schedule transfer expression.",
                 "enum": [
                     "RECURRING",
                     "ONE_TIME"
@@ -6839,24 +6835,24 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "RECURRING",
-                        "description": "The scheduled transfer is a recurring event."
+                        "description": "The schedule transfer is a recurring event. example: monthly schedule transfer."
                     },
                     {
                         "value": "ONE_TIME",
-                        "description": "The scheduled transfer is a one-time event."
+                        "description": "Creates a one-time schedule transfer."
                     }
                 ]
             },
             "ScheduleTransferType": {
                 "type": "string",
-                "description": "The type of schedule the transfer is on. Schedules based on time patterns use EventBridge.",
+                "description": "Defines the type of schedule trigger used for executing transfers. Schedule based on time patterns using EventBridge.\n",
                 "enum": [
                     "TIME_BASED"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "TIME_BASED",
-                        "description": "The schedule is based on time patterns using EventBridge. Supports recurring patterns (daily, weekly, biweekly, monthly) and one-time events. "
+                        "description": "Schedule based on time patterns using EventBridge. Supports recurring patterns (daily, weekly, biweekly, monthly) and one-time future executions. \n"
                     }
                 ]
             },
@@ -6872,17 +6868,17 @@
                 "properties": {
                     "sourceAccountId": {
                         "type": "string",
-                        "description": "The unique identifier of the source Amazon Seller Wallet bank account from which the money is debited.",
+                        "description": "The unique identifier of the source Amazon SW bank account from where the money needs to be debited\n",
                         "example": "amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI"
                     },
                     "destinationAccountId": {
                         "type": "string",
-                        "description": "The unique identifier of the destination bank account where the money is deposited.",
+                        "description": "Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited\n",
                         "example": "amzn1.account.AJKBFWEJFBNH2KCJPII5FBN"
                     },
                     "description": {
                         "type": "string",
-                        "description": "A description of the transaction.",
+                        "description": "Optional field to specify description for the transaction\n",
                         "example": "Payment to the delivery partner"
                     },
                     "destinationTransactionInstrument": {
@@ -6899,12 +6895,12 @@
                     },
                     "requestTime": {
                         "type": "string",
-                        "description": "The time at which the transaction was initiated in [ISO 8601 date time format](https://developer-docs.amazon.com/sp-api/docs/iso-8601).",
+                        "description": "The transaction initiation request time in date-time format\n",
                         "format": "date-time",
                         "example": "2024-03-26T02:32:59.787Z"
                     }
                 },
-                "description": "Request body to initiate a transaction from a Seller Wallet bank account to another customer-defined bank account.",
+                "description": "Request body to initiate a transaction from a SW bank account to another customer defined bank account\n",
                 "example": {
                     "sourceAccountId": "amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI",
                     "description": "Payment to the delivery partner",
@@ -6983,11 +6979,11 @@
                     },
                     "bankAccountNumber": {
                         "type": "string",
-                        "description": "The bank account number of the destination payment method.\n\n**Note:** This field is encrypted before Amazon receives it, so should not be used to generate `destAccountDigitalSignature`, and should not be included in the request signature.",
+                        "description": "This field would be used to populate the bank account number of the destination payment method. The field is intentionally not included in any other Schemas since Amazon internal systems will never receive it in unencrypted format, so field won't be part of the request signature\n",
                         "example": "GB29RBOS60161331926819"
                     }
                 },
-                "description": "Details of the destination bank account in the transaction request.",
+                "description": "Request body to create transaction instrument, Amazon performs validation and screening (anti-money laundering measuers) on all the transaction instruments before executing a transaction thus it requires transaction instrument holder's contact details as well\n",
                 "example": {
                     "bankAccount": {
                         "accountHolderName": "John Doe",
@@ -7020,7 +7016,7 @@
                 "properties": {
                     "transactionId": {
                         "type": "string",
-                        "description": "The unique identifier provided by Amazon to the transaction."
+                        "description": "The unique identifier provided by Amazon to the transaction\n"
                     },
                     "transactionType": {
                         "$ref": "#/components/schemas/TransactionType"
@@ -7030,37 +7026,37 @@
                     },
                     "transactionRequestDate": {
                         "type": "string",
-                        "description": "The date on which the transaction was initiated.",
+                        "description": "The date when the transaction was initiated.",
                         "format": "date-time"
                     },
                     "expectedCompletionDate": {
                         "type": "string",
-                        "description": "The expected completion date of the transaction.",
+                        "description": "Expected completion date of a transaction, for existing active Payees (Trusted Beneficiaries) it will be 24 hours but for new destination bank accounts the value could go up to 5 days\n",
                         "format": "date-time",
                         "example": "2023-09-26T02:32:59.787Z"
                     },
                     "transactionActualCompletionDate": {
                         "type": "string",
-                        "description": "The transaction's completion date.",
+                        "description": "Transaction completion date\n",
                         "format": "date-time"
                     },
                     "lastUpdateDate": {
                         "type": "string",
-                        "description": "The date of the most recent account balance update.",
+                        "description": "The last update date on the transaction\n",
                         "format": "date-time"
                     },
                     "requesterName": {
                         "type": "string",
-                        "description": "The Amazon Seller Wallet customer who requested the transaction.",
+                        "description": "Amazon SW customer who requested the transaction\n",
                         "example": "TPPOrgId"
                     },
                     "transactionRequesterSource": {
                         "type": "string",
-                        "description": "The transaction initiation source. This value could be the Amazon portal or PISP name that the customer used to start the transaction."
+                        "description": "The transaction initiation source. This value is either the Amazon portal or PISP name that the customer used to start the transaction."
                     },
                     "transactionDescription": {
                         "type": "string",
-                        "description": "The description provided by the requester in the transaction request at time of transaction initiation."
+                        "description": "A description of the transaction that the requester provides when they initiate the transaction."
                     },
                     "transactionSourceAccount": {
                         "$ref": "#/components/schemas/TransactionAccount"
@@ -7079,11 +7075,11 @@
                     },
                     "transactionFailureReason": {
                         "type": "string",
-                        "description": "The reason the transaction failed, if applicable.",
+                        "description": "Description in case the transaction fails before completion\n",
                         "example": "Insufficient Balance"
                     }
                 },
-                "description": "The current transaction status and historical details related to it."
+                "description": "The current transaction status and related historical details."
             },
             "TransactionAccount": {
                 "required": [
@@ -7096,33 +7092,33 @@
                 "properties": {
                     "accountId": {
                         "type": "string",
-                        "description": "The unique identifier provided by Amazon to identify the account."
+                        "description": "The unique identifier provided by Amazon to identify the account\n"
                     },
                     "bankAccountHolderName": {
                         "type": "string",
-                        "description": "The account holder's name."
+                        "description": "BankAccount holder's name\n"
                     },
                     "bankName": {
                         "type": "string",
-                        "description": "The name of the bank."
+                        "description": "The name of the bank\n"
                     },
                     "bankAccountNumberFormat": {
                         "$ref": "#/components/schemas/BankAccountNumberFormat"
                     },
                     "bankAccountNumberTail": {
                         "type": "string",
-                        "description": "The last three digits of the bank account number."
+                        "description": "Last 3 digit of the bank account number\n"
                     },
                     "bankAccountCountryCode": {
                         "type": "string",
-                        "description": "The two-digit country code, in ISO 3166 format. This field is optional for `transactionSourceAccount`, but is mandatory for `transactionDestinationAccount`."
+                        "description": "The two digit country code, in ISO 3166 format. This field is OPTIONAL for transactionSourceAccount object but is MANDATORY field for transactionDestinationAccount\n"
                     },
                     "bankAccountCurrency": {
                         "type": "string",
-                        "description": "The currency code in ISO 4217 format."
+                        "description": "The currency code in ISO 4217 format\n"
                     }
                 },
-                "description": "Details of the bank account involved in transaction."
+                "description": "Details of the bank account involved in the transaction."
             },
             "TransactionListing": {
                 "required": [
@@ -7132,22 +7128,22 @@
                 "properties": {
                     "nextPageToken": {
                         "type": "string",
-                        "description": "A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.",
+                        "description": "If present, use this pagination token to retrieve the next page of supply sources, if not provided the API will return same response. The field will only be provided when the list is greater than 100.",
                         "example": "3493805734095308457308475"
                     },
                     "transactions": {
                         "type": "array",
-                        "description": "A list of transactions.",
+                        "description": "Collection that holds Transaction\n",
                         "items": {
                             "$ref": "#/components/schemas/Transaction"
                         }
                     }
                 },
-                "description": "A list of transactions."
+                "description": "Struct that holds collection of transactions."
             },
             "TransactionStatus": {
                 "type": "string",
-                "description": "The current status of the transaction.",
+                "description": "Represents current status of the transaction.",
                 "enum": [
                     "FAILED",
                     "FAILED_CREDITS_APPLIED",
@@ -7159,33 +7155,33 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "FAILED",
-                        "description": "The transaction failed before completion."
+                        "description": "Transaction failed before completion."
                     },
                     {
                         "value": "FAILED_CREDITS_APPLIED",
-                        "description": "The transaction failed after debit and credit had been applied back to the balance."
+                        "description": "Transaction failed after debit and credit has been applied back to the balance."
                     },
                     {
                         "value": "INITIATED",
-                        "description": "The transaction was requested but not started yet."
+                        "description": "Transaction is requested but not started yet."
                     },
                     {
                         "value": "IN_PROGRESS",
-                        "description": "The transaction is in progress."
+                        "description": "Transaction is in progress."
                     },
                     {
                         "value": "PAYEE_UNDER_REVIEW",
-                        "description": "The destination account holder (beneficiary) is under review."
+                        "description": "Represents that the destination account holder (beneficiary) is under review."
                     },
                     {
                         "value": "SUCCESSFUL",
-                        "description": "The transaction is successfully processed."
+                        "description": "Transaction is successfully processed."
                     }
                 ]
             },
             "TransactionType": {
                 "type": "string",
-                "description": "The type of transaction.",
+                "description": "Represent type of transaction.",
                 "enum": [
                     "CREDIT",
                     "DEBIT"
@@ -7193,11 +7189,11 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "CREDIT",
-                        "description": "Money is deposited into Amazon Seller Wallet account."
+                        "description": "Money is deposited into the Seller Wallet account."
                     },
                     {
                         "value": "DEBIT",
-                        "description": "Money is taken out of the Amazon Seller Wallet account."
+                        "description": "Money is taken out of the Seller Wallet account."
                     }
                 ]
             },
@@ -7221,13 +7217,13 @@
                     },
                     "fees": {
                         "type": "array",
-                        "description": "A list of fees.",
+                        "description": "List of fees\n",
                         "items": {
                             "$ref": "#/components/schemas/Fee"
                         }
                     }
                 },
-                "description": "The fees and foreign exchange rates applied to the transaction.\n\nIf the fees are in terms of the `baseAmount` (source account) currency, then the effective rate is equal to **1 - (fees * `baseRate` / `baseAmount`)**.\n\nIf the fees are in terms of the `transferAmount` (destination account) currency, then the effective rate is equal to **`baseRate` - (fees / `baseAmount`)**.\n\nIn the preceding expressions, **fees** is equal to the sum of all `feeAmount.currencyAmount` values in the `fees` array."
+                "description": "The fees and foreign exchange rates that apply to the transaction.\n\nIf the fees are in terms of the `baseAmount` (source account) currency, then the effective rate is equal to **1 - (fees * `baseRate` / `baseAmount`)**.\n\nIf the fees are in terms of the `transferAmount` (destination account) currency, then the effective rate is equal to **`baseRate` - (fees / `baseAmount`)**.\n\nIn the preceding expressions, **fees** is equal to the sum of all `feeAmount.currencyAmount` values in the `fees` array."
             },
             "TransferSchedule": {
                 "required": [
@@ -7242,7 +7238,7 @@
                 "properties": {
                     "transferScheduleId": {
                         "type": "string",
-                        "description": "The unique identifier provided by Amazon to the scheduled transfer."
+                        "description": "The unique identifier provided by Amazon to the scheduled transfer\n"
                     },
                     "transactionType": {
                         "$ref": "#/components/schemas/TransactionType"
@@ -7264,13 +7260,13 @@
                     },
                     "transferScheduleFailures": {
                         "type": "array",
-                        "description": "A list of transfer schedule failures.",
+                        "description": "Collection that holds Transfer Schedules that has been cancelled or failed due to certain reasons.\n",
                         "items": {
                             "$ref": "#/components/schemas/TransferScheduleFailures"
                         }
                     }
                 },
-                "description": "Transfer schedule details and historical details related to it.",
+                "description": "Transfer schedule details and related historical details.",
                 "example": {
                     "transferScheduleId": "amzn1.transferschedule.SMUGN2EN3ZHWSRJKH2KCJPII5JEI",
                     "transactionType": "DEBIT",
@@ -7321,16 +7317,16 @@
                 "properties": {
                     "transferScheduleFailureDate": {
                         "type": "string",
-                        "description": "The transfer schedule failure date.",
+                        "description": "The transfer schedule cancellation date\n",
                         "format": "date-time"
                     },
                     "transferScheduleFailureReason": {
                         "type": "string",
-                        "description": "The reason listed for the failure of the transfer schedule.",
+                        "description": "The statement/reasoning listed for the cancellation of the transfer schedule\n",
                         "example": "INSUFFICIENT_BALANCE"
                     }
                 },
-                "description": "The time of and reason for the transfer schedule failure.",
+                "description": "Specifies the balance amount in the Amazon SW bank account",
                 "example": {
                     "transferScheduleFailureDate": "2024-03-01T10:30:00Z",
                     "transferScheduleFailureReason": "INSUFFICIENT_BALANCE"
@@ -7344,18 +7340,18 @@
                 "properties": {
                     "nextPageToken": {
                         "type": "string",
-                        "description": "A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.",
+                        "description": "If present, use this pagination token to retrieve the next page of supply sources, if not provided the API will return same response. The field will only be provided when the list is greater than 100.",
                         "example": "3493805734095308457308475"
                     },
                     "transferSchedules": {
                         "type": "array",
-                        "description": "A list of transfer schedules.",
+                        "description": "Collection that holds list of Transfer Schedules\n",
                         "items": {
                             "$ref": "#/components/schemas/TransferSchedule"
                         }
                     }
                 },
-                "description": "A list of transfer schedules."
+                "description": "Struct that holds collection of transfer schedules."
             },
             "TransferScheduleRequest": {
                 "required": [
@@ -7371,17 +7367,17 @@
                 "properties": {
                     "sourceAccountId": {
                         "type": "string",
-                        "description": "The unique identifier of the source Amazon Seller Wallet bank account from which money is debited.",
+                        "description": "The unique identifier of the source Amazon SW bank account from where the money needs to be debited\n",
                         "example": "amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI"
                     },
                     "sourceCurrencyCode": {
                         "type": "string",
-                        "description": "The three-letter currency code of the source payment method country, in ISO 4217 format.",
+                        "description": "Represents 3 letter currency code in ISO 4217 standard format of the source payment method country\n",
                         "example": "GBP"
                     },
                     "destinationAccountId": {
                         "type": "string",
-                        "description": "The unique identifier of the destination bank account where the money is deposited.",
+                        "description": "Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited\n",
                         "example": "amzn1.account.AJKBFWEJFBNH2KCJPII5FBN"
                     },
                     "destinationTransactionInstrument": {
@@ -7400,7 +7396,7 @@
                         "$ref": "#/components/schemas/TransferScheduleStatus"
                     }
                 },
-                "description": "Request body to initiate a scheduled transfer from a Seller Wallet bank account to another customer-defined bank account.",
+                "description": "Request body to initiate a scheduled transfer from a SW bank account to another customer defined bank account\n",
                 "example": {
                     "sourceAccountId": "amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI",
                     "destinationAccountId": "amzn1.account.AJKBFWEJFBNH2KCJPII5FBN",
@@ -7437,7 +7433,7 @@
             },
             "TransferScheduleStatus": {
                 "type": "string",
-                "description": "The schedule status of the transfer.",
+                "description": "Represents the schedule status of the transfer.",
                 "enum": [
                     "ENABLED",
                     "DISABLED",
@@ -7447,19 +7443,19 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "ENABLED",
-                        "description": "The transfer schedule is enabled."
+                        "description": "Represents the status of the transfer schedule that is enabled."
                     },
                     {
                         "value": "DISABLED",
-                        "description": "The transfer schedule is disabled."
+                        "description": "Represents the status of the transfer schedule that is disabled."
                     },
                     {
                         "value": "EXPIRED",
-                        "description": "The transfer has expired and is no longer scheduled."
+                        "description": "Represents the status of the transfer that has expired and not scheduled anymore."
                     },
                     {
                         "value": "DELETED",
-                        "description": "The transfer was scheduled but has been deleted."
+                        "description": "Represents the status of the transfer that was scheduled but has been deleted."
                     }
                 ]
             }

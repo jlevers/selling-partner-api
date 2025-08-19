@@ -30,7 +30,7 @@ class UpdateTransferSchedule extends Request implements HasBody
     protected Method $method = Method::PUT;
 
     /**
-     * @param  TransferSchedule  $transferSchedule  Transfer schedule details and historical details related to it.
+     * @param  TransferSchedule  $transferSchedule  Transfer schedule details and related historical details.
      * @param  string  $destAccountDigitalSignature  Digital signature for the destination bank account details.
      * @param  string  $amountDigitalSignature  Digital signature for the source currency transaction amount.
      */

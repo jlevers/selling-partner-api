@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAInventoryV1\Requests;
 
 use Exception;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\FBAInventoryV1\Responses\GetInventorySummariesResponse;
 
 /**
@@ -16,14 +18,14 @@ class GetInventorySummaries extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $granularityType The granularity type for the inventory aggregation level.
-     * @param  string  $granularityId The granularity ID for the inventory aggregation level.
-     * @param  array  $marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries.
-     * @param  ?bool  $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value).
-     * @param  ?DateTime  $startDateTime A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected.
-     * @param  ?array  $sellerSkus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs.
-     * @param  ?string  $sellerSku A single seller SKU used for querying the specified seller SKU inventory summaries.
-     * @param  ?string  $nextToken String token returned in the response of your previous request. The string token will expire 30 seconds after being created.
+     * @param  string  $granularityType  The granularity type for the inventory aggregation level.
+     * @param  string  $granularityId  The granularity ID for the inventory aggregation level.
+     * @param  array  $marketplaceIds  The marketplace ID for the marketplace for which to return inventory summaries.
+     * @param  ?bool  $details  true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value).
+     * @param  ?DateTime  $startDateTime  A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected.
+     * @param  ?array  $sellerSkus  A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs.
+     * @param  ?string  $sellerSku  A single seller SKU used for querying the specified seller SKU inventory summaries.
+     * @param  ?string  $nextToken  String token returned in the response of your previous request. The string token will expire 30 seconds after being created.
      */
     public function __construct(
         protected string $granularityType,
@@ -45,7 +47,8 @@ class GetInventorySummaries extends Request
             // Fix: Amazon FBA Inventory API expects marketplaceIds as a comma-separated string, not an array
             // The API will reject marketplaceIds[0]=VALUE format that Saloon generates from arrays
             'marketplaceIds' => implode(',', $this->marketplaceIds),
-            'details' => $this->details,
+            // Fix: Amazon expects 'true'/'false' strings, not 1/0 integers
+            'details' => $this->details !== null ? ($this->details ? 'true' : 'false') : null,
             'startDateTime' => $this->startDateTime?->format(\DateTime::RFC3339),
             // Fix: Same issue with sellerSkus - convert to comma-separated string
             'sellerSkus' => $this->sellerSkus ? implode(',', $this->sellerSkus) : null,

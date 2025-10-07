@@ -42,10 +42,13 @@ class GetInventorySummaries extends Request
         return array_filter([
             'granularityType' => $this->granularityType,
             'granularityId' => $this->granularityId,
-            'marketplaceIds' => $this->marketplaceIds,
+            // Fix: Amazon FBA Inventory API expects marketplaceIds as a comma-separated string, not an array
+            // The API will reject marketplaceIds[0]=VALUE format that Saloon generates from arrays
+            'marketplaceIds' => implode(',', $this->marketplaceIds),
             'details' => $this->details,
             'startDateTime' => $this->startDateTime?->format(\DateTime::RFC3339),
-            'sellerSkus' => $this->sellerSkus,
+            // Fix: Same issue with sellerSkus - convert to comma-separated string
+            'sellerSkus' => $this->sellerSkus ? implode(',', $this->sellerSkus) : null,
             'sellerSku' => $this->sellerSku,
             'nextToken' => $this->nextToken,
         ]);

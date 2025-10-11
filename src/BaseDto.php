@@ -11,18 +11,7 @@ abstract class BaseDto implements \JsonSerializable
     protected static array $complexArrayTypes = [];
     protected static array $attributeMap = [];
 
-    public function __construct(...$params)
-    {
-        // Support both named parameters (from API) and array construction
-        if (count($params) === 1 && is_array($params[0])) {
-            $data = $params[0];
-            foreach ($data as $key => $value) {
-                if (property_exists($this, $key)) {
-                    $this->$key = $value;
-                }
-            }
-        }
-    }
+    // No constructor - let child classes handle their own typed constructors
 
     public function toArray(): array
     {

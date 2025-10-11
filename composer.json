@@ -33,8 +33,7 @@
     "ext-mbstring": "*",
     "guzzlehttp/guzzle": "^6.0|^7.0",
     "saloonphp/saloon": "^3.4",
-    "openspout/openspout": "^4.23",
-    "highsidelabs/saloon-sdk-generator": "dev-master"
+    "openspout/openspout": "^4.23"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0 || ^9.0",

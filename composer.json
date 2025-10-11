@@ -46,7 +46,8 @@
     },
     "autoload": {
         "psr-4": {
-            "SellingPartnerApi\\": "src/"
+            "SellingPartnerApi\\": "src/",
+            "Crescat\\SaloonSdkGenerator\\": "src/"
         },
         "files": [
             "src/Generator/constants.php"

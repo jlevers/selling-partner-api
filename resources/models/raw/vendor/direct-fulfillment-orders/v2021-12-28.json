@@ -246,6 +246,7 @@
                                             "billToParty": {
                                                 "partyId": "ABCD"
                                             },
+                                            "hasCustomizableItems": true,
                                             "items": [
                                                 {
                                                     "itemSequenceNumber": "00001",
@@ -541,6 +542,7 @@
                                         "billToParty": {
                                             "partyId": "ABCD"
                                         },
+                                        "hasCustomizableItems": true,
                                         "items": [
                                             {
                                                 "itemSequenceNumber": "00001",
@@ -1083,6 +1085,10 @@
                     },
                     "billToParty": {
                         "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "hasCustomizableItems": {
+                        "type": "boolean",
+                        "description": "When `true`, the order contains customizable items."
                     },
                     "items": {
                         "type": "array",

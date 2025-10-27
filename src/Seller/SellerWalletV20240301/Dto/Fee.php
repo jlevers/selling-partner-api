@@ -17,13 +17,13 @@ final class Fee extends Dto
     /**
      * @param  string  $feeId  Unique identifier assigned to the Fee.
      * @param  string  $feeType  Represents different types of fees that can be applied on a transaction.
-     * @param  float  $feeRateValue  A decimal number such as amount or FX rate.
+     * @param  string  $feeRateValue  The value of the fee in percentage format.
      * @param  Currency  $feeAmount  A currency type and amount.
      */
     public function __construct(
         public string $feeId,
         public string $feeType,
-        public float $feeRateValue,
+        public string $feeRateValue,
         public Currency $feeAmount,
     ) {}
 }

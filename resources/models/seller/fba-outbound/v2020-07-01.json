@@ -207,6 +207,11 @@
                 "dynamic": {}
             }
         },
+        "/fba/outbound/2020-07-01/deliveryOfferings": {
+            "x-amzn-api-sandbox": {
+                "dynamic": {}
+            }
+        },
         "/fba/outbound/2020-07-01/deliveryOffers": {
             "post": {
                 "tags": [
@@ -400,7 +405,7 @@
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)",
+                "description": "Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the `nextToken` parameter.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)",
                 "operationId": "listAllFulfillmentOrders",
                 "parameters": [
                     {
@@ -784,11 +789,18 @@
                     {
                         "name": "packageNumber",
                         "in": "query",
-                        "description": "The unencrypted package identifier returned by the `getFulfillmentOrder` operation.",
-                        "required": true,
+                        "description": "The unencrypted package identifier. You can obtain this value from the `getFulfillmentOrder` operation.",
                         "schema": {
                             "type": "integer",
                             "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "amazonFulfillmentTrackingNumber",
+                        "in": "query",
+                        "description": "The Amazon fulfillment tracking number. You can obtain this value from the `getFulfillmentOrder` operation.",
+                        "schema": {
+                            "type": "string"
                         }
                     }
                 ],
@@ -1183,7 +1195,7 @@
                     {
                         "name": "sellerFulfillmentOrderId",
                         "in": "path",
-                        "description": "An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct `SellerFulfillmentOrderId` value based on the buyer's request to return items.",
+                        "description": "An identifier the seller assigns to the fulfillment order at the time it was created. The seller uses their own records to find the correct `sellerFulfillmentOrderId` value based on the buyer's request to return items.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1191,7 +1203,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "CreateFulfillmentReturnRequest parameter",
+                    "description": "The request body of the `createFulfillmentReturn` operation.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1574,7 +1586,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "UpdateFulfillmentOrderRequest parameter",
+                    "description": "The request body of the `updateFulfillmentOrder` operation.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -2341,7 +2353,7 @@
                     {
                         "name": "nextToken",
                         "in": "query",
-                        "description": "A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.",
+                        "description": "A string token returned in the response to your previous request that is used to return the next response page. A value of `null` will return the first page.",
                         "schema": {
                             "type": "string"
                         }
@@ -2349,7 +2361,7 @@
                     {
                         "name": "queryStartDate",
                         "in": "query",
-                        "description": "A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ",
+                        "description": "A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format `yyyy-MM-ddTHH:mm:ss.sssZ`",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -2530,7 +2542,7 @@
                 "tags": [
                     "FBAOutboundV20200701"
                 ],
-                "description": "Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn't eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the number of items with the `sellerSku` you specify that can have orders fulfilled using the specified feature. Note that if the `sellerSku` isn't eligible, the response will contain an empty `skuInfo` object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getFeatureSKU",
                 "parameters": [
                     {
@@ -2554,7 +2566,7 @@
                     {
                         "name": "sellerSku",
                         "in": "path",
-                        "description": "Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller's `SellerId`, which is included with every operation that you submit.",
+                        "description": "Used to identify an item in the given marketplace. `sellerSku` is qualified by the seller's `sellerId`, which is included with every operation that you submit.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -2776,8 +2788,7 @@
                     "addressLine1",
                     "countryCode",
                     "name",
-                    "postalCode",
-                    "stateOrRegion"
+                    "postalCode"
                 ],
                 "type": "object",
                 "properties": {
@@ -2865,7 +2876,7 @@
                     "sellerFulfillmentOrderItemId": {
                         "maxLength": 50,
                         "type": "string",
-                        "description": "A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same `SellerSKU`. For example, the seller might assign different `SellerFulfillmentOrderItemId` values to two items in a fulfillment order that share the same `SellerSKU` but have different `GiftMessage` values."
+                        "description": "A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same `sellerSku` value. For example, the seller might assign different `sellerFulfillmentOrderItemId` values to two items in a fulfillment order that share the same `sellerSku` value but have different `giftMessage` values."
                     },
                     "quantity": {
                         "$ref": "#/components/schemas/Quantity"
@@ -2905,7 +2916,7 @@
             },
             "FulfillmentPolicy": {
                 "type": "string",
-                "description": "The `FulfillmentPolicy` value specified when you submitted the `createFulfillmentOrder` operation.",
+                "description": "The `FulfillmentPolicy` value specified when you called the `createFulfillmentOrder` operation.",
                 "enum": [
                     "FillOrKill",
                     "FillAll",
@@ -2998,12 +3009,12 @@
                     "sellerFulfillmentOrderId": {
                         "maxLength": 40,
                         "type": "string",
-                        "description": "A fulfillment order identifier that the seller creates to track their fulfillment order. The `SellerFulfillmentOrderId` must be unique for each fulfillment order that a seller creates. If the seller's system already creates unique order identifiers, then these might be good values for them to use."
+                        "description": "A fulfillment order identifier that the seller creates to track their fulfillment order. The `sellerFulfillmentOrderId` must be unique for each fulfillment order that a seller creates. If the seller's system already creates unique order identifiers, then these might be good values for them to use."
                     },
                     "displayableOrderId": {
                         "maxLength": 40,
                         "type": "string",
-                        "description": "A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `DisplayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the `SellerFulfillmentOrderId` for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.\n\nThe value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed."
+                        "description": "A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `displayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.\n\nThe value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed."
                     },
                     "displayableOrderDate": {
                         "$ref": "#/components/schemas/Timestamp"
@@ -3067,7 +3078,7 @@
                         "$ref": "#/components/schemas/CreateReturnItemList"
                     }
                 },
-                "description": "The `createFulfillmentReturn` operation creates a fulfillment return for items that were fulfilled using the `createFulfillmentOrder` operation. For calls to `createFulfillmentReturn`, you must include `ReturnReasonCode` values returned by a previous call to the `listReturnReasonCodes` operation."
+                "description": "The `createFulfillmentReturn` operation creates a fulfillment return for items that were fulfilled using the `createFulfillmentOrder` operation. For calls to `createFulfillmentReturn`, you must include `returnReasonCode` values returned by a previous call to the `listReturnReasonCodes` operation."
             },
             "CreateFulfillmentReturnResult": {
                 "type": "object",
@@ -3082,7 +3093,7 @@
                         "$ref": "#/components/schemas/ReturnAuthorizationList"
                     }
                 },
-                "description": "The result for the createFulfillmentReturn operation."
+                "description": "The result for the `createFulfillmentReturn` operation."
             },
             "CreateFulfillmentReturnResponse": {
                 "type": "object",
@@ -3108,7 +3119,7 @@
                     "sellerReturnItemId": {
                         "maxLength": 80,
                         "type": "string",
-                        "description": "An identifier assigned by the seller to the return item."
+                        "description": "An identifier the seller assigns to the return item."
                     },
                     "sellerFulfillmentOrderItemId": {
                         "type": "string",
@@ -3647,7 +3658,7 @@
                     },
                     "fulfillmentCenterId": {
                         "type": "string",
-                        "description": "An identifier for the fulfillment center that the shipment will be sent from."
+                        "description": "An identifier for the fulfillment center from which the shipment is sent."
                     },
                     "fulfillmentShipmentStatus": {
                         "type": "string",
@@ -3685,7 +3696,7 @@
                     },
                     "shippingNotes": {
                         "type": "array",
-                        "description": "Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren't available.",
+                        "description": "Provides additional insight into shipment timeline. Primarily used to communicate that actual delivery dates aren't available.",
                         "items": {
                             "type": "string"
                         }
@@ -3767,6 +3778,10 @@
                         "type": "string",
                         "description": "The tracking number, if provided, can be used to obtain tracking and delivery information."
                     },
+                    "amazonFulfillmentTrackingNumber": {
+                        "type": "string",
+                        "description": "The Amazon fulfillment tracking number, if provided, can be used to obtain tracking and delivery information."
+                    },
                     "estimatedArrivalDate": {
                         "$ref": "#/components/schemas/Timestamp"
                     },
@@ -3814,7 +3829,7 @@
                         "$ref": "#/components/schemas/PaymentInformationList"
                     }
                 },
-                "description": "The request for the getFulfillmentOrder operation."
+                "description": "The request for the `getFulfillmentOrder` operation."
             },
             "GetFulfillmentOrderResponse": {
                 "type": "object",
@@ -3892,7 +3907,7 @@
                     },
                     "includeDeliveryWindows": {
                         "type": "boolean",
-                        "description": "When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` = `ScheduledDelivery`."
+                        "description": "When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` equal to `ScheduledDelivery`."
                     },
                     "featureConstraints": {
                         "type": "array",
@@ -3939,7 +3954,7 @@
                         "$ref": "#/components/schemas/GetDeliveryOffersTerms"
                     }
                 },
-                "description": "The request body schema for the getDeliveryOffers operation."
+                "description": "The request body schema for the `getDeliveryOffers` operation."
             },
             "GetDeliveryOffersResponse": {
                 "type": "object",
@@ -3951,7 +3966,7 @@
                         "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The response schema for the getDeliveryOffers operation."
+                "description": "The response schema for the `getDeliveryOffers` operation."
             },
             "GetDeliveryOffersResult": {
                 "type": "object",
@@ -4165,7 +4180,7 @@
                     },
                     "locale": {
                         "type": "string",
-                        "description": "The locale for the message (for example, en_US)."
+                        "description": "The locale for the message (e.g., `en_US`)."
                     }
                 },
                 "description": "Localized messaging for a delivery offering."
@@ -4225,7 +4240,7 @@
                 "properties": {
                     "sellerReturnItemId": {
                         "type": "string",
-                        "description": "An identifier assigned by the seller to the return item."
+                        "description": "An identifier the seller assigns to the return item."
                     },
                     "sellerFulfillmentOrderItemId": {
                         "type": "string",
@@ -4259,7 +4274,7 @@
                         }
                     }
                 },
-                "description": "The request for the listAllFulfillmentOrders operation."
+                "description": "The request for the `listAllFulfillmentOrders` operation."
             },
             "ListAllFulfillmentOrdersResponse": {
                 "type": "object",
@@ -4280,7 +4295,7 @@
                         "$ref": "#/components/schemas/ReasonCodeDetailsList"
                     }
                 },
-                "description": "The request for the listReturnReasonCodes operation."
+                "description": "The request for the `listReturnReasonCodes` operation."
             },
             "ListReturnReasonCodesResponse": {
                 "type": "object",
@@ -4335,7 +4350,7 @@
                 "properties": {
                     "documentType": {
                         "type": "string",
-                        "description": "The delivery document type. Values are `SIGNATURE` and `DELIVERY_IMAGE`."
+                        "description": "The delivery document type. The only possible value is `DELIVERY_IMAGE`."
                     },
                     "url": {
                         "type": "string",
@@ -4633,7 +4648,7 @@
                     },
                     "currentStatusDescription": {
                         "type": "string",
-                        "description": "Description corresponding to the CurrentStatus value."
+                        "description": "Description corresponding to the `CurrentStatus` value."
                     },
                     "deliveryWindow": {
                         "$ref": "#/components/schemas/DateRange"
@@ -4680,7 +4695,7 @@
                     },
                     "translatedDescription": {
                         "type": "string",
-                        "description": "A translation of the description. The translation is in the language specified in the Language request parameter."
+                        "description": "A translation of the description. The translation is in the language specified in the `language` request parameter."
                     }
                 },
                 "description": "A return reason code, a description, and an optional description translation."
@@ -4730,7 +4745,7 @@
                     },
                     "fulfillmentCenterId": {
                         "type": "string",
-                        "description": "An identifier for the Amazon fulfillment center that the return items should be sent to."
+                        "description": "An identifier for the Amazon fulfillment center to which the return items should be sent."
                     },
                     "returnToAddress": {
                         "$ref": "#/components/schemas/Address"
@@ -4772,7 +4787,7 @@
                 "properties": {
                     "sellerReturnItemId": {
                         "type": "string",
-                        "description": "An identifier assigned by the seller to the return item."
+                        "description": "An identifier the seller assigns to the return item."
                     },
                     "sellerFulfillmentOrderItemId": {
                         "type": "string",
@@ -4873,7 +4888,7 @@
             },
             "ShippingSpeedCategoryList": {
                 "type": "array",
-                "description": "ShippingSpeedCategory List",
+                "description": "List of shipping speed categories.",
                 "items": {
                     "$ref": "#/components/schemas/ShippingSpeedCategory"
                 }
@@ -5169,7 +5184,7 @@
                     "sellerFulfillmentOrderItemId": {
                         "maxLength": 50,
                         "type": "string",
-                        "description": "Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation."
+                        "description": "Identifies the fulfillment order item to update. Created with a previous call to the `createFulfillmentOrder` operation."
                     },
                     "quantity": {
                         "$ref": "#/components/schemas/Quantity"
@@ -5404,7 +5419,7 @@
                         }
                     }
                 },
-                "description": "The payload for the `getEligibileInventory` operation."
+                "description": "The payload for the `getEligibleInventory` operation."
             },
             "FeatureSku": {
                 "type": "object",
@@ -5522,7 +5537,7 @@
                     },
                     "ineligibleReasons": {
                         "type": "array",
-                        "description": "A list of one or more reasons that the seller SKU is ineligibile for the feature.\n\nPossible values:\n* `MERCHANT_NOT_ENROLLED` - The merchant isn't enrolled for the feature.\n* `SKU_NOT_ELIGIBLE` - The SKU doesn't reside in a warehouse that supports the feature.\n* `INVALID_SKU` - There is an issue with the SKU provided.",
+                        "description": "A list of one or more reasons that the seller SKU is ineligible for the feature.\n\nPossible values:\n* `MERCHANT_NOT_ENROLLED`: The merchant isn't enrolled for the feature.\n* `SKU_NOT_ELIGIBLE`: The SKU doesn't reside in a warehouse that supports the feature.\n* `INVALID_SKU`: There is an issue with the SKU provided.",
                         "items": {
                             "type": "string"
                         }
@@ -5538,7 +5553,7 @@
                 "properties": {
                     "featureName": {
                         "type": "string",
-                        "description": "The name of the feature."
+                        "description": "The name of the feature. Valid feature names are:\n\n- `BLOCK_AMZL`: Blocks orders from being shipped using Amazon Logistics (AMZL).\n  - Note: Using this feature will incur additional fee surcharges on MCF orders and may increase the risk of unfulfilled or delayed deliveries if alternative carriers are unavailable. Using `BLOCK_AMZL` in an order request will take precedence over your Seller Central account setting.\n- `BLANK_BOX`: Ships orders in non-Amazon branded packaging (blank boxes).\n- `SIGNATURE_CONFIRMATION`: Requires a signature from the recipient upon delivery. \n  - Note: Using signature confirmation features will incur additional fees on MCF orders and are currently supported only in the US marketplace."
                     },
                     "featureFulfillmentPolicy": {
                         "type": "string",
@@ -5559,7 +5574,7 @@
                         ]
                     }
                 },
-                "description": "`FeatureSettings` allows users to apply fulfillment features to an order. To block an order from being shipped using Amazon Logistics (AMZL) and an AMZL tracking number, use `featureName` as `BLOCK_AMZL` and `featureFulfillmentPolicy` as `Required`. Blocking AMZL will incur an additional fee surcharge on your MCF orders and increase the risk of some of your orders being unfulfilled or delivered late if there are no alternative carriers available. Using `BLOCK_AMZL` in an order request will take precedence over your Seller Central account setting. To ship in non-Amazon branded packaging (blank boxes), use featureName `BLANK_BOX`."
+                "description": "Feature settings allows you to apply fulfillment features to an order. To block an order from being shipped using Amazon Logistics (AMZL) and an AMZL tracking number, set `featureName` to `BLOCK_AMZL` and `featureFulfillmentPolicy` to `Required`. Blocking AMZL will incur an additional fee surcharge on your MCF orders and increase the risk of some of your orders being unfulfilled or delivered late if there are no alternative carriers available. Using `BLOCK_AMZL` in an order request will take precedence over your Seller Central account setting. To ship in non-Amazon branded packaging (blank boxes), set `featureName` to `BLANK_BOX`. To require a signature from the recipient upon delivery, set `featureName` to `SIGNATURE_CONFIRMATION`. Note that using signature confirmation features will incur additional fees on MCF orders and are currently supported only in the US marketplace. To ensure all items in an order are delivered together, set `featureName` to `DELIVER_TOGETHER`."
             },
             "SubmitFulfillmentOrderStatusUpdateRequest": {
                 "type": "object",

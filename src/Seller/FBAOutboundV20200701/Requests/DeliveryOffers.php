@@ -29,7 +29,7 @@ class DeliveryOffers extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  GetDeliveryOffersRequest  $getDeliveryOffersRequest  The request body schema for the getDeliveryOffers operation.
+     * @param  GetDeliveryOffersRequest  $getDeliveryOffersRequest  The request body schema for the `getDeliveryOffers` operation.
      */
     public function __construct(
         public GetDeliveryOffersRequest $getDeliveryOffersRequest,

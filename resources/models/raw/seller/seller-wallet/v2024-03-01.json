@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.1",
     "info": {
-        "title": "The Selling Partner API for Amazon Seller Wallet Open Banking API",
+        "title": "The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.\n\nFor more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).",
         "description": "The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.",
         "termsOfService": "http://spectrum.Amazon.com/terms/",
         "contact": {
@@ -55,7 +55,7 @@
                         "schema": {
                             "type": "string"
                         },
-                        "example": "EU"
+                        "example": "A1RKKUPIHCS9HS"
                     }
                 ],
                 "responses": {
@@ -96,7 +96,6 @@
                                         "accounts": [
                                             {
                                                 "accountId": "amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ",
-                                                "accountHolderName": "John Doe",
                                                 "bankAccountNumberFormat": "BBAN",
                                                 "bankName": "Amazon Seller Wallet",
                                                 "bankAccountOwnershipType": "SELF",
@@ -467,6 +466,16 @@
                             "type": "string"
                         },
                         "example": "amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ"
+                    },
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "A1RKKUPIHCS9HS"
                     }
                 ],
                 "responses": {
@@ -500,12 +509,14 @@
                                         "parameters": {
                                             "accountId": {
                                                 "value": "accountIdCase200"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A1RKKUPIHCS9HS"
                                             }
                                         }
                                     },
                                     "response": {
                                         "accountId": "amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ",
-                                        "accountHolderName": "Jane Doe",
                                         "bankAccountNumberFormat": "BBAN",
                                         "bankName": "Amazon Seller Wallet",
                                         "bankAccountOwnershipType": "SELF",
@@ -874,6 +885,16 @@
                             "type": "string"
                         },
                         "example": "amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ"
+                    },
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "A1RKKUPIHCS9HS"
                     }
                 ],
                 "responses": {
@@ -907,6 +928,9 @@
                                         "parameters": {
                                             "accountId": {
                                                 "value": "accountIdCase200"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A1RKKUPIHCS9HS"
                                             }
                                         }
                                     },
@@ -1328,6 +1352,16 @@
                             "type": "number"
                         },
                         "example": 1000
+                    },
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "A1RKKUPIHCS9HS"
                     }
                 ],
                 "responses": {
@@ -1373,6 +1407,9 @@
                                             },
                                             "baseAmount": {
                                                 "value": 500
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A1RKKUPIHCS9HS"
                                             }
                                         }
                                     },
@@ -1395,7 +1432,7 @@
                                             {
                                                 "feeId": "Unique_FeeId_001",
                                                 "feeType": "TRANSACTION_FEE",
-                                                "feeRateValue": 0.9,
+                                                "feeRateValue": "0.9",
                                                 "feeAmount": {
                                                     "currencyCode": "EUR",
                                                     "currencyAmount": 4.5
@@ -1404,7 +1441,7 @@
                                             {
                                                 "feeId": "Unique_FeeId_002",
                                                 "feeType": "TAX",
-                                                "feeRateValue": 20,
+                                                "feeRateValue": "20.0",
                                                 "feeAmount": {
                                                     "currencyCode": "EUR",
                                                     "currencyAmount": 0.9
@@ -1803,6 +1840,16 @@
                             "type": "string"
                         },
                         "example": "Next Page Token"
+                    },
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "A1RKKUPIHCS9HS"
                     }
                 ],
                 "responses": {
@@ -1836,6 +1883,9 @@
                                         "parameters": {
                                             "accountId": {
                                                 "value": "sourceAccountIdCase200"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A1RKKUPIHCS9HS"
                                             }
                                         }
                                     },
@@ -1845,7 +1895,7 @@
                                             {
                                                 "transactionId": "amzn.transaction.AKJBNEFNL23R84V",
                                                 "transactionType": "DEBIT",
-                                                "transactionStatus": "PAYEE_UNDER_REVIEW",
+                                                "transactionStatus": "IN_PROGRESS",
                                                 "transactionRequestDate": "2023-09-26T02:32:59.787Z",
                                                 "expectedCompletionDate": "2023-09-26T02:32:59.787Z",
                                                 "transactionActualCompletionDate": "2023-09-26T02:32:59.787Z",
@@ -1892,7 +1942,7 @@
                                                         {
                                                             "feeId": "Unique_FeeId_001",
                                                             "feeType": "TRANSACTION_FEE",
-                                                            "feeRateValue": 0.9,
+                                                            "feeRateValue": "0.9",
                                                             "feeAmount": {
                                                                 "currencyCode": "EUR",
                                                                 "currencyAmount": 4.5
@@ -1901,7 +1951,7 @@
                                                         {
                                                             "feeId": "Unique_FeeId_002",
                                                             "feeType": "TAX",
-                                                            "feeRateValue": 20,
+                                                            "feeRateValue": "20.0",
                                                             "feeAmount": {
                                                                 "currencyCode": "EUR",
                                                                 "currencyAmount": 0.9
@@ -2277,6 +2327,16 @@
                             "type": "string"
                         },
                         "example": "1EHdFHhrCArIgmWbPtW0HuTlN_LPteg8G8tbvF4QmoRekOO84nQxg8j4gs0wEyAktg2Sm80a_FaTswv-U8XUXGHZ1UBagGD9zEPrGBbia_N5gm4fCOW-qyrT8lwchdkiaprNwsqpv3aKid7Ux3uwEzxiEedO3QWvv6nCZnNNxK-zz2Zj6tPDE_mgQk5tJv4xRgMxtcTMmr7"
+                    },
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "A1RKKUPIHCS9HS"
                     }
                 ],
                 "requestBody": {
@@ -2310,7 +2370,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Transaction"
+                                    "$ref": "#/components/schemas/CreateTransactionResponse"
                                 }
                             }
                         },
@@ -2319,12 +2379,14 @@
                                 {
                                     "request": {
                                         "parameters": {
+                                            "marketplaceId": {
+                                                "value": "A1RKKUPIHCS9HS"
+                                            },
                                             "body": {
                                                 "value": {
                                                     "sourceAccountId": "sourceAccountIdCase200",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "Joane Packaging Ltd",
                                                             "bankAccountNumberFormat": "IBAN",
                                                             "bankName": "Royal Bank of Scotland",
                                                             "bankAccountOwnershipType": "THIRD_PARTY",
@@ -2334,8 +2396,10 @@
                                                             "accountCurrency": "GBP",
                                                             "bankAccountNumberTail": "819"
                                                         },
+                                                        "accountHolderName": "Joane Packaging Ltd",
                                                         "bankAccountNumber": "GB29RBOS60161331926819"
                                                     },
+                                                    "transactionDescription": "BG999999999",
                                                     "destinationAccountHolderAddress": {
                                                         "addressLine1": "4 East Market Street",
                                                         "addressLine2": "Unit 101",
@@ -2355,75 +2419,77 @@
                                         }
                                     },
                                     "response": {
-                                        "transactionId": "amzn.transaction.ALNR19JCVWLN3E",
-                                        "transactionType": "DEBIT",
-                                        "transactionStatus": "PAYEE_UNDER_REVIEW",
-                                        "transactionRequestDate": "2023-09-26T02:32:59.787Z",
-                                        "expectedCompletionDate": "2023-09-26T02:32:59.787Z",
-                                        "transactionActualCompletionDate": "2023-09-30T02:32:59.787Z",
-                                        "lastUpdateDate": "2023-09-26T02:32:59.787Z",
-                                        "requesterName": "TppOrgId",
-                                        "transactionRequesterSource": "TPP",
-                                        "transactionDescription": "Test transaction request",
-                                        "transactionSourceAccount": {
-                                            "accountId": "sourceAccountIdCase200",
-                                            "bankAccountHolderName": "John Doe",
-                                            "bankName": "Amazon Seller Wallet",
-                                            "bankAccountNumberFormat": "IBAN",
-                                            "bankAccountCurrency": "GBP"
-                                        },
-                                        "transactionDestinationAccount": {
-                                            "bankAccountHolderName": "Johnny Packaging",
-                                            "bankName": "Royal Bank of Scotland",
-                                            "bankAccountNumberFormat": "IBAN",
-                                            "bankAccountNumberTail": "819",
-                                            "bankAccountCurrency": "GBP",
-                                            "bankAccountCountryCode": "EU"
-                                        },
-                                        "transactionRequestAmount": {
-                                            "currencyCode": "EUR",
-                                            "currencyAmount": 500
-                                        },
-                                        "transferRateDetails": {
-                                            "baseAmount": {
+                                        "transaction": {
+                                            "transactionId": "amzn.transaction.ALNR19JCVWLN3E",
+                                            "transactionType": "DEBIT",
+                                            "transactionStatus": "IN_PROGRESS",
+                                            "transactionRequestDate": "2023-09-26T02:32:59.787Z",
+                                            "expectedCompletionDate": "2023-09-26T02:32:59.787Z",
+                                            "transactionActualCompletionDate": "2023-09-30T02:32:59.787Z",
+                                            "lastUpdateDate": "2023-09-26T02:32:59.787Z",
+                                            "requesterName": "TppOrgId",
+                                            "transactionRequesterSource": "TPP",
+                                            "transactionDescription": "Test transaction request",
+                                            "transactionSourceAccount": {
+                                                "accountId": "sourceAccountIdCase200",
+                                                "bankAccountHolderName": "John Doe",
+                                                "bankName": "Amazon Seller Wallet",
+                                                "bankAccountNumberFormat": "IBAN",
+                                                "bankAccountCurrency": "GBP"
+                                            },
+                                            "transactionDestinationAccount": {
+                                                "bankName": "Royal Bank of Scotland",
+                                                "bankAccountNumberFormat": "IBAN",
+                                                "bankAccountNumberTail": "819",
+                                                "bankAccountCurrency": "GBP",
+                                                "bankAccountCountryCode": "EU"
+                                            },
+                                            "transactionRequestAmount": {
                                                 "currencyCode": "EUR",
                                                 "currencyAmount": 500
                                             },
-                                            "fxRateDetails": {
-                                                "fxRateId": "UNIQUE_FX_RATE_ID_1",
-                                                "baseRate": 7.6915,
-                                                "effectiveFxRate": 7.6084,
-                                                "rateDirection": "BUY"
+                                            "transferRateDetails": {
+                                                "baseAmount": {
+                                                    "currencyCode": "EUR",
+                                                    "currencyAmount": 500
+                                                },
+                                                "fxRateDetails": {
+                                                    "fxRateId": "UNIQUE_FX_RATE_ID_1",
+                                                    "baseRate": 7.6915,
+                                                    "effectiveFxRate": 7.6084,
+                                                    "rateDirection": "BUY"
+                                                },
+                                                "transferAmount": {
+                                                    "currencyCode": "CNY",
+                                                    "currencyAmount": 3804.2
+                                                },
+                                                "fees": [
+                                                    {
+                                                        "feeId": "Unique_FeeId_001",
+                                                        "feeType": "TRANSACTION_FEE",
+                                                        "feeRateValue": "0.9",
+                                                        "feeAmount": {
+                                                            "currencyCode": "EUR",
+                                                            "currencyAmount": 4.5
+                                                        }
+                                                    },
+                                                    {
+                                                        "feeId": "Unique_FeeId_002",
+                                                        "feeType": "TAX",
+                                                        "feeRateValue": "20.0",
+                                                        "feeAmount": {
+                                                            "currencyCode": "EUR",
+                                                            "currencyAmount": 0.9
+                                                        }
+                                                    }
+                                                ]
                                             },
-                                            "transferAmount": {
+                                            "transactionFinalAmount": {
                                                 "currencyCode": "CNY",
                                                 "currencyAmount": 3804.2
-                                            },
-                                            "fees": [
-                                                {
-                                                    "feeId": "Unique_FeeId_001",
-                                                    "feeType": "TRANSACTION_FEE",
-                                                    "feeRateValue": 0.9,
-                                                    "feeAmount": {
-                                                        "currencyCode": "EUR",
-                                                        "currencyAmount": 4.5
-                                                    }
-                                                },
-                                                {
-                                                    "feeId": "Unique_FeeId_002",
-                                                    "feeType": "TAX",
-                                                    "feeRateValue": 20,
-                                                    "feeAmount": {
-                                                        "currencyCode": "EUR",
-                                                        "currencyAmount": 0.9
-                                                    }
-                                                }
-                                            ]
+                                            }
                                         },
-                                        "transactionFinalAmount": {
-                                            "currencyCode": "CNY",
-                                            "currencyAmount": 3804.2
-                                        }
+                                        "callBackURL": "https://www.example.com/callback/transaction_id"
                                     }
                                 }
                             ]
@@ -2462,7 +2528,6 @@
                                                     "sourceAccountId": "sourceAccountIdCase400",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "Johnny Doe",
                                                             "bankAccountNumberFormat": "IBAN",
                                                             "bankName": "Royal Bank of Scotland",
                                                             "bankAccountOwnershipType": "THIRD_PARTY",
@@ -2472,7 +2537,8 @@
                                                             "accountCurrency": "GBP",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "destinationAccountHolderAddress": {
                                                         "addressLine1": "4 East Market Street",
@@ -2532,7 +2598,6 @@
                                                     "sourceAccountId": "sourceAccountIdCase403",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "Johnny Doe",
                                                             "bankAccountNumberFormat": "IBAN",
                                                             "bankName": "Royal Bank of Scotland",
                                                             "bankAccountOwnershipType": "THIRD_PARTY",
@@ -2542,7 +2607,8 @@
                                                             "accountCurrency": "GBP",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "destinationAccountHolderAddress": {
                                                         "addressLine1": "4 East Market Street",
@@ -2608,7 +2674,6 @@
                                                     "sourceAccountId": "sourceAccountIdCase404",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankAccountNumberFormat": "IBAN",
                                                             "bankName": "Royal Bank of Scotland",
                                                             "bankAccountOwnershipType": "THIRD_PARTY",
@@ -2618,7 +2683,8 @@
                                                             "accountCurrency": "GBP",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "destinationAccountHolderAddress": {
                                                         "addressLine1": "4 East Market Street",
@@ -2678,7 +2744,6 @@
                                                     "sourceAccountId": "sourceAccountIdCase408",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankAccountNumberFormat": "IBAN",
                                                             "bankName": "Royal Bank of Scotland",
                                                             "bankAccountOwnershipType": "THIRD_PARTY",
@@ -2688,7 +2753,8 @@
                                                             "accountCurrency": "GBP",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "destinationAccountHolderAddress": {
                                                         "addressLine1": "4 East Market St",
@@ -2784,7 +2850,6 @@
                                                     "sourceAccountId": "sourceAccountIdCase422",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankAccountNumberFormat": "IBAN",
                                                             "bankName": "Royal Bank of Scotland",
                                                             "bankAccountOwnershipType": "THIRD_PARTY",
@@ -2794,7 +2859,8 @@
                                                             "accountCurrency": "GBP",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "destinationAccountHolderAddress": {
                                                         "addressLine1": "4 East Market St",
@@ -2854,7 +2920,6 @@
                                                     "sourceAccountId": "sourceAccountIdCase429",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankAccountNumberFormat": "IBAN",
                                                             "bankName": "Royal Bank of Scotland",
                                                             "bankAccountOwnershipType": "THIRD_PARTY",
@@ -2864,7 +2929,8 @@
                                                             "accountCurrency": "GBP",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "destinationAccountHolderAddress": {
                                                         "addressLine1": "4 East Market St",
@@ -2924,7 +2990,6 @@
                                                     "sourceAccountId": "sourceAccountIdCase500",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankAccountNumberFormat": "IBAN",
                                                             "bankName": "Royal Bank of Scotland",
                                                             "bankAccountOwnershipType": "THIRD_PARTY",
@@ -2934,7 +2999,8 @@
                                                             "accountCurrency": "GBP",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "destinationAccountHolderAddress": {
                                                         "addressLine1": "4 East Market St",
@@ -2994,7 +3060,6 @@
                                                     "sourceAccountId": "sourceAccountIdCase503",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankAccountNumberFormat": "IBAN",
                                                             "bankName": "Royal Bank of Scotland",
                                                             "bankAccountOwnershipType": "THIRD_PARTY",
@@ -3004,7 +3069,8 @@
                                                             "accountCurrency": "GBP",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "destinationAccountHolderAddress": {
                                                         "addressLine1": "4 East Market St",
@@ -3059,6 +3125,16 @@
                             "type": "string"
                         },
                         "example": "amzn1.transaction.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ"
+                    },
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "A1RKKUPIHCS9HS"
                     }
                 ],
                 "responses": {
@@ -3092,13 +3168,16 @@
                                         "parameters": {
                                             "transactionId": {
                                                 "value": "transactionIdCase200"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A1RKKUPIHCS9HS"
                                             }
                                         }
                                     },
                                     "response": {
                                         "transactionId": "amzn.transaction.AKJBNEFNL23R84V",
                                         "transactionType": "DEBIT",
-                                        "transactionStatus": "PAYEE_UNDER_REVIEW",
+                                        "transactionStatus": "IN_PROGRESS",
                                         "transactionRequestDate": "2023-09-26T02:32:59.787Z",
                                         "expectedCompletionDate": "2023-09-26T02:32:59.787Z",
                                         "transactionActualCompletionDate": "2023-09-26T02:32:59.787Z",
@@ -3145,7 +3224,7 @@
                                                 {
                                                     "feeId": "Unique_FeeId_001",
                                                     "feeType": "TRANSACTION_FEE",
-                                                    "feeRateValue": 0.9,
+                                                    "feeRateValue": "0.9",
                                                     "feeAmount": {
                                                         "currencyCode": "EUR",
                                                         "currencyAmount": 4.5
@@ -3154,7 +3233,7 @@
                                                 {
                                                     "feeId": "Unique_FeeId_002",
                                                     "feeType": "TAX",
-                                                    "feeRateValue": 20,
+                                                    "feeRateValue": "20.0",
                                                     "feeAmount": {
                                                         "currencyCode": "EUR",
                                                         "currencyAmount": 0.9
@@ -3522,6 +3601,16 @@
                         "example": "amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ"
                     },
                     {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "A1RKKUPIHCS9HS"
+                    },
+                    {
                         "name": "nextPageToken",
                         "in": "query",
                         "description": "Pagination token to retrieve a specific page of results.",
@@ -3562,6 +3651,9 @@
                                         "parameters": {
                                             "accountId": {
                                                 "value": "sourceAccountIdCase200"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A1RKKUPIHCS9HS"
                                             }
                                         }
                                     },
@@ -3971,6 +4063,16 @@
                             "type": "string"
                         },
                         "example": "1EHdFHhrCArIgmWbPtW0HuTlN_LPteg8G8tbvF4QmoRekOO84nQxg8j4gs0wEyAktg2Sm80a_FaTswv-U8XUXGHZ1UBagGD9zEPrGBbia_N5gm4fCOW-qyrT8lwchdkiaprNwsqpv3aKid7Ux3uwEzxiEedO3QWvv6nCZnNNxK-zz2Zj6tPDE_mgQk5tJv4xRgMxtcTMmr7"
+                    },
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "A1RKKUPIHCS9HS"
                     }
                 ],
                 "requestBody": {
@@ -4013,6 +4115,9 @@
                                 {
                                     "request": {
                                         "parameters": {
+                                            "marketplaceId": {
+                                                "value": "A1RKKUPIHCS9HS"
+                                            },
                                             "body": {
                                                 "value": {
                                                     "transferScheduleId": "transferScheduleIdCase200",
@@ -4301,8 +4406,8 @@
                                         "errors": [
                                             {
                                                 "code": "NotFound",
-                                                "message": "Account not found.",
-                                                "details": "Account doesn't exists for invalid SourceAccountId"
+                                                "message": "Transfer Schedule not found.",
+                                                "details": "Transfer schedule id doesn't exists for invalid TransferScheduleId"
                                             }
                                         ]
                                     }
@@ -4660,6 +4765,16 @@
                             "type": "string"
                         },
                         "example": "1EHdFHhrCArIgmWbPtW0HuTlN_LPteg8G8tbvF4QmoRekOO84nQxg8j4gs0wEyAktg2Sm80a_FaTswv-U8XUXGHZ1UBagGD9zEPrGBbia_N5gm4fCOW-qyrT8lwchdkiaprNwsqpv3aKid7Ux3uwEzxiEedO3QWvv6nCZnNNxK-zz2Zj6tPDE_mgQk5tJv4xRgMxtcTMmr7"
+                    },
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "A1RKKUPIHCS9HS"
                     }
                 ],
                 "requestBody": {
@@ -4702,6 +4817,9 @@
                                 {
                                     "request": {
                                         "parameters": {
+                                            "marketplaceId": {
+                                                "value": "A1RKKUPIHCS9HS"
+                                            },
                                             "body": {
                                                 "value": {
                                                     "sourceAccountId": "amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI",
@@ -4709,7 +4827,6 @@
                                                     "sourceCurrencyCode": "USD",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankNumberFormat": "IBAN",
                                                             "bankAccountOwnershipType": "SELF_ACCOUNT",
                                                             "routingNumber": "HBUKGB4B",
@@ -4717,7 +4834,8 @@
                                                             "accountCurrency": "EUR",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "transactionType": "DEBIT",
                                                     "transferScheduleInformation": {
@@ -4817,7 +4935,6 @@
                                                     "sourceCurrencyCode": "USD",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankNumberFormat": "IBAN",
                                                             "bankAccountOwnershipType": "SELF_ACCOUNT",
                                                             "routingNumber": "HBUKGB4B",
@@ -4825,7 +4942,8 @@
                                                             "accountCurrency": "EUR",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "transactionType": "DEBIT",
                                                     "transferScheduleInformation": {
@@ -4888,7 +5006,6 @@
                                                     "sourceCurrencyCode": "USD",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankNumberFormat": "IBAN",
                                                             "bankAccountOwnershipType": "SELF_ACCOUNT",
                                                             "routingNumber": "HBUKGB4B",
@@ -4896,7 +5013,8 @@
                                                             "accountCurrency": "EUR",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "transactionType": "DEBIT",
                                                     "transferScheduleInformation": {
@@ -4965,7 +5083,6 @@
                                                     "sourceCurrencyCode": "USD",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankNumberFormat": "IBAN",
                                                             "bankAccountOwnershipType": "SELF_ACCOUNT",
                                                             "routingNumber": "HBUKGB4B",
@@ -4973,7 +5090,8 @@
                                                             "accountCurrency": "EUR",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "transactionType": "DEBIT",
                                                     "transferScheduleInformation": {
@@ -5036,7 +5154,6 @@
                                                     "sourceCurrencyCode": "USD",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankNumberFormat": "IBAN",
                                                             "bankAccountOwnershipType": "SELF_ACCOUNT",
                                                             "routingNumber": "HBUKGB4B",
@@ -5044,7 +5161,8 @@
                                                             "accountCurrency": "EUR",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "transactionType": "DEBIT",
                                                     "transferScheduleInformation": {
@@ -5107,7 +5225,6 @@
                                                     "sourceCurrencyCode": "USD",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankNumberFormat": "IBAN",
                                                             "bankAccountOwnershipType": "SELF_ACCOUNT",
                                                             "routingNumber": "HBUKGB4B",
@@ -5115,7 +5232,8 @@
                                                             "accountCurrency": "EUR",
                                                             "bankAccountNumberTail": "919"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926919"
+                                                        "bankAccountNumber": "GB29RBOS60161331926919",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "transactionType": "DEBIT",
                                                     "transferScheduleInformation": {
@@ -5214,7 +5332,6 @@
                                                     "sourceCurrencyCode": "USD",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankNumberFormat": "IBAN",
                                                             "bankAccountOwnershipType": "SELF_ACCOUNT",
                                                             "routingNumber": "HBUKGB4B",
@@ -5222,7 +5339,8 @@
                                                             "accountCurrency": "EUR",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "transactionType": "DEBIT",
                                                     "transferScheduleInformation": {
@@ -5344,7 +5462,6 @@
                                                     "sourceCurrencyCode": "USD",
                                                     "destinationTransactionInstrument": {
                                                         "bankAccount": {
-                                                            "accountHolderName": "John Doe",
                                                             "bankNumberFormat": "IBAN",
                                                             "bankAccountOwnershipType": "SELF_ACCOUNT",
                                                             "routingNumber": "HBUKGB4B",
@@ -5352,7 +5469,8 @@
                                                             "accountCurrency": "EUR",
                                                             "bankAccountNumberTail": "819"
                                                         },
-                                                        "bankAccountNumber": "GB29RBOS60161331926819"
+                                                        "bankAccountNumber": "GB29RBOS60161331926819",
+                                                        "accountHolderName": "John Doe"
                                                     },
                                                     "transactionType": "DEBIT",
                                                     "transferScheduleInformation": {
@@ -5388,24 +5506,476 @@
                     }
                 },
                 "x-codegen-request-body-name": "body"
+            }
+        },
+        "/finances/transfers/wallet/2024-03-01/transferSchedules/{transferScheduleId}": {
+            "get": {
+                "tags": [
+                    "Transfer Schedule"
+                ],
+                "summary": "Find particular Amazon Seller Wallet account transfer schedule by Amazon transfer schedule identifier",
+                "description": "Find a particular Amazon Seller Wallet account transfer schedule.",
+                "operationId": "getTransferSchedule",
+                "parameters": [
+                    {
+                        "name": "transferScheduleId",
+                        "in": "path",
+                        "description": "The schedule ID of the Amazon Seller Wallet transfer.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "amzn1.transferschedule.AKNWCDNVP3FNJDCLK876"
+                    },
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "A1RKKUPIHCS9HS"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TransferSchedule"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdcase200"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A1RKKUPIHCS9HS"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "transferScheduleId": "amzn1.transferschedule.SMUGN2EN3ZHWSRJKH2KCJPII5JEI",
+                                        "transactionType": "DEBIT",
+                                        "transactionSourceAccount": {
+                                            "accountId": "sourceAccountIdCase200",
+                                            "bankAccountHolderName": "John Doe",
+                                            "bankName": "Amazon Seller Wallet",
+                                            "bankAccountNumberFormat": "IBAN",
+                                            "bankAccountNumberTail": "123",
+                                            "bankAccountCurrency": "GBP"
+                                        },
+                                        "transactionDestinationAccount": {
+                                            "bankAccountHolderName": "Dane Shipping",
+                                            "bankName": "Royal Bank of Scotland",
+                                            "bankAccountNumberFormat": "IBAN",
+                                            "bankAccountNumberTail": "819",
+                                            "bankAccountCurrency": "GBP",
+                                            "bankAccountCountryCode": "EU"
+                                        },
+                                        "transferScheduleStatus": "ENABLED",
+                                        "transferScheduleInformation": {
+                                            "scheduleStartDate": "2024-03-01T00:00:00Z",
+                                            "scheduleEndDate": "2027-03-01T00:00:00Z",
+                                            "scheduleExpression": {
+                                                "scheduleExpressionType": "RECURRING",
+                                                "recurringFrequency": "WEEKLY"
+                                            },
+                                            "scheduleType": "TIME_BASED"
+                                        },
+                                        "paymentPreference": {
+                                            "paymentPreferencePaymentType": "PERCENTAGE",
+                                            "value": 25.5
+                                        },
+                                        "transferScheduleFailures": [
+                                            {
+                                                "transferScheduleFailureDate": "2024-03-01T10:30:00Z",
+                                                "transferScheduleFailureReason": "INSUFFICIENT_BALANCE"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase400"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid or Missing wacCertificate.",
+                                                "details": "WAC certificate is missing for the request"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase403"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "UnauthorizedRequest",
+                                                "message": "Invalid WAC certificate.",
+                                                "details": "NCA Status for the certificate is invalid"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase404"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "NotFound",
+                                                "message": "Transfer Schedule not found.",
+                                                "details": "Transfer schedule id doesn't exists for invalid TransferScheduleId"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "408": {
+                        "description": "Request Timed Out.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase408"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "RequestTimedOut",
+                                                "message": "Request Timed Out",
+                                                "details": "Server did not respond in time"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase429"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "RequestThrottled",
+                                                "message": "Request Throttled",
+                                                "details": "Server throttled the request"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase500"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InternalServerError",
+                                                "message": "Internal Server Error",
+                                                "details": "Internal Server Error Occurred"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "transferScheduleId": {
+                                                "value": "transferScheduleIdCase503"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "ServiceUnavailable",
+                                                "message": "Server Unavailable",
+                                                "details": "Server is not accepting request"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
             },
             "delete": {
                 "tags": [
                     "Transfer Schedule"
                 ],
-                "summary": "Delete a transaction request that is scheduled from Amazon SW account to another customer provided account",
-                "description": "Delete a transaction request that is scheduled from a Seller Wallet account to another customer-provided account.",
+                "summary": "Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account",
+                "description": "Delete a transaction request that is scheduled from Amazon Seller Wallet account to another customer-provided account.",
                 "operationId": "deleteScheduleTransaction",
                 "parameters": [
                     {
                         "name": "transferScheduleId",
                         "in": "path",
-                        "description": "A unique reference id for a scheduled transfer",
+                        "description": "A unique reference ID for a scheduled transfer.",
                         "required": true,
                         "schema": {
                             "type": "string"
                         },
                         "example": "amzn1.scheduletransfer.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ"
+                    },
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "A1RKKUPIHCS9HS"
                     }
                 ],
                 "responses": {
@@ -5439,6 +6009,9 @@
                                         "parameters": {
                                             "transferScheduleId": {
                                                 "value": "transferScheduleIdCase200"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A1RKKUPIHCS9HS"
                                             }
                                         }
                                     },
@@ -5781,435 +6354,6 @@
                     }
                 }
             }
-        },
-        "/finances/transfers/wallet/2024-03-01/transferSchedules/{transferScheduleId}": {
-            "get": {
-                "tags": [
-                    "Transfer Schedule"
-                ],
-                "summary": "Find particular Amazon SW account transfer schedule by Amazon transfer schedule identifier",
-                "description": "Find a particular Seller Wallet account transfer schedule.",
-                "operationId": "getTransferSchedule",
-                "parameters": [
-                    {
-                        "name": "transferScheduleId",
-                        "in": "path",
-                        "description": "Schedule ID of the Amazon SW transfer",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "amzn1.transferschedule.AKNWCDNVP3FNJDCLK876"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/TransferSchedule"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdcase200"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "transferScheduleId": "amzn1.transferschedule.SMUGN2EN3ZHWSRJKH2KCJPII5JEI",
-                                        "transactionType": "DEBIT",
-                                        "transactionSourceAccount": {
-                                            "accountId": "sourceAccountIdCase200",
-                                            "bankAccountHolderName": "John Doe",
-                                            "bankName": "Amazon Seller Wallet",
-                                            "bankAccountNumberFormat": "IBAN",
-                                            "bankAccountNumberTail": "123",
-                                            "bankAccountCurrency": "GBP"
-                                        },
-                                        "transactionDestinationAccount": {
-                                            "bankAccountHolderName": "Dane Shipping",
-                                            "bankName": "Royal Bank of Scotland",
-                                            "bankAccountNumberFormat": "IBAN",
-                                            "bankAccountNumberTail": "819",
-                                            "bankAccountCurrency": "GBP",
-                                            "bankAccountCountryCode": "EU"
-                                        },
-                                        "transferScheduleStatus": "ENABLED",
-                                        "transferScheduleInformation": {
-                                            "scheduleStartDate": "2024-03-01T00:00:00Z",
-                                            "scheduleEndDate": "2027-03-01T00:00:00Z",
-                                            "scheduleExpression": {
-                                                "scheduleExpressionType": "RECURRING",
-                                                "recurringFrequency": "WEEKLY"
-                                            },
-                                            "scheduleType": "TIME_BASED"
-                                        },
-                                        "paymentPreference": {
-                                            "paymentPreferencePaymentType": "PERCENTAGE",
-                                            "value": 25.5
-                                        },
-                                        "transferScheduleFailures": [
-                                            {
-                                                "transferScheduleFailureDate": "2024-03-01T10:30:00Z",
-                                                "transferScheduleFailureReason": "INSUFFICIENT_BALANCE"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "400": {
-                        "description": "Request has missing or invalid parameters and cannot be parsed.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase400"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "InvalidInput",
-                                                "message": "Invalid or Missing wacCertificate.",
-                                                "details": "WAC certificate is missing for the request"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "403": {
-                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase403"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "UnauthorizedRequest",
-                                                "message": "Invalid WAC certificate.",
-                                                "details": "NCA Status for the certificate is invalid"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "404": {
-                        "description": "The resource specified does not exist.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase404"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "NotFound",
-                                                "message": "Account not found.",
-                                                "details": "Account doesn't exists for InvalidAccountId"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "408": {
-                        "description": "Request Timed Out.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase408"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "RequestTimedOut",
-                                                "message": "Request Timed Out",
-                                                "details": "Server did not respond in time"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "413": {
-                        "description": "The request size exceeded the maximum accepted size.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        }
-                    },
-                    "415": {
-                        "description": "The request payload is in an unsupported format.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        }
-                    },
-                    "429": {
-                        "description": "The frequency of requests was greater than allowed.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase429"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "RequestThrottled",
-                                                "message": "Request Throttled",
-                                                "details": "Server throttled the request"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "500": {
-                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase500"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "InternalServerError",
-                                                "message": "Internal Server Error",
-                                                "details": "Internal Server Error Occurred"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "503": {
-                        "description": "Temporary overloading or maintenance of the server.",
-                        "headers": {
-                            "x-amzn-RequestId": {
-                                "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        },
-                        "x-amzn-api-sandbox": {
-                            "static": [
-                                {
-                                    "request": {
-                                        "parameters": {
-                                            "transferScheduleId": {
-                                                "value": "transferScheduleIdCase503"
-                                            }
-                                        }
-                                    },
-                                    "response": {
-                                        "errors": [
-                                            {
-                                                "code": "ServiceUnavailable",
-                                                "message": "Server Unavailable",
-                                                "details": "Server is not accepting request"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                }
-            }
         }
     },
     "components": {
@@ -6273,7 +6417,6 @@
                 "required": [
                     "accountCountryCode",
                     "accountCurrency",
-                    "accountHolderName",
                     "bankAccountNumberFormat",
                     "bankAccountNumberTail",
                     "bankAccountOwnershipType",
@@ -6545,6 +6688,24 @@
                 "type": "number",
                 "description": "A decimal number such as amount or FX rate."
             },
+            "CreateTransactionResponse": {
+                "required": [
+                    "callBackURL",
+                    "transaction"
+                ],
+                "type": "object",
+                "properties": {
+                    "transaction": {
+                        "$ref": "#/components/schemas/Transaction"
+                    },
+                    "callBackURL": {
+                        "type": "string",
+                        "description": "The callback URL for the transaction which the user have to click to approve/consent the transaction",
+                        "example": "https://www.example.com/callback/transaction_id/"
+                    }
+                },
+                "description": "The transaction response and historical details related to it."
+            },
             "Currency": {
                 "type": "object",
                 "properties": {
@@ -6666,7 +6827,8 @@
                         "$ref": "#/components/schemas/FeeType"
                     },
                     "feeRateValue": {
-                        "$ref": "#/components/schemas/BigDecimal"
+                        "type": "string",
+                        "description": "The value of the fee in percentage format."
                     },
                     "feeAmount": {
                         "$ref": "#/components/schemas/Currency"
@@ -6707,11 +6869,11 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "BUY",
-                        "description": "Buy value represents the rate if customer is buying the source currency.\n"
+                        "description": "Buy value represents the rate if customer is buying the destination currency."
                     },
                     {
                         "value": "SELL",
-                        "description": "Sell value represents the rate if customer is selling the source currency.\n"
+                        "description": "Sell value represents the rate if customer is selling the destination currency."
                     }
                 ]
             },
@@ -6753,27 +6915,27 @@
                 "type": "string",
                 "description": "Represent parameters to specify recurrence of the scheduled transfer.",
                 "enum": [
-                    "BIWEEKLY",
                     "DAILY",
-                    "MONTHLY",
-                    "WEEKLY"
+                    "WEEKLY",
+                    "BIWEEKLY",
+                    "MONTHLY"
                 ],
                 "x-docgen-enum-table-extension": [
-                    {
-                        "value": "BIWEEKLY",
-                        "description": "The transfer repeats every two weeks."
-                    },
                     {
                         "value": "DAILY",
                         "description": "The transfer repeats every day."
                     },
                     {
-                        "value": "MONTHLY",
-                        "description": "The transfer repeats every month."
+                        "value": "WEEKLY",
+                        "description": "The transfer will repeat every week."
                     },
                     {
-                        "value": "WEEKLY",
-                        "description": "The transfer repeats every week."
+                        "value": "BIWEEKLY",
+                        "description": "The transfer will repeat every two weeks."
+                    },
+                    {
+                        "value": "MONTHLY",
+                        "description": "The transfer will repeat every month."
                     }
                 ]
             },
@@ -6858,7 +7020,6 @@
             },
             "TransactionInitiationRequest": {
                 "required": [
-                    "description",
                     "destinationTransactionInstrument",
                     "requestTime",
                     "sourceAccountId",
@@ -6876,13 +7037,17 @@
                         "description": "Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited\n",
                         "example": "amzn1.account.AJKBFWEJFBNH2KCJPII5FBN"
                     },
-                    "description": {
-                        "type": "string",
-                        "description": "Optional field to specify description for the transaction\n",
-                        "example": "Payment to the delivery partner"
-                    },
                     "destinationTransactionInstrument": {
                         "$ref": "#/components/schemas/TransactionInstrumentDetails"
+                    },
+                    "transactionDescription": {
+                        "type": "string",
+                        "description": "A description of the transaction."
+                    },
+                    "customerPaymentReference": {
+                        "type": "string",
+                        "description": "If the payment is for VAT (Value-Added-Tax) then enter VAT identification number in this field which will be mandatory. The length constraint is 140 characters and do not allow user to enter any sensitive information other than VAT-ID.",
+                        "example": "BG999999999"
                     },
                     "destinationAccountHolderAddress": {
                         "$ref": "#/components/schemas/AccountHolderAddress"
@@ -6903,14 +7068,12 @@
                 "description": "Request body to initiate a transaction from a SW bank account to another customer defined bank account\n",
                 "example": {
                     "sourceAccountId": "amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI",
-                    "description": "Payment to the delivery partner",
                     "sourceAmount": {
                         "amount": 100,
                         "currency": "USD"
                     },
                     "destinationTransactionInstrument": {
                         "bankAccount": {
-                            "accountHolderName": "John Doe",
                             "bankAccountNumberFormat": "BBAN",
                             "bankAccountOwnershipType": "SELF",
                             "routingNumber": "HBUKGB4B",
@@ -6919,8 +7082,11 @@
                             "accountCurrency": "CNY",
                             "bankAccountNumberTail": "819"
                         },
+                        "accountHolderName": "John Doe",
                         "bankAccountNumber": "GB29RBOS60161331926819"
                     },
+                    "transactionDescription": "This is transaction to partner",
+                    "customerPaymentReference": "BG999999999",
                     "destinationAccountHolderAddress": {
                         "addressLine1": "333 Boren Ave N",
                         "city": "Seattle",
@@ -6947,7 +7113,7 @@
                             {
                                 "feeId": "Unique_FeeId_001",
                                 "feeType": "TRANSACTION_FEE",
-                                "feeRateValue": 0.9,
+                                "feeRateValue": "0.9",
                                 "feeAmount": {
                                     "currencyCode": "EUR",
                                     "currencyAmount": 4.5
@@ -6956,7 +7122,7 @@
                             {
                                 "feeId": "Unique_FeeId_002",
                                 "feeType": "TAX",
-                                "feeRateValue": 20,
+                                "feeRateValue": "20.0",
                                 "feeAmount": {
                                     "currencyCode": "EUR",
                                     "currencyAmount": 0.9
@@ -6969,6 +7135,7 @@
             },
             "TransactionInstrumentDetails": {
                 "required": [
+                    "accountHolderName",
                     "bankAccount",
                     "bankAccountNumber"
                 ],
@@ -6981,12 +7148,16 @@
                         "type": "string",
                         "description": "This field would be used to populate the bank account number of the destination payment method. The field is intentionally not included in any other Schemas since Amazon internal systems will never receive it in unencrypted format, so field won't be part of the request signature\n",
                         "example": "GB29RBOS60161331926819"
+                    },
+                    "accountHolderName": {
+                        "type": "string",
+                        "description": "The bank account holder's name (expected to be an Amazon customer).\n\n**Note:** This field is encrypted before Amazon receives it, so should not be used to generate `destAccountDigitalSignature`, and should not be included in the request signature.",
+                        "example": "John Doe"
                     }
                 },
                 "description": "Request body to create transaction instrument, Amazon performs validation and screening (anti-money laundering measuers) on all the transaction instruments before executing a transaction thus it requires transaction instrument holder's contact details as well\n",
                 "example": {
                     "bankAccount": {
-                        "accountHolderName": "John Doe",
                         "bankAccountNumberFormat": "IBAN",
                         "bankAccountOwnershipType": "SELF",
                         "routingNumber": "HBUKGB4B",
@@ -6995,7 +7166,8 @@
                         "accountCurrency": "EUR",
                         "bankAccountNumberTail": "819"
                     },
-                    "bankAccountNumber": "GB29RBOS60161331926819"
+                    "bankAccountNumber": "GB29RBOS60161331926819",
+                    "accountHolderName": "John Doe"
                 }
             },
             "Transaction": {
@@ -7084,7 +7256,6 @@
             "TransactionAccount": {
                 "required": [
                     "bankAccountCurrency",
-                    "bankAccountHolderName",
                     "bankAccountNumberFormat",
                     "bankName"
                 ],
@@ -7145,14 +7316,18 @@
                 "type": "string",
                 "description": "Represents current status of the transaction.",
                 "enum": [
+                    "EXPIRED",
                     "FAILED",
                     "FAILED_CREDITS_APPLIED",
-                    "INITIATED",
                     "IN_PROGRESS",
-                    "PAYEE_UNDER_REVIEW",
+                    "PENDING_USER_APPROVAL",
                     "SUCCESSFUL"
                 ],
                 "x-docgen-enum-table-extension": [
+                    {
+                        "value": "EXPIRED",
+                        "description": "The transaction has expired due to missing approval/consent."
+                    },
                     {
                         "value": "FAILED",
                         "description": "Transaction failed before completion."
@@ -7162,16 +7337,12 @@
                         "description": "Transaction failed after debit and credit has been applied back to the balance."
                     },
                     {
-                        "value": "INITIATED",
-                        "description": "Transaction is requested but not started yet."
-                    },
-                    {
                         "value": "IN_PROGRESS",
                         "description": "Transaction is in progress."
                     },
                     {
-                        "value": "PAYEE_UNDER_REVIEW",
-                        "description": "Represents that the destination account holder (beneficiary) is under review."
+                        "value": "PENDING_USER_APPROVAL",
+                        "description": "The transaction has been created, but pending approval from the user via dynamic linking."
                     },
                     {
                         "value": "SUCCESSFUL",
@@ -7403,7 +7574,6 @@
                     "sourceCurrencyCode": "USD",
                     "destinationTransactionInstrument": {
                         "bankAccount": {
-                            "accountHolderName": "John Doe",
                             "bankAccountNumberFormat": "BBAN",
                             "bankAccountOwnershipType": "SELF",
                             "routingNumber": "HBUKGB4B",
@@ -7412,7 +7582,8 @@
                             "accountCurrency": "CNY",
                             "bankAccountNumberTail": "819"
                         },
-                        "bankAccountNumber": "GB29RBOS60161331926819"
+                        "bankAccountNumber": "GB29RBOS60161331926819",
+                        "accountHolderName": "John Doe"
                     },
                     "transactionType": "DEBIT",
                     "transferScheduleInformation": {

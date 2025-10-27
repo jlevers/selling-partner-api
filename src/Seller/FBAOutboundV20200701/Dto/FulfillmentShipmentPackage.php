@@ -18,6 +18,7 @@ final class FulfillmentShipmentPackage extends Dto
      * @param  int  $packageNumber  Identifies a package in a shipment.
      * @param  string  $carrierCode  Identifies the carrier who will deliver the shipment to the recipient.
      * @param  ?string  $trackingNumber  The tracking number, if provided, can be used to obtain tracking and delivery information.
+     * @param  ?string  $amazonFulfillmentTrackingNumber  The Amazon fulfillment tracking number, if provided, can be used to obtain tracking and delivery information.
      * @param  ?\DateTimeInterface  $estimatedArrivalDate  Date timestamp
      * @param  ?LockerDetails  $lockerDetails  The locker details, which you can use to access the locker delivery box.
      * @param  ?DeliveryInformation  $deliveryInformation  The delivery information for the package. This information is available after the package is delivered.
@@ -26,6 +27,7 @@ final class FulfillmentShipmentPackage extends Dto
         public int $packageNumber,
         public string $carrierCode,
         public ?string $trackingNumber = null,
+        public ?string $amazonFulfillmentTrackingNumber = null,
         public ?\DateTimeInterface $estimatedArrivalDate = null,
         public ?LockerDetails $lockerDetails = null,
         public ?DeliveryInformation $deliveryInformation = null,

@@ -15,7 +15,6 @@ use SellingPartnerApi\Response;
 final class BankAccount extends Response
 {
     /**
-     * @param  string  $accountHolderName  BankAccount holder's name (expected to be Amazon customer)
      * @param  string  $bankAccountNumberFormat  The format of the bank account number.
      * @param  string  $bankAccountOwnershipType  Represents destination bank account's ownership type.
      * @param  string  $routingNumber  Routing number for automated clearing house transfers, for all Amazon Seller Wallet account the value will be denoted by nine cosecutive 0's,
@@ -24,11 +23,11 @@ final class BankAccount extends Response
      * @param  string  $accountCurrency  BankAccount currency code in ISO 4217 format
      * @param  string  $bankAccountNumberTail  Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0's
      * @param  ?string  $accountId  The unique identifier provided by Amazon to identify the account
+     * @param  ?string  $accountHolderName  BankAccount holder's name (expected to be Amazon customer)
      * @param  ?string  $bankName  The name of the bank, for all Amazon Seller Wallet account the value will be Amazon Seller Wallet
      * @param  ?string  $bankAccountHolderStatus  Represents status of the Amazon Seller Wallet accountholder
      */
     public function __construct(
-        public readonly string $accountHolderName,
         public readonly string $bankAccountNumberFormat,
         public readonly string $bankAccountOwnershipType,
         public readonly string $routingNumber,
@@ -37,6 +36,7 @@ final class BankAccount extends Response
         public readonly string $accountCurrency,
         public readonly string $bankAccountNumberTail,
         public readonly ?string $accountId = null,
+        public readonly ?string $accountHolderName = null,
         public readonly ?string $bankName = null,
         public readonly ?string $bankAccountHolderStatus = null,
     ) {}

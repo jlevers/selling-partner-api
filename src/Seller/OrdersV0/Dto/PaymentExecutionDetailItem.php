@@ -14,20 +14,41 @@ use SellingPartnerApi\Dto;
 
 final class PaymentExecutionDetailItem extends Dto
 {
-    protected static array $attributeMap = ['payment' => 'Payment', 'paymentMethod' => 'PaymentMethod'];
+    protected static array $attributeMap = [
+        'payment' => 'Payment',
+        'paymentMethod' => 'PaymentMethod',
+        'acquirerId' => 'AcquirerId',
+        'cardBrand' => 'CardBrand',
+        'authorizationCode' => 'AuthorizationCode',
+    ];
 
     /**
      * @param  Money  $payment  The monetary value of the order.
-     * @param  string  $paymentMethod  A sub-payment method for a COD order.
+     * @param  string  $paymentMethod  The sub-payment method for an order.
      *
      * **Possible values**:
      * * `COD`: Cash on delivery
      * * `GC`: Gift card
      * * `PointsAccount`: Amazon Points
      * * `Invoice`: Invoice
+     * * `CreditCard`: Credit card
+     * * `Pix`: Pix
+     * * `Other`: Other.
+     * @param  ?string  $acquirerId  The Brazilian Taxpayer Identifier (CNPJ) of the payment processor or acquiring bank that authorizes the payment.
+     *
+     * **Note**: This attribute is only available for orders in the Brazil (BR) marketplace when the `PaymentMethod` is `CreditCard` or `Pix`.
+     * @param  ?string  $cardBrand  The card network or brand used in the payment transaction (for example, Visa or Mastercard).
+     *
+     * **Note**: This attribute is only available for orders in the Brazil (BR) marketplace when the `PaymentMethod` is `CreditCard`.
+     * @param  ?string  $authorizationCode  The unique code that confirms the payment authorization.
+     *
+     * **Note**: This attribute is only available for orders in the Brazil (BR) marketplace when the `PaymentMethod` is `CreditCard` or `Pix`.
      */
     public function __construct(
         public Money $payment,
         public string $paymentMethod,
+        public ?string $acquirerId = null,
+        public ?string $cardBrand = null,
+        public ?string $authorizationCode = null,
     ) {}
 }

@@ -16,7 +16,7 @@ final class DeliveryMessage extends Dto
 {
     /**
      * @param  ?string  $text  The message content for a delivery offering.
-     * @param  ?string  $locale  The locale for the message (for example, en_US).
+     * @param  ?string  $locale  The locale for the message (e.g., `en_US`).
      */
     public function __construct(
         public ?string $text = null,

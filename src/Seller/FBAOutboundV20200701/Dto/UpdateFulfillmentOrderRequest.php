@@ -28,7 +28,7 @@ final class UpdateFulfillmentOrderRequest extends Dto
      *                                          Note: Shipping method service level agreements vary by marketplace. Sellers should refer to the [Seller Central](https://developer-docs.amazon.com/sp-api/docs/seller-central-urls) website in their marketplace for shipping method service level agreements and fulfillment fees.
      * @param  ?Address  $destinationAddress  A physical address.
      * @param  ?string  $fulfillmentAction  Specifies whether the fulfillment order should ship now or have an order hold put on it.
-     * @param  ?string  $fulfillmentPolicy  The `FulfillmentPolicy` value specified when you submitted the `createFulfillmentOrder` operation.
+     * @param  ?string  $fulfillmentPolicy  The `FulfillmentPolicy` value specified when you called the `createFulfillmentOrder` operation.
      * @param  ?string  $shipFromCountryCode  The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
      * @param  ?string[]  $notificationEmails  A list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller.
      * @param  FeatureSettings[]|null  $featureConstraints  A list of features and their fulfillment policies to apply to the order.

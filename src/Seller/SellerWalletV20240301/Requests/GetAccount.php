@@ -26,9 +26,11 @@ class GetAccount extends Request
 
     /**
      * @param  string  $accountId  ID of the Amazon SW account
+     * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function __construct(
         protected string $accountId,
+        protected string $marketplaceId,
     ) {}
 
     public function resolveEndpoint(): string
@@ -46,5 +48,10 @@ class GetAccount extends Request
         };
 
         return $responseCls::deserialize($response->json());
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceId' => $this->marketplaceId]);
     }
 }

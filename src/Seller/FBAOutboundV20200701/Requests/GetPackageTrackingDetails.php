@@ -24,10 +24,12 @@ class GetPackageTrackingDetails extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  int  $packageNumber  The unencrypted package identifier returned by the `getFulfillmentOrder` operation.
+     * @param  ?int  $packageNumber  The unencrypted package identifier. You can obtain this value from the `getFulfillmentOrder` operation.
+     * @param  ?string  $amazonFulfillmentTrackingNumber  The Amazon fulfillment tracking number. You can obtain this value from the `getFulfillmentOrder` operation.
      */
     public function __construct(
-        protected int $packageNumber,
+        protected ?int $packageNumber = null,
+        protected ?string $amazonFulfillmentTrackingNumber = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -48,6 +50,6 @@ class GetPackageTrackingDetails extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['packageNumber' => $this->packageNumber]);
+        return array_filter(['packageNumber' => $this->packageNumber, 'amazonFulfillmentTrackingNumber' => $this->amazonFulfillmentTrackingNumber]);
     }
 }

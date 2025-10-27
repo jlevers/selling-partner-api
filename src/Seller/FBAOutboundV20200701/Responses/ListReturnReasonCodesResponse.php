@@ -17,7 +17,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\ListReturnReasonCodesResul
 final class ListReturnReasonCodesResponse extends Response
 {
     /**
-     * @param  ?ListReturnReasonCodesResult  $payload  The request for the listReturnReasonCodes operation.
+     * @param  ?ListReturnReasonCodesResult  $payload  The request for the `listReturnReasonCodes` operation.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

@@ -19,6 +19,10 @@ final class Points extends Dto
         'pointsMonetaryValue' => 'PointsMonetaryValue',
     ];
 
+    /**
+     * @param  ?int  $pointsNumber  The number of Amazon Points
+     * @param  ?MoneyType  $pointsMonetaryValue  An object representing a monetary value with its currency information.
+     */
     public function __construct(
         public ?int $pointsNumber = null,
         public ?MoneyType $pointsMonetaryValue = null,

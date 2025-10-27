@@ -121,6 +121,21 @@
                                                         "CurrencyCode": "USD",
                                                         "Amount": 34.73
                                                     },
+                                                    "RateWithAdjustments": {
+                                                        "CurrencyCode": "USD",
+                                                        "Amount": 33.73
+                                                    },
+                                                    "AdjustmentItemList": [
+                                                        {
+                                                            "RateItemID": "FBM_SHIP_PLUS_CREDIT",
+                                                            "RateItemType": "INCLUDED",
+                                                            "RateItemCharge": {
+                                                                "CurrencyCode": "USD",
+                                                                "Amount": 1
+                                                            },
+                                                            "RateItemNameLocalization": "FBM Ship Plus Credit"
+                                                        }
+                                                    ],
                                                     "ShippingServiceOptions": {
                                                         "DeliveryExperience": "NoTracking",
                                                         "CarrierWillPickUp": false,
@@ -148,7 +163,8 @@
                                                     ],
                                                     "Benefits": {
                                                         "IncludedBenefits": [
-                                                            "CLAIMS_PROTECTED"
+                                                            "CLAIMS_PROTECTED",
+                                                            "FBM_SHIP_PLUS"
                                                         ],
                                                         "ExcludedBenefits": []
                                                     }
@@ -162,6 +178,10 @@
                                                     "EarliestEstimatedDeliveryDate": "2019-10-30T06:00:00Z",
                                                     "LatestEstimatedDeliveryDate": "2019-10-30T06:00:00Z",
                                                     "Rate": {
+                                                        "CurrencyCode": "USD",
+                                                        "Amount": 98.75
+                                                    },
+                                                    "RateWithAdjustments": {
                                                         "CurrencyCode": "USD",
                                                         "Amount": 98.75
                                                     },
@@ -533,6 +553,21 @@
                                                     "CurrencyCode": "USD",
                                                     "Amount": 34.73
                                                 },
+                                                "RateWithAdjustments": {
+                                                    "CurrencyCode": "USD",
+                                                    "Amount": 33.73
+                                                },
+                                                "AdjustmentItemList": [
+                                                    {
+                                                        "RateItemID": "FBM_SHIP_PLUS_CREDIT",
+                                                        "RateItemType": "INCLUDED",
+                                                        "RateItemCharge": {
+                                                            "CurrencyCode": "USD",
+                                                            "Amount": 1
+                                                        },
+                                                        "RateItemNameLocalization": "FBM Ship Plus Credit"
+                                                    }
+                                                ],
                                                 "ShippingServiceOptions": {
                                                     "DeliveryExperience": "DeliveryConfirmationWithoutSignature",
                                                     "DeclaredValue": {
@@ -542,7 +577,9 @@
                                                 },
                                                 "RequiresAdditionalSellerInputs": false,
                                                 "Benefits": {
-                                                    "IncludedBenefits": [],
+                                                    "IncludedBenefits": [
+                                                        "FBM_SHIP_PLUS"
+                                                    ],
                                                     "ExcludedBenefits": [
                                                         {
                                                             "Benefit": "CLAIMS_PROTECTED",
@@ -845,6 +882,21 @@
                                                     "CurrencyCode": "USD",
                                                     "Amount": 34.73
                                                 },
+                                                "RateWithAdjustments": {
+                                                    "CurrencyCode": "USD",
+                                                    "Amount": 33.73
+                                                },
+                                                "AdjustmentItemList": [
+                                                    {
+                                                        "RateItemID": "FBM_SHIP_PLUS_CREDIT",
+                                                        "RateItemType": "INCLUDED",
+                                                        "RateItemCharge": {
+                                                            "CurrencyCode": "USD",
+                                                            "Amount": 1
+                                                        },
+                                                        "RateItemNameLocalization": "FBM Ship Plus Credit"
+                                                    }
+                                                ],
                                                 "ShippingServiceOptions": {
                                                     "DeliveryExperience": "DeliveryConfirmationWithoutSignature",
                                                     "DeclaredValue": {
@@ -1181,6 +1233,21 @@
                                                     "CurrencyCode": "USD",
                                                     "Amount": 34.73
                                                 },
+                                                "RateWithAdjustments": {
+                                                    "CurrencyCode": "USD",
+                                                    "Amount": 33.73
+                                                },
+                                                "AdjustmentItemList": [
+                                                    {
+                                                        "RateItemID": "FBM_SHIP_PLUS_CREDIT",
+                                                        "RateItemType": "INCLUDED",
+                                                        "RateItemCharge": {
+                                                            "CurrencyCode": "USD",
+                                                            "Amount": 1
+                                                        },
+                                                        "RateItemNameLocalization": "FBM Ship Plus Credit"
+                                                    }
+                                                ],
                                                 "ShippingServiceOptions": {
                                                     "DeliveryExperience": "NoTracking",
                                                     "DeclaredValue": {
@@ -1191,7 +1258,8 @@
                                                 "RequiresAdditionalSellerInputs": false,
                                                 "Benefits": {
                                                     "IncludedBenefits": [
-                                                        "CLAIMS_PROTECTED"
+                                                        "CLAIMS_PROTECTED",
+                                                        "FBM_SHIP_PLUS"
                                                     ],
                                                     "ExcludedBenefits": []
                                                 }
@@ -3124,6 +3192,12 @@
                     "Rate": {
                         "$ref": "#/components/schemas/CurrencyAmount"
                     },
+                    "RateWithAdjustments": {
+                        "$ref": "#/components/schemas/CurrencyAmount"
+                    },
+                    "AdjustmentItemList": {
+                        "$ref": "#/components/schemas/AdjustmentItemList"
+                    },
                     "ShippingServiceOptions": {
                         "$ref": "#/components/schemas/ShippingServiceOptions"
                     },
@@ -3546,6 +3620,61 @@
                     }
                 },
                 "description": "Details related to any dangerous goods or items that are shipped."
+            },
+            "AdjustmentItemList": {
+                "type": "array",
+                "description": "List of adjustments.",
+                "items": {
+                    "$ref": "#/components/schemas/RateItem"
+                }
+            },
+            "RateItem": {
+                "required": [
+                    "RateItemID"
+                ],
+                "type": "object",
+                "properties": {
+                    "RateItemID": {
+                        "$ref": "#/components/schemas/RateItemID"
+                    },
+                    "RateItemType": {
+                        "$ref": "#/components/schemas/RateItemType"
+                    },
+                    "RateItemCharge": {
+                        "$ref": "#/components/schemas/CurrencyAmount"
+                    },
+                    "RateItemNameLocalization": {
+                        "type": "string",
+                        "description": "Localized name for the RateItem."
+                    }
+                },
+                "description": "Rate item for shipping costs and adjustments."
+            },
+            "RateItemID": {
+                "type": "string",
+                "description": "Unique identifier for the RateItem.",
+                "enum": [
+                    "FBM_SHIP_PLUS_CREDIT"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "FBM_SHIP_PLUS_CREDIT",
+                        "description": "Charge adjustment for FBM Ship+."
+                    }
+                ]
+            },
+            "RateItemType": {
+                "type": "string",
+                "description": "Type for the RateItem.",
+                "enum": [
+                    "INCLUDED"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "INCLUDED",
+                        "description": "RateItem is included but not guaranteed to offer for the shipping service."
+                    }
+                ]
             }
         }
     },

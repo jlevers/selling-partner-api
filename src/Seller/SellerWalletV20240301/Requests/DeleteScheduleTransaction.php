@@ -25,15 +25,17 @@ class DeleteScheduleTransaction extends Request
     protected Method $method = Method::DELETE;
 
     /**
-     * @param  string  $transferScheduleId  A unique reference id for a scheduled transfer
+     * @param  string  $transferScheduleId  A unique reference ID for a scheduled transfer.
+     * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function __construct(
         protected string $transferScheduleId,
+        protected string $marketplaceId,
     ) {}
 
     public function resolveEndpoint(): string
     {
-        return '/finances/transfers/wallet/2024-03-01/transferSchedules';
+        return "/finances/transfers/wallet/2024-03-01/transferSchedules/{$this->transferScheduleId}";
     }
 
     public function createDtoFromResponse(Response $response): DeleteTransferSchedule|ErrorList
@@ -46,5 +48,10 @@ class DeleteScheduleTransaction extends Request
         };
 
         return $responseCls::deserialize($response->json());
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceId' => $this->marketplaceId]);
     }
 }

@@ -17,7 +17,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\ListAllFulfillmentOrdersRe
 final class ListAllFulfillmentOrdersResponse extends Response
 {
     /**
-     * @param  ?ListAllFulfillmentOrdersResult  $payload  The request for the listAllFulfillmentOrders operation.
+     * @param  ?ListAllFulfillmentOrdersResult  $payload  The request for the `listAllFulfillmentOrders` operation.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

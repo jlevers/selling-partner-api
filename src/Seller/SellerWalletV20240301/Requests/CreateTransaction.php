@@ -17,8 +17,8 @@ use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\SellerWalletV20240301\Dto\TransactionInitiationRequest;
+use SellingPartnerApi\Seller\SellerWalletV20240301\Responses\CreateTransactionResponse;
 use SellingPartnerApi\Seller\SellerWalletV20240301\Responses\ErrorList;
-use SellingPartnerApi\Seller\SellerWalletV20240301\Responses\Transaction;
 
 /**
  * createTransaction
@@ -31,11 +31,13 @@ class CreateTransaction extends Request implements HasBody
 
     /**
      * @param  TransactionInitiationRequest  $transactionInitiationRequest  Request body to initiate a transaction from a SW bank account to another customer defined bank account
+     * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  string  $destAccountDigitalSignature  Digital signature for the destination bank account details.
      * @param  string  $amountDigitalSignature  Digital signature for the source currency transaction amount.
      */
     public function __construct(
         public TransactionInitiationRequest $transactionInitiationRequest,
+        protected string $marketplaceId,
         protected string $destAccountDigitalSignature,
         protected string $amountDigitalSignature,
     ) {}
@@ -45,11 +47,11 @@ class CreateTransaction extends Request implements HasBody
         return '/finances/transfers/wallet/2024-03-01/transactions';
     }
 
-    public function createDtoFromResponse(Response $response): Transaction|ErrorList
+    public function createDtoFromResponse(Response $response): CreateTransactionResponse|ErrorList
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            200 => Transaction::class,
+            200 => CreateTransactionResponse::class,
             400, 403, 404, 408, 413, 415, 422, 429, 500, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
@@ -60,6 +62,11 @@ class CreateTransaction extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->transactionInitiationRequest->toArray();
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceId' => $this->marketplaceId]);
     }
 
     public function defaultHeaders(): array

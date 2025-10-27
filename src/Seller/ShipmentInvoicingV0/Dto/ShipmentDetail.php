@@ -21,6 +21,7 @@ final class ShipmentDetail extends Dto
         'purchaseDate' => 'PurchaseDate',
         'shippingAddress' => 'ShippingAddress',
         'paymentMethodDetails' => 'PaymentMethodDetails',
+        'payments' => 'Payments',
         'marketplaceId' => 'MarketplaceId',
         'sellerId' => 'SellerId',
         'buyerName' => 'BuyerName',
@@ -31,7 +32,10 @@ final class ShipmentDetail extends Dto
         'shipmentItems' => 'ShipmentItems',
     ];
 
-    protected static array $complexArrayTypes = ['shipmentItems' => ShipmentItem::class];
+    protected static array $complexArrayTypes = [
+        'payments' => PaymentInformation::class,
+        'shipmentItems' => ShipmentItem::class,
+    ];
 
     /**
      * @param  ?string  $warehouseId  The Amazon-defined identifier for the warehouse.
@@ -40,6 +44,7 @@ final class ShipmentDetail extends Dto
      * @param  ?\DateTimeInterface  $purchaseDate  The date and time when the order was created.
      * @param  ?Address  $shippingAddress  The shipping address details of the shipment.
      * @param  ?string[]  $paymentMethodDetails  The list of payment method details.
+     * @param  PaymentInformation[]|null  $payments  List of payment transactions
      * @param  ?string  $marketplaceId  The identifier for the marketplace where the order was placed.
      * @param  ?string  $sellerId  The seller identifier.
      * @param  ?string  $buyerName  The name of the buyer.
@@ -56,6 +61,7 @@ final class ShipmentDetail extends Dto
         public ?\DateTimeInterface $purchaseDate = null,
         public ?Address $shippingAddress = null,
         public ?array $paymentMethodDetails = null,
+        public ?array $payments = null,
         public ?string $marketplaceId = null,
         public ?string $sellerId = null,
         public ?string $buyerName = null,

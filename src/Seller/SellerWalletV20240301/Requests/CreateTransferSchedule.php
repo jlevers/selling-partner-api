@@ -31,11 +31,13 @@ class CreateTransferSchedule extends Request implements HasBody
 
     /**
      * @param  TransferScheduleRequest  $transferScheduleRequest  Request body to initiate a scheduled transfer from a SW bank account to another customer defined bank account
+     * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  string  $destAccountDigitalSignature  Digital signature for the destination bank account details.
      * @param  string  $amountDigitalSignature  Digital signature for the source currency transaction amount.
      */
     public function __construct(
         public TransferScheduleRequest $transferScheduleRequest,
+        protected string $marketplaceId,
         protected string $destAccountDigitalSignature,
         protected string $amountDigitalSignature,
     ) {}
@@ -60,6 +62,11 @@ class CreateTransferSchedule extends Request implements HasBody
     public function defaultBody(): array
     {
         return $this->transferScheduleRequest->toArray();
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['marketplaceId' => $this->marketplaceId]);
     }
 
     public function defaultHeaders(): array

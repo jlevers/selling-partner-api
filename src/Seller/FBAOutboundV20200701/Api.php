@@ -38,7 +38,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  GetDeliveryOffersRequest  $getDeliveryOffersRequest  The request body schema for the getDeliveryOffers operation.
+     * @param  GetDeliveryOffersRequest  $getDeliveryOffersRequest  The request body schema for the `getDeliveryOffers` operation.
      */
     public function deliveryOffers(GetDeliveryOffersRequest $getDeliveryOffersRequest): Response
     {
@@ -71,11 +71,14 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  int  $packageNumber  The unencrypted package identifier returned by the `getFulfillmentOrder` operation.
+     * @param  ?int  $packageNumber  The unencrypted package identifier. You can obtain this value from the `getFulfillmentOrder` operation.
+     * @param  ?string  $amazonFulfillmentTrackingNumber  The Amazon fulfillment tracking number. You can obtain this value from the `getFulfillmentOrder` operation.
      */
-    public function getPackageTrackingDetails(int $packageNumber): Response
-    {
-        $request = new GetPackageTrackingDetails($packageNumber);
+    public function getPackageTrackingDetails(
+        ?int $packageNumber = null,
+        ?string $amazonFulfillmentTrackingNumber = null,
+    ): Response {
+        $request = new GetPackageTrackingDetails($packageNumber, $amazonFulfillmentTrackingNumber);
 
         return $this->connector->send($request);
     }
@@ -98,8 +101,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $sellerFulfillmentOrderId  An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct `SellerFulfillmentOrderId` value based on the buyer's request to return items.
-     * @param  CreateFulfillmentReturnRequest  $createFulfillmentReturnRequest  The `createFulfillmentReturn` operation creates a fulfillment return for items that were fulfilled using the `createFulfillmentOrder` operation. For calls to `createFulfillmentReturn`, you must include `ReturnReasonCode` values returned by a previous call to the `listReturnReasonCodes` operation.
+     * @param  string  $sellerFulfillmentOrderId  An identifier the seller assigns to the fulfillment order at the time it was created. The seller uses their own records to find the correct `sellerFulfillmentOrderId` value based on the buyer's request to return items.
+     * @param  CreateFulfillmentReturnRequest  $createFulfillmentReturnRequest  The `createFulfillmentReturn` operation creates a fulfillment return for items that were fulfilled using the `createFulfillmentOrder` operation. For calls to `createFulfillmentReturn`, you must include `returnReasonCode` values returned by a previous call to the `listReturnReasonCodes` operation.
      */
     public function createFulfillmentReturn(
         string $sellerFulfillmentOrderId,
@@ -169,8 +172,8 @@ class Api extends BaseResource
     /**
      * @param  string  $featureName  The name of the feature for which to return a list of eligible inventory.
      * @param  string  $marketplaceId  The marketplace for which to return a list of the inventory that is eligible for the specified feature.
-     * @param  ?string  $nextToken  A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
-     * @param  ?\DateTimeInterface  $queryStartDate  A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ
+     * @param  ?string  $nextToken  A string token returned in the response to your previous request that is used to return the next response page. A value of `null` will return the first page.
+     * @param  ?\DateTimeInterface  $queryStartDate  A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format `yyyy-MM-ddTHH:mm:ss.sssZ`
      */
     public function getFeatureInventory(
         string $featureName,
@@ -185,7 +188,7 @@ class Api extends BaseResource
 
     /**
      * @param  string  $featureName  The name of the feature.
-     * @param  string  $sellerSku  Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller's `SellerId`, which is included with every operation that you submit.
+     * @param  string  $sellerSku  Used to identify an item in the given marketplace. `sellerSku` is qualified by the seller's `sellerId`, which is included with every operation that you submit.
      * @param  string  $marketplaceId  The marketplace for which to return the count.
      */
     public function getFeatureSku(string $featureName, string $sellerSku, string $marketplaceId): Response

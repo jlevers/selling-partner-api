@@ -20,6 +20,11 @@ final class PriceToEstimateFees extends Dto
         'points' => 'Points',
     ];
 
+    /**
+     * @param  MoneyType  $listingPrice  An object representing a monetary value with its currency information.
+     * @param  ?MoneyType  $shipping  An object representing a monetary value with its currency information.
+     * @param  ?Points  $points  The number of Amazon Points offered with the purchase of an item.The Amazon Points program is only available in Japan.
+     */
     public function __construct(
         public MoneyType $listingPrice,
         public ?MoneyType $shipping = null,

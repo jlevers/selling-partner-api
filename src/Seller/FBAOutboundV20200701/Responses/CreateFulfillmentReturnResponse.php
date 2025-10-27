@@ -17,7 +17,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\ErrorList;
 final class CreateFulfillmentReturnResponse extends Response
 {
     /**
-     * @param  ?CreateFulfillmentReturnResult  $payload  The result for the createFulfillmentReturn operation.
+     * @param  ?CreateFulfillmentReturnResult  $payload  The result for the `createFulfillmentReturn` operation.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

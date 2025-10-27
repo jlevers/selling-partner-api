@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class DeliveryDocument extends Dto
 {
     /**
-     * @param  string  $documentType  The delivery document type. Values are `SIGNATURE` and `DELIVERY_IMAGE`.
+     * @param  string  $documentType  The delivery document type. The only possible value is `DELIVERY_IMAGE`.
      * @param  ?string  $url  A URL that you can use to download the document. This URL has a `Content-Type` header. Note that the URL expires after one hour. To get a new URL, you must call the API again.
      */
     public function __construct(

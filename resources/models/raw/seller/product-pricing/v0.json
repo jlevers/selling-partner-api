@@ -1812,6 +1812,14 @@
                                                             "Amount": 8,
                                                             "CurrencyCode": "USD"
                                                         },
+                                                        "Shipping": {
+                                                            "Amount": 0,
+                                                            "CurrencyCode": "USD"
+                                                        },
+                                                        "LandedPrice": {
+                                                            "Amount": 8,
+                                                            "CurrencyCode": "USD"
+                                                        },
                                                         "sellerId": "AXXXXXXXXXXXXX"
                                                     },
                                                     {
@@ -1820,6 +1828,14 @@
                                                         "quantityTier": 30,
                                                         "quantityDiscountType": "QUANTITY_DISCOUNT",
                                                         "ListingPrice": {
+                                                            "Amount": 7,
+                                                            "CurrencyCode": "USD"
+                                                        },
+                                                        "Shipping": {
+                                                            "Amount": 0,
+                                                            "CurrencyCode": "USD"
+                                                        },
+                                                        "LandedPrice": {
                                                             "Amount": 7,
                                                             "CurrencyCode": "USD"
                                                         },
@@ -2382,6 +2398,14 @@
                                                             "Amount": 8,
                                                             "CurrencyCode": "USD"
                                                         },
+                                                        "Shipping": {
+                                                            "Amount": 0,
+                                                            "CurrencyCode": "USD"
+                                                        },
+                                                        "LandedPrice": {
+                                                            "Amount": 8,
+                                                            "CurrencyCode": "USD"
+                                                        },
                                                         "sellerId": "AXXXXXXXXXXXXX"
                                                     },
                                                     {
@@ -2390,6 +2414,14 @@
                                                         "quantityTier": 30,
                                                         "quantityDiscountType": "QUANTITY_DISCOUNT",
                                                         "ListingPrice": {
+                                                            "Amount": 7,
+                                                            "CurrencyCode": "USD"
+                                                        },
+                                                        "Shipping": {
+                                                            "Amount": 0,
+                                                            "CurrencyCode": "USD"
+                                                        },
+                                                        "LandedPrice": {
                                                             "Amount": 7,
                                                             "CurrencyCode": "USD"
                                                         },
@@ -2856,7 +2888,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -3014,7 +3046,7 @@
                                                                 "IsFulfilledByAmazon": true
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -3460,7 +3492,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -3625,7 +3657,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -3789,7 +3821,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -4373,7 +4405,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -4555,7 +4587,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -4759,7 +4791,7 @@
                                                                 "IsFulfilledByAmazon": true
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -4873,7 +4905,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -4906,7 +4938,7 @@
                                                             "TotalOfferCount": 0
                                                         },
                                                         "Offers": [],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -5772,7 +5804,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -5956,7 +5988,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -6410,7 +6442,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -6577,7 +6609,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -6741,7 +6773,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "marketplaceId": "ATVPDKIKX0DER"
+                                                        "MarketplaceID": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -7265,6 +7297,12 @@
                     }
                 },
                 "description": "The HTTP status line associated with the response.  For more information, consult [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html)."
+            },
+            "HttpUri": {
+                "maxLength": 512,
+                "minLength": 6,
+                "type": "string",
+                "description": "The URI associated with the individual APIs being called as part of the batch request."
             },
             "HttpMethod": {
                 "type": "string",

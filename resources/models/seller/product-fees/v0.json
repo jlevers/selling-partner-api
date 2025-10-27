@@ -38,6 +38,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "The request body schema for the getMyFeesEstimates operation",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -212,12 +213,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -278,12 +273,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -302,12 +291,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -323,12 +306,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -365,6 +342,7 @@
                     }
                 ],
                 "requestBody": {
+                    "description": "The request body schema for the getMyFeesEstimates operation",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -539,12 +517,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -605,12 +577,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -629,12 +595,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -650,12 +610,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -681,6 +635,7 @@
                 "description": "Returns the estimated fees for a list of products.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "getMyFeesEstimates",
                 "requestBody": {
+                    "description": "The request body schema for the getMyFeesEstimates operation",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -948,12 +903,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1014,12 +963,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1038,12 +981,6 @@
                                 "schema": {
                                     "type": "string"
                                 }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
-                                "schema": {
-                                    "type": "string"
-                                }
                             }
                         },
                         "content": {
@@ -1059,12 +996,6 @@
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "x-amzn-RateLimit-Limit": {
-                                "description": "Your rate limit (requests per second) for this operation.\n_Note:_ For this status code, the rate limit header is deprecated and no longer returned.",
                                 "schema": {
                                     "type": "string"
                                 }
@@ -1159,7 +1090,8 @@
                     "errors": {
                         "$ref": "#/components/schemas/ErrorList"
                     }
-                }
+                },
+                "description": "The response object for the GetMyFeesEstimate operation."
             },
             "GetMyFeesEstimateResult": {
                 "type": "object",
@@ -1182,12 +1114,14 @@
                 "properties": {
                     "PointsNumber": {
                         "type": "integer",
+                        "description": "The number of Amazon Points",
                         "format": "int32"
                     },
                     "PointsMonetaryValue": {
                         "$ref": "#/components/schemas/MoneyType"
                     }
-                }
+                },
+                "description": "The number of Amazon Points offered with the purchase of an item.The Amazon Points program is only available in Japan."
             },
             "GetMyFeesEstimatesErrorList": {
                 "required": [
@@ -1197,6 +1131,7 @@
                 "properties": {
                     "errors": {
                         "type": "array",
+                        "description": "A list of error responses returned when a request is unsuccessful.",
                         "items": {
                             "$ref": "#/components/schemas/Error"
                         }
@@ -1239,7 +1174,8 @@
                         "type": "string",
                         "description": "Additional details that can help the caller understand or fix the issue."
                     }
-                }
+                },
+                "description": "An object representing an error that occurred during the API operation."
             },
             "FeesEstimateResult": {
                 "type": "object",
@@ -1450,7 +1386,8 @@
                         "type": "number",
                         "description": "The monetary value."
                     }
-                }
+                },
+                "description": "An object representing a monetary value with its currency information."
             },
             "OptionalFulfillmentProgram": {
                 "type": "string",

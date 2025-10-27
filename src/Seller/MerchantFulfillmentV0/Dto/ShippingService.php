@@ -24,6 +24,8 @@ final class ShippingService extends Dto
         'shippingServiceOptions' => 'ShippingServiceOptions',
         'earliestEstimatedDeliveryDate' => 'EarliestEstimatedDeliveryDate',
         'latestEstimatedDeliveryDate' => 'LatestEstimatedDeliveryDate',
+        'rateWithAdjustments' => 'RateWithAdjustments',
+        'adjustmentItemList' => 'AdjustmentItemList',
         'availableShippingServiceOptions' => 'AvailableShippingServiceOptions',
         'availableLabelFormats' => 'AvailableLabelFormats',
         'availableFormatOptionsForLabel' => 'AvailableFormatOptionsForLabel',
@@ -31,7 +33,10 @@ final class ShippingService extends Dto
         'benefits' => 'Benefits',
     ];
 
-    protected static array $complexArrayTypes = ['availableFormatOptionsForLabel' => LabelFormatOption::class];
+    protected static array $complexArrayTypes = [
+        'adjustmentItemList' => RateItem::class,
+        'availableFormatOptionsForLabel' => LabelFormatOption::class,
+    ];
 
     /**
      * @param  string  $shippingServiceName  A plain text representation of a carrier's shipping service. For example, "UPS Ground" or "FedEx Standard Overnight".
@@ -43,6 +48,8 @@ final class ShippingService extends Dto
      * @param  ShippingServiceOptions  $shippingServiceOptions  Extra services provided by a carrier.
      * @param  ?\DateTimeInterface  $earliestEstimatedDeliveryDate  Date-time formatted timestamp.
      * @param  ?\DateTimeInterface  $latestEstimatedDeliveryDate  Date-time formatted timestamp.
+     * @param  ?CurrencyAmount  $rateWithAdjustments  Currency type and amount.
+     * @param  RateItem[]|null  $adjustmentItemList  List of adjustments.
      * @param  ?AvailableShippingServiceOptions  $availableShippingServiceOptions  The available shipping service options.
      * @param  ?string[]  $availableLabelFormats  List of label formats.
      * @param  LabelFormatOption[]|null  $availableFormatOptionsForLabel  The available label formats.
@@ -59,6 +66,8 @@ final class ShippingService extends Dto
         public ShippingServiceOptions $shippingServiceOptions,
         public ?\DateTimeInterface $earliestEstimatedDeliveryDate = null,
         public ?\DateTimeInterface $latestEstimatedDeliveryDate = null,
+        public ?CurrencyAmount $rateWithAdjustments = null,
+        public ?array $adjustmentItemList = null,
         public ?AvailableShippingServiceOptions $availableShippingServiceOptions = null,
         public ?array $availableLabelFormats = null,
         public ?array $availableFormatOptionsForLabel = null,

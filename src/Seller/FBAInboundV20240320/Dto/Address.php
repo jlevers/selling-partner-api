@@ -22,6 +22,7 @@ final class Address extends Dto
      * @param  string  $postalCode  The postal code.
      * @param  ?string  $addressLine2  Additional street address information.
      * @param  ?string  $companyName  The name of the business.
+     * @param  ?string  $districtOrCounty  The district or county.
      * @param  ?string  $email  The email address.
      * @param  ?string  $phoneNumber  The phone number.
      * @param  ?string  $stateOrProvinceCode  The state or province code.
@@ -34,6 +35,7 @@ final class Address extends Dto
         public string $postalCode,
         public ?string $addressLine2 = null,
         public ?string $companyName = null,
+        public ?string $districtOrCounty = null,
         public ?string $email = null,
         public ?string $phoneNumber = null,
         public ?string $stateOrProvinceCode = null,

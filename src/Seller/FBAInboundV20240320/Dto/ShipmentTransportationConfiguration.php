@@ -20,7 +20,7 @@ final class ShipmentTransportationConfiguration extends Dto
      * @param  WindowInput  $readyToShipWindow  Contains only a starting DateTime.
      * @param  string  $shipmentId  Identifier of a shipment. A shipment contains the boxes and units being inbounded.
      * @param  ?ContactInformation  $contactInformation  The seller's contact information.
-     * @param  ?FreightInformation  $freightInformation  Freight information describes the skus being transported. Freight carrier options and quotes will only be returned if the freight information is provided.
+     * @param  ?FreightInformation  $freightInformation  Freight information describes the SKUs that are in transit. Freight carrier options and quotes will only be returned if the freight information is provided.
      * @param  PalletInput[]|null  $pallets  List of pallet configuration inputs.
      */
     public function __construct(

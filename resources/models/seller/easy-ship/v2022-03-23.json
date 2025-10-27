@@ -73,12 +73,12 @@
                                                     "length": 15,
                                                     "width": 10,
                                                     "height": 12,
-                                                    "unit": "Cm",
+                                                    "unit": "cm",
                                                     "identifier": "test"
                                                 },
                                                 "packageWeight": {
                                                     "value": 50,
-                                                    "unit": "G"
+                                                    "unit": "g"
                                                 }
                                             }
                                         }
@@ -87,16 +87,16 @@
                                         "amazonOrderId": "931-2308757-7991048",
                                         "timeSlots": [
                                             {
-                                                "handoverMethod": "Pickup",
+                                                "handoverMethod": "PICKUP",
                                                 "slotId": "AQc48yxSAAAAADZG0qQAAAAA6kkAAAAAAAA=",
-                                                "startTime": "2022-03-09T23:30:00Z",
-                                                "endTime": "2022-03-10T02:00:00Z"
+                                                "startTime": "2022-03-09T10:00:00+09:00",
+                                                "endTime": "2022-03-10T10:00:00+09:00"
                                             },
                                             {
-                                                "handoverMethod": "Pickup",
+                                                "handoverMethod": "PICKUP",
                                                 "slotId": "AQef4K2CAAAAAGdIAEAAAAAA6kkAAAAAAAA=",
-                                                "startTime": "2022-03-10T02:00:00Z",
-                                                "endTime": "2022-03-10T04:30:00Z"
+                                                "startTime": "2022-03-10T10:00:00+09:00",
+                                                "endTime": "2022-03-10T11:00:00+09:00"
                                             }
                                         ]
                                     }
@@ -140,11 +140,11 @@
                                                         "length": 15,
                                                         "width": 10,
                                                         "height": 12,
-                                                        "unit": "Cm"
+                                                        "unit": "cm"
                                                     },
                                                     "packageWeight": {
                                                         "value": 50,
-                                                        "unit": "G"
+                                                        "unit": "g"
                                                     }
                                                 }
                                             }
@@ -171,11 +171,11 @@
                                                         "length": 15,
                                                         "width": 10,
                                                         "height": 12,
-                                                        "unit": "Cm"
+                                                        "unit": "cm"
                                                     },
                                                     "packageWeight": {
                                                         "value": 50,
-                                                        "unit": "G"
+                                                        "unit": "g"
                                                     }
                                                 }
                                             }
@@ -424,16 +424,16 @@
                                             "length": 12,
                                             "width": 12,
                                             "height": 12,
-                                            "unit": "Cm"
+                                            "unit": "cm"
                                         },
                                         "packageWeight": {
                                             "value": 23,
-                                            "unit": "G"
+                                            "unit": "g"
                                         },
                                         "packageTimeSlot": {
                                             "slotId": "AQc48yxSAAAAADZG0qQAAAAA6kkAAAAAAAA=",
-                                            "startTime": "2022-03-09T23:30:00Z",
-                                            "endTime": "2022-03-10T02:00:00Z"
+                                            "startTime": "2022-03-09T10:00:00+09:00",
+                                            "endTime": "2022-03-10T10:00:00+09:00"
                                         },
                                         "packageStatus": "Scheduled"
                                     }
@@ -692,16 +692,16 @@
                                                         "length": 12,
                                                         "width": 12,
                                                         "height": 12,
-                                                        "unit": "Cm"
+                                                        "unit": "cm"
                                                     },
                                                     "packageWeight": {
                                                         "value": 23,
-                                                        "unit": "G"
+                                                        "unit": "g"
                                                     },
                                                     "packageTimeSlot": {
                                                         "slotId": "AQc48yxSAAAAADZG0qQAAAAA6kkAAAAAAAA=",
-                                                        "startTime": "2022-03-09T23:30:00Z",
-                                                        "endTime": "2022-03-10T02:00:00Z"
+                                                        "startTime": "2022-03-09T10:00:00+09:00",
+                                                        "endTime": "2022-03-10T10:00:00+09:00"
                                                     }
                                                 }
                                             }
@@ -716,16 +716,16 @@
                                             "length": 12,
                                             "width": 12,
                                             "height": 12,
-                                            "unit": "Cm"
+                                            "unit": "cm"
                                         },
                                         "packageWeight": {
                                             "value": 23,
-                                            "unit": "G"
+                                            "unit": "g"
                                         },
                                         "packageTimeSlot": {
                                             "slotId": "AQc48yxSAAAAADZG0qQAAAAA6kkAAAAAAAA=",
-                                            "startTime": "2022-03-09T23:30:00Z",
-                                            "endTime": "2022-03-10T02:00:00Z"
+                                            "startTime": "2022-03-09T10:00:00+09:00",
+                                            "endTime": "2022-03-10T10:00:00+09:00"
                                         },
                                         "packageStatus": "ReadyForPickup"
                                     }
@@ -767,8 +767,8 @@
                                                     "packageDetails": {
                                                         "packageTimeSlot": {
                                                             "slotId": "",
-                                                            "startTime": "2022-03-09T23:30:00Z",
-                                                            "endTime": "2022-03-10T02:00:00Z"
+                                                            "startTime": "2022-03-09T10:00:00+09:00",
+                                                            "endTime": "2022-03-10T10:00:00+09:00"
                                                         }
                                                     }
                                                 }
@@ -793,8 +793,8 @@
                                                     "packageDetails": {
                                                         "packageTimeSlot": {
                                                             "slotId": "AQc48yxSAAAAADZG0qQAAAAA6kkAAAAAAAA=",
-                                                            "startTime": "2022-03-09T23:30:00Z",
-                                                            "endTime": "2022-03-10T02:00:00Z"
+                                                            "startTime": "2022-03-09T10:00:00+09:00",
+                                                            "endTime": "2022-03-10T10:00:00+09:00"
                                                         }
                                                     }
                                                 }
@@ -1022,8 +1022,8 @@
                                                         },
                                                         "packageTimeSlot": {
                                                             "slotId": "AQc48yxSAAAAADZG0qQAAAAA6kkAAAAAAAA=",
-                                                            "startTime": "2022-03-09T23:30:00Z",
-                                                            "endTime": "2022-03-10T02:00:00Z"
+                                                            "startTime": "2022-03-09T10:00:00+09:00",
+                                                            "endTime": "2022-03-10T10:00:00+09:00"
                                                         }
                                                     }
                                                 ]
@@ -1041,16 +1041,16 @@
                                                     "length": 12,
                                                     "width": 12,
                                                     "height": 12,
-                                                    "unit": "Cm"
+                                                    "unit": "cm"
                                                 },
                                                 "packageWeight": {
                                                     "value": 23,
-                                                    "unit": "G"
+                                                    "unit": "g"
                                                 },
                                                 "packageTimeSlot": {
                                                     "slotId": "AQc48yxSAAAAADZG0qQAAAAA6kkAAAAAAAA=",
-                                                    "startTime": "2022-03-09T23:30:00Z",
-                                                    "endTime": "2022-03-10T02:00:00Z"
+                                                    "startTime": "2022-03-09T10:00:00+09:00",
+                                                    "endTime": "2022-03-10T10:00:00+09:00"
                                                 },
                                                 "packageIdentifier": "Scheduled",
                                                 "packageStatus": "ReadyForPickup"
@@ -1100,8 +1100,8 @@
                                                             },
                                                             "packageTimeSlot": {
                                                                 "slotId": "",
-                                                                "startTime": "2022-03-09T23:30:00Z",
-                                                                "endTime": "2022-03-10T02:00:00Z"
+                                                                "startTime": "2022-03-09T10:00:00+09:00",
+                                                                "endTime": "2022-03-10T10:00:00+09:00"
                                                             }
                                                         }
                                                     ]
@@ -1132,8 +1132,8 @@
                                                             },
                                                             "packageTimeSlot": {
                                                                 "slotId": "AQc48yxSAAAAADZG0qQAAAAA6kkAAAAAAAA=",
-                                                                "startTime": "2022-03-09T23:30:00Z",
-                                                                "endTime": "2022-03-10T02:00:00Z"
+                                                                "startTime": "2022-03-09T10:00:00+09:00",
+                                                                "endTime": "2022-03-10T10:00:00+09:00"
                                                             }
                                                         }
                                                     ]
@@ -1164,8 +1164,8 @@
                                                             },
                                                             "packageTimeSlot": {
                                                                 "slotId": "AQc48yxSAAAAADZG0qQAAAAA6kkAAAAAAAA=",
-                                                                "startTime": "2022-03-09T23:30:00Z",
-                                                                "endTime": "2022-03-10T02:00:00Z"
+                                                                "startTime": "2022-03-09T10:00:00+09:00",
+                                                                "endTime": "2022-03-10T10:00:00+09:00"
                                                             }
                                                         }
                                                     ]
@@ -1344,7 +1344,7 @@
                 "tags": [
                     "EasyShipV20220323"
                 ],
-                "description": "This operation automatically schedules a time slot for all the `amazonOrderId`s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table)).\n\nDevelopers calling this operation may optionally assign a `packageDetails` object, allowing them to input a preferred time slot for each order in their request. In this case, Amazon will try to schedule the respective packages using their optional settings. On the other hand, *i.e.*, if the time slot is not provided, Amazon will then pick the earliest time slot possible. \n\nRegarding the shipping label's file format, external developers are able to choose between PDF or ZPL, and Amazon will create the label accordingly.\n\nThis operation returns an array composed of the scheduled packages, and a short-lived URL pointing to a zip file containing the generated shipping labels and the other documents enabled for your marketplace. If at least an order couldn't be scheduled, then Amazon adds the `rejectedOrders` list into the response, which contains an entry for each order we couldn't process. Each entry is composed of an error message describing the reason of the failure, so that sellers can take action.\n\nThe table below displays the supported request and burst maximum rates:\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "This operation automatically schedules a time slot for all the `amazonOrderId`s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table)).\n\nDevelopers calling this operation may optionally assign a `packageDetails` object, allowing them to input a preferred time slot for each order in ther request. In this case, Amazon will try to schedule the respective packages using their optional settings. On the other hand, *i.e.*, if the time slot is not provided, Amazon will then pick the earliest time slot possible. \n\nRegarding the shipping label's file format, external developers are able to choose between PDF or ZPL, and Amazon will create the label accordingly.\n\nThis operation returns an array composed of the scheduled packages, and a short-lived URL pointing to a zip file containing the generated shipping labels and the other documents enabled for your marketplace. If at least an order couldn't be scheduled, then Amazon adds the `rejectedOrders` list into the response, which contains an entry for each order we couldn't process. Each entry is composed of an error message describing the reason of the failure, so that sellers can take action.\n\nThe table below displays the supported request and burst maximum rates:\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
                 "operationId": "createScheduledPackageBulk",
                 "requestBody": {
                     "description": "The request schema for the `createScheduledPackageBulk` operation.",
@@ -1404,9 +1404,9 @@
                                                                 ],
                                                                 "packageTimeSlot": {
                                                                     "slotId": "AQc48yxSAAAAADZG0qQAAAAA6kkAAAAAAAA=",
-                                                                    "startTime": "2022-03-09T23:30:00Z",
-                                                                    "endTime": "2022-03-10T02:00:00Z",
-                                                                    "handoverMethod": "Pickup"
+                                                                    "startTime": "2022-03-09T10:00:00+09:00",
+                                                                    "endTime": "2022-03-10T10:00:00+09:00",
+                                                                    "handoverMethod": "PICKUP"
                                                                 },
                                                                 "packageIdentifier": "1ab0f06a-9149-87e0-aba9-7098117872d6"
                                                             }
@@ -1431,8 +1431,15 @@
                                                     "packageId": "1ab0f06a-9149-87e0-aba9-7098117872d6"
                                                 },
                                                 "packageTimeSlot": {
-                                                    "startTime": "2022-03-09T23:30:00Z",
-                                                    "endTime": "2022-03-10T02:00:00Z"
+                                                    "slotId": "AQc48yxSAAAAADZG0qQAAAAA6kkAAAAAAAA=",
+                                                    "startTime": "2022-03-09T10:00:00+09:00",
+                                                    "endTime": "2022-03-10T10:00:00+09:00",
+                                                    "handoverMethod": "PICKUP"
+                                                },
+                                                "packageIdentifier": "1ab0f06a-9149-87e0-aba9-7098117872d6",
+                                                "invoice": {
+                                                    "invoiceNumber": "IN-456",
+                                                    "invoiceDate": "2022-03-09T10:00:00+09:00"
                                                 },
                                                 "packageDimensions": {
                                                     "length": 5.905511805,
@@ -1445,6 +1452,15 @@
                                                     "value": 11.466,
                                                     "unit": "ounces"
                                                 },
+                                                "packageItems": [
+                                                    {
+                                                        "orderItemId": "6195931986885",
+                                                        "orderItemSerialNumbers": [
+                                                            "ABCDE1234",
+                                                            "56789FGHI"
+                                                        ]
+                                                    }
+                                                ],
                                                 "packageStatus": "ReadyForPickup",
                                                 "trackingDetails": {
                                                     "trackingId": "1652969339691"
@@ -1456,8 +1472,13 @@
                                                     "packageId": "80c06e53-3d96-f13f-30ca-85b50b1cb4ce"
                                                 },
                                                 "packageTimeSlot": {
-                                                    "startTime": "2022-05-21T06:08:52.036Z",
-                                                    "endTime": "2022-05-21T10:08:52.036Z"
+                                                    "slotId": "AQef4K2CAAAAAGdIAEAAAAAA6kkAAAAAAAA=",
+                                                    "startTime": "2022-05-21T10:00:00+09:00",
+                                                    "endTime": "2022-05-21T10:00:00+09:00"
+                                                },
+                                                "invoice": {
+                                                    "invoiceNumber": "IN-456",
+                                                    "invoiceDate": "2022-05-21T10:00:00+09:00"
                                                 },
                                                 "packageDimensions": {
                                                     "length": 5.905511805,
@@ -1481,6 +1502,7 @@
                                                 "amazonOrderId": "951-9026094-1233333",
                                                 "error": {
                                                     "code": "InvalidInput",
+                                                    "details": "Couldn't find the order details for 951-9026094-1233333",
                                                     "message": "Couldn't find the order details for 951-9026094-1233333"
                                                 }
                                             }
@@ -1809,16 +1831,16 @@
                 "type": "string",
                 "description": "Identifies the method by which a seller will hand a package over to Amazon Logistics.",
                 "enum": [
-                    "Pickup",
-                    "Dropoff"
+                    "PICKUP",
+                    "DROPOFF"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
-                        "value": "Pickup",
+                        "value": "PICKUP",
                         "description": "An Amazon Logistics carrier will pickup the package(s) from the seller's pickup address."
                     },
                     {
-                        "value": "Dropoff",
+                        "value": "DROPOFF",
                         "description": "Seller will need to drop off the package(s) to a designated location."
                     }
                 ]
@@ -2173,11 +2195,11 @@
                 "type": "string",
                 "description": "The unit of measurement used to measure the length.",
                 "enum": [
-                    "Cm"
+                    "cm"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
-                        "value": "Cm",
+                        "value": "cm",
                         "description": "Centimeters"
                     }
                 ]
@@ -2186,17 +2208,17 @@
                 "type": "string",
                 "description": "The unit of measurement used to measure the weight.",
                 "enum": [
-                    "Grams",
-                    "G"
+                    "grams",
+                    "g"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
-                        "value": "Grams",
-                        "description": "Grams"
+                        "value": "grams",
+                        "description": "grams"
                     },
                     {
-                        "value": "G",
-                        "description": "Grams"
+                        "value": "g",
+                        "description": "grams"
                     }
                 ]
             },

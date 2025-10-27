@@ -18,7 +18,7 @@ final class ReturnAuthorization extends Dto
 
     /**
      * @param  string  $returnAuthorizationId  An identifier for the return authorization. This identifier associates return items with the return authorization used to return them.
-     * @param  string  $fulfillmentCenterId  An identifier for the Amazon fulfillment center that the return items should be sent to.
+     * @param  string  $fulfillmentCenterId  An identifier for the Amazon fulfillment center to which the return items should be sent.
      * @param  Address  $returnToAddress  A physical address.
      * @param  string  $amazonRmaId  The return merchandise authorization (RMA) that Amazon needs to process the return.
      * @param  string  $rmaPageUrl  A URL for a web page that contains the return authorization barcode and the mailing label. This does not include pre-paid shipping.

@@ -17,7 +17,7 @@ final class ShipmentDestination extends Dto
     /**
      * @param  string  $destinationType  The type of destination for this shipment. Possible values: `AMAZON_OPTIMIZED`, `AMAZON_WAREHOUSE`.
      * @param  ?Address  $address  Specific details to identify a place.
-     * @param  ?string  $warehouseId  The warehouse that the shipment should be sent to. Empty if the destination type is `AMAZON_OPTIMIZED`.
+     * @param  ?string  $warehouseId  The warehouse that the shipment should be sent to. This can be empty if the destination type is `AMAZON_OPTIMIZED`.
      */
     public function __construct(
         public string $destinationType,

@@ -30,6 +30,7 @@ class GetTransferPreview extends Request
      * @param  string  $destinationCountryCode  Represents 2 character country code of destination transaction account in ISO 3166 standard format.
      * @param  string  $destinationCurrencyCode  Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.
      * @param  float  $baseAmount  Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.
+     * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function __construct(
         protected string $sourceCountryCode,
@@ -37,6 +38,7 @@ class GetTransferPreview extends Request
         protected string $destinationCountryCode,
         protected string $destinationCurrencyCode,
         protected float $baseAmount,
+        protected string $marketplaceId,
     ) {}
 
     public function resolveEndpoint(): string
@@ -64,6 +66,7 @@ class GetTransferPreview extends Request
             'destinationCountryCode' => $this->destinationCountryCode,
             'destinationCurrencyCode' => $this->destinationCurrencyCode,
             'baseAmount' => $this->baseAmount,
+            'marketplaceId' => $this->marketplaceId,
         ]);
     }
 }

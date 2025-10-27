@@ -32,7 +32,7 @@ final class Shipment extends Response
      * @param  ?string  $amazonReferenceId  A unique identifier created by Amazon that identifies this Amazon-partnered, Less Than Truckload/Full Truckload (LTL/FTL) shipment.
      * @param  ?ContactInformation  $contactInformation  The seller's contact information.
      * @param  ?Dates  $dates  Specifies the date that the seller expects their shipment will be shipped.
-     * @param  ?FreightInformation  $freightInformation  Freight information describes the skus being transported. Freight carrier options and quotes will only be returned if the freight information is provided.
+     * @param  ?FreightInformation  $freightInformation  Freight information describes the SKUs that are in transit. Freight carrier options and quotes will only be returned if the freight information is provided.
      * @param  ?string  $name  The name of the shipment.
      * @param  ?SelectedDeliveryWindow  $selectedDeliveryWindow  Selected delivery window attributes.
      * @param  ?string  $selectedTransportationOptionId  Identifier of a transportation option. A transportation option represent one option for how to send a shipment.

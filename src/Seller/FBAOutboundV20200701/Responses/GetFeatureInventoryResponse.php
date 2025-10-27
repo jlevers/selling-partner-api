@@ -17,7 +17,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\GetFeatureInventoryResult;
 final class GetFeatureInventoryResponse extends Response
 {
     /**
-     * @param  ?GetFeatureInventoryResult  $payload  The payload for the `getEligibileInventory` operation.
+     * @param  ?GetFeatureInventoryResult  $payload  The payload for the `getEligibleInventory` operation.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

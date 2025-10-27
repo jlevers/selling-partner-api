@@ -27,6 +27,7 @@ final class OrderDetails extends Dto
      * @param  OrderItem[]  $items  A list of items in this purchase order.
      * @param  ?string  $orderStatus  Current status of the order.
      * @param  ?TaxItemDetails  $taxTotal  Total tax details for the line item.
+     * @param  ?bool  $hasCustomizableItems  When `true`, the order contains customizable items.
      */
     public function __construct(
         public string $customerOrderNumber,
@@ -39,5 +40,6 @@ final class OrderDetails extends Dto
         public array $items,
         public ?string $orderStatus = null,
         public ?TaxItemDetails $taxTotal = null,
+        public ?bool $hasCustomizableItems = null,
     ) {}
 }

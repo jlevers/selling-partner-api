@@ -30,7 +30,7 @@ final class FulfillmentOrder extends Dto
      * @param  \DateTimeInterface  $statusUpdatedDate  Date timestamp
      * @param  ?DeliveryWindow  $deliveryWindow  The time range within which a Scheduled Delivery fulfillment order should be delivered. This is only available in the JP marketplace.
      * @param  ?string  $fulfillmentAction  Specifies whether the fulfillment order should ship now or have an order hold put on it.
-     * @param  ?string  $fulfillmentPolicy  The `FulfillmentPolicy` value specified when you submitted the `createFulfillmentOrder` operation.
+     * @param  ?string  $fulfillmentPolicy  The `FulfillmentPolicy` value specified when you called the `createFulfillmentOrder` operation.
      * @param  ?CodSettings  $codSettings  The COD (Cash On Delivery) charges that you associate with a COD fulfillment order.
      * @param  ?string[]  $notificationEmails  A list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller.
      * @param  FeatureSettings[]|null  $featureConstraints  A list of features and their fulfillment policies to apply to the order.

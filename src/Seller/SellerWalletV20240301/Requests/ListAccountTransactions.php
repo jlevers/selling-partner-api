@@ -26,10 +26,12 @@ class ListAccountTransactions extends Request
 
     /**
      * @param  string  $accountId  ID of the Amazon SW account
+     * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  ?string  $nextPageToken  Pagination token to retrieve a specific page of results.
      */
     public function __construct(
         protected string $accountId,
+        protected string $marketplaceId,
         protected ?string $nextPageToken = null,
     ) {}
 
@@ -52,6 +54,6 @@ class ListAccountTransactions extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['accountId' => $this->accountId, 'nextPageToken' => $this->nextPageToken]);
+        return array_filter(['accountId' => $this->accountId, 'marketplaceId' => $this->marketplaceId, 'nextPageToken' => $this->nextPageToken]);
     }
 }

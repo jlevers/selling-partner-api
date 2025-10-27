@@ -16,7 +16,7 @@ final class CreateFulfillmentOrderItem extends Dto
 {
     /**
      * @param  string  $sellerSku  The seller SKU of the item.
-     * @param  string  $sellerFulfillmentOrderItemId  A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same `SellerSKU`. For example, the seller might assign different `SellerFulfillmentOrderItemId` values to two items in a fulfillment order that share the same `SellerSKU` but have different `GiftMessage` values.
+     * @param  string  $sellerFulfillmentOrderItemId  A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same `sellerSku` value. For example, the seller might assign different `sellerFulfillmentOrderItemId` values to two items in a fulfillment order that share the same `sellerSku` value but have different `giftMessage` values.
      * @param  int  $quantity  The item quantity.
      * @param  ?string  $giftMessage  A message to the gift recipient, if applicable.
      * @param  ?string  $displayableComment  Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip.

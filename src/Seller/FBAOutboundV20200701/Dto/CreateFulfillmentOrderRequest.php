@@ -21,8 +21,8 @@ final class CreateFulfillmentOrderRequest extends Dto
     ];
 
     /**
-     * @param  string  $sellerFulfillmentOrderId  A fulfillment order identifier that the seller creates to track their fulfillment order. The `SellerFulfillmentOrderId` must be unique for each fulfillment order that a seller creates. If the seller's system already creates unique order identifiers, then these might be good values for them to use.
-     * @param  string  $displayableOrderId  A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `DisplayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the `SellerFulfillmentOrderId` for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
+     * @param  string  $sellerFulfillmentOrderId  A fulfillment order identifier that the seller creates to track their fulfillment order. The `sellerFulfillmentOrderId` must be unique for each fulfillment order that a seller creates. If the seller's system already creates unique order identifiers, then these might be good values for them to use.
+     * @param  string  $displayableOrderId  A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `displayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
      *
      * The value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed.
      * @param  \DateTimeInterface  $displayableOrderDate  Date timestamp
@@ -37,7 +37,7 @@ final class CreateFulfillmentOrderRequest extends Dto
      *                                                     This feature is currently supported only in the JP marketplace and not applicable for other marketplaces.
      *                                                     For eligible orders, the default delivery preference will be to deliver the package unattended at the front door, unless you specify otherwise.
      * @param  ?string  $fulfillmentAction  Specifies whether the fulfillment order should ship now or have an order hold put on it.
-     * @param  ?string  $fulfillmentPolicy  The `FulfillmentPolicy` value specified when you submitted the `createFulfillmentOrder` operation.
+     * @param  ?string  $fulfillmentPolicy  The `FulfillmentPolicy` value specified when you called the `createFulfillmentOrder` operation.
      * @param  ?CodSettings  $codSettings  The COD (Cash On Delivery) charges that you associate with a COD fulfillment order.
      * @param  ?string  $shipFromCountryCode  The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
      * @param  ?string[]  $notificationEmails  A list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller.

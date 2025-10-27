@@ -18,9 +18,13 @@ final class TransactionInstrumentDetails extends Dto
     /**
      * @param  BankAccount  $bankAccount  Details of an Amazon SW bank account, used to hold money earned by a SW customer by selling items. NOTE: Not including account_links, short cut links to the account balance and transactions -> since not mandatory
      * @param  string  $bankAccountNumber  This field would be used to populate the bank account number of the destination payment method. The field is intentionally not included in any other Schemas since Amazon internal systems will never receive it in unencrypted format, so field won't be part of the request signature
+     * @param  string  $accountHolderName  The bank account holder's name (expected to be an Amazon customer).
+     *
+     * **Note:** This field is encrypted before Amazon receives it, so should not be used to generate `destAccountDigitalSignature`, and should not be included in the request signature.
      */
     public function __construct(
         public BankAccount $bankAccount,
         public string $bankAccountNumber,
+        public string $accountHolderName,
     ) {}
 }

@@ -17,7 +17,7 @@ final class SpdTrackingItem extends Dto
     /**
      * @param  ?string  $boxId  The ID provided by Amazon that identifies a given box. This ID is comprised of the external shipment ID (which is generated after transportation has been confirmed) and the index of the box.
      * @param  ?string  $trackingId  The tracking ID associated with each box in a non-Amazon partnered Small Parcel Delivery (SPD) shipment.
-     * @param  ?string  $trackingNumberValidationStatus  Whether or not Amazon has validated the tracking number. If more than 24 hours have passed and the status is not yet 'VALIDATED', please verify the number and update if necessary. Possible values: `VALIDATED`, `NOT_VALIDATED`.
+     * @param  ?string  $trackingNumberValidationStatus  Indicates whether Amazon has validated the tracking number. Because shipment validation is asynchronous, tracking IDs might not be validated immediately, and the status might change after a few hours. If more than 24 hours have passed and the status is not yet 'VALIDATED' or `NOT_SUPPORTED`, verify the number and update it if necessary. **Possible values:** `VALIDATED`, `NOT_VALIDATED`, `NOT_SUPPORTED` (Amazon is unable to find tracking information for the provided tracking ID).
      */
     public function __construct(
         public ?string $boxId = null,

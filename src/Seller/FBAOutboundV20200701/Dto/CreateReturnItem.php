@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class CreateReturnItem extends Dto
 {
     /**
-     * @param  string  $sellerReturnItemId  An identifier assigned by the seller to the return item.
+     * @param  string  $sellerReturnItemId  An identifier the seller assigns to the return item.
      * @param  string  $sellerFulfillmentOrderItemId  The identifier assigned to the item by the seller when the fulfillment order was created.
      * @param  string  $amazonShipmentId  The identifier for the shipment that is associated with the return item.
      * @param  string  $returnReasonCode  The return reason code assigned to the return item by the seller.

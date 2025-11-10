@@ -37,13 +37,13 @@ abstract class BaseResponse implements \JsonSerializable
             // Convert property name to camelCase for JSON
             $jsonKey = $this->toCamelCase($key);
             
-            if ($value instanceof self) {
+            if (is_object($value) && method_exists($value, 'toArray')) {
                 $result[$jsonKey] = $value->toArray();
             } elseif ($value instanceof DateTime) {
                 $result[$jsonKey] = $value->format('Y-m-d\TH:i:s\Z');
             } elseif (is_array($value)) {
                 $result[$jsonKey] = array_map(function ($item) {
-                    if ($item instanceof self) {
+                    if (is_object($item) && method_exists($item, 'toArray')) {
                         return $item->toArray();
                     } elseif ($item instanceof DateTime) {
                         return $item->format('Y-m-d\TH:i:s\Z');
@@ -75,4 +75,8 @@ abstract class BaseResponse implements \JsonSerializable
         return lcfirst($string);
     }
 }
+
+
+
+
 

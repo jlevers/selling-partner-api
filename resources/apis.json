@@ -71,6 +71,15 @@
                 }
             ]
         },
+        "delivery-by-amazon": {
+            "name": "Delivery by Amazon",
+            "versions": [
+                {
+                    "version": "2022-07-01",
+                    "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/refs/heads/main/models/delivery-by-amazon/deliveryShipmentInvoiceV2022-07-01.json"
+                }
+            ]
+        },
         "easy-ship": {
             "name": "Easy Ship",
             "versions": [

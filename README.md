@@ -25,8 +25,6 @@ A PHP library for connecting to Amazon's [Selling Partner API](https://github.co
 
 ---
 
-**I'm available for consulting work!** If you need support designing and building applications with Amazon, Walmart, or other e-commerce APIs, or building SDKs in PHP, I can help. Shoot me an email at [jesse@highsidelabs.co](mailto:jesse@highsidelabs.co).
-
 If you've found any of my packages useful, please consider [becoming a Sponsor](https://github.com/sponsors/jlevers), or making a one-time donation via the button below. I appreciate any and all support! Keeping open source projects alive is a community effort.
 
 <p align="center">
@@ -35,6 +33,8 @@ If you've found any of my packages useful, please consider [becoming a Sponsor](
 
 ### Sponsored by **[Tesmo](https://tesmollc.com)**.
 
+### Sponsored by **[Highside Labs](https://tools.highsidelabs.co/starter-kit)**. Get started with SP API development on Laravel in minutes.
+
 ---
 
 > [!NOTE]
@@ -42,7 +42,7 @@ If you've found any of my packages useful, please consider [becoming a Sponsor](
 
 ## Features
 
-* Supports all Selling Partner API operations (for Sellers and Vendors) as of 10/27/2025
+* Supports all Selling Partner API operations (for Sellers and Vendors) as of 12/6/2025
 * Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents
 * Can handle the end-to-end OAuth flow, from building authorization URLs to converting authorization codes into refresh tokens
@@ -258,6 +258,10 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
 * **Data Kiosk API (v2023-11-15)** ([docs](https://developer-docs.amazon.com/sp-api/v0/docs/data-kiosk-api-v2023-11-15-reference))
     ```php
     $dataKioskApi = $sellerConnector->dataKioskV20231115();
+    ```
+* **Delivery by Amazon API (v2022-07-01)** ([docs](https://developer-docs.amazon.com/sp-api/reference/delivery-by-amazon-v2022-07-01))
+    ```php
+    $deliveryByAmazonApi = $sellerConnector->deliveryByAmazonV20220701();
     ```
 * **EasyShip API (v2022-03-23)** ([docs](https://developer-docs.amazon.com/sp-api/docs/easy-ship-api-v2022-03-23-reference))
     ```php

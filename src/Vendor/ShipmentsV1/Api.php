@@ -4,10 +4,12 @@ namespace SellingPartnerApi\Vendor\ShipmentsV1;
 
 use Saloon\Http\Response;
 use SellingPartnerApi\BaseResource;
+use SellingPartnerApi\Vendor\ShipmentsV1\Dto\SubmitShipmentConfirmationRequest;
 use SellingPartnerApi\Vendor\ShipmentsV1\Dto\SubmitShipmentConfirmationsRequest;
 use SellingPartnerApi\Vendor\ShipmentsV1\Dto\SubmitShipments as SubmitShipments1;
 use SellingPartnerApi\Vendor\ShipmentsV1\Requests\GetShipmentDetails;
 use SellingPartnerApi\Vendor\ShipmentsV1\Requests\GetShipmentLabels;
+use SellingPartnerApi\Vendor\ShipmentsV1\Requests\SubmitShipmentConfirmation;
 use SellingPartnerApi\Vendor\ShipmentsV1\Requests\SubmitShipmentConfirmations;
 use SellingPartnerApi\Vendor\ShipmentsV1\Requests\SubmitShipments;
 
@@ -25,6 +27,17 @@ class Api extends BaseResource
     }
 
     /**
+     * @param  SubmitShipmentConfirmationRequest  $submitShipmentConfirmationRequest  The request schema for the SubmitShipmentConfirmation operation.
+     */
+    public function submitShipmentConfirmation(
+        SubmitShipmentConfirmationRequest $submitShipmentConfirmationRequest,
+    ): Response {
+        $request = new SubmitShipmentConfirmation($submitShipmentConfirmationRequest);
+
+        return $this->connector->send($request);
+    }
+
+    /**
      * @param  ?int  $limit  The limit to the number of records returned. Default value is 50 records.
      * @param  ?string  $sortOrder  Sort in ascending or descending order by purchase order creation date.
      * @param  ?string  $nextToken  Used for pagination when there are more shipments than the specified result size limit.
@@ -37,7 +50,7 @@ class Api extends BaseResource
      * @param  ?\DateTimeInterface  $shippedBefore  Get Shipment Details by passing Shipped Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?\DateTimeInterface  $shippedAfter  Get Shipment Details by passing Shipped Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?\DateTimeInterface  $estimatedDeliveryBefore  Get Shipment Details by passing Estimated Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
-     * @param  ?\DateTimeInterface  $estimatedDeliveryAfter  Get Shipment Details by passing Estimated Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+     * @param  ?\DateTimeInterface  $estimatedDeliveryAfter  Get Shipment Details by passing Estimated Delivery Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?\DateTimeInterface  $shipmentDeliveryBefore  Get Shipment Details by passing Shipment Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?\DateTimeInterface  $shipmentDeliveryAfter  Get Shipment Details by passing Shipment Delivery Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?\DateTimeInterface  $requestedPickUpBefore  Get Shipment Details by passing Before Requested pickup date. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.

@@ -6,6 +6,7 @@ use Saloon\Http\Response;
 use SellingPartnerApi\BaseResource;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\CreateFulfillmentOrderRequest;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\CreateFulfillmentReturnRequest;
+use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\GetDeliveryOfferingsRequest;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\GetDeliveryOffersRequest;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\GetFulfillmentPreviewRequest;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\SubmitFulfillmentOrderStatusUpdateRequest;
@@ -13,6 +14,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\UpdateFulfillmentOrderRequ
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Requests\CancelFulfillmentOrder;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Requests\CreateFulfillmentOrder;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Requests\CreateFulfillmentReturn;
+use SellingPartnerApi\Seller\FBAOutboundV20200701\Requests\DeliveryOfferings;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Requests\DeliveryOffers;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Requests\GetFeatureInventory;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Requests\GetFeatures;
@@ -33,6 +35,16 @@ class Api extends BaseResource
     public function getFulfillmentPreview(GetFulfillmentPreviewRequest $getFulfillmentPreviewRequest): Response
     {
         $request = new GetFulfillmentPreview($getFulfillmentPreviewRequest);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  GetDeliveryOfferingsRequest  $getDeliveryOfferingsRequest  The request body schema for the `getDeliveryOfferings` operation.
+     */
+    public function deliveryOfferings(GetDeliveryOfferingsRequest $getDeliveryOfferingsRequest): Response
+    {
+        $request = new DeliveryOfferings($getDeliveryOfferingsRequest);
 
         return $this->connector->send($request);
     }
@@ -71,14 +83,11 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  ?int  $packageNumber  The unencrypted package identifier. You can obtain this value from the `getFulfillmentOrder` operation.
-     * @param  ?string  $amazonFulfillmentTrackingNumber  The Amazon fulfillment tracking number. You can obtain this value from the `getFulfillmentOrder` operation.
+     * @param  int  $packageNumber  The unencrypted package identifier. You can obtain this value from the `getFulfillmentOrder` operation.
      */
-    public function getPackageTrackingDetails(
-        ?int $packageNumber = null,
-        ?string $amazonFulfillmentTrackingNumber = null,
-    ): Response {
-        $request = new GetPackageTrackingDetails($packageNumber, $amazonFulfillmentTrackingNumber);
+    public function getPackageTrackingDetails(int $packageNumber): Response
+    {
+        $request = new GetPackageTrackingDetails($packageNumber);
 
         return $this->connector->send($request);
     }

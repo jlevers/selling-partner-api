@@ -17,11 +17,19 @@ final class PackageItemDetails extends Dto
     /**
      * @param  ?string  $purchaseOrderNumber  The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
      * @param  ?string  $lotNumber  The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items.
+     * @param  ?string  $lotNumberSourceReference  This is a reference to the lot number source location meaning the place where the product was assigned a traceability lot number. This is mandatory for goods in scope of the FDA Food Safety Modernization Act (FSMA 204). If provided, lotNumberSourceType must also be specified.
+     * @param  ?string  $lotNumberSourceType  The type of reference for the lot number source. Must be provided when lotNumberSourceReference is specified.
+     * @param  ?string  $countryOfOrigin  The two digit country code in ISO 3166-1 alpha-2 format representing the country where the product was manufactured or originated.
+     * @param  ?RegulationReferences  $regulationReferences  Container for regulatory compliance information, for instance EU Due Diligence Regulation (EUDR) requirements. Includes reference numbers, verification codes, compliance information, and exemption codes necessary for documenting regulatory compliance for shipments.
      * @param  ?Expiry  $expiry  Expiry refers to the collection of dates required  for certain items. These could be either expiryDate or mfgDate and expiryAfterDuration. These are mandatory for perishable items.
      */
     public function __construct(
         public ?string $purchaseOrderNumber = null,
         public ?string $lotNumber = null,
+        public ?string $lotNumberSourceReference = null,
+        public ?string $lotNumberSourceType = null,
+        public ?string $countryOfOrigin = null,
+        public ?RegulationReferences $regulationReferences = null,
         public ?Expiry $expiry = null,
     ) {}
 }

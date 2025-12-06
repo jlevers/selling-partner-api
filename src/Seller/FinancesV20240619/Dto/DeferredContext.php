@@ -18,7 +18,7 @@ final class DeferredContext extends Dto
      * @param  ?string  $deferralReason  The deferral policy applied to the transaction.
      *
      * **Examples:** `B2B` (invoiced orders), `DD7` (delivery date policy)
-     * @param  ?\DateTimeInterface  $maturityDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?\DateTimeInterface  $maturityDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function __construct(
         public ?string $deferralReason = null,

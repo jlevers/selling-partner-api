@@ -23,7 +23,7 @@ final class TransactionInitiationRequest extends Dto
      * @param  ?string  $destinationAccountId  Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited
      * @param  ?string  $transactionDescription  A description of the transaction.
      * @param  ?string  $customerPaymentReference  If the payment is for VAT (Value-Added-Tax) then enter VAT identification number in this field which will be mandatory. The length constraint is 140 characters and do not allow user to enter any sensitive information other than VAT-ID.
-     * @param  ?AccountHolderAddress  $destinationAccountHolderAddress  Address for bank account verification of the Payee. For example, this can be a person or business mailing address
+     * @param  ?PayeeContactInformation  $payeeContactInformation  The contact information of the payee. This field is required when the request `bankAccountOwnershipType` is `THIRD_PARTY`. The contact information is used for payee verification and registration purposes.
      * @param  ?TransferRatePreview  $transferRateDetails  The fees and foreign exchange rates that apply to the transaction.
      *
      * If the fees are in terms of the `baseAmount` (source account) currency, then the effective rate is equal to **1 - (fees * `baseRate` / `baseAmount`)**.
@@ -40,7 +40,7 @@ final class TransactionInitiationRequest extends Dto
         public ?string $destinationAccountId = null,
         public ?string $transactionDescription = null,
         public ?string $customerPaymentReference = null,
-        public ?AccountHolderAddress $destinationAccountHolderAddress = null,
+        public ?PayeeContactInformation $payeeContactInformation = null,
         public ?TransferRatePreview $transferRateDetails = null,
     ) {}
 }

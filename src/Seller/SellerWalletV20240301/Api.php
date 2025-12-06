@@ -93,8 +93,8 @@ class Api extends BaseResource
     /**
      * @param  TransactionInitiationRequest  $transactionInitiationRequest  Request body to initiate a transaction from a SW bank account to another customer defined bank account
      * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @param  string  $destAccountDigitalSignature  Digital signature for the destination bank account details.
-     * @param  string  $amountDigitalSignature  Digital signature for the source currency transaction amount.
+     * @param  string  $destAccountDigitalSignature  Digital signature for the destination bank account details. For more information, refer to [Third-Party Provider Signature Guidance](https://developer-docs.amazon.com/sp-api/docs/tpp-registration-signature-guidance).
+     * @param  string  $amountDigitalSignature  Digital signature for the source currency transaction amount. Sign in the order of the request definitions. You can omit empty or optional fields. For more information, refer to [Third-Party Provider Signature Guidance](https://developer-docs.amazon.com/sp-api/docs/tpp-registration-signature-guidance).
      */
     public function createTransaction(
         TransactionInitiationRequest $transactionInitiationRequest,

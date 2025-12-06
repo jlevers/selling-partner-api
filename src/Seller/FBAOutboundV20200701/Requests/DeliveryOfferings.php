@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace SellingPartnerApi\Seller\FBAInboundV20240320\Requests;
+namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
@@ -16,37 +16,35 @@ use Saloon\Enums\Method;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
-use SellingPartnerApi\Seller\FBAInboundV20240320\Dto\SetPrepDetailsRequest;
-use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\ErrorList;
-use SellingPartnerApi\Seller\FBAInboundV20240320\Responses\SetPrepDetailsResponse;
+use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\GetDeliveryOfferingsRequest;
+use SellingPartnerApi\Seller\FBAOutboundV20200701\Responses\GetDeliveryOfferingsResponse;
 
 /**
- * setPrepDetails
+ * deliveryOfferings
  */
-class SetPrepDetails extends Request implements HasBody
+class DeliveryOfferings extends Request implements HasBody
 {
     use HasJsonBody;
 
     protected Method $method = Method::POST;
 
     /**
-     * @param  SetPrepDetailsRequest  $setPrepDetailsRequest  The `setPrepDetails` request.
+     * @param  GetDeliveryOfferingsRequest  $getDeliveryOfferingsRequest  The request body schema for the `getDeliveryOfferings` operation.
      */
     public function __construct(
-        public SetPrepDetailsRequest $setPrepDetailsRequest,
+        public GetDeliveryOfferingsRequest $getDeliveryOfferingsRequest,
     ) {}
 
     public function resolveEndpoint(): string
     {
-        return '/inbound/fba/2024-03-20/items/prepDetails';
+        return '/fba/outbound/2020-07-01/deliveryOfferings';
     }
 
-    public function createDtoFromResponse(Response $response): SetPrepDetailsResponse|ErrorList
+    public function createDtoFromResponse(Response $response): GetDeliveryOfferingsResponse
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            202 => SetPrepDetailsResponse::class,
-            400, 404, 500, 403, 413, 415, 429, 503 => ErrorList::class,
+            200, 400, 401, 403, 404, 429, 500, 503 => GetDeliveryOfferingsResponse::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 
@@ -55,6 +53,6 @@ class SetPrepDetails extends Request implements HasBody
 
     public function defaultBody(): array
     {
-        return $this->setPrepDetailsRequest->toArray();
+        return $this->getDeliveryOfferingsRequest->toArray();
     }
 }

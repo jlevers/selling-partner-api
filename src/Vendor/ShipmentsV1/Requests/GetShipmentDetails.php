@@ -36,7 +36,7 @@ class GetShipmentDetails extends Request
      * @param  ?\DateTimeInterface  $shippedBefore  Get Shipment Details by passing Shipped Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?\DateTimeInterface  $shippedAfter  Get Shipment Details by passing Shipped Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?\DateTimeInterface  $estimatedDeliveryBefore  Get Shipment Details by passing Estimated Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
-     * @param  ?\DateTimeInterface  $estimatedDeliveryAfter  Get Shipment Details by passing Estimated Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+     * @param  ?\DateTimeInterface  $estimatedDeliveryAfter  Get Shipment Details by passing Estimated Delivery Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?\DateTimeInterface  $shipmentDeliveryBefore  Get Shipment Details by passing Shipment Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?\DateTimeInterface  $shipmentDeliveryAfter  Get Shipment Details by passing Shipment Delivery Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      * @param  ?\DateTimeInterface  $requestedPickUpBefore  Get Shipment Details by passing Before Requested pickup date. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.

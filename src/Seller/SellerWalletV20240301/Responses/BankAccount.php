@@ -15,29 +15,29 @@ use SellingPartnerApi\Response;
 final class BankAccount extends Response
 {
     /**
-     * @param  string  $bankAccountNumberFormat  The format of the bank account number.
      * @param  string  $bankAccountOwnershipType  Represents destination bank account's ownership type.
-     * @param  string  $routingNumber  Routing number for automated clearing house transfers, for all Amazon Seller Wallet account the value will be denoted by nine cosecutive 0's,
-     * @param  string  $bankNumberFormat  Represents a format of a bank number also called routing number type
      * @param  string  $accountCountryCode  The two digit country code, in ISO 3166 format.
      * @param  string  $accountCurrency  BankAccount currency code in ISO 4217 format
      * @param  string  $bankAccountNumberTail  Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0's
-     * @param  ?string  $accountId  The unique identifier provided by Amazon to identify the account
-     * @param  ?string  $accountHolderName  BankAccount holder's name (expected to be Amazon customer)
-     * @param  ?string  $bankName  The name of the bank, for all Amazon Seller Wallet account the value will be Amazon Seller Wallet
+     * @param  ?string  $accountId  The unique bank account identifier provided by Amazon. To initiate a `SELF` transaction with Seller Wallet, you must choose `BANK_ACCOUNT` as the payment method type in the [getPaymentMethod](https://developer-docs.amazon.com/sp-api/reference/getpaymentmethods) request. Your Amazon Seller Wallet bank account identifier should match the `paymentMethodId` in the response. This field is required.
+     * @param  ?string  $accountHolderName  The bank account holder's name (expected to be an Amazon customer). There is a 50 character limit.
+     * @param  ?string  $bankAccountNumberFormat  The format of the bank account number.
+     * @param  ?string  $bankName  The name of the bank. This value is Amazon Seller Wallet for Amazon Seller Wallet accounts.
+     * @param  ?string  $routingNumber  Routing number for automated clearing house transfers for `THIRD_PARTY` transaction requests. This value is nine consecutive zeros for Amazon Seller Wallet accounts.
+     * @param  ?string  $bankNumberFormat  Represents a format of a bank number also called routing number type
      * @param  ?string  $bankAccountHolderStatus  Represents status of the Amazon Seller Wallet accountholder
      */
     public function __construct(
-        public readonly string $bankAccountNumberFormat,
         public readonly string $bankAccountOwnershipType,
-        public readonly string $routingNumber,
-        public readonly string $bankNumberFormat,
         public readonly string $accountCountryCode,
         public readonly string $accountCurrency,
         public readonly string $bankAccountNumberTail,
         public readonly ?string $accountId = null,
         public readonly ?string $accountHolderName = null,
+        public readonly ?string $bankAccountNumberFormat = null,
         public readonly ?string $bankName = null,
+        public readonly ?string $routingNumber = null,
+        public readonly ?string $bankNumberFormat = null,
         public readonly ?string $bankAccountHolderStatus = null,
     ) {}
 }

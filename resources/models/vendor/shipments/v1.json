@@ -329,6 +329,293 @@
                 "x-codegen-request-body-name": "body"
             }
         },
+        "/vendor/shipping/v1/shipmentConfirmation": {
+            "post": {
+                "tags": [
+                    "ShipmentsV1"
+                ],
+                "summary": "SubmitShipmentConfirmation",
+                "description": "Submits one shipment confirmation for vendor orders and get response immediately.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 10 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "SubmitShipmentConfirmation",
+                "requestBody": {
+                    "description": "A request to submit shipment confirmation.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SubmitShipmentConfirmationRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationResponse"
+                                },
+                                "example": {
+                                    "payload": {}
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "shipmentConfirmation": {
+                                                        "shipmentIdentifier": "TestShipmentConfirmation202",
+                                                        "shipmentConfirmationDate": "2021-03-11T12:38:23.388Z",
+                                                        "sellingParty": {
+                                                            "partyId": "ABCD1"
+                                                        },
+                                                        "shipFromParty": {
+                                                            "partyId": "EFGH1"
+                                                        },
+                                                        "shipToParty": {
+                                                            "partyId": "JKL1"
+                                                        },
+                                                        "shipmentConfirmationType": "Original",
+                                                        "shippedItems": [
+                                                            {
+                                                                "itemSequenceNumber": "001",
+                                                                "shippedQuantity": {
+                                                                    "amount": 100,
+                                                                    "unitOfMeasure": "Eaches"
+                                                                },
+                                                                "itemDetails": {
+                                                                    "purchaseOrderNumber": "TestOrder202"
+                                                                }
+                                                            },
+                                                            {
+                                                                "itemSequenceNumber": "002",
+                                                                "shippedQuantity": {
+                                                                    "amount": 100,
+                                                                    "unitOfMeasure": "Cases",
+                                                                    "totalWeight": {
+                                                                        "amount": "332.8",
+                                                                        "unitOfMeasure": "POUNDS"
+                                                                    }
+                                                                },
+                                                                "itemDetails": {
+                                                                    "purchaseOrderNumber": "TestOrder202"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "payload": {}
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationResponse"
+                                }
+                            }
+                        },
+                        "x-amazon-spds-sandbox-behaviors": [
+                            {
+                                "request": {
+                                    "parameters": {
+                                        "body": {
+                                            "value": {
+                                                "shipmentConfirmation": {
+                                                    "shipmentIdentifier": "MOCKSHIPMENTID"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "response": {
+                                    "errors": [
+                                        {
+                                            "code": "InvalidInput",
+                                            "message": "Invalid Shipment ID"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmitShipmentConfirmationResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
+            }
+        },
         "/vendor/shipping/v1/shipments": {
             "get": {
                 "tags": [
@@ -473,7 +760,7 @@
                     {
                         "name": "estimatedDeliveryAfter",
                         "in": "query",
-                        "description": "Get Shipment Details by passing Estimated Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "description": "Get Shipment Details by passing Estimated Delivery Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
                         "schema": {
                             "type": "string",
                             "format": "date-time"
@@ -3417,6 +3704,46 @@
                         "type": "string",
                         "description": "The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items."
                     },
+                    "lotNumberSourceReference": {
+                        "type": "string",
+                        "description": "This is a reference to the lot number source location meaning the place where the product was assigned a traceability lot number. This is mandatory for goods in scope of the FDA Food Safety Modernization Act (FSMA 204). If provided, lotNumberSourceType must also be specified."
+                    },
+                    "lotNumberSourceType": {
+                        "type": "string",
+                        "description": "The type of reference for the lot number source. Must be provided when lotNumberSourceReference is specified.",
+                        "enum": [
+                            "GLN",
+                            "FFRN",
+                            "USDA_E",
+                            "URL"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "GLN",
+                                "description": "GS1 Global Location Number that uniquely identifies business locations and legal entities."
+                            },
+                            {
+                                "value": "FFRN",
+                                "description": "FDA Food Facility Registration Number assigned to facilities that manufacture, process, pack, or hold food for consumption in the U.S."
+                            },
+                            {
+                                "value": "USDA_E",
+                                "description": "USDA Establishment Number assigned to facilities under USDA inspection."
+                            },
+                            {
+                                "value": "URL",
+                                "description": "Web address that uniquely identifies a business entity."
+                            }
+                        ]
+                    },
+                    "countryOfOrigin": {
+                        "pattern": "^[A-Z]{2}$",
+                        "type": "string",
+                        "description": "The two digit country code in ISO 3166-1 alpha-2 format representing the country where the product was manufactured or originated."
+                    },
+                    "regulationReferences": {
+                        "$ref": "#/components/schemas/RegulationReferences"
+                    },
                     "expiry": {
                         "$ref": "#/components/schemas/Expiry"
                     }
@@ -3976,6 +4303,28 @@
                 },
                 "description": "Details of item quantity."
             },
+            "RegulationReferences": {
+                "type": "object",
+                "properties": {
+                    "dueDiligenceReference": {
+                        "type": "string",
+                        "description": "The EUDR Due Diligence Reference number from vendor's upstream Due Dilligence Statement (DDS) submitted to EU Commison portal or provided to Onix."
+                    },
+                    "dueDiligenceVerification": {
+                        "type": "string",
+                        "description": "The EUDR Due Diligence Verification number provided by EU Commision associated with submitted DDR."
+                    },
+                    "dueDiligenceInformation": {
+                        "type": "string",
+                        "description": "The EUDR Due Diligence Information for EUDR that was already pre-loaded in Vendor Central within Amazon compliance collection experience."
+                    },
+                    "dueDiligenceExemptionCode": {
+                        "type": "string",
+                        "description": "The Due Diligence exemption code for EUDR products indicating the item is exempt from due diligence requirements."
+                    }
+                },
+                "description": "Container for regulatory compliance information, for instance EU Due Diligence Regulation (EUDR) requirements. Includes reference numbers, verification codes, compliance information, and exemption codes necessary for documenting regulatory compliance for shipments."
+            },
             "Expiry": {
                 "type": "object",
                 "properties": {
@@ -4086,6 +4435,30 @@
                     }
                 },
                 "description": "Error response returned when the request is unsuccessful."
+            },
+            "SubmitShipmentConfirmationRequest": {
+                "required": [
+                    "shipmentConfirmation"
+                ],
+                "type": "object",
+                "properties": {
+                    "shipmentConfirmation": {
+                        "$ref": "#/components/schemas/ShipmentConfirmation"
+                    }
+                },
+                "description": "The request schema for the SubmitShipmentConfirmation operation."
+            },
+            "SubmitShipmentConfirmationResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#/components/schemas/TransactionReference"
+                    },
+                    "errors": {
+                        "$ref": "#/components/schemas/ErrorList"
+                    }
+                },
+                "description": "The ASN was submitted successfully"
             }
         }
     },

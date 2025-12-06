@@ -16,7 +16,7 @@ final class ItemRelatedIdentifier extends Dto
 {
     /**
      * @param  ?string  $itemRelatedIdentifierName  Enumerated set of related item identifier names for the item.
-     * @param  ?string  $itemRelatedIdentifierValue  Corresponding value of ItemRelatedIdentifierName
+     * @param  ?string  $itemRelatedIdentifierValue  Corresponding value to `ItemRelatedIdentifierName`.
      */
     public function __construct(
         public ?string $itemRelatedIdentifierName = null,

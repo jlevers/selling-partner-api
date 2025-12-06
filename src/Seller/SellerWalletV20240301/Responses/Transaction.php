@@ -18,6 +18,7 @@ use SellingPartnerApi\Seller\SellerWalletV20240301\Dto\TransferRatePreview;
 final class Transaction extends Response
 {
     /**
+     * @param  string  $accountId  The unique identifier of the Amazon Seller Wallet bank account from which the money is debited.
      * @param  string  $transactionId  The unique identifier provided by Amazon to the transaction
      * @param  string  $transactionType  Represent type of transaction.
      * @param  string  $transactionStatus  Represents current status of the transaction.
@@ -25,7 +26,6 @@ final class Transaction extends Response
      * @param  \DateTimeInterface  $lastUpdateDate  The last update date on the transaction
      * @param  string  $transactionRequesterSource  The transaction initiation source. This value is either the Amazon portal or PISP name that the customer used to start the transaction.
      * @param  string  $transactionDescription  A description of the transaction that the requester provides when they initiate the transaction.
-     * @param  TransactionAccount  $transactionSourceAccount  Details of the bank account involved in the transaction.
      * @param  TransactionAccount  $transactionDestinationAccount  Details of the bank account involved in the transaction.
      * @param  Currency  $transactionRequestAmount  A currency type and amount.
      * @param  TransferRatePreview  $transferRateDetails  The fees and foreign exchange rates that apply to the transaction.
@@ -38,10 +38,12 @@ final class Transaction extends Response
      * @param  ?\DateTimeInterface  $expectedCompletionDate  Expected completion date of a transaction, for existing active Payees (Trusted Beneficiaries) it will be 24 hours but for new destination bank accounts the value could go up to 5 days
      * @param  ?\DateTimeInterface  $transactionActualCompletionDate  Transaction completion date
      * @param  ?string  $requesterName  Amazon SW customer who requested the transaction
+     * @param  ?TransactionAccount  $transactionSourceAccount  Details of the bank account involved in the transaction.
      * @param  ?Currency  $transactionFinalAmount  A currency type and amount.
      * @param  ?string  $transactionFailureReason  Description in case the transaction fails before completion
      */
     public function __construct(
+        public readonly string $accountId,
         public readonly string $transactionId,
         public readonly string $transactionType,
         public readonly string $transactionStatus,
@@ -49,13 +51,13 @@ final class Transaction extends Response
         public readonly \DateTimeInterface $lastUpdateDate,
         public readonly string $transactionRequesterSource,
         public readonly string $transactionDescription,
-        public readonly TransactionAccount $transactionSourceAccount,
         public readonly TransactionAccount $transactionDestinationAccount,
         public readonly Currency $transactionRequestAmount,
         public readonly TransferRatePreview $transferRateDetails,
         public readonly ?\DateTimeInterface $expectedCompletionDate = null,
         public readonly ?\DateTimeInterface $transactionActualCompletionDate = null,
         public readonly ?string $requesterName = null,
+        public readonly ?TransactionAccount $transactionSourceAccount = null,
         public readonly ?Currency $transactionFinalAmount = null,
         public readonly ?string $transactionFailureReason = null,
     ) {}

@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class AmazonPayContext extends Dto
 {
     /**
-     * @param  ?string  $storeName  Store name related to transaction.
-     * @param  ?string  $orderType  Order type of the transaction.
+     * @param  ?string  $storeName  The name of the store that is related to the transaction.
+     * @param  ?string  $orderType  The transaction's order type.
      * @param  ?string  $channel  Channel details of related transaction.
      */
     public function __construct(

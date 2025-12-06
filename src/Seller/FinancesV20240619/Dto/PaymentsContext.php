@@ -15,10 +15,10 @@ use SellingPartnerApi\Dto;
 final class PaymentsContext extends Dto
 {
     /**
-     * @param  ?string  $paymentType  Type of payment made.
-     * @param  ?string  $paymentMethod  Method of payment made.
-     * @param  ?string  $paymentReference  Reference number of payment made.
-     * @param  ?\DateTimeInterface  $paymentDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?string  $paymentType  The type of payment.
+     * @param  ?string  $paymentMethod  The method of payment.
+     * @param  ?string  $paymentReference  The reference number of the payment.
+     * @param  ?\DateTimeInterface  $paymentDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function __construct(
         public ?string $paymentType = null,

@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class DeliveryWindowOption extends Dto
 {
     /**
-     * @param  string  $availabilityType  Identifies type of Delivery Window Availability. Values: `AVAILABLE`, `CONGESTED`
+     * @param  string  $availabilityType  The type of delivery window availability. Values: `AVAILABLE`, `BLOCKED`, `CONGESTED`, `DISCOUNTED`
      * @param  string  $deliveryWindowOptionId  Identifier of a delivery window option. A delivery window option represent one option for when a shipment is expected to be delivered.
      * @param  \DateTimeInterface  $endDate  The time at which this delivery window option ends. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
      * @param  \DateTimeInterface  $startDate  The time at which this delivery window option starts. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.

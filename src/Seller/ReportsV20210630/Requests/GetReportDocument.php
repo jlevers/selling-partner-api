@@ -26,8 +26,13 @@ class GetReportDocument extends Request
         protected string $reportDocumentId,
         protected string $reportType,
     ) {
-        $rdtMiddleware = new RestrictedDataToken($this->resolveEndpoint(), 'GET', []);
-        $this->middleware()->onRequest($rdtMiddleware);
+        $reports = json_decode(file_get_contents(RESOURCE_DIR.'/reports.json'), true);
+        $isRestricted = isset($reports[$this->reportType]) && $reports[$this->reportType]['restricted'];
+        
+        if ($isRestricted) {
+            $rdtMiddleware = new RestrictedDataToken($this->resolveEndpoint(), 'GET', []);
+            $this->middleware()->onRequest($rdtMiddleware);
+        }
         $this->middleware()->onRequest(new RestrictedReport);
     }
 

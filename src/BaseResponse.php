@@ -13,6 +13,46 @@ abstract class BaseResponse implements \JsonSerializable
 
     // No constructor - let child classes handle their own typed constructors
 
+    /**
+     * Deserialize JSON data into a response object
+     */
+    public static function deserialize(array $data, string $class): self
+    {
+        $reflection = new ReflectionClass($class);
+        $constructor = $reflection->getConstructor();
+        
+        if (!$constructor) {
+            return new $class();
+        }
+        
+        $params = [];
+        foreach ($constructor->getParameters() as $param) {
+            $paramName = $param->getName();
+            
+            // Try different key formats (camelCase, snake_case, PascalCase)
+            $value = $data[$paramName] 
+                ?? $data[self::toSnakeCase($paramName)] 
+                ?? $data[ucfirst($paramName)] 
+                ?? null;
+            
+            if ($value === null && $param->isDefaultValueAvailable()) {
+                $params[] = $param->getDefaultValue();
+            } else {
+                $params[] = $value;
+            }
+        }
+        
+        return $reflection->newInstanceArgs($params);
+    }
+
+    /**
+     * Convert camelCase to snake_case
+     */
+    protected static function toSnakeCase(string $string): string
+    {
+        return strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $string));
+    }
+
     public function toArray(): array
     {
         $result = [];

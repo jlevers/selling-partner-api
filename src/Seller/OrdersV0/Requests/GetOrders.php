@@ -57,8 +57,7 @@ class GetOrders extends Request
      * @param  ?array  $paymentMethods  A list of payment method values. Use this field to select orders that were paid with the specified payment methods.
      *
      * **Possible values**: `COD` (cash on delivery), `CVS` (convenience store), `Other` (Any payment method other than COD or CVS).
-     * @param  ?string  $buyerEmail  The email address of a buyer. Used to select orders that contain the specified email address.
-     * @param  ?string  $sellerOrderId  An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If `SellerOrderId` is specified, then `FulfillmentChannels`, `OrderStatuses`, `PaymentMethod`, `LastUpdatedAfter`, LastUpdatedBefore, and `BuyerEmail` cannot be specified.
+     * @param  ?string  $sellerOrderId  An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If `SellerOrderId` is specified, then `FulfillmentChannels`, `OrderStatuses`, `PaymentMethod`, `LastUpdatedAfter`, and `LastUpdatedBefore` cannot be specified.
      * @param  ?int  $maxResultsPerPage  A number that indicates the maximum number of orders that can be returned per page. Value must be 1 - 100. Default 100.
      * @param  ?array  $easyShipShipmentStatuses  A list of `EasyShipShipmentStatus` values. Used to select Easy Ship orders with statuses that match the specified values. If `EasyShipShipmentStatus` is specified, only Amazon Easy Ship orders are returned.
      *
@@ -92,8 +91,8 @@ class GetOrders extends Request
      * @param  ?string  $actualFulfillmentSupplySourceId  The `sourceId` of the location from where you want the order fulfilled.
      * @param  ?bool  $isIspu  When true, this order is marked to be picked up from a store rather than delivered.
      * @param  ?string  $storeChainStoreId  The store chain store identifier. Linked to a specific store in a store chain.
-     * @param  ?string  $earliestDeliveryDateBefore  Use this date to select orders with a earliest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
-     * @param  ?string  $earliestDeliveryDateAfter  Use this date to select orders with a earliest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+     * @param  ?string  $earliestDeliveryDateBefore  Use this date to select orders with an earliest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+     * @param  ?string  $earliestDeliveryDateAfter  Use this date to select orders with an earliest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      * @param  ?string  $latestDeliveryDateBefore  Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      * @param  ?string  $latestDeliveryDateAfter  Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      */
@@ -106,7 +105,6 @@ class GetOrders extends Request
         protected ?array $orderStatuses = null,
         protected ?array $fulfillmentChannels = null,
         protected ?array $paymentMethods = null,
-        protected ?string $buyerEmail = null,
         protected ?string $sellerOrderId = null,
         protected ?int $maxResultsPerPage = null,
         protected ?array $easyShipShipmentStatuses = null,
@@ -152,7 +150,6 @@ class GetOrders extends Request
             'OrderStatuses' => $this->orderStatuses,
             'FulfillmentChannels' => $this->fulfillmentChannels,
             'PaymentMethods' => $this->paymentMethods,
-            'BuyerEmail' => $this->buyerEmail,
             'SellerOrderId' => $this->sellerOrderId,
             'MaxResultsPerPage' => $this->maxResultsPerPage,
             'EasyShipShipmentStatuses' => $this->easyShipShipmentStatuses,

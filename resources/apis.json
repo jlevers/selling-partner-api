@@ -215,6 +215,10 @@
                 {
                     "version": 0,
                     "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/orders-api-model/ordersV0.json"
+                },
+                {
+                    "version": "2026-01-01",
+                    "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/refs/heads/main/models/orders-api-model/orders_2026-01-01.json"
                 }
             ]
         },

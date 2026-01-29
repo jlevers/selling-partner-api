@@ -42,7 +42,7 @@ If you've found any of my packages useful, please consider [becoming a Sponsor](
 
 ## Features
 
-* Supports all Selling Partner API operations (for Sellers and Vendors) as of 12/6/2025
+* Supports all Selling Partner API operations (for Sellers and Vendors) as of 1/29/2026
 * Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents
 * Can handle the end-to-end OAuth flow, from building authorization URLs to converting authorization codes into refresh tokens
@@ -330,6 +330,10 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
 * **Orders API (v0)** ([docs](https://developer-docs.amazon.com/sp-api/docs/orders-api-v0-reference))
     ```php
     $ordersApi = $sellerConnector->ordersV0();
+    ```
+* **Orders API (v2026-01-01)** ([docs](https://developer-docs.amazon.com/sp-api/reference/orders-v2026-01-01))
+    ```php
+    $ordersApi = $sellerConnector->ordersV20260101();
     ```
 * **Product Fees API (v0)** ([docs](https://developer-docs.amazon.com/sp-api/docs/product-fees-api-v0-reference))
     ```php

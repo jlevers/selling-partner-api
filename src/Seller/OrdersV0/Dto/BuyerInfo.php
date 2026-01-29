@@ -15,7 +15,6 @@ use SellingPartnerApi\Dto;
 final class BuyerInfo extends Dto
 {
     protected static array $attributeMap = [
-        'buyerEmail' => 'BuyerEmail',
         'buyerName' => 'BuyerName',
         'buyerCounty' => 'BuyerCounty',
         'buyerTaxInfo' => 'BuyerTaxInfo',
@@ -23,7 +22,6 @@ final class BuyerInfo extends Dto
     ];
 
     /**
-     * @param  ?string  $buyerEmail  The anonymized email address of the buyer.
      * @param  ?string  $buyerName  The buyer name or the recipient name.
      * @param  ?string  $buyerCounty  The county of the buyer.
      *
@@ -32,7 +30,6 @@ final class BuyerInfo extends Dto
      * @param  ?string  $purchaseOrderNumber  The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.
      */
     public function __construct(
-        public ?string $buyerEmail = null,
         public ?string $buyerName = null,
         public ?string $buyerCounty = null,
         public ?BuyerTaxInfo $buyerTaxInfo = null,

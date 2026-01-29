@@ -154,6 +154,11 @@ class SellerConnector extends SellingPartnerApi
         return new OrdersV0\Api($this);
     }
 
+    public function ordersV20260101(): OrdersV20260101\Api
+    {
+        return new OrdersV20260101\Api($this);
+    }
+
     public function productFeesV0(): ProductFeesV0\Api
     {
         return new ProductFeesV0\Api($this);

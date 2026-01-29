@@ -114,17 +114,9 @@
                         }
                     },
                     {
-                        "name": "BuyerEmail",
-                        "in": "query",
-                        "description": "The email address of a buyer. Used to select orders that contain the specified email address.",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "SellerOrderId",
                         "in": "query",
-                        "description": "An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If `SellerOrderId` is specified, then `FulfillmentChannels`, `OrderStatuses`, `PaymentMethod`, `LastUpdatedAfter`, LastUpdatedBefore, and `BuyerEmail` cannot be specified.",
+                        "description": "An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If `SellerOrderId` is specified, then `FulfillmentChannels`, `OrderStatuses`, `PaymentMethod`, `LastUpdatedAfter`, and `LastUpdatedBefore` cannot be specified.",
                         "schema": {
                             "type": "string"
                         }
@@ -212,7 +204,7 @@
                     {
                         "name": "EarliestDeliveryDateBefore",
                         "in": "query",
-                        "description": "Use this date to select orders with a earliest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
+                        "description": "Use this date to select orders with an earliest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
                         "schema": {
                             "type": "string"
                         }
@@ -220,7 +212,7 @@
                     {
                         "name": "EarliestDeliveryDateAfter",
                         "in": "query",
-                        "description": "Use this date to select orders with a earliest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
+                        "description": "Use this date to select orders with an earliest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.",
                         "schema": {
                             "type": "string"
                         }
@@ -273,13 +265,13 @@
                                                 "PurchaseDate": "2017-01-20T19:49:35Z",
                                                 "LastUpdateDate": "2017-01-20T19:49:35Z",
                                                 "OrderStatus": "Pending",
-                                                "FulfillmentChannel": "SellerFulfilled",
+                                                "FulfillmentChannel": "MFN",
                                                 "NumberOfItemsShipped": 0,
                                                 "NumberOfItemsUnshipped": 0,
                                                 "PaymentMethod": "Other",
                                                 "PaymentMethodDetails": [
                                                     "CreditCard",
-                                                    "GiftCerificate"
+                                                    "GiftCertificate"
                                                 ],
                                                 "MarketplaceId": "ATVPDKIKX0DER",
                                                 "ShipmentServiceLevelCategory": "Standard",
@@ -302,7 +294,6 @@
                                                     "CountryCode": "US"
                                                 },
                                                 "BuyerInfo": {
-                                                    "BuyerEmail": "user@example.com",
                                                     "BuyerName": "John Doe",
                                                     "BuyerTaxInfo": {
                                                         "CompanyLegalName": "A Company Name"
@@ -449,13 +440,13 @@
                                                     "PurchaseDate": "2017-01-20T19:49:35Z",
                                                     "LastUpdateDate": "2017-01-20T19:49:35Z",
                                                     "OrderStatus": "Pending",
-                                                    "FulfillmentChannel": "SellerFulfilled",
+                                                    "FulfillmentChannel": "MFN",
                                                     "NumberOfItemsShipped": 0,
                                                     "NumberOfItemsUnshipped": 0,
                                                     "PaymentMethod": "Other",
                                                     "PaymentMethodDetails": [
                                                         "CreditCard",
-                                                        "GiftCerificate"
+                                                        "GiftCertificate"
                                                     ],
                                                     "MarketplaceId": "ATVPDKIKX0DER",
                                                     "ShipmentServiceLevelCategory": "Standard",
@@ -500,13 +491,13 @@
                                                     "PurchaseDate": "2017-01-20T19:49:35Z",
                                                     "LastUpdateDate": "2017-01-20T19:49:35Z",
                                                     "OrderStatus": "Pending",
-                                                    "FulfillmentChannel": "SellerFulfilled",
+                                                    "FulfillmentChannel": "MFN",
                                                     "NumberOfItemsShipped": 0,
                                                     "NumberOfItemsUnshipped": 0,
                                                     "PaymentMethod": "Other",
                                                     "PaymentMethodDetails": [
                                                         "CreditCard",
-                                                        "GiftCerificate"
+                                                        "GiftCertificate"
                                                     ],
                                                     "MarketplaceId": "ATVPDKIKX0DER",
                                                     "ShipmentServiceLevelCategory": "Standard",
@@ -720,13 +711,13 @@
                                         "PurchaseDate": "2017-01-20T19:49:35Z",
                                         "LastUpdateDate": "2017-01-20T19:49:35Z",
                                         "OrderStatus": "Pending",
-                                        "FulfillmentChannel": "SellerFulfilled",
+                                        "FulfillmentChannel": "MFN",
                                         "NumberOfItemsShipped": 0,
                                         "NumberOfItemsUnshipped": 0,
                                         "PaymentMethod": "Other",
                                         "PaymentMethodDetails": [
                                             "CreditCard",
-                                            "GiftCerificate"
+                                            "GiftCertificate"
                                         ],
                                         "MarketplaceId": "ATVPDKIKX0DER",
                                         "ShipmentServiceLevelCategory": "Standard",
@@ -763,7 +754,6 @@
                                             "CountryCode": "US"
                                         },
                                         "BuyerInfo": {
-                                            "BuyerEmail": "user@example.com",
                                             "BuyerName": "John Doe",
                                             "BuyerTaxInfo": {
                                                 "CompanyLegalName": "A Company Name"
@@ -1108,7 +1098,6 @@
                                 "example": {
                                     "payload": {
                                         "AmazonOrderId": "902-3159896-1390916",
-                                        "BuyerEmail": "user@example.com",
                                         "BuyerName": "John Smith",
                                         "BuyerTaxInfo": {
                                             "CompanyLegalName": "Company Name"
@@ -1131,7 +1120,6 @@
                                     "response": {
                                         "payload": {
                                             "AmazonOrderId": "902-1845936-5435065",
-                                            "BuyerEmail": "fzyrv6gwkhbb15c@example.com",
                                             "BuyerName": "MFNIntegrationTestMerchant"
                                         }
                                     }
@@ -1504,6 +1492,272 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/GetOrderAddressResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/orders/v0/orders/{orderId}/fulfillmentInstructions": {
+            "get": {
+                "tags": [
+                    "OrdersV0"
+                ],
+                "description": "Returns the fulfillment instructions for the order that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 30 |\n\nThe `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "getOrderFulfillmentInstructions",
+                "parameters": [
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "description": "The Amazon order identifier in 3-7-7 format.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetOrderFulfillmentInstructionsResponse"
+                                },
+                                "example": {
+                                    "payload": {
+                                        "AmazonOrderId": "902-3159896-1390916",
+                                        "FulfillmentPlans": [
+                                            {
+                                                "CreationDate": "2023-10-25T12:00:00Z",
+                                                "FulfillmentPlanId": "1",
+                                                "FulfillmentType": "SHIP",
+                                                "FulfillmentPlanStatus": "ACTIVE",
+                                                "LastStatusUpdateDate": "2023-10-25T12:00:00Z",
+                                                "FulfillmentPlanItems": [
+                                                    {
+                                                        "OrderItemId": "6217867064725",
+                                                        "Measurement": {
+                                                            "Unit": "COUNT",
+                                                            "Value": 20
+                                                        }
+                                                    }
+                                                ],
+                                                "ShippingInstructions": {
+                                                    "CarrierCode": "UPS",
+                                                    "ShippingMethod": "Ground",
+                                                    "ShippingConstraints": {
+                                                        "PalletDelivery": "MANDATORY"
+                                                    }
+                                                },
+                                                "FulfillmentLocation": {
+                                                    "SupplySourceId": "bb3e1352-a3b4-4b99-aeb7-b1a923837ef2"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": "TEST_CASE_200"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "payload": {
+                                            "AmazonOrderId": "TEST_CASE_200",
+                                            "FulfillmentPlans": [
+                                                {
+                                                    "CreationDate": "2023-10-25T12:00:00Z",
+                                                    "FulfillmentPlanId": "1",
+                                                    "FulfillmentType": "SHIP",
+                                                    "FulfillmentPlanStatus": "ACTIVE",
+                                                    "LastStatusUpdateDate": "2023-10-25T12:00:00Z",
+                                                    "FulfillmentPlanItems": [
+                                                        {
+                                                            "OrderItemId": "6217867064725",
+                                                            "Measurement": {
+                                                                "Unit": "COUNT",
+                                                                "Value": 20
+                                                            }
+                                                        }
+                                                    ],
+                                                    "ShippingInstructions": {
+                                                        "CarrierCode": "UPS",
+                                                        "ShippingMethod": "Ground",
+                                                        "ShippingConstraints": {
+                                                            "PalletDelivery": "MANDATORY"
+                                                        }
+                                                    },
+                                                    "FulfillmentLocation": {
+                                                        "SupplySourceId": "bb3e1352-a3b4-4b99-aeb7-b1a923837ef2"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetOrderFulfillmentInstructionsResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": "TEST_CASE_400"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid Input"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetOrderFulfillmentInstructionsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetOrderFulfillmentInstructionsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetOrderFulfillmentInstructionsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetOrderFulfillmentInstructionsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetOrderFulfillmentInstructionsResponse"
                                 }
                             }
                         }
@@ -3625,6 +3879,18 @@
                 },
                 "description": "The response schema for the `getOrderItemsBuyerInfo` operation."
             },
+            "GetOrderFulfillmentInstructionsResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#/components/schemas/FulfillmentInstructions"
+                    },
+                    "errors": {
+                        "$ref": "#/components/schemas/ErrorList"
+                    }
+                },
+                "description": "The response schema for the `getOrderFulfillmentInstructions` operation."
+            },
             "OrdersList": {
                 "required": [
                     "Orders"
@@ -3973,10 +4239,6 @@
                     "AmazonOrderId": {
                         "type": "string",
                         "description": "An Amazon-defined order identifier, in 3-7-7 format."
-                    },
-                    "BuyerEmail": {
-                        "type": "string",
-                        "description": "The anonymized email address of the buyer."
                     },
                     "BuyerName": {
                         "type": "string",
@@ -4845,9 +5107,25 @@
                     },
                     "AmazonPrograms": {
                         "$ref": "#/components/schemas/AmazonPrograms"
+                    },
+                    "ExportInfo": {
+                        "$ref": "#/components/schemas/ExportInfo"
                     }
                 },
                 "description": "A single order item."
+            },
+            "ExportInfo": {
+                "type": "object",
+                "properties": {
+                    "ExportCharge": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "ExportChargeModel": {
+                        "type": "string",
+                        "description": "Holds the `ExportCharge` collection model that is associated with the specified order item.\n\n**Possible values**: `AMAZON_FACILITATED`: Import/export charge is withheld by Amazon and remitted to the customs authority by the carrier on behalf of the buyer/seller."
+                    }
+                },
+                "description": "Contains information that is related to the export of an order item."
             },
             "AmazonPrograms": {
                 "required": [
@@ -5266,6 +5544,143 @@
                 },
                 "description": "Contains the instructions about the fulfillment, such as the location from where you want the order filled."
             },
+            "FulfillmentInstructions": {
+                "required": [
+                    "AmazonOrderId"
+                ],
+                "type": "object",
+                "properties": {
+                    "FulfillmentPlans": {
+                        "type": "array",
+                        "description": "List of all fulfillment plans for the given order id",
+                        "items": {
+                            "$ref": "#/components/schemas/FulfillmentPlan"
+                        }
+                    },
+                    "AmazonOrderId": {
+                        "type": "string",
+                        "description": "An Amazon-defined order identifier, in 3-7-7 format."
+                    }
+                },
+                "description": "Contains all fulfillment plans for the order"
+            },
+            "FulfillmentPlan": {
+                "required": [
+                    "CreationDate",
+                    "FulfillmentPlanId",
+                    "FulfillmentPlanItems",
+                    "FulfillmentPlanStatus",
+                    "FulfillmentType",
+                    "LastStatusUpdateDate"
+                ],
+                "type": "object",
+                "properties": {
+                    "FulfillmentPlanId": {
+                        "type": "string",
+                        "description": "Unique identifier for a fulfillment plan."
+                    },
+                    "CreationDate": {
+                        "type": "string",
+                        "description": "Time when the fulfillment plan was created in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format."
+                    },
+                    "FulfillmentType": {
+                        "type": "string",
+                        "description": "Type of fulfillment",
+                        "enum": [
+                            "INSTORE_PICKUP",
+                            "SERVICE",
+                            "SHIP"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "INSTORE_PICKUP",
+                                "description": "Buyer picks up items in plan from store."
+                            },
+                            {
+                                "value": "SERVICE",
+                                "description": "Services that are performed for the buyer, such as assembly."
+                            },
+                            {
+                                "value": "SHIP",
+                                "description": "Shipped by seller through detailed ship method."
+                            }
+                        ]
+                    },
+                    "FulfillmentPlanStatus": {
+                        "type": "string",
+                        "description": "The fulfillment plan status.",
+                        "enum": [
+                            "ACTIVE",
+                            "ABORTED",
+                            "COMPLETED",
+                            "PARTIALLY_FULFILLED"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "ACTIVE",
+                                "description": "The plan is ready to be fulfilled."
+                            },
+                            {
+                                "value": "ABORTED",
+                                "description": "Plan was canceled, either through order canceling or replanning of shipment."
+                            },
+                            {
+                                "value": "COMPLETED",
+                                "description": "Plan has been fulfilled and completed."
+                            },
+                            {
+                                "value": "PARTIALLY_FULFILLED",
+                                "description": "Plan has been partially fulfilled."
+                            }
+                        ]
+                    },
+                    "LastStatusUpdateDate": {
+                        "type": "string",
+                        "description": "The time when the fulfillment plan's status was last updated in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format."
+                    },
+                    "FulfillmentLocation": {
+                        "$ref": "#/components/schemas/FulfillmentLocation"
+                    },
+                    "ShippingInstructions": {
+                        "$ref": "#/components/schemas/ShippingInstructions"
+                    },
+                    "FulfillmentPlanItems": {
+                        "type": "array",
+                        "description": "The details of the order items that are included in the fulfillment plan.",
+                        "items": {
+                            "$ref": "#/components/schemas/FulfillmentPlanItem"
+                        }
+                    }
+                },
+                "description": "A collection of order items that are to be fulfilled from the same location with the same shipping, pickup, and service instructions."
+            },
+            "FulfillmentLocation": {
+                "type": "object",
+                "properties": {
+                    "SupplySourceId": {
+                        "type": "string",
+                        "description": "The fulfillment location identifier."
+                    }
+                },
+                "description": "Represents a location from which the plan is to be fulfilled."
+            },
+            "ShippingInstructions": {
+                "type": "object",
+                "properties": {
+                    "CarrierCode": {
+                        "type": "string",
+                        "description": "The name of the carrier that delivers the package."
+                    },
+                    "ShippingMethod": {
+                        "type": "string",
+                        "description": "The ship method that is used for the order."
+                    },
+                    "ShippingConstraints": {
+                        "$ref": "#/components/schemas/FulfillmentPlanShippingConstraints"
+                    }
+                },
+                "description": "The shipping-related information of a delivery."
+            },
             "ShippingConstraints": {
                 "type": "object",
                 "properties": {
@@ -5297,13 +5712,56 @@
                     }
                 ]
             },
+            "FulfillmentPlanShippingConstraints": {
+                "type": "object",
+                "properties": {
+                    "PalletDelivery": {
+                        "$ref": "#/components/schemas/FulfillmentPlanConstraintType"
+                    },
+                    "SignatureConfirmation": {
+                        "$ref": "#/components/schemas/FulfillmentPlanConstraintType"
+                    }
+                },
+                "description": "Delivery constraints applicable to this order."
+            },
+            "FulfillmentPlanConstraintType": {
+                "type": "string",
+                "description": "Details the importance of the constraint present on the item.",
+                "enum": [
+                    "MANDATORY",
+                    "RECOMMENDED"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "MANDATORY",
+                        "description": "Item must follow the constraint to ensure order is met with buyer's delivery requirements."
+                    },
+                    {
+                        "value": "RECOMMENDED",
+                        "description": "Item is recommended to follow the constraint to ensure order is met with buyer's delivery requirements."
+                    }
+                ]
+            },
+            "FulfillmentPlanItem": {
+                "required": [
+                    "Measurement",
+                    "OrderItemId"
+                ],
+                "type": "object",
+                "properties": {
+                    "OrderItemId": {
+                        "type": "string",
+                        "description": "An Amazon-defined associated order item's order item identifier."
+                    },
+                    "Measurement": {
+                        "$ref": "#/components/schemas/Measurement"
+                    }
+                },
+                "description": "The order items associated with this fulfillment plan."
+            },
             "BuyerInfo": {
                 "type": "object",
                 "properties": {
-                    "BuyerEmail": {
-                        "type": "string",
-                        "description": "The anonymized email address of the buyer."
-                    },
                     "BuyerName": {
                         "type": "string",
                         "description": "The buyer name or the recipient name."

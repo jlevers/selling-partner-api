@@ -26,7 +26,7 @@ final class AdjustmentItem extends Dto
     ];
 
     /**
-     * @param  ?string  $quantity  Represents the number of units in the seller's inventory when the AdustmentType is FBAInventoryReimbursement.
+     * @param  ?string  $quantity  Represents the number of units in the seller's inventory when the `AdjustmentType` is `FBAInventoryReimbursement`.
      * @param  ?Currency  $perUnitAmount  A currency type and amount.
      * @param  ?Currency  $totalAmount  A currency type and amount.
      * @param  ?string  $sellerSku  The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.

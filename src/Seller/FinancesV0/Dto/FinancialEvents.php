@@ -19,6 +19,7 @@ final class FinancialEvents extends Dto
         'shipmentSettleEventList' => 'ShipmentSettleEventList',
         'refundEventList' => 'RefundEventList',
         'guaranteeClaimEventList' => 'GuaranteeClaimEventList',
+        'ebtRefundReimbursementOnlyEventList' => 'EBTRefundReimbursementOnlyEventList',
         'chargebackEventList' => 'ChargebackEventList',
         'payWithAmazonEventList' => 'PayWithAmazonEventList',
         'serviceProviderCreditEventList' => 'ServiceProviderCreditEventList',
@@ -55,6 +56,7 @@ final class FinancialEvents extends Dto
         'shipmentSettleEventList' => ShipmentEvent::class,
         'refundEventList' => ShipmentEvent::class,
         'guaranteeClaimEventList' => ShipmentEvent::class,
+        'ebtRefundReimbursementOnlyEventList' => EbtRefundReimbursementOnlyEvent::class,
         'chargebackEventList' => ShipmentEvent::class,
         'payWithAmazonEventList' => PayWithAmazonEvent::class,
         'serviceProviderCreditEventList' => SolutionProviderCreditEvent::class,
@@ -91,10 +93,11 @@ final class FinancialEvents extends Dto
      * @param  ShipmentEvent[]|null  $shipmentSettleEventList  A list of `ShipmentEvent` items.
      * @param  ShipmentEvent[]|null  $refundEventList  A list of shipment event information.
      * @param  ShipmentEvent[]|null  $guaranteeClaimEventList  A list of shipment event information.
+     * @param  EbtRefundReimbursementOnlyEvent[]|null  $ebtRefundReimbursementOnlyEventList  A list of EBT refund reimbursement events.
      * @param  ShipmentEvent[]|null  $chargebackEventList  A list of shipment event information.
      * @param  PayWithAmazonEvent[]|null  $payWithAmazonEventList  A list of events related to the seller's Pay with Amazon account.
-     * @param  SolutionProviderCreditEvent[]|null  $serviceProviderCreditEventList  A list of information about solution provider credits.
-     * @param  RetrochargeEvent[]|null  $retrochargeEventList  A list of information about Retrocharge or RetrochargeReversal events.
+     * @param  SolutionProviderCreditEvent[]|null  $serviceProviderCreditEventList  A list of `SolutionProviderCreditEvent`.
+     * @param  RetrochargeEvent[]|null  $retrochargeEventList  A list of information about `Retrocharge` or `RetrochargeReversal` events.
      * @param  RentalTransactionEvent[]|null  $rentalTransactionEventList  A list of rental transaction event information.
      * @param  ProductAdsPaymentEvent[]|null  $productAdsPaymentEventList  A list of sponsored products payment events.
      * @param  ServiceFeeEvent[]|null  $serviceFeeEventList  A list of information about service fee events.
@@ -102,7 +105,7 @@ final class FinancialEvents extends Dto
      * @param  DebtRecoveryEvent[]|null  $debtRecoveryEventList  A list of debt recovery event information.
      * @param  LoanServicingEvent[]|null  $loanServicingEventList  A list of loan servicing events.
      * @param  AdjustmentEvent[]|null  $adjustmentEventList  A list of adjustment event information for the seller's account.
-     * @param  SafetReimbursementEvent[]|null  $safetReimbursementEventList  A list of SAFETReimbursementEvents.
+     * @param  SafetReimbursementEvent[]|null  $safetReimbursementEventList  A list of `SAFETReimbursementEvent`.
      * @param  SellerReviewEnrollmentPaymentEvent[]|null  $sellerReviewEnrollmentPaymentEventList  A list of information about fee events for the Early Reviewer Program.
      * @param  FbaLiquidationEvent[]|null  $fbaLiquidationEventList  A list of FBA inventory liquidation payment events.
      * @param  CouponPaymentEvent[]|null  $couponPaymentEventList  A list of coupon payment event information.
@@ -111,13 +114,13 @@ final class FinancialEvents extends Dto
      * @param  AffordabilityExpenseEvent[]|null  $affordabilityExpenseEventList  A list of expense information related to an affordability promotion.
      * @param  AffordabilityExpenseEvent[]|null  $affordabilityExpenseReversalEventList  A list of expense information related to an affordability promotion.
      * @param  RemovalShipmentEvent[]|null  $removalShipmentEventList  A list of removal shipment event information.
-     * @param  RemovalShipmentAdjustmentEvent[]|null  $removalShipmentAdjustmentEventList  A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.
+     * @param  RemovalShipmentAdjustmentEvent[]|null  $removalShipmentAdjustmentEventList  A comma-delimited list of `RemovalShipmentAdjustment` details for FBA inventory.
      * @param  TrialShipmentEvent[]|null  $trialShipmentEventList  A list of information about trial shipment financial events.
      * @param  TdsReimbursementEvent[]|null  $tdsReimbursementEventList  A list of `TDSReimbursementEvent` items.
      * @param  AdhocDisbursementEvent[]|null  $adhocDisbursementEventList  A list of `AdhocDisbursement` events.
-     * @param  TaxWithholdingEvent[]|null  $taxWithholdingEventList  A list of `TaxWithholding` events.
+     * @param  TaxWithholdingEvent[]|null  $taxWithholdingEventList  A list of tax withholding events.
      * @param  ChargeRefundEvent[]|null  $chargeRefundEventList  A list of charge refund events.
-     * @param  FailedAdhocDisbursementEvent[]|null  $failedAdhocDisbursementEventList  A list of `FailedAdhocDisbursementEvent`s.
+     * @param  FailedAdhocDisbursementEvent[]|null  $failedAdhocDisbursementEventList  A list of `FailedAdhocDisbursementEvent`.
      * @param  ValueAddedServiceChargeEvent[]|null  $valueAddedServiceChargeEventList  A list of `ValueAddedServiceCharge` events.
      * @param  CapacityReservationBillingEvent[]|null  $capacityReservationBillingEventList  A list of `CapacityReservationBillingEvent` events.
      */
@@ -126,6 +129,7 @@ final class FinancialEvents extends Dto
         public ?array $shipmentSettleEventList = null,
         public ?array $refundEventList = null,
         public ?array $guaranteeClaimEventList = null,
+        public ?array $ebtRefundReimbursementOnlyEventList = null,
         public ?array $chargebackEventList = null,
         public ?array $payWithAmazonEventList = null,
         public ?array $serviceProviderCreditEventList = null,

@@ -22,7 +22,7 @@ final class FbaLiquidationEvent extends Dto
     ];
 
     /**
-     * @param  ?\DateTimeInterface  $postedDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?string  $originalRemovalOrderId  The identifier for the original removal order.
      * @param  ?Currency  $liquidationProceedsAmount  A currency type and amount.
      * @param  ?Currency  $liquidationFeeAmount  A currency type and amount.

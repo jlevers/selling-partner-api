@@ -349,7 +349,7 @@
                     "required": true
                 },
                 "responses": {
-                    "202": {
+                    "200": {
                         "description": "Success.",
                         "headers": {
                             "x-amzn-RequestId": {
@@ -371,7 +371,9 @@
                                     "$ref": "#/components/schemas/SubmitShipmentConfirmationResponse"
                                 },
                                 "example": {
-                                    "payload": {}
+                                    "payload": {
+                                        "message": "The ASN was submitted successfully"
+                                    }
                                 }
                             }
                         },
@@ -427,7 +429,9 @@
                                         }
                                     },
                                     "response": {
-                                        "payload": {}
+                                        "payload": {
+                                            "message": "The ASN was submitted successfully"
+                                        }
                                     }
                                 }
                             ]
@@ -3656,6 +3660,46 @@
                         "type": "string",
                         "description": "The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items."
                     },
+                    "lotNumberSourceReference": {
+                        "type": "string",
+                        "description": "The location identifier where the product receives a traceability lot number. Provide this field for products subject to the FDA Food Safety Modernization Act (FSMA) Section 204. When you provide `lotNumberSourceReference`, you must also specify the corresponding `lotNumberSourceType` field."
+                    },
+                    "lotNumberSourceType": {
+                        "type": "string",
+                        "description": "The identifier type used for the lot number source. Provide this field when you specify `lotNumberSourceReference`.",
+                        "enum": [
+                            "GLN",
+                            "FFRN",
+                            "USDA_E",
+                            "URL"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "GLN",
+                                "description": "GS1 Global Location Number to identify business locations and legal entities."
+                            },
+                            {
+                                "value": "FFRN",
+                                "description": "FDA Food Facility Registration Number assigned to facilities that manufacture, process, pack, or hold food for consumption in the U.S."
+                            },
+                            {
+                                "value": "USDA_E",
+                                "description": "USDA Establishment Number assigned to facilities under USDA inspection."
+                            },
+                            {
+                                "value": "URL",
+                                "description": "Web address that identifies a business entity."
+                            }
+                        ]
+                    },
+                    "countryOfOrigin": {
+                        "pattern": "^[A-Z]{2}$",
+                        "type": "string",
+                        "description": "The two-character country code for the country where the product was manufactured or originates. Use ISO 3166-1 alpha-2 format."
+                    },
+                    "regulationReferences": {
+                        "$ref": "#/components/schemas/RegulationReferences"
+                    },
                     "expiry": {
                         "$ref": "#/components/schemas/Expiry"
                     },
@@ -3703,46 +3747,6 @@
                     "lotNumber": {
                         "type": "string",
                         "description": "The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items."
-                    },
-                    "lotNumberSourceReference": {
-                        "type": "string",
-                        "description": "This is a reference to the lot number source location meaning the place where the product was assigned a traceability lot number. This is mandatory for goods in scope of the FDA Food Safety Modernization Act (FSMA 204). If provided, lotNumberSourceType must also be specified."
-                    },
-                    "lotNumberSourceType": {
-                        "type": "string",
-                        "description": "The type of reference for the lot number source. Must be provided when lotNumberSourceReference is specified.",
-                        "enum": [
-                            "GLN",
-                            "FFRN",
-                            "USDA_E",
-                            "URL"
-                        ],
-                        "x-docgen-enum-table-extension": [
-                            {
-                                "value": "GLN",
-                                "description": "GS1 Global Location Number that uniquely identifies business locations and legal entities."
-                            },
-                            {
-                                "value": "FFRN",
-                                "description": "FDA Food Facility Registration Number assigned to facilities that manufacture, process, pack, or hold food for consumption in the U.S."
-                            },
-                            {
-                                "value": "USDA_E",
-                                "description": "USDA Establishment Number assigned to facilities under USDA inspection."
-                            },
-                            {
-                                "value": "URL",
-                                "description": "Web address that uniquely identifies a business entity."
-                            }
-                        ]
-                    },
-                    "countryOfOrigin": {
-                        "pattern": "^[A-Z]{2}$",
-                        "type": "string",
-                        "description": "The two digit country code in ISO 3166-1 alpha-2 format representing the country where the product was manufactured or originated."
-                    },
-                    "regulationReferences": {
-                        "$ref": "#/components/schemas/RegulationReferences"
                     },
                     "expiry": {
                         "$ref": "#/components/schemas/Expiry"
@@ -4308,22 +4312,22 @@
                 "properties": {
                     "dueDiligenceReference": {
                         "type": "string",
-                        "description": "The EUDR Due Diligence Reference number from vendor's upstream Due Dilligence Statement (DDS) submitted to EU Commison portal or provided to Onix."
+                        "description": "The reference number from the vendor's EUDR Due Diligence Statement (DDS) submitted to the EU Commission portal or provided to Amazon through ONIX feed."
                     },
                     "dueDiligenceVerification": {
                         "type": "string",
-                        "description": "The EUDR Due Diligence Verification number provided by EU Commision associated with submitted DDR."
+                        "description": "The EUDR Due Diligence verification number provided by the EU Commission for the submitted DDS."
                     },
                     "dueDiligenceInformation": {
                         "type": "string",
-                        "description": "The EUDR Due Diligence Information for EUDR that was already pre-loaded in Vendor Central within Amazon compliance collection experience."
+                        "description": "The EUDR Due Diligence information pre-loaded in Vendor Central."
                     },
                     "dueDiligenceExemptionCode": {
                         "type": "string",
-                        "description": "The Due Diligence exemption code for EUDR products indicating the item is exempt from due diligence requirements."
+                        "description": "The exemption code for EUDR products exempt from due diligence requirements."
                     }
                 },
-                "description": "Container for regulatory compliance information, for instance EU Due Diligence Regulation (EUDR) requirements. Includes reference numbers, verification codes, compliance information, and exemption codes necessary for documenting regulatory compliance for shipments."
+                "description": "Regulatory requirements and compliance information for the item, including reference numbers, verification codes, and exemption codes. Use this field to specify applicable regulations such as EU Deforestation Regulation (EUDR)."
             },
             "Expiry": {
                 "type": "object",
@@ -4398,6 +4402,17 @@
                 },
                 "description": "The response payload for the SubmitShipmentConfirmations operation."
             },
+            "SubmitShipmentConfirmationResult": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "description": "Success message for the operation SubmitShipmentConfirmation",
+                        "example": "The ASN was submitted successfully"
+                    }
+                },
+                "description": "Result payload for successful ASN submission."
+            },
             "ErrorList": {
                 "required": [
                     "errors"
@@ -4452,13 +4467,13 @@
                 "type": "object",
                 "properties": {
                     "payload": {
-                        "$ref": "#/components/schemas/TransactionReference"
+                        "$ref": "#/components/schemas/SubmitShipmentConfirmationResult"
                     },
                     "errors": {
                         "$ref": "#/components/schemas/ErrorList"
                     }
                 },
-                "description": "The ASN was submitted successfully"
+                "description": "The response schema for the SubmitShipmentConfirmation operation."
             }
         }
     },

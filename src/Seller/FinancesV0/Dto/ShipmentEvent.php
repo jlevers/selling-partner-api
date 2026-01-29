@@ -55,7 +55,7 @@ final class ShipmentEvent extends Dto
      * @param  FeeComponent[]|null  $orderFeeList  A list of fee component information.
      * @param  FeeComponent[]|null  $orderFeeAdjustmentList  A list of fee component information.
      * @param  DirectPayment[]|null  $directPaymentList  A list of direct payment information.
-     * @param  ?\DateTimeInterface  $postedDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ShipmentItem[]|null  $shipmentItemList  A list of shipment items.
      * @param  ShipmentItem[]|null  $shipmentItemAdjustmentList  A list of shipment items.
      */

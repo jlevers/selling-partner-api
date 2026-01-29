@@ -26,7 +26,7 @@ final class ImagingServicesFeeEvent extends Dto
     /**
      * @param  ?string  $imagingRequestBillingItemId  The identifier for the imaging services request.
      * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the item for which the imaging service was requested.
-     * @param  ?\DateTimeInterface  $postedDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  FeeComponent[]|null  $feeList  A list of fee component information.
      */
     public function __construct(

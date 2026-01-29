@@ -7,16 +7,21 @@ use SellingPartnerApi\BaseResource;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\InboundOrder;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\InboundOrderCreationData;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\InboundPackages;
+use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\ReplenishmentOrderCreationData;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\TransportationDetails;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\CancelInbound;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\CheckInboundEligibility;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\ConfirmInbound;
+use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\ConfirmReplenishmentOrder;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\CreateInbound;
+use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\CreateReplenishmentOrder;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\GetInbound;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\GetInboundShipment;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\GetInboundShipmentLabels;
+use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\GetReplenishmentOrder;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\ListInboundShipments;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\ListInventory;
+use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\ListReplenishmentOrders;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\UpdateInbound;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\UpdateInboundShipmentTransportDetails;
 
@@ -162,6 +167,58 @@ class Api extends BaseResource
         ?int $maxResults = null,
     ): Response {
         $request = new ListInventory($sku, $sortOrder, $details, $nextToken, $maxResults);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  ?\DateTimeInterface  $updatedAfter  Get the replenishment orders updated after certain time (Inclusive)
+     *                                             Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339.
+     * @param  ?\DateTimeInterface  $updatedBefore  Get the replenishment orders updated before certain time (Inclusive)
+     *                                              Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339.
+     * @param  ?string  $sortOrder  Sort the response in ASCENDING or DESCENDING order. The default sort order is DESCENDING.
+     * @param  ?int  $maxResults  Maximum results to be returned in a single response.
+     * @param  ?string  $nextToken  A token that is used to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
+     */
+    public function listReplenishmentOrders(
+        ?\DateTimeInterface $updatedAfter = null,
+        ?\DateTimeInterface $updatedBefore = null,
+        ?string $sortOrder = null,
+        ?int $maxResults = null,
+        ?string $nextToken = null,
+    ): Response {
+        $request = new ListReplenishmentOrders($updatedAfter, $updatedBefore, $sortOrder, $maxResults, $nextToken);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  ReplenishmentOrderCreationData  $replenishmentOrderCreationData  This structure represents the payload for creating an AFN Replenishment Order.
+     *                                                                          By default, all replenishment orders created support Partial order preferences.
+     */
+    public function createReplenishmentOrder(ReplenishmentOrderCreationData $replenishmentOrderCreationData): Response
+    {
+        $request = new CreateReplenishmentOrder($replenishmentOrderCreationData);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $orderId  ID of the replenishment order to be retrieved.
+     */
+    public function getReplenishmentOrder(string $orderId): Response
+    {
+        $request = new GetReplenishmentOrder($orderId);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $orderId  ID of the replenishment order to be confirmed.
+     */
+    public function confirmReplenishmentOrder(string $orderId): Response
+    {
+        $request = new ConfirmReplenishmentOrder($orderId);
 
         return $this->connector->send($request);
     }

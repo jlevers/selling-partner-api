@@ -31,9 +31,11 @@ class Api extends BaseResource
      *
      * * `FINANCIAL_EVENT_GROUP_ID`: the financial event group ID associated with the transaction.
      *
+     * * `ORDER_ID`: the order ID associated with the transaction.
+     *
      * **Note:**
      *
-     *  FINANCIAL_EVENT_GROUP_ID is the only `relatedIdentifier` with filtering capabilities at the moment. While other `relatedIdentifier` values will be included in the response when available, they cannot be used for filtering purposes.
+     *  FINANCIAL_EVENT_GROUP_ID and ORDER_ID are the only `relatedIdentifier` with filtering capabilities at the moment. While other `relatedIdentifier` values will be included in the response when available, they cannot be used for filtering purposes.
      * @param  ?string  $relatedIdentifierValue  The value of the `relatedIdentifier`.
      * @param  ?string  $nextToken  The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
      */

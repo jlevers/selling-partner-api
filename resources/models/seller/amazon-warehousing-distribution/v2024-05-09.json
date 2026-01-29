@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "The Selling Partner API for Amazon Warehousing and Distribution",
-        "description": "The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.",
+        "description": "The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory. ",
         "contact": {
             "name": "Selling Partner API Developer Support",
             "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
@@ -2715,7 +2715,7 @@
                                                 }
                                             }
                                         ],
-                                        "previewedAt": "1688454771870"
+                                        "previewedAt": "2025-06-20T19:30:58.466Z"
                                     }
                                 }
                             ]
@@ -3743,6 +3743,1042 @@
                     }
                 }
             }
+        },
+        "/awd/2024-05-09/replenishmentOrders": {
+            "get": {
+                "tags": [
+                    "AmazonWarehousingAndDistributionV20240509"
+                ],
+                "description": "Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters.\nAPI by default will sort orders by updatedAt attribute in descending order.",
+                "operationId": "listReplenishmentOrders",
+                "parameters": [
+                    {
+                        "name": "updatedAfter",
+                        "in": "query",
+                        "description": "Get the replenishment orders updated after certain time (Inclusive)\nDate should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "example": "2023-01-12T10:00:00.000Z"
+                    },
+                    {
+                        "name": "updatedBefore",
+                        "in": "query",
+                        "description": "Get the replenishment orders updated before certain time (Inclusive)\nDate should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "example": "2023-01-12T10:00:00.000Z"
+                    },
+                    {
+                        "name": "sortOrder",
+                        "in": "query",
+                        "description": "Sort the response in ASCENDING or DESCENDING order. The default sort order is DESCENDING.",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "ASCENDING",
+                                "DESCENDING"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "description": "Sorts the collection in ascending order.",
+                                    "value": "ASCENDING"
+                                },
+                                {
+                                    "description": "Sorts the collection in descending order",
+                                    "value": "DESCENDING"
+                                }
+                            ]
+                        },
+                        "example": "ASCENDING",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "Sorts the collection in ascending order.",
+                                "value": "ASCENDING"
+                            },
+                            {
+                                "description": "Sorts the collection in descending order",
+                                "value": "DESCENDING"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "maxResults",
+                        "in": "query",
+                        "description": "Maximum results to be returned in a single response.",
+                        "schema": {
+                            "maximum": 100,
+                            "minimum": 1,
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 25
+                        },
+                        "example": "10"
+                    },
+                    {
+                        "name": "nextToken",
+                        "in": "query",
+                        "description": "A token that is used to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "SampleToken"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ListReplenishmentOrders 200 response",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ReplenishmentOrderListing"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {
+                                        "orders": [
+                                            {
+                                                "confirmedOn": "2024-08-11T23:20:50.520Z",
+                                                "createdAt": "2024-08-10T23:20:50.520Z",
+                                                "eligibleProducts": [],
+                                                "distributionIneligibleReasons": [],
+                                                "orderId": "TEST_ORDER_ID",
+                                                "status": "SUCCESS",
+                                                "outboundShipments": [],
+                                                "products": [],
+                                                "shippedProducts": []
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "sortOrder": {
+                                                "value": "TEST"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "details": "This exception is thrown when client inputs are invalid",
+                                                "message": "Invalid sort order field: TEST"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "AmazonWarehousingAndDistributionV20240509"
+                ],
+                "description": "Creates an AWD replenishment order with given products to replenish.\nThe API will return the order ID of the newly created order and also start an async validation check on the products to e.\nThe order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check",
+                "operationId": "createReplenishmentOrder",
+                "requestBody": {
+                    "description": "Payload for creating a replenishment order.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ReplenishmentOrderCreationData"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "CreateReplenishmentOrder 201 response.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ReplenishmentOrderReference"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "products": [
+                                                        {
+                                                            "quantity": 20,
+                                                            "sku": "TEST_SKU"
+                                                        }
+                                                    ],
+                                                    "preferences": {
+                                                        "confirmation": "AUTO"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "orderId": "TEST_ORDER_ID"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "products": [
+                                                        {
+                                                            "quantity": 1,
+                                                            "sku": "TEST_SKU"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "details": "This exception is thrown when client inputs are invalid",
+                                                "message": "Invalid package type: TEST"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
+            }
+        },
+        "/awd/2024-05-09/replenishmentOrders/{orderId}": {
+            "get": {
+                "tags": [
+                    "AmazonWarehousingAndDistributionV20240509"
+                ],
+                "description": "Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.",
+                "operationId": "getReplenishmentOrder",
+                "parameters": [
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "description": "ID of the replenishment order to be retrieved.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "GetReplenishmentOrder 200 response.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ReplenishmentOrder"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": "TEST_ORDER_ID"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "confirmedOn": "2024-08-11T23:20:50.520Z",
+                                        "createdAt": "2024-08-10T23:20:50.520Z",
+                                        "eligibleProducts": [],
+                                        "distributionIneligibleReasons": [],
+                                        "orderId": "TEST_ORDER_ID",
+                                        "status": "SUCCESS",
+                                        "outboundShipments": [],
+                                        "products": [],
+                                        "shippedProducts": []
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": " "
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "details": "This exception is thrown when client inputs are invalid",
+                                                "message": "OrderId should be present for this request"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/awd/2024-05-09/replenishmentOrders/{orderId}/confirmation": {
+            "post": {
+                "tags": [
+                    "AmazonWarehousingAndDistributionV20240509"
+                ],
+                "description": "Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node.\nOrder can only be confirmed in ELIGIBLE state.",
+                "operationId": "confirmReplenishmentOrder",
+                "parameters": [
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "description": "ID of the replenishment order to be confirmed.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "ConfirmReplenishmentOrder 204 response",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {}
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "orderId": {
+                                                "value": " "
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "BAD_REQUEST",
+                                                "details": "This exception is thrown when client inputs are invalid",
+                                                "message": "OrderId should be present for this request"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -3850,6 +4886,25 @@
                     }
                 ]
             },
+            "ConfirmationMode": {
+                "type": "string",
+                "description": "Confirmation Modes supported for Replenishment order creation. By default, the confirmation mode will be set to MANUAL.",
+                "example": "MANUAL",
+                "enum": [
+                    "AUTO",
+                    "MANUAL"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "When set to AUTO, the order will be confirmed once the status is ELIGIBLE.",
+                        "value": "AUTO"
+                    },
+                    {
+                        "description": "When set to MANUAL, the order needs to be confirmed manually after the status is ELIGIBLE.",
+                        "value": "AUTO"
+                    }
+                ]
+            },
             "DestinationDetails": {
                 "type": "object",
                 "properties": {
@@ -3903,6 +4958,43 @@
                         "value": "CENTIMETERS"
                     }
                 ]
+            },
+            "DistributionIneligibleReason": {
+                "required": [
+                    "failureCode",
+                    "failureReasons"
+                ],
+                "type": "object",
+                "properties": {
+                    "failureCode": {
+                        "type": "string",
+                        "description": "Failure code details of the error.",
+                        "example": "TestErrorCode"
+                    },
+                    "failureReasons": {
+                        "type": "array",
+                        "description": "Failure reasons of the error.",
+                        "example": [
+                            "Test failure reason"
+                        ],
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "SKU associated with the error.",
+                        "example": "SampleSKU"
+                    }
+                },
+                "description": "Execution errors associated with the replenishment order. This field will be populated if the order failed validation.",
+                "example": {
+                    "failureCode": "TestErrorCode",
+                    "failureReasons": [
+                        "Test failure reason"
+                    ],
+                    "sku": "SampleSKU"
+                }
             },
             "DistributionPackage": {
                 "required": [
@@ -4061,6 +5153,36 @@
                         "value": "PALLET"
                     }
                 ]
+            },
+            "DistributionProduct": {
+                "required": [
+                    "quantity",
+                    "sku"
+                ],
+                "type": "object",
+                "properties": {
+                    "attributes": {
+                        "type": "array",
+                        "description": "Attributes for this instance of the product, i.e. already-prepped, or other\nattributes that distinguish the product beyond the SKU.",
+                        "example": {
+                            "name": "TestAttribute",
+                            "value": "TestAttributeValue"
+                        },
+                        "items": {
+                            "$ref": "#/components/schemas/ProductAttribute"
+                        }
+                    },
+                    "quantity": {
+                        "type": "integer",
+                        "description": "Quantity of the product",
+                        "format": "int32"
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "The seller/merchant stock keeping unit (SKU)."
+                    }
+                },
+                "description": "Represents a product with sku details and corresponding quantity"
             },
             "Error": {
                 "required": [
@@ -4931,6 +6053,100 @@
                     "description": "The MSKU of an invalid order."
                 }
             },
+            "OutboundShipmentStatus": {
+                "type": "string",
+                "description": "Possible shipment statuses for outbound shipments.",
+                "example": "CREATED",
+                "enum": [
+                    "CREATED",
+                    "IN_TRANSIT",
+                    "DELIVERED",
+                    "RECEIVING",
+                    "RECEIVED",
+                    "CLOSED",
+                    "CANCELLED",
+                    "FAILED"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "Shipment is created. No inventory has been picked up at the source node.",
+                        "value": "CREATED"
+                    },
+                    {
+                        "description": "Carrier acknowledged that the shipment is in transit between the origin node and destination node.",
+                        "value": "IN_TRANSIT"
+                    },
+                    {
+                        "description": "Carrier indicated that the shipment has arrived at the destination node, but the destination node has not acknowledged the delivery.",
+                        "value": "DELIVERED"
+                    },
+                    {
+                        "description": "Destination node acknowledged the arrival of the shipment.",
+                        "value": "RECEIVING"
+                    },
+                    {
+                        "description": "Destination node has received the items.",
+                        "value": "RECEIVED"
+                    },
+                    {
+                        "description": "No more actions are required for the shipment. This is a final state.",
+                        "value": "CLOSED"
+                    },
+                    {
+                        "description": "Shipment has been cancelled by order owner. This is a final state.",
+                        "value": "CANCELLED"
+                    },
+                    {
+                        "description": "Shipment delivery has failed. This is a final state.",
+                        "value": "FAILED"
+                    }
+                ]
+            },
+            "OutboundShipmentSummary": {
+                "required": [
+                    "orderId",
+                    "shipmentId",
+                    "shipmentStatus"
+                ],
+                "type": "object",
+                "properties": {
+                    "createdAt": {
+                        "type": "string",
+                        "description": "Timestamp denoting when the shipment was created",
+                        "format": "date-time",
+                        "example": "2023-01-12T10:00:00Z"
+                    },
+                    "orderId": {
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Order ID of AWD inbound order this inbound shipment belongs to",
+                        "example": "TestOrderId"
+                    },
+                    "shipmentId": {
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Unique shipment ID",
+                        "example": "TestShipmentId"
+                    },
+                    "shipmentStatus": {
+                        "$ref": "#/components/schemas/OutboundShipmentStatus"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "Timestamp denoting when the shipment was updated",
+                        "format": "date-time",
+                        "example": "2023-01-12T10:00:00Z"
+                    }
+                },
+                "description": "Summary of an AWD inbound shipment containing the shipment ID which can be used to\nfetch the actual shipment",
+                "example": {
+                    "createdAt": "2023-01-12T10:00:00.000Z",
+                    "orderId": "TestOrderId",
+                    "shipmentId": "TestShipmentId",
+                    "shipmentStatus": "CREATED",
+                    "updatedAt": "2023-01-12T10:00:00.000Z"
+                }
+            },
             "PackageDimensions": {
                 "required": [
                     "height",
@@ -5185,6 +6401,201 @@
                     }
                 },
                 "description": "Represents a product with the SKU details and the corresponding quantity."
+            },
+            "ReplenishmentOrder": {
+                "required": [
+                    "orderId",
+                    "outboundShipments",
+                    "status"
+                ],
+                "type": "object",
+                "properties": {
+                    "confirmedOn": {
+                        "type": "string",
+                        "description": "Date on which this replenishment order was confirmed.",
+                        "format": "date-time"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "description": "Date on which this replenishment order was created.",
+                        "format": "date-time"
+                    },
+                    "distributionIneligibleReasons": {
+                        "type": "array",
+                        "description": "Distribution errors associated with the order related to the products or packages to replenish.\nThis field will be populated if the order has products or packages which failed validation.",
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionIneligibleReason"
+                        }
+                    },
+                    "eligibleProducts": {
+                        "type": "array",
+                        "description": "List of product units that are eligible for replenishment.",
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionProduct"
+                        }
+                    },
+                    "orderId": {
+                        "type": "string",
+                        "description": "Order Id of the replenishment order."
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/ReplenishmentOrderStatus"
+                    },
+                    "outboundShipments": {
+                        "type": "array",
+                        "description": "List of outbound shipments that are part of this order.",
+                        "items": {
+                            "$ref": "#/components/schemas/OutboundShipmentSummary"
+                        }
+                    },
+                    "products": {
+                        "type": "array",
+                        "description": "Requested amount of single product units to be replenished.",
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionProduct"
+                        }
+                    },
+                    "shippedProducts": {
+                        "type": "array",
+                        "description": "Outbound product units that are shipped after the execution has completed post confirmation.",
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionProduct"
+                        }
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "Date on which this replenishment order was last updated.",
+                        "format": "date-time",
+                        "example": "2023-01-12T10:00:00Z"
+                    }
+                },
+                "description": "Represents an AWD replenishment order."
+            },
+            "ReplenishmentOrderCreationData": {
+                "type": "object",
+                "properties": {
+                    "preferences": {
+                        "$ref": "#/components/schemas/ReplenishmentPreferences"
+                    },
+                    "products": {
+                        "type": "array",
+                        "description": "Requested amount of single product units to be replenished.",
+                        "example": [
+                            {
+                                "sku": "TestSKU",
+                                "quantity": 1
+                            }
+                        ],
+                        "items": {
+                            "$ref": "#/components/schemas/DistributionProduct"
+                        }
+                    }
+                },
+                "description": "This structure represents the payload for creating an AFN Replenishment Order.\nBy default, all replenishment orders created support Partial order preferences.",
+                "example": {
+                    "products": [
+                        {
+                            "quantity": 1,
+                            "sku": "testPen"
+                        }
+                    ],
+                    "preferences": {
+                        "confirmation": "AUTO"
+                    }
+                }
+            },
+            "ReplenishmentOrderListing": {
+                "type": "object",
+                "properties": {
+                    "nextToken": {
+                        "type": "string",
+                        "description": "A token that is used to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
+                        "example": "SampleToken"
+                    },
+                    "orders": {
+                        "type": "array",
+                        "description": "List of replenishment orders.",
+                        "items": {
+                            "$ref": "#/components/schemas/ReplenishmentOrder"
+                        }
+                    }
+                },
+                "description": "A list of paginated replenishment orders filtered by the attributes passed in the request."
+            },
+            "ReplenishmentOrderReference": {
+                "required": [
+                    "orderId"
+                ],
+                "type": "object",
+                "properties": {
+                    "orderId": {
+                        "type": "string",
+                        "description": "Order ID of the Replenishment order."
+                    }
+                },
+                "description": "Response containing the reference identifier for the newly created/updated replenishment order consisting of the order ID."
+            },
+            "ReplenishmentOrderStatus": {
+                "type": "string",
+                "description": "Statuses supported for an replenishment order.",
+                "enum": [
+                    "CONFIRMED",
+                    "CREATED",
+                    "ELIGIBLE",
+                    "EXECUTING",
+                    "FAILURE",
+                    "INELIGIBLE",
+                    "INVENTORY_OUTBOUND",
+                    "SUCCESS",
+                    "VALIDATING"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "description": "The order enters this state as soon as the order is confirmed.",
+                        "value": "CONFIRMED"
+                    },
+                    {
+                        "description": "A newly created replenishment order will always start in this state. On UI, this status is called DRAFT",
+                        "value": "CREATED"
+                    },
+                    {
+                        "description": "This is the only state when an order can be confirmed.",
+                        "value": "ELIGIBLE"
+                    },
+                    {
+                        "description": "The order is being executed in the system.",
+                        "value": "EXECUTING"
+                    },
+                    {
+                        "description": "If any of the shipment reports failure or does not reach the destination,\nthe order status is marked as failed",
+                        "value": "FAILURE"
+                    },
+                    {
+                        "description": "If the validation results in a failure, the order will be in this state.\nIn this state, a validation errors field will be provided to show the\nerrors with the order and potential guidance on fixing them.",
+                        "value": "INELIGIBLE"
+                    },
+                    {
+                        "description": "The order executing is complete and the order is awaiting the moving of inventory.\nIn this status, the shipments for an order will be visible.",
+                        "value": "INVENTORY_OUTBOUND"
+                    },
+                    {
+                        "description": "If all the shipments are successfully received at the destination channel, the order is marked successful.",
+                        "value": "SUCCESS"
+                    },
+                    {
+                        "description": "The order is being validated asynchronously.\nThe order will be in this state after every item update.",
+                        "value": "VALIDATING"
+                    }
+                ]
+            },
+            "ReplenishmentPreferences": {
+                "type": "object",
+                "properties": {
+                    "confirmation": {
+                        "$ref": "#/components/schemas/ConfirmationMode"
+                    }
+                },
+                "description": "Preferences that can be passed in context of a replenishment order"
             },
             "ShipmentLabels": {
                 "required": [

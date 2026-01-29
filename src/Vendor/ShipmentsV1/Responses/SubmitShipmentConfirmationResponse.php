@@ -12,16 +12,16 @@ namespace SellingPartnerApi\Vendor\ShipmentsV1\Responses;
 
 use SellingPartnerApi\Response;
 use SellingPartnerApi\Vendor\ShipmentsV1\Dto\ErrorList;
-use SellingPartnerApi\Vendor\ShipmentsV1\Dto\TransactionReference;
+use SellingPartnerApi\Vendor\ShipmentsV1\Dto\SubmitShipmentConfirmationResult;
 
 final class SubmitShipmentConfirmationResponse extends Response
 {
     /**
-     * @param  ?TransactionReference  $payload  The response payload for the SubmitShipmentConfirmations operation.
+     * @param  ?SubmitShipmentConfirmationResult  $payload  Result payload for successful ASN submission.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
-        public readonly ?TransactionReference $payload = null,
+        public readonly ?SubmitShipmentConfirmationResult $payload = null,
         public readonly ?ErrorList $errors = null,
     ) {}
 }

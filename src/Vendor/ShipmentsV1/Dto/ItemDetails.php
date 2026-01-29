@@ -17,6 +17,10 @@ final class ItemDetails extends Dto
     /**
      * @param  ?string  $purchaseOrderNumber  The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
      * @param  ?string  $lotNumber  The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items.
+     * @param  ?string  $lotNumberSourceReference  The location identifier where the product receives a traceability lot number. Provide this field for products subject to the FDA Food Safety Modernization Act (FSMA) Section 204. When you provide `lotNumberSourceReference`, you must also specify the corresponding `lotNumberSourceType` field.
+     * @param  ?string  $lotNumberSourceType  The identifier type used for the lot number source. Provide this field when you specify `lotNumberSourceReference`.
+     * @param  ?string  $countryOfOrigin  The two-character country code for the country where the product was manufactured or originates. Use ISO 3166-1 alpha-2 format.
+     * @param  ?RegulationReferences  $regulationReferences  Regulatory requirements and compliance information for the item, including reference numbers, verification codes, and exemption codes. Use this field to specify applicable regulations such as EU Deforestation Regulation (EUDR).
      * @param  ?Expiry  $expiry  Expiry refers to the collection of dates required  for certain items. These could be either expiryDate or mfgDate and expiryAfterDuration. These are mandatory for perishable items.
      * @param  ?Money  $maximumRetailPrice  An amount of money, including units in the form of currency.
      * @param  ?string  $handlingCode  Identification of the instructions on how specified item/carton/pallet should be handled.
@@ -24,6 +28,10 @@ final class ItemDetails extends Dto
     public function __construct(
         public ?string $purchaseOrderNumber = null,
         public ?string $lotNumber = null,
+        public ?string $lotNumberSourceReference = null,
+        public ?string $lotNumberSourceType = null,
+        public ?string $countryOfOrigin = null,
+        public ?RegulationReferences $regulationReferences = null,
         public ?Expiry $expiry = null,
         public ?Money $maximumRetailPrice = null,
         public ?string $handlingCode = null,

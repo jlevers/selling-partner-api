@@ -18,7 +18,7 @@ final class ListFinancialEventsPayload extends Dto
 
     /**
      * @param  ?string  $nextToken  When present and not empty, pass this string token in the next request to return the next response page.
-     * @param  ?FinancialEvents  $financialEvents  Contains all information related to a financial event.
+     * @param  ?FinancialEvents  $financialEvents  All the information that is related to a financial event.
      */
     public function __construct(
         public ?string $nextToken = null,

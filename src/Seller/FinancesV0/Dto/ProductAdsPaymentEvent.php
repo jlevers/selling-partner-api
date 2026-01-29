@@ -15,15 +15,15 @@ use SellingPartnerApi\Dto;
 final class ProductAdsPaymentEvent extends Dto
 {
     /**
-     * @param  ?\DateTimeInterface  $postedDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?string  $transactionType  Indicates if the transaction is for a charge or a refund.
      *
      * Possible values:
      *
-     * * charge - Charge
+     * * `charge`
      *
-     * * refund - Refund
-     * @param  ?string  $invoiceId  Identifier for the invoice that the transaction appears in.
+     * * `refund`
+     * @param  ?string  $invoiceId  The identifier for the invoice that includes the transaction.
      * @param  ?Currency  $baseValue  A currency type and amount.
      * @param  ?Currency  $taxValue  A currency type and amount.
      * @param  ?Currency  $transactionValue  A currency type and amount.

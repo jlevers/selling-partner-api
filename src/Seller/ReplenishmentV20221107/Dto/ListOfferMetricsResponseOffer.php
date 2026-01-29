@@ -27,14 +27,14 @@ final class ListOfferMetricsResponseOffer extends Dto
 
     /**
      * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN).
-     * @param  ?float  $notDeliveredDueToOos  The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.
-     * @param  ?float  $totalSubscriptionsRevenue  The revenue generated from subscriptions over a period of time. Applicable to PERFORMANCE timePeriodType.
-     * @param  ?float  $shippedSubscriptionUnits  The number of units shipped to the subscribers over a period of time. Applicable to PERFORMANCE timePeriodType.
-     * @param  ?float  $activeSubscriptions  The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.
-     * @param  ?float  $revenuePenetration  The percentage of total program revenue out of total product revenue. Applicable to PERFORMANCE timePeriodType.
-     * @param  ?float  $lostRevenueDueToOos  The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.
-     * @param  ?float  $couponsRevenuePenetration  The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.
-     * @param  ?float  $shareOfCouponSubscriptions  The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.
+     * @param  ?float  $notDeliveredDueToOos  The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to `FORECAST` `timePeriodType`.
+     * @param  ?float  $totalSubscriptionsRevenue  The revenue generated from subscriptions over a period of time. Applicable to `FORECAST` `timePeriodType`.
+     * @param  ?float  $shippedSubscriptionUnits  The number of units shipped to the subscribers over a period of time. Applicable to `FORECAST` `timePeriodType`.
+     * @param  ?float  $activeSubscriptions  The number of active subscriptions present at the end of the period. Applicable to `FORECAST` `timePeriodType`.
+     * @param  ?float  $revenuePenetration  The percentage of total program revenue out of total product revenue. Applicable to `FORECAST` `timePeriodType`.
+     * @param  ?float  $lostRevenueDueToOos  The revenue that would have been generated had there not been out of stock. Applicable to `FORECAST` `timePeriodType`.
+     * @param  ?float  $couponsRevenuePenetration  The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to `FORECAST` `timePeriodType`.
+     * @param  ?float  $shareOfCouponSubscriptions  The percentage of new subscriptions acquired through coupons. Applicable to `FORECAST` `timePeriodType`.
      * @param  ?float  $next30dayTotalSubscriptionsRevenue  The forecasted total subscription revenue for the next 30 days. Applicable to FORECAST timePeriodType.
      * @param  ?float  $next60dayTotalSubscriptionsRevenue  The forecasted total subscription revenue for the next 60 days. Applicable to FORECAST timePeriodType.
      * @param  ?float  $next90dayTotalSubscriptionsRevenue  The forecasted total subscription revenue for the next 90 days. Applicable to FORECAST timePeriodType.

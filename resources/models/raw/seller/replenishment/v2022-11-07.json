@@ -81,10 +81,27 @@
                                             "revenuePenetrationFor5PercentSellerFunding": 22.2,
                                             "revenuePenetrationFor10PercentSellerFunding": 67.57,
                                             "shareOfCouponSubscriptions": 17.32,
+                                            "signupConversionFor0PercentSellerFunding": 11.7,
+                                            "signupConversionFor5PercentSellerFunding": 7.3,
+                                            "signupConversionFor10PercentSellerFunding": 3.9,
                                             "currencyCode": "USD",
                                             "timeInterval": {
-                                                "endDate": "2023-05-09T22:36:56Z",
-                                                "startDate": "2022-05-09T22:36:56Z"
+                                                "endDate": "2025-05-09T22:36:56Z",
+                                                "startDate": "2024-05-09T22:36:56Z"
+                                            }
+                                        },
+                                        {
+                                            "nonSubscriberLifeTimeValueFromOTP": 95.74,
+                                            "lostSubscriberLifeTimeValueFromOTP": 119.1,
+                                            "lostSubscriberLifeTimeValueFromSNS": 76.56,
+                                            "growingSubscriberLifeTimeValueFromOTP": 113.31,
+                                            "growingSubscriberLifeTimeValueFromSNS": 106.56,
+                                            "establishedSubscriberLifeTimeValueFromOTP": 138.02,
+                                            "establishedSubscriberLifeTimeValueFromSNS": 316.25,
+                                            "currencyCode": "USD",
+                                            "timeInterval": {
+                                                "endDate": "2025-05-09T22:36:56Z",
+                                                "startDate": "2023-05-09T22:36:56Z"
                                             }
                                         }
                                     ]
@@ -137,10 +154,27 @@
                                                 "revenuePenetrationFor5PercentSellerFunding": 22.2,
                                                 "revenuePenetrationFor10PercentSellerFunding": 67.57,
                                                 "shareOfCouponSubscriptions": 17.32,
+                                                "signupConversionFor0PercentSellerFunding": 11.7,
+                                                "signupConversionFor5PercentSellerFunding": 7.3,
+                                                "signupConversionFor10PercentSellerFunding": 3.9,
                                                 "currencyCode": "USD",
                                                 "timeInterval": {
-                                                    "endDate": "2023-05-09T22:36:56Z",
-                                                    "startDate": "2022-05-09T22:36:56Z"
+                                                    "endDate": "2025-05-09T22:36:56Z",
+                                                    "startDate": "2024-05-09T22:36:56Z"
+                                                }
+                                            },
+                                            {
+                                                "nonSubscriberLifeTimeValueFromOTP": 95.74,
+                                                "lostSubscriberLifeTimeValueFromOTP": 119.1,
+                                                "lostSubscriberLifeTimeValueFromSNS": 76.56,
+                                                "growingSubscriberLifeTimeValueFromOTP": 113.31,
+                                                "growingSubscriberLifeTimeValueFromSNS": 106.56,
+                                                "establishedSubscriberLifeTimeValueFromOTP": 138.02,
+                                                "establishedSubscriberLifeTimeValueFromSNS": 316.25,
+                                                "currencyCode": "USD",
+                                                "timeInterval": {
+                                                    "endDate": "2025-05-09T22:36:56Z",
+                                                    "startDate": "2023-05-09T22:36:56Z"
                                                 }
                                             }
                                         ]
@@ -1523,39 +1557,39 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "SHIPPED_SUBSCRIPTION_UNITS",
-                        "description": "The number of units shipped to the subscribers over a period of time. Applicable to PERFORMANCE timePeriodType."
+                        "description": "The number of units shipped to the subscribers over a period of time. Applicable to `PERFORMANCE` `timePeriodType`."
                     },
                     {
                         "value": "TOTAL_SUBSCRIPTIONS_REVENUE",
-                        "description": "The revenue generated from subscriptions over a period of time. Applicable to PERFORMANCE timePeriodType."
+                        "description": "The revenue generated from subscriptions over a period of time. Applicable to `PERFORMANCE` `timePeriodType`."
                     },
                     {
                         "value": "ACTIVE_SUBSCRIPTIONS",
-                        "description": "The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType."
+                        "description": "The number of active subscriptions present at the end of the period. Applicable to `PERFORMANCE` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_90DAYS_SHIPPED_SUBSCRIPTION_UNITS",
-                        "description": "The forecasted shipped subscription units for the next 90 days. Applicable to FORECAST timePeriodType."
+                        "description": "The forecasted shipped subscription units for the next 90 days. Applicable to `PERFORMANCE` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_60DAYS_SHIPPED_SUBSCRIPTION_UNITS",
-                        "description": "The forecasted shipped subscription units for the next 60 days. Applicable to FORECAST timePeriodType."
+                        "description": "The forecasted shipped subscription units for the next 60 days. Applicable to `PERFORMANCE` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_30DAYS_SHIPPED_SUBSCRIPTION_UNITS",
-                        "description": "The forecasted shipped subscription units for the next 30 days. Applicable to FORECAST timePeriodType."
+                        "description": "The forecasted shipped subscription units for the next 30 days. Applicable to `PERFORMANCE` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_90DAYS_TOTAL_SUBSCRIPTIONS_REVENUE",
-                        "description": "The forecasted total subscription revenue for the next 90 days. Applicable to FORECAST timePeriodType."
+                        "description": "The forecasted total subscription revenue for the next 90 days. Applicable to `FORECAST` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_60DAYS_TOTAL_SUBSCRIPTIONS_REVENUE",
-                        "description": "The forecasted total subscription revenue for the next 60 days. Applicable to FORECAST timePeriodType."
+                        "description": "The forecasted total subscription revenue for the next 60 days. Applicable to `FORECAST` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_30DAYS_TOTAL_SUBSCRIPTIONS_REVENUE",
-                        "description": "The forecasted total subscription revenue for the next 30 days. Applicable to FORECAST timePeriodType."
+                        "description": "The forecasted total subscription revenue for the next 30 days. Applicable to `FORECAST` `timePeriodType`."
                     }
                 ]
             },
@@ -1752,7 +1786,9 @@
                     "REVENUE_BY_DELIVERIES",
                     "SUBSCRIBER_RETENTION",
                     "REVENUE_PENETRATION_BY_SELLER_FUNDING",
-                    "SHARE_OF_COUPON_SUBSCRIPTIONS"
+                    "SHARE_OF_COUPON_SUBSCRIPTIONS",
+                    "SUBSCRIBER_LIFETIME_VALUE_BY_CUSTOMER_SEGMENT",
+                    "SIGNUP_CONVERSION_BY_SELLER_FUNDING"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
@@ -1802,6 +1838,14 @@
                     {
                         "value": "SHARE_OF_COUPON_SUBSCRIPTIONS",
                         "description": "The percentage of new subscriptions acquired through coupons."
+                    },
+                    {
+                        "value": "SUBSCRIBER_LIFETIME_VALUE_BY_CUSTOMER_SEGMENT",
+                        "description": "The total customer spend on your catalog over the past 24 months, including both one-time purchases and Subscribe & Save orders. Subscribers with more than 12 months of tenure are categorized as \u2018Established\u2019, while those with less are classified as \u2018Growing\u2019."
+                    },
+                    {
+                        "value": "SIGNUP_CONVERSION_BY_SELLER_FUNDING",
+                        "description": "The percentage of subscriptions created within a specific discount tier out of the total number of new orders placed over the past 12 months (including both one-time purchases and new subscriptions)."
                     }
                 ]
             },
@@ -1861,129 +1905,199 @@
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "totalSubscriptionsRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The revenue generated from subscriptions over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.",
+                        "description": "The revenue generated from subscriptions over a period of time. Applicable for both the `PERFORMANCE` and `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "shippedSubscriptionUnits": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The number of units shipped to the subscribers over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.",
+                        "description": "The number of units shipped to the subscribers over a period of time. Applicable for both the `PERFORMANCE` and `FORECAST` `timePeriodType`.",
                         "format": "int64"
                     },
                     "activeSubscriptions": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The number of active subscriptions present at the end of the period. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "int64"
                     },
                     "subscriberAverageRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "nonSubscriberAverageRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "lostRevenueDueToOOS": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The revenue that would have been generated had there not been out of stock. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "subscriberAverageReorders": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The average reorders per subscriber of the program over a period of 12 months. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The average reorders per subscriber of the program over a period of 12 months. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "nonSubscriberAverageReorders": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The average reorders per non-subscriber of the program over a period of past 12 months. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The average reorders per non-subscriber of the program over a period of past 12 months. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "couponsRevenuePenetration": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "revenueFromSubscriptionsWithMultipleDeliveries": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The subscription revenue generated from subscriptions with over two deliveries over the past 12 months. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The subscription revenue generated from subscriptions with over two deliveries over the past 12 months. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "revenueFromActiveSubscriptionsWithSingleDelivery": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The subscription revenue generated from active subscriptions with one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The subscription revenue generated from active subscriptions with one delivery over the past 12 months. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "revenueFromCancelledSubscriptionsAfterSingleDelivery": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The subscription revenue generated from subscriptions which are cancelled after one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The subscription revenue generated from subscriptions which are cancelled after one delivery over the past 12 months. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "subscriberRetentionFor30Days": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of subscriptions retained after 30 days of subscription creation. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The percentage of subscriptions retained after 30 days of subscription creation. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "subscriberRetentionFor90Days": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of subscriptions retained after 90 days of subscription creation. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The percentage of subscriptions retained after 90 days of subscription creation. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "revenuePenetrationFor0PercentSellerFunding": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of subscription revenue generated by offers with 0% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The percentage of subscription revenue generated by offers with 0% seller-funded discount over the last 12 months. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "revenuePenetrationFor5PercentSellerFunding": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "[Applicable only for Sellers] The percentage of subscription revenue generated by offers with 5% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "[Applicable only for Sellers] The percentage of subscription revenue generated by offers with 5% seller-funded discount over the last 12 months. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "revenuePenetrationFor10PercentSellerFunding": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "[Applicable only for Sellers] The percentage of subscription revenue generated by offers with 10% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "[Applicable only for Sellers] The percentage of subscription revenue generated by offers with 10% seller-funded discount over the last 12 months. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "revenuePenetrationFor5PlusPercentSellerFunding": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "[Applicable only for vendors] The percentage of subscription revenue generated by offers with 5% or above seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "[Applicable only for vendors] The percentage of subscription revenue generated by offers with 5% or above seller-funded discount over the last 12 months. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "shareOfCouponSubscriptions": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The percentage of new subscriptions acquired through coupons. Applicable to `PERFORMANCE` `timePeriodType`.",
+                        "format": "double"
+                    },
+                    "nonSubscriberLifeTimeValueFromOTP": {
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "Total revenue from customers who have made purchases from your catalog but have never subscribed to any products",
+                        "format": "double"
+                    },
+                    "lostSubscriberLifeTimeValueFromOTP": {
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "Revenue from one-time purchase orders placed by customers who previously had subscriptions but currently have none active in your catalog.",
+                        "format": "double"
+                    },
+                    "lostSubscriberLifeTimeValueFromSNS": {
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "Revenue from Subscribe & Save orders placed by customers who previously had subscriptions but currently have none active in your catalog.",
+                        "format": "double"
+                    },
+                    "growingSubscriberLifeTimeValueFromOTP": {
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "Revenue from one-time purchase orders placed by customers who started their first subscription with your catalog within the past 12 months.",
+                        "format": "double"
+                    },
+                    "growingSubscriberLifeTimeValueFromSNS": {
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "Revenue from Subscribe & Save orders placed by customers who started their first subscription with your catalog within the past 12 months.",
+                        "format": "double"
+                    },
+                    "establishedSubscriberLifeTimeValueFromOTP": {
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "Revenue from one-time purchase orders placed by customers who have maintained an active subscription with your catalog for more than 12 months.",
+                        "format": "double"
+                    },
+                    "establishedSubscriberLifeTimeValueFromSNS": {
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "Revenue from Subscribe & Save orders placed by customers who have maintained an active subscription with your catalog for more than 12 months.",
+                        "format": "double"
+                    },
+                    "signupConversionFor0PercentSellerFunding": {
+                        "maximum": 100,
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "Percentage of subscriptions created by offers with 0% seller-funded discount out of the total number of new orders placed over the past 12 months",
+                        "format": "double"
+                    },
+                    "signupConversionFor5PercentSellerFunding": {
+                        "maximum": 100,
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "[Applicable only for Sellers] Percentage of subscriptions created by offers with 5% seller-funded discount out of the total number of new orders placed over the past 12 months",
+                        "format": "double"
+                    },
+                    "signupConversionFor10PercentSellerFunding": {
+                        "maximum": 100,
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "[Applicable only for Sellers] Percentage of subscriptions created by offers with 10% seller-funded discount out of the total number of new orders placed over the past 12 months",
+                        "format": "double"
+                    },
+                    "signupConversionFor5PlusPercentSellerFunding": {
+                        "maximum": 100,
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "[Applicable only for Vendors] Percentage of subscriptions created by offers with 5% or above seller-funded discount out of the total number of new orders placed over the past 12 months",
                         "format": "double"
                     },
                     "timeInterval": {
@@ -2085,52 +2199,52 @@
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "totalSubscriptionsRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The revenue generated from subscriptions over a period of time. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The revenue generated from subscriptions over a period of time. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "shippedSubscriptionUnits": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The number of units shipped to the subscribers over a period of time. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The number of units shipped to the subscribers over a period of time. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "int64"
                     },
                     "activeSubscriptions": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The number of active subscriptions present at the end of the period. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "int64"
                     },
                     "revenuePenetration": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of total program revenue out of total product revenue. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The percentage of total program revenue out of total product revenue. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "lostRevenueDueToOOS": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The revenue that would have been generated had there not been out of stock. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "couponsRevenuePenetration": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "shareOfCouponSubscriptions": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.",
+                        "description": "The percentage of new subscriptions acquired through coupons. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "next30DayTotalSubscriptionsRevenue": {

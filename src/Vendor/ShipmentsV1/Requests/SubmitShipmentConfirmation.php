@@ -44,7 +44,7 @@ class SubmitShipmentConfirmation extends Request implements HasBody
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            202, 400, 403, 404, 413, 415, 429, 500, 503 => SubmitShipmentConfirmationResponse::class,
+            200, 400, 403, 404, 413, 415, 429, 500, 503 => SubmitShipmentConfirmationResponse::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

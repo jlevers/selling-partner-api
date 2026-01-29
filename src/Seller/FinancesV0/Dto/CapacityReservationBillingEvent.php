@@ -22,8 +22,8 @@ final class CapacityReservationBillingEvent extends Dto
     ];
 
     /**
-     * @param  ?string  $transactionType  Indicates the type of transaction. For example, FBA Inventory Fee
-     * @param  ?\DateTimeInterface  $postedDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?string  $transactionType  The transaction type. For example, FBA Inventory Fee.
+     * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?string  $description  A short description of the capacity reservation billing event.
      * @param  ?Currency  $transactionAmount  A currency type and amount.
      */

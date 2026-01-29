@@ -5,7 +5,11 @@ namespace SellingPartnerApi\Seller\InvoicesV20240619;
 use Saloon\Http\Response;
 use SellingPartnerApi\BaseResource;
 use SellingPartnerApi\Seller\InvoicesV20240619\Dto\ExportInvoicesRequest;
+use SellingPartnerApi\Seller\InvoicesV20240619\Dto\GovernmentInvoiceRequest;
+use SellingPartnerApi\Seller\InvoicesV20240619\Requests\CreateGovernmentInvoice;
 use SellingPartnerApi\Seller\InvoicesV20240619\Requests\CreateInvoicesExport;
+use SellingPartnerApi\Seller\InvoicesV20240619\Requests\GetGovernmentInvoiceDocument;
+use SellingPartnerApi\Seller\InvoicesV20240619\Requests\GetGovernmentInvoiceStatus;
 use SellingPartnerApi\Seller\InvoicesV20240619\Requests\GetInvoice;
 use SellingPartnerApi\Seller\InvoicesV20240619\Requests\GetInvoices;
 use SellingPartnerApi\Seller\InvoicesV20240619\Requests\GetInvoicesAttributes;
@@ -76,6 +80,56 @@ class Api extends BaseResource
     public function getInvoicesExport(string $exportId): Response
     {
         $request = new GetInvoicesExport($exportId);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $marketplaceId  The invoices status will match the marketplace that you specify.
+     * @param  string  $transactionType  Marketplace specific classification of the transaction type that originated the invoice. Check 'transactionType' options using 'getInvoicesAttributes' operation.
+     * @param  string  $shipmentId  The unique shipment identifier to get an invoice for.
+     * @param  string  $invoiceType  Marketplace specific classification of the invoice type. Check 'invoiceType' options using 'getInvoicesAttributes' operation.
+     * @param  ?string  $inboundPlanId  The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+     */
+    public function getGovernmentInvoiceStatus(
+        string $marketplaceId,
+        string $transactionType,
+        string $shipmentId,
+        string $invoiceType,
+        ?string $inboundPlanId = null,
+    ): Response {
+        $request = new GetGovernmentInvoiceStatus($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  GovernmentInvoiceRequest  $governmentInvoiceRequest  Information required to create the government invoice.
+     */
+    public function createGovernmentInvoice(GovernmentInvoiceRequest $governmentInvoiceRequest): Response
+    {
+        $request = new CreateGovernmentInvoice($governmentInvoiceRequest);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $shipmentId  The unique shipment identifier to get an invoice for.
+     * @param  string  $marketplaceId  The invoices returned will match the marketplace that you specify.
+     * @param  string  $transactionType  Marketplace specific classification of the transaction type that originated the invoice. Check 'transactionType' options using 'getInvoicesAttributes' operation.
+     * @param  string  $invoiceType  Marketplace specific classification of the invoice type. Check 'invoiceType' options using 'getInvoicesAttributes' operation.
+     * @param  ?string  $inboundPlanId  The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+     * @param  ?string  $fileFormat  Requested file format. Default is XML
+     */
+    public function getGovernmentInvoiceDocument(
+        string $shipmentId,
+        string $marketplaceId,
+        string $transactionType,
+        string $invoiceType,
+        ?string $inboundPlanId = null,
+        ?string $fileFormat = null,
+    ): Response {
+        $request = new GetGovernmentInvoiceDocument($shipmentId, $marketplaceId, $transactionType, $invoiceType, $inboundPlanId, $fileFormat);
 
         return $this->connector->send($request);
     }

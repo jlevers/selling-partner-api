@@ -15,10 +15,10 @@ use SellingPartnerApi\Dto;
 final class RegulationReferences extends Dto
 {
     /**
-     * @param  ?string  $dueDiligenceReference  The EUDR Due Diligence Reference number from vendor's upstream Due Dilligence Statement (DDS) submitted to EU Commison portal or provided to Onix.
-     * @param  ?string  $dueDiligenceVerification  The EUDR Due Diligence Verification number provided by EU Commision associated with submitted DDR.
-     * @param  ?string  $dueDiligenceInformation  The EUDR Due Diligence Information for EUDR that was already pre-loaded in Vendor Central within Amazon compliance collection experience.
-     * @param  ?string  $dueDiligenceExemptionCode  The Due Diligence exemption code for EUDR products indicating the item is exempt from due diligence requirements.
+     * @param  ?string  $dueDiligenceReference  The reference number from the vendor's EUDR Due Diligence Statement (DDS) submitted to the EU Commission portal or provided to Amazon through ONIX feed.
+     * @param  ?string  $dueDiligenceVerification  The EUDR Due Diligence verification number provided by the EU Commission for the submitted DDS.
+     * @param  ?string  $dueDiligenceInformation  The EUDR Due Diligence information pre-loaded in Vendor Central.
+     * @param  ?string  $dueDiligenceExemptionCode  The exemption code for EUDR products exempt from due diligence requirements.
      */
     public function __construct(
         public ?string $dueDiligenceReference = null,

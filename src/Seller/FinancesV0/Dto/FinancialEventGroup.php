@@ -34,18 +34,17 @@ final class FinancialEventGroup extends Dto
      *
      * Possible values:
      *
-     * * Open
-     *
-     * * Closed
+     * * `Open`
+     * * `Closed`
      * @param  ?string  $fundTransferStatus  The status of the fund transfer.
      * @param  ?Currency  $originalTotal  A currency type and amount.
      * @param  ?Currency  $convertedTotal  A currency type and amount.
-     * @param  ?\DateTimeInterface  $fundTransferDate  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?\DateTimeInterface  $fundTransferDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?string  $traceId  The trace identifier used by sellers to look up transactions externally.
      * @param  ?string  $accountTail  The account tail of the payment instrument.
      * @param  ?Currency  $beginningBalance  A currency type and amount.
-     * @param  ?\DateTimeInterface  $financialEventGroupStart  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
-     * @param  ?\DateTimeInterface  $financialEventGroupEnd  Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+     * @param  ?\DateTimeInterface  $financialEventGroupStart  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     * @param  ?\DateTimeInterface  $financialEventGroupEnd  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function __construct(
         public ?string $financialEventGroupId = null,

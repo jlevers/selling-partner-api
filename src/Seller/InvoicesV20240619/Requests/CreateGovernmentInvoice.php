@@ -8,43 +8,45 @@
 
 declare(strict_types=1);
 
-namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Requests;
+namespace SellingPartnerApi\Seller\InvoicesV20240619\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\EmptyResponse;
 use SellingPartnerApi\Request;
-use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\GetDeliveryOfferingsRequest;
-use SellingPartnerApi\Seller\FBAOutboundV20200701\Responses\GetDeliveryOfferingsResponse;
+use SellingPartnerApi\Seller\InvoicesV20240619\Dto\GovernmentInvoiceRequest;
+use SellingPartnerApi\Seller\InvoicesV20240619\Responses\ErrorList;
 
 /**
- * deliveryOfferings
+ * createGovernmentInvoice
  */
-class DeliveryOfferings extends Request implements HasBody
+class CreateGovernmentInvoice extends Request implements HasBody
 {
     use HasJsonBody;
 
     protected Method $method = Method::POST;
 
     /**
-     * @param  GetDeliveryOfferingsRequest  $getDeliveryOfferingsRequest  The request body schema for the `getDeliveryOfferings` operation.
+     * @param  GovernmentInvoiceRequest  $governmentInvoiceRequest  Information required to create the government invoice.
      */
     public function __construct(
-        public GetDeliveryOfferingsRequest $getDeliveryOfferingsRequest,
+        public GovernmentInvoiceRequest $governmentInvoiceRequest,
     ) {}
 
     public function resolveEndpoint(): string
     {
-        return '/fba/outbound/2020-07-01/deliveryOfferings';
+        return '/tax/invoices/2024-06-19/governmentInvoiceRequests';
     }
 
-    public function createDtoFromResponse(Response $response): GetDeliveryOfferingsResponse
+    public function createDtoFromResponse(Response $response): EmptyResponse|ErrorList
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            200, 400, 401, 403, 404, 429, 500, 503 => GetDeliveryOfferingsResponse::class,
+            204 => EmptyResponse::class,
+            400, 401, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 
@@ -53,6 +55,6 @@ class DeliveryOfferings extends Request implements HasBody
 
     public function defaultBody(): array
     {
-        return $this->getDeliveryOfferingsRequest->toArray();
+        return $this->governmentInvoiceRequest->toArray();
     }
 }

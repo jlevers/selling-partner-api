@@ -19,6 +19,7 @@ final class OrdersList extends Dto
         'nextToken' => 'NextToken',
         'lastUpdatedBefore' => 'LastUpdatedBefore',
         'createdBefore' => 'CreatedBefore',
+        'buyerEmail' => 'BuyerEmail',
     ];
 
     protected static array $complexArrayTypes = ['orders' => Order::class];
@@ -28,11 +29,13 @@ final class OrdersList extends Dto
      * @param  ?string  $nextToken  When present and not empty, pass this string token in the next request to return the next response page.
      * @param  ?string  $lastUpdatedBefore  Use this date to select orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. Use [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format for all dates.
      * @param  ?string  $createdBefore  Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+     * @param  ?string  $buyerEmail  The anonymized email address of the buyer.
      */
     public function __construct(
         public array $orders,
         public ?string $nextToken = null,
         public ?string $lastUpdatedBefore = null,
         public ?string $createdBefore = null,
+        public ?string $buyerEmail = null,
     ) {}
 }

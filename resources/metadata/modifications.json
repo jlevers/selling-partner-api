@@ -106,6 +106,26 @@
               "description": "The name of the automated carrier."
             }
           }
+        },
+        {
+            "action": "merge",
+            "path": "components.schemas.OrdersList.properties",
+            "value": {
+                "BuyerEmail": {
+                    "type": "string",
+                    "description": "The anonymized email address of the buyer."
+                }
+            }
+        },
+        {
+            "action": "merge",
+            "path": "components.schemas.BuyerInfo.properties",
+            "value": {
+                "BuyerEmail": {
+                    "type": "string",
+                    "description": "The anonymized email address of the buyer."
+                }
+            }
         }
       ]
     },

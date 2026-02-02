@@ -3911,6 +3911,10 @@
                     "CreatedBefore": {
                         "type": "string",
                         "description": "Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format."
+                    },
+                    "BuyerEmail": {
+                        "type": "string",
+                        "description": "The anonymized email address of the buyer."
                     }
                 },
                 "description": "A list of orders along with additional information to make subsequent API calls."
@@ -5776,6 +5780,10 @@
                     "PurchaseOrderNumber": {
                         "type": "string",
                         "description": "The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout."
+                    },
+                    "BuyerEmail": {
+                        "type": "string",
+                        "description": "The anonymized email address of the buyer."
                     }
                 },
                 "description": "Buyer information."

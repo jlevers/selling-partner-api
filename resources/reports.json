@@ -764,14 +764,14 @@
   },
   "GET_FLAT_FILE_VAT_INVOICE_DATA_REPORT": {
     "contentType": "text/tab-separated-values",
-    "restricted": true,
+    "restricted": false,
     "requestable": true,
     "schedulable": true,
     "quoteEnclosure": false
   },
   "GET_XML_VAT_INVOICE_DATA_REPORT": {
     "contentType": "text/xml",
-    "restricted": true,
+    "restricted": false,
     "requestable": true,
     "schedulable": true,
     "quoteEnclosure": false

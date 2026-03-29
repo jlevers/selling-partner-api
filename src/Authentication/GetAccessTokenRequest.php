@@ -22,6 +22,12 @@ class GetAccessTokenRequest extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
+     * Allow the token endpoint to be an absolute URL, since it points to a different
+     * host (api.amazon.com) than the SP-API connector's base URL.
+     */
+    public ?bool $allowBaseUrlOverride = true;
+
+    /**
      * Requires the authorization code and OAuth 2 config.
      *
      * @param  string[]  $scopes

@@ -38,7 +38,8 @@ class OAuth extends Connector
             ->setClientId($this->clientId)
             ->setClientSecret($this->clientSecret)
             ->setRedirectUri($this->redirectUri)
-            ->setTokenEndpoint(self::TOKEN_URL);
+            ->setTokenEndpoint(self::TOKEN_URL)
+            ->setAllowBaseUrlOverride(true);
     }
 
     public function resolveBaseUrl(): string

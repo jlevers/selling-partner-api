@@ -126,6 +126,16 @@
                     "description": "The anonymized email address of the buyer."
                 }
             }
+        },
+        {
+            "action": "merge",
+            "path": "components.schemas.OrderBuyerInfo.properties",
+            "value": {
+                "BuyerEmail": {
+                    "type": "string",
+                    "description": "The anonymized email address of the buyer."
+                }
+            }
         }
       ]
     },

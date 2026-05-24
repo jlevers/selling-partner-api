@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class Origin extends Dto
 {
     /**
-     * @param  string  $countryCode  The two digit country code the items should ship from. In ISO 3166-1 alpha-2 format.
+     * @param  string  $countryCode  The two-digit country code (in ISO 3166-1 alpha-2 format) for the country where the items will ship from.
      */
     public function __construct(
         public string $countryCode,

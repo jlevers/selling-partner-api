@@ -1296,7 +1296,6 @@
                         "style": "form",
                         "explode": false,
                         "schema": {
-                            "maxItems": 1,
                             "type": "array",
                             "items": {
                                 "type": "string"

@@ -19,6 +19,7 @@ final class AddressExtendedFields extends Dto
         'streetNumber' => 'StreetNumber',
         'complement' => 'Complement',
         'neighborhood' => 'Neighborhood',
+        'geoCoordinates' => 'GeoCoordinates',
     ];
 
     /**
@@ -26,11 +27,13 @@ final class AddressExtendedFields extends Dto
      * @param  ?string  $streetNumber  The house, building, or property number associated with the location's street address.
      * @param  ?string  $complement  The floor number/unit number in the building/private house number.
      * @param  ?string  $neighborhood  The neighborhood. This value is only used in some countries (such as Brazil).
+     * @param  ?GeoCoordinates  $geoCoordinates  The latitude and longitude coordinates of the shipping address using the WGS84 coordinate system.
      */
     public function __construct(
         public ?string $streetName = null,
         public ?string $streetNumber = null,
         public ?string $complement = null,
         public ?string $neighborhood = null,
+        public ?GeoCoordinates $geoCoordinates = null,
     ) {}
 }

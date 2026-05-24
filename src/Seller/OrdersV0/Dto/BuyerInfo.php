@@ -15,27 +15,27 @@ use SellingPartnerApi\Dto;
 final class BuyerInfo extends Dto
 {
     protected static array $attributeMap = [
+        'buyerEmail' => 'BuyerEmail',
         'buyerName' => 'BuyerName',
         'buyerCounty' => 'BuyerCounty',
         'buyerTaxInfo' => 'BuyerTaxInfo',
         'purchaseOrderNumber' => 'PurchaseOrderNumber',
-        'buyerEmail' => 'BuyerEmail',
     ];
 
     /**
+     * @param  ?string  $buyerEmail  The anonymized email address of the buyer.
      * @param  ?string  $buyerName  The buyer name or the recipient name.
      * @param  ?string  $buyerCounty  The county of the buyer.
      *
      * **Note**: This attribute is only available in the Brazil marketplace.
      * @param  ?BuyerTaxInfo  $buyerTaxInfo  Tax information about the buyer.
      * @param  ?string  $purchaseOrderNumber  The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.
-     * @param  ?string  $buyerEmail  The anonymized email address of the buyer.
      */
     public function __construct(
+        public ?string $buyerEmail = null,
         public ?string $buyerName = null,
         public ?string $buyerCounty = null,
         public ?BuyerTaxInfo $buyerTaxInfo = null,
         public ?string $purchaseOrderNumber = null,
-        public ?string $buyerEmail = null,
     ) {}
 }

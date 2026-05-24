@@ -13,6 +13,8 @@ use Symfony\Component\Console\Attribute\AsCommand;
 )]
 class RefactorSchemas extends AbstractSchemasCommand
 {
+    protected static string $action = 'Refactoring';
+
     protected function handleSchema(Schema $schema): int
     {
         $schema->refactor();

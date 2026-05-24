@@ -114,10 +114,14 @@ class Api extends BaseResource
     /**
      * @param  string  $reportDocumentId  The identifier for the report document.
      * @param  string  $reportType  The report type of the report document.
+     * @param  ?bool  $enableContentEncodingUrlHeader  When `true`, the Content-Encoding header on the returned URL is set to `gzip` instead of the default `identity` when `compressionAlgorithm` is `GZIP`. This allows automatic decompression by HTTP clients.
      */
-    public function getReportDocument(string $reportDocumentId, string $reportType): Response
-    {
-        $request = new GetReportDocument($reportDocumentId, $reportType);
+    public function getReportDocument(
+        string $reportDocumentId,
+        string $reportType,
+        ?bool $enableContentEncodingUrlHeader = null,
+    ): Response {
+        $request = new GetReportDocument($reportDocumentId, $reportType, $enableContentEncodingUrlHeader);
 
         return $this->connector->send($request);
     }

@@ -18,7 +18,7 @@ final class PackageStatus extends Dto
      * @param  string  $status  Primary status classification of the package in the shipping workflow.
      * @param  ?string  $detailedStatus  Granular status information providing specific details about the package's current location and handling stage.
      *
-     * **Possible values:**
+     * **Possible values**:
      * - `PENDING_SCHEDULE` (Package awaiting pickup scheduling)
      * - `PENDING_PICK_UP` (Package ready for carrier collection from seller)
      * - `PENDING_DROP_OFF` (Package awaiting seller delivery to carrier)

@@ -44,7 +44,7 @@ final class ShipmentDetail extends Dto
      * @param  ?\DateTimeInterface  $purchaseDate  The date and time when the order was created.
      * @param  ?Address  $shippingAddress  The shipping address details of the shipment.
      * @param  ?string[]  $paymentMethodDetails  The list of payment method details.
-     * @param  PaymentInformation[]|null  $payments  List of payment transactions
+     * @param  PaymentInformation[]|null  $payments  A list of payment transactions.
      * @param  ?string  $marketplaceId  The identifier for the marketplace where the order was placed.
      * @param  ?string  $sellerId  The seller identifier.
      * @param  ?string  $buyerName  The name of the buyer.

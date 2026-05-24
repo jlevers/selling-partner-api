@@ -17,10 +17,10 @@ final class PrepDetails extends Dto
     protected static array $complexArrayTypes = ['prepInstructions' => PrepInstruction::class];
 
     /**
-     * @param  ?string  $labelOwner  The entity that labels the products.
+     * @param  ?string  $labelOwner  The entity that labels the products. `AMAZON` is not an accepted value in the US marketplace.
      * @param  ?string  $prepCategory  The preparation category for shipping an item to Amazon's fulfillment network.
      * @param  PrepInstruction[]|null  $prepInstructions  Contains information about the preparation of the inbound products. The system auto-generates this field with the use of the `prepCategory`, and if you attempt to pass a value for this field, the system will ignore it.
-     * @param  ?string  $prepOwner  The owner of the preparations, if special preparations are required.
+     * @param  ?string  $prepOwner  The owner of the preparations, if special preparations are required. `AMAZON` is not an accepted value in the US marketplace.
      */
     public function __construct(
         public ?string $labelOwner = null,

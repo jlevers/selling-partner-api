@@ -15,6 +15,8 @@ class GenerateSchemas extends AbstractSchemasCommand
 {
     use HasSchemaArgs;
 
+    protected static string $action = 'Generating';
+
     protected function handleSchema(Schema $schema): int
     {
         $schema->generate();

@@ -24,10 +24,10 @@ final class PaymentInformation extends Dto
 
     /**
      * @param  ?string  $paymentMethod  Payment methods
-     * @param  ?string  $acquirerId  Government ID of acquirer
-     * @param  ?string  $cardBrand  Credit card brand (if payment method is CreditCard)
+     * @param  ?string  $acquirerId  The government ID of the acquirer.
+     * @param  ?string  $cardBrand  The credit card brand if the payment method is `CreditCard`.
      * @param  ?Money  $paymentValue  The currency type and amount.
-     * @param  ?string  $authorizationCode  Authorization code for this payment
+     * @param  ?string  $authorizationCode  The authorization code of this payment.
      */
     public function __construct(
         public ?string $paymentMethod = null,

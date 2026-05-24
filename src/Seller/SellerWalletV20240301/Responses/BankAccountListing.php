@@ -17,7 +17,7 @@ final class BankAccountListing extends Response
     protected static array $complexArrayTypes = ['accounts' => BankAccount::class];
 
     /**
-     * @param  BankAccount[]  $accounts  Collection that holds BankAccount
+     * @param  BankAccount[]  $accounts  A list of bank accounts.
      */
     public function __construct(
         public readonly array $accounts,

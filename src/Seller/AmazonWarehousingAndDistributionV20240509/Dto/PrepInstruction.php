@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class PrepInstruction extends Dto
 {
     /**
-     * @param  ?string  $prepOwner  The owner of the preparations, if special preparations are required.
+     * @param  ?string  $prepOwner  The owner of the preparations, if special preparations are required. `AMAZON` is not an accepted value in the US marketplace.
      * @param  ?string  $prepType  The type of preparation to be done. For more information about preparing items, refer to [Prep guidance](https://sellercentral.amazon.com/help/hub/reference/external/GF4G7547KSLDX2KC) on Seller Central.
      */
     public function __construct(

@@ -21,9 +21,9 @@ final class TransferRatePreview extends Response
 
     /**
      * @param  Currency  $baseAmount  A currency type and amount.
-     * @param  FxRateDetails  $fxRateDetails  Foreign exchange rate details displayed when transfer preview is requested.
+     * @param  FxRateDetails  $fxRateDetails  Foreign exchange rate details.
      * @param  Currency  $transferAmount  A currency type and amount.
-     * @param  Fee[]  $fees  List of fees
+     * @param  Fee[]  $fees  A list of fees.
      */
     public function __construct(
         public readonly Currency $baseAmount,

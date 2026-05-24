@@ -17,7 +17,9 @@ final class TransactionInstrumentDetails extends Dto
 {
     /**
      * @param  BankAccount  $bankAccount  Details of an Amazon Seller Wallet bank account. This account is used to hold the money that a Seller Wallet customer earns by selling items.
-     * @param  string  $bankAccountNumber  This field would be used to populate the bank account number of the destination payment method. The field is intentionally not included in any other Schemas since Amazon internal systems will never receive it in unencrypted format, so field won't be part of the request signature
+     * @param  string  $bankAccountNumber  The bank account number of the destination payment method.
+     *
+     * **Note:** This field is encrypted before Amazon receives it, so should not be used to generate `destAccountDigitalSignature`, and should not be included in the request signature.
      * @param  string  $accountHolderName  The bank account holder's name (expected to be an Amazon customer).
      *
      * **Note:** This field is encrypted before Amazon receives it, so should not be used to generate `destAccountDigitalSignature`, and should not be included in the request signature.

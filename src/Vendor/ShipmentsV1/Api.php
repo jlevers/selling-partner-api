@@ -4,12 +4,10 @@ namespace SellingPartnerApi\Vendor\ShipmentsV1;
 
 use Saloon\Http\Response;
 use SellingPartnerApi\BaseResource;
-use SellingPartnerApi\Vendor\ShipmentsV1\Dto\SubmitShipmentConfirmationRequest;
 use SellingPartnerApi\Vendor\ShipmentsV1\Dto\SubmitShipmentConfirmationsRequest;
 use SellingPartnerApi\Vendor\ShipmentsV1\Dto\SubmitShipments as SubmitShipments1;
 use SellingPartnerApi\Vendor\ShipmentsV1\Requests\GetShipmentDetails;
 use SellingPartnerApi\Vendor\ShipmentsV1\Requests\GetShipmentLabels;
-use SellingPartnerApi\Vendor\ShipmentsV1\Requests\SubmitShipmentConfirmation;
 use SellingPartnerApi\Vendor\ShipmentsV1\Requests\SubmitShipmentConfirmations;
 use SellingPartnerApi\Vendor\ShipmentsV1\Requests\SubmitShipments;
 
@@ -22,17 +20,6 @@ class Api extends BaseResource
         SubmitShipmentConfirmationsRequest $submitShipmentConfirmationsRequest,
     ): Response {
         $request = new SubmitShipmentConfirmations($submitShipmentConfirmationsRequest);
-
-        return $this->connector->send($request);
-    }
-
-    /**
-     * @param  SubmitShipmentConfirmationRequest  $submitShipmentConfirmationRequest  The request schema for the SubmitShipmentConfirmation operation.
-     */
-    public function submitShipmentConfirmation(
-        SubmitShipmentConfirmationRequest $submitShipmentConfirmationRequest,
-    ): Response {
-        $request = new SubmitShipmentConfirmation($submitShipmentConfirmationRequest);
 
         return $this->connector->send($request);
     }

@@ -18,6 +18,7 @@ final class ServiceJob extends Dto
         'preferredAppointmentTimes' => AppointmentTime::class,
         'appointments' => Appointment::class,
         'associatedItems' => AssociatedItem::class,
+        'payments' => Payment::class,
     ];
 
     /**
@@ -35,6 +36,7 @@ final class ServiceJob extends Dto
      * @param  ?Buyer  $buyer  Information about the buyer.
      * @param  AssociatedItem[]|null  $associatedItems  A list of items associated with the service job.
      * @param  ?ServiceLocation  $serviceLocation  Information about the location of the service job.
+     * @param  Payment[]|null  $payments  A list that contains payment information for the service job.
      */
     public function __construct(
         public ?\DateTimeInterface $createTime = null,
@@ -51,5 +53,6 @@ final class ServiceJob extends Dto
         public ?Buyer $buyer = null,
         public ?array $associatedItems = null,
         public ?ServiceLocation $serviceLocation = null,
+        public ?array $payments = null,
     ) {}
 }

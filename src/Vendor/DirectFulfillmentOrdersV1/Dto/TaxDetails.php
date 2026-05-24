@@ -11,13 +11,14 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Vendor\DirectFulfillmentOrdersV1\Dto;
 
 use SellingPartnerApi\Dto;
+use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV1\Dto\TaxDetails as TaxDetails1;
 
 final class TaxDetails extends Dto
 {
-    protected static array $complexArrayTypes = ['taxLineItem' => TaxDetails::class];
+    protected static array $complexArrayTypes = ['taxLineItem' => TaxDetails1::class];
 
     /**
-     * @param  TaxDetails[]|null  $taxLineItem  A list of tax line items.
+     * @param  TaxDetails1[]|null  $taxLineItem  A list of tax line items.
      */
     public function __construct(
         public ?array $taxLineItem = null,

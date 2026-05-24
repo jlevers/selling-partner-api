@@ -26,9 +26,11 @@ class GetFeedDocument extends Request
 
     /**
      * @param  string  $feedDocumentId  The identifier of the feed document.
+     * @param  ?bool  $enableContentEncodingUrlHeader  When `true`, the Content-Encoding header on the returned URL is set to `gzip` instead of the default `identity` when `compressionAlgorithm` is `GZIP`. This allows automatic decompression by HTTP clients.
      */
     public function __construct(
         protected string $feedDocumentId,
+        protected ?bool $enableContentEncodingUrlHeader = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -46,5 +48,10 @@ class GetFeedDocument extends Request
         };
 
         return $responseCls::deserialize($response->json());
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['enableContentEncodingUrlHeader' => $this->enableContentEncodingUrlHeader]);
     }
 }

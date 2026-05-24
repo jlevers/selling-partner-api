@@ -16,7 +16,7 @@ final class Destination extends Dto
 {
     /**
      * @param  ?VariablePrecisionAddress  $deliveryAddress  A physical address with varying degrees of precision. A more precise address can provide more accurate results than country code and postal code alone.
-     * @param  ?string  $ipAddress  An IP Address.
+     * @param  ?string  $ipAddress  An IP address.
      */
     public function __construct(
         public ?VariablePrecisionAddress $deliveryAddress = null,

@@ -80,10 +80,11 @@ class Api extends BaseResource
 
     /**
      * @param  string  $feedDocumentId  The identifier of the feed document.
+     * @param  ?bool  $enableContentEncodingUrlHeader  When `true`, the Content-Encoding header on the returned URL is set to `gzip` instead of the default `identity` when `compressionAlgorithm` is `GZIP`. This allows automatic decompression by HTTP clients.
      */
-    public function getFeedDocument(string $feedDocumentId): Response
+    public function getFeedDocument(string $feedDocumentId, ?bool $enableContentEncodingUrlHeader = null): Response
     {
-        $request = new GetFeedDocument($feedDocumentId);
+        $request = new GetFeedDocument($feedDocumentId, $enableContentEncodingUrlHeader);
 
         return $this->connector->send($request);
     }

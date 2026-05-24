@@ -1703,7 +1703,7 @@
                                                     "IsFulfilledByAmazon": false
                                                 }
                                             ],
-                                            "MarketplaceID": "ATVPDKIKX0DER"
+                                            "marketplaceId": "ATVPDKIKX0DER"
                                         }
                                     }
                                 },
@@ -1892,7 +1892,7 @@
                                                     "IsFulfilledByAmazon": false
                                                 }
                                             ],
-                                            "MarketplaceID": "ATVPDKIKX0DER"
+                                            "marketplaceId": "ATVPDKIKX0DER"
                                         }
                                     }
                                 }
@@ -2289,7 +2289,7 @@
                                                     "IsFulfilledByAmazon": false
                                                 }
                                             ],
-                                            "MarketplaceID": "ATVPDKIKX0DER"
+                                            "marketplaceId": "ATVPDKIKX0DER"
                                         }
                                     }
                                 },
@@ -2478,7 +2478,7 @@
                                                     "IsFulfilledByAmazon": false
                                                 }
                                             ],
-                                            "MarketplaceID": "ATVPDKIKX0DER"
+                                            "marketplaceId": "ATVPDKIKX0DER"
                                         }
                                     }
                                 }
@@ -2888,7 +2888,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -3046,7 +3046,7 @@
                                                                 "IsFulfilledByAmazon": true
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -3492,7 +3492,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -3657,7 +3657,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -3821,7 +3821,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -4405,7 +4405,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -4587,7 +4587,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -4791,7 +4791,7 @@
                                                                 "IsFulfilledByAmazon": true
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -4905,7 +4905,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -4938,7 +4938,7 @@
                                                             "TotalOfferCount": 0
                                                         },
                                                         "Offers": [],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -5804,7 +5804,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -5988,7 +5988,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -6442,7 +6442,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -6609,7 +6609,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -6773,7 +6773,7 @@
                                                                 "IsFulfilledByAmazon": false
                                                             }
                                                         ],
-                                                        "MarketplaceID": "ATVPDKIKX0DER"
+                                                        "marketplaceId": "ATVPDKIKX0DER"
                                                     }
                                                 },
                                                 "headers": {
@@ -7220,14 +7220,14 @@
                 "required": [
                     "Identifier",
                     "ItemCondition",
-                    "MarketplaceID",
                     "Offers",
                     "Summary",
+                    "marketplaceId",
                     "status"
                 ],
                 "type": "object",
                 "properties": {
-                    "MarketplaceID": {
+                    "marketplaceId": {
                         "type": "string",
                         "description": "A marketplace identifier."
                     },

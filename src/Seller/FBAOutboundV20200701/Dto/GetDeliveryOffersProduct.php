@@ -16,7 +16,7 @@ final class GetDeliveryOffersProduct extends Dto
 {
     /**
      * @param  ProductIdentifier  $productIdentifier  Product identifier input that locates a product for MCF.
-     * @param  ?Amount  $amount  A quantity based on unit of measure.
+     * @param  ?Amount  $amount  A quantity based on the specified unit of measurement.
      */
     public function __construct(
         public ProductIdentifier $productIdentifier,

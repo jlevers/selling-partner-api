@@ -4,7 +4,6 @@ namespace SellingPartnerApi\Seller\MessagingV1;
 
 use Saloon\Http\Response;
 use SellingPartnerApi\BaseResource;
-use SellingPartnerApi\Seller\MessagingV1\Dto\CreateAmazonMotorsRequest;
 use SellingPartnerApi\Seller\MessagingV1\Dto\CreateConfirmCustomizationDetailsRequest;
 use SellingPartnerApi\Seller\MessagingV1\Dto\CreateConfirmDeliveryDetailsRequest;
 use SellingPartnerApi\Seller\MessagingV1\Dto\CreateConfirmOrderDetailsRequest;
@@ -15,7 +14,6 @@ use SellingPartnerApi\Seller\MessagingV1\Dto\CreateUnexpectedProblemRequest;
 use SellingPartnerApi\Seller\MessagingV1\Dto\CreateWarrantyRequest;
 use SellingPartnerApi\Seller\MessagingV1\Dto\InvoiceRequest;
 use SellingPartnerApi\Seller\MessagingV1\Requests\ConfirmCustomizationDetails;
-use SellingPartnerApi\Seller\MessagingV1\Requests\CreateAmazonMotors;
 use SellingPartnerApi\Seller\MessagingV1\Requests\CreateConfirmDeliveryDetails;
 use SellingPartnerApi\Seller\MessagingV1\Requests\CreateConfirmOrderDetails;
 use SellingPartnerApi\Seller\MessagingV1\Requests\CreateConfirmServiceDetails;
@@ -111,21 +109,6 @@ class Api extends BaseResource
         array $marketplaceIds,
     ): Response {
         $request = new CreateConfirmServiceDetails($amazonOrderId, $createConfirmServiceDetailsRequest, $marketplaceIds);
-
-        return $this->connector->send($request);
-    }
-
-    /**
-     * @param  string  $amazonOrderId  An Amazon order identifier. This identifies the order for which a message is sent.
-     * @param  CreateAmazonMotorsRequest  $createAmazonMotorsRequest  The request schema for the createAmazonMotors operation.
-     * @param  array  $marketplaceIds  A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
-     */
-    public function createAmazonMotors(
-        string $amazonOrderId,
-        CreateAmazonMotorsRequest $createAmazonMotorsRequest,
-        array $marketplaceIds,
-    ): Response {
-        $request = new CreateAmazonMotors($amazonOrderId, $createAmazonMotorsRequest, $marketplaceIds);
 
         return $this->connector->send($request);
     }

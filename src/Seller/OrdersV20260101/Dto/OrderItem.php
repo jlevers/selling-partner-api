@@ -14,11 +14,14 @@ use SellingPartnerApi\Dto;
 
 final class OrderItem extends Dto
 {
+    protected static array $complexArrayTypes = ['associatedOrderItems' => AssociatedOrderItem::class];
+
     /**
      * @param  string  $orderItemId  A unique identifier for this specific item within the order.
      * @param  int  $quantityOrdered  The number of units of this item that the customer ordered.
      * @param  ItemProduct  $product  Product information for an order item.
      * @param  ?Measurement  $measurement  Specifies the unit of measure and quantity for items that are sold by weight, volume, length, or other measurements rather than simple count.
+     * @param  AssociatedOrderItem[]|null  $associatedOrderItems  A list of order items associated with this item. For example, a value-add service purchased with the product.
      * @param  ?string[]  $programs  Special programs that apply specifically to this item within the order.
      *
      * **Possible values**: `TRANSPARENCY`, `SUBSCRIBE_AND_SAVE`
@@ -27,17 +30,20 @@ final class OrderItem extends Dto
      * @param  ?ItemPromotion  $promotion  Details about any discounts, coupons, or promotional offers applied to this item.
      * @param  ?ItemCancellation  $cancellation  The cancellation information of the order item.
      * @param  ?ItemFulfillment  $fulfillment  Information about how the order item should be processed, packed, and shipped to the customer.
+     * @param  ?ItemTax  $tax  Tax information for an order item.
      */
     public function __construct(
         public string $orderItemId,
         public int $quantityOrdered,
         public ItemProduct $product,
         public ?Measurement $measurement = null,
+        public ?array $associatedOrderItems = null,
         public ?array $programs = null,
         public ?ItemProceeds $proceeds = null,
         public ?ItemExpense $expense = null,
         public ?ItemPromotion $promotion = null,
         public ?ItemCancellation $cancellation = null,
         public ?ItemFulfillment $fulfillment = null,
+        public ?ItemTax $tax = null,
     ) {}
 }

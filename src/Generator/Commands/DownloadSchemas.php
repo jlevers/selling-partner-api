@@ -15,6 +15,8 @@ class DownloadSchemas extends AbstractSchemasCommand
 {
     use HasSchemaArgs;
 
+    protected static string $action = 'Downloading';
+
     protected function handleSchema(Schema $schema): int
     {
         $schema->download();

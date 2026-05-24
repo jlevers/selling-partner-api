@@ -84,6 +84,7 @@
                                             "signupConversionFor0PercentSellerFunding": 11.7,
                                             "signupConversionFor5PercentSellerFunding": 7.3,
                                             "signupConversionFor10PercentSellerFunding": 3.9,
+                                            "revenuePenetration": 21.67,
                                             "currencyCode": "USD",
                                             "timeInterval": {
                                                 "endDate": "2025-05-09T22:36:56Z",
@@ -121,7 +122,8 @@
                                                         "endDate": "2022-12-31T00:00:00Z"
                                                     },
                                                     "metrics": [
-                                                        "TOTAL_SUBSCRIPTIONS_REVENUE"
+                                                        "TOTAL_SUBSCRIPTIONS_REVENUE",
+                                                        "REVENUE_PENETRATION"
                                                     ],
                                                     "timePeriodType": "PERFORMANCE",
                                                     "marketplaceId": "ATVPDKIKX0DER",
@@ -157,6 +159,7 @@
                                                 "signupConversionFor0PercentSellerFunding": 11.7,
                                                 "signupConversionFor5PercentSellerFunding": 7.3,
                                                 "signupConversionFor10PercentSellerFunding": 3.9,
+                                                "revenuePenetration": 21.67,
                                                 "currencyCode": "USD",
                                                 "timeInterval": {
                                                     "endDate": "2025-05-09T22:36:56Z",
@@ -454,6 +457,8 @@
                                             "lostRevenueDueToOOS": 12.32,
                                             "couponsRevenuePenetration": 10,
                                             "shareOfCouponSubscriptions": 24.04,
+                                            "sku": "SD-RES-101973",
+                                            "fulfillmentChannelType": "AMAZON",
                                             "timeInterval": {
                                                 "endDate": "2023-03-11T00:00:00Z",
                                                 "startDate": "2023-03-05T00:00:00Z"
@@ -469,6 +474,8 @@
                                             "lostRevenueDueToOOS": 17.82,
                                             "couponsRevenuePenetration": 17,
                                             "shareOfCouponSubscriptions": 20.04,
+                                            "sku": "SD-RES-121973",
+                                            "fulfillmentChannelType": "MERCHANT",
                                             "timeInterval": {
                                                 "endDate": "2023-03-11T00:00:00Z",
                                                 "startDate": "2023-03-05T00:00:00Z"
@@ -521,6 +528,8 @@
                                         "offers": [
                                             {
                                                 "asin": "B07CYBR5GZ",
+                                                "sku": "SD-RES-101973",
+                                                "fulfillmentChannelType": "AMAZON",
                                                 "notDeliveredDueToOOS": 10.2,
                                                 "totalSubscriptionsRevenue": 100.45,
                                                 "revenuePenetration": 23.6,
@@ -537,6 +546,8 @@
                                             },
                                             {
                                                 "asin": "B07CYJJW8H",
+                                                "sku": "SD-RES-121973",
+                                                "fulfillmentChannelType": "MERCHANT",
                                                 "notDeliveredDueToOOS": 12.78,
                                                 "totalSubscriptionsRevenue": 80.11,
                                                 "revenuePenetration": 35.9,
@@ -1214,7 +1225,7 @@
                         "minItems": 1,
                         "uniqueItems": true,
                         "type": "array",
-                        "description": "The list of metrics requested. If no metric value is provided, data for all of the metrics will be returned.",
+                        "description": "The list of metrics requested. If no metric value is provided, data for all metrics will be returned.",
                         "items": {
                             "$ref": "#/components/schemas/Metric"
                         }
@@ -1294,6 +1305,24 @@
                     {
                         "value": "REPLENISHMENT_ONLY_ORDERING",
                         "description": "The offer will not be able to add new subscriptions but existing subscriptions will be fulfilled. This eligibility status also blocks one-time purchases to preserve inventory for existing subscriptions."
+                    }
+                ]
+            },
+            "FulfillmentChannelType": {
+                "type": "string",
+                "description": "The fulfillment channel type of an offer. Note that this is only valid for sellers and not for vendors.",
+                "enum": [
+                    "AMAZON",
+                    "MERCHANT"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "AMAZON",
+                        "description": "Orders for this offer are fulfilled by Amazon."
+                    },
+                    {
+                        "value": "MERCHANT",
+                        "description": "Orders for this offer are fulfilled by the merchant."
                     }
                 ]
             },
@@ -1442,7 +1471,7 @@
                     },
                     {
                         "value": "OPTED_OUT",
-                        "description": "The offer is opted-out to the auto-enrollment program."
+                        "description": "The offer is opted-out of the auto-enrollment program."
                     }
                 ]
             },
@@ -1464,7 +1493,7 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "SUBSCRIBE_AND_SAVE",
-                        "description": "Subscribe And Save Program."
+                        "description": "Subscribe and Save Program."
                     }
                 ]
             },
@@ -1569,15 +1598,15 @@
                     },
                     {
                         "value": "NEXT_90DAYS_SHIPPED_SUBSCRIPTION_UNITS",
-                        "description": "The forecasted shipped subscription units for the next 90 days. Applicable to `PERFORMANCE` `timePeriodType`."
+                        "description": "The forecasted shipped subscription units for the next 90 days. Applicable to `FORECAST` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_60DAYS_SHIPPED_SUBSCRIPTION_UNITS",
-                        "description": "The forecasted shipped subscription units for the next 60 days. Applicable to `PERFORMANCE` `timePeriodType`."
+                        "description": "The forecasted shipped subscription units for the next 60 days. Applicable to `FORECAST` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_30DAYS_SHIPPED_SUBSCRIPTION_UNITS",
-                        "description": "The forecasted shipped subscription units for the next 30 days. Applicable to `PERFORMANCE` `timePeriodType`."
+                        "description": "The forecasted shipped subscription units for the next 30 days. Applicable to `FORECAST` `timePeriodType`."
                     },
                     {
                         "value": "NEXT_90DAYS_TOTAL_SUBSCRIPTIONS_REVENUE",
@@ -1635,7 +1664,7 @@
                         "description": "A list of SKUs to filter. This filter is only supported for sellers and not for vendors.",
                         "items": {
                             "type": "string",
-                            "description": "Sku."
+                            "description": "SKU."
                         }
                     },
                     "asins": {
@@ -1666,9 +1695,47 @@
                     },
                     "programTypes": {
                         "$ref": "#/components/schemas/ProgramTypes"
+                    },
+                    "deliveriesConditions": {
+                        "minItems": 1,
+                        "uniqueItems": true,
+                        "type": "array",
+                        "description": "A list of delivery condition types to filter the results by. Results are filtered to only include offers with the specified delivery conditions.",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "NEXT_30_DAYS_DELIVERIES_PAUSED_PRICING",
+                                "NEXT_30_DAYS_DELIVERIES_PAUSED_NON_BUYABLE",
+                                "NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK_ONLY",
+                                "NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK",
+                                "NO_ISSUES_FOR_NEXT_30_DAYS_DELIVERIES"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "value": "NEXT_30_DAYS_DELIVERIES_PAUSED_PRICING",
+                                    "description": "Deliveries for the next 30 days are paused due to pricing issues."
+                                },
+                                {
+                                    "value": "NEXT_30_DAYS_DELIVERIES_PAUSED_NON_BUYABLE",
+                                    "description": "Deliveries for the next 30 days are paused because the offer is not buyable."
+                                },
+                                {
+                                    "value": "NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK_ONLY",
+                                    "description": "Deliveries for the next 30 days are at risk due to low inventory only."
+                                },
+                                {
+                                    "value": "NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK",
+                                    "description": "Deliveries for the next 30 days are at risk due to low inventory."
+                                },
+                                {
+                                    "value": "NO_ISSUES_FOR_NEXT_30_DAYS_DELIVERIES",
+                                    "description": "There are no issues for deliveries in the next 30 days."
+                                }
+                            ]
+                        }
                     }
                 },
-                "description": "Use these parameters to filter results. Any result must match all of the provided parameters. For any parameter that is an array, the result must match at least one element in the provided array."
+                "description": "Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array."
             },
             "ListOffersRequestSort": {
                 "required": [
@@ -1694,7 +1761,11 @@
                     "SELLING_PARTNER_FUNDED_BASE_DISCOUNT_PERCENTAGE",
                     "SELLING_PARTNER_FUNDED_TIERED_DISCOUNT_PERCENTAGE",
                     "AMAZON_FUNDED_BASE_DISCOUNT_PERCENTAGE",
-                    "AMAZON_FUNDED_TIERED_DISCOUNT_PERCENTAGE"
+                    "AMAZON_FUNDED_TIERED_DISCOUNT_PERCENTAGE",
+                    "INVENTORY",
+                    "PRICE",
+                    "SUBSCRIPTION_COUNT",
+                    "FULFILLMENT_NETWORK_ID_TYPE"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
@@ -1716,12 +1787,28 @@
                     {
                         "value": "AMAZON_FUNDED_TIERED_DISCOUNT_PERCENTAGE",
                         "description": "Sort the offers on the tiered discount percentage set by Amazon on the offer."
+                    },
+                    {
+                        "value": "INVENTORY",
+                        "description": "Sort the offers on the available inventory."
+                    },
+                    {
+                        "value": "PRICE",
+                        "description": "Sort the offers on the price."
+                    },
+                    {
+                        "value": "SUBSCRIPTION_COUNT",
+                        "description": "Sort the offers on the number of active subscriptions."
+                    },
+                    {
+                        "value": "FULFILLMENT_NETWORK_ID_TYPE",
+                        "description": "Sort the offers on the fulfillment network identifier type."
                     }
                 ]
             },
             "MarketplaceId": {
                 "type": "string",
-                "description": "The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace."
+                "description": "The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace."
             },
             "AggregationFrequency": {
                 "type": "string",
@@ -1769,7 +1856,7 @@
                         "format": "date-time"
                     }
                 },
-                "description": "A date-time interval in ISO 8601 format which is used to compute metrics. Only the date is required, but you must pass the complete date and time value. For example, November 11, 2022 should be passed as \"2022-11-07T00:00:00Z\". Note that only data for the trailing 2 years is supported.\n\n **Note**: The `listOfferMetrics` operation only supports a time interval which covers a single unit of the aggregation frequency. For example, for a MONTH aggregation frequency, the duration of the interval between the startDate and endDate can not be more than 1 month."
+                "description": "A date-time interval in ISO 8601 format which is used to compute metrics. Only the date is required, but you must pass the complete date and time value. For example, November 11, 2022 should be passed as \"2022-11-11T00:00:00Z\". Note that only data for the trailing 2 years is supported.\n\n **Note**: The `listOfferMetrics` operation only supports a time interval which covers a single unit of the aggregation frequency. For example, for a MONTH aggregation frequency, the duration of the interval between the startDate and endDate can not be more than 1 month."
             },
             "Metric": {
                 "type": "string",
@@ -1788,7 +1875,8 @@
                     "REVENUE_PENETRATION_BY_SELLER_FUNDING",
                     "SHARE_OF_COUPON_SUBSCRIPTIONS",
                     "SUBSCRIBER_LIFETIME_VALUE_BY_CUSTOMER_SEGMENT",
-                    "SIGNUP_CONVERSION_BY_SELLER_FUNDING"
+                    "SIGNUP_CONVERSION_BY_SELLER_FUNDING",
+                    "REVENUE_PENETRATION"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
@@ -1846,6 +1934,10 @@
                     {
                         "value": "SIGNUP_CONVERSION_BY_SELLER_FUNDING",
                         "description": "The percentage of subscriptions created within a specific discount tier out of the total number of new orders placed over the past 12 months (including both one-time purchases and new subscriptions)."
+                    },
+                    {
+                        "value": "REVENUE_PENETRATION",
+                        "description": "The percentage of total program revenue out of total product revenue over a period of time."
                     }
                 ]
             },
@@ -2033,7 +2125,7 @@
                     "nonSubscriberLifeTimeValueFromOTP": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "Total revenue from customers who have made purchases from your catalog but have never subscribed to any products",
+                        "description": "Total revenue from customers who have made purchases from your catalog but have never subscribed to any products.",
                         "format": "double"
                     },
                     "lostSubscriberLifeTimeValueFromOTP": {
@@ -2098,6 +2190,13 @@
                         "minimum": 0,
                         "type": "number",
                         "description": "[Applicable only for Vendors] Percentage of subscriptions created by offers with 5% or above seller-funded discount out of the total number of new orders placed over the past 12 months",
+                        "format": "double"
+                    },
+                    "revenuePenetration": {
+                        "maximum": 100,
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "The percentage of total program revenue out of total product revenue over a period of time. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "timeInterval": {
@@ -2172,9 +2271,124 @@
                             "type": "string",
                             "description": "An alphanumeric code that represents a relationship between Amazon and a vendor."
                         }
+                    },
+                    "price": {
+                        "minimum": 0,
+                        "type": "number",
+                        "description": "The current price of the offer. This is the listed price amount for the item.",
+                        "format": "double"
+                    },
+                    "priceCurrencyCode": {
+                        "type": "string",
+                        "description": "The currency code in ISO 4217 format for the price. For example, `USD` for US dollars."
+                    },
+                    "inventory": {
+                        "minimum": 0,
+                        "type": "integer",
+                        "description": "The available inventory count for the offer.",
+                        "format": "int64"
+                    },
+                    "stockRisk": {
+                        "type": "string",
+                        "description": "The stock risk level of the offer, indicating the risk of the offer going out of stock."
+                    },
+                    "deliveriesConditions": {
+                        "type": "array",
+                        "description": "A list of delivery conditions for the offer, indicating the health of upcoming deliveries. Each condition describes the quantity of upcoming deliveries associated with a particular delivery condition type.",
+                        "items": {
+                            "$ref": "#/components/schemas/DeliveriesCondition"
+                        }
+                    },
+                    "subscriptions": {
+                        "minimum": 0,
+                        "type": "integer",
+                        "description": "The number of active subscriptions for the offer.",
+                        "format": "int64"
+                    },
+                    "fulfillmentNetworkIDType": {
+                        "type": "string",
+                        "description": "The fulfillment network identifier type for the offer, indicating how the offer is fulfilled."
+                    },
+                    "forecastDeliveries": {
+                        "$ref": "#/components/schemas/ForecastDeliveries"
                     }
                 },
                 "description": "An object which contains details about an offer."
+            },
+            "ForecastDeliveries": {
+                "type": "object",
+                "properties": {
+                    "next15DaysDeliveries": {
+                        "minimum": 0,
+                        "type": "integer",
+                        "description": "The projected number of subscriber deliveries in the next 15 days.",
+                        "format": "int64"
+                    },
+                    "next30DaysDeliveries": {
+                        "minimum": 0,
+                        "type": "integer",
+                        "description": "The projected number of subscriber deliveries in the next 30 days.",
+                        "format": "int64"
+                    },
+                    "next60DaysDeliveries": {
+                        "minimum": 0,
+                        "type": "integer",
+                        "description": "The projected number of subscriber deliveries in the next 60 days.",
+                        "format": "int64"
+                    },
+                    "next90DaysDeliveries": {
+                        "minimum": 0,
+                        "type": "integer",
+                        "description": "The projected number of subscriber deliveries in the next 90 days.",
+                        "format": "int64"
+                    }
+                },
+                "description": "An object which contains the projected subscriber demand for the offer over different time horizons."
+            },
+            "DeliveriesCondition": {
+                "type": "object",
+                "properties": {
+                    "condition": {
+                        "type": "string",
+                        "description": "The condition type of upcoming deliveries for the offer.",
+                        "enum": [
+                            "NEXT_30_DAYS_DELIVERIES_PAUSED_PRICING",
+                            "NEXT_30_DAYS_DELIVERIES_PAUSED_NON_BUYABLE",
+                            "NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK_ONLY",
+                            "NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK",
+                            "NO_ISSUES_FOR_NEXT_30_DAYS_DELIVERIES"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "NEXT_30_DAYS_DELIVERIES_PAUSED_PRICING",
+                                "description": "Deliveries for the next 30 days are paused due to pricing issues."
+                            },
+                            {
+                                "value": "NEXT_30_DAYS_DELIVERIES_PAUSED_NON_BUYABLE",
+                                "description": "Deliveries for the next 30 days are paused because the offer is not buyable."
+                            },
+                            {
+                                "value": "NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK_ONLY",
+                                "description": "Deliveries for the next 30 days are at risk due to low inventory only."
+                            },
+                            {
+                                "value": "NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK",
+                                "description": "Deliveries for the next 30 days are at risk due to low inventory."
+                            },
+                            {
+                                "value": "NO_ISSUES_FOR_NEXT_30_DAYS_DELIVERIES",
+                                "description": "There are no issues for deliveries in the next 30 days."
+                            }
+                        ]
+                    },
+                    "next30DaysDeliveries": {
+                        "minimum": 0,
+                        "type": "integer",
+                        "description": "The number of upcoming deliveries in the next 30 days associated with this delivery condition.",
+                        "format": "int64"
+                    }
+                },
+                "description": "An object which contains the delivery condition and the quantity of upcoming deliveries associated with that condition for an offer."
             },
             "PaginationResponse": {
                 "type": "object",
@@ -2195,92 +2409,99 @@
                         "type": "string",
                         "description": "The Amazon Standard Identification Number (ASIN)."
                     },
+                    "sku": {
+                        "type": "string",
+                        "description": "The SKU. This property is only supported for sellers and not for vendors."
+                    },
+                    "fulfillmentChannelType": {
+                        "$ref": "#/components/schemas/FulfillmentChannelType"
+                    },
                     "notDeliveredDueToOOS": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to `FORECAST` `timePeriodType`.",
+                        "description": "The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "totalSubscriptionsRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The revenue generated from subscriptions over a period of time. Applicable to `FORECAST` `timePeriodType`.",
+                        "description": "The revenue generated from subscriptions over a period of time. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "shippedSubscriptionUnits": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The number of units shipped to the subscribers over a period of time. Applicable to `FORECAST` `timePeriodType`.",
+                        "description": "The number of units shipped to the subscribers over a period of time. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "int64"
                     },
                     "activeSubscriptions": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The number of active subscriptions present at the end of the period. Applicable to `FORECAST` `timePeriodType`.",
+                        "description": "The number of active subscriptions present at the end of the period. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "int64"
                     },
                     "revenuePenetration": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of total program revenue out of total product revenue. Applicable to `FORECAST` `timePeriodType`.",
+                        "description": "The percentage of total program revenue out of total product revenue. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "lostRevenueDueToOOS": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The revenue that would have been generated had there not been out of stock. Applicable to `FORECAST` `timePeriodType`.",
+                        "description": "The revenue that would have been generated had there not been out of stock. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "couponsRevenuePenetration": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to `FORECAST` `timePeriodType`.",
+                        "description": "The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "shareOfCouponSubscriptions": {
                         "maximum": 100,
                         "minimum": 0,
                         "type": "number",
-                        "description": "The percentage of new subscriptions acquired through coupons. Applicable to `FORECAST` `timePeriodType`.",
+                        "description": "The percentage of new subscriptions acquired through coupons. Applicable to `PERFORMANCE` `timePeriodType`.",
                         "format": "double"
                     },
                     "next30DayTotalSubscriptionsRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The forecasted total subscription revenue for the next 30 days. Applicable to FORECAST timePeriodType.",
+                        "description": "The forecasted total subscription revenue for the next 30 days. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "next60DayTotalSubscriptionsRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The forecasted total subscription revenue for the next 60 days. Applicable to FORECAST timePeriodType.",
+                        "description": "The forecasted total subscription revenue for the next 60 days. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "next90DayTotalSubscriptionsRevenue": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The forecasted total subscription revenue for the next 90 days. Applicable to FORECAST timePeriodType.",
+                        "description": "The forecasted total subscription revenue for the next 90 days. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "double"
                     },
                     "next30DayShippedSubscriptionUnits": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The forecasted shipped subscription units for the next 30 days. Applicable to FORECAST timePeriodType.",
+                        "description": "The forecasted shipped subscription units for the next 30 days. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "int64"
                     },
                     "next60DayShippedSubscriptionUnits": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The forecasted shipped subscription units for the next 60 days. Applicable to FORECAST timePeriodType.",
+                        "description": "The forecasted shipped subscription units for the next 60 days. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "int64"
                     },
                     "next90DayShippedSubscriptionUnits": {
                         "minimum": 0,
                         "type": "number",
-                        "description": "The forecasted shipped subscription units for the next 90 days. Applicable to FORECAST timePeriodType.",
+                        "description": "The forecasted shipped subscription units for the next 90 days. Applicable to `FORECAST` `timePeriodType`.",
                         "format": "int64"
                     },
                     "timeInterval": {

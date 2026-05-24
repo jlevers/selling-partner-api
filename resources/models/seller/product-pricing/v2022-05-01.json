@@ -900,6 +900,21 @@
                                                                 "sellerId": "A3DH5AGPM3JVAB",
                                                                 "fulfillmentType": "AFN"
                                                             }
+                                                        ],
+                                                        "similarItems": [
+                                                            {
+                                                                "items": [
+                                                                    {
+                                                                        "asin": "B00ZIA513F"
+                                                                    },
+                                                                    {
+                                                                        "asin": "B009DA8GI1"
+                                                                    },
+                                                                    {
+                                                                        "asin": "B00KF8SK3D"
+                                                                    }
+                                                                ]
+                                                            }
                                                         ]
                                                     }
                                                 ]
@@ -923,7 +938,8 @@
                                                             "includedData": [
                                                                 "featuredBuyingOptions",
                                                                 "referencePrices",
-                                                                "lowestPricedOffers"
+                                                                "lowestPricedOffers",
+                                                                "similarItems"
                                                             ],
                                                             "lowestPricedOffersInputs": [
                                                                 {
@@ -1176,6 +1192,21 @@
                                                                     "subCondition": "Acceptable",
                                                                     "sellerId": "A3DH5AGPM3JVAB",
                                                                     "fulfillmentType": "AFN"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "similarItems": [
+                                                        {
+                                                            "items": [
+                                                                {
+                                                                    "asin": "B00ZIA513F"
+                                                                },
+                                                                {
+                                                                    "asin": "B009DA8GI1"
+                                                                },
+                                                                {
+                                                                    "asin": "B00KF8SK3D"
                                                                 }
                                                             ]
                                                         }
@@ -1519,7 +1550,8 @@
                 "enum": [
                     "featuredBuyingOptions",
                     "referencePrices",
-                    "lowestPricedOffers"
+                    "lowestPricedOffers",
+                    "similarItems"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
@@ -1533,6 +1565,10 @@
                     {
                         "value": "lowestPricedOffers",
                         "description": "The lowest-priced standard offers that are available for the item in the Amazon store."
+                    },
+                    {
+                        "value": "similarItems",
+                        "description": "Provides a list of up to 20 ASINs which are similar to the item."
                     }
                 ]
             },
@@ -1633,6 +1669,13 @@
                             "$ref": "#/components/schemas/ReferencePrice"
                         }
                     },
+                    "similarItems": {
+                        "type": "array",
+                        "description": "A list of similar items for the specified ASIN `marketplaceId` combination.",
+                        "items": {
+                            "$ref": "#/components/schemas/SimilarItems"
+                        }
+                    },
                     "errors": {
                         "$ref": "#/components/schemas/ErrorList"
                     }
@@ -1655,6 +1698,31 @@
                     }
                 },
                 "description": "The reference price for the specified ASIN `marketplaceId` combination."
+            },
+            "SimilarItems": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "description": "A list of similar items for the specified ASIN `marketplaceId` combination.",
+                        "items": {
+                            "$ref": "#/components/schemas/Item"
+                        }
+                    }
+                },
+                "description": "The summary of similar items for the specified ASIN `marketplaceId` combination."
+            },
+            "Item": {
+                "required": [
+                    "asin"
+                ],
+                "type": "object",
+                "properties": {
+                    "asin": {
+                        "$ref": "#/components/schemas/Asin"
+                    }
+                },
+                "description": "A similar item for the specified ASIN `marketplaceId` combination."
             },
             "FeaturedBuyingOption": {
                 "required": [

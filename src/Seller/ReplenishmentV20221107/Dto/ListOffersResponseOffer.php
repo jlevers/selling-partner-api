@@ -14,14 +14,26 @@ use SellingPartnerApi\Dto;
 
 final class ListOffersResponseOffer extends Dto
 {
+    protected static array $attributeMap = ['fulfillmentNetworkIdType' => 'fulfillmentNetworkIDType'];
+
+    protected static array $complexArrayTypes = ['deliveriesConditions' => DeliveriesCondition::class];
+
     /**
      * @param  ?string  $sku  The SKU. This property is only supported for sellers and not for vendors.
      * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN).
-     * @param  ?string  $marketplaceId  The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
+     * @param  ?string  $marketplaceId  The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
      * @param  ?string  $eligibility  The current eligibility status of an offer.
      * @param  ?OfferProgramConfiguration  $offerProgramConfiguration  The offer program configuration contains a set of program properties for an offer.
      * @param  ?string  $programType  The replenishment program type.
      * @param  ?string[]  $vendorCodes  A list of vendor codes associated with the offer.
+     * @param  ?float  $price  The current price of the offer. This is the listed price amount for the item.
+     * @param  ?string  $priceCurrencyCode  The currency code in ISO 4217 format for the price. For example, `USD` for US dollars.
+     * @param  ?int  $inventory  The available inventory count for the offer.
+     * @param  ?string  $stockRisk  The stock risk level of the offer, indicating the risk of the offer going out of stock.
+     * @param  DeliveriesCondition[]|null  $deliveriesConditions  A list of delivery conditions for the offer, indicating the health of upcoming deliveries. Each condition describes the quantity of upcoming deliveries associated with a particular delivery condition type.
+     * @param  ?int  $subscriptions  The number of active subscriptions for the offer.
+     * @param  ?string  $fulfillmentNetworkIdType  The fulfillment network identifier type for the offer, indicating how the offer is fulfilled.
+     * @param  ?ForecastDeliveries  $forecastDeliveries  An object which contains the projected subscriber demand for the offer over different time horizons.
      */
     public function __construct(
         public ?string $sku = null,
@@ -31,5 +43,13 @@ final class ListOffersResponseOffer extends Dto
         public ?OfferProgramConfiguration $offerProgramConfiguration = null,
         public ?string $programType = null,
         public ?array $vendorCodes = null,
+        public ?float $price = null,
+        public ?string $priceCurrencyCode = null,
+        public ?int $inventory = null,
+        public ?string $stockRisk = null,
+        public ?array $deliveriesConditions = null,
+        public ?int $subscriptions = null,
+        public ?string $fulfillmentNetworkIdType = null,
+        public ?ForecastDeliveries $forecastDeliveries = null,
     ) {}
 }

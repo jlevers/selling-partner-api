@@ -16,11 +16,11 @@ use SellingPartnerApi\Seller\SellerWalletV20240301\Responses\TransferRatePreview
 final class TransactionInitiationRequest extends Dto
 {
     /**
-     * @param  string  $sourceAccountId  The unique identifier of the source Amazon SW bank account from where the money needs to be debited
-     * @param  TransactionInstrumentDetails  $destinationTransactionInstrument  Request body to create transaction instrument, Amazon performs validation and screening (anti-money laundering measuers) on all the transaction instruments before executing a transaction thus it requires transaction instrument holder's contact details as well
+     * @param  string  $sourceAccountId  The unique identifier of the source Amazon Seller Wallet bank account from which the money is debited.
+     * @param  TransactionInstrumentDetails  $destinationTransactionInstrument  Details of the destination bank account in the transaction request.
      * @param  Currency  $sourceAmount  A currency type and amount.
-     * @param  \DateTimeInterface  $requestTime  The transaction initiation request time in date-time format
-     * @param  ?string  $destinationAccountId  Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited
+     * @param  \DateTimeInterface  $requestTime  The time at which the transaction was initiated in [ISO 8601 date time format](https://developer-docs.amazon.com/sp-api/docs/iso-8601).
+     * @param  ?string  $destinationAccountId  The unique identifier of the destination bank account where the money is deposited.
      * @param  ?string  $transactionDescription  A description of the transaction.
      * @param  ?string  $customerPaymentReference  If the payment is for VAT (Value-Added-Tax) then enter VAT identification number in this field which will be mandatory. The length constraint is 140 characters and do not allow user to enter any sensitive information other than VAT-ID.
      * @param  ?PayeeContactInformation  $payeeContactInformation  The contact information of the payee. This field is required when the request `bankAccountOwnershipType` is `THIRD_PARTY`. The contact information is used for payee verification and registration purposes.

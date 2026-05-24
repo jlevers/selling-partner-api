@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class Fee extends Dto
 {
     /**
-     * @param  string  $feeId  Unique identifier assigned to the Fee.
-     * @param  string  $feeType  Represents different types of fees that can be applied on a transaction.
+     * @param  string  $feeId  The unique identifier assigned to the fee.
+     * @param  string  $feeType  The type of fee on the transaction.
      * @param  string  $feeRateValue  The value of the fee in percentage format.
      * @param  Currency  $feeAmount  A currency type and amount.
      */

@@ -54,7 +54,9 @@ final class Address extends Dto
      * 2. In some cases, the buyer phone number is suppressed:
      * a. Phone is suppressed for all `AFN` (fulfilled by Amazon) orders.
      * b. Phone is suppressed for the shipped `MFN` (fulfilled by seller) order when the current date is past the Latest Delivery Date.
-     * @param  ?AddressExtendedFields  $extendedFields  The container for address extended fields (such as `street name` and `street number`). Currently only available with Brazil shipping addresses.
+     * @param  ?AddressExtendedFields  $extendedFields  Extended address fields for additional address components including the street name or number.
+     *
+     * Note: Available for grocery sellers and Brazil shipping addresses.
      * @param  ?string  $addressType  The address type of the shipping address.
      */
     public function __construct(

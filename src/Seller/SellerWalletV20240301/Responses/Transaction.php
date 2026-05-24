@@ -19,11 +19,11 @@ final class Transaction extends Response
 {
     /**
      * @param  string  $accountId  The unique identifier of the Amazon Seller Wallet bank account from which the money is debited.
-     * @param  string  $transactionId  The unique identifier provided by Amazon to the transaction
-     * @param  string  $transactionType  Represent type of transaction.
-     * @param  string  $transactionStatus  Represents current status of the transaction.
+     * @param  string  $transactionId  The unique identifier provided by Amazon to the transaction.
+     * @param  string  $transactionType  The type of transaction.
+     * @param  string  $transactionStatus  The current status of the transaction.
      * @param  \DateTimeInterface  $transactionRequestDate  The date when the transaction was initiated.
-     * @param  \DateTimeInterface  $lastUpdateDate  The last update date on the transaction
+     * @param  \DateTimeInterface  $lastUpdateDate  The date of the most recent account balance update.
      * @param  string  $transactionRequesterSource  The transaction initiation source. This value is either the Amazon portal or PISP name that the customer used to start the transaction.
      * @param  string  $transactionDescription  A description of the transaction that the requester provides when they initiate the transaction.
      * @param  TransactionAccount  $transactionDestinationAccount  Details of the bank account involved in the transaction.
@@ -35,12 +35,12 @@ final class Transaction extends Response
      * If the fees are in terms of the `transferAmount` (destination account) currency, then the effective rate is equal to **`baseRate` - (fees / `baseAmount`)**.
      *
      * In the preceding expressions, **fees** is equal to the sum of all `feeAmount.currencyAmount` values in the `fees` array.
-     * @param  ?\DateTimeInterface  $expectedCompletionDate  Expected completion date of a transaction, for existing active Payees (Trusted Beneficiaries) it will be 24 hours but for new destination bank accounts the value could go up to 5 days
-     * @param  ?\DateTimeInterface  $transactionActualCompletionDate  Transaction completion date
-     * @param  ?string  $requesterName  Amazon SW customer who requested the transaction
+     * @param  ?\DateTimeInterface  $expectedCompletionDate  The expected completion date of the transaction.
+     * @param  ?\DateTimeInterface  $transactionActualCompletionDate  The transaction's completion date.
+     * @param  ?string  $requesterName  The Amazon Seller Wallet customer who requested the transaction.
      * @param  ?TransactionAccount  $transactionSourceAccount  Details of the bank account involved in the transaction.
      * @param  ?Currency  $transactionFinalAmount  A currency type and amount.
-     * @param  ?string  $transactionFailureReason  Description in case the transaction fails before completion
+     * @param  ?string  $transactionFailureReason  The reason the transaction failed, if applicable.
      */
     public function __construct(
         public readonly string $accountId,

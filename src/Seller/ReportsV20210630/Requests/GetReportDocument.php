@@ -28,10 +28,12 @@ class GetReportDocument extends Request
     /**
      * @param  string  $reportDocumentId  The identifier for the report document.
      * @param  string  $reportType  The report type of the report document.
+     * @param  ?bool  $enableContentEncodingUrlHeader  When `true`, the Content-Encoding header on the returned URL is set to `gzip` instead of the default `identity` when `compressionAlgorithm` is `GZIP`. This allows automatic decompression by HTTP clients.
      */
     public function __construct(
         protected string $reportDocumentId,
         protected string $reportType,
+        protected ?bool $enableContentEncodingUrlHeader = null,
     ) {
         $this->middleware()->onRequest(new RestrictedReport);
     }
@@ -55,6 +57,6 @@ class GetReportDocument extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['reportType' => $this->reportType]);
+        return array_filter(['reportType' => $this->reportType, 'enableContentEncodingUrlHeader' => $this->enableContentEncodingUrlHeader]);
     }
 }

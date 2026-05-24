@@ -24,13 +24,19 @@ final class GetFeatureSkuResult extends Dto
      * * `MERCHANT_NOT_ENROLLED`: The merchant isn't enrolled for the feature.
      * * `SKU_NOT_ELIGIBLE`: The SKU doesn't reside in a warehouse that supports the feature.
      * * `INVALID_SKU`: There is an issue with the SKU provided.
-     * @param  ?FeatureSku  $skuInfo  Information about an SKU, including the count available, identifiers, and a list of overlapping SKUs that share the same inventory pool.
+     * @param  ?string  $sellerSku  Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+     * @param  ?string  $fnSku  The unique SKU used by Amazon's fulfillment network.
+     * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
+     * @param  ?float  $skuCount  The number of SKUs available for this service.
      */
     public function __construct(
         public string $marketplaceId,
         public string $featureName,
         public bool $isEligible,
         public ?array $ineligibleReasons = null,
-        public ?FeatureSku $skuInfo = null,
+        public ?string $sellerSku = null,
+        public ?string $fnSku = null,
+        public ?string $asin = null,
+        public ?float $skuCount = null,
     ) {}
 }

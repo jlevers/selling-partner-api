@@ -18,7 +18,7 @@ final class DeliveryInformation extends Dto
 
     /**
      * @param  DeliveryDocument[]|null  $deliveryDocumentList  A list of delivery documents for a package.
-     * @param  ?DropOffLocation  $dropOffLocation  The preferred location to leave packages at the destination address.
+     * @param  ?DropOffLocation  $dropOffLocation  The drop-off location at the destination address.
      */
     public function __construct(
         public ?array $deliveryDocumentList = null,

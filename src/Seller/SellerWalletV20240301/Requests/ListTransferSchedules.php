@@ -25,9 +25,9 @@ class ListTransferSchedules extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $accountId  ID of the Amazon SW account
+     * @param  string  $accountId  The ID of the Amazon Seller Wallet account.
      * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @param  ?string  $nextPageToken  Pagination token to retrieve a specific page of results.
+     * @param  ?string  $nextPageToken  A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.
      */
     public function __construct(
         protected string $accountId,

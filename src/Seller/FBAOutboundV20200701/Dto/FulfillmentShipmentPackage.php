@@ -21,7 +21,7 @@ final class FulfillmentShipmentPackage extends Dto
      * @param  ?string  $amazonFulfillmentTrackingNumber  The Amazon fulfillment tracking number, if provided, can be used to obtain tracking and delivery information.
      * @param  ?\DateTimeInterface  $estimatedArrivalDate  Date timestamp
      * @param  ?LockerDetails  $lockerDetails  The locker details, which you can use to access the locker delivery box.
-     * @param  ?DeliveryInformation  $deliveryInformation  The delivery information for the package. This information is available after the package is delivered.
+     * @param  ?DeliveryInformation  $deliveryInformation  The delivery information of the package, this information is only available post package delivery to its intended destination.
      */
     public function __construct(
         public int $packageNumber,

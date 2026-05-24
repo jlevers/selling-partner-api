@@ -11,15 +11,16 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\FinancesV20240619\Dto;
 
 use SellingPartnerApi\Dto;
+use SellingPartnerApi\Seller\FinancesV20240619\Dto\Breakdown as Breakdown1;
 
 final class Breakdown extends Dto
 {
-    protected static array $complexArrayTypes = ['breakdowns' => Breakdown::class];
+    protected static array $complexArrayTypes = ['breakdowns' => Breakdown1::class];
 
     /**
      * @param  ?string  $breakdownType  The type of charge.
      * @param  ?Currency  $breakdownAmount  A currency type and amount.
-     * @param  Breakdown[]|null  $breakdowns  A list of breakdowns that detail how the total amount is calculated for the transaction.
+     * @param  Breakdown1[]|null  $breakdowns  A list of breakdowns that detail how the total amount is calculated for the transaction.
      */
     public function __construct(
         public ?string $breakdownType = null,

@@ -17,17 +17,17 @@ final class PayeeContactInformation extends Dto
     /**
      * @param  string  $payeeFirstName  First name of the payee. There is a 50 character limit.
      * @param  string  $payeeLastName  Last name of the payee. There is a 50 character limit.
-     * @param  string  $addressLine1  Address Line 1 of the public address
-     * @param  string  $city  City name of the public address
+     * @param  string  $addressLine1  Address Line 1 of the public address.
+     * @param  string  $city  City name of the public address.
      * @param  string  $state  State name of the public address. This is the state or region for China-based addresses.
-     * @param  string  $postalCode  Postal code of the public address
+     * @param  string  $postalCode  Postal code of the public address.
      * @param  string  $countryCode  The two digit country code, in ISO 3166 format.
      * @param  string  $emailAddress  Email address of the payee.
      * @param  string  $phoneNumber  Valid phone number of the payee.
      * @param  string  $payeeEntityType  The entity type of the transaction payee when the bank account ownership type is `THIRD_PARTY`.
      * @param  ?string  $payeeMiddleName  Middle name of the payee. There is a 50 character limit.
-     * @param  ?string  $addressLine2  Address Line 2 of the public address
-     * @param  ?string  $country  Country name of the public address
+     * @param  ?string  $addressLine2  Address Line 2 of the public address.
+     * @param  ?string  $country  Country name of the public address.
      */
     public function __construct(
         public string $payeeFirstName,

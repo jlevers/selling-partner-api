@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class DeliveryPreferences extends Dto
 {
     /**
-     * @param  ?string  $deliveryInstructions  Additional delivery instructions. For example, this could be instructions on how to enter a building, nearby landmark or navigation instructions, 'Beware of dogs', etc.
-     * @param  ?DropOffLocation  $dropOffLocation  The preferred location to leave packages at the destination address.
+     * @param  ?string  $deliveryInstructions  Additional delivery instructions. For example, this could be instructions on how to enter a building, nearby landmark or navigation instructions, or `Beware of dogs`.
+     * @param  ?DropOffLocation  $dropOffLocation  The drop-off location at the destination address.
      */
     public function __construct(
         public ?string $deliveryInstructions = null,

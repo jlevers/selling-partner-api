@@ -1,9 +1,8 @@
 {
     "openapi": "3.0.1",
     "info": {
-        "title": "The Selling Partner API for Amazon Seller Wallet Open Banking API Spec.\n\nFor more information, refer to the [Seller Wallet Open Banking API Use Case Guide](doc:seller-wallet-open-banking-api-v2024-03-01-use-case-guide).",
+        "title": "The Selling Partner API for Amazon Seller Wallet Open Banking API",
         "description": "The Selling Partner API for Seller Wallet (Seller Wallet API) provides financial information that is relevant to a seller's Seller Wallet account. You can obtain financial events, balances, and transfer schedules for Seller Wallet accounts. You can also schedule and initiate transactions.",
-        "termsOfService": "http://spectrum.Amazon.com/terms/",
         "contact": {
             "name": "Selling Partner API Developer Support",
             "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
@@ -22,19 +21,19 @@
     "tags": [
         {
             "name": "Accounts",
-            "description": "Everything about Amazon SW customer accounts"
+            "description": "Everything about Amazon Seller Wallet customer accounts"
         },
         {
             "name": "Transfer Preview",
-            "description": "Access to all transfers with fees and the final amount with FX details in Amazon SW"
+            "description": "Access to all transfers with fees and the final amount with FX details in Amazon Seller Wallet"
         },
         {
             "name": "Transactions",
-            "description": "Access to all transactions in Amazon SW account"
+            "description": "Access to all transactions in Amazon Seller Wallet account"
         },
         {
             "name": "Transfer Schedule",
-            "description": "Access to all transfer schedules in Amazon SW account"
+            "description": "Access to all transfer schedules in Amazon Seller Wallet account"
         }
     ],
     "paths": {
@@ -43,14 +42,14 @@
                 "tags": [
                     "Accounts"
                 ],
-                "summary": "Get all Amazon SW accounts for the seller",
+                "summary": "Get all Amazon Seller Wallet accounts for the seller",
                 "description": "Get Seller Wallet accounts for a seller.",
                 "operationId": "listAccounts",
                 "parameters": [
                     {
                         "name": "marketplaceId",
                         "in": "query",
-                        "description": "A marketplace identifier. Specifies the marketplace for which items are returned.",
+                        "description": "The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -453,14 +452,14 @@
                 "tags": [
                     "Accounts"
                 ],
-                "summary": "Find particular Amazon SW account by Amazon account identifier",
+                "summary": "Find particular Amazon Seller Wallet account by Amazon account identifier",
                 "description": "Retrieve a Seller Wallet bank account by Amazon account identifier.",
                 "operationId": "getAccount",
                 "parameters": [
                     {
                         "name": "accountId",
                         "in": "path",
-                        "description": "ID of the Amazon SW account",
+                        "description": "The ID of the Amazon Seller Wallet account.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -872,14 +871,14 @@
                 "tags": [
                     "Accounts"
                 ],
-                "summary": "Find balance in particular Amazon SW account by Amazon account identifier",
+                "summary": "Find balance in particular Amazon Seller Wallet account by Amazon account identifier",
                 "description": "Retrieve the balance in a given Seller Wallet bank account.",
                 "operationId": "listAccountBalances",
                 "parameters": [
                     {
                         "name": "accountId",
                         "in": "path",
-                        "description": "ID of the Amazon SW account",
+                        "description": "The ID of the Amazon Seller Wallet account.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1300,13 +1299,13 @@
                     "Transfer Preview"
                 ],
                 "summary": "Fetch potential fees that could be applied on a transaction on the basis of the source and destination country currency code",
-                "description": "Returns list of potential fees on a transaction based on the source and destination country currency code",
+                "description": "Retrieve a list of potential fees on a transaction.",
                 "operationId": "getTransferPreview",
                 "parameters": [
                     {
                         "name": "sourceCountryCode",
                         "in": "query",
-                        "description": "Represents 2 character country code of source transaction account in ISO 3166 standard format.",
+                        "description": "Country code of the source transaction account in ISO 3166 format.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1316,7 +1315,7 @@
                     {
                         "name": "sourceCurrencyCode",
                         "in": "query",
-                        "description": "Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.",
+                        "description": "Currency code of the source transaction country in ISO 4217 format.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1326,7 +1325,7 @@
                     {
                         "name": "destinationCountryCode",
                         "in": "query",
-                        "description": "Represents 2 character country code of destination transaction account in ISO 3166 standard format.",
+                        "description": "Country code of the destination transaction account in ISO 3166 format.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1336,7 +1335,7 @@
                     {
                         "name": "destinationCurrencyCode",
                         "in": "query",
-                        "description": "Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.",
+                        "description": "Currency code of the destination transaction country in ISO 4217 format.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1346,7 +1345,7 @@
                     {
                         "name": "baseAmount",
                         "in": "query",
-                        "description": "Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.",
+                        "description": "The base transaction amount without any markup fees.",
                         "required": true,
                         "schema": {
                             "type": "number"
@@ -1818,14 +1817,14 @@
                 "tags": [
                     "Transactions"
                 ],
-                "summary": "The API will return all the transactions for a given Amazon SW account sorted by the transaction request date",
+                "summary": "The API will return all the transactions for a given Amazon Seller Wallet account sorted by the transaction request date",
                 "description": "Retrieve a list of transactions for a given Seller Wallet bank account.",
                 "operationId": "listAccountTransactions",
                 "parameters": [
                     {
                         "name": "accountId",
                         "in": "query",
-                        "description": "ID of the Amazon SW account",
+                        "description": "The ID of the Amazon Seller Wallet account.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1835,7 +1834,7 @@
                     {
                         "name": "nextPageToken",
                         "in": "query",
-                        "description": "Pagination token to retrieve a specific page of results.",
+                        "description": "A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.",
                         "schema": {
                             "type": "string"
                         },
@@ -2305,7 +2304,7 @@
                 "tags": [
                     "Transactions"
                 ],
-                "summary": "Create a transaction request from Amazon SW account to another customer provided account",
+                "summary": "Create a transaction request from Amazon Seller Wallet account to another customer-provided account",
                 "description": "Create a transaction request from a Seller Wallet account to another customer-provided account.",
                 "operationId": "createTransaction",
                 "parameters": [
@@ -2341,7 +2340,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "Defines the actual payload of the request",
+                    "description": "The payload of the request",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -3141,14 +3140,14 @@
                 "tags": [
                     "Transactions"
                 ],
-                "summary": "Find particular Amazon SW account transaction by Amazon transaction identifier",
-                "description": "Returns a transaction",
+                "summary": "Find particular Amazon Seller Wallet account transaction by Amazon transaction identifier",
+                "description": "Find a transaction by the Amazon transaction identifier.",
                 "operationId": "getTransaction",
                 "parameters": [
                     {
                         "name": "transactionId",
                         "in": "path",
-                        "description": "ID of the Amazon SW transaction",
+                        "description": "The ID of the Amazon Seller Wallet transaction.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -3616,14 +3615,14 @@
                 "tags": [
                     "Transfer Schedule"
                 ],
-                "summary": "The API will return all the transfer schedules for a given Amazon SW account",
+                "summary": "The API will return all the transfer schedules for a given Amazon Seller Wallet account",
                 "description": "Retrieve transfer schedules of a Seller Wallet bank account.",
                 "operationId": "listTransferSchedules",
                 "parameters": [
                     {
                         "name": "accountId",
                         "in": "query",
-                        "description": "ID of the Amazon SW account",
+                        "description": "The ID of the Amazon Seller Wallet account.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -3643,7 +3642,7 @@
                     {
                         "name": "nextPageToken",
                         "in": "query",
-                        "description": "Pagination token to retrieve a specific page of results.",
+                        "description": "A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.",
                         "schema": {
                             "type": "string"
                         },
@@ -4071,7 +4070,7 @@
                     "Transfer Schedule"
                 ],
                 "summary": "Update a transfer schedule information. Only fields (i.e; transferScheduleInformation, paymentPreference, transferScheduleStatus) in the request body can be updated.",
-                "description": "Returns a transfer belonging to the updated scheduled transfer request",
+                "description": "Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.",
                 "operationId": "updateTransferSchedule",
                 "parameters": [
                     {
@@ -4106,7 +4105,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "Defines the actual payload of the scheduled transfer request that is to be updated.\n",
+                    "description": "The payload of the scheduled transfer request that is to be updated.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -4772,7 +4771,7 @@
                 "tags": [
                     "Transfer Schedule"
                 ],
-                "summary": "Create a transfer schedule request from Amazon SW account to another customer provided account",
+                "summary": "Create a transfer schedule request from Amazon Seller Wallet account to another customer-provided account",
                 "description": "Create a transfer schedule request from a Seller Wallet account to another customer-provided account.",
                 "operationId": "createTransferSchedule",
                 "parameters": [
@@ -4808,7 +4807,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "Defines the actual payload of the request",
+                    "description": "The payload of the request.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -6420,17 +6419,17 @@
                     },
                     "addressLine1": {
                         "type": "string",
-                        "description": "Address Line 1 of the public address\n",
+                        "description": "Address Line 1 of the public address.",
                         "example": "678 JFK Street"
                     },
                     "addressLine2": {
                         "type": "string",
-                        "description": "Address Line 2 of the public address\n",
+                        "description": "Address Line 2 of the public address.",
                         "example": "Unit 415"
                     },
                     "city": {
                         "type": "string",
-                        "description": "City name of the public address\n",
+                        "description": "City name of the public address.",
                         "example": "Seattle"
                     },
                     "state": {
@@ -6440,17 +6439,17 @@
                     },
                     "postalCode": {
                         "type": "string",
-                        "description": "Postal code of the public address\n",
+                        "description": "Postal code of the public address.",
                         "example": "98109"
                     },
                     "country": {
                         "type": "string",
-                        "description": "Country name of the public address\n",
+                        "description": "Country name of the public address.",
                         "example": "United States"
                     },
                     "countryCode": {
                         "type": "string",
-                        "description": "The two digit country code, in ISO 3166 format.\n",
+                        "description": "The two digit country code, in ISO 3166 format.",
                         "example": "US"
                     },
                     "emailAddress": {
@@ -6521,18 +6520,18 @@
                     },
                     "accountCountryCode": {
                         "type": "string",
-                        "description": "The two digit country code, in ISO 3166 format.\n",
+                        "description": "The two-digit country code in ISO 3166 format.",
                         "example": "US"
                     },
                     "accountCurrency": {
                         "type": "string",
-                        "description": "BankAccount currency code in ISO 4217 format\n",
+                        "description": "Bank account currency code in ISO 4217 format.",
                         "example": "USD"
                     },
                     "bankAccountNumberTail": {
                         "type": "string",
-                        "description": "Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0's\n",
-                        "example": "666"
+                        "description": "The last 3 digit of the bank account number. This value is three consecutive zeros for Amazon Seller Wallet accounts.",
+                        "example": "123"
                     },
                     "bankAccountHolderStatus": {
                         "$ref": "#/components/schemas/BankAccountHolderStatus"
@@ -6548,13 +6547,13 @@
                 "properties": {
                     "accounts": {
                         "type": "array",
-                        "description": "Collection that holds BankAccount\n",
+                        "description": "A list of bank accounts.",
                         "items": {
                             "$ref": "#/components/schemas/BankAccount"
                         }
                     }
                 },
-                "description": "Struct that holds collection of accounts."
+                "description": "A list of bank accounts."
             },
             "Balance": {
                 "required": [
@@ -6567,7 +6566,7 @@
                 "properties": {
                     "accountId": {
                         "type": "string",
-                        "description": "The unique identifier provided by Amazon to identify the account\n",
+                        "description": "The unique identifier provided by Amazon to identify the account.",
                         "example": "amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ"
                     },
                     "balanceType": {
@@ -6578,16 +6577,16 @@
                     },
                     "balanceCurrency": {
                         "type": "string",
-                        "description": "The Amazon SW bank account currency code in ISO 4217 format\n",
+                        "description": "The Amazon Seller Wallet bank account currency code in ISO 4217 format.",
                         "example": "USD"
                     },
                     "lastUpdateDate": {
                         "type": "string",
-                        "description": "The last update date on the account balance\n",
+                        "description": "The date of the most recent account balance update.",
                         "format": "date-time"
                     }
                 },
-                "description": "Specifies the balance amount in the Amazon SW bank account",
+                "description": "The balance amount in the Amazon Seller Wallet bank account.",
                 "example": {
                     "accountId": "amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ",
                     "balanceType": "AVAILABLE",
@@ -6601,13 +6600,13 @@
                 "properties": {
                     "balances": {
                         "type": "array",
-                        "description": "Collection that holds list of balances on the account\n",
+                        "description": "A list of balances in the seller account.",
                         "items": {
                             "$ref": "#/components/schemas/Balance"
                         }
                     }
                 },
-                "description": "Struct that holds list of balances on the seller account.",
+                "description": "A list of balances in the seller account.",
                 "example": {
                     "balances": [
                         {
@@ -6636,7 +6635,7 @@
             },
             "BalanceType": {
                 "type": "string",
-                "description": "Represent a bank account balance type.",
+                "description": "The type of bank account balance.",
                 "enum": [
                     "AVAILABLE",
                     "LOCKED_IN",
@@ -6646,19 +6645,19 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "AVAILABLE",
-                        "description": "Available balance that is accessible to the seller."
+                        "description": "The available balance that is accessible to the seller."
                     },
                     {
                         "value": "LOCKED_IN",
-                        "description": "The incoming balance in sellers account."
+                        "description": "The incoming balance in the seller's account."
                     },
                     {
                         "value": "LOCKED_OUT",
-                        "description": "The outgoing balance from sellers account"
+                        "description": "The outgoing balance from seller's account"
                     },
                     {
                         "value": "TOTAL",
-                        "description": "Total balance in the sellers account."
+                        "description": "The total balance in the seller's account."
                     }
                 ]
             },
@@ -6672,17 +6671,17 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "IBAN",
-                        "description": "International Bank BankAccount Number."
+                        "description": "International bank account number."
                     },
                     {
                         "value": "BBAN",
-                        "description": "Basic Bank BankAccount Number which is Domestic bank accounts."
+                        "description": "Basic bank account number for domestic bank accounts."
                     }
                 ]
             },
             "BankAccountHolderStatus": {
                 "type": "string",
-                "description": "Represents status of the Amazon Seller Wallet accountholder",
+                "description": "The status of the Amazon Seller Wallet account holder.",
                 "enum": [
                     "ACTIVE",
                     "INACTIVE",
@@ -6692,25 +6691,25 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "ACTIVE",
-                        "description": "BankAccount holder is Active."
+                        "description": "The account holder is Active."
                     },
                     {
                         "value": "INACTIVE",
-                        "description": "BankAccount holder is Inactive and cannot be used for transactions."
+                        "description": "The account holder is inactive and cannot make transactions."
                     },
                     {
                         "value": "UNDER_REVIEW",
-                        "description": "BankAccount holder is currently under review."
+                        "description": "The account holder is currently under review."
                     },
                     {
                         "value": "VERIFICATION_FAILED",
-                        "description": "BankAccount holder KYC(Know Your Customer) verification has failed."
+                        "description": "The account holder KYC (Know Your Customer) verification has failed."
                     }
                 ]
             },
             "BankAccountOwnershipType": {
                 "type": "string",
-                "description": "Represents destination bank account's ownership type.",
+                "description": "The destination bank account's ownership type.",
                 "enum": [
                     "THIRD_PARTY",
                     "SELF"
@@ -6718,7 +6717,7 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "THIRD_PARTY",
-                        "description": "BankAccount is not officially owned by the Payment Service User who is viewing the account and initiating the transaction."
+                        "description": "The account is not officially owned by the Payment Service User who is viewing the account and initiating the transaction."
                     },
                     {
                         "value": "SELF",
@@ -6728,7 +6727,7 @@
             },
             "BankNumberFormat": {
                 "type": "string",
-                "description": "Represents a format of a bank number also called routing number type",
+                "description": "The format of the bank number. Also known as the routing number type.",
                 "enum": [
                     "BIC",
                     "BASIC"
@@ -6740,13 +6739,13 @@
                     },
                     {
                         "value": "BASIC",
-                        "description": "Basic means the bank number has a special format specific to the country code provided, such as ABA routing number."
+                        "description": "The bank number has a special format specific to the country code provided, such as ABA routing number."
                     }
                 ]
             },
             "BigDecimal": {
                 "type": "number",
-                "description": "A decimal number such as amount or FX rate."
+                "description": "A decimal number, such as an amount or FX rate."
             },
             "CreateTransactionResponse": {
                 "required": [
@@ -6788,7 +6787,7 @@
                 "properties": {
                     "code": {
                         "type": "string",
-                        "description": "A success code that specifies the delete operation was successful. eg:HTTP 200."
+                        "description": "A success code that specifies that the delete operation was successful. For example, HTTP 200."
                     },
                     "message": {
                         "type": "string",
@@ -6799,7 +6798,7 @@
                         "description": "Additional details that can help the caller understand the operation execution."
                     }
                 },
-                "description": "Response returned when the schedule transfer's delete request is successful."
+                "description": "The response returned when the schedule transfer's delete request is successful."
             },
             "Error": {
                 "required": [
@@ -6831,7 +6830,7 @@
                 "properties": {
                     "errors": {
                         "type": "array",
-                        "description": "List of errors\n",
+                        "description": "List of errors",
                         "items": {
                             "$ref": "#/components/schemas/Error"
                         }
@@ -6850,7 +6849,7 @@
                 "properties": {
                     "fxRateId": {
                         "type": "string",
-                        "description": "Unique identifier assigned to the fees/foreign exchange Rate of a transaction.\n"
+                        "description": "The unique identifier assigned to the fees / foreign exchange rate of a transaction."
                     },
                     "baseRate": {
                         "$ref": "#/components/schemas/BigDecimal"
@@ -6862,7 +6861,7 @@
                         "$ref": "#/components/schemas/RateDirection"
                     }
                 },
-                "description": "Foreign exchange rate details displayed when transfer preview is requested.\n",
+                "description": "Foreign exchange rate details.",
                 "example": {
                     "fxRateId": "UNIQUE_FX_RATE_ID_1",
                     "baseRate": 7.2,
@@ -6881,7 +6880,7 @@
                 "properties": {
                     "feeId": {
                         "type": "string",
-                        "description": "Unique identifier assigned to the Fee.\n"
+                        "description": "The unique identifier assigned to the fee."
                     },
                     "feeType": {
                         "$ref": "#/components/schemas/FeeType"
@@ -6894,11 +6893,11 @@
                         "$ref": "#/components/schemas/Currency"
                     }
                 },
-                "description": "If the fees is in baseAmount (sourceAccount) currency, effectiveRate =  (baseAmount - sum(fees.feeAmount.currencyAmount)) * baseRate) / baseAmount. If the fees is in transferAmount (destinationAccount) currency, effectiveRate =  (( baseAmount * baseRate ) -  sum(fees.feeAmount.currencyAmount )) / baseAmount\n"
+                "description": "Details of the fee."
             },
             "FeeType": {
                 "type": "string",
-                "description": "Represents different types of fees that can be applied on a transaction.",
+                "description": "The type of fee on the transaction.",
                 "enum": [
                     "MISCELLANEOUS_FEE",
                     "TAX",
@@ -6907,21 +6906,21 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "MISCELLANEOUS_FEE",
-                        "description": "Represents any other service charges or additional fee applied by a transaction executor service."
+                        "description": "Any other service charges or additional fee applied by a transaction executor service."
                     },
                     {
                         "value": "TAX",
-                        "description": "Represents tax fees if applied on any transaction."
+                        "description": "Taxes on the transaction."
                     },
                     {
                         "value": "TRANSACTION_FEE",
-                        "description": "Represents a per transaction fee that can be applied by a transaction executor service. This can be both INTERNATIONAL and DOMESTIC fees"
+                        "description": "A per-transaction fee that can be applied by a transaction executor service. This can be both international and domestic fees"
                     }
                 ]
             },
             "RateDirection": {
                 "type": "string",
-                "description": "Represents the rate direction at which the transaction is performed.",
+                "description": "Whether the customer is buying or selling the source currency.",
                 "enum": [
                     "BUY",
                     "SELL"
@@ -6974,11 +6973,11 @@
                         "$ref": "#/components/schemas/BigDecimal"
                     }
                 },
-                "description": "Payment preference type in which transfer is being scheduled\n"
+                "description": "The type of payment preference in which the transfer is being scheduled."
             },
             "PaymentPreferencePaymentType": {
                 "type": "string",
-                "description": "Represent a type of payment preference.",
+                "description": "The type of payment preference.",
                 "enum": [
                     "PERCENTAGE",
                     "AMOUNT"
@@ -6986,17 +6985,17 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "PERCENTAGE",
-                        "description": "The schedule transfer in percentage."
+                        "description": "The scheduled transfer is a percentage of the account total."
                     },
                     {
                         "value": "AMOUNT",
-                        "description": "The schedule transfer in amount value."
+                        "description": "The scheduled transfer is a specific amount."
                     }
                 ]
             },
             "RecurringFrequency": {
                 "type": "string",
-                "description": "Represent parameters to specify recurrence of the scheduled transfer.",
+                "description": "The frequency at which the transaction is repeated.",
                 "enum": [
                     "DAILY",
                     "WEEKLY",
@@ -7027,13 +7026,13 @@
                 "properties": {
                     "scheduleStartDate": {
                         "type": "string",
-                        "description": "Field to specify start date of the scheduled transfer\n",
+                        "description": "The start date of the scheduled transfer.",
                         "format": "date-time",
                         "example": "2024-03-01T00:00:00Z"
                     },
                     "scheduleEndDate": {
                         "type": "string",
-                        "description": "Field to specify end date of the scheduled transfer\n",
+                        "description": "The end date of the scheduled transfer.",
                         "format": "date-time",
                         "example": "2027-03-01T00:00:00Z"
                     },
@@ -7044,7 +7043,7 @@
                         "$ref": "#/components/schemas/ScheduleTransferType"
                     }
                 },
-                "description": "Parameters containing information required for initiating a schedule transfer\n",
+                "description": "Mandatory information for initiating a schedule transfer.",
                 "example": {
                     "scheduleStartDate": "2024-03-01T00:00:00Z",
                     "scheduleEndDate": "2027-03-01T00:00:00Z",
@@ -7068,11 +7067,11 @@
                         "$ref": "#/components/schemas/RecurringFrequency"
                     }
                 },
-                "description": "Parameters containing information of the expression that defines when the schedule runs. The following formats are supported.\n"
+                "description": "The configuration of the schedule."
             },
             "ScheduleExpressionType": {
                 "type": "string",
-                "description": "Represent a type of schedule transfer expression.",
+                "description": "The type of scheduled transfer expression.",
                 "enum": [
                     "RECURRING",
                     "ONE_TIME"
@@ -7080,24 +7079,24 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "RECURRING",
-                        "description": "The schedule transfer is a recurring event. example: monthly schedule transfer."
+                        "description": "The scheduled transfer is a recurring event."
                     },
                     {
                         "value": "ONE_TIME",
-                        "description": "Creates a one-time schedule transfer."
+                        "description": "The scheduled transfer is a one-time event."
                     }
                 ]
             },
             "ScheduleTransferType": {
                 "type": "string",
-                "description": "Defines the type of schedule trigger used for executing transfers. Schedule based on time patterns using EventBridge.\n",
+                "description": "The type of schedule the transfer is on. Schedules based on time patterns use EventBridge.",
                 "enum": [
                     "TIME_BASED"
                 ],
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "TIME_BASED",
-                        "description": "Schedule based on time patterns using EventBridge. Supports recurring patterns (daily, weekly, biweekly, monthly) and one-time future executions. \n"
+                        "description": "The schedule is based on time patterns using EventBridge. Supports recurring patterns (daily, weekly, biweekly, monthly) and one-time events. "
                     }
                 ]
             },
@@ -7112,12 +7111,12 @@
                 "properties": {
                     "sourceAccountId": {
                         "type": "string",
-                        "description": "The unique identifier of the source Amazon SW bank account from where the money needs to be debited\n",
+                        "description": "The unique identifier of the source Amazon Seller Wallet bank account from which the money is debited.",
                         "example": "amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI"
                     },
                     "destinationAccountId": {
                         "type": "string",
-                        "description": "Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited\n",
+                        "description": "The unique identifier of the destination bank account where the money is deposited.",
                         "example": "amzn1.account.AJKBFWEJFBNH2KCJPII5FBN"
                     },
                     "destinationTransactionInstrument": {
@@ -7143,12 +7142,12 @@
                     },
                     "requestTime": {
                         "type": "string",
-                        "description": "The transaction initiation request time in date-time format\n",
+                        "description": "The time at which the transaction was initiated in [ISO 8601 date time format](https://developer-docs.amazon.com/sp-api/docs/iso-8601).",
                         "format": "date-time",
                         "example": "2024-03-26T02:32:59.787Z"
                     }
                 },
-                "description": "Request body to initiate a transaction from a SW bank account to another customer defined bank account\n",
+                "description": "Request body to initiate a transaction from a Seller Wallet bank account to another customer-defined bank account.",
                 "example": {
                     "sourceAccountId": "amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI",
                     "sourceAmount": {
@@ -7234,7 +7233,7 @@
                     },
                     "bankAccountNumber": {
                         "type": "string",
-                        "description": "This field would be used to populate the bank account number of the destination payment method. The field is intentionally not included in any other Schemas since Amazon internal systems will never receive it in unencrypted format, so field won't be part of the request signature\n",
+                        "description": "The bank account number of the destination payment method.\n\n**Note:** This field is encrypted before Amazon receives it, so should not be used to generate `destAccountDigitalSignature`, and should not be included in the request signature.",
                         "example": "GB29RBOS60161331926819"
                     },
                     "accountHolderName": {
@@ -7243,7 +7242,7 @@
                         "example": "John Doe"
                     }
                 },
-                "description": "Request body to create transaction instrument, Amazon performs validation and screening (anti-money laundering measuers) on all the transaction instruments before executing a transaction thus it requires transaction instrument holder's contact details as well\n",
+                "description": "Details of the destination bank account in the transaction request.",
                 "example": {
                     "bankAccount": {
                         "bankAccountNumberFormat": "IBAN",
@@ -7281,7 +7280,7 @@
                     },
                     "transactionId": {
                         "type": "string",
-                        "description": "The unique identifier provided by Amazon to the transaction\n"
+                        "description": "The unique identifier provided by Amazon to the transaction."
                     },
                     "transactionType": {
                         "$ref": "#/components/schemas/TransactionType"
@@ -7296,23 +7295,23 @@
                     },
                     "expectedCompletionDate": {
                         "type": "string",
-                        "description": "Expected completion date of a transaction, for existing active Payees (Trusted Beneficiaries) it will be 24 hours but for new destination bank accounts the value could go up to 5 days\n",
+                        "description": "The expected completion date of the transaction.",
                         "format": "date-time",
                         "example": "2023-09-26T02:32:59.787Z"
                     },
                     "transactionActualCompletionDate": {
                         "type": "string",
-                        "description": "Transaction completion date\n",
+                        "description": "The transaction's completion date.",
                         "format": "date-time"
                     },
                     "lastUpdateDate": {
                         "type": "string",
-                        "description": "The last update date on the transaction\n",
+                        "description": "The date of the most recent account balance update.",
                         "format": "date-time"
                     },
                     "requesterName": {
                         "type": "string",
-                        "description": "Amazon SW customer who requested the transaction\n",
+                        "description": "The Amazon Seller Wallet customer who requested the transaction.",
                         "example": "TPPOrgId"
                     },
                     "transactionRequesterSource": {
@@ -7340,7 +7339,7 @@
                     },
                     "transactionFailureReason": {
                         "type": "string",
-                        "description": "Description in case the transaction fails before completion\n",
+                        "description": "The reason the transaction failed, if applicable.",
                         "example": "Insufficient Balance"
                     }
                 },
@@ -7356,30 +7355,30 @@
                 "properties": {
                     "accountId": {
                         "type": "string",
-                        "description": "The unique identifier provided by Amazon to identify the account\n"
+                        "description": "The unique identifier provided by Amazon to identify the account."
                     },
                     "bankAccountHolderName": {
                         "type": "string",
-                        "description": "BankAccount holder's name\n"
+                        "description": "The account holder's name."
                     },
                     "bankName": {
                         "type": "string",
-                        "description": "The name of the bank\n"
+                        "description": "The name of the bank."
                     },
                     "bankAccountNumberFormat": {
                         "$ref": "#/components/schemas/BankAccountNumberFormat"
                     },
                     "bankAccountNumberTail": {
                         "type": "string",
-                        "description": "Last 3 digit of the bank account number\n"
+                        "description": "The last three digits of the bank account number."
                     },
                     "bankAccountCountryCode": {
                         "type": "string",
-                        "description": "The two digit country code, in ISO 3166 format. This field is OPTIONAL for transactionSourceAccount object but is MANDATORY field for transactionDestinationAccount\n"
+                        "description": "The two-digit country code, in ISO 3166 format. This field is optional for `transactionSourceAccount`, but is mandatory for `transactionDestinationAccount`."
                     },
                     "bankAccountCurrency": {
                         "type": "string",
-                        "description": "The currency code in ISO 4217 format\n"
+                        "description": "The currency code in ISO 4217 format."
                     }
                 },
                 "description": "Details of the bank account involved in the transaction."
@@ -7392,22 +7391,22 @@
                 "properties": {
                     "nextPageToken": {
                         "type": "string",
-                        "description": "If present, use this pagination token to retrieve the next page of supply sources, if not provided the API will return same response. The field will only be provided when the list is greater than 100.",
+                        "description": "A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.",
                         "example": "3493805734095308457308475"
                     },
                     "transactions": {
                         "type": "array",
-                        "description": "Collection that holds Transaction\n",
+                        "description": "A list of transactions.",
                         "items": {
                             "$ref": "#/components/schemas/Transaction"
                         }
                     }
                 },
-                "description": "Struct that holds collection of transactions."
+                "description": "A list of transactions."
             },
             "TransactionStatus": {
                 "type": "string",
-                "description": "Represents current status of the transaction.",
+                "description": "The current status of the transaction.",
                 "enum": [
                     "EXPIRED",
                     "FAILED",
@@ -7423,15 +7422,15 @@
                     },
                     {
                         "value": "FAILED",
-                        "description": "Transaction failed before completion."
+                        "description": "The transaction failed before completion."
                     },
                     {
                         "value": "FAILED_CREDITS_APPLIED",
-                        "description": "Transaction failed after debit and credit has been applied back to the balance."
+                        "description": "The transaction failed after debit and credit had been applied back to the balance."
                     },
                     {
                         "value": "IN_PROGRESS",
-                        "description": "Transaction is in progress."
+                        "description": "The transaction is in progress."
                     },
                     {
                         "value": "PENDING_USER_APPROVAL",
@@ -7439,13 +7438,13 @@
                     },
                     {
                         "value": "SUCCESSFUL",
-                        "description": "Transaction is successfully processed."
+                        "description": "The transaction is successfully processed."
                     }
                 ]
             },
             "TransactionType": {
                 "type": "string",
-                "description": "Represent type of transaction.",
+                "description": "The type of transaction.",
                 "enum": [
                     "CREDIT",
                     "DEBIT"
@@ -7481,7 +7480,7 @@
                     },
                     "fees": {
                         "type": "array",
-                        "description": "List of fees\n",
+                        "description": "A list of fees.",
                         "items": {
                             "$ref": "#/components/schemas/Fee"
                         }
@@ -7502,7 +7501,7 @@
                 "properties": {
                     "transferScheduleId": {
                         "type": "string",
-                        "description": "The unique identifier provided by Amazon to the scheduled transfer\n"
+                        "description": "The unique identifier provided by Amazon to the scheduled transfer."
                     },
                     "transactionType": {
                         "$ref": "#/components/schemas/TransactionType"
@@ -7524,7 +7523,7 @@
                     },
                     "transferScheduleFailures": {
                         "type": "array",
-                        "description": "Collection that holds Transfer Schedules that has been cancelled or failed due to certain reasons.\n",
+                        "description": "A list of transfer schedule failures.",
                         "items": {
                             "$ref": "#/components/schemas/TransferScheduleFailures"
                         }
@@ -7581,16 +7580,16 @@
                 "properties": {
                     "transferScheduleFailureDate": {
                         "type": "string",
-                        "description": "The transfer schedule cancellation date\n",
+                        "description": "The transfer schedule failure date.",
                         "format": "date-time"
                     },
                     "transferScheduleFailureReason": {
                         "type": "string",
-                        "description": "The statement/reasoning listed for the cancellation of the transfer schedule\n",
+                        "description": "The reason listed for the failure of the transfer schedule.",
                         "example": "INSUFFICIENT_BALANCE"
                     }
                 },
-                "description": "Specifies the balance amount in the Amazon SW bank account",
+                "description": "The time of and reason for the transfer schedule failure.",
                 "example": {
                     "transferScheduleFailureDate": "2024-03-01T10:30:00Z",
                     "transferScheduleFailureReason": "INSUFFICIENT_BALANCE"
@@ -7604,18 +7603,18 @@
                 "properties": {
                     "nextPageToken": {
                         "type": "string",
-                        "description": "If present, use this pagination token to retrieve the next page of supply sources, if not provided the API will return same response. The field will only be provided when the list is greater than 100.",
+                        "description": "A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.",
                         "example": "3493805734095308457308475"
                     },
                     "transferSchedules": {
                         "type": "array",
-                        "description": "Collection that holds list of Transfer Schedules\n",
+                        "description": "A list of transfer schedules.",
                         "items": {
                             "$ref": "#/components/schemas/TransferSchedule"
                         }
                     }
                 },
-                "description": "Struct that holds collection of transfer schedules."
+                "description": "A list of transfer schedules."
             },
             "TransferScheduleRequest": {
                 "required": [
@@ -7631,17 +7630,17 @@
                 "properties": {
                     "sourceAccountId": {
                         "type": "string",
-                        "description": "The unique identifier of the source Amazon SW bank account from where the money needs to be debited\n",
+                        "description": "The unique identifier of the source Amazon Seller Wallet bank account from which money is debited.",
                         "example": "amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI"
                     },
                     "sourceCurrencyCode": {
                         "type": "string",
-                        "description": "Represents 3 letter currency code in ISO 4217 standard format of the source payment method country\n",
+                        "description": "The three-letter currency code of the source payment method country, in ISO 4217 format.",
                         "example": "GBP"
                     },
                     "destinationAccountId": {
                         "type": "string",
-                        "description": "Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited\n",
+                        "description": "The unique identifier of the destination bank account where the money is deposited.",
                         "example": "amzn1.account.AJKBFWEJFBNH2KCJPII5FBN"
                     },
                     "destinationTransactionInstrument": {
@@ -7660,7 +7659,7 @@
                         "$ref": "#/components/schemas/TransferScheduleStatus"
                     }
                 },
-                "description": "Request body to initiate a scheduled transfer from a SW bank account to another customer defined bank account\n",
+                "description": "Request body to initiate a scheduled transfer from a Seller Wallet bank account to another customer-defined bank account.",
                 "example": {
                     "sourceAccountId": "amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI",
                     "destinationAccountId": "amzn1.account.AJKBFWEJFBNH2KCJPII5FBN",
@@ -7697,7 +7696,7 @@
             },
             "TransferScheduleStatus": {
                 "type": "string",
-                "description": "Represents the schedule status of the transfer.",
+                "description": "The schedule status of the transfer.",
                 "enum": [
                     "ENABLED",
                     "DISABLED",
@@ -7707,19 +7706,19 @@
                 "x-docgen-enum-table-extension": [
                     {
                         "value": "ENABLED",
-                        "description": "Represents the status of the transfer schedule that is enabled."
+                        "description": "The transfer schedule is enabled."
                     },
                     {
                         "value": "DISABLED",
-                        "description": "Represents the status of the transfer schedule that is disabled."
+                        "description": "The transfer schedule is disabled."
                     },
                     {
                         "value": "EXPIRED",
-                        "description": "Represents the status of the transfer that has expired and not scheduled anymore."
+                        "description": "The transfer has expired and is no longer scheduled."
                     },
                     {
                         "value": "DELETED",
-                        "description": "Represents the status of the transfer that was scheduled but has been deleted."
+                        "description": "The transfer was scheduled but has been deleted."
                     }
                 ]
             }

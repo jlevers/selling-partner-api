@@ -15,7 +15,6 @@ use SellingPartnerApi\Dto;
 final class GetOffersResult extends Dto
 {
     protected static array $attributeMap = [
-        'marketplaceId' => 'MarketplaceID',
         'itemCondition' => 'ItemCondition',
         'identifier' => 'Identifier',
         'summary' => 'Summary',

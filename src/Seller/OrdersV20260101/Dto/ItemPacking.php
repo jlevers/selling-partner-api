@@ -16,8 +16,10 @@ final class ItemPacking extends Dto
 {
     /**
      * @param  ?GiftOption  $giftOption  Gift wrapping and personalization options selected by the customer for an order item.
+     * @param  ?SerialNumberRequirement  $serialNumberRequirement  Whether serial numbers must be provided for this line item.
      */
     public function __construct(
         public ?GiftOption $giftOption = null,
+        public ?SerialNumberRequirement $serialNumberRequirement = null,
     ) {}
 }

@@ -14,6 +14,9 @@ abstract class AbstractSchemasCommand extends Command
 {
     use HasSchemaArgs;
 
+    /** The human-readable action being performed on the schemas. */
+    protected static string $action = 'Handling';
+
     /**
      * Execute the command, given the input arguments/options via $input and the output interface
      * via $output. Filters the schemas to be processed based on the input, and then calls the
@@ -24,7 +27,7 @@ abstract class AbstractSchemasCommand extends Command
         $this->schemas = static::filterSchemas($input);
 
         foreach ($this->schemas as $schema) {
-            echo "Handling schema {$schema->code} ...\n";
+            echo static::$action." schema {$schema->code} ...\n";
 
             try {
                 $returnCode = $this->handleSchema($schema);

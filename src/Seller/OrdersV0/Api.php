@@ -11,7 +11,6 @@ use SellingPartnerApi\Seller\OrdersV0\Requests\ConfirmShipment;
 use SellingPartnerApi\Seller\OrdersV0\Requests\GetOrder;
 use SellingPartnerApi\Seller\OrdersV0\Requests\GetOrderAddress;
 use SellingPartnerApi\Seller\OrdersV0\Requests\GetOrderBuyerInfo;
-use SellingPartnerApi\Seller\OrdersV0\Requests\GetOrderFulfillmentInstructions;
 use SellingPartnerApi\Seller\OrdersV0\Requests\GetOrderItems;
 use SellingPartnerApi\Seller\OrdersV0\Requests\GetOrderItemsBuyerInfo;
 use SellingPartnerApi\Seller\OrdersV0\Requests\GetOrderRegulatedInfo;
@@ -54,7 +53,8 @@ class Api extends BaseResource
      * @param  ?array  $paymentMethods  A list of payment method values. Use this field to select orders that were paid with the specified payment methods.
      *
      * **Possible values**: `COD` (cash on delivery), `CVS` (convenience store), `Other` (Any payment method other than COD or CVS).
-     * @param  ?string  $sellerOrderId  An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If `SellerOrderId` is specified, then `FulfillmentChannels`, `OrderStatuses`, `PaymentMethod`, `LastUpdatedAfter`, and `LastUpdatedBefore` cannot be specified.
+     * @param  ?string  $buyerEmail  The email address of a buyer. Used to select orders that contain the specified email address.
+     * @param  ?string  $sellerOrderId  An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If `SellerOrderId` is specified, then `FulfillmentChannels`, `OrderStatuses`, `PaymentMethod`, `LastUpdatedAfter`, `LastUpdatedBefore`, and `BuyerEmail` cannot be specified.
      * @param  ?int  $maxResultsPerPage  A number that indicates the maximum number of orders that can be returned per page. Value must be 1 - 100. Default 100.
      * @param  ?array  $easyShipShipmentStatuses  A list of `EasyShipShipmentStatus` values. Used to select Easy Ship orders with statuses that match the specified values. If `EasyShipShipmentStatus` is specified, only Amazon Easy Ship orders are returned.
      *
@@ -102,6 +102,7 @@ class Api extends BaseResource
         ?array $orderStatuses = null,
         ?array $fulfillmentChannels = null,
         ?array $paymentMethods = null,
+        ?string $buyerEmail = null,
         ?string $sellerOrderId = null,
         ?int $maxResultsPerPage = null,
         ?array $easyShipShipmentStatuses = null,
@@ -116,7 +117,7 @@ class Api extends BaseResource
         ?string $latestDeliveryDateBefore = null,
         ?string $latestDeliveryDateAfter = null,
     ): Response {
-        $request = new GetOrders($marketplaceIds, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $orderStatuses, $fulfillmentChannels, $paymentMethods, $sellerOrderId, $maxResultsPerPage, $easyShipShipmentStatuses, $electronicInvoiceStatuses, $nextToken, $amazonOrderIds, $actualFulfillmentSupplySourceId, $isIspu, $storeChainStoreId, $earliestDeliveryDateBefore, $earliestDeliveryDateAfter, $latestDeliveryDateBefore, $latestDeliveryDateAfter);
+        $request = new GetOrders($marketplaceIds, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $orderStatuses, $fulfillmentChannels, $paymentMethods, $buyerEmail, $sellerOrderId, $maxResultsPerPage, $easyShipShipmentStatuses, $electronicInvoiceStatuses, $nextToken, $amazonOrderIds, $actualFulfillmentSupplySourceId, $isIspu, $storeChainStoreId, $earliestDeliveryDateBefore, $earliestDeliveryDateAfter, $latestDeliveryDateBefore, $latestDeliveryDateAfter);
 
         return $this->connector->send($request);
     }
@@ -147,16 +148,6 @@ class Api extends BaseResource
     public function getOrderAddress(string $orderId): Response
     {
         $request = new GetOrderAddress($orderId);
-
-        return $this->connector->send($request);
-    }
-
-    /**
-     * @param  string  $orderId  The Amazon order identifier in 3-7-7 format.
-     */
-    public function getOrderFulfillmentInstructions(string $orderId): Response
-    {
-        $request = new GetOrderFulfillmentInstructions($orderId);
 
         return $this->connector->send($request);
     }

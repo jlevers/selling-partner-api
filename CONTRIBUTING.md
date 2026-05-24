@@ -80,6 +80,8 @@ Finally, the code is generated from the finalized OpenAPI models. We use `highsi
 
 The `resources/generator-config.json` file provides some basic configuration parameters to the autogenerator, and the files in `src/Generator/Generators` override `highsidelabs/saloon-sdk-generator`'s default file generators. There are several different generator files that can be overridden – you can see all of them [here](https://github.com/highsidelabs/saloon-sdk-generator/tree/master/src/Generators). If you have questions about how to go about extending or modifying the generator files, please [open an issue](https://github.com/highsidelabs/saloon-sdk-generator/issues) in the `highsidelabs/saloon-sdk-generator` repository.
 
+After regenerating code, run `composer lint` to standardize the formatting of the generated code.
+
 ### Generator control files
 
 #### `apis.json`

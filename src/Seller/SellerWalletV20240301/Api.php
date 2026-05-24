@@ -23,7 +23,7 @@ use SellingPartnerApi\Seller\SellerWalletV20240301\Requests\UpdateTransferSchedu
 class Api extends BaseResource
 {
     /**
-     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for which items are returned.
+     * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function listAccounts(string $marketplaceId): Response
     {
@@ -33,7 +33,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $accountId  ID of the Amazon SW account
+     * @param  string  $accountId  The ID of the Amazon Seller Wallet account.
      * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function getAccount(string $accountId, string $marketplaceId): Response
@@ -44,7 +44,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $accountId  ID of the Amazon SW account
+     * @param  string  $accountId  The ID of the Amazon Seller Wallet account.
      * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function listAccountBalances(string $accountId, string $marketplaceId): Response
@@ -55,11 +55,11 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $sourceCountryCode  Represents 2 character country code of source transaction account in ISO 3166 standard format.
-     * @param  string  $sourceCurrencyCode  Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.
-     * @param  string  $destinationCountryCode  Represents 2 character country code of destination transaction account in ISO 3166 standard format.
-     * @param  string  $destinationCurrencyCode  Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.
-     * @param  float  $baseAmount  Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.
+     * @param  string  $sourceCountryCode  Country code of the source transaction account in ISO 3166 format.
+     * @param  string  $sourceCurrencyCode  Currency code of the source transaction country in ISO 4217 format.
+     * @param  string  $destinationCountryCode  Country code of the destination transaction account in ISO 3166 format.
+     * @param  string  $destinationCurrencyCode  Currency code of the destination transaction country in ISO 4217 format.
+     * @param  float  $baseAmount  The base transaction amount without any markup fees.
      * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function getTransferPreview(
@@ -76,9 +76,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $accountId  ID of the Amazon SW account
+     * @param  string  $accountId  The ID of the Amazon Seller Wallet account.
      * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @param  ?string  $nextPageToken  Pagination token to retrieve a specific page of results.
+     * @param  ?string  $nextPageToken  A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.
      */
     public function listAccountTransactions(
         string $accountId,
@@ -91,7 +91,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  TransactionInitiationRequest  $transactionInitiationRequest  Request body to initiate a transaction from a SW bank account to another customer defined bank account
+     * @param  TransactionInitiationRequest  $transactionInitiationRequest  Request body to initiate a transaction from a Seller Wallet bank account to another customer-defined bank account.
      * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  string  $destAccountDigitalSignature  Digital signature for the destination bank account details. For more information, refer to [Third-Party Provider Signature Guidance](https://developer-docs.amazon.com/sp-api/docs/tpp-registration-signature-guidance).
      * @param  string  $amountDigitalSignature  Digital signature for the source currency transaction amount. Sign in the order of the request definitions. You can omit empty or optional fields. For more information, refer to [Third-Party Provider Signature Guidance](https://developer-docs.amazon.com/sp-api/docs/tpp-registration-signature-guidance).
@@ -108,7 +108,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $transactionId  ID of the Amazon SW transaction
+     * @param  string  $transactionId  The ID of the Amazon Seller Wallet transaction.
      * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function getTransaction(string $transactionId, string $marketplaceId): Response
@@ -119,9 +119,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $accountId  ID of the Amazon SW account
+     * @param  string  $accountId  The ID of the Amazon Seller Wallet account.
      * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @param  ?string  $nextPageToken  Pagination token to retrieve a specific page of results.
+     * @param  ?string  $nextPageToken  A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.
      */
     public function listTransferSchedules(
         string $accountId,
@@ -151,7 +151,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  TransferScheduleRequest  $transferScheduleRequest  Request body to initiate a scheduled transfer from a SW bank account to another customer defined bank account
+     * @param  TransferScheduleRequest  $transferScheduleRequest  Request body to initiate a scheduled transfer from a Seller Wallet bank account to another customer-defined bank account.
      * @param  string  $marketplaceId  The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  string  $destAccountDigitalSignature  Digital signature for the destination bank account details.
      * @param  string  $amountDigitalSignature  Digital signature for the source currency transaction amount.

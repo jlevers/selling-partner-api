@@ -69,6 +69,11 @@ class SellerConnector extends SellingPartnerApi
         return new EasyShipV20220323\Api($this);
     }
 
+    public function externalFulfillmentV20240911(): ExternalFulfillmentV20240911\Api
+    {
+        return new ExternalFulfillmentV20240911\Api($this);
+    }
+
     public function fbaInboundV20240320(): FBAInboundV20240320\Api
     {
         return new FBAInboundV20240320\Api($this);

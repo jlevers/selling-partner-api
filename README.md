@@ -263,6 +263,10 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
     ```php
     $deliveryByAmazonApi = $sellerConnector->deliveryByAmazonV20220701();
     ```
+* **External Fulfillment API (v2024-09-11)** ([docs](https://developer-docs.amazon.com/sp-api/reference/external-fulfillment-shipping-v2024-09-11))
+    ```php
+    $externalFulfillmentApi = $sellerConnector->externalFulfillmentV20240911();
+    ```
 * **EasyShip API (v2022-03-23)** ([docs](https://developer-docs.amazon.com/sp-api/docs/easy-ship-api-v2022-03-23-reference))
     ```php
     $easyShipApi = $sellerConnector->easyShipV20220323();

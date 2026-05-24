@@ -89,6 +89,15 @@
                 }
             ]
         },
+        "external-fulfillment": {
+            "name": "External Fulfillment",
+            "versions": [
+                {
+                    "version": "2024-09-11",
+                    "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/refs/heads/main/models/external-fulfillment/externalFulfillmentShipments_2024-09-11.json"
+                }
+            ]
+        },
         "fba-inbound-eligibility": {
             "name": "FBA Inbound Eligibility",
             "versions": [

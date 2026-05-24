@@ -4258,6 +4258,10 @@
                     "PurchaseOrderNumber": {
                         "type": "string",
                         "description": "The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout."
+                    },
+                    "BuyerEmail": {
+                        "type": "string",
+                        "description": "The anonymized email address of the buyer."
                     }
                 },
                 "description": "Buyer information for an order."

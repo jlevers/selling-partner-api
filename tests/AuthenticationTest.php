@@ -258,6 +258,57 @@ class AuthenticationTest extends TestCase
         );
     }
 
+    public function test_restricted_data_token_only_requests_data_elements_known_to_the_endpoint(): void
+    {
+        $mockClient = new MockClient([
+            GetAccessTokenRequest::class => fn () => MockResponse::make([
+                'access_token' => 'access-token',
+                'token_type' => 'bearer',
+                'expires_in' => 3600,
+                'refresh_token' => 'refresh-token',
+            ]),
+            CreateRestrictedDataToken::class => MockResponse::make([
+                'restrictedDataToken' => 'restricted-data-token',
+                'expiresIn' => 3600,
+            ]),
+        ]);
+
+        // The connector is configured with data elements for the broadest endpoint that supports
+        // them (e.g. Orders v0 getOrder, which supports both shippingAddress and buyerInfo).
+        $connector = SellingPartnerApi::seller(
+            clientId: 'client-id',
+            clientSecret: 'client-secret',
+            refreshToken: 'refresh-token',
+            endpoint: Endpoint::NA_SANDBOX,
+            dataElements: ['shippingAddress', 'buyerInfo'],
+        );
+        $connector->withMockClient($mockClient);
+
+        // But getOrderItems only recognizes buyerInfo, so the restricted data token request for
+        // that endpoint must not include shippingAddress, or Amazon rejects it with:
+        // "Application does not have access to one or more requested data elements: [shippingAddress]"
+        $authenticator = $connector->restrictedAuth(
+            '/orders/v0/orders/{orderId}/orderItems',
+            'GET',
+            ['buyerInfo'],
+        );
+
+        $this->assertEquals('restricted-data-token', $authenticator->accessToken);
+
+        $this->assertEquals(
+            [
+                'restrictedResources' => [
+                    [
+                        'method' => 'GET',
+                        'path' => '/orders/v0/orders/{orderId}/orderItems',
+                        'dataElements' => ['buyerInfo'],
+                    ],
+                ],
+            ],
+            $mockClient->getLastPendingRequest()->body()->all()
+        );
+    }
+
     public function test_creates_new_delegated_restricted_data_token(): void
     {
         $mockClient = new MockClient([

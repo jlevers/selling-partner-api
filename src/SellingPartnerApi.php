@@ -144,14 +144,16 @@ abstract class SellingPartnerApi extends Connector
             $cacheKey = "{$this->delegatee}.{$cacheKey}";
         }
 
-        // Only use data elements that are known to be valid for this particular endpoint
-        $dataElements = array_intersect($this->dataElements, $knownDataElements);
+        // Only use data elements that are known to be valid for this particular endpoint.
+        // array_values() re-indexes the result, since array_intersect() preserves the original
+        // keys, and json_encode() would otherwise serialize a non-contiguous array as a JSON
+        // object instead of an array once it reaches the request body.
+        $dataElements = array_values(array_intersect($this->dataElements, $knownDataElements));
         if ($dataElements) {
             $cacheKey .= ':'.implode(',', $dataElements);
         }
 
         // Using $this in closures doesn't work well
-        $dataElements = $this->dataElements;
         $delegatee = $this->delegatee;
         $tokensApi = $this->tokensApi;
         $authenticator = $this->getCacheableAuthenticator(

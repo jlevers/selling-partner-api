@@ -30,7 +30,7 @@ class GetSubscriptionById extends Request
      * @param  string  $subscriptionId  The identifier for the subscription that you want to get.
      * @param  string  $notificationType  The type of notification.
      *
-     *  For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
+     *  For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
      */
     public function __construct(
         protected string $subscriptionId,

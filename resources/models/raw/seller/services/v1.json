@@ -1024,6 +1024,39 @@
                             "minItems": 1,
                             "type": "array",
                             "items": {
+                                "pattern": "^[0-9\\-]+$",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "productOrderIds",
+                        "in": "query",
+                        "description": "A list of up to 20 associated product order IDs. You can use these IDs to query service jobs.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "maxItems": 20,
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                                "pattern": "^[0-9\\-]+$",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "trackingIds",
+                        "in": "query",
+                        "description": "A list of up to 20 associated product tracking IDs. You can use these IDs to query service jobs.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "maxItems": 20,
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                                "pattern": "^[A-Za-z0-9\\-]+$",
                                 "type": "string"
                             }
                         }
@@ -8776,6 +8809,20 @@
                     "serviceOrderId": {
                         "$ref": "#/components/schemas/OrderId"
                     },
+                    "productOrderIds": {
+                        "type": "array",
+                        "description": "A list of associated product order IDs for the service job.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "trackingIds": {
+                        "type": "array",
+                        "description": "A list of associated product tracking IDs for the service job.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
                     "marketplaceId": {
                         "pattern": "^[A-Z0-9]*$",
                         "type": "string",
@@ -9121,6 +9168,13 @@
                     },
                     "itemDelivery": {
                         "$ref": "#/components/schemas/ItemDelivery"
+                    },
+                    "linkedAssets": {
+                        "type": "array",
+                        "description": "A list of customer-owned assets on which the service must be performed.",
+                        "items": {
+                            "$ref": "#/components/schemas/LinkedAsset"
+                        }
                     }
                 },
                 "description": "Information about an item associated with the service job."
@@ -9154,6 +9208,27 @@
                     }
                 },
                 "description": "Promised delivery information for the item."
+            },
+            "LinkedAsset": {
+                "type": "object",
+                "properties": {
+                    "assetType": {
+                        "type": "string",
+                        "description": "The type of the linked asset. For example: `VEHICLE`. "
+                    },
+                    "assetName": {
+                        "type": "string",
+                        "description": "The name of the linked asset. For example: `2024 Polaris Slingshot SLR AutoDrive`."
+                    },
+                    "additionalAttributes": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Additional attributes of the linked asset, such as vehicle make, model, year, and engine details."
+                    }
+                },
+                "description": "Information about an asset linked to an associated item, such as vehicle information for Ship-to-Store orders."
             },
             "ServiceLocation": {
                 "type": "object",

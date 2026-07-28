@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class OrderChangeTypeFilter extends Dto
 {
     /**
-     * @param  ?string[]  $orderChangeTypes  A list of order change types to subscribe to (for example: `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
+     * @param  ?string[]  $orderChangeTypes  A list of order change types you can subscribe to (for example, `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
      */
     public function __construct(
         public ?array $orderChangeTypes = null,

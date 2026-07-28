@@ -14,10 +14,14 @@ use SellingPartnerApi\Dto;
 
 final class OrderProceeds extends Dto
 {
+    protected static array $complexArrayTypes = ['breakdowns' => OrderProceedsBreakdown::class];
+
     /**
      * @param  ?Money  $grandTotal  An amount of money, including units in the form of currency.
+     * @param  OrderProceedsBreakdown[]|null  $breakdowns  Categorized proceeds for the order. Proceed categories are either aggregated across all order items (such as `ITEM`, `SHIPPING`, and `TAX`) or applied at the order level (such as `DELIVERY_TIP`).
      */
     public function __construct(
         public ?Money $grandTotal = null,
+        public ?array $breakdowns = null,
     ) {}
 }

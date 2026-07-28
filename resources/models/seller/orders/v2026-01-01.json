@@ -210,7 +210,8 @@
                                     "FULFILLMENT",
                                     "PACKAGES",
                                     "TAX",
-                                    "PAYMENT"
+                                    "PAYMENT",
+                                    "FULFILLMENT_ORDERS"
                                 ],
                                 "x-docgen-enum-table-extension": [
                                     {
@@ -252,6 +253,10 @@
                                     {
                                         "value": "PAYMENT",
                                         "description": "The payment information associated with the order."
+                                    },
+                                    {
+                                        "value": "FULFILLMENT_ORDERS",
+                                        "description": "The fulfillment orders associated with this order."
                                     }
                                 ]
                             }
@@ -430,9 +435,33 @@
                                             },
                                             "proceeds": {
                                                 "grandTotal": {
-                                                    "amount": "149.99",
+                                                    "amount": "154.99",
                                                     "currencyCode": "USD"
-                                                }
+                                                },
+                                                "breakdowns": [
+                                                    {
+                                                        "type": "ITEM",
+                                                        "subtotal": {
+                                                            "amount": "149.97",
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "TAX",
+                                                        "subtotal": {
+                                                            "amount": "0.02",
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "DELIVERY_TIP",
+                                                        "status": "FINALIZED",
+                                                        "subtotal": {
+                                                            "amount": "5.00",
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    }
+                                                ]
                                             },
                                             "fulfillment": {
                                                 "fulfillmentStatus": "SHIPPED",
@@ -632,6 +661,11 @@
                                                             ]
                                                         }
                                                     ]
+                                                }
+                                            ],
+                                            "fulfillmentOrders": [
+                                                {
+                                                    "fulfillmentOrderId": "LdDv2jxM4"
                                                 }
                                             ]
                                         }
@@ -1439,7 +1473,8 @@
                                     "FULFILLMENT",
                                     "PACKAGES",
                                     "TAX",
-                                    "PAYMENT"
+                                    "PAYMENT",
+                                    "FULFILLMENT_ORDERS"
                                 ],
                                 "x-docgen-enum-table-extension": [
                                     {
@@ -1481,6 +1516,10 @@
                                     {
                                         "value": "PAYMENT",
                                         "description": "The payment information associated with the order."
+                                    },
+                                    {
+                                        "value": "FULFILLMENT_ORDERS",
+                                        "description": "The fulfillment orders associated with this order."
                                     }
                                 ]
                             }
@@ -1557,7 +1596,30 @@
                                             "grandTotal": {
                                                 "amount": "103.97",
                                                 "currencyCode": "GBP"
-                                            }
+                                            },
+                                            "breakdowns": [
+                                                {
+                                                    "type": "ITEM",
+                                                    "subtotal": {
+                                                        "amount": "89.97",
+                                                        "currencyCode": "GBP"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "SHIPPING",
+                                                    "subtotal": {
+                                                        "amount": "10.00",
+                                                        "currencyCode": "GBP"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "TAX",
+                                                    "subtotal": {
+                                                        "amount": "4.00",
+                                                        "currencyCode": "GBP"
+                                                    }
+                                                }
+                                            ]
                                         },
                                         "fulfillment": {
                                             "fulfillmentStatus": "SHIPPED",
@@ -1716,6 +1778,11 @@
                                                         ]
                                                     }
                                                 ]
+                                            }
+                                        ],
+                                        "fulfillmentOrders": [
+                                            {
+                                                "fulfillmentOrderId": "LdDv2jxM4"
                                             }
                                         ]
                                     }
@@ -2452,6 +2519,13 @@
                         "items": {
                             "$ref": "#/components/schemas/OrderPackage"
                         }
+                    },
+                    "fulfillmentOrders": {
+                        "type": "array",
+                        "description": "The list of fulfillment orders associated with this customer order. Each entry corresponds to one fulfillment unit created by Amazon for this order. **Note:** Only available for EasyShip orders at present.",
+                        "items": {
+                            "$ref": "#/components/schemas/FulfillmentOrder"
+                        }
                     }
                 },
                 "description": "Comprehensive information about a customer order."
@@ -2548,9 +2622,37 @@
                 "properties": {
                     "grandTotal": {
                         "$ref": "#/components/schemas/Money"
+                    },
+                    "breakdowns": {
+                        "type": "array",
+                        "description": "Categorized proceeds for the order. Proceed categories are either aggregated across all order items (such as `ITEM`, `SHIPPING`, and `TAX`) or applied at the order level (such as `DELIVERY_TIP`).",
+                        "items": {
+                            "$ref": "#/components/schemas/OrderProceedsBreakdown"
+                        }
                     }
                 },
                 "description": "The money that the seller receives from the sale of the order."
+            },
+            "OrderProceedsBreakdown": {
+                "required": [
+                    "subtotal",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "The proceeds category. \n\n**Possible values**: `ITEM`, `SHIPPING`, `GIFT_WRAP`, `COD_FEE`, `TAX`, `DISCOUNT`, `DELIVERY_TIP`, `OTHER`. **Note:** `DELIVERY_TIP` is charged separately and not attributed to a specific item. The remaining categories are aggregated across all order items."
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "The processing status of the charge. Only present for categories processed separately after checkout, such as `DELIVERY_TIP`.\n\n**Possible values**: `PENDING`, `FINALIZED`."
+                    },
+                    "subtotal": {
+                        "$ref": "#/components/schemas/Money"
+                    }
+                },
+                "description": "An entry detailing proceeds information."
             },
             "OrderFulfillment": {
                 "required": [
@@ -3307,6 +3409,10 @@
                 "description": "Information about any personalization, customization, or special modifications applied to this order item."
             },
             "ItemProceedsBreakdown": {
+                "required": [
+                    "subtotal",
+                    "type"
+                ],
                 "type": "object",
                 "properties": {
                     "type": {
@@ -3901,6 +4007,19 @@
                     }
                 },
                 "description": "A list of error responses returned when a request is unsuccessful."
+            },
+            "FulfillmentOrder": {
+                "required": [
+                    "fulfillmentOrderId"
+                ],
+                "type": "object",
+                "properties": {
+                    "fulfillmentOrderId": {
+                        "type": "string",
+                        "description": "The Fulfillment Order ID assigned by Amazon after fulfillment planning. This identifier is identical to the Shipment ID required by External Fulfillment APIs."
+                    }
+                },
+                "description": "Information about a fulfillment order associated with a customer order. A fulfillment order represents a unit of fulfillment created by Amazon for the order. **Note:** Only available for EasyShip orders at present."
             }
         }
     },

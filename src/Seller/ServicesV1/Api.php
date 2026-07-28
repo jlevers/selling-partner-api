@@ -68,6 +68,8 @@ class Api extends BaseResource
     /**
      * @param  array  $marketplaceIds  Used to select jobs that were placed in the specified marketplaces.
      * @param  ?array  $serviceOrderIds  List of service order ids for the query you want to perform.Max values supported 20.
+     * @param  ?array  $productOrderIds  A list of up to 20 associated product order IDs. You can use these IDs to query service jobs.
+     * @param  ?array  $trackingIds  A list of up to 20 associated product tracking IDs. You can use these IDs to query service jobs.
      * @param  ?array  $serviceJobStatus  A list of one or more job status by which to filter the list of jobs.
      * @param  ?string  $pageToken  String returned in the response of your previous request.
      * @param  ?int  $pageSize  A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
@@ -86,6 +88,8 @@ class Api extends BaseResource
     public function getServiceJobs(
         array $marketplaceIds,
         ?array $serviceOrderIds = null,
+        ?array $productOrderIds = null,
+        ?array $trackingIds = null,
         ?array $serviceJobStatus = null,
         ?string $pageToken = null,
         ?int $pageSize = null,
@@ -101,7 +105,7 @@ class Api extends BaseResource
         ?array $requiredSkills = null,
         ?array $storeIds = null,
     ): Response {
-        $request = new GetServiceJobs($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds);
+        $request = new GetServiceJobs($marketplaceIds, $serviceOrderIds, $productOrderIds, $trackingIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds);
 
         return $this->connector->send($request);
     }

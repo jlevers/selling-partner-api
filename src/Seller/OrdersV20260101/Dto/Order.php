@@ -19,6 +19,7 @@ final class Order extends Dto
         'orderAliases' => Alias::class,
         'associatedOrders' => AssociatedOrder::class,
         'packages' => OrderPackage::class,
+        'fulfillmentOrders' => FulfillmentOrder::class,
     ];
 
     /**
@@ -39,6 +40,7 @@ final class Order extends Dto
      * @param  ?OrderTax  $tax  Tax information about the order.
      * @param  ?OrderFulfillment  $fulfillment  Information about how the order is being processed, packed, and shipped to the customer.
      * @param  OrderPackage[]|null  $packages  Shipping packages created for this order, including tracking information. **Note:** Only available for merchant-fulfilled (FBM) orders.
+     * @param  FulfillmentOrder[]|null  $fulfillmentOrders  The list of fulfillment orders associated with this customer order. Each entry corresponds to one fulfillment unit created by Amazon for this order. **Note:** Only available for EasyShip orders at present.
      */
     public function __construct(
         public string $orderId,
@@ -56,5 +58,6 @@ final class Order extends Dto
         public ?OrderTax $tax = null,
         public ?OrderFulfillment $fulfillment = null,
         public ?array $packages = null,
+        public ?array $fulfillmentOrders = null,
     ) {}
 }

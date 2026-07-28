@@ -17,15 +17,15 @@ final class ItemProceedsBreakdown extends Dto
     protected static array $complexArrayTypes = ['detailedBreakdowns' => ItemProceedsDetailedBreakdown::class];
 
     /**
-     * @param  ?string  $type  Category classification of the proceeds breakdown.
+     * @param  string  $type  Category classification of the proceeds breakdown.
      *
      * **Possible values**: `ITEM`, `SHIPPING`, `GIFT_WRAP`, `COD_FEE`, `OTHER`, `TAX`, `DISCOUNT`
-     * @param  ?Money  $subtotal  An amount of money, including units in the form of currency.
+     * @param  Money  $subtotal  An amount of money, including units in the form of currency.
      * @param  ItemProceedsDetailedBreakdown[]|null  $detailedBreakdowns  Further granular breakdown of the subtotal.
      */
     public function __construct(
-        public ?string $type = null,
-        public ?Money $subtotal = null,
+        public string $type,
+        public Money $subtotal,
         public ?array $detailedBreakdowns = null,
     ) {}
 }

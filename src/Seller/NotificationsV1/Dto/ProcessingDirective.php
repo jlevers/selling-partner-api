@@ -15,9 +15,12 @@ use SellingPartnerApi\Dto;
 final class ProcessingDirective extends Dto
 {
     /**
-     * @param  ?EventFilter  $eventFilter  A `notificationType` specific filter. This object contains all of the currently available filters and properties that you can use to define a `notificationType` specific filter.
+     * @param  ?EventFilter  $eventFilter  A `notificationType` filter. This object contains all of the available filters and properties that you can use to define a `notificationType` specific filter.
+     * @param  ?string  $filterExpression  An expression for filtering events before delivery to destination based on the notification payload (example: FulfillmentOrderStatusNotification.FulfillmentOrderStatus == `SHIPPED` ). The `filterExpression` is a string that follows the CEL expression syntax (https://github.com/google/cel-spec) excluding arithmetic operators (+, -, *, /, %) and list/map indexing ([]). Refer to Notification Type Values to determine if filter Expression is supported for a Notification Type. Refer to CEL Operators (https://developer-docs.amazon.com/sp-api/docs/filter-notification-subscriptions) to see if a CEL operator is supported.
+     *                                     Note: eventFilter and filterExpression are mutually exclusive. You can use filterExpression to replace existing eventFilter configurations.
      */
     public function __construct(
         public ?EventFilter $eventFilter = null,
+        public ?string $filterExpression = null,
     ) {}
 }

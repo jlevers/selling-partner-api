@@ -18,7 +18,7 @@ final class RestrictionList extends Response
     protected static array $complexArrayTypes = ['restrictions' => Restriction::class];
 
     /**
-     * @param  Restriction[]  $restrictions
+     * @param  Restriction[]  $restrictions  A list of restrictions.
      */
     public function __construct(
         public readonly array $restrictions,

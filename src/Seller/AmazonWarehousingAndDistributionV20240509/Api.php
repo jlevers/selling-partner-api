@@ -7,23 +7,31 @@ use SellingPartnerApi\BaseResource;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\InboundOrder;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\InboundOrderCreationData;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\InboundPackages;
+use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\OutboundOrder;
+use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\OutboundOrderCreationData;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\ReplenishmentOrderCreationData;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Dto\TransportationDetails;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\CancelInbound;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\CheckInboundEligibility;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\ConfirmInbound;
+use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\ConfirmOutbound;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\ConfirmReplenishmentOrder;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\CreateInbound;
+use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\CreateOutbound;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\CreateReplenishmentOrder;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\GetInbound;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\GetInboundShipment;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\GetInboundShipmentLabels;
+use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\GetLabelPageTypes;
+use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\GetOutbound;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\GetReplenishmentOrder;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\ListInboundShipments;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\ListInventory;
+use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\ListOutbounds;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\ListReplenishmentOrders;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\UpdateInbound;
 use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\UpdateInboundShipmentTransportDetails;
+use SellingPartnerApi\Seller\AmazonWarehousingAndDistributionV20240509\Requests\UpdateOutbound;
 
 class Api extends BaseResource
 {
@@ -107,6 +115,16 @@ class Api extends BaseResource
     }
 
     /**
+     * @param  string  $shipmentId  ID for the shipment.
+     */
+    public function getLabelPageTypes(string $shipmentId): Response
+    {
+        $request = new GetLabelPageTypes($shipmentId);
+
+        return $this->connector->send($request);
+    }
+
+    /**
      * @param  string  $shipmentId  The shipment ID.
      * @param  TransportationDetails  $transportationDetails  Transportation details for the shipment.
      */
@@ -167,6 +185,66 @@ class Api extends BaseResource
         ?int $maxResults = null,
     ): Response {
         $request = new ListInventory($sku, $sortOrder, $details, $nextToken, $maxResults);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  ?\DateTimeInterface  $updatedAfter  Get the outbound orders updated after a certain time (inclusive). The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+     * @param  ?\DateTimeInterface  $updatedBefore  Get the outbound orders updated before a certain time (inclusive). The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+     * @param  ?string  $sortOrder  Sort the response in `ASCENDING` or `DESCENDING` order.
+     * @param  ?int  $maxResults  Maximum number of results to return.
+     * @param  ?string  $nextToken  A token that is used to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
+     */
+    public function listOutbounds(
+        ?\DateTimeInterface $updatedAfter = null,
+        ?\DateTimeInterface $updatedBefore = null,
+        ?string $sortOrder = null,
+        ?int $maxResults = null,
+        ?string $nextToken = null,
+    ): Response {
+        $request = new ListOutbounds($updatedAfter, $updatedBefore, $sortOrder, $maxResults, $nextToken);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  OutboundOrderCreationData  $outboundOrderCreationData  Payload for creating an outbound order.
+     */
+    public function createOutbound(OutboundOrderCreationData $outboundOrderCreationData): Response
+    {
+        $request = new CreateOutbound($outboundOrderCreationData);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $orderId  ID for the outbound order to be retrieved.
+     */
+    public function getOutbound(string $orderId): Response
+    {
+        $request = new GetOutbound($orderId);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $orderId  ID for the outbound order to be updated.
+     * @param  OutboundOrder  $outboundOrder  Represents an AWD outbound order.
+     */
+    public function updateOutbound(string $orderId, OutboundOrder $outboundOrder): Response
+    {
+        $request = new UpdateOutbound($orderId, $outboundOrder);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $orderId  ID for the outbound order you want to confirm.
+     */
+    public function confirmOutbound(string $orderId): Response
+    {
+        $request = new ConfirmOutbound($orderId);
 
         return $this->connector->send($request);
     }

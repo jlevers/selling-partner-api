@@ -18,9 +18,7 @@ final class Subscription extends Dto
      * @param  string  $subscriptionId  The subscription identifier generated when the subscription is created.
      * @param  string  $payloadVersion  The version of the payload object to be used in the notification.
      * @param  string  $destinationId  The identifier for the destination where notifications will be delivered.
-     * @param  ?ProcessingDirective  $processingDirective  Additional information passed to the subscription to control the processing of notifications. For example, you can use an `eventFilter` to customize your subscription to send notifications for only the specified `marketplaceId`s, or select the aggregation time period at which to send notifications (for example: limit to one notification every five minutes for high frequency notifications). The specific features available vary depending on the `notificationType`.
-     *
-     * This feature is currently only supported by the `ANY_OFFER_CHANGED` and `ORDER_CHANGE` `notificationType`s.
+     * @param  ?ProcessingDirective  $processingDirective  Additional information passed to the subscription to control the processing of notifications. For example, you can use an `eventFilter` to customize your subscription to send notifications for only the `marketplaceId`s that you specify, or select the aggregation time period at which to send notifications (for example, you can set a limit of one notification every five minutes for high frequency notifications). You can also use `filterExpression` to filter events based on notification payload. The specific features available can vary by the `notificationType`.
      */
     public function __construct(
         public string $subscriptionId,

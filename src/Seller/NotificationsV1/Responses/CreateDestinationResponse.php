@@ -17,7 +17,7 @@ use SellingPartnerApi\Seller\NotificationsV1\Dto\ErrorList;
 final class CreateDestinationResponse extends Response
 {
     /**
-     * @param  ?Destination  $payload  Information about the destination created when you call the `createDestination` operation.
+     * @param  ?Destination  $payload  Information about the destination you create when you call the `createDestination` operation.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

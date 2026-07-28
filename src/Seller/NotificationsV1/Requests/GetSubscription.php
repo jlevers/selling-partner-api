@@ -26,7 +26,7 @@ class GetSubscription extends Request
     /**
      * @param  string  $notificationType  The type of notification.
      *
-     *  For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
+     *  For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
      * @param  ?string  $payloadVersion  The version of the payload object to be used in the notification.
      */
     public function __construct(

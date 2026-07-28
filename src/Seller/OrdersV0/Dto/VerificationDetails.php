@@ -14,10 +14,16 @@ use SellingPartnerApi\Dto;
 
 final class VerificationDetails extends Dto
 {
+    protected static array $complexArrayTypes = ['approvedAlternativeDetails' => ApprovedAttribute::class];
+
     /**
      * @param  ?PrescriptionDetail  $prescriptionDetail  Information about the prescription that is used to verify a regulated product. This must be provided once per order and reflect the seller’s own records. Only approved orders can have prescriptions.
+     * @param  ApprovedAttribute[]|null  $approvedAlternativeDetails  Pre-approved alternative product attributes available for a rejected order. Each element contains an attribute name, its original value from the rejected order, and the corrected value that would result in approval (for example, a substituted `asin` or adjusted `petWeight`).
+     * @param  ?InterimStatusDetail  $interimStatusDetail  Interim status information provided during the verification process to share granular progress updates while an order is pending verification (for example, vet contacted through email).
      */
     public function __construct(
         public ?PrescriptionDetail $prescriptionDetail = null,
+        public ?array $approvedAlternativeDetails = null,
+        public ?InterimStatusDetail $interimStatusDetail = null,
     ) {}
 }

@@ -26,6 +26,8 @@ class GetServiceJobs extends Request
     /**
      * @param  array  $marketplaceIds  Used to select jobs that were placed in the specified marketplaces.
      * @param  ?array  $serviceOrderIds  List of service order ids for the query you want to perform.Max values supported 20.
+     * @param  ?array  $productOrderIds  A list of up to 20 associated product order IDs. You can use these IDs to query service jobs.
+     * @param  ?array  $trackingIds  A list of up to 20 associated product tracking IDs. You can use these IDs to query service jobs.
      * @param  ?array  $serviceJobStatus  A list of one or more job status by which to filter the list of jobs.
      * @param  ?string  $pageToken  String returned in the response of your previous request.
      * @param  ?int  $pageSize  A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
@@ -44,6 +46,8 @@ class GetServiceJobs extends Request
     public function __construct(
         protected array $marketplaceIds,
         protected ?array $serviceOrderIds = null,
+        protected ?array $productOrderIds = null,
+        protected ?array $trackingIds = null,
         protected ?array $serviceJobStatus = null,
         protected ?string $pageToken = null,
         protected ?int $pageSize = null,
@@ -81,6 +85,8 @@ class GetServiceJobs extends Request
         return array_filter([
             'marketplaceIds' => $this->marketplaceIds,
             'serviceOrderIds' => $this->serviceOrderIds,
+            'productOrderIds' => $this->productOrderIds,
+            'trackingIds' => $this->trackingIds,
             'serviceJobStatus' => $this->serviceJobStatus,
             'pageToken' => $this->pageToken,
             'pageSize' => $this->pageSize,

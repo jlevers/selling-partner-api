@@ -14,6 +14,8 @@ use SellingPartnerApi\Dto;
 
 final class AssociatedItem extends Dto
 {
+    protected static array $complexArrayTypes = ['linkedAssets' => LinkedAsset::class];
+
     /**
      * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
      * @param  ?string  $title  The title of the item.
@@ -22,6 +24,7 @@ final class AssociatedItem extends Dto
      * @param  ?string  $itemStatus  The status of the item.
      * @param  ?string  $brandName  The brand name of the item.
      * @param  ?ItemDelivery  $itemDelivery  Delivery information for the item.
+     * @param  LinkedAsset[]|null  $linkedAssets  A list of customer-owned assets on which the service must be performed.
      */
     public function __construct(
         public ?string $asin = null,
@@ -31,5 +34,6 @@ final class AssociatedItem extends Dto
         public ?string $itemStatus = null,
         public ?string $brandName = null,
         public ?ItemDelivery $itemDelivery = null,
+        public ?array $linkedAssets = null,
     ) {}
 }

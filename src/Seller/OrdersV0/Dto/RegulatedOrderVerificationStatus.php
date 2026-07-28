@@ -22,11 +22,13 @@ final class RegulatedOrderVerificationStatus extends Dto
         'reviewDate' => 'ReviewDate',
         'externalReviewerId' => 'ExternalReviewerId',
         'validVerificationDetails' => 'ValidVerificationDetails',
+        'validInterimStatusCodes' => 'ValidInterimStatusCodes',
     ];
 
     protected static array $complexArrayTypes = [
         'validRejectionReasons' => RejectionReason::class,
         'validVerificationDetails' => ValidVerificationDetail::class,
+        'validInterimStatusCodes' => ValidInterimStatusCode::class,
     ];
 
     /**
@@ -37,6 +39,7 @@ final class RegulatedOrderVerificationStatus extends Dto
      * @param  ?string  $reviewDate  The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
      * @param  ?string  $externalReviewerId  The identifier for the order's regulated information reviewer.
      * @param  ValidVerificationDetail[]|null  $validVerificationDetails  A list of valid verification details that may be provided and the criteria required for when the verification detail can be provided.
+     * @param  ValidInterimStatusCode[]|null  $validInterimStatusCodes  Valid interim status codes that may be used when populating `InterimStatusDetail`. Each element contains a `StatusCode` identifier and its customer-facing `StatusDescription`.
      */
     public function __construct(
         public string $status,
@@ -46,5 +49,6 @@ final class RegulatedOrderVerificationStatus extends Dto
         public ?string $reviewDate = null,
         public ?string $externalReviewerId = null,
         public ?array $validVerificationDetails = null,
+        public ?array $validInterimStatusCodes = null,
     ) {}
 }

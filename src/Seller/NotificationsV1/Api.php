@@ -6,6 +6,7 @@ use Saloon\Http\Response;
 use SellingPartnerApi\BaseResource;
 use SellingPartnerApi\Seller\NotificationsV1\Dto\CreateDestinationRequest;
 use SellingPartnerApi\Seller\NotificationsV1\Dto\CreateSubscriptionRequest;
+use SellingPartnerApi\Seller\NotificationsV1\Dto\SendTestNotificationRequest;
 use SellingPartnerApi\Seller\NotificationsV1\Requests\CreateDestination;
 use SellingPartnerApi\Seller\NotificationsV1\Requests\CreateSubscription;
 use SellingPartnerApi\Seller\NotificationsV1\Requests\DeleteDestination;
@@ -14,13 +15,14 @@ use SellingPartnerApi\Seller\NotificationsV1\Requests\GetDestination;
 use SellingPartnerApi\Seller\NotificationsV1\Requests\GetDestinations;
 use SellingPartnerApi\Seller\NotificationsV1\Requests\GetSubscription;
 use SellingPartnerApi\Seller\NotificationsV1\Requests\GetSubscriptionById;
+use SellingPartnerApi\Seller\NotificationsV1\Requests\SendTestNotification;
 
 class Api extends BaseResource
 {
     /**
      * @param  string  $notificationType  The type of notification.
      *
-     *  For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
+     *  For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
      * @param  ?string  $payloadVersion  The version of the payload object to be used in the notification.
      */
     public function getSubscription(string $notificationType, ?string $payloadVersion = null): Response
@@ -33,7 +35,7 @@ class Api extends BaseResource
     /**
      * @param  string  $notificationType  The type of notification.
      *
-     *  For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
+     *  For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
      * @param  CreateSubscriptionRequest  $createSubscriptionRequest  The request schema for the `createSubscription` operation.
      */
     public function createSubscription(
@@ -49,7 +51,7 @@ class Api extends BaseResource
      * @param  string  $subscriptionId  The identifier for the subscription that you want to get.
      * @param  string  $notificationType  The type of notification.
      *
-     *  For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
+     *  For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
      */
     public function getSubscriptionById(string $subscriptionId, string $notificationType): Response
     {
@@ -62,11 +64,26 @@ class Api extends BaseResource
      * @param  string  $subscriptionId  The identifier for the subscription that you want to delete.
      * @param  string  $notificationType  The type of notification.
      *
-     *  For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
+     *  For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
      */
     public function deleteSubscriptionById(string $subscriptionId, string $notificationType): Response
     {
         $request = new DeleteSubscriptionById($subscriptionId, $notificationType);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $notificationType  The type of notification.
+     *
+     *  For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
+     * @param  SendTestNotificationRequest  $sendTestNotificationRequest  The request schema for the `sendTestNotification` operation.
+     */
+    public function sendTestNotification(
+        string $notificationType,
+        SendTestNotificationRequest $sendTestNotificationRequest,
+    ): Response {
+        $request = new SendTestNotification($notificationType, $sendTestNotificationRequest);
 
         return $this->connector->send($request);
     }

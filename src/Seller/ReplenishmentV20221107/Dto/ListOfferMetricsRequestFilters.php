@@ -15,14 +15,20 @@ use SellingPartnerApi\Dto;
 final class ListOfferMetricsRequestFilters extends Dto
 {
     /**
-     * @param  TimeInterval  $timeInterval  A date-time interval in ISO 8601 format which is used to compute metrics. Only the date is required, but you must pass the complete date and time value. For example, November 11, 2022 should be passed as "2022-11-11T00:00:00Z". Note that only data for the trailing 2 years is supported.
+     * @param  TimeInterval  $timeInterval  A date-time interval in ISO 8601 format used to compute metrics. Only the date is required, but you must pass the complete date and time value. For example, November 11, 2022 should be passed as "2022-11-11T00:00:00Z". Note that only data for the trailing 2 years is supported.
      *
-     *  **Note**: The `listOfferMetrics` operation only supports a time interval which covers a single unit of the aggregation frequency. For example, for a MONTH aggregation frequency, the duration of the interval between the startDate and endDate can not be more than 1 month.
+     * **Note**:
+     * * The `listOfferMetrics` operation only supports a time interval which covers a single unit of the aggregation frequency. For example, for a MONTH aggregation frequency, the duration of the interval between the startDate and endDate can not be more than 1 month.
+     * * For the `getSellingPartnerMetrics` operation with DAY aggregation frequency, the time interval cannot exceed 31 days.
      * @param  string  $timePeriodType  The time period type that determines whether the metrics requested are backward-looking (performance) or forward-looking (forecast).
      * @param  string  $marketplaceId  The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
      * @param  string[]  $programTypes  A list of replenishment program types.
      * @param  ?string  $aggregationFrequency  The time period used to group data in the response. Note that this is only valid for the `PERFORMANCE` time period type.
-     * @param  ?string[]  $asins  A list of Amazon Standard Identification Numbers (ASINs).
+     * @param  ?string[]  $asins  A list of Amazon Standard Identification Numbers (ASINs) to filter by.
+     * @param  ?string[]  $skus  [Applicable only for Sellers] A list of SKUs to filter by.
+     * @param  ?string[]  $fulfillmentChannelTypes  [Applicable only for Sellers] The fulfillment channel types to filter by.
+     * @param  ?string[]  $brandNames  [Applicable only for US marketplace] A list of brand names to filter by.
+     * @param  ?string[]  $productGroups  [Applicable only for Vendors] A list of product group names to filter by.
      */
     public function __construct(
         public TimeInterval $timeInterval,
@@ -31,5 +37,9 @@ final class ListOfferMetricsRequestFilters extends Dto
         public array $programTypes,
         public ?string $aggregationFrequency = null,
         public ?array $asins = null,
+        public ?array $skus = null,
+        public ?array $fulfillmentChannelTypes = null,
+        public ?array $brandNames = null,
+        public ?array $productGroups = null,
     ) {}
 }

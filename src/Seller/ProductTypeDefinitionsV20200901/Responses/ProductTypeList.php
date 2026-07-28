@@ -18,7 +18,7 @@ final class ProductTypeList extends Response
     protected static array $complexArrayTypes = ['productTypes' => ProductType::class];
 
     /**
-     * @param  ProductType[]  $productTypes
+     * @param  ProductType[]  $productTypes  A list of product types.
      * @param  string  $productTypeVersion  Amazon product type version identifier.
      */
     public function __construct(

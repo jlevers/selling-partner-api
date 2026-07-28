@@ -30,6 +30,7 @@ class GetListingsRestrictions extends Request
      * @param  array  $marketplaceIds  A comma-delimited list of Amazon marketplace identifiers for the request.
      * @param  ?string  $conditionType  The condition used to filter restrictions.
      * @param  ?string  $reasonLocale  A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: "en_US", "fr_CA", "fr_FR". Localized messages default to "en_US" when a localization is not available in the specified locale.
+     * @param  ?string  $productType  The product type of the item. When provided with the brand name, the API evaluates GTIN exemption restrictions in addition to brand restrictions for the specified product type.
      */
     public function __construct(
         protected string $asin,
@@ -37,6 +38,7 @@ class GetListingsRestrictions extends Request
         protected array $marketplaceIds,
         protected ?string $conditionType = null,
         protected ?string $reasonLocale = null,
+        protected ?string $productType = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -64,6 +66,7 @@ class GetListingsRestrictions extends Request
             'marketplaceIds' => $this->marketplaceIds,
             'conditionType' => $this->conditionType,
             'reasonLocale' => $this->reasonLocale,
+            'productType' => $this->productType,
         ]);
     }
 }

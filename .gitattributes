@@ -6,7 +6,6 @@
 /bin/** export-ignore
 /phpunit.dist.xml export-ignore
 /resources/apis.json export-ignore
-/resources/generator-config.json export-ignore
 /resources/metadata/** export-ignore
 /resources/models/** export-ignore
 /tests/** export-ignore

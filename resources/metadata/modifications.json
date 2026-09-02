@@ -191,6 +191,17 @@
             "action": "replace",
             "path": "paths./shipping/v2/carrierAccounts/{carrierId}.put.operationId",
             "value": "updateLinkedCarrierAccount"
+        },
+        {
+          "comment": "Add the undocumented amazonSellerId property to AmazonOrderDetails. Amazon accepts (and, for the 3PL Buy Shipping pilot, requires) this field so that a third-party logistics provider can buy shipping for an order belonging to a different seller than the one whose credentials are being used, but it is missing from the published model.",
+          "action": "merge",
+          "path": "components.schemas.AmazonOrderDetails.properties",
+          "value": {
+            "amazonSellerId": {
+              "type": "string",
+              "description": "The seller identifier of the Amazon seller that owns the order. Only needed when buying shipping on behalf of another seller (the 3PL Buy Shipping pilot); leave it unset to buy shipping for your own orders."
+            }
+          }
         }
       ]
     },

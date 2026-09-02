@@ -16,8 +16,10 @@ final class AmazonOrderDetails extends Dto
 {
     /**
      * @param  string  $orderId  The Amazon order ID associated with the Amazon order fulfilled by this shipment.
+     * @param  ?string  $amazonSellerId  The seller identifier of the Amazon seller that owns the order. Only needed when buying shipping on behalf of another seller (the 3PL Buy Shipping pilot); leave it unset to buy shipping for your own orders.
      */
     public function __construct(
         public string $orderId,
+        public ?string $amazonSellerId = null,
     ) {}
 }

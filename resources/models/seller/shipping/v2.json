@@ -10386,6 +10386,10 @@
                     "orderId": {
                         "type": "string",
                         "description": "The Amazon order ID associated with the Amazon order fulfilled by this shipment."
+                    },
+                    "amazonSellerId": {
+                        "type": "string",
+                        "description": "The seller identifier of the Amazon seller that owns the order. Only needed when buying shipping on behalf of another seller (the 3PL Buy Shipping pilot); leave it unset to buy shipping for your own orders."
                     }
                 },
                 "description": "Amazon order information. This is required if the shipment source channel is Amazon."

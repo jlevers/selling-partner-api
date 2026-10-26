@@ -14,6 +14,9 @@ use SellingPartnerApi\Dto;
 
 final class Points extends Dto
 {
+    /**
+     * @param  int  $pointsNumber  The number of Amazon Points offered with the purchase of an item, and their monetary value.
+     */
     public function __construct(
         public int $pointsNumber,
     ) {}

@@ -21,20 +21,22 @@ class Api extends BaseResource
 {
     /**
      * @param  string  $marketplaceId  The marketplace identifier.
+     * @param  ?string  $warehouseCode  The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
      */
-    public function getInvoicesAttributes(string $marketplaceId): Response
+    public function getInvoicesAttributes(string $marketplaceId, ?string $warehouseCode = null): Response
     {
-        $request = new GetInvoicesAttributes($marketplaceId);
+        $request = new GetInvoicesAttributes($marketplaceId, $warehouseCode);
 
         return $this->connector->send($request);
     }
 
     /**
      * @param  string  $invoicesDocumentId  The export document identifier.
+     * @param  ?string  $warehouseCode  The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
      */
-    public function getInvoicesDocument(string $invoicesDocumentId): Response
+    public function getInvoicesDocument(string $invoicesDocumentId, ?string $warehouseCode = null): Response
     {
-        $request = new GetInvoicesDocument($invoicesDocumentId);
+        $request = new GetInvoicesDocument($invoicesDocumentId, $warehouseCode);
 
         return $this->connector->send($request);
     }
@@ -50,6 +52,7 @@ class Api extends BaseResource
      * Maximum: 100
      * @param  ?\DateTimeInterface  $dateEnd  The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request.
      * @param  ?string  $status  Return exports matching the status specified.
+     * @param  ?string  $warehouseCode  The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
      */
     public function getInvoicesExports(
         string $marketplaceId,
@@ -58,8 +61,9 @@ class Api extends BaseResource
         ?int $pageSize = null,
         ?\DateTimeInterface $dateEnd = null,
         ?string $status = null,
+        ?string $warehouseCode = null,
     ): Response {
-        $request = new GetInvoicesExports($marketplaceId, $dateStart, $nextToken, $pageSize, $dateEnd, $status);
+        $request = new GetInvoicesExports($marketplaceId, $dateStart, $nextToken, $pageSize, $dateEnd, $status, $warehouseCode);
 
         return $this->connector->send($request);
     }
@@ -76,20 +80,21 @@ class Api extends BaseResource
 
     /**
      * @param  string  $exportId  The unique identifier for the export.
+     * @param  ?string  $warehouseCode  The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
      */
-    public function getInvoicesExport(string $exportId): Response
+    public function getInvoicesExport(string $exportId, ?string $warehouseCode = null): Response
     {
-        $request = new GetInvoicesExport($exportId);
+        $request = new GetInvoicesExport($exportId, $warehouseCode);
 
         return $this->connector->send($request);
     }
 
     /**
-     * @param  string  $marketplaceId  The invoices status will match the marketplace that you specify.
-     * @param  string  $transactionType  Marketplace specific classification of the transaction type that originated the invoice. Check 'transactionType' options using 'getInvoicesAttributes' operation.
-     * @param  string  $shipmentId  The unique shipment identifier to get an invoice for.
-     * @param  string  $invoiceType  Marketplace specific classification of the invoice type. Check 'invoiceType' options using 'getInvoicesAttributes' operation.
-     * @param  ?string  $inboundPlanId  The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+     * @param  string  $marketplaceId  The marketplace of the invoice request.
+     * @param  string  $transactionType  The marketplace-specific classification of the transaction type that originated the invoice. Check `transactionType` options using the `getInvoicesAttributes` operation.
+     * @param  string  $shipmentId  The unique shipment identifier for which to get an invoice.
+     * @param  string  $invoiceType  The marketplace-specific classification of the invoice type. Check `invoiceType` options using the `getInvoicesAttributes` operation.
+     * @param  ?string  $inboundPlanId  The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.
      */
     public function getGovernmentInvoiceStatus(
         string $marketplaceId,
@@ -114,12 +119,12 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $shipmentId  The unique shipment identifier to get an invoice for.
-     * @param  string  $marketplaceId  The invoices returned will match the marketplace that you specify.
-     * @param  string  $transactionType  Marketplace specific classification of the transaction type that originated the invoice. Check 'transactionType' options using 'getInvoicesAttributes' operation.
-     * @param  string  $invoiceType  Marketplace specific classification of the invoice type. Check 'invoiceType' options using 'getInvoicesAttributes' operation.
-     * @param  ?string  $inboundPlanId  The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
-     * @param  ?string  $fileFormat  Requested file format. Default is XML
+     * @param  string  $shipmentId  The unique shipment identifier for which to get an invoice.
+     * @param  string  $marketplaceId  The marketplace of the invoice.
+     * @param  string  $transactionType  The marketplace-specific classification of the transaction type that originated the invoice. Check `transactionType` options using the `getInvoicesAttributes` operation.
+     * @param  string  $invoiceType  The marketplace-specific classification of the invoice type. Check `invoiceType` options using the `getInvoicesAttributes` operation.
+     * @param  ?string  $inboundPlanId  The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.
+     * @param  ?string  $fileFormat  The file format of the invoice. The default is XML.
      */
     public function getGovernmentInvoiceDocument(
         string $shipmentId,
@@ -155,6 +160,7 @@ class Api extends BaseResource
      * Min count: 1
      * @param  ?string  $externalInvoiceId  Return invoices that match this external ID. This is typically the Government Invoice ID.
      * @param  ?string  $sortBy  The attribute by which you want to sort the invoices in the response.
+     * @param  ?string  $warehouseCode  The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
      */
     public function getInvoices(
         string $marketplaceId,
@@ -171,8 +177,9 @@ class Api extends BaseResource
         ?array $statuses = null,
         ?string $externalInvoiceId = null,
         ?string $sortBy = null,
+        ?string $warehouseCode = null,
     ): Response {
-        $request = new GetInvoices($marketplaceId, $transactionIdentifierName, $pageSize, $dateEnd, $transactionType, $transactionIdentifierId, $dateStart, $series, $nextToken, $sortOrder, $invoiceType, $statuses, $externalInvoiceId, $sortBy);
+        $request = new GetInvoices($marketplaceId, $transactionIdentifierName, $pageSize, $dateEnd, $transactionType, $transactionIdentifierId, $dateStart, $series, $nextToken, $sortOrder, $invoiceType, $statuses, $externalInvoiceId, $sortBy, $warehouseCode);
 
         return $this->connector->send($request);
     }
@@ -180,10 +187,11 @@ class Api extends BaseResource
     /**
      * @param  string  $invoiceId  The invoice identifier.
      * @param  string  $marketplaceId  The marketplace from which you want the invoice.
+     * @param  ?string  $warehouseCode  The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
      */
-    public function getInvoice(string $invoiceId, string $marketplaceId): Response
+    public function getInvoice(string $invoiceId, string $marketplaceId, ?string $warehouseCode = null): Response
     {
-        $request = new GetInvoice($invoiceId, $marketplaceId);
+        $request = new GetInvoice($invoiceId, $marketplaceId, $warehouseCode);
 
         return $this->connector->send($request);
     }

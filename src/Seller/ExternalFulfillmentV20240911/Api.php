@@ -4,12 +4,15 @@ namespace SellingPartnerApi\Seller\ExternalFulfillmentV20240911;
 
 use Saloon\Http\Response;
 use SellingPartnerApi\BaseResource;
+use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Dto\CreateSandboxShipmentRequest;
 use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Dto\Package;
 use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Dto\PackageDeliveryStatus;
 use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Dto\Packages;
 use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Dto\ShipLabelsInput;
 use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Dto\ShipmentAcknowledgementRequest;
+use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Dto\UpdateSandboxShipmentRequest;
 use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Requests\CreatePackages;
+use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Requests\CreateSandboxShipment;
 use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Requests\GenerateInvoice;
 use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Requests\GenerateShipLabels;
 use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Requests\GetShipment;
@@ -19,11 +22,12 @@ use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Requests\RetrieveInvoi
 use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Requests\RetrieveShippingOptions;
 use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Requests\UpdatePackage;
 use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Requests\UpdatePackageStatus;
+use SellingPartnerApi\Seller\ExternalFulfillmentV20240911\Requests\UpdateSandboxShipment;
 
 class Api extends BaseResource
 {
     /**
-     * @param  string  $status  The status of shipment you want to include in the response. To retrieve all new shipments, set this value to `CREATED` or `ACCEPTED`.
+     * @param  string  $status  The status of shipment you want to include in the response. To retrieve all new shipments, set this value to `ACCEPTED`.
      * @param  ?string  $locationId  The Amazon channel location identifier for the shipments you want to retrieve.
      * @param  ?string  $marketplaceId  The marketplace ID associated with the location. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  ?string  $channelName  The channel name associated with the location.
@@ -43,6 +47,16 @@ class Api extends BaseResource
         ?string $paginationToken = null,
     ): Response {
         $request = new GetShipments($status, $locationId, $marketplaceId, $channelName, $lastUpdatedAfter, $lastUpdatedBefore, $maxResults, $paginationToken);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  CreateSandboxShipmentRequest  $createSandboxShipmentRequest  The request object for creating a sandbox shipment.
+     */
+    public function createSandboxShipment(CreateSandboxShipmentRequest $createSandboxShipmentRequest): Response
+    {
+        $request = new CreateSandboxShipment($createSandboxShipmentRequest);
 
         return $this->connector->send($request);
     }
@@ -68,6 +82,19 @@ class Api extends BaseResource
         string $operation,
     ): Response {
         $request = new ProcessShipment($shipmentId, $shipmentAcknowledgementRequest, $operation);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $shipmentId  The unique identifier of the shipment to update.
+     * @param  UpdateSandboxShipmentRequest  $updateSandboxShipmentRequest  The request object for updating a sandbox shipment. The `updates` object is required for `SHIPMENT_STATUS_CHANGE` and `TRANSPORT_CAPACITY_CHANGE` update types, and must not be provided for `INVOICE_AVAILABILITY_CHANGE`.
+     */
+    public function updateSandboxShipment(
+        string $shipmentId,
+        UpdateSandboxShipmentRequest $updateSandboxShipmentRequest,
+    ): Response {
+        $request = new UpdateSandboxShipment($shipmentId, $updateSandboxShipmentRequest);
 
         return $this->connector->send($request);
     }
@@ -99,7 +126,7 @@ class Api extends BaseResource
      * @param  string  $shipmentId  The ID of the shipment to which the package belongs.
      * @param  string  $packageId  The ID of the package whose status you want to update.
      * @param  PackageDeliveryStatus  $packageDeliveryStatus  The delivery status of the package.
-     * @param  ?string  $status  **DEPRECATED**. Do not use. Package status is defined in the body parameter.
+     * @param  ?string  $status  **This field is only used for the Seller Flex program**. For the Self Delivery program, package statuses are defined in the body parameter.
      */
     public function updatePackageStatus(
         string $shipmentId,

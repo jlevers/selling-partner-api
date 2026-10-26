@@ -16,7 +16,7 @@ use SellingPartnerApi\Seller\InvoicesV20240619\Dto\InvoiceDocument;
 final class GovtInvoiceDocumentResponse extends Response
 {
     /**
-     * @param  ?InvoiceDocument  $invoiceDocument  Object containing the documentId and a S3 pre-signed URL to download the specified document file.
+     * @param  ?InvoiceDocument  $invoiceDocument  The `documentId` and an S3 pre-signed URL that you can use to download the specified document file.
      */
     public function __construct(
         public readonly ?InvoiceDocument $invoiceDocument = null,

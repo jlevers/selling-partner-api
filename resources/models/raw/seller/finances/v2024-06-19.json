@@ -21,7 +21,7 @@
     "paths": {
         "/finances/2024-06-19/transactions": {
             "get": {
-                "description": "Returns transactions for the given parameters. Financial events might not include orders from the last 48 hours.\n\n**Usage plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
+                "description": "Returns transactions for the given parameters. Financial events might not include orders from the last 48 hours. **Note:** If you want to retrieve MFN orders in the US store, do not supply the `marketplaceId` parameter.\n\n**Usage plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "listTransactions",
                 "parameters": [
                     {
@@ -47,7 +47,7 @@
                     {
                         "name": "marketplaceId",
                         "in": "query",
-                        "description": "The identifier of the marketplace from which you want to retrieve transactions. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "description": "The identifier of the marketplace from which you want to retrieve transactions. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for a marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
                         "schema": {
                             "type": "string"
                         },
@@ -65,7 +65,7 @@
                     {
                         "name": "relatedIdentifierName",
                         "in": "query",
-                        "description": "The name of the `relatedIdentifier`.\n\n**Possible values:**\n\n* `FINANCIAL_EVENT_GROUP_ID`: the financial event group ID associated with the transaction.\n\n* `ORDER_ID`: the order ID associated with the transaction.  \n\n**Note:**\n\n FINANCIAL_EVENT_GROUP_ID and ORDER_ID are the only `relatedIdentifier` with filtering capabilities at the moment. While other `relatedIdentifier` values will be included in the response when available, they cannot be used for filtering purposes.",
+                        "description": "The name of the `relatedIdentifier`.\n\n**Possible values:**\n\n* `FINANCIAL_EVENT_GROUP_ID`: the financial event group ID associated with the transaction.\n\n* `ORDER_ID`: the order ID associated with the transaction.  \n\n**Note:**\n\n`FINANCIAL_EVENT_GROUP_ID` and `ORDER_ID` are the only `relatedIdentifier` with filtering capabilities at the moment. While other `relatedIdentifier` values will be included in the response when available, they cannot be used for filtering purposes.",
                         "schema": {
                             "type": "string"
                         },
@@ -249,6 +249,24 @@
                             }
                         }
                     },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
                     "415": {
                         "description": "The request payload is in an unsupported format.",
                         "headers": {
@@ -267,8 +285,753 @@
                             }
                         }
                     },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/finances/2024-06-19/balances": {
+            "get": {
+                "description": "Retrieve a balance. This balance can be a past balances at a specified date, or a current balance. Sub-balances are listed by account type and marketplace.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that apply to the operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "listBalances",
+                "parameters": [
+                    {
+                        "name": "marketplaceIds",
+                        "in": "query",
+                        "description": "The marketplaces from which to retrieve balances. If omitted, balances from all applicable marketplaces may be returned. To find the marketplace ID for a region, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "example": [
+                            "AXXXXXXXXXER"
+                        ]
+                    },
+                    {
+                        "name": "balanceType",
+                        "in": "query",
+                        "description": "The type of balance to include in the response. If omitted, all balance types may be included in the response.\n\n**Possible values:** `AVAILABLE`, `RESERVED`, `TOTAL`, `DEFERRED`, `ACCOUNT_LEVEL_RESERVE`",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "TOTAL"
+                    },
+                    {
+                        "name": "accountType",
+                        "in": "query",
+                        "description": "The type of account to include in the response.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Standard Orders"
+                    },
+                    {
+                        "name": "asOfDate",
+                        "in": "query",
+                        "description": "The date from which you want to retrieve balances. If provided, the response includes historical balances at the specified date. The value must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date format. If omitted, the point in time balance is provided.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "example": "2025-01-12"
+                    },
+                    {
+                        "name": "nextToken",
+                        "in": "query",
+                        "description": "A token that you use to retrieve subsequent pages of results. When there are more than 500 results available, the response will include a `nextToken` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. Repeat this process until the `nextToken` value is null to retrieve all results.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "jehgri34yo7jr9e8f984tr9i4o"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListBalancesResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "marketplaceIds": {
+                                                "value": [
+                                                    "AXXXXXXXXXER"
+                                                ]
+                                            },
+                                            "balanceType": {
+                                                "value": "TOTAL"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "balances": [
+                                            {
+                                                "partnerMetadata": {
+                                                    "partnerId": "XXXXXXXXXXXXXX",
+                                                    "accountType": "Standard Orders",
+                                                    "marketplaceId": "AXXXXXXXXXER"
+                                                },
+                                                "balanceType": "TOTAL",
+                                                "amount": {
+                                                    "currencyAmount": 15000,
+                                                    "currencyCode": "USD"
+                                                },
+                                                "lastUpdatedTime": "2025-01-12T10:30:00+09:00",
+                                                "balances": [
+                                                    {
+                                                        "balanceType": "AVAILABLE",
+                                                        "amount": {
+                                                            "currencyAmount": 8000,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "balanceType": "RESERVED",
+                                                        "amount": {
+                                                            "currencyAmount": 7000,
+                                                            "currencyCode": "USD"
+                                                        },
+                                                        "balances": [
+                                                            {
+                                                                "balanceType": "DEFERRED",
+                                                                "amount": {
+                                                                    "currencyAmount": 9000,
+                                                                    "currencyCode": "USD"
+                                                                }
+                                                            },
+                                                            {
+                                                                "balanceType": "ACCOUNT_LEVEL_RESERVE",
+                                                                "amount": {
+                                                                    "currencyAmount": -2000,
+                                                                    "currencyCode": "USD"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "nextToken": "jehgri34yo7jr9e8f984tr9i4o"
+                                    }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "marketplaceIds": {
+                                                "value": [
+                                                    "AXXXXXXXXXER"
+                                                ]
+                                            },
+                                            "balanceType": {
+                                                "value": "TOTAL"
+                                            },
+                                            "asOfDate": {
+                                                "value": "2025-01-12"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "balances": [
+                                            {
+                                                "partnerMetadata": {
+                                                    "partnerId": "XXXXXXXXXXXXXX",
+                                                    "accountType": "Standard Orders",
+                                                    "marketplaceId": "AXXXXXXXXXER"
+                                                },
+                                                "balanceType": "TOTAL",
+                                                "amount": {
+                                                    "currencyAmount": 15000,
+                                                    "currencyCode": "USD"
+                                                },
+                                                "asOfDate": "2025-01-12",
+                                                "balances": [
+                                                    {
+                                                        "balanceType": "AVAILABLE",
+                                                        "amount": {
+                                                            "currencyAmount": 8000,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "balanceType": "RESERVED",
+                                                        "amount": {
+                                                            "currencyAmount": 7000,
+                                                            "currencyCode": "USD"
+                                                        },
+                                                        "balances": [
+                                                            {
+                                                                "balanceType": "DEFERRED",
+                                                                "amount": {
+                                                                    "currencyAmount": 9000,
+                                                                    "currencyCode": "USD"
+                                                                }
+                                                            },
+                                                            {
+                                                                "balanceType": "ACCOUNT_LEVEL_RESERVE",
+                                                                "amount": {
+                                                                    "currencyAmount": -2000,
+                                                                    "currencyCode": "USD"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "nextToken": "jehgri34yo7jr9e8f984tr9i4o"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "marketplaceIds": {
+                                                "value": [
+                                                    "INVALID_MARKETPLACE_ID"
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid input",
+                                                "details": "Invalid input"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
                     "413": {
                         "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/finances/2024-06-19/summary": {
+            "get": {
+                "description": "Retrieve the financial summary for the specified time period or settlement period.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.5 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that apply to the operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "operationId": "listSummary",
+                "parameters": [
+                    {
+                        "name": "marketplaceIds",
+                        "in": "query",
+                        "description": "The marketplaces from which to retrieve summaries. If omitted, summaries from all applicable marketplaces may be returned. To find the marketplace ID for a region, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "example": [
+                            "AXXXXXXXXXER"
+                        ]
+                    },
+                    {
+                        "name": "accountType",
+                        "in": "query",
+                        "description": "The type of account to include in the response.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Standard Orders"
+                    },
+                    {
+                        "name": "relatedIdentifierName",
+                        "in": "query",
+                        "description": "The name of the `relatedIdentifier`. The only possible value is `SETTLEMENT_ID`, the settlement ID associated with the summary.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "SETTLEMENT_ID"
+                    },
+                    {
+                        "name": "relatedIdentifierValue",
+                        "in": "query",
+                        "description": "The value of the `relatedIdentifier`.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "8129762527551"
+                    },
+                    {
+                        "name": "periodStart",
+                        "in": "query",
+                        "description": "The start of the period for which to retrieve summaries. When provided, the response will only include summaries with transactions that occurred on or after the specified date. The value must be formatted in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "example": "2025-01-12"
+                    },
+                    {
+                        "name": "periodEnd",
+                        "in": "query",
+                        "description": "The end of the period for which to retrieve summaries. When provided, the response will only include summaries with transactions that occurred on or before the specified date. The value must be formatted in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "example": "2025-01-12"
+                    },
+                    {
+                        "name": "nextToken",
+                        "in": "query",
+                        "description": "A token that you use to retrieve subsequent pages of results. When there are more results available, the response will include a `nextToken` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. Repeat this process until the `nextToken` value is null to retrieve all results.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "jehgri34yo7jr9e8f984tr9i4o"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SummaryResponse"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "marketplaceIds": {
+                                                "value": [
+                                                    "AXXXXXXXXXER"
+                                                ]
+                                            },
+                                            "periodStart": {
+                                                "value": "2025-01-12"
+                                            },
+                                            "periodEnd": {
+                                                "value": "2025-01-12"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "summaries": [
+                                            {
+                                                "partnerMetadata": {
+                                                    "partnerId": "XXXXXXXXXXXXXX",
+                                                    "accountType": "Standard Orders",
+                                                    "marketplaceId": "AXXXXXXXXXER"
+                                                },
+                                                "periodStart": "2025-01-12",
+                                                "periodEnd": "2025-01-12",
+                                                "netProceeds": {
+                                                    "currencyAmount": 8000,
+                                                    "currencyCode": "USD"
+                                                },
+                                                "breakdowns": [
+                                                    {
+                                                        "breakdownType": "Sales",
+                                                        "breakdownAmount": {
+                                                            "currencyAmount": 8000,
+                                                            "currencyCode": "USD"
+                                                        },
+                                                        "breakdowns": [
+                                                            {
+                                                                "breakdownType": "Product Charges",
+                                                                "breakdownAmount": {
+                                                                    "currencyAmount": 9000,
+                                                                    "currencyCode": "USD"
+                                                                },
+                                                                "breakdowns": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "breakdownType": "Expenses",
+                                                        "breakdownAmount": {
+                                                            "currencyAmount": -1000,
+                                                            "currencyCode": "USD"
+                                                        },
+                                                        "breakdowns": [
+                                                            {
+                                                                "breakdownType": "FBA fees",
+                                                                "breakdownAmount": {
+                                                                    "currencyAmount": -1000,
+                                                                    "currencyCode": "USD"
+                                                                },
+                                                                "breakdowns": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "nextToken": "jehgri34yo7jr9e8f984tr9i4o"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "marketplaceIds": {
+                                                "value": [
+                                                    "INVALID_MARKETPLACE_ID"
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid input",
+                                                "details": "Invalid input"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
@@ -352,7 +1115,7 @@
                         "$ref": "#/components/schemas/TransactionsPayload"
                     }
                 },
-                "description": "The response schema for the `listTransactions` operation."
+                "description": "The response to the `listTransactions` operation."
             },
             "TransactionsPayload": {
                 "type": "object",
@@ -397,7 +1160,7 @@
                     },
                     "description": {
                         "type": "string",
-                        "description": "Describes the reasons for the transaction.\n\n**Example:** 'Order Payment', 'Refund Order'"
+                        "description": "Describes the reasons for the transaction.\n\n**Example:** `Order Payment`, `Refund Order`"
                     },
                     "postedDate": {
                         "$ref": "#/components/schemas/Date"
@@ -544,7 +1307,7 @@
                 "properties": {
                     "sellingPartnerId": {
                         "type": "string",
-                        "description": "A unique seller identifier."
+                        "description": "The unique seller identifier."
                     },
                     "accountType": {
                         "type": "string",
@@ -552,7 +1315,7 @@
                     },
                     "marketplaceId": {
                         "type": "string",
-                        "description": "The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
+                        "description": "The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for a marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
                     }
                 },
                 "description": "Metadata that describes the seller."
@@ -642,7 +1405,7 @@
                 "properties": {
                     "marketplaceId": {
                         "type": "string",
-                        "description": "The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
+                        "description": "The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for a marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
                     },
                     "marketplaceName": {
                         "type": "string",
@@ -686,7 +1449,7 @@
                         "$ref": "#/components/schemas/Contexts"
                     }
                 },
-                "description": "Additional information about the items in a transaction."
+                "description": "Additional information about an item in a transaction."
             },
             "ItemRelatedIdentifier": {
                 "type": "object",
@@ -781,7 +1544,7 @@
                         }
                     }
                 },
-                "description": "Details about the movement of money in the financial transaction. Breakdowns are further categorized into breakdown types, breakdown amounts, and further breakdowns."
+                "description": "Details about the movement of money in the financial transaction."
             },
             "Contexts": {
                 "type": "array",
@@ -791,7 +1554,7 @@
                 }
             },
             "Context": {
-                "description": "Additional Information about the item.",
+                "description": "Additional information about the item.",
                 "allOf": [
                     {
                         "required": [
@@ -800,7 +1563,8 @@
                         "type": "object",
                         "properties": {
                             "contextType": {
-                                "type": "string"
+                                "type": "string",
+                                "description": "The type of context."
                             }
                         }
                     },
@@ -862,11 +1626,11 @@
                     },
                     "orderType": {
                         "type": "string",
-                        "description": "The transaction's order type."
+                        "description": "The order type of the transaction."
                     },
                     "channel": {
                         "type": "string",
-                        "description": "Channel details of related transaction."
+                        "description": "The channel of the transaction. For example: `MFN`."
                     }
                 },
                 "description": "Additional information related to Amazon Pay.",
@@ -950,6 +1714,226 @@
                 "example": {
                     "startTime": "2020-07-14T03:35:13.214Z",
                     "endTime": "2020-07-14T03:35:13.214Z"
+                }
+            },
+            "ListBalancesResponse": {
+                "type": "object",
+                "properties": {
+                    "balances": {
+                        "$ref": "#/components/schemas/Balances"
+                    },
+                    "nextToken": {
+                        "type": "string",
+                        "description": "A token to retrieve the next page of results. If null, no more results are available."
+                    }
+                },
+                "description": "The response to the `listBalances` operation."
+            },
+            "Balances": {
+                "type": "array",
+                "description": "A list of balances.",
+                "items": {
+                    "$ref": "#/components/schemas/Balance"
+                }
+            },
+            "Balance": {
+                "type": "object",
+                "properties": {
+                    "partnerMetadata": {
+                        "$ref": "#/components/schemas/PartnerMetadata"
+                    },
+                    "balanceType": {
+                        "type": "string",
+                        "description": "The type of balance.",
+                        "enum": [
+                            "AVAILABLE",
+                            "RESERVED",
+                            "ACCOUNT_LEVEL_RESERVE",
+                            "DEFERRED",
+                            "TOTAL"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "AVAILABLE",
+                                "description": "The total balance currently available in the account."
+                            },
+                            {
+                                "value": "DEFERRED",
+                                "description": "The deferred balance is a portion of sales revenue that is temporarily withheld before being transferred to the available balance after a specified period."
+                            },
+                            {
+                                "value": "ACCOUNT_LEVEL_RESERVE",
+                                "description": "Balance reserved as a safety measure to cover potential liabilities such as refunds, chargebacks, or other claims. Based on sales volume, product category, and account history. "
+                            },
+                            {
+                                "value": "RESERVED",
+                                "description": "The reserved balance is sum of Deferred and Account Level Reserved."
+                            },
+                            {
+                                "value": "TOTAL",
+                                "description": "Overall sum of balances including available and reserved."
+                            }
+                        ]
+                    },
+                    "amount": {
+                        "$ref": "#/components/schemas/Currency"
+                    },
+                    "balances": {
+                        "type": "array",
+                        "description": "A list of balances that comprise this balance.",
+                        "items": {
+                            "$ref": "#/components/schemas/Balance"
+                        }
+                    },
+                    "asOfDate": {
+                        "$ref": "#/components/schemas/Date"
+                    },
+                    "lastUpdatedTime": {
+                        "type": "string",
+                        "description": "The date and time when the balance was last updated, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The value is in the marketplace's local time zone. This field is present for point-in-time balance queries (when no `asOfDate` query parameter is provided). Null for ending balance queries.",
+                        "format": "date-time"
+                    }
+                },
+                "description": "All information relevant to a balance.",
+                "example": {
+                    "partnerMetadata": {
+                        "partnerId": "XXXXXXXXXXXXXX",
+                        "accountType": "Standard Orders",
+                        "marketplaceId": "AXXXXXXXXXER"
+                    },
+                    "balanceType": "TOTAL",
+                    "amount": {
+                        "currencyAmount": 15000,
+                        "currencyCode": "USD"
+                    },
+                    "balances": [
+                        {
+                            "balanceType": "AVAILABLE",
+                            "amount": {
+                                "currencyAmount": 8000,
+                                "currencyCode": "USD"
+                            }
+                        },
+                        {
+                            "balanceType": "RESERVED",
+                            "amount": {
+                                "currencyAmount": 7000,
+                                "currencyCode": "USD"
+                            },
+                            "balances": [
+                                {
+                                    "balanceType": "DEFERRED",
+                                    "amount": {
+                                        "currencyAmount": 9000,
+                                        "currencyCode": "USD"
+                                    }
+                                },
+                                {
+                                    "balanceType": "ACCOUNT_LEVEL_RESERVE",
+                                    "amount": {
+                                        "currencyAmount": -2000,
+                                        "currencyCode": "USD"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "lastUpdatedTime": "2025-01-12T10:30:00+09:00"
+                }
+            },
+            "PartnerMetadata": {
+                "type": "object",
+                "properties": {
+                    "partnerId": {
+                        "type": "string",
+                        "description": "The unique seller identifier."
+                    },
+                    "accountType": {
+                        "type": "string",
+                        "description": "The type of account."
+                    },
+                    "marketplaceId": {
+                        "type": "string",
+                        "description": "The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for a marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
+                    }
+                },
+                "description": "Metadata that describes the seller."
+            },
+            "SummaryResponse": {
+                "type": "object",
+                "properties": {
+                    "summaries": {
+                        "type": "array",
+                        "description": "A list of financial summaries.",
+                        "items": {
+                            "$ref": "#/components/schemas/Summary"
+                        }
+                    },
+                    "nextToken": {
+                        "type": "string",
+                        "description": "A token to retrieve the next page of results. If null, no more results are available."
+                    }
+                },
+                "description": "The response to the `listSummary` operation."
+            },
+            "Summary": {
+                "type": "object",
+                "properties": {
+                    "partnerMetadata": {
+                        "$ref": "#/components/schemas/PartnerMetadata"
+                    },
+                    "netProceeds": {
+                        "$ref": "#/components/schemas/Currency"
+                    },
+                    "relatedIdentifiers": {
+                        "$ref": "#/components/schemas/RelatedIdentifiers"
+                    },
+                    "breakdowns": {
+                        "$ref": "#/components/schemas/Breakdowns"
+                    },
+                    "periodStart": {
+                        "$ref": "#/components/schemas/Date"
+                    },
+                    "periodEnd": {
+                        "$ref": "#/components/schemas/Date"
+                    }
+                },
+                "description": "Contains all information related to the financial summary.",
+                "example": {
+                    "partnerMetadata": {
+                        "partnerId": "XXXXXXXXXXXXXX",
+                        "accountType": "Standard Orders",
+                        "marketplaceId": "AXXXXXXXXXER"
+                    },
+                    "netProceeds": {
+                        "currencyAmount": 17000,
+                        "currencyCode": "USD"
+                    },
+                    "relatedIdentifiers": [
+                        {
+                            "relatedIdentifierName": "SETTLEMENT_ID",
+                            "relatedIdentifierValue": "123456789"
+                        }
+                    ],
+                    "breakdowns": [
+                        {
+                            "breakdownType": "Sales",
+                            "amount": 20000,
+                            "breakdowns": []
+                        },
+                        {
+                            "breakdownType": "Expenses",
+                            "amount": -1000,
+                            "breakdowns": []
+                        },
+                        {
+                            "breakdownType": "Refunds",
+                            "amount": -2000,
+                            "breakdowns": []
+                        }
+                    ],
+                    "periodStart": "2026-01-01T00:00:00Z",
+                    "periodEnd": "2026-01-31T23:59:59Z"
                 }
             },
             "ErrorList": {

@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class InvoiceDocument extends Dto
 {
     /**
-     * @param  ?string  $invoiceDocumentUrl  A pre-signed URL to download the invoice document in its original format. This URL expires after 30 seconds.
+     * @param  ?string  $invoiceDocumentUrl  A pre-signed URL that you can use to download the invoice document in its original format. This URL expires after 30 seconds.
      */
     public function __construct(
         public ?string $invoiceDocumentUrl = null,

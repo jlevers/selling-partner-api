@@ -14,16 +14,21 @@ use SellingPartnerApi\Dto;
 
 final class PartyIdentification extends Dto
 {
-    protected static array $complexArrayTypes = ['taxRegistrationDetails' => TaxRegistrationDetails::class];
+    protected static array $complexArrayTypes = [
+        'taxRegistrationDetails' => TaxRegistrationDetails::class,
+        'additionalPartyIdentifications' => AdditionalPartyIdentification::class,
+    ];
 
     /**
      * @param  string  $partyId  Assigned identification for the party.
      * @param  ?Address  $address  A physical address.
      * @param  TaxRegistrationDetails[]|null  $taxRegistrationDetails  Tax registration details of the party.
+     * @param  AdditionalPartyIdentification[]|null  $additionalPartyIdentifications  Additional corporate or fiscal registration identifiers for the party that are not VAT/GST registrations (e.g. FR SIREN, or DE W-IdNr.).
      */
     public function __construct(
         public string $partyId,
         public ?Address $address = null,
         public ?array $taxRegistrationDetails = null,
+        public ?array $additionalPartyIdentifications = null,
     ) {}
 }

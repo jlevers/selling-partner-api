@@ -37,7 +37,7 @@ final class Transaction extends Dto
      * * `DEFERRED_RELEASED`: the transaction was deferred in the past, but is now released. The status of a deferred transaction is updated to `DEFERRED_RELEASED` when the transaction is released.
      * @param  ?string  $description  Describes the reasons for the transaction.
      *
-     * **Example:** 'Order Payment', 'Refund Order'
+     * **Example:** `Order Payment`, `Refund Order`
      * @param  ?\DateTimeInterface  $postedDate  A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      * @param  ?Currency  $totalAmount  A currency type and amount.
      * @param  ?MarketplaceDetails  $marketplaceDetails  Information about the marketplace where the transaction occurred.

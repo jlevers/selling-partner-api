@@ -25,7 +25,7 @@ class GetPaymentMethods extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $marketplaceId  The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  string  $marketplaceId  The identifier of the Amazon store from which you want to retrieve payment methods. For the list of store identifiers, refer to [Store Identifiers](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  ?array  $paymentMethodTypes  A comma-separated list of the payment method types you want to include in the response.
      */
     public function __construct(

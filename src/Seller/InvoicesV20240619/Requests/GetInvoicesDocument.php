@@ -26,9 +26,11 @@ class GetInvoicesDocument extends Request
 
     /**
      * @param  string  $invoicesDocumentId  The export document identifier.
+     * @param  ?string  $warehouseCode  The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
      */
     public function __construct(
         protected string $invoicesDocumentId,
+        protected ?string $warehouseCode = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -46,5 +48,10 @@ class GetInvoicesDocument extends Request
         };
 
         return $responseCls::deserialize($response->json());
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['warehouseCode' => $this->warehouseCode]);
     }
 }

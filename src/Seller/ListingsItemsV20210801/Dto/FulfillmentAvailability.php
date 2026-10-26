@@ -16,7 +16,7 @@ final class FulfillmentAvailability extends Dto
 {
     /**
      * @param  string  $fulfillmentChannelCode  Designates which fulfillment network is used.
-     * @param  ?int  $quantity  The quantity of the item you are making available for sale.
+     * @param  ?int  $quantity  The item quantity that you're making available for sale.
      */
     public function __construct(
         public string $fulfillmentChannelCode,

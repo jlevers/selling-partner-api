@@ -17,6 +17,7 @@ final class SegmentedFeaturedOffer extends Dto
     protected static array $complexArrayTypes = [
         'featuredOfferSegments' => FeaturedOfferSegment::class,
         'shippingOptions' => ShippingOption::class,
+        'promotions' => Promotion::class,
     ];
 
     /**
@@ -29,6 +30,7 @@ final class SegmentedFeaturedOffer extends Dto
      * @param  ShippingOption[]|null  $shippingOptions  A list of shipping options associated with this offer
      * @param  ?Points  $points  The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points.
      * @param  ?PrimeDetails  $primeDetails  Amazon Prime details.
+     * @param  Promotion[]|null  $promotions  A list of live promotions applicable to this offer.
      */
     public function __construct(
         public string $sellerId,
@@ -40,5 +42,6 @@ final class SegmentedFeaturedOffer extends Dto
         public ?array $shippingOptions = null,
         public ?Points $points = null,
         public ?PrimeDetails $primeDetails = null,
+        public ?array $promotions = null,
     ) {}
 }

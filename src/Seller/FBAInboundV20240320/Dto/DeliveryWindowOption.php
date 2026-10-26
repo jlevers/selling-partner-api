@@ -14,12 +14,15 @@ use SellingPartnerApi\Dto;
 
 final class DeliveryWindowOption extends Dto
 {
+    protected static array $complexArrayTypes = ['discounts' => Incentive::class];
+
     /**
      * @param  string  $availabilityType  The type of delivery window availability. Values: `AVAILABLE`, `BLOCKED`, `CONGESTED`, `DISCOUNTED`
      * @param  string  $deliveryWindowOptionId  Identifier of a delivery window option. A delivery window option represent one option for when a shipment is expected to be delivered.
      * @param  \DateTimeInterface  $endDate  The time at which this delivery window option ends. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
      * @param  \DateTimeInterface  $startDate  The time at which this delivery window option starts. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
      * @param  \DateTimeInterface  $validUntil  The time at which this window delivery option is no longer valid. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
+     * @param  Incentive[]|null  $discounts  Discounts for the offered option.
      */
     public function __construct(
         public string $availabilityType,
@@ -27,5 +30,6 @@ final class DeliveryWindowOption extends Dto
         public \DateTimeInterface $endDate,
         public \DateTimeInterface $startDate,
         public \DateTimeInterface $validUntil,
+        public ?array $discounts = null,
     ) {}
 }

@@ -14,7 +14,12 @@ use SellingPartnerApi\Dto;
 
 final class InvoiceItem extends Dto
 {
-    protected static array $complexArrayTypes = ['taxDetails' => TaxDetail::class, 'chargeDetails' => ChargeDetails::class];
+    protected static array $complexArrayTypes = [
+        'taxDetails' => TaxDetail::class,
+        'additionalDetails' => AdditionalDetails::class,
+        'chargeDetails' => ChargeDetails::class,
+        'allowanceDetails' => AllowanceDetails::class,
+    ];
 
     /**
      * @param  string  $itemSequenceNumber  Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
@@ -23,10 +28,13 @@ final class InvoiceItem extends Dto
      * @param  string  $purchaseOrderNumber  The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
      * @param  ?string  $buyerProductIdentifier  Buyer's standard identification number (ASIN) of an item.
      * @param  ?string  $vendorProductIdentifier  The vendor selected product identification of the item.
+     * @param  ?string  $itemDescription  Product or service description for the invoiced line item.
      * @param  ?string  $vendorOrderNumber  The vendor's order number for this order.
      * @param  ?string  $hsnCode  Harmonized System of Nomenclature (HSN) tax code. The HSN number cannot contain alphabets.
      * @param  TaxDetail[]|null  $taxDetails  Individual tax details per line item.
+     * @param  AdditionalDetails[]|null  $additionalDetails  Line-level additional details provided by the selling party, e.g. tax exemption reason code and text.
      * @param  ChargeDetails[]|null  $chargeDetails  Individual charge details per line item.
+     * @param  AllowanceDetails[]|null  $allowanceDetails  Individual allowance details per line item.
      */
     public function __construct(
         public string $itemSequenceNumber,
@@ -35,9 +43,12 @@ final class InvoiceItem extends Dto
         public string $purchaseOrderNumber,
         public ?string $buyerProductIdentifier = null,
         public ?string $vendorProductIdentifier = null,
+        public ?string $itemDescription = null,
         public ?string $vendorOrderNumber = null,
         public ?string $hsnCode = null,
         public ?array $taxDetails = null,
+        public ?array $additionalDetails = null,
         public ?array $chargeDetails = null,
+        public ?array $allowanceDetails = null,
     ) {}
 }

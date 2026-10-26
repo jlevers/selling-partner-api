@@ -15,13 +15,13 @@ use SellingPartnerApi\Dto;
 final class CarrierDetailsContext extends Dto
 {
     /**
-     * @param  ?string  $name  The name of the carrier, as registered in state and federal tax authorities.
-     * @param  ?string  $address  The address of the carrier, as registered in state and federal tax authorities.
-     * @param  ?string  $contextType  Type of additional information.
-     * @param  ?string  $federalTaxId  Tax Identification number of the carrier.
+     * @param  ?string  $name  The name of the carrier, as registered with state and federal tax authorities.
+     * @param  ?string  $address  The address of the carrier, as registered with state and federal tax authorities.
+     * @param  ?string  $contextType  The type of additional information.
+     * @param  ?string  $federalTaxId  The tax identification number of the carrier.
      * @param  ?string  $regionCode  The code of the federal subdivision in which the carrier is registered.
      * @param  ?string  $regionTaxId  The regional tax registration number of the carrier.
-     * @param  ?string  $vehicleLicensePlate  The identifier for the carrier vehicle as printed in its registration plate.
+     * @param  ?string  $vehicleLicensePlate  The identifier for the carrier vehicle, as printed on its registration plate.
      * @param  ?string  $vehicleRegistrationRegionCode  The code of the federal subdivision in which the carrier vehicle is registered.
      */
     public function __construct(

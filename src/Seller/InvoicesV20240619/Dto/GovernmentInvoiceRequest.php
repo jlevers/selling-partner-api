@@ -17,12 +17,12 @@ final class GovernmentInvoiceRequest extends Dto
     protected static array $complexArrayTypes = ['contexts' => CarrierDetailsContext::class];
 
     /**
-     * @param  string  $invoiceType  Marketplace specific classification of the invoice type. Check 'invoiceType' options using 'getInvoicesAttributes' operation.
-     * @param  string  $marketplaceId  The government invoices creation request will match the national authoritative source of the given marketplace.
-     * @param  string  $shipmentId  The unique shipment identifier to get an invoice for.
-     * @param  string  $transactionType  Marketplace specific classification of the transaction type that originated the invoice. Check 'transactionType' options using 'getInvoicesAttributes' operation.
-     * @param  CarrierDetailsContext[]|null  $contexts  Object that contains additional invoice creation information
-     * @param  ?string  $inboundPlanId  The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+     * @param  string  $invoiceType  The marketplace-specific classification of the invoice type. Check `invoiceType` options using the `getInvoicesAttributes` operation.
+     * @param  string  $marketplaceId  The marketplace of the national authoritative source that will be on the government invoice creation request.
+     * @param  string  $shipmentId  The unique shipment identifier for which to get an invoice.
+     * @param  string  $transactionType  The marketplace-specific classification of the transaction type that originated the invoice. Check `transactionType` options using the `getInvoicesAttributes` operation.
+     * @param  CarrierDetailsContext[]|null  $contexts  Additional information for invoice creation.
+     * @param  ?string  $inboundPlanId  The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.
      */
     public function __construct(
         public string $invoiceType,

@@ -18,7 +18,7 @@ final class SubmitInvoiceRequest extends Dto
 
     /**
      * @param  string  $invoiceContent  Shipment invoice document content.
-     * @param  string  $marketplaceId  An Amazon marketplace identifier.
+     * @param  string  $marketplaceId  An Amazon store identifier.
      * @param  string  $contentMd5value  MD5 sum for validating the invoice data. For more information about calculating this value, see [Working with Content-MD5 Checksums](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_MD5.html).
      * @param  string  $invoiceType  The invoice type.
      * @param  string  $programType  The Amazon program type.

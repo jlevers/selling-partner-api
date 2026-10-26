@@ -15,10 +15,30 @@ use SellingPartnerApi\Seller\NotificationsV1\Requests\GetDestination;
 use SellingPartnerApi\Seller\NotificationsV1\Requests\GetDestinations;
 use SellingPartnerApi\Seller\NotificationsV1\Requests\GetSubscription;
 use SellingPartnerApi\Seller\NotificationsV1\Requests\GetSubscriptionById;
+use SellingPartnerApi\Seller\NotificationsV1\Requests\GetSubscriptions;
 use SellingPartnerApi\Seller\NotificationsV1\Requests\SendTestNotification;
 
 class Api extends BaseResource
 {
+    /**
+     * @param  array  $notificationTypes  A list of notification types to retrieve subscriptions for. Currently limited to a single notification type per request.
+     *
+     *  For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
+     * @param  ?string  $payloadVersion  The version of the payload object to be used in the notification.
+     * @param  ?int  $pageSize  The maximum number of subscriptions to return per page. Minimum value is 30. Maximum value is 100. Default is 30.
+     * @param  ?string  $nextToken  A token to retrieve the next page of results. If this field is not empty in a response, pass its value in the next request to retrieve the next page.
+     */
+    public function getSubscriptions(
+        array $notificationTypes,
+        ?string $payloadVersion = null,
+        ?int $pageSize = null,
+        ?string $nextToken = null,
+    ): Response {
+        $request = new GetSubscriptions($notificationTypes, $payloadVersion, $pageSize, $nextToken);
+
+        return $this->connector->send($request);
+    }
+
     /**
      * @param  string  $notificationType  The type of notification.
      *

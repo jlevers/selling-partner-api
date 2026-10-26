@@ -25,7 +25,7 @@ class GetShipments extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $status  The status of shipment you want to include in the response. To retrieve all new shipments, set this value to `CREATED` or `ACCEPTED`.
+     * @param  string  $status  The status of shipment you want to include in the response. To retrieve all new shipments, set this value to `ACCEPTED`.
      * @param  ?string  $locationId  The Amazon channel location identifier for the shipments you want to retrieve.
      * @param  ?string  $marketplaceId  The marketplace ID associated with the location. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  ?string  $channelName  The channel name associated with the location.

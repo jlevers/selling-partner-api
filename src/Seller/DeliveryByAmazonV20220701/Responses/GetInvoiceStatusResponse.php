@@ -12,19 +12,26 @@ namespace SellingPartnerApi\Seller\DeliveryByAmazonV20220701\Responses;
 
 use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\DeliveryByAmazonV20220701\Dto\ErrorList;
+use SellingPartnerApi\Seller\DeliveryByAmazonV20220701\Dto\InvoiceStatus;
 
 final class GetInvoiceStatusResponse extends Response
 {
+    protected static array $complexArrayTypes = ['invoices' => InvoiceStatus::class];
+
     /**
      * @param  ?string  $amazonOrderId  The Amazon-defined order identifier.
      * @param  ?string  $amazonShipmentId  The Amazon-defined shipment identifier.
      * @param  ?string  $invoiceStatus  The shipment invoice status.
+     * @param  ?string  $orderInvoicingStatus  The invoicing status of the order, considering the aggregated results of all invoices sent.
+     * @param  InvoiceStatus[]|null  $invoices  List of individual invoice statuses for the order.
      * @param  ?ErrorList  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?string $amazonOrderId = null,
         public readonly ?string $amazonShipmentId = null,
         public readonly ?string $invoiceStatus = null,
+        public readonly ?string $orderInvoicingStatus = null,
+        public readonly ?array $invoices = null,
         public readonly ?ErrorList $errors = null,
     ) {}
 }

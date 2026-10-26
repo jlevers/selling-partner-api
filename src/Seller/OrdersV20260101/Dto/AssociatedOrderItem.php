@@ -21,10 +21,15 @@ final class AssociatedOrderItem extends Dto
      *
      * **Possible values**:
      * - `VALUE_ADD_SERVICE` (The associated item is a service order)
+     * - `WARRANTY` (The associated item is a product covered by a warranty or protection plan)
+     * @param  ?string  $asin  The ASIN of the associated order item.
+     * @param  ?Money  $purchasePrice  An amount of money, including units in the form of currency.
      */
     public function __construct(
         public ?string $orderId = null,
         public ?string $orderItemId = null,
         public ?string $associationType = null,
+        public ?string $asin = null,
+        public ?Money $purchasePrice = null,
     ) {}
 }

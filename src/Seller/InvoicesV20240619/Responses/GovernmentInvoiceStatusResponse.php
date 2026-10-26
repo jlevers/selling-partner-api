@@ -19,7 +19,7 @@ final class GovernmentInvoiceStatusResponse extends Response
 
     /**
      * @param  InvoiceError[]|null  $invoiceErrors  The errors that occurred during invoice creation.
-     * @param  ?string  $invoiceExternalDocumentId  Government Invoice ID of a successfully authorized invoice.
+     * @param  ?string  $invoiceExternalDocumentId  The Government Invoice ID of a successfully authorized invoice.
      * @param  ?string  $status  The current status of a government invoice creation request.
      */
     public function __construct(

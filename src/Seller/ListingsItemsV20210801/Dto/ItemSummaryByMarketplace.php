@@ -15,16 +15,16 @@ use SellingPartnerApi\Dto;
 final class ItemSummaryByMarketplace extends Dto
 {
     /**
-     * @param  string  $marketplaceId  A marketplace identifier. Identifies the Amazon marketplace for the listings item.
-     * @param  string  $productType  The Amazon product type of the listings item.
+     * @param  string  $marketplaceId  A marketplace identifier. Identifies the listings item's Amazon store.
+     * @param  string  $productType  The listings item's Amazon product type.
      * @param  string[]  $status  Statuses that apply to the listings item.
-     * @param  \DateTimeInterface  $createdDate  The date the listings item was created in ISO 8601 format.
-     * @param  \DateTimeInterface  $lastUpdatedDate  The date the listings item was last updated in ISO 8601 format.
-     * @param  ?string  $asin  Amazon Standard Identification Number (ASIN) of the listings item.
+     * @param  \DateTimeInterface  $createdDate  Date the listings item was created, in ISO 8601 format.
+     * @param  \DateTimeInterface  $lastUpdatedDate  Date the listings item was last updated, in ISO 8601 format.
+     * @param  ?string  $asin  The ASIN of the listings item.
      * @param  ?string  $conditionType  Identifies the condition of the listings item.
-     * @param  ?string  $fnSku  The fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item.
-     * @param  ?string  $itemName  The name or title associated with an Amazon catalog item.
-     * @param  ?ItemImage  $mainImage  The image for the listings item.
+     * @param  ?string  $fnSku  Fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item.
+     * @param  ?string  $itemName  Name, or title, associated with an Amazon catalog item.
+     * @param  ?ItemImage  $mainImage  The listings item's image.
      */
     public function __construct(
         public string $marketplaceId,

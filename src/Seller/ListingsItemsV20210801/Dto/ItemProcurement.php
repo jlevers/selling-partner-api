@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class ItemProcurement extends Dto
 {
     /**
-     * @param  Money  $costPrice  The currency type and amount.
+     * @param  Money  $costPrice  The currency type and the amount.
      */
     public function __construct(
         public Money $costPrice,

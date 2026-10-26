@@ -30,7 +30,7 @@ class CreateContentDocument extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  string  $marketplaceId  The identifier for the Amazon store where the A+ Content is published.
      */
     public function __construct(
         public PostContentDocumentRequest $postContentDocumentRequest,

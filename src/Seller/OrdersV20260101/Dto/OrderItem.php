@@ -21,7 +21,7 @@ final class OrderItem extends Dto
      * @param  int  $quantityOrdered  The number of units of this item that the customer ordered.
      * @param  ItemProduct  $product  Product information for an order item.
      * @param  ?Measurement  $measurement  Specifies the unit of measure and quantity for items that are sold by weight, volume, length, or other measurements rather than simple count.
-     * @param  AssociatedOrderItem[]|null  $associatedOrderItems  A list of order items associated with this item. For example, a value-add service purchased with the product.
+     * @param  AssociatedOrderItem[]|null  $associatedOrderItems  A list of order items associated with this item. For example, a value-add service purchased with the product, or a product covered by a warranty protection plan.
      * @param  ?string[]  $programs  Special programs that apply specifically to this item within the order.
      *
      * **Possible values**: `TRANSPARENCY`, `SUBSCRIBE_AND_SAVE`

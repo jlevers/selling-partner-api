@@ -24,6 +24,8 @@ final class OrderFulfillment extends Dto
      * **Possible values**: `EXPEDITED`, `FREE_ECONOMY`, `NEXT_DAY`, `PRIORITY`, `SAME_DAY`, `SECOND_DAY`, `SCHEDULED`, `STANDARD`.
      * @param  ?DateTimeRange  $shipByWindow  A time period with start and end boundaries.
      * @param  ?DateTimeRange  $deliverByWindow  A time period with start and end boundaries.
+     * @param  ?DateTimeRange  $labelPrintingWindow  A time period with start and end boundaries.
+     * @param  ?PromiseCalculationInputs  $promiseCalculationInputs  The inputs used to calculate a promise date.
      */
     public function __construct(
         public string $fulfillmentStatus,
@@ -31,5 +33,7 @@ final class OrderFulfillment extends Dto
         public ?string $fulfillmentServiceLevel = null,
         public ?DateTimeRange $shipByWindow = null,
         public ?DateTimeRange $deliverByWindow = null,
+        public ?DateTimeRange $labelPrintingWindow = null,
+        public ?PromiseCalculationInputs $promiseCalculationInputs = null,
     ) {}
 }

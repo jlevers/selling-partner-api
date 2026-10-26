@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class CustomAttribute extends Dto
 {
     /**
-     * @param  ?string  $key  The key of the custom attribute. Must be unique.
+     * @param  ?string  $key  The attribute key.
      * @param  ?string  $type  The data type of the custom attribute value to aid with parsing during deserialization.
-     * @param  ?string  $value  The value of the custom attribute.
+     * @param  ?string  $value  The attribute value.
      */
     public function __construct(
         public ?string $key = null,

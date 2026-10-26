@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Selling Partner API for Delivery Shipment Invoicing",
-        "description": "The Selling Partner API for Delivery Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil marketplace for a selling partner\u2019s orders.",
+        "description": "The Selling Partner API for Delivery Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil Amazon store for a selling partner\u2019s orders.",
         "contact": {
             "name": "Selling Partner API Developer Support",
             "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
@@ -24,7 +24,7 @@
                 "tags": [
                     "DeliveryByAmazonV20220701"
                 ],
-                "description": "Submits a shipment invoice for a given order or shipment. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1.133 | 25 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Submits a shipment invoice for a given order or shipment. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1.133 | 25 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "submitInvoice",
                 "parameters": [
                     {
@@ -47,7 +47,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "The request body that specifies invoice, program and marketplace values.",
+                    "description": "The request body that specifies invoice, program and `marketplaceId` values.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -318,7 +318,7 @@
                 "tags": [
                     "DeliveryByAmazonV20220701"
                 ],
-                "description": "Returns the invoice status for the order or shipment you specify. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1.133 | 25 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the invoice status for the order or shipment you specify. You must specify either an `orderId`, `shipmentId`, or `invoiceId` as a query parameter. If multiple parameters are supplied, `orderId` takes precedence over `shipmentId`, which takes precedence over `invoiceId`.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1.133 | 25 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "getInvoiceStatus",
                 "parameters": [
                     {
@@ -340,9 +340,18 @@
                         "example": "1234567890123"
                     },
                     {
+                        "name": "invoiceId",
+                        "in": "query",
+                        "description": "The invoice access key (NF-e access key for Brazilian invoices). Use this to retrieve the status of a specific invoice.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "35200000000000000000000000000000000000000000"
+                    },
+                    {
                         "name": "marketplaceId",
                         "in": "query",
-                        "description": "The marketplace identifier.",
+                        "description": "The Amazon store identifier.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -464,7 +473,14 @@
                                     "response": {
                                         "amazonShipmentId": "1111111111111",
                                         "amazonOrderId": "000-0000000-0000000",
-                                        "invoiceStatus": "Accepted"
+                                        "invoiceStatus": "Accepted",
+                                        "orderInvoicingStatus": "Accepted",
+                                        "invoices": [
+                                            {
+                                                "id": "35200000000000000000000000000000000000000000",
+                                                "status": "Accepted"
+                                            }
+                                        ]
                                     }
                                 }
                             ]
@@ -725,7 +741,7 @@
                     },
                     "marketplaceId": {
                         "type": "string",
-                        "description": "An Amazon marketplace identifier."
+                        "description": "An Amazon store identifier."
                     },
                     "contentMD5Value": {
                         "type": "string",
@@ -832,11 +848,88 @@
                     "invoiceStatus": {
                         "$ref": "#/components/schemas/ShipmentInvoiceStatus"
                     },
+                    "orderInvoicingStatus": {
+                        "type": "string",
+                        "description": "The invoicing status of the order, considering the aggregated results of all invoices sent.",
+                        "enum": [
+                            "Processing",
+                            "Accepted",
+                            "PartiallyAccepted",
+                            "Rejected"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Processing",
+                                "description": "At least one invoice is still being processed, none rejected."
+                            },
+                            {
+                                "value": "Accepted",
+                                "description": "All invoices have been accepted."
+                            },
+                            {
+                                "value": "PartiallyAccepted",
+                                "description": "A mix of accepted and rejected or processing invoices."
+                            },
+                            {
+                                "value": "Rejected",
+                                "description": "All invoices have been rejected."
+                            }
+                        ]
+                    },
+                    "invoices": {
+                        "type": "array",
+                        "description": "List of individual invoice statuses for the order.",
+                        "items": {
+                            "$ref": "#/components/schemas/InvoiceStatus"
+                        }
+                    },
                     "errors": {
                         "$ref": "#/components/schemas/ErrorList"
                     }
                 },
                 "description": "The response schema for the getInvoiceStatus operation."
+            },
+            "InvoiceStatus": {
+                "required": [
+                    "id",
+                    "status"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The unique invoice identifier (NF-e access key for Brazilian invoices)."
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "The current status of this invoice.",
+                        "enum": [
+                            "Processing",
+                            "Accepted",
+                            "Rejected",
+                            "NotFound"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Processing",
+                                "description": "The invoice is still being processed."
+                            },
+                            {
+                                "value": "Accepted",
+                                "description": "The invoice has been accepted."
+                            },
+                            {
+                                "value": "Rejected",
+                                "description": "The invoice has been rejected."
+                            },
+                            {
+                                "value": "NotFound",
+                                "description": "The invoice was not found."
+                            }
+                        ]
+                    }
+                },
+                "description": "Individual invoice status entry."
             }
         }
     },

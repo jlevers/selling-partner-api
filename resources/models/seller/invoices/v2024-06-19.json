@@ -24,7 +24,7 @@
                 "tags": [
                     "InvoicesV20240619"
                 ],
-                "description": "Returns marketplace-dependent schemas and their respective set of possible values.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 1 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns marketplace-dependent schemas and their respective set of possible values.",
                 "operationId": "getInvoicesAttributes",
                 "parameters": [
                     {
@@ -32,6 +32,14 @@
                         "in": "query",
                         "description": "The marketplace identifier.",
                         "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "warehouseCode",
+                        "in": "query",
+                        "description": "The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.",
                         "schema": {
                             "type": "string"
                         }
@@ -68,6 +76,39 @@
                                         "parameters": {
                                             "marketplaceId": {
                                                 "value": "A2Q3Y263D00KWC"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "invoicesAttributes": {
+                                            "invoiceStatusOptions": [
+                                                {
+                                                    "description": "The government authorized the invoice.",
+                                                    "value": "AUTHORIZED"
+                                                },
+                                                {
+                                                    "description": "The government rejected the invoice.",
+                                                    "value": "REJECTED"
+                                                },
+                                                {
+                                                    "description": "The invoice is canceled.",
+                                                    "value": "CANCELED"
+                                                }
+                                            ],
+                                            "invoiceTypeOptions": [],
+                                            "transactionIdentifierNameOptions": [],
+                                            "transactionTypeOptions": []
+                                        }
+                                    }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "marketplaceId": {
+                                                "value": "A2Q3Y263D00KWC"
+                                            },
+                                            "warehouseCode": {
+                                                "value": "ABCD"
                                             }
                                         }
                                     },
@@ -288,7 +329,8 @@
                             }
                         }
                     }
-                }
+                },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL"
             }
         },
         "/tax/invoices/2024-06-19/documents/{invoicesDocumentId}": {
@@ -296,7 +338,7 @@
                 "tags": [
                     "InvoicesV20240619"
                 ],
-                "description": "Returns the invoice document's ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.0167 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns the invoice document's ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.",
                 "operationId": "getInvoicesDocument",
                 "parameters": [
                     {
@@ -304,6 +346,14 @@
                         "in": "path",
                         "description": "The export document identifier.",
                         "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "warehouseCode",
+                        "in": "query",
+                        "description": "The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.",
                         "schema": {
                             "type": "string"
                         }
@@ -340,6 +390,24 @@
                                         "parameters": {
                                             "invoicesDocumentId": {
                                                 "value": "18c598f5-75db-4c1a-bd3e-4c64b36781c5"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "invoicesDocument": {
+                                            "invoicesDocumentId": "18c598f5-75db-4c1a-bd3e-4c64b36781c5",
+                                            "invoicesDocumentUrl": "https://invoicesdocumentbucket.s3.eu-east-1.amazonaws.com/18c598f5-75db-4c1a-bd3e-4c64b36781c5.xml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=<CREDENTIAL>&X-Amz-Date=20240710T171315Z&X-Amz-Expires=300&X-Amz-Signature=<SIGNATURE>&X-Amz-SignedHeaders=host"
+                                        }
+                                    }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "invoicesDocumentId": {
+                                                "value": "18c598f5-75db-4c1a-bd3e-4c64b36781c5"
+                                            },
+                                            "warehouseCode": {
+                                                "value": "ABCD"
                                             }
                                         }
                                     },
@@ -545,7 +613,8 @@
                             }
                         }
                     }
-                }
+                },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL"
             }
         },
         "/tax/invoices/2024-06-19/exports": {
@@ -553,7 +622,7 @@
                 "tags": [
                     "InvoicesV20240619"
                 ],
-                "description": "Returns invoice exports details for exports that match the filters that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.1 | 20 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns invoice exports details for exports that match the filters that you specify.",
                 "operationId": "getInvoicesExports",
                 "parameters": [
                     {
@@ -648,6 +717,14 @@
                                 "value": "ERROR"
                             }
                         ]
+                    },
+                    {
+                        "name": "warehouseCode",
+                        "in": "query",
+                        "description": "The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.",
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
@@ -693,6 +770,45 @@
                                             },
                                             "status": {
                                                 "value": "DONE"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "exports": [
+                                            {
+                                                "errorMessage": "",
+                                                "exportId": "4bdd8293-0cd7-4208-bed5-78b2c6ecefef",
+                                                "generateExportFinishedAt": "2024-07-10T16:00:00.000Z",
+                                                "generateExportStartedAt": "2024-07-10T15:00:00.000Z",
+                                                "invoicesDocumentIds": [
+                                                    "18c598f5-75db-4c1a-bd3e-4c64b36781c5"
+                                                ],
+                                                "status": "DONE"
+                                            }
+                                        ],
+                                        "nextToken": "WTtGLzlBkat22iOI5C1yrpSPqMpz9UHYxdvm5U4DqEVJL5hqxv9xMuXe3eg35i17"
+                                    }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "dateEnd": {
+                                                "value": "2024-07-10T23:59:59.000Z"
+                                            },
+                                            "dateStart": {
+                                                "value": "2024-07-10T00:00:00.000Z"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A2Q3Y263D00KWC"
+                                            },
+                                            "pageSize": {
+                                                "value": 1
+                                            },
+                                            "status": {
+                                                "value": "DONE"
+                                            },
+                                            "warehouseCode": {
+                                                "value": "ABCD"
                                             }
                                         }
                                     },
@@ -917,13 +1033,14 @@
                             }
                         }
                     }
-                }
+                },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL"
             },
             "post": {
                 "tags": [
                     "InvoicesV20240619"
                 ],
-                "description": "Creates an invoice export request.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.167 | 1 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Creates an invoice export request.",
                 "operationId": "createInvoicesExport",
                 "requestBody": {
                     "description": "Information required to create the export request.",
@@ -1186,6 +1303,7 @@
                         }
                     }
                 },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL",
                 "x-codegen-request-body-name": "body"
             }
         },
@@ -1194,7 +1312,7 @@
                 "tags": [
                     "InvoicesV20240619"
                 ],
-                "description": "Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.",
                 "operationId": "getInvoicesExport",
                 "parameters": [
                     {
@@ -1202,6 +1320,14 @@
                         "in": "path",
                         "description": "The unique identifier for the export.",
                         "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "warehouseCode",
+                        "in": "query",
+                        "description": "The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.",
                         "schema": {
                             "type": "string"
                         }
@@ -1238,6 +1364,30 @@
                                         "parameters": {
                                             "exportId": {
                                                 "value": "4bdd8293-0cd7-4208-bed5-78b2c6ecefef"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "export": {
+                                            "errorMessage": "",
+                                            "exportId": "4bdd8293-0cd7-4208-bed5-78b2c6ecefef",
+                                            "generateExportFinishedAt": "2024-07-10T16:00:00.000Z",
+                                            "generateExportStartedAt": "2024-07-10T15:00:00.000Z",
+                                            "invoicesDocumentIds": [
+                                                "18c598f5-75db-4c1a-bd3e-4c64b36781c5"
+                                            ],
+                                            "status": "DONE"
+                                        }
+                                    }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "exportId": {
+                                                "value": "4bdd8293-0cd7-4208-bed5-78b2c6ecefef"
+                                            },
+                                            "warehouseCode": {
+                                                "value": "ABCD"
                                             }
                                         }
                                     },
@@ -1449,7 +1599,8 @@
                             }
                         }
                     }
-                }
+                },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL"
             }
         },
         "/tax/invoices/2024-06-19/governmentInvoiceRequests": {
@@ -1457,13 +1608,13 @@
                 "tags": [
                     "InvoicesV20240619"
                 ],
-                "description": "Returns the status of an invoice generation request.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.0167 | 1 |\n\nFor more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.",
+                "description": "Retrieve the status of an invoice generation request.",
                 "operationId": "getGovernmentInvoiceStatus",
                 "parameters": [
                     {
                         "name": "marketplaceId",
                         "in": "query",
-                        "description": "The invoices status will match the marketplace that you specify.",
+                        "description": "The marketplace of the invoice request.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1472,7 +1623,7 @@
                     {
                         "name": "transactionType",
                         "in": "query",
-                        "description": "Marketplace specific classification of the transaction type that originated the invoice. Check 'transactionType' options using 'getInvoicesAttributes' operation.",
+                        "description": "The marketplace-specific classification of the transaction type that originated the invoice. Check `transactionType` options using the `getInvoicesAttributes` operation.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1481,7 +1632,7 @@
                     {
                         "name": "shipmentId",
                         "in": "query",
-                        "description": "The unique shipment identifier to get an invoice for.",
+                        "description": "The unique shipment identifier for which to get an invoice.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1490,7 +1641,7 @@
                     {
                         "name": "invoiceType",
                         "in": "query",
-                        "description": "Marketplace specific classification of the invoice type. Check 'invoiceType' options using 'getInvoicesAttributes' operation.",
+                        "description": "The marketplace-specific classification of the invoice type. Check `invoiceType` options using the `getInvoicesAttributes` operation.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -1499,7 +1650,7 @@
                     {
                         "name": "inboundPlanId",
                         "in": "query",
-                        "description": "The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.",
+                        "description": "The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.",
                         "schema": {
                             "type": "string"
                         }
@@ -1787,7 +1938,7 @@
                 "tags": [
                     "InvoicesV20240619"
                 ],
-                "description": "Submits an asynchronous government invoice creation request.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.0167 | 1 |\n\nFor more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.",
+                "description": "Submit an asynchronous request to create a government invoice.",
                 "operationId": "createGovernmentInvoice",
                 "requestBody": {
                     "description": "Information required to create the government invoice.",
@@ -2052,13 +2203,13 @@
                 "tags": [
                     "InvoicesV20240619"
                 ],
-                "description": "Returns an invoiceDocument object containing an invoiceDocumentUrl .\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.0167 | 1 |\n\nFor more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.",
+                "description": "Retrieve the URL of an invoice document.",
                 "operationId": "getGovernmentInvoiceDocument",
                 "parameters": [
                     {
                         "name": "marketplaceId",
                         "in": "query",
-                        "description": "The invoices returned will match the marketplace that you specify.",
+                        "description": "The marketplace of the invoice.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -2067,7 +2218,7 @@
                     {
                         "name": "transactionType",
                         "in": "query",
-                        "description": "Marketplace specific classification of the transaction type that originated the invoice. Check 'transactionType' options using 'getInvoicesAttributes' operation.",
+                        "description": "The marketplace-specific classification of the transaction type that originated the invoice. Check `transactionType` options using the `getInvoicesAttributes` operation.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -2076,7 +2227,7 @@
                     {
                         "name": "shipmentId",
                         "in": "path",
-                        "description": "The unique shipment identifier to get an invoice for.",
+                        "description": "The unique shipment identifier for which to get an invoice.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -2085,7 +2236,7 @@
                     {
                         "name": "invoiceType",
                         "in": "query",
-                        "description": "Marketplace specific classification of the invoice type. Check 'invoiceType' options using 'getInvoicesAttributes' operation.",
+                        "description": "The marketplace-specific classification of the invoice type. Check `invoiceType` options using the `getInvoicesAttributes` operation.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -2094,7 +2245,7 @@
                     {
                         "name": "inboundPlanId",
                         "in": "query",
-                        "description": "The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.",
+                        "description": "The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.",
                         "schema": {
                             "type": "string"
                         }
@@ -2102,7 +2253,7 @@
                     {
                         "name": "fileFormat",
                         "in": "query",
-                        "description": "Requested file format. Default is XML",
+                        "description": "The file format of the invoice. The default is XML.",
                         "schema": {
                             "type": "string"
                         }
@@ -2366,7 +2517,7 @@
                 "tags": [
                     "InvoicesV20240619"
                 ],
-                "description": "Returns invoice details for the invoices that match the filters that you specify.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.1 | 20 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns invoice details for the invoices that match the filters that you specify.",
                 "operationId": "getInvoices",
                 "parameters": [
                     {
@@ -2528,6 +2679,14 @@
                                 "value": "START_DATE_TIME"
                             }
                         ]
+                    },
+                    {
+                        "name": "warehouseCode",
+                        "in": "query",
+                        "description": "The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.",
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
@@ -2625,6 +2784,67 @@
                                             },
                                             "series": {
                                                 "value": "32"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "invoices": [
+                                            {
+                                                "date": "2024-07-10T15:00:00.000Z",
+                                                "errorCode": "",
+                                                "externalInvoiceId": "1283743",
+                                                "govResponse": "",
+                                                "id": "ad5b9dcd-6981-4dc4-a3d7-dd2568298a94",
+                                                "invoiceType": "SYMBOLIC_RETURN",
+                                                "series": "32",
+                                                "status": "AUTHORIZED",
+                                                "transactionIds": [
+                                                    {
+                                                        "name": "BUSINESS_TRANSACTION_ID",
+                                                        "id": "94cd4e1a-5cc5-486d-b592-045a95a168e1"
+                                                    }
+                                                ],
+                                                "transactionType": "CUSTOMER_SALES"
+                                            }
+                                        ],
+                                        "nextToken": "WTtGLzlBkat22iOI5C1yrpSPqMpz9UHYxdvm5U4DqEVJL5hqxv9xMuXe3eg35i17"
+                                    }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "dateEnd": {
+                                                "value": "2024-07-20T23:59:59"
+                                            },
+                                            "dateStart": {
+                                                "value": "2024-07-01T00:00:00"
+                                            },
+                                            "invoiceType": {
+                                                "value": "DIRECT_FULFILLMENT"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A2Q3Y263D00KWC"
+                                            },
+                                            "pageSize": {
+                                                "value": 1
+                                            },
+                                            "sortBy": {
+                                                "value": "START_DATE_TIME"
+                                            },
+                                            "sortOrder": {
+                                                "value": "DESC"
+                                            },
+                                            "transactionIdentifierId": {
+                                                "value": "94cd4e1a-5cc5-486d-b592-045a95a168e1"
+                                            },
+                                            "transactionIdentifierName": {
+                                                "value": "BUSINESS_TRANSACTION_ID"
+                                            },
+                                            "transactionType": {
+                                                "value": "VENDOR_INBOUND"
+                                            },
+                                            "warehouseCode": {
+                                                "value": "ABCD"
                                             }
                                         }
                                     },
@@ -2858,7 +3078,8 @@
                             }
                         }
                     }
-                }
+                },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL"
             }
         },
         "/tax/invoices/2024-06-19/invoices/{invoiceId}": {
@@ -2866,7 +3087,7 @@
                 "tags": [
                     "InvoicesV20240619"
                 ],
-                "description": "Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes.\nTo get the full invoice, use the `createInvoicesExport` operation to start an export request.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 2 | 15 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).",
+                "description": "Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes.\nTo get the full invoice, use the `createInvoicesExport` operation to start an export request.",
                 "operationId": "getInvoice",
                 "parameters": [
                     {
@@ -2883,6 +3104,14 @@
                         "in": "path",
                         "description": "The invoice identifier.",
                         "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "warehouseCode",
+                        "in": "query",
+                        "description": "The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.",
                         "schema": {
                             "type": "string"
                         }
@@ -2942,6 +3171,40 @@
                                                 }
                                             ],
                                             "transactionType": "CUSTOMER_SALES_SYMBOLIC"
+                                        }
+                                    }
+                                },
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "invoiceId": {
+                                                "value": "ad5b9dcd-6981-4dc4-a3d7-dd2568298a94"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "A2Q3Y263D00KWC"
+                                            },
+                                            "warehouseCode": {
+                                                "value": "ABCD"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "invoice": {
+                                            "date": "2024-07-10T15:00:00.000Z",
+                                            "errorCode": "",
+                                            "externalInvoiceId": "1283743",
+                                            "govResponse": "",
+                                            "id": "ad5b9dcd-6981-4dc4-a3d7-dd2568298a94",
+                                            "invoiceType": "DIRECT_FULFILLMENT",
+                                            "series": "32",
+                                            "status": "AUTHORIZED",
+                                            "transactionIds": [
+                                                {
+                                                    "name": "BUSINESS_TRANSACTION_ID",
+                                                    "id": "94cd4e1a-5cc5-486d-b592-045a95a168e1"
+                                                }
+                                            ],
+                                            "transactionType": "VENDOR_INBOUND"
                                         }
                                     }
                                 }
@@ -3162,7 +3425,8 @@
                             }
                         }
                     }
-                }
+                },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL"
             }
         }
     },
@@ -3187,19 +3451,19 @@
                 "properties": {
                     "name": {
                         "type": "string",
-                        "description": "The name of the carrier, as registered in state and federal tax authorities."
+                        "description": "The name of the carrier, as registered with state and federal tax authorities."
                     },
                     "address": {
                         "type": "string",
-                        "description": "The address of the carrier, as registered in state and federal tax authorities."
+                        "description": "The address of the carrier, as registered with state and federal tax authorities."
                     },
                     "contextType": {
                         "type": "string",
-                        "description": "Type of additional information."
+                        "description": "The type of additional information."
                     },
                     "federalTaxId": {
                         "type": "string",
-                        "description": "Tax Identification number of the carrier."
+                        "description": "The tax identification number of the carrier."
                     },
                     "regionCode": {
                         "type": "string",
@@ -3211,7 +3475,7 @@
                     },
                     "vehicleLicensePlate": {
                         "type": "string",
-                        "description": "The identifier for the carrier vehicle as printed in its registration plate."
+                        "description": "The identifier for the carrier vehicle, as printed on its registration plate."
                     },
                     "vehicleRegistrationRegionCode": {
                         "type": "string",
@@ -3325,6 +3589,10 @@
                     "transactionType": {
                         "type": "string",
                         "description": "The marketplace-specific classification of the transaction type for which the invoice was created. Use the `getInvoicesAttributes` operation to check `transactionType` options"
+                    },
+                    "warehouseCode": {
+                        "type": "string",
+                        "description": "The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral."
                     }
                 },
                 "description": "The information required to create the export request.",
@@ -3343,7 +3611,8 @@
                         "name": "BUSINESS_TRANSACTION_ID",
                         "id": "94cd4e1a-5cc5-486d-b592-045a95a168e1"
                     },
-                    "transactionType": "CUSTOMER_SALES"
+                    "transactionType": "CUSTOMER_SALES",
+                    "warehouseCode": "ABCD"
                 }
             },
             "ExportInvoicesResponse": {
@@ -3487,11 +3756,11 @@
                         "value": "PROCESSING"
                     },
                     {
-                        "description": "The government invoice creation request is finished with success. Use the external document IDs to download the output documents.",
+                        "description": "The government invoice creation request is finished successfully. Use the external document IDs to download the output documents.",
                         "value": "SUCCESS"
                     },
                     {
-                        "description": "The government invoice creation request resulted in an error. Check the errorMessage attribute for more details.",
+                        "description": "The government invoice creation request resulted in an error. Check the `errorMessage` attribute for more details.",
                         "value": "ERROR"
                     }
                 ]
@@ -3507,30 +3776,30 @@
                 "properties": {
                     "contexts": {
                         "type": "array",
-                        "description": "Object that contains additional invoice creation information",
+                        "description": "Additional information for invoice creation.",
                         "items": {
                             "$ref": "#/components/schemas/CarrierDetailsContext"
                         }
                     },
                     "inboundPlanId": {
                         "type": "string",
-                        "description": "The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created."
+                        "description": "The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created."
                     },
                     "invoiceType": {
                         "type": "string",
-                        "description": "Marketplace specific classification of the invoice type. Check 'invoiceType' options using 'getInvoicesAttributes' operation."
+                        "description": "The marketplace-specific classification of the invoice type. Check `invoiceType` options using the `getInvoicesAttributes` operation."
                     },
                     "marketplaceId": {
                         "type": "string",
-                        "description": "The government invoices creation request will match the national authoritative source of the given marketplace."
+                        "description": "The marketplace of the national authoritative source that will be on the government invoice creation request."
                     },
                     "shipmentId": {
                         "type": "string",
-                        "description": "The unique shipment identifier to get an invoice for."
+                        "description": "The unique shipment identifier for which to get an invoice."
                     },
                     "transactionType": {
                         "type": "string",
-                        "description": "Marketplace specific classification of the transaction type that originated the invoice. Check 'transactionType' options using 'getInvoicesAttributes' operation."
+                        "description": "The marketplace-specific classification of the transaction type that originated the invoice. Check `transactionType` options using the `getInvoicesAttributes` operation."
                     }
                 },
                 "description": "Information required to create the government invoice.",
@@ -3566,7 +3835,7 @@
                     },
                     "invoiceExternalDocumentId": {
                         "type": "string",
-                        "description": "Government Invoice ID of a successfully authorized invoice."
+                        "description": "The Government Invoice ID of a successfully authorized invoice."
                     },
                     "status": {
                         "$ref": "#/components/schemas/GovernmentInvoiceCreationStatus"
@@ -3638,24 +3907,24 @@
                 "properties": {
                     "invoiceDocumentUrl": {
                         "type": "string",
-                        "description": "A pre-signed URL to download the invoice document in its original format. This URL expires after 30 seconds."
+                        "description": "A pre-signed URL that you can use to download the invoice document in its original format. This URL expires after 30 seconds."
                     }
                 },
-                "description": "Object containing the documentId and a S3 pre-signed URL to download the specified document file."
+                "description": "The `documentId` and an S3 pre-signed URL that you can use to download the specified document file."
             },
             "InvoiceError": {
                 "type": "object",
                 "properties": {
                     "description": {
                         "type": "string",
-                        "description": "A text description of the error."
+                        "description": "A description of the error."
                     },
                     "errorCode": {
                         "type": "string",
                         "description": "The code of the error."
                     }
                 },
-                "description": "An invoice creation error occurrence."
+                "description": "An invoice creation error occurred."
             },
             "InvoicesAttributes": {
                 "type": "object",

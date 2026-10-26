@@ -26,11 +26,35 @@ final class ContentModule extends Dto
      * @param  ?StandardMultipleImageTextModule  $standardMultipleImageText  Standard images with text, presented one at a time. The user clicks on thumbnails to view each block.
      * @param  ?StandardProductDescriptionModule  $standardProductDescription  Standard product description text.
      * @param  ?StandardSingleImageHighlightsModule  $standardSingleImageHighlights  A standard image with several paragraphs and a bulleted list.
-     * @param  ?StandardSingleImageSpecsDetailModule  $standardSingleImageSpecsDetail  A standard image with paragraphs, a bulleted list, and extra space for technical details.
+     * @param  ?StandardSingleImageSpecsDetailModule  $standardSingleImageSpecsDetail  A standard image with paragraphs and a bulleted list, and extra space for technical details.
      * @param  ?StandardSingleSideImageModule  $standardSingleSideImage  A standard headline and body text with an image on the side.
      * @param  ?StandardTechSpecsModule  $standardTechSpecs  The standard table of technical feature names and definitions.
      * @param  ?StandardTextModule  $standardText  A standard headline and body text.
      * @param  ?StandardThreeImageTextModule  $standardThreeImageText  Three standard images with text, presented across a single row.
+     * @param  ?PremiumImageTextModule  $premiumImageText  A single image paired with text, positioned side by side. The image can appear on the left or right of the text block.
+     * @param  ?PremiumTextModule  $premiumText  A text-only module with headline and body text, allowing greater character limits than other modules for explaining more details or instructions on your product.
+     * @param  ?PremiumFullBackgroundTextModule  $premiumFullBackgroundText  A full-width background image with a text overlay box containing subheadline, headline, and body text. The text box can be positioned to the left or right, and styled light or dark.
+     * @param  ?PremiumFullBackgroundImageModule  $premiumFullBackgroundImage  A full-width background image that spans the entire module width, with optional headline and body text below.
+     * @param  ?PremiumFourColumnImagesModule  $premiumFourColumnImages  Four images displayed in a row with a single headline above. Each image has its own subheadline and body text.
+     * @param  ?PremiumDualImageTextModule  $premiumDualImageText  Two images displayed side by side with a single headline above. Each image has its own subheadline and body text.
+     * @param  ?PremiumImageCarouselModule  $premiumImageCarousel  A carousel of full-width image panels, each with its own headline and body text. Users swipe or click through panels.
+     * @param  ?PremiumNavigationCarouselModule  $premiumNavigationCarousel  A carousel of full-width image panels with clickable navigation tabs. Each panel has its own navigation text, subheadline, headline, and body text.
+     * @param  ?PremiumRegimenCarouselModule  $premiumRegimenCarousel  A carousel with a module headline, full-width image panels, and navigation tabs. Each panel has its own inset headline, inset body text, and navigation text.
+     * @param  ?PremiumThreeColumnComparisonModule  $premiumThreeColumnComparison  A comparison table displaying products side by side with features, tooltips, and detail rows.
+     * @param  ?PremiumComparisonCarouselModule  $premiumComparisonCarousel  A comparison table with product images, headline per product, and feature rows with text.
+     * @param  ?PremiumComparisonScrollerModule  $premiumComparisonScroller  A scrollable comparison view with full-height product images, chart headline, and feature rows with text per product.
+     * @param  ?PremiumHotspotImageModule  $premiumHotspotImage  A full-width image with clickable hotspot markers that reveal headline and descriptive text for each point of interest.
+     * @param  ?PremiumHotspotImageTextModule  $premiumHotspotImageText  A full-width image with clickable hotspot markers, plus a module headline and body text above the image.
+     * @param  ?PremiumFaqModule  $premiumFaq  A list of question-and-answer pairs with a configurable background color scheme of light or dark.
+     * @param  ?PremiumTechSpecsModule  $premiumTechSpecs  A structured list of specification-definition pairs with a headline, for presenting key technical details of your product.
+     * @param  ?PremiumVideoTextModule  $premiumVideoText  A video paired with text containing subheadline, headline, and body text. The video can appear on the left or right of the text block.
+     * @param  ?PremiumHeroVideoModule  $premiumHeroVideo  A full-width video with optional headline and body text below.
+     * @param  ?PremiumVideoImageCarouselModule  $premiumVideoImageCarousel  A carousel of panels, each containing a video or image with its own panel headline, subheadline, and body text. A module headline appears above the carousel.
+     * @param  ?BrandStoryImageWithLogoModule  $brandStoryImageWithLogo  The required background card for all Brand Story Content. Provides a full-width background image with a Brand logo overlay, headline, and body text. All other Brand Story modules appear within this carousel.
+     * @param  ?BrandStoryFourAsinModule  $brandStoryFourAsin  A Brand Story card displaying up to four product ASINs with images, enabling cross-selling to other products in your catalog.
+     * @param  ?BrandStoryMediaAssetModule  $brandStoryMediaAsset  A Brand Story card featuring a single image as the primary visual element.
+     * @param  ?BrandStoryAboutModule  $brandStoryAbout  A Brand Story card with text-focused content for telling your Brand's story, mission, or values.
+     * @param  ?BrandStoryQuestionsModule  $brandStoryQuestions  A Brand Story card with question-and-answer pairs about your Brand.
      */
     public function __construct(
         public string $contentModuleType,
@@ -49,5 +73,29 @@ final class ContentModule extends Dto
         public ?StandardTechSpecsModule $standardTechSpecs = null,
         public ?StandardTextModule $standardText = null,
         public ?StandardThreeImageTextModule $standardThreeImageText = null,
+        public ?PremiumImageTextModule $premiumImageText = null,
+        public ?PremiumTextModule $premiumText = null,
+        public ?PremiumFullBackgroundTextModule $premiumFullBackgroundText = null,
+        public ?PremiumFullBackgroundImageModule $premiumFullBackgroundImage = null,
+        public ?PremiumFourColumnImagesModule $premiumFourColumnImages = null,
+        public ?PremiumDualImageTextModule $premiumDualImageText = null,
+        public ?PremiumImageCarouselModule $premiumImageCarousel = null,
+        public ?PremiumNavigationCarouselModule $premiumNavigationCarousel = null,
+        public ?PremiumRegimenCarouselModule $premiumRegimenCarousel = null,
+        public ?PremiumThreeColumnComparisonModule $premiumThreeColumnComparison = null,
+        public ?PremiumComparisonCarouselModule $premiumComparisonCarousel = null,
+        public ?PremiumComparisonScrollerModule $premiumComparisonScroller = null,
+        public ?PremiumHotspotImageModule $premiumHotspotImage = null,
+        public ?PremiumHotspotImageTextModule $premiumHotspotImageText = null,
+        public ?PremiumFaqModule $premiumFaq = null,
+        public ?PremiumTechSpecsModule $premiumTechSpecs = null,
+        public ?PremiumVideoTextModule $premiumVideoText = null,
+        public ?PremiumHeroVideoModule $premiumHeroVideo = null,
+        public ?PremiumVideoImageCarouselModule $premiumVideoImageCarousel = null,
+        public ?BrandStoryImageWithLogoModule $brandStoryImageWithLogo = null,
+        public ?BrandStoryFourAsinModule $brandStoryFourAsin = null,
+        public ?BrandStoryMediaAssetModule $brandStoryMediaAsset = null,
+        public ?BrandStoryAboutModule $brandStoryAbout = null,
+        public ?BrandStoryQuestionsModule $brandStoryQuestions = null,
     ) {}
 }

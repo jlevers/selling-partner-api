@@ -398,6 +398,7 @@
                         }
                     }
                 },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL",
                 "x-codegen-request-body-name": "body"
             }
         }
@@ -437,6 +438,16 @@
                         "description": "Invoice date.",
                         "format": "date-time"
                     },
+                    "taxPointDate": {
+                        "type": "string",
+                        "description": "The date on which the tax becomes chargeable, if different from the invoice date. When absent, the invoice date applies.",
+                        "format": "date-time"
+                    },
+                    "deliveryDate": {
+                        "type": "string",
+                        "description": "Date of delivery of the goods or completion of the service.",
+                        "format": "date-time"
+                    },
                     "referenceNumber": {
                         "type": "string",
                         "description": "An additional unique reference number used for regulatory or other purposes."
@@ -450,6 +461,18 @@
                     "billToParty": {
                         "$ref": "#/components/schemas/PartyIdentification"
                     },
+                    "billFromParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "vatGroupParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "taxRepresentativeParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "shipToParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
                     "shipToCountryCode": {
                         "type": "string",
                         "description": "Ship-to country code."
@@ -460,6 +483,12 @@
                     },
                     "invoiceTotal": {
                         "$ref": "#/components/schemas/Money"
+                    },
+                    "invoiceBaseAmount": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "exchangeRate": {
+                        "$ref": "#/components/schemas/Decimal"
                     },
                     "taxTotals": {
                         "type": "array",
@@ -480,6 +509,13 @@
                         "description": "Total charge amount details for all line items.",
                         "items": {
                             "$ref": "#/components/schemas/ChargeDetails"
+                        }
+                    },
+                    "allowanceDetails": {
+                        "type": "array",
+                        "description": "Total allowance amount details for all line items.",
+                        "items": {
+                            "$ref": "#/components/schemas/AllowanceDetails"
                         }
                     },
                     "items": {
@@ -513,6 +549,10 @@
                         "type": "string",
                         "description": "The vendor selected product identification of the item."
                     },
+                    "itemDescription": {
+                        "type": "string",
+                        "description": "Product or service description for the invoiced line item."
+                    },
                     "invoicedQuantity": {
                         "$ref": "#/components/schemas/ItemQuantity"
                     },
@@ -538,11 +578,25 @@
                             "$ref": "#/components/schemas/TaxDetail"
                         }
                     },
+                    "additionalDetails": {
+                        "type": "array",
+                        "description": "Line-level additional details provided by the selling party, e.g. tax exemption reason code and text.",
+                        "items": {
+                            "$ref": "#/components/schemas/AdditionalDetails"
+                        }
+                    },
                     "chargeDetails": {
                         "type": "array",
                         "description": "Individual charge details per line item.",
                         "items": {
                             "$ref": "#/components/schemas/ChargeDetails"
+                        }
+                    },
+                    "allowanceDetails": {
+                        "type": "array",
+                        "description": "Individual allowance details per line item.",
+                        "items": {
+                            "$ref": "#/components/schemas/AllowanceDetails"
                         }
                     }
                 },
@@ -567,9 +621,48 @@
                         "items": {
                             "$ref": "#/components/schemas/TaxRegistrationDetail"
                         }
+                    },
+                    "additionalPartyIdentifications": {
+                        "type": "array",
+                        "description": "Additional corporate or fiscal registration identifiers for the party that are not VAT/GST registrations (e.g. FR SIREN, or DE W-IdNr.).",
+                        "items": {
+                            "$ref": "#/components/schemas/AdditionalPartyIdentification"
+                        }
                     }
                 },
                 "description": "Name, address and tax details of a party."
+            },
+            "AdditionalPartyIdentification": {
+                "required": [
+                    "identificationNumber",
+                    "identificationType"
+                ],
+                "type": "object",
+                "properties": {
+                    "identificationType": {
+                        "type": "string",
+                        "description": "The type of the additional party identifier.",
+                        "enum": [
+                            "FR_SIREN",
+                            "DE_WIDNR"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "FR_SIREN",
+                                "description": "French company registration number (Syst\u00e8me d'identification du r\u00e9pertoire des entreprises)."
+                            },
+                            {
+                                "value": "DE_WIDNR",
+                                "description": "German economic identification number (Wirtschafts-Identifikationsnummer)."
+                            }
+                        ]
+                    },
+                    "identificationNumber": {
+                        "type": "string",
+                        "description": "The value of the additional party identifier."
+                    }
+                },
+                "description": "An additional corporate or fiscal registration identifier for a party."
             },
             "TaxRegistrationDetail": {
                 "required": [
@@ -582,7 +675,8 @@
                         "description": "Tax registration type for the entity.",
                         "enum": [
                             "VAT",
-                            "GST"
+                            "GST",
+                            "LocalTaxNumber"
                         ],
                         "x-docgen-enum-table-extension": [
                             {
@@ -592,6 +686,10 @@
                             {
                                 "value": "GST",
                                 "description": "Goods and Services tax."
+                            },
+                            {
+                                "value": "LocalTaxNumber",
+                                "description": "Local tax number issued by the tax office (for example, Germany's Steuernummer)."
                             }
                         ]
                     },
@@ -848,6 +946,68 @@
                 },
                 "description": "Monetary and tax details of the charge."
             },
+            "AllowanceDetails": {
+                "required": [
+                    "allowanceAmount",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "Type of the allowance applied.",
+                        "enum": [
+                            "Discount",
+                            "DiscountIncentive",
+                            "Defective",
+                            "Promotional",
+                            "UnsaleableMerchandise",
+                            "Special"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "Discount",
+                                "description": "Discount allowance."
+                            },
+                            {
+                                "value": "DiscountIncentive",
+                                "description": "Discount incentive allowance."
+                            },
+                            {
+                                "value": "Defective",
+                                "description": "Allowance applied for defective item."
+                            },
+                            {
+                                "value": "Promotional",
+                                "description": "Promotional allowance."
+                            },
+                            {
+                                "value": "UnsaleableMerchandise",
+                                "description": "Allowance applied due to unsaleable merchandise."
+                            },
+                            {
+                                "value": "Special",
+                                "description": "Special allowances."
+                            }
+                        ]
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the allowance."
+                    },
+                    "allowanceAmount": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "taxDetails": {
+                        "type": "array",
+                        "description": "Tax amount details applied on this allowance.",
+                        "items": {
+                            "$ref": "#/components/schemas/TaxDetail"
+                        }
+                    }
+                },
+                "description": "Monetary and tax details of the allowance."
+            },
             "AdditionalDetails": {
                 "required": [
                     "detail",
@@ -860,7 +1020,10 @@
                         "description": "The type of the additional information provided by the selling party.",
                         "enum": [
                             "SUR",
-                            "OCR"
+                            "OCR",
+                            "TaxExemptReason",
+                            "LegalTerms",
+                            "RegulatoryNote"
                         ],
                         "x-docgen-enum-table-extension": [
                             {
@@ -870,6 +1033,18 @@
                             {
                                 "value": "OCR",
                                 "description": "OCR."
+                            },
+                            {
+                                "value": "TaxExemptReason",
+                                "description": "VAT exemption reason code or free text."
+                            },
+                            {
+                                "value": "LegalTerms",
+                                "description": "Other legal terms applicable to the invoice."
+                            },
+                            {
+                                "value": "RegulatoryNote",
+                                "description": "Regulatory note applicable to the invoice."
                             }
                         ]
                     },

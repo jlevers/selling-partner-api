@@ -35,6 +35,7 @@ class GetInvoicesExports extends Request
      * Maximum: 100
      * @param  ?\DateTimeInterface  $dateEnd  The latest export creation date and time for exports that you want to include in the response. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The default value is the time of the request.
      * @param  ?string  $status  Return exports matching the status specified.
+     * @param  ?string  $warehouseCode  The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
      */
     public function __construct(
         protected string $marketplaceId,
@@ -43,6 +44,7 @@ class GetInvoicesExports extends Request
         protected ?int $pageSize = null,
         protected ?\DateTimeInterface $dateEnd = null,
         protected ?string $status = null,
+        protected ?string $warehouseCode = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -71,6 +73,7 @@ class GetInvoicesExports extends Request
             'pageSize' => $this->pageSize,
             'dateEnd' => $this->dateEnd?->format('Y-m-d\TH:i:s\Z'),
             'status' => $this->status,
+            'warehouseCode' => $this->warehouseCode,
         ]);
     }
 }

@@ -27,10 +27,12 @@ class GetInvoice extends Request
     /**
      * @param  string  $invoiceId  The invoice identifier.
      * @param  string  $marketplaceId  The marketplace from which you want the invoice.
+     * @param  ?string  $warehouseCode  The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
      */
     public function __construct(
         protected string $invoiceId,
         protected string $marketplaceId,
+        protected ?string $warehouseCode = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -52,6 +54,6 @@ class GetInvoice extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['marketplaceId' => $this->marketplaceId]);
+        return array_filter(['marketplaceId' => $this->marketplaceId, 'warehouseCode' => $this->warehouseCode]);
     }
 }

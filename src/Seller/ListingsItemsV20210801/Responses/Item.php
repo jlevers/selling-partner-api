@@ -32,15 +32,15 @@ final class Item extends Response
     ];
 
     /**
-     * @param  string  $sku  A selling partner provided identifier for an Amazon listing.
-     * @param  ItemSummaryByMarketplace[]|null  $summaries  Summary details of a listings item.
-     * @param  ?mixed[]  $attributes  A JSON object containing structured listings item attribute data keyed by attribute name.
-     * @param  Issue[]|null  $issues  The issues associated with the listings item.
-     * @param  ItemOfferByMarketplace[]|null  $offers  Offer details for the listings item.
-     * @param  FulfillmentAvailability[]|null  $fulfillmentAvailability  The fulfillment availability for the listings item.
-     * @param  ItemProcurement[]|null  $procurement  The vendor procurement information for the listings item.
-     * @param  ItemRelationshipsByMarketplace[]|null  $relationships  Relationships for a listing item, by marketplace (for example, variations).
-     * @param  ItemProductTypeByMarketplace[]|null  $productTypes  Product types for a listing item, by marketplace.
+     * @param  string  $sku  A selling partner-provided identifier for an Amazon listing.
+     * @param  ItemSummaryByMarketplace[]|null  $summaries  Summary details for a listings item.
+     * @param  ?mixed[]  $attributes  JSON object containing structured listings item attribute data keyed by attribute name.
+     * @param  Issue[]|null  $issues  Issues associated with the listings item.
+     * @param  ItemOfferByMarketplace[]|null  $offers  The listings item's offer details.
+     * @param  FulfillmentAvailability[]|null  $fulfillmentAvailability  The listings item's fulfillment availability.
+     * @param  ItemProcurement[]|null  $procurement  The listings item's vendor procurement information.
+     * @param  ItemRelationshipsByMarketplace[]|null  $relationships  Relationships for a listing item, by Amazon store (for example, variations).
+     * @param  ItemProductTypeByMarketplace[]|null  $productTypes  Product types for a listing item, by Amazon store.
      */
     public function __construct(
         public readonly string $sku,

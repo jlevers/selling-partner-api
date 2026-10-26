@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class Money extends Dto
 {
     /**
-     * @param  string  $currencyCode  Three-digit currency code in ISO 4217 format.
-     * @param  string  $amount  A decimal number with no loss of precision. Useful when precision loss is unnaceptable, as with currencies. Follows RFC7159 for number representation.
+     * @param  string  $currencyCode  Three-digit currency code. In ISO 4217 format.
+     * @param  string  $amount  A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.
      */
     public function __construct(
         public string $currencyCode,

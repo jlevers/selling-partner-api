@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class StandardSingleSideImageModule extends Dto
 {
     /**
-     * @param  string  $imagePositionType  The content's relative positioning.
+     * @param  string  $imagePositionType  The relative positioning of content.
      * @param  ?StandardImageTextBlock  $block  The A+ Content standard image and text box block.
      */
     public function __construct(

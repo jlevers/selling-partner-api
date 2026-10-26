@@ -19,6 +19,7 @@ final class InvoiceDetail extends Dto
         'taxTotals' => TaxDetail::class,
         'additionalDetails' => AdditionalDetails::class,
         'chargeDetails' => ChargeDetails::class,
+        'allowanceDetails' => AllowanceDetails::class,
     ];
 
     /**
@@ -28,13 +29,22 @@ final class InvoiceDetail extends Dto
      * @param  PartyIdentification  $shipFromParty  Name, address and tax details of a party.
      * @param  Money  $invoiceTotal  An amount of money, including units in the form of currency.
      * @param  InvoiceItem[]  $items  Provides the details of the items in this invoice.
+     * @param  ?\DateTimeInterface  $taxPointDate  The date on which the tax becomes chargeable, if different from the invoice date. When absent, the invoice date applies.
+     * @param  ?\DateTimeInterface  $deliveryDate  Date of delivery of the goods or completion of the service.
      * @param  ?string  $referenceNumber  An additional unique reference number used for regulatory or other purposes.
      * @param  ?PartyIdentification  $billToParty  Name, address and tax details of a party.
+     * @param  ?PartyIdentification  $billFromParty  Name, address and tax details of a party.
+     * @param  ?PartyIdentification  $vatGroupParty  Name, address and tax details of a party.
+     * @param  ?PartyIdentification  $taxRepresentativeParty  Name, address and tax details of a party.
+     * @param  ?PartyIdentification  $shipToParty  Name, address and tax details of a party.
      * @param  ?string  $shipToCountryCode  Ship-to country code.
      * @param  ?string  $paymentTermsCode  The payment terms for the invoice.
+     * @param  ?Money  $invoiceBaseAmount  An amount of money, including units in the form of currency.
+     * @param  ?string  $exchangeRate  A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\d*))(\.\d+)?([eE][+-]?\d+)?$`.
      * @param  TaxDetail[]|null  $taxTotals  Individual tax details per line item.
      * @param  AdditionalDetails[]|null  $additionalDetails  Additional details provided by the selling party, for tax-related or other purposes.
      * @param  ChargeDetails[]|null  $chargeDetails  Total charge amount details for all line items.
+     * @param  AllowanceDetails[]|null  $allowanceDetails  Total allowance amount details for all line items.
      */
     public function __construct(
         public string $invoiceNumber,
@@ -43,12 +53,21 @@ final class InvoiceDetail extends Dto
         public PartyIdentification $shipFromParty,
         public Money $invoiceTotal,
         public array $items,
+        public ?\DateTimeInterface $taxPointDate = null,
+        public ?\DateTimeInterface $deliveryDate = null,
         public ?string $referenceNumber = null,
         public ?PartyIdentification $billToParty = null,
+        public ?PartyIdentification $billFromParty = null,
+        public ?PartyIdentification $vatGroupParty = null,
+        public ?PartyIdentification $taxRepresentativeParty = null,
+        public ?PartyIdentification $shipToParty = null,
         public ?string $shipToCountryCode = null,
         public ?string $paymentTermsCode = null,
+        public ?Money $invoiceBaseAmount = null,
+        public ?string $exchangeRate = null,
         public ?array $taxTotals = null,
         public ?array $additionalDetails = null,
         public ?array $chargeDetails = null,
+        public ?array $allowanceDetails = null,
     ) {}
 }

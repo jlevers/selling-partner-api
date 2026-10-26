@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class ItemInput extends Dto
 {
     /**
-     * @param  string  $labelOwner  Specifies who will label the items. Options include `AMAZON`, `SELLER` or `NONE`.
+     * @param  string  $labelOwner  Specifies who will label the items. Options include `AMAZON`, `SELLER` or `NONE`. `AMAZON` is not an accepted value in the US marketplace.
      * @param  string  $msku  The merchant SKU, a merchant-supplied identifier of a specific SKU.
      * @param  string  $prepOwner  The owner of the preparations, if special preparations are required.
      * @param  int  $quantity  The number of units of the specified MSKU that will be shipped.

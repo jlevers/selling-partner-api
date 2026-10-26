@@ -33,7 +33,7 @@ class UpdatePackageStatus extends Request implements HasBody
      * @param  string  $shipmentId  The ID of the shipment to which the package belongs.
      * @param  string  $packageId  The ID of the package whose status you want to update.
      * @param  PackageDeliveryStatus  $packageDeliveryStatus  The delivery status of the package.
-     * @param  ?string  $status  **DEPRECATED**. Do not use. Package status is defined in the body parameter.
+     * @param  ?string  $status  **This field is only used for the Seller Flex program**. For the Self Delivery program, package statuses are defined in the body parameter.
      */
     public function __construct(
         protected string $shipmentId,

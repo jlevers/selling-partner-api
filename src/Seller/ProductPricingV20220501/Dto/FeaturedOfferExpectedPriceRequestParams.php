@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class FeaturedOfferExpectedPriceRequestParams extends Dto
 {
     /**
-     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  string  $marketplaceId  The `MarketplaceID` is the globally unique identifier of an Amazon store. To find the ID for your Amazon store, refer to [Amazon store IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      * @param  string  $sku  The seller SKU of the item.
      * @param  ?Segment  $segment  Input segment for featured offer expected price. The segment contains the location information for which featured offer expected price is requested.
      */

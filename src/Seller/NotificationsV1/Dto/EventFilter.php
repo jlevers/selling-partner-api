@@ -19,11 +19,13 @@ final class EventFilter extends Dto
      * @param  ?AggregationSettings  $aggregationSettings  A container that holds all of the necessary properties to configure the aggregation of notifications.
      * @param  ?string[]  $marketplaceIds  A list of marketplace identifiers you can subscribe to (for example, `ATVPDKIKX0DER`). To receive notifications in every marketplace, do not provide this list.
      * @param  ?string[]  $orderChangeTypes  A list of order change types you can subscribe to (for example, `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
+     * @param  ?TrackingIdentifier  $trackingIdentifier  Specifies the tracking identifier used to filter your subscription notifications. Provide exactly one identifier field. Providing multiple identifier fields in a single request is not supported.
      */
     public function __construct(
         public string $eventFilterType,
         public ?AggregationSettings $aggregationSettings = null,
         public ?array $marketplaceIds = null,
         public ?array $orderChangeTypes = null,
+        public ?TrackingIdentifier $trackingIdentifier = null,
     ) {}
 }

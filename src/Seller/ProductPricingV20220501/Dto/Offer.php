@@ -14,7 +14,10 @@ use SellingPartnerApi\Dto;
 
 final class Offer extends Dto
 {
-    protected static array $complexArrayTypes = ['shippingOptions' => ShippingOption::class];
+    protected static array $complexArrayTypes = [
+        'shippingOptions' => ShippingOption::class,
+        'promotions' => Promotion::class,
+    ];
 
     /**
      * @param  string  $sellerId  The seller identifier for the offer.
@@ -25,6 +28,7 @@ final class Offer extends Dto
      * @param  ShippingOption[]|null  $shippingOptions  A list of shipping options associated with this offer
      * @param  ?Points  $points  The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points.
      * @param  ?PrimeDetails  $primeDetails  Amazon Prime details.
+     * @param  Promotion[]|null  $promotions  A list of live promotions applicable to this offer.
      */
     public function __construct(
         public string $sellerId,
@@ -35,5 +39,6 @@ final class Offer extends Dto
         public ?array $shippingOptions = null,
         public ?Points $points = null,
         public ?PrimeDetails $primeDetails = null,
+        public ?array $promotions = null,
     ) {}
 }

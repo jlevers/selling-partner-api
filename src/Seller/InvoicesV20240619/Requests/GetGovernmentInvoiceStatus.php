@@ -25,11 +25,11 @@ class GetGovernmentInvoiceStatus extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $marketplaceId  The invoices status will match the marketplace that you specify.
-     * @param  string  $transactionType  Marketplace specific classification of the transaction type that originated the invoice. Check 'transactionType' options using 'getInvoicesAttributes' operation.
-     * @param  string  $shipmentId  The unique shipment identifier to get an invoice for.
-     * @param  string  $invoiceType  Marketplace specific classification of the invoice type. Check 'invoiceType' options using 'getInvoicesAttributes' operation.
-     * @param  ?string  $inboundPlanId  The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+     * @param  string  $marketplaceId  The marketplace of the invoice request.
+     * @param  string  $transactionType  The marketplace-specific classification of the transaction type that originated the invoice. Check `transactionType` options using the `getInvoicesAttributes` operation.
+     * @param  string  $shipmentId  The unique shipment identifier for which to get an invoice.
+     * @param  string  $invoiceType  The marketplace-specific classification of the invoice type. Check `invoiceType` options using the `getInvoicesAttributes` operation.
+     * @param  ?string  $inboundPlanId  The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.
      */
     public function __construct(
         protected string $marketplaceId,

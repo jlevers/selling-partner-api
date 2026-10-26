@@ -22,7 +22,7 @@ final class ListingsItemSubmissionResponse extends Response
     ];
 
     /**
-     * @param  string  $sku  A selling partner provided identifier for an Amazon listing.
+     * @param  string  $sku  A selling partner-provided identifier for an Amazon listing.
      * @param  string  $status  The status of the listings item submission.
      * @param  string  $submissionId  The unique identifier of the listings item submission.
      * @param  Issue[]|null  $issues  Listings item issues related to the listings item submission.

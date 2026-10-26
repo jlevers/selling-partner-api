@@ -27,6 +27,7 @@ final class ExportInvoicesRequest extends Dto
      * Min count: 1
      * @param  ?TransactionIdentifier  $transactionIdentifier  The identifier for a transaction.
      * @param  ?string  $transactionType  The marketplace-specific classification of the transaction type for which the invoice was created. Use the `getInvoicesAttributes` operation to check `transactionType` options
+     * @param  ?string  $warehouseCode  The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
      */
     public function __construct(
         public string $marketplaceId,
@@ -39,5 +40,6 @@ final class ExportInvoicesRequest extends Dto
         public ?array $statuses = null,
         public ?TransactionIdentifier $transactionIdentifier = null,
         public ?string $transactionType = null,
+        public ?string $warehouseCode = null,
     ) {}
 }

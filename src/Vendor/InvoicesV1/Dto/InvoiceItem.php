@@ -15,6 +15,7 @@ use SellingPartnerApi\Dto;
 final class InvoiceItem extends Dto
 {
     protected static array $complexArrayTypes = [
+        'additionalDetails' => AdditionalDetails::class,
         'taxDetails' => TaxDetails::class,
         'chargeDetails' => ChargeDetails::class,
         'allowanceDetails' => AllowanceDetails::class,
@@ -29,6 +30,8 @@ final class InvoiceItem extends Dto
      * @param  ?string  $netCostUnitOfMeasure  This field represents weight unit of measure of items that are ordered by cases and supporting priced by weight.
      * @param  ?string  $purchaseOrderNumber  The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.
      * @param  ?string  $hsnCode  HSN Tax code. The HSN number cannot contain alphabets.
+     * @param  ?string  $itemDescription  Product or service description for the invoiced line item.
+     * @param  AdditionalDetails[]|null  $additionalDetails  Line-level additional details provided by the selling party, e.g. tax exemption reason code and text.
      * @param  ?CreditNoteDetails  $creditNoteDetails  References required in order to process a credit note. This information is required only if InvoiceType is CreditNote.
      * @param  TaxDetails[]|null  $taxDetails  Individual tax details per line item.
      * @param  ChargeDetails[]|null  $chargeDetails  Individual charge details per line item.
@@ -43,6 +46,8 @@ final class InvoiceItem extends Dto
         public ?string $netCostUnitOfMeasure = null,
         public ?string $purchaseOrderNumber = null,
         public ?string $hsnCode = null,
+        public ?string $itemDescription = null,
+        public ?array $additionalDetails = null,
         public ?CreditNoteDetails $creditNoteDetails = null,
         public ?array $taxDetails = null,
         public ?array $chargeDetails = null,

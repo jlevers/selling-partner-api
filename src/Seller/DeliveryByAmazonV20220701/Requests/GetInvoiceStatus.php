@@ -25,11 +25,12 @@ class GetInvoiceStatus extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $marketplaceId  The marketplace identifier.
+     * @param  string  $marketplaceId  The Amazon store identifier.
      * @param  string  $invoiceType  The invoice's type.
      * @param  string  $programType  The Amazon program that seller is currently enrolled.
      * @param  ?string  $orderId  The order identifier.
      * @param  ?string  $shipmentId  The shipment identifier.
+     * @param  ?string  $invoiceId  The invoice access key (NF-e access key for Brazilian invoices). Use this to retrieve the status of a specific invoice.
      */
     public function __construct(
         protected string $marketplaceId,
@@ -37,6 +38,7 @@ class GetInvoiceStatus extends Request
         protected string $programType,
         protected ?string $orderId = null,
         protected ?string $shipmentId = null,
+        protected ?string $invoiceId = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -64,6 +66,7 @@ class GetInvoiceStatus extends Request
             'programType' => $this->programType,
             'orderId' => $this->orderId,
             'shipmentId' => $this->shipmentId,
+            'invoiceId' => $this->invoiceId,
         ]);
     }
 }

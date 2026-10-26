@@ -16,8 +16,10 @@ final class ItemCancellation extends Dto
 {
     /**
      * @param  ?ItemCancellationRequest  $cancellationRequest  Detailed information about a cancellation request submitted for a specific order item.
+     * @param  ?ItemCancellationExecution  $cancellationExecution  Detailed information about how the cancellation was processed for a specific order item.
      */
     public function __construct(
         public ?ItemCancellationRequest $cancellationRequest = null,
+        public ?ItemCancellationExecution $cancellationExecution = null,
     ) {}
 }

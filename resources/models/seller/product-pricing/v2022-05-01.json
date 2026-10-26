@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Selling Partner API for Pricing",
-        "description": "The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon Marketplace products.\n\nFor more information, refer to the [Product Pricing v2022-05-01 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).",
+        "description": "The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer pricing information for Amazon store products.\n\nFor more information, refer to the [Product Pricing v2022-05-01 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).",
         "contact": {
             "name": "Selling Partner API Developer Support",
             "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
@@ -39,7 +39,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success.",
+                        "description": "Success",
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
@@ -226,7 +226,7 @@
                                                 "errors": [
                                                     {
                                                         "code": "INVALID_SKU",
-                                                        "message": "The requested SKU does not exist for the seller in the requested marketplace."
+                                                        "message": "The requested SKU does not exist for the seller in the requested Amazon store."
                                                     }
                                                 ]
                                             }
@@ -443,7 +443,7 @@
                                                     "errors": [
                                                         {
                                                             "code": "INVALID_SKU",
-                                                            "message": "The requested SKU does not exist for the seller in the requested marketplace."
+                                                            "message": "The requested SKU does not exist for the seller in the requested Amazon store."
                                                         }
                                                     ]
                                                 }
@@ -500,7 +500,7 @@
                                         "errors": [
                                             {
                                                 "code": "INVALID_SKU",
-                                                "message": "The requested SKU does not exist for the seller in the requested marketplace."
+                                                "message": "The requested SKU does not exist for the seller in the requested Amazon store."
                                             }
                                         ]
                                     }
@@ -704,6 +704,44 @@
                                                                         "currencyCode": "USD"
                                                                     }
                                                                 },
+                                                                "promotions": [
+                                                                    {
+                                                                        "promotionType": "COUPON",
+                                                                        "promotionSavings": {
+                                                                            "discount": {
+                                                                                "type": "AMOUNT_OFF",
+                                                                                "amountOff": {
+                                                                                    "amount": 2,
+                                                                                    "currencyCode": "USD"
+                                                                                }
+                                                                            },
+                                                                            "discountedPrice": {
+                                                                                "amount": 16.11,
+                                                                                "currencyCode": "USD"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "promotionType": "BASKET_BUILDING",
+                                                                        "promotionSavings": {
+                                                                            "discount": {
+                                                                                "type": "PERCENTAGE_OFF",
+                                                                                "percentOff": 10
+                                                                            }
+                                                                        },
+                                                                        "purchaseRequirements": {
+                                                                            "condition": {
+                                                                                "amountThreshold": {
+                                                                                    "type": "AT_LEAST",
+                                                                                    "currency": {
+                                                                                        "amount": 30,
+                                                                                        "currencyCode": "USD"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ],
                                                                 "featuredOfferSegments": [
                                                                     {
                                                                         "customerMembership": "PRIME",
@@ -767,6 +805,17 @@
                                                                         "currencyCode": "USD"
                                                                     }
                                                                 },
+                                                                "promotions": [
+                                                                    {
+                                                                        "promotionType": "DEAL",
+                                                                        "promotionSavings": {
+                                                                            "discountedPrice": {
+                                                                                "amount": 17.15,
+                                                                                "currencyCode": "USD"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ],
                                                                 "featuredOfferSegments": [
                                                                     {
                                                                         "customerMembership": "NON_PRIME",
@@ -841,7 +890,22 @@
                                                                 },
                                                                 "subCondition": "New",
                                                                 "sellerId": "A2ZWOLFOFDPJL1",
-                                                                "fulfillmentType": "MFN"
+                                                                "fulfillmentType": "MFN",
+                                                                "promotions": [
+                                                                    {
+                                                                        "promotionType": "COUPON",
+                                                                        "promotionSavings": {
+                                                                            "discount": {
+                                                                                "type": "PERCENTAGE_OFF",
+                                                                                "percentOff": 10
+                                                                            },
+                                                                            "discountedPrice": {
+                                                                                "amount": 16.29,
+                                                                                "currencyCode": "USD"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
                                                             },
                                                             {
                                                                 "listingPrice": {
@@ -869,7 +933,29 @@
                                                                 },
                                                                 "sellerId": "A3DJR8M9Y3OUPG",
                                                                 "subCondition": "New",
-                                                                "fulfillmentType": "MFN"
+                                                                "fulfillmentType": "MFN",
+                                                                "promotions": [
+                                                                    {
+                                                                        "promotionType": "BASKET_BUILDING",
+                                                                        "promotionSavings": {
+                                                                            "discount": {
+                                                                                "type": "AMOUNT_OFF",
+                                                                                "amountOff": {
+                                                                                    "amount": 3,
+                                                                                    "currencyCode": "USD"
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "purchaseRequirements": {
+                                                                            "condition": {
+                                                                                "quantityThreshold": {
+                                                                                    "type": "AT_LEAST",
+                                                                                    "quantity": 1
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
                                                             }
                                                         ]
                                                     },
@@ -881,8 +967,8 @@
                                                         "offers": [
                                                             {
                                                                 "listingPrice": {
-                                                                    "CurrencyCode": "USD",
-                                                                    "Amount": 12
+                                                                    "currencyCode": "USD",
+                                                                    "amount": 12
                                                                 },
                                                                 "shippingOptions": [
                                                                     {
@@ -898,22 +984,33 @@
                                                                 },
                                                                 "subCondition": "Acceptable",
                                                                 "sellerId": "A3DH5AGPM3JVAB",
-                                                                "fulfillmentType": "AFN"
-                                                            }
-                                                        ],
-                                                        "similarItems": [
-                                                            {
-                                                                "items": [
+                                                                "fulfillmentType": "AFN",
+                                                                "promotions": [
                                                                     {
-                                                                        "asin": "B00ZIA513F"
-                                                                    },
-                                                                    {
-                                                                        "asin": "B009DA8GI1"
-                                                                    },
-                                                                    {
-                                                                        "asin": "B00KF8SK3D"
+                                                                        "promotionType": "DEAL",
+                                                                        "promotionSavings": {
+                                                                            "discountedPrice": {
+                                                                                "amount": 10,
+                                                                                "currencyCode": "USD"
+                                                                            }
+                                                                        }
                                                                     }
                                                                 ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "similarItems": [
+                                                    {
+                                                        "items": [
+                                                            {
+                                                                "asin": "B00ZIA513F"
+                                                            },
+                                                            {
+                                                                "asin": "B009DA8GI1"
+                                                            },
+                                                            {
+                                                                "asin": "B00KF8SK3D"
                                                             }
                                                         ]
                                                     }
@@ -1006,6 +1103,24 @@
                                                                             "currencyCode": "USD"
                                                                         }
                                                                     },
+                                                                    "promotions": [
+                                                                        {
+                                                                            "promotionType": "COUPON",
+                                                                            "promotionSavings": {
+                                                                                "discount": {
+                                                                                    "type": "AMOUNT_OFF",
+                                                                                    "amountOff": {
+                                                                                        "amount": 2,
+                                                                                        "currencyCode": "USD"
+                                                                                    }
+                                                                                },
+                                                                                "discountedPrice": {
+                                                                                    "amount": 16.11,
+                                                                                    "currencyCode": "USD"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ],
                                                                     "featuredOfferSegments": [
                                                                         {
                                                                             "customerMembership": "NON_PRIME",
@@ -1057,6 +1172,17 @@
                                                                             "currencyCode": "USD"
                                                                         }
                                                                     },
+                                                                    "promotions": [
+                                                                        {
+                                                                            "promotionType": "DEAL",
+                                                                            "promotionSavings": {
+                                                                                "discountedPrice": {
+                                                                                    "amount": 17.15,
+                                                                                    "currencyCode": "USD"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ],
                                                                     "featuredOfferSegments": [
                                                                         {
                                                                             "customerMembership": "NON_PRIME",
@@ -1132,7 +1258,22 @@
                                                                     },
                                                                     "subCondition": "New",
                                                                     "sellerId": "A2ZWOLFOFDPJL1",
-                                                                    "fulfillmentType": "MFN"
+                                                                    "fulfillmentType": "MFN",
+                                                                    "promotions": [
+                                                                        {
+                                                                            "promotionType": "COUPON",
+                                                                            "promotionSavings": {
+                                                                                "discount": {
+                                                                                    "type": "PERCENTAGE_OFF",
+                                                                                    "percentOff": 10
+                                                                                },
+                                                                                "discountedPrice": {
+                                                                                    "amount": 16.29,
+                                                                                    "currencyCode": "USD"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
                                                                 },
                                                                 {
                                                                     "condition": "New",
@@ -1161,7 +1302,29 @@
                                                                     },
                                                                     "sellerId": "A3DJR8M9Y3OUPG",
                                                                     "subCondition": "New",
-                                                                    "fulfillmentType": "MFN"
+                                                                    "fulfillmentType": "MFN",
+                                                                    "promotions": [
+                                                                        {
+                                                                            "promotionType": "BASKET_BUILDING",
+                                                                            "promotionSavings": {
+                                                                                "discount": {
+                                                                                    "type": "AMOUNT_OFF",
+                                                                                    "amountOff": {
+                                                                                        "amount": 3,
+                                                                                        "currencyCode": "USD"
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "purchaseRequirements": {
+                                                                                "condition": {
+                                                                                    "quantityThreshold": {
+                                                                                        "type": "AT_LEAST",
+                                                                                        "quantity": 2
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
                                                                 }
                                                             ]
                                                         },
@@ -1691,7 +1854,7 @@
                 "properties": {
                     "name": {
                         "type": "string",
-                        "description": "Reference price type (e.g., `CompetitivePriceThreshold`, `WasPrice`, `CompetitivePrice`). For definitions, see the [Product Pricing API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide)."
+                        "description": "Reference price type (e.g., `CompetitivePriceThreshold`, `WasPrice`, `CompetitivePrice`). For definitions, refer to the [Product Pricing API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api)."
                     },
                     "price": {
                         "$ref": "#/components/schemas/MoneyType"
@@ -1908,6 +2071,9 @@
                     },
                     "primeDetails": {
                         "$ref": "#/components/schemas/PrimeDetails"
+                    },
+                    "promotions": {
+                        "$ref": "#/components/schemas/Promotions"
                     }
                 },
                 "description": "The offer data of a product."
@@ -1929,20 +2095,141 @@
                         "x-docgen-enum-table-extension": [
                             {
                                 "value": "NATIONAL",
-                                "description": "Indicates that this offer has Amazon Prime eligibility in all regions within the marketplace."
+                                "description": "Indicates that this offer has Amazon Prime eligibility in all regions within the Amazon store."
                             },
                             {
                                 "value": "REGIONAL",
-                                "description": "Indicates that this offer has Amazon Prime eligibility in some (but not all) regions within the marketplace."
+                                "description": "Indicates that this offer has Amazon Prime eligibility in some (but not all) regions within the Amazon store."
                             },
                             {
                                 "value": "NONE",
-                                "description": "Indicates that this offer is not an Amazon Prime offer in any region within the marketplace."
+                                "description": "Indicates that this offer is not an Amazon Prime offer in any region within the Amazon store."
                             }
                         ]
                     }
                 },
                 "description": "Amazon Prime details."
+            },
+            "Promotions": {
+                "type": "array",
+                "description": "A list of live promotions applicable to this offer.",
+                "items": {
+                    "$ref": "#/components/schemas/Promotion"
+                }
+            },
+            "Promotion": {
+                "required": [
+                    "promotionSavings",
+                    "promotionType"
+                ],
+                "type": "object",
+                "properties": {
+                    "promotionType": {
+                        "$ref": "#/components/schemas/PromotionType"
+                    },
+                    "promotionSavings": {
+                        "$ref": "#/components/schemas/PromotionSavings"
+                    },
+                    "purchaseRequirements": {
+                        "$ref": "#/components/schemas/PurchaseRequirements"
+                    }
+                },
+                "description": "A promotion applicable to the offer."
+            },
+            "PromotionType": {
+                "type": "string",
+                "description": "Indicates the type of promotion based on the customer-facing experience. Possible values include:\n\n- COUPON: The offer has a live coupon that customers can clip and apply at checkout.\n- DEAL: The offer has a live deal (for example, Lightning Deal or Best Deal). Deals are time-limited, require meeting quality criteria, and automatically apply a discount when the customer purchases the item.\n- BASKET_BUILDING: The offer has a basket-building (multi-quantity) promotion where customers purchase multiple quantities of the same or different qualifying items to receive a discount on eligible items. Promotions created in Seller Central -> Advertising -> Manage Promotions fall into this category"
+            },
+            "PromotionSavings": {
+                "type": "object",
+                "properties": {
+                    "discount": {
+                        "$ref": "#/components/schemas/PromotionDiscount"
+                    },
+                    "discountedPrice": {
+                        "$ref": "#/components/schemas/MoneyType"
+                    }
+                },
+                "description": "Details about the savings applied by the promotion."
+            },
+            "PromotionDiscount": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "$ref": "#/components/schemas/DiscountType"
+                    },
+                    "amountOff": {
+                        "$ref": "#/components/schemas/MoneyType"
+                    },
+                    "percentOff": {
+                        "maximum": 100,
+                        "minimum": 1,
+                        "type": "number",
+                        "description": "The percentage discount applied to the original price (1-100). Only valid when type is PERCENTAGE_OFF."
+                    }
+                },
+                "description": "Discount details applied by the promotion."
+            },
+            "DiscountType": {
+                "type": "string",
+                "description": "Method used to calculate the discount amount. Supported values: PERCENTAGE_OFF (discount applied as a percentage off the original price), AMOUNT_OFF (discount applied as a fixed amount off the original price)."
+            },
+            "PurchaseRequirements": {
+                "type": "object",
+                "properties": {
+                    "condition": {
+                        "$ref": "#/components/schemas/PurchaseCondition"
+                    }
+                },
+                "description": "Purchase requirements that customers must meet to qualify for basket building promotions. Contains the purchase condition (how much to buy). Represents the 'Buy X' portion of Buy X Get Y promotions."
+            },
+            "PurchaseCondition": {
+                "type": "object",
+                "properties": {
+                    "quantityThreshold": {
+                        "$ref": "#/components/schemas/QuantityThreshold"
+                    },
+                    "amountThreshold": {
+                        "$ref": "#/components/schemas/AmountThreshold"
+                    }
+                },
+                "description": "Specifies minimum purchase requirements using quantity-based or amount-based conditions for basket building promotions. Used in purchase requirements to specify conditions within those configurations. Exactly one of quantityThreshold or amountThreshold must be specified."
+            },
+            "QuantityThreshold": {
+                "required": [
+                    "quantity",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "Indicates how the quantity requirement is evaluated. Possible values include:\n\n- AT_LEAST: The customer must purchase at least the specified quantity of items to qualify for the benefit.\n- FOR_EACH: The benefit applies for every group of the specified quantity purchased (for example, the discount applies for each set of 2 items purchased)."
+                    },
+                    "quantity": {
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "Number of items required to meet this purchase condition."
+                    }
+                },
+                "description": "Quantity-based purchase conditions for basket building promotions."
+            },
+            "AmountThreshold": {
+                "required": [
+                    "currency",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "Indicates how the amount requirement is evaluated. For spend-based conditions, the supported value is AT_LEAST, meaning the customer must spend at least the specified dollar amount to qualify."
+                    },
+                    "currency": {
+                        "$ref": "#/components/schemas/MoneyType"
+                    }
+                },
+                "description": "Amount-based purchase conditions for basket building promotions. Customers must spend a minimum dollar amount."
             },
             "ShippingOption": {
                 "required": [
@@ -2037,7 +2324,7 @@
                     },
                     "value": {
                         "type": "string",
-                        "description": "Postal code value "
+                        "description": "Postal code value"
                     }
                 },
                 "description": "Postal code value with country code"
@@ -2332,7 +2619,7 @@
             },
             "MarketplaceId": {
                 "type": "string",
-                "description": "The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
+                "description": "The `MarketplaceID` is the globally unique identifier of an Amazon store. To find the ID for your Amazon store, refer to [Amazon store IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids)."
             },
             "Sku": {
                 "type": "string",

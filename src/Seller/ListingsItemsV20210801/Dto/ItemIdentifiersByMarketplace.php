@@ -15,8 +15,8 @@ use SellingPartnerApi\Dto;
 final class ItemIdentifiersByMarketplace extends Dto
 {
     /**
-     * @param  ?string  $marketplaceId  A marketplace identifier. Identifies the Amazon marketplace for the listings item.
-     * @param  ?string  $asin  Amazon Standard Identification Number (ASIN) of the listings item.
+     * @param  ?string  $marketplaceId  Amazon store identifier. Identifies the listings item's Amazon store.
+     * @param  ?string  $asin  The ASIN of the listings item.
      */
     public function __construct(
         public ?string $marketplaceId = null,

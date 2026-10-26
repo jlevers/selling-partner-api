@@ -16,8 +16,8 @@ final class AmazonPayContext extends Dto
 {
     /**
      * @param  ?string  $storeName  The name of the store that is related to the transaction.
-     * @param  ?string  $orderType  The transaction's order type.
-     * @param  ?string  $channel  Channel details of related transaction.
+     * @param  ?string  $orderType  The order type of the transaction.
+     * @param  ?string  $channel  The channel of the transaction. For example: `MFN`.
      */
     public function __construct(
         public ?string $storeName = null,

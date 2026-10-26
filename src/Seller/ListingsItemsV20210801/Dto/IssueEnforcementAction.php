@@ -23,7 +23,7 @@ final class IssueEnforcementAction extends Dto
      *
      * * `ATTRIBUTE_SUPPRESSED` - An attribute's value on the listing item is invalid, which causes it to be rejected by Amazon.
      *
-     * * `CATALOG_ITEM_REMOVED` - This catalog item is inactive on Amazon, and all offers against it in the applicable marketplace are non-buyable.
+     * * `CATALOG_ITEM_REMOVED` - This catalog item is inactive on Amazon, and all offers against it in the applicable Amazon store are non-buyable.
      *
      * * `SEARCH_SUPPRESSED` - This value indicates that the catalog item is hidden from search results.
      */

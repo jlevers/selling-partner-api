@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class ItemProductTypeByMarketplace extends Dto
 {
     /**
-     * @param  string  $marketplaceId  Amazon marketplace identifier.
+     * @param  string  $marketplaceId  Amazon store identifier.
      * @param  string  $productType  The name of the product type that is submitted by the Selling Partner.
      */
     public function __construct(

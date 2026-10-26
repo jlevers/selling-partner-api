@@ -32,7 +32,12 @@ final class Invoice extends Dto
      * @param  ?PartyIdentification  $shipToParty  Name, address and tax details of a party.
      * @param  ?PartyIdentification  $shipFromParty  Name, address and tax details of a party.
      * @param  ?PartyIdentification  $billToParty  Name, address and tax details of a party.
+     * @param  ?PartyIdentification  $billFromParty  Name, address and tax details of a party.
+     * @param  ?PartyIdentification  $vatGroupParty  Name, address and tax details of a party.
+     * @param  ?PartyIdentification  $taxRepresentativeParty  Name, address and tax details of a party.
      * @param  ?PaymentTerms  $paymentTerms  Terms of the payment for the invoice. The basis of the payment terms is the invoice date.
+     * @param  ?Money  $invoiceBaseAmount  An amount of money, including units in the form of currency.
+     * @param  ?\DateTimeInterface  $taxPointDate  Defines a date and time according to ISO8601.
      * @param  TaxDetails[]|null  $taxDetails  Total tax amount details for all line items.
      * @param  AdditionalDetails[]|null  $additionalDetails  Additional details provided by the selling party, for tax related or other purposes.
      * @param  ChargeDetails[]|null  $chargeDetails  Total charge amount details for all line items.
@@ -49,7 +54,12 @@ final class Invoice extends Dto
         public ?PartyIdentification $shipToParty = null,
         public ?PartyIdentification $shipFromParty = null,
         public ?PartyIdentification $billToParty = null,
+        public ?PartyIdentification $billFromParty = null,
+        public ?PartyIdentification $vatGroupParty = null,
+        public ?PartyIdentification $taxRepresentativeParty = null,
         public ?PaymentTerms $paymentTerms = null,
+        public ?Money $invoiceBaseAmount = null,
+        public ?\DateTimeInterface $taxPointDate = null,
         public ?array $taxDetails = null,
         public ?array $additionalDetails = null,
         public ?array $chargeDetails = null,

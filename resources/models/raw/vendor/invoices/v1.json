@@ -293,6 +293,7 @@
                         }
                     }
                 },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL",
                 "x-codegen-request-body-name": "body"
             }
         }
@@ -414,11 +415,26 @@
                     "billToParty": {
                         "$ref": "#/components/schemas/PartyIdentification"
                     },
+                    "billFromParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "vatGroupParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
+                    "taxRepresentativeParty": {
+                        "$ref": "#/components/schemas/PartyIdentification"
+                    },
                     "paymentTerms": {
                         "$ref": "#/components/schemas/PaymentTerms"
                     },
                     "invoiceTotal": {
                         "$ref": "#/components/schemas/Money"
+                    },
+                    "invoiceBaseAmount": {
+                        "$ref": "#/components/schemas/Money"
+                    },
+                    "taxPointDate": {
+                        "$ref": "#/components/schemas/DateTime"
                     },
                     "taxDetails": {
                         "type": "array",
@@ -477,9 +493,48 @@
                         "items": {
                             "$ref": "#/components/schemas/TaxRegistrationDetails"
                         }
+                    },
+                    "additionalPartyIdentifications": {
+                        "type": "array",
+                        "description": "Additional corporate or fiscal registration identifiers for the party that are not VAT/GST registrations (e.g. FR SIREN, or DE W-IdNr.).",
+                        "items": {
+                            "$ref": "#/components/schemas/AdditionalPartyIdentification"
+                        }
                     }
                 },
                 "description": "Name, address and tax details of a party."
+            },
+            "AdditionalPartyIdentification": {
+                "required": [
+                    "identificationNumber",
+                    "identificationType"
+                ],
+                "type": "object",
+                "properties": {
+                    "identificationType": {
+                        "type": "string",
+                        "description": "The type of the additional party identifier.",
+                        "enum": [
+                            "FR_SIREN",
+                            "DE_WIDNR"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "FR_SIREN",
+                                "description": "French company registration number (Syst\u00e8me d'identification du r\u00e9pertoire des entreprises)."
+                            },
+                            {
+                                "value": "DE_WIDNR",
+                                "description": "German economic identification number (Wirtschafts-Identifikationsnummer)."
+                            }
+                        ]
+                    },
+                    "identificationNumber": {
+                        "type": "string",
+                        "description": "The value of the additional party identifier."
+                    }
+                },
+                "description": "An additional corporate or fiscal registration identifier for a party."
             },
             "TaxRegistrationDetails": {
                 "required": [
@@ -493,7 +548,8 @@
                         "description": "The tax registration type for the entity.",
                         "enum": [
                             "VAT",
-                            "GST"
+                            "GST",
+                            "LocalTaxNumber"
                         ],
                         "x-docgen-enum-table-extension": [
                             {
@@ -503,6 +559,10 @@
                             {
                                 "value": "GST",
                                 "description": "Goods and services tax."
+                            },
+                            {
+                                "value": "LocalTaxNumber",
+                                "description": "Local tax number issued by the tax office (for example, Germany's Steuernummer)."
                             }
                         ]
                     },
@@ -605,6 +665,17 @@
                     "hsnCode": {
                         "type": "string",
                         "description": "HSN Tax code. The HSN number cannot contain alphabets."
+                    },
+                    "itemDescription": {
+                        "type": "string",
+                        "description": "Product or service description for the invoiced line item."
+                    },
+                    "additionalDetails": {
+                        "type": "array",
+                        "description": "Line-level additional details provided by the selling party, e.g. tax exemption reason code and text.",
+                        "items": {
+                            "$ref": "#/components/schemas/AdditionalDetails"
+                        }
                     },
                     "creditNoteDetails": {
                         "$ref": "#/components/schemas/CreditNoteDetails"
@@ -756,7 +827,10 @@
                         "enum": [
                             "SUR",
                             "OCR",
-                            "CartonCount"
+                            "CartonCount",
+                            "TaxExemptReason",
+                            "LegalTerms",
+                            "RegulatoryNote"
                         ],
                         "x-docgen-enum-table-extension": [
                             {
@@ -770,6 +844,18 @@
                             {
                                 "value": "CartonCount",
                                 "description": "The total number of cartons invoiced."
+                            },
+                            {
+                                "value": "TaxExemptReason",
+                                "description": "VAT exemption reason code or free text."
+                            },
+                            {
+                                "value": "LegalTerms",
+                                "description": "Other legal terms applicable to the invoice."
+                            },
+                            {
+                                "value": "RegulatoryNote",
+                                "description": "Regulatory note applicable to the invoice."
                             }
                         ]
                     },
@@ -994,6 +1080,9 @@
                     "referenceInvoiceNumber": {
                         "type": "string",
                         "description": "Original Invoice Number when sending a credit note relating to an existing invoice. One Invoice only to be processed per Credit Note. This is mandatory for AP Credit Notes."
+                    },
+                    "originalInvoiceDate": {
+                        "$ref": "#/components/schemas/DateTime"
                     },
                     "debitNoteNumber": {
                         "type": "string",

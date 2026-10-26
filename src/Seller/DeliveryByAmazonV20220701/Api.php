@@ -26,11 +26,12 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $marketplaceId  The marketplace identifier.
+     * @param  string  $marketplaceId  The Amazon store identifier.
      * @param  string  $invoiceType  The invoice's type.
      * @param  string  $programType  The Amazon program that seller is currently enrolled.
      * @param  ?string  $orderId  The order identifier.
      * @param  ?string  $shipmentId  The shipment identifier.
+     * @param  ?string  $invoiceId  The invoice access key (NF-e access key for Brazilian invoices). Use this to retrieve the status of a specific invoice.
      */
     public function getInvoiceStatus(
         string $marketplaceId,
@@ -38,8 +39,9 @@ class Api extends BaseResource
         string $programType,
         ?string $orderId = null,
         ?string $shipmentId = null,
+        ?string $invoiceId = null,
     ): Response {
-        $request = new GetInvoiceStatus($marketplaceId, $invoiceType, $programType, $orderId, $shipmentId);
+        $request = new GetInvoiceStatus($marketplaceId, $invoiceType, $programType, $orderId, $shipmentId, $invoiceId);
 
         return $this->connector->send($request);
     }

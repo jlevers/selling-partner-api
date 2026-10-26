@@ -15,9 +15,9 @@ use SellingPartnerApi\Dto;
 final class SellingPartnerMetadata extends Dto
 {
     /**
-     * @param  ?string  $sellingPartnerId  A unique seller identifier.
+     * @param  ?string  $sellingPartnerId  The unique seller identifier.
      * @param  ?string  $accountType  The type of account in the transaction.
-     * @param  ?string  $marketplaceId  The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  ?string  $marketplaceId  The identifier of the marketplace where the transaction occurred. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for a marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function __construct(
         public ?string $sellingPartnerId = null,

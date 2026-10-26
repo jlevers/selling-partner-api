@@ -45,6 +45,7 @@ class GetInvoices extends Request
      * Min count: 1
      * @param  ?string  $externalInvoiceId  Return invoices that match this external ID. This is typically the Government Invoice ID.
      * @param  ?string  $sortBy  The attribute by which you want to sort the invoices in the response.
+     * @param  ?string  $warehouseCode  The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
      */
     public function __construct(
         protected string $marketplaceId,
@@ -61,6 +62,7 @@ class GetInvoices extends Request
         protected ?array $statuses = null,
         protected ?string $externalInvoiceId = null,
         protected ?string $sortBy = null,
+        protected ?string $warehouseCode = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -97,6 +99,7 @@ class GetInvoices extends Request
             'statuses' => $this->statuses,
             'externalInvoiceId' => $this->externalInvoiceId,
             'sortBy' => $this->sortBy,
+            'warehouseCode' => $this->warehouseCode,
         ]);
     }
 }

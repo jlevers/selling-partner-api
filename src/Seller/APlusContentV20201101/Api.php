@@ -4,10 +4,14 @@ namespace SellingPartnerApi\Seller\APlusContentV20201101;
 
 use Saloon\Http\Response;
 use SellingPartnerApi\BaseResource;
+use SellingPartnerApi\Seller\APlusContentV20201101\Dto\CreateMediaRequest;
 use SellingPartnerApi\Seller\APlusContentV20201101\Dto\PostContentDocumentAsinRelationsRequest;
 use SellingPartnerApi\Seller\APlusContentV20201101\Dto\PostContentDocumentRequest;
+use SellingPartnerApi\Seller\APlusContentV20201101\Dto\UpdateMediaRequest;
 use SellingPartnerApi\Seller\APlusContentV20201101\Requests\CreateContentDocument;
+use SellingPartnerApi\Seller\APlusContentV20201101\Requests\CreateMedia;
 use SellingPartnerApi\Seller\APlusContentV20201101\Requests\GetContentDocument;
+use SellingPartnerApi\Seller\APlusContentV20201101\Requests\GetMedia;
 use SellingPartnerApi\Seller\APlusContentV20201101\Requests\ListContentDocumentAsinRelations;
 use SellingPartnerApi\Seller\APlusContentV20201101\Requests\PostContentDocumentApprovalSubmission;
 use SellingPartnerApi\Seller\APlusContentV20201101\Requests\PostContentDocumentAsinRelations;
@@ -15,13 +19,14 @@ use SellingPartnerApi\Seller\APlusContentV20201101\Requests\PostContentDocumentS
 use SellingPartnerApi\Seller\APlusContentV20201101\Requests\SearchContentDocuments;
 use SellingPartnerApi\Seller\APlusContentV20201101\Requests\SearchContentPublishRecords;
 use SellingPartnerApi\Seller\APlusContentV20201101\Requests\UpdateContentDocument;
+use SellingPartnerApi\Seller\APlusContentV20201101\Requests\UpdateMedia;
 use SellingPartnerApi\Seller\APlusContentV20201101\Requests\ValidateContentDocumentAsinRelations;
 
 class Api extends BaseResource
 {
     /**
-     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @param  ?string  $pageToken  A token that you use to fetch a specific page when there are multiple pages of results.
+     * @param  string  $marketplaceId  The identifier for the Amazon store where the A+ Content is published.
+     * @param  ?string  $pageToken  A page token from the `nextPageToken` response element returned by your previous call to this operation. `nextPageToken` is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include `pageToken` as the only parameter. Specifying `pageToken` with any other parameter will cause the request to fail. When no `nextPageToken` value is returned there are no more pages to return. A `pageToken` value is not usable across different operations.
      */
     public function searchContentDocuments(string $marketplaceId, ?string $pageToken = null): Response
     {
@@ -31,7 +36,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  string  $marketplaceId  The identifier for the Amazon store where the A+ Content is published.
      */
     public function createContentDocument(
         PostContentDocumentRequest $postContentDocumentRequest,
@@ -43,8 +48,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @param  string  $marketplaceId  The identifier for the Amazon store where the A+ Content is published.
      * @param  array  $includedDataSet  The set of A+ Content data types to include in the response.
      */
     public function getContentDocument(
@@ -58,8 +63,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @param  string  $marketplaceId  The identifier for the Amazon store where the A+ Content is published.
      */
     public function updateContentDocument(
         string $contentReferenceKey,
@@ -72,11 +77,11 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @param  ?array  $includedDataSet  The set of A+ Content data types to include in the response. If you don't include this parameter, the operation returns the related ASINs without metadata.
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @param  string  $marketplaceId  The identifier for the Amazon store where the A+ Content is published.
+     * @param  ?array  $includedDataSet  The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
      * @param  ?array  $asinSet  The set of ASINs.
-     * @param  ?string  $pageToken  A token that you use to fetch a specific page when there are multiple pages of results.
+     * @param  ?string  $pageToken  A page token from the `nextPageToken` response element returned by your previous call to this operation. `nextPageToken` is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include `pageToken` as the only parameter. Specifying `pageToken` with any other parameter will cause the request to fail. When no `nextPageToken` value is returned there are no more pages to return. A `pageToken` value is not usable across different operations.
      */
     public function listContentDocumentAsinRelations(
         string $contentReferenceKey,
@@ -91,8 +96,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @param  string  $marketplaceId  The identifier for the Amazon store where the A+ Content is published.
      */
     public function postContentDocumentAsinRelations(
         string $contentReferenceKey,
@@ -105,7 +110,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  string  $marketplaceId  The identifier for the Amazon store where the A+ Content is published.
      * @param  ?array  $asinSet  The set of ASINs.
      */
     public function validateContentDocumentAsinRelations(
@@ -119,9 +124,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-     * @param  string  $asin  The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.
-     * @param  ?string  $pageToken  A token that you use to fetch a specific page when there are multiple pages of results.
+     * @param  string  $marketplaceId  The identifier for the Amazon store where the A+ Content is published.
+     * @param  string  $asin  The Amazon Standard Identification Number (ASIN).
+     * @param  ?string  $pageToken  A page token from the `nextPageToken` response element returned by your previous call to this operation. `nextPageToken` is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include `pageToken` as the only parameter. Specifying `pageToken` with any other parameter will cause the request to fail. When no `nextPageToken` value is returned there are no more pages to return. A `pageToken` value is not usable across different operations.
      */
     public function searchContentPublishRecords(string $marketplaceId, string $asin, ?string $pageToken = null): Response
     {
@@ -131,8 +136,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @param  string  $marketplaceId  The identifier for the Amazon store where the A+ Content is published.
      */
     public function postContentDocumentApprovalSubmission(string $contentReferenceKey, string $marketplaceId): Response
     {
@@ -142,12 +147,48 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @param  string  $marketplaceId  The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @param  string  $marketplaceId  The identifier for the Amazon store where the A+ Content is published.
      */
     public function postContentDocumentSuspendSubmission(string $contentReferenceKey, string $marketplaceId): Response
     {
         $request = new PostContentDocumentSuspendSubmission($contentReferenceKey, $marketplaceId);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  CreateMediaRequest  $createMediaRequest  The request body for creating a media asset. Uses the unified media shape as a subset, omitting system-derived fields.
+     */
+    public function createMedia(CreateMediaRequest $createMediaRequest): Response
+    {
+        $request = new CreateMedia($createMediaRequest);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $mediaId  The unique identifier for the media asset.
+     * @param  ?string  $associatedMediaId  When provided, returns only the specific association. When omitted, returns all associated media.
+     */
+    public function getMedia(string $mediaId, ?string $associatedMediaId = null): Response
+    {
+        $request = new GetMedia($mediaId, $associatedMediaId);
+
+        return $this->connector->send($request);
+    }
+
+    /**
+     * @param  string  $mediaId  The unique identifier for the media asset to update.
+     * @param  UpdateMediaRequest  $updateMediaRequest  The request body for updating media metadata. Exactly one of title or descriptions must be provided.
+     * @param  ?string  $associatedMediaId  When provided, identifies the specific video-image pairing for title updates. Required when updating a pairing title.
+     */
+    public function updateMedia(
+        string $mediaId,
+        UpdateMediaRequest $updateMediaRequest,
+        ?string $associatedMediaId = null,
+    ): Response {
+        $request = new UpdateMedia($mediaId, $updateMediaRequest, $associatedMediaId);
 
         return $this->connector->send($request);
     }

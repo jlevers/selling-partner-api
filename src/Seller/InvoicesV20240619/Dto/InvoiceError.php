@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class InvoiceError extends Dto
 {
     /**
-     * @param  ?string  $description  A text description of the error.
+     * @param  ?string  $description  A description of the error.
      * @param  ?string  $errorCode  The code of the error.
      */
     public function __construct(

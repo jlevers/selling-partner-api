@@ -24,7 +24,7 @@
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^6.0|^7.0|^8.0",
+        "guzzlehttp/guzzle": "^6.0|^7.15.2|^8.0",
         "saloonphp/saloon": "^4.0",
         "openspout/openspout": "^4.23",
         "illuminate/support": "^11.0|^12.0|^13.0"

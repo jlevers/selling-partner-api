@@ -1,0 +1,1906 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "The Selling Partner API for Support",
+        "description": "The Selling Partner API for Support provides programmatic access to information about Selling Partner support.",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "2025-02-01"
+    },
+    "servers": [
+        {
+            "url": "https://sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/support/2025-02-01/cases": {
+            "post": {
+                "tags": [
+                    "SupportV20250201"
+                ],
+                "description": "Retrieve support cases for a selling partner.",
+                "operationId": "listCases",
+                "requestBody": {
+                    "description": "The request body for the listCases operation.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ListCasesRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListCasesResult"
+                                },
+                                "example": {
+                                    "nextToken": "SampleToken",
+                                    "cases": [
+                                        {
+                                            "caseId": "1234567890",
+                                            "status": "RESOLVED",
+                                            "subject": "test subject",
+                                            "primaryEmail": "test_seller@domain.com",
+                                            "ccEmails": [
+                                                "test_seller1@domain.com",
+                                                "test_seller2@domain.com"
+                                            ],
+                                            "createdDate": "2024-01-12T10:00:00.000Z",
+                                            "lastUpdatedDate": "2024-01-12T10:00:00.000Z",
+                                            "resolvedDate": "2024-01-12T10:00:00.000Z",
+                                            "appointments": [
+                                                {
+                                                    "appointmentId": "TestAppointmentId",
+                                                    "status": "SCHEDULED",
+                                                    "answeringParty": "RECEPTIONIST",
+                                                    "phoneNumber": {
+                                                        "countryCode": "US",
+                                                        "number": "1234567890",
+                                                        "extension": "1"
+                                                    },
+                                                    "callbackTiming": {
+                                                        "earliestCallbackTime": "2024-01-12T10:00:00.000Z",
+                                                        "latestCallbackTime": "2024-01-12T11:00:00.000Z"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "sortOrder": "ASC",
+                                                    "maxResults": 2,
+                                                    "nextToken": "SampleToken"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "cases": [
+                                            {
+                                                "caseId": "1234567890",
+                                                "status": "RESOLVED",
+                                                "subject": "test subject",
+                                                "primaryEmail": "test_seller@domain.com",
+                                                "ccEmails": [
+                                                    "test_seller1@domain.com",
+                                                    "test_seller2@domain.com"
+                                                ],
+                                                "createdDate": "2024-01-12T10:00:00.000Z",
+                                                "lastUpdatedDate": "2024-01-12T10:00:00.000Z",
+                                                "resolvedDate": "2024-01-12T10:00:00.000Z",
+                                                "appointments": [
+                                                    {
+                                                        "appointmentId": "TestAppointmentId",
+                                                        "status": "SCHEDULED",
+                                                        "answeringParty": "RECEPTIONIST",
+                                                        "phoneNumber": {
+                                                            "countryCode": "US",
+                                                            "number": "1234567890",
+                                                            "extension": "1"
+                                                        },
+                                                        "callbackTiming": {
+                                                            "earliestCallbackTime": "2024-01-12T10:00:00.000Z",
+                                                            "latestCallbackTime": "2024-01-12T11:00:00.000Z"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "nextToken": "InvalidToken123"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "details": "Invalid Input",
+                                                "message": "The parameter 'nextToken' is not valid."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL",
+                "x-codegen-request-body-name": "body"
+            }
+        },
+        "/support/2025-02-01/cases/{caseId}": {
+            "get": {
+                "tags": [
+                    "SupportV20250201"
+                ],
+                "description": "Retrieve a specific support case.",
+                "operationId": "getCase",
+                "parameters": [
+                    {
+                        "name": "caseId",
+                        "in": "path",
+                        "description": "The case identifier.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1234567890"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Case"
+                                },
+                                "example": {
+                                    "caseId": "1234567890",
+                                    "status": "RESOLVED",
+                                    "subject": "test subject",
+                                    "primaryEmail": "test_seller@domain.com",
+                                    "ccEmails": [
+                                        "test_seller1@domain.com",
+                                        "test_seller2@domain.com"
+                                    ],
+                                    "createdDate": "2024-01-12T10:00:00.000Z",
+                                    "lastUpdatedDate": "2024-01-12T10:00:00.000Z",
+                                    "resolvedDate": "2024-01-12T10:00:00.000Z",
+                                    "appointments": [
+                                        {
+                                            "appointmentId": "TestAppointmentId",
+                                            "answeringParty": "RECEPTIONIST",
+                                            "phoneNumber": {
+                                                "countryCode": "US",
+                                                "number": "1234567890",
+                                                "extension": "1"
+                                            },
+                                            "callbackTiming": {
+                                                "earliestCallbackTime": "2024-01-12T10:00:00.000Z",
+                                                "latestCallbackTime": "2024-01-12T11:00:00.000Z"
+                                            },
+                                            "status": "SCHEDULED"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "caseId": {
+                                                "value": "1234567890"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "caseId": "1234567890",
+                                        "status": "RESOLVED",
+                                        "subject": "test subject",
+                                        "primaryEmail": "test_seller@domain.com",
+                                        "ccEmails": [
+                                            "test_seller1@domain.com",
+                                            "test_seller2@domain.com"
+                                        ],
+                                        "createdDate": "2024-01-12T10:00:00.000Z",
+                                        "lastUpdatedDate": "2024-01-12T10:00:00.000Z",
+                                        "resolvedDate": "2024-01-12T10:00:00.000Z",
+                                        "appointments": [
+                                            {
+                                                "appointmentId": "TestAppointmentId",
+                                                "answeringParty": "RECEPTIONIST",
+                                                "phoneNumber": {
+                                                    "countryCode": "US",
+                                                    "number": "1234567890",
+                                                    "extension": "1"
+                                                },
+                                                "callbackTiming": {
+                                                    "earliestCallbackTime": "2024-01-12T10:00:00.000Z",
+                                                    "latestCallbackTime": "2024-01-12T11:00:00.000Z"
+                                                },
+                                                "status": "SCHEDULED"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "caseId": {
+                                                "value": ""
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "details": "Invalid Input",
+                                                "message": "Invalid 'caseId' when calling getCase."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/support/2025-02-01/cases/{caseId}/contacts": {
+            "get": {
+                "tags": [
+                    "SupportV20250201"
+                ],
+                "description": "Retrieve contacts for a specific support case.",
+                "operationId": "listContacts",
+                "parameters": [
+                    {
+                        "name": "caseId",
+                        "in": "path",
+                        "description": "The case identifier.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1234567890"
+                    },
+                    {
+                        "name": "maxResults",
+                        "in": "query",
+                        "description": "The maximum number of results to include in the response.",
+                        "schema": {
+                            "maximum": 50,
+                            "minimum": 1,
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 10
+                        },
+                        "example": 25
+                    },
+                    {
+                        "name": "nextToken",
+                        "in": "query",
+                        "description": "A token to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "SampleToken"
+                    },
+                    {
+                        "name": "sortOrder",
+                        "in": "query",
+                        "description": "Sort the returned contacts by `createdDate` in either ascending or descending order.",
+                        "schema": {
+                            "type": "string",
+                            "default": "DESC",
+                            "enum": [
+                                "ASC",
+                                "DESC"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "description": "Sort the collection in ascending order.",
+                                    "value": "ASC"
+                                },
+                                {
+                                    "description": "Sort the collection in descending order.",
+                                    "value": "DESC"
+                                }
+                            ]
+                        },
+                        "example": "DESC",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "Sort the collection in ascending order.",
+                                "value": "ASC"
+                            },
+                            {
+                                "description": "Sort the collection in descending order.",
+                                "value": "DESC"
+                            }
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListContactsResult"
+                                },
+                                "example": {
+                                    "nextToken": "SampleToken",
+                                    "contacts": [
+                                        {
+                                            "contactId": "TestContactId",
+                                            "channel": "EMAIL",
+                                            "emailContent": {
+                                                "sender": {
+                                                    "displayName": "Test Selling Partner Name",
+                                                    "role": "SELLING_PARTNER"
+                                                },
+                                                "message": "sample email message",
+                                                "attachments": [
+                                                    {
+                                                        "name": "testAttachment.txt",
+                                                        "downloadUrl": "https://filelocation/filename"
+                                                    }
+                                                ]
+                                            },
+                                            "createdDate": "2024-01-12T11:00:00.000Z"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "caseId": {
+                                                "value": "1234567890"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "nextToken": "SampleToken",
+                                        "contacts": [
+                                            {
+                                                "contactId": "TestContactId",
+                                                "channel": "EMAIL",
+                                                "emailContent": {
+                                                    "sender": {
+                                                        "displayName": "Test Selling Partner Name",
+                                                        "role": "SELLING_PARTNER"
+                                                    },
+                                                    "message": "sample email message",
+                                                    "attachments": [
+                                                        {
+                                                            "name": "testAttachment.txt",
+                                                            "downloadUrl": "https://filelocation/filename"
+                                                        }
+                                                    ]
+                                                },
+                                                "createdDate": "2024-01-12T11:00:00.000Z"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "caseId": {
+                                                "value": ""
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "details": "Invalid Input",
+                                                "message": "Invalid 'caseId' when calling listContacts."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ListCasesRequest": {
+                "type": "object",
+                "properties": {
+                    "marketplaceId": {
+                        "type": "string",
+                        "description": "The marketplace identifier used for authorization only. This field does not impact the returned collection. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
+                        "example": "ATVPDKIKX0DER",
+                        "x-amzn-api-internal": "EXCLUSIVE"
+                    },
+                    "caseFilters": {
+                        "$ref": "#/components/schemas/CaseFilters"
+                    },
+                    "sortField": {
+                        "type": "string",
+                        "description": "The field to sort cases by. Defaults to CREATION_DATE when absent.",
+                        "example": "CASE_ID",
+                        "default": "CREATION_DATE",
+                        "enum": [
+                            "CASE_ID",
+                            "STATUS",
+                            "SUBJECT",
+                            "PRIMARY_EMAIL",
+                            "CREATION_DATE",
+                            "LAST_OUTBOUND_DATE",
+                            "RESOLUTION_DATE"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "Sorts the collection by case identifier.",
+                                "value": "CASE_ID"
+                            },
+                            {
+                                "description": "Sorts the collection by case status.",
+                                "value": "STATUS"
+                            },
+                            {
+                                "description": "Sorts the collection by case subject.",
+                                "value": "SUBJECT"
+                            },
+                            {
+                                "description": "Sorts the collection by primary email address.",
+                                "value": "PRIMARY_EMAIL"
+                            },
+                            {
+                                "description": "Sorts the collection by creation date.",
+                                "value": "CREATION_DATE"
+                            },
+                            {
+                                "description": "Sorts the collection by last outbound contact date.",
+                                "value": "LAST_OUTBOUND_DATE"
+                            },
+                            {
+                                "description": "Sorts the collection by resolution date.",
+                                "value": "RESOLUTION_DATE"
+                            }
+                        ],
+                        "x-amzn-api-internal": "EXCLUSIVE"
+                    },
+                    "sortOrder": {
+                        "type": "string",
+                        "description": "The sort direction. Defaults to DESC when absent.",
+                        "example": "ASC",
+                        "default": "DESC",
+                        "enum": [
+                            "ASC",
+                            "DESC"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "Sorts the collection in ascending order.",
+                                "value": "ASC"
+                            },
+                            {
+                                "description": "Sorts the collection in descending order.",
+                                "value": "DESC"
+                            }
+                        ]
+                    },
+                    "maxResults": {
+                        "maximum": 50,
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "Maximum number of results to return.",
+                        "format": "int32",
+                        "example": 25,
+                        "default": 10
+                    },
+                    "nextToken": {
+                        "type": "string",
+                        "description": "A token to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
+                        "example": "SampleToken"
+                    }
+                },
+                "description": "The request body for the listCases operation.",
+                "example": {
+                    "sortOrder": "ASC",
+                    "maxResults": 25
+                }
+            },
+            "ListCasesResult": {
+                "required": [
+                    "cases"
+                ],
+                "type": "object",
+                "properties": {
+                    "nextToken": {
+                        "type": "string",
+                        "description": "A token to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
+                        "example": "SampleToken"
+                    },
+                    "cases": {
+                        "type": "array",
+                        "description": "A paginated list of support cases.",
+                        "items": {
+                            "$ref": "#/components/schemas/Case"
+                        }
+                    }
+                },
+                "description": "A list of support cases."
+            },
+            "Case": {
+                "required": [
+                    "caseId",
+                    "ccEmails",
+                    "createdDate",
+                    "lastUpdatedDate",
+                    "primaryEmail",
+                    "status",
+                    "subject"
+                ],
+                "type": "object",
+                "properties": {
+                    "caseId": {
+                        "type": "string",
+                        "description": "A globally unique identifier for the case",
+                        "example": "1234567890"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "The current status of the case.",
+                        "enum": [
+                            "RESOLVED",
+                            "TRANSFERRED",
+                            "PENDING_MERCHANT_ACTION",
+                            "PENDING_AMAZON_ACTION"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "Indicates that a case is resolved and requires no farther action.",
+                                "value": "RESOLVED"
+                            },
+                            {
+                                "description": "Indicates that a case is transferred and future case details are no longer tracked in this case.",
+                                "value": "TRANSFERRED"
+                            },
+                            {
+                                "description": "Indicates that the case is awaiting an action by the selling partner.",
+                                "value": "PENDING_MERCHANT_ACTION"
+                            },
+                            {
+                                "description": "Indicates that the case is awaiting an action by Amazon.",
+                                "value": "PENDING_AMAZON_ACTION"
+                            }
+                        ]
+                    },
+                    "subject": {
+                        "type": "string",
+                        "description": "The subject of the case.",
+                        "example": "test subject"
+                    },
+                    "primaryEmail": {
+                        "type": "string",
+                        "description": "The primary email associated with the case.",
+                        "example": "test@testemail.com"
+                    },
+                    "ccEmails": {
+                        "type": "array",
+                        "description": "Additional emails that are attached to the case.",
+                        "example": [
+                            "test1@testemail.com",
+                            "test2@testemail.com"
+                        ],
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "appointments": {
+                        "type": "array",
+                        "description": "All appointments for the case.",
+                        "items": {
+                            "$ref": "#/components/schemas/Appointment"
+                        }
+                    },
+                    "createdDate": {
+                        "type": "string",
+                        "description": "The time when the case was created. In [ISO 8601](https://developer-docs.amazon/sp-api/docs/iso-8601) format.",
+                        "format": "date-time",
+                        "example": "2024-01-12T10:00:00Z"
+                    },
+                    "lastUpdatedDate": {
+                        "type": "string",
+                        "description": "The time when the case was last updated, which includes updates to the case details and new contacts added to the case. In [ISO 8601](https://developer-docs.amazon/sp-api/docs/iso-8601) format.",
+                        "format": "date-time",
+                        "example": "2024-01-12T10:00:00Z"
+                    },
+                    "resolvedDate": {
+                        "type": "string",
+                        "description": "The time when the case was resolved. In [ISO 8601](https://developer-docs.amazon/sp-api/docs/iso-8601) format.",
+                        "format": "date-time",
+                        "example": "2024-01-12T10:00:00Z"
+                    },
+                    "lastOutboundDate": {
+                        "type": "string",
+                        "description": "The timestamp of the last outbound contact on the case. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                        "format": "date-time",
+                        "example": "2024-01-12T10:30:00Z",
+                        "x-amzn-api-internal": "EXCLUSIVE"
+                    }
+                },
+                "description": "The support case.",
+                "example": {
+                    "caseId": "1234567890",
+                    "status": "RESOLVED",
+                    "subject": "test subject",
+                    "primaryEmail": "test_seller@domain.com",
+                    "ccEmails": [
+                        "test_seller1@domain.com",
+                        "test_seller2@domain.com"
+                    ],
+                    "createdDate": "2024-01-12T10:00:00.000Z",
+                    "lastUpdatedDate": "2024-01-12T10:00:00.000Z",
+                    "resolvedDate": "2024-01-12T10:00:00.000Z",
+                    "appointments": [
+                        {
+                            "appointmentId": "TestAppointmentId",
+                            "answeringParty": "RECEPTIONIST",
+                            "phoneNumber": {
+                                "countryCode": "US",
+                                "number": "1234567890",
+                                "extension": "1"
+                            },
+                            "callbackTiming": {
+                                "earliestCallbackTime": "2024-01-12T10:00:00.000Z",
+                                "latestCallbackTime": "2024-01-12T11:00:00.000Z"
+                            },
+                            "status": "SCHEDULED"
+                        }
+                    ]
+                }
+            },
+            "CaseFilters": {
+                "type": "object",
+                "properties": {
+                    "caseStatuses": {
+                        "type": "array",
+                        "description": "Filter the collection by one or more case statuses.",
+                        "example": [
+                            "PENDING_AMAZON_ACTION",
+                            "PENDING_MERCHANT_ACTION"
+                        ],
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "RESOLVED",
+                                "TRANSFERRED",
+                                "PENDING_MERCHANT_ACTION",
+                                "PENDING_AMAZON_ACTION"
+                            ]
+                        }
+                    },
+                    "createdDate": {
+                        "$ref": "#/components/schemas/DateFilter"
+                    },
+                    "lastOutboundDate": {
+                        "$ref": "#/components/schemas/DateFilter"
+                    },
+                    "resolvedDate": {
+                        "$ref": "#/components/schemas/DateFilter"
+                    },
+                    "primaryEmails": {
+                        "type": "array",
+                        "description": "Filter the collection by primary email address.",
+                        "example": [
+                            "test_seller@domain.com"
+                        ],
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "ccEmails": {
+                        "type": "array",
+                        "description": "Filter the collection by one or more CC email addresses.",
+                        "example": [
+                            "test_seller1@domain.com"
+                        ],
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "subjectKeywords": {
+                        "maxLength": 200,
+                        "minLength": 1,
+                        "type": "string",
+                        "description": "Filter the collection by case subject keywords. Maximum 200 characters.",
+                        "example": "test subject"
+                    }
+                },
+                "description": "Optional filters for case search. All filters are optional \u2014 when absent, no filtering is applied for that field. Different filters are combined with AND logic, and multiple values of the same field are combined with OR logic.",
+                "example": {
+                    "caseStatuses": [
+                        "PENDING_AMAZON_ACTION"
+                    ],
+                    "createdDate": {
+                        "after": "2024-01-01T00:00:00.000Z"
+                    },
+                    "lastOutboundDate": {
+                        "after": "2024-06-01T00:00:00.000Z"
+                    },
+                    "resolvedDate": {
+                        "before": "2024-12-31T23:59:59.000Z"
+                    },
+                    "primaryEmails": [
+                        "test_seller@domain.com"
+                    ],
+                    "ccEmails": [
+                        "test_seller1@domain.com"
+                    ],
+                    "subjectKeywords": "test subject"
+                },
+                "x-amzn-api-internal": "EXCLUSIVE"
+            },
+            "DateFilter": {
+                "type": "object",
+                "properties": {
+                    "after": {
+                        "type": "string",
+                        "description": "Include results with timestamps strictly after this value (exclusive).",
+                        "format": "date-time",
+                        "example": "2024-01-01T00:00:00Z"
+                    },
+                    "before": {
+                        "type": "string",
+                        "description": "Include results with timestamps strictly before this value (exclusive).",
+                        "format": "date-time",
+                        "example": "2024-12-31T23:59:59Z"
+                    }
+                },
+                "description": "A date range filter with optional before and after bounds. Dates must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
+                "example": {
+                    "after": "2024-01-01T00:00:00.000Z",
+                    "before": "2024-12-31T23:59:59.000Z"
+                },
+                "x-amzn-api-internal": "EXCLUSIVE"
+            },
+            "Appointment": {
+                "required": [
+                    "appointmentId",
+                    "callbackTiming",
+                    "phoneNumber",
+                    "status"
+                ],
+                "type": "object",
+                "properties": {
+                    "appointmentId": {
+                        "type": "string",
+                        "description": "The unique identifier for the scheduled appointment.",
+                        "example": "TestAppointmentId"
+                    },
+                    "phoneNumber": {
+                        "$ref": "#/components/schemas/PhoneNumber"
+                    },
+                    "answeringParty": {
+                        "type": "string",
+                        "description": "The person who is expected to answer the call.",
+                        "example": "RECEPTIONIST",
+                        "enum": [
+                            "RECEPTIONIST"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "The call should be routed through a receptionist",
+                                "value": "RECEPTIONIST"
+                            }
+                        ]
+                    },
+                    "callbackTiming": {
+                        "$ref": "#/components/schemas/CallbackTiming"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "The appointment status.",
+                        "example": "SCHEDULED",
+                        "enum": [
+                            "SCHEDULED",
+                            "CANCELLED",
+                            "MISSED",
+                            "COMPLETED"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "An appointment is currently scheduled for a future date.",
+                                "value": "SCHEDULED"
+                            },
+                            {
+                                "description": "A previously scheduled appointment was canceled and no contact will be created for it.",
+                                "value": "CANCELLED"
+                            },
+                            {
+                                "description": "A previously scheduled appointment was unable to be completed.",
+                                "value": "MISSED"
+                            },
+                            {
+                                "description": "A previously scheduled appointment was completed.",
+                                "value": "COMPLETED"
+                            }
+                        ]
+                    }
+                },
+                "description": "An appointment for a contact at a future date.",
+                "example": {
+                    "appointmentId": "TestAppointmentId",
+                    "phoneNumber": {
+                        "countryCode": "US",
+                        "number": "1234567890",
+                        "extension": "1"
+                    },
+                    "answeringParty": "RECEPTIONIST",
+                    "callbackTiming": {
+                        "earliestCallbackTime": "2024-01-12T10:00:00.000Z",
+                        "latestCallbackTime": "2024-01-12T11:00:00.000Z"
+                    },
+                    "status": "SCHEDULED"
+                }
+            },
+            "PhoneNumber": {
+                "required": [
+                    "countryCode",
+                    "number"
+                ],
+                "type": "object",
+                "properties": {
+                    "countryCode": {
+                        "type": "string",
+                        "description": "The ISO 3166-1 two-digit country code for the calling country.",
+                        "example": "US"
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "The phone number to call.",
+                        "example": "1234567890"
+                    },
+                    "extension": {
+                        "type": "string",
+                        "description": "The extension to use for the call, if applicable.",
+                        "example": "1"
+                    }
+                },
+                "description": "The selling partner's phone number.",
+                "example": {
+                    "countryCode": "US",
+                    "number": "1234567890",
+                    "extension": "1"
+                }
+            },
+            "CallbackTiming": {
+                "required": [
+                    "earliestCallbackTime",
+                    "latestCallbackTime"
+                ],
+                "type": "object",
+                "properties": {
+                    "earliestCallbackTime": {
+                        "type": "string",
+                        "description": "The earliest time at which to call the selling partner.",
+                        "format": "date-time",
+                        "example": "2024-01-12T10:00:00Z"
+                    },
+                    "latestCallbackTime": {
+                        "type": "string",
+                        "description": "The latest time at which to call the selling partner.",
+                        "format": "date-time",
+                        "example": "2024-01-12T11:00:00Z"
+                    }
+                },
+                "description": "The time window for an appointment callback",
+                "example": {
+                    "earliestCallbackTime": "2024-01-12T10:00:00.000Z",
+                    "latestCallbackTime": "2024-01-12T11:00:00.000Z"
+                }
+            },
+            "ListContactsResult": {
+                "required": [
+                    "contacts"
+                ],
+                "type": "object",
+                "properties": {
+                    "nextToken": {
+                        "type": "string",
+                        "description": "A token to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.",
+                        "example": "SampleToken"
+                    },
+                    "contacts": {
+                        "type": "array",
+                        "description": "A list of contacts.",
+                        "example": [
+                            {
+                                "contactId": "TestContactId",
+                                "channel": "EMAIL",
+                                "emailContent": {
+                                    "sender": {
+                                        "displayName": "Test Selling Partner Name",
+                                        "role": "SELLING_PARTNER"
+                                    },
+                                    "message": "sample email message",
+                                    "attachments": [
+                                        {
+                                            "name": "testAttachment.txt",
+                                            "downloadUrl": "https://filelocation/filename"
+                                        }
+                                    ]
+                                },
+                                "createdDate": "2024-01-12T11:00:00.000Z"
+                            }
+                        ],
+                        "items": {
+                            "$ref": "#/components/schemas/Contact"
+                        }
+                    }
+                },
+                "description": "A list of contacts.",
+                "example": {
+                    "nextToken": "SampleToken",
+                    "contacts": [
+                        {
+                            "contactId": "TestContactId",
+                            "channel": "EMAIL",
+                            "emailContent": {
+                                "sender": {
+                                    "displayName": "Test Selling Partner Name",
+                                    "role": "SELLING_PARTNER"
+                                },
+                                "message": "sample email message",
+                                "attachments": [
+                                    {
+                                        "name": "testAttachment.txt",
+                                        "downloadUrl": "https://filelocation/filename"
+                                    }
+                                ]
+                            },
+                            "createdDate": "2024-01-12T11:00:00.000Z"
+                        }
+                    ]
+                }
+            },
+            "Contact": {
+                "required": [
+                    "channel",
+                    "contactId",
+                    "createdDate"
+                ],
+                "type": "object",
+                "properties": {
+                    "contactId": {
+                        "type": "string",
+                        "description": "A unique identifier for the contact",
+                        "example": "TestContactId"
+                    },
+                    "channel": {
+                        "type": "string",
+                        "description": "The contact channel for communication between the selling partner and Amazon.",
+                        "example": "PHONE",
+                        "enum": [
+                            "PHONE",
+                            "CHAT",
+                            "EMAIL"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "A phone call contact.",
+                                "value": "PHONE"
+                            },
+                            {
+                                "description": "A chat contact.",
+                                "value": "CHAT"
+                            },
+                            {
+                                "description": "An email contact.",
+                                "value": "EMAIL"
+                            }
+                        ]
+                    },
+                    "emailContent": {
+                        "$ref": "#/components/schemas/EmailContent"
+                    },
+                    "phoneContent": {
+                        "$ref": "#/components/schemas/PhoneContent"
+                    },
+                    "chatContent": {
+                        "$ref": "#/components/schemas/ChatContent"
+                    },
+                    "createdDate": {
+                        "type": "string",
+                        "description": "The time at which the contact was created. In [ISO 8601](https://developer-docs.amazon/sp-api/docs/iso-8601) format.",
+                        "format": "date-time",
+                        "example": "2024-01-12T11:00:00Z"
+                    }
+                },
+                "description": "A contact.",
+                "example": {
+                    "contactId": "TestContactId",
+                    "channel": "EMAIL",
+                    "emailContent": {
+                        "sender": {
+                            "displayName": "Test Selling Partner Name",
+                            "role": "SELLING_PARTNER"
+                        },
+                        "message": "sample email message",
+                        "attachments": [
+                            {
+                                "name": "testAttachment.txt",
+                                "downloadUrl": "https://filelocation/filename"
+                            }
+                        ]
+                    },
+                    "createdDate": "2024-01-12T11:00:00.000Z"
+                }
+            },
+            "EmailContent": {
+                "required": [
+                    "message",
+                    "sender"
+                ],
+                "type": "object",
+                "properties": {
+                    "sender": {
+                        "$ref": "#/components/schemas/Participant"
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The email body of the contact.",
+                        "example": "sample email message"
+                    },
+                    "attachments": {
+                        "type": "array",
+                        "description": "All attachments included in the contact.",
+                        "example": [
+                            {
+                                "name": "testAttachment.txt",
+                                "downloadUrl": "https://filelocation/filename"
+                            }
+                        ],
+                        "items": {
+                            "$ref": "#/components/schemas/Attachment"
+                        }
+                    }
+                },
+                "description": "The content of an email contact.",
+                "example": {
+                    "sender": {
+                        "displayName": "Test Selling Partner Name",
+                        "role": "SELLING_PARTNER"
+                    },
+                    "message": "sample email message",
+                    "attachments": [
+                        {
+                            "name": "testAttachment.txt",
+                            "downloadUrl": "https://filelocation/filename"
+                        }
+                    ]
+                }
+            },
+            "Participant": {
+                "required": [
+                    "displayName",
+                    "role"
+                ],
+                "type": "object",
+                "properties": {
+                    "displayName": {
+                        "type": "string",
+                        "description": "The human-readable name of the participant.",
+                        "example": "Test Selling Partner Name"
+                    },
+                    "role": {
+                        "type": "string",
+                        "description": "The role of the participant.",
+                        "example": "SELLING_PARTNER",
+                        "enum": [
+                            "AMAZON",
+                            "SELLING_PARTNER"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "Amazon support.",
+                                "value": "AMAZON"
+                            },
+                            {
+                                "description": "The selling partner.",
+                                "value": "SELLING_PARTNER"
+                            }
+                        ]
+                    }
+                },
+                "description": "A participant for a single-directional communication between a selling partner and Amazon support.",
+                "example": {
+                    "displayName": "Test Selling Partner Name",
+                    "role": "SELLING_PARTNER"
+                }
+            },
+            "Attachment": {
+                "required": [
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the attachment.",
+                        "example": "testAttachment.txt"
+                    },
+                    "downloadUrl": {
+                        "type": "string",
+                        "description": "The download link to the attachment file. The `downloadUrl` is included in the response if available. If there is a failure to return the `downloadUrl`, this field is not included in the response. The `downloadUrl` expires after 15 minutes.",
+                        "example": "https://filelocation/filename"
+                    }
+                },
+                "description": "A file attachment.",
+                "example": {
+                    "name": "testAttachment.txt",
+                    "downloadUrl": "https://filelocation/filename"
+                }
+            },
+            "PhoneContent": {
+                "type": "object",
+                "properties": {
+                    "callNotes": {
+                        "type": "string",
+                        "description": "Notes that summarize the phone call, provided by Amazon support",
+                        "example": "sample notes from call"
+                    }
+                },
+                "description": "The content for a phone contact.",
+                "example": {
+                    "callNotes": "sample notes from call"
+                }
+            },
+            "ChatContent": {
+                "required": [
+                    "events",
+                    "transcript"
+                ],
+                "type": "object",
+                "properties": {
+                    "events": {
+                        "type": "array",
+                        "description": "A list of events that make up the chat contact. Not all chat contacts are broken into chat events, and it is recommended to fallback on the `transcript` when `events` is empty.",
+                        "example": [
+                            {
+                                "timestamp": "2024-01-12T11:00:00.000Z",
+                                "type": "MESSAGE",
+                                "message": "sample chat message",
+                                "participant": {
+                                    "displayName": "Test Selling Partner Name",
+                                    "role": "SELLING_PARTNER"
+                                }
+                            }
+                        ],
+                        "items": {
+                            "$ref": "#/components/schemas/ChatEvent"
+                        }
+                    },
+                    "transcript": {
+                        "type": "string",
+                        "description": "The human-readable transcript of the chat contact.",
+                        "example": "2024-12-23T15:02:00.171Z SellingPartnerName I'm having an issue with my Listing\\n\\n2024-12-23T15:02:57.627Z Amazon Associated Kyle Hello"
+                    }
+                },
+                "description": "The content for a chat contact.",
+                "example": {
+                    "events": [
+                        {
+                            "timestamp": "2024-01-12T11:00:00.000Z",
+                            "type": "MESSAGE",
+                            "message": "sample chat message",
+                            "participant": {
+                                "displayName": "Test Selling Partner Name",
+                                "role": "SELLING_PARTNER"
+                            }
+                        }
+                    ],
+                    "transcript": "sample chat transcript"
+                }
+            },
+            "ChatEvent": {
+                "required": [
+                    "timestamp",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "timestamp": {
+                        "type": "string",
+                        "description": "The time at which the event occurred.",
+                        "format": "date-time",
+                        "example": "2024-01-12T11:00:00Z"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The type of chat event.",
+                        "example": "MESSAGE",
+                        "enum": [
+                            "MESSAGE",
+                            "ATTACHMENT",
+                            "PARTICIPANT_JOINED",
+                            "PARTICIPANT_LEFT",
+                            "PARTICIPANT_IDLE",
+                            "CHAT_ENDED"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "description": "A message was sent.",
+                                "value": "MESSAGE"
+                            },
+                            {
+                                "description": "A file was attached.",
+                                "value": "ATTACHMENT"
+                            },
+                            {
+                                "description": "A participant joined the chat.",
+                                "value": "PARTICIPANT_JOINED"
+                            },
+                            {
+                                "description": "A participant left the chat.",
+                                "value": "PARTICIPANT_LEFT"
+                            },
+                            {
+                                "description": "A participant is idle in the chat.",
+                                "value": "PARTICIPANT_IDLE"
+                            },
+                            {
+                                "description": "The chat has ended.",
+                                "value": "CHAT_ENDED"
+                            }
+                        ]
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The message from the chat event. Only present if the event type is `MESSAGE`.",
+                        "example": "sample chat message"
+                    },
+                    "participant": {
+                        "$ref": "#/components/schemas/Participant"
+                    },
+                    "attachments": {
+                        "type": "array",
+                        "description": "All attachments included in the event. Only present if the event type is `ATTACHMENT`.",
+                        "example": [
+                            {
+                                "name": "testAttachment.txt",
+                                "downloadUrl": "https://filelocation/filename"
+                            }
+                        ],
+                        "items": {
+                            "$ref": "#/components/schemas/Attachment"
+                        }
+                    }
+                },
+                "description": "A single event from a chat contact.",
+                "example": {
+                    "timestamp": "2024-01-12T11:00:00.000Z",
+                    "type": "MESSAGE",
+                    "message": "sample chat message",
+                    "participant": {
+                        "displayName": "Test Selling Partner Name",
+                        "role": "SELLING_PARTNER"
+                    }
+                }
+            },
+            "ErrorList": {
+                "required": [
+                    "errors"
+                ],
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "description": "array of errors",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                },
+                "description": "A list of error responses returned when a request is unsuccessful.",
+                "example": {
+                    "errors": [
+                        {
+                            "code": "ErrorCode",
+                            "message": "The error message",
+                            "details": "Details about the error"
+                        }
+                    ]
+                }
+            },
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional details that can help the caller understand or fix the issue."
+                    }
+                },
+                "description": "Error response returned when the request is unsuccessful.",
+                "example": {
+                    "code": "ErrorCode",
+                    "message": "The error message",
+                    "details": "Details about the error"
+                }
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

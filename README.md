@@ -296,6 +296,10 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
     ```php
     $financesApi = $sellerConnector->financesV20240619();
     ```
+* **Finance Remittance API (v2026-03-17)** ([docs](https://developer-docs.amazon/sp-api/docs/finance-remittance-api))
+    ```php
+    $financeRemittanceApi = $sellerConnector->financeRemittanceV20260317();
+    ```
 * **Finances API (v0)** ([docs](https://developer-docs.amazon.com/sp-api/docs/finances-api-reference))
     ```php
     $financesApi = $sellerConnector->financesV0();
@@ -395,6 +399,10 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
 * **Supply Sources API (v2020-07-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/supply-sources-api-v2020-07-01-reference))
     ```php
     $supplySourcesApi = $sellerConnector->supplySourcesV20200701();
+    ```
+* **Support API (v2025-02-01)** ([docs](https://developer-docs.amazon/sp-api/docs/support-api))
+    ```php
+    $supportApi = $sellerConnector->supportV20250201();
     ```
 * **Tokens API (v2021-03-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/tokens-api-v2021-03-01-reference))
     ```php

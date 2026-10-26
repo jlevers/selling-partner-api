@@ -114,6 +114,11 @@ class SellerConnector extends SellingPartnerApi
         return new FinancesV20240619\Api($this);
     }
 
+    public function financeRemittanceV20260317(): FinanceRemittanceV20260317\Api
+    {
+	return new FinanceRemittanceV20260317\Api($this);
+    }
+
     public function financesV0(): FinancesV0\Api
     {
         return new FinancesV0\Api($this);
@@ -237,6 +242,11 @@ class SellerConnector extends SellingPartnerApi
     public function supplySourcesV20200701(): SupplySourcesV20200701\Api
     {
         return new SupplySourcesV20200701\Api($this);
+    }
+
+    public function supportV20250201(): SupportV20250201\Api
+    {
+	return new SupportV20250201\Api($this);
     }
 
     public function tokensV20210301(): TokensV20210301\Api

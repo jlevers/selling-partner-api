@@ -1,0 +1,1360 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "The Selling Partner API for Finance Remittance",
+        "description": "The Selling Partner API for Finance Remittance provides programmatic access to selling partner payment remittance data, including remittance summaries and detailed line items.",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "2026-03-17"
+    },
+    "servers": [
+        {
+            "url": "https://sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/finances/remittances/2026-03-17/remittances": {
+            "get": {
+                "description": "Returns a list of remittance summaries for the specified Amazon store, filtered by date range. Results are paginated.",
+                "operationId": "getRemittanceHeaders",
+                "parameters": [
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The `marketplaceId` is a globally unique identifier used to specify which Amazon store a request is targeting. For more information, refer to [Store Identifiers](https://developer-docs.amazon/sp-api/docs/store-identifiers).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "ATVPDKIKX0DER"
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "The earliest payment date for remittances to include in the response. Dates are in ISO 8601 date-time format. The default is 30 days prior to the time of the request. The minimum start date is one year ago from the current date.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "2026-03-01T00:00:00Z"
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "The latest payment date for remittances to include in the response. Dates are in ISO 8601 date-time format. The default is the current date-time. The maximum date range between `startDate` and `endDate` is 90 days.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "2026-03-17T00:00:00Z"
+                    },
+                    {
+                        "name": "nextToken",
+                        "in": "query",
+                        "description": "A token to fetch the next page of results. Use the value returned in the previous response.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "xsd9fhsakl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetRemittancesResponse"
+                                },
+                                "example": {
+                                    "remittances": [
+                                        {
+                                            "paymentDate": "2026-01-14T00:00:00Z",
+                                            "paymentNumber": "355522363",
+                                            "uniquePaymentId": "756473657",
+                                            "exchangeRate": 1,
+                                            "paymentAmount": {
+                                                "currencyCode": "EUR",
+                                                "currencyAmount": 3.5
+                                            },
+                                            "paymentAmountInInvoiceCurrency": {
+                                                "currencyCode": "EUR",
+                                                "currencyAmount": 3.5
+                                            },
+                                            "paymentMethod": "EFT",
+                                            "remittanceStatus": "SUCCESSFUL",
+                                            "lineItemCount": 1,
+                                            "relatedIdentifiers": [
+                                                {
+                                                    "relatedIdentifierName": "VENDOR_CODE",
+                                                    "relatedIdentifierValue": [
+                                                        "VENDOR01"
+                                                    ]
+                                                },
+                                                {
+                                                    "relatedIdentifierName": "PAYEE_CODE",
+                                                    "relatedIdentifierValue": [
+                                                        "ABC12"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "paymentDate": "2026-01-05T00:00:00Z",
+                                            "paymentNumber": "354651630",
+                                            "uniquePaymentId": "756473658",
+                                            "exchangeRate": 1,
+                                            "paymentAmount": {
+                                                "currencyCode": "EUR",
+                                                "currencyAmount": 3386.79
+                                            },
+                                            "paymentAmountInInvoiceCurrency": {
+                                                "currencyCode": "EUR",
+                                                "currencyAmount": 3386.79
+                                            },
+                                            "paymentMethod": "EFT",
+                                            "remittanceStatus": "SUCCESSFUL",
+                                            "lineItemCount": 5,
+                                            "relatedIdentifiers": [
+                                                {
+                                                    "relatedIdentifierName": "VENDOR_CODE",
+                                                    "relatedIdentifierValue": [
+                                                        "VENDOR01"
+                                                    ]
+                                                },
+                                                {
+                                                    "relatedIdentifierName": "PAYEE_CODE",
+                                                    "relatedIdentifierValue": [
+                                                        "ABC12"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "nextToken": "seed-token-abc123",
+                                    "numOfRecords": 2
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "marketplaceId": {
+                                                "value": "valid-id-123"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "remittances": [
+                                            {
+                                                "paymentDate": "2026-01-14T00:00:00Z",
+                                                "paymentNumber": "355522363",
+                                                "uniquePaymentId": "756473657",
+                                                "exchangeRate": 1,
+                                                "paymentAmount": {
+                                                    "currencyCode": "EUR",
+                                                    "currencyAmount": 3.5
+                                                },
+                                                "paymentAmountInInvoiceCurrency": {
+                                                    "currencyCode": "EUR",
+                                                    "currencyAmount": 3.5
+                                                },
+                                                "paymentMethod": "EFT",
+                                                "remittanceStatus": "SUCCESSFUL",
+                                                "lineItemCount": 1,
+                                                "relatedIdentifiers": [
+                                                    {
+                                                        "relatedIdentifierName": "VENDOR_CODE",
+                                                        "relatedIdentifierValue": [
+                                                            "VENDOR01"
+                                                        ]
+                                                    },
+                                                    {
+                                                        "relatedIdentifierName": "PAYEE_CODE",
+                                                        "relatedIdentifierValue": [
+                                                            "ABC12"
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "paymentDate": "2026-01-05T00:00:00Z",
+                                                "paymentNumber": "354651630",
+                                                "uniquePaymentId": "756473658",
+                                                "exchangeRate": 1,
+                                                "paymentAmount": {
+                                                    "currencyCode": "EUR",
+                                                    "currencyAmount": 3386.79
+                                                },
+                                                "paymentAmountInInvoiceCurrency": {
+                                                    "currencyCode": "EUR",
+                                                    "currencyAmount": 3386.79
+                                                },
+                                                "paymentMethod": "EFT",
+                                                "remittanceStatus": "SUCCESSFUL",
+                                                "lineItemCount": 5,
+                                                "relatedIdentifiers": [
+                                                    {
+                                                        "relatedIdentifierName": "VENDOR_CODE",
+                                                        "relatedIdentifierValue": [
+                                                            "VENDOR01"
+                                                        ]
+                                                    },
+                                                    {
+                                                        "relatedIdentifierName": "PAYEE_CODE",
+                                                        "relatedIdentifierValue": [
+                                                            "ABC12"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "nextToken": "seed-token-abc123",
+                                        "numOfRecords": 2
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "InvalidInput",
+                                            "message": "Invalid input provided.",
+                                            "details": "The marketplaceId field is required."
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "marketplaceId": {
+                                                "value": ""
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid input provided."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "Unauthorized",
+                                            "message": "Access to the resource is forbidden.",
+                                            "details": "The selling partner account is not authorized to access this resource."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "NotFound",
+                                            "message": "The requested resource does not exist.",
+                                            "details": "No remittance found for the specified identifier."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "RequestTooLarge",
+                                            "message": "The request payload exceeds the maximum allowed size."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "UnsupportedMediaType",
+                                            "message": "The request payload format is not supported."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "QuotaExceeded",
+                                            "message": "You have exceeded your rate limit for this operation.",
+                                            "details": "Retry after the number of seconds specified in the Retry-After header."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "InternalFailure",
+                                            "message": "An unexpected error occurred. Please try again later."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "ServiceUnavailable",
+                                            "message": "The service is temporarily unavailable. Please try again later.",
+                                            "details": "The server is currently unable to handle the request due to temporary overloading or maintenance."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "FinanceRemittanceV20260317"
+                ]
+            }
+        },
+        "/finances/remittances/2026-03-17/remittances/{uniquePaymentId}": {
+            "get": {
+                "description": "Returns detailed line items for a specific remittance. Results are paginated.",
+                "operationId": "getRemittance",
+                "parameters": [
+                    {
+                        "name": "uniquePaymentId",
+                        "in": "path",
+                        "description": "The unique identifier for the payment.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "756473657"
+                    },
+                    {
+                        "name": "marketplaceId",
+                        "in": "query",
+                        "description": "The `marketplaceId` is a globally unique identifier used to specify which Amazon store a request is targeting. For more information, refer to [Store Identifiers](https://developer-docs.amazon/sp-api/docs/store-identifiers).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "ATVPDKIKX0DER"
+                    },
+                    {
+                        "name": "nextTokenForLineItems",
+                        "in": "query",
+                        "description": "A token to fetch the next page of results. Use the value returned in the previous response.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "xsd9fhsakl"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetRemittanceResponse"
+                                },
+                                "example": {
+                                    "remittanceHeader": {
+                                        "paymentDate": "2026-01-14T00:00:00Z",
+                                        "paymentNumber": "355522363",
+                                        "uniquePaymentId": "756473657",
+                                        "exchangeRate": 1,
+                                        "paymentAmount": {
+                                            "currencyCode": "EUR",
+                                            "currencyAmount": 3.5
+                                        },
+                                        "paymentAmountInInvoiceCurrency": {
+                                            "currencyCode": "EUR",
+                                            "currencyAmount": 3.5
+                                        },
+                                        "paymentMethod": "EFT",
+                                        "remittanceStatus": "SUCCESSFUL",
+                                        "lineItemCount": 1,
+                                        "relatedIdentifiers": [
+                                            {
+                                                "relatedIdentifierName": "VENDOR_CODE",
+                                                "relatedIdentifierValue": [
+                                                    "VENDOR01"
+                                                ]
+                                            },
+                                            {
+                                                "relatedIdentifierName": "PAYEE_CODE",
+                                                "relatedIdentifierValue": [
+                                                    "ABC12"
+                                                ]
+                                            }
+                                        ],
+                                        "countryCode": "DE"
+                                    },
+                                    "nextTokenForLineItems": "seed-token-def456",
+                                    "remittanceItems": [
+                                        {
+                                            "invoiceNumber": "INV-2026-00142",
+                                            "invoiceIssueDate": "2026-01-10T00:00:00Z",
+                                            "withholdingAmount": {
+                                                "currencyCode": "EUR",
+                                                "currencyAmount": 0
+                                            },
+                                            "totalAmount": {
+                                                "currencyCode": "EUR",
+                                                "currencyAmount": 3.5
+                                            },
+                                            "totalAmountBreakdown": [
+                                                {
+                                                    "breakdownType": "InvoiceAmount",
+                                                    "breakdownAmount": {
+                                                        "currencyCode": "EUR",
+                                                        "currencyAmount": 3.5
+                                                    }
+                                                },
+                                                {
+                                                    "breakdownType": "TaxAmount",
+                                                    "breakdownAmount": {
+                                                        "currencyCode": "EUR",
+                                                        "currencyAmount": 0
+                                                    }
+                                                }
+                                            ],
+                                            "netAmountPaid": {
+                                                "currencyCode": "EUR",
+                                                "currencyAmount": 3.5
+                                            },
+                                            "netAmountPaidBreakdown": [
+                                                {
+                                                    "breakdownType": "AmountPaid",
+                                                    "breakdownAmount": {
+                                                        "currencyCode": "EUR",
+                                                        "currencyAmount": 3.5
+                                                    }
+                                                },
+                                                {
+                                                    "breakdownType": "TermsDiscountTaken",
+                                                    "breakdownAmount": {
+                                                        "currencyCode": "EUR",
+                                                        "currencyAmount": 0
+                                                    }
+                                                }
+                                            ],
+                                            "description": "Payment for goods received",
+                                            "paymentTerms": "Net 30",
+                                            "invoiceType": "Standard",
+                                            "relatedItemIdentifiers": [
+                                                {
+                                                    "relatedIdentifierName": "VENDOR_CODE",
+                                                    "relatedIdentifierValue": [
+                                                        "VENDOR01"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "uniquePaymentId": {
+                                                "value": "756473657"
+                                            },
+                                            "marketplaceId": {
+                                                "value": "valid-id-123"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "remittanceHeader": {
+                                            "paymentDate": "2026-01-14T00:00:00Z",
+                                            "paymentNumber": "355522363",
+                                            "uniquePaymentId": "756473657",
+                                            "exchangeRate": 1,
+                                            "paymentAmount": {
+                                                "currencyCode": "EUR",
+                                                "currencyAmount": 3.5
+                                            },
+                                            "paymentAmountInInvoiceCurrency": {
+                                                "currencyCode": "EUR",
+                                                "currencyAmount": 3.5
+                                            },
+                                            "paymentMethod": "EFT",
+                                            "remittanceStatus": "SUCCESSFUL",
+                                            "lineItemCount": 1,
+                                            "relatedIdentifiers": [
+                                                {
+                                                    "relatedIdentifierName": "VENDOR_CODE",
+                                                    "relatedIdentifierValue": [
+                                                        "VENDOR01"
+                                                    ]
+                                                },
+                                                {
+                                                    "relatedIdentifierName": "PAYEE_CODE",
+                                                    "relatedIdentifierValue": [
+                                                        "ABC12"
+                                                    ]
+                                                }
+                                            ],
+                                            "countryCode": "DE"
+                                        },
+                                        "nextTokenForLineItems": "seed-token-def456",
+                                        "remittanceItems": [
+                                            {
+                                                "invoiceNumber": "INV-2026-00142",
+                                                "invoiceIssueDate": "2026-01-10T00:00:00Z",
+                                                "withholdingAmount": {
+                                                    "currencyCode": "EUR",
+                                                    "currencyAmount": 0
+                                                },
+                                                "totalAmount": {
+                                                    "currencyCode": "EUR",
+                                                    "currencyAmount": 3.5
+                                                },
+                                                "totalAmountBreakdown": [
+                                                    {
+                                                        "breakdownType": "InvoiceAmount",
+                                                        "breakdownAmount": {
+                                                            "currencyCode": "EUR",
+                                                            "currencyAmount": 3.5
+                                                        }
+                                                    },
+                                                    {
+                                                        "breakdownType": "TaxAmount",
+                                                        "breakdownAmount": {
+                                                            "currencyCode": "EUR",
+                                                            "currencyAmount": 0
+                                                        }
+                                                    }
+                                                ],
+                                                "netAmountPaid": {
+                                                    "currencyCode": "EUR",
+                                                    "currencyAmount": 3.5
+                                                },
+                                                "netAmountPaidBreakdown": [
+                                                    {
+                                                        "breakdownType": "AmountPaid",
+                                                        "breakdownAmount": {
+                                                            "currencyCode": "EUR",
+                                                            "currencyAmount": 3.5
+                                                        }
+                                                    },
+                                                    {
+                                                        "breakdownType": "TermsDiscountTaken",
+                                                        "breakdownAmount": {
+                                                            "currencyCode": "EUR",
+                                                            "currencyAmount": 0
+                                                        }
+                                                    }
+                                                ],
+                                                "description": "Payment for goods received",
+                                                "paymentTerms": "Net 30",
+                                                "invoiceType": "Standard",
+                                                "relatedItemIdentifiers": [
+                                                    {
+                                                        "relatedIdentifierName": "VENDOR_CODE",
+                                                        "relatedIdentifierValue": [
+                                                            "VENDOR01"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "InvalidInput",
+                                            "message": "Invalid input provided.",
+                                            "details": "The marketplaceId field is required."
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "uniquePaymentId": {
+                                                "value": "-1"
+                                            },
+                                            "marketplaceId": {
+                                                "value": ""
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid input provided."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "Unauthorized",
+                                            "message": "Access to the resource is forbidden.",
+                                            "details": "The selling partner account is not authorized to access this resource."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "NotFound",
+                                            "message": "The requested resource does not exist.",
+                                            "details": "No remittance found for the specified identifier."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "RequestTooLarge",
+                                            "message": "The request payload exceeds the maximum allowed size."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "UnsupportedMediaType",
+                                            "message": "The request payload format is not supported."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "QuotaExceeded",
+                                            "message": "You have exceeded your rate limit for this operation.",
+                                            "details": "Retry after the number of seconds specified in the Retry-After header."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "InternalFailure",
+                                            "message": "An unexpected error occurred. Please try again later."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                },
+                                "example": {
+                                    "errors": [
+                                        {
+                                            "code": "ServiceUnavailable",
+                                            "message": "The service is temporarily unavailable. Please try again later.",
+                                            "details": "The server is currently unable to handle the request due to temporary overloading or maintenance."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "FinanceRemittanceV20260317"
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorList": {
+                "required": [
+                    "errors"
+                ],
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "description": "A list of errors.",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                },
+                "description": "A list of error responses returned when a request is unsuccessful."
+            },
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional details that can help the caller understand or fix the issue."
+                    }
+                },
+                "description": "Error response returned when the request is unsuccessful."
+            },
+            "RemittanceStatus": {
+                "type": "string",
+                "description": "The status of a remittance.",
+                "enum": [
+                    "IN_PROGRESS",
+                    "SUCCESSFUL",
+                    "FAILED"
+                ],
+                "x-example": "SUCCESSFUL",
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "IN_PROGRESS",
+                        "description": "The remittance is in progress."
+                    },
+                    {
+                        "value": "SUCCESSFUL",
+                        "description": "The remittance was completed successfully."
+                    },
+                    {
+                        "value": "FAILED",
+                        "description": "The remittance failed."
+                    }
+                ]
+            },
+            "RelatedIdentifier": {
+                "required": [
+                    "relatedIdentifierName",
+                    "relatedIdentifierValue"
+                ],
+                "type": "object",
+                "properties": {
+                    "relatedIdentifierName": {
+                        "type": "string",
+                        "description": "An enumerated set of related business identifier names.",
+                        "enum": [
+                            "VENDOR_CODE",
+                            "PAYEE_CODE"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "VENDOR_CODE",
+                                "description": "Vendor code associated with the remittance."
+                            },
+                            {
+                                "value": "PAYEE_CODE",
+                                "description": "Payee code associated with the remittance."
+                            }
+                        ]
+                    },
+                    "relatedIdentifierValue": {
+                        "type": "array",
+                        "description": "The corresponding values for `relatedIdentifierName`.",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "description": "A related business identifier for the transaction.",
+                "example": {
+                    "relatedIdentifierName": "VENDOR_CODE",
+                    "relatedIdentifierValue": [
+                        "VENDOR01"
+                    ]
+                }
+            },
+            "RelatedItemIdentifier": {
+                "required": [
+                    "relatedIdentifierName",
+                    "relatedIdentifierValue"
+                ],
+                "type": "object",
+                "properties": {
+                    "relatedIdentifierName": {
+                        "type": "string",
+                        "description": "An enumerated set of related business identifier names for a line item.",
+                        "enum": [
+                            "VENDOR_CODE"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "VENDOR_CODE",
+                                "description": "Vendor codes associated with this line item."
+                            }
+                        ]
+                    },
+                    "relatedIdentifierValue": {
+                        "type": "array",
+                        "description": "The corresponding values for `relatedIdentifierName`.",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "description": "A related business identifier for a remittance line item.",
+                "example": {
+                    "relatedIdentifierName": "VENDOR_CODE",
+                    "relatedIdentifierValue": [
+                        "VENDOR01"
+                    ]
+                }
+            },
+            "BigDecimal": {
+                "type": "number",
+                "description": "Fields with a schema type of `BigDecimal` are a signed decimal number (for example `currencyAmount`)."
+            },
+            "Currency": {
+                "required": [
+                    "currencyAmount",
+                    "currencyCode"
+                ],
+                "type": "object",
+                "properties": {
+                    "currencyCode": {
+                        "type": "string",
+                        "description": "The three-digit currency code in ISO 4217 format."
+                    },
+                    "currencyAmount": {
+                        "$ref": "#/components/schemas/BigDecimal"
+                    }
+                },
+                "description": "A currency amount with the associated currency code."
+            },
+            "Breakdown": {
+                "required": [
+                    "breakdownAmount",
+                    "breakdownType"
+                ],
+                "type": "object",
+                "properties": {
+                    "breakdownType": {
+                        "type": "string",
+                        "description": "The type of sub-component.\n\n**Possible values for `totalAmountBreakdown`:**\n\n* `InvoiceAmount`: The amount on the invoice.\n* `TaxAmount`: The tax amount on the invoice.\n\n**Possible values for `netAmountPaidBreakdown`:**\n\n* `AmountPaid`: The amount paid for the line item in the remittance.\n* `TermsDiscountTaken`: The discount applied based on vendor payment terms."
+                    },
+                    "breakdownAmount": {
+                        "$ref": "#/components/schemas/Currency"
+                    }
+                },
+                "description": "A sub-component of a monetary amount.",
+                "example": {
+                    "breakdownType": "TaxAmount",
+                    "breakdownAmount": {
+                        "currencyCode": "EUR",
+                        "currencyAmount": 0
+                    }
+                }
+            },
+            "RemittanceHeader": {
+                "required": [
+                    "paymentAmount",
+                    "paymentDate",
+                    "remittanceStatus",
+                    "uniquePaymentId"
+                ],
+                "type": "object",
+                "properties": {
+                    "paymentDate": {
+                        "type": "string",
+                        "description": "The date of the payment in ISO 8601 date-time format.",
+                        "format": "date-time"
+                    },
+                    "paymentNumber": {
+                        "type": "string",
+                        "description": "The external payment reference number associated with the remittance. Vendors can use this identifier to search for payment information."
+                    },
+                    "uniquePaymentId": {
+                        "type": "string",
+                        "description": "The unique internal identifier for the payment record in the remittance system."
+                    },
+                    "exchangeRate": {
+                        "$ref": "#/components/schemas/BigDecimal"
+                    },
+                    "paymentAmount": {
+                        "$ref": "#/components/schemas/Currency"
+                    },
+                    "paymentAmountInInvoiceCurrency": {
+                        "$ref": "#/components/schemas/Currency"
+                    },
+                    "paymentMethod": {
+                        "type": "string",
+                        "description": "The method used for the payment."
+                    },
+                    "remittanceStatus": {
+                        "$ref": "#/components/schemas/RemittanceStatus"
+                    },
+                    "lineItemCount": {
+                        "type": "integer",
+                        "description": "The number of line items in the remittance.",
+                        "format": "int32"
+                    },
+                    "relatedIdentifiers": {
+                        "type": "array",
+                        "description": "A list of related business identifiers for the remittance.",
+                        "items": {
+                            "$ref": "#/components/schemas/RelatedIdentifier"
+                        }
+                    },
+                    "countryCode": {
+                        "type": "string",
+                        "description": "The country code associated with the remittance in ISO 3166-1 alpha-2 format."
+                    }
+                },
+                "description": "Summary information for a remittance payment."
+            },
+            "RemittanceItem": {
+                "type": "object",
+                "properties": {
+                    "invoiceNumber": {
+                        "type": "string",
+                        "description": "The invoice number."
+                    },
+                    "invoiceIssueDate": {
+                        "type": "string",
+                        "description": "The invoice issue date in ISO 8601 date-time format.",
+                        "format": "date-time"
+                    },
+                    "withholdingAmount": {
+                        "$ref": "#/components/schemas/Currency"
+                    },
+                    "totalAmount": {
+                        "$ref": "#/components/schemas/Currency"
+                    },
+                    "totalAmountBreakdown": {
+                        "type": "array",
+                        "description": "The breakdown of `totalAmount` into sub-components.\n\n**Possible `breakdownType` values:**\n\n* `InvoiceAmount`: The amount on the invoice.\n* `TaxAmount`: The tax amount on the invoice.",
+                        "items": {
+                            "$ref": "#/components/schemas/Breakdown"
+                        }
+                    },
+                    "netAmountPaid": {
+                        "$ref": "#/components/schemas/Currency"
+                    },
+                    "netAmountPaidBreakdown": {
+                        "type": "array",
+                        "description": "The breakdown of `netAmountPaid` into sub-components.\n\n**Possible `breakdownType` values:**\n\n* `AmountPaid`: The amount paid for the line item in the remittance.\n* `TermsDiscountTaken`: The discount applied based on vendor payment terms. For example, early payment terms such as `1% 30, NET 60` allow a percentage discount on the invoice value when payment is made within the specified period.",
+                        "items": {
+                            "$ref": "#/components/schemas/Breakdown"
+                        }
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "A description of the line item."
+                    },
+                    "paymentTerms": {
+                        "type": "string",
+                        "description": "The payment terms."
+                    },
+                    "invoiceType": {
+                        "type": "string",
+                        "description": "The type of invoice."
+                    },
+                    "relatedItemIdentifiers": {
+                        "type": "array",
+                        "description": "A list of related business identifiers for the line item.",
+                        "items": {
+                            "$ref": "#/components/schemas/RelatedItemIdentifier"
+                        }
+                    }
+                },
+                "description": "Detailed line item information for a remittance."
+            },
+            "GetRemittanceResponse": {
+                "type": "object",
+                "properties": {
+                    "remittanceHeader": {
+                        "$ref": "#/components/schemas/RemittanceHeader"
+                    },
+                    "nextTokenForLineItems": {
+                        "type": "string",
+                        "description": "A token to fetch the next page of line item results. Present when more results are available."
+                    },
+                    "remittanceItems": {
+                        "type": "array",
+                        "description": "A list of remittance line items.",
+                        "items": {
+                            "$ref": "#/components/schemas/RemittanceItem"
+                        }
+                    }
+                },
+                "description": "The response for the `getRemittance` operation."
+            },
+            "GetRemittancesResponse": {
+                "type": "object",
+                "properties": {
+                    "remittances": {
+                        "type": "array",
+                        "description": "A list of remittance summaries.",
+                        "items": {
+                            "$ref": "#/components/schemas/RemittanceHeader"
+                        }
+                    },
+                    "nextToken": {
+                        "type": "string",
+                        "description": "A token to fetch the next page of results. Present when more results are available."
+                    },
+                    "numOfRecords": {
+                        "type": "integer",
+                        "description": "The total number of records across all pages.",
+                        "format": "int32"
+                    }
+                },
+                "description": "The response for the `getRemittanceHeaders` operation."
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

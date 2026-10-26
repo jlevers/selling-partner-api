@@ -160,6 +160,15 @@
                 }
             ]
         },
+	"finance-remittance": {
+	    "name": "Finance Remittance",
+	    "versions": [
+		{
+		    "version": "2026-03-17",
+		    "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/refs/heads/main/models/finance-remittance-api-model/financeRemittance-2026-03-17.json"
+		}
+	    ]
+	},
         "invoices": {
             "name": "Invoices",
             "versions": [
@@ -357,6 +366,15 @@
                 }
             ]
         },
+	"support": {
+	    "name": "Support",
+	    "versions": [
+		{
+		    "version": "2025-02-01",
+		    "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/refs/heads/main/models/support-api-model/support_2025-02-01.json"
+		}
+	    ]
+	},
         "tokens": {
             "name": "Tokens",
             "versions": [

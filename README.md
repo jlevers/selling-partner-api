@@ -220,6 +220,14 @@ use SellingPartnerApi\SellingPartnerApi;
 $sellerConnector = SellingPartnerApi::seller(/* ... */);
 ```
 
+* **Action Items API (v2026-06-01)** ([docs](https://developer-docs.amazon/sp-api/docs/action-items-api))
+    ```php
+    $actionItemsApi = $sellerConnector->actionItemsApiV20260601();
+    ```
+* **Action Plans API (v2026-06-01)** ([docs](https://developer-docs.amazon/sp-api/docs/action-plans-api-overview))
+    ```php
+    $actionItemsApi = $sellerConnector->actionPlansApiV20260601();
+    ```
 * **Amazon Warehousing and Distribution API (v2024-05-09)** ([docs](https://developer-docs.amazon.com/sp-api/docs/awd_2024-05-09-reference))
     ```php
     $amazonWarehousingAndDistributionApi = $sellerConnector->amazonWarehousingAndDistributionV20240509();
@@ -327,6 +335,10 @@ $sellerConnector = SellingPartnerApi::seller(/* ... */);
 * **Messaging API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/merchant-fulfillment-api-v0-reference))
     ```php
     $messagingApi = $sellerConnector->messagingV1();
+    ```
+* **Messaging API (v2026-04-20)** ([docs](https://developer-docs.amazon/sp-api/docs/messaging-automations-api))
+    ```php
+    $messagingApi = $sellerConnector->messagingV20260420();
     ```
 * **Notifications API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-reference))
     ```php

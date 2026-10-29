@@ -9,6 +9,16 @@ use SellingPartnerApi\SellingPartnerApi;
 
 class SellerConnector extends SellingPartnerApi
 {
+    public function actionItemsV20260601(): ActionItemsV20260601\Api
+    {
+        return new ActionItemsV20260601\Api($this);
+    }
+
+    public function actionPLansV20260601(): ActionPlansV20260601\Api
+    {
+        return new ActionPlansV20260601\Api($this);
+    }
+
     public function amazonWarehousingAndDistributionV20240509(): AmazonWarehousingAndDistributionV20240509\Api
     {
         return new AmazonWarehousingAndDistributionV20240509\Api($this);
@@ -116,7 +126,7 @@ class SellerConnector extends SellingPartnerApi
 
     public function financeRemittanceV20260317(): FinanceRemittanceV20260317\Api
     {
-	return new FinanceRemittanceV20260317\Api($this);
+        return new FinanceRemittanceV20260317\Api($this);
     }
 
     public function financesV0(): FinancesV0\Api
@@ -152,6 +162,11 @@ class SellerConnector extends SellingPartnerApi
     public function messagingV1(): MessagingV1\Api
     {
         return new MessagingV1\Api($this);
+    }
+
+    public function messagingV20260420(): MessagingV20260420\Api
+    {
+        return new MessagingV20260420\Api($this);
     }
 
     public function notificationsV1(): NotificationsV1\Api
@@ -246,7 +261,7 @@ class SellerConnector extends SellingPartnerApi
 
     public function supportV20250201(): SupportV20250201\Api
     {
-	return new SupportV20250201\Api($this);
+        return new SupportV20250201\Api($this);
     }
 
     public function tokensV20210301(): TokensV20210301\Api

@@ -1,5 +1,23 @@
 {
     "seller": {
+	"action-items": {
+	    "name": "Action Items",
+	    "versions": [
+		{
+		    "version": "2026-06-01",
+		    "url": "https://github.com/amzn/selling-partner-api-models/raw/refs/heads/main/models/action-items-api-model/actionItems_2026-06-01.json"
+		}
+	    ]
+	},
+	"action-plans": {
+	    "name": "Action Plans",
+	    "versions": [
+		{
+		    "version": "2026-06-01",
+		    "url": "https://github.com/amzn/selling-partner-api-models/raw/refs/heads/main/models/action-plans-api-model/actionPlans_2026-06-01.json"
+		}
+	    ]
+	},
         "amazon-warehousing-distribution": {
             "name": "Amazon Warehousing and Distribution",
             "versions": [
@@ -215,7 +233,11 @@
                 {
                     "version": 1,
                     "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/messaging-api-model/messaging.json"
-                }
+                },
+		{
+		    "version": "2026-04-20",
+		    "url": "https://github.com/amzn/selling-partner-api-models/raw/refs/heads/main/models/messaging-api-model/messaging_2026-04-20.json"
+		}
             ]
         },
         "notifications": {

@@ -1,0 +1,2305 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "The Selling Partner API for Action Plans",
+        "description": "The Action Plans API allows you to create, configure, and execute action plans from pre-defined templates or custom-built workflows.",
+        "contact": {
+            "name": "Selling Partner API Developer Support",
+            "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
+        },
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "version": "2026-06-01"
+    },
+    "servers": [
+        {
+            "url": "https://sellingpartnerapi-na.amazon.com/"
+        }
+    ],
+    "paths": {
+        "/actionPlans/2026-06-01/plans/{actionPlanId}": {
+            "get": {
+                "tags": [
+                    "ActionPlansV20260601"
+                ],
+                "summary": "Get an action plan.",
+                "description": "Returns an action plan by ID. Use `includedData=steps` to include the plan's steps with their resolved input and output values.",
+                "operationId": "getActionPlan",
+                "parameters": [
+                    {
+                        "name": "actionPlanId",
+                        "in": "path",
+                        "description": "The unique identifier of the action plan (UUID).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "e5f6a7b8-89ab-cdef-0123-456789abcdef"
+                    },
+                    {
+                        "name": "locale",
+                        "in": "query",
+                        "description": "The locale for localized content, as an ISO 639 language code and ISO 3166 country code separated by a hyphen. Defaults to `en-US`.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "en-US"
+                    },
+                    {
+                        "name": "includedData",
+                        "in": "query",
+                        "description": "Additional data to include in the response. Include `steps` to include the plan's steps with their resolved input and output values.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "steps"
+                                ]
+                            },
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "value": "steps",
+                                    "description": "Include the plan's steps with their resolved input and output values."
+                                }
+                            ]
+                        },
+                        "example": "steps",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "steps",
+                                "description": "Include the plan's steps with their resolved input and output values."
+                            }
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetActionPlanResponse"
+                                },
+                                "example": {
+                                    "plan": {
+                                        "actionPlanId": "e5f6a7b8-89ab-cdef-0123-456789abcdef",
+                                        "type": {
+                                            "definition": {
+                                                "displayName": {
+                                                    "text": "Cross-store expansion (FBA)",
+                                                    "locale": "en-US"
+                                                },
+                                                "inputs": {
+                                                    "sourceMarketplaceId": {
+                                                        "displayName": {
+                                                            "text": "Source marketplace ID",
+                                                            "locale": "en-US"
+                                                        }
+                                                    },
+                                                    "targetMarketplaceId": {
+                                                        "displayName": {
+                                                            "text": "Target marketplace ID",
+                                                            "locale": "en-US"
+                                                        }
+                                                    }
+                                                },
+                                                "planDefinitionId": "CROSS_STORE_EXPANSION_FBA"
+                                            }
+                                        },
+                                        "references": {
+                                            "actionItems": [
+                                                {
+                                                    "actionItemId": "ebf5caf1-8cfb-43bd-a13b-ef91bdb0d930",
+                                                    "resolution": {
+                                                        "definition": {
+                                                            "resolutionDefinitionId": "CROSS_STORE_EXPANSION_FBA"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "displayName": {
+                                            "text": "Expand FBA to DE \u2014 Order #12345",
+                                            "locale": "en-US"
+                                        },
+                                        "status": [
+                                            "DONE"
+                                        ],
+                                        "inputs": {
+                                            "sourceMarketplaceId": {
+                                                "value": [
+                                                    "A1PA6795UKMFR9"
+                                                ]
+                                            },
+                                            "targetMarketplaceId": {
+                                                "value": [
+                                                    "A13V1IB3VIYZZH"
+                                                ]
+                                            }
+                                        },
+                                        "createdDate": "2025-07-07T14:55:00Z",
+                                        "lastUpdatedDate": "2025-07-07T17:00:00Z",
+                                        "acceptedDate": "2025-07-07T15:00:00Z",
+                                        "startedDate": "2025-07-07T15:01:00Z",
+                                        "completedDate": "2025-07-07T17:00:00Z",
+                                        "steps": [
+                                            {
+                                                "stepId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+                                                "mode": "AUTOMATED",
+                                                "definition": {
+                                                    "displayName": {
+                                                        "text": "Configure Pricing Settings",
+                                                        "locale": "en-US"
+                                                    },
+                                                    "inputs": {
+                                                        "sourceMarketplaceId": {
+                                                            "displayName": {
+                                                                "text": "Source marketplace ID",
+                                                                "locale": "en-US"
+                                                            }
+                                                        },
+                                                        "targetMarketplaceId": {
+                                                            "displayName": {
+                                                                "text": "Target marketplace ID",
+                                                                "locale": "en-US"
+                                                            }
+                                                        }
+                                                    },
+                                                    "outputs": {
+                                                        "pricingRuleId": {
+                                                            "displayName": {
+                                                                "text": "Pricing rule ID",
+                                                                "locale": "en-US"
+                                                            }
+                                                        }
+                                                    },
+                                                    "stepDefinitionId": "CONFIGURE_PRICING_SETTINGS"
+                                                },
+                                                "description": {
+                                                    "text": "Set up cross-store pricing rules linking pricing in the source and target marketplaces.",
+                                                    "locale": "en-US"
+                                                },
+                                                "dependencies": [],
+                                                "status": [
+                                                    "COMPLETED",
+                                                    "SUCCEEDED"
+                                                ],
+                                                "startedDate": "2025-07-07T15:01:00Z",
+                                                "lastUpdatedDate": "2025-07-07T15:15:00Z",
+                                                "completedDate": "2025-07-07T15:15:00Z",
+                                                "inputs": {
+                                                    "sourceMarketplaceId": {
+                                                        "value": [
+                                                            "A1PA6795UKMFR9"
+                                                        ]
+                                                    },
+                                                    "targetMarketplaceId": {
+                                                        "value": [
+                                                            "A13V1IB3VIYZZH"
+                                                        ]
+                                                    }
+                                                },
+                                                "outputs": {
+                                                    "pricingRuleId": {
+                                                        "value": [
+                                                            "PR-FR-XSTORE-001"
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "stepId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+                                                "mode": "AUTOMATED",
+                                                "definition": {
+                                                    "displayName": {
+                                                        "text": "Copy Offers",
+                                                        "locale": "en-US"
+                                                    },
+                                                    "inputs": {
+                                                        "targetMarketplaceId": {
+                                                            "displayName": {
+                                                                "text": "Target marketplace ID",
+                                                                "locale": "en-US"
+                                                            }
+                                                        },
+                                                        "fulfillmentChannel": {
+                                                            "displayName": {
+                                                                "text": "Fulfillment channel",
+                                                                "locale": "en-US"
+                                                            }
+                                                        },
+                                                        "pricingRuleId": {
+                                                            "displayName": {
+                                                                "text": "Pricing rule ID",
+                                                                "locale": "en-US"
+                                                            }
+                                                        }
+                                                    },
+                                                    "outputs": {
+                                                        "listings": {
+                                                            "displayName": {
+                                                                "text": "Listings",
+                                                                "locale": "en-US"
+                                                            }
+                                                        }
+                                                    },
+                                                    "stepDefinitionId": "COPY_OFFERS"
+                                                },
+                                                "description": {
+                                                    "text": "Publish offers in the target marketplace using Fulfillment by Amazon.",
+                                                    "locale": "en-US"
+                                                },
+                                                "dependencies": [
+                                                    "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+                                                ],
+                                                "status": [
+                                                    "COMPLETED",
+                                                    "SUCCEEDED"
+                                                ],
+                                                "startedDate": "2025-07-07T16:30:00Z",
+                                                "lastUpdatedDate": "2025-07-07T17:00:00Z",
+                                                "completedDate": "2025-07-07T17:00:00Z",
+                                                "inputs": {
+                                                    "targetMarketplaceId": {
+                                                        "value": [
+                                                            "A13V1IB3VIYZZH"
+                                                        ]
+                                                    },
+                                                    "fulfillmentChannel": {
+                                                        "value": [
+                                                            "FBA"
+                                                        ]
+                                                    },
+                                                    "pricingRuleId": {
+                                                        "value": [
+                                                            "PR-FR-XSTORE-001"
+                                                        ]
+                                                    }
+                                                },
+                                                "outputs": {
+                                                    "listings": {
+                                                        "value": [
+                                                            "LST-FR-001",
+                                                            "LST-FR-002"
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "actionItems": [
+                                            {
+                                                "type": {
+                                                    "classifications": [
+                                                        "ISSUE"
+                                                    ],
+                                                    "definition": {
+                                                        "typeDefinitionId": "MISSING_INPUT",
+                                                        "displayName": {
+                                                            "text": "Missing Input",
+                                                            "locale": "en-US"
+                                                        }
+                                                    }
+                                                },
+                                                "description": {
+                                                    "text": "Step 'Copy Offers' is missing value for sourceMarketplaceId input.",
+                                                    "locale": "en-US"
+                                                },
+                                                "references": {
+                                                    "steps": [
+                                                        {
+                                                            "stepId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+                                                            "attributeNames": [
+                                                                "sourceMarketplaceId"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "type": {
+                                                    "classifications": [
+                                                        "ISSUE"
+                                                    ],
+                                                    "definition": {
+                                                        "typeDefinitionId": "QUOTA_EXCEEDED",
+                                                        "displayName": {
+                                                            "text": "Quota Exceeded",
+                                                            "locale": "en-US"
+                                                        }
+                                                    }
+                                                },
+                                                "description": {
+                                                    "text": "Maximum concurrent plans reached.",
+                                                    "locale": "en-US"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "actionPlanId": {
+                                                "value": "e5f6a7b8-89ab-cdef-0123-456789abcdef"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "plan": {
+                                            "actionPlanId": "e5f6a7b8-89ab-cdef-0123-456789abcdef",
+                                            "status": [
+                                                "DONE"
+                                            ],
+                                            "displayName": {
+                                                "text": "Expand FBA to DE \u2014 Order #12345",
+                                                "locale": "en-US"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "actionPlanId": {
+                                                "value": "INVALID"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid actionPlanId format. Must be a valid UUID."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL"
+            }
+        },
+        "/actionPlans/2026-06-01/plans": {
+            "get": {
+                "tags": [
+                    "ActionPlansV20260601"
+                ],
+                "summary": "List action plans.",
+                "description": "Returns a paginated list of the seller's action plans, sorted newest first by `createdDate`. Multiple filters are combined with a logical AND. Multiple values in a single filter are combined with a logical OR.",
+                "operationId": "listActionPlans",
+                "parameters": [
+                    {
+                        "name": "statuses",
+                        "in": "query",
+                        "description": "Filters by plan status.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "DRAFT",
+                                    "PENDING_SELLING_PARTNER",
+                                    "PROCESSING",
+                                    "DONE",
+                                    "CANCELLED",
+                                    "PARTIAL"
+                                ]
+                            }
+                        },
+                        "example": "PROCESSING,DONE"
+                    },
+                    {
+                        "name": "planTemplateIds",
+                        "in": "query",
+                        "description": "Filters by plan template IDs. Multiple values allowed.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "example": "CROSS_STORE_EXPANSION_FBA"
+                    },
+                    {
+                        "name": "actionItemIds",
+                        "in": "query",
+                        "description": "Filters by associated action item IDs. Multiple values allowed.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "example": "ebf5caf1-8cfb-43bd-a13b-ef91bdb0d930"
+                    },
+                    {
+                        "name": "createdAfter",
+                        "in": "query",
+                        "description": "Plans created at or after this timestamp. Timestamp is in ISO 8601 format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "example": "2025-07-01T00:00:00Z"
+                    },
+                    {
+                        "name": "createdBefore",
+                        "in": "query",
+                        "description": "Plans created at or before this timestamp. Timestamp is in ISO 8601 format.",
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "example": "2025-07-31T23:59:59Z"
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "description": "Maximum number of results per page.",
+                        "schema": {
+                            "maximum": 20,
+                            "type": "integer",
+                            "default": 10
+                        },
+                        "example": 10
+                    },
+                    {
+                        "name": "pageToken",
+                        "in": "query",
+                        "description": "A token to retrieve a specific page of results. Pass the `nextToken` value from a previous response.\n\n**Note:** The `previousToken` value is not yet supported.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJsYXN0UGxhbklkIjoiYzFkMmUzZjQifQ=="
+                    },
+                    {
+                        "name": "locale",
+                        "in": "query",
+                        "description": "The locale for localized content, as an ISO 639 language code and ISO 3166 country code separated by a hyphen. Defaults to `en-US`.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "en-US"
+                    },
+                    {
+                        "name": "includedData",
+                        "in": "query",
+                        "description": "Additional data to return in the response. Specify `steps` to return each plan's steps with their resolved input and output values.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "steps",
+                                    "refinements"
+                                ]
+                            },
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "value": "steps",
+                                    "description": "Include each plan's steps with their resolved input and output values."
+                                },
+                                {
+                                    "value": "refinements",
+                                    "description": "Include search refinements (facets) for progressive filtering based on the current result set. This value is not yet supported."
+                                }
+                            ]
+                        },
+                        "example": "steps",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "steps",
+                                "description": "Include each plan's steps with their resolved input and output values."
+                            },
+                            {
+                                "value": "refinements",
+                                "description": "Include search refinements (facets) for progressive filtering based on the current result set. This value is not yet supported."
+                            }
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListActionPlansResponse"
+                                },
+                                "example": {
+                                    "actionPlans": [
+                                        {
+                                            "actionPlanId": "e5f6a7b8-89ab-cdef-0123-456789abcdef",
+                                            "type": {
+                                                "definition": {
+                                                    "planDefinitionId": "CROSS_STORE_EXPANSION_FBA",
+                                                    "displayName": {
+                                                        "text": "Cross-store expansion (FBA)",
+                                                        "locale": "en-US"
+                                                    }
+                                                }
+                                            },
+                                            "displayName": {
+                                                "text": "Expand FBA to DE \u2014 Order #12345",
+                                                "locale": "en-US"
+                                            },
+                                            "status": [
+                                                "PROCESSING"
+                                            ],
+                                            "inputs": {
+                                                "sourceMarketplaceId": {
+                                                    "value": [
+                                                        "A1PA6795UKMFR9"
+                                                    ]
+                                                },
+                                                "targetMarketplaceId": {
+                                                    "value": [
+                                                        "A13V1IB3VIYZZH"
+                                                    ]
+                                                }
+                                            },
+                                            "createdDate": "2025-07-07T14:55:00Z",
+                                            "lastUpdatedDate": "2025-07-07T16:00:00Z",
+                                            "startedDate": "2025-07-07T15:01:00Z"
+                                        }
+                                    ],
+                                    "numberOfResults": 5,
+                                    "pagination": {
+                                        "nextToken": "eyJsYXN0UGxhbklkIjoiYzFkMmUzZjQifQ=="
+                                    }
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {}
+                                    },
+                                    "response": {
+                                        "actionPlans": [
+                                            {
+                                                "actionPlanId": "e5f6a7b8-89ab-cdef-0123-456789abcdef",
+                                                "status": [
+                                                    "PROCESSING"
+                                                ]
+                                            }
+                                        ],
+                                        "numberOfResults": 1,
+                                        "pagination": {}
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "statuses": {
+                                                "value": [
+                                                    "INVALID"
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid status value: INVALID."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource specified does not exist.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL"
+            },
+            "post": {
+                "tags": [
+                    "ActionPlansV20260601"
+                ],
+                "summary": "Create an action plan.",
+                "description": "Creates an action plan from a template. Use `mode=PREVIEW` to return the plan without creating or executing it. Omit `mode` to create the plan and submit it for execution.",
+                "operationId": "createActionPlan",
+                "parameters": [
+                    {
+                        "name": "mode",
+                        "in": "query",
+                        "description": "The mode of operation. Set `PREVIEW` to return the plan without creating or executing it. Omit `mode` to create the plan and submit it for execution.",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "PREVIEW"
+                            ],
+                            "x-docgen-enum-table-extension": [
+                                {
+                                    "value": "PREVIEW",
+                                    "description": "Returns the plan without creating or executing it."
+                                }
+                            ]
+                        },
+                        "example": "PREVIEW",
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "PREVIEW",
+                                "description": "Returns the plan without creating or executing it."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "locale",
+                        "in": "query",
+                        "description": "The locale for localized content, as an ISO 639 language code and ISO 3166 country code separated by a hyphen. Defaults to `en-US`.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "en-US"
+                    }
+                ],
+                "requestBody": {
+                    "description": "The request for action plan creation.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateActionPlanRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "If `mode=PREVIEW` is set, returns a preview of the action plan. Otherwise, returns the created plan, which is submitted for execution.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetActionPlanResponse"
+                                },
+                                "example": {
+                                    "plan": {
+                                        "actionPlanId": "e5f6a7b8-89ab-cdef-0123-456789abcdef",
+                                        "status": [
+                                            "DRAFT"
+                                        ],
+                                        "displayName": {
+                                            "text": "Expand FBA to DE \u2014 Order #12345",
+                                            "locale": "en-US"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "mode": {
+                                                "value": "PREVIEW"
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "plan": {
+                                            "actionPlanId": "e5f6a7b8-89ab-cdef-0123-456789abcdef",
+                                            "status": [
+                                                "DRAFT"
+                                            ],
+                                            "displayName": {
+                                                "text": "Expand FBA to DE \u2014 Order #12345",
+                                                "locale": "en-US"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Request has missing or invalid parameters and cannot be parsed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "x-amzn-RateLimit-Limit": {
+                                "description": "Your rate limit (requests per second) for this operation.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        },
+                        "x-amzn-api-sandbox": {
+                            "static": [
+                                {
+                                    "request": {
+                                        "parameters": {
+                                            "body": {
+                                                "value": {
+                                                    "planTemplateId": "INVALID"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "response": {
+                                        "errors": [
+                                            {
+                                                "code": "InvalidInput",
+                                                "message": "Invalid planTemplateId."
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "403": {
+                        "description": "Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "The request conflicts with the current state of the resource.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "413": {
+                        "description": "The request size exceeded the maximum accepted size.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "415": {
+                        "description": "The request payload is in an unsupported format.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "The frequency of requests was greater than allowed.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "An unexpected condition occurred that prevented the server from fulfilling the request.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Temporary overloading or maintenance of the server.",
+                        "headers": {
+                            "x-amzn-RequestId": {
+                                "description": "Unique request reference identifier.",
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorList"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL",
+                "x-codegen-request-body-name": "body"
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ActionItem": {
+                "required": [
+                    "description",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "$ref": "#/components/schemas/ActionItemType"
+                    },
+                    "description": {
+                        "$ref": "#/components/schemas/LocalizedText"
+                    },
+                    "references": {
+                        "$ref": "#/components/schemas/ActionItemReferences"
+                    }
+                },
+                "description": "An issue or required action on a specific step surfaced during plan creation or execution.",
+                "example": {
+                    "type": {
+                        "classifications": [
+                            "ISSUE"
+                        ],
+                        "definition": {
+                            "typeDefinitionId": "MISSING_INPUT",
+                            "displayName": {
+                                "text": "Missing Input",
+                                "locale": "en-US"
+                            }
+                        }
+                    },
+                    "description": {
+                        "text": "Step 'Copy Offers' is missing value for sourceMarketplaceId input.",
+                        "locale": "en-US"
+                    },
+                    "references": {
+                        "steps": [
+                            {
+                                "stepId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+                                "attributeNames": [
+                                    "sourceMarketplaceId"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "ActionItemReference": {
+                "required": [
+                    "actionItemId"
+                ],
+                "type": "object",
+                "properties": {
+                    "actionItemId": {
+                        "type": "string",
+                        "description": "The identifier of the action item this plan resolves.",
+                        "example": "ebf5caf1-8cfb-43bd-a13b-ef91bdb0d930"
+                    },
+                    "resolution": {
+                        "$ref": "#/components/schemas/ActionItemResolutionRef"
+                    }
+                },
+                "description": "A reference from a plan to the action item it resolves."
+            },
+            "ActionItemResolutionReference": {
+                "required": [
+                    "actionItemId",
+                    "resolution"
+                ],
+                "type": "object",
+                "properties": {
+                    "actionItemId": {
+                        "type": "string",
+                        "description": "The identifier of the action item this plan resolves.",
+                        "example": "ebf5caf1-8cfb-43bd-a13b-ef91bdb0d930"
+                    },
+                    "resolution": {
+                        "$ref": "#/components/schemas/ActionItemResolutionRef"
+                    }
+                },
+                "description": "Identifies the action item this plan resolves and the resolution it fulfills. Required when creating a plan from an action item."
+            },
+            "ActionItemReferences": {
+                "type": "object",
+                "properties": {
+                    "steps": {
+                        "type": "array",
+                        "description": "The steps this action item relates to.",
+                        "items": {
+                            "$ref": "#/components/schemas/ActionItemStepReference"
+                        }
+                    }
+                },
+                "description": "Contains an action item's references to steps and attributes.",
+                "example": {
+                    "steps": [
+                        {
+                            "stepId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+                            "attributeNames": [
+                                "sourceMarketplaceId"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "ActionItemStepReference": {
+                "required": [
+                    "stepId"
+                ],
+                "type": "object",
+                "properties": {
+                    "stepId": {
+                        "type": "string",
+                        "description": "The step identifier (UUID) this action item relates to.",
+                        "example": "7c9e6679-7425-40de-944b-e07fc1f90ae7"
+                    },
+                    "attributeNames": {
+                        "type": "array",
+                        "description": "The input or output attribute names on the step that this action item relates to.",
+                        "example": [
+                            "sourceMarketplaceId"
+                        ],
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "description": "A reference from an action item to a specific step and its affected attributes.",
+                "example": {
+                    "stepId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+                    "attributeNames": [
+                        "sourceMarketplaceId"
+                    ]
+                }
+            },
+            "ActionItemType": {
+                "required": [
+                    "classifications",
+                    "definition"
+                ],
+                "type": "object",
+                "properties": {
+                    "classifications": {
+                        "$ref": "#/components/schemas/ActionItemTypeClassifications"
+                    },
+                    "definition": {
+                        "$ref": "#/components/schemas/ActionItemTypeDefinition"
+                    }
+                },
+                "description": "Combines one or more classifications with a reference to the action item's type definition.",
+                "example": {
+                    "classifications": [
+                        "ISSUE"
+                    ],
+                    "definition": {
+                        "typeDefinitionId": "MISSING_INPUT",
+                        "displayName": {
+                            "text": "Missing Input",
+                            "locale": "en-US"
+                        }
+                    }
+                }
+            },
+            "ActionItemTypeClassification": {
+                "type": "string",
+                "description": "A classification of an action item.",
+                "example": "ISSUE",
+                "enum": [
+                    "ISSUE",
+                    "TASK",
+                    "RECOMMENDATION"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "ISSUE",
+                        "description": "A problem to fix."
+                    },
+                    {
+                        "value": "TASK",
+                        "description": "An item requiring seller action."
+                    },
+                    {
+                        "value": "RECOMMENDATION",
+                        "description": "An opportunity to pursue."
+                    }
+                ]
+            },
+            "ActionItemTypeClassifications": {
+                "minItems": 1,
+                "type": "array",
+                "description": "Classifications for an action item type.",
+                "example": [
+                    "ISSUE"
+                ],
+                "items": {
+                    "$ref": "#/components/schemas/ActionItemTypeClassification"
+                }
+            },
+            "ActionItemTypeDefinition": {
+                "required": [
+                    "displayName",
+                    "typeDefinitionId"
+                ],
+                "type": "object",
+                "properties": {
+                    "typeDefinitionId": {
+                        "type": "string",
+                        "description": "The semantic identifier of the action item type definition.",
+                        "example": "MISSING_INPUT"
+                    },
+                    "displayName": {
+                        "$ref": "#/components/schemas/LocalizedText"
+                    }
+                },
+                "description": "The action item's type and its display name.",
+                "example": {
+                    "typeDefinitionId": "MISSING_INPUT",
+                    "displayName": {
+                        "text": "Missing Input",
+                        "locale": "en-US"
+                    }
+                }
+            },
+            "ActionPlan": {
+                "required": [
+                    "actionPlanId",
+                    "status"
+                ],
+                "type": "object",
+                "properties": {
+                    "actionPlanId": {
+                        "type": "string",
+                        "description": "Unique identifier for this action plan (UUID, system-generated).",
+                        "example": "e5f6a7b8-89ab-cdef-0123-456789abcdef"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/ActionPlanType"
+                    },
+                    "references": {
+                        "$ref": "#/components/schemas/PlanReferences"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/PlanStatuses"
+                    },
+                    "inputs": {
+                        "$ref": "#/components/schemas/InputValues"
+                    },
+                    "createdDate": {
+                        "type": "string",
+                        "description": "When the plan was created, in ISO 8601 format.",
+                        "format": "date-time",
+                        "example": "2025-07-07T14:55:00Z"
+                    },
+                    "lastUpdatedDate": {
+                        "type": "string",
+                        "description": "When the plan was last updated, in ISO 8601 format.",
+                        "format": "date-time",
+                        "example": "2025-07-07T17:00:00Z"
+                    },
+                    "acceptedDate": {
+                        "type": "string",
+                        "description": "When the plan was accepted, in ISO 8601 format.",
+                        "format": "date-time",
+                        "example": "2025-07-07T15:00:00Z"
+                    },
+                    "completedDate": {
+                        "type": "string",
+                        "description": "When the plan reached a terminal state, in ISO 8601 format.",
+                        "format": "date-time",
+                        "example": "2025-07-07T17:00:00Z"
+                    },
+                    "steps": {
+                        "type": "array",
+                        "description": "The plan's steps with their resolved input and output values. Included only when `includedData` contains `steps`.",
+                        "items": {
+                            "$ref": "#/components/schemas/PlanStep"
+                        }
+                    },
+                    "startedDate": {
+                        "type": "string",
+                        "description": "When execution began, in ISO 8601 format.",
+                        "format": "date-time",
+                        "example": "2025-07-07T15:01:00Z"
+                    },
+                    "displayName": {
+                        "$ref": "#/components/schemas/LocalizedText"
+                    },
+                    "actionItems": {
+                        "type": "array",
+                        "description": "Action items generated during plan creation or execution. Follows the same schema as the Action Items API.",
+                        "items": {
+                            "$ref": "#/components/schemas/ActionItem"
+                        }
+                    }
+                },
+                "description": "An action plan instance.",
+                "example": {
+                    "actionPlanId": "e5f6a7b8-89ab-cdef-0123-456789abcdef",
+                    "type": {
+                        "definition": {
+                            "displayName": {
+                                "text": "Cross-store expansion (FBA)",
+                                "locale": "en-US"
+                            },
+                            "planDefinitionId": "CROSS_STORE_EXPANSION_FBA"
+                        }
+                    },
+                    "references": {
+                        "actionItems": [
+                            {
+                                "actionItemId": "ebf5caf1-8cfb-43bd-a13b-ef91bdb0d930",
+                                "resolution": {
+                                    "definition": {
+                                        "resolutionDefinitionId": "CROSS_STORE_EXPANSION_FBA"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "displayName": {
+                        "text": "Expand FBA to DE \u2014 Order #12345",
+                        "locale": "en-US"
+                    },
+                    "status": [
+                        "DONE"
+                    ],
+                    "inputs": {
+                        "sourceMarketplaceId": {
+                            "value": [
+                                "A1PA6795UKMFR9"
+                            ]
+                        },
+                        "targetMarketplaceId": {
+                            "value": [
+                                "A13V1IB3VIYZZH"
+                            ]
+                        }
+                    },
+                    "createdDate": "2025-07-07T14:55:00Z",
+                    "lastUpdatedDate": "2025-07-07T17:00:00Z",
+                    "acceptedDate": "2025-07-07T15:00:00Z",
+                    "startedDate": "2025-07-07T15:01:00Z",
+                    "completedDate": "2025-07-07T17:00:00Z"
+                }
+            },
+            "ActionPlanType": {
+                "required": [
+                    "definition"
+                ],
+                "type": "object",
+                "properties": {
+                    "definition": {
+                        "$ref": "#/components/schemas/PlanDefinitionRef"
+                    }
+                },
+                "description": "The plan template this plan instantiates.",
+                "example": {
+                    "definition": {
+                        "displayName": {
+                            "text": "Cross-store expansion (FBA)",
+                            "locale": "en-US"
+                        },
+                        "planDefinitionId": "CROSS_STORE_EXPANSION_FBA"
+                    }
+                }
+            },
+            "CreateActionPlanRequest": {
+                "required": [
+                    "planTemplateId"
+                ],
+                "type": "object",
+                "properties": {
+                    "planTemplateId": {
+                        "type": "string",
+                        "description": "The plan template to instantiate.",
+                        "example": "CROSS_STORE_EXPANSION_FBA"
+                    },
+                    "actionItem": {
+                        "$ref": "#/components/schemas/ActionItemResolutionReference"
+                    },
+                    "inputs": {
+                        "$ref": "#/components/schemas/InputValues"
+                    }
+                },
+                "description": "Request body for creating an action plan.",
+                "example": {
+                    "planTemplateId": "CROSS_STORE_EXPANSION_FBA",
+                    "actionItem": {
+                        "actionItemId": "ebf5caf1-8cfb-43bd-a13b-ef91bdb0d930",
+                        "resolution": {
+                            "definition": {
+                                "resolutionDefinitionId": "CROSS_STORE_EXPANSION_FBA"
+                            }
+                        }
+                    },
+                    "inputs": {
+                        "sourceMarketplaceId": {
+                            "value": [
+                                "A1PA6795UKMFR9"
+                            ]
+                        },
+                        "targetMarketplaceId": {
+                            "value": [
+                                "A13V1IB3VIYZZH"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Error": {
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "An error code that identifies the type of error that occurred."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message that describes the error condition."
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Additional details that can help the caller understand or fix the issue.",
+                        "example": "The actionPlanId must be a valid UUID."
+                    }
+                },
+                "description": "Error response returned when the request is unsuccessful."
+            },
+            "ErrorList": {
+                "required": [
+                    "errors"
+                ],
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "description": "Error list.",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                },
+                "description": "A list of error responses returned when a request is unsuccessful."
+            },
+            "GetActionPlanResponse": {
+                "required": [
+                    "plan"
+                ],
+                "type": "object",
+                "properties": {
+                    "plan": {
+                        "$ref": "#/components/schemas/ActionPlan"
+                    }
+                },
+                "description": "Response for the getActionPlan operation, containing the requested action plan.",
+                "example": {
+                    "plan": {
+                        "actionPlanId": "e5f6a7b8-89ab-cdef-0123-456789abcdef",
+                        "status": [
+                            "DONE"
+                        ],
+                        "displayName": {
+                            "text": "Expand FBA to DE \u2014 Order #12345",
+                            "locale": "en-US"
+                        }
+                    }
+                }
+            },
+            "InputDeclaration": {
+                "required": [
+                    "displayName"
+                ],
+                "type": "object",
+                "properties": {
+                    "displayName": {
+                        "$ref": "#/components/schemas/LocalizedText"
+                    }
+                },
+                "description": "A display-name declaration for a named input or output.",
+                "example": {
+                    "displayName": {
+                        "text": "Source marketplace ID",
+                        "locale": "en-US"
+                    }
+                }
+            },
+            "InputDeclarations": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "#/components/schemas/InputDeclaration"
+                },
+                "description": "A map of input or output declarations, keyed by name.",
+                "example": {
+                    "sourceMarketplaceId": {
+                        "displayName": {
+                            "text": "Source marketplace ID",
+                            "locale": "en-US"
+                        }
+                    }
+                }
+            },
+            "InputValue": {
+                "required": [
+                    "value"
+                ],
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "array",
+                        "description": "The value, as an array of strings.",
+                        "example": [
+                            "A1PA6795UKMFR9"
+                        ],
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "description": "An input or output value carried as an array of strings.",
+                "example": {
+                    "value": [
+                        "A1PA6795UKMFR9"
+                    ]
+                }
+            },
+            "InputValues": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "#/components/schemas/InputValue"
+                },
+                "description": "A map of input or output values, keyed by name.",
+                "example": {
+                    "sourceMarketplaceId": {
+                        "value": [
+                            "A1PA6795UKMFR9"
+                        ]
+                    },
+                    "targetMarketplaceId": {
+                        "value": [
+                            "A13V1IB3VIYZZH"
+                        ]
+                    }
+                }
+            },
+            "ListActionPlansResponse": {
+                "required": [
+                    "actionPlans",
+                    "numberOfResults"
+                ],
+                "type": "object",
+                "properties": {
+                    "actionPlans": {
+                        "type": "array",
+                        "description": "The action plans matching the query. Steps are omitted by default.",
+                        "items": {
+                            "$ref": "#/components/schemas/ActionPlan"
+                        }
+                    },
+                    "numberOfResults": {
+                        "type": "integer",
+                        "description": "The total number of action plans matching the query."
+                    },
+                    "refinements": {
+                        "$ref": "#/components/schemas/SearchRefinements"
+                    },
+                    "pagination": {
+                        "$ref": "#/components/schemas/Pagination"
+                    }
+                },
+                "description": "Response for the `listActionPlans` operation, containing the matching action plans and the total results count.",
+                "example": {
+                    "actionPlans": [
+                        {
+                            "actionPlanId": "e5f6a7b8-89ab-cdef-0123-456789abcdef",
+                            "status": [
+                                "PROCESSING"
+                            ]
+                        }
+                    ],
+                    "numberOfResults": 2,
+                    "refinements": {
+                        "planTemplateId": [
+                            {
+                                "displayName": "Cross-store expansion (FBA)",
+                                "count": 12,
+                                "value": "CROSS_STORE_EXPANSION_FBA"
+                            }
+                        ]
+                    },
+                    "pagination": {
+                        "nextToken": "eyJsYXN0UGxhbklkIjoiYzFkMmUzZjQifQ=="
+                    }
+                }
+            },
+            "SearchRefinements": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "#/components/schemas/SearchRefinementValues"
+                },
+                "description": "Facets keyed by refinement name, used for progressive filtering of the result set.",
+                "example": {
+                    "planTemplateId": [
+                        {
+                            "displayName": "Cross-store expansion (FBA)",
+                            "count": 12,
+                            "value": "CROSS_STORE_EXPANSION_FBA"
+                        }
+                    ]
+                }
+            },
+            "SearchRefinementValues": {
+                "type": "array",
+                "description": "The set of values available for a single search refinement.",
+                "example": [
+                    {
+                        "displayName": "Cross-store expansion (FBA)",
+                        "count": 12,
+                        "value": "CROSS_STORE_EXPANSION_FBA"
+                    }
+                ],
+                "items": {
+                    "$ref": "#/components/schemas/SearchRefinementValue"
+                }
+            },
+            "SearchRefinementValue": {
+                "required": [
+                    "count",
+                    "displayName",
+                    "value"
+                ],
+                "type": "object",
+                "properties": {
+                    "displayName": {
+                        "type": "string",
+                        "description": "The localized display name for this refinement value.",
+                        "example": "Cross-store expansion (FBA)"
+                    },
+                    "count": {
+                        "type": "integer",
+                        "description": "The number of results matching this refinement value.",
+                        "example": 12
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "The value to supply as a filter to refine the result set.",
+                        "example": "CROSS_STORE_EXPANSION_FBA"
+                    }
+                },
+                "description": "A single search refinement value with its display name and result count."
+            },
+            "LocalizedText": {
+                "required": [
+                    "locale",
+                    "text"
+                ],
+                "type": "object",
+                "properties": {
+                    "text": {
+                        "type": "string",
+                        "description": "The localized text content.",
+                        "example": "Cross-store expansion (FBA)"
+                    },
+                    "locale": {
+                        "type": "string",
+                        "description": "The BCP 47 language tag, as an ISO 639 language code and ISO 3166 country code separated by a hyphen.",
+                        "example": "en-US"
+                    }
+                },
+                "description": "A localized text value paired with the locale it is rendered in."
+            },
+            "Pagination": {
+                "type": "object",
+                "properties": {
+                    "nextToken": {
+                        "type": "string",
+                        "description": "Token to retrieve the next page. Absent when no more results.",
+                        "example": "eyJsYXN0UGxhbklkIjoiYzFkMmUzZjQifQ=="
+                    },
+                    "previousToken": {
+                        "type": "string",
+                        "description": "A token to retrieve the previous page of results. This value is not yet supported.",
+                        "example": "eyJsYXN0UGxhbklkIjoiYTliOGM3ZDYifQ=="
+                    }
+                },
+                "description": "Cursor-based pagination metadata.",
+                "example": {
+                    "nextToken": "eyJsYXN0UGxhbklkIjoiYzFkMmUzZjQifQ=="
+                }
+            },
+            "PlanDefinitionRef": {
+                "required": [
+                    "displayName",
+                    "planDefinitionId"
+                ],
+                "type": "object",
+                "properties": {
+                    "displayName": {
+                        "$ref": "#/components/schemas/LocalizedText"
+                    },
+                    "inputs": {
+                        "$ref": "#/components/schemas/InputDeclarations"
+                    },
+                    "planDefinitionId": {
+                        "type": "string",
+                        "description": "The semantic identifier of the plan template.",
+                        "example": "CROSS_STORE_EXPANSION_FBA"
+                    }
+                },
+                "description": "The plan template and its input declarations.",
+                "example": {
+                    "displayName": {
+                        "text": "Cross-store expansion (FBA)",
+                        "locale": "en-US"
+                    },
+                    "inputs": {
+                        "sourceMarketplaceId": {
+                            "displayName": {
+                                "text": "Source marketplace ID",
+                                "locale": "en-US"
+                            }
+                        }
+                    },
+                    "planDefinitionId": "CROSS_STORE_EXPANSION_FBA"
+                }
+            },
+            "PlanReferences": {
+                "type": "object",
+                "properties": {
+                    "actionItems": {
+                        "type": "array",
+                        "description": "Action items associated with this plan.",
+                        "items": {
+                            "$ref": "#/components/schemas/ActionItemReference"
+                        }
+                    }
+                },
+                "description": "Contains entities related to a plan.",
+                "example": {
+                    "actionItems": [
+                        {
+                            "actionItemId": "ebf5caf1-8cfb-43bd-a13b-ef91bdb0d930",
+                            "resolution": {
+                                "definition": {
+                                    "resolutionDefinitionId": "CROSS_STORE_EXPANSION_FBA"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "PlanStatus": {
+                "type": "string",
+                "description": "A lifecycle state of an action plan.",
+                "example": "DONE",
+                "enum": [
+                    "DRAFT",
+                    "PENDING_SELLING_PARTNER",
+                    "PROCESSING",
+                    "DONE",
+                    "CANCELLED",
+                    "PARTIAL"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "DRAFT",
+                        "description": "The plan has been created but not submitted for execution."
+                    },
+                    {
+                        "value": "PENDING_SELLING_PARTNER",
+                        "description": "The plan is awaiting action from the seller."
+                    },
+                    {
+                        "value": "PROCESSING",
+                        "description": "The plan is being executed."
+                    },
+                    {
+                        "value": "DONE",
+                        "description": "The plan finished, and all steps completed successfully."
+                    },
+                    {
+                        "value": "CANCELLED",
+                        "description": "The plan was cancelled before completion."
+                    },
+                    {
+                        "value": "PARTIAL",
+                        "description": "The plan finished, but not all steps completed successfully."
+                    }
+                ]
+            },
+            "PlanStatuses": {
+                "minItems": 1,
+                "type": "array",
+                "description": "The state of a plan, expressed as an array.",
+                "example": [
+                    "DONE"
+                ],
+                "items": {
+                    "$ref": "#/components/schemas/PlanStatus"
+                }
+            },
+            "PlanStep": {
+                "required": [
+                    "definition",
+                    "mode",
+                    "stepId"
+                ],
+                "type": "object",
+                "properties": {
+                    "stepId": {
+                        "type": "string",
+                        "description": "Opaque unique identifier of this step within the plan (UUID).",
+                        "example": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+                    },
+                    "mode": {
+                        "$ref": "#/components/schemas/StepMode"
+                    },
+                    "definition": {
+                        "$ref": "#/components/schemas/StepDefinitionRef"
+                    },
+                    "description": {
+                        "$ref": "#/components/schemas/LocalizedText"
+                    },
+                    "dependencies": {
+                        "type": "array",
+                        "description": "Step identifiers (UUIDs) that must complete before this step runs.",
+                        "example": [],
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/StepStatuses"
+                    },
+                    "lastUpdatedDate": {
+                        "type": "string",
+                        "description": "When the step was last updated, in ISO 8601 format.",
+                        "format": "date-time",
+                        "example": "2025-07-07T15:15:00Z"
+                    },
+                    "completedDate": {
+                        "type": "string",
+                        "description": "When the step completed, in ISO 8601 format.",
+                        "format": "date-time",
+                        "example": "2025-07-07T15:15:00Z"
+                    },
+                    "inputs": {
+                        "$ref": "#/components/schemas/InputValues"
+                    },
+                    "outputs": {
+                        "$ref": "#/components/schemas/InputValues"
+                    },
+                    "startedDate": {
+                        "type": "string",
+                        "description": "When the step started execution, in ISO 8601 format.",
+                        "format": "date-time",
+                        "example": "2025-07-07T15:01:00Z"
+                    }
+                },
+                "description": "A step instance within a plan.",
+                "example": {
+                    "stepId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+                    "mode": "AUTOMATED",
+                    "definition": {
+                        "displayName": {
+                            "text": "Configure Pricing Settings",
+                            "locale": "en-US"
+                        },
+                        "stepDefinitionId": "CONFIGURE_PRICING_SETTINGS"
+                    },
+                    "description": {
+                        "text": "Set up cross-store pricing rules.",
+                        "locale": "en-US"
+                    },
+                    "dependencies": [],
+                    "status": [
+                        "COMPLETED",
+                        "SUCCEEDED"
+                    ],
+                    "startedDate": "2025-07-07T15:01:00Z"
+                }
+            },
+            "StepDefinitionRef": {
+                "required": [
+                    "displayName",
+                    "stepDefinitionId"
+                ],
+                "type": "object",
+                "properties": {
+                    "displayName": {
+                        "$ref": "#/components/schemas/LocalizedText"
+                    },
+                    "inputs": {
+                        "$ref": "#/components/schemas/InputDeclarations"
+                    },
+                    "outputs": {
+                        "$ref": "#/components/schemas/InputDeclarations"
+                    },
+                    "stepDefinitionId": {
+                        "type": "string",
+                        "description": "The semantic identifier of the step definition.",
+                        "example": "CONFIGURE_PRICING_SETTINGS"
+                    }
+                },
+                "description": "The step template and its input and output declarations.",
+                "example": {
+                    "displayName": {
+                        "text": "Configure Pricing Settings",
+                        "locale": "en-US"
+                    },
+                    "stepDefinitionId": "CONFIGURE_PRICING_SETTINGS"
+                }
+            },
+            "StepMode": {
+                "type": "string",
+                "description": "Indicates whether a step completes automatically or through manual seller action.",
+                "example": "AUTOMATED",
+                "enum": [
+                    "AUTOMATED",
+                    "MANUAL"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "AUTOMATED",
+                        "description": "Amazon completes this step automatically, without seller intervention."
+                    },
+                    {
+                        "value": "MANUAL",
+                        "description": "Step requires explicit seller action to complete."
+                    }
+                ]
+            },
+            "StepStatus": {
+                "type": "string",
+                "description": "The current state of the step. A step can take up to 7 days to complete.",
+                "example": "COMPLETED",
+                "enum": [
+                    "NOT_STARTED",
+                    "PENDING_DEPENDENCY",
+                    "PENDING_SELLING_PARTNER",
+                    "PROCESSING",
+                    "COMPLETED",
+                    "SKIPPED",
+                    "SUCCEEDED",
+                    "FAILED"
+                ],
+                "x-docgen-enum-table-extension": [
+                    {
+                        "value": "NOT_STARTED",
+                        "description": "Step has not yet started."
+                    },
+                    {
+                        "value": "PENDING_DEPENDENCY",
+                        "description": "Waiting for upstream dependencies to complete."
+                    },
+                    {
+                        "value": "PENDING_SELLING_PARTNER",
+                        "description": "Awaiting seller action on a manual step."
+                    },
+                    {
+                        "value": "PROCESSING",
+                        "description": "Step is actively executing."
+                    },
+                    {
+                        "value": "COMPLETED",
+                        "description": "Step has reached a terminal state. Paired with an outcome (`SUCCEEDED` or `FAILED`)."
+                    },
+                    {
+                        "value": "SKIPPED",
+                        "description": "Step was skipped."
+                    },
+                    {
+                        "value": "SUCCEEDED",
+                        "description": "Terminal outcome: step completed successfully."
+                    },
+                    {
+                        "value": "FAILED",
+                        "description": "Terminal outcome: step failed."
+                    }
+                ]
+            },
+            "StepStatuses": {
+                "minItems": 1,
+                "type": "array",
+                "description": "The state of a step, expressed as an array.",
+                "example": [
+                    "COMPLETED",
+                    "SUCCEEDED"
+                ],
+                "items": {
+                    "$ref": "#/components/schemas/StepStatus"
+                }
+            },
+            "ResolutionDefinitionRef": {
+                "required": [
+                    "resolutionDefinitionId"
+                ],
+                "type": "object",
+                "properties": {
+                    "resolutionDefinitionId": {
+                        "type": "string",
+                        "description": "The identifier of the resolution definition.",
+                        "example": "CROSS_STORE_EXPANSION_FBA"
+                    }
+                },
+                "description": "The resolution definition on an action item."
+            },
+            "ActionItemResolutionRef": {
+                "required": [
+                    "definition"
+                ],
+                "type": "object",
+                "properties": {
+                    "definition": {
+                        "$ref": "#/components/schemas/ResolutionDefinitionRef"
+                    }
+                },
+                "description": "The resolution definition that satisfies an action item."
+            }
+        }
+    },
+    "x-original-swagger-version": "2.0"
+}

@@ -15,11 +15,11 @@ use SellingPartnerApi\Dto;
 final class InvoiceInfo extends Dto
 {
     /**
-     * @param  string  $invoiceId  The unique ID of the invoice that corresponds to the shipment.
-     * @param  string  $creationDateTime  A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+     * @param  ?string  $invoiceId  The unique ID of the invoice that corresponds to the shipment.
+     * @param  ?\DateTimeInterface  $creationDateTime  A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      */
     public function __construct(
-        public string $invoiceId,
-        public string $creationDateTime,
+        public ?string $invoiceId = null,
+        public ?\DateTimeInterface $creationDateTime = null,
     ) {}
 }

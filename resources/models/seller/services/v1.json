@@ -1309,6 +1309,24 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "name": "providerServiceJobReferenceIds",
+                        "in": "query",
+                        "description": "A list of up to 20 reference IDs for the service jobs assigned to the provider. You can use these IDs to query service jobs.",
+                        "style": "form",
+                        "explode": false,
+                        "schema": {
+                            "maxItems": 20,
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                                "maxLength": 255,
+                                "minLength": 1,
+                                "pattern": "^[A-Za-z0-9\\-_]+$",
+                                "type": "string"
+                            }
+                        }
                     }
                 ],
                 "responses": {
@@ -8912,6 +8930,10 @@
                         "pattern": "^[A-Z0-9]*$",
                         "type": "string",
                         "description": "The identifier of the service job provider."
+                    },
+                    "providerServiceJobReferenceId": {
+                        "type": "string",
+                        "description": "The reference ID for the service job assigned to the provider."
                     }
                 },
                 "description": "Information about the service job provider."

@@ -17,13 +17,15 @@ final class ComplianceAttributes extends Dto
     /**
      * @param  string  $hazmatLabelsRequirement  The requirement level for this field.
      * @param  string  $serialNumberRequirement  The requirement level for this field.
-     * @param  string  $countryOfOriginRequirement  The requirement level for this field.
-     * @param  string  $itemValueRequirement  The requirement level for this field.
+     * @param  ?string  $hazmatLabelRequirement  The requirement level for this field.
+     * @param  ?string  $countryOfOriginRequirement  The requirement level for this field.
+     * @param  ?string  $itemValueRequirement  The requirement level for this field.
      */
     public function __construct(
         public string $hazmatLabelsRequirement,
         public string $serialNumberRequirement,
-        public string $countryOfOriginRequirement,
-        public string $itemValueRequirement,
+        public ?string $hazmatLabelRequirement = null,
+        public ?string $countryOfOriginRequirement = null,
+        public ?string $itemValueRequirement = null,
     ) {}
 }

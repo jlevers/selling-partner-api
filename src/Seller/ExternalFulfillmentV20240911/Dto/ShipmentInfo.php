@@ -21,7 +21,7 @@ final class ShipmentInfo extends Dto
      * @param  string  $buyerOrderId  The buyer's order ID.
      * @param  ?ReplacedShipmentInfo  $originalShipmentInfo  Details of the original shipment if `shipmentType` is either `REPLACEMENT` or `EXCHANGE`.
      * @param  ?string[]  $orderStatesEligibleForRejection  A list of order statuses for which the marketplace allows order rejection (seller cancellation). If the order has a status that does not belong to this list, then seller cancellation is not possible.
-     * @param  ?string  $orderPlacedTimestamp  The timestamp of when the order was placed, in UTC
+     * @param  ?float  $orderPlacedTimestamp  The epoch timestamp (in milliseconds) of when the order was placed, in UTC.
      * @param  ?string  $processingSource  The source of the order operation.
      * @param  ?string  $paymentMethod  The payment method for the shipment.
      */
@@ -32,7 +32,7 @@ final class ShipmentInfo extends Dto
         public string $buyerOrderId,
         public ?ReplacedShipmentInfo $originalShipmentInfo = null,
         public ?array $orderStatesEligibleForRejection = null,
-        public ?string $orderPlacedTimestamp = null,
+        public ?float $orderPlacedTimestamp = null,
         public ?string $processingSource = null,
         public ?string $paymentMethod = null,
     ) {}

@@ -16,8 +16,10 @@ final class ServiceJobProvider extends Dto
 {
     /**
      * @param  ?string  $serviceJobProviderId  The identifier of the service job provider.
+     * @param  ?string  $providerServiceJobReferenceId  The reference ID for the service job assigned to the provider.
      */
     public function __construct(
         public ?string $serviceJobProviderId = null,
+        public ?string $providerServiceJobReferenceId = null,
     ) {}
 }

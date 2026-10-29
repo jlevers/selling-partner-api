@@ -42,6 +42,7 @@ class GetServiceJobs extends Request
      * @param  ?array  $asins  List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20.
      * @param  ?array  $requiredSkills  A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20.
      * @param  ?array  $storeIds  List of Amazon-defined identifiers for the region scope. Max values supported is 50.
+     * @param  ?array  $providerServiceJobReferenceIds  A list of up to 20 reference IDs for the service jobs assigned to the provider. You can use these IDs to query service jobs.
      */
     public function __construct(
         protected array $marketplaceIds,
@@ -62,6 +63,7 @@ class GetServiceJobs extends Request
         protected ?array $asins = null,
         protected ?array $requiredSkills = null,
         protected ?array $storeIds = null,
+        protected ?array $providerServiceJobReferenceIds = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -101,6 +103,7 @@ class GetServiceJobs extends Request
             'asins' => $this->asins,
             'requiredSkills' => $this->requiredSkills,
             'storeIds' => $this->storeIds,
+            'providerServiceJobReferenceIds' => $this->providerServiceJobReferenceIds,
         ]);
     }
 }

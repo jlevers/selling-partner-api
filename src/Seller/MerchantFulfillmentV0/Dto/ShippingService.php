@@ -39,7 +39,7 @@ final class ShippingService extends Dto
     ];
 
     /**
-     * @param  string  $shippingServiceName  A plain text representation of a carrier's shipping service. For example, "UPS Ground" or "FedEx Standard Overnight".
+     * @param  string  $shippingServiceName  The carrier's shipping service name, such as "UPS Ground" or "FedEx Standard Overnight".
      * @param  string  $carrierName  The name of the carrier.
      * @param  string  $shippingServiceId  An Amazon-defined shipping service identifier.
      * @param  string  $shippingServiceOfferId  An Amazon-defined shipping service offer identifier.
@@ -53,8 +53,8 @@ final class ShippingService extends Dto
      * @param  ?AvailableShippingServiceOptions  $availableShippingServiceOptions  The available shipping service options.
      * @param  ?string[]  $availableLabelFormats  List of label formats.
      * @param  LabelFormatOption[]|null  $availableFormatOptionsForLabel  The available label formats.
-     * @param  ?bool  $requiresAdditionalSellerInputs  When true, additional seller inputs are required.
-     * @param  ?Benefits  $benefits  Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (for example, `CLAIMS_PROTECTED`) when sellers purchase shipping through Amazon. Benefit details are made available for any shipment placed on or after January 1st 2024 00:00 UTC.
+     * @param  ?bool  $requiresAdditionalSellerInputs  When `true`, additional seller inputs are required.
+     * @param  ?Benefits  $benefits  Benefits that are included and excluded for each shipping offer. Benefits represent services provided by Amazon (for example, `CLAIMS_PROTECTED`) when sellers purchase shipping through Amazon. Benefit details are available for any shipment placed on or after January 1, 2024, 00:00 UTC.
      */
     public function __construct(
         public string $shippingServiceName,

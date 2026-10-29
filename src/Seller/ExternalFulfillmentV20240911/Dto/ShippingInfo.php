@@ -19,15 +19,17 @@ final class ShippingInfo extends Dto
     protected static array $complexArrayTypes = ['recommendedPackages' => RecommendedPackage::class];
 
     /**
-     * @param  string  $expectedShippingDateTimeInUtc  A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+     * @param  \DateTimeInterface  $expectedShippingDateTimeInUtc  A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      * @param  ?string  $recommendedShipMethod  The ship method recommended by the Amazon Fulfillment Network for the packages in this shipment.
+     * @param  ?\DateTimeInterface  $expectedShippingDateTime  A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      * @param  ?Address  $shipToAddress  The address.
      * @param  ?string  $shippingType  The type of shipping that the seller uses to deliver a customer order.
      * @param  RecommendedPackage[]|null  $recommendedPackages  Recommendations for the packages in an order.
      */
     public function __construct(
-        public string $expectedShippingDateTimeInUtc,
+        public \DateTimeInterface $expectedShippingDateTimeInUtc,
         public ?string $recommendedShipMethod = null,
+        public ?\DateTimeInterface $expectedShippingDateTime = null,
         public ?Address $shipToAddress = null,
         public ?string $shippingType = null,
         public ?array $recommendedPackages = null,

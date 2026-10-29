@@ -17,7 +17,7 @@ final class ShipmentAcknowledgementRequest extends Dto
     protected static array $complexArrayTypes = ['lineItems' => LineItemWithReason::class];
 
     /**
-     * @param  LineItemWithReason[]  $lineItems  Details about the line items from the shipment that are being confirmed or rejected by the seller.
+     * @param  LineItemWithReason[]  $lineItems  Details about the line items from the shipment that are being rejected by the seller.
      * @param  ?string  $referenceId  A unique identifier for every shipment rejection.
      */
     public function __construct(

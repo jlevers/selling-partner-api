@@ -84,6 +84,7 @@ class Api extends BaseResource
      * @param  ?array  $asins  List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20.
      * @param  ?array  $requiredSkills  A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20.
      * @param  ?array  $storeIds  List of Amazon-defined identifiers for the region scope. Max values supported is 50.
+     * @param  ?array  $providerServiceJobReferenceIds  A list of up to 20 reference IDs for the service jobs assigned to the provider. You can use these IDs to query service jobs.
      */
     public function getServiceJobs(
         array $marketplaceIds,
@@ -104,8 +105,9 @@ class Api extends BaseResource
         ?array $asins = null,
         ?array $requiredSkills = null,
         ?array $storeIds = null,
+        ?array $providerServiceJobReferenceIds = null,
     ): Response {
-        $request = new GetServiceJobs($marketplaceIds, $serviceOrderIds, $productOrderIds, $trackingIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds);
+        $request = new GetServiceJobs($marketplaceIds, $serviceOrderIds, $productOrderIds, $trackingIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds, $providerServiceJobReferenceIds);
 
         return $this->connector->send($request);
     }

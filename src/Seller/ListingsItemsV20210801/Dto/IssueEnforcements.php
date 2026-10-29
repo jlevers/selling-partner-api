@@ -18,7 +18,7 @@ final class IssueEnforcements extends Dto
 
     /**
      * @param  IssueEnforcementAction[]  $actions  List of enforcement actions taken by Amazon that affect the publishing or status of a listing.
-     * @param  IssueExemption  $exemption  Conveying the status of the listed enforcement actions and, if applicable, provides information about the exemption's expiry date.
+     * @param  IssueExemption  $exemption  The status of the listed enforcement actions. If applicable, includes information about the exemption expiry date.
      */
     public function __construct(
         public array $actions,

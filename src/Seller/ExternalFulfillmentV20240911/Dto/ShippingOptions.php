@@ -17,7 +17,7 @@ final class ShippingOptions extends Dto
     /**
      * @param  string  $shippingOptionId  An identifier for the shipping option.
      * @param  string  $shipBy  The shipper type.
-     * @param  ?string  $carrierName  The carrier name for the offering.
+     * @param  ?string  $carrierName  The carrier name for the offering. Applicable only for Self Ship program
      * @param  ?TimeWindow  $pickupWindow  Time duration used to specify the interval of an event, such as pick up and delivery.
      * @param  ?TimeWindow  $timeSlot  Time duration used to specify the interval of an event, such as pick up and delivery.
      * @param  ?HandoverLocation  $handoverLocation  The drop-off location details for package handover.

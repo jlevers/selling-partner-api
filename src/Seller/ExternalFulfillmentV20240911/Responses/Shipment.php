@@ -40,14 +40,14 @@ final class Shipment extends Response
      * @param  string  $status  The current status of the shipment.
      * @param  ShipmentLineItem[]  $lineItems  The line items in the shipment.
      * @param  ShippingInfo  $shippingInfo  Shipping information for the packages in a shipment.
-     * @param  string  $creationDateTime  A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
-     * @param  string  $lastUpdatedDateTime  A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+     * @param  \DateTimeInterface  $creationDateTime  A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+     * @param  \DateTimeInterface  $lastUpdatedDateTime  A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      * @param  ?InvoiceInfo  $invoiceInfo  Information about the shipment's invoice.
-     * @param  PartyIdentificationInfo[]|null  $partyInfoList  All involved party identification and metadata for the vendor, buyer, and seller. Applicable for direct-fulfillment sellers.
+     * @param  PartyIdentificationInfo[]|null  $partyInfoList  All involved party identification and metadata for vendor, buyer, seller. Applicable only for direct-fulfillment sellers.
      * @param  ?string  $subStatus  The sub status of the shipment.
      * @param  ?string  $reason  The reason for the sub-status.
      * @param  Package[]|null  $packages  The list of packages in the shipment.
-     * @param  ?string  $earliestPackDateTime  A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+     * @param  ?\DateTimeInterface  $earliestPackDateTime  A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      */
     public function __construct(
         public readonly string $id,
@@ -59,13 +59,13 @@ final class Shipment extends Response
         public readonly string $status,
         public readonly array $lineItems,
         public readonly ShippingInfo $shippingInfo,
-        public readonly string $creationDateTime,
-        public readonly string $lastUpdatedDateTime,
+        public readonly \DateTimeInterface $creationDateTime,
+        public readonly \DateTimeInterface $lastUpdatedDateTime,
         public readonly ?InvoiceInfo $invoiceInfo = null,
         public readonly ?array $partyInfoList = null,
         public readonly ?string $subStatus = null,
         public readonly ?string $reason = null,
         public readonly ?array $packages = null,
-        public readonly ?string $earliestPackDateTime = null,
+        public readonly ?\DateTimeInterface $earliestPackDateTime = null,
     ) {}
 }

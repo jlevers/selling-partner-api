@@ -20,7 +20,7 @@ final class LabelFormatOption extends Dto
     ];
 
     /**
-     * @param  ?bool  $includePackingSlipWithLabel  When true, include a packing slip with the label.
+     * @param  ?bool  $includePackingSlipWithLabel  When `true`, include a packing slip with the label.
      * @param  ?string  $labelFormat  The label format.
      */
     public function __construct(

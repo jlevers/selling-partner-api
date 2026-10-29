@@ -198,6 +198,26 @@
                                             "audience": {
                                                 "value": "ALL",
                                                 "displayName": "Sell on Amazon"
+                                            },
+                                            "replenishmentDiscount": {
+                                                "discountPercentage": 5
+                                            },
+                                            "quantityDiscountPlan": {
+                                                "discountType": "PERCENT",
+                                                "levels": [
+                                                    {
+                                                        "lowerBound": 5,
+                                                        "value": "5.0"
+                                                    },
+                                                    {
+                                                        "lowerBound": 10,
+                                                        "value": "10.0"
+                                                    },
+                                                    {
+                                                        "lowerBound": 25,
+                                                        "value": "15.0"
+                                                    }
+                                                ]
                                             }
                                         },
                                         {
@@ -383,6 +403,26 @@
                                                 "audience": {
                                                     "value": "ALL",
                                                     "displayName": "Sell on Amazon"
+                                                },
+                                                "replenishmentDiscount": {
+                                                    "discountPercentage": 5
+                                                },
+                                                "quantityDiscountPlan": {
+                                                    "discountType": "PERCENT",
+                                                    "levels": [
+                                                        {
+                                                            "lowerBound": 5,
+                                                            "value": "5.0"
+                                                        },
+                                                        {
+                                                            "lowerBound": 10,
+                                                            "value": "10.0"
+                                                        },
+                                                        {
+                                                            "lowerBound": 25,
+                                                            "value": "15.0"
+                                                        }
+                                                    ]
                                                 }
                                             },
                                             {
@@ -693,13 +733,14 @@
                             }
                         }
                     }
-                }
+                },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL"
             },
             "put": {
                 "tags": [
                     "ListingsItemsV20210801"
                 ],
-                "description": "Creates a new or fully-updates an existing listings item for a selling partner.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.",
+                "description": "Creates a new or fully updates an existing listings item for a selling partner.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.",
                 "operationId": "putListingsItem",
                 "parameters": [
                     {
@@ -812,7 +853,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Successfully understood the request to create or fully-update a listings item. Refer to the response to determine if the submission has been accepted.",
+                        "description": "Successfully understood the request to create or fully-update a listings item. Refer to the response to determine whether the submission has been accepted.",
                         "headers": {
                             "x-amzn-RequestId": {
                                 "description": "Unique request reference identifier.",
@@ -1112,13 +1153,14 @@
                         }
                     }
                 },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL",
                 "x-codegen-request-body-name": "body"
             },
             "delete": {
                 "tags": [
                     "ListingsItemsV20210801"
                 ],
-                "description": "Delete a listings item for a selling partner.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.",
+                "description": "Deletes a listings item for a selling partner.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 5 | 5 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.",
                 "operationId": "deleteListingsItem",
                 "parameters": [
                     {
@@ -1365,7 +1407,8 @@
                             }
                         }
                     }
-                }
+                },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL"
             },
             "patch": {
                 "tags": [
@@ -1772,6 +1815,7 @@
                         }
                     }
                 },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL",
                 "x-codegen-request-body-name": "body"
             }
         },
@@ -1810,7 +1854,7 @@
                     {
                         "name": "issueLocale",
                         "in": "query",
-                        "description": "A locale that is used to localize issues. When not provided, the default language code of the first Amazon store is used. Examples: \"en_US\", \"fr_CA\", \"fr_FR\". When a localization is not available in the specified locale, localized messages default to \"en_US\".",
+                        "description": "A locale for localization of issues. When not provided, the default language code of the first Amazon store is used. Examples: \"en_US\", \"fr_CA\", \"fr_FR\". When a localization is not available in the specified locale, localized messages default to \"en_US\".",
                         "schema": {
                             "type": "string"
                         },
@@ -1819,7 +1863,7 @@
                     {
                         "name": "includedData",
                         "in": "query",
-                        "description": "A comma-delimited list of data sets that you want to include in the response. Default: `summaries`.",
+                        "description": "A comma-delimited list of data sets to include in the response. Default: `summaries`.",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -1878,7 +1922,7 @@
                     {
                         "name": "identifiers",
                         "in": "query",
-                        "description": "A comma-delimited list of product identifiers that you can use to search for listings items. \n\n**Note**: \n1. This is required when you specify `identifiersType`.\n2. You cannot use 'identifiers' if you specify `variationParentSku` or `packageHierarchySku`.",
+                        "description": "A comma-delimited list of product identifiers that you can use to search for listings items.\n\n**Note**: \n1. This is required when you specify `identifiersType`.\n2. You cannot use 'identifiers' if you specify `variationParentSku` or `packageHierarchySku`.",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -1893,7 +1937,7 @@
                     {
                         "name": "identifiersType",
                         "in": "query",
-                        "description": "A type of product identifiers that you can use to search for listings items. \n\n**Note**: \nThis is required when `identifiers` is provided.",
+                        "description": "A type of product identifiers that you can use to search for listings items.\n\n**Note**: \nThis is required when `identifiers` is provided.",
                         "schema": {
                             "type": "string",
                             "enum": [
@@ -1989,7 +2033,7 @@
                     {
                         "name": "variationParentSku",
                         "in": "query",
-                        "description": "Filters results to include listing items that are variation children of the specified SKU. \n\n**Note**: You cannot use `variationParentSku` if you include `identifiers` or `packageHierarchySku` in your request.",
+                        "description": "Filters results to include listing items that are variation children of the specified SKU.\n\n**Note**: You cannot use `variationParentSku` if you include `identifiers` or `packageHierarchySku` in your request.",
                         "schema": {
                             "type": "string"
                         },
@@ -1998,7 +2042,7 @@
                     {
                         "name": "packageHierarchySku",
                         "in": "query",
-                        "description": "Filter results to include listing items that contain or are contained by the specified SKU. \n\n**Note**: You cannot use `packageHierarchySku` if you include `identifiers` or `variationParentSku` in your request.",
+                        "description": "Filter results to include listing items that contain or are contained by the specified SKU.\n\n**Note**: You cannot use `packageHierarchySku` if you include `identifiers` or `variationParentSku` in your request.",
                         "schema": {
                             "type": "string"
                         },
@@ -3034,6 +3078,26 @@
                                                     "price": {
                                                         "currencyCode": "USD",
                                                         "amount": "100.00"
+                                                    },
+                                                    "replenishmentDiscount": {
+                                                        "discountPercentage": 5
+                                                    },
+                                                    "quantityDiscountPlan": {
+                                                        "discountType": "PERCENT",
+                                                        "levels": [
+                                                            {
+                                                                "lowerBound": 5,
+                                                                "value": "5.0"
+                                                            },
+                                                            {
+                                                                "lowerBound": 10,
+                                                                "value": "10.0"
+                                                            },
+                                                            {
+                                                                "lowerBound": 25,
+                                                                "value": "15.0"
+                                                            }
+                                                        ]
                                                     }
                                                 },
                                                 {
@@ -3246,6 +3310,26 @@
                                                         "price": {
                                                             "currencyCode": "USD",
                                                             "amount": "100.00"
+                                                        },
+                                                        "replenishmentDiscount": {
+                                                            "discountPercentage": 5
+                                                        },
+                                                        "quantityDiscountPlan": {
+                                                            "discountType": "PERCENT",
+                                                            "levels": [
+                                                                {
+                                                                    "lowerBound": 5,
+                                                                    "value": "5.0"
+                                                                },
+                                                                {
+                                                                    "lowerBound": 10,
+                                                                    "value": "10.0"
+                                                                },
+                                                                {
+                                                                    "lowerBound": 25,
+                                                                    "value": "15.0"
+                                                                }
+                                                            ]
                                                         }
                                                     },
                                                     {
@@ -3559,7 +3643,8 @@
                             }
                         }
                     }
-                }
+                },
+                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL"
             }
         }
     },
@@ -3612,7 +3697,7 @@
                 "properties": {
                     "numberOfResults": {
                         "type": "integer",
-                        "description": "The total number of selling partner listings items found for the search criteria (only results up to the page count limit is returned per request regardless of the number found).\n\nNote: The maximum number of items (SKUs) that can be returned and paged through is 1000."
+                        "description": "The total number of selling partner listings items found for the search criteria (the response returns only results up to the page count limit per request regardless of the number found).\n\nNote: The maximum number of items (SKUs) that can be returned and paged through is 1000."
                     },
                     "pagination": {
                         "$ref": "#/components/schemas/Pagination"
@@ -3691,7 +3776,7 @@
                 "properties": {
                     "marketplaceId": {
                         "type": "string",
-                        "description": "A marketplace identifier. Identifies the listings item's Amazon store."
+                        "description": "An Amazon store identifier. Identifies the listings item's Amazon store."
                     },
                     "asin": {
                         "type": "string",
@@ -3994,11 +4079,11 @@
                 "properties": {
                     "action": {
                         "type": "string",
-                        "description": "The enforcement action name. \n\nPossible values: \n\n* `LISTING_SUPPRESSED` - This enforcement takes down the current listing item's buyability. \n\n* `ATTRIBUTE_SUPPRESSED` - An attribute's value on the listing item is invalid, which causes it to be rejected by Amazon. \n\n* `CATALOG_ITEM_REMOVED` - This catalog item is inactive on Amazon, and all offers against it in the applicable Amazon store are non-buyable. \n\n* `SEARCH_SUPPRESSED` - This value indicates that the catalog item is hidden from search results.",
+                        "description": "The enforcement action name.\n\nPossible values:\n\n* `LISTING_SUPPRESSED` - This enforcement takes down the current listing item's buyability.\n\n* `ATTRIBUTE_SUPPRESSED` - An attribute's value on the listing item is invalid, which causes it to be rejected by Amazon.\n\n* `CATALOG_ITEM_REMOVED` - This catalog item is inactive on Amazon, and all offers against it in the applicable Amazon store are non-buyable.\n\n* `SEARCH_SUPPRESSED` - This value indicates that the catalog item is hidden from search results.",
                         "example": "LISTING_SUPPRESSED"
                     }
                 },
-                "description": "The enforcement action taken by Amazon that affect the publishing or status of a listing"
+                "description": "An enforcement action that Amazon takes that affects the publishing or status of a listing."
             },
             "IssueExemption": {
                 "required": [
@@ -4021,22 +4106,22 @@
                             },
                             {
                                 "value": "EXEMPT_UNTIL_EXPIRY_DATE",
-                                "description": "This status indicates that a product listing has been granted a temporary exemption from the listed enforcement actions. The exemption remains in effect until a specified expiry date. After this date, Amazon enforces the listed actions. The `expiryDate` field provides the timestamp indicating when the temporary exemption ends, adhering to the ISO 8601 format"
+                                "description": "This status indicates that a product listing has been granted a temporary exemption from the listed enforcement actions. The exemption remains in effect until a specified expiry date. After this date, Amazon enforces the listed actions. The `expiryDate` field provides the timestamp indicating when the temporary exemption ends, adhering to the ISO 8601 format."
                             },
                             {
                                 "value": "NOT_EXEMPT",
-                                "description": "This status is assigned to a product listing when it has no exemptions from the listed enforcement actions. When the status is `NOT_EXEMPT`, it signifies that Amazon has already taken the specified enforcement actions. There is no exemption in place, and the listed actions are actively enforced"
+                                "description": "This status is assigned to a product listing when it has no exemptions from the listed enforcement actions. When the status is `NOT_EXEMPT`, it signifies that Amazon has already taken the specified enforcement actions. There is no exemption in place, and the listed actions are actively enforced."
                             }
                         ]
                     },
                     "expiryDate": {
                         "type": "string",
-                        "description": "Represents the timestamp, in ISO 8601 format, that specifies the date when the temporary exemptions expires, and Amazon begins enforcing the listed actions.",
+                        "description": "The timestamp, in ISO 8601 format, when the temporary exemption expires and Amazon begins enforcing the listed actions.",
                         "format": "date-time",
                         "example": "2023-10-28T00:36:48.914Z"
                     }
                 },
-                "description": "Conveying the status of the listed enforcement actions and, if applicable, provides information about the exemption's expiry date."
+                "description": "The status of the listed enforcement actions. If applicable, includes information about the exemption expiry date."
             },
             "ItemOffers": {
                 "type": "array",
@@ -4083,9 +4168,80 @@
                     },
                     "audience": {
                         "$ref": "#/components/schemas/Audience"
+                    },
+                    "replenishmentDiscount": {
+                        "$ref": "#/components/schemas/ReplenishmentDiscount"
+                    },
+                    "quantityDiscountPlan": {
+                        "$ref": "#/components/schemas/QuantityDiscountPlan"
                     }
                 },
                 "description": "Offer details for a listings item for the specified Amazon store."
+            },
+            "ReplenishmentDiscount": {
+                "required": [
+                    "discountPercentage"
+                ],
+                "type": "object",
+                "properties": {
+                    "discountPercentage": {
+                        "type": "integer",
+                        "description": "The seller-funded Subscribe & Save discount on the offer, as a percentage (0\u2013100). For example, `5` means 5% off; `0` means the selling partner funds no discount."
+                    }
+                },
+                "description": "A replenishment discount set by the selling partner on the offer for Subscribe & Save subscriptions."
+            },
+            "QuantityDiscountPlan": {
+                "required": [
+                    "discountType",
+                    "levels"
+                ],
+                "type": "object",
+                "properties": {
+                    "discountType": {
+                        "type": "string",
+                        "description": "The quantity price type, indicating whether the quantity discount is a fixed price set in the local currency for each quantity threshold, or a percentage discount on the price.",
+                        "enum": [
+                            "PERCENT",
+                            "FIXED"
+                        ],
+                        "x-docgen-enum-table-extension": [
+                            {
+                                "value": "PERCENT",
+                                "description": "The quantity price is a percentage discount offered on the price for each quantity threshold. For example, a value of `5.0` means 5% off."
+                            },
+                            {
+                                "value": "FIXED",
+                                "description": "The quantity price is a fixed price set in the local currency for each quantity threshold."
+                            }
+                        ]
+                    },
+                    "levels": {
+                        "type": "array",
+                        "description": "The quantity discount levels that define the discount at each quantity threshold.",
+                        "items": {
+                            "$ref": "#/components/schemas/QuantityDiscountLevel"
+                        }
+                    }
+                },
+                "description": "The active quantity discount plan for an offer. A quantity discount plan defines discounts on the offer price based on the purchase quantity. There are two types of discounts: fixed prices based on the order quantity, and percentage discounts on the price based on the order quantity."
+            },
+            "QuantityDiscountLevel": {
+                "required": [
+                    "lowerBound",
+                    "value"
+                ],
+                "type": "object",
+                "properties": {
+                    "lowerBound": {
+                        "type": "integer",
+                        "description": "The quantity threshold, which is the minimum purchase quantity necessary to receive the discount. The discount applies to all units when the quantity threshold is met."
+                    },
+                    "value": {
+                        "$ref": "#/components/schemas/Decimal"
+                    }
+                },
+                "description": "A quantity discount level, defining the discount applied when the purchase quantity meets a given threshold."
             },
             "ItemProcurement": {
                 "required": [
@@ -4277,7 +4433,7 @@
                 "properties": {
                     "value": {
                         "type": "string",
-                        "description": "Name of the audience an offer is applicable to. \n\nCommon values: \n\n* 'ALL' - Standard offer audience for buyers on Amazon retail websites. \n\n* 'B2B' - Offer audience for Amazon Business website buyers.",
+                        "description": "Name of the audience an offer is applicable to.\n\nCommon values:\n\n* 'ALL' - Standard offer audience for buyers on Amazon retail websites.\n\n* 'B2B' - Offer audience for Amazon Business website buyers.",
                         "example": "ALL"
                     },
                     "displayName": {
@@ -4486,7 +4642,7 @@
                         "description": "A token that can be used to fetch the previous page."
                     }
                 },
-                "description": "When a request produces a response that exceeds the `pageSize`, pagination occurs. This means the response is divided into individual pages. To retrieve the next page or the previous page, you must pass the `nextToken` value or the `previousToken` value as the `pageToken` parameter in the next request. When you receive the last page, there is no `nextToken` key in the pagination object."
+                "description": "When a response exceeds the `pageSize`, the response is divided into individual pages. To retrieve the next page or the previous page, you must pass the `nextToken` value or the `previousToken` value as the `pageToken` parameter in the next request. When you receive the last page, there is no `nextToken` key in the pagination object."
             }
         }
     },

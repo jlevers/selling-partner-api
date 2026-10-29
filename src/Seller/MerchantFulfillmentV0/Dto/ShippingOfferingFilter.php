@@ -22,8 +22,8 @@ final class ShippingOfferingFilter extends Dto
     ];
 
     /**
-     * @param  ?bool  $includePackingSlipWithLabel  When true, include a packing slip with the label.
-     * @param  ?bool  $includeComplexShippingOptions  When true, include complex shipping options.
+     * @param  ?bool  $includePackingSlipWithLabel  When `true`, include a packing slip with the label.
+     * @param  ?bool  $includeComplexShippingOptions  When `true`, include complex shipping options.
      * @param  ?string  $carrierWillPickUp  Carrier will pick up option.
      * @param  ?string  $deliveryExperience  The delivery confirmation level.
      */

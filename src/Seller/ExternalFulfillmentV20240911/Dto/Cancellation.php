@@ -16,13 +16,13 @@ final class Cancellation extends Dto
 {
     /**
      * @param  int  $cancelledQuantity  The number of items of this particular item which have been cancelled.
-     * @param  string  $cancelledTimestamp  A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+     * @param  \DateTimeInterface  $cancelledTimestamp  A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      * @param  string  $cancellationType  The type of cancellation of the item in the shipment.
      * @param  ?string  $cancellationReason  The reason for the cancellation of the shipment.
      */
     public function __construct(
         public int $cancelledQuantity,
-        public string $cancelledTimestamp,
+        public \DateTimeInterface $cancelledTimestamp,
         public string $cancellationType,
         public ?string $cancellationReason = null,
     ) {}

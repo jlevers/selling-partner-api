@@ -20,6 +20,7 @@ final class TrackingIdentifier extends Dto
      * @param  ?string  $aftn  Amazon Fulfillment Tracking Number.
      * @param  ?string  $containerNumber  Container number provided by the Logistics Service Provider.
      * @param  ?string  $houseBillOfLadingNumber  House Bill of Lading number.
+     * @param  ?string  $proNumber  The PRO number assigned by the freight carrier
      * @param  ?CarrierTracking  $carrierTracking  Carrier-provided tracking identifier.
      */
     public function __construct(
@@ -28,6 +29,7 @@ final class TrackingIdentifier extends Dto
         public ?string $aftn = null,
         public ?string $containerNumber = null,
         public ?string $houseBillOfLadingNumber = null,
+        public ?string $proNumber = null,
         public ?CarrierTracking $carrierTracking = null,
     ) {}
 }

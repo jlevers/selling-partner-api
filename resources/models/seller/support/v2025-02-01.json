@@ -24,7 +24,7 @@
                 "tags": [
                     "SupportV20250201"
                 ],
-                "description": "Retrieve support cases for a selling partner.",
+                "description": "Retrieve support cases for a selling partner.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.1 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "listCases",
                 "requestBody": {
                     "description": "The request body for the listCases operation.",
@@ -327,7 +327,6 @@
                         }
                     }
                 },
-                "x-amzn-api-internal": "INTERNAL_AND_EXTERNAL",
                 "x-codegen-request-body-name": "body"
             }
         },
@@ -336,7 +335,7 @@
                 "tags": [
                     "SupportV20250201"
                 ],
-                "description": "Retrieve a specific support case.",
+                "description": "Retrieve a specific support case.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.1 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "getCase",
                 "parameters": [
                     {
@@ -632,7 +631,7 @@
                 "tags": [
                     "SupportV20250201"
                 ],
-                "description": "Retrieve contacts for a specific support case.",
+                "description": "Retrieve contacts for a specific support case.\n\n**Usage Plan:**\n\n| Rate (requests per second) | Burst |\n| ---- | ---- |\n| 0.1 | 10 |\n\nThe `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).",
                 "operationId": "listContacts",
                 "parameters": [
                     {
@@ -973,61 +972,6 @@
             "ListCasesRequest": {
                 "type": "object",
                 "properties": {
-                    "marketplaceId": {
-                        "type": "string",
-                        "description": "The marketplace identifier used for authorization only. This field does not impact the returned collection. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).",
-                        "example": "ATVPDKIKX0DER",
-                        "x-amzn-api-internal": "EXCLUSIVE"
-                    },
-                    "caseFilters": {
-                        "$ref": "#/components/schemas/CaseFilters"
-                    },
-                    "sortField": {
-                        "type": "string",
-                        "description": "The field to sort cases by. Defaults to CREATION_DATE when absent.",
-                        "example": "CASE_ID",
-                        "default": "CREATION_DATE",
-                        "enum": [
-                            "CASE_ID",
-                            "STATUS",
-                            "SUBJECT",
-                            "PRIMARY_EMAIL",
-                            "CREATION_DATE",
-                            "LAST_OUTBOUND_DATE",
-                            "RESOLUTION_DATE"
-                        ],
-                        "x-docgen-enum-table-extension": [
-                            {
-                                "description": "Sorts the collection by case identifier.",
-                                "value": "CASE_ID"
-                            },
-                            {
-                                "description": "Sorts the collection by case status.",
-                                "value": "STATUS"
-                            },
-                            {
-                                "description": "Sorts the collection by case subject.",
-                                "value": "SUBJECT"
-                            },
-                            {
-                                "description": "Sorts the collection by primary email address.",
-                                "value": "PRIMARY_EMAIL"
-                            },
-                            {
-                                "description": "Sorts the collection by creation date.",
-                                "value": "CREATION_DATE"
-                            },
-                            {
-                                "description": "Sorts the collection by last outbound contact date.",
-                                "value": "LAST_OUTBOUND_DATE"
-                            },
-                            {
-                                "description": "Sorts the collection by resolution date.",
-                                "value": "RESOLUTION_DATE"
-                            }
-                        ],
-                        "x-amzn-api-internal": "EXCLUSIVE"
-                    },
                     "sortOrder": {
                         "type": "string",
                         "description": "The sort direction. Defaults to DESC when absent.",
@@ -1180,13 +1124,6 @@
                         "description": "The time when the case was resolved. In [ISO 8601](https://developer-docs.amazon/sp-api/docs/iso-8601) format.",
                         "format": "date-time",
                         "example": "2024-01-12T10:00:00Z"
-                    },
-                    "lastOutboundDate": {
-                        "type": "string",
-                        "description": "The timestamp of the last outbound contact on the case. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
-                        "format": "date-time",
-                        "example": "2024-01-12T10:30:00Z",
-                        "x-amzn-api-internal": "EXCLUSIVE"
                     }
                 },
                 "description": "The support case.",
@@ -1219,110 +1156,6 @@
                         }
                     ]
                 }
-            },
-            "CaseFilters": {
-                "type": "object",
-                "properties": {
-                    "caseStatuses": {
-                        "type": "array",
-                        "description": "Filter the collection by one or more case statuses.",
-                        "example": [
-                            "PENDING_AMAZON_ACTION",
-                            "PENDING_MERCHANT_ACTION"
-                        ],
-                        "items": {
-                            "type": "string",
-                            "enum": [
-                                "RESOLVED",
-                                "TRANSFERRED",
-                                "PENDING_MERCHANT_ACTION",
-                                "PENDING_AMAZON_ACTION"
-                            ]
-                        }
-                    },
-                    "createdDate": {
-                        "$ref": "#/components/schemas/DateFilter"
-                    },
-                    "lastOutboundDate": {
-                        "$ref": "#/components/schemas/DateFilter"
-                    },
-                    "resolvedDate": {
-                        "$ref": "#/components/schemas/DateFilter"
-                    },
-                    "primaryEmails": {
-                        "type": "array",
-                        "description": "Filter the collection by primary email address.",
-                        "example": [
-                            "test_seller@domain.com"
-                        ],
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "ccEmails": {
-                        "type": "array",
-                        "description": "Filter the collection by one or more CC email addresses.",
-                        "example": [
-                            "test_seller1@domain.com"
-                        ],
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "subjectKeywords": {
-                        "maxLength": 200,
-                        "minLength": 1,
-                        "type": "string",
-                        "description": "Filter the collection by case subject keywords. Maximum 200 characters.",
-                        "example": "test subject"
-                    }
-                },
-                "description": "Optional filters for case search. All filters are optional \u2014 when absent, no filtering is applied for that field. Different filters are combined with AND logic, and multiple values of the same field are combined with OR logic.",
-                "example": {
-                    "caseStatuses": [
-                        "PENDING_AMAZON_ACTION"
-                    ],
-                    "createdDate": {
-                        "after": "2024-01-01T00:00:00.000Z"
-                    },
-                    "lastOutboundDate": {
-                        "after": "2024-06-01T00:00:00.000Z"
-                    },
-                    "resolvedDate": {
-                        "before": "2024-12-31T23:59:59.000Z"
-                    },
-                    "primaryEmails": [
-                        "test_seller@domain.com"
-                    ],
-                    "ccEmails": [
-                        "test_seller1@domain.com"
-                    ],
-                    "subjectKeywords": "test subject"
-                },
-                "x-amzn-api-internal": "EXCLUSIVE"
-            },
-            "DateFilter": {
-                "type": "object",
-                "properties": {
-                    "after": {
-                        "type": "string",
-                        "description": "Include results with timestamps strictly after this value (exclusive).",
-                        "format": "date-time",
-                        "example": "2024-01-01T00:00:00Z"
-                    },
-                    "before": {
-                        "type": "string",
-                        "description": "Include results with timestamps strictly before this value (exclusive).",
-                        "format": "date-time",
-                        "example": "2024-12-31T23:59:59Z"
-                    }
-                },
-                "description": "A date range filter with optional before and after bounds. Dates must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.",
-                "example": {
-                    "after": "2024-01-01T00:00:00.000Z",
-                    "before": "2024-12-31T23:59:59.000Z"
-                },
-                "x-amzn-api-internal": "EXCLUSIVE"
             },
             "Appointment": {
                 "required": [

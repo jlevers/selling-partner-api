@@ -39,7 +39,7 @@ final class Address extends Dto
      * @param  ?string  $addressLine2  Additional street address information.
      * @param  ?string  $addressLine3  Additional street address information.
      * @param  ?string  $districtOrCounty  The district or county.
-     * @param  ?string  $stateOrProvinceCode  The state or province code. This is a required field in Canada, US, and UK marketplaces, and for shipments that originate in China.
+     * @param  ?string  $stateOrProvinceCode  The state or province code. This is a required field in Amazon Canada, US, and UK stores, and for shipments that originate in China.
      */
     public function __construct(
         public string $name,

@@ -17,7 +17,7 @@ final class PackageDeliveryStatus extends Dto
     /**
      * @param  ?string  $status  The status of a package.
      * @param  ?string  $subStatus  The sub-status of a package.
-     * @param  ?string  $reason  The reason for the sub-status.
+     * @param  ?string  $reason  The reason for the sub-status. Refer [table](https://developer-docs.amazon/sp-api/docs/process-shipment#step-6-update-the-package-status) for possible values.
      */
     public function __construct(
         public ?string $status = null,

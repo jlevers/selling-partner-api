@@ -32,7 +32,7 @@ class GenerateShipLabels extends Request implements HasBody
     /**
      * @param  string  $shipmentId  The ID of the shipment whose shipping labels you want to generate and retrieve.
      * @param  ShipLabelsInput  $shipLabelsInput  Tracking details for multiple packages.
-     * @param  string  $operation  Specify whether you want to generate or regenerate a label.
+     * @param  string  $operation  Specify whether you want to generate or regenerate a label. For retrieving existing labels, set this value to `GENERATE`
      * @param  ?string  $shippingOptionId  The ID of the shipping option whose shipping labels you want.
      */
     public function __construct(

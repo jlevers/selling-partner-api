@@ -19,11 +19,11 @@ final class RecommendedPackage extends Dto
     /**
      * @param  PackageDimensions  $dimensions  The dimensions of a package.
      * @param  Weight  $weight  The weight of a package.
-     * @param  RecommendedPackageLineItem[]  $lineItems  A list of line items to be contained in a recommended package. This attribute is only for orders that come with specific recommendations for line-item distribution.
+     * @param  RecommendedPackageLineItem[]|null  $lineItems  A list of line items to be contained in a recommended package. This attribute is only for orders that come with specific recommendations for line-item distribution.
      */
     public function __construct(
         public PackageDimensions $dimensions,
         public Weight $weight,
-        public array $lineItems,
+        public ?array $lineItems = null,
     ) {}
 }

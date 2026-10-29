@@ -27,7 +27,7 @@ final class SellerInputDefinition extends Dto
     protected static array $complexArrayTypes = ['constraints' => Constraint::class];
 
     /**
-     * @param  bool  $isRequired  When true, the additional input field is required.
+     * @param  bool  $isRequired  When `true`, the additional input field is required.
      * @param  string  $dataType  The data type of the additional input field.
      * @param  Constraint[]  $constraints  List of constraints.
      * @param  string  $inputDisplayText  The display text for the additional input field.

@@ -17,11 +17,11 @@ final class Tax extends Dto
     /**
      * @param  ChargeBreakup  $charge  The composition of the charge.
      * @param  ?string  $type  The type of tax.
-     * @param  ?string  $rate  A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+     * @param  ?float  $rate  A decimal number.
      */
     public function __construct(
         public ChargeBreakup $charge,
         public ?string $type = null,
-        public ?string $rate = null,
+        public ?float $rate = null,
     ) {}
 }

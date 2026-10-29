@@ -15,11 +15,11 @@ use SellingPartnerApi\Dto;
 final class Dimension extends Dto
 {
     /**
-     * @param  string  $value  A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+     * @param  float  $value  A decimal number.
      * @param  string  $dimensionUnit  The unit of measurement of the dimension.
      */
     public function __construct(
-        public string $value,
+        public float $value,
         public string $dimensionUnit,
     ) {}
 }

@@ -2481,6 +2481,10 @@
                         "type": "string",
                         "description": "House Bill of Lading number."
                     },
+                    "proNumber": {
+                        "type": "string",
+                        "description": "The PRO number assigned by the freight carrier"
+                    },
                     "carrierTracking": {
                         "required": [
                             "trackingNumber"
@@ -2578,7 +2582,8 @@
                 "enum": [
                     "BuyerRequestedChange",
                     "DeliveryTipChange",
-                    "OrderStatusChange"
+                    "OrderStatusChange",
+                    "PreFulfillmentStatusChange"
                 ]
             },
             "Subscription": {

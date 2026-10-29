@@ -18,7 +18,7 @@ final class PartyIdentificationInfo extends Dto
      * @param  string  $partyId  Assigned identification for the party. For example, a warehouse code or vendor code.
      * @param  string  $partyType  Assigned identification for the party. For example, a warehouse code or vendor code.
      * @param  ?Address  $address  The address.
-     * @param  ?TaxRegistrationInfo  $taxInfo  Tax registration details of the entity. Applicable to direct fulfillment shipments.
+     * @param  ?TaxRegistrationInfo  $taxInfo  Tax registration details of the entity. Applicable only to direct fulfillment shipments.
      */
     public function __construct(
         public string $partyId,

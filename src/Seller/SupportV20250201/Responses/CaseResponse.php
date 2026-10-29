@@ -27,7 +27,6 @@ final class CaseResponse extends Response
      * @param  \DateTimeInterface  $lastUpdatedDate  The time when the case was last updated, which includes updates to the case details and new contacts added to the case. In [ISO 8601](https://developer-docs.amazon/sp-api/docs/iso-8601) format.
      * @param  Appointment[]|null  $appointments  All appointments for the case.
      * @param  ?\DateTimeInterface  $resolvedDate  The time when the case was resolved. In [ISO 8601](https://developer-docs.amazon/sp-api/docs/iso-8601) format.
-     * @param  ?\DateTimeInterface  $lastOutboundDate  The timestamp of the last outbound contact on the case. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      */
     public function __construct(
         public readonly string $caseId,
@@ -39,6 +38,5 @@ final class CaseResponse extends Response
         public readonly \DateTimeInterface $lastUpdatedDate,
         public readonly ?array $appointments = null,
         public readonly ?\DateTimeInterface $resolvedDate = null,
-        public readonly ?\DateTimeInterface $lastOutboundDate = null,
     ) {}
 }

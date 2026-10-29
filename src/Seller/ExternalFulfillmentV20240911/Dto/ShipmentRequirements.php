@@ -16,7 +16,7 @@ final class ShipmentRequirements extends Dto
 {
     /**
      * @param  PackingSlipRequirement  $pSlip  Whether the packing slip is required to be attached to the shipment, and its corresponding status.
-     * @param  InvoiceRequirement  $invoice  Whether the invoice document is required to be attached to the shipment and its corresponding status.
+     * @param  InvoiceRequirement  $invoice  Whether the invoice document is required to be attached to the shipment and its corresponding status. Applicable only for Brazil marketplace.
      */
     public function __construct(
         public PackingSlipRequirement $pSlip,

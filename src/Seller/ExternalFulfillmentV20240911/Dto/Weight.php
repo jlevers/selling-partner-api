@@ -15,11 +15,11 @@ use SellingPartnerApi\Dto;
 final class Weight extends Dto
 {
     /**
-     * @param  string  $value  A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+     * @param  float  $value  A decimal number.
      * @param  string  $weightUnit  The unit of measurement of the weight.
      */
     public function __construct(
-        public string $value,
+        public float $value,
         public string $weightUnit,
     ) {}
 }

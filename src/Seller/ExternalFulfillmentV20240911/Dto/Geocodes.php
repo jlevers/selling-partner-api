@@ -15,13 +15,13 @@ use SellingPartnerApi\Dto;
 final class Geocodes extends Dto
 {
     /**
-     * @param  string  $latitude  A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
-     * @param  string  $longitude  A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
-     * @param  ?string  $elevation  A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+     * @param  float  $latitude  A decimal number.
+     * @param  float  $longitude  A decimal number.
+     * @param  ?float  $elevation  A decimal number.
      */
     public function __construct(
-        public string $latitude,
-        public string $longitude,
-        public ?string $elevation = null,
+        public float $latitude,
+        public float $longitude,
+        public ?float $elevation = null,
     ) {}
 }

@@ -17,13 +17,14 @@ final class Package extends Dto
     protected static array $complexArrayTypes = ['packageLineItems' => PackageLineItem::class];
 
     /**
-     * @param  string  $id  An ID that uniquely identifies a package within a shipment.
+     * @param  string  $id  The ID of the package whose information you want to update.
      * @param  PackageDimensions  $dimensions  The dimensions of a package.
      * @param  Weight  $weight  The weight of a package.
      * @param  PackageLineItem[]  $packageLineItems  The list of line items in a package.
      * @param  ?string[]  $hazmatLabels  The optional list of HAZMAT labels applied to the package.
      * @param  ?string  $status  The current status of the package.
      * @param  ?string  $packageHandlingRequirements  Whether the package requires standard handling or extra care.
+     * @param  ?TrackingDetails  $trackingDetails  The carrier and tracking details of a package.
      */
     public function __construct(
         public string $id,
@@ -33,5 +34,6 @@ final class Package extends Dto
         public ?array $hazmatLabels = null,
         public ?string $status = null,
         public ?string $packageHandlingRequirements = null,
+        public ?TrackingDetails $trackingDetails = null,
     ) {}
 }

@@ -15,7 +15,7 @@ use SellingPartnerApi\Dto;
 final class ItemSummaryByMarketplace extends Dto
 {
     /**
-     * @param  string  $marketplaceId  A marketplace identifier. Identifies the listings item's Amazon store.
+     * @param  string  $marketplaceId  An Amazon store identifier. Identifies the listings item's Amazon store.
      * @param  string  $productType  The listings item's Amazon product type.
      * @param  string[]  $status  Statuses that apply to the listings item.
      * @param  \DateTimeInterface  $createdDate  Date the listings item was created, in ISO 8601 format.

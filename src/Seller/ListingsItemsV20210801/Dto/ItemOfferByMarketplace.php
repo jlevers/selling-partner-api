@@ -20,6 +20,8 @@ final class ItemOfferByMarketplace extends Dto
      * @param  Money  $price  The currency type and the amount.
      * @param  ?Points  $points  The number of Amazon Points offered with the purchase of an item, and their monetary value. Note that the `Points` element is only returned in Japan (JP).
      * @param  ?Audience  $audience  Buyer segment or program this offer is applicable to.
+     * @param  ?ReplenishmentDiscount  $replenishmentDiscount  A replenishment discount set by the selling partner on the offer for Subscribe & Save subscriptions.
+     * @param  ?QuantityDiscountPlan  $quantityDiscountPlan  The active quantity discount plan for an offer. A quantity discount plan defines discounts on the offer price based on the purchase quantity. There are two types of discounts: fixed prices based on the order quantity, and percentage discounts on the price based on the order quantity.
      */
     public function __construct(
         public string $marketplaceId,
@@ -27,5 +29,7 @@ final class ItemOfferByMarketplace extends Dto
         public Money $price,
         public ?Points $points = null,
         public ?Audience $audience = null,
+        public ?ReplenishmentDiscount $replenishmentDiscount = null,
+        public ?QuantityDiscountPlan $quantityDiscountPlan = null,
     ) {}
 }

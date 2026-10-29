@@ -15,11 +15,11 @@ use SellingPartnerApi\Dto;
 final class Amount extends Dto
 {
     /**
-     * @param  string  $value  A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+     * @param  float  $value  A decimal number.
      * @param  string  $currencyCode  Three digit currency code in ISO 4217 format.
      */
     public function __construct(
-        public string $value,
+        public float $value,
         public string $currencyCode,
     ) {}
 }

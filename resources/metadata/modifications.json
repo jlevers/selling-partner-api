@@ -38,6 +38,14 @@
     "fba-outbound": {
       "2020-07-01": [
         {
+          "comment": "TrackingEvent addresses returned by Amazon may omit city and state",
+          "action": "replace",
+          "path": "components.schemas.TrackingAddress.required",
+          "value": [
+            "country"
+          ]
+        },
+        {
           "comment": "Remove required 'sellerReturnReasonCode', see https://github.com/jlevers/selling-partner-api/issues/706",
           "action": "replace",
           "path": "components.schemas.ReturnItem.required",

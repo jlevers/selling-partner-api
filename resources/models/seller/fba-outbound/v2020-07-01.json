@@ -4900,9 +4900,7 @@
             },
             "TrackingAddress": {
                 "required": [
-                    "city",
-                    "country",
-                    "state"
+                    "country"
                 ],
                 "type": "object",
                 "properties": {

@@ -15,13 +15,13 @@ use SellingPartnerApi\Dto;
 final class TrackingAddress extends Dto
 {
     /**
-     * @param  string  $city  The city.
-     * @param  string  $state  The state.
      * @param  string  $country  The country.
+     * @param  ?string  $city  The city.
+     * @param  ?string  $state  The state.
      */
     public function __construct(
-        public string $city,
-        public string $state,
         public string $country,
+        public ?string $city = null,
+        public ?string $state = null,
     ) {}
 }

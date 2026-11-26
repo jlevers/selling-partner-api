@@ -38,6 +38,16 @@
     "fba-outbound": {
       "2020-07-01": [
         {
+          "comment": "TrackingEvent returned by Amazon may omit eventAddress",
+          "action": "replace",
+          "path": "components.schemas.TrackingEvent.required",
+          "value": [
+            "eventCode",
+            "eventDate",
+            "eventDescription"
+          ]
+        },
+        {
           "comment": "TrackingEvent addresses returned by Amazon may omit city and state",
           "action": "replace",
           "path": "components.schemas.TrackingAddress.required",

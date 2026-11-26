@@ -5107,7 +5107,6 @@
             },
             "TrackingEvent": {
                 "required": [
-                    "eventAddress",
                     "eventCode",
                     "eventDate",
                     "eventDescription"

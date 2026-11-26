@@ -64,4 +64,16 @@ class TrackingEventTest extends TestCase
         $this->assertSame('WA', $event->eventAddress->state);
         $this->assertSame('US', $event->eventAddress->country);
     }
+
+    public function test_deserialize_tracking_event_without_address(): void
+    {
+        $event = TrackingEvent::deserialize([
+            'eventDate' => '2026-11-11T12:00:00Z',
+            'eventCode' => 'EVENT_101',
+            'eventDescription' => 'Package received',
+        ]);
+
+        $this->assertNull($event->eventAddress);
+        $this->assertSame('EVENT_101', $event->eventCode);
+    }
 }

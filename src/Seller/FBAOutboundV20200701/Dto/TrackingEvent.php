@@ -16,14 +16,14 @@ final class TrackingEvent extends Dto
 {
     /**
      * @param  \DateTimeInterface  $eventDate  Date timestamp
-     * @param  TrackingAddress  $eventAddress  Address information for tracking the package.
      * @param  string  $eventCode  The event code for the delivery event.
      * @param  string  $eventDescription  A description for the corresponding event code.
+     * @param  ?TrackingAddress  $eventAddress  Address information for tracking the package.
      */
     public function __construct(
         public \DateTimeInterface $eventDate,
-        public TrackingAddress $eventAddress,
         public string $eventCode,
         public string $eventDescription,
+        public ?TrackingAddress $eventAddress = null,
     ) {}
 }

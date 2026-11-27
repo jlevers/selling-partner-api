@@ -5108,8 +5108,7 @@
             "TrackingEvent": {
                 "required": [
                     "eventCode",
-                    "eventDate",
-                    "eventDescription"
+                    "eventDate"
                 ],
                 "type": "object",
                 "properties": {
